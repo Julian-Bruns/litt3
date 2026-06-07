@@ -1,0 +1,1416 @@
+\documentclass[11pt]{amsart}
+
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{opentheorem}[theorem]{Open theorem}
+\newtheorem{target}[theorem]{Certificate target}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\kbar}{\overline{\mathbb F}_5}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\Div}{\operatorname{div}}
+\newcommand{\Norm}{\operatorname{Norm}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Pic}{\operatorname{Pic}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Comm}{\operatorname{Comm}}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\F}{\mathbb F}
+
+\title{A conditional reduction of a characteristic-five common-cover obstruction}
+\author{June 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let \(k=\overline{\mathbb F}_5\) and \(S=\PP^1_k(31,31,31)\).  The common-cover
+counterexample considered here is reduced to the visibility of finite etale
+self-correspondences of \(S\).  The reduction is then carried to the curve
+level: a non-visible correspondence is assumed to yield a particular
+genus-\(11\), degree-\(35\) pair of three-point maps, and the remaining work is
+to exclude three explicit branches of this pair.  One branch is further
+reduced to two stated computer-algebra claims.  These four open theorems
+together imply the visibility theorem for \(S\), hence the desired
+common-cover obstruction.
+\end{abstract}
+
+\tableofcontents
+
+\section{Statement of the Reduction}
+
+The original question is the following.
+
+\begin{question}[Common-cover question over \(\kbar\)]
+Do any two smooth proper connected curves of genus at least \(2\) over
+\(k=\kbar\) admit a common connected finite etale cover?
+\end{question}
+
+The proposed counterexample is \(Y:y^{31}=x(x-1)\).  Put
+\(S=\PP^1_k(31,31,31)\).  Section~\ref{sec:global-route} proves that it is
+enough to show every connected finite etale self-correspondence of \(S\) is
+visible, in the sense of Definition~\ref{def:visible}.  The curve-level part
+of the note reduces this visibility theorem to Open
+Theorems~\ref{open:profile-extraction}, \ref{open:entry-one},
+\ref{open:no-highpoint}, and \ref{open:double-fiber}; the formal implication
+is Theorem~\ref{thm:four-open-imply-comm}.
+
+\section{The global stack route}
+\label{sec:global-route}
+
+Let \(k=\kbar\).  The stack
+\[
+  S=\PP^1_k(31,31,31)
+\]
+is the smooth proper stacky curve with coarse space \(\PP^1_k\) and stabilizer
+order \(31\) at \(0,1,\infty\).
+
+\begin{lemma}[The cyclic atlas]
+\label{lem:atlas}
+Let
+\[
+  Y:\quad y^{31}=x(x-1)
+\]
+and let \(C_{31}\) act by \(y\mapsto \zeta y\).  Then
+\[
+  S=[Y/C_{31}],
+\]
+the map \(Y\to S\) is a representable finite etale \(C_{31}\)-torsor, and
+\(g(Y)=15\).
+\end{lemma}
+
+\begin{proof}
+The coarse map \(Y\to\PP^1_x\) has degree \(31\) and is totally ramified over
+\(0,1,\infty\).  Riemann--Hurwitz gives
+\[
+  2g(Y)-2=31(-2)+3(31-1)=28,
+\]
+so \(g(Y)=15\).  The quotient stack \([Y/C_{31}]\) remembers the three coarse
+ramification stabilizers; therefore the quotient map \(Y\to [Y/C_{31}]\) is
+finite etale in the stack sense and representable.
+\end{proof}
+
+The three stacky points have the same order, so \(S_3\) acts on \(S\) by
+permuting them.  The quotient is
+\[
+  S_0=S/S_3\simeq \PP^1_k(2,3,62),
+\]
+and the quotient map is denoted
+\[
+  \pi_0:S\longrightarrow S_0.
+\]
+It is finite etale of degree \(6\) as a morphism of stacky curves: the branch
+orders of the coarse \(S_3\)-quotient are exactly absorbed by the stack
+indices \(2,3,62\) on the target.
+
+\begin{definition}[Finite etale self-correspondence]
+A finite etale self-correspondence of \(S\) is a connected smooth proper
+Deligne--Mumford curve \(T\) together with two representable finite etale maps
+\[
+  u,v:T\to S.
+\]
+\end{definition}
+
+\begin{definition}[Visible self-correspondence]
+\label{def:visible}
+A finite etale self-correspondence \(u,v:T\to S\) is visible if
+\[
+  \pi_0\circ u\simeq \pi_0\circ v.
+\]
+Equivalently, \((u,v):T\to S\times S\) factors through the fiber product
+\[
+  S\times_{S_0}S.
+\]
+Since \(S\to S_0\) is the \(S_3\)-quotient and \(T\) is connected, this is the
+same as saying that \(v=\sigma\circ u\) for one fixed \(\sigma\in S_3\).
+\end{definition}
+
+The assertion that all finite etale self-correspondences of \(S\) are visible
+is the visibility theorem for \(S\).  In the usual shorthand it is written
+\[
+  \Comm_{\mathrm{alg},k}(S)=\Aut(S)=S_3.
+\]
+
+\begin{lemma}[No genus-three etale cover of \(S_0\)]
+\label{lem:no-genus3-S0}
+No smooth proper connected genus-three curve admits a finite etale map to
+\[
+  S_0=\PP^1_k(2,3,62).
+\]
+\end{lemma}
+
+\begin{proof}
+For a stacky projective line \(\PP^1(a,b,c)\),
+\[
+  \deg K_{\PP^1(a,b,c)}
+  =
+  -2+\left(1-\frac1a\right)+\left(1-\frac1b\right)
+      +\left(1-\frac1c\right).
+\]
+For \((a,b,c)=(2,3,62)\) this is \(14/93\).  If \(X\to S_0\) were finite
+etale of degree \(d\) and \(g(X)=3\), then
+\[
+  4=\deg K_X=d\cdot\frac{14}{93},
+\]
+so \(d=186/7\), impossible.
+\end{proof}
+
+\begin{proposition}[Conditional common-cover counterexample]
+\label{prop:conditional-common-cover}
+Assume every finite etale self-correspondence of \(S\) is visible.  Then
+\(Y:y^{31}=x(x-1)\) has no connected common finite etale cover with any smooth
+proper connected genus-three curve over \(k\).
+\end{proposition}
+
+\begin{proof}
+Suppose, to the contrary, that \(Z\to X\) and \(Z\to Y\) are connected finite
+etale covers with \(g(X)=3\).  Compose \(Z\to Y\) with the atlas torsor
+\(Y\to S\), and call the resulting finite etale map \(b:Z\to S\).
+
+Let
+\[
+  R=Z\times_X Z
+\]
+with projections \(p_1,p_2:R\rightrightarrows Z\).  For each connected
+component \(R_\alpha\) of \(R\), the two maps
+\[
+  b\circ p_1,\ b\circ p_2:R_\alpha\to S
+\]
+form a finite etale self-correspondence of \(S\).  By
+Definition~\ref{def:visible},
+\[
+  \pi_0\circ b\circ p_1=\pi_0\circ b\circ p_2
+\]
+on every \(R_\alpha\), hence on all of \(R\).  Thus
+\(\pi_0\circ b:Z\to S_0\) is invariant under the finite etale equivalence
+relation \(R\rightrightarrows Z\).  Since \(Z\to X\) is finite etale
+surjective, effective descent for finite etale morphisms gives a finite etale
+map
+\[
+  X\to S_0.
+\]
+This contradicts Lemma~\ref{lem:no-genus3-S0}.
+\end{proof}
+
+\begin{remark}
+The proposition reduces the common-cover counterexample to the algebraic
+visibility theorem for \(S\).  The rest of the note reduces that theorem to
+the four open theorems assembled in
+Theorem~\ref{thm:four-open-imply-comm}.
+\end{remark}
+
+\section{Profile Pairs}
+\label{sec:profile-pairs}
+
+\begin{definition}[Three-point profile map]
+\label{def:one-profile-map}
+Let \(n,m\ge 1\).  A separable function \(h:C\to\PP^1\) on a smooth proper
+connected curve has three-point profile \((n;m)\) if \(\deg h=n+m\), all
+ramification of \(h\) lies over \(0,1,\infty\), and for each
+\(a\in\{0,1,\infty\}\) one has
+\[
+  h^{-1}(a)=nP_a(h)+E_a(h),
+\]
+where \(P_a(h)\) is one point and \(E_a(h)\) is a reduced effective divisor of
+degree \(m\), disjoint from the two other \(E\)-divisors for the same map.
+In the rest of the note, ``profile map'' means three-point profile
+\((31;4)\).
+\end{definition}
+
+\begin{lemma}[Genus of a \((31;4)\)-profile map]
+\label{lem:profile-genus}
+If \(C\) admits a \((31;4)\)-profile map, then \(g(C)=11\).
+\end{lemma}
+
+\begin{proof}
+The ramification contribution over each of \(0,1,\infty\) is \(31-1=30\).
+Since there is no other ramification,
+\[
+  2g(C)-2=35(-2)+3\cdot 30=20,
+\]
+so \(g(C)=11\).
+\end{proof}
+
+\begin{definition}[Profile-\(4\) two-map pair]
+\label{def:profile4-pair}
+A profile-\(4\) two-map pair is a smooth proper connected curve \(C/k\) with
+two \((31;4)\)-profile maps \(x,r:C\to\PP^1\), such that
+\[
+  k(C)=k(x,r),
+\]
+the twelve unramified boundary points agree as a reduced divisor
+\[
+  U=E_0+E_1+E_\infty=F_0+F_1+F_\infty,
+\]
+where \(E_i=E_i(x)\) and \(F_j=E_j(r)\), and the incidence matrix
+\[
+  M_{ij}:=\deg(E_i\cap F_j)
+\]
+is
+\[
+  M=
+  \begin{pmatrix}
+  0&1&3\\
+  1&2&1\\
+  3&1&0
+  \end{pmatrix}
+  \qquad (i,j\in\{0,1,\infty\}).
+\]
+\end{definition}
+
+\begin{lemma}[Divisors attached to a profile-\(4\) pair]
+\label{lem:profile-divisors}
+Let \((C,x,r)\) be a profile-\(4\) pair.  With
+\[
+  P_i=P_i(x),\qquad Q_j=P_j(r),
+\]
+one has
+\[
+ \Div(x)=31P_0+E_0-31P_\infty-E_\infty.
+\]
+Moreover
+\[
+ \Div(x-1)=31P_1+E_1-31P_\infty-E_\infty,
+\]
+and
+\[
+ \Div(r)=31Q_0+F_0-31Q_\infty-F_\infty,\qquad
+ \Div(r-1)=31Q_1+F_1-31Q_\infty-F_\infty.
+\]
+\end{lemma}
+
+\begin{proof}
+For \(x\), the zero divisor is the scheme-theoretic fiber over \(0\), namely
+\[
+  x^{-1}(0)=31P_0+E_0,
+\]
+and the pole divisor is the fiber over \(\infty\),
+\[
+  x^{-1}(\infty)=31P_\infty+E_\infty.
+\]
+Their difference is \(\Div(x)\).  The same argument applied to \(x-1\) uses
+the fiber of \(x\) over \(1\) for the zeros and the same pole fiber as \(x\).
+The two formulas for \(r\) are identical with \(P,E,x\) replaced by
+\(Q,F,r\).
+\end{proof}
+
+Write the nonempty atoms of the incidence decomposition as
+\[
+\begin{array}{lll}
+ A=U_{0,1}, & B=U_{0,\infty}, & C=U_{1,0},\\
+ D=U_{1,1}, & E=U_{1,\infty}, & F=U_{\infty,0},\\
+ G=U_{\infty,1}. &&
+\end{array}
+\]
+Their degrees are
+\[
+  \deg A=\deg C=\deg E=\deg G=1,\qquad
+  \deg D=2,\qquad
+  \deg B=\deg F=3.
+\]
+The atoms \(U_{0,0}\) and \(U_{\infty,\infty}\) are empty.
+
+\begin{opentheorem}[A. Profile extraction from a non-visible correspondence]
+\label{open:profile-extraction}
+Let
+\[
+  u,v:T\to S=\PP^1_k(31,31,31)
+\]
+be a connected representable finite etale self-correspondence such that
+\[
+  \pi_0\circ u\not\simeq \pi_0\circ v.
+\]
+Then, after possibly interchanging \(u\) and \(v\) and composing one of them
+with a visible \(S_3\)-symmetry of \(S\), there is a smooth proper connected
+curve \(C/k\) and separable functions \(x,r\in k(C)\) such that
+\((C,x,r)\) is a profile-\(4\) two-map pair in the sense of
+Definition~\ref{def:profile4-pair}.
+\end{opentheorem}
+
+\begin{remark}
+Open Theorem~\ref{open:profile-extraction} is the global-to-curve reduction:
+it replaces a non-visible stack correspondence by the explicit two-map
+incidence datum of Definition~\ref{def:profile4-pair}.
+\end{remark}
+
+\begin{remark}[Why profile \(4\)]
+Among \(3\times3\) nonnegative integer matrices with all row and column sums
+\(4\), modulo independent relabeling of rows and columns, there are nine
+incidence profiles.  The profile above is the smallest of the six profiles in
+which no \(r\)-boundary block is equal to \(E_\infty\).  This matters for the
+Kummer tests in Section~\ref{sec:kummer}.  The unproved content in
+Open Theorem~\ref{open:profile-extraction} is that, after the visible
+\(S_3\)-symmetries and the preceding reductions, no other incidence profile
+has to be considered.
+\end{remark}
+
+\section{Logarithmic Differentials and Kummer Tests}
+\label{sec:kummer}
+
+We use the following logarithmic identities.
+
+\subsection{Logarithmic forms}
+
+Let \(h\) be one profile map.  For \(c\in\{0,1,\infty\}\), define
+\[
+  \Omega_c(h)=\frac{dh}{(h-a)(h-b)},\qquad \{a,b,c\}=\{0,1,\infty\}.
+\]
+Thus
+\[
+  \Omega_0(h)=\frac{dh}{h-1},\qquad
+  \Omega_1(h)=\frac{dh}{h},\qquad
+  \Omega_\infty(h)=\frac{dh}{h(h-1)}.
+\]
+
+\begin{lemma}[Divisor of \(\Omega_c\)]
+\label{lem:omega-divisor}
+For \(\{a,b,c\}=\{0,1,\infty\}\),
+\[
+  \Div\Omega_c(h)
+  =30P_c(h)-P_a(h)-P_b(h)-E_a(h)-E_b(h).
+\]
+\end{lemma}
+
+\begin{proof}
+At \(P_c(h)\), use \(h-c\) as a target coordinate if \(c\ne\infty\), and use
+\(1/h\) if \(c=\infty\).  In either coordinate the local form of the map is
+\(t\mapsto t^{31}\), so \(dh\) contributes order \(30\) relative to a local
+parameter on \(C\), while neither denominator factor vanishes.  Hence
+\(\Omega_c(h)\) has order \(30\) at \(P_c(h)\).
+
+At \(P_a(h)\), the corresponding denominator factor has order \(31\), while
+\(dh\) has order \(30\), so the order is \(-1\); the same argument applies at
+\(P_b(h)\).  At each point of \(E_a(h)\) or \(E_b(h)\), the map is unramified
+and the corresponding denominator factor has a simple zero, so the order is
+\(-1\).  Away from the three boundary fibers the denominator is nonzero and
+the map is unramified, so there are no further zeros or poles.  The displayed
+divisor also has the required degree
+\[
+  30-1-1-4-4=20=2g(C)-2.
+\]
+\end{proof}
+
+At an unramified boundary point with boundary label \(\ell\), the residue of
+\(\Omega_c(h)\) is
+\[
+\begin{array}{c|ccc}
+       & \ell=0 & \ell=1 & \ell=\infty\\ \hline
+c=0    & 0&1&-1\\
+c=1    & 1&0&-1\\
+c=\infty&-1&1&0 .
+\end{array}
+\]
+For example, near a point with \(h=0\), the form \(dh/h\) has residue \(1\),
+while \(dh/(h-1)\) is regular.
+
+Multiplying the three logarithmic forms for one map gives
+\[
+  \Div\bigl(\Omega_0(h)\Omega_1(h)\Omega_\infty(h)\bigr)
+  =28(P_0(h)+P_1(h)+P_\infty(h))-2U_h,
+\]
+where \(U_h=E_0(h)+E_1(h)+E_\infty(h)\).  Hence a profile-\(4\) pair satisfies
+the Picard constraint
+\[
+  28\bigl((P_0+P_1+P_\infty)-(Q_0+Q_1+Q_\infty)\bigr)=0
+  \quad\text{in }\Pic^0(C).
+\]
+
+\subsection{Kummer valuation tests}
+
+Let \(F=k(C)\) and let
+\[
+  K=F(y),\qquad y^{31}=x(x-1).
+\]
+
+\begin{lemma}[Boundary valuation obstruction]
+\label{lem:kummer-valuation}
+None of
+\[
+  r(r-1),\qquad \frac{1-r}{r^2},\qquad \frac{r}{(r-1)^2}
+\]
+is a \(31\)st power in \(K\).
+\end{lemma}
+
+\begin{proof}
+Because \(k\) is algebraically closed and contains \(\mu_{31}\), Kummer theory
+says that an element \(B\in F^\times\) becomes a \(31\)st power in \(K\) only
+if its class in \(F^\times/F^{\times31}\) lies in the subgroup generated by
+\(x(x-1)\).  Equivalently,
+\[
+  B=(x(x-1))^m a^{31}
+\]
+for some \(m\in\mathbb Z/31\mathbb Z\) and \(a\in F^\times\).  Therefore the
+valuation vector of \(B\) on the twelve points of \(U\), modulo \(31\), must
+be \(m\) times the valuation vector of \(x(x-1)\), namely
+\[
+  1\text{ on }E_0,\qquad 1\text{ on }E_1,\qquad -2\text{ on }E_\infty.
+\]
+
+The three displayed functions have valuation vectors
+\[
+\begin{array}{c|ccc}
+        &F_0&F_1&F_\infty\\ \hline
+r(r-1)&1&1&-2\\
+(1-r)/r^2&-2&1&1\\
+r/(r-1)^2&1&-2&1 .
+\end{array}
+\]
+If one of these vectors equals \(m(1,1,-2)\) after pulling back to the
+\(E\)-partition of \(U\), then the unique four-point block on which the value
+is \(-2\) must be \(E_\infty\).  The alternative \(m\ne1\) is impossible:
+then the two values \(m\) and \(-2m\) would have to be among \(\{1,-2\}\), and
+the only such scalar preserving the multiplicities \(8\) and \(4\) is
+\(m=1\).
+
+Thus the three necessary conditions are respectively
+\[
+  F_\infty=E_\infty,\qquad F_0=E_\infty,\qquad F_1=E_\infty.
+\]
+For profile \(4\), no column of \(M\) is \((0,0,4)^t\), so none of
+\(F_0,F_1,F_\infty\) equals \(E_\infty\).  All three elements therefore fail
+the valuation test.
+\end{proof}
+
+\subsection{A characteristic-five \(p\)-basis constraint}
+
+Let \(F=k(C)\).  Since \(x\) is separable and \(k\) is perfect of
+characteristic \(5\),
+\[
+  F=F^5(x).
+\]
+Thus
+\[
+  r=u_0^5+u_1^5x+u_2^5x^2+u_3^5x^3+u_4^5x^4
+\]
+for unique \(u_i\in F\), and
+\[
+  \frac{dr}{dx}=u_1^5+2u_2^5x+3u_3^5x^2+4u_4^5x^3.
+\]
+At an unramified \(x\)-pole \(P\in E_\infty\), the valuations of the five
+terms \(u_i^5x^i\) have distinct residues modulo \(5\).  Therefore there is
+no cancellation among them.
+
+As a check on possible characteristic-\(5\) constructions, suppose
+\[
+  r=x+u^5
+\]
+and suppose \(r\) is again a profile map with branch values \(0,1,\infty\).
+Any pole of \(u\) away from \(x^{-1}(\infty)\) would give \(r\) a pole whose
+order is divisible by \(5\), which is incompatible with the profile.  At the
+four simple poles in \(E_\infty\), the same residue-modulo-\(5\) argument shows
+that \(u\) is regular.  At \(P_\infty\), the pole order of \(u\) is at most
+\(6\), otherwise \(u^5\) would dominate the order-\(31\) pole of \(x\).
+Thus \(\deg u\le6\).  At a finite high point of \(x\), say
+\(x=a+t^{31}\), the equality
+\[
+  r-r(P)=t^{31}+(u-u(P))^5
+\]
+has tame ramification index \(31\) only if \(\ord_P(u-u(P))\ge7\), unless
+\(u\) is constant.  This contradicts \(\deg u\le6\).  Hence \(u\) is constant,
+and then the branch-value condition forces that constant to be \(0\).
+
+\section{High-point coincidences}
+\label{sec:highpoint}
+
+A high-point coincidence is an equality \(Q_j=P_i\) among the six ramified
+points of the two profile maps.  Its entry is \(M_{ij}\); for instance an
+entry-one coincidence means \(M_{ij}=1\).
+
+\begin{lemma}[High-point quotient]
+\label{lem:highpoint-quotient}
+If \(Q_j=P_i\), then
+\[
+  Y_{i,j}:=\frac{\Omega_j(r)}{\Omega_i(x)}
+\]
+has degree at most \(6-M_{ij}\).
+\end{lemma}
+
+\begin{proof}
+Let \(\{a,b,i\}=\{0,1,\infty\}\) and
+\(\{c,d,j\}=\{0,1,\infty\}\).  By Lemma~\ref{lem:omega-divisor}, the order
+\(30\) terms at the common point \(Q_j=P_i\) cancel, and
+\[
+  \Div(Y_{i,j})
+  =
+  (P_a+P_b+F_j)-(Q_c+Q_d+E_i).
+\]
+The positive part has degree at most
+\[
+  2+\deg(F_j-E_i)_+=2+4-M_{ij}=6-M_{ij}.
+\]
+Any additional high-point coincidence only cancels more terms.
+\end{proof}
+
+At every atom \(U_{\alpha,\beta}\) with \(\alpha\ne i\) and \(\beta\ne j\),
+both logarithmic forms have simple poles, so the value of \(Y_{i,j}\) is the
+quotient of the two residues in the residue table.  Counting these reduced
+atoms gives the following forced finite fibers:
+\[
+\begin{array}{c|c|c|c}
+\text{coincidence} & M_{ij} & \deg Y_{i,j}\le & \text{forced finite values}\\ \hline
+Q_0=P_0       &0&6& 1:2,\ -1:2\\
+Q_1=P_0       &1&5& 1:1,\ -1:4\\
+Q_\infty=P_0  &3&3& 1:5,\ -1:2\\
+Q_0=P_1       &1&5& 1:1,\ -1:4\\
+Q_1=P_1       &2&4& -1:6\\
+Q_\infty=P_1  &1&5& 1:4,\ -1:1\\
+Q_0=P_\infty  &3&3& 1:5,\ -1:2\\
+Q_1=P_\infty  &1&5& 1:4,\ -1:1\\
+Q_\infty=P_\infty&0&6&1:2,\ -1:2 .
+\end{array}
+\]
+Hence the coincidences
+\[
+  Q_\infty=P_0,\qquad Q_1=P_1,\qquad Q_0=P_\infty
+\]
+are impossible.
+
+\begin{lemma}[Simultaneous inversion]
+\label{lem:inversion}
+The case \(Q_\infty=P_\infty\) is equivalent to the case \(Q_0=P_0\).
+\end{lemma}
+
+\begin{proof}
+Replace \(x,r\) by
+\[
+  x'=1/x,\qquad r'=1/r.
+\]
+Then
+\[
+  \Div(x')=31P_\infty+E_\infty-31P_0-E_0,
+\]
+and
+\[
+  \Div(x'-1)=\Div((1-x)/x)
+  =31P_1+E_1-31P_0-E_0.
+\]
+Thus the labels \(0\) and \(\infty\) are interchanged for \(x\), while the
+label \(1\) is fixed.  The same calculation applies to \(r\).  The incidence
+matrix is unchanged by simultaneous interchange of rows \(0,\infty\) and
+columns \(0,\infty\):
+\[
+  \begin{pmatrix}
+  0&1&3\\1&2&1\\3&1&0
+  \end{pmatrix}
+  \longmapsto
+  \begin{pmatrix}
+  0&1&3\\1&2&1\\3&1&0
+  \end{pmatrix}.
+\]
+Therefore \(Q_\infty=P_\infty\) for \((x,r)\) becomes \(Q'_0=P'_0\) for
+\((x',r')\), and the operation is an involution.
+\end{proof}
+
+\begin{lemma}[The paired entry-zero edge is impossible]
+\label{lem:paired-edge}
+There is no profile-\(4\) pair with
+\[
+  Q_0=P_0,\qquad Q_\infty=P_\infty.
+\]
+\end{lemma}
+
+\begin{proof}
+Assume both equalities.  Put
+\[
+  u=\frac{\Omega_0(r)}{\Omega_0(x)},\qquad
+  v=\frac{\Omega_\infty(r)}{\Omega_\infty(x)}.
+\]
+The divisor formula gives
+\[
+  \Div(u)=P_1+U_{1,0}+U_{\infty,0}
+          -Q_1-U_{0,1}-U_{0,\infty},
+\]
+and
+\[
+  \Div(v)=P_1+U_{0,\infty}+U_{1,\infty}
+          -Q_1-U_{\infty,0}-U_{\infty,1}.
+\]
+Thus both \(u\) and \(v\) have degree \(5\).
+
+Let \(\Gamma\subset\PP^1_u\times\PP^1_v\) be the image of
+\((u,v)\), and let \(n=[k(C):k(u,v)]\).  Since both functions have degree
+\(5\), the bidegree of \(\Gamma\) is \((5/n,5/n)\), so \(n=1\) or \(5\).
+If \(n=5\), then \(\Gamma\) has bidegree \((1,1)\), hence
+\(v=M(u)\) for a linear fractional transformation.  The points \(P_1,Q_1\), and the two
+points of \(U_{1,1}\), force
+\[
+  M(0)=0,\qquad M(\infty)=\infty,\qquad M(1)=1,
+\]
+so \(M\) is the identity.  But \(U_{0,\infty}\) maps to
+\((\infty,0)\), contradiction.  Therefore \(n=1\), and \(C\) is the
+normalization of a bidegree-\((5,5)\) curve \(\Gamma\).
+
+The atoms \(U_{0,\infty}\), \(U_{\infty,0}\), and \(U_{1,1}\) map to
+\[
+  (\infty,0),\qquad (0,\infty),\qquad (1,1),
+\]
+with branch counts \(3,3,2\): the corresponding atoms are reduced on the
+normalization \(C\), and \(C\to\Gamma\) is birational.  A singularity of a
+reduced curve on a smooth surface with \(m\) distinct analytic branches has
+\(\delta\ge {m\choose 2}\).  Hence these three points contribute at least
+\[
+  {3\choose2}+{3\choose2}+{2\choose2}=7
+\]
+to the total \(\delta\)-invariant.  The arithmetic genus of a
+bidegree-\((5,5)\) curve in \(\PP^1\times\PP^1\) is \(16\), so
+\[
+  g(C)\le 16-7=9,
+\]
+contradicting Lemma~\ref{lem:profile-genus}.
+\end{proof}
+
+\begin{corollary}[Entry-zero coverage modulo entry-one]
+\label{cor:entry0-coverage}
+Assume \(Q_0=P_0\).  If no entry-one high-point coincidence occurs, then no
+other high-point coincidence occurs.
+\end{corollary}
+
+\begin{proof}
+The high-point quotient table already excludes
+\[
+  Q_\infty=P_0,\qquad Q_1=P_1,\qquad Q_0=P_\infty.
+\]
+The equalities \(Q_1=P_0\) and \(Q_0=P_1\) would identify distinct high points
+of a single map.  The remaining possible extra coincidences are
+\[
+  Q_1=P_\infty,\qquad Q_\infty=P_1,\qquad Q_\infty=P_\infty.
+\]
+The first two are entry-one coincidences, and the last is impossible by
+Lemma~\ref{lem:paired-edge}.
+\end{proof}
+
+\section{The entry-one branch}
+\label{sec:entry-one}
+
+The four entry-one coincidences are equivalent under the symmetries of the
+incidence matrix and by interchanging the two maps.  We use the representative
+\[
+  Q_1=P_0.
+\]
+
+\subsection{The degree-five quotient}
+
+Define
+\[
+  z=\frac{\Omega_1(r)}{\Omega_0(x)}
+   =\frac{dr/r}{dx/(x-1)}.
+\]
+By Lemma~\ref{lem:omega-divisor},
+\[
+  \Div(z)=P_1+P_\infty+D+G-Q_0-Q_\infty-B.
+\]
+Thus \(\deg z=5\) in the no-further-highpoint subcase.  If another high-point
+coincidence is also present, the divisor above has further cancellation; such
+lower-degree specializations remain part of the entry-one problem.  We first
+treat the no-further-highpoint case.
+
+The boundary residues force
+\[
+  z=1\text{ on }C,\qquad z=-1\text{ on }E+F.
+\]
+Let
+\[
+  \alpha=z(P_0)=z(Q_1),\qquad u=z(A),\qquad
+  c=x(Q_0),\qquad d=x(Q_\infty).
+\]
+The points \(Q_0\) and \(Q_\infty\) may lie in the same \(x\)-fiber; no
+condition \(c\ne d\) is imposed.
+
+Since \(\deg x=35\) and \(\deg z=5\), if \(k(x,z)\ne k(C)\) then the degree
+\([k(C):k(x,z)]\) divides both \(35\) and \(5\).  The nontrivial possibility
+would force \(x\in k(z)\), so the ramification index \(31\) of \(x\) would
+factor through a degree-\(5\) map, impossible.  Hence
+\[
+  k(C)=k(x,z),
+\]
+and \(C\) is the normalization of an integral curve of bidegree \((5,35)\)
+in \(\PP^1_x\times\PP^1_z\).
+
+\subsection{Norms and the tautological trace identity}
+
+Write \(\Norm_z=\Norm_{k(C)/k(z)}\).  Pushing the divisors of
+\(x,x-1,r,r-1\) along \(z\) gives, up to constants,
+\[
+  \Norm_z(x)=\frac{(z-\alpha)^{31}(z-u)}{z^{32}(z+1)^3},
+\qquad
+  \Norm_z(x-1)=\frac{z(z-1)}{(z+1)^2},
+\]
+and
+\[
+  \Norm_z(r)=(z-1)(z+1)^2,\qquad
+  \Norm_z(r-1)=\frac{(z-\alpha)^{31}(z-u)z^3}{z+1}.
+\]
+The defining differential relation is
+\[
+  d\log r=z\,d\log(x-1).
+\]
+Taking trace to \(k(z)\) gives
+\[
+  d\log\Norm_z(r)=z\,d\log\Norm_z(x-1).
+\]
+Substitution yields
+\[
+  \frac1{z-1}+\frac2{z+1}
+  =
+  z\left(\frac1z+\frac1{z-1}-\frac2{z+1}\right),
+\]
+which is an identity.  Thus the first pushed-forward norm/trace relation is
+not an obstruction.
+
+\subsection{The \(p\)-closed equation}
+
+Let
+\[
+  \partial=(x-1)\frac{d}{dx}.
+\]
+For this entry-one quotient, the Cartier-operator formula for the logarithmic
+exact differential \(d\log r=z\,d\log(x-1)\) gives the characteristic-\(5\)
+equation
+\[
+  \partial^4z=z-z^5.
+\]
+This at least proves separability of \(z\).  If \(dz=0\), then
+\(\partial z=0\), so the equation gives \(z^5=z\).  Over \(k=\kbar\), this
+forces \(z\in\F_5\), contradicting \(\deg z=5\).
+
+\subsection{A bidegree-\((5,35)\) normal form}
+
+Normalize the bidegree equation \(f(x,z)=0\) by
+\[
+  [z^{35}]f=x^3(x-c)(x-d),\qquad
+  [x^5]f=z^{32}(z+1)^3.
+\]
+Put
+\[
+  s=c+d,\qquad p=cd,\qquad N=(1-c)(1-d).
+\]
+Here \(N\ne0\); otherwise the fiber \(x=1\) would contain a pole of \(z\),
+contradicting the displayed divisor of \(z\).
+Let
+\[
+  \Phi(z)=(z-\alpha)^{31}(z-u),\quad
+  \Psi(z)=z^{33}(z-1)(z+1),\quad
+  \Gamma(z)=z^{32}(z+1)^3.
+\]
+Then one may write
+\[
+  f(x,z)=(1-x)K\Phi(z)+xN\Psi(z)+x(x-1)H(x,z),
+\]
+where
+\[
+  H=h_0(z)+xh_1(z)+x^2h_2(z)+x^3\Gamma(z).
+\]
+The leading \(z^{35}\)-coefficients are forced:
+\[
+  [z^{35}]h_0=N,\qquad [z^{35}]h_1=N,\qquad
+  [z^{35}]h_2=1-s.
+\]
+Indeed the coefficient of \(z^{35}\) is
+\[
+  xN+x(x-1)\bigl(N+Nx+(1-s)x^2+x^3\bigr)
+  =x^3(x^2-sx+p).
+\]
+
+The fiber \(x=0\) gives
+\[
+  f(0,z)=K(z-\alpha)^{31}(z-u),
+\]
+the fiber \(x=1\) gives
+\[
+  f(1,z)=N z^{33}(z-1)(z+1),
+\]
+and the \(x=\infty\) boundary is encoded by \([x^5]f=\Gamma(z)\).
+
+At the corner \((x,z)=(0,\infty)\), write \(w=1/z\) and
+\[
+  F(x,w)=w^{35}f(x,1/w).
+\]
+The three points of \(B=U_{0,\infty}\) have local behavior \(w\sim x\).  Thus
+the tangent cubic is proportional to
+\[
+  (w-x)^3.
+\]
+Writing
+\[
+  w^{35}h_0(1/w)=N+aw+bw^2+O(w^3),\qquad
+  w^{35}h_1(1/w)=N+ew+O(w^2),
+\]
+the degree-two term forces \(a=0\), and the cubic comparison gives
+\[
+  p=-K,\qquad e=-3K,\qquad b=3K-N.
+\]
+These are genuine constraints, but they are not yet contradictory.
+
+\begin{opentheorem}[B. Entry-one exclusion]
+\label{open:entry-one}
+No profile-\(4\) pair has an entry-one high-point coincidence.  In the
+representative \(Q_1=P_0\) with no further high-point coincidence, this is the
+assertion that no integral bidegree-\((5,35)\) curve \(f(x,z)=0\), with the
+boundary normal form and tangent constraints above, is the normalization of a
+profile-\(4\) pair satisfying
+\[
+  d\log r=z\,d\log(x-1)
+\]
+for some function \(r\) with the prescribed divisor.  The assertion includes
+the lower-degree boundary strata obtained from this representative by imposing
+additional high-point coincidences compatible with the quotient table.
+\end{opentheorem}
+
+\section{The no-highpoint branch}
+\label{sec:no-highpoint}
+
+If none of the six high points \(P_0,P_1,P_\infty,Q_0,Q_1,Q_\infty\) agree,
+the low-degree quotient of Lemma~\ref{lem:highpoint-quotient} is unavailable.
+The residual approach below uses a bidegree-\((4,4)\) ansatz.  The first
+unproved part is that every no-highpoint solution is represented by this
+ansatz.
+
+Let
+\[
+\begin{aligned}
+P(X,R)=&\ R^4X^4-R^4X^3-R^3X^4
+       +2R^3X-2R^2X\\
+      &\quad +2RX^3-2RX^2+R+X-1,
+\end{aligned}
+\]
+and
+\[
+  L=4XR+4X+4R+2.
+\]
+The line \(L=0\) is the graph
+\[
+  R=\frac{4X+2}{X+1},
+\]
+which sends \(X=0,1,\infty\) to \(R=2,3,4\), respectively.  The boundary
+preserving residual family is
+\[
+  H_A=L^{31}P-X(X-1)R(R-1)A(X,R),
+\]
+where
+\[
+  \deg_X A\le 32,\qquad \deg_R A\le 32.
+\]
+The factor \(X(X-1)R(R-1)\) makes the six affine boundary restrictions agree
+with those of \(L^{31}P\).  The condition that the
+\((X,R)=(0,\infty)\) and \((\infty,0)\) corners have multiplicity three
+forces the two corner coefficients
+\[
+  [R^{32}]A(0,R)=2,\qquad [X^{32}]A(X,0)=2.
+\]
+
+Given the boundary profile, Riemann--Hurwitz says that a valid residual curve
+has no interior ramification for either projection: the three order-\(31\)
+boundary branches already use the full ramification budget.  Thus a residual
+candidate must satisfy, away from the boundary,
+\[
+  H_A=\frac{\partial H_A}{\partial R}=0
+  \quad\text{has no solution}
+\]
+for the \(X\)-projection, and similarly with \(X\) and \(R\) interchanged.
+In characteristic \(5\), writing \(D=X(X-1)R(R-1)\) and \(F=LP\), the
+ramification equations away from \(F=0\) may be written as
+\[
+  N_R=F\,\partial_R(DA)-DA\,\partial_RF=0,
+\]
+\[
+  N_X=F\,\partial_X(DA)-DA\,\partial_XF=0.
+\]
+
+Several small subfamilies of this residual system have been eliminated:
+constant \(A\), sparse low-parameter families, and the symmetric
+ordinary-corner candidates.  These eliminations are not enough for the full
+coefficient space, which has \(33^2\) coefficients before boundary conditions,
+and they are not used as proof of the full no-highpoint branch below.
+
+\begin{opentheorem}[C. No-highpoint exclusion]
+\label{open:no-highpoint}
+No profile-\(4\) two-map pair exists with all six high points
+\[
+  P_0,P_1,P_\infty,Q_0,Q_1,Q_\infty
+\]
+distinct.
+
+A sufficient residual route to this theorem is the conjunction of the
+following two precise statements:
+\begin{enumerate}[label=\textnormal{(\arabic*)},leftmargin=2.2em]
+\item every no-highpoint profile-\(4\) pair gives a residual equation
+  \(H_A=0\) of the form above;
+\item no polynomial \(A\) in that residual family satisfies all boundary,
+  integrality, genus, and no-interior-ramification conditions over \(\kbar\).
+\end{enumerate}
+\end{opentheorem}
+
+\section{The entry-zero branch}
+\label{sec:entry-zero}
+
+By Lemma~\ref{lem:inversion}, it is enough to study the entry-zero
+representative
+\[
+  Q_0=P_0.
+\]
+By Corollary~\ref{cor:entry0-coverage}, after the entry-one branch is removed,
+this representative has no other high-point coincidence.
+
+\subsection{The quotient and its norms}
+
+Assume \(Q_0=P_0\) and no other high-point coincidence.  Define
+\[
+  z=\frac{\Omega_0(r)}{\Omega_0(x)}
+   =\frac{dr/(r-1)}{dx/(x-1)}.
+\]
+Then
+\[
+  \Div(z)=P_1+P_\infty+C+F-Q_1-Q_\infty-A-B,
+\]
+so \(\deg z=6\).  Since \(\gcd(35,6)=1\), the field \(k(x,z)\) is all of
+\(k(C)\).  Therefore \(C\) is the normalization of an integral bidegree
+\((6,35)\) curve \(f(x,z)=0\) in \(\PP^1_x\times\PP^1_z\).
+
+Let
+\[
+  \alpha=z(P_0),\qquad c=x(Q_1),\qquad d=x(Q_\infty),
+\]
+and set
+\[
+  s=c+d,\qquad p=cd,\qquad N=(1-c)(1-d)=1-s+p.
+\]
+The no-other-highpoint assumption and the fact that \(U\) is the common
+unramified boundary imply
+\[
+  c,d\in k\setminus\{0,1\};
+\]
+the points \(Q_1,Q_\infty\) are distinct, but the values \(c,d\) need not be
+distinct.
+Normalize \(f\) by
+\[
+  [x^6]f=z^{34}(z+1),\qquad [z^{35}]f=x^4(x-c)(x-d).
+\]
+The boundary fibers have the form
+\[
+  f(x,0)=K(x-1)^2,
+\]
+\[
+  f(0,z)=K(1-\eta z)^{31},\qquad \eta=\alpha^{-1},
+\]
+and
+\[
+  f(1,z)=N z^{32}(z-1)^2(z+1).
+\]
+These formulas are just the pushed-forward divisors of \(z,x,x-1\).  Explicitly,
+\[
+  \Norm_{C/k(x)}(z)=
+  \frac{(x-1)^2}{x^4(x-c)(x-d)},
+\]
+\[
+  \Norm_{C/k(z)}(x)=
+  \frac{(z-\alpha)^{31}}{z^{34}(z+1)},
+\]
+and
+\[
+  \Norm_{C/k(z)}(x-1)=\frac{(z-1)^2}{z^2}.
+\]
+
+\begin{lemma}[Norm-constant reduction]
+\label{lem:cd2}
+In the entry-zero no-other-highpoint branch,
+\[
+  \alpha^{31}=1,\qquad (1-c)(1-d)=1,\qquad cd=-1.
+\]
+Consequently
+\[
+  c=d=2.
+\]
+\end{lemma}
+
+\begin{proof}
+Since \(f\) has odd degree \(35\) in \(z\),
+\[
+  \Norm_{C/k(x)}(z)=
+  -\frac{f(x,0)}{x^4(x-c)(x-d)}
+  =
+  -\frac{K(x-1)^2}{x^4(x-c)(x-d)}.
+\]
+Comparison with the exact norm gives \(K=-1\).
+
+Since \(f\) has degree \(6\) in \(x\),
+\[
+  \Norm_{C/k(z)}(x)=
+  \frac{f(0,z)}{z^{34}(z+1)}
+  =
+  \frac{K(1-\eta z)^{31}}{z^{34}(z+1)}.
+\]
+As \(1-\eta z=-\eta(z-\alpha)\), comparison gives
+\[
+  K(-\eta)^{31}=1.
+\]
+With \(K=-1\), this implies \(\eta^{31}=1\), hence \(\alpha^{31}=1\).
+
+Similarly,
+\[
+  \Norm_{C/k(z)}(x-1)=
+  \frac{f(1,z)}{z^{34}(z+1)}
+  =
+  N\frac{(z-1)^2}{z^2},
+\]
+so \(N=1\).
+
+It remains to identify \(p=cd\).  Put \(w=1/z\) and
+\[
+  \bar f(x,w)=w^{35}f(x,1/w).
+\]
+At \((x,w)=(0,0)\), the residues of
+\((dr/(r-1))/(dx/(x-1))\) give \(z\sim -1/x\) on the atom
+\(A=U_{0,1}\), while the three points of \(B=U_{0,\infty}\) have
+\(z\sim 1/x\).  Hence the degree-four
+tangent cone is proportional to
+\[
+  (w+x)(w-x)^3.
+\]
+The \(w^4\)-coefficient of the degree-four part of \(\bar f\) is
+\(K(-\eta)^{31}\), and the \(x^4\)-coefficient is \(p\).  In
+\((w+x)(w-x)^3\), these two coefficients have opposite signs.  Therefore
+\[
+  p=-K(-\eta)^{31}=-1.
+\]
+Since \(N=1-s+p=1\) and \(p=-1\), we have \(s=-1\).  The numbers \(c,d\) are
+the roots of
+\[
+  T^2-sT+p=T^2+T-1.
+\]
+Over characteristic \(5\), this is \((T-2)^2\).  Hence \(c=d=2\).
+\end{proof}
+
+Thus the entry-zero branch is reduced to the corrected double-fiber case
+\[
+  Q_0=P_0,\qquad x(Q_1)=x(Q_\infty)=2,\qquad Q_1\ne Q_\infty.
+\]
+
+\subsection{The formal local tower}
+
+The double-fiber case is studied by expanding the normalized bidegree
+\((6,35)\) equation at the double fiber \(x=2\) and imposing the
+characteristic-\(5\) differential equation attached to
+\[
+  z=\frac{dr/(r-1)}{dx/(x-1)}.
+\]
+The expansion alternates repeated and simple layers.  The layers through
+simple \(u^{25}\), together with the repeated \(u^{25}\) two-minor step, have
+explicit linear certificates: at each layer the relevant residual equations
+either solve the next group of coefficients or cut to a smaller affine
+subspace by a displayed full-rank matrix.  The first unresolved global local
+frontier is the tail-exhausted simple-\(u^{30}\) all-zero locus together with
+the base residual and repeated-\(e30\) consistency.
+
+One checked component of this frontier is the point \(P129\).  In local
+coordinates, the representative is
+\[
+(2,1,2,3,4,3,2,1,1,3,0,2,0,2,4,2,1,1,2).
+\]
+After the repeated-\(u^{25}\) pivot solve, the remaining free variables are
+\[
+\begin{gathered}
+u7\_3,u6\_2,u6\_3,u5\_1,u5\_2,u4\_0,u4\_1,u4\_2,u4\_3,\\
+u3\_0,u3\_1,u3\_2,u3\_3,u2\_2,u1\_0,u1\_1 .
+\end{gathered}
+\]
+The repeated-\(e30\) condition is the affine three-row system
+\[
+  (3,2,4)+\sum_{\nu=1}^{16}y_\nu c_\nu=0,
+\]
+where the columns \(c_\nu\), in the order above, are
+\[
+\begin{array}{c|c}
+\text{variable}&c_\nu\\ \hline
+u7\_3&(1,4,1)\\
+u6\_2&(4,3,3)\\
+u6\_3&(0,1,1)\\
+u5\_1&(2,2,4)\\
+u5\_2&(0,1,3)\\
+u4\_0&(2,3,3)\\
+u4\_1&(2,1,2)\\
+u4\_2&(0,1,4)\\
+u4\_3&(3,1,1)\\
+u3\_0&(1,4,4)\\
+u3\_1&(1,1,1)\\
+u3\_2&(4,3,0)\\
+u3\_3&(1,4,3)\\
+u2\_2&(0,3,2)\\
+u1\_0&(1,0,0)\\
+u1\_1&(3,3,3).
+\end{array}
+\]
+This matrix has rank \(3\), leaving an affine \(13\)-space.  The later
+layers \(e35,e40,e45\) have ranks
+\[
+  4,\qquad 4,\qquad 4
+\]
+on successive solution spaces, leaving a final line.  On that line the simple
+\(e50\) residual is the nonzero constant \(2\).  Therefore \(P129\) does not
+extend to a formal local solution through \(e50\).  The same \(e50\) ending
+also kills the checked nearby tangent points of \(P129\) and the checked
+\(\rho4\) tangent hit.
+
+\subsection{Basin \(127\)}
+
+Another high-nullity component of the same frontier is a six-parameter affine
+family with coordinates \(r_0,\ldots,r_5\).  The expected saturated quotient is
+the ideal
+\[
+\begin{gathered}
+J=\langle
+r_2-2,\ r_5-2,\ 
+r_0+2r_1-2r_3+2r_4^2+r_4+1,\\
+r_1^2-r_3-2r_4-1,\ 
+r_1r_3+2r_1-2r_3-r_4^2+2r_4,\\
+r_1r_4-r_1+2r_4^2-2,\ 
+r_3^2+r_3-2,\ 
+r_3r_4-r_3-r_4+1,\\
+r_4^3-2r_4^2-r_4+2
+\rangle
+\subset \F_5[r_0,\ldots,r_5].
+\end{gathered}
+\]
+\begin{lemma}[The displayed basin-\(127\) quotient]
+\label{lem:J127-points}
+The ideal \(J\) is radical of length \(5\).  Its five points are
+\[
+\begin{gathered}
+(0,0,2,1,4,2),\quad
+(0,1,2,3,1,2),\quad
+(3,4,2,1,2,2),\\
+(4,2,2,1,1,2),\quad
+(4,4,2,3,1,2).
+\end{gathered}
+\]
+Moreover, adding the base residual
+\[
+  B_{127}=r_3+r_4^2.
+\]
+cuts \(J\) to the single maximal ideal
+\[
+  (r_0+2,\ r_1+1,\ r_2-2,\ r_3-1,\ r_4-2,\ r_5-2),
+\]
+which is the already killed \(P129\) point.
+\end{lemma}
+
+\begin{proof}
+The generators first give \(r_2=r_5=2\) and
+\[
+  r_4^3-2r_4^2-r_4+2=(r_4-1)(r_4-2)(r_4+1).
+\]
+Also
+\[
+  r_3r_4-r_3-r_4+1=(r_4-1)(r_3-1).
+\]
+If \(r_4=4=-1\), then \(r_3=1\).  The equation
+\[
+  r_1r_4-r_1+2r_4^2-2=0
+\]
+gives \(r_1=0\), and the linear equation for \(r_0\) gives \(r_0=0\).  If
+\(r_4=2\), then \(r_3=1\), the same equation gives \(r_1=4\), and then
+\(r_0=3\).
+
+It remains to set \(r_4=1\).  Then \(r_3^2+r_3-2=0\), so
+\[
+  r_3\in\{1,3\}.
+\]
+For \(r_3=1\), the equation
+\[
+  r_1r_3+2r_1-2r_3-r_4^2+2r_4=0
+\]
+gives \(r_1=2\), and then \(r_0=4\).  For \(r_3=3\), the equation
+\[
+  r_1^2-r_3-2r_4-1=0
+\]
+gives \(r_1\in\{1,4\}\), and the linear equation gives respectively
+\(r_0=0\) and \(r_0=4\).  These are exactly the five displayed points.
+
+All factors in this triangular decomposition are squarefree over \(\F_5\), so
+\(J\) is the intersection of the corresponding maximal ideals.  Evaluating
+\(B_{127}=r_3+r_4^2\) on the five points leaves only
+\((3,4,2,1,2,2)\), which is the maximal ideal displayed above.
+\end{proof}
+
+\begin{target}[D1. Basin-\(127\) containment]
+\label{target:basin127}
+Let \(I_{127}\) be the ideal generated by the basin-\(127\) low-data equations
+in the six coordinates \(r_0,\ldots,r_5\), and let \(s_{127}\) be the product
+of the etale discriminant and the chart pivot.  Then
+\[
+  V(I_{127})\cap D(s_{127})\subseteq V(J),
+\]
+or equivalently every generator of \(\sqrt{J}\) vanishes on the localized
+low-data scheme.  The stronger saturated equality
+\[
+  I_{127}:s_{127}^{\infty}=J
+\]
+implies this containment.
+\end{target}
+
+Target~\ref{target:basin127} is the part presently being checked in Sage.  It
+would close the basin-\(127\) component by reducing its base-residual locus to
+the already killed \(P129\) point.
+
+\begin{target}[D2. Double-fiber tail coverage]
+\label{target:tail-coverage}
+On each \(\rho3\) and \(\rho4\) pivot chart, form the localized ideal
+\[
+  I_{\mathrm{chart}}
+  =
+  \langle
+  \Phi_0,\Phi_1,\Phi_2,\,
+  S_{30},\,
+  E30_0,E30_1,E30_2
+  \rangle:s_{\mathrm{chart}}^\infty,
+\]
+where \(\Phi_i\) are the shared repeated low-data equations, \(S_{30}\) is the
+simple-\(u30\) Schur/base residual, \(E30_i\) are the three affine repeated
+\(e30\) equations after the repeated-\(u25\) pivot solve, and
+\(s_{\mathrm{chart}}\) is the product of the etale discriminant and all chart
+pivots.  Then \(V(I_{\mathrm{chart}})\) is contained in the union of
+the \(P129\), \(\rho4\), and basin-\(127\) strata, and after the
+corresponding \(e35,e40,e45,e50\) layer equations are adjoined on each stratum,
+the remaining localized ideals are unit ideals.
+\end{target}
+
+\begin{opentheorem}[D. Double-fiber completion]
+\label{open:double-fiber}
+There is no profile-\(4\) pair satisfying
+\[
+  Q_0=P_0,\qquad
+  x(Q_1)=x(Q_\infty)=2,\qquad
+  Q_1\ne Q_\infty,
+\]
+with no other high-point coincidence.  It follows from the two certificate
+targets above.
+\end{opentheorem}
+
+\section{Assembly of the curve-level reduction}
+\label{sec:assembly}
+
+\begin{proposition}[Certificate targets imply Open Theorem D]
+\label{prop:entry0-conditional}
+Assume Certificate Targets~\ref{target:basin127} and
+\ref{target:tail-coverage}.  Then Open Theorem~\ref{open:double-fiber}
+holds.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:cd2}, every entry-zero no-other-highpoint solution lies in
+the corrected \(c=d=2\) double-fiber branch.  The formal layer certificates
+through repeated \(u^{25}\) and simple \(u^{30}\) reduce this branch to the
+tail-exhausted simple-\(u30\) all-zero locus with base residual and
+repeated-\(e30\) consistency.  The \(P129\) and \(\rho4\) local strata are
+killed at \(e50\).  Target~\ref{target:basin127} reduces the basin-\(127\)
+base-residual part to \(P129\), already killed.  Target~\ref{target:tail-coverage}
+says that every other point of the localized frontier is contained in one of
+these killed strata or becomes empty after the later layer equations.
+\end{proof}
+
+\begin{proposition}[Open Theorems B--D eliminate profile \(4\)]
+\label{prop:BCD-profile4}
+Assume Open Theorems~\ref{open:entry-one}, \ref{open:no-highpoint}, and
+\ref{open:double-fiber}.  Then no profile-\(4\) two-map pair exists.
+\end{proposition}
+
+\begin{proof}
+Let \((C,x,r)\) be a profile-\(4\) pair.  If there is no high-point
+coincidence, Open Theorem~\ref{open:no-highpoint} removes it.  If there is an
+entry-one high-point coincidence, Open Theorem~\ref{open:entry-one} removes it.  The
+high-point quotient table removes the three coincidences
+\[
+  Q_\infty=P_0,\qquad Q_1=P_1,\qquad Q_0=P_\infty.
+\]
+Thus any remaining high-point coincidence is entry-zero.  By simultaneous
+inversion it is represented by \(Q_0=P_0\).  After entry-one cases have been
+removed, Corollary~\ref{cor:entry0-coverage} says there is no other high-point
+coincidence.  Lemma~\ref{lem:cd2} reduces this branch to the corrected
+double-fiber case, and Open Theorem~\ref{open:double-fiber} removes it.
+Therefore no profile-\(4\) pair remains.
+\end{proof}
+
+\begin{theorem}[Visibility from the four open theorems]
+\label{thm:four-open-imply-comm}
+Assume Open Theorems~\ref{open:profile-extraction}, \ref{open:entry-one},
+\ref{open:no-highpoint}, and \ref{open:double-fiber}.  Then every finite
+etale self-correspondence of \(S=\PP^1_k(31,31,31)\) is visible.  Equivalently,
+\(\Comm_{\mathrm{alg},k}(S)=\Aut(S)=S_3\).
+\end{theorem}
+
+\begin{proof}
+Let \(u,v:T\to S\) be a connected representable finite etale
+self-correspondence.  If
+\[
+  \pi_0\circ u\not\simeq \pi_0\circ v,
+\]
+then Open Theorem~\ref{open:profile-extraction} produces a profile-\(4\)
+two-map pair.  This contradicts Proposition~\ref{prop:BCD-profile4}.  Hence
+\(\pi_0\circ u\simeq\pi_0\circ v\) for every connected finite etale
+self-correspondence of \(S\), so every such correspondence is visible by
+Definition~\ref{def:visible}.
+\end{proof}
+
+\begin{corollary}[Conditional common-cover counterexample from the four open theorems]
+If Open Theorems~\ref{open:profile-extraction}, \ref{open:entry-one},
+\ref{open:no-highpoint}, and \ref{open:double-fiber} are proved, then
+\[
+  Y:\ y^{31}=x(x-1)
+\]
+has no connected common finite etale cover with any smooth proper connected
+genus-three curve over \(k\).
+\end{corollary}
+
+\begin{proof}
+Combine Theorem~\ref{thm:four-open-imply-comm} with
+Proposition~\ref{prop:conditional-common-cover}.
+\end{proof}
+
+\section{Open Theorems}
+
+The reduction leaves the following four independent statements.
+\begin{enumerate}[label=\textnormal{(\Alph*)},leftmargin=2.2em]
+\item Open Theorem~\ref{open:profile-extraction}: every non-visible
+  finite etale self-correspondence of \(S\) produces the profile-\(4\)
+  degree-\(35\) pair.
+\item Open Theorem~\ref{open:entry-one}: no profile-\(4\) pair has an
+  entry-one high-point coincidence.
+\item Open Theorem~\ref{open:no-highpoint}: no profile-\(4\) pair has
+  all six high points distinct.
+\item Open Theorem~\ref{open:double-fiber}: the corrected entry-zero
+  double-fiber branch is empty.
+\end{enumerate}
+
+The Sage computation concerns item (D), more specifically Certificate
+Target~\ref{target:basin127}.  If it proves
+\[
+  V(I_{127})\cap D(s_{127})\subseteq V(J)
+\]
+or the stronger saturation equality
+\[
+  I_{127}:s_{127}^{\infty}=J,
+\]
+then the basin-\(127\) component of the double-fiber frontier is closed: the
+base residual cuts it to \(P129\), already killed at \(e50\).  That still
+leaves Certificate Target~\ref{target:tail-coverage}, the chart-wise coverage
+of the rest of the tail-exhausted simple-\(u30\) base-zero/e30 locus.
+
+Thus the computation is one algebraic containment inside Open
+Theorem~\ref{open:double-fiber}.  Together with Open
+Theorems~\ref{open:profile-extraction}, \ref{open:entry-one}, and
+\ref{open:no-highpoint}, Open Theorem~\ref{open:double-fiber} implies the
+visibility theorem by Theorem~\ref{thm:four-open-imply-comm}.
+
+\end{document}
