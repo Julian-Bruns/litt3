@@ -4,3 +4,5 @@ the model continued until it hit a difficult problem, at which point it used the
 this keeps the context of the solver (5.5 Pro) clean and only contains the relevant context put in the prompt. 
 for the prompt, i used something similar to what OpenAI used for the unit distance problem, as it let the model work longer and deviate from the goal less: context description, call to solve it completely, forbid internet access and some steering if the model had repeatedly gone wrong before, a description of two acceptable outcomes.
 my pro subscription is used up now, but perhaps someone else can take this further. 
+
+the partial progress claimed can be viewed in litt3_partial_progress.pdf, though the proofs are somewhat less detailed than in the files. there are also some suggested prompts for the remaining open theorems in open_theorem_prompts_2026_06_06.md
