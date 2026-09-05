@@ -1,0 +1,462 @@
+# Minimal correspondences and the corrected profile-extraction reduction
+
+## Status and scope
+
+**Status: `proved-text`.**  This file proves a reduction for a
+*minimal-degree* non-visible self-correspondence of
+
+\[
+ S=\mathbb P^1_k(31,31,31),\qquad k=\overline{\mathbb F}_5.
+\]
+
+It does **not** prove Task 01.  In particular, it does not force degree
+\(35\), and it does not force the incidence matrix displayed there.  It
+also does not give a counterexample to Task 01: none of the additional
+numerical strata found below is shown here to contain a non-visible
+correspondence.
+
+No characteristic-zero lifting or specialization assertion is used.
+
+## The result
+
+Let
+
+\[
+ u,v:\mathcal T\longrightarrow S
+\]
+
+be a connected representable finite etale self-correspondence.  Write
+\(C\) for the coarse curve of \(\mathcal T\), and write
+
+\[
+ x,r:C\longrightarrow \mathbb P^1
+\]
+
+for the coarse maps.  The two legs have the same degree; denote it by
+\(d\).
+
+**Theorem.**  If any non-visible self-correspondence exists, one of minimal
+degree can be chosen so that
+
+\[
+                         k(C)=k(x,r).                 \tag{16.1}
+\]
+
+If its degree is less than \(62\), exactly one of the following occurs.
+
+| degree | genus of \(C\) | number \(\tau\) of stacky points of \(\mathcal T\) | coarse fiber shape for each leg |
+|---:|---:|---:|---|
+| \(31\) | \(15\) | \(0\) | one point of multiplicity \(31\) over each of \(0,1,\infty\) |
+| \(31\) | \(0\) | \(31\) | two fibers are one point of multiplicity \(31\); the third is reduced of degree \(31\) |
+| \(31+m\), \(1\leq m\leq15\) | \(15-m\) | \(3m\) | each fiber is \(31P_i+E_i\), with \(E_i\) reduced of degree \(m\) |
+
+The rational-coarse-curve case in the second row is always visible and
+therefore cannot occur for a minimal non-visible correspondence.  Thus a
+minimal non-visible correspondence of degree less than \(62\), if one
+exists, is either
+
+1. the degree-\(31\), genus-\(15\), scheme-source case in the first row; or
+2. one of the fifteen generalized profile cases \(m=1,\ldots,15\).
+
+The profile in Task 01 is only the single choice \(m=4\).  Even conditional
+on \(m=4\), the row and column sums alone allow \(120\) labelled incidence
+matrices.  The matrix in Task 01 has an orbit of size \(18\) under row and
+column permutations and transposition, so the margin conditions do not
+select it.
+
+The proof is divided into four steps.
+
+## 1. Local form of an etale map to the root stack
+
+Put \(B=\{0,1,\infty\}\).  For a point \(P\in C\), let
+
+\[
+ n_P=|I_P(\mathcal T)|.
+\]
+
+Representability injects \(I_P(\mathcal T)\) into the inertia of \(S\).
+Since \(31\) is prime, \(n_P\) is either \(1\) or \(31\).  Etaleness gives
+the following complete description of the coarse map \(x\):
+
+\[
+ e_P(x)=
+ \begin{cases}
+  1,&x(P)\notin B,\\[2mm]
+  31/n_P,&x(P)\in B.
+ \end{cases}                                      \tag{16.2}
+\]
+
+In the first line necessarily \(n_P=1\), since nontrivial source inertia
+cannot inject into the trivial inertia away from \(B\).  The same statement
+holds for \(r\).  In particular:
+
+- neither coarse map ramifies away from \(B\);
+- an ordinary point over \(B\) has ramification index \(31\); and
+- a stacky point of \(\mathcal T\) is unramified on the coarse curve and
+  maps into \(B\) under both \(x\) and \(r\).
+
+For completeness, (16.2) can be read directly from completed local charts.
+A root point of order \(n\) has chart
+\([\operatorname{Spec}k[[z]]/\mu_n]\) and coarse parameter \(z^n\).
+An etale representable map to a root point of order \(31\) identifies the
+upstairs disc etale-locally, so the induced coarse ramification index is
+the quotient \(31/n\).
+
+We will also use the following elementary root-stack lifting criterion.
+
+**Root-stack criterion.**  Let \(q:C_1\to C_0\) be a finite separable map
+of smooth curves.  Give \(C_1\) root index \(n_P\) at finitely many points
+and \(C_0\) root index \(m_Q\) at finitely many points, with omitted indices
+understood to be \(1\).  If
+
+\[
+                 m_Q=e_P(q)n_P                         \tag{16.3}
+\]
+
+for every \(P\) above \(Q\), then \(q\) has a representable finite etale
+lift between the corresponding root stacks.  Conversely, an etale lift
+forces (16.3).
+
+Indeed, locally (16.3) says that the coarse equation is, up to a unit,
+\(s=t^{m_Q/n_P}\).  The needed roots of the unit exist etale-locally because
+the indices here are prime to \(5\), and on the uniformizing discs the map
+is etale.  Globally, if \(\mathcal P\) and \(\mathcal Q\) denote the stack
+divisors, then
+
+\[
+ m_Q\,q^*\mathcal Q
+ =q^*Q
+ =\sum_{P\mid Q}e_P(q)n_P\,\mathcal P;
+\]
+
+condition (16.3) supplies exactly the required root sections.  This also
+shows uniqueness up to 2-isomorphism.  Equivalently, a nonzero root section
+is determined by its Cartier divisor, so it cannot be changed by tensoring
+with an unmarked torsion line bundle.
+
+## 2. Descent to the field generated by the two coarse functions
+
+Let \(L=k(C)\), let \(K=k(x,r)\subseteq L\), and let \(C_0\) be the smooth
+projective curve with function field \(K\).  There is a finite separable map
+
+\[
+ q:C\longrightarrow C_0
+\]
+
+and factorizations \(x=x_0q\), \(r=r_0q\).  We now construct a stack
+\(\mathcal T_0\) on \(C_0\) for which all three maps in
+
+\[
+ \mathcal T\longrightarrow\mathcal T_0
+ \overset{u_0,v_0}{\rightrightarrows} S                 \tag{16.4}
+\]
+
+are representable finite etale.
+
+Fix \(Q\in C_0\) and \(P\in C\) over \(Q\).  If \(x_0(Q)\notin B\), then
+(16.2) and multiplicativity of ramification indices give
+
+\[
+ e_P(q)=e_Q(x_0)=n_P=1.
+\]
+
+If \(x_0(Q)\in B\), the same two facts give
+
+\[
+ e_P(q)e_Q(x_0)=\frac{31}{n_P},
+ \qquad
+ n_Pe_P(q)=\frac{31}{e_Q(x_0)}.                         \tag{16.5}
+\]
+
+The right side is independent of the choice of \(P\) above \(Q\).  Define
+
+\[
+ \nu_Q=n_Pe_P(q).
+\]
+
+Equations (16.2) and (16.5) show that \(\nu_Q\in\{1,31\}\) and that it is
+independent of \(P\).  Repeating the calculation with \(r_0\) gives the
+*same* value:
+
+\[
+ \nu_Q=
+ \begin{cases}
+  1,&r_0(Q)\notin B,\\[1mm]
+  31/e_Q(r_0),&r_0(Q)\in B.
+ \end{cases}                                           \tag{16.6}
+\]
+
+This proves the required inertia independence; the root index put on
+\(C_0\) does not depend on which leg of the correspondence is used.
+
+Let \(\mathcal T_0\) be the root stack of \(C_0\) with index \(31\) exactly
+at the points for which \(\nu_Q=31\).  A smooth tame stacky curve with
+trivial generic inertia is the corresponding root stack of its coarse
+curve; this applies to \(\mathcal T\), because it maps representably to
+the effective orbifold \(S\).  The equality
+
+\[
+                  \nu_Q=e_P(q)n_P
+\]
+
+and the root-stack criterion produce the first map in (16.4).  Equations
+(16.5) and (16.6) produce the two maps from \(\mathcal T_0\) to \(S\).
+The uniqueness part of the criterion identifies their composites with the
+original \(u\) and \(v\).
+
+Now suppose \((u,v)\) was chosen non-visible of minimal degree.  The two
+leg degrees are equal because
+
+\[
+ \deg K_{\mathcal T}
+ =\deg(u)\deg K_S
+ =\deg(v)\deg K_S,
+ \qquad \deg K_S=28/31\ne0.
+\]
+
+Put \(e=[L:K]=\deg(q)\).  The descended legs in (16.4) have degree \(d/e\).
+If they were visible, composing the witnessing 2-isomorphism with
+\(\mathcal T\to\mathcal T_0\) would make \((u,v)\) visible.  Hence they are
+non-visible.  Minimality forces \(e=1\), proving (16.1).
+
+Notice that this argument does not take separate Galois closures and does
+not assert the existence of a simultaneous finite Galois refinement.
+
+## 3. Complete degree bookkeeping below 62
+
+For one leg, and for each \(i\in B\), let
+
+- \(a_i\) be the number of ordinary points over \(i\), necessarily of
+  ramification index \(31\); and
+- \(b_i\) be the number of stacky points over \(i\), each appearing with
+  coarse multiplicity one.
+
+Then
+
+\[
+                         d=31a_i+b_i.                   \tag{16.7}
+\]
+
+Every stacky point maps to exactly one point of \(B\), so if \(\tau\) is
+the total number of stacky points of \(\mathcal T\), then
+
+\[
+ \tau=b_0+b_1+b_\infty.
+\]
+
+Riemann--Hurwitz for the coarse map gives, with
+\(A=a_0+a_1+a_\infty\),
+
+\[
+                 2g(C)-2=-2d+30A.                       \tag{16.8}
+\]
+
+The same \(\tau\) is obtained from the other leg because the stacky locus
+is intrinsic to \(\mathcal T\).  Formula (16.8) also shows that the other
+leg has the same value of \(A\).
+
+If \(d<31\), (16.7) makes every \(a_i=0\).  Then
+\(g(C)=1-d\), so only \(d=1\) is possible.  A degree-one etale leg is an
+isomorphism.  Moreover every automorphism of \(S\), up to 2-isomorphism,
+comes from a permutation of its three coarse marked points: the coarse
+automorphism lies in \(S_3\), and the uniqueness of root-stack lifts rules
+out an additional kernel.  Thus every degree-one correspondence is
+visible.
+
+Now assume \(31\leq d<62\).  Each \(a_i\) is zero or one, and (16.8) says
+
+\[
+                         g(C)=1-d+15A.                  \tag{16.9}
+\]
+
+The cases \(A=0,1\) give negative genus.  The case \(A=2\) gives
+\(g(C)=31-d\), hence only \(d=31\); then (16.7) gives \(\tau=31\).
+The case \(A=3\) gives
+
+\[
+ g(C)=46-d,
+ \qquad
+ \tau=3(d-31),                                          \tag{16.10}
+\]
+
+so \(31\leq d\leq46\).  At \(d=31\) this is the genus-\(15\),
+\(\tau=0\) case.  Writing \(d=31+m\) for the remaining cases gives
+exactly \(1\leq m\leq15\) and the third row of the theorem.  Finally,
+(16.9) excludes every \(47\leq d<62\).  This proves that the table is
+exhaustive, including both exceptional degree-\(31\) strata.
+
+In the \(31+m\) case, the stacky locus is a common reduced divisor
+
+\[
+ U=E_0+E_1+E_\infty=F_0+F_1+F_\infty,
+\]
+
+and each of its two displayed decompositions is a partition into three
+degree-\(m\) divisors.  Thus minimality supplies the field-generation and
+common-boundary parts of Task 01, but only after a degree has independently
+been fixed; it does not fix \(m\).
+
+## 4. The rational degree-31 stratum is visible
+
+We first determine a stabilizer that is slightly delicate in
+characteristic \(5\).
+
+**Lemma.**  In \(\operatorname{PGL}_2(k)\),
+
+\[
+             \operatorname{Stab}(\mu_{31})
+             =\{z\mapsto\zeta z, z\mapsto\zeta/z:
+                 \zeta^{31}=1\}\simeq D_{62}.           \tag{16.11}
+\]
+
+**Proof.**  Let \(\phi(z)=(az+b)/(cz+d)\) preserve \(\mu_{31}\).  The
+polynomial
+
+\[
+ (az+b)^{31}-(cz+d)^{31}
+\]
+
+vanishes at all \(31\) distinct roots of \(z^{31}-1\), and hence is a
+nonzero scalar multiple of that polynomial.  In characteristic \(5\),
+
+\[
+ (1+X)^{31}=(1+X)(1+X^5)(1+X^{25}),
+\]
+
+so the nonzero binomial coefficients occur at
+\(0,1,5,6,25,26,30,31\), and all are one.
+
+Suppose first that \(a,b,c,d\) are all nonzero.  From the coefficients of
+\(z,z^5,z^6\), putting \(A=a/c\) and \(D=d/b\), we obtain
+
+\[
+ A=D^{30},\qquad A^5=D^{26},\qquad A^6=D^{25}.
+\]
+
+Thus \(D^{124}=D^{155}=1\), whence \(D^{31}=1\).  But then
+\(AD=D^{31}=1\), or \(ad=bc\), contradicting invertibility.  If one matrix
+entry is zero, the coefficients of \(z\) and \(z^{30}\) show respectively
+that the opposite off-diagonal or diagonal entry is zero.  The matrix is
+therefore diagonal or anti-diagonal.  The condition that it preserve
+\(\mu_{31}\) gives exactly (16.11).  \(\square\)
+
+Now suppose \(d=31\), \(g(C)=0\), and \(\tau=31\).  For either coarse leg,
+two marked fibers are single totally ramified points and the remaining
+marked fiber is the common stacky set \(U\) of \(31\) points.  Permuting
+the three target markings and choosing a coordinate \(z\) on \(C\), we can
+write the first map as
+
+\[
+                         x=z^{31},\qquad U=\mu_{31}.      \tag{16.12}
+\]
+
+Indeed, a rational function with divisor \(31P-31Q\) is the \(31\)-st
+power of a fractional linear coordinate up to a scalar, and the scalar can
+be absorbed because \(k\) is algebraically closed.
+
+After an independent permutation of the markings, the second map has the
+form
+
+\[
+                         r=w(z)^{31}
+\]
+
+for some \(w\in\operatorname{PGL}_2(k)\), and its reduced third fiber says
+\(w(U)=\mu_{31}\).  By (16.11), \(w(z)=\zeta z\) or \(\zeta/z\).  Hence
+\(r=x\) or \(r=x^{-1}\) in these normalized coordinates.  Undoing the
+normalizations shows that the two coarse maps differ by an element of
+\(S_3\).
+
+This equality of coarse maps really does imply visibility of the stack
+maps.  To see this without suppressing root data, recall that a lift of a
+dominant coarse map \(f:\mathcal T\to\mathbb P^1\) to
+\(S\) consists, for each \(i\in B\), of a line bundle with a nonzero section
+whose \(31\)-st power is the pullback of the marked divisor.  Its divisor is
+forced to be
+
+\[
+                         \frac1{31}f^*[i]
+\]
+
+as a Cartier divisor on \(\mathcal T\).  A line bundle with a nonzero
+section is determined by this divisor, so two such lifts are 2-isomorphic.
+Consequently \(v\simeq\sigma u\) for some \(\sigma\in S_3\), as required.
+
+## 5. What the margin-four data actually imply
+
+Assume now, as an additional hypothesis not obtained above, that \(d=35\).
+Then \(m=4\), \(g(C)=11\), and the two decompositions of the twelve-point
+stacky locus give a nonnegative integral matrix
+
+\[
+ M_{ij}=\deg(E_i\cap F_j)
+\]
+
+whose three row sums and three column sums are all \(4\).
+
+There are exactly \(120\) such labelled matrices.  Here is a short
+hand count.  Choose the first row \(R\), then choose the second row \(S\)
+coordinatewise below \(4-R\); the third row is forced.  Up to permutation,
+the four possible types of \(R\), the number of its permutations, and the
+number of possible \(S\)'s are
+
+\[
+\begin{array}{c|c|c|c}
+R&\#\{R\}&\#\{S\}&\text{contribution}\\ \hline
+(4,0,0)&3&5&15\\
+(3,1,0)&6&8&48\\
+(2,2,0)&3&9&27\\
+(2,1,1)&3&10&30.
+\end{array}
+\]
+
+Their sum is \(120\).  Conversely, every such table is realized by two
+partitions of an abstract twelve-element set, by placing \(M_{ij}\) elements
+in cell \((i,j)\).  Thus \(120\) is exactly what the common-boundary and
+margin data allow; this converse makes no assertion that the partitions
+come from algebraic maps.
+
+For the particular matrix
+
+\[
+ M_*=
+ \begin{pmatrix}
+ 0&1&3\\
+ 1&2&1\\
+ 3&1&0
+ \end{pmatrix},                                         \tag{16.13}
+\]
+
+the orbit under independent row and column permutations and transposition
+has size \(18\).  Indeed, in \(S_3\times S_3\), the middle row and middle
+column are the unique ones having multiset \(\{1,1,2\}\), so a stabilizer
+must fix each of them.  Of the four remaining choices, only the identity
+and simultaneous reversal of the first and third rows and columns fix
+\(M_*\).  The stabilizer there has order \(2\).  Since \(M_*\) is symmetric,
+adjoining transposition doubles both the acting group and the stabilizer.
+The orbit therefore has size
+
+\[
+                         \frac{72}{4}=18.
+\]
+
+In particular, the row and column sums leave \(102\) labelled matrices
+outside the orbit of (16.13).  Additional geometry might exclude them, but
+no such exclusion follows from minimality, field generation, or the fiber
+bookkeeping proved here.
+
+## Precise remaining gap in Task 01
+
+The proposed inevitability of the Task-01 profile is not refuted by this
+file, because no non-visible correspondence in a competing stratum has
+been constructed.  What is proved is that the presently available direct
+reduction stops at the following alternatives:
+
+- degree at least \(62\);
+- the unresolved degree-\(31\), genus-\(15\), scheme-source stratum; or
+- a generalized profile \((31;m)\) for any \(1\leq m\leq15\).
+
+Even after separately proving \(m=4\), one must still prove that the
+incidence matrix lies in the eighteen-element orbit of (16.13).  These are
+two independent missing implications.  Neither is supplied by passing to
+the field \(k(x,r)\).

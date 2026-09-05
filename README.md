@@ -17,6 +17,15 @@ have open gates.
 
 ## Agent reading protocol
 
+For the current investigation, read [update.md](update.md) first; it
+identifies the active frontier and corrections to older material.
+
+Audit records are reference material, not routine reading. Use the verdict,
+auditor, date, and brief objections linked from each theorem. Do not open
+the full audit record unless there is a concrete reason to doubt the
+theorem or investigate an objection. This keeps audit transcripts out of
+the working context unless they are needed.
+
 1. Read this file, [STRUCTURE.md](STRUCTURE.md), and
    [MISSING_INPUTS.md](MISSING_INPUTS.md).
 2. Choose one target in [tasks/README.md](tasks/README.md).

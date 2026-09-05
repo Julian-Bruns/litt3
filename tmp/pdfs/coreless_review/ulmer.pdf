@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<HTML>
+
+<HEAD> <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<TITLE> Douglas Ulmer - Home</TITLE>
+
+<!-- This is taken from https://docs.mathjax.org/en/latest/web/configuration.html -->
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" 
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+
+<LINK REL="stylesheet" HREF="style.css" TYPE="text/css">
+
+</HEAD>
+
+
+<body>
+
+<div id="header">
+
+<ul> <li id="selected"><a href="index.html">HOME</a></li> <li><a href="research/index.html">RESEARCH</a></li> <li><a href="teaching/index.html">TEACHING</a></li> <li><a href="service/index.html">SERVICE</a></li>
+
+</ul>
+
+</div>
+
+
+<div id="content">
+
+
+<table> <tr> <td align="left"><img src="images/doug.jpg" alt="Doug Ulmer" height="200"></td> 
+<td align="left"> <h1>Douglas Ulmer</h1> <p class="small"> <br> 
+<a class="quiet" href="http://sms.arizona.edu">Chair, School of Mathematical Sciences</a><br> 
+<a class="quiet" href="http://www.math.arizona.edu">Professor and Head, Department of Mathematics</a><br> 
+<a class="quiet" href="http://www.arizona.edu">University of Arizona</a><br> 
+Tucson, AZ 85721-0089 </p> </td> 
+<td align="right"><img src="images/MathLogo.png" alt="UA Math logo" width="451" height="135"></td> </tr> </table>
+
+<hr>
+
+
+
+<h2>Recent research</h2> 
+<p>
+I have been thinking about the Torelli locus $\mathcal{M}_g\hookrightarrow\mathcal{A}_g$ 
+(the image of the moduli space of curves in the moduli space of principally polarized abelian varieties)
+and how it interacts with the Newton and Ekedahl-Oort stratifications of $\mathcal{A}_g$.  
+In the first of several planned papers, Bryden Cais and I study $\mathbb{Z}/p\mathbb{Z}$ 
+covers of curves $Y\to X$ and look at how the $p$-torsion of the Jacobian of $Y$ is related to that of $X$.
+See my research page for this paper.</p>
+
+<p>
+A recently completed paper with Felipe Voloch gives a
+generalization (far from obvious even in the statement) of results in
+my 2022 IMRN paper with Urzua to characteristic $p$.  Our results cast
+new light on the original complex situation, and we discovered and
+fixed a mistake from a famous 50+ year old paper of Manin.  The preprint is <a href="https://arxiv.org/abs/2508.06680" target="_blank">here</a>.
+
+<h2>Students</h2> <p>I have projects for students at several levels.   For the last few years, I have enjoyed working with advanced undergraduates on semester-length projects in number theory and related areas.  I'd also be happy to talk with graduate students about projects in number theory and algebraic geometry ranging from a quick MS with good prospects for a paper to more substantial PhD projects.</p>
+
+
+<h2>Contact</h2> <p>The fastest and most reliable way to reach me is via e-mail at <tt>ulmer@math.arizona.edu</tt>.  To make an appointment, please contact my colleagues Alejandra (Ali) Gaona (520-621-2868, <tt>agaona@math.arizona.edu</tt>) or Aubrey Mouradian (520-621-2713, <tt>aubreymouradian@math.arizona.edu</tt>). </p>
+
+
+
+<h2>Etc.</h2>
+
+<p>My short <a href="Ulmer-cv-short.pdf" target="_blank">CV</a>.</p>
+
+
+<hr> <table class="bottom"> <tr> <td align="left"> email: <a href="mailto:ulmer@math.arizona.edu" class="quiet-gray">ulmer@math.arizona.edu</a> </td>
+
+
+<td align="center"> phone: 520-621-2868 </td>
+
+<td align="right"> offices: Math 109 &#38; ENR2 S311 </td>
+
+</tr> </table>
+
+
+<p> <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fmath.arizona.edu%2F~ulmer%2F" target="_blank"> <img src="images/valid-html401.png" alt="valid-html401" height="31" width="88"></a> </p>
+
+
+</div>
+
+
+</BODY> </HTML>
