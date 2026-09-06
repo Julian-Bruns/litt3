@@ -2,6 +2,11 @@
   "schema_version": 1,
   "definitions": [
     {
+      "id": "finite_algebra_certificates",
+      "title": "Exact finite-algebra computation conventions",
+      "path": "Definitions/Def_finite_algebra_certificates.md"
+    },
+    {
       "id": "scalar_hermitian_data",
       "title": "Explicit scalar Hermitian conventions on the fixed curve",
       "path": "Definitions/Def_scalar_hermitian_data.md"
@@ -48,6 +53,50 @@
     }
   ],
   "theorems": [
+    {
+      "id": "finite_algebra_completion_certificates",
+      "title": "Known-length stopping and exact Frobenius root extraction",
+      "statement": "Theorems/Thm_finite_algebra_completion_certificates.md",
+      "solution": "Solutions/Sol_finite_algebra_completion_certificates.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "finite_algebra_certificates"
+      ],
+      "dependencies": [
+        "fixed_x_oper_cubic_quotient"
+      ],
+      "audits": [
+        "Research/audits/FINITE_ALGEBRA_CERTIFICATES_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_finite_algebra_completion_certificates.md",
+      "scope": "General exact finite-algebra certificates. Cubic-quotient dependency only supplies fixed-X numerical specialization. Does not supply current intermediate basis or a speed guarantee.",
+      "statement_version": 1,
+      "evidence_summary": "PASS, /root/finite_algebra_certificate_audit, Astra medium, 2026-09-06. Correct membership direction, Frobenius semilinearity, nonmonogenic products, multiplicity retention, and sufficient versus necessary iteration bounds are explicit.",
+      "statement_sha256": "5df84cf553b76522aa3e213c5f0616ba0417e45640edd680e13de60420ba0b00"
+    },
+    {
+      "id": "dormant_first_integral_charts",
+      "title": "Explicit dormant first integrals and uniform nonvanishing",
+      "statement": "Theorems/Thm_dormant_first_integral_charts.md",
+      "solution": "Solutions/Sol_dormant_first_integral_charts.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "fixed_pair"
+      ],
+      "dependencies": [
+        "fixed_x_dormant_equations"
+      ],
+      "audits": [
+        "Research/audits/FIRST_INTEGRAL_ZERO_TEST_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_dormant_first_integral_charts.md",
+      "scope": "Field-level nonlinear ODE classification; D4 nonvanishing for every monic squarefree degree-ten trigonal model; fixed-X affine map rank17. Does not give a scheme-equivalent smaller global oper search.",
+      "statement_version": 1,
+      "evidence_summary": "Symbolic field reconstruction from bounded independent derivation; main uniform partial-fraction proof and exact18x24 affine map with minor/witness. Scoped audit isolates Sage rational zero-test bug and passes all125 identity tests; no whole global-theorem audit claimed.",
+      "statement_sha256": "945eb35383835d65cb9713eb4a5cd1a969e568b275b1c530c3dcc2a66da1f0dc"
+    },
     {
       "id": "scalar_hermitian_reconstruction",
       "title": "Explicit scalar Hermitian reconstruction with normalized identification",

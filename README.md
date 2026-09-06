@@ -10,6 +10,9 @@ Read [update.md](update.md), then [Research/STATE.md](Research/STATE.md).
 That short continuation record, not a historical file number or route
 index, specifies the active strategy, last result, missing implication,
 and next action. [AGENTS.md](AGENTS.md) contains the continuation contract.
+The [post-enumeration roadmap](Research/AFTER_ENUMERATION.md) distinguishes
+the current finite calculation from the cored and coreless exclusions
+still needed for an actual counterexample.
 
 ## The research library
 

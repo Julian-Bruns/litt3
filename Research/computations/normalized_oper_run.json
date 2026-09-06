@@ -1,0 +1,26 @@
+{
+  "status": "running",
+  "started_utc": "2026-09-06T17:27:38.882959+00:00",
+  "supervisor_pid": 9989,
+  "command": [
+    "/tmp/litt3-msolve-lowmem.bQGL6w/msolve-0.10.1/msolve",
+    "-t",
+    "10",
+    "-l",
+    "2",
+    "-m",
+    "250",
+    "-v",
+    "2",
+    "-g",
+    "2",
+    "-f",
+    "/Users/julian/Documents/litt3/Research/computations/normalized_oper_msolve.in",
+    "-o",
+    "/Users/julian/Documents/litt3/Research/computations/normalized_oper_msolve.gb"
+  ],
+  "input_sha256": "c378d97ee11e2f1e306402a47a90cca586316734df3475d0099d3eabe2253f2a",
+  "log": "/Users/julian/Documents/litt3/Research/computations/normalized_oper_solver.log",
+  "output": "/Users/julian/Documents/litt3/Research/computations/normalized_oper_msolve.gb",
+  "solver_pid": 9991
+}

@@ -1,38 +1,39 @@
-# Research update — 2026-09-06, 18:42 CEST
+# Research update — 2026-09-06, 21:17 CEST
 
 ## How close are we?
 
-The problem is still unsolved, and there is no reliable finishing estimate.
-We now have a smaller, exact test for one important class of possible
-covers. We have not yet shown that even this class is impossible; other
-classes would still remain afterward.
+The problem is still unsolved. Completing this calculation would finish
+a useful candidate list, not the proof. We would still have to exclude
+the corresponding covers, handle the remaining kinds of covers, and
+overcome a separate major gap for covers without a common quotient.
+There is no reliable percentage-to-proof or finishing estimate.
 
 ## What changed
 
-The 55 known distinct solutions are fully written down. Each counts eight
-times in the full calculation. The remaining solutions are still being
-computed. A new reduction splits that remaining search into groups of
-three and cuts its number of variables substantially.
+We proved exact rules for recognizing a complete calculation and for
+separating distinct answers from their repeated counts. These rules passed
+an independent audit. The55 known answers count eight times each, so they
+cannot account for the total29375 by themselves.
 
-Pro's answer provides an explicit way to test whether a known solution
-can produce a cover. I reduced its 96 equations to 56 throughout the
-search, removed ten unnecessary choices, and proved that the extra
-extension data are uniquely determined. The same argument works for
-other curves in our general theorem. Both the concrete and general
-reductions have passed independent mathematical audits. Sixteen exact
-tests agree with the key identity; none is a solution of the final test.
+We also found an explicit description of the differential equation and
+removed an exceptional case for a whole family of curves. This has not yet
+become a faster complete search. A12-variable trial made the equations much
+larger; it was not adopted. Its short mathematical record is preserved.
 
-## Current strategy
+A testing discrepancy was traced to Sage treating a zero rational function
+as nonzero. Corrected exact checks pass all125 examples; no earlier
+certificate was found affected.
 
-Save and implement the smaller cover test while the full solution searches
-run. Use the examples to check the implementation, then look for a reason
-the test fails throughout the parameter space. The busy processors are
-doing exact equation calculations. The hourly reminder only waits.
+## Current strategy and pause
 
-Latest change: one optimized search now uses all ten CPU cores. I removed
-an unnecessary variable, tested a lower-memory solver build, and stopped
-all older searches. Retired trial files are recoverable in Trash; the
-verified solutions and certificates are unchanged. Completion time and
-the eventual peak memory use are still unknown.
+The original optimized calculation is still running, now in degree8.
+Its pending pairs are checks between equations, not candidate answers.
+The live display remains available.
 
+As requested, active research is paused. A one-shot watcher waits without
+model calls and will notify you and resume this exact chat when the
+calculation ends. Its final result must then be checked before use.
+
+The [post-enumeration roadmap](Research/AFTER_ENUMERATION.md) explains
+precisely what still needs proving, for you and the next agent.
 Continue at [Research/STATE.md](Research/STATE.md).

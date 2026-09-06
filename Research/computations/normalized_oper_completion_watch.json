@@ -1,0 +1,9 @@
+{
+  "status": "armed",
+  "watcher_pid": 56616,
+  "session_id": "01a06bb7-7c2a-7eb1-971c-2b890a7e0bf7",
+  "armed_utc": "2026-09-06T19:16:04.545366+00:00",
+  "solver_started_utc": "2026-09-06T17:27:38.882959+00:00",
+  "solver_pid": 9991,
+  "supervisor_pid": 9989
+}

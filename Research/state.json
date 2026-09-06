@@ -1,29 +1,34 @@
 {
-  "phase": "single_optimized_all_core_oper_enumeration",
+  "phase": "idle_solver_wait_with_post_enumeration_roadmap",
   "active_target_ids": [
     "scalar_hermitian_reconstruction",
     "semilinear_hermitian_lift",
     "fixed_x_oper_cubic_quotient"
   ],
-  "next_action": "Let ONE10-thread14-variable patched msolve PTY97862 PID90081 compute. Monitor memory; all older jobs terminated and variants retired. Export with --normalized on completion, then radical/tuples and multiplicities.",
+  "next_action": "User requested pause after handoff. Watcher56616 resumes exact chat on solver exit. On success verify/export normalized basis, then exact closed-point/cubic/multiplicity extraction. Read AFTER_ENUMERATION.md before atlas work; no candidate list alone excludes covers.",
   "last_completed_ids": [
+    "finite_algebra_completion_certificates",
+    "dormant_first_integral_charts",
     "semilinear_hermitian_lift",
     "scalar_hermitian_reconstruction",
     "fixed_x_oper_cubic_quotient"
   ],
-  "last_updated_local": "2026-09-06 18:42 CEST",
+  "last_updated_local": "2026-09-06 21:17 CEST",
   "problem_status": "unsolved",
   "pro_requests_remaining": 0,
   "migration_status": "complete",
   "timer": {
-    "due_local": "2026-09-06 about18:59 CEST",
-    "exec_cell": "286"
+    "due_local": null,
+    "exec_cell": null,
+    "status": "cancelled_user_requested_idle_wait_rearm_when_research_resumes"
   },
   "active_computations": [
     {
-      "session_id": 97862,
-      "pid": 90081,
-      "status": "running_only_solver",
+      "supervisor_pid": 9989,
+      "pid": 9991,
+      "status": "running_detached_only_solver",
+      "status_file": "Research/computations/normalized_oper_run.json",
+      "log_file": "Research/computations/normalized_oper_solver.log",
       "threads": 10,
       "pair_cap": 250,
       "script": "patched msolve normalized_oper_msolve.in",
@@ -38,9 +43,19 @@
     "remaining_distinct_count": null
   },
   "active_agents": [],
+  "completion_watcher": {
+    "pid": 56616,
+    "status": "armed_kernel_exit_event",
+    "session_id": "01a06bb7-7c2a-7eb1-971c-2b890a7e0bf7",
+    "state_file": "Research/computations/normalized_oper_completion_watch.json",
+    "resume_log": "Research/computations/normalized_oper_resume.jsonl",
+    "reply_file": "Research/computations/normalized_oper_resume_reply.md"
+  },
   "pro_prompt": "Research/PRO_SCALAR_HERMITIAN_RECONSTRUCTION.md",
   "pro_status": "Integrated pointwise reconstruction;10 identification parameters and40 extension variables removed. General horizontal retraction audited in all allowed genera/torsion twists.",
   "proof_scope": "Large cored untwisted PSU branch only; small cored, nontrivial PGU twists and coreless cases remain.",
   "patched_solver": "/tmp/litt3-msolve-lowmem.bQGL6w/msolve-0.10.1/msolve",
-  "retired_algorithms": "Removed from active code; obsolete artifacts recoverable in /Users/julian/.Trash/litt3-retired-solvers.2a0Fl7. All old processes terminated."
+  "retired_algorithms": "Removed from active code; obsolete artifacts recoverable in /Users/julian/.Trash/litt3-retired-solvers.2a0Fl7. All old processes terminated.",
+  "handoff": "Research/AFTER_ENUMERATION.md",
+  "unadopted_algorithm": "12-variable triangular probe: degree22,242362terms; no speed benchmark, trial retired; see Research/TRIANGULAR_COORDINATE_PROBE.md"
 }
