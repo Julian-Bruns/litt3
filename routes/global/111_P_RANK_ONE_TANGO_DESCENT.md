@@ -305,7 +305,7 @@ descent. More generally Corollary 111.3 applies to every finite Galois
 etale cover of X_1 whose source has p-rank one.
 
 The genus-nine X in
-[the current genus-(9,25) pair, file 76](76_EXPLICIT_BRANCH_RATIONAL_R3_REDESIGN.md)
+[the current genus-(9,25) pair, file 76](../../Theorems/Thm_fixed_pair_arithmetic.md)
 is different: its Frobenius polynomial (76.5) has lowest nonzero
 modulo-five term 3083 T^12, so its p-rank is six, not one. This note
 does not replace either fixed curve and gives no new common-cover

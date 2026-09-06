@@ -160,7 +160,7 @@ from Galois to non-Galois bi-etale correspondences.
 
 This boundary applies to the present explicit curve, not only to hypothetical
 hyperelliptic alternatives.  The curve \(X\) of
-[file 76](76_EXPLICIT_BRANCH_RATIONAL_R3_REDESIGN.md) has a tame cyclic
+[file 76](../../Theorems/Thm_fixed_pair_arithmetic.md) has a tame cyclic
 degree-three map
 
 \[

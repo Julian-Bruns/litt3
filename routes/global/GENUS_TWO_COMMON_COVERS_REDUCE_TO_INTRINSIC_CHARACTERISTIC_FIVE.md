@@ -53,12 +53,12 @@ and canonical degrees then give
        \deg(X/S)=(g(X)-1)\deg(Y/S)\le42000(g(X)-1).
 \]
 
-[Bounded-atlas finiteness](BOUNDED_ATLAS_DEGREE_GIVES_FINITE_ORBIFOLD_PARTNERS.md)
+[Bounded-atlas finiteness](../../Theorems/Thm_bounded_atlas_partner_finiteness.md)
 now gives the asserted finite set. This includes wild stabilizers and
 non-Galois atlases.
 
 A cored bi-étale correspondence has such a common orbifold by
-[the core-to-orbifold bridge](CORED_BIETALE_CORRESPONDENCES_HAVE_COMMON_ORBIFOLDS.md).
+[the core-to-orbifold bridge](../../Theorems/Thm_cored_orbifold_bridge.md).
 Its proof does not assume the desired simultaneous unramified envelope:
 a core first supplies a finite simultaneous *field* envelope; alternating
 the two étale Galois-closure operations inside it stabilizes and produces
@@ -171,7 +171,7 @@ can in principle exist without a mixed-characteristic lift. Neither
 ordinarity of `Y`, genus two, a lift of each individual curve, nor separate
 lifting of the two covers supplies the missing joint lift.
 
-Moreover, [Bogomolov–Tschinkel's domination theorem](HYPERELLIPTIC_ETALE_COVERS_HAVE_ARBITRARY_ABELIAN_FACTORS.md)
+Moreover, [Bogomolov–Tschinkel's domination theorem](UNIVERSAL_ONE_SIDED_DOMINATION_FORCES_FULL_ETALE_JACOBIAN_SPECTRUM.md)
 shows that the Jacobians of finite étale covers of any genus-two `Y`
 already contain every prescribed abelian variety as an isogeny factor.
 Unrestricted Jacobian-factor or Newton-slope exclusion therefore cannot

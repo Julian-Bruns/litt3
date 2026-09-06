@@ -290,7 +290,7 @@ Every complex irreducible character \(\chi\) of \(H\) has degree at most
 ## 4. The current genus-nine/genus-25 pair
 
 Let \(X,Y/\overline{\mathbf F}_5\) be the curves of file
-[76](76_EXPLICIT_BRANCH_RATIONAL_R3_REDESIGN.md).  Thus
+[76](../../Theorems/Thm_fixed_pair_arithmetic.md).  Thus
 
 \[
                            g(X)=9,\qquad g(Y)=25.

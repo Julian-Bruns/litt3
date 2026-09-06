@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "definitions": [
+    {
+      "id": "scalar_hermitian_data",
+      "title": "Explicit scalar Hermitian conventions on the fixed curve",
+      "path": "Definitions/Def_scalar_hermitian_data.md"
+    },
+    {
+      "id": "frobenius_form_atlases",
+      "title": "Frobenius-form atlas and normalized extension data",
+      "path": "Definitions/Def_frobenius_form_atlases.md"
+    },
+    {
+      "id": "base_conventions",
+      "title": "Base conventions",
+      "path": "Definitions/Def_base_conventions.md"
+    },
+    {
+      "id": "canonical_tensors",
+      "title": "Canonical tensors, Cartier operations, and markings",
+      "path": "Definitions/Def_canonical_tensors.md"
+    },
+    {
+      "id": "correspondences",
+      "title": "Actual bi-etale correspondences and their operations",
+      "path": "Definitions/Def_correspondences.md"
+    },
+    {
+      "id": "fixed_pair",
+      "title": "The fixed characteristic-five pair",
+      "path": "Definitions/Def_fixed_pair.md"
+    },
+    {
+      "id": "orbifolds",
+      "title": "Effective orbifold curves and atlases",
+      "path": "Definitions/Def_orbifolds.md"
+    },
+    {
+      "id": "theta_cartier",
+      "title": "Frobenius exact differentials and Raynaud theta notation",
+      "path": "Definitions/Def_theta_cartier.md"
+    },
+    {
+      "id": "wild_ramification",
+      "title": "Wild local atlas notation",
+      "path": "Definitions/Def_wild_ramification.md"
+    }
+  ],
+  "theorems": [
+    {
+      "id": "scalar_hermitian_reconstruction",
+      "title": "Explicit scalar Hermitian reconstruction with normalized identification",
+      "statement": "Theorems/Thm_scalar_hermitian_reconstruction.md",
+      "solution": "Solutions/Sol_scalar_hermitian_reconstruction.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "scalar_hermitian_data",
+        "fixed_pair",
+        "frobenius_form_atlases"
+      ],
+      "dependencies": [
+        "fixed_x_dormant_equations",
+        "hermitian_atlas_extension_criterion",
+        "dormant_horizontal_tensor_tower",
+        "semilinear_hermitian_lift"
+      ],
+      "audits": [
+        "Research/audits/PRO_SCALAR_FRAME_CHECK_2026_09_06.md",
+        "Research/audits/HERMITIAN_DIFFERENTIAL_ELIMINATION_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_scalar_hermitian_reconstruction.md",
+      "scope": "Fixed geometric oper, untwisted PSU atlas. Exact56-equation test without rank assumption or extension variables; all10 identification parameters removed. Not universal over nonreduced oper scheme and no atlas exclusion.",
+      "statement_version": 3,
+      "evidence_summary": "Frame precomputation and unconditional differential elimination separately PASS, /root/pro_scalar_frame_check and /root/differential_elimination_audit, 2026-09-06. All16 computed upper blocks equal Dbar times lower block; two samples have globally reduced zeros. Full new theorem including normalization not independently audited.",
+      "statement_sha256": "5c3e7b201bcc0427c129422fc2e863fba16ebf6655b0c4c9fa599ffecaebbe6f"
+    },
+    {
+      "id": "fixed_x_oper_cubic_quotient",
+      "title": "Cubic quotient of the remaining fixed-X dormant opers",
+      "statement": "Theorems/Thm_fixed_x_oper_cubic_quotient.md",
+      "solution": "Solutions/Sol_fixed_x_oper_cubic_quotient.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "fixed_pair"
+      ],
+      "dependencies": [
+        "fixed_x_dormant_equations"
+      ],
+      "audits": [],
+      "source": "scripts/normalized_oper_quotient.sage",
+      "scope": "Fixed-X enumeration:55 exceptional points and etale cubic reconstruction from the14-variable scheme of length9645. Inverse variable proved redundant, local multiplicities preserved. Enumeration not completed.",
+      "statement_version": 3,
+      "evidence_summary": "Author reconstruction and exact certificates: c4-zero slice length330/radical55/local6; rank5 C-block minors at all55 invariant points prove scale is a unit. No independent whole-result audit claimed.",
+      "statement_sha256": "dd889efb8e435babead8e40790765feb9396c482ac361c3d6c9fd2703b0339e4"
+    },
+    {
+      "id": "dormant_horizontal_tensor_tower",
+      "title": "Horizontal tensors as a parameterized Frobenius tower",
+      "statement": "Theorems/Thm_dormant_horizontal_tensor_tower.md",
+      "solution": "Solutions/Sol_dormant_horizontal_tensor_tower.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "frobenius_form_atlases"
+      ],
+      "dependencies": [
+        "dormant_rank_two_candidates",
+        "semilinear_hermitian_lift"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_dormant_horizontal_tensor_tower.md",
+      "scope": "All weights2+5n, exact horizontal dimensions and generic reduced zeros. These tensors exist universally and alone are no atlas obstruction. Tangent interpretation is untwisted only.",
+      "statement_version": 2,
+      "evidence_summary": "Author proof, /root, 2026-09-06, by oper projection and Cartier descent; not independently audited.",
+      "statement_sha256": "e9b99cec45ae7a7a486b1bc5951429f5db793ae998b7053aea323405cf5185b7"
+    },
+    {
+      "id": "fixed_x_dormant_equations",
+      "title": "The complete 96-quadratic dormant-oper system on X",
+      "statement": "Theorems/Thm_fixed_x_dormant_equations.md",
+      "solution": "Solutions/Sol_fixed_x_dormant_equations.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "fixed_pair",
+        "frobenius_form_atlases"
+      ],
+      "dependencies": [
+        "fixed_pair_arithmetic",
+        "dormant_rank_two_candidates"
+      ],
+      "audits": [
+        "Research/audits/FIXED_X_DORMANT_EQUATIONS_AUDIT_2026_09_06.md"
+      ],
+      "source": "scripts/fixed_x_dormant_opers.sage",
+      "scope": "All regular dormant projective opers scheme-theoretically; total length literature-derived. Invariant slice has55 distinct points, each with full local multiplicity8. No rank-three lift or cover exclusion.",
+      "statement_version": 2,
+      "evidence_summary": "PASS core chart/curvature audit, /root/fixed_x_dormant_equations_audit, 2026-09-06. Additional exact computations:55 invariant points, full local length8 each,55 distinct tuples checked in all96 equations; not part of that audit.",
+      "statement_sha256": "4284acba6afef3f4449692c0258be3e2d116dccb175f0a0b849b2132a99b4959"
+    },
+    {
+      "id": "dormant_rank_two_candidates",
+      "title": "Finite nonempty dormant rank-two candidate classes",
+      "statement": "Theorems/Thm_dormant_rank_two_candidates.md",
+      "solution": "Solutions/Sol_dormant_rank_two_candidates.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "frobenius_form_atlases"
+      ],
+      "dependencies": [
+        "hermitian_atlas_extension_criterion"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_dormant_rank_two_candidates.md",
+      "scope": "Exact rank-two candidates; all-odd-prime degree follows by polynomial identity, not extrapolation. These exist on every C and are not an atlas obstruction.",
+      "statement_version": 1,
+      "evidence_summary": "Primary proofs read by /root and /root/rank_two_frobenius_preimage_sources, 2026-09-06. Genus9 count independently checked with the equations audit.",
+      "statement_sha256": "32ab17d5bb711229d8bfd709481e5d7294c3c717d34a67c7282a7620eae30056"
+    },
+    {
+      "id": "semilinear_hermitian_lift",
+      "title": "Unique Hermitian extension candidate via horizontal differential retraction",
+      "statement": "Theorems/Thm_semilinear_hermitian_lift.md",
+      "solution": "Solutions/Sol_semilinear_hermitian_lift.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "frobenius_form_atlases"
+      ],
+      "dependencies": [
+        "hermitian_atlas_extension_criterion"
+      ],
+      "audits": [
+        "Research/audits/HERMITIAN_HORIZONTAL_RETRACTION_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_semilinear_hermitian_lift.md",
+      "scope": "All genera in the existing setup, including nontrivial tau^3=O. Exactly one extension candidate for fixed V,pi,j; residual dimension7(g-1), no rank assumption. No atlas exclusion or arbitrary nonreduced-family claim.",
+      "statement_version": 2,
+      "evidence_summary": "PASS strengthened horizontal retraction, dual Frobenius annihilation, unique candidate and rank bound; /root/horizontal_retraction_audit, 2026-09-06. Use underlying k-vector sheaf cohomology and transport connection after cancelling M. Prior extension-equation derivation retained.",
+      "statement_sha256": "5dd9d3329caa9af1e9c095bc04a649f8b4fc6e202f8c2e1c892cde03739b22b2"
+    },
+    {
+      "id": "hermitian_atlas_extension_criterion",
+      "title": "Rank-three extension criterion for a Hermitian orbifold atlas",
+      "statement": "Theorems/Thm_hermitian_atlas_extension_criterion.md",
+      "solution": "Solutions/Sol_hermitian_atlas_extension_criterion.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "frobenius_form_atlases",
+        "orbifolds"
+      ],
+      "dependencies": [
+        "completed_local_orbifold_rigidity"
+      ],
+      "audits": [
+        "Research/audits/HERMITIAN_BUNDLE_MAJOR_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_hermitian_atlas_extension_criterion.md",
+      "scope": "Exact rank-three Frobenius-form criterion; for 5 not dividing 2g-2, a finite torsion choice and 12(g-1)-dimensional extension space suffice, with automatic transversality. No fixed-curve solution or exclusion.",
+      "statement_version": 1,
+      "evidence_summary": "PASS, /root/hermitian_bundle_major_audit, 2026-09-06. All four assertions checked; no material objection. Affine-linear wording clarified.",
+      "statement_sha256": "71af715848a48fde0ceeb7f8928f97ee749e410acf3d05aae491e567647d4d5e"
+    },
+    {
+      "id": "completed_local_orbifold_rigidity",
+      "title": "Completed branch extensions determine an effective orbifold",
+      "statement": "Theorems/Thm_completed_local_orbifold_rigidity.md",
+      "solution": "Solutions/Sol_completed_local_orbifold_rigidity.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "orbifolds",
+        "wild_ramification"
+      ],
+      "dependencies": [
+        "unimodular_atlas_normality",
+        "hermitian_local_normality"
+      ],
+      "audits": [
+        "Research/audits/COMPLETED_LOCAL_GLOBAL_MAJOR_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_completed_local_orbifold_rigidity.md",
+      "scope": "Completed-local classification for developable effective orbifolds; the two large char5 cases are Hermitian quotient stacks in the common-cover class of the superspecial genus-two Q and ordinary Fermat quartic. No fixed-atlas exclusion or converse.",
+      "statement_version": 2,
+      "evidence_summary": "PASS, /root/completed_local_global_major_audit, 2026-09-06. Full sections 1-7 checked, including explicit Q and Fermat common covers; no breaking issue or required correction.",
+      "statement_sha256": "3c648d11dc9b2de4116859d3bee5e6d1d9d85405b924c04f9c323e3a4bcdb83a"
+    },
+    {
+      "id": "hermitian_local_normality",
+      "title": "Hermitian local rigidity and a scalar fixed-base invariant",
+      "statement": "Theorems/Thm_hermitian_local_normality.md",
+      "solution": "Solutions/Sol_hermitian_local_normality.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "wild_ramification"
+      ],
+      "dependencies": [
+        "finite_jet_local_normality"
+      ],
+      "audits": [
+        "Research/audits/HERMITIAN_FIXED_BASE_MAJOR_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_hermitian_local_normality.md",
+      "scope": "Parameterized local p^3 action with order-p second group and large tame complement; no global orbifold or atlas existence.",
+      "statement_version": 2,
+      "evidence_summary": "PASS, /root/hermitian_fixed_base_major_audit, 2026-09-06. No breaking issue; Hermitian infinity-stabilizer subgroup wording clarified. Exact finite-field formula checks also pass, independently of the prose audit.",
+      "statement_sha256": "6ce41d1fe2f3a918bd13e1c17768bb56155add0c8edb7ab998830cb6e255036d"
+    },
+    {
+      "id": "finite_jet_local_normality",
+      "title": "Finite-jet certificate for completed-local normality",
+      "statement": "Theorems/Thm_finite_jet_local_normality.md",
+      "solution": "Solutions/Sol_finite_jet_local_normality.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "wild_ramification"
+      ],
+      "dependencies": [],
+      "audits": [
+        "Research/audits/HERMITIAN_FIXED_BASE_MAJOR_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_finite_jet_local_normality.md",
+      "scope": "Classical determinacy bound with controlled correction and finite fixed-base Galois/isomorphism tests; no atlas existence.",
+      "statement_version": 2,
+      "evidence_summary": "PASS, /root/hermitian_fixed_base_major_audit, 2026-09-06. No breaking issue; Hermitian infinity-stabilizer subgroup wording clarified. Exact finite-field formula checks also pass, independently of the prose audit.",
+      "statement_sha256": "3e4409d7ba608f67190b58c660b54741a3537dae6ae56347da8d99c4d811dc10"
+    },
+    {
+      "id": "canonical_marked_quotient",
+      "title": "Canonical quotients for reduced canonical markings",
+      "statement": "Theorems/Thm_canonical_marked_quotient.md",
+      "solution": "Solutions/Sol_canonical_marked_quotient.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "canonical_tensors",
+        "correspondences",
+        "orbifolds"
+      ],
+      "dependencies": [
+        "finite_correspondence_groupoid",
+        "contact_degree_bound",
+        "etale_root_contact_bound"
+      ],
+      "audits": [
+        "routes/global/audits/CANONICAL_MARKED_QUOTIENT_MAJOR_STRESS_TEST_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_canonical_marked_quotient.md",
+      "scope": "All weights p>=5; marked compatibility required. Final fixed-genus partner corollary is an immediate post-audit consequence.",
+      "statement_version": 1,
+      "statement_sha256": "b00a09801d4dc96b70fe3e02b3926d8c8a674dcdcd2cbe8dafca6aecde884b08",
+      "evidence_summary": "PASS, /root/canonical_marked_quotient_major_stress_test, 2026-09-06; nonbreaking clarifications incorporated. Final partner corollary is a post-audit immediate consequence."
+    },
+    {
+      "id": "finite_correspondence_groupoid",
+      "title": "Finite composition-closed images give an effective orbifold",
+      "statement": "Theorems/Thm_finite_correspondence_groupoid.md",
+      "solution": "Solutions/Sol_finite_correspondence_groupoid.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "correspondences",
+        "orbifolds"
+      ],
+      "dependencies": [],
+      "audits": [
+        "routes/global/audits/CANONICAL_MARKED_QUOTIENT_MAJOR_STRESS_TEST_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_finite_correspondence_groupoid.md",
+      "scope": "Finiteness assumed, not inferred from finite seed generation. Primary-source normalization and quotient theorems remain proof-local.",
+      "statement_version": 1,
+      "statement_sha256": "9773f0235f2fb4689846a7d7499caa5e34d4c365b8a5d6927cca7cfa10aa18bc",
+      "evidence_summary": "PASS in the same major package audit, /root/canonical_marked_quotient_major_stress_test, 2026-09-06."
+    },
+    {
+      "id": "contact_degree_bound",
+      "title": "Parameterized contact bounds and reduced-union atlas bounds",
+      "statement": "Theorems/Thm_contact_degree_bound.md",
+      "solution": "Solutions/Sol_contact_degree_bound.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "canonical_tensors",
+        "correspondences",
+        "orbifolds"
+      ],
+      "dependencies": [],
+      "audits": [
+        "routes/global/audits/SHARED_SIMPLE_FORM_CONTACT_DEGREE_BOUND_AUDIT_2026_09_06.md",
+        "routes/global/audits/ETALE_ROOT_REDUCTION_OF_THE_CONTACT_BOUND_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_contact_degree_bound.md",
+      "scope": "Specified shared tensor; general atlas argument extracted from checked genus-nine proof, not dependent on its endpoint arithmetic.",
+      "statement_version": 1,
+      "statement_sha256": "646b30faee9c8add578925e3d3bdcc859e09c290f0ab9d62825155812a4d5f24",
+      "evidence_summary": "PASS, 2026-09-06; extension removing Jacobian orthogonality checked by /root/contact_root_extension_audit."
+    },
+    {
+      "id": "etale_root_contact_bound",
+      "title": "Linear-in-weight bounds via etale roots",
+      "statement": "Theorems/Thm_etale_root_contact_bound.md",
+      "solution": "Solutions/Sol_etale_root_contact_bound.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "canonical_tensors",
+        "correspondences"
+      ],
+      "dependencies": [
+        "contact_degree_bound"
+      ],
+      "audits": [
+        "routes/global/audits/ETALE_ROOT_REDUCTION_OF_THE_CONTACT_BOUND_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_etale_root_contact_bound.md",
+      "scope": "Prime-to-p weights; p=5 audited source, general p>=5 follows with contact constant.",
+      "statement_version": 1,
+      "statement_sha256": "b8f311cd57a5def4fe792e3f23b7e0a2d64681b4889d5979ba5ce7b49d437152",
+      "evidence_summary": "PASS, /root/contact_root_extension_audit, 2026-09-06."
+    },
+    {
+      "id": "shared_tensor_core",
+      "title": "Shared simple-root tensors force a core",
+      "statement": "Theorems/Thm_shared_tensor_core.md",
+      "solution": "Solutions/Sol_shared_tensor_core.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "canonical_tensors",
+        "correspondences",
+        "theta_cartier"
+      ],
+      "dependencies": [
+        "canonical_marked_quotient",
+        "cored_orbifold_bridge"
+      ],
+      "audits": [
+        "routes/global/audits/UNIFORM_EQUAL_WEIGHT_CONTACT_FORCES_CORE_AUDIT_2026_09_06.md",
+        "routes/global/audits/CANONICAL_MARKED_QUOTIENT_MAJOR_STRESS_TEST_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_shared_tensor_core.md",
+      "scope": "First assertion is now a consequence; separate positive-genus logarithmic lemma retained.",
+      "statement_version": 1,
+      "statement_sha256": "3119f4efa267b4c63d1d2c56f028391d7afb8dede44fac6b9dd350373296f254",
+      "evidence_summary": "PASS, /root/contact_bound_to_core_audit, 2026-09-06; all-weight extension inherited from the separate canonical-quotient audit."
+    },
+    {
+      "id": "cored_orbifold_bridge",
+      "title": "A cored span has a common effective orbifold",
+      "statement": "Theorems/Thm_cored_orbifold_bridge.md",
+      "solution": "Solutions/Sol_cored_orbifold_bridge.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "correspondences",
+        "orbifolds"
+      ],
+      "dependencies": [],
+      "audits": [],
+      "source": "Solutions/Sol_cored_orbifold_bridge.md",
+      "scope": "Core hypothesis required. Krishnamoorthy's core theorem is an external proof input.",
+      "statement_version": 1,
+      "statement_sha256": "f51140f578824083f46424ad6f5391c106dde98458eede876bf1d5b0f38c1006",
+      "evidence_summary": "Author prose; no independent whole-statement audit claimed. See solution for scoped computational checks."
+    },
+    {
+      "id": "bounded_atlas_partner_finiteness",
+      "title": "Bounded atlases give finite partner sets",
+      "statement": "Theorems/Thm_bounded_atlas_partner_finiteness.md",
+      "solution": "Solutions/Sol_bounded_atlas_partner_finiteness.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "orbifolds",
+        "correspondences"
+      ],
+      "dependencies": [],
+      "audits": [
+        "routes/global/audits/BOUNDED_ATLAS_DEGREE_GIVES_FINITE_ORBIFOLD_PARTNERS_AUDIT.md"
+      ],
+      "source": "Solutions/Sol_bounded_atlas_partner_finiteness.md",
+      "scope": "Does not supply the atlas bound or exclude the bounded partners.",
+      "statement_version": 1,
+      "statement_sha256": "ed13428ee099f08716133ea2c596c9bdc3be25c60fa792fd2ef2457576613bd2",
+      "evidence_summary": "PASS, /root/x_elliptic_quotient_maps, 2026-09-05; no breaking objection."
+    },
+    {
+      "id": "integral_jump_bound",
+      "title": "Integral wild-subgroup jumps bound atlas degree",
+      "statement": "Theorems/Thm_integral_jump_bound.md",
+      "solution": "Solutions/Sol_integral_jump_bound.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "orbifolds",
+        "wild_ramification"
+      ],
+      "dependencies": [],
+      "audits": [
+        "routes/global/audits/INTEGRAL_WILD_JUMP_DEGREE_BOUND_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_integral_jump_bound.md",
+      "scope": "Two-branch low-different hypothesis. Signature and single-jump legacy inputs remain proof-local; dependency DAG is not exhaustive.",
+      "statement_version": 1,
+      "statement_sha256": "abd6b3fb6a0a5fc726f47c3dda25a19a42eb5a45069af8d0efe9c98d8feb6274",
+      "evidence_summary": "PASS, /root/integral_jump_degree_bound_audit, 2026-09-06; independent exact enumeration.",
+      "legacy_dependencies": [
+        "routes/global/TWO_BRANCH_SINGLE_JUMP_ORBIFOLD_ATLASES_ARE_DEGREE_BOUNDED.md"
+      ]
+    },
+    {
+      "id": "translation_rank_bound",
+      "title": "Translation rank detects fractional wild jumps",
+      "statement": "Theorems/Thm_translation_rank_bound.md",
+      "solution": "Solutions/Sol_translation_rank_bound.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "wild_ramification"
+      ],
+      "dependencies": [],
+      "audits": [
+        "routes/global/audits/ARTIN_SCHREIER_TRANSLATION_RANK_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_translation_rank_bound.md",
+      "scope": "Polynomial theorem and local order-p-second-group consequence. HKG realization remains an external proof input.",
+      "statement_version": 1,
+      "statement_sha256": "8c8d216120aae2b3619e83f44597b94b860e8168ba139d718bfea3b51ab59940",
+      "evidence_summary": "PASS, /root/integral_jump_degree_bound_audit, 2026-09-06; 275 exact polynomial checks."
+    },
+    {
+      "id": "common_cover_problem",
+      "title": "Litt Problem 3",
+      "statement": "Theorems/Thm_common_cover_problem.md",
+      "solution": null,
+      "status": "open",
+      "verification": "not_proved",
+      "definitions": [
+        "base_conventions",
+        "correspondences"
+      ],
+      "dependencies": [],
+      "audits": [],
+      "source": "README.md",
+      "scope": "Unmarked common finite etale cover question over Fbar_5; unsolved.",
+      "statement_version": 1,
+      "statement_sha256": "905acb49b4c7620e072191a1970db14a36e752f2abfbc84cc85d5bbd5ebf424a",
+      "evidence_summary": "Unsolved; no proof."
+    },
+    {
+      "id": "fixed_pair_arithmetic",
+      "title": "Geometry and Jacobians of the explicit fixed pair",
+      "statement": "Theorems/Thm_fixed_pair_arithmetic.md",
+      "solution": "Solutions/Sol_fixed_pair_arithmetic.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "fixed_pair"
+      ],
+      "dependencies": [],
+      "audits": [],
+      "source": "Solutions/Sol_fixed_pair_arithmetic.md",
+      "scope": "Propositions 76.1–76.3 and stated geometric consequences; Theorem 76.4 is not promoted. Theta divisor is also sourced to the retained eigenform proof. External absolute-simplicity criteria and arithmetic certificate remain proof-local.",
+      "statement_version": 1,
+      "statement_sha256": "9f56be5fe5c55a00b236271b520bfaa081a30a06a54717caddd75d10f9e212a9",
+      "evidence_summary": "Author prose; no independent whole-statement audit claimed. See solution for scoped computational checks."
+    },
+    {
+      "id": "fixed_x_orbifold_bound",
+      "title": "All effective orbifold quotients of the fixed genus-nine curve",
+      "statement": "Theorems/Thm_fixed_x_orbifold_bound.md",
+      "solution": "Solutions/Sol_fixed_x_orbifold_bound.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "fixed_pair",
+        "correspondences",
+        "orbifolds",
+        "theta_cartier"
+      ],
+      "dependencies": [
+        "contact_degree_bound",
+        "fixed_x_cartier_eigenforms",
+        "fixed_x_two_branch_bound",
+        "cored_orbifold_bridge",
+        "bounded_atlas_partner_finiteness",
+        "canonical_intersection",
+        "etale_root_contact_bound"
+      ],
+      "audits": [
+        "routes/global/audits/GENUS9_ALL_EFFECTIVE_ORBIFOLD_QUOTIENTS_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_fixed_x_orbifold_bound.md",
+      "scope": "All effective orbifold quotients, cored degrees/partner finiteness, and coreless shared-one-form vanishing; no nonexistence conclusion. Standard signature results remain proof-local external dependencies; DAG is not exhaustive of legacy lemmas.",
+      "statement_version": 1,
+      "statement_sha256": "dc182d584a6fdb2df0acc7576b9bd9ae149f9d20530d0c43e4a090885c225292",
+      "evidence_summary": "PASS, /root/integral_jump_degree_bound_audit, 2026-09-06, including the widened one-endpoint scope and assertion 3."
+    },
+    {
+      "id": "fixed_x_cartier_eigenforms",
+      "title": "Nonzero-eigenvalue Cartier forms on the fixed curve",
+      "statement": "Theorems/Thm_fixed_x_cartier_eigenforms.md",
+      "solution": "Solutions/Sol_fixed_x_cartier_eigenforms.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "fixed_pair",
+        "theta_cartier",
+        "correspondences"
+      ],
+      "dependencies": [
+        "fixed_pair_arithmetic",
+        "etale_root_contact_bound"
+      ],
+      "audits": [
+        "routes/global/audits/GENUS9_ALL_NONZERO_EIGENVALUE_CARTIER_FORMS_SIMPLE_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_fixed_x_cartier_eigenforms.md",
+      "scope": "All algebraic-closure eigenforms with nonzero eigenvalue; shared-one-form vanishing for the fixed ordinary Y in any actual span. Exact certificate and standard semilinear/Jacobian facts remain proof-local.",
+      "statement_version": 1,
+      "statement_sha256": "9e061b828735436073ae64b4e64b08a74228b80185d80460d12f0b0e683a7afd",
+      "evidence_summary": "PASS, /root/genus9_all_eigenforms_simple_audit, 2026-09-06; independent exact Sage replay."
+    },
+    {
+      "id": "wild_first_layer",
+      "title": "Genus bounds for the first wild ramification layer",
+      "statement": "Theorems/Thm_wild_first_layer.md",
+      "solution": "Solutions/Sol_wild_first_layer.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "orbifolds",
+        "wild_ramification"
+      ],
+      "dependencies": [
+        "integral_jump_bound",
+        "translation_rank_bound"
+      ],
+      "audits": [
+        "routes/global/audits/FIRST_WILD_RAMIFICATION_LAYER_GENUS_BOUND_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_wild_first_layer.md",
+      "scope": "Bounds first quotient only; full atlas bound conditional on bounded abelian index in the deeper subgroup. Swan divisibility, single-jump and bounded-denominator legacy results and HKG realization remain proof-local external dependencies; DAG not exhaustive.",
+      "statement_version": 1,
+      "statement_sha256": "90726c89d32cea32cf3566c363dddf224b85d6c21a484c3486c805c7111b7a3a",
+      "evidence_summary": "PASS, /root/contact_bound_to_core_audit, 2026-09-06.",
+      "legacy_dependencies": [
+        "routes/global/13_PROOF_LOCAL_RAMIFICATION.md",
+        "routes/global/BOUNDED_WILD_JUMP_DENOMINATORS_BOUND_ATLAS_DEGREES.md"
+      ]
+    },
+    {
+      "id": "two_branch_tensor_patterns",
+      "title": "Bounded tame orders and integer tensor patterns",
+      "statement": "Theorems/Thm_two_branch_tensor_patterns.md",
+      "solution": "Solutions/Sol_two_branch_tensor_patterns.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "orbifolds",
+        "wild_ramification",
+        "canonical_tensors"
+      ],
+      "dependencies": [
+        "wild_first_layer"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_two_branch_tensor_patterns.md",
+      "scope": "Two-branch low-different atlases; finite integer patterns do not imply fixed tensors, finite atlases, or a wild-order bound. Local/genus identities remain proof-local external legacy dependencies.",
+      "statement_version": 1,
+      "statement_sha256": "ceb66dac9ef5751ba4f3d85220fa03ad0d8ded386e36dde4944fa2242951cbdc",
+      "evidence_summary": "Author prose; no independent whole-statement audit claimed. See solution for scoped computational checks."
+    },
+    {
+      "id": "fixed_x_two_branch_bound",
+      "title": "Two-branch low-different atlases of the fixed curve",
+      "statement": "Theorems/Thm_fixed_x_two_branch_bound.md",
+      "solution": "Solutions/Sol_fixed_x_two_branch_bound.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "fixed_pair",
+        "orbifolds",
+        "wild_ramification",
+        "canonical_tensors"
+      ],
+      "dependencies": [
+        "wild_first_layer",
+        "integral_jump_bound",
+        "two_primary_w3"
+      ],
+      "audits": [
+        "routes/global/audits/CORED_FIXED_PAIR_BOUNDED_MINIMAL_DEGREE_AUDIT_2026_09_06.md",
+        "routes/global/audits/GENUS9_ALL_EFFECTIVE_ORBIFOLD_QUOTIENTS_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_fixed_x_two_branch_bound.md",
+      "scope": "One-endpoint bound with explicit exceptional necessary signatures, not existence. Signature reduction and two-primary W3 are proof-local external legacy dependencies; DAG is not exhaustive.",
+      "statement_version": 1,
+      "statement_sha256": "ea7e651e12e3b495214656097ef9d710aabef3dbf6ab46792d2b3ad722f12d2a",
+      "evidence_summary": "PASS, /root/integral_jump_degree_bound_audit, 2026-09-06; both certificates and widened scope checked.",
+      "legacy_dependencies": [
+        "routes/global/CORED_ZERO_ONE_FORM_INTERSECTION_AND_WILD_SIGNATURE_REDUCTION.md"
+      ]
+    },
+    {
+      "id": "two_primary_w3",
+      "title": "Odd trigonal pencils, two-primary W3, and three-point tensors",
+      "statement": "Theorems/Thm_two_primary_w3.md",
+      "solution": "Solutions/Sol_two_primary_w3.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "fixed_pair",
+        "theta_cartier",
+        "canonical_tensors",
+        "wild_ramification"
+      ],
+      "dependencies": [
+        "fixed_pair_arithmetic",
+        "cartier_generator"
+      ],
+      "audits": [
+        "routes/global/audits/ENDPOINT_TWO_PRIMARY_LOW_DEGREE_TORSION_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_two_primary_w3.md",
+      "scope": "Parameterized pencil and Frobenius criteria plus fixed-X W3 and a specified three-point Cartier obstruction. Finite-field translation and signature facts remain proof-local external legacy dependencies; DAG not exhaustive.",
+      "statement_version": 1,
+      "statement_sha256": "46eee5d2746e6ef1e2b9f20ae71c9a58dfe67fdefc5baeb4a6179978449e42c9",
+      "evidence_summary": "PASS, /root/contact_bound_to_core_audit, 2026-09-06; certificate replay included."
+    },
+    {
+      "id": "canonical_intersection",
+      "title": "Canonical-ring intersection of a coreless étale span",
+      "statement": "Theorems/Thm_canonical_intersection.md",
+      "solution": "Solutions/Sol_canonical_intersection.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "correspondences",
+        "canonical_tensors"
+      ],
+      "dependencies": [],
+      "audits": [],
+      "source": "Solutions/Sol_canonical_intersection.md",
+      "scope": "Classification over algebraically closed fields; clump converse stated over Fbar_5. External one-clump theorem remains cited in the proof. Does not establish a clump or either positive-characteristic example.",
+      "statement_version": 1,
+      "statement_sha256": "28c48ece418ad92839aa51a00288214b948670fc23bf23b091b2f7d2e62ecb4d",
+      "evidence_summary": "Author prose; no independent whole-statement audit claimed. See solution for scoped computational checks."
+    },
+    {
+      "id": "cartier_generator",
+      "title": "Frobenius and Cartier constraints on a primitive invariant",
+      "statement": "Theorems/Thm_cartier_generator.md",
+      "solution": "Solutions/Sol_cartier_generator.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "correspondences",
+        "canonical_tensors",
+        "theta_cartier"
+      ],
+      "dependencies": [
+        "canonical_intersection"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_cartier_generator.md",
+      "scope": "Conditional on nontrivial coreless canonical intersection; no clump existence, nonvanishing, or d dividing 4 claim.",
+      "statement_version": 1,
+      "statement_sha256": "4ddb539ce7b0ea99fbfe7449e7e3147f6588d6be59c372095476e34d797a35a7",
+      "evidence_summary": "Author prose; no independent whole-statement audit claimed. See solution for scoped computational checks."
+    },
+    {
+      "id": "raynaud_cofinal_saturation",
+      "title": "Cofinal saturation of inherited Raynaud theta directions",
+      "statement": "Theorems/Thm_raynaud_cofinal_saturation.md",
+      "solution": "Solutions/Sol_raynaud_cofinal_saturation.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "base_conventions",
+        "theta_cartier",
+        "correspondences"
+      ],
+      "dependencies": [],
+      "audits": [
+        "routes/global/RAYNAUD_THETA_SATURATED_REFINEMENTS_ARE_COFINAL_AUDIT.md"
+      ],
+      "source": "Solutions/Sol_raynaud_cofinal_saturation.md",
+      "scope": "Cofinal nonvanishing on fixed inherited Jacobian parameters; refined spans need not be jointly minimal.",
+      "statement_version": 1,
+      "statement_sha256": "a68537c22b9e0e19fe9edfb4f4d1ecbbe514d344bd27563085963753c00f92e3",
+      "evidence_summary": "PASS, /root/raynaud_cofinal_refinement_major_audit, 2026-09-06. A literature consequence, not a new Raynaud theorem."
+    },
+    {
+      "id": "all_symmetric_cartier_hn",
+      "title": "Ordinary HN polygons of all symmetric powers of the Cartier bundle",
+      "statement": "Theorems/Thm_all_symmetric_cartier_hn.md",
+      "solution": "Solutions/Sol_all_symmetric_cartier_hn.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "base_conventions",
+        "theta_cartier"
+      ],
+      "dependencies": [],
+      "audits": [
+        "routes/global/audits/ALL_CARTIER_SYMMETRIC_HN_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_all_symmetric_cartier_hn.md",
+      "scope": "All n and odd p, normalized by genus minus one; no arbitrary Schur subquotient or common-cover exclusion.",
+      "statement_version": 1,
+      "statement_sha256": "f3bf98b82b2553cfffc9317f5356c5246511f653ff3483063f4a2edc214c8979",
+      "evidence_summary": "PASS, /root/cartier_symmetric_power_hn_major_audit, 2026-09-06; no breaking objection."
+    },
+    {
+      "id": "all_tensor_cartier_hn",
+      "title": "Ordinary HN polygons of all full tensor powers of the Cartier bundle",
+      "statement": "Theorems/Thm_all_tensor_cartier_hn.md",
+      "solution": "Solutions/Sol_all_tensor_cartier_hn.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "base_conventions",
+        "theta_cartier"
+      ],
+      "dependencies": [],
+      "audits": [
+        "routes/global/audits/ALL_CARTIER_TENSOR_HN_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_all_tensor_cartier_hn.md",
+      "scope": "All full and mixed tensor powers in odd characteristic; legacy differential-operator input remains proof-local, not a registered dependency.",
+      "statement_version": 1,
+      "statement_sha256": "7eb0572903632cd0f3aaed5f0fafd6b1bc86fa537cf8103a1c765e47e6bb557a",
+      "evidence_summary": "PASS, /root/all_cartier_tensor_hn_major_audit, 2026-09-06; no breaking objection.",
+      "legacy_dependencies": [
+        "routes/global/CARTIER_ENDOMORPHISM_HN_IS_THE_DIFFERENTIAL_OPERATOR_FILTRATION.md",
+        "routes/global/22_CARTIER_BUNDLE_ETALE_FUNCTORIALITY_AND_LIMITS.md"
+      ]
+    },
+    {
+      "id": "ordinary_cyclic_triple_finite_bad_cosets",
+      "title": "Finite bad cosets for ordinary cyclic etale triples of genus-two curves",
+      "statement": "Theorems/Thm_ordinary_cyclic_triple_finite_bad_cosets.md",
+      "solution": "Solutions/Sol_ordinary_cyclic_triple_finite_bad_cosets.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "base_conventions",
+        "theta_cartier"
+      ],
+      "dependencies": [],
+      "audits": [
+        "routes/global/audits/ORDINARY_CYCLIC_TRIPLE_FINITE_BAD_FIBERS_AUDIT.md"
+      ],
+      "source": "Solutions/Sol_ordinary_cyclic_triple_finite_bad_cosets.md",
+      "scope": "Characteristic five, ordinary Y of genus two and ordinary cyclic etale triple U; finite exceptions, not their absence. Legacy Prym input remains proof-local.",
+      "statement_version": 1,
+      "statement_sha256": "6423c078e16547a7f63e59236a501062f47e7eb28d0abe8d708134689fadc9fb",
+      "evidence_summary": "PASS, /root/ordinary_triple_finite_bad_fibers_check, 2026-09-05; elementary grid bound checked separately.",
+      "legacy_dependencies": [
+        "routes/global/SHARP_ELLIPTIC_GRID_DIVISOR_INTERSECTION_BOUNDS.md",
+        "routes/global/CYCLIC_TRIPLE_GENUS_TWO_PRYM_AND_BAD_AXIS_COMPONENT_BOUNDARY.md"
+      ]
+    },
+    {
+      "id": "polarization_bad_fiber_bound",
+      "title": "Polarization bounds for finite bad-fiber schemes and determinant defects",
+      "statement": "Theorems/Thm_polarization_bad_fiber_bound.md",
+      "solution": "Solutions/Sol_polarization_bad_fiber_bound.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "base_conventions",
+        "theta_cartier"
+      ],
+      "dependencies": [
+        "ordinary_cyclic_triple_finite_bad_cosets"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_polarization_bad_fiber_bound.md",
+      "scope": "General bound assumes finite bad scheme and split ample pullback; registered dependency is used only for the ordinary cyclic-triple application.",
+      "statement_version": 1,
+      "statement_sha256": "d497b0016341df079497170f0b9d07f47e88237aa1d6ea709ed9aa8547146939",
+      "evidence_summary": "Author prose; no independent whole-statement audit claimed. See solution for scoped computational checks."
+    },
+    {
+      "id": "frobenius_exception_sieve",
+      "title": "Frobenius localization of finite theta exceptions",
+      "statement": "Theorems/Thm_frobenius_exception_sieve.md",
+      "solution": "Solutions/Sol_frobenius_exception_sieve.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "base_conventions",
+        "theta_cartier"
+      ],
+      "dependencies": [
+        "ordinary_cyclic_triple_finite_bad_cosets",
+        "polarization_bad_fiber_bound"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_frobenius_exception_sieve.md",
+      "scope": "Finite-field candidate sieve for ordinary cyclic triples; field-dependent bound, not exclusion or generic-moduli torsion.",
+      "statement_version": 1,
+      "statement_sha256": "7655b2d2f7336c453d30ce57449bd6c30f40ae4ff9eab13d844ae2e0d5ecc364",
+      "evidence_summary": "Author prose; no independent whole-statement audit claimed. See solution for scoped computational checks."
+    },
+    {
+      "id": "stratified_contact_bound",
+      "title": "Zero-stratified contact bounds and a simultaneous quotient",
+      "statement": "Theorems/Thm_stratified_contact_bound.md",
+      "solution": "Solutions/Sol_stratified_contact_bound.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "canonical_tensors",
+        "correspondences",
+        "orbifolds"
+      ],
+      "dependencies": [
+        "contact_degree_bound",
+        "finite_correspondence_groupoid",
+        "canonical_marked_quotient"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_stratified_contact_bound.md",
+      "scope": "Positive-characteristic reduced-union inequality, all weights; hard-cap or positive energy yields a finite exact relation. Nonuniform zero strata are a sufficient condition, not supplied by arbitrary spans. No claimed new single-span core theorem beyond one-clump literature.",
+      "statement_version": 1,
+      "evidence_summary": "Author proof, /root, 2026-09-06; not independently audited. Existing audited contact/groupoid arguments are inputs, not an audit of this extension.",
+      "statement_sha256": "e43c7c93d1bc3d1044126745ba58814dde046899e5af251c90400f6f575680cd"
+    },
+    {
+      "id": "cored_ring_and_marking_spectrum",
+      "title": "Full shared canonical ring and exact reduced-marking spectrum",
+      "statement": "Theorems/Thm_cored_ring_and_marking_spectrum.md",
+      "solution": "Solutions/Sol_cored_ring_and_marking_spectrum.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "canonical_tensors",
+        "orbifolds",
+        "correspondences"
+      ],
+      "dependencies": [
+        "cored_orbifold_bridge",
+        "fixed_x_two_branch_bound"
+      ],
+      "audits": [
+        "Research/audits/CORED_RING_AND_LOCAL_NORMALITY_MAJOR_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_cored_ring_and_marking_spectrum.md",
+      "scope": "Cored actual spans only, using the quotient by BOTH generated deck groups. Large-signature consequences conditional on their realization; no new atlas or common-cover exclusion.",
+      "statement_version": 1,
+      "evidence_summary": "PASS, /root/cored_ring_normality_major_check, 2026-09-06. Both-group descent, reduced marking spectrum, and exact arithmetic minima checked.",
+      "statement_sha256": "1e7275fc1497613cd3dabc014477e44fb9f528aab33097aa120eece96c1ddac7"
+    },
+    {
+      "id": "unimodular_atlas_normality",
+      "title": "Two-generator differential presentation and exact local-normality gate",
+      "statement": "Theorems/Thm_unimodular_atlas_normality.md",
+      "solution": "Solutions/Sol_unimodular_atlas_normality.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "canonical_tensors",
+        "orbifolds"
+      ],
+      "dependencies": [
+        "cored_ring_and_marking_spectrum"
+      ],
+      "audits": [
+        "Research/audits/CORED_RING_AND_LOCAL_NORMALITY_MAJOR_AUDIT_2026_09_06.md"
+      ],
+      "source": "Solutions/Sol_unimodular_atlas_normality.md",
+      "scope": "p|E,m|(E+1). Reconstructs an etale atlas IFF all wild completed extensions are mutually base-field-isomorphic Galois. Differential identities and matching ramification numbers alone are insufficient.",
+      "statement_version": 1,
+      "evidence_summary": "PASS, /root/cored_ring_normality_major_check, 2026-09-06. Nonbreaking clarification: [W/H] is the scheme C only after H is free; wording incorporated.",
+      "statement_sha256": "51ce078bed53e5c103096c84fba85a51527adc03f41af9689b63fd1bd5551bd9"
+    }
+  ]
+}

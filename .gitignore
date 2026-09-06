@@ -1,0 +1,5 @@
+# Upstream is an explicitly cloned reference, not a nested project to publish.
+reference/prove2me_workspace/
+scripts/__pycache__/
+tests/__pycache__/
+/scripts/*.sage.py

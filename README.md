@@ -1,148 +1,94 @@
-# Litt Problem 3 working repository
+# Litt Problem 3 research workspace
 
-[Problem 3](https://www.problemsilike.com/3) asks whether every pair of
-smooth projective curves of genus at least two over an algebraic closure of a
-finite field has a common finite étale cover. This repository develops a
-possible negative answer over
+[Problem 3](https://www.problemsilike.com/3) asks whether every two smooth
+projective curves of genus at least two over Fbar_5 have a common finite
+etale cover. We seek a counterexample. **The problem remains unsolved.**
 
-\[
-k=\overline{\mathbb F}_5,
-\qquad Y:\ y^{31}=x(x-1).
-\]
+## Continue the investigation
 
-The problem is **not solved here**. The active material now gives a
-refereed conditional framework, together with several exact local lemmas,
-but the global extraction and all three surviving profile-4 branches still
-have open gates.
+Read [update.md](update.md), then [Research/STATE.md](Research/STATE.md).
+That short continuation record, not a historical file number or route
+index, specifies the active strategy, last result, missing implication,
+and next action. [AGENTS.md](AGENTS.md) contains the continuation contract.
 
-## Agent reading protocol
+## The research library
 
-For the current investigation, read [update.md](update.md) first; it
-identifies the active frontier and corrections to older material.
+The layout adapts [Prove2Me](https://github.com/prove2me/prove2me_workspace)
+for mathematical prose. The upstream workspace is cloned locally at
+`reference/prove2me_workspace`; [provenance and differences](Research/PROVE2ME_ADAPTATION.md)
+record the revision. Nothing was uploaded or represented as Lean-verified.
 
-Audit records are reference material, not routine reading. Use the verdict,
-auditor, date, and brief objections linked from each theorem. Do not open
-the full audit record unless there is a concrete reason to doubt the
-theorem or investigate an objection. This keeps audit transcripts out of
-the working context unless they are needed.
+- [Definitions/](Definitions/): explicit conventions and active objects.
+- [Theorems/](Theorems/): exact statements, hypotheses, and limits.
+- [Solutions/](Solutions/): retained proofs, citations, and certificates.
+- [Research/library.json](Research/library.json): stable IDs, evidence,
+  and reviewed dependencies. Older proof-local inputs may be unpromoted;
+  this is not a claim that every dependency has been catalogued.
+- [Research/legacy_inventory.json](Research/legacy_inventory.json):
+  searchable metadata for historical sources, not an endorsement of them.
 
-1. Read this file, [STRUCTURE.md](STRUCTURE.md), and
-   [MISSING_INPUTS.md](MISSING_INPUTS.md).
-2. Choose one target in [tasks/README.md](tasks/README.md).
-3. Read that target's route README and only the source files listed there.
-4. Treat a `certificate-transcript` as a claim to reconstruct, not as a
-   reproducible proof.
-5. Do not use `archive/` as proof input. The dated synthesis in `reference/`
-   is useful for provenance, but the active modular files control status.
+Read statements first and only the proof needed for the current target:
 
-Historical numbers in filenames are identifiers, not a recommended reading
-order.
-
-## What is proved
-
-- The smooth projective model of \(Y\) has genus \(15\), and
-  \(Y\to S=\mathbb P^1(31,31,31)\) is a representable finite étale
-  \(\mu_{31}\)-torsor.
-- The symmetric quotient is
-  \(S_0=[S/S_3]\simeq\mathbb P^1(2,3,62)\), with
-  \(\deg K_{S_0}=14/93\).
-- If every finite étale self-correspondence of \(S\) is visible over
-  \(S_0\), then any curve sharing a finite étale cover with \(Y\) has
-  \(g\equiv1\pmod 7\). In particular, no genus-\(3\) curve shares such a
-  cover with \(Y\). The required descent, including its cocycle, is proved
-  in the active global route.
-- For the proposed profile-4 pair, the high-point quotient argument excludes
-  three incidence cells, identifies the two entry-zero representatives, and
-  excludes the paired entry-zero case.
-- For the entry-zero representative, file `79` fixes the compatible norm
-  constants and the tangent leading form. Its audit shows that these
-  comparisons do **not** establish \(x(Q_1)=x(Q_\infty)=2\); reaching that
-  specialization, or
-  treating its complement, is a new open gate.
-- Several local ramification, simple-layer, determinant, and displayed
-  basin-quotient calculations are proved under their explicitly stated
-  inputs. See the route indexes for their exact scope.
-
-None of these statements proves visibility or profile-4 nonexistence.
-
-## Active dependency picture
-
-```text
-non-visible self-correspondence
-             |
-             v
-Task 01: profile extraction (open)
-             |
-             v
-fixed profile-4 pair
-     |              |                 |
-     v              v                 v
-Task 02         Task 03       entry-zero norm audit 79
-entry-one       no-highpoint            |
-(open)          (open)                  v
-                            Task 00B: specialization/coverage
-                                      |
-                                      v
-                            repeated-layer identities (00A)
-                            + missing repeated-u20 (00)
-                            + basin containment H127 (04)
-                            + coverage and terminal extraction (05)
-                                      |
-                                      v
-                             entry-zero exclusion (open)
-     |              |                 |
-     +--------------+-----------------+
-                    |
-                    v
-                 visibility
-                    |
-                    v
-       proved descent + canonical degree
-                    |
-                    v
-     conditional negative answer to Problem 3
+```sh
+python3 scripts/research_workspace.py frontier
+python3 scripts/research_workspace.py show canonical_marked_quotient
+python3 scripts/research_workspace.py dependencies canonical_marked_quotient
+python3 scripts/research_workspace.py search nonabelian
+python3 scripts/research_workspace.py proof canonical_marked_quotient
+python3 scripts/research_workspace.py validate
 ```
 
-File `79` proves the correctly normalized boundary and tangent formulas from
-its displayed inputs. The old further arrow to \(c=d=2\) was circular: it
-set several independent norm constants equal to one even though the defining
-equation has only one overall scalar. Task 00B must justify the specialization
-used by the retained tower, exclude its complement, or replace the tower by a
-uniform argument.
+Search and statement display do not load proof or audit bodies.
+The validator checks paths, statuses, dependencies, and statement drift;
+it does NOT check mathematical truth. [CLI details](scripts/README.md).
 
-Tasks 00, 00A, and 00B are independent prerequisites. Recovering the missing
-repeated-\(u^{20}\) note does not prove the transcript-only response identities
-in files `81`, `92`, `96`, and `104`; neither repair establishes that every
-entry-zero pair lies in the specialized tower. Conversely, solving Task 00B
-does not fill either formal-layer evidence gap. The terminal transcripts also
-need derivations from the actual local equations, not just verification of
-their displayed final polynomials.
+## Evidence and scope
 
-There is a separate global over-orbifold route. It currently needs both wild
-exclusions, an exact complex commensurator reference, a characteristic-\(5\)
-tame specialization/overgroup theorem, and a simultaneous finite-envelope
-bridge. It does not presently establish visibility and is not a substitute
-for Task 01.
+Audit records are reference-only. Use their verdict, auditor, date, and
+brief observations in the theorem metadata. **Do not open audit bodies
+unless there is a concrete mathematical doubt or objection to investigate.**
+An author proof, audited prose, and computational transcript are different
+evidence levels. Algebraic-closure claims require more than finite sampling.
 
-## Evidence labels
+The [canonical marked-quotient theorem](Theorems/Thm_canonical_marked_quotient.md)
+classifies all correspondences
+preserving a specified reduced canonical-size marking. Arbitrary common
+covers are NOT known to preserve such a marking. The
+[genus-nine atlas bound](Theorems/Thm_fixed_x_orbifold_bound.md) still leaves
+bounded cored cases and the coreless case unexcluded. The current extension
+is the [cored ring and marking theorem](Theorems/Thm_cored_ring_and_marking_spectrum.md)
+and its [exact local-normality criterion](Theorems/Thm_unimodular_atlas_normality.md).
+The completed [local classification](Theorems/Thm_hermitian_local_normality.md)
+and [global identification](Theorems/Thm_completed_local_orbifold_rigidity.md)
+now identify the two large cases with Hermitian quotient stacks; whether
+our chosen curve covers them is still open.
+Use the continuation record for the next action, not this overview.
 
-- `proved-text`: the retained file contains a proof of the stated result.
-- `conditional-proof`: the implication is proved, but one or more named
-  premises are not established in this checkout.
-- `certificate-transcript`: formulas or output are recorded, but their
-  derivation or executable certificate is absent.
-- `open`: a target, not an established theorem.
-- `missing dependency`: an input is known to be absent.
-- `archived`: deliberately outside the active proof graph.
+Keep both actual etale maps from the SAME source. Do not assume a
+simultaneous Galois closure before establishing a core or finite relation.
+The [cofinal saturation boundary](Theorems/Thm_raynaud_cofinal_saturation.md)
+and [universal tensor slopes](Theorems/Thm_all_tensor_cartier_hn.md) must
+not be retried as unrestricted obstructions. Checked
+[Tango](routes/global/IGUSA_TANGO_COUNTEREXAMPLE_AND_RETAINED_SECTION_BOUNDARY.md),
+[singleton](routes/global/CORELESS_PROJECTIVE_ETALE_SINGLETON_TANGO_COUNTEREXAMPLE.md),
+and [higher-weight](routes/global/DEGREE_NINE_FREE_CHARACTER_QUOTIENT_COUNTEREXAMPLE.md)
+counterexamples remain essential boundaries, not counterexamples to Litt.
 
-A file can contain more than one label; always use the status attached to the
-specific assertion being cited.
+## Historical sources and maintenance
 
-Throughout, unrestricted variables range over \(k\), not over \(\mathbb F_5\).
-Prime-field computations may verify polynomial identities or serve as
-regression tests, but sampling \(\mathbb F_5\)-points does not prove a claim
-over \(\overline{\mathbb F}_5\). In particular, never replace \(a^5\) by
-\(a\) for an unrestricted parameter.
+Promoted old paths are deleted; references lead directly to the canonical
+records. There are no compatibility aliases for the migrated library.
+Unpromoted material remains in `routes/`, `archive/`, and `tasks/`, indexed
+conservatively and excluded from default rg/file discovery by `.ignore`.
+Retrieve a needed older input through metadata search or its explicit path.
+[Selective review](Research/migration/LEGACY_REVIEW.md) records reusable
+older bundles, superseded cases, and status hazards. `STRUCTURE.md`,
+`MISSING_INPUTS.md`, old frontiers, and task indexes are historical maps,
+not the current continuation queue.
 
-The original workflow note is preserved in
-[archive/PROVENANCE.md](archive/PROVENANCE.md).
+When changing scope, update the statement version, evidence, dependencies,
+and hash explicitly; never silently relabel a hypothesis as proved.
+Shorten naturally encountered superseded proofs, preserving genuinely
+distinct lemmas and updating references directly. Do not retain redirects.
+Refresh the short plain-language update
+about hourly during active research, using a non-polling reminder.

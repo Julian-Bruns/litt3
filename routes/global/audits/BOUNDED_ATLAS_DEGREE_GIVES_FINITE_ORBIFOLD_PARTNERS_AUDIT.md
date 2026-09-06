@@ -12,7 +12,7 @@
 ## Scope
 
 This audit checks
-`BOUNDED_ATLAS_DEGREE_GIVES_FINITE_ORBIFOLD_PARTNERS.md`, including wild
+`Solutions/Sol_bounded_atlas_partner_finiteness.md`, including wild
 effective orbifolds. It does not supply the atlas-degree bound assumed in
 the open-family consequence, classify local orbifold signatures, or say
 anything about coreless common covers.

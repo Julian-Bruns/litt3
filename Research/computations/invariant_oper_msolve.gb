@@ -1,0 +1,23 @@
+#Reduced Groebner basis data
+#---
+#field characteristic: 5
+#variable order:       b0, b1, b2, b3, b4, b5, b6, b7, zeta
+#monomial order:       graded reverse lexicographical
+#length of basis:      16 elements sorted by increasing leading monomials
+#---
+[1*zeta^2+4*zeta^1+2,
+1*b7^2+4*b6^1+3*zeta^1+3,
+1*b6^1*b7^1+1*b6^1*zeta^1+3*b7^1*zeta^1+2*b5^1+3*b6^1+2*b7^1+1*zeta^1+4,
+1*b6^2+2*b5^1*b7^1+3*b5^1*zeta^1+3*b6^1*zeta^1+2*b7^1*zeta^1+4*b5^1+2*b6^1+4*b7^1+3*zeta^1+2,
+1*b5^1*b6^1+1*b4^1*b7^1+4*b4^1*zeta^1+3*b5^1*zeta^1+1*b7^1*zeta^1+1*b3^1+2*b4^1+2*b5^1+3*zeta^1+2,
+1*b5^2+2*b4^1*b6^1+2*b3^1*b7^1+2*b3^1*zeta^1+1*b5^1*zeta^1+2*b6^1*zeta^1+4*b7^1*zeta^1+1*b3^1+2*b5^1+1*zeta^1+2,
+1*b4^1*b5^1+1*b3^1*b6^1+1*b2^1*b7^1+2*b1^1+1*zeta^1+1,
+1*b4^2+2*b3^1*b5^1+2*b2^1*b6^1+2*b1^1*b7^1+2*b1^1*zeta^1+1*b2^1*zeta^1+2*b3^1*zeta^1+1*b4^1*zeta^1+4*b6^1*zeta^1+1*b7^1*zeta^1+4*b0^1+1*b1^1+4*b2^1+4*b3^1+2*b6^1+4*zeta^1+2,
+1*b3^1*b4^1+1*b2^1*b5^1+1*b1^1*b6^1+1*b0^1*b7^1+4*b0^1*zeta^1+4*b1^1*zeta^1+1*b2^1*zeta^1+2*b4^1*zeta^1+3*b5^1*zeta^1+4*b6^1*zeta^1+1*b7^1*zeta^1+2*b0^1+1*b1^1+2*b2^1+4*b5^1+1*b7^1+3*zeta^1+1,
+1*b3^2+2*b2^1*b4^1+2*b1^1*b5^1+2*b0^1*b6^1+1*b0^1*zeta^1+2*b2^1*zeta^1+2*b3^1*zeta^1+1*b4^1*zeta^1+1*b5^1*zeta^1+1*b7^1*zeta^1+4*b0^1+3*b4^1+3*b7^1+4*zeta^1+2,
+1*b2^1*b3^1+1*b1^1*b4^1+1*b0^1*b5^1+3*b0^1*zeta^1+1*b1^1*zeta^1+2*b2^1*zeta^1+2*b3^1*zeta^1+3*b5^1*zeta^1+3*b6^1*zeta^1+1*b7^1*zeta^1+1*b0^1+1*b3^1+3*b5^1+4*b6^1+3*b7^1+3*zeta^1+4,
+1*b2^2+2*b1^1*b3^1+2*b0^1*b4^1+2*zeta^1+2,
+1*b1^1*b2^1+1*b0^1*b3^1+2*b1^1*zeta^1+3*b2^1*zeta^1+1*b3^1*zeta^1+4*b4^1*zeta^1+1*b1^1+1*b3^1+2*b4^1+4*zeta^1+3,
+1*b1^2+2*b0^1*b2^1+1*b0^1*zeta^1+3*b1^1*zeta^1+2*b2^1*zeta^1+2*b4^1*zeta^1+3*b0^1+2*b2^1+1*b4^1+1,
+1*b0^1*b1^1+3*b0^1*zeta^1+3*b2^1*zeta^1+3*b3^1*zeta^1+4*b2^1+4*b3^1+3*zeta^1+3,
+1*b0^2+1*b0^1*zeta^1+1*b1^1*zeta^1+2*b2^1*zeta^1+1*b0^1+3*b1^1+1*b2^1+3*zeta^1+3]:

@@ -1,0 +1,145 @@
+{
+  "ideal": "I+(c4), I the full 96 dormant-oper quadrics",
+  "method": "Reuse certified full local presentations modulo m^5 with m^4=0; adjoin the formal c4 expression and take exact Macaulay ranks.",
+  "top_third_equation": {
+    "x_degree": 28,
+    "coefficient": "2*c4^2 - 2*a10",
+    "unit": "3",
+    "normalized_identity": "a10-c4^2=0"
+  },
+  "points": [
+    {
+      "residue_degree": 1,
+      "factor": "b7 + 2*a + 2",
+      "local_length": 6,
+      "jacobian_rank": 21,
+      "c4_mod_m5": "(a + 1)*t0^2 + (-2*a - 1)*t0*t1 + (-2*a - 1)*t0*t2 + t1*t2 + (2*a + 2)*t2^2",
+      "rank_checks": [
+        {
+          "power": 4,
+          "ambient_dimension": 20,
+          "rank": 14,
+          "length": 6
+        },
+        {
+          "power": 5,
+          "ambient_dimension": 35,
+          "rank": 29,
+          "length": 6
+        }
+      ],
+      "full_certificate": "invariant_oper_multiplicities.json, corresponding factor row"
+    },
+    {
+      "residue_degree": 1,
+      "factor": "b7 + 4*a + 3",
+      "local_length": 6,
+      "jacobian_rank": 21,
+      "c4_mod_m5": "(a + 1)*t0^2 + (-a + 2)*t0*t1 - 2*t1^2 + (-a - 2)*t0*t2 + 2*t1*t2 - t2^2",
+      "rank_checks": [
+        {
+          "power": 4,
+          "ambient_dimension": 20,
+          "rank": 14,
+          "length": 6
+        },
+        {
+          "power": 5,
+          "ambient_dimension": 35,
+          "rank": 29,
+          "length": 6
+        }
+      ],
+      "full_certificate": "invariant_oper_multiplicities.json, corresponding factor row"
+    },
+    {
+      "residue_degree": 2,
+      "factor": "b7^2 + (4*a + 3)*b7 + a + 3",
+      "local_length": 6,
+      "jacobian_rank": 21,
+      "c4_mod_m5": "(-2*u^2 - u - 1)*t0^2 + (2*u^3 - u^2 - u - 1)*t0*t1 + (-2*u^3 - u^2 - 2*u + 1)*t1^2 + (-2*u^3 - 2*u^2 - u - 2)*t0*t2 + (-u^3 + u^2 + 2*u + 1)*t1*t2 + (2*u^3 + 2*u^2 - 2*u - 2)*t2^2",
+      "rank_checks": [
+        {
+          "power": 4,
+          "ambient_dimension": 20,
+          "rank": 14,
+          "length": 6
+        },
+        {
+          "power": 5,
+          "ambient_dimension": 35,
+          "rank": 29,
+          "length": 6
+        }
+      ],
+      "full_certificate": "invariant_oper_multiplicities.json, corresponding factor row"
+    },
+    {
+      "residue_degree": 9,
+      "factor": "b7^9 + 3*b7^8 + (a + 1)*b7^7 + (4*a + 2)*b7^6 + b7^5 + 4*b7^4 + (2*a + 1)*b7^3 + 2*b7^2 + (3*a + 1)*b7 + a",
+      "local_length": 6,
+      "jacobian_rank": 21,
+      "c4_mod_m5": "(2*u^17 - u^16 + u^15 + u^14 + 2*u^13 - 2*u^12 + 2*u^11 - u^10 + u^9 + 2*u^7 - 2*u^6 + 2*u^5 - u^4 + 2*u^2 - 2*u - 2)*t0^2 + (u^17 - u^15 + 2*u^14 - 2*u^13 + u^12 - 2*u^11 - 2*u^10 + 2*u^9 + u^8 + 2*u^7 + u^5 - 2*u^4 - u^2 - 2*u - 2)*t0*t1 + (u^17 + 2*u^16 - u^15 + 2*u^13 - u^12 + 2*u^11 + u^10 + 2*u^9 - 2*u^8 - 2*u^7 - 2*u^6 - u^4 - u^3 + 2*u)*t1^2 + (-2*u^17 - u^16 + 2*u^15 + u^14 + 2*u^13 + u^11 + 2*u^7 + u^6 - u^5 - 2*u^4 + u^3 + 2*u^2 + u - 2)*t0*t2 + (-2*u^17 + u^15 - u^13 - u^12 + 2*u^11 + 2*u^8 - u^7 + u^6 + 2*u^5 - u^4 - 2*u^2 + u + 2)*t1*t2 + (2*u^16 + u^15 - u^14 - 2*u^13 + u^12 - u^11 + 2*u^10 + u^9 + u^8 - 2*u^7 - 2*u^6 - 2*u^5 + 2*u^4 + u^2 + 2*u + 2)*t2^2",
+      "rank_checks": [
+        {
+          "power": 4,
+          "ambient_dimension": 20,
+          "rank": 14,
+          "length": 6
+        },
+        {
+          "power": 5,
+          "ambient_dimension": 35,
+          "rank": 29,
+          "length": 6
+        }
+      ],
+      "full_certificate": "invariant_oper_multiplicities.json, corresponding factor row"
+    },
+    {
+      "residue_degree": 19,
+      "factor": "b7^19 + a*b7^18 + (4*a + 4)*b7^17 + 3*b7^16 + (a + 2)*b7^15 + (3*a + 3)*b7^14 + (4*a + 4)*b7^13 + (2*a + 3)*b7^12 + (a + 4)*b7^11 + (2*a + 2)*b7^10 + (4*a + 3)*b7^9 + a*b7^8 + (3*a + 1)*b7^7 + b7^6 + (3*a + 2)*b7^5 + (3*a + 4)*b7^4 + (4*a + 4)*b7^3 + (4*a + 2)*b7^2 + b7 + a + 1",
+      "local_length": 6,
+      "jacobian_rank": 21,
+      "c4_mod_m5": "(u^36 + u^35 + u^34 + u^33 - 2*u^32 + 2*u^31 - u^30 - 2*u^29 - 2*u^28 - 2*u^27 + u^26 + u^25 - 2*u^24 + 2*u^23 + 2*u^21 + 2*u^20 + u^19 - u^18 - 2*u^17 - 2*u^16 - u^15 - 2*u^14 - u^12 - u^11 + u^10 - u^9 + u^8 - u^7 + 2*u^6 - 2*u^4 - 2*u^2 + 2*u + 2)*t0^2 + (-u^37 - 2*u^36 + 2*u^35 - 2*u^34 + 2*u^33 + 2*u^29 - u^27 + u^26 + u^25 + 2*u^24 - 2*u^23 - u^22 + 2*u^21 - u^20 - 2*u^19 + 2*u^18 - u^17 + 2*u^16 - 2*u^15 + u^14 + 2*u^13 + u^12 + u^11 - 2*u^10 + 2*u^9 - 2*u^8 + 2*u^7 + 2*u^6 + u^5 + 2*u^4 + 2*u^3 + u^2 + 2*u + 1)*t0*t1 + (-u^36 - 2*u^35 + u^34 + u^33 - 2*u^31 - 2*u^30 + 2*u^29 + u^28 + u^27 + 2*u^26 - u^25 - u^24 + u^23 - 2*u^22 + 2*u^21 + u^20 + 2*u^18 + u^17 - u^16 + u^14 - 2*u^13 + u^9 + u^8 - 2*u^7 - u^6 + 2*u^5 - 2*u^4 + u^3 + 2*u - 1)*t1^2 + (2*u^37 - 2*u^35 - u^34 - u^33 - 2*u^32 - u^31 - 2*u^29 - 2*u^28 + 2*u^27 - u^26 - u^25 + u^24 - 2*u^21 - u^20 + u^17 - 2*u^16 + 2*u^15 - 2*u^14 - 2*u^13 - 2*u^12 + 2*u^11 + 2*u^9 - 2*u^8 - u^6 - u^5 + u^2 - 1)*t0*t2 + (-2*u^37 - u^36 + u^35 + 2*u^33 + u^32 - 2*u^29 - 2*u^26 - 2*u^25 - u^24 + u^23 - u^22 + u^21 - 2*u^20 + 2*u^18 - 2*u^17 - 2*u^16 + 2*u^15 - u^14 - 2*u^13 + 2*u^12 - u^11 + u^8 - u^7 - u^6 - 2*u^5 + 2*u^4 + u^2 + u + 1)*t1*t2 + (u^37 + 2*u^35 - 2*u^34 - 2*u^33 - 2*u^32 - 2*u^31 + u^29 - u^27 - u^26 + 2*u^25 + 2*u^24 - u^23 - u^22 - 2*u^21 + u^19 + u^18 - 2*u^17 + u^16 - 2*u^14 + u^13 - u^12 - u^11 - u^10 + 2*u^9 - 2*u^7 - u^6 + u^5 + 2*u^4 - u^3 - u^2 - 2*u - 2)*t2^2",
+      "rank_checks": [
+        {
+          "power": 4,
+          "ambient_dimension": 20,
+          "rank": 14,
+          "length": 6
+        },
+        {
+          "power": 5,
+          "ambient_dimension": 35,
+          "rank": 29,
+          "length": 6
+        }
+      ],
+      "full_certificate": "invariant_oper_multiplicities.json, corresponding factor row"
+    },
+    {
+      "residue_degree": 23,
+      "factor": "b7^23 + (2*a + 3)*b7^22 + (4*a + 3)*b7^21 + (4*a + 3)*b7^20 + (4*a + 1)*b7^18 + (4*a + 3)*b7^17 + (4*a + 2)*b7^16 + (3*a + 4)*b7^15 + (4*a + 4)*b7^14 + (2*a + 2)*b7^13 + (2*a + 1)*b7^12 + (2*a + 2)*b7^11 + 2*b7^10 + (2*a + 1)*b7^9 + 4*a*b7^8 + (3*a + 4)*b7^7 + (2*a + 3)*b7^6 + (4*a + 3)*b7^5 + 2*a*b7^4 + (2*a + 4)*b7^3 + 2*b7^2 + a + 3",
+      "local_length": 6,
+      "jacobian_rank": 21,
+      "c4_mod_m5": "(u^45 + u^44 + u^43 + u^39 + 2*u^38 + u^37 - u^35 - u^34 - 2*u^33 + u^32 + u^31 - u^30 - u^29 + 2*u^27 - 2*u^26 - u^25 + 2*u^24 - 2*u^23 - 2*u^22 + u^21 + 2*u^18 - 2*u^16 - u^15 + 2*u^14 - u^13 + 2*u^11 - u^10 + 2*u^9 + u^8 - u^6 + u^5 - u^4 - u^3 + 2*u^2 + 2*u - 2)*t0^2 + (2*u^45 - u^44 - u^43 - 2*u^40 + 2*u^39 - u^38 + u^37 + 2*u^36 - u^35 - 2*u^34 - 2*u^33 + 2*u^31 + 2*u^30 - u^28 + 2*u^27 - 2*u^26 + u^24 - 2*u^23 + u^22 - u^21 - 2*u^20 - u^19 - 2*u^16 + u^15 - 2*u^14 - u^13 - 2*u^12 - u^11 + u^10 + 2*u^9 - u^8 + 2*u^7 + 2*u^6 + 2*u^4 + 2*u^3 + 2*u^2 - u - 1)*t0*t1 + (u^45 + u^43 + 2*u^42 + u^41 - 2*u^40 + u^39 + 2*u^38 + 2*u^37 - u^36 + u^35 - u^33 - 2*u^32 + 2*u^31 + 2*u^29 - 2*u^28 + 2*u^26 - 2*u^25 - 2*u^24 + u^23 + 2*u^22 + u^21 - 2*u^19 - u^18 - 2*u^17 - u^15 + u^13 + u^12 + 2*u^10 - u^9 + 2*u^7 - 2*u^6 - 2*u^5 + u^4 - u^3 + u)*t1^2 + (2*u^45 + u^44 - 2*u^39 - u^37 + 2*u^36 + u^34 - u^33 + u^31 + 2*u^30 + 2*u^28 + 2*u^27 - u^24 + 2*u^22 - u^20 + u^19 - u^18 - u^17 + u^16 - u^15 + u^14 - 2*u^13 - u^12 + u^11 + u^9 + u^8 + u^7 - 2*u^6 + 2*u^5 - 2*u^4 - 2*u^3 - 2*u^2 - 2*u)*t0*t2 + (u^45 + u^41 - u^40 + u^39 - u^36 + 2*u^34 + u^33 - 2*u^32 - 2*u^31 + 2*u^30 + 2*u^29 + u^28 + 2*u^27 - u^25 + u^24 - 2*u^23 - u^22 - u^21 - 2*u^20 - 2*u^19 + u^18 - 2*u^17 - u^16 - u^15 + 2*u^14 + u^13 + u^12 + 2*u^11 - 2*u^9 + 2*u^7 - 2*u^6 - 2*u^4 - 2*u - 1)*t1*t2 + (-2*u^45 + u^44 + u^41 + 2*u^40 - 2*u^39 - 2*u^38 - 2*u^37 - u^36 - 2*u^33 + 2*u^32 - 2*u^31 + u^29 - 2*u^28 + u^27 + 2*u^26 - 2*u^25 + 2*u^24 - 2*u^23 - 2*u^22 - 2*u^21 + u^20 + u^19 - u^18 + u^17 + 2*u^16 - u^15 - 2*u^14 - 2*u^13 - u^12 - u^11 + 2*u^10 + 2*u^9 + u^8 + 2*u^6 - u^5 + u^3 - 2*u^2 - u + 1)*t2^2",
+      "rank_checks": [
+        {
+          "power": 4,
+          "ambient_dimension": 20,
+          "rank": 14,
+          "length": 6
+        },
+        {
+          "power": 5,
+          "ambient_dimension": 35,
+          "rank": 29,
+          "length": 6
+        }
+      ],
+      "full_certificate": "invariant_oper_multiplicities.json, corresponding factor row"
+    }
+  ],
+  "total_invariant_contribution": 330
+}

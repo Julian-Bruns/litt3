@@ -169,7 +169,7 @@ bound.  Since the degrees in Theorem 1 are unbounded and there are only
 finitely many images in the bounded range, every sufficiently high-degree
 image in the constructed sequence is coreless.
 
-[Core-to-orbifold bridge](CORED_BIETALE_CORRESPONDENCES_HAVE_COMMON_ORBIFOLDS.md).
+[Core-to-orbifold bridge](../../Theorems/Thm_cored_orbifold_bridge.md).
 [Uniform ordinary genus-two bound](ORDINARY_GENUS_TWO_UNIFORM_ORBIFOLD_DEGREE_BOUND.md).
 
 This is a conditional answer to Krishnamoorthy's Question 3.21 in general,

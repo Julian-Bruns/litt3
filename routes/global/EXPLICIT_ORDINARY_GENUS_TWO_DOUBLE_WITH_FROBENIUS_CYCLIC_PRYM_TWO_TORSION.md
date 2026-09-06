@@ -45,9 +45,10 @@ The cubic \(c\) takes the nonzero values \(1,3,1,1,4\) on
 \(g\) are squarefree and coprime. In particular both projective
 hyperelliptic models are smooth of the stated genera.
 
-For a hyperelliptic equation \(z^2=F(t)\) in characteristic five,
-the Hasse--Witt matrix in the standard differential basis has
-\((i,j)\)-entry the coefficient of \(t^{5i-j}\) in \(F^2\).
+For a hyperelliptic equation \(z^2=F(t)\) over \(\mathbf F_5\),
+we use the Cartier--Manin coefficient convention
+\(H_{ij}=[t^{5i-j}]F^2\). Transposing to the dual Hasse--Witt
+convention does not change the determinant or ordinarity conclusion.
 Here
 \[
  fg=t^6+2t^5+3t^4+3t^3+4t^2+2t,
@@ -69,6 +70,9 @@ The executable
 [Sage certificate](EXPLICIT_ORDINARY_GENUS_TWO_DOUBLE_WITH_FROBENIUS_CYCLIC_PRYM_TWO_TORSION_CERTIFICATE.sage)
 checks all displayed polynomial, Hasse--Witt, factorization, partition,
 and point-count assertions without a search.
+It was run successfully with SageMath on 2026-09-05: determinant
+\(4\), elliptic Hasse invariant \(1\), elliptic point count \(5\),
+and the three-cycle \([1,2,0]\); every regression assertion passed.
 
 ## Actual covering geometry and Prym identification
 

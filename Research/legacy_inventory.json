@@ -1,0 +1,3484 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "path": "DIRAC_TRACE_POLARIZATION_OBSTRUCTION_2026_09_05.md",
+      "title": "A trace obstruction to a Dirac section on ordinary p-torsion",
+      "sha256": "06731adbf8d963e7e2cbe4aa812565be7aba2e0c0b9815079984568c51afabc8",
+      "bytes": 10548,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "FINITE_FLAT_DIRAC_DUALITY_OBSTRUCTION_2026_09_05.md",
+      "title": "Finite-flat Dirac obstruction using duality trace",
+      "sha256": "351965e06ade7006efa04377d7b51a0a85639910f592c1782d81f09d891bbd47",
+      "bytes": 10843,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "MISSING_INPUTS.md",
+      "title": "Missing inputs and reproducibility limits",
+      "sha256": "9d41831fdc9bd46c95bf70490066f0784f93df0fbb26bb05a1b2a16cf17d7580",
+      "bytes": 6288,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "PRO_QUESTION_TWO_LEG_THETA_2026_09_05.md",
+      "title": "A bounded question about two unramified maps and Raynaud theta",
+      "sha256": "12eb7ec7534f5ac0c5a7fb192f7a2fcb4c3861a44d63f04e059ec66a2ad3d420",
+      "bytes": 10672,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "PRO_QUESTION_TWO_LEG_THETA_SHORT_2026_09_05.md",
+      "title": "Two-leg Raynaud-theta properness",
+      "sha256": "e2fce31a4ea127fdd3e4e6fdbfc1843dcf195609de18d1d7bc423a26f42d1d90",
+      "bytes": 4660,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "archive/PROVENANCE.md",
+      "title": "PROVENANCE",
+      "sha256": "1bf6a2cf728481738f0d43c7a0646a2ce4abc0c0bd2f59a2cb309fe36cb2ad83",
+      "bytes": 1246,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "archive/README.md",
+      "title": "Archive policy",
+      "sha256": "751a47faa0caa5f34284b95e26c75967a495fa31528b26d25830df1226ba21b2",
+      "bytes": 1545,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "archive/inconclusive/169_ENTRY1_TRACE_REFINEMENT.md",
+      "title": "Entry-1 trace refinement",
+      "sha256": "ea53e51615e92b118ac23def70a9acacbc532bdbfe12b4ab8dba9208ef566137",
+      "bytes": 1951,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "archive/inconclusive/173_ENTRY1_FIBER_PARTITION_AUDIT.md",
+      "title": "Entry-1 degree-5 fiber partition audit",
+      "sha256": "d3f2cc258bf75d9583abcce80a51ef128084c182ccb82b51dd11719b8d13bd06",
+      "bytes": 3310,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "archive/redundant/145_SYMBOLIC_FINAL_LINE_SIMPLE_E50_CERTIFICATE.md",
+      "title": "Symbolic final-line simple e50 certificate",
+      "sha256": "5b813296d4b9e31db0af7544d21901690576c9b58760864c6dc39ed156dcd6ed",
+      "bytes": 1934,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "archive/redundant/160_E50_FINAL_LINE_SINGULAR_CHECKS.md",
+      "title": "E50 final-line Singular checks",
+      "sha256": "4b6f55b87e606b3f746770645e0e6d96b8d23084ee685abb3773a9caf750a99a",
+      "bytes": 930,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "archive/status_snapshots/167_SHORTEST_REDUCTION_AUDIT_GATES.md",
+      "title": "Shortest reduction, audit gates, and post-Sage route",
+      "sha256": "c1b494513753e3ddc23b3138bf6be5ab0e6613766d43d6248ab1c8edca2b137c",
+      "bytes": 9009,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "archive/status_snapshots/DEPENDENCY_LEDGER_2026-06-05.md",
+      "title": "Dependency ledger for the partial-progress note",
+      "sha256": "ee6fe4dd87b37ee0400ad8cfb4a8a8772cef080738553a6a4f49f218cd14cc18",
+      "bytes": 4853,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "archive/strategy_notes/178_BASIN127_THEORETICAL_REDUCTION_PLAN.md",
+      "title": "Basin 127 theoretical search-space reductions",
+      "sha256": "0398f20a26895853746cec5dd6f4571e64957de92e61e4cbcb29a9ee2995645d",
+      "bytes": 4639,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/100_JOINT_IMAGE_CONDUCTOR_CRITERION_FOR_BIETALE_COVERS.md",
+      "title": "The joint-image conductor criterion for bi-etale covers",
+      "sha256": "9424928e4533c8415d518c6e19e778dca335c9beb77eb5ab5801be114820dd28",
+      "bytes": 9814,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/101_CANONICAL_GLUING_ORDER_AND_LARGE_DEGREE_BOUND.md",
+      "title": "Canonical gluing order and a large-degree bound",
+      "sha256": "64c2b498b34d1d334dc32da182ba292b1e555f06a1796dd76b8677fb53594e3a",
+      "bytes": 9906,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/102_MULTIBRANCH_INTERPOLATION_AND_CANONICAL_GLUING_EXPONENT.md",
+      "title": "Multibranch interpolation and the canonical gluing exponent",
+      "sha256": "7052aaa4e46daf3c1c2f1ed882f1f8d2cc0fcfe08aa1b4589c69ff2eebbc9343",
+      "bytes": 8372,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/103_CONNECTING_CLASS_GENERATION_AND_EQUALITY_CORE.md",
+      "title": "Connecting-class generation and a common quotient at equality",
+      "sha256": "ba1451df4359064568d059072c3d679a6d0de38ee4e8fcfd11cca3abfde63ad7",
+      "bytes": 11139,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/105_NONGALOIS_DESCENT_THROUGH_THE_CONNECTING_MAP.md",
+      "title": "Non-Galois descent through the connecting map",
+      "sha256": "df8fe470045e1a710e4461b162a3d58bd6ddf68d0ee54a197b1180f23cc3d6e4",
+      "bytes": 12841,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/106_CANONICAL_CONNECTING_FIELD_EQUALS_INCIDENCE_FIELD.md",
+      "title": "The canonical connecting field equals the incidence field",
+      "sha256": "b62122c193bee991d8e2adb4971a9be0e9f95784a36c8566da9cb75efb27ead6",
+      "bytes": 7120,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/107_ORIENTED_KUMMER_MODEL_AND_EXACT_ETALE_EQUALITY.md",
+      "title": "The oriented Kummer model and its exact etale equality",
+      "sha256": "5250bd5c62f8d74c4ee3c8609972a1900029340b5006f61a0c6c482a22363434",
+      "bytes": 12221,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/108_UNIT_ROOT_PACKETS_AND_NONGALOIS_P_RANK_BRIDGES.md",
+      "title": "Unit-root packets and non-Galois p-rank bridges",
+      "sha256": "1cc5ec130c6a78c69fd4518d8383404e3182a2cbf398144dd6b3aba76acfea9b",
+      "bytes": 10241,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/109_PRIME_AVOIDING_ETALE_GLOBAL_GENERATION.md",
+      "title": "Prime-avoiding etale global generation",
+      "sha256": "0409cb667ad198da0c3161387864e29a13122139a361bf0f06ffb8d47604f473",
+      "bytes": 9013,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/10_PROOF_SELF_CORRESPONDENCE.md",
+      "title": "Self-correspondences and the conditional common-cover theorem",
+      "sha256": "04cf96f0e7085b3f732980ded1c1c98bab08480d19dee0757d51d25febc85d8e",
+      "bytes": 7938,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/110_TWO_LEG_WITT_OBSTRUCTION_AND_NONZERO_CROSS_TRACE.md",
+      "title": "The two-leg Witt obstruction and a nonzero quadratic cross trace",
+      "sha256": "2a9156691ce93da49c9d01d473df1bbd60fa5266cdb2f149bbfb453707b32d63",
+      "bytes": 10458,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/111_P_RANK_ONE_TANGO_DESCENT.md",
+      "title": "P-rank-one maximal Tango structures descend through etale p-groups",
+      "sha256": "3a281584104c0cb5577e80810aa0f63f4301d6c3c68ddcaa04bce08fd9c591cb",
+      "bytes": 13515,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/112_P_RANK_ONE_NONGALOIS_FACTORIZATION.md",
+      "title": "P-rank amplification and rank-one non-Galois factorization",
+      "sha256": "fae2df0389dfe63b8e937a012d19b628288bd84f1e513b518470450bcc94df6b",
+      "bytes": 12929,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/113_GENERAL_NONGALOIS_P_RANK_AMPLIFICATION.md",
+      "title": "General non-Galois p-rank amplification",
+      "sha256": "e7ac8ee71165fd08053507d84509278ae11deebfc9875164395e8dcf15a59fae",
+      "bytes": 8711,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/114_HERMITIAN_TWO_LEG_W2_OBSTRUCTION.md",
+      "title": "An actual two-leg obstruction over the second Witt vectors",
+      "sha256": "574d16b48e4a6593f51765c01f49bc3aa46ab020873c39fe73137bb512e33427",
+      "bytes": 5964,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/115_POSITIVE_RANK_PRESERVING_TANGO_DESCENT.md",
+      "title": "Maximal Tango descent without a Galois hypothesis",
+      "sha256": "117f19db128cec96338f16e7070b119f2f27d5b944979eb8615a698259b0dff6",
+      "bytes": 10922,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/116_ETALE_REFINEMENT_PRESERVES_SIMULTANEOUS_DEFORMATIONS.md",
+      "title": "Etale refinement cannot repair a simultaneous-lifting obstruction",
+      "sha256": "220142255373ad8f65613bbd29e0042b1beea34955a1641031ab791739bc9d86",
+      "bytes": 10807,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/117_SATURATED_TANGO_LINES_AND_A_SHARPER_COUNT.md",
+      "title": "Saturated Tango lines and a sharper all-rank count",
+      "sha256": "5e5e51f770bbb513a63c99f666cba0a0d2b6097fb7e8cbf131dc8cb7b2766f43",
+      "bytes": 8106,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/118_COMMON_TANGENT_SPACE_ORBIFOLD_FORMULA_AND_CORE_BOUNDARY.md",
+      "title": "Common tangent spaces, tame orbifold quotients, and the core boundary",
+      "sha256": "bc004e3fe4155599305ba47d584ba0d2a323a2a142bb2fd00b4ee158d9aba002",
+      "bytes": 7351,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/119_QUADRATIC_TWIST_RANK_BRIDGE_FOR_TANGO_DESCENT.md",
+      "title": "A quadratic-twist rank bridge for testing unrestricted Tango descent",
+      "sha256": "e120802acb7a130477e4707fc5401a7e6d22f3e243eddcc05d32b218e37f87ee",
+      "bytes": 6771,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/11_PROOF_OVER_ORBIFOLD_CLASSIFICATION.md",
+      "title": "Finite over-orbifolds of `S`",
+      "sha256": "fd0db0e777129901f479539543524b084fd668769e29f6c053388fd5310c35cf",
+      "bytes": 7344,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/120_TANGO_FIXED_STRUCTURES_UNDER_UNRAMIFIED_TWISTING.md",
+      "title": "Fixed Tango structures are unchanged by unramified quadratic twisting",
+      "sha256": "8c89f4f24ab9338127bd8288ba006e34500a319658d87d4d79e02ab83a211261",
+      "bytes": 5299,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/12_PROOF_PROFINITE_ORBIFOLD_GROUP.md",
+      "title": "The complex triangle-group input and its limits",
+      "sha256": "8a1540e06aa59a268e1b3df09b34fad01c707d4659a4265056da2f38cbfb8514",
+      "bytes": 5678,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/13_PROOF_LOCAL_RAMIFICATION.md",
+      "title": "Local ramification results",
+      "sha256": "a8b2e8c65c3298c5ea9563b447a30ef6188f78bebdb9e12f2f447e73fd3e926f",
+      "bytes": 7570,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/14_PROOF_LIFT_THROUGH_Y.md",
+      "title": "The cyclic curve and the atlas of `S`",
+      "sha256": "23f221566efa9c417255a2eca9e7f461b057aff89fa913a33d75957c49b1fc51",
+      "bytes": 1895,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/15_TAME_OVER_ORBIFOLD_SPECIALIZATION.md",
+      "title": "Tame over-orbifolds lift and factor by descent",
+      "sha256": "bb137943e108dd904d3ec9d9f9895cb0658ecf833ad0922050e568f0c31f88fd",
+      "bytes": 20315,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/16_MINIMAL_CORRESPONDENCE_PROFILE_BOOKKEEPING.md",
+      "title": "Minimal correspondences and the corrected profile-extraction reduction",
+      "sha256": "f8de486f0e40c90c741de0f9c5212307f0b14af200d8cfdf3b77ed5a1347413e",
+      "bytes": 15670,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/16_PROOF_WEAK_WILD_EXCLUSION.md",
+      "title": "Weakly ramified wild over-orbifolds do not occur",
+      "sha256": "81ff717615f08675b6da13d256b898d95c123a7b852e6a7c2cdde1f001817932",
+      "bytes": 5781,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/17_COMPLEX_COMMENSURATOR_CALCULATION.md",
+      "title": "The complex commensurator of the (31,31,31) triangle group",
+      "sha256": "b212906669c91bcc93cc54b31365a58c2fa2d146a0e58bc0fa140b198310250b",
+      "bytes": 3472,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/18_PROOF_NONWEAK_WILD_EXCLUSION.md",
+      "title": "Non-weakly ramified wild over-orbifolds do not occur",
+      "sha256": "00c751a7dfb408c8ba1f046473cdda275e22a9571714836035ccae44608586bd",
+      "bytes": 11938,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/19_STRONG_FINITE_OVER_ORBIFOLD_CLASSIFICATION.md",
+      "title": "Complete and presentation-compatible classification of finite over-orbifolds",
+      "sha256": "254ebbcee797d752c4e101f6a7c24fea18a5d36c488f308919d10295a8ffcbda",
+      "bytes": 7040,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/20_AUTOMORPHISMS_OF_THE_CYCLIC_ATLAS.md",
+      "title": "Automorphisms of the cyclic genus-fifteen atlas",
+      "sha256": "d3e69e3eaca5d76e7b153d100e2aff5f7330e826db7a90bd67a3730ad532a29f",
+      "bytes": 4864,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/21_SIMULTANEOUS_ENVELOPE_CORE_TOWER_CRITERION.md",
+      "title": "The simultaneous-envelope criterion and the core-tower obstruction",
+      "sha256": "32d900e90e27b81bd6f3d50c980b4b138addde70f471fc8d5e6c67235ed7b312",
+      "bytes": 14142,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/22_CARTIER_BUNDLE_ETALE_FUNCTORIALITY_AND_LIMITS.md",
+      "title": "The Cartier bundle under finite etale covers",
+      "sha256": "208f9fc1b6252958a4b89cf4096f963b0aa79999036e11d943d54d8ace73c185",
+      "bytes": 15078,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/23_CARTIER_BUNDLE_ON_THE_TRIANGLE_ORBIFOLD.md",
+      "title": "The Cartier bundle on the `(31,31,31)` orbifold",
+      "sha256": "fe5e94cb2f66ee5cc3cf563404892ad9a27db30f387b8d86de7bba321489ac70",
+      "bytes": 17930,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/24_STABLE_ETALE_GONALITY_VANISHES.md",
+      "title": "Stable finite-etale gonality vanishes",
+      "sha256": "b5b5533e768074302532b796a4c24410cd60abce847068b9428fff84ea6d77cb",
+      "bytes": 4107,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/25_EXACT_FROBENIUS_DESCENT_AND_ANABELIAN_LIMIT.md",
+      "title": "Exact Frobenius descent of a self-correspondence",
+      "sha256": "b9e3974ac0550557a5981e4cf34782851eaf8a511a7a7c40a77bd2937166d655",
+      "bytes": 15085,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/26_LOW_DEGREE_MONODROMY_AND_CLOSURE_DICHOTOMY.md",
+      "title": "Low-degree monodromy and the independent-closure obstruction",
+      "sha256": "2368a8c92a304c9444f78381b5a246acc354c08b1a0dec829aa5b4547ddc4778",
+      "bytes": 15414,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/27_NO_DEGREE46_GENERALIZED_PROFILE.md",
+      "title": "The degree-46 generalized profile is empty",
+      "sha256": "0625ba3e22bb399d1352a1f100419b70f1960796407f795b8940266f5249275a",
+      "bytes": 4351,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/28_ETALE_STABLE_TANGO_INVARIANT.md",
+      "title": "The finite-etale stable Tango invariant",
+      "sha256": "0cc8011089d9e90ce3e186f9fae88cfdacc789076b4b696653640d9474ed975c",
+      "bytes": 7528,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/29_COMMON_COVERS_REDUCE_TO_FREE_SEVEN_POWER_SYMMETRIES.md",
+      "title": "Common covers reduce to free seven-power symmetries",
+      "sha256": "f29676320c4fb5bc6c28b01e0836176d1b9be02fb520c4cb78b596f95622ad89",
+      "bytes": 11328,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/30_CUBIC_DIFFERENTIAL_TORSION_FOR_GENERALIZED_PROFILES.md",
+      "title": "A cubic-differential torsion constraint for generalized profiles",
+      "sha256": "ab9b82f14b8de3c40e838d4864668b6f13545cf136fa9962c163e4eba2d92b02",
+      "bytes": 7837,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/31_DEGREE45_ELLIPTIC_LEG_EXISTS.md",
+      "title": "A degree-45 elliptic generalized-profile leg exists",
+      "sha256": "11afc9337aef43980699cf708ea452a940eaaa47d82eb0ac65591b4274bc24b6",
+      "bytes": 4452,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/32_FIRST_WITT_OBSTRUCTION_AND_SEVEN_SYMMETRY.md",
+      "title": "The first Witt obstruction and the order-seven reduction",
+      "sha256": "0e649d78c5ad53ea0f80240c2ee40ffb9320c1baff2ce8399837f2742496ca09",
+      "bytes": 11578,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/33_MOCHIZUKI_CANONICAL_LIFTING_LIMIT.md",
+      "title": "Mochizuki's canonical lifting: the exact finite-cover bridge and its failure on the cyclic atlas",
+      "sha256": "55ac0806497c9ca95b2e58fa34843bdef182848d27435e7be9680103468f1c1d",
+      "bytes": 15507,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/34_FROBENIUS_LINEAR_DIFFERENTIAL_RIGIDITY.md",
+      "title": "Frobenius-linear differential rigidity in the generalized profiles",
+      "sha256": "0761517ac0051ed8b85fae4411dad8c02ed62a0d280a034a51b26c39285381a3",
+      "bytes": 10875,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/36_CARTIER_CYCLIC_SEVEN_OBSTRUCTION.md",
+      "title": "Cartier exactness and the cyclic-seven obstruction",
+      "sha256": "5bcb9bca80ff5c5b330490e484e28605cdecb5afc83b7d3173af4111c08b3f0c",
+      "bytes": 14836,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/37_FIRST_WITT_CLASS_AS_A_FROBENIUS_CECH_COCYCLE.md",
+      "title": "The first Witt class as a Frobenius Cech cocycle",
+      "sha256": "1550231f1843fe5c354256ec7a9212cb2b0ee9068802fb105f3ae57fe22148e9",
+      "bytes": 16386,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/38_COPRIME_DESCENT_THROUGH_THE_CYCLIC_ATLAS.md",
+      "title": "Coprime descent through the cyclic atlas",
+      "sha256": "1342c52289190fca4118422a0c4ea0854e549f90adef79bb3bd849e8ebc351aa",
+      "bytes": 13470,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/39_SCHWARZIAN_TRIANGLE_REDUCTION_AND_LIMIT.md",
+      "title": "The characteristic-five Schwarzian: triangle reduction and limit",
+      "sha256": "2c07aaccef774e094fc4dedf8692a1e320e940e02f69dee4d2e7f57889a1f13d",
+      "bytes": 16362,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/40_JACOBIAN_NORM_OBSTRUCTION_FOR_THE_SEVEN_DIAMOND.md",
+      "title": "Jacobian norm obstruction for the order-seven diamond",
+      "sha256": "7f8210e195b6d8a46e61ea481587eacc632e5de69146d7817cfe893f0e0ec25c",
+      "bytes": 14512,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/41_FULL_SYLOW_NORM_DICHOTOMY.md",
+      "title": "The full Sylow-seven norm: a prime-to-seven bound and its limit",
+      "sha256": "39a525f6974570890a3ac9a91d63ae40117a4253034ebc7e729f1db5849664c2",
+      "bytes": 14752,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/42_ROSATI_NORM_AND_POLARIZATION_LIMIT.md",
+      "title": "The Rosati norm in the seven-diamond and its polarization limit",
+      "sha256": "faae2a3216aedf37a4f1e63d74fb33306ce9156ec12f0d61ea39043c05fcd4d7",
+      "bytes": 12526,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/43_PUSHING_THE_TANGO_LINE_TO_THE_FIXED_CURVE.md",
+      "title": "Pushing the Tango line to the fixed curve",
+      "sha256": "090718f648a0628a07428a5d1386e5be185bb8679d4f659fa2d9c32a4334d97a",
+      "bytes": 28219,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/44_NORMED_HYPERELLIPTIC_BRANCH_PENCIL.md",
+      "title": "The normed hyperelliptic branch pencil in the seven-diamond",
+      "sha256": "0964c406ace2ec5eb52d6f4669c890c30a0b8cfceb0f751d3ab920dcca4a73f1",
+      "bytes": 11083,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/45_EFFECTIVE_CORRESPONDENCE_AND_CONDUCTOR_FORMULAS.md",
+      "title": "Effective correspondences in the seven-diamond",
+      "sha256": "8b66d7bccdec5279659e3b3969c813e28a305eb6df6edd79c44e5611056bd4bc",
+      "bytes": 14414,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/46_NORM_PENCIL_CANNOT_BE_A_PENCIL.md",
+      "title": "The norm-polynomial system cannot be a pencil",
+      "sha256": "bfe0de9b886bf28bc78254848799e9b6c96ce291a73cb8bd38abeed9e802a7ac",
+      "bytes": 11556,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/47_COEFFICIENT_FIELD_COARSENING.md",
+      "title": "Coarsening through the norm-coefficient curve",
+      "sha256": "b671f8d0f4a296ea2ccb3d35538c29888dfbc51961919ceeb02f6b4bbe530ce1",
+      "bytes": 11062,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/48_M9_CROSS_CORRESPONDENCE_RANK_OBSTRUCTION.md",
+      "title": "Cross-correspondence and Gram-rank restrictions at \\(M=9\\)",
+      "sha256": "12e5accbf836c2a35b114a51bd672b06af426626edce31342f9058e4f5203134",
+      "bytes": 11087,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/49_FROBENIUS_GRAPH_TRACE_LATTICE.md",
+      "title": "Frobenius-graph tests and the trace lattice at \\(M=9\\)",
+      "sha256": "fc874baf39aeae93450434350c75fd5536d5e876c180b0c6deeaaa2422986ed5",
+      "bytes": 18380,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/50_FAMILIES_PRESERVATION_MOD_31_TEST.md",
+      "title": "The mod-31 shadow of families preservation",
+      "sha256": "0edad0937a14459a5c7d6138958ccd2863c06de45bfa478b7189a22d65b87538",
+      "bytes": 10886,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/51_FAMILIES_PRESERVING_RIGIDITY_IN_CHARACTERISTIC_P.md",
+      "title": "Families-preserving rigidity for full characteristic-\\(p\\) curve groups",
+      "sha256": "5f74270c1af30ec1526038fb389112917e379c405d900c6db33168c6206ab49f",
+      "bytes": 7186,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/52_VIRTUAL_SURFACE_FAMILIES_RIGIDITY.md",
+      "title": "Families rigidity for the order-$31$ root-stack group",
+      "sha256": "e251ba5ddc5f4a3a3b69544fafeff9e02668df1a1d621f4c8da229ca2db3effd",
+      "bytes": 11436,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/53_M9_GENUS_ONE_COARSENING_IS_HYPERELLIPTIC.md",
+      "title": "The genus-one full-span coarsening is hyperelliptic",
+      "sha256": "bb73dc14ca39e0dc2c3e1c33b9033e85b1f963a7f1cd22063296f52e6fc009d5",
+      "bytes": 8290,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/54_EXACT_31_ADIC_ENDOMORPHISM_ORDER.md",
+      "title": "The exact endomorphism order at \\(31\\)",
+      "sha256": "8ca96eec139856b2916fd5113939dd55bfdd12f9f028dbbac29b58d1fb6839ef",
+      "bytes": 7083,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/55_SQUARE_LABEL_COLLISIONS_AND_SPECTRAL_CONDUCTOR.md",
+      "title": "Square-label collisions and the spectral conductor budget",
+      "sha256": "9ceea015b29d71c554dca74237cb48a77e9d4022d3a7f5b19799871e5f5d80fb",
+      "bytes": 11700,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/56_M9_GENUS_TWO_COARSENING_SPECTRUM.md",
+      "title": "The genus-two full-span coarsening has a finite involution spectrum",
+      "sha256": "94ddc56c134f5d0a306cf52fd9041496feec486b7c52ed5edea88c5944e6842c",
+      "bytes": 9156,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/57_DEGREE45_FAMILIES_SHADOW_DESCENDS_TO_F125.md",
+      "title": "The degree-45 families shadow descends to a finite field",
+      "sha256": "ad4e64ec621071d07b04b96b218227c1c9003bac4b899151cfa5ce080d3cca8f",
+      "bytes": 8984,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/58_DEGREE45_FAMILIES_SHADOW_EXCLUDED.md",
+      "title": "The degree-45 families shadow is impossible",
+      "sha256": "bd80d2932efddce3d2f3ff6bc1bf8ae15eb31095df6a131d6b7601bb8e6993c6",
+      "bytes": 7934,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/58_X_CENTRAL_GLUE_CONGRUENCES.md",
+      "title": "Central gluing congruences for the three elliptic factors of `J(X)`",
+      "sha256": "e89b4c5e329b22d991be614ef2f2f676551e083209b7699a056af5dcc253326e",
+      "bytes": 12310,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/59_C14_ELLIPTIC_LABEL_RIGIDITY.md",
+      "title": "Label rigidity in the cyclic genus-one coarsening",
+      "sha256": "a33a64647add5cd03c97533c7103dba4cb96db8b23d15a580d2cc0232c7d926f",
+      "bytes": 19130,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/60_ANTI_INVARIANT_PRYM_DECOMPOSITION.md",
+      "title": "The anti-invariant Prym decomposition at `M=9`",
+      "sha256": "1f8eed8dff784c1efe89e50a143bd9e3a7578dc7c15012e3b37c2b373e5ef4b6",
+      "bytes": 11229,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/61_D14_GENUS_ONE_ROW_IMPOSSIBLE.md",
+      "title": "The dihedral genus-one coarsening is impossible",
+      "sha256": "62dcf6c6410fb0842953b6c906bf3211008ec94730b0d4b0c2d1f392e2e48fd6",
+      "bytes": 10573,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/64_FROBENIUS_EQUIVARIANCE_DOES_NOT_FORCE_FAMILIES.md",
+      "title": "Frobenius equivariance does not force families preservation",
+      "sha256": "b6705e19a24b679a69b233953c1a0d3b39b8b27b2053e32187478cbf84a662ec",
+      "bytes": 12852,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/65_GENUS_TWO_REDESIGN_FULL_SPAN_ENDPOINT.md",
+      "title": "The genus-two redesign and its full-span endpoint",
+      "sha256": "c00b0b0431993ccf31384aa3f33068e396ea6c671aa67acf0445669642cad290",
+      "bytes": 15658,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/66_COEFFICIENT_CORE_AND_SHARED_RAMIFICATION.md",
+      "title": "The coefficient core and its shared ramification defect",
+      "sha256": "83eecabd06013e0bbe10b689108c3542a7e02c5787d27dc39145f255c3860021",
+      "bytes": 12991,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/66_WEIGHTED_GRID_CYCLIC_INTERVAL_EXCLUSION.md",
+      "title": "Weighted-grid descent and the cyclic genus-one interval",
+      "sha256": "27cd8f11e80943a95768e0c0af99f1b09d08e9ca32d08959174d0a1b69066663",
+      "bytes": 16146,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/67_CUBIC_CROSS_ROSATI_GAP.md",
+      "title": "The global Rosati gap for cubic cross correspondences",
+      "sha256": "90d5158d793e534e700c93bae1b84bdb16f722a764e0feb77f3bf0c7eb6750c5",
+      "bytes": 11974,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/67_GENERAL_DOUBLE_COEFFICIENT_COARSENING.md",
+      "title": "General structure of a quadratic coefficient coarsening",
+      "sha256": "6b75d07ca75ff19fb71654ea445b30962bebd848d1bb8bd82772b0f585a5e658",
+      "bytes": 21267,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/68_PRIME_RATIO_DIAMOND_AND_ALL_DEGREE_COEFFICIENT_SIEVE.md",
+      "title": "Prime-ratio diamonds and the corrected coefficient reduction",
+      "sha256": "3389d2f25cc677854fb2eb21af1d7b9cc3ad1d6c6524950237f9ef8082517606",
+      "bytes": 7769,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/69_PARAMETERIZED_CYCLIC_HYPERELLIPTIC_HONDA_SIEVE.md",
+      "title": "A parameterized cyclic-hyperelliptic Honda sieve",
+      "sha256": "8b5ea12b183ceed808335d5c023ac82738004c2bde524af4c89ef63a9357f721",
+      "bytes": 21413,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/70_PARAMETERIZED_WEIGHTED_GRID_INTERVAL.md",
+      "title": "A parameterized weighted-grid interval",
+      "sha256": "bfccfcf3c3eae09b0b4054af65d4c5107c98400475b87a1ef09ac3364d80ff8f",
+      "bytes": 11131,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/71_SCALAR_COMPRESSION_AT_THE_FIRST_DIAMOND_DEGREE.md",
+      "title": "Scalar compression at the first admissible diamond degree",
+      "sha256": "47e07f4ae285e4435cfd30e2a9af5da66882bf86f77e1fb01186ced21266ef32",
+      "bytes": 9023,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/72_DEGREE19_REDESIGN_FULL_SPAN.md",
+      "title": "The degree-19 redesign and its full-span obstruction",
+      "sha256": "d87493a076bbc242fcf2a8674a53066d709bd65c289047dcf7fb9e8fb731737d",
+      "bytes": 10418,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/73_DEFECT_FREE_ENDPOINT_FORCES_A_PENCIL.md",
+      "title": "A defect-free coefficient endpoint forces a pencil",
+      "sha256": "5d4d88304c1ac9f2a0a7adee4f800b90eee42feaf314627a61c3b80608e6808c",
+      "bytes": 6356,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/74_SIMPLE_SOURCE_JACOBIAN_PRYM_PACKING.md",
+      "title": "Prym packing for a simple source Jacobian",
+      "sha256": "ffd9beb535040ca03fbcc0ec15c815c521f6172c68a398f6b379e469fac65029",
+      "bytes": 7379,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/75_ORTHOGONAL_COMPLEMENT_DIVISOR_SIEVE.md",
+      "title": "The orthogonal-complement divisor sieve",
+      "sha256": "3a0d1ecd614aa725256c9e6f8bfea4317cd60a12085c086733e09869e23b7406",
+      "bytes": 7381,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/77_M9_BIRATIONAL_PUSHED_INCIDENCE_AND_SPLITTING.md",
+      "title": "The pushed incidence curve and the exact genus-three splitting type",
+      "sha256": "c39f1f5512bf83835b73279b2f1828d3367c6d8b30442596aafa5d1b4ecbe021",
+      "bytes": 24174,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/78_M6_PLANE_CONTACT_AND_SPECTRAL_DISCRIMINANT.md",
+      "title": "The degree-six plane contact budget and discriminant double plane",
+      "sha256": "810c1b1e78398c37f9197b114cada8872b5afa58e36c412d66da5339473a92e9",
+      "bytes": 23401,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/79_SCALAR_INVOLUTION_CROSS_IMAGE_SIEVE.md",
+      "title": "A scalar involution and cross-image sieve",
+      "sha256": "b464f5c12da3b07757a79bf17ea869e649cb485f06b26ac842dc0976fae89314",
+      "bytes": 15846,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/80_NONSCALAR_CROSS_IMAGE_TRACE_SIEVE.md",
+      "title": "The nonscalar cross-image trace sieve",
+      "sha256": "4b77e776fa03c48545102654d73c31d05d855dd0b5a0590d739d957114d110eb",
+      "bytes": 10259,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/81_FULL_ORBIT_INTERPOLATION_AND_CUBIC_SIGN_MONODROMY.md",
+      "title": "Full orbit interpolation and cubic sign monodromy",
+      "sha256": "598af06e2d4e839ad80bfcab0d70271169135a6c0e5cd10ab55d7860531dfe2f",
+      "bytes": 13907,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/82_SIGNED_ORBIT_CONGRUENCES_AND_SHORT_DEGREE_REPAIR.md",
+      "title": "Signed-orbit congruences and the repaired short-degree sieve",
+      "sha256": "881ec81e18da9f1f51001261c39bcba2fdfb9aa39d885ea1e37b1b5f9c0f535b",
+      "bytes": 14319,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/83_SIGN_NORM_BRANCH_CARRIER_AND_COPRIME_DESCENT.md",
+      "title": "The sign norm carries the even branching",
+      "sha256": "b3937f6ac476390ec1b0228db4cd97adfe6a34e1b00ece4b5addaa18502cae09",
+      "bytes": 9259,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/84_COMMON_RAMIFICATION_DEFECT_AND_ORBIT_PRYM.md",
+      "title": "A common ramification defect and the extra orbit Prym",
+      "sha256": "190ac0f8bafd3083195c242c1689943b8093f6aedfd7a87854e6419a7d198e76",
+      "bytes": 9858,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/85_ODD_PRIME_DECK_GROUPS_AND_A5_COUNTEREXAMPLE.md",
+      "title": "Odd-prime deck groups: the Hecke obstruction and a counterexample",
+      "sha256": "b7ae732a0c8245bc7d09c66678f188758d9cd691282b11f844a533990018010e",
+      "bytes": 14537,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/86_EQUAL_CHARACTERISTIC_SIGNED_ORBITS_AND_WILD_DEFECT.md",
+      "title": "Equal-characteristic signed orbits and the wild defect",
+      "sha256": "2f115a15c15d57934cd1c14b30d766ab14eca3969401e68e19d26520e7d5ebca",
+      "bytes": 16951,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/87_TRIVIAL_AUTOMORPHISMS_AND_BRANCH_RIGIDITY_FORCE_DECK_NORMALITY.md",
+      "title": "Trivial automorphisms and branch rigidity force deck normality",
+      "sha256": "c9902369ad50ca979dc3a93f85d41cfb2c295d1e3eb333d8c33a52bc8c34d6bb",
+      "bytes": 14581,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/88_WIMAN_EDGE_CHAR5_DECK_COUNTEREXAMPLE.md",
+      "title": "A characteristic-five Wiman--Edge deck counterexample",
+      "sha256": "313dcac281ed75c3f6699bb71fa54649ae31f17bd541639d84e9f993fbf6b295",
+      "bytes": 11018,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/89_EXPLICIT_RIGID_SIMPLE_PLANE_QUARTIC.md",
+      "title": "An explicit simple-Jacobian curve with no geometric automorphisms",
+      "sha256": "8647b2c1ace943a14062e0d67714f807ca36c8582062b57cc5ebf6876fc89dde",
+      "bytes": 4949,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/90_HIGHER_CYCLIC_PRIME_POWER_DECK_RIGIDITY.md",
+      "title": "Higher cyclic prime-power deck rigidity",
+      "sha256": "6dfb4f3d862a8a2b3b6e2f3b6c2a6f9562c8d764750514d176039124226f9121",
+      "bytes": 10118,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/91_ARBITRARY_ABELIAN_DECK_RIGIDITY.md",
+      "title": "Arbitrary abelian deck rigidity over a rigid simple-Jacobian curve",
+      "sha256": "ebd434108cbbc512964d9235e12f7a1829e6d1e0eafae0a804ae51c51251a748",
+      "bytes": 9850,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/92_BRANCH_RIGID_ABELIAN_PRIME_POWER_COVERS.md",
+      "title": "Branch rigidity controls all abelian prime-power covers",
+      "sha256": "2d5340a40d8fcadb83799c0d203f1ffbc3ff03722e100da607ec9b2f7ae06ac7",
+      "bytes": 9625,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/93_NONABELIAN_DECK_RIGIDITY_BOUNDARY.md",
+      "title": "Nonabelian deck rigidity fails in characteristic five",
+      "sha256": "0d3cae087966ffffdd32b55ca1531a90a3bea56c83442e4885d39f342357676a",
+      "bytes": 15676,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/94_COMPOSITE_ABELIAN_DECK_REDUCTION_AND_HECKE_BOTTLENECK.md",
+      "title": "Composite abelian deck groups: the exact normalizer and Hecke bottleneck",
+      "sha256": "ca1a7ec2dccff946b05556b2342da3ad67a9a3b626b3c754bf5d3c19f0ebab37",
+      "bytes": 12035,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/95_ABELIAN_ETALE_TOWERS_AND_ENDOMORPHISM_FIELDS.md",
+      "title": "Abelian etale towers and endomorphism fields",
+      "sha256": "5c70730fe20d749a347682588753f30ce55ed70818a97f9ee5ef370af2b294d7",
+      "bytes": 10015,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/96_NONABELIAN_PACKET_SCHUR_INDEX_DOMINATION_BOUND.md",
+      "title": "Nonabelian packet and Schur-index domination bound",
+      "sha256": "05be78f36d997d4a5304a0abf888c20928af9babe2b2050df5f962560edd24dd",
+      "bytes": 12137,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/97_GALOIS_TO_NONGALOIS_PASSAGE_IN_COMMON_COVER_RESULTS.md",
+      "title": "How resolved common-cover variants handle non-Galois legs",
+      "sha256": "bce0869d74d9245465e8b5aa78a823f0540be3c7618c058c7307960e70094e6b",
+      "bytes": 27787,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/98_FULL_SIGNED_FROBENIUS_GROUP_AND_SHARP_PACKET_RANGE.md",
+      "title": "Full signed Frobenius group and the sharp packet range",
+      "sha256": "9835058a8f8f24d578833d712ddbb6dfe1983e283c4e632be32f2854ee872f33",
+      "bytes": 8262,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/99_SIGNED_GALOIS_CERTIFICATE_FOR_GEOMETRIC_ENDOMORPHISMS.md",
+      "title": "A signed Galois certificate for geometric endomorphisms",
+      "sha256": "747c2a6e18847be1f79f0e723122867a66f70124c04169f195bc843fc27f95d6",
+      "bytes": 4673,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/A9_TWO_POINT_COVER_WITH_EXACT_WILD_LOCAL_FIELD.md",
+      "title": "A two-point cover from A9 with the exact prescribed wild local field",
+      "sha256": "6de67e68230cbca191f73631a5d0f2b9cfe9004d928866f4bd9f914956e636af",
+      "bytes": 5856,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ABELIAN_ETALE_TOWERS_ACQUIRE_NO_LARGE_SIMPLE_FACTOR.md",
+      "title": "Abelian étale towers acquire no sufficiently large simple factor",
+      "sha256": "c07a53602a5f5a3aeaa019a52bdb786330d9f7ca5faf698f63ed18768d4363a5",
+      "bytes": 10387,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ADDITIVE_BIDEGREE_FIVE_CORELESS_EXACT_TEST.md",
+      "title": "An explicit ramified additive coreless correspondence in characteristic five",
+      "sha256": "72e80b44ef9f434c2ee8d696bef4e36535f1a16ccf797573c70f90195d4cdef3",
+      "bytes": 8482,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ADVERSARIAL_ADDITIVE_AND_NONMATCHING_COMPOSITION_SEARCH_2026_09_05.md",
+      "title": "Additive moduli and nonmatching composition: adversarial search",
+      "sha256": "b71d12724414dc597f93d0e1c4d8a7a51710f8f33421e6c88b83dec30487d7ac",
+      "bytes": 4658,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/AN_ORDINARY_GENUS_TWO_OPEN_HAS_PROPER_THETA_FOR_ALL_DOUBLE_ABELIAN_TOWERS.md",
+      "title": "A genus-two open with proper theta for every double-abelian tower",
+      "sha256": "28a51be8868d7118df05f05e2b77112a458d408688d7b1d571434b6369d95939",
+      "bytes": 11696,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/AUTOMATIC_RANK_FOUR_CARTIER_SYMMETRIC_CUBE.md",
+      "title": "The rank-four Cartier symmetric-cube condition is automatic",
+      "sha256": "1a5462b550708a98c49910e890ec3c03411846fc3777dd34d15d64d0a2c849c2",
+      "bytes": 3160,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/AUXILIARY_HYPERELLIPTIC_SCALAR_FROBENIUS_LEVEL64_EXISTENCE.md",
+      "title": "Auxiliary hyperelliptic curves with scalar Frobenius on level 64",
+      "sha256": "fb68cedbce512a8c9cf53d09c565f470e6913f45d6cbb1ee8cfd63e7f9bf2bb8",
+      "bytes": 6166,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/BIETALE_CORRESPONDENCE_STRUCTURE_LITERATURE_2026_09_05.md",
+      "title": "Structure of actual bi-etale correspondences — 5 September 2026",
+      "sha256": "04466053d89b4e06f9a893b33fad5c436dc7c8b506ab5f4b7d3f28e461b428c9",
+      "bytes": 6326,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/BIETALE_JOINT_IMAGE_COLLISION_DIVISOR_AND_NORMAL_LINE.md",
+      "title": "The collision divisor and normal line of a bi-etale joint image",
+      "sha256": "7a6dea867c6e26d44e51232ce26449ba2cfe57ea91d42caf7080ade7bd452938",
+      "bytes": 10568,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/BIETALE_REFINEMENT_BLOCKS_AND_POSITIVE_CORRESPONDENCE_CATEGORY.md",
+      "title": "Refinement blocks and a positive category of actual bi-etale correspondences",
+      "sha256": "2591ba2f53727be60ada4856ad57df5c0a9a1143e2858762ad680fad097f287c",
+      "bytes": 9287,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/BIRATIONAL_RANK_ONE_CARTIER_CRYSTAL_DOES_NOT_CLOSE_THETA_GAP.md",
+      "title": "Rank-one Cartier crystals and the restricted Raynaud-theta gap",
+      "sha256": "2c106c343e82908fed244eb39742b6a9330fd02cf2265aa62637e4aad668d8a6",
+      "bytes": 7089,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/BOUNDED_ABELIAN_ORDINARITY_PRIOR_ART_AND_SOLVABLE_BOUNDARY.md",
+      "title": "Bounded abelian-cover ordinarity: prior art and the solvable boundary",
+      "sha256": "59be9c387c21f6dd9b635fb947f3228f55633e5793c7a692063c89b356460a44",
+      "bytes": 6121,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/BOUNDED_ORBIFOLD_QUOTIENTS_FORCE_INFINITELY_MANY_CORELESS_CORRESPONDENCES.md",
+      "title": "Bounded orbifold quotients force infinitely many minimal coreless correspondences",
+      "sha256": "05ddfcfefdc4e284b23d48fd4742fc4ca6a63d3a58e1875bb26c06fe884bf59b",
+      "bytes": 15013,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/BOUNDED_WILD_JUMP_DENOMINATORS_BOUND_ATLAS_DEGREES.md",
+      "title": "Bounded wild-jump denominators bound two-branch atlas degrees",
+      "sha256": "c9006b2442a900179879f77a466a753c860eaa390629e9e7bd87023638dac8d9",
+      "bytes": 8737,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/BOXALL_PRUFER_TORSION_AND_EVERY_CYCLIC_TOWER.md",
+      "title": "Boxall-style Prüfer torsion finiteness and every cyclic tower",
+      "sha256": "2cec40cbc4bd1e97fdfd45d539e87f73f951a1c3f6e9355f3f260ca5dd24abae",
+      "bytes": 12769,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/BOXALL_TORSION_COSETS_AND_MAXIMAL_ABELIAN_DEFECT_EXPONENT.md",
+      "title": "Boxall torsion cosets and the maximal-abelian defect exponent",
+      "sha256": "2b290daa65e1fde37a5295ef3bb5e12bfa6597f7248b8fb37e22a4cdcf3dc33a",
+      "bytes": 14146,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CANONICAL_DIRAC_DIVISOR_UNIQUENESS_IN_THE_POLARIZATION_CLASS.md",
+      "title": "Canonical Dirac divisor: uniqueness across the polarization class",
+      "sha256": "eb8c37edec0e2e9a2204d4a46d54eab475eb4d8c53ba37712a8a19c90c8818b4",
+      "bytes": 6718,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CANONICAL_POISSON_CROSS_NORMALIZER_AND_TWO_PROBE_FACTORIZATION.md",
+      "title": "Canonical Poisson cross-normalizers and a two-probe factorization test",
+      "sha256": "3a5d6f98008ced686e9fd71484dbb91661b332889c7f6b2402516866d6c1fbe9",
+      "bytes": 10532,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CANONICAL_POISSON_RESTRICTED_POWERS_RECOVER_CARTIER.md",
+      "title": "Degree-one Hamiltonian restricted powers recover Cartier",
+      "sha256": "f0edecbf3384c80a21eaa8529b135a41ec7b93ddd9cd9331561b120b85da0f2b",
+      "bytes": 5986,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CANONICAL_POISSON_RINGS_RETAIN_EXACTLY_THE_ETALE_CONDITION.md",
+      "title": "Canonical Poisson rings retain exactly the etale condition",
+      "sha256": "1860507c664fe2d74779822e3a168bd96068a2ffd82a789629c6ca2bc3897365",
+      "bytes": 10949,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CANONICAL_RING_GENERATORS_DO_NOT_DETERMINE_TRACE_REALIZATIONS.md",
+      "title": "Canonical ring generators do not determine trace realizations",
+      "sha256": "22ac821563b4e36235682efda28989c2933358ac7abf4a4cdba130bef7e36d1c",
+      "bytes": 6851,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CARTIER_BUNDLE_SEPARABLE_PULLBACK_AND_DIFFERENT.md",
+      "title": "Separable pullback of the Cartier bundle detects the full different",
+      "sha256": "bd96f92fe366064b689aae5544cf2b988cdc64840d95336f65071b9a438e1252",
+      "bytes": 9433,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CARTIER_EIGENFORMS_AS_MULTIPLICATIVE_DEFORMATION_DATA.md",
+      "title": "Cartier eigenforms as multiplicative deformation data",
+      "sha256": "01d08df592f0fe623f92df7554991f98228e21ee4a5601853fb6de5975df7840",
+      "bytes": 4918,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CARTIER_EIGENFORM_EQUIMULTIPLE_TANGENT_CHARACTER_CRITERION.md",
+      "title": "Equimultiple eigenform tangents and a Cartier character kernel",
+      "sha256": "bfbced5587665b8f918b76e9a8b30d288b37c7faa6cb76ecd365892ce86ed986",
+      "bytes": 6314,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CARTIER_ENDOMORPHISM_HN_IS_THE_DIFFERENTIAL_OPERATOR_FILTRATION.md",
+      "title": "The Cartier endomorphism HN filtration is the differential-operator filtration",
+      "sha256": "3e7fe3535df07e20e73e81a98450262911a3ca939062bfe347cabf341088b0d3",
+      "bytes": 7482,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CARTIER_ON_NORMALIZATION_ADJOINTS_IN_A_PRODUCT_SURFACE.md",
+      "title": "Cartier on normalization adjoints in a product surface",
+      "sha256": "bfe57fa8c8220140cf952ed941dc74a49734b68ad67233871722c9c7bf0781f8",
+      "bytes": 9702,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CHAR5_ALL_ORDINARY_DATA_DESTRUCTION_LITERATURE_BOUNDARY.md",
+      "title": "Characteristic-five destruction: bounded literature comparison",
+      "sha256": "267e2c3605d25e08dcb61121a769196f6bc355804d6e5fc472ad76f3b7428416",
+      "bytes": 5759,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CHARACTER_ORBITS_AND_NONGALOIS_RESTRICTED_THETA_TESTS.md",
+      "title": "Character orbits and non-Galois restricted-theta tests",
+      "sha256": "3ef735c6346028d49a0bbf091d24d45dd02994454b51d568479bc7d1276ee60e",
+      "bytes": 9437,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CLUMP_EXISTENCE_SPECTRAL_CRITERION_AND_WEIGHT_BOUNDARY.md",
+      "title": "Clump existence: an exact two-map spectral criterion and the weight boundary",
+      "sha256": "b4d8f677c406e6b1e8e35fda2744603424dcce1ed4a0d1660451dfc28ebd5da1",
+      "bytes": 10348,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/COMPATIBLE_TANGO_STRUCTURES_SINGLETON_OR_QUARTET.md",
+      "title": "Compatible Tango structures: zero, one, or p−1",
+      "sha256": "017e40312b3b67b142626e176b1e1f27b6324f362500298f0f24ddd231a66cf1",
+      "bytes": 5551,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CONDUCTOR_FROBENIUS_NOT_DETERMINED_BY_CONTACT_OR_DIFFERENTIAL_RATIOS.md",
+      "title": "Conductor Frobenius is not determined by contacts or differential ratios",
+      "sha256": "b48c025b15ebd35232157e8a6c7f2c140331654a12d932f95e24bf8dc93089b1",
+      "bytes": 7661,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/COPRIME_PRODUCT_MIXED_JACOBIAN_VANISHING_FORCES_DESCENT.md",
+      "title": "Coprime-product mixed Jacobian vanishing forces descent",
+      "sha256": "577127ef60bc6a6cb4f3f65f65ff8f13079086d3b2780f573c70488fcbb17b8c",
+      "bytes": 6268,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CORED_ZERO_ONE_FORM_INTERSECTION_AND_WILD_SIGNATURE_REDUCTION.md",
+      "title": "Zero shared one-forms restrict a common orbifold's wild signature",
+      "sha256": "7fe441a8752c6b9dbb21ac0dd1ea7cf9a2b5498e28cdac2b83910f7dc968d6c4",
+      "bytes": 4897,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CORELESSNESS_AS_TRANSCENDENCE_IN_THE_POSITIVE_CORRESPONDENCE_CATEGORY.md",
+      "title": "Corelessness as transcendence of an actual self-correspondence",
+      "sha256": "c901ec6fe1b0f0e80558f524043914ac822f2659ca7e8d090b8e21549528dfda",
+      "bytes": 7766,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CORELESS_CARTIER_TYPE_UNDER_SEPARABLE_DOMINATION.md",
+      "title": "Cartier type under separable domination of coreless spans",
+      "sha256": "657a296d13125e3fea24ec84017127e3cc2bffd925e74c3fa36f296cac8e105c",
+      "bytes": 5863,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CORELESS_CLUMP_PRIMARY_SOURCE_BOUNDARY_2026_09_05.md",
+      "title": "Coreless clump existence: primary-source boundary, 5 September 2026",
+      "sha256": "a4a9d65ddd0abfbe77d5c8b78a23ae2d8343bff295a47eb935e6c259a5da2d92",
+      "bytes": 4771,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CORELESS_GENERIC_GRAPH_FORCES_UNBOUNDED_PRIMITIVE_CORRESPONDENCES.md",
+      "title": "A coreless generic graph forces unbounded primitive correspondences",
+      "sha256": "922587e60600f7390ea6728b12d484e0a9d82fc6faa79c680d4664ae37c4d030",
+      "bytes": 9095,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CORELESS_HOM_ZERO_CORRESPONDENCE_IN_CHARACTERISTIC_FIVE.md",
+      "title": "A coreless Jacobian-orthogonal étale correspondence in characteristic five",
+      "sha256": "cd046252b9df8e215f70c9c1c66cf4b09e23f675ab990d83eb50fdf1b6ad6ce2",
+      "bytes": 14827,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CORELESS_INVARIANT_KUMMER_EXACT_LOG_NORMAL_FORM.md",
+      "title": "Kummer root normal form retaining both actual etale legs",
+      "sha256": "be9347abcc2136bc9f2f0a69386338e5544db8e34db61f6c0699afb96f2c8d9d",
+      "bytes": 10381,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CORELESS_JOINT_DEFORMATION_RIGIDITY_SOURCE_BOUNDARY.md",
+      "title": "Coreless joint deformation: the exact rigidity-source boundary",
+      "sha256": "a3fce75ed9085c860fc692090654845f4d48c4e2d9457acd95cb569ebfd3c6fe",
+      "bytes": 2911,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CORELESS_PROJECTIVE_ETALE_SINGLETON_TANGO_COUNTEREXAMPLE.md",
+      "title": "A projective etale coreless correspondence with a shared exact differential",
+      "sha256": "a6889114b28e173b7aa4c218f95cee056922b1aa9031bac0bf4900fccc77dbf5",
+      "bytes": 7679,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CORE_PRESERVING_TAME_REDUCTION_TO_TRANSVERSE_DORMANT_MIURA_DATA.md",
+      "title": "Core-preserving tame reduction to everywhere-transverse dormant data",
+      "sha256": "6daa4635b384cd3fb6f0822a0696537e531429c26961165926c0b024131b48ab",
+      "bytes": 10422,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CUBIC_SIGNED_MONODROMY_J8_GENUS_IDENTITIES.md",
+      "title": "Cubic signed monodromy at eight sign choices",
+      "sha256": "4bece386f29ce8afa141a4895430ff6fb193d8eddee834381e09bfdd08a27c90",
+      "bytes": 8617,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CYCLIC_CANONICAL_ROOT_TORSION_FLEXIBILITY.md",
+      "title": "Torsion flexibility of a canonical root on a cyclic etale cover",
+      "sha256": "c9342100fb5c80002290034eea312889f40f308a51cd06787d961e5fc07cfeb0",
+      "bytes": 5437,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CYCLIC_TOWER_NEW_ORDINARITY_AND_FIXED_SUPPORT_BOUNDARY.md",
+      "title": "Cyclic tower new-ordinarity: exact quantifiers and fixed-support boundary",
+      "sha256": "54d443f4e4f708c5b1c60bb8ea9627b08f07621c39d8b27f51078d2b4fd75022",
+      "bytes": 12339,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/CYCLIC_TRIPLE_GENUS_TWO_PRYM_AND_BAD_AXIS_COMPONENT_BOUNDARY.md",
+      "title": "Cyclic triple covers of genus two: Prym and bad-axis component bounds",
+      "sha256": "c9471c00f61fdba03c44247a108394a82e698244424f6045c1b302d89da56e3a",
+      "bytes": 10867,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/D8_NONLINEAR_CARTIER_FAILURE_INVISIBLE_ON_QUADRATIC_SUBCOVERS.md",
+      "title": "A nonlinear D8 Cartier obstruction invisible on all quadratic subcovers",
+      "sha256": "5b40f551aacb017b57aff77a8ebfc36bd14f2745846307bb83eb8fbf97f10ca7",
+      "bytes": 8348,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/DEGREE_NINE_FREE_CHARACTER_QUOTIENT_COUNTEREXAMPLE.md",
+      "title": "A free order-nine character quotient with primitive canonical weight nine",
+      "sha256": "6d20d5381f3f86b795268e18c3d342cb22fc08ea20cfc5a4e8b9ac549f539604",
+      "bytes": 11502,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/DORMANT_OPER_CORELESS_MUMFORD_CONSTRUCTION.md",
+      "title": "Coreless finite etale spans preserving a dormant projective oper",
+      "sha256": "c32b691364fa3706766515d713c10e134b414363c743a4be0f0f48bc28a4d529",
+      "bytes": 9980,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/DORMANT_OPER_ORDINARITY_DOES_NOT_SUPPLY_TWO_LEG_MATCHING.md",
+      "title": "Dormant-oper ordinarity does not supply the missing two-leg matching",
+      "sha256": "adca93bbb0ed7271584e0409f0f1281dfd8e37c69252018e21edb89df8974b84",
+      "bytes": 7987,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/DOUBLE_ZERO_PCLOSED_QUOTIENT_DISCREPANCY_AND_KLT_MODEL.md",
+      "title": "Double-zero p-closed quotient: discrepancy and an explicit klt model",
+      "sha256": "81cb1c314a3ca30977873e0a92a95ac23ed6376ce46c4c5dc9c468381ea9eb6f",
+      "bytes": 7321,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ELLIPTIC_CHARACTER_DIRECTIONS_AND_POLARIZATION_CONTROLLED_A_NUMBERS.md",
+      "title": "Elliptic character directions: polarization-controlled a-numbers",
+      "sha256": "2a0322cbdd56db6e2fbb91396f7f358991a5ffd41da67b0531fa3f42d5f31f84",
+      "bytes": 7276,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ETALE_PICARD_PULLBACK_KERNELS_AND_TANGENT_BLINDNESS.md",
+      "title": "Étale Picard pullback kernels and tangent blindness under refinement",
+      "sha256": "7bc7f36851c70a4814be254ab9b772a345dedb83d542d13bef28f7afd04018c2",
+      "bytes": 18498,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ETALE_P_RANK_GRADIENT_LITERATURE_AUDIT_2026_09_05.md",
+      "title": "All-etale p-rank gradients: verified endpoint and unresolved opposite endpoint",
+      "sha256": "374214e1e61d255639884490669f2b31372c129005ab1f9f8fd4acd8c0c20f32",
+      "bytes": 5386,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/ETALE_TANGO_SLOPE_LITERATURE_BOUNDARY_2026_09_06.md",
+      "title": "Why the all-cover asymptotic slope theorem does not compute the etale invariant",
+      "sha256": "a372d5319a78f9a51b688c429a7d748a479a785e93927b15f916324ecb67d15f",
+      "bytes": 2344,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ETALE_THETA_IMAGE_AND_QUOTIENT_GLOBAL_GENERATION.md",
+      "title": "Étale theta images and global generation after quotient twisting",
+      "sha256": "66b99a2bd0550a2731157b371749284735014264e952c1f1b6b4be3c16e75849",
+      "bytes": 8634,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/EXACT_CANONICAL_SUBSYSTEMS_CAN_BE_BIRATIONAL_IN_UNBOUNDED_GENUS.md",
+      "title": "Exact canonical subsystems can be birational in unbounded genus",
+      "sha256": "2fae0318fdd8ce54c805fe3daa1eb8bc7ad914d8276468454488e7a3b76ee433",
+      "bytes": 6457,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/EXPLICIT_C3_CUBIC_DIAMOND_ORDINARY_HOM_ORTHOGONAL_PARAMETER.md",
+      "title": "An explicit ordinary, Jacobian-orthogonal parameter in the cubic Kummer diamond",
+      "sha256": "c7f2bd2fa577fabcff72dbc0600515369fcc9a5a1755fba6b1f7eca0644ae6a8",
+      "bytes": 7887,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/EXPLICIT_GENUS5_CUBICAL_COVER_AND_ASYMPTOTIC_RAYNAUD_LINES.md",
+      "title": "An explicit genus-five cubical cover and asymptotic Raynaud-avoiding lines",
+      "sha256": "af6625aa6adb6a1d8ee7ff4a54ff0e8ff1d90cc7779a9871a3598029b49f62bb",
+      "bytes": 7218,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/EXPLICIT_GENUS9_ENDOMORPHISM_FIELD_ABELIAN_PART.md",
+      "title": "The abelian part of the explicit genus-nine endomorphism field",
+      "sha256": "e6012aeb4802269b18d41e4fb6abb17ff96a926211246eb678aa32f69c6bac42",
+      "bytes": 5138,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/EXPLICIT_ORDINARY_GENUS_TWO_DOUBLE_WITH_FROBENIUS_CYCLIC_PRYM_TWO_TORSION.md",
+      "title": "An ordinary genus-two double with Frobenius-cyclic Prym two-torsion",
+      "sha256": "af02ecec36c75064db6100185c5cbc397ab6d3f0e080ac43ae898b96343e951c",
+      "bytes": 5268,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/EXPLICIT_SECOND_ORDER_EQUATION_FOR_CARTIER_ZERO_PLURIFORMS.md",
+      "title": "An explicitly soluble second-order equation for higher differentials",
+      "sha256": "feb555f4c61e672a6e8279a10694abde06215b55ed027e471f0ba7d77afa12d8",
+      "bytes": 10640,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/EXPONENT_FOUR_ORDINARITY_CONTROLS_ALL_PRIME_TO_FIVE_INVERSION_TOWERS.md",
+      "title": "Exponent-four ordinarity controls all prime-to-five inversion towers",
+      "sha256": "ab5f28eb4eeadf6cf4e6e23716fffd131f38fc5ad0c8c1de0893c82c4d8a0d1f",
+      "bytes": 15426,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FINITE_ETALE_COVER_DESTROYS_ALL_ORDINARY_INDIGENOUS_DATA_ON_ONE_CURVE.md",
+      "title": "One finite étale cover destroys every ordinary nilpotent datum on a fixed curve",
+      "sha256": "a4f0045a8cc755bd9b2c705b25dce762d49aa87b03a2c13dd82e1502bb246c7c",
+      "bytes": 8321,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FINITE_FLAT_LAGRANGIAN_INTERPOLATION_AND_RAYNAUD_DIRAC_UNIQUENESS.md",
+      "title": "Finite-flat Lagrangian interpolation and Raynaud Dirac uniqueness",
+      "sha256": "db11b9e17b48e7dc59cbc57af616a90870bbac1ccd0950d37649de5fcbdefcab",
+      "bytes": 12342,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FINITE_FROBENIUS_KERNELS_NEED_NOT_BE_PROJECTIVE.md",
+      "title": "Finite Frobenius kernels need not be projective",
+      "sha256": "09444f0434f5d75e7fecc08e712f19a1787a303e0433e606b06a93c007fc7f54",
+      "bytes": 5006,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FINITE_GENERALIZED_CARTIER_EIGENFORM_POOLS_AND_ETALE_COMPATIBILITY.md",
+      "title": "Finite generalized-Cartier eigenform pools and two-leg compatibility",
+      "sha256": "a4b339d3fc13cb7ba27d387b29498f5b23669bf7a12042adfc112f0ec79fb572",
+      "bytes": 8673,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FINITE_NONORDINARY_TARGETS_IN_FINITE_SUPPORT_ABELIAN_TOWERS.md",
+      "title": "Finite nonordinary targets in finite-support abelian etale towers",
+      "sha256": "8271f230a8c40979231d1486862a900821fefcc80d2156e52553c295d846eb45",
+      "bytes": 9686,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FINITE_RESTRICTED_THETA_CHARACTERS_FORCE_UNIFORM_ETALE_TARGET_DESCENT.md",
+      "title": "Finite bad characters force one finite etale descent level",
+      "sha256": "ab7898da89618a6046bf0c90083f8578f783bb116f83f2eed9028b25f4487774",
+      "bytes": 6885,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FINITE_SEED_MONODROMY_CLOSURE_AND_UNBOUNDED_PRIMITIVE_COVERS.md",
+      "title": "Finite seed monodromy closure and unbounded primitive covers",
+      "sha256": "1a9c9cc506042456fdcfbf9b97e3ee5a09a71a3a916d6ecd241beed1f4e7f5b3",
+      "bytes": 7032,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FINITE_TARGET_SET_FOR_JOINTLY_LIFTABLE_CORELESS_CORRESPONDENCES.md",
+      "title": "A finite target set for jointly liftable coreless correspondences",
+      "sha256": "046f9cc6fc426fd8bf07c46f98b13b7992f64590f64bb7630c8f5ed0faeb8c14",
+      "bytes": 8942,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FIXED_CORNER_CHARACTER_DESCENT_FOR_VARYING_TARGET_LIFTS.md",
+      "title": "Fixed-corner character descent for varying target lifts",
+      "sha256": "497fa97dd1d81e98299fe58f1ad9ae2ab84a19fdecf2c8aa87da897a56576ab1",
+      "bytes": 11822,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FIXED_ENDPOINT_WILD_ABSORPTION_AND_ORDINARY_CHARACTER_ESCAPE.md",
+      "title": "Fixed endpoint constraints for wild absorption; an ordinary character escape",
+      "sha256": "d4e16575fdc1bfde8fbc9a37651c0e29ec96980789ce6c8c92609de6c3c22671",
+      "bytes": 7820,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FIXED_POINT_ASCENT_TRACE_BOUND.md",
+      "title": "A fixed-point ascent bound through a non-lifted involution",
+      "sha256": "3634609e4f0861b8e72cdfbf7b9a8f54255d6c300d98e99b02f2197d46ef144e",
+      "bytes": 13121,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FIXED_WEIGHT_NORMS_AND_COMMUTING_CANONICAL_RING_REALIZATION.md",
+      "title": "Fixed-weight norms and a commuting canonical-ring realization",
+      "sha256": "7c69f0b7158d73a35c75c04d0fca85c4d2204ac550e29f937410eed61491d6bb",
+      "bytes": 10932,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FIXED_Y_LOW_DEGREE_TORSION_FROBENIUS_BOUNDARY.md",
+      "title": "The earlier scalar-Frobenius boundary is bypassed",
+      "sha256": "9bd88b26b61e557dc5e4e776475969cc19d15896fb44832e125d49629871df7c",
+      "bytes": 1166,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FIXED_Y_NONORDINARY_ETALE_DOUBLE_COVER.md",
+      "title": "The fixed genus-twenty-five curve has a nonordinary etale double cover",
+      "sha256": "867bb376517325281cbf9a8a64140eb3f7724302df67ee077c2598b4d62a0482",
+      "bytes": 3890,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FIXED_Y_TWO_PRIMARY_W6_HAS_ONLY_TWO_TORSION.md",
+      "title": "The fixed Y has no higher two-primary torsion on W6",
+      "sha256": "b064736768be5d58c1acdf1cdd1209d6b47d7b4db60613c1a04a3814de0a72b4",
+      "bytes": 3880,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FROBENIUS_CONNECTING_CLASS_COMPARISON.md",
+      "title": "Frobenius recursion for the connecting class",
+      "sha256": "01bc8c471afe2089bc8872139a168d90b2d895d0d7b28f1e5bd1533637600934",
+      "bytes": 2431,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FROBENIUS_OF_THE_BIETALE_CONDUCTOR_QUOTIENT.md",
+      "title": "Frobenius on the conductor quotient of a bi-etale joint image",
+      "sha256": "fe7d66f7c05ad6bacb2f3b78c6dfdb5eb015ecf0a6ffe624d1825d104d283bb1",
+      "bytes": 12021,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FROBENIUS_QUOTIENT_CLASS_AND_ETALE_INJECTIVITY.md",
+      "title": "The Frobenius-quotient class: all-degree étale injectivity and the universal boundary",
+      "sha256": "9ec9816cdd8a20a4781aef1ffacc39bf49a337867a503e3b8e5431a82bbaf667",
+      "bytes": 9091,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_05_0659.md",
+      "title": "Technical frontier — 2026-09-05, 06:59 CEST",
+      "sha256": "15009e25d45fa6e8ed145f189954976b69abae0167b36da1167e37e03ac1303f",
+      "bytes": 5316,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_05_1217.md",
+      "title": "Technical frontier — 2026-09-05, 12:17 CEST",
+      "sha256": "c9a42b59f932b1da762d7d68ed5ef3ebb0ac485f195a6d5ca72dae3026e072e8",
+      "bytes": 6508,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_05_1317.md",
+      "title": "Technical frontier — 2026-09-05, 13:17 CEST",
+      "sha256": "c273cdee2603a36484ee9250148e20a2a74a8ede994ee8e4a7a583299e7d05ac",
+      "bytes": 6007,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_05_1403.md",
+      "title": "Technical frontier — 2026-09-05, 14:03 CEST",
+      "sha256": "1ab97aa06416881c01698dc171a54aa3094ef880611f3566576ccfcaae118948",
+      "bytes": 7063,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_05_1503.md",
+      "title": "Technical frontier — 2026-09-05, 15:03 CEST",
+      "sha256": "012c103249bc4f65421004ccbaff125056a63826782e34fec91e306f7a81e784",
+      "bytes": 6527,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_05_1604.md",
+      "title": "Technical frontier — 2026-09-05, 16:04 CEST",
+      "sha256": "97fe92dbb2d759e816ac137b82e13cfb0478286b508715bdc3347269d556038a",
+      "bytes": 3024,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_05_1703.md",
+      "title": "Technical frontier — 2026-09-05, 17:03 CEST",
+      "sha256": "abdce1d2499f502d79947a986b832f9d785e538dcda398be1c13a3cc6f23fb20",
+      "bytes": 7026,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_05_1804.md",
+      "title": "Technical frontier — 2026-09-05, 18:04 CEST",
+      "sha256": "e38321c2b95f4da86799a172843a0c19a671ade707fecb1a5f4458fc8902e9cd",
+      "bytes": 8210,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_05_2010.md",
+      "title": "Technical frontier — 2026-09-05, 20:10 CEST",
+      "sha256": "1e85ced16866768cdf5985f8deb57e16b7f43d5a8943204b5f59132f68f07221",
+      "bytes": 8437,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_05_2110.md",
+      "title": "Technical frontier — 2026-09-05, 21:10 CEST",
+      "sha256": "bac8b1453a648fb044cabbd5ace46530028e32b8545d8999f2be335d3e577b91",
+      "bytes": 8003,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_05_2210.md",
+      "title": "Current frontier — 2026-09-05, 22:10 CEST",
+      "sha256": "5c1535492fa9f90b44ef1f4706023ef2840c90e28853b6b9230cae4035857bda",
+      "bytes": 4820,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_05_2256.md",
+      "title": "Current frontier — 2026-09-05, 22:56 CEST",
+      "sha256": "949dbbb0a183a397194a6f34744f00025d176250e56ce62b86d0e8a5992f72ca",
+      "bytes": 5130,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_0041.md",
+      "title": "Current frontier — 2026-09-06, 00:41 CEST",
+      "sha256": "86c89e028f98ded6514260e2036aaafaa87b756ab7fcd444cdc05e30b1a8c9b8",
+      "bytes": 5829,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_0123.md",
+      "title": "Current frontier — 2026-09-06, 01:23 CEST",
+      "sha256": "6b105af4c42b05e9f962930f62bd97abf9f042929acbf14a237d3e9b125c3ba3",
+      "bytes": 4763,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_0223.md",
+      "title": "Current frontier — 2026-09-06, 02:23 CEST",
+      "sha256": "9688493f879b9f31ab1aab6b166462b57b149a96081e9ef6968c25c823eb5237",
+      "bytes": 3245,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_0258.md",
+      "title": "Current frontier — 2026-09-06, 02:58 CEST",
+      "sha256": "3649e5eacd66e7b470ef7742057afcab42fabdd68cf23847e7915a00c4639a93",
+      "bytes": 6037,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_0325.md",
+      "title": "Current frontier — 2026-09-06, 03:25 CEST",
+      "sha256": "088c5d6d55ff07bf92993212e6f14c0c10551a082a48aad6d55cb5218875fede",
+      "bytes": 7147,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_0356.md",
+      "title": "Current frontier — 2026-09-06, 03:56 CEST",
+      "sha256": "e5d6a36336d27cbc0a6e8aa7d01bfbb69763bb1ba418752bef1ce0ae22817a3c",
+      "bytes": 6974,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_0411.md",
+      "title": "Current frontier — 2026-09-06, 04:11 CEST",
+      "sha256": "ba86ebff8a3eb86c04366ca9f99bb99b9e82ee778606fc5a21359c29820c84e1",
+      "bytes": 6203,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_0456.md",
+      "title": "Current frontier — 2026-09-06, 04:56 CEST",
+      "sha256": "afdb3e61f5a45c4433a2df685b2c2dfd4ec58ca36aba1a7a4a6493c122c6c399",
+      "bytes": 5909,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_0528.md",
+      "title": "Current frontier — 2026-09-06, 05:28 CEST",
+      "sha256": "eb4fab9b3d23801b773e3392fa403b041cbbe8b1298954974cf8427bd0178d7b",
+      "bytes": 5222,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_0629.md",
+      "title": "Technical frontier — 2026-09-06 06:29 CEST",
+      "sha256": "6b0eba4cf4d6b0750b2a44c2566404889c8804e365e8463926f3f6f90d569781",
+      "bytes": 7809,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_0730.md",
+      "title": "Technical frontier — 2026-09-06 07:30 CEST",
+      "sha256": "092ee092c8e05aa397acf89142bdf751aaf7c7b84a898513112a727805b50052",
+      "bytes": 7301,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_0835.md",
+      "title": "Technical frontier — 2026-09-06 08:35 CEST",
+      "sha256": "09539f8b1f5175a17f082b64bfd9827c9690e3f0a66953a57bdc1f5751d53d61",
+      "bytes": 8745,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_0938.md",
+      "title": "Technical frontier — 2026-09-06 09:38 CEST",
+      "sha256": "91b6c4cff1c4329c8d7704914b58314912343a714771245262b1e0d420352839",
+      "bytes": 5397,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_1044.md",
+      "title": "Technical frontier — 2026-09-06 10:44 CEST",
+      "sha256": "47871a5630b94923c1cb83c8a27eea8f0f6d5e526b861a20b7127de2f6cdd853",
+      "bytes": 3559,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_1145.md",
+      "title": "Technical frontier — 2026-09-06, 11:45 CEST",
+      "sha256": "0eb4ac904c921639c35cb65c2f9760338a4159909736a6b31302639dd814e01f",
+      "bytes": 4810,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_1245.md",
+      "title": "Technical frontier — 2026-09-06, 12:45 CEST",
+      "sha256": "c277b17dcb73a951ce8b1e0798a89ad18432585e9de094aa3dff764875a1713d",
+      "bytes": 2854,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_2026_09_06_1320.md",
+      "title": "Technical frontier — 2026-09-06, 13:20 CEST",
+      "sha256": "974c81c2580b9423070d19d1c428fef94ba9b79a093cc64ea8cef55ff33096a7",
+      "bytes": 5354,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FRONTIER_RECONNECTION_2026_09_05.md",
+      "title": "Reconnecting the joint-image frontier to the earlier proofs",
+      "sha256": "a47e00d6f9be45e9c4705f1a792f54e4983d660009a8df8727b4a07122daf753",
+      "bytes": 6379,
+      "classification": "historical_checkpoint"
+    },
+    {
+      "path": "routes/global/FULL_GRID_INTERPOLATION_AND_ABEL_IMAGE_RECHECK.md",
+      "title": "Full-grid interpolation and the Abel image: reconnection checks",
+      "sha256": "f7aed503264856b966290299de5e7be8ef6feba92c7b7bd182ccdc430d16397f",
+      "bytes": 7146,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/GENERAL_TWO_PRIME_RECTANGLES_AND_AXIS_DESCENT.md",
+      "title": "General two-prime rectangles and exact axis descent",
+      "sha256": "6ba3de17130875bf4e4086947e79d10cff56be2518f10466b4d28894bbfef53b",
+      "bytes": 13348,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/GENERIC_HYPERELLIPTIC_BOUNDED_ABELIAN_COVERS_ORDINARY.md",
+      "title": "Ordinary bounded-exponent abelian covers of hyperelliptic curves",
+      "sha256": "b0574cf726be52eef8f4fba63c0f52bb086417ca1c87521b3b11323a1193e5ed",
+      "bytes": 10618,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/GENERIC_J1_ROW_FORMAL_ESCAPE_AND_FULL_GRID_TARGET.md",
+      "title": "The generic \\(j=m=e=1\\) row: formal escape and the full-grid target",
+      "sha256": "1e69ef28dad1c850d41b1864e40202b80e8e688fceecf47eda0c01272f4012d9",
+      "bytes": 12209,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/GENERIC_TREE_EXACT_HANKEL_AND_FINITE_STABILIZER_OBSTRUCTION.md",
+      "title": "Generic trees: exact Hankel growth and infinite finite-set stabilizers",
+      "sha256": "6e0c5897e4fb851bc60d6ec5af934aa2a1327a6d2caa92ced0bc897ef1c1efc3",
+      "bytes": 5982,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/GENERIC_TWO_LEG_THETA_FAILURE_FORCES_CARTIER_PETRI_TRACE_ORTHOGONALITY.md",
+      "title": "Generic two-leg theta failure forces simultaneous trace orthogonality",
+      "sha256": "5d64d2d550954a95b94826d2c1c7103b9335430a67ae92cf2045b365eaac1d9b",
+      "bytes": 8551,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/GENUS_P_MINUS_ONE_TWO_POLE_AND_A5_NONEXISTENCE.md",
+      "title": "Two-pole genus-\\(p-1\\) curves and the impossible weak \\(A_5\\) profile",
+      "sha256": "f366c8d2ee15915c9977a7d5846012c3acf82278553652cee029a109967ac0cf",
+      "bytes": 7813,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/GENUS_TWO_BOUNDED_RAYNAUD_MONODROMY_COMMON_COVER_EXCLUSION.md",
+      "title": "Genus two: bounded Raynaud monodromy excludes actual common covers",
+      "sha256": "2a4ba89ffee6f318358787b63481a35565a4601e55bd163a2739b95aaa9d46a7",
+      "bytes": 11549,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/GENUS_TWO_COMMON_COVERS_REDUCE_TO_INTRINSIC_CHARACTERISTIC_FIVE.md",
+      "title": "Ordinary genus-two partners: the remaining case is intrinsically characteristic five",
+      "sha256": "8e7e357e57e3ac93c2bf5ae4fc16a6f8b68a6d460bb1f50e08017c614d19d1ad",
+      "bytes": 8136,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/GENUS_TWO_ETALE_MAPS_AS_A_SINGLE_CANONICAL_BRACKET_EQUATION.md",
+      "title": "Genus-two etale maps as one canonical bracket equation",
+      "sha256": "ad7654a85ac3f3f4524ab4f839573e2b3a90420ea404700eb2ca086bb8ad2800",
+      "bytes": 5928,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/GENUS_TWO_HYPERELLIPTIC_INDIGENOUS_INVARIANCE_AND_COMPLETE_UNMARKED_QUARTIC_POOL.md",
+      "title": "Hyperelliptic invariance and the complete unmarked quartic pool",
+      "sha256": "b9b45277a04a3fb4e937aa87aab6c525c6cccf9ea70d0f48b465ef8c8eeed81b",
+      "bytes": 8157,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/HEISENBERG_CENTRAL_TWISTS_AND_ORDER125_EXCLUSION.md",
+      "title": "Heisenberg central twists and the order-125 residual case",
+      "sha256": "927845755e58dec73907e0c798d16212f3b574b3695917676bab4ca8db0c53ef",
+      "bytes": 11051,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/HEISENBERG_EQUIVARIANT_H2_AND_SPLIT_RAMIFICATION_OBSTRUCTION.md",
+      "title": "Equivariant central extensions of the Heisenberg group",
+      "sha256": "93135d1fc20a750d43d93589adaf1a01f95fdb06cf118fa6a4a3b28393fe81cf",
+      "bytes": 11293,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/HORIZONTAL_BOREL_COLLISIONS_AND_MUMFORD_SCREEN.md",
+      "title": "Horizontal Borel reductions: simple collisions and a Mumford boundary",
+      "sha256": "9e85d7d469c2037a1890df7a8eb3b2ccc73bf1ba25f650307cb46e7d92c0ce6a",
+      "bytes": 5100,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/HOSHI_GENUS2_UNRAMIFIED_PRYM_FILTER.md",
+      "title": "The fifteen-class elliptic-Prym filter for the explicit genus-two quotient",
+      "sha256": "c97c8de72a30a6b129969fe9bd8fe597d6622d7d9fd4fb5c3bfd7a65618d0020",
+      "bytes": 2544,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/HOSHI_GENUS6_EXACT_TANGO_COUNT.md",
+      "title": "A genus-six curve with exactly ten maximal Tango structures in characteristic five",
+      "sha256": "9e817864a9cd318d339896f749081d816790ec4873dc8300f1e17d5b19ec8f9e",
+      "bytes": 7557,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/HOSHI_GENUS6_F5_KUMMER_P_RANK.md",
+      "title": "Hoshi's genus-six Kummer construction over F5: exact p-rank four",
+      "sha256": "522a00b7bb53085d38bf884fd86f13a936037965dfc5092d7c95e541e28e24fe",
+      "bytes": 2355,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/HOSHI_GENUS6_GENUS2_QUOTIENT_MODEL.md",
+      "title": "Explicit genus-two quotient and quadratic presentation of the Hoshi curve",
+      "sha256": "5d7c43bda4e2aa2538ad467ef2043f8045b86e38e0ded24bd39a5741c911cf38",
+      "bytes": 3879,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/HOSHI_GENUS6_REFLECTION_AND_TWIST_BOUNDARY.md",
+      "title": "Reflections of the ten-Tango genus-six curve and an étale twist boundary",
+      "sha256": "846c1286d5899f020745bebc1ab542eb3b929fbbb2c5800844bce67100ddecd5",
+      "bytes": 6270,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/HOSHI_GENUS6_SINGLE_TWIST_P_RANK.md",
+      "title": "The surviving genus-six twist has p-rank five: a negative finite-packet result",
+      "sha256": "de2ab8a58618373121bcb6f28bbb81e7b558e2bd87b0cc82cb294d55a43aea74",
+      "bytes": 6045,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/HOSHI_GENUS6_TWIST_WITH_NO_MAXIMAL_TANGO.md",
+      "title": "An explicit failure of unrestricted étale descent for maximal Tango structures",
+      "sha256": "8c0b2db620f25ce92a1089aa9482e7ebf53ba0f0f3f3bf6479c241dcaed35dfc",
+      "bytes": 9785,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/HYPERELLIPTIC_LOW_DEGREE_TWO_PRIMARY_TORSION_DESCENDS.md",
+      "title": "Low-degree two-primary torsion descends to a small field",
+      "sha256": "a94a386968046fc9424bf9fbd33b18fc53183661c528a6425503c0a04672a7bc",
+      "bytes": 3973,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/IGUSA_TANGO_COUNTEREXAMPLE_AND_RETAINED_SECTION_BOUNDARY.md",
+      "title": "The Igusa counterexample and the information a Tango line forgets",
+      "sha256": "1e91d3e673ffcfb648e0080a3d67fb16a5f9072c765f4dabe1b6b383d6a102e4",
+      "bytes": 8826,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/JOINT_GEOMETRY_LITERATURE_BOUNDARY_2026_09_05.md",
+      "title": "Joint-geometry literature boundary, 5 September 2026",
+      "sha256": "4174b73a3340b169bdcad00150a6d4009c015e75ed1321cb256eda641288e639",
+      "bytes": 5308,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/KUMMER_DIAGONAL_QUADRIC_MODEL_AFTER_LABEL_TRIVIALIZATION.md",
+      "title": "The fixed Kummer complete intersection after killing the square labels",
+      "sha256": "a49b4cc0521b57862f5677f4cf463ae187bb9e02a6b76824b6617a89cf1ed6a5",
+      "bytes": 13083,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/LITERATURE_AUDIT_THROUGH_2026_09_04.md",
+      "title": "Literature audit through 4 September 2026",
+      "sha256": "d48b84082de17059c48abc98c2cb6db0e54b8c78a7e3553d7e244aac809bb2da",
+      "bytes": 39631,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/LOCAL_MAXIMAL_TANGO_CONNECTION_EQUATION_CHAR5.md",
+      "title": "The local connection equation for maximal Tango structures in characteristic five",
+      "sha256": "b91a8e592849e635c97710a57d306c1f86ed1a833ff05301ec30afc1fc02f8b6",
+      "bytes": 8004,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/MINIMAL_BIETALE_CORRESPONDENCES_SPECIALIZATION.md",
+      "title": "Minimal hyperbolic bi-étale correspondences remain minimal under specialization",
+      "sha256": "b3fe73b4aa32370cf15a1a5e72faf6c2d0400c7c92f703724970acebb4ec4287",
+      "bytes": 10926,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/MINIMAL_BIETALE_CORRESPONDENCE_HAS_BIRATIONAL_RELATIVE_GAUSS_MAP.md",
+      "title": "Minimal bi-etale correspondences and the relative Gauss map",
+      "sha256": "16b817b17baddcef5800c5dbc3541b296ddcacdb63aa3848a0bc2887799aea8e",
+      "bytes": 5721,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/MINIMAL_BIETALE_MONODROMY_FAITHFULLY_ACTS_ON_THE_ENDPOINT_PACKET.md",
+      "title": "Minimality makes the endpoint multiplicity representation faithful",
+      "sha256": "8a9679d19209452f1d6ee47aa12612d9039d1489c636ec702a7a9bee939af34a",
+      "bytes": 4284,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/MINIMAL_COMMON_COVER_AND_INCIDENCE_DESCENT.md",
+      "title": "Minimal common covers and rational incidence descent",
+      "sha256": "d8162a176acb2b550a30833c5bc706400dcd437a91e48f8ae1bee1f79f1c6f15",
+      "bytes": 11819,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/MIXED_JACOBIAN_VANISHING_HAS_UNIFORMLY_BOUNDED_ABELIAN_RESIDUAL.md",
+      "title": "Mixed Jacobian vanishing has a uniformly bounded abelian residual",
+      "sha256": "de1ec0d463ef84f1a7da747580eeb1a9c9e0de5c80e995b46c44a5e531e6c601",
+      "bytes": 21738,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/MIXED_JACOBIAN_VANISHING_REDUCES_TO_ABELIAN_OR_METABELIAN_QUOTIENTS.md",
+      "title": "Mixed Jacobian vanishing: perfect-factor descent and solvable residual quotients",
+      "sha256": "8b93c4ed0126da4e9b028c39e8b8178ee88b34a2641954c1f20e503c641fa274",
+      "bytes": 7533,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/MOD5_GRAPH_CANCELLATION_AND_INVERTIBLE_TREE_BLOCKS.md",
+      "title": "Mod-5 graph cancellation and invertible tree blocks",
+      "sha256": "2aa76336680a12973bc75362e9174e833540fe51b340eb019e3cdaf7631620fb",
+      "bytes": 6926,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/MULTIBRANCH_WILD_ORBIFOLD_FINITE_REDUCTION.md",
+      "title": "Multi-branch wild orbifolds: exact finite reduction for the genus-nine atlas",
+      "sha256": "5f5946876bf651ca394f170aa75ab998149cf7808323f05c85152d7ac60e79ac",
+      "bytes": 7336,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/NONGALOIS_ETALE_DEGREE5_CAN_DESTROY_ORDINARINESS.md",
+      "title": "A non-Galois etale degree-five cover of an ordinary curve can be nonordinary",
+      "sha256": "5a2d88f667b58b5a2fe3c10b3629ddd51a6d0f9fe81528339ca7e92ad4edac94",
+      "bytes": 4713,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/NONGALOIS_JACOBIAN_ORTHOGONALITY_AND_ETALE_MAP_STABILIZATION.md",
+      "title": "Non-Galois Jacobian orthogonality and stabilization of actual etale maps",
+      "sha256": "f8d62f278ee9adcafdfa35750005a25f62643a8c0858d68659a16987bc962c4d",
+      "bytes": 14427,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/NONWEAK_TWO_POINT_FIRST_BREAK_FINITE_FILTER.md",
+      "title": "Residual nonweak two-point first-break filter",
+      "sha256": "6cdbe47bd708847f995d928824d4c502700879f78ca63dd050f7856996f44b64",
+      "bytes": 4159,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/NONZERO_MIXED_TORSION_CONSTANT_IN_AN_ACTUAL_ETALE_C3_PRODUCT.md",
+      "title": "A nonzero mixed torsion constant for an actual étale product action",
+      "sha256": "ca3e69bbd1e0f2d0ebcfe97df08ae7613ffbffa55eaaa229ad4c2833c89bc389",
+      "bytes": 10883,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/NORMAL_P_RADICAL_QUOTIENT_DEFECT_RECONSTRUCTION.md",
+      "title": "Normal p-radicals and reconstruction of actual quotient defects",
+      "sha256": "2151edc2aadeafab09a3e3b8a2336accbbf1c71c00b17700f53346a353b2a9f2",
+      "bytes": 10708,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/NORM_COEFFICIENT_FIELD_EQUALS_INCIDENCE_FIELD.md",
+      "title": "Norm coefficients recover exactly the incidence field",
+      "sha256": "86996496311a831027a905ac940cec998c926e393e1d114f1e9c9c70f32f6cad",
+      "bytes": 6645,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/NORM_CONTROLLED_CHARACTER_DESCENT_OVER_MOVING_STRIPS.md",
+      "title": "Norm-controlled character descent over moving strips",
+      "sha256": "5190fd809744f09913338acd214e45ce1867d0baf4fb722289f2a187d69389cf",
+      "bytes": 10394,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ODD_ABELIAN_COVERS_AFTER_A_DOUBLE_COVER_HAVE_PROPER_AXIS_THETA.md",
+      "title": "Odd abelian covers after a double cover have proper axis theta",
+      "sha256": "9a636261b37a5612b283d141c7cf633af2dfb354265bc5bcf4d26c1b76fa32e6",
+      "bytes": 8688,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ODD_GENERALIZED_DIHEDRAL_TOWERS_OVER_ORDINARY_GENUS_TWO_HAVE_FINITE_NONORDINARY_TARGETS.md",
+      "title": "Odd generalized-dihedral towers over ordinary genus two: one finite exceptional level",
+      "sha256": "8e0ce3a47bf660eebeee96d71bcca670da02671a945c0c89bfca0ee30ec90f2e",
+      "bytes": 19990,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ONE_SIMPLE_FACTOR_CONTROLS_MIXED_ETALE_MAP_DESCENT.md",
+      "title": "One simple factor controls descent in a product of étale covers",
+      "sha256": "8990c4a00a7b6f1f8ed020e07915725dff7950a0c28085fe6913ea725086697a",
+      "bytes": 8069,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ORDER_P_SECOND_RAMIFICATION_GROUP_FORCES_A_DEGREE_BOUND.md",
+      "title": "A prime-order second ramification group cannot give unbounded atlas degree",
+      "sha256": "0e85fbe946a8c01f3694e07e8d9756874b88ae98265565d73b31018722774da4",
+      "bytes": 5651,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ORDINARY_ATLAS_LOCAL_DIFFERENT_BOUND.md",
+      "title": "Cartier bounds on wild inertia from a possibly non-Galois étale atlas",
+      "sha256": "58a7c89d78fc2e7d8472e3c84a038d9ac27f7f8b578c997c132ee990ba60f147",
+      "bytes": 6794,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ORDINARY_ATLAS_WITH_NONWEAK_MIXED_INERTIA.md",
+      "title": "An ordinary atlas with non-weakly-ramified mixed inertia",
+      "sha256": "da5919e5fcc309086088836c082a6133912ff352676f6077ab1a39f7bc56cf46",
+      "bytes": 6694,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ORDINARY_GENUS_TWO_CORELESS_LIFTING_BOUNDARY.md",
+      "title": "Ordinary genus-two targets do not supply a simultaneous-lifting theorem",
+      "sha256": "fbe84fffa4c6f508e961e698b8558e12e289a38756b1c9b77259fd80f79d852a",
+      "bytes": 7214,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ORDINARY_GENUS_TWO_HAS_BAD_CYCLIC_COVERS_AVOIDING_ANY_FINITE_PRIME_SET.md",
+      "title": "Bad cyclic covers of ordinary genus-two curves avoiding any finite prime set",
+      "sha256": "e2caaff0723331712e5d9e9b34c0ad9cfcaa2a52058b942ee7a8169fa8799c8e",
+      "bytes": 7173,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ORDINARY_GENUS_TWO_UNIFORM_ORBIFOLD_DEGREE_BOUND.md",
+      "title": "Ordinary genus-two curves have uniformly bounded effective orbifold quotients",
+      "sha256": "ef80e7b7a2823a7cdf4cdec1371102afce3848a0dbbdb683c3e435b8f2f3b646",
+      "bytes": 5601,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ORDINARY_INDIGENOUS_DATA_SIMULTANEOUS_ETALE_LIFTING.md",
+      "title": "Ordinary indigenous data: conditional simultaneous étale lifting",
+      "sha256": "e797dc5163e5cde3361b1509a0d3c26c83d9fe213b23ee5b16a45a49bb0add1a",
+      "bytes": 4762,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ORDINARY_INDIGENOUS_INVERSE_CHARACTER_CARTIER_CRITERION.md",
+      "title": "Ordinary indigenous bundles and the inverse Cartier character",
+      "sha256": "6f915adafbb1f6748a62984fa6e0625b023cea68f4ee5b2e2b05f9cdfb2c53b7",
+      "bytes": 9407,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ORDINARY_MIXED_BLOCKS_IN_TWO_LEG_ABELIAN_RECTANGLES.md",
+      "title": "Ordinary mixed blocks in actual two-leg abelian rectangles",
+      "sha256": "4d54e54cf94979781676e527b588505f3e7cdd8c3af323ca4ec624e98d360ca9",
+      "bytes": 10004,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ORDINARY_NONSQUARE_INDIGENOUS_DATUM_FAILS_ON_ETALE_DEGREE_FOUR_COVER.md",
+      "title": "An ordinary nonsquare indigenous datum becomes nonordinary on an étale degree-four cover",
+      "sha256": "03e25783e93fee8df1a6713e368486167c1700149be4cf8a0cf470b2921a34c9",
+      "bytes": 8495,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ORDINARY_PRINCIPAL_P_TORSION_INTERPOLATION_BELOW_P.md",
+      "title": "Ordinary principal p-torsion interpolation below p",
+      "sha256": "3be44d94a4b5f837d604a419397267eed337d4e1a75a3a4a77d92acbdd9c844f",
+      "bytes": 16113,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ORDINARY_SHARED_FORMS_ARE_ETALE_JACOBIAN_GLUING.md",
+      "title": "Shared regular forms detect finite etale Jacobian gluing",
+      "sha256": "bafe95dc66ab7e1f060b54e6e82c493cc8d376f4899a366ef3b90c64f3b451f2",
+      "bytes": 6814,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/PARAMETERIZED_PUSHED_INCIDENCE_DICHOTOMY.md",
+      "title": "The parameterized pushed-incidence dichotomy",
+      "sha256": "1b407fc6d61264c1c251cd7a4d06f9023a4e8c93d326a8f6044cc642c07fcd99",
+      "bytes": 15583,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/PLANE_COEFFICIENT_GAUSS_CLASSICALITY.md",
+      "title": "Plane coefficient curves are forced to have classical Gauss map",
+      "sha256": "d7822560de301b91b822e3268d2d69db61f317d8847bdd06d9c475093f3e94ad",
+      "bytes": 8997,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/PLURICANONICAL_FROBENIUS_RESIDUE_BLOCKS_AND_CARTIER_EXTENSIONS.md",
+      "title": "Pluricanonical Frobenius residue blocks and Cartier extensions",
+      "sha256": "6b3acee566bea617360103d9f9068cb0deb03e48b53b5a3d0848fedf084cc689",
+      "bytes": 8538,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/PLURICANONICAL_REALIZATIONS_JOINTLY_DETECT_ACTUAL_BIETALE_CYCLES.md",
+      "title": "Pluricanonical realizations jointly detect actual bi-etale cycles",
+      "sha256": "7b7f5be71809b849043ce6192795c11bbd5d63581fad32daa469b0ebf60e27ed",
+      "bytes": 10720,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/PPAV_VERSCHIEBUNG_DIRAC_SECTION_CONSTRUCTION.md",
+      "title": "A Dirac section on every principally polarized abelian variety",
+      "sha256": "48ad8f5b689313ec1482e3bbcadf68ae49520741eaa9307532c1e413d9f76960",
+      "bytes": 7505,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/PRIMITIVE_CANONICAL_WEIGHT_UNDER_ENDPOINT_COVERS.md",
+      "title": "Primitive canonical weight under compatible endpoint covers",
+      "sha256": "edb1be99b621b919862de77290a9668b44976fef5de4954e7042a41eb8a1ecc6",
+      "bytes": 3862,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/PROJECTIVE_FROBENIUS_DEFECT_AND_NONGALOIS_QUOTIENT_TESTS.md",
+      "title": "Projective Frobenius defect and non-Galois quotient tests",
+      "sha256": "db8dc4bac12dfb412329a216b989c67910661805fc88620b43ec38c2f224245f",
+      "bytes": 9439,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/PURE_PRO_ELL_DEFECT_BOUNDARY_FOR_ORDINARY_GENUS_TWO.md",
+      "title": "Pure pro-ell defect over an ordinary genus-two curve: the exact boundary",
+      "sha256": "cb3037ac64c7b486c25c5c0309ffc45c9ce409633fd9bdd6d92d194fdcf76eeb",
+      "bytes": 10035,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/P_GROUP_REFINEMENT_INVARIANCE_OF_RESTRICTED_RAYNAUD_THETA.md",
+      "title": "P-group refinement invariance of restricted Raynaud theta",
+      "sha256": "f1e31ecf09d7a9f144fcfb28fe11c367505f9b11c149d5853d8ee2fc6eeca5d3",
+      "bytes": 9038,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/P_RANK_ONE_GENUS9_ALTERNATIVE_SOURCE.md",
+      "title": "An optional genus-nine source with p-rank one",
+      "sha256": "1ee615f2d18ab2101dde2d93d22fad133b298e325f107d3dbf2a712d601b4721",
+      "bytes": 4131,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/QUADRATIC_TRACE_RAMIFICATION_DETECTOR.md",
+      "title": "Quadratic differential trace detects local ramification",
+      "sha256": "1a6bb11116780c6b31c4b492a682488a6aaa2d8808343131cdfbe286a153b6d1",
+      "bytes": 3985,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/QUESTION_3_21_ITERATION_AND_PRIOR_ART_BOUNDARY.md",
+      "title": "Question 3.21: iteration and the precise prior-art boundary",
+      "sha256": "bdfa3580e71e7c97568bea525a5c7384434cc5d9306953b4679ea08b7ca534a9",
+      "bytes": 6016,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/QUOTIENT_ORDINARITY_S4_AND_EXTRASPECIAL_TESTS.md",
+      "title": "Quotient ordinarity: an S4 induction test and an extraspecial boundary",
+      "sha256": "26b8e01e43cc405fdcd72a5f05caeb925dea63855c5e1600602be48273b74d9e",
+      "bytes": 8877,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/RANK_ONE_GALOIS_CLOSURE_FORMAL_BOUNDARY.md",
+      "title": "Rank-one Galois-closure shortcut: formal boundary only",
+      "sha256": "37c2d17769a49d21b77c5bd73a9f2dee50ef2d1b9ede1005f76ec502eb381a42",
+      "bytes": 3884,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/RATIONAL_FACTOR_PROFILE_SHARPNESS.md",
+      "title": "Rational-factor profiles are orbifold profiles, and the two residual profiles are sharp",
+      "sha256": "e11259701514710433e0596ac2fdffae299d98153a573ea39737b9680e0ebd2f",
+      "bytes": 9603,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/RAYNAUD_HEISENBERG_BAD_BLOCK_AND_CHARACTER_ORBIT_BOUNDARY.md",
+      "title": "Raynaud's bad Heisenberg block: monomiality, character orbits, and faithful quotients",
+      "sha256": "3c7e2b4912c0fbefe8e4383aca0bd757b92619be0f4b29a57f07b40b2a38e056",
+      "bytes": 14863,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/RAYNAUD_THETA_SATURATED_REFINEMENTS_ARE_COFINAL_AUDIT.md",
+      "title": "Independent audit: theta-saturated refinements",
+      "sha256": "7c4d9fd506e25a37b5ec32621bbd6ef3b812fba8e3e84f1ba5b17bd9152fe851",
+      "bytes": 4708,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/README.md",
+      "title": "Global routes",
+      "sha256": "64b87f1c235f75b4d801d2c1f6999cd4239d71c4ac0830422b9b9269b25d60a8",
+      "bytes": 3756,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/RESTRICTED_RAYNAUD_THETA_SUFFICIENT_CONDITIONS_AND_STABILITY_BOUNDARY.md",
+      "title": "Restricted Raynaud theta: sufficient conditions and the stability boundary",
+      "sha256": "9aee0e23f1d26084b2a67e2ac331068d113d52f4089fccd7dbe37294b61e74c9",
+      "bytes": 9045,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/SAME_PRIME_GENERIC_RECTANGLES_AND_ONE_FACTOR_AXIS_DESCENT.md",
+      "title": "Same-prime generic rectangles and one-factor axis descent",
+      "sha256": "df250430b90e5da48acb18d6f9767568b3e72e9ed6ac3efdae6833378fe5c24a",
+      "bytes": 9243,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/SEPARABLE_NORM_RECOVERY_FROM_PLURICANONICAL_TRACE_MOMENTS.md",
+      "title": "Separable norm recovery from pluricanonical trace moments",
+      "sha256": "2f126498bc1e14cc54cf44300661e7e05bc530b69dba00a873198d624617fc29",
+      "bytes": 7038,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/SEVENTH_ROOT_BRANCH_PARTITIONS_ORDINARY_PAIR_FACTORS.md",
+      "title": "Ordinary pair factors for every even partition of the seventh-root branch set",
+      "sha256": "66d3da759345d82b282a5f8c37daaf561a85734d72ece4824fdb9f9cbfdcd895",
+      "bytes": 3820,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/SHARED_HORIZONTAL_BOREL_UNIQUENESS_IN_CARTIER_ZERO_BRANCH.md",
+      "title": "Canonical uniqueness of shared dormant oper–line data",
+      "sha256": "05e896d316a52b6248deed988bbb7f240040f7ddf5bd0f1d06f80b611418d311",
+      "bytes": 4375,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/SHARP_ELLIPTIC_GRID_DIVISOR_INTERSECTION_BOUNDS.md",
+      "title": "Sharp divisor intersection bounds on elliptic grids",
+      "sha256": "34c3fda38706b9cba4b5068dcd3b19a737e0b94893fb8bfaf244370ace0e870e",
+      "bytes": 5527,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/SHEET_NORM_KUMMER_EXTENSIONS_ADD_NO_ABELIANIZATION.md",
+      "title": "Sheet-norm Kummer extensions add no abelianization",
+      "sha256": "dcde3203b0c13a5e3f11ae25278e1df13b588cdbd256f781346a57e319ea77da",
+      "bytes": 9082,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/SIMPLE_JACOBIAN_FORBIDS_BIDEGREE_TWO_BIETALE_SELF_CORRESPONDENCES.md",
+      "title": "A simple Jacobian forbids bidegree-two bi-etale self-correspondences",
+      "sha256": "ea5518741d023c35e793f4ec607f7ee3d19655a3c72413bd0654e2ec2b263a60",
+      "bytes": 5353,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/SMALL_POSITIVE_RAMIFICATION_TAIL_AND_ONE_POINT_ORBIFOLDS.md",
+      "title": "A sharp small positive ramification-tail gap",
+      "sha256": "cef2bb8d4ebfbb8e190019a0e92e490e1b16361ca5e6608c47545a6a23cc9c15",
+      "bytes": 9131,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/SOCLE_CRITERION_FOR_RESTRICTED_RAYNAUD_THETA.md",
+      "title": "A socle criterion for proper restricted Raynaud theta",
+      "sha256": "54ca99b47a072b44184d88c802e881bed490b45c5490f8b47a290ecdcff2f266",
+      "bytes": 13383,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/SUPERSPECIAL_GENUS_TWO_QUADRATIC_CARTIER_EIGENFORMS_CERTIFICATE.md",
+      "title": "Quadratic Cartier eigenforms on y² = x⁵ − x in characteristic five",
+      "sha256": "9e47e33a18cd25a51b2ac556b8e9e05e62b08fdc47c92fc581255cd2ce0ba631",
+      "bytes": 6711,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/SUPERSPECIAL_GENUS_TWO_QUARTIC_DEGREE_FOUR_CERTIFICATE.md",
+      "title": "A quartic Cartier eigenform with root-cover degree four",
+      "sha256": "bb2ae46593c57e3fb1cba11ca400228d72fb17662fec4721a382ce54e49405a7",
+      "bytes": 16084,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/TAME_BALANCING_REMOVES_FIVE_DIVISIBLE_GENUS_FROM_THE_ADDITIVE_COUNTEREXAMPLE.md",
+      "title": "Tame balancing removes five-divisible genus from the additive counterexample",
+      "sha256": "e456942abee35e42f9d983fc32ba26f23c1b44d1a60f164f0be19815298e56fa",
+      "bytes": 4148,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/TAME_COMMON_ORBIFOLD_FIXED_PAIR_FINITE_REDUCTION.md",
+      "title": "Tame common orbifolds for the fixed genus-nine/genus-twenty-five pair",
+      "sha256": "e6bab78e094fc0e7cf1ba3185e934f6ccb13b3839a12580dc1d2ed9b9e09c1e1",
+      "bytes": 11019,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/TAME_DOUBLE_REGULARIZATION_OF_SHARED_CARTIER_ZERO_EQUATIONS.md",
+      "title": "Degree-four regularization of shared Cartier-zero equations",
+      "sha256": "bfc1772875eed8ee18db6c9ed9d0cf228d7b64f251cf8447ed16f6280494a375",
+      "bytes": 5078,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/TANGO_NORM_DEFECT_AND_CONNECTED_AFFINE_COUNTEREXAMPLE.md",
+      "title": "Normalized norm connections: descent under equal p-rank, and the Tango defect",
+      "sha256": "523c3730926f7da5db33328e86251f6509b850b066525946f9d1a7b5e9b92af7",
+      "bytes": 7757,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/THETA_TRANSLATE_FREE_BASES_AND_FINITE_ETALE_TARGETS.md",
+      "title": "Translate-free Raynaud theta loci and finite étale targets",
+      "sha256": "e37913e8d1c6a46f6339615583ee1ac703a98d772c571787ec431c45084e3882",
+      "bytes": 6424,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/TRANSVERSE_DORMANT_MIURA_TANGO_PRIMARY_SOURCE_SCREEN.md",
+      "title": "Everywhere-transverse dormant Miura structures: precise Tango reformulation",
+      "sha256": "5dc74d21d0d21d96d558a96e5e5d6df3f3adede2d6cb5fa3ac6fe9ac4b5174c2",
+      "bytes": 8344,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/TWISTED_CARTIER_ETALE_COVERS_AND_SIMPLE_MONODROMY_FACTORS.md",
+      "title": "Twisted Cartier on étale covers: exact simple-factor criterion",
+      "sha256": "0d0b44ec7196bd9841fcc08bd75af22ac8b3531594d71f3f8fc27983fd4fd8d3",
+      "bytes": 8638,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/TWISTED_CARTIER_GOOD_COVERS_NOT_CLOSED_UNDER_FIBER_PRODUCTS.md",
+      "title": "Ordinary-preserving covers need not have an ordinary-preserving common refinement",
+      "sha256": "852124e732fe87da6ce5d7eef0c7b333df34e673eba93edf5215bbfecf295f50",
+      "bytes": 5035,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/TWO_BRANCH_SINGLE_JUMP_ORBIFOLD_ATLASES_ARE_DEGREE_BOUNDED.md",
+      "title": "A genus bound for two-branch atlases with one wild ramification jump",
+      "sha256": "a74630cc1e606256c2bacf80beca96aa1bb0521e0c834c41c54e8ab3ac94e4d8",
+      "bytes": 5422,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/TWO_ONE_FORM_PROBES_AND_LOW_WEIGHT_FACTORISATION_DEFECT.md",
+      "title": "Two one-form probes and low-weight factorisation defect",
+      "sha256": "a6942c1fb3b6492e9b7c4b41b045575b1900af189792bd742ce3a711c4a89e3f",
+      "bytes": 7868,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/TWO_POINT_LOGARITHMIC_DIFFERENTIAL_TORSION.md",
+      "title": "Logarithmic-differential torsion for a two-point wild orbifold",
+      "sha256": "cd2371aeb56af16cb87f117c4f56b750cb057c7e0d65a2d5514a0edf7b386c63",
+      "bytes": 10261,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/TWO_POINT_NONWEAK_ORBIFOLD_LOCAL_REDUCTION.md",
+      "title": "Two-point nonweak orbifolds: a finite branch and one residual family",
+      "sha256": "646aed58544d678ec73cb7c4e00384654917399fecf9810ae7744588beb63850",
+      "bytes": 11809,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/UNBOUNDED_DOUBLE_ZERO_HECKE_LEAVES_ON_A_FIXED_GENUS17_CURVE.md",
+      "title": "Unbounded double-zero etale leaves on one fixed genus-seventeen curve",
+      "sha256": "cce5294f4e5b9ca0a7f4d62082589af02fc49e0fb1095385ad83ccb9ab96d6fe",
+      "bytes": 8249,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/UNIVERSAL_ONE_SIDED_DOMINATION_FORCES_FULL_ETALE_JACOBIAN_SPECTRUM.md",
+      "title": "Universal one-sided domination and the full etale Jacobian spectrum",
+      "sha256": "9f4c4f10500bac20ac8952b40b959d554c4a3b93a0b2c2e777d5be3e596c4b2e",
+      "bytes": 7286,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/WEAK_TWO_POINT_ORBIFOLDS_POWER_OF_TWO_EULER.md",
+      "title": "Weak two-point orbifolds when the atlas Euler number is a power of two",
+      "sha256": "fae00eb809f5d57695e1a68192222b677b7ab62d2cae2189cc3b5dc24226c509",
+      "bytes": 3876,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/ZERO_PROJECTED_MIXED_PAIRING_BOUNDS_AXIS_ORBITS.md",
+      "title": "Zero projected mixed pairing bounds an actual axis orbit",
+      "sha256": "124e6d4a2683b1a6d708273ca2d8ccf71b2faf76b50cdeea147a3978f9d77968",
+      "bytes": 9358,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/global/audits/101_CANONICAL_GLUING_ORDER_AND_LARGE_DEGREE_BOUND_AUDIT.md",
+      "title": "Audit: canonical gluing order and large-degree bound",
+      "sha256": "03c3d06e1342b9e2df925219ba7414128c2e3d96f936f899ae15ca5567e22823",
+      "bytes": 3417,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/102_MULTIBRANCH_INTERPOLATION_AND_CANONICAL_GLUING_EXPONENT_AUDIT.md",
+      "title": "Audit: multibranch interpolation and canonical gluing exponent",
+      "sha256": "b4d83661b7893d714e52a901fcb332ed16b2ebcab5f66ed28022b7b12441674a",
+      "bytes": 3414,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/105_NONGALOIS_DESCENT_THROUGH_THE_CONNECTING_MAP_AUDIT.md",
+      "title": "Audit: non-Galois descent through the connecting map",
+      "sha256": "3bd34e3b25e88e047087e42bb7cb7b8d5300d951926e00120ccb4d1ed758f86d",
+      "bytes": 2859,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/115_POSITIVE_RANK_PRESERVING_TANGO_DESCENT_AUDIT.md",
+      "title": "Audit of file 115: positive-rank-preserving Tango descent",
+      "sha256": "042172622c09d88ee1508137471d19fece043c1d34254e6259a07b4c27a353e7",
+      "bytes": 4439,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/38_COPRIME_DESCENT_AUDIT.md",
+      "title": "Audit of file 38: coprime descent through the cyclic atlas",
+      "sha256": "acf0ba3965bc3be3f74af6f6b840c17b4fdf67258858758c8c52c21bc0ed5daa",
+      "bytes": 1496,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/39_SCHWARZIAN_AUDIT.md",
+      "title": "Audit of file 39: characteristic-five Schwarzian reduction",
+      "sha256": "3a5c86614384c188867d0d9c59fd698e3b19dfd257cb8cad5570112654a091c9",
+      "bytes": 1347,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/40_JACOBIAN_NORM_AUDIT.md",
+      "title": "Audit of file 40: Jacobian norm obstruction",
+      "sha256": "7c9bb22c5afdff9d57b96338fe31a5b77c75b97c350a952885f54fc9a86ffb46",
+      "bytes": 1630,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/41_FULL_SYLOW_NORM_AUDIT.md",
+      "title": "Audit of file 41: full Sylow-seven norm dichotomy",
+      "sha256": "a6234d26fe29c927a869c66eb9b83e9cef3c8ac638d84c15c4a82c936986689b",
+      "bytes": 1366,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/42_ROSATI_POLARIZATION_AUDIT.md",
+      "title": "Audit state of file 42: Rosati norm and polarization limit",
+      "sha256": "d78d84b71eb8523bc987fdf812f40bcbd2fa0aa4d0c93383f0433edbc711daa7",
+      "bytes": 998,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/43_TANGO_PUSHDOWN_AUDIT.md",
+      "title": "Composite audit of file 43: Tango-line pushdown",
+      "sha256": "fdb8379317a62e15c6569106f703e8fe304b99cbed88a69133fe46e21e10ec03",
+      "bytes": 1946,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/44_NORMED_BRANCH_PENCIL_AUDIT.md",
+      "title": "Audit: normed hyperelliptic branch pencil",
+      "sha256": "d74ae442e04f3befad5395e9d6ac99f141c4cfe715b1b1ac4756996b77b5ad50",
+      "bytes": 1759,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/45_EFFECTIVE_CORRESPONDENCE_AUDIT.md",
+      "title": "Audit: effective correspondences and conductor formulas",
+      "sha256": "382ee16e22b536d62d253c8489107b73855c8fca74efbc1c70060e4b8a674159",
+      "bytes": 1335,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/46_NORM_PENCIL_DIMENSION_AUDIT.md",
+      "title": "Audit: norm-polynomial system cannot be a pencil",
+      "sha256": "8dedcc152eaf918d9a9e66194880498f5bf0e5f74f3a58a97b70207b623136d5",
+      "bytes": 1325,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/47_COEFFICIENT_COARSENING_AUDIT.md",
+      "title": "Audit: coefficient-field coarsening",
+      "sha256": "d9fc45ffb3a518dd1262b0bc74dce67b427bfd4e074d9906e9c834d0c280482b",
+      "bytes": 3439,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/48_M9_RANK_OBSTRUCTION_AUDIT.md",
+      "title": "Audit: degree-nine cross-correspondence rank obstruction",
+      "sha256": "807dfa9b238a906e9a2f0a96f3294009a08e6f7320da2da3a44f08ec8a266e6d",
+      "bytes": 4398,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/49_FROBENIUS_TRACE_LATTICE_AUDIT.md",
+      "title": "Audit: Frobenius-graph trace lattice",
+      "sha256": "f052bee35d3249cf4e46482d774f10e4d9bc1fa91c936e6c8c6baa84c1606c20",
+      "bytes": 3778,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/50_FAMILIES_PRESERVATION_MOD_31_AUDIT.md",
+      "title": "Audit: mod-31 shadow of families preservation",
+      "sha256": "4f811d1f6b8f198fb7aafe01339ac0ff42336d67e8eaa88c2f8eb3fe6bc73c0b",
+      "bytes": 1843,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/51_FAMILIES_PRESERVING_RIGIDITY_IN_CHARACTERISTIC_P_AUDIT.md",
+      "title": "Audit: families-preserving rigidity for full characteristic-p curve groups",
+      "sha256": "f713338a4fcfa3b35acd50857c667866b5402aec9d294e065a1548f8a37d547f",
+      "bytes": 1825,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/52_VIRTUAL_SURFACE_FAMILIES_RIGIDITY_AUDIT.md",
+      "title": "Audit: virtual-surface families rigidity for the root-stack group",
+      "sha256": "f4aa81a651fe92299fdb11c60debc6e47eed3698b49db9c414c696ed54308e2c",
+      "bytes": 2092,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/53_M9_GENUS_ONE_COARSENING_AUDIT.md",
+      "title": "Audit: genus-one degree-nine coarsening is hyperelliptic",
+      "sha256": "895a51166669772c7ad479ae0b333738574e3bf8f9f66e14afb6b02c46c7fbe9",
+      "bytes": 3039,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/54_EXACT_31_ADIC_ENDOMORPHISM_ORDER_AUDIT.md",
+      "title": "Audit: exact 31-adic endomorphism order",
+      "sha256": "ddef305d9b0d13b7211d844ccd5c55035688eedace542beb259d84548ea726d2",
+      "bytes": 2683,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/55_SQUARE_LABEL_COLLISIONS_AND_SPECTRAL_CONDUCTOR_AUDIT.md",
+      "title": "Audit: square-label collisions and the spectral conductor budget",
+      "sha256": "2acca676dfac3ee74a7c3f6542e4695aea2b2153158b0b9d05668ea924ba0a11",
+      "bytes": 3060,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/56_M9_GENUS_TWO_COARSENING_SPECTRUM_AUDIT.md",
+      "title": "Audit: genus-two degree-nine coarsening spectrum",
+      "sha256": "186de5603634b43a8709ebac55c6b453d56681a3ad71d61d3f12564e1830fe9a",
+      "bytes": 2802,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/58_X_CENTRAL_GLUE_CONGRUENCES_AUDIT.md",
+      "title": "Audit: central gluing congruences for `J(X)`",
+      "sha256": "b7f2e45f6d662ca665200fba1221629fe26cb15c03e387a48d2183d089e3fda6",
+      "bytes": 4180,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/59_C14_ELLIPTIC_LABEL_RIGIDITY_AUDIT.md",
+      "title": "Audit: label rigidity in the cyclic genus-one coarsening",
+      "sha256": "28afe409ba265612fa2d7524267f7b1ca602d64e8fce6ed3fe7feb3317f8108c",
+      "bytes": 4666,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/60_ANTI_INVARIANT_PRYM_DECOMPOSITION_AUDIT.md",
+      "title": "Audit: anti-invariant Prym decomposition at `M=9`",
+      "sha256": "1a48c0b0dd4e13cd34b228ed4b83a989d4b5480645d05169fb85d9a8bdae2eaf",
+      "bytes": 4647,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/61_D14_GENUS_ONE_ROW_IMPOSSIBLE_AUDIT.md",
+      "title": "Audit: impossibility of the dihedral genus-one coarsening",
+      "sha256": "f91cfc3ee20cf2e9ef9d4df876c2a1a16601e887cc269597a39c75ea41ae26b5",
+      "bytes": 3583,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/62_DEGREE45_FAMILIES_ENDPOINT_AUDIT.md",
+      "title": "Independent audit of the degree-45 families endpoint",
+      "sha256": "49c22bf4bdd58c1d0423b68b8352c347d1505d83f7d7539f3d16c74ec3e1fab7",
+      "bytes": 5295,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/63_C14_GENUS_ONE_ROW_IMPOSSIBLE_AUDIT.md",
+      "title": "Audit: impossibility of the cyclic genus-one coarsening",
+      "sha256": "4896a99a9f114814af0d9c8083aa7c88f2bf490b90772e5b587e2061fd085133",
+      "bytes": 5285,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/64_FROBENIUS_EQUIVARIANCE_DOES_NOT_FORCE_FAMILIES_AUDIT.md",
+      "title": "Audit: Frobenius equivariance does not force families preservation",
+      "sha256": "48099d41cfd04d2b445ff008557faa031bdb19d76a227cada960e80766c12364",
+      "bytes": 7164,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/66_68_QUADRATIC_CORE_FIELD_INTERSECTION_AUDIT.md",
+      "title": "Audit: the quadratic-core field intersection in files 66 and 68",
+      "sha256": "c581edb206390394f365895e789752bec69eac476fcbce4211634f32d7b924b0",
+      "bytes": 6681,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/69_72_PARAMETERIZED_HONDA_AND_DEGREE19_AUDIT.md",
+      "title": "Audit: parameterized Honda sieve and degree-19 redesign",
+      "sha256": "68322109ed38ee59a9ca62fd147f98baa355cb2f93ac91bc7a700117917ded46",
+      "bytes": 8067,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/73_75_STRUCTURAL_REFINEMENTS_AUDIT.md",
+      "title": "Audit: files 73--75, coefficient endpoints and Prym packing",
+      "sha256": "ff260dc77252f6a14ae43f569f774878ca51257b40d5da94c31957bd4fb8317b",
+      "bytes": 3814,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/76_GENUS25_Y_ARITHMETIC_AND_SIGNED_RATIO_AUDIT.md",
+      "title": "Audit: genus-25 target arithmetic and the signed root-ratio lemma",
+      "sha256": "fda4b9cf1156cd93d3ccdb228a568a17f5736855029e1c4478000aeeb7ff5d92",
+      "bytes": 6563,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/78_M6_PLANE_CONTACT_AND_SPECTRAL_DISCRIMINANT_AUDIT.md",
+      "title": "Audit: degree-six plane contact and spectral discriminant",
+      "sha256": "81cf009b2c8580a75d4b0c1fd23aad97c1752b0392c44956742feb331105e331",
+      "bytes": 6185,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/81_FULL_ORBIT_INTERPOLATION_AND_CUBIC_SIGN_MONODROMY_AUDIT.md",
+      "title": "Audit: full-orbit interpolation and cubic sign monodromy",
+      "sha256": "c322bb0788db407038c4ce2998b5fb03493dd181f0ca683abcdc04f6767c77e6",
+      "bytes": 5057,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/82_SIGNED_ORBIT_CONGRUENCES_AND_SHORT_DEGREE_REPAIR_AUDIT.md",
+      "title": "Audit: signed-orbit congruences and the repaired short-degree sieve",
+      "sha256": "7d0fea1a87e26c3ddb158883b23e97df3c26407b7048654cf09110d6f4e3ccbe",
+      "bytes": 3678,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/83_SIGN_NORM_BRANCH_CARRIER_AND_COPRIME_DESCENT_AUDIT.md",
+      "title": "Audit: sign norm branch carrier and coprime descent",
+      "sha256": "d9c68d50cd60597479fef44977e276ef166c6fbc513446390731e61ea261ba05",
+      "bytes": 3466,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/90_HIGHER_CYCLIC_PRIME_POWER_DECK_RIGIDITY_AUDIT.md",
+      "title": "Audit: higher cyclic prime-power deck rigidity",
+      "sha256": "7224f44c99e5e86f900ca5414768514918880002aef388a9cd1b7f9b4caa2200",
+      "bytes": 3574,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/91_ARBITRARY_ABELIAN_DECK_RIGIDITY_AUDIT.md",
+      "title": "Audit: arbitrary abelian deck rigidity",
+      "sha256": "1595718afd152f6ad9d05c22180aac9a5f87c04c3f2562db3baa3499905b2ce6",
+      "bytes": 2549,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/92_BRANCH_RIGID_ABELIAN_PRIME_POWER_COVERS_AUDIT.md",
+      "title": "Audit: branch-rigid abelian prime-power covers",
+      "sha256": "7ad4fbf1ddb30e3d59f3db927813337021c80507654dfccd2400d57889df3874",
+      "bytes": 3282,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/93_NONABELIAN_DECK_RIGIDITY_BOUNDARY_AUDIT.md",
+      "title": "Audit: nonabelian deck-rigidity boundary",
+      "sha256": "3f28064fa96fc21d3a1cc86646cb5514fa784c8cf0f034b3debd96e2a25ea850",
+      "bytes": 2168,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/95_96_98_ALL_DEGREE_PACKET_CHAIN_AUDIT.md",
+      "title": "Audit: abelian towers, nonabelian packets, and the full signed field",
+      "sha256": "8dc9be1fdc8ea08cf3f040d58de81466b8b90a9a7342004ae4727f7e757cba7d",
+      "bytes": 3742,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/A9_EXACT_LOCAL_REALIZATION_AUDIT_2026_09_05.md",
+      "title": "Independent audit: exact local A9 realization and cyclic-16 augmentation",
+      "sha256": "e111237b5715089f1645ce2464244f5767a8ad7b8feb93a8d97af104b3f31db8",
+      "bytes": 5175,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ADDITIVE_PROJECTIVE_COUNTER_GLOBAL_AUDIT_2026_09_05.md",
+      "title": "Conditional global audit of the additive projective construction",
+      "sha256": "162bcce73732c184c272e375b268f22329e7d30b6a22ac96ffa1a5bd6cf01448",
+      "bytes": 6415,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ALL_CARTIER_SYMMETRIC_HN_AUDIT_2026_09_06.md",
+      "title": "Independent audit: all Cartier symmetric-power HN polygons",
+      "sha256": "3d59c92385d7f472b6fe2d1408eb572e46b417686ee69ac1a9483bdbbe33dc99",
+      "bytes": 4779,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ALL_CARTIER_TENSOR_HN_AUDIT_2026_09_06.md",
+      "title": "All Cartier tensor-power HN polygons: independent audit",
+      "sha256": "ae25a4c5ab7a42c8cfa3d34af383dca83d1858a4e543257fe7fdf68f6759cc89",
+      "bytes": 2906,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ALL_DEGREE_COMMON_ORBIFOLD_BOUND_AND_LOGARITHMIC_TORSION_AUDIT.md",
+      "title": "Audit: all-degree common-orbifold bound and logarithmic torsion",
+      "sha256": "85a7a2dcf43bba288fd61c5f679a0e82d28fe62001137827072c8d9a066f35be",
+      "bytes": 13017,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ALL_ORDINARY_DATA_KILLED_ON_ONE_FINITE_ETALE_2_COVER_AUDIT_2026_09_05.md",
+      "title": "Audit: all ordinary data killed on one finite étale 2-cover",
+      "sha256": "4245abd47b31fadab0fc3d35570f0054d5f54d178519b3f17e7c1e3f59557f04",
+      "bytes": 6294,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ARTIN_SCHREIER_TRANSLATION_RANK_AUDIT_2026_09_06.md",
+      "title": "Audit: Artin--Schreier translation rank and fractional jumps",
+      "sha256": "40902485bbfb1301af8870f9eb044f6ddf3b54d7f64c5adc5add3bfe753b8e33",
+      "bytes": 5722,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/BOUNDED_ATLAS_DEGREE_GIVES_FINITE_ORBIFOLD_PARTNERS_AUDIT.md",
+      "title": "Audit: bounded atlas degree gives finitely many orbifold partners",
+      "sha256": "dee5f1e3d7428c05e5ded2dc8eff280b90ecd5dd9e0b9227bf6168336bfea403",
+      "bytes": 2804,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/BOUNDED_ORBIFOLD_QUOTIENTS_CORELESS_ITERATION_AUDIT.md",
+      "title": "Focused checks: bounded cored degree and coreless iteration",
+      "sha256": "b619713b7edc89b4c3cc4b5ece748a5e1e311fa8c3d620f3286f57ee5c5a9564",
+      "bytes": 3247,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/BOXALL_PRUFER_CYCLIC_TOWER_AUDIT.md",
+      "title": "Audit: Boxall-style torsion intersection and cyclic towers",
+      "sha256": "2c2285050491ae9f542c87b7e77cba5f68fe3dc14e4a5baa4a4c713a227695fd",
+      "bytes": 2476,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/CANONICAL_MARKED_QUOTIENT_MAJOR_STRESS_TEST_2026_09_06.md",
+      "title": "Canonical marked quotient: major stress test",
+      "sha256": "6b9dc28a77c0e8713270cdc82d9b9d9b76bd2a40cadaacfd0ab2a9ae1bde9e27",
+      "bytes": 3520,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/CANONICAL_POISSON_RINGS_RETAIN_EXACTLY_THE_ETALE_CONDITION_AUDIT_2026_09_05.md",
+      "title": "Audit: canonical Poisson rings and the etale condition",
+      "sha256": "494b846dc24d3dfeb142616ac44b3049e9d5b9d032f7465f54105811c63f7d4e",
+      "bytes": 3447,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/CARTIER_ENDOMORPHISM_HN_AUDIT_2026_09_06.md",
+      "title": "Independent audit: Cartier endomorphism HN filtration",
+      "sha256": "e381e9e5b60fac447ace0323fb990c5ff86083f2b401719e5dd9e7f3420c34f5",
+      "bytes": 5938,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/COMPATIBLE_TANGO_STRUCTURES_STRUCTURAL_AUDIT_2026_09_05.md",
+      "title": "Independent structural audit of the compatible Tango count",
+      "sha256": "aca31b929dcb1b4fe7fa73194704d14156f2c0347bbd8b08e3f79de1bd17d2b3",
+      "bytes": 6971,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/CORED_FIXED_PAIR_BOUNDED_MINIMAL_DEGREE_AUDIT_2026_09_06.md",
+      "title": "Major audit: two-primary W2 and bounded minimal cored degree",
+      "sha256": "5c1c269ec17557e4cbbe2fe0599f05a5c7d871f9fd110646c5241f444692fee2",
+      "bytes": 6629,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/CORED_SINGLE_JUMP_DEGREE_BOUND_AUDIT_2026_09_06.md",
+      "title": "Audit: cored zero-form reduction and single-jump degree bound",
+      "sha256": "ab857df772a2c2288217de9f7bf273779be4eb434b1e44e00e968a5e63b06610",
+      "bytes": 4019,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/CORELESS_HOM_ZERO_CORRESPONDENCE_IN_CHARACTERISTIC_FIVE_AUDIT.md",
+      "title": "Focused audit: coreless Jacobian-orthogonal correspondence in characteristic five",
+      "sha256": "de6c890953f514fec7d25cbcf1e8f1d07668b1fac5a10508cbf45793f2c9d8ef",
+      "bytes": 11257,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/CORE_PRESERVING_TRANSVERSE_DORMANT_REDUCTION_AUDIT_2026_09_05.md",
+      "title": "Core-preserving transverse dormant reduction: independent audit",
+      "sha256": "53683e10dd0c4486ace72d767e6586cbfd38307c52e03feb7790c9ef65151cfe",
+      "bytes": 7920,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/DEGREE_NINE_FREE_CHARACTER_QUOTIENT_AUDIT_2026_09_06.md",
+      "title": "Independent audit: free order-nine character quotient",
+      "sha256": "539db14bbeed4e8853d276583d7f306bed04992f8e4d56b458b0d6f34ad116aa",
+      "bytes": 5862,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/DORMANT_OPER_CORELESS_MUMFORD_CONSTRUCTION_AUDIT_2026_09_05.md",
+      "title": "Independent audit: coreless Mumford span preserving a dormant oper",
+      "sha256": "bdcf7025cae786958bdf2d4249908cf942a5941d90feeeea63787438b589eff5",
+      "bytes": 9951,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ELLIPTIC_CHARACTER_BOUNDS_AND_FINITE_DESCENT_AUDIT.md",
+      "title": "Audit: elliptic character bounds and finite étale descent",
+      "sha256": "4e8c8f9e7a240bb45da79cf0d1ea496f84625170d09f1c133e16d2e65eb4cc86",
+      "bytes": 8244,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ENDPOINT_TWO_PRIMARY_LOW_DEGREE_TORSION_AUDIT_2026_09_06.md",
+      "title": "Audit: endpoint two-primary torsion in low-degree Abel images",
+      "sha256": "02f47e15b680f1e07eabfecd4fdaa312395549ca3cddd617561d5f226ff06dfc",
+      "bytes": 5557,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ETALE_ROOT_REDUCTION_OF_THE_CONTACT_BOUND_AUDIT_2026_09_06.md",
+      "title": "Independent audit: etale roots and the contact bound",
+      "sha256": "2906dabc3f0abf8dfe2b06ddab17de2972853518ade134c736a3133e3ee457ff",
+      "bytes": 5074,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/FIRST_WILD_RAMIFICATION_LAYER_GENUS_BOUND_AUDIT_2026_09_06.md",
+      "title": "Audit: first wild ramification layer versus atlas genus",
+      "sha256": "b8a034b49b9164f1bc18ba09057c432be0c8f74bf40420760c59a19aefb97f3c",
+      "bytes": 4322,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/FIXED_WEIGHT_NORMS_AND_COMMUTING_CANONICAL_RING_REALIZATION_AUDIT_2026_09_05.md",
+      "title": "Audit: fixed-weight norms and commuting canonical-ring realization",
+      "sha256": "03df501c38b1d5a45d6edcdffd90638f6897230d90c7cd0dcbac1a5199c182dc",
+      "bytes": 4847,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/GENERIC_HYPERELLIPTIC_BOUNDED_ABELIAN_COVERS_ORDINARY_AUDIT.md",
+      "title": "Audit: ordinary bounded-exponent abelian covers of generic hyperelliptic curves",
+      "sha256": "fab2001f08d5967053075c1e86fc1faf75b645c6f0833d8b76b1b83b36afb11e",
+      "bytes": 4186,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/GENERIC_TWO_LEG_TRACE_REDUCTION_AUDIT.md",
+      "title": "Focused independent audit: generic two-leg trace reduction",
+      "sha256": "b88491ac03c727e048bd332ef8ceab9748c603e87ecb2f062aae24ca38503842",
+      "bytes": 5121,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/GENUS17_UNBOUNDED_HECKE_BOUNDARY_AUDIT_2026_09_06.md",
+      "title": "Fixed genus-seventeen unbounded Hecke leaves: boundary audit",
+      "sha256": "90725106fc8e92d396817ae71483279a16f49a18e22ff957d2a1322f63a79fd4",
+      "bytes": 6228,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/GENUS9_ALL_EFFECTIVE_ORBIFOLD_QUOTIENTS_AUDIT_2026_09_06.md",
+      "title": "Audit: all effective orbifold quotients of the fixed genus-nine curve",
+      "sha256": "09095460608b3d0e416de32737716188330b5edae72a157a3fabffce30fdc7af",
+      "bytes": 6436,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/GENUS9_ALL_NONZERO_EIGENVALUE_CARTIER_FORMS_SIMPLE_AUDIT_2026_09_06.md",
+      "title": "Genus-nine Cartier eigenforms: independent major audit",
+      "sha256": "d5aad0fc7cffd1667e307fef01e96407689662143579c498b1269f08f75f27f4",
+      "bytes": 3540,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/GENUS9_UNIFORM_CARTIER_ZERO_AND_DEGREE_ONE_BOUND_AUDIT_2026_09_06.md",
+      "title": "Uniform Cartier zeros on file76 X: independent audit",
+      "sha256": "3243490d34688a4ab8cb289586a7ccf8ccc39e9e2a482149df4aacacd4b7c6ce",
+      "bytes": 4064,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/GF25_T_SQUARED_TWO_CURRENT_FRONTIER_AUDIT_2026_09_05.md",
+      "title": "Custom GF(25) matrix arithmetic: independent current-frontier audit",
+      "sha256": "5761c26d2537d3b03e9dfe0136e121886dad3f3c4dc8c27f34209734a447913b",
+      "bytes": 5181,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/HOSHI_GENUS6_TWIST_WITH_NO_MAXIMAL_TANGO_AUDIT.md",
+      "title": "Focused audit: the genus-six twist has no maximal Tango structure",
+      "sha256": "750bf3d4ba3a0a3112fed5a94eeca73c409b605bcf7fca6b85fa8d3de97f383b",
+      "bytes": 7527,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/HOSHI_SAGE10_9_CUSTOM_GF25_MATRIX_BACKEND_AUDIT.md",
+      "title": "Audit of Sage 10.9 custom-GF(25) dense matrix arithmetic in the Hoshi certificates",
+      "sha256": "7aaf8e1ac7352c830ca80707e8be4ae869031cdaca0b1bd63a74a70a6809a5f8",
+      "bytes": 6413,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/IGUSA_11_CORRESPONDENCE_GLOBAL_AUDIT_2026_09_05.md",
+      "title": "Igusa 11-correspondence: independent global audit",
+      "sha256": "8171ec34acf781b76bf88a188976411a35fb047e827dc834c3350824b36358e9",
+      "bytes": 9713,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/IGUSA_KUMMER_DIFFERENTIAL_AUDIT_2026_09_05.md",
+      "title": "Igusa Kummer differential audit — 2026-09-05",
+      "sha256": "dfa32c27c45daee2af1d8d70c09386adfdca55af867da2572ec338298a4d58cf",
+      "bytes": 11804,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/INTEGRAL_WILD_JUMP_DEGREE_BOUND_AUDIT_2026_09_06.md",
+      "title": "Audit: integral wild jumps and the cored degree bound",
+      "sha256": "87243f11326a25bcaaeded7db0f39c73766ee7869298b6962aaf4bac98ae1521",
+      "bytes": 5565,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/MAXIMAL_LOWER_BREAK_COMMON_RESIDUE_AUDIT.md",
+      "title": "Audit: maximal lower break forces a common residue class",
+      "sha256": "1b8ee0f4ce87d19e236203e12bf3cc2e393b075a3c1c8201e3e5633accc8bfb6",
+      "bytes": 3501,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/MINIMAL_COMMON_COVER_AND_INCIDENCE_DESCENT_AUDIT.md",
+      "title": "Audit: minimal common covers and rational incidence descent",
+      "sha256": "b19168da94338909b5bbcb9a49e48201f6d7665026312b50580ee0f26f6a0400",
+      "bytes": 1717,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/NONGALOIS_JACOBIAN_STABILIZATION_AUDIT.md",
+      "title": "Audit: non-Galois Jacobian orthogonality and etale-map stabilization",
+      "sha256": "12ed8185c58b18293298cc26c923a282a341d198d44948e592fadb46df30afca",
+      "bytes": 3484,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ODD_ABELIAN_COVERS_AFTER_A_DOUBLE_COVER_AXIS_THETA_AUDIT.md",
+      "title": "Audit: odd abelian covers after an étale double cover",
+      "sha256": "66eb3fd0591b759a40fa20af6da8a23d71ada9a3302a3b2c572671b3c16d03a0",
+      "bytes": 3501,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ODD_PRIME_DECK_NORMALITY_UNDER_RIGID_BRANCH_AUDIT.md",
+      "title": "Audit: odd-prime deck normality under rigid branch locus",
+      "sha256": "34e1d31f343f73dfac15d9870286120c760f7f6a5d8399b79a78e8911a61b11a",
+      "bytes": 9841,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ONE_FACTOR_AND_SAME_PRIME_RECTANGLES_FOCUSED_AUDIT.md",
+      "title": "Focused checks of one-factor descent and same-prime rectangles",
+      "sha256": "9cb0058816df1afb99194b3acf75955f4897c76b50efb42efe54075dee85eb26",
+      "bytes": 2485,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ORDINARY_ATLAS_AND_WEAK_TWO_POINT_AUDIT.md",
+      "title": "Audit: ordinary-atlas Cartier bounds and weak two-point arithmetic",
+      "sha256": "64a8816ca6a4d0e76ffe5e386ef74bfc7ccc4f86879f3bf9ad3eb8b71545e650",
+      "bytes": 5753,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ORDINARY_CYCLIC_TRIPLE_FINITE_BAD_FIBERS_AUDIT.md",
+      "title": "Independent audit: ordinary cyclic triples have finitely many bad fibers",
+      "sha256": "f2c816f017a42aa6866f40585d27564fc13fff9a56d466eded8d47081bc60196",
+      "bytes": 6765,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ORDINARY_GENUS_TWO_OPEN_ALL_DOUBLE_ABELIAN_TOWERS_AUDIT.md",
+      "title": "Focused audit: a genus-two open for all double-abelian towers",
+      "sha256": "0d8336ec14801c01560096568f87cf20bec512b4defcbe9325e817cb43e1e3cb",
+      "bytes": 6225,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/ORDINARY_GENUS_TWO_UNIFORM_ORBIFOLD_DEGREE_BOUND_AUDIT.md",
+      "title": "Audit: ordinary genus-two uniform orbifold degree bound",
+      "sha256": "522b8cbd69e5d36eed8eade223171937ae7758c19aa5bc217f79592f4457ae79",
+      "bytes": 3729,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/POSITIVE_CORRESPONDENCE_CORE_ALGEBRAICITY_AUDIT.md",
+      "title": "Independent audit: a core and algebraicity of the positive return correspondence",
+      "sha256": "fb301de8acbfb14528c2948847eaf5be53634e003c09a0d49bc5923e8d6233f2",
+      "bytes": 5236,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/PPAV_VERSCHIEBUNG_DIRAC_EXISTENCE_AND_UNIQUENESS_AUDIT_2026_09_05.md",
+      "title": "Focused audit: universal ppav Dirac existence and proposed uniqueness",
+      "sha256": "592b6ecf43ccaab158dac01c32936941076ddbc46c56553b2ac5f02b84459715",
+      "bytes": 7989,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/PRO_SOCLE_AND_CHARACTER_ORBIT_FOCUSED_AUDIT.md",
+      "title": "Pro socle and character-orbit focused checks",
+      "sha256": "61dced56a2b99d1465c8b403d4afc79b746b4812c7ffa8040385eb78ec3ac05b",
+      "bytes": 1775,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/README.md",
+      "title": "Audit index for the current global route",
+      "sha256": "e4fcc693acccfd5a88abf856d5fcaf0fa2fa1f71257a923ac0ba64f67db9862c",
+      "bytes": 12930,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/SHARED_SIMPLE_FORM_CONTACT_DEGREE_BOUND_AUDIT_2026_09_06.md",
+      "title": "Shared simple-form contact degree bound: independent proof audit",
+      "sha256": "8d148a353d25d23323a6ae8b92c5679b676fe4c4af93d48a033a6d254578ff87",
+      "bytes": 3656,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/SIMPLE_JACOBIAN_BIDEGREE_TWO_AUDIT.md",
+      "title": "Audit: simple Jacobians and bidegree-two bi-etale correspondences",
+      "sha256": "e6d66c8dd32afb1ca0d704fe8ff16ff513acfabcda2462ef5ad9b92c535e4cce",
+      "bytes": 1454,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/TANGO_LINE_CLASS_AND_UNIQUENESS_CHECK_2026_09_05.md",
+      "title": "Tango line classes and uniqueness across dormant oper choices",
+      "sha256": "25e20858873b3641e6062427f24a201311985d925d7e1b975321bfe31343996c",
+      "bytes": 7405,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/UNIFORM_EQUAL_WEIGHT_CONTACT_FORCES_CORE_AUDIT_2026_09_06.md",
+      "title": "Audit: a uniform zero multiplicity equal to the weight forces a core",
+      "sha256": "c57aa80fd09cfe5e0ef8b2d5e6f9b2fc18306e274c613166b480b6eb52633329",
+      "bytes": 8763,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/global/audits/UNIVERSAL_ETALE_JACOBIAN_SPECTRUM_AUDIT.md",
+      "title": "Audit: universal etale Jacobian spectrum",
+      "sha256": "8bbd8a7047779796a1c55cb5463d422017742f9a40d7b13a140fb327ee69e0a5",
+      "bytes": 1403,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/profile4/162_PROFILE4_HIGHPOINT_FIBER_COUNT_LEMMA.md",
+      "title": "Profile-4 high-point reductions",
+      "sha256": "807747c1fc84bae1a67d85524241a2a9c114d6967f1536e9c6836c7c95c35a26",
+      "bytes": 9059,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/README.md",
+      "title": "Profile-4 route",
+      "sha256": "a3383ff52d1eca15c9b442502a7cd3addf808defee783c26360fbc599ed36c6c",
+      "bytes": 1231,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/79_ENTRY_ZERO_DOUBLE_FIBER_REDUCTION.md",
+      "title": "Entry-zero norm-normalization audit",
+      "sha256": "f155455f54382af84e7244d04ad89e1f0c8053660e26412455f04a24cd15e9ca",
+      "bytes": 7140,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/README.md",
+      "title": "Double-fiber route",
+      "sha256": "f0ecc0b408b0c1dc9bb1ea4ee2d7e6c4671c81d06aeecea123e6024641ca5dbf",
+      "bytes": 3774,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/basin127/159_BASIN127_CAS_SETUP_AND_DISPLAYED_BASIS_CHECK.md",
+      "title": "The displayed basin-127 quotient",
+      "sha256": "c05e8c3ec9a6898629454edf87c8596841586993b2d332b45bac044f150ebc7e",
+      "bytes": 4628,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/basin127/179_BASIN127_TAIL_DEPTH_REDUCTION.md",
+      "title": "Basin-127 tail-depth reduction",
+      "sha256": "236152784c7a292694f963019c71b231aa2193ce2c14174a295917f1e520ec78",
+      "bytes": 3853,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/basin127/README.md",
+      "title": "Basin-127 route",
+      "sha256": "3818cb06707628435b569dbd2a393da14c97c39c36b29f86260aaccba4897a67",
+      "bytes": 1347,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/100_REPEATED_U20_MISSING_GATE.md",
+      "title": "Missing repeated-\\(u^{20}\\) gate",
+      "sha256": "456564eb68dc74bff0dc871d323aa0241cb1ee1b868a526aa9384dd9056bb63b",
+      "bytes": 1498,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/101_SIMPLE_U25_LEADING_SOLVE_CERTIFICATE.md",
+      "title": "Simple \\(x=0,u^{25}\\) solve",
+      "sha256": "750692e758783f957d8650463c80f12e54f9a66bb27fc12ce01af4cd9a327100",
+      "bytes": 1123,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/104_REPEATED_U25_TWO_MINOR_CERTIFICATE.md",
+      "title": "Repeated-\\(u^{25}\\) two-minor reduction",
+      "sha256": "1cd571de435d89a0605f7452dadefc0b5b2e16abe15e093e7b37bb78718eb779",
+      "bytes": 2906,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/182_GENERAL_REPEATED_RESPONSE_LEMMA.md",
+      "title": "General repeated-layer response lemma",
+      "sha256": "40ccc8dcfe3182597274f11132aebf02d9314cdb4cfc8bf5204629a4f0541583",
+      "bytes": 5674,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/184_SECOND_BLOWUP_SHAPE_AND_UC_RESIDUE_LEMMA.md",
+      "title": "Second-blowup shape and three repeated-layer scalar identities",
+      "sha256": "42072f67241c07084b1178954cd277363a12b4c105c2d1cbfb35b9ec165a0051",
+      "bytes": 10409,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/185_SIMPLE_SCHUR_RESPONSE_AND_REPEATED_COLUMNS.md",
+      "title": "Simple-branch response and the repeated-layer Schur columns",
+      "sha256": "72cd0176611b9804d14c1183480d09a770816568f8bfb021edbb3de3f0940bd7",
+      "bytes": 6704,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/186_REPEATED_U5_LAST_SCALAR_RESIDUE_CERTIFICATE.md",
+      "title": "The last repeated-\\(u^5\\) scalar by a four-branch residue",
+      "sha256": "5b241cc8deec5fd8a70cf278eccc701ec6f36331e852e37cf3927c1cac6ea11f",
+      "bytes": 6958,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/187_REPEATED_U20_COMPLETE_AFFINE_CERTIFICATE.md",
+      "title": "Complete repeated-\\(u^{20}\\) affine certificate",
+      "sha256": "3cd8225e2004eadeb358f4b01f943b596de8f0f7a1866ccf2e3c62226f7a112f",
+      "bytes": 12548,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/188_GENERAL_REPEATED_U5_SCALAR_AND_ATLAS.md",
+      "title": "The repeated-\\(u^5\\) scalar before the double-fiber specialization",
+      "sha256": "69fbf79f88e3e9249ccc6d26ce78e7a1430c5010049c531ac2d484d074199ea4",
+      "bytes": 6014,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/189_ENTRY_ZERO_RELABELLED_ATLAS_REDUCTION.md",
+      "title": "Relabelling the exceptional repeated-\\(u^5\\) scalar",
+      "sha256": "4d60f89ea1f6e275daef6069e6475f8e631fcab758ee0871d624feb8cd3f7cf6",
+      "bytes": 5593,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/190_INFINITY_NEWTON_POLYGON_AND_U25_ENDPOINT_BAND.md",
+      "title": "The infinity Newton polygon and the terminal \\(u^{25}\\) coefficient band",
+      "sha256": "40e809425a07e6be34a6a5de16ffad29a498991d830c10053f61b68efc7af908",
+      "bytes": 10854,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/191_ORDER_THREE_QUOTIENT_ON_THE_HARD_EXCEPTION.md",
+      "title": "The order-three quotient on the hard exceptional locus",
+      "sha256": "158e516c36141b83d5b087a48ec71b06ea6b6f024af6e864db351927765e823b",
+      "bytes": 7188,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/192_TRUE_BOUNDARY_U25_FULL_RESPONSE_AND_HARD_U5_RANK.md",
+      "title": "The true \\(z=0\\) boundary at repeated \\(u^{25}\\)",
+      "sha256": "038d1a713faa0be932e0571282cf5d4b6fec1c7cc06b38912e834ef9ead6d1ba",
+      "bytes": 10077,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/193_ENTRY_ZERO_TRACE_AND_EXCEPTIONAL_COKERNEL.md",
+      "title": "The entry-zero trace and the exceptional first-layer cokernel",
+      "sha256": "c2f2333b5e5b80ec3a9a91a534109f553f34626aee9da0e4a51632886aef57ac",
+      "bytes": 5290,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/194_HARD_U5_BASE_RESIDUAL_IS_NOT_BOUNDARY_FORCED.md",
+      "title": "The hard repeated-\\(u^5\\) base residual is not boundary-forced",
+      "sha256": "9436486c3948fee33f2d88b58ddbe38456a942907012dee59ec857dccb7f3257",
+      "bytes": 6260,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/80_REPEATED_BRANCH_LINEAR_ALGEBRA.md",
+      "title": "Linear algebra on the clean repeated branch",
+      "sha256": "73f144cf529e1370661324590c02e02172f7693ae41ab98af8dd4ddddcfdba3d",
+      "bytes": 1739,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/81_REPEATED_U5_COLUMN_RECURRENCE_CERTIFICATE.md",
+      "title": "Repeated-\\(u^5\\) response formulas",
+      "sha256": "03f28632c3f68821820a490f62d580c8704a7b7f1cf64ac38a4fafff81cdef78",
+      "bytes": 5391,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/83_REPEATED_U5_REPAIRED_ATLAS_CERTIFICATE.md",
+      "title": "Repeated-\\(u^5\\) two-chart atlas",
+      "sha256": "116f7e34bec45194e54660536fa1b250d2f39a8f629ebf01c3606bae842947ac",
+      "bytes": 2211,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/85_SIMPLE_FIVE_STEP_SOLVE_LEMMA.md",
+      "title": "Simple-branch five-step solve lemma",
+      "sha256": "7b5ee0b192538ebb805a361a8f7b4858eac0f89e4eeaef9bc45a501f56b1b752",
+      "bytes": 3473,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/86_SIMPLE_U10_CHARTED_SOLVE_CERTIFICATE.md",
+      "title": "Simple \\(x=0,u^{10}\\) solve",
+      "sha256": "f4c5757822fe7b4536f2131fef81f94dd302591021655f45f6e6ad4ffdf16795",
+      "bytes": 1334,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/92_REPEATED_U10_TWO_MINOR_CERTIFICATE.md",
+      "title": "Repeated-\\(u^{10}\\) two-minor reduction",
+      "sha256": "5780aa8f24f42f3bb24dd36ca2273692e0bda6c98630b11629b9f146949444de",
+      "bytes": 2604,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/93_SIMPLE_U15_LEADING_SOLVE_CERTIFICATE.md",
+      "title": "Simple \\(x=0,u^{15}\\) solve",
+      "sha256": "7baf72ff3348f2cd11fc90d5ee8e6c4c8d690e1edb5ae5efcd79b37882fb8478",
+      "bytes": 911,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/96_REPEATED_U15_VERTICAL_CERTIFICATE.md",
+      "title": "Repeated-\\(u^{15}\\) vertical rank reduction",
+      "sha256": "1b23638859b2a84aee48ec754c5aaabfc3cf74274e3da4f3b166a2bcc02d4763",
+      "bytes": 2868,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/97_SIMPLE_U20_LEADING_SOLVE_CERTIFICATE.md",
+      "title": "Simple \\(x=0,u^{20}\\) solve",
+      "sha256": "57d5d3b999d1ccb81f620a99f425dfb8e7e92de40b646bd9165aa007c31e8781",
+      "bytes": 1014,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/layer_certificates/README.md",
+      "title": "Formal layer reading order and evidence",
+      "sha256": "33374ddf9ff6669c82fc2d471c0f9d5a72f1772a6fd6cb140b8864f3c76928b0",
+      "bytes": 2632,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/open_targets/180_G4_DOUBLE_FIBER_TAIL_COVERAGE_TARGET.md",
+      "title": "Double-fiber tail-coverage target",
+      "sha256": "15d263f108edac2c703111ac4dec989112b4528d129cc87e5bd73336e0afd2b4",
+      "bytes": 4994,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/open_targets/181_REPEATED_E30_IDEAL_EXTRACTION_TARGET.md",
+      "title": "Repeated-\\(e30\\) ideal-extraction target",
+      "sha256": "2da97a5013ac41f8885921e72ab72bf254006526fdd605541c8f37e7bc78af33",
+      "bytes": 3341,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/open_targets/README.md",
+      "title": "Double-fiber open targets",
+      "sha256": "1fe8178091ef7a2fc9a1bab27dfe7507081d5b05a0bbc97ccdad8839aba7bb80",
+      "bytes": 740,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/terminal_strata/148_SYMBOLIC_P129_LAYER_CERTIFICATE.md",
+      "title": "P129 post-\\(e30\\) layer transcript",
+      "sha256": "6391e26db47dd5103919d5cc3eee1b5027af06755d0231eb0cd612b14feaa3a7",
+      "bytes": 2568,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/terminal_strata/150_TANGENT_CANDIDATE_FIELD_AND_E50_AUDIT.md",
+      "title": "P129 tangent candidates and the base field",
+      "sha256": "1bf8378aa3b57e2096c470187e4cca94ab20aaefffb92edb13bb6894a5547922",
+      "bytes": 3219,
+      "classification": "audit_reference_only"
+    },
+    {
+      "path": "routes/profile4/double_fiber/terminal_strata/156_RHO4_ALLZERO_POINT_AND_E50_KILL.md",
+      "title": "Rho4 candidate transcript and \\(e50\\) ending",
+      "sha256": "15cdaf9e06d684b7d0de55dd97f370c9dc33dfa1bc5d9c4a3c309125035359dd",
+      "bytes": 2229,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/double_fiber/terminal_strata/README.md",
+      "title": "Terminal-strata transcripts",
+      "sha256": "055755fdc1d18fa95541f4892108f540e51a7d4e27fa3115b4e5c11a90e1dbca",
+      "bytes": 1335,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/entry_one/171_ENTRY1_DOUBLE_FINITE_POLE_EDGE.md",
+      "title": "Entry-1 double finite pole edge",
+      "sha256": "ec607442dd40c17d1ebb69982211911ba4fbd9d7e84fa4104d0af5e4844ae4b8",
+      "bytes": 2808,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/entry_one/172_ENTRY1_SIMPLE_FINITE_POLE_ODE.md",
+      "title": "Entry-1 simple finite pole ODE check",
+      "sha256": "63a99f36e671a7d11fce309a30eb185385fab047f9e0adcbf878fd36df86cdd8",
+      "bytes": 2178,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/entry_one/174_ENTRY1_LOWZ_INFINITY_CORNER.md",
+      "title": "Entry-1 low-z corner at x=infinity",
+      "sha256": "3344dc26f8c761466934d425489af1d428a00ec9397c6605c9c6c6749d727e85",
+      "bytes": 2830,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/entry_one/175_ENTRY1_LOGARITHMIC_EXACTNESS_TARGET.md",
+      "title": "Entry-one logarithmic lifting target",
+      "sha256": "a1fa41cc2fe05e94ec4fc808e695b4fa9442e4fe85acb62c23657ccc749528fb",
+      "bytes": 5179,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/entry_one/176_ENTRY1_X_NORM_SHADOW.md",
+      "title": "Entry-one norm consequences",
+      "sha256": "fa3bfbe5f6afccc90d770983aed3fd811ea5f0a3ed8310fc627846eede050e63",
+      "bytes": 3220,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/entry_one/177_ENTRY1_PINFTY_HIGH_BRANCH_ODE.md",
+      "title": "Entry-1 P_infty high-branch ODE",
+      "sha256": "52b03f9b850f1924c1f8af8e4079529e885b0a7f494a1c14642cad8c553a4065",
+      "bytes": 2408,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/entry_one/README.md",
+      "title": "Entry-one route",
+      "sha256": "c20d523eb1ce67f5c3a5199989a9d5da932aa465ec61a3366d587f254ea717ef",
+      "bytes": 2624,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/no_highpoint/170_NO_HIGHPOINT_RESIDUAL_GATE.md",
+      "title": "No-highpoint residual gate",
+      "sha256": "9947967abd0507634595bfffba4a75a14ac43ed839385e57d79bcd7231000599",
+      "bytes": 7218,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "routes/profile4/no_highpoint/README.md",
+      "title": "No-highpoint route",
+      "sha256": "ac4afecc5f64e94a7d01cb6115678720a0d18f84062ae3f75e5829321de6065a",
+      "bytes": 993,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "tasks/00A_REPROVE_REPEATED_LAYER_IDENTITIES.md",
+      "title": "Prerequisite: reprove the transcript-only repeated-layer identities",
+      "sha256": "4e0dd7fa3326345d7ff5cf9bfb44c74b1846408acb3238bfad20b104778921d4",
+      "bytes": 2857,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "tasks/00B_ENTRY_ZERO_SPECIALIZATION_OR_COVERAGE.md",
+      "title": "Task 00B: justify the entry-zero specialization or cover the full branch",
+      "sha256": "784fccca41672e629460809aa5bf888f0a5288c1a4d269d13ebb27fd591180c1",
+      "bytes": 3231,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "tasks/00_RECOVER_REPEATED_U20.md",
+      "title": "Prerequisite: recover or reprove the repeated-`u20` layer",
+      "sha256": "eac4f8206b4d7fdee9a63be9ebe2f2da9a45d594de84a35650b673ea351e2d73",
+      "bytes": 2185,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "tasks/01_PROFILE_EXTRACTION.md",
+      "title": "Task 01: extract the profile-4 curve problem from a non-visible correspondence",
+      "sha256": "6ca4f2861b64aaae7d275883c5ad317b525dc258175e7ddb92dc07523d6d7602",
+      "bytes": 3330,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "tasks/02_ENTRY_ONE_EXCLUSION.md",
+      "title": "Task 02: exclude all entry-one high-point coincidences",
+      "sha256": "81fab55ac5941faf5881434d6f8b85c9ed9113eb869177bf524fb4afdb365937",
+      "bytes": 6176,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "tasks/03_NO_HIGHPOINT_EXCLUSION.md",
+      "title": "Task 03: exclude the no-highpoint branch",
+      "sha256": "41e6a66d26261404274ab06ffe21a11bd2b970e1691dab7b137c14b0a88dfe25",
+      "bytes": 4086,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "tasks/04_BASIN127_CONTAINMENT.md",
+      "title": "Task 04: prove the basin-127 saturation containment",
+      "sha256": "b6750c5422f0e32937b67f45269e94cb42086703a106f5b4080034732707b972",
+      "bytes": 3349,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "tasks/05_DOUBLE_FIBER_TAIL_COVERAGE.md",
+      "title": "Task 05: prove double-fiber tail coverage and terminal emptiness",
+      "sha256": "a5b3e6f2c6d23821f52751273d71d576e8f10fa5687f6cfe3d5e9742df0e3c5b",
+      "bytes": 5215,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "tasks/06_FINAL_ASSEMBLY.md",
+      "title": "Task 06: verify the final conditional assembly",
+      "sha256": "5aebc765a280de21980900523cb613215c84344b8037369dbcd3fd1661490b39",
+      "bytes": 4011,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "tasks/GPT6_PRO_INTRINSIC_STRATEGY_REVIEW_DRAFT_2026_09_05.md",
+      "title": "Draft for one fresh-perspective Pro request",
+      "sha256": "355b0406e4e4673ca42f50275e953261fd607cdf818342a64fea7ee177613b5b",
+      "bytes": 4925,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "tasks/GPT6_PRO_TANGO_CORE_LEMMA_PROMPT_2026_09_05.md",
+      "title": "Tango-core Pro request — DISPROVED",
+      "sha256": "c7e685676d3f3d1244408d77af782b37b34baf0ca34932f7b1c2e3c2b0f451a2",
+      "bytes": 1052,
+      "classification": "legacy_unreviewed"
+    },
+    {
+      "path": "tasks/README.md",
+      "title": "Open-task router",
+      "sha256": "211c228fa1b85535276598a57047171081e666f1113929a00bc0cf065400812c",
+      "bytes": 3779,
+      "classification": "legacy_unreviewed"
+    }
+  ]
+}

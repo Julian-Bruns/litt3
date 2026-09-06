@@ -99,7 +99,7 @@ about arbitrary ramified or inseparable maps.
 ## 3. Proof of the cored degree bound
 
 Let `X <- C -> Y` be minimal and cored. The bridge proved in
-[CORED_BIETALE_CORRESPONDENCES_HAVE_COMMON_ORBIFOLDS.md](CORED_BIETALE_CORRESPONDENCES_HAVE_COMMON_ORBIFOLDS.md)
+[CORED_BIETALE_CORRESPONDENCES_HAVE_COMMON_ORBIFOLDS.md](../../Theorems/Thm_cored_orbifold_bridge.md)
 gives an actual finite etale refinement `W -> C` such that `W -> X` and
 `W -> Y` are both Galois. It is important that this refinement is
 constructed by alternating unramified Galois closures inside a finite
@@ -293,7 +293,7 @@ one (indeed infinitely many) is coreless, contradicting 2.
 Finally any common cover with `Y` now has a core, and therefore yields
 a common effective orbifold `S`. The atlas `Y -> S` has degree at most
 `B`. Apply the
-[bounded-atlas finiteness theorem](BOUNDED_ATLAS_DEGREE_GIVES_FINITE_ORBIFOLD_PARTNERS.md)
+[bounded-atlas finiteness theorem](../../Theorems/Thm_bounded_atlas_partner_finiteness.md)
 to the fixed curve `Y` and partner genus `h`. This proves the last
 assertion. No Galois hypothesis on either original cover was introduced.
 

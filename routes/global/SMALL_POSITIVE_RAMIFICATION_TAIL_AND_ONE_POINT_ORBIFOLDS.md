@@ -267,7 +267,7 @@ hyperbolic one-point orbifold requires \(d/e>2\) by
 Riemann--Hurwitz, already contradicting (10).
 
 In particular the fixed ordinary genus-25 curve of
-[file 76](76_EXPLICIT_BRANCH_RATIONAL_R3_REDESIGN.md) cannot share the
+[file 76](../../Theorems/Thm_fixed_pair_arithmetic.md) cannot share the
 one-point orbifold in (9) with the genus-nine curve. Its p-rank \(25\)
 is sufficient; the genus-nine curve's p-rank \(6\) is not used.
 This is an exclusion of the specified finite common orbifold, not of

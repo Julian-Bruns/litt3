@@ -1,0 +1,92 @@
+{
+  "field": "F5[a]/(a^2+4a+2)",
+  "invariant_scheme_length": 55,
+  "all_invariant_points_covered": true,
+  "certificate": [
+    {
+      "orbit_id": 0,
+      "residue_degree": 1,
+      "factor": "b7 + 2*a + 2",
+      "rank": 5,
+      "pivot_rows": [
+        0,
+        1,
+        2,
+        5,
+        6
+      ],
+      "nonzero_minor": "4*a + 4"
+    },
+    {
+      "orbit_id": 1,
+      "residue_degree": 1,
+      "factor": "b7 + 4*a + 3",
+      "rank": 5,
+      "pivot_rows": [
+        0,
+        1,
+        2,
+        5,
+        6
+      ],
+      "nonzero_minor": "1"
+    },
+    {
+      "orbit_id": 2,
+      "residue_degree": 2,
+      "factor": "b7^2 + (4*a + 3)*b7 + a + 3",
+      "rank": 5,
+      "pivot_rows": [
+        0,
+        1,
+        2,
+        5,
+        6
+      ],
+      "nonzero_minor": "u + 2*a + 2"
+    },
+    {
+      "orbit_id": 3,
+      "residue_degree": 9,
+      "factor": "b7^9 + 3*b7^8 + (a + 1)*b7^7 + (4*a + 2)*b7^6 + b7^5 + 4*b7^4 + (2*a + 1)*b7^3 + 2*b7^2 + (3*a + 1)*b7 + a",
+      "rank": 5,
+      "pivot_rows": [
+        0,
+        1,
+        2,
+        5,
+        6
+      ],
+      "nonzero_minor": "(2*a + 3)*u^8 + 4*a*u^7 + (a + 1)*u^6 + (3*a + 3)*u^5 + (4*a + 4)*u^4 + (4*a + 2)*u^3 + (3*a + 1)*u^2 + (2*a + 4)*u + 4"
+    },
+    {
+      "orbit_id": 4,
+      "residue_degree": 19,
+      "factor": "b7^19 + a*b7^18 + (4*a + 4)*b7^17 + 3*b7^16 + (a + 2)*b7^15 + (3*a + 3)*b7^14 + (4*a + 4)*b7^13 + (2*a + 3)*b7^12 + (a + 4)*b7^11 + (2*a + 2)*b7^10 + (4*a + 3)*b7^9 + a*b7^8 + (3*a + 1)*b7^7 + b7^6 + (3*a + 2)*b7^5 + (3*a + 4)*b7^4 + (4*a + 4)*b7^3 + (4*a + 2)*b7^2 + b7 + a + 1",
+      "rank": 5,
+      "pivot_rows": [
+        0,
+        1,
+        2,
+        5,
+        6
+      ],
+      "nonzero_minor": "(3*a + 2)*u^18 + (4*a + 2)*u^17 + 4*a*u^16 + (3*a + 4)*u^15 + 3*u^14 + (4*a + 4)*u^13 + u^12 + (4*a + 4)*u^10 + (a + 4)*u^9 + 2*a*u^8 + (4*a + 1)*u^7 + (4*a + 1)*u^6 + (3*a + 1)*u^5 + 3*a*u^4 + (a + 3)*u^3 + u^2 + (3*a + 1)*u + 3*a"
+    },
+    {
+      "orbit_id": 5,
+      "residue_degree": 23,
+      "factor": "b7^23 + (2*a + 3)*b7^22 + (4*a + 3)*b7^21 + (4*a + 3)*b7^20 + (4*a + 1)*b7^18 + (4*a + 3)*b7^17 + (4*a + 2)*b7^16 + (3*a + 4)*b7^15 + (4*a + 4)*b7^14 + (2*a + 2)*b7^13 + (2*a + 1)*b7^12 + (2*a + 2)*b7^11 + 2*b7^10 + (2*a + 1)*b7^9 + 4*a*b7^8 + (3*a + 4)*b7^7 + (2*a + 3)*b7^6 + (4*a + 3)*b7^5 + 2*a*b7^4 + (2*a + 4)*b7^3 + 2*b7^2 + a + 3",
+      "rank": 5,
+      "pivot_rows": [
+        0,
+        1,
+        2,
+        5,
+        6
+      ],
+      "nonzero_minor": "(2*a + 1)*u^22 + (a + 3)*u^21 + (a + 2)*u^20 + 2*u^19 + 3*u^18 + 4*u^17 + (4*a + 4)*u^16 + (a + 3)*u^15 + (3*a + 2)*u^14 + (4*a + 3)*u^13 + 3*a*u^12 + 2*a*u^11 + 2*u^9 + (4*a + 3)*u^8 + 4*a*u^7 + (3*a + 3)*u^6 + (3*a + 2)*u^5 + a*u^4 + (2*a + 2)*u^3 + (a + 2)*u^2 + 2*a*u + 4*a"
+    }
+  ],
+  "conclusion": "Lambda=0 is impossible in the normalized equations before adjoining its inverse: e0 makes B invariant, e1 forces Chat=0, contradicting its monic coefficient. Lambda is already a unit. Removing inv*Lambda-1 preserves the entire scheme, including local multiplicities."
+}

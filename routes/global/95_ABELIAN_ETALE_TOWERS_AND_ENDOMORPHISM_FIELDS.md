@@ -214,7 +214,7 @@ Let \(k=\overline{\mathbf F}_5\),
                                                                \tag{95.8}
 \]
 
-File [76](76_EXPLICIT_BRANCH_RATIONAL_R3_REDESIGN.md), Proposition 76.3,
+File [76](../../Theorems/Thm_fixed_pair_arithmetic.md), Proposition 76.3,
 and its exact arithmetic certificate establish that \(J(Y)\) is
 ordinary and absolutely simple. Its Frobenius field \(K\) has degree
 50, and its real subfield \(K^+\) has degree 25 and normal-closure

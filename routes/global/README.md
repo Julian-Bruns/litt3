@@ -1,6 +1,12 @@
 # Global routes
 
-The target is visibility of every representable finite étale
+For the current structural investigation, read [update.md](../../update.md)
+and its linked frontier. The numbered index below describes the earlier
+root-stack route; it is not the current work plan. The
+[Igusa counterexample note](IGUSA_TANGO_COUNTEREXAMPLE_AND_RETAINED_SECTION_BOUNDARY.md)
+records the latest correction to the Tango route.
+
+The historical root-stack target is visibility of every representable finite étale
 self-correspondence of
 
 `S=P^1_{\bar F_5}(31,31,31)`

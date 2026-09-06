@@ -1,0 +1,46 @@
+{
+  "phase": "single_optimized_all_core_oper_enumeration",
+  "active_target_ids": [
+    "scalar_hermitian_reconstruction",
+    "semilinear_hermitian_lift",
+    "fixed_x_oper_cubic_quotient"
+  ],
+  "next_action": "Let ONE10-thread14-variable patched msolve PTY97862 PID90081 compute. Monitor memory; all older jobs terminated and variants retired. Export with --normalized on completion, then radical/tuples and multiplicities.",
+  "last_completed_ids": [
+    "semilinear_hermitian_lift",
+    "scalar_hermitian_reconstruction",
+    "fixed_x_oper_cubic_quotient"
+  ],
+  "last_updated_local": "2026-09-06 18:42 CEST",
+  "problem_status": "unsolved",
+  "pro_requests_remaining": 0,
+  "migration_status": "complete",
+  "timer": {
+    "due_local": "2026-09-06 about18:59 CEST",
+    "exec_cell": "286"
+  },
+  "active_computations": [
+    {
+      "session_id": 97862,
+      "pid": 90081,
+      "status": "running_only_solver",
+      "threads": 10,
+      "pair_cap": 250,
+      "script": "patched msolve normalized_oper_msolve.in",
+      "expected_F25_length": 9645,
+      "expected_F5_length": 19290
+    }
+  ],
+  "enumeration": {
+    "distinct_exported": 55,
+    "full_multiplicity_each": 8,
+    "remaining_full_length": 28935,
+    "remaining_distinct_count": null
+  },
+  "active_agents": [],
+  "pro_prompt": "Research/PRO_SCALAR_HERMITIAN_RECONSTRUCTION.md",
+  "pro_status": "Integrated pointwise reconstruction;10 identification parameters and40 extension variables removed. General horizontal retraction audited in all allowed genera/torsion twists.",
+  "proof_scope": "Large cored untwisted PSU branch only; small cored, nontrivial PGU twists and coreless cases remain.",
+  "patched_solver": "/tmp/litt3-msolve-lowmem.bQGL6w/msolve-0.10.1/msolve",
+  "retired_algorithms": "Removed from active code; obsolete artifacts recoverable in /Users/julian/.Trash/litt3-retired-solvers.2a0Fl7. All old processes terminated."
+}

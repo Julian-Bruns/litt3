@@ -169,7 +169,7 @@ argument, not a claim that every numerically allowed packet occurs.
 ## 3. The exact abelian subfield of the fixed genus-nine endomorphism field
 
 Let \(X\) be the fixed genus-nine curve in
-[file 76](76_EXPLICIT_BRANCH_RATIONAL_R3_REDESIGN.md).
+[file 76](../../Theorems/Thm_fixed_pair_arithmetic.md).
 Proposition 76.2 and the argument in
 [file 87, Proposition 87.10](87_TRIVIAL_AUTOMORPHISMS_AND_BRANCH_RIGIDITY_FORCE_DECK_NORMALITY.md)
 give

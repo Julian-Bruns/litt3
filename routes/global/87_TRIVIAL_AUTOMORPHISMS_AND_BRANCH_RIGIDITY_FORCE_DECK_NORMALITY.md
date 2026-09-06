@@ -10,7 +10,8 @@
 This note gives two degree-independent deck-rigidity theorems and a
 common-cover consequence.
 
-The first is the strongest and cleanest.  If \(J(X)\) is simple and
+The first is now a special case of the audited arbitrary-abelian theorem
+in [file91](91_ARBITRARY_ABELIAN_DECK_RIGIDITY.md). If \(J(X)\) is simple and
 \(\operatorname{Aut}(X)=1\), then every connected etale Galois cover of
 \(X\) with abelian \(\ell\)-group deck group has no automorphisms beyond
 its deck group.  This holds in every characteristic, including
@@ -77,84 +78,17 @@ which is impossible for \(\deg(f)>1\). \(\square\)
 ## 2. The trivial-automorphism theorem in arbitrary abelian
 \(\ell\)-power degree
 
-### Theorem 87.3 (absolute deck rigidity)
+### Former Theorem 87.3: use the arbitrary-abelian theorem
 
-Let \(k\) be algebraically closed, let \(X/k\) be a smooth projective
-curve of genus at least two, and assume
+The prime-power theorem and its proof are superseded by
+[Theorem91.1](91_ARBITRARY_ABELIAN_DECK_RIGIDITY.md), independently
+checked PASS on 2026-09-04. That theorem applies to EVERY finite abelian
+deck group, in every characteristic, under the same rigid-base and
+simple-Jacobian hypotheses. No special prime-power argument is needed.
 
-\[
-                  J(X)\ \text{is simple},\qquad
-                  \operatorname{Aut}(X)=1.                            \tag{87.2}
-\]
-
-Let \(D\to X\) be a connected finite etale Galois cover whose deck group
-\(H\) is a nontrivial finite abelian \(\ell\)-group, for any prime
-\(\ell\).  Then
-
-\[
-                         \operatorname{Aut}(D)=H.                     \tag{87.3}
-\]
-
-This remains valid when \(\ell=\operatorname{char}k\).
-
-#### Proof
-
-Put \(A=\operatorname{Aut}(D)\).  This is a finite group because
-\(g(D)\ge2\).  Lemma 87.1 and (87.2) give
-
-\[
-                              N_A(H)=H.                               \tag{87.4}
-\]
-
-Choose an \(\ell\)-Sylow subgroup \(P\le A\) containing \(H\).  A proper
-subgroup of a finite \(\ell\)-group is strictly contained in its
-normalizer.  Thus \(H<P\) would imply
-
-\[
-                         H<N_P(H)\le N_A(H)=H,
-\]
-
-a contradiction.  Hence \(P=H\).  In particular \(P\) is abelian and
-
-\[
-                         P\subseteq Z(N_A(P)).
-\]
-
-Burnside's normal \(\ell\)-complement theorem supplies a normal subgroup
-\(R\triangleleft A\), of order prime to \(\ell\), such that
-
-\[
-                   A=R\rtimes P,\qquad A/R\simeq P=H.                 \tag{87.5}
-\]
-
-Suppose \(A>H\).  The inclusion \(H<A\) gives a finite separable map
-
-\[
-                         X=D/H\longrightarrow D/A
-\]
-
-of degree greater than one.  Lemma 87.2 makes \(D/A\simeq\mathbf P^1\).
-
-Every \(\ell\)-Sylow subgroup of \(A\) is conjugate to \(H\), and hence
-acts freely on \(D\).  Therefore no point stabilizer for the \(A\)-action
-has order divisible by \(\ell\).  Its image in \(A/R\simeq H\) is
-trivial.  It follows that the quotient map
-
-\[
-                         D/R\longrightarrow D/A\simeq\mathbf P^1
-\]
-
-is a connected finite etale Galois cover with nontrivial deck group
-\(H\).  This is impossible because the projective line over an
-algebraically closed field has no nontrivial connected finite etale
-cover.  Hence \(A=H\). \(\square\)
-
-### Remark 87.4
-
-The abelian hypothesis is used exactly once: it places the Sylow subgroup
-inside the center of its normalizer, which is the hypothesis of Burnside's
-normal-complement theorem.  The proof does not extend as written to a
-nonabelian \(\ell\)-group.
+The genuinely different branch-rigidity theorem below is retained.
+The nonabelian extension is not asserted; see
+[the checked boundary](93_NONABELIAN_DECK_RIGIDITY_BOUNDARY.md).
 
 ## 3. A branch-rigid \(C_\ell\)-base theorem
 

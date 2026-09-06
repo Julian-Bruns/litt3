@@ -1,0 +1,17 @@
+# Default rg/file discovery shows the active research library, not old routes.
+# Historical material remains accessible through the metadata search CLI or
+# by explicitly naming a needed proof/certificate path.
+/routes/
+/archive/
+/tasks/
+/reference/
+/tmp/
+/Research/legacy_inventory.json
+# Superseded root-level route maps and prompts are historical inputs too.
+/STRUCTURE.md
+/MISSING_INPUTS.md
+/PRO_QUESTION_TWO_LEG_THETA_SHORT_2026_09_05.md
+/PRO_QUESTION_TWO_LEG_THETA_2026_09_05.md
+/DIRAC_TRACE_POLARIZATION_OBSTRUCTION_2026_09_05.md
+/FINITE_FLAT_DIRAC_DUALITY_OBSTRUCTION_2026_09_05.md
+**/__pycache__/

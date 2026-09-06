@@ -89,7 +89,7 @@ Apply this to \(E=K\cap\mathbf Q^{\rm ab}\). \(\square\)
 ## 2. Two small factorizations for the current target
 
 Let \(Y\), \(P_Y\), and \(Q_Y\) be as in file
-[76](76_EXPLICIT_BRANCH_RATIONAL_R3_REDESIGN.md), so
+[76](../../Theorems/Thm_fixed_pair_arithmetic.md), so
 
 \[
  Y:\ z^2=(t^{25}+t^5+t)(t^{25}+t^5+t-1)(t-4),\qquad

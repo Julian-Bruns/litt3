@@ -161,7 +161,7 @@ $$
 $$
 
 Apply the independently audited
-[bounded-atlas finiteness theorem](BOUNDED_ATLAS_DEGREE_GIVES_FINITE_ORBIFOLD_PARTNERS.md)
+[bounded-atlas finiteness theorem](../../Theorems/Thm_bounded_atlas_partner_finiteness.md)
 with $B=42000(g_X-1)$ and target genus two.
 That theorem takes a Galois closure only over the orbifold already
 assumed to exist; wild inertia and non-Galois atlases are allowed.
