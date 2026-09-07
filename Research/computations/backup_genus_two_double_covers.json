@@ -1,0 +1,575 @@
+{
+ "status": "all15 connected geometric etale double covers are ordinary; author computation",
+ "field_modulus": [
+  1,
+  1,
+  0,
+  1
+ ],
+ "branch_points": [
+  [],
+  [
+   1
+  ],
+  [
+   2
+  ],
+  [
+   3
+  ],
+  [
+   0,
+   1
+  ],
+  null
+ ],
+ "infinity_index": 5,
+ "covers": [
+  {
+   "branch_pair_indices": [
+    0,
+    1
+   ],
+   "A_coefficients": [
+    [],
+    [
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [
+     0,
+     4
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    2,
+    0,
+    1
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    0,
+    2
+   ],
+   "A_coefficients": [
+    [],
+    [
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [
+     0,
+     2
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    2,
+    1,
+    1
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    0,
+    3
+   ],
+   "A_coefficients": [
+    [],
+    [
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [
+     0,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    3,
+    2,
+    1
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    0,
+    4
+   ],
+   "A_coefficients": [
+    [],
+    [
+     0,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [
+     4
+    ],
+    [
+     1
+    ],
+    [
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    3
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    0,
+    5
+   ],
+   "A_coefficients": [
+    [],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [
+     0,
+     1
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    3,
+    3,
+    3
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    1,
+    2
+   ],
+   "A_coefficients": [
+    [
+     2
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [],
+    [
+     0,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    4,
+    2,
+    1
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    1,
+    3
+   ],
+   "A_coefficients": [
+    [
+     3
+    ],
+    [
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [],
+    [
+     0,
+     2
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    4,
+    3,
+    1
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    1,
+    4
+   ],
+   "A_coefficients": [
+    [
+     0,
+     1
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [],
+    [
+     1
+    ],
+    [],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    2
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    1,
+    5
+   ],
+   "A_coefficients": [
+    [
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [],
+    [
+     0,
+     4
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    1,
+    0,
+    2
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    2,
+    3
+   ],
+   "A_coefficients": [
+    [
+     1
+    ],
+    [],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [],
+    [
+     0,
+     1
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    1,
+    4,
+    1
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    2,
+    4
+   ],
+   "A_coefficients": [
+    [
+     0,
+     2
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [],
+    [
+     3
+    ],
+    [
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    2
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    2,
+    5
+   ],
+   "A_coefficients": [
+    [
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [],
+    [
+     0,
+     2
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    4,
+    3,
+    2
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    3,
+    4
+   ],
+   "A_coefficients": [
+    [
+     0,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [],
+    [
+     2
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    3
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    3,
+    5
+   ],
+   "A_coefficients": [
+    [
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [],
+    [
+     0,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    4,
+    4,
+    3
+   ],
+   "etale_double_cover_ordinary": true
+  },
+  {
+   "branch_pair_indices": [
+    4,
+    5
+   ],
+   "A_coefficients": [
+    [
+     0,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_B_coefficients": [
+    [],
+    [
+     4
+    ],
+    [
+     1
+    ],
+    [
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "elliptic_Hasse_invariant": [
+    3
+   ],
+   "etale_double_cover_ordinary": true
+  }
+ ],
+ "proof_scope": "Actual genus-three double covers of the backup C only; no arbitrary etale-cover ordinarity claim."
+}

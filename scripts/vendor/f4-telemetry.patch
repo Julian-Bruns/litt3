@@ -1,0 +1,217 @@
+--- a/src/neogb/gb.c
++++ b/src/neogb/gb.c
+@@ -28,6 +28,7 @@
+ 
+ #include "libneogb.h"
+ #include "data.c"
++#include "f4_metrics.h"
+ #include "meta_data.c"/* computational meta data */
+ #include "tools.c"    /* tools like inversion mod p,
+                        * tracer construction, timings etc. */
+@@ -49,4 +50,3 @@
+ #include "nf.c"       /* implemenation of normal form algorithm */
+ #include "f4sat.c"    /* implemenation of saturation algorithm */
+ #include "modular.c"  /* implemenation of modular Groebner for F4 */
+-
+--- a/src/neogb/f4.c
++++ b/src/neogb/f4.c
+@@ -710,6 +710,7 @@
+     }
+ 
+     done = initialize_f4(&bs, &md, &mat, gmd, gbs, fc);
++    f4m_init(md->nthrds);
+     if(cp_resume) {
+         f4cp_load(cp_resume,bs,md,cp_fingerprint);
+         done=bs->constant || !md->ps->ld;
+@@ -735,6 +736,9 @@
+     while (!done) {
+         rrt = realtime();
+         crt = cputime();
++        f4m_reset();
++        int64_t metrics_before[]={md->num_zerored,md->num_gb_crit,md->num_redundant};
++        uint64_t metrics_upper=0,metrics_lower=0;
+         double cp_t[]={md->select_rtime,md->symbol_rtime,md->la_rtime,md->update_rtime};
+         uint64_t cp_rows=0,cp_cols=0,cp_nnz=0,cp_degree_pairs=0;
+         uint64_t cp_pairs_before=cp_enabled?md->ps->ld:0,cp_selected=0;
+@@ -750,6 +754,8 @@
+         if(cp_enabled) {
+             cp_selected=cp_pairs_before-md->ps->ld;
+             cp_rows=mat->nru+mat->nrl; cp_cols=md->ht->eld-1;
++            metrics_upper=mat->nru;metrics_lower=mat->nrl;
++            f4m_monomials(md->ht);
+             for(unsigned i=0;i<mat->nru;++i) cp_nnz+=mat->rr[i][LENGTH];
+             for(unsigned i=0;i<mat->nrl;++i) cp_nnz+=mat->tr[i][LENGTH];
+             if(!done) f4cp_pre_la(cp_telemetry,bs,md,cp_rows,cp_cols,cp_nnz);
+@@ -769,8 +775,14 @@
+             f4cp_telemetry(cp_telemetry,bs,md,cp_rows,cp_cols,cp_nnz,
+                 cp_degree_pairs,cp_selected,cp_t,realtime()-rrt);
+             int stop=f4cp_requested || (cp_stop && cp_rounds>=cp_stop);
++            double metrics_save_start=realtime();
+             if(cp_path && (done || stop || (cp_interval && cp_rounds%cp_interval==0)))
+                 f4cp_save(cp_path,bs,md,cp_fingerprint);
++            double metrics_save_seconds=realtime()-metrics_save_start;
++            uint64_t metrics_terms=0;
++            if(f4m_enabled)for(unsigned i=0;i<bs->ld;i++)if(bs->hm[i])metrics_terms+=bs->hm[i][LENGTH];
++            f4m_emit(cp_telemetry,md->current_rd,md,metrics_before,metrics_upper,metrics_lower,
++                     cp_cols,cp_nnz,metrics_terms,metrics_save_seconds);
+             if(stop && !done) {
+                 fprintf(stderr,"F4_INCOMPLETE: saved round %d; %u S-pairs remain; no Groebner basis exported\n",md->current_rd,md->ps->ld);
+                 fflush(NULL); exit(75);
+--- a/src/neogb/la_ff_8.c
++++ b/src/neogb/la_ff_8.c
+@@ -115,6 +115,8 @@
+     const len_t ncols           = mat->nc;
+     const len_t ncl             = mat->ncl;
+     cf8_t * const * const mcf  = mat->cf_8;
++    f4m_counter *metrics=f4m_local();
++    if(metrics){metrics->row_calls++;metrics->column_probes+=ncols-dpiv;}
+ 
+     rba_t *rba;
+     if (tr > 0) {
+@@ -164,6 +166,7 @@
+         /* found reducer row, get multiplier */
+         const uint32_t mul= (uint32_t)(fc - dr[i]);
+         dts   = pivs[i];
++        if(metrics){metrics->axpy_calls++;metrics->coefficient_updates+=dts[LENGTH];}
+         if (i < ncl) {
+             /* set corresponding bit of reducer in reducer bit array */
+             if (tr > 0) {
+@@ -536,6 +539,7 @@
+         dr[i] = 0;
+     }
+     if (k == 0) {
++        if(metrics)metrics->zero_returns++;
+         return NULL;
+     }
+ 
+--- a/src/neogb/symbol.c
++++ b/src/neogb/symbol.c
+@@ -504,6 +504,8 @@
+     ht_t *bht = bs->ht;
+ 
+     const len_t rr  = *nr;
++    f4m_counter *metrics=f4m_local();
++    if(metrics)metrics->symbol_queries++;
+ 
+     const len_t evl = bht->evl;
+ 
+@@ -522,14 +524,17 @@
+ 
+     i = 0;
+ start:
++    k=i;
+     while (i < lml && lms[i] & ns) {
+         i++;
+     }
++    if(metrics)metrics->symbol_mask_skips+=i-k;
+     if (i < lml) {
+         const hm_t *b = bs->hm[lmps[i]];
+         const exp_t * const f = evb[b[OFFSET]];
+         for (k=0; k < evl; ++k) {
+             if (e[k] < f[k]) {
++                if(metrics)metrics->symbol_full_rejects++;
+                 i++;
+                 goto start;
+             }
+@@ -538,6 +543,7 @@
+ 
+         const hi_t h  = hdm.val - hdb[b[OFFSET]].val;
+         rows[rr]  = multiplied_poly_to_matrix_row(sht, bht, h, etmp, b);
++        if(metrics){metrics->symbol_rows++;metrics->symbol_terms+=b[LENGTH];}
+         /* track trace information ? */
+         if (md->trace_level == LEARN_TRACER) {
+             rows[rr][BINDEX]  = lmps[i];
+--- a/src/neogb/f4_metrics.h
++++ b/src/neogb/f4_metrics.h
+@@ -0,0 +1,91 @@
++/* Optional counters only: not part of a basis or checkpoint's mathematical state. */
++#ifndef F4_METRICS_H
++#define F4_METRICS_H
++#include <inttypes.h>
++#include <sys/time.h>
++typedef struct {
++    uint64_t row_calls, axpy_calls, coefficient_updates, column_probes;
++    uint64_t zero_returns, symbol_queries, symbol_mask_skips, symbol_full_rejects;
++    uint64_t symbol_rows, symbol_terms;
++    uint64_t padding[6];
++} f4m_counter;
++static int f4m_enabled=0;
++static int f4m_threads=0;
++static f4m_counter *f4m_slots=NULL;
++static uint64_t f4m_coeff_columns=0,f4m_coeff_only=0,f4m_coeff_degree=0,f4m_unknown_degree=0;
++static int f4m_degrees_available=0;
++static inline f4m_counter *f4m_local(void) {
++    if (!f4m_enabled) return NULL;
++    int i=omp_get_thread_num();
++    if(i<0 || i>=f4m_threads) abort();
++    return &f4m_slots[i];
++}
++static void f4m_init(int threads) {
++    f4m_enabled=getenv("MSOLVE_F4_GRANULAR")!=NULL;
++    if(!f4m_enabled)return;
++    free(f4m_slots); f4m_threads=threads>0?threads:1;
++    f4m_slots=calloc(f4m_threads,sizeof(*f4m_slots));
++    if(!f4m_slots)abort();
++}
++static void f4m_reset(void) {
++    if(f4m_enabled)memset(f4m_slots,0,f4m_threads*sizeof(*f4m_slots));
++}
++static void f4m_monomials(const ht_t *ht) {
++    f4m_coeff_columns=f4m_coeff_only=f4m_coeff_degree=f4m_unknown_degree=0;
++    f4m_degrees_available=0;
++    if(!f4m_enabled)return;
++    const char *setting=getenv("MSOLVE_F4_COEFF_VARIABLES");if(!setting)return;
++    unsigned char *mask=calloc(ht->nv,1);if(!mask)abort();
++    const char *p=setting;
++    while(*p) {
++        char *end;long index=strtol(p,&end,10);
++        if(end==p||index<0||index>=ht->nv||(*end&&*end!=','))abort();
++        mask[index]=1;p=*end?end+1:end;
++    }
++    f4m_degrees_available=1;
++    for(hl_t h=1;h<ht->eld;h++) {
++        uint64_t coeff=0,unknown=0;
++        for(unsigned i=0;i<ht->nv;i++) {
++            unsigned off=i+1+(ht->ebl && i>=ht->ebl-1);
++            if(mask[i])coeff+=ht->ev[h][off];else unknown+=ht->ev[h][off];
++        }
++        f4m_coeff_columns+=(coeff>0);f4m_coeff_only+=(coeff>0&&unknown==0);
++        if(coeff>f4m_coeff_degree)f4m_coeff_degree=coeff;
++        if(unknown>f4m_unknown_degree)f4m_unknown_degree=unknown;
++    }
++    free(mask);
++}
++static void f4m_emit(const char *path,int round,const md_t *m,const int64_t *before,
++                     uint64_t upper,uint64_t lower,uint64_t columns,uint64_t nnz,
++                     uint64_t basis_terms,double checkpoint_seconds) {
++    if(!f4m_enabled || !path)return;
++    f4m_counter z={0};
++    for(int i=0;i<f4m_threads;i++) {
++        uint64_t *out=(uint64_t*)&z,*in=(uint64_t*)&f4m_slots[i];
++        for(int j=0;j<10;j++)out[j]+=in[j];
++    }
++    FILE *f=fopen(path,"a");if(!f)abort();
++    struct timeval now;gettimeofday(&now,NULL);
++    fprintf(f,"{\"event\":\"granular_round\",\"schema\":1,\"round\":%d,"
++      "\"arithmetic_domain\":\"F5_encoded\",\"coefficient_updates\":%"PRIu64","
++      "\"row_subtractions\":%"PRIu64",\"row_reducer_calls\":%"PRIu64","
++      "\"reducer_column_probes\":%"PRIu64",\"reducer_zero_returns\":%"PRIu64","
++      "\"symbol_queries\":%"PRIu64",\"symbol_mask_skips\":%"PRIu64","
++      "\"symbol_full_divisibility_rejects\":%"PRIu64",\"symbol_generated_rows\":%"PRIu64","
++      "\"symbol_generated_terms\":%"PRIu64",\"matrix_reducer_rows\":%"PRIu64","
++      "\"matrix_target_rows\":%"PRIu64",\"matrix_columns\":%"PRIu64",\"matrix_nnz\":%"PRIu64","
++      "\"basis_terms_after\":%"PRIu64",\"zero_rows\":%"PRId64","
++      "\"gm_criterion_rejections\":%"PRId64",\"redundant_basis_elements\":%"PRId64","
++      "\"checkpoint_seconds\":%.9g,\"coefficient_degree_profile_available\":%s,"
++      "\"symbolic_columns_with_coefficient_powers\":%"PRIu64",\"coefficient_only_symbolic_columns\":%"PRIu64","
++      "\"max_coefficient_generator_degree\":%"PRIu64",\"max_genuine_unknown_degree\":%"PRIu64","
++      "\"unix_seconds\":%.6f,\"counter_scope\":\"known_pivot_sparse_ff8_and_symbol_search;initialization_and_final_reduction_excluded\"}\n",
++      round,z.coefficient_updates,z.axpy_calls,z.row_calls,z.column_probes,z.zero_returns,
++      z.symbol_queries,z.symbol_mask_skips,z.symbol_full_rejects,z.symbol_rows,z.symbol_terms,
++      upper,lower,columns,nnz,basis_terms,m->num_zerored-before[0],
++      m->num_gb_crit-before[1],m->num_redundant-before[2],checkpoint_seconds,
++      f4m_degrees_available?"true":"false",f4m_coeff_columns,f4m_coeff_only,
++      f4m_coeff_degree,f4m_unknown_degree,now.tv_sec+now.tv_usec*1e-6);
++    fclose(f);
++}
++#endif

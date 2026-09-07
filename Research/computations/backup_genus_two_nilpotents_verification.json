@@ -1,0 +1,16 @@
+{
+  "status": "PASS independent no-solver nilpotent census replay",
+  "certificate_sha256": "a34d3fafdd8ebe4b6f7b5686cc1002bc6baa1076ebc95a29bc05135c55792839",
+  "scheme_length": 125,
+  "distinct_points": 90,
+  "dormant_points": 5,
+  "dormant_local_multiplicity": 8,
+  "active_points": 85,
+  "active_jacobian_units_verified": true,
+  "normalized_generalized_Cartier_equation_verified": true,
+  "all_active_quartics_have_four_double_zeros": true,
+  "trivial_root_class_count": 10,
+  "each_of_15_nontrivial_root_class_count": 5,
+  "elapsed_seconds": 0.7012935829698108,
+  "scope": "Exact endpoint algebra. Scalar connection geometry and multiplicity argument are author prose, not an independent mathematical audit. No common connection or source ordinarity is inferred."
+}

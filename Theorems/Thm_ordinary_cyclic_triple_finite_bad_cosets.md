@@ -36,4 +36,7 @@ The ordinary-U hypothesis cannot be dropped.
 [Proof](../Solutions/Sol_ordinary_cyclic_triple_finite_bad_cosets.md).
 Audited prose: PASS, `/root/ordinary_triple_finite_bad_fibers_check`,
 2026-09-05; [verdict and clarifications](../routes/global/audits/ORDINARY_CYCLIC_TRIPLE_FINITE_BAD_FIBERS_AUDIT.md).
-The cyclic-triple Prym calculation remains a proof-local legacy input.
+Version2,2026-09-07: mathematical statement and audited scope unchanged.
+The algebraic Prym input is now in Section1 of the proof; its retained
+nonordinary component bounds are an author-only appendix, NOT assertions
+of this ordinary theorem or an extension of its audit.

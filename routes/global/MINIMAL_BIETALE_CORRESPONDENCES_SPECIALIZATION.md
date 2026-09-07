@@ -67,7 +67,7 @@ cover is again étale. For example, take a finite étale Galois closure
 and apply the subgroup correspondence. Thus all three maps in (1) are
 finite étale, including \(q_s\). They are separable even in degree
 divisible by the characteristic. This is the same elementary
-normalization mechanism used in Proposition D.1 of the earlier note.
+normalization mechanism in [the incidence proof, §1](MINIMAL_COMMON_COVER_AND_INCIDENCE_DESCENT.md#1-the-exact-incidence-square-and-the-missing-second-leg).
 
 If the special diagram is not minimal, \([L:M]>1\). Theorem 1 then
 produces a generic common factor of that same degree, contradicting

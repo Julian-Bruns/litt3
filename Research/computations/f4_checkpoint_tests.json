@@ -1,0 +1,166 @@
+[
+  {
+    "test": "cyclic3",
+    "baseline_rc": 0,
+    "stop_rc": 75,
+    "resume_rc": 0,
+    "identical": true,
+    "baseline_bytes": 286,
+    "stop_bytes": 0,
+    "checkpoint_sha256": "faf735c0545302a258c0eb5c00c200f199ab0afd986d28a6b03e9d33fc8bd300"
+  },
+  {
+    "test": "cyclic3-reload",
+    "rc": 0,
+    "identical": true
+  },
+  {
+    "test": "cyclic3-reload.prev",
+    "rc": 0,
+    "identical": true
+  },
+  {
+    "test": "cyclic3-wrong-input",
+    "rc": 74,
+    "rejected": true,
+    "bytes": 0
+  },
+  {
+    "test": "cyclic3-corruption",
+    "rc": 74,
+    "rejected": true,
+    "bytes": 0
+  },
+  {
+    "test": "cyclic4",
+    "baseline_rc": 0,
+    "stop_rc": 75,
+    "resume_rc": 0,
+    "identical": true,
+    "baseline_bytes": 523,
+    "stop_bytes": 0,
+    "checkpoint_sha256": "38e4f471336abedd9344a222dc2ac5e549ae96429711b604eca3c148b12547cc"
+  },
+  {
+    "test": "cyclic4-reload",
+    "rc": 0,
+    "identical": true
+  },
+  {
+    "test": "cyclic4-reload.prev",
+    "rc": 0,
+    "identical": true
+  },
+  {
+    "test": "cyclic4-wrong-input",
+    "rc": 74,
+    "rejected": true,
+    "bytes": 0
+  },
+  {
+    "test": "cyclic4-corruption",
+    "rc": 74,
+    "rejected": true,
+    "bytes": 0
+  },
+  {
+    "test": "cyclic5",
+    "baseline_rc": 0,
+    "stop_rc": 75,
+    "resume_rc": 0,
+    "identical": true,
+    "baseline_bytes": 2240,
+    "stop_bytes": 0,
+    "checkpoint_sha256": "484c31f0ff7cdfc4e43976e9f66a53225379e9c881bb51140fedf9841970d5cc"
+  },
+  {
+    "test": "cyclic5-reload",
+    "rc": 0,
+    "identical": true
+  },
+  {
+    "test": "cyclic5-reload.prev",
+    "rc": 0,
+    "identical": true
+  },
+  {
+    "test": "cyclic5-wrong-input",
+    "rc": 74,
+    "rejected": true,
+    "bytes": 0
+  },
+  {
+    "test": "cyclic5-corruption",
+    "rc": 74,
+    "rejected": true,
+    "bytes": 0
+  },
+  {
+    "test": "chain2",
+    "baseline_rc": 0,
+    "stop_rc": 75,
+    "resume_rc": 0,
+    "identical": true,
+    "baseline_bytes": 268,
+    "stop_bytes": 0
+  },
+  {
+    "test": "chain6",
+    "baseline_rc": 0,
+    "stop_rc": 75,
+    "resume_rc": 0,
+    "identical": true,
+    "baseline_bytes": 344,
+    "stop_bytes": 0
+  },
+  {
+    "test": "chain10",
+    "baseline_rc": 0,
+    "stop_rc": 75,
+    "resume_rc": 0,
+    "identical": true,
+    "baseline_bytes": 421,
+    "stop_bytes": 0
+  },
+  {
+    "test": "SIGUSR1",
+    "rc": 75,
+    "incomplete": true,
+    "output_bytes": 0
+  },
+  {
+    "test": "SIGUSR1-resume",
+    "rc": 0,
+    "identical": true
+  },
+  {
+    "test": "cyclic3-original-binary",
+    "rc": 0,
+    "identical": true
+  },
+  {
+    "test": "cyclic4-original-binary",
+    "rc": 0,
+    "identical": true
+  },
+  {
+    "test": "cyclic5-original-binary",
+    "rc": 0,
+    "identical": true
+  },
+  {
+    "test": "chain2-original-binary",
+    "rc": 0,
+    "identical": true
+  },
+  {
+    "test": "chain6-original-binary",
+    "rc": 0,
+    "identical": true
+  },
+  {
+    "test": "chain10-original-binary",
+    "rc": 0,
+    "identical": true
+  }
+]

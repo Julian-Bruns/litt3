@@ -1,278 +1,221 @@
-# The joint-image conductor criterion for bi-etale covers
+# Bi-etale joint images: conductor, collisions and adjunction
 
-**Status: proved below; author self-check complete; independent audit
-pending. 2026-09-04.**
+Version 2, 2026-09-08. Author proofs/self-checks from 2026-09-04 and
+2026-09-05; independent audit pending. Consolidates the conductor criterion
+and ordered-collision/normal-line proof. No common-cover exclusion or
+global realization of the local counterexamples is claimed.
+The ordered-collision proof is by /root/x_elliptic_quotient_maps.
 
-This note records an exact, all-degree formulation that retains both maps
-from the **same** projective curve. It is not a nonexistence theorem. The
-ingredients are standard normalization, adjunction, and the different;
-the purpose is to keep the full geometric condition in the current search.
-No Galois hypothesis is imposed on either map.
+Let X,Y be smooth projective connected curves over an algebraically closed
+field k, with s_X=g(X)−1>0 and s_Y=g(Y)−1>0. Every common-cover assertion
+retains BOTH actual finite etale maps from the SAME smooth projective source.
+No Galois or characteristic-prime degree hypothesis is imposed.
 
-All curves are smooth, projective, and connected over an algebraically
-closed field \(k\), unless an image curve is explicitly allowed to be
-singular. Put \(s_X=g(X)-1>0\), \(s_Y=g(Y)-1>0\).
+## 1. The joint normalization retains both legs
 
-## 1. Passing to the joint image loses no common cover
-
-### Proposition 100.1
-
-Given finite etale maps \(f:Z\to X\) and \(g:Z\to Y\), let
-\(C\subset X\times Y\) be the reduced image of \((f,g)\), and let
-\(\nu:Z_0\to C\) be its normalization. Then
+Given actual finite etale maps f:W→X and g:W→Y, normalize their reduced
+joint image C⊂X×Y. Its function field is the compositum of the two
+specified subfields INSIDE k(W). Thus all extensions in
+W→Z→X,Y are separable, and properness makes the maps finite. Different
+transitivity gives
 
 \[
-                Z\longrightarrow Z_0\longrightarrow X,Y
+ R_{W/X}=R_{W/Z}+\pi^*R_{Z/X}=0.
 \]
 
-are all finite etale maps. In particular, the common-cover problem is
-unchanged if one requires the joint map to be birational onto its image.
+Both terms are effective and therefore zero; the tower over Y gives
+R_{Z/Y}=0 too. Consequently W→Z and BOTH maps Z→X,Y are finite etale.
+We may require the joint map to be birational onto C without losing
+any common cover. This is not a simultaneous Galois-closure assertion.
 
-#### Proof
+## 2. The exact conductor-different identities
 
-The function field of \(Z_0\) is the compositum of the two specified
-subfields \(k(X),k(Y)\subset k(Z)\). Every extension in the resulting
-towers is separable, because \(k(Z)/k(X)\) and \(k(Z)/k(Y)\) are
-separable. Properness makes the induced maps of curves finite.
-
-The different transitivity formula for \(Z\to Z_0\to X\) is
+More generally let C⊂S=X×Y be integral with finite generically separable
+projections, ν:Z→C its normalization, and f:Z→X, g:Z→Y the induced maps.
+Put d_X=deg f, d_Y=deg g and L=ν^*O_S(C). Write Δ for the conductor divisor:
+the conductor ideal on Z is O_Z(−Δ). Since C is Cartier and Gorenstein,
 
 \[
- R_{Z/X}=R_{Z/Z_0}+\pi^*R_{Z_0/X}.
+ \omega_Z=\nu^*\omega_C(-\Delta),\qquad
+ \omega_C=(\omega_S\otimes O_S(C))|_C.                    \tag{1}
 \]
 
-The left side is zero, and both terms on the right are effective.
-They therefore vanish. The same argument for the tower over \(Y\)
-proves the assertion. This works also when a degree is divisible by
-the characteristic. \(\square\)
-
-Unlike a coefficient-image quotient in an auxiliary construction,
-\(Z_0\) still maps to these exact two original curves.
-
-## 2. The two differential conditions share one conductor
-
-Let \(C\subset S=X\times Y\) be an integral curve with finite,
-generically separable projections. Write
+The two components of the conormal derivative are intrinsic sections
 
 \[
-        \nu:Z\to C,\qquad f:Z\to X,\qquad g:Z\to Y,
-        \qquad d_X=\deg f,\ d_Y=\deg g.
+ s_X\in H^0(Z,L\otimes f^*\omega_X),\qquad
+ s_Y\in H^0(Z,L\otimes g^*\omega_Y).
 \]
 
-Let \(\Delta\) be the conductor divisor on \(Z\): the conductor
-ideal of \(\mathcal O_C\subset\nu_*\mathcal O_Z\), viewed as an
-ideal of \(\mathcal O_Z\), is \(\mathcal O_Z(-\Delta)\).
-Since \(C\) is a Cartier divisor on the smooth surface \(S\), it
-is Gorenstein and
+They satisfy the CROSS-direction identities
 
 \[
- \omega_Z\simeq\nu^*\omega_C(-\Delta),\qquad
- \omega_C\simeq(\omega_S\otimes\mathcal O_S(C))|_C.
-                                                               \tag{100.1}
+ \boxed{\operatorname{div}(s_X)=\Delta+R_g,\qquad
+        \operatorname{div}(s_Y)=\Delta+R_f.}              \tag{2}
 \]
 
-Denote \(L=\nu^*\mathcal O_S(C)\). The conormal derivative of a
-local equation of \(C\), restricted to \(C\), is intrinsic. Splitting
-\(\Omega_S=\operatorname{pr}_X^*\Omega_X\oplus
-\operatorname{pr}_Y^*\Omega_Y\) and pulling back to \(Z\) gives
-two global sections
+Here R denotes the full different, not merely the sum of e−1.
+
+Indeed, for a local equation F(x,y)=0, the dualizing generator is
+η=dx/F_y=−dy/F_x. On a normalization branch with parameter t and conductor
+exponent c, (1) gives ord_t(η)=−c, whence
 
 \[
-        s_x\in H^0(Z,L\otimes f^*\omega_X),\qquad
-        s_y\in H^0(Z,L\otimes g^*\omega_Y).
-                                                               \tag{100.2}
-\]
-
-### Theorem 100.2 (exact conductor-different identities)
-
-The divisors of these sections satisfy
-
-\[
-             \operatorname{div}(s_x)=\Delta+R_g,
-             \qquad
-             \operatorname{div}(s_y)=\Delta+R_f.         \tag{100.3}
-\]
-
-Consequently, \(f\) and \(g\) are both etale if and only if
-
-\[
-             \operatorname{div}(s_x)
-              =\operatorname{div}(s_y)=\Delta.          \tag{100.4}
-\]
-
-In (100.4) the equalities are equalities of **divisors on the same
-normalization**, not just equalities of total degrees.
-
-#### Proof
-
-At a point of \(C\), choose local parameters \(x,y\) from \(X,Y\)
-and a local equation \(F(x,y)=0\). A generator of the dualizing
-module of this plane complete intersection, in its function field, is
-
-\[
-                      \eta=\frac{dx}{F_y}
-                            =-\frac{dy}{F_x}.          \tag{100.5}
-\]
-
-Both denominators are nonzero in the function field because both
-projections are generically separable. On a branch parameterized by
-\(t\), with conductor exponent \(c\), (100.1) says
-\(\operatorname{ord}_t\eta=-c\). Thus
-
-\[
- \operatorname{ord}_t(F_y)=c+\operatorname{ord}_t(dx/dt),
- \qquad
+ \operatorname{ord}_t(F_y)=c+\operatorname{ord}_t(dx/dt),\quad
  \operatorname{ord}_t(F_x)=c+\operatorname{ord}_t(dy/dt).
 \]
 
-For a separable map of smooth curves, the orders of the differential
-maps are precisely the different exponents, including in wild
-characteristic. These are the asserted identities.
+The differential orders are exactly the different exponents for separable
+maps of smooth curves, including wild ramification. Equation changes by
+units and coordinate changes give the stated line-bundle transformations.
+For (1), finite duality identifies ν_*ω_Z with
+Hom_C(ν_*O_Z,ω_C); because ω_C is invertible, the remaining Hom factor is
+the conductor. See the general [Stacks duality background](https://stacks.math.columbia.edu/tag/0E31).
 
-Changing the equation \(F\) by a unit changes its differential on
-\(C\) by the same unit; changing coordinates gives exactly the line
-bundle transformations in (100.2). Hence the local identities glue.
-Finally an effective different vanishes exactly when the finite
-separable map of smooth curves is etale. \(\square\)
+Thus BOTH maps are etale exactly when div(s_X)=div(s_Y)=Δ as DIVISORS
+ON THE SAME Z. Equality only of abstract lengths would lose the condition.
 
-The conductor-duality identity in (100.1) can also be obtained directly
-from finite duality:
-\(\nu_*\omega_Z=\mathcal Hom_C(\nu_*\mathcal O_Z,\omega_C)\).
-Since \(\omega_C\) is invertible, the Hom factor is the conductor.
-For the relevant general duality background, see the
-[Stacks Project, Algebraic Curves, Section 53.4](https://stacks.math.columbia.edu/tag/0E31).
+## 3. Normal line and actual ordered collisions
 
-### Corollary 100.3 (the common tangent line)
-
-For a bi-etale correspondence the differential of its joint map is
-a subbundle inclusion
+Assume now both maps are etale and j=(f,g):Z→S is birational onto C.
+The identifications df,dg give κ=(dg)^(−1)df:f^*ω_X→g^*ω_Y.
+Differentiating F along Z gives
+(1_L⊗κ)(s_X)+s_Y=0. In particular,
 
 \[
- T_Z\longrightarrow f^*T_X\oplus g^*T_Y\simeq T_Z\oplus T_Z,
+ N_j=\operatorname{coker}(T_Z\to f^*T_X\oplus g^*T_Y)
+       \simeq T_Z,\qquad L\simeq N_j(\Delta).             \tag{3}
 \]
 
-with each component an isomorphism. Its normal bundle is therefore
-\(T_Z\), of degree \(2-2g(Z)<0\).
+The first assertion follows by identifying both summands with T_Z and
+taking the quotient by their diagonal. The second follows from (2).
+Hence H^0(N_j)=0 and deg N_j=2−2g(Z)<0. This is a normal line of the
+map, NOT a claim that j is a closed immersion or that C is smooth.
 
-This is a statement about the normalization map. It does **not** say
-that \(C\) is smooth or that \(Z\to S\) is a closed immersion.
-\(\square\)
-
-## 3. An exact maximal-singularity formulation when the Jacobians are disjoint
-
-Assume
+At P=(x_0,y_0), the completed branches are DISTINCT smooth graphs
+y=φ_i(x), with φ_i'(0)≠0. There is no singular unibranch contribution.
+Set m_ij=ord_x(φ_i−φ_j). The plane-curve product equation gives
 
 \[
-                       \operatorname{Hom}(J(X),J(Y))=0.
-                                                               \tag{100.6}
+ \delta_P=\sum_{i<j}m_{ij},\qquad
+ c_i=\sum_{j\ne i}m_{ij}.                                 \tag{4}
 \]
 
-The Neron--Severi group of the product, modulo numerical equivalence,
-then has only the two fiber directions. With
-\(F_X=\{x\}\times Y\), \(F_Y=X\times\{y\}\), one has
+For example F_y on branch i is ∏_{j≠i}(φ_i−φ_j), while
+F_x=−φ_i'F_y, confirming both conductor exponents directly.
+Writing δ(C)=p_a(C)−g(Z)=Σ_Pδ_P, one obtains
 
 \[
- C\equiv d_YF_X+d_XF_Y,\qquad C^2=2d_Xd_Y,
- \qquad K_S\cdot C=2s_Xd_X+2s_Yd_Y.                   \tag{100.7}
+ \deg\Delta=2\delta(C),\qquad
+ C^2=2-2g(Z)+2\delta(C).                                  \tag{5}
 \]
 
-The usual additional summand in the Neron--Severi group is the group
-of homomorphisms between the two Jacobians; (100.6) removes it.
-
-Write \(\delta(C)=p_a(C)-g(Z)\), the total normalization defect.
-Adjunction gives
+There is also an intrinsic ordered-pair description. The complement
+R_X=(Z×_X Z)\setminus Δ_Z is a smooth projective, possibly disconnected
+curve, finite etale over Z by either projection π_i. It can be empty.
+No component is sent into Δ_Y by (gπ_1,gπ_2): otherwise two generic points
+would have the same joint image, contradicting birationality. Therefore
 
 \[
-                  p_a(C)=1+d_Xd_Y+s_Xd_X+s_Yd_Y.       \tag{100.8}
+ E_X=(g\pi_1,g\pi_2)^*\Delta_Y,\qquad
+ (\pi_1)_*E_X=\Delta,\qquad \deg E_X=2\delta(C).            \tag{6}
 \]
 
-### Theorem 100.4 (equivalent all-degree criterion)
+The local multiplicity at the ordered pair (z_i,z_j) is precisely m_ij
+in the common etale parameter x. Summing over j proves (6). Interchanging
+X and Y gives the same conductor. This uses the actual two-leg diagram,
+not independent point-pair or Jacobian data.
 
-Under (100.6), \(X,Y\) have a common finite etale cover if and only
-if there are positive integers \(d_X,d_Y\) and an integral curve
-\(C\subset X\times Y\), with finite generically separable
-projections of those degrees, such that
+## 4. Self-intersection and the maximal-defect criterion
+
+Let Φ=g_*f^*:J(X)→J(Y), with Rosati adjoint Φ†=f_*g^*. For ℓ≠char(k),
+the product-surface intersection identity is
 
 \[
-                s_Xd_X=s_Yd_Y=:t,
-                \qquad \delta(C)=d_Xd_Y+t.            \tag{100.9}
+ C^2=2d_Xd_Y-
+       \operatorname{Tr}(\Phi\Phi^\dagger\mid V_\ell J(Y)).
+                                                               \tag{7}
 \]
 
-The number \(d_Xd_Y+t\) is the largest possible normalization defect
-for such balanced degrees and separable projections.
-
-#### Proof
-
-For arbitrary separable projections, Riemann--Hurwitz implies
+The two fiber components contribute 2d_Xd_Y; the H^1⊗H^1 component
+contributes minus the displayed trace. This also proves independence
+of ℓ and integrality; see the full
+[Rosati factorization proof, Section 1](../../Solutions/Sol_etale_rosati_factorization.md).
+Combining (5) and (7) gives, for every actual bi-etale joint image,
 
 \[
-                       g(Z)-1\ge\max\{s_Xd_X,s_Yd_Y\}.
+ \delta(C)=d_Xd_Y+g(Z)-1-\tfrac12
+       \operatorname{Tr}(\Phi\Phi^\dagger).               \tag{8}
 \]
 
-Subtracting this from (100.8) gives
+Suppose Hom(J(X),J(Y))=0. With F_X={x}×Y, F_Y=X×{y},
 
 \[
-                 \delta(C)\le d_Xd_Y+\min\{s_Xd_X,s_Yd_Y\}.
-                                                               \tag{100.10}
+ C\equiv d_YF_X+d_XF_Y,\quad C^2=2d_Xd_Y,\quad
+ p_a(C)=1+d_Xd_Y+s_Xd_X+s_Yd_Y.                           \tag{9}
 \]
 
-If both maps are etale, both Riemann--Hurwitz inequalities are
-equalities, yielding (100.9). Proposition 100.1 supplies such an image
-from any common cover.
-
-Conversely, (100.8)--(100.9) imply \(g(Z)-1=t\). Both different
-degrees are then zero by Riemann--Hurwitz. Since the different
-divisors are effective, they vanish, and both maps are etale.
-\(\square\)
-
-For the current genera \((9,25)\), write \(N=d_Y\). Then
+These formulas hold already for integral C with finite generically
+separable projections. Riemann--Hurwitz then gives
 
 \[
- \boxed{d_X=3N,\quad g(Z)=24N+1,\quad
-        p_a(C)=3N^2+48N+1,\quad\delta(C)=3N^2+24N.}
-                                                               \tag{100.11}
+ \delta(C)\le d_Xd_Y+\min(s_Xd_X,s_Yd_Y).                  \tag{10}
 \]
 
-Condition (100.6) holds because \(J(Y)\) is simple of dimension 25,
-whereas \(J(X)\) has dimension 9. In fact it holds for **every**
-first curve of genus less than 25 with this fixed target; no simplicity
-assumption on \(J(X)\) is needed.
-
-## 4. Why counting ordinary nodes would lose the condition again
-
-Even when both projections are etale on every branch, the joint image
-can have arbitrarily high tangential contacts in characteristic five.
-For example, in the completed local plane, take
+Consequently X,Y have an actual common finite etale cover IF AND ONLY IF
+there are positive degrees and such an integral C satisfying
 
 \[
-                    F=(y-x)(y-x-x^{5^m}),\qquad m\ge1.
-                                                               \tag{100.12}
+ s_Xd_X=s_Yd_Y=:t,\qquad \delta(C)=d_Xd_Y+t.               \tag{11}
 \]
 
-Both branches are smooth and both coordinate projections are etale:
-their slopes are both one. Their intersection multiplicity is
-\(5^m\). Each conductor exponent is \(5^m\), and on either branch
-both partial derivatives have exactly that order. Thus (100.4) holds
-locally, with \(\delta=5^m\), not one.
+For the forward direction use Section 1 and equality in both
+Riemann--Hurwitz formulas. Conversely (9) and (11) give g(Z)−1=t,
+so both effective different divisors have degree zero and vanish.
+Thus the extremal singularity condition really preserves both etale legs.
 
-This is a local two-branch model, not an asserted global common cover.
-It shows why a bound on the number of coincident point-pairs does not
-bound \(\delta(C)\). The contact orders must be retained.
+For genera (9,25), under this Hom-zero hypothesis, N=d_Y gives
 
-One must also use the different, not just \(e-1\), in wild cases.
-For the smooth branch \(x=y^5+y^6\), projection to \(x\) has
-ramification index 5 but different exponent 5, because
-\(dx/dy=y^5\) in characteristic five. Projection to \(y\) is etale.
-Equation (100.3) detects this exactly with conductor zero.
+\[
+ d_X=3N,\quad g(Z)=24N+1,\quad
+ p_a(C)=3N^2+48N+1,\quad \delta(C)=3N^2+24N.              \tag{12}
+\]
 
-## 5. The precise next obstruction
+If J(Y) is simple and g(X)<g(Y), Hom-zero follows because any nonzero
+homomorphism would surject onto J(Y), impossible by dimension. No
+simplicity of J(X) is needed. This implication, not a new arithmetic
+verification of a particular endpoint, is used here.
 
-Files 95--99 remain useful monodromy filters, but they do not decide
-whether a curve satisfying (100.9) exists. A proof must rule out the
-maximal-defect locus **on the fixed product** \(X\times Y\), or show
-that the two partial differential sections cannot both have precisely
-the shared conductor divisor in (100.4).
+## 5. Counterexamples and the remaining boundary
 
-Neither arbitrary singularity data, nor a Jacobian isogeny factor, nor
-two independently realizable maps is a substitute for that condition.
-No impossibility of (100.9) in unbounded degree is claimed here.
+The derivative ratios on two branches satisfy
+φ_j'/φ_i'=1 at the closed point exactly when m_ij≥2, and
+
+\[
+ \operatorname{ord}(\phi_j'/\phi_i'-1)\ge m_{ij}-1,
+\]
+
+with equality if char(k) does not divide m_ij. The order can instead be
+infinite when the contact order is divisible by the characteristic.
+In characteristic five, the two graphs y=x and y=x+x^(5^a), a≥1, have
+IDENTICAL slope one but contact 5^a, conductor 5^a on each branch and
+δ=5^a. Their differential-ratio gluing order is one. This is a local
+model, not a globally realized common cover. Counting nodes or derivative
+ratios alone therefore cannot bound the conductor.
+
+Nor can one replace the different by e−1: on the smooth branch
+x=y^5+y^6, the x-projection has e=5 and different exponent 5 because
+dx/dy=y^5; the y-projection is etale and the conductor is zero.
+
+The negative normal line in (3) is compatible with positive C² because
+the conductor contributes in (5). It does not constrain the global
+Frobenius action on H^1(Z,N). For the two-leg map
+α:J(X)^(1)×J(Y)^(1)→J(Z)^(1), (A,B)↦f^*A⊗g^*B, an everywhere-bad
+restricted Raynaud locus would mean H^0(B_Z⊗α(A,B))≠0 for ALL pairs.
+An ordinary Z has a good origin, but singularity rigidity proves no
+such properness for a nonordinary Z. The precise local/global separation,
+including prime-to-p labels, is in the
+[conductor Frobenius proof](FROBENIUS_OF_THE_BIETALE_CONDUCTOR_QUOTIENT.md).
+
+No unbounded-degree exclusion of (11), no generic theta properness and
+no existence of compatible endpoint structures follows from this note.

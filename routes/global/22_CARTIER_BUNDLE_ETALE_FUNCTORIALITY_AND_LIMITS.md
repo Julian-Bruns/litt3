@@ -1,461 +1,175 @@
-# The Cartier bundle under finite etale covers
+# The Cartier bundle under finite étale covers
 
-**Status:** proved-text for the base-change, numerical, Frobenius-filtration,
-cyclic-cover, and explicit Cartier calculations below.  The final assessment is
-a no-go result for the listed coarse invariants, not a theorem that the full
-Cartier bundle or its theta divisor can never be useful.
+Status: author proved-text for the base-change, bundle, cyclic-cover
+and explicit Cartier calculations below. The limitations concern the
+listed coarse invariants, not the full bundle or theta divisor.
 
-## 1. Conventions and statement
+Let k be perfect of characteristic p>2, C/k smooth projective
+geometrically connected, and F_C:C→C^(1) its relative Frobenius. Define
 
-Let `k` be a perfect field of characteristic `p>2`.  For a smooth projective
-geometrically connected curve `C/k`, put
+    0 → O_(C^(1)) → F_C,*O_C → B_C → 0.                       (1)
 
-\[
- C^{(1)}=C\times_{\operatorname{Spec}k,F_k}\operatorname{Spec}k,
- \qquad F_C=F_{C/k}:C\longrightarrow C^{(1)},
-\]
+Keep the Frobenius twist: even over Fbar_5 there is no canonical
+k-isomorphism C≅C^(1).
 
-and define the bundle of locally exact differentials on `C^(1)` by
+## 1. Theorem1: exact étale pullback
 
-\[
- 0\longrightarrow \mathcal O_{C^{(1)}}
- \longrightarrow F_{C,*}\mathcal O_C
- \longrightarrow B_C^1\longrightarrow 0.                 \tag{1}
-\]
+For finite étale f:D→C, with h=f^(1), there is a canonical isomorphism
 
-The Frobenius twist in this definition must not be suppressed.  Even over
-`k=bar(F_5)`, there is no canonical `k`-isomorphism from an arbitrary curve to
-its Frobenius twist.
+    B_D ≅ h^*B_C,                                             (2)
 
-### Theorem 1 (exact etale pullback)
+compatible with (1) and composition. Indeed,
+D≅C×_(C^(1))D^(1), since relative Frobenius of an étale morphism is
+an isomorphism. Flat base change identifies h^*F_C,*O_C with F_D,*O_D
+and the pulled-back unit with the unit for D. Taking cokernels proves
+(2), with compatibility inherited from these canonical maps.
 
-Let `f:D -> C` be finite etale, and let
-`f^(1):D^(1) -> C^(1)` be its Frobenius twist.  There is a canonical
-isomorphism
+In particular, BOTH actual finite étale maps f:Z→X and g:Z→Y from
+the SAME smooth projective source give
 
-\[
-             B_D^1\ \simeq\ (f^{(1)})^*B_C^1.             \tag{2}
-\]
+    (f^(1))^*B_X ≅ B_Z ≅ (g^(1))^*B_Y.                       (3)
 
-It is compatible with composition of finite etale maps and with (1).
+No separable-map substitute or simultaneous Galois closure is used.
 
-### Proof
+## 2. Proposition2: bundle invariants and Frobenius filtration
 
-The natural square
+Put s=g(C)−1>0 and ω1=ω_(C^(1)). Then B_C has rank p−1,
+Euler characteristic0, degree(p−1)s and slope s. It is geometrically
+stable, has a canonical perfect alternating pairing into ω1, and
 
-\[
-\begin{CD}
-D @>{F_D}>> D^{(1)}\\
-@V f VV       @VV f^{(1)} V\\
-C @>{F_C}>> C^{(1)}
-\end{CD}                                                   \tag{3}
-\]
+    det B_C ≅ ω1^((p−1)/2).
 
-is Cartesian.  Indeed, the natural map
+Its Frobenius pullback has HN line quotients ω_C^i, 1≤i≤p−1, in
+decreasing order of i. These constructions commute with étale pullback.
 
-\[
-D\longrightarrow C\times_{C^{(1)}}D^{(1)}
-\]
+Proof. Finite pushforward preserves cohomology, so (1) gives χ(B_C)=0;
+Riemann–Roch gives the rank and degree. The Raynaud pairing is
 
-is the relative Frobenius of `D` over `C`, and relative Frobenius is an
-isomorphism for an etale morphism.  Flat base change in (3) gives
+    (ā,b̄) ↦ Cartier(a db).
 
-\[
-(f^{(1)})^*F_{C,*}\mathcal O_C
- \simeq F_{D,*}f^*\mathcal O_C
- \simeq F_{D,*}\mathcal O_D.                              \tag{4}
-\]
+It is well-defined modulo pth powers and alternating because Cartier
+kills exact forms. In a local basis t,…,t^(p−1), its matrix has
+invertible anti-diagonal entries j at i+j=p and no other entries,
+proving perfection. Taking the rth wedge of the alternating form,
+r=(p−1)/2<p, yields det B_C≅ω1^r because r! is invertible.
+Geometric stability is Joshi's theorem (also Tong's direct proof).
+Formation of B commutes with perfect-field extensions by flat base
+change. Hence every finite étale pullback is again stable by (2).
 
-Under (4), the pullback of the unit map in (1) is the unit map for `D`.
-Since `f^(1)` is flat, pulling back (1) is exact.  Taking cokernels proves
-(2).  All maps used are canonical, so the construction is compatible with
-composition.  This proves the theorem. \(\square\)
+For the Frobenius filtration let V=F_C^*F_C,*O_C and let I be its
+evaluation ideal. Frobenius is flat, and evaluation splits the unit
+O_C→V; its quotient F_C^*B_C is thus canonically I. Étale-locally,
 
-Consequently, if `Z` is a common finite etale cover of `X` and `Y`, then
+    V=O_C[α]/(α^p),   I=(α),
+    0=I^p ⊂ I^(p−1) ⊂ ⋯ ⊂ I,   I^i/I^(i+1)=ω_C^i.          (4)
 
-\[
-(Z\to X)^{(1),*}B_X^1\simeq B_Z^1
- \simeq (Z\to Y)^{(1),*}B_Y^1.                            \tag{5}
-\]
+These line quotients have strictly decreasing degrees2is, so (4) is
+the HN filtration. In characteristic five this gives rank4, determinant
+ω1² and Frobenius slopes8s,6s,4s,2s. Under a degree-d étale cover,
+ω_D=f^*ω_C, ω_(D^(1))=h^*ω1 and g(D)−1=ds, as required.
 
-Thus the bundle passes the first functoriality test.  The rest of this note
-explains why its most accessible invariants do not give an obstruction.
+If a degree-s line bundle L on C^(1) is used to normalize B_C,
+the degree-zero bundle B_C⊗L^(-1) has Frobenius slopes(2i−p)s.
+It is therefore not strongly semistable, hence not essentially finite
+or associated to a finite étale monodromy representation.
 
-## 2. The standard bundle invariants are universal
+Do not confuse the two connections: the canonical connection on V
+does NOT preserve I; its map I/I²→ω_C is an isomorphism. Its quotient
+V/O_C=F_C^*B_C does inherit a zero-p-curvature connection, since the
+unit is horizontal. Identification with I in (4) is an identification
+of bundles, not a restriction of the connection on V. Zero p-curvature
+does not by itself mean finite étale monodromy.
 
-Let `g=g(C)>=2`.
+## 3. Proposition3: cohomology and the theta divisor in cyclic covers
 
-### Proposition 2 (rank, determinant, stability, and Frobenius HN polygon)
+The long exact sequence of (1) gives
 
-The following statements hold.
+    h⁰(B_C)=dim ker(F:H¹(C^(1),O)→H¹(C,O))=a(C),
 
-1. `B_C^1` has rank `p-1`, Euler characteristic zero, degree
-   `(p-1)(g-1)`, and slope `g-1`.
-2. There is a canonical perfect alternating pairing
+also the dimension of the Cartier kernel on H⁰(C,ω_C).
+Raynaud's theta divisor is
+Θ_(B_C)={L∈Pic⁰(C^(1)):h⁰(B_C⊗L)>0}.
 
-   \[
-   B_C^1\otimes B_C^1\longrightarrow \omega_{C^{(1)}}.
-                                                               \tag{6}
-   \]
+Let f:D→C be a connected split cyclic étale cover of degree n prime
+to p. For h=f^(1), choose the order-n bundle η with
+h_*O_(D^(1))=⊕_(i=0)^(n−1)η^(-i). For every L∈Pic⁰(C^(1)) and q,
 
-   Hence, writing `r=(p-1)/2`,
-
-   \[
-                  \det B_C^1\simeq\omega_{C^{(1)}}^{\otimes r}.
-                                                               \tag{7}
-   \]
-3. If `k` is algebraically closed, `B_C^1` is stable; over a general perfect
-   field it is geometrically stable.  In particular, Theorem 1 implies the
-   unusually strong fact that every finite etale pullback of `B_C^1` is
-   stable: it is the Cartier bundle of the covering curve.
-4. The Harder--Narasimhan filtration of `F_C^*B_C^1` has line-bundle
-   quotients
+    H^q(D^(1),B_D⊗h^*L)
+      ≅ ⊕_(i=0)^(n−1) H^q(C^(1),B_C⊗L⊗η^(-i)).            (5)
 
-   \[
-            \omega_C,\ \omega_C^{\otimes2},\ldots,
-            \omega_C^{\otimes(p-1)}.                         \tag{8}
-   \]
+In particular h⁰(B_D)=∑_i h⁰(B_C⊗η^(-i)). Scheme-theoretically,
 
-   In particular its polygon, after division by `2g-2`, depends only on `p`.
-
-### Proof
-
-The rank follows from (1).  Since finite pushforward does not change
-cohomology,
-
-\[
- \chi(B_C^1)=\chi(\mathcal O_C)-\chi(\mathcal O_{C^{(1)}})=0.
-\]
-
-Riemann--Roch then gives the asserted degree and slope.
-
-Identify `B_C^1` with the image of
-`d:F_{C,*}O_C -> F_{C,*}Omega_C^1`.  If bars denote classes modulo
-`O_{C^(1)}`, the rule
-
-\[
-            (\bar a,\bar b)\longmapsto \operatorname{Car}(a\,db)
-                                                               \tag{9}
-\]
-
-is a well-defined alternating pairing with values in
-`omega_{C^(1)}`.  Raynaud proves that (9) is perfect.  Taking the `r`-th
-exterior power of its symplectic form gives a nowhere-vanishing section of
-
-\[
-(\det B_C^1)^{-1}\otimes\omega_{C^{(1)}}^{\otimes r}.
-\]
-
-Here `r!` is invertible because `r<p`, so this gives (7).  Stability over an
-algebraic closure for `g>=2` is the theorem of Joshi; it also follows from
-the direct argument in Tong cited below.  Formation of `B_C^1` commutes with
-extension of perfect ground fields by the same flat-base-change argument as
-in Theorem 1, so this gives geometric stability over a general perfect
-field.  Applying the result to `D` and using (2) proves the assertion about
-etale pullback.
-
-It remains to prove (8).  Put
-
-\[
- V=F_C^*F_{C,*}\mathcal O_C,
- \qquad I=\ker(V\longrightarrow\mathcal O_C),               \tag{10}
-\]
-
-where the second arrow is evaluation.  Pullback of (1) is exact because
-`C` is smooth and hence Frobenius is flat.  The pulled-back unit
-`O_C -> V` is split by evaluation, so its cokernel is canonically `I`.
-Thus
-
-\[
-                       F_C^*B_C^1\simeq I.                   \tag{11}
-\]
-
-Locally at an etale parameter `t`, the algebra in (10) is
-
-\[
-       \mathcal O_C[\alpha]/(\alpha^p),
-       \qquad \alpha=t\otimes1-1\otimes t,
-\]
-
-and `I=(alpha)`.  Powers of the diagonal ideal therefore give a canonical
-filtration
-
-\[
- 0=I^p\subset I^{p-1}\subset\cdots\subset I^2\subset I,
- \qquad I^i/I^{i+1}\simeq\omega_C^{\otimes i}.              \tag{12}
-\]
-
-In the ascending order displayed in (12), the quotient degrees are strictly
-decreasing.  The quotients are line bundles, hence semistable, so (12) is the
-Harder--Narasimhan filtration.  This proves (8). \(\square\)
-
-### Consequences in characteristic five
-
-For `p=5`, the rank is four, the determinant is `omega^2`, and the four
-Frobenius-HN slopes are
-
-\[
-           2(g-1),\ 4(g-1),\ 6(g-1),\ 8(g-1).               \tag{13}
-\]
-
-All of these identities commute with finite etale pullback.  For the
-determinant one has
-
-```
-omega_(D^(1))=(f^(1))^*omega_(C^(1)),
-```
-
-whereas for the Frobenius-HN filtration one has
-
-```
-omega_D=f^*omega_C.
-```
-
-Also `g(D)-1=deg(f)(g(C)-1)`.
-
-There is also no standard finite-monodromy bundle hidden here.  If `L` has
-degree `g-1`, then `E=B_C^1 tensor L^{-1}` has degree zero, but the HN slopes
-of `F_C^*E` are
-
-\[
-                       (2i-p)(g-1),\qquad 1\le i\le p-1.     \tag{14}
-\]
-
-They are not all equal.  Thus every degree-zero line-bundle normalization of
-`B_C^1` is not strongly semistable and hence is not essentially finite, so
-it does not define a finite etale monodromy representation.  There is a
-related but distinct connection point.  The Cartier connection on `V` does
-not preserve the evaluation ideal `I`: its first second-fundamental form
-`I/I^2 -> omega_C` is the isomorphism in (12).  The quotient
-`V/O_C=F_C^*B_C^1` nevertheless inherits a zero-`p`-curvature connection,
-because the pulled-back unit subbundle `O_C` is horizontal.  Thus (11) does
-not identify that quotient connection with the restriction of the
-connection on `V` to `I`; and a zero-`p`-curvature connection should not be
-conflated with finite etale monodromy.
-
-## 3. Cohomology and the theta divisor change under covers
-
-The long exact sequence of (1) identifies
-
-\[
- h^0(C^{(1)},B_C^1)
- =\dim\ker\bigl(F:H^1(C^{(1)},\mathcal O)\to H^1(C,\mathcal O)\bigr).
-                                                               \tag{15}
-\]
-
-This is the `a`-number of `C`; dually, it is the dimension of the kernel of
-Cartier on `H^0(C,omega_C)`.
-
-Raynaud proved that `B_C^1` has a theta divisor
-
-\[
- \Theta_{B_C}\ =\ \{L\in\operatorname{Pic}^0(C^{(1)}):
-                  h^0(B_C^1\otimes L)>0\}.                  \tag{16}
-\]
-
-The next exact formula shows why neither (15) nor (16) is itself a
-commensurability invariant.
-
-### Proposition 3 (prime-to-p cyclic-cover formula)
-
-Let `f:D -> C` be a connected split cyclic etale cover of degree `n` prime
-to `p` (the splitting is automatic over an algebraically closed field
-containing `mu_n`).
-Write `h=f^(1)`, and choose the order-`n` line bundle `eta` on `C^(1)` that
-defines `h`, with the convention
-
-\[
-                  h_*\mathcal O_{D^{(1)}}
-                  \simeq\bigoplus_{i=0}^{n-1}\eta^{-i}.      \tag{17}
-\]
-
-Then, for every `L in Pic^0(C^(1))` and every `q`,
-
-\[
- H^q(D^{(1)},B_D^1\otimes h^*L)
- \simeq
- \bigoplus_{i=0}^{n-1}
- H^q(C^{(1)},B_C^1\otimes L\otimes\eta^{-i}).               \tag{18}
-\]
-
-In particular,
-
-\[
- h^0(B_D^1)=\sum_{i=0}^{n-1}h^0(B_C^1\otimes\eta^{-i}).     \tag{19}
-\]
-
-Scheme-theoretically, pullback of the determinant-of-cohomology theta
-divisor is the sum of torsion translates
-
-\[
- (h^*)^*\Theta_{B_D}
- =\sum_{i=0}^{n-1}
-   \{L:\ L\otimes\eta^{-i}\in\Theta_{B_C}\}.              \tag{20}
-\]
-
-### Proof
-
-By Theorem 1, `B_D^1=h^*B_C^1`.  The projection formula and (17) give
-
-\[
- Rh_*\bigl(B_D^1\otimes h^*L\bigr)
- \simeq
- \bigoplus_{i=0}^{n-1}B_C^1\otimes L\otimes\eta^{-i}.
-\]
-
-Taking cohomology proves (18) and (19).  In families over the Jacobian, the
-determinant of cohomology of a direct sum is the tensor product of the
-determinants, and its canonical theta section is the product of their theta
-sections.  Its zero divisor is therefore the sum in (20), including
-multiplicities. \(\square\)
-
-Thus the theta divisor does not simply pull back from the base: on the
-sub-Jacobian coming from a cyclic cover, it becomes a union of all the
-relevant torsion translates.  Likewise, (19) has no cover-independent
-normalization.  This failure occurs in actual covers, not just formally:
-Raynaud's Theorem 2 gives every smooth proper curve of genus at least two a
-finite etale Galois cover with solvable prime-to-`p` group that is not
-ordinary.  In particular one may start with an ordinary curve.  Madore's
-Theorem 4.1 presents the earlier generic-curve construction.
-
-## 4. Explicit test against the cyclic genus-fifteen curve
-
-Work now over `bar(F_5)` and take
-
-\[
- X:\quad v^2=x^7-x+1,
- \qquad
- Y:\quad y^{31}=x(x-1).                                    \tag{21}
-\]
-
-The polynomial defining `X` is square-free: its derivative is `2x^6-1`,
-and a hypothetical common root would first give `x=2` and then contradict
-`2x^6=1`.  Thus `X` is a smooth genus-three curve.  If
-
-\[
- (x^7-x+1)^2=\sum_m c_mx^m,
-\]
-
-its Cartier--Manin matrix on
-`dx/v, x dx/v, x^2 dx/v` is, up to the harmless transpose convention,
-
-\[
- (c_{5i-j})_{1\le i,j\le3}
- =\begin{pmatrix}
- 0&0&1\\
- 0&3&2\\
- 1&0&0
- \end{pmatrix},
- \qquad \det=2\ne0.                                       \tag{22}
-\]
-
-Hence `X` is ordinary, `h^0(B_X^1)=0`, and its `p`-rank is three.
-
-For `Y`, a basis of regular differentials is
-
-\[
-                       \omega_b=\frac{dx}{y^b},
-                       \qquad 16\le b\le30.                 \tag{23}
-\]
-
-Indeed, the valuations at the points over `0,1,infinity` are respectively
-`30-b,30-b,2b-32`.  Given `b`, let `b' in {1,...,30}` and `q in {0,...,4}`
-satisfy
-
-\[
-                         5b'=b+31q.
-\]
-
-Since `y^31=x(x-1)`, the Cartier rule gives
-
-\[
- \operatorname{Car}(\omega_b)
- =\frac1{y^{b'}}
-   \operatorname{Car}\bigl((x(x-1))^qdx\bigr).             \tag{24}
-\]
-
-Only the coefficient of `x^4` can contribute.  It is nonzero exactly for
-`q=2,3,4`, with values `1,3,1`.  Thus the nonzero arrows, labelled by their
-nonzero scalar when it is `3`, are
-
-\[
-\begin{array}{lll}
-16\to28,&17\xrightarrow{3}22,&18\to16,\\
-21\to29,&22\xrightarrow{3}23,&23\to17,\\
-26\to30,&27\xrightarrow{3}24,&28\to18.
-\end{array}                                                  \tag{25}
-\]
-
-The other six basis vectors map to zero.  Therefore Cartier has rank nine,
-
-\[
-                   h^0(B_Y^1)=15-9=6.                       \tag{26}
-\]
-
-The two persistent three-cycles in (25),
-`(16,28,18)` and `(17,22,23)`, also show that the stable Cartier rank, hence
-the `p`-rank of `Y`, is six.
-
-The base curves are therefore sharply separated by cohomology:
-
-\[
-\begin{array}{c|c|c|c|c}
- &g&h^0(B^1)&p\text{-rank}&\deg B^1\\ \hline
-X&3&0&3&8\\
-Y&15&6&6&56.
-\end{array}                                                  \tag{27}
-\]
-
-But this does not obstruct a common cover.  If `Z -> X` and `Z -> Y` have
-degrees `d_X,d_Y`, Riemann--Hurwitz gives
-
-\[
-                         d_X=7d_Y.                           \tag{28}
-\]
-
-The degrees of the pulled-back Cartier bundles then agree tautologically:
-`8d_X=56d_Y`.  The four HN quotient degrees from (13) agree term by term:
-`4i d_X=28i d_Y`.  The determinants both become `omega_(Z^(1))^2`.  Finally,
-(19) and Raynaud's ordinary-to-nonordinary covers show that the discrepancy
-in (27) is not preserved on passing to finite etale covers.
-
-## 5. Route assessment
-
-The construction gives the exact necessary identity (5), but the following
-data cannot distinguish the curves in (21) up to finite-etale
-commensurability:
-
-* rank, degree, slope, determinant, stability, or the HN polygon of `B^1`;
-* the HN polygon after Frobenius pullback;
-* Nori/finite monodromy after a degree-zero twist;
-* `h^0(B^1)`, the `a`-number, ordinarity, or `p`-rank by themselves;
-* the divisor class of the Raynaud theta divisor, or naive pullback of that
-  divisor along Jacobians.
-
-The full theta divisor contains curve-specific information, and this note
-does not rule out using all of it.  Formula (20), however, shows the missing
-ingredient precisely: one would need a theorem extracting a quantity from a
-theta divisor that is unchanged under sums of torsion translates for every
-finite etale cover, including nonabelian covers.  No such quantity is supplied
-by the standard numerical or cohomological data above.
+    (h^*)^*Θ_(B_D)
+      =∑_(i=0)^(n−1) {L:L⊗η^(-i)∈Θ_(B_C)}.                 (6)
+
+Proof. Apply (2), the projection formula and the displayed splitting
+of h_*O. Finite pushforward has no higher direct images, giving (5).
+In the Jacobian family, determinant of cohomology sends this direct
+sum to the tensor product of the determinant lines, with the product
+of their canonical sections. Their zero divisors add, including
+multiplicity, proving (6).
+
+Thus neither cohomology nor the theta divisor simply pulls back
+unchanged. This is a genuine cover phenomenon: Raynaud's ordinarity
+Theorem2 supplies every genus≥2 curve with a finite étale Galois cover
+of solvable prime-to-p group that is not ordinary, even if the base is
+ordinary. Madore's Theorem4.1 gives the earlier generic-curve construction.
+
+## 4. Explicit ordinary/nonordinary comparison over Fbar_5
+
+Take X:v²=x⁷−x+1 and Y:y³¹=x(x−1). The first polynomial is square-free:
+a common root with2x⁶−1 would give x=2, contradicting2x⁶=1. Hence X
+has genus3. On dx/v,x dx/v,x² dx/v its Cartier–Manin matrix is
+
+    (c_(5i−j)) = [0 0 1; 0 3 2; 1 0 0],   det=2,
+    where (x⁷−x+1)²=∑ c_m x^m.
+
+Thus X is ordinary, with a(X)=0 and p-rank3.
+
+For genus15 Y, the regular basis is ω_b=dx/y^b, 16≤b≤30:
+its valuations over0,1,∞ are30−b,30−b,2b−32. Choose b′∈{1,…,30},
+q∈{0,…,4} with5b′=b+31q. Then
+
+    Cartier(ω_b)=y^(-b′) Cartier((x(x−1))^q dx).
+
+Only the x⁴ coefficient contributes; it is nonzero precisely for
+q=2,3,4, with values1,3,1. The nonzero arrows are
+
+    16→28, 17→22 (scalar3), 18→16,
+    21→29, 22→23 (scalar3), 23→17,
+    26→30, 27→24 (scalar3), 28→18.
+
+The other six basis vectors map to zero. Cartier rank is9, so a(Y)=6.
+The persistent cycles(16,28,18) and(17,22,23) give stable rank6,
+hence p-rank6. Degrees of B_X and B_Y are respectively8 and56.
+
+For an actual common étale source Z of degrees d_X,d_Y,
+Riemann–Hurwitz forces d_X=7d_Y. Consequently8d_X=56d_Y; the four
+Frobenius-HN quotient degrees4i d_X and28i d_Y agree, and both
+determinants become ω_(Z^(1))². The differing base a-numbers and
+ordinarity cannot supply a cover obstruction by Section3.
+
+## 5. Exact limitation
+
+Ranks, degrees, slopes, determinants, stability and the Frobenius HN
+polygon are universal after the necessary degree scaling. The
+degree-zero normalization does not yield finite monodromy; a-number,
+ordinarity and p-rank alone are not preserved under arbitrary étale
+covers. Nor does the theta class or naive theta pullback separate
+commensurability.
+
+The full theta divisor still contains curve-specific data. Using it
+would require an invariant compatible with the torsion-translate sums
+(6) and with nonabelian covers; none is supplied here.
+The stronger [full-tensor](../../Theorems/Thm_all_tensor_cartier_hn.md)
+and [symmetric-power](../../Theorems/Thm_all_symmetric_cartier_hn.md)
+HN theorems likewise do not exclude a common cover.
 
 ## Primary references
 
-* M. Raynaud, *Sections des fibres vectoriels sur une courbe*, Bull. Soc.
-  Math. France **110** (1982), 103--125, especially section 4.1:
-  <https://numdam.org/articles/10.24033/bsmf.1955/>.
-* K. Joshi, *Stability and locally exact differentials on a curve*, C. R.
-  Math. **338** (2004), 869--872:
-  <https://www.numdam.org/articles/10.1016/j.crma.2004.02.019/>.
-* X. Sun, *Stability of direct images under Frobenius morphism*, especially
-  Lemma 2.1 on the canonical filtration: <https://arxiv.org/abs/math/0608043>.
-* J. Tong, *Diviseur theta et formes differentielles*, Math. Z. **264**
-  (2010), 521--569, sections 1.2 and 1.4:
-  <https://arxiv.org/abs/0712.2046>.
-* M. Raynaud, *Revetements des courbes en caracteristique p > 0 et
-  ordinarite*, Compositio Math. **123** (2000), 73--88, Theorem 2:
-  <https://www.cambridge.org/core/journals/compositio-mathematica/article/revetements-des-courbes-en-caracteristique-p0-et-ordinarite/16AB72912D3CE32BFC5D012B1025A8E4>.
-* D. Madore, *Theta divisors and the Frobenius morphism*, in *Courbes
-  semi-stables et groupe fondamental en geometrie algebrique*, Progress in
-  Math. 187 (2000), 279--289, Theorem 4.1:
-  <https://alexjbest.github.io/buntes/courbes-semi-stables.pdf#page=284>.
+- [Raynaud, Sections des fibrés vectoriels sur une courbe, §4.1 (1982)](https://numdam.org/articles/10.24033/bsmf.1955/).
+- [Joshi, Stability and locally exact differentials on a curve (2004)](https://www.numdam.org/articles/10.1016/j.crma.2004.02.019/).
+- [Sun, Stability of direct images under Frobenius morphism, Lemma2.1](https://arxiv.org/abs/math/0608043).
+- [Tong, Diviseur theta et formes différentielles, §§1.2,1.4](https://arxiv.org/abs/0712.2046).
+- [Raynaud, Revêtements des courbes en caractéristique p>0 et ordinarité, Theorem2 (2000)](https://www.cambridge.org/core/journals/compositio-mathematica/article/revetements-des-courbes-en-caracteristique-p0-et-ordinarite/16AB72912D3CE32BFC5D012B1025A8E4).
+- [Madore, Theta divisors and the Frobenius morphism, Theorem4.1 (2000)](https://alexjbest.github.io/buntes/courbes-semi-stables.pdf#page=284).

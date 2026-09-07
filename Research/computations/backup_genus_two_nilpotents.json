@@ -1,0 +1,4382 @@
+{
+ "status": "complete determinant-zero census with exact radical, multiplicities and zero profiles",
+ "field_modulus": [
+  1,
+  1,
+  0,
+  1
+ ],
+ "potential": "r=(4FF_second+2F_first^2+(2u^3+b0+b1u+b2u^2)F)/F^2",
+ "determinant": "-E_first^2-3E(E_second+3rE), E=r_second-3r^2",
+ "original_equations": [
+  "-b0^5 + (a^2 - 2*a + 2)*b0^3 + (-2*a^2 - 2*a)*b0^2*b1 + (a^2)*b0^2*b2 + (a^2)*b0*b1^2 + (2*a^2 - 2)*b0 + (2*a^2 - 2*a - 2)*b1^2 + (a + 1)*b1*b2 + (-a^2 + 2*a + 1)*b1 + (2*a^2 + 2*a - 1)*b2",
+  "(a + 1)*b0^3 + (a^2 - a - 2)*b0^2*b1 + (-2*a^2 - a + 1)*b0^2*b2 + (a^2 + a + 1)*b0^2 + (-2*a^2 - a + 1)*b0*b1^2 + (a^2 + a + 1)*b0*b1*b2 + (-a^2 + a + 2)*b0*b1 + (a^2 - a - 2)*b0*b2^2 + (2*a^2 + a - 1)*b0*b2 + 2*b0 - b1^5 + (a^2 + a + 1)*b1^3 + (a^2 - a - 2)*b1^2*b2 + (2*a^2 - a + 2)*b1^2 + (-2*a^2 - a + 1)*b1*b2^2 + (-2*a^2 - 1)*b1*b2 + (-2*a^2 - 1)*b1 + (a^2 + a)*b2^3 + (2*a^2 - a - 1)*b2^2 + (2*a^2 + 2*a + 2)*b2 + (-a^2 + 2*a)",
+  "-b0*b1 + b0*b2^2 + (2*a + 2)*b0*b2 + (-2*a - 2)*b0 + b1^2*b2 + (-2*a - 2)*b1^2 + (-2*a - 2)*b1*b2^2 + (a^2 + 2*a + 1)*b1*b2 + (-a^2 - a)*b1 - b2^5 + (2*a^2 - 2*a + 1)*b2^3 + b2^2 + (-2*a^2 - a - 1)*b2 + (a + 2)"
+ ],
+ "global_horizontal_divisibility_verified": true,
+ "closed_points": [
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 0,
+   "separator_factor": [
+    [],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    5
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 0,
+   "separator_factor": [
+    [
+     1,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    1,
+    4
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 1,
+   "separator_factor": [
+    [
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    1,
+    5
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 1,
+   "separator_factor": [
+    [
+     3,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    3,
+    4
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 2,
+   "separator_factor": [
+    [
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    4
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 2,
+   "separator_factor": [
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    2,
+    5
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 3,
+   "separator_factor": [
+    [
+     4,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    3,
+    5
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 3,
+   "separator_factor": [
+    [
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    2,
+    4
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 4,
+   "separator_factor": [
+    [
+     0,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    4,
+    5
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 5,
+   "separator_factor": [
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    1
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 6,
+   "separator_factor": [
+    [
+     3,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    3
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 6,
+   "separator_factor": [
+    [
+     0,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    1,
+    2
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 7,
+   "separator_factor": [
+    [
+     2,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    2,
+    3
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 8,
+   "separator_factor": [
+    [
+     1,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    2
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 8,
+   "separator_factor": [
+    [
+     2,
+     0,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    5
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 8,
+   "separator_factor": [
+    [
+     3,
+     0,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    2,
+    4
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 9,
+   "separator_factor": [
+    [
+     4,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    1,
+    3
+   ],
+   "nonbranch_root_polynomial_degree": 0
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 10,
+   "separator_factor": [
+    [
+     4,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    1,
+    2
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 11,
+   "separator_factor": [
+    [
+     0,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    4,
+    5
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 12,
+   "separator_factor": [
+    [
+     4,
+     0,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    3
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 13,
+   "separator_factor": [
+    [
+     0,
+     0,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    2
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 14,
+   "separator_factor": [
+    [
+     0,
+     4,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    1,
+    2
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 14,
+   "separator_factor": [
+    [
+     0,
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    2
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 15,
+   "separator_factor": [
+    [
+     2,
+     2,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    2
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 16,
+   "separator_factor": [
+    [
+     0,
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    4,
+    5
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 17,
+   "separator_factor": [
+    [
+     1,
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    3,
+    4
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 1,
+   "fiber_index": 18,
+   "separator_factor": [
+    [
+     0,
+     2,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    2
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 2,
+   "fiber_index": 19,
+   "separator_factor": [
+    [
+     3,
+     3,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    1,
+    4
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 2,
+   "fiber_index": 20,
+   "separator_factor": [
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    1,
+    4
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 2,
+   "fiber_index": 21,
+   "separator_factor": [
+    [
+     0,
+     2,
+     3
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    4,
+    5
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 2,
+   "fiber_index": 22,
+   "separator_factor": [
+    [
+     1,
+     0,
+     4
+    ],
+    [
+     1,
+     2,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    4
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 2,
+   "fiber_index": 23,
+   "separator_factor": [
+    [
+     3,
+     0,
+     3
+    ],
+    [
+     4,
+     4,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    1
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 2,
+   "fiber_index": 24,
+   "separator_factor": [
+    [
+     2,
+     0,
+     1
+    ],
+    [
+     4,
+     0,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    4
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 2,
+   "fiber_index": 25,
+   "separator_factor": [
+    [
+     3,
+     3,
+     2
+    ],
+    [
+     0,
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    1,
+    2
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 2,
+   "fiber_index": 26,
+   "separator_factor": [
+    [
+     1
+    ],
+    [
+     3,
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    1
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 3,
+   "fiber_index": 27,
+   "separator_factor": [
+    [
+     0,
+     4,
+     4
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    2,
+    4
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 3,
+   "fiber_index": 28,
+   "separator_factor": [
+    [
+     4,
+     1,
+     1
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    5
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 3,
+   "fiber_index": 29,
+   "separator_factor": [
+    [
+     2,
+     3,
+     2
+    ],
+    [
+     4,
+     2,
+     3
+    ],
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    3,
+    4
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 3,
+   "fiber_index": 30,
+   "separator_factor": [
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     0,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    0,
+    3
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 4,
+   "fiber_index": 31,
+   "separator_factor": [
+    [
+     1,
+     0,
+     3
+    ],
+    [
+     2
+    ],
+    [
+     2,
+     0,
+     4
+    ],
+    [],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    2,
+    3
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 4,
+   "fiber_index": 32,
+   "separator_factor": [
+    [
+     1,
+     0,
+     3
+    ],
+    [
+     2,
+     1,
+     4
+    ],
+    [
+     3,
+     4,
+     4
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    1,
+    3
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 4,
+   "fiber_index": 33,
+   "separator_factor": [
+    [
+     0,
+     3
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    2,
+    5
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 4,
+   "fiber_index": 34,
+   "separator_factor": [
+    [
+     3,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    1,
+    5
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 4,
+   "fiber_index": 35,
+   "separator_factor": [
+    [
+     1,
+     4
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [
+    3,
+    5
+   ],
+   "nonbranch_root_polynomial_degree": 1
+  },
+  {
+   "residue_degree_over_F125": 5,
+   "fiber_index": 36,
+   "separator_factor": [
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [],
+   "nonbranch_root_polynomial_degree": 2
+  },
+  {
+   "residue_degree_over_F125": 5,
+   "fiber_index": 37,
+   "separator_factor": [
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     1,
+     1,
+     3
+    ],
+    [
+     0,
+     0,
+     3
+    ],
+    [
+     3,
+     0,
+     2
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 8,
+   "dormant": true
+  },
+  {
+   "residue_degree_over_F125": 5,
+   "fiber_index": 38,
+   "separator_factor": [
+    [
+     2,
+     0,
+     1
+    ],
+    [
+     2,
+     2,
+     1
+    ],
+    [
+     3,
+     1,
+     3
+    ],
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "local_multiplicity": 1,
+   "dormant": false,
+   "quartic_zero_orders": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "quadratic_root_two_torsion_branch_pair": [],
+   "nonbranch_root_polynomial_degree": 2
+  }
+ ],
+ "scope": "One endpoint only. Geometric bridge author-proof audit pending.",
+ "scheme_length": 125,
+ "groebner_basis": [
+  "b0^2 + (a^2 + a + 1)*b0*b2^6 + (2*a - 1)*b0*b2^5 + (2*a^2 + a + 2)*b0*b2^4 + (a^2 - a - 2)*b0*b2^3 + (2*a - 2)*b0*b2^2 + (a^2 - 1)*b0*b2 + (-a^2 + 2*a - 2)*b0 + (a^2 + 2)*b1^2*b2^4 + (a^2 + 2*a - 2)*b1^2*b2^3 + (2*a^2 + 2*a + 2)*b1^2*b2^2 + (-2*a^2 - 2*a)*b1^2*b2 + (2*a^2 - a - 2)*b1^2 + (a^2 + 2*a - 2)*b1*b2^15 + (-a^2 - 2)*b1*b2^14 + (-2*a^2 + a - 1)*b1*b2^13 + (-2*a^2 + a - 2)*b1*b2^12 + (2*a^2 - 2*a + 2)*b1*b2^10 + (-2*a^2 + 2*a + 2)*b1*b2^9 + (2*a^2 + a + 1)*b1*b2^8 + (a^2 - 1)*b1*b2^7 + (2*a^2 + a + 1)*b1*b2^6 + (a^2 - a + 1)*b1*b2^5 + (-2*a)*b1*b2^4 + (-a^2 + 2*a - 2)*b1*b2^3 + a*b1*b2^2 + (-2*a^2 - 2*a - 2)*b1*b2 + (-2*a^2 - 2)*b1 + (a - 1)*b2^96 + (-2*a^2 + 2*a - 2)*b2^95 + (-2*a - 2)*b2^94 + (-2*a^2 + 2*a - 2)*b2^93 + (-2*a^2 + 2*a + 1)*b2^92 + (-a^2 - 2*a)*b2^91 + (2*a^2 - a - 1)*b2^90 + (-2*a^2 + 2)*b2^89 + (a^2 - 2*a + 2)*b2^88 + (2*a^2 + 2*a)*b2^87 + (-a^2 - a)*b2^86 + (-a^2 + a)*b2^85 + (-2*a^2 - a + 2)*b2^84 + (2*a^2 + a)*b2^83 + (a^2)*b2^82 + (-a^2 + 2*a + 1)*b2^81 + (-a^2 + a - 2)*b2^80 + (2*a^2 - 2*a + 1)*b2^79 + (-a^2 + 2*a + 1)*b2^78 + (-2*a^2 - 2*a - 1)*b2^77 + (2*a + 1)*b2^76 + (-a^2 - 2*a - 2)*b2^75 + (a + 1)*b2^74 + (-2*a^2 - a + 1)*b2^73 + (-a^2 - 2*a + 2)*b2^72 + (a^2 - a + 2)*b2^71 + (a^2 + 2*a)*b2^70 + (-2*a^2 - a - 1)*b2^69 + (2*a - 2)*b2^68 + (a^2 + 1)*b2^67 + (-a + 1)*b2^66 + (a^2 + a - 2)*b2^65 + (a^2 + 2*a)*b2^64 + (-2*a^2 + a - 2)*b2^63 + (2*a - 1)*b2^62 + (-2*a^2 + a + 1)*b2^61 + (2*a^2 - 2*a - 1)*b2^60 + (a^2 + 1)*b2^59 + (-a^2 - a)*b2^58 + (2*a + 2)*b2^57 + (2*a^2 - a - 2)*b2^56 + (a + 2)*b2^55 + (-a^2 + a + 2)*b2^54 + (-a^2 + 2*a - 2)*b2^53 + (a + 2)*b2^52 + (-a^2 - 2*a + 1)*b2^51 + (-a^2 - a - 2)*b2^50 + (2*a^2 + a + 1)*b2^49 + (a^2 + 1)*b2^48 + (-a^2)*b2^47 + (-2*a^2 - 2*a + 2)*b2^46 + (-a^2 + a)*b2^45 + (2*a)*b2^43 + (a^2 - a + 1)*b2^42 + (-a^2 + a + 1)*b2^41 + (a - 2)*b2^40 + (2*a^2 - 2*a - 2)*b2^39 - b2^38 + (-2*a^2 - a + 2)*b2^37 + (2*a^2 + 2*a + 1)*b2^36 + (a - 2)*b2^35 + (-2*a^2 - a - 1)*b2^34 + (2*a - 2)*b2^33 + (a^2 - a)*b2^32 + (-2*a^2 - a - 2)*b2^31 + (-a^2 - 2*a + 1)*b2^30 + (a^2 - 2*a + 2)*b2^29 + (a^2 - a - 2)*b2^28 + (a^2 - 2*a)*b2^27 + (-a^2 - 2*a - 1)*b2^26 + (-a + 2)*b2^25 + (2*a^2 + 2*a - 2)*b2^24 + (a^2 + a - 1)*b2^23 + (2*a^2 + a + 1)*b2^22 + (-a^2 - 2*a - 1)*b2^21 + (a^2 - a)*b2^20 + (2*a^2 - a + 2)*b2^19 + (2*a^2 - a + 2)*b2^18 + (a - 1)*b2^17 + (-2*a^2 + 2*a + 1)*b2^16 + (a^2 + a - 1)*b2^15 + (-a^2 - a + 1)*b2^14 + a*b2^13 + b2^12 + (2*a^2 + 2*a)*b2^11 + (-2*a + 1)*b2^10 + (a^2 + 2*a)*b2^9 + (2*a^2 + a + 1)*b2^8 - 2*b2^7 + (-2*a^2 + 2)*b2^6 + (2*a^2 - a - 1)*b2^5 + (-a^2 - 2*a + 2)*b2^4 + (-a^2 + 1)*b2^3 + (-a^2 - a - 1)*b2^2 + (-2*a^2 - 2*a - 2)*b2 + (2*a)",
+  "b0*b1 - b0*b2^2 + (-2*a - 2)*b0*b2 + (2*a + 2)*b0 - b1^2*b2 + (2*a + 2)*b1^2 + (2*a + 2)*b1*b2^2 + (-a^2 - 2*a - 1)*b1*b2 + (a^2 + a)*b1 + b2^5 + (-2*a^2 + 2*a - 1)*b2^3 - b2^2 + (2*a^2 + a + 1)*b2 + (-a - 2)",
+  "b0*b2^7 + a*b0*b2^5 + (-2*a^2 + a - 2)*b0*b2^4 + (-a + 2)*b0*b2^3 + (2*a + 1)*b0*b2^2 + (-2*a - 1)*b0*b2 + (a^2 - 2*a)*b0 + (-a^2 + 2*a + 2)*b1^2*b2^4 + (2*a^2 - 2*a - 1)*b1^2*b2^3 + (2*a^2 + 2*a)*b1^2*b2^2 + (2*a^2 - 2)*b1^2*b2 + (a^2 + 2)*b1^2 + (2*a + 1)*b1*b2^15 + (-a^2 + a - 1)*b1*b2^14 + (-a^2 - a + 2)*b1*b2^13 + b1*b2^12 + (a + 1)*b1*b2^11 + (-2*a^2 + a + 2)*b1*b2^10 + (-a + 2)*b1*b2^9 + (2*a^2 - 2*a)*b1*b2^8 + (a^2 + a)*b1*b2^7 + (2*a^2 - a - 2)*b1*b2^6 + (a^2 + 2*a)*b1*b2^5 + (-2*a^2 + a)*b1*b2^4 + (-a^2 + a - 1)*b1*b2^3 + (-2*a^2 + 1)*b1*b2^2 + (-2*a^2 + 2*a + 2)*b1*b2 + (-2*a^2 - 2*a - 2)*b1 + (-a^2 + 1)*b2^96 + (-2*a + 2)*b2^95 + (2*a)*b2^94 + (a^2 + a - 2)*b2^93 + (-2*a^2 - 2*a + 1)*b2^92 + (-2*a^2 + 2*a)*b2^91 + (2*a^2 + a + 1)*b2^90 + (-a - 1)*b2^89 + (a^2 - 1)*b2^88 + (2*a^2 - 1)*b2^87 + (2*a + 1)*b2^86 + (a^2 - 2*a - 1)*b2^85 + (a^2 + a - 2)*b2^84 + (-2*a^2 - a + 1)*b2^83 + (-a^2 - 2*a + 2)*b2^82 + (-a + 2)*b2^81 + (-2*a^2 - 2*a + 1)*b2^80 + (a^2 + a - 1)*b2^79 - 2*b2^78 + (2*a^2 + a - 2)*b2^77 + (2*a^2 + 2*a - 2)*b2^76 + (-2*a^2 - a - 1)*b2^75 + (a^2 + 2*a + 2)*b2^74 + (-2*a^2 + a - 1)*b2^73 + (a^2 + 2*a + 2)*b2^72 + (-2*a^2 - 2*a - 1)*b2^71 + (-2*a^2 - 2*a - 2)*b2^70 + (a^2 + 2*a + 2)*b2^69 + (-a^2 + a + 2)*b2^68 + (2*a^2 - 2*a + 2)*b2^67 + (a^2 - a - 1)*b2^66 + (a^2 + a - 1)*b2^65 + (2*a^2 + 2*a - 2)*b2^64 + a*b2^63 + (a^2)*b2^62 + (-a^2 + 2*a + 1)*b2^61 + (a^2 + a - 2)*b2^60 + (-2*a^2 - 2*a + 2)*b2^59 + (2*a^2 - 2*a)*b2^58 + (2*a^2 + 2*a + 1)*b2^57 + (-a^2 - 2*a - 1)*b2^56 + (-2*a^2 - a - 1)*b2^55 + (-2*a^2 - a - 1)*b2^54 + (2*a - 2)*b2^53 + (2*a)*b2^52 + b2^51 + (a^2 - 2*a + 2)*b2^50 + (a^2 + a - 1)*b2^49 + (2*a^2 - a - 1)*b2^48 + (2*a^2 + 2*a)*b2^47 + (-a^2 - a + 2)*b2^46 + (2*a + 2)*b2^45 + (2*a^2 - 2*a - 2)*b2^44 + (2*a^2 - 2*a + 2)*b2^43 + (-2*a^2 + a)*b2^42 + (2*a^2 - a)*b2^41 + b2^40 + (a^2 + 1)*b2^39 + (-a - 1)*b2^38 - b2^37 + (-a^2 - a - 2)*b2^36 + (a^2 - 2*a + 2)*b2^35 + (-2*a^2 + 2*a - 1)*b2^34 + (-2*a^2 + 2)*b2^33 + (-a^2 + a + 1)*b2^32 + (-2*a^2 - a - 1)*b2^31 + (-2*a^2 + 2*a - 2)*b2^30 + (a^2 - 2*a + 2)*b2^29 + (2*a^2 - a - 2)*b2^28 + (a^2 - 2*a + 2)*b2^27 + (-2*a)*b2^26 + (-2*a^2 - 2*a - 1)*b2^25 + (2*a^2 + a + 2)*b2^24 + (a^2 + 2*a + 2)*b2^23 + (-a^2 - 2*a - 2)*b2^22 + (-a^2 + a - 1)*b2^21 + (2*a + 1)*b2^20 + (-a^2 + 2*a + 1)*b2^19 + (-a - 1)*b2^18 + (-2*a^2 - a)*b2^17 + (a^2 + 2*a)*b2^16 + (a^2 - a - 2)*b2^15 + (2*a^2 - a)*b2^14 + (2*a^2 - 1)*b2^13 + (-2*a - 2)*b2^12 + (2*a^2)*b2^11 + (2*a^2 - a)*b2^10 + (2*a + 2)*b2^9 + (a^2 + 1)*b2^8 + (-2*a^2 - 2*a)*b2^7 + (-2*a^2 - 1)*b2^6 + (a^2 + 2*a - 2)*b2^5 + (2*a^2 - 2*a + 1)*b2^4 + (a - 2)*b2^3 + (-a^2 - 2*a + 1)*b2^2 + (a^2 - 2*a)*b2 + 1",
+  "b1^3 + 2*b1^2*b2^2 + (-a - 1)*b1^2*b2 + (a + 1)*b1^2 + (-a^2 + a + 2)*b1*b2^15 + (2*a^2 - 2*a + 1)*b1*b2^14 + (-a^2 - a)*b1*b2^13 + (-2*a^2 - 2*a)*b1*b2^12 + (2*a - 2)*b1*b2^11 + (-2*a^2 + 2*a + 1)*b1*b2^10 + (-a^2 - 1)*b1*b2^9 + (2*a^2 + 2*a + 2)*b1*b2^8 + (-2*a^2 - 1)*b1*b2^7 + (-a^2 + 2*a + 1)*b1*b2^6 + (-a^2 - a + 1)*b1*b2^5 + (2*a - 2)*b1*b2^4 + (-2*a^2 + a)*b1*b2^3 + (2*a^2 - 2)*b1*b2^2 + (a^2)*b1*b2 + (a^2 + 2*a + 1)*b1 + (-2*a^2 - 2)*b2^96 + (2*a^2 + 2*a - 2)*b2^95 + (a^2 - a)*b2^94 + (-a)*b2^93 + (a^2 - a + 1)*b2^92 + (a^2 - 2*a + 2)*b2^91 + (2*a - 1)*b2^90 + (-a^2 + 1)*b2^89 + (a + 2)*b2^88 + (-a^2 + a - 1)*b2^87 + 2*b2^86 + (-a^2 + 2*a - 2)*b2^85 + (-a^2 + a - 2)*b2^84 + (-2*a^2 + 2*a - 2)*b2^83 + (a^2 + 2*a - 2)*b2^82 + (a^2 - a)*b2^81 + (-2*a^2 + 2)*b2^80 + (a^2 - 2*a - 1)*b2^79 + (-2*a^2 + 1)*b2^78 + (-a^2 + a + 2)*b2^77 + (-2*a^2 - a)*b2^76 + (2*a^2 - a + 2)*b2^75 + (2*a^2)*b2^74 + (2*a^2 - a)*b2^73 + (-2*a^2 - 2*a - 1)*b2^72 + (-a^2 + 1)*b2^71 + (-2*a^2 - 2*a)*b2^70 + (2*a^2 - a - 1)*b2^69 + (a^2 - 2*a + 2)*b2^68 + (-2*a^2 + 1)*b2^67 - 2*b2^66 + (-2*a^2 + 2)*b2^65 + (-a^2)*b2^64 + (a^2 + 1)*b2^63 + (a^2 - a)*b2^62 + (a^2 - 1)*b2^61 + (a^2 - 1)*b2^60 + (-2*a^2 - 2*a - 1)*b2^59 + (a^2 - 2*a + 2)*b2^58 + (-a^2 - 2*a + 1)*b2^57 + (-a^2 + a + 2)*b2^56 + (a + 2)*b2^55 + (2*a^2 - a - 2)*b2^54 + (-2*a + 1)*b2^53 + (-a^2 - 2)*b2^52 + (-2*a^2 - 2)*b2^51 + (a^2 + a - 1)*b2^50 + (a^2 + 2*a - 1)*b2^49 + (-a^2 - 2*a - 2)*b2^48 + (-2*a^2 + 2*a - 1)*b2^47 + b2^46 + (a^2 + a - 2)*b2^45 + (2*a^2 - 2*a + 2)*b2^44 + (a - 2)*b2^43 + (2*a^2)*b2^42 + (a^2 - 2*a - 1)*b2^41 + (a^2 + 1)*b2^40 + (a^2 + a + 2)*b2^39 + (2*a^2 - a + 1)*b2^38 + (a^2 + a - 1)*b2^37 + (2*a^2 - 1)*b2^36 + a*b2^35 + (-2*a^2 - 2*a - 1)*b2^34 + (a^2)*b2^33 + (-2*a^2 + 2*a - 1)*b2^32 + (-a^2 - 2*a + 1)*b2^31 + (a^2 - a)*b2^30 + (a^2 - 1)*b2^29 + (-2*a^2 + 2*a + 1)*b2^28 + (2*a^2 - 2*a - 1)*b2^27 + (a^2 - 2*a - 1)*b2^26 + (-2*a^2 - 2*a)*b2^25 + (-2*a^2 + 2*a)*b2^24 + (2*a^2 - 2*a + 2)*b2^23 + (a^2 - 2*a + 1)*b2^22 + (2*a^2 + a + 1)*b2^21 + (-a^2 - a - 1)*b2^20 + (-2*a^2 - a + 2)*b2^19 + (a^2 - a)*b2^18 + (a^2 - a)*b2^17 + (a^2 - a + 2)*b2^16 + (a^2 + 2*a + 2)*b2^15 + (a - 2)*b2^14 + (a^2 + 2)*b2^13 + (2*a^2 + a - 2)*b2^12 + (2*a - 2)*b2^11 + (-2*a^2 - a + 1)*b2^10 - b2^9 + (-a^2 - a - 2)*b2^8 + (2*a^2 + 1)*b2^7 + (a^2 - a)*b2^6 + (2*a^2 - 2*a - 1)*b2^5 + (2*a^2 + a + 1)*b2^4 + (2*a^2 + 2)*b2^3 + (a^2)*b2^2 + (-a^2 - a)*b2 + (-2*a^2 + 2*a)",
+  "b1^2*b2^5 + (a + 1)*b1^2*b2^4 + (2*a^2 - 2)*b1^2*b2^3 + (-2*a^2)*b1^2*b2^2 + (-2*a^2 + a + 1)*b1^2*b2 + (2*a^2 + 2*a - 2)*b1^2 + (a^2 + a + 1)*b1*b2^15 + (-a^2 - a - 1)*b1*b2^14 + (-a^2 - 2)*b1*b2^13 + (2*a^2 - 2)*b1*b2^12 + (2*a^2 - 2*a)*b1*b2^11 + (-2*a^2 + 1)*b1*b2^10 + (a^2 - a + 1)*b1*b2^9 + (a^2 + 2)*b1*b2^8 + (-2*a^2 + 2*a + 2)*b1*b2^7 + (-a^2 - a + 2)*b1*b2^6 + (-a - 1)*b1*b2^5 + (a^2 + 2*a + 2)*b1*b2^4 + (-2*a^2 - 2*a + 2)*b1*b2^3 + (a + 1)*b1*b2^2 + (a^2 + a - 1)*b1*b2 + (2*a^2 - a - 2)*b1 + (-a + 2)*b2^96 + (-2*a^2 + 2)*b2^95 + (-2*a^2 - 2*a + 2)*b2^94 + (2*a^2 - a - 1)*b2^93 + (2*a + 2)*b2^92 + (2*a - 1)*b2^91 + (a^2 + a)*b2^90 + (2*a^2 - a)*b2^89 + (-2*a^2 + a)*b2^88 + (2*a^2 - a + 2)*b2^87 + (-2*a + 1)*b2^86 + (-2*a^2 + a + 2)*b2^85 + (2*a^2 + a + 2)*b2^84 + (a + 2)*b2^83 + (a^2 - a + 1)*b2^82 + (-2*a^2 + 1)*b2^81 + (-a^2 + a - 1)*b2^80 + (2*a^2 + 2)*b2^79 + (-a^2 - 2*a)*b2^78 + (-2*a^2 + a + 2)*b2^77 + (a - 1)*b2^76 + (-2*a^2 + a - 2)*b2^75 + (-2*a^2 - a + 2)*b2^74 + (a^2 + a + 2)*b2^73 + (-a^2 + 2*a + 2)*b2^72 + (-2*a^2 + 1)*b2^71 + (2*a^2 - a - 2)*b2^70 + (2*a^2 - a + 2)*b2^69 + (-a - 2)*b2^68 + (2*a^2 - 2*a + 1)*b2^67 + (a + 1)*b2^66 + (-2*a^2 - a - 2)*b2^65 + (-a^2 - 2*a - 2)*b2^64 + (a^2 + 2*a)*b2^63 + (-2*a^2 + a - 2)*b2^62 + (2*a^2 + 2*a - 2)*b2^61 + (a^2 - a - 1)*b2^60 + (2*a^2 + 2*a - 1)*b2^59 + (-a^2 + a + 1)*b2^58 + (-a^2 - 2*a + 2)*b2^57 + (-2*a^2 - a)*b2^56 + (a^2 - a + 1)*b2^55 + (2*a^2 + 2*a - 2)*b2^54 + (a^2 + 2)*b2^53 + (-a^2 + a + 2)*b2^52 + (-2*a^2 + 2*a - 2)*b2^51 + (2*a^2 - a - 2)*b2^50 + (2*a^2 - 2*a)*b2^49 + (2*a^2 + 2*a - 1)*b2^48 + (2*a^2 + a + 1)*b2^47 + (-2*a^2 + a + 1)*b2^46 + (2*a^2 + 2*a - 1)*b2^45 + (2*a^2)*b2^44 + (2*a^2 + a - 1)*b2^43 + (a^2 - 2*a - 1)*b2^42 + (-a^2 + 2*a)*b2^41 + a*b2^40 + (a^2 - a + 1)*b2^39 + (2*a)*b2^38 + (a + 1)*b2^37 + (-a^2 - a)*b2^36 + (-2*a^2 + 2*a - 2)*b2^35 + (-2*a - 1)*b2^34 + (2*a - 1)*b2^33 + (-2*a^2 + 2*a + 2)*b2^32 + (a^2 + a + 1)*b2^31 + (2*a^2 + 2*a + 2)*b2^30 + (-a^2 + a - 1)*b2^29 + (-a^2 + 2*a - 2)*b2^28 + (-a^2 + 2*a + 2)*b2^27 + (-2*a^2 + 1)*b2^26 - b2^25 + (2*a^2 + 2*a + 1)*b2^24 + (-a^2 - a - 1)*b2^23 + (2*a^2 - 2*a + 2)*b2^22 + (a^2 - 2)*b2^21 + (a^2 - a + 1)*b2^20 + (2*a^2 + 2*a)*b2^19 + (-2*a^2 - 2*a - 2)*b2^18 + (-a^2 + a - 2)*b2^17 + (2*a^2)*b2^16 + (2*a^2 + 2*a - 2)*b2^15 + (-2*a^2 - 2*a - 2)*b2^14 + (-a - 1)*b2^13 + (-a^2 + a - 1)*b2^12 + (-2*a^2 + 2*a - 2)*b2^11 + (-a^2 + a - 1)*b2^10 + (-2*a^2 - a)*b2^9 + (-a^2 + 2*a + 2)*b2^8 - b2^7 + (-2*a + 2)*b2^6 + (2*a^2 + a)*b2^5 + (-2*a^2 + 2*a + 1)*b2^4 + (a + 2)*b2^3 + (-a^2 + a + 2)*b2^2 + (-a^2 - 2*a - 1)*b2 + (-a^2 - 1)",
+  "b1*b2^16 + (2*a^2 - 2)*b1*b2^15 + (2*a - 2)*b1*b2^14 + (2*a^2 - 1)*b1*b2^13 + (-a^2 - 2*a + 2)*b1*b2^12 + (-2*a^2 - 2*a + 1)*b1*b2^11 + (-2*a^2 + 2*a)*b1*b2^10 + (-a^2 + 2*a + 2)*b1*b2^9 + (a^2 + a)*b1*b2^8 + (2*a + 1)*b1*b2^7 + (a^2 - a + 2)*b1*b2^6 + (-2*a^2 - 2*a)*b1*b2^5 + (2*a - 1)*b1*b2^4 + (a + 2)*b1*b2^3 + (a^2 - 2*a + 2)*b1*b2^2 + (a^2 + a + 1)*b1*b2 + (a^2 - 2*a + 1)*b2^96 + (a^2 + 2*a + 2)*b2^95 + (-2*a^2 + 2*a - 2)*b2^94 + (-2*a^2 + a + 2)*b2^93 + (2*a^2 + 2)*b2^92 + (2*a^2 - 2*a - 2)*b2^91 + (-a^2 - 2*a)*b2^90 + (-2*a^2 + 1)*b2^89 + (-2*a^2 + 2*a + 2)*b2^88 + (-2*a + 1)*b2^87 + (2*a + 2)*b2^86 + (-a^2 + 2*a)*b2^85 + (-2*a^2 - a)*b2^84 + (a^2 - 2*a - 1)*b2^83 + (2*a^2)*b2^82 + (2*a^2 + a)*b2^81 + (-2*a^2 - a - 2)*b2^80 + (-a^2 + 2*a - 1)*b2^79 + (a^2 + a - 1)*b2^78 + (-a^2 - a)*b2^77 + (-a^2 - 2)*b2^76 + (a^2 - 2*a - 1)*b2^75 + (2*a^2 - 2*a + 2)*b2^74 + (-2*a^2 - a + 1)*b2^73 + (2*a^2 - a + 2)*b2^72 + (2*a^2 - a + 1)*b2^71 + (-a^2 - a)*b2^70 + (-a^2 + 2*a - 2)*b2^69 + (-a^2 + a - 2)*b2^68 + (-2*a^2 + 2*a - 2)*b2^67 + (a^2 - 2*a)*b2^66 + a*b2^65 + (a^2 + 2*a - 2)*b2^64 + (2*a^2 - a - 2)*b2^63 + (-a^2 + a - 1)*b2^62 + (-2*a^2)*b2^61 + (-a^2 + 2)*b2^60 + (-a^2 - 2*a + 2)*b2^59 + (a^2 + 2*a)*b2^58 + (-a^2 + 2*a + 2)*b2^57 + (-2*a^2 - a + 1)*b2^56 + (2*a^2 - a - 2)*b2^55 + (2*a^2 + 2*a)*b2^54 + (-a)*b2^52 + (2*a^2 - a - 1)*b2^51 + (-a - 1)*b2^50 + (2*a^2 - 2*a - 1)*b2^49 + (a^2 + a + 1)*b2^48 + (-a^2 - 2*a - 2)*b2^47 + (a^2 + a - 1)*b2^46 + (a^2 + a + 2)*b2^45 + (a^2 - a - 1)*b2^44 + (2*a^2 - a - 2)*b2^43 + (a^2 - 2*a - 2)*b2^42 + (-a^2 + a + 2)*b2^41 + (2*a^2 + a + 2)*b2^40 + (-2*a + 1)*b2^39 + (-2*a^2 - 2*a + 2)*b2^38 + (-a^2)*b2^37 + (-a^2 + a)*b2^36 + (-a^2 + 2*a)*b2^35 + (a^2 - a + 2)*b2^34 + (a^2 - a - 1)*b2^33 + (2*a^2 - 2*a)*b2^32 + (a^2 + a + 2)*b2^31 + (-a^2)*b2^30 + (a^2 + 2*a)*b2^29 + (-2*a^2 - 1)*b2^28 + (a^2 + a - 2)*b2^27 + (a^2 + a)*b2^26 + (-a^2 - 2*a + 2)*b2^25 + (-2*a^2 + 1)*b2^24 + (2*a^2 + 2*a)*b2^23 + (-2*a^2 - 2*a - 2)*b2^22 + (-2*a^2 + 2*a + 2)*b2^21 - b2^20 + (2*a^2 + 1)*b2^19 + (a^2 + 2*a - 2)*b2^18 + (a^2 + 2)*b2^17 + (a^2 + 1)*b2^16 + (-2*a^2 + a - 1)*b2^15 + (a^2 + 1)*b2^14 + (2*a^2 + a)*b2^13 + (-2*a - 1)*b2^12 + (a^2 - a + 1)*b2^11 + (-a + 1)*b2^10 + (-a - 1)*b2^9 + (a^2 - 2*a)*b2^8 + (-2*a - 1)*b2^7 + (-2*a^2 + a - 2)*b2^6 + (-a^2 - 2*a - 1)*b2^5 + (2*a^2 - a + 1)*b2^4 + (a^2 + 2*a - 2)*b2^3 + (2*a^2 - a - 2)*b2^2 + (-2*a^2 + 2*a - 1)*b2",
+  "b2^97 + (-2*a^2 - a + 1)*b2^96 + (-a^2 + a)*b2^95 + (-2*a^2 - a)*b2^94 + (a^2 - 2*a + 2)*b2^93 + (-a^2 - a)*b2^92 + (-2*a^2)*b2^91 + (-a^2 - a)*b2^90 + (a^2 + a - 1)*b2^89 + (-2*a^2 - a + 2)*b2^88 + (-2*a^2 - 2*a + 2)*b2^87 + (-2*a^2 + 2*a)*b2^86 + (-a)*b2^85 + (-2*a^2 - 2*a - 2)*b2^84 + (a^2 - 2*a)*b2^83 - 2*b2^82 + (a^2 + 1)*b2^81 + (a^2 + 2*a - 2)*b2^80 + (-a^2 - 1)*b2^79 + (-a^2)*b2^78 + (-a^2 + a - 1)*b2^77 + (a^2 - 2)*b2^76 + (-a^2 + 2*a + 1)*b2^75 + (-a^2 - a)*b2^74 + (-2*a^2 + 2*a - 2)*b2^73 + (-2*a^2 + a)*b2^72 + (2*a^2 - 2*a - 1)*b2^71 + (-a^2 - 2*a + 2)*b2^70 + (-2*a^2 - 2*a + 2)*b2^69 + (2*a + 1)*b2^68 + (a^2 - 2*a + 1)*b2^67 + (-a - 1)*b2^66 + (2*a^2 + 1)*b2^65 + b2^64 + (2*a^2 + 2)*b2^63 + (-a^2 - 2)*b2^62 + (-2*a - 2)*b2^61 + (a^2 + 2)*b2^60 + (a^2 - a - 1)*b2^59 + (2*a^2 + 2)*b2^58 + (-2*a^2 + a + 1)*b2^57 + (-2*a^2 + a)*b2^56 + (a^2 - 2*a - 2)*b2^55 + (2*a^2 + a + 1)*b2^54 + (-a^2 + 2*a)*b2^53 + (-2*a - 1)*b2^52 + (-a)*b2^51 + (a + 2)*b2^50 + (2*a^2 - 1)*b2^49 + (-2*a^2 - 2*a + 1)*b2^48 + (-2*a^2 + a)*b2^47 + (-2*a^2 - 2*a + 2)*b2^46 + (-2*a - 1)*b2^45 + (a + 2)*b2^44 + (2*a^2 + 2*a + 2)*b2^43 + (2*a^2 - 2*a)*b2^42 + (-a^2 - 2*a - 1)*b2^41 + (a^2 - 2*a - 1)*b2^40 + (2*a^2 + a + 2)*b2^39 + (-2*a^2 - a + 2)*b2^38 + (a^2 - a)*b2^37 + (a^2 - 2)*b2^36 + (a^2 + a - 1)*b2^35 + (-a^2 - 2*a)*b2^34 + (-a^2)*b2^33 + b2^32 + (-a^2 + 2*a + 2)*b2^31 + (a^2 + 2*a - 1)*b2^30 + (2*a^2 + 2*a - 2)*b2^29 + (2*a^2)*b2^28 + (-a^2 - 2*a - 2)*b2^27 + (a - 2)*b2^26 + (2*a^2 - a + 2)*b2^25 + (a^2 + a - 2)*b2^24 + (2*a^2 - a + 2)*b2^23 + (2*a^2 + 2*a - 1)*b2^22 + (2*a + 1)*b2^21 + (-2*a^2 - 2*a - 2)*b2^20 - 2*b2^19 + (-a - 1)*b2^18 + (-a + 1)*b2^17 + (a^2 + 2*a + 2)*b2^16 + (-a - 1)*b2^15 + (-2*a^2 + 2*a + 1)*b2^14 + (2*a + 1)*b2^13 + (2*a - 2)*b2^12 + (-a^2 + 2*a + 1)*b2^11 + b2^10 + (a^2 + 1)*b2^9 + (2*a^2 + 2*a)*b2^8 + (a^2 + a - 2)*b2^7 + (-2*a^2 - 2)*b2^6 + (2*a^2 + a)*b2^5 + (-2*a^2 + 2*a - 2)*b2^4 + (a - 2)*b2^3 + (-2*a^2 + a - 1)*b2^2 + (-a^2 - 2*a + 2)*b2"
+ ],
+ "elapsed_seconds": 2.9555461660493165,
+ "radical_groebner_basis": [
+  "b0^2 + (-2*a^2 + 2*a - 2)*b0*b2 + (2*a^2 + a + 2)*b0 + (a^2 - a - 2)*b1*b2^5 + (a + 1)*b1*b2^4 + a*b1*b2^3 + (2*a^2 + a - 1)*b1*b2^2 + (2*a^2 - a - 2)*b1*b2 + (a^2 - 2*a - 2)*b2^81 + (2*a)*b2^80 + (a^2 - 2*a - 2)*b2^79 + (a^2 + a)*b2^78 + (a^2 - a - 1)*b2^77 + (2*a^2 - 2*a + 2)*b2^76 + 2*b2^75 + (2*a^2 + a + 1)*b2^74 + (2*a - 2)*b2^73 + (-2*a^2 + 2*a - 1)*b2^72 + (a - 1)*b2^71 + (-2*a^2 + a - 1)*b2^70 + (-2*a - 2)*b2^69 + (-a^2 - 2*a - 1)*b2^68 + (-a^2 - a + 2)*b2^67 + (2*a^2 + 2*a - 2)*b2^66 + (-2*a^2 - 2*a - 1)*b2^65 + (-2*a^2 + 2)*b2^64 - b2^63 + (-a^2 - 1)*b2^62 + (-2*a^2 - 2*a - 1)*b2^61 + (2*a^2 - 2*a + 2)*b2^60 + (-2*a^2 - a + 1)*b2^59 + (a - 1)*b2^58 + (a^2 + 2*a - 1)*b2^57 + (a^2 + 2)*b2^56 + (2*a - 2)*b2^55 + (-2*a^2 - 2)*b2^54 + (2*a^2 - 2*a + 1)*b2^53 + (a^2 + a - 2)*b2^52 + (2*a^2 + a - 1)*b2^51 + (a^2 - 2*a + 2)*b2^50 + b2^49 + (-a^2 + 2*a + 1)*b2^48 + (-2*a^2 + 2*a - 1)*b2^47 + (a^2 - a + 1)*b2^46 + (a - 2)*b2^45 + (a^2 + a - 2)*b2^44 + (2*a^2)*b2^43 + (-a^2 - 2*a + 1)*b2^42 + (-2*a)*b2^41 + (2*a^2 - 1)*b2^40 + (2*a^2 - 2*a)*b2^39 + (-2*a^2 - 2*a - 2)*b2^38 + (-2*a^2 - 2*a + 2)*b2^37 + 2*b2^36 + (2*a - 2)*b2^35 + (2*a^2 + 2*a + 1)*b2^34 + (a^2 - 2*a + 1)*b2^33 + (2*a^2 - 1)*b2^32 + (2*a^2 + 1)*b2^31 + (-2*a^2)*b2^30 + (-a^2 - 2)*b2^29 + (-a^2 + 2*a)*b2^28 + (-a^2 + 2*a + 1)*b2^27 + (a^2 + a)*b2^26 + (a^2 + 1)*b2^25 + (2*a^2 + 1)*b2^24 + (a + 2)*b2^23 + (a^2 - a - 1)*b2^22 + (-2*a^2 + 2*a - 1)*b2^21 + (a^2 + a + 1)*b2^20 + (a^2 - a + 1)*b2^19 + (-2*a^2 - a - 1)*b2^18 + (2*a - 2)*b2^17 + (2*a^2 - 2*a + 1)*b2^16 + (2*a^2)*b2^15 + (a^2 - 2*a)*b2^14 + (-a^2 - 2*a - 1)*b2^13 + (-2*a^2 - a)*b2^12 + (-2*a^2 - 2*a - 2)*b2^11 + (2*a^2 + a)*b2^10 + (-a^2 + a - 1)*b2^9 + (-2*a^2 - a - 1)*b2^8 + (-a^2 - 2)*b2^7 + (-2*a^2 + a - 2)*b2^6 + (2*a^2 - 2*a - 1)*b2^5 + (a^2 + 2)*b2^4 + (-2*a^2 - 2*a - 2)*b2^3 + (a^2 + 1)*b2^2 + 2*b2 + (a^2 + 2*a - 1)",
+  "b0*b1 + (2*a + 2)*b0*b2 + (-a^2)*b0 + (-a^2 - 2*a)*b1*b2^5 + (a + 1)*b1*b2^4 + (a - 2)*b1*b2^3 + (2*a^2 - 2*a + 1)*b1*b2 + (-a - 1)*b1 + (-2*a + 2)*b2^81 + (-a^2 - a - 2)*b2^80 + (a^2 - a - 2)*b2^79 + (-a^2 + a)*b2^78 + (a^2)*b2^77 + (-a^2 + a - 2)*b2^76 + (-a^2 + 2*a)*b2^75 + (a^2 + a + 1)*b2^74 + (a^2 - a - 2)*b2^73 + (-a^2 - a - 1)*b2^72 + (2*a^2 + 2*a - 1)*b2^71 + (a^2 - 2)*b2^70 + (a^2 + a)*b2^69 + (2*a^2 + a - 1)*b2^68 + (-a - 2)*b2^67 + (-2*a^2 + 1)*b2^66 + (-a^2 + a - 1)*b2^65 + (-2*a - 1)*b2^64 + (-2*a^2 + a + 2)*b2^63 + (-a^2 - 2*a + 1)*b2^62 + (-2*a^2 + a + 1)*b2^61 + (a^2 + a + 2)*b2^60 + (-2*a + 1)*b2^59 + (-2*a^2 + a - 2)*b2^58 + (-2*a^2 - 2*a - 1)*b2^57 + (-a^2 - a + 2)*b2^56 + (-a^2 + a)*b2^55 + (2*a^2 - 2)*b2^54 + (2*a^2 + a + 2)*b2^53 + (-a^2 - a)*b2^52 + (-2*a^2 - 2*a - 2)*b2^51 + (-2*a^2 - a + 1)*b2^50 + (a^2 + 2*a + 2)*b2^49 + (-2*a^2 - a - 2)*b2^48 + (2*a + 2)*b2^47 + (-2*a^2 + a - 2)*b2^46 + (-a^2 + a + 1)*b2^45 + (a^2 - a - 2)*b2^44 - 2*b2^43 + (-2*a^2 + a + 1)*b2^42 + (2*a^2 + a - 1)*b2^41 + (-2*a + 1)*b2^40 + (2*a - 2)*b2^39 + (-a^2 - 1)*b2^38 + (-2*a^2 - 2*a + 1)*b2^37 + (2*a^2)*b2^36 + (-a^2 + 2*a - 1)*b2^35 + (-2*a^2)*b2^34 + (a^2 + 2*a + 2)*b2^33 + (a^2 - a - 1)*b2^32 + (-a^2 + a - 1)*b2^31 + (-2*a^2 + a + 2)*b2^30 + (-a^2 - 2*a)*b2^29 + (a^2)*b2^28 + (a^2 + 2)*b2^27 + (-a^2 + 2)*b2^26 + (a^2 - 2*a + 1)*b2^25 + (-a^2 + 2*a + 1)*b2^24 + (a^2 + 2*a + 1)*b2^23 + (-2*a^2 - 1)*b2^22 + (-a^2 + 1)*b2^21 + (a^2 + a - 1)*b2^20 + (-2*a^2 - a - 2)*b2^19 + (-2*a^2 - a + 1)*b2^18 + (a^2 + a + 2)*b2^17 + (a^2 - 2)*b2^16 + 2*b2^15 + (2*a^2 - a - 2)*b2^14 + (-2*a^2 - a + 1)*b2^13 + (-2*a^2 - a - 2)*b2^12 + (-2*a^2 - 2*a + 2)*b2^11 + (-2*a^2 + 2*a - 2)*b2^10 + (-2*a^2 + a + 2)*b2^9 + (a^2 + 2*a - 1)*b2^8 + (-a^2 - a + 1)*b2^7 + (-2*a^2 - a - 1)*b2^6 + (2*a^2 - 2*a + 2)*b2^5 + (a^2 + 2*a - 1)*b2^4 + (a^2 - a)*b2^3 + (-2*a^2 - a)*b2^2 + (a^2 + a - 1)*b2 + (a^2 - a - 1)",
+  "b0*b2^2 + (-a - 1)*b0*b2 + (-a^2 - 2*a - 2)*b0 + (a^2 + a + 2)*b1*b2^5 + (a^2 + a + 1)*b1*b2^4 + (a^2 + a)*b1*b2^3 + (a^2 + 2*a + 2)*b1*b2^2 + (a^2 + 2*a + 1)*b1*b2 + (2*a + 2)*b2^81 + (a^2 + 1)*b2^80 + (-2*a^2 - a - 1)*b2^79 + (a^2 - a - 2)*b2^78 + (-2*a - 2)*b2^77 + (-a + 2)*b2^76 + (-a^2 - a + 1)*b2^75 + (a^2 + a + 2)*b2^74 + (a^2 + a - 1)*b2^73 + (a^2 + 2*a - 2)*b2^72 + (-2*a^2 - a)*b2^71 + (-2*a^2 - 2*a - 2)*b2^70 + (a^2 - 2*a)*b2^69 + (-a^2 + 2)*b2^68 + (a^2 + a + 1)*b2^67 + (a^2 - 2*a)*b2^66 - b2^65 + b2^64 + (-a^2 - a - 2)*b2^63 + (-a^2 - a)*b2^62 + (a + 2)*b2^61 + (-2*a^2 + 1)*b2^60 + (a^2 + 2*a - 1)*b2^59 - b2^58 + (a^2 + a + 1)*b2^57 + (a^2 - a)*b2^56 + (2*a^2 + 2*a - 1)*b2^55 - b2^54 + (-a^2 + a - 2)*b2^53 + (-2*a + 2)*b2^52 + (-2*a^2 + 2*a - 1)*b2^51 + (-2*a^2 + 2*a + 2)*b2^50 + (-a^2 + 2*a)*b2^49 + (2*a^2 + 2*a + 1)*b2^48 + (-2*a^2 + a + 1)*b2^47 + (2*a^2 + 2*a + 2)*b2^46 + (-2*a^2 - 2*a - 2)*b2^45 + (-a^2 + 2*a - 2)*b2^44 + (a + 2)*b2^43 + (-a^2 + a)*b2^42 + (-a^2 + 2*a + 1)*b2^41 + (a^2)*b2^40 + (-a - 1)*b2^39 + (-2*a^2)*b2^38 + (a^2 + 2*a)*b2^37 + (a - 2)*b2^36 + (-a^2 + 1)*b2^35 + (2*a^2 - a - 1)*b2^34 + (-a^2 + 1)*b2^33 + (a^2 - 2*a - 1)*b2^32 - b2^31 + (-a)*b2^30 + (-2*a^2 - a - 1)*b2^29 + (2*a^2)*b2^28 + (a^2 + 2*a - 2)*b2^27 + (2*a^2 - 2*a)*b2^26 + (-a + 1)*b2^25 + (-2*a^2 - a)*b2^24 + (-a^2 - 2*a - 1)*b2^23 + (a^2 + a + 2)*b2^22 + (a + 1)*b2^21 + (-a^2 - a + 2)*b2^20 + (-2*a^2 + 2*a)*b2^19 + (-a^2 - 2*a + 2)*b2^18 + (a - 2)*b2^17 + (-a^2 - 2*a)*b2^16 + (2*a^2 - a + 1)*b2^15 + b2^14 + (-a - 1)*b2^13 + (-2*a^2 - a - 1)*b2^12 + (a^2 + 2*a)*b2^11 + (a^2 - a + 2)*b2^10 + (-a^2 + 2*a - 2)*b2^9 + (a^2 - a)*b2^8 + (-2*a^2 - a - 2)*b2^7 + (-2*a^2 + 2*a + 1)*b2^6 + (a^2 - 1)*b2^5 + (a^2 - 2*a + 2)*b2^4 + (a^2 - 2*a + 2)*b2^3 + (2*a^2 + 2)*b2^2 + (2*a)*b2 + (-2*a^2 - 2*a + 1)",
+  "b1^2 + (2*a^2 - a + 1)*b1*b2^5 + (2*a^2 + 2*a - 2)*b1*b2^4 + (2*a^2 + 2*a - 2)*b1*b2^3 + (2*a^2 + 2*a + 1)*b1*b2^2 - b1*b2 + (-2*a - 2)*b1 + (2*a - 1)*b2^81 + (a^2 - 2*a)*b2^80 + (a^2 + a)*b2^79 - 2*b2^78 + (2*a + 2)*b2^77 + (-2*a^2 - 2*a - 1)*b2^76 + (-a^2)*b2^75 + (-a^2 + a - 1)*b2^74 + (-a^2 + 2*a + 1)*b2^73 + (2*a^2 + 2*a + 2)*b2^72 + (2*a^2 - a + 2)*b2^71 + (a^2 - 1)*b2^70 + (-2*a^2 - 2*a - 1)*b2^69 + (-a^2 - 1)*b2^68 + (-a^2 + 1)*b2^67 + (-2*a^2 - 2*a + 1)*b2^66 + (-a^2 + 2*a - 2)*b2^65 + (-a^2 + a)*b2^64 + (a^2 - 2)*b2^63 + (-2*a^2 + 2*a - 1)*b2^62 + (a^2)*b2^61 + (-a^2 + a - 2)*b2^60 + (-2*a^2 - a + 1)*b2^59 + (-a^2 - 1)*b2^58 + (2*a^2 + 2*a + 1)*b2^57 + (-a^2 + a - 2)*b2^56 + (a^2 + 2*a - 1)*b2^55 + (-a + 2)*b2^54 + (a^2 + 2*a + 2)*b2^53 + (2*a^2 + a + 1)*b2^52 + (2*a - 2)*b2^51 + (a^2 - 2*a - 2)*b2^50 + (-2*a - 2)*b2^49 + (-2*a^2 + a + 1)*b2^48 + (-a^2 + a - 2)*b2^47 + (-a^2 - 2*a + 2)*b2^46 + (a^2 - 2*a - 2)*b2^44 + (-2*a^2 + a - 2)*b2^43 + (2*a^2 + 2*a)*b2^42 + (-2*a^2 + a + 1)*b2^41 + (a^2 - a - 1)*b2^40 + (a - 1)*b2^39 + (2*a^2 - 2)*b2^38 + (2*a^2 + a - 1)*b2^37 + (2*a - 2)*b2^36 + (-a^2 - 2*a)*b2^35 + (a^2 + 2*a + 1)*b2^34 + (-a^2)*b2^33 + (2*a^2 - 2)*b2^32 + (-2*a^2 + 2*a - 1)*b2^31 + (-a^2 - 2*a)*b2^30 + (-a^2 + 1)*b2^29 + (-2*a^2 + 2*a - 2)*b2^28 + (2*a^2 + 2*a - 2)*b2^27 + (a^2 + a + 2)*b2^26 + (2*a^2 + a + 1)*b2^25 + (-2*a^2 + 2)*b2^24 + (a^2 + 1)*b2^23 + (2*a^2 + a - 1)*b2^22 + (2*a^2 - 2*a + 2)*b2^21 + (a^2 - a + 1)*b2^20 - 2*b2^19 + (a^2 - a - 2)*b2^18 + (a + 2)*b2^17 + (-2*a^2 + a + 2)*b2^16 + (-2*a + 1)*b2^15 + (-a^2)*b2^14 + (2*a^2 - a - 1)*b2^13 + (2*a^2 + 2*a - 1)*b2^12 + (-a^2 - 2*a + 2)*b2^11 + (-a^2 - a + 2)*b2^10 + (-2*a^2 - 2*a)*b2^9 - 2*b2^8 + (a^2 - 1)*b2^7 + (-a^2 + 1)*b2^6 + (-a^2 - a - 1)*b2^5 + (-2*a^2 - a + 2)*b2^4 + (-2*a^2 - a - 2)*b2^3 + (-2*a^2 - 2*a - 2)*b2^2 + (a^2 + a - 1)*b2 + (2*a^2 - a + 2)",
+  "b1*b2^6 + (2*a^2 - 2*a + 1)*b1*b2^5 + (a - 2)*b1*b2^4 + (a - 2)*b1*b2^3 + (a + 2)*b1*b2^2 + (-2*a^2 - 2*a + 2)*b1*b2 + (-a^2 + a - 1)*b2^81 + (2*a - 2)*b2^80 + (-a - 2)*b2^79 + (2*a^2 - 1)*b2^78 + (a^2 + 2*a - 1)*b2^77 + (-2*a^2 + a + 1)*b2^76 + (-2*a^2 + a - 1)*b2^75 + (-a - 1)*b2^74 + (2*a^2 + 2*a - 1)*b2^73 + (2*a + 2)*b2^72 - b2^71 + (a^2 + 2*a + 2)*b2^70 + (a - 1)*b2^69 + (-2*a - 2)*b2^68 - 2*b2^67 + (a^2 + a - 1)*b2^66 + (2*a^2 + 1)*b2^65 + (a - 2)*b2^64 + (a^2 + 2*a - 2)*b2^63 - 2*b2^62 + (-2*a^2 + 1)*b2^61 + (a^2 + 2*a + 1)*b2^60 + (-a^2)*b2^59 - b2^58 + (-a^2 - a + 1)*b2^57 + (a^2 - 2*a - 2)*b2^56 + (-2*a^2 - 2*a)*b2^55 + (a^2 + 1)*b2^54 + (2*a^2 + 2*a)*b2^53 + (-2*a^2 - 2*a)*b2^52 + (-a^2)*b2^51 + (a + 2)*b2^50 + (a^2 + a - 2)*b2^49 + (-a^2 + 2*a - 1)*b2^48 + (a - 1)*b2^47 + (-a^2 - a + 2)*b2^46 + (2*a^2 + 2)*b2^45 - b2^44 + (-2*a^2 + 1)*b2^43 + (a^2 - 2)*b2^42 + a*b2^41 + (2*a^2 - 2*a - 1)*b2^40 + (a^2 + 2*a)*b2^39 + b2^38 + (2*a^2 + 2*a - 1)*b2^37 + (2*a^2 - 1)*b2^36 + (-a^2 - 2*a - 1)*b2^35 + (2*a^2 + a + 2)*b2^34 + (-2*a^2 + a - 1)*b2^33 + (2*a^2 - 2)*b2^32 + (-a^2 + 2*a - 1)*b2^31 + (2*a^2 + 2*a + 2)*b2^30 + (-2*a + 2)*b2^29 + (-2*a^2 - a - 2)*b2^28 + (2*a - 1)*b2^27 + (a^2 - 2*a - 1)*b2^26 + (2*a^2 + 2*a - 2)*b2^25 + (-2*a^2 + a + 1)*b2^24 + (a^2 - a - 1)*b2^23 + (-a^2 - a)*b2^22 + (2*a^2)*b2^21 + (-a^2 - a)*b2^20 + (2*a^2 + 2*a - 1)*b2^19 + (-2*a^2 - a + 2)*b2^18 + (2*a^2 - 2)*b2^17 + (-a)*b2^16 + (-2*a^2 - a - 2)*b2^15 + (a^2 + a - 1)*b2^14 + (-a^2 - a - 1)*b2^13 + (a^2 - 2*a)*b2^12 - b2^11 + (a^2 + 2*a)*b2^10 + (-2*a^2 + 2*a - 2)*b2^9 + (2*a^2 - 2*a - 1)*b2^8 + (-a^2 - 2*a - 2)*b2^7 + (a^2 + 2*a)*b2^6 + (-2*a^2 + a - 2)*b2^5 + (-2*a^2 + 2*a - 2)*b2^4 + (2*a^2 - 1)*b2^3 + (-a^2 + 2*a + 2)*b2^2 + (2*a^2 - a + 1)*b2",
+  "b2^82 + (-2*a^2 + a - 2)*b2^81 + (-2*a^2 + 2*a - 2)*b2^80 + (2*a^2 - a)*b2^79 + (-a^2 - 1)*b2^78 + (-2*a^2 - 2*a + 2)*b2^77 + (a^2 - a)*b2^75 - b2^74 + (a^2 + a + 1)*b2^73 + (2*a + 2)*b2^72 + (a^2 - a + 2)*b2^71 + (-a^2 - 2*a - 2)*b2^70 + (-a^2 + 2*a + 2)*b2^69 + (-a^2 + 2*a)*b2^68 + (-2*a^2 - a + 2)*b2^67 + (2*a^2 - 2*a - 2)*b2^66 + (-2*a^2 - 2*a)*b2^65 + (-a^2)*b2^64 + (a^2 + 2)*b2^63 + (a^2 - 2*a - 1)*b2^62 + (a^2 - 2*a + 1)*b2^61 + (-2*a^2 + 2*a)*b2^60 + (-2*a^2 - a + 2)*b2^59 + (-a + 2)*b2^58 + (a^2 - 2*a - 2)*b2^57 + (-a^2 + 1)*b2^56 + (a^2 + 2*a)*b2^55 + (a^2 - 2*a + 1)*b2^54 + (-a^2 - 2*a)*b2^53 + (-2*a)*b2^52 + (2*a^2 - a + 2)*b2^51 + (a^2 - 2)*b2^50 + (-a^2 + 1)*b2^49 + (2*a^2)*b2^48 + (-a^2 + 2*a + 1)*b2^47 + (a^2 - 2)*b2^46 + (-a - 1)*b2^45 + (-2*a^2 - a - 1)*b2^44 + (-2*a^2 + 2*a - 1)*b2^42 + (-2*a - 2)*b2^41 + (a^2 + 2*a + 1)*b2^40 + (2*a^2 + 2)*b2^39 + (-a^2 + 2*a)*b2^38 + (-a^2 + a + 1)*b2^37 + (-2*a^2 - 2)*b2^36 + (-a^2 - 2)*b2^35 + (2*a^2 - a - 1)*b2^34 + (-2*a^2 - 2*a - 1)*b2^33 + (-2*a^2 - a + 2)*b2^32 + (-2*a^2 - 2*a)*b2^31 + (a^2 - a + 1)*b2^30 + (2*a^2 - 1)*b2^29 + (2*a)*b2^28 + (a^2 - a + 2)*b2^27 + (a + 2)*b2^26 + (a^2)*b2^25 + (2*a^2 - a + 1)*b2^24 + (a^2 - 2*a - 2)*b2^23 + (2*a^2 + 2*a + 1)*b2^22 + (a^2 - 1)*b2^21 + (a^2 + a - 2)*b2^20 + (-a^2 - 2*a)*b2^19 + (-2*a^2 + a + 2)*b2^18 + (a^2 + a - 1)*b2^17 + (-2*a^2 + a + 1)*b2^16 + (2*a^2 - a + 2)*b2^15 + (a^2 + a + 1)*b2^14 + (-a^2 - 2*a - 1)*b2^13 + (2*a^2 + a + 2)*b2^12 + (-a - 1)*b2^10 + (-a^2 + a - 1)*b2^9 + (2*a^2 + 2)*b2^8 + (2*a^2 + 2*a)*b2^7 + (-2*a^2 + a - 1)*b2^6 + (-a^2 - a + 1)*b2^5 + (-2*a^2 - 2*a - 2)*b2^4 + (a^2 + a)*b2^3 + 2*b2^2 + (-a + 2)*b2"
+ ],
+ "geometric_point_count": 90,
+ "active_quartic_polynomial": [
+  "-b0^2 + a*b1 + (-2*a^2 - a + 1)",
+  "-2*b0*b1 + (-2*a - 2)*b1 + a*b2",
+  "-2*b0*b2 - b1^2 + (-2*a - 2)*b1 + (2*a + 2)*b2",
+  "b0 - 2*b1*b2 + (a + 1)*b1 + (-a - 1)",
+  "b1 - b2^2 + (-2*a - 2)*b2 + (2*a + 2)"
+ ],
+ "b2_eliminant": [
+  [],
+  [
+   2,
+   4
+  ],
+  [
+   2
+  ],
+  [
+   0,
+   1,
+   1
+  ],
+  [
+   3,
+   3,
+   3
+  ],
+  [
+   1,
+   4,
+   4
+  ],
+  [
+   4,
+   1,
+   3
+  ],
+  [
+   0,
+   2,
+   2
+  ],
+  [
+   2,
+   0,
+   2
+  ],
+  [
+   4,
+   1,
+   4
+  ],
+  [
+   4,
+   4
+  ],
+  [],
+  [
+   2,
+   1,
+   2
+  ],
+  [
+   4,
+   3,
+   4
+  ],
+  [
+   1,
+   1,
+   1
+  ],
+  [
+   2,
+   4,
+   2
+  ],
+  [
+   1,
+   1,
+   3
+  ],
+  [
+   4,
+   1,
+   1
+  ],
+  [
+   2,
+   1,
+   3
+  ],
+  [
+   0,
+   3,
+   4
+  ],
+  [
+   3,
+   1,
+   1
+  ],
+  [
+   4,
+   0,
+   1
+  ],
+  [
+   1,
+   2,
+   2
+  ],
+  [
+   3,
+   3,
+   1
+  ],
+  [
+   1,
+   4,
+   2
+  ],
+  [
+   0,
+   0,
+   1
+  ],
+  [
+   2,
+   1
+  ],
+  [
+   2,
+   4,
+   1
+  ],
+  [
+   0,
+   2
+  ],
+  [
+   4,
+   0,
+   2
+  ],
+  [
+   1,
+   4,
+   1
+  ],
+  [
+   0,
+   3,
+   3
+  ],
+  [
+   2,
+   4,
+   3
+  ],
+  [
+   4,
+   3,
+   3
+  ],
+  [
+   4,
+   4,
+   2
+  ],
+  [
+   3,
+   0,
+   4
+  ],
+  [
+   3,
+   0,
+   3
+  ],
+  [
+   1,
+   1,
+   4
+  ],
+  [
+   0,
+   2,
+   4
+  ],
+  [
+   2,
+   0,
+   2
+  ],
+  [
+   1,
+   2,
+   1
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   4,
+   2,
+   3
+  ],
+  [],
+  [
+   4,
+   4,
+   3
+  ],
+  [
+   4,
+   4
+  ],
+  [
+   3,
+   0,
+   1
+  ],
+  [
+   1,
+   2,
+   4
+  ],
+  [
+   0,
+   0,
+   2
+  ],
+  [
+   1,
+   0,
+   4
+  ],
+  [
+   3,
+   0,
+   1
+  ],
+  [
+   2,
+   4,
+   2
+  ],
+  [
+   0,
+   3
+  ],
+  [
+   0,
+   3,
+   4
+  ],
+  [
+   1,
+   3,
+   1
+  ],
+  [
+   0,
+   2,
+   1
+  ],
+  [
+   1,
+   0,
+   4
+  ],
+  [
+   3,
+   3,
+   1
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   2,
+   4,
+   3
+  ],
+  [
+   0,
+   2,
+   3
+  ],
+  [
+   1,
+   3,
+   1
+  ],
+  [
+   4,
+   3,
+   1
+  ],
+  [
+   2,
+   0,
+   1
+  ],
+  [
+   0,
+   0,
+   4
+  ],
+  [
+   0,
+   3,
+   3
+  ],
+  [
+   3,
+   3,
+   2
+  ],
+  [
+   2,
+   4,
+   3
+  ],
+  [
+   0,
+   2,
+   4
+  ],
+  [
+   2,
+   2,
+   4
+  ],
+  [
+   3,
+   3,
+   4
+  ],
+  [
+   2,
+   4,
+   1
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   1,
+   1,
+   1
+  ],
+  [
+   4
+  ],
+  [
+   0,
+   4,
+   1
+  ],
+  [],
+  [
+   2,
+   3,
+   3
+  ],
+  [
+   4,
+   0,
+   4
+  ],
+  [
+   0,
+   4,
+   2
+  ],
+  [
+   3,
+   2,
+   3
+  ],
+  [
+   3,
+   1,
+   3
+  ],
+  [
+   1
+  ]
+ ],
+ "squarefree_fiber_shapes": [
+  {
+   "b2_factor": [
+    [],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [
+    1
+   ],
+   "q_p0_p1_p2": [
+    [
+     [],
+     [
+      1,
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      4,
+      4
+     ],
+     [
+      1
+     ]
+    ],
+    []
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [
+    2
+   ],
+   "q_p0_p1_p2": [
+    [
+     [
+      1,
+      2
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      3
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ],
+     [
+      2
+     ]
+    ],
+    [
+     [
+      4
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [
+    1
+   ],
+   "q_p0_p1_p2": [
+    [
+     [
+      3,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      1
+     ],
+     [
+      2
+     ]
+    ],
+    [
+     [
+      4,
+      4
+     ],
+     [
+      4
+     ]
+    ],
+    [
+     [
+      3
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [
+    1
+   ],
+   "q_p0_p1_p2": [
+    [
+     [
+      4,
+      3,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      2
+     ],
+     [
+      4
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ],
+     [
+      2
+     ]
+    ],
+    [
+     [
+      2
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     0,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      0,
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      4
+     ]
+    ],
+    [
+     [
+      4,
+      3
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      0,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      4
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     1,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [
+    1
+   ],
+   "q_p0_p1_p2": [
+    [
+     [
+      0,
+      2,
+      3
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      4,
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      2,
+      1
+     ]
+    ],
+    [
+     [
+      4,
+      3
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     2,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      2,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      4,
+      4
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     3,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [
+    1
+   ],
+   "q_p0_p1_p2": [
+    [
+     [
+      0,
+      2
+     ],
+     [
+      4,
+      2,
+      2
+     ],
+     [
+      1,
+      4,
+      3
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      2,
+      2
+     ],
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      4,
+      0,
+      3
+     ]
+    ],
+    [
+     [
+      3,
+      0,
+      3
+     ],
+     [
+      0,
+      3,
+      2
+     ],
+     [
+      1,
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      3
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     4,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      4,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      4
+     ]
+    ],
+    [
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     4,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      4,
+      3
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      2,
+      4
+     ]
+    ],
+    [
+     [
+      1,
+      4,
+      1
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     0,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      0,
+      4
+     ],
+     [
+      1
+     ]
+    ],
+    [],
+    [
+     [
+      3,
+      0,
+      3
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     4,
+     0,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      4,
+      0,
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      4
+     ]
+    ],
+    [
+     [
+      2,
+      3,
+      2
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     0,
+     0,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      0,
+      0,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      4,
+      4
+     ]
+    ],
+    [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [
+    1
+   ],
+   "q_p0_p1_p2": [
+    [
+     [
+      2,
+      4,
+      1
+     ],
+     [
+      0,
+      0,
+      4
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      4,
+      4
+     ],
+     [
+      3,
+      4,
+      4
+     ]
+    ],
+    [
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      3,
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      4,
+      3
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     2,
+     2,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      2,
+      2,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      3,
+      3,
+      1
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     0,
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      0,
+      1,
+      3
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      3,
+      4
+     ]
+    ],
+    [
+     [
+      3,
+      2,
+      4
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     1,
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      1,
+      1,
+      3
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      1,
+      4
+     ]
+    ],
+    [
+     [
+      3,
+      2,
+      3
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     0,
+     2,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      0,
+      2,
+      4
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      2,
+      1
+     ]
+    ],
+    [
+     [
+      1
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     3,
+     3,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      3,
+      3,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      3,
+      2
+     ],
+     [
+      1,
+      3,
+      4
+     ]
+    ],
+    [
+     [
+      1,
+      0,
+      4
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      4,
+      2,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      4,
+      2,
+      3
+     ],
+     [
+      2,
+      2,
+      3
+     ]
+    ],
+    [
+     [
+      3,
+      3,
+      2
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     0,
+     2,
+     3
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      0,
+      2,
+      3
+     ],
+     [
+      2,
+      1,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      4,
+      3,
+      4
+     ],
+     [
+      4,
+      4,
+      3
+     ]
+    ],
+    [
+     [
+      3,
+      1,
+      2
+     ],
+     [
+      0,
+      1,
+      3
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     1,
+     0,
+     4
+    ],
+    [
+     1,
+     2,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      1,
+      0,
+      4
+     ],
+     [
+      1,
+      2,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      0,
+      3
+     ],
+     [
+      1,
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      3,
+      4,
+      3
+     ],
+     [
+      1,
+      0,
+      4
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     3,
+     0,
+     3
+    ],
+    [
+     4,
+     4,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      3,
+      0,
+      3
+     ],
+     [
+      4,
+      4,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      2,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      4,
+      2
+     ],
+     [
+      4,
+      2,
+      4
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     2,
+     0,
+     1
+    ],
+    [
+     4,
+     0,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      2,
+      0,
+      1
+     ],
+     [
+      4,
+      0,
+      3
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      2,
+      2
+     ],
+     [
+      4,
+      2,
+      3
+     ]
+    ],
+    [
+     [
+      0,
+      4,
+      2
+     ],
+     [
+      2,
+      1,
+      1
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     3,
+     3,
+     2
+    ],
+    [
+     0,
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      3,
+      3,
+      2
+     ],
+     [
+      0,
+      1,
+      3
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      2,
+      4,
+      2
+     ],
+     [
+      0,
+      1,
+      3
+     ]
+    ],
+    [
+     [
+      4,
+      4
+     ],
+     [
+      0,
+      1,
+      1
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     1
+    ],
+    [
+     3,
+     1,
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      1
+     ],
+     [
+      3,
+      1,
+      3
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      4,
+      1
+     ],
+     [
+      2,
+      1,
+      1
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     0,
+     4,
+     4
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      0,
+      4,
+      4
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      2,
+      4
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    [
+     [
+      3,
+      4
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     4,
+     1,
+     1
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      4,
+      1,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      4
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      3,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     2,
+     3,
+     2
+    ],
+    [
+     4,
+     2,
+     3
+    ],
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      2,
+      3,
+      2
+     ],
+     [
+      4,
+      2,
+      3
+     ],
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      2,
+      2
+     ],
+     [
+      4,
+      1,
+      3
+     ],
+     [
+      2,
+      4,
+      2
+     ]
+    ],
+    [
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      3
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     0,
+     4
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      3,
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      0,
+      4
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      4,
+      0,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      1,
+      4
+     ]
+    ],
+    [
+     [
+      0,
+      3,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      3
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     1,
+     0,
+     3
+    ],
+    [
+     2
+    ],
+    [
+     2,
+     0,
+     4
+    ],
+    [],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      1,
+      0,
+      3
+     ],
+     [
+      2
+     ],
+     [
+      2,
+      0,
+      4
+     ],
+     [],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      0,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      4
+     ]
+    ],
+    [
+     [
+      0,
+      2,
+      1
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      3
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     1,
+     0,
+     3
+    ],
+    [
+     2,
+     1,
+     4
+    ],
+    [
+     3,
+     4,
+     4
+    ],
+    [
+     3
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      1,
+      0,
+      3
+     ],
+     [
+      2,
+      1,
+      4
+     ],
+     [
+      3,
+      4,
+      4
+     ],
+     [
+      3
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      3,
+      1
+     ],
+     [
+      4
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      4
+     ]
+    ],
+    [
+     [
+      3,
+      0,
+      1
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      3
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     0,
+     3
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      0,
+      3
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     3,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      3,
+      1
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      4
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     1,
+     4
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      1,
+      4
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      4,
+      2,
+      1
+     ],
+     [
+      0,
+      2,
+      1
+     ],
+     [
+      3
+     ],
+     [
+      4
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      0,
+      3
+     ],
+     [
+      4,
+      2,
+      2
+     ],
+     [
+      2,
+      0,
+      4
+     ],
+     [
+      0,
+      4,
+      2
+     ],
+     [
+      0,
+      2,
+      4
+     ]
+    ],
+    [
+     [
+      1,
+      3,
+      3
+     ],
+     [
+      0,
+      0,
+      2
+     ],
+     [
+      2,
+      2,
+      3
+     ],
+     [
+      0,
+      3,
+      3
+     ],
+     [
+      1,
+      2,
+      1
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     1,
+     1,
+     3
+    ],
+    [
+     0,
+     0,
+     3
+    ],
+    [
+     3,
+     0,
+     2
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      3,
+      2,
+      2
+     ],
+     [
+      1,
+      1,
+      3
+     ],
+     [
+      0,
+      0,
+      3
+     ],
+     [
+      3,
+      0,
+      2
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      0,
+      2
+     ],
+     [
+      4,
+      2,
+      3
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      2
+     ]
+    ],
+    [
+     [
+      3,
+      3
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  },
+  {
+   "b2_factor": [
+    [
+     2,
+     0,
+     1
+    ],
+    [
+     2,
+     2,
+     1
+    ],
+    [
+     3,
+     1,
+     3
+    ],
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1
+    ]
+   ],
+   "separator_scalar": [],
+   "q_p0_p1_p2": [
+    [
+     [
+      2,
+      0,
+      1
+     ],
+     [
+      2,
+      2,
+      1
+     ],
+     [
+      3,
+      1,
+      3
+     ],
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    [
+     [
+      4,
+      3,
+      4
+     ],
+     [
+      4,
+      0,
+      1
+     ],
+     [
+      1,
+      1,
+      4
+     ],
+     [
+      2,
+      2,
+      2
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    [
+     [
+      3,
+      4,
+      4
+     ],
+     [
+      2,
+      2,
+      4
+     ],
+     [
+      1,
+      4,
+      2
+     ],
+     [
+      2,
+      0,
+      1
+     ],
+     [
+      1,
+      0,
+      2
+     ]
+    ],
+    [
+     [],
+     [
+      1
+     ]
+    ]
+   ],
+   "original_equations_and_separator_verified": true,
+   "jacobian_vanishes_exactly_at_dormant_points": true
+  }
+ ],
+ "dormant_geometric_count": 5,
+ "active_geometric_count": 85,
+ "explicit_distinct_solution_count": 90,
+ "completeness_certificate": "90 disjoint squarefree explicit solutions; five dormant local complete intersections have length at least 8; 85 active Jacobian determinants are nonzero; total lower bound equals 125",
+ "total_local_lengths_verified": 125
+}

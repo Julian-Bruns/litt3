@@ -1,0 +1,168 @@
+# Proof: pushout, Higgs evaluation, and the canonical-pencil direct image
+
+[Statement](../Theorems/Thm_canonical_divisor_pencil_radical.md).
+The determinant extension is the one in `rank_two_extension_space`,
+twisted to have left term O. Its two alternating blocks are the complete
+pencil of `acyclic_alternating_atlas`. We do not replace its actual
+extension class by arbitrary one-leg data. We construct the sequence
+directly here; the stronger degree bound used in other extension-fiber
+theorems is not needed, in particular in genus2.
+
+## 1. The elementary modification along a canonical divisor
+
+Write L=omega^3. The pushout bundle is the cokernel of
+
+    O -> E + omega,             1 |-> (u,-s).
+
+Because u is nowhere zero, this injection has locally free cokernel,
+including at multiple zeros of s. The pushout diagram gives both
+sequences in the statement. Locally, in a basis beginning with u, the
+inclusion E->E_s has matrix diag(s,1); its quotient is omega|D_s.
+
+The class of 0->omega->E_s->L->0 is s eta. Tensoring by E^vee gives
+
+    0 -> E^vee omega -> Hom(E,E_s) -> E ->0,               (5)
+
+where E^vee L=E by the fixed determinant. Its connecting map
+H0(E)->H1(E^vee omega)=H0(E)^vee is the determinant cup product with
+s eta, hence A_s up to the convention's global sign.
+
+Stability implies H0(E^vee omega)=0: this bundle has negative slope.
+Equivalently H1(E)=0 by Serre duality. Therefore (5) identifies its
+Hom space with the radical, not a quotient by an unrecorded kernel.
+The canonical inclusion E->E_s maps to u under this identification.
+
+This proves the first formula of (1) directly on the curve. In particular,
+it does not confuse the radical of one form with the common constant
+kernel of the pencil.
+
+## 2. Evaluation of endomorphism-valued differentials
+
+Evaluation at the nowhere-zero u gives another exact sequence
+
+    0 -> E^vee omega -> End(E) omega
+                          --phi |-> phi(u)--> E omega ->0.       (6)
+
+Its kernel is Hom(L,E) omega=E^vee omega. This sequence can be obtained
+by dualizing the actual section extension and tensoring with E omega.
+Its connecting homomorphism is cup product with eta, up to the global
+sign of the dual extension. Thus, for v in H0(E), the condition A_s v=0
+is equivalent to s v lying in the image of H0(End(E) omega).
+
+The global evaluation map in (6) is injective because its left H0 is
+zero. A section in its image is divisible by s precisely when it vanishes
+on the entire Cartier divisor D_s, with its multiplicities. Division by
+s then gives a unique section of E. This proves the second identification
+in (1), including its stated reconstruction.
+
+Stability gives h0(End(E))=1. Riemann--Roch and Serre duality yield
+
+    h0(End(E) omega)=4n+1=m+1.
+
+The length of D_s is2n and E has rank two, so
+h0((E omega)|D_s)=4n=m. Taking dimensions proves (2).
+
+For completeness, the COMMON kernel is a line. Tensor the original
+extension with E^vee to get
+
+    0 -> E^vee -> End(E) -> E ->0.
+
+Its connecting map has kernel precisely ku, because H0(E^vee)=0 and
+H0(End(E))=k. In a basepoint-free canonical pencil the decomposition
+H0(E omega)=s0 A+s1 A is exact, by acyclicity of V. Serre duality
+therefore identifies this connecting map with the two stacked forms.
+Each individual form is alternating on an even-dimensional space and
+contains u in its radical; its corank is consequently even and at least2.
+This is compatible with, but does not sharpen, the general normal-corank
+bound in `alternating_constant_kernel_elimination`.
+
+## 3. What the canonical map determines, and what it does not
+
+The basepoint-free pencil defines a finite map f with
+f^*O_P1(1)=omega and degree2n. It need not be assumed separable for
+the following direct-image argument. Finite morphisms between smooth
+curves are flat, so the direct images of vector bundles are vector bundles.
+
+The bundle f_*V has rank4n=m and both H0 and H1 zero. Splitting on P1
+therefore gives f_*V=O(-1)^m, and projection formula gives f_*E=O^m.
+
+Put T=f_*End(E), of rank8n=2m. We have
+
+    h0(T)=1,           h1(T(1))=1,           h1(T(2))=0.
+
+The first is simplicity. The second is Serre duality on C. The third
+is dual to H0(End(E) omega^-1)=0, which follows from stability because
+it is Hom(E,E omega^-1) between bundles of strictly decreasing slopes.
+
+In the splitting of T, h0(T)=1 forces exactly one O summand, no positive
+summands, and every other summand negative. The last vanishing rules
+out degrees below-3; h1(T(1))=1 then forces exactly one O(-3). Finally
+
+    deg T=chi(End(E))-rank T=-m-2m=-3m
+
+forces m-1 copies each of O(-1) and O(-2). This proves (3), without
+an assumption about a generic divisor or independent point conditions.
+
+The splitting does NOT evaluate the actual section u. Its missing datum
+is the rank of the evaluation map along f's fibers. The globally generated
+part of T(1) is O(1)+O^(m-1); evaluation on u maps it into
+f_*(E omega)=O(1)^m. The scalar O(1) maps to the line generated by u.
+Knowing these source and target bundles does not supply a proved rank31
+assertion in genus9. We do not infer independence of the remaining
+conditions solely from stability, acyclicity, or these splitting types.
+
+In particular, this proof gives neither a geometric higher-corank
+counterexample nor a proof that such a case cannot occur. Corank2 remains
+the explicit rank condition in the statement, and all five abstractly
+allowed normal-corank strata must remain in the exact atlas charts.
+
+## 4. Exact interface with the saved alternating tensor
+
+The map in (6) has image the kernel of cup product on H0(E omega).
+In the canonical-pencil decomposition its matrix is [A_0 A_1]. Thus
+
+    H=ker[A_0 A_1]
+
+is the image of H0(End(E) omega). Since the common radical of the two
+alternating matrices is ku, their concatenation has rank m-1 and this
+kernel has dimension m+1, agreeing with the cohomological calculation.
+
+A section s0 x+s1 y vanishes on D_(s0+t s1) precisely when it is
+(s0+t s1)v for some v in A. The direct-sum decomposition makes this
+equivalent to y=t x, with v=x. Hence restriction, after choosing its
+natural target coordinates, is exactly (x,y)|->y-t x on H. The case
+s=s1 gives x=0 and v=y. This proves (4). No choice of a rational
+point of the atlas over its coefficient field is involved.
+
+For the scalar genus-nine presentation, transport all these spaces and
+maps by the same coefficient Frobenius as in the alternating atlas
+theorem. Over the perfect coefficient field this does not change any
+rank or kernel dimension. It is not replacement of the fifth powers
+of the atlas parameters by independent variables.
+
+The exact script `scripts/alternating_kernel_genus_two_check.sage` first
+checks all original equations at all33 independently known genus-two
+atlas points, then constructs H as this5-dimensional kernel inside the
+8-dimensional canonical-pencil decomposition. Here the intrinsic theorem
+identifies the original eight N output coordinates with Ext1(V,T),
+whose Serre dual is H0(V omega^2)=H0(E omega). Every canonical section
+therefore supplies an alternating row map. This construction is injective;
+the exact solution space of alternating row maps has dimension2, equal
+to h0(omega) in genus2. Hence its selected basis is the canonical space,
+not an unrelated alternating pencil. The genus-two canonical system is
+basepoint free.
+
+At each of the26 F25
+pencil parameters, the4 by5 evaluation map has rank3 and its radical
+reconstruction has rank2 and is killed by the corresponding alternating
+matrix. This is an exact check of the cohomological tensor interface;
+it is not a separately constructed geometric bundle chart on C.
+
+The same script retains the33 R-sensitive negative controls described
+in `alternating_constant_kernel_elimination`. No R equation is inferred
+from the rank formula or discarded. Its report is
+`/Users/julian/Documents/litt3-computation-data/orbit11-structure/constant_kernel_genus_two_check.json`.
+
+No expanded orbit0011 tensor was built and no production process changed.
+The original unmarked common-cover problem, requiring both actual finite
+etale maps from the same source, remains unsolved.

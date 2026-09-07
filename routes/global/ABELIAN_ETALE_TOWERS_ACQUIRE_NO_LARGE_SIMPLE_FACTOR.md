@@ -171,7 +171,7 @@ argument, not a claim that every numerically allowed packet occurs.
 Let \(X\) be the fixed genus-nine curve in
 [file 76](../../Theorems/Thm_fixed_pair_arithmetic.md).
 Proposition 76.2 and the argument in
-[file 87, Proposition 87.10](87_TRIVIAL_AUTOMORPHISMS_AND_BRANCH_RIGIDITY_FORCE_DECK_NORMALITY.md)
+[the retained automorphism calculation](92_BRANCH_RIGID_ABELIAN_PRIME_POWER_COVERS.md#proposition8710-exact-automorphisms-and-branch-rigidity)
 give
 \[
  \begin{gathered}

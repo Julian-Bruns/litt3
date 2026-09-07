@@ -1,394 +1,182 @@
-# Minimal common covers and rational incidence descent
-
-## Status and purpose
-
-**Status: proved; independently audited (PASS).**
-
-[Independent audit record](audits/MINIMAL_COMMON_COVER_AND_INCIDENCE_DESCENT_AUDIT.md).
-
-This note records exactly how far minimality reaches in the pushed-incidence
-argument.  A minimal common cover is automatically birational to its image
-in the product of the two fixed target curves.  By contrast, when its
-exterior-product divisor family factors through a curve \(B\), the descended
-normalization is naturally an etale cover of only one fixed target.  Its
-other natural map is to \(B\), not to the second fixed target.  Thus this
-factorization does not by itself contradict minimality.
-
-The distinction matters even when the two target genera have an integral
-ratio.  That ratio determines what the degree of a hypothetical map to the
-second fixed curve would have to be; it does not construct such a map.
-
-## 1. What minimality does imply
-
-Let \(X,Y\) be smooth projective curves of genera at least two over an
-algebraically closed field.  A *common etale cover* means a smooth connected
-curve \(W\) equipped with finite etale maps
-
-\[
-                     u:W\longrightarrow X,\qquad
-                     v:W\longrightarrow Y.             \tag{D.1}
-\]
-
-Choose \(W\) for which \(\deg v\) is minimal.  This is equivalent to
-minimizing \(\deg u\), because etale Riemann--Hurwitz gives
-
-\[
-       \deg u\,\bigl(g(X)-1\bigr)
-          =\deg v\,\bigl(g(Y)-1\bigr).                  \tag{D.2}
-\]
-
-### Proposition D.1 (a minimal common cover has no product-image quotient)
-
-The map
-
-\[
-                       (u,v):W\longrightarrow X\times Y
-\]
-
-is birational onto its reduced image.
-
-#### Proof
-
-Let \(G\) be the normalization of the reduced image and let \(e\) be the
-generic degree of \(W\to G\).  Both maps in (D.1) factor through \(G\).
-In each of the function-field towers over \(X\) and \(Y\), ramification
-indices multiply.  Since the composites are etale, the intermediate maps
-
-\[
-                         G\longrightarrow X,\qquad
-                         G\longrightarrow Y
-\]
-
-and \(W\to G\) are finite etale.  If \(e>1\), then
-
-\[
-                         \deg(G/Y)=\deg(W/Y)/e,
-\]
-
-contrary to minimality.  Hence \(e=1\). \(\square\)
-
-This proposition removes the generic image degree without any gonality or
-Jacobian hypothesis.  Its force stops at quotients through which *both of
-the given target maps descend*.
-
-## 2. What a rational factor actually produces
-
-Retain the minimal common cover (D.1), and assume that the product image
-\(\Gamma\subset X\times Y\) has exterior-product class
-
-\[
-                      \mathcal O(\Gamma)\simeq N\boxtimes R. \tag{D.3}
-\]
-
-Write
-
-\[
-                         n=\deg(W/Y).
-\]
-
-The section cutting out \(\Gamma\) gives a divisor-family map
-
-\[
-                         \zeta:Y\longrightarrow\mathbf P H^0(X,N).
-\]
-
-Suppose that it factors through a finite map of degree \(d>1\), where
-\(B\) is a smooth projective integral curve (in applications, the
-normalization of the image),
-
-\[
-             Y\xrightarrow{\psi}B\xrightarrow{\iota}\mathbf P H^0(X,N),
-             \qquad \deg\psi=d,                       \tag{D.4}
-\]
-
-and put \(S=\iota^*\mathcal O(1)\).  The tautological line on the
-projective space gives an incidence section on \(X\times B\); denote its
-zero divisor by
-
-\[
-                         \Gamma_0\subset X\times B.    \tag{D.5}
-\]
-
-### Proposition D.2 (the descended curve covers only the first fixed target)
-
-One has
-
-\[
-                         R\simeq\psi^*S,
-\]
-
-the divisor \(\Gamma_0\) is integral, and
-
-\[
-                (1_X\times\psi)^*\Gamma_0=\Gamma
-\]
-
-scheme-theoretically.  Let \(Z_0\) be the normalization of
-\(\Gamma_0\), with maps
-
-\[
-                   s:Z_0\longrightarrow X,\qquad
-                   \varphi:Z_0\longrightarrow B.      \tag{D.6}
-\]
-
-The curve \(W\) is the normalization of \(Z_0\times_B Y\).  There is a
-commutative square
-
-\[
-\begin{array}{ccc}
- W&\xrightarrow{v}&Y\\
- \big\downarrow q&&\big\downarrow\psi\\
- Z_0&\xrightarrow{\varphi}&B,
-\end{array}                                             \tag{D.7}
-\]
-
-where
-
-\[
-                         \deg q=d.                     \tag{D.8}
-\]
-
-Both
-
-\[
-                         q:W\to Z_0,\qquad s:Z_0\to X  \tag{D.9}
-\]
-
-are finite etale.  In particular, the factor \(\psi\) in (D.4) is
-generically separable.
-
-However, the original map \(v:W\to Y\) cannot descend through \(q\).
-More precisely, there is no morphism \(\lambda:Z_0\to Y\) satisfying
-
-\[
-                              v=\lambda q              \tag{D.10}
-\]
-
-unless \(d=1\).
-
-#### Proof
-
-Let \(V=H^0(X,N)\), and write the section cutting out \(\Gamma\) as a
-map
-
-\[
-                         R^{-1}\longrightarrow V\otimes\mathcal O_Y.
-\]
-
-It is nonzero on every fiber: otherwise \(\Gamma\) would contain a
-horizontal fiber, contrary to its finiteness over \(Y\).  Its image is
-therefore a line subbundle, namely \(\zeta^*\mathcal O(-1)\).  The
-factorization (D.4) identifies this with \(\psi^*S^{-1}\), proving
-\(R\simeq\psi^*S\).  The tautological inclusion
-
-\[
-                         S^{-1}\longrightarrow V\otimes\mathcal O_B
-\]
-
-pulls back to the preceding map.  Evaluating these sections on \(X\)
-proves the scheme-theoretic equality
-\((1_X\times\psi)^*\Gamma_0=\Gamma\).
-
-The map \(\psi\) is finite flat and surjective.  Integrality descends
-under faithfully flat morphisms, so the integrality of \(\Gamma\) proves
-that of \(\Gamma_0\).
-
-The scheme-theoretic pullback assertion identifies \(\Gamma\) with the
-integral fiber product \(\Gamma_0\times_B Y\).  Passing to normalizations
-gives (D.7): equivalently, \(Z_0\times_B Y\) has the same field-valued
-generic algebra as \(\Gamma_0\times_B Y=\Gamma\), and its normalization
-is \(W\).  Since \(\psi\) is finite flat of degree \(d\), its base change
-is finite flat of degree \(d\); in particular there are no vertical or
-embedded extra components, and the generic degree of \(q\) is \(d\).
-This proves (D.8).
-
-The composite \(sq=u\) is etale.  The fields in
-
-\[
-                         k(X)\subset k(Z_0)\subset k(W)
-\]
-
-are therefore separable, and multiplicativity of ramification indices
-shows that both maps in (D.9) are etale.
-
-At the generic point, \(q\) is the degree-preserving base change of
-\(\psi\), so
-
-\[
- k(W)=k(Z_0)\otimes_{k(B)}k(Y)
-\]
-
-is a field of dimension \(d\) over \(k(Z_0)\).  Base change for Kahler
-differentials gives
-
-\[
- \Omega_{k(Y)/k(B)}\otimes_{k(Y)}k(W)
-       \simeq\Omega_{k(W)/k(Z_0)}=0.
-\]
-
-Faithfulness of the field extension gives
-\(\Omega_{k(Y)/k(B)}=0\), so \(k(Y)/k(B)\) is separable.
-
-Finally, inside \(k(W)\) one has
-
-\[
-                         k(W)=k(Z_0)k(Y),               \tag{D.11}
-\]
-
-because \(W\) normalizes the integral fiber product.  If (D.10) held,
-then \(v^*k(Y)\subseteq q^*k(Z_0)\).  Equation (D.11) would give
-\(k(W)=k(Z_0)\), contradicting \([k(W):k(Z_0)]=d>1\). \(\square\)
-
-Equivalently, the exact descent condition for the given \(Y\)-map is
-
-\[
- v\operatorname{pr}_1=v\operatorname{pr}_2
-       \quad\text{on }W\times_{Z_0}W.                 \tag{D.12}
-\]
-
-In a genuine factorization of degree \(d>1\), (D.12) necessarily fails:
-the relation defining \(q\) identifies the \(d\) points of a generic
-\(\psi\)-fiber, while \(v\) remembers which point of that fiber was chosen.
-
-### Corollary D.2a (the Frobenius alternative cannot occur)
-
-Every factor map \(\psi:Y\to B\) arising from the divisor family of a
-bi-etale incidence curve as above is generically separable, even when the
-characteristic divides \(d\).
-
-If \(J(Y)\) is simple and \(B\) is the normalization of the image of
-\(\zeta\), then exactly one of the following holds:
-
-1. \(d=1\), so \(\zeta\) is birational onto its image;
-2. \(B\simeq\mathbf P^1\).
-
-Thus a positive-characteristic Frobenius factor is not a third possibility
-in an actual bi-etale incidence setup.
-
-#### Proof
-
-Separability is Proposition D.2.  Suppose \(g(B)>0\).  Pullback along
-\(\psi\) has finite kernel on Jacobians because
-\(\psi_*\psi^*=[d]\), so its image is a positive-dimensional abelian
-subvariety of \(J(Y)\).  Simplicity gives \(g(B)=g(Y)\).  Since
-\(\psi\) is separable, Riemann--Hurwitz and effectiveness of the
-different give
-
-\[
- g(Y)-1\geq d\bigl(g(B)-1\bigr)=d\bigl(g(Y)-1\bigr).
-\]
-
-As \(g(Y)\geq2\), this forces \(d=1\).  If \(g(B)=0\), the smooth
-projective curve \(B\) is \(\mathbf P^1\). \(\square\)
-
-## 3. The exact missing hypothesis for a smaller common cover
-
-Now suppose that the target genera satisfy
-
-\[
-                     g(Y)-1=r\bigl(g(X)-1\bigr)        \tag{D.13}
-\]
-
-for an integer \(r>1\).  Then
-
-\[
-                         \deg(W/X)=rn.                 \tag{D.14}
-\]
-
-Write
-
-\[
-                         \ell=\deg(Z_0/X).
-\]
-
-Equations (D.8)--(D.9) give
-
-\[
-                              d\ell=rn.                \tag{D.15}
-\]
-
-### Theorem D.3 (minimality criterion after incidence descent)
-
-The rational factor (D.4) contradicts minimality of \(W\) if one can
-additionally construct a finite etale map
-
-\[
-                         \lambda:Z_0\longrightarrow Y. \tag{D.16}
-\]
-
-Indeed, such a map necessarily has degree
-
-\[
-                  \deg\lambda={\ell\over r}={n\over d}<n.          \tag{D.17}
-\]
-
-The construction of \(\Gamma_0\), the etale map \(Z_0\to X\), and the
-genus identity do not themselves furnish a map (D.16).  In particular,
-the natural candidate obtained by descending \(v\) is ruled out by
-Proposition D.2 when \(d>1\).
-
-In particular:
-
-1. A necessary numerical condition for (D.16) is
-
-   \[
-                              r\mid\ell,
-   \]
-
-   equivalently \(d\mid n\).
-2. If \(r\nmid\ell\), genus already proves that \(Z_0\) cannot be an etale
-   cover of \(Y\), so minimality cannot be applied to \(Z_0\).
-3. Even when \(r\mid\ell\), equality of the required genera and degrees
-   does not construct (D.16).  For example, in the endpoint
-   \(\ell=r\), such a map would have degree one and would assert the
-   additional geometric fact \(Z_0\simeq Y\).
-
-#### Proof
-
-If (D.16) exists, etale Riemann--Hurwitz applied to \(Z_0\to X\) and
-\(Z_0\to Y\) gives
-
-\[
- \ell\bigl(g(X)-1\bigr)
-   =\deg\lambda\bigl(g(Y)-1\bigr)
-   =r\deg\lambda\bigl(g(X)-1\bigr).
-\]
-
-Thus \(\deg\lambda=\ell/r\).  Substitution from (D.15) gives
-\(\deg\lambda=n/d\), which is strictly smaller than \(n\).  Hence \(Z_0\)
-would be a common etale cover of the two fixed curves with smaller degree
-over \(Y\), contradicting minimality.
-
-This also proves the divisibility assertions.  The incidence descent only
-supplies the two arrows in (D.6); its second target is \(B\), not \(Y\).
-Proposition D.2 proves that the given arrow \(W\to Y\) cannot supply the
-missing map by descent.  Finally, Riemann--Hurwitz is only a necessary
-degree-and-genus identity.  It contains no construction of a morphism to
-the fixed curve \(Y\).  For instance, two nonisomorphic curves of the same
-genus at least two satisfy the same genus identity but admit no etale
-degree-one map between them. \(\square\)
-
-## 4. Consequence for the degree-nine seven-diamond
-
-For
-
-\[
-                       (r,n)=(7,9),
-\]
-
-the two residual rational factors from the pushed-incidence analysis are
-
-\[
-                       (d,\ell)=(21,3),\qquad(63,1).
-\]
-
-In both cases \(7\nmid\ell\).  Thus their descended normalizations have
-genera \(7\) and \(3\), respectively, and cannot map etale to the fixed
-genus-15 curve \(Y\).  They therefore do **not** produce smaller common
-covers of \(X\) and \(Y\), even if the original degree-nine common cover
-was chosen minimal.
-
-The additional input needed to eliminate these factors must concern the
-fixed curves themselves: for example, their torsion-divisor classes,
-monodromy representations, or cyclic norm labels.  Minimality and the
-genus ratio alone cannot do it.
+# Incidence descent, minimal common covers and norm coordinates
+
+Version2,2026-09-08. The original degree-minimal statements in §1 retain
+[PASS metadata](audits/MINIMAL_COMMON_COVER_AND_INCIDENCE_DESCENT_AUDIT.md):
+/root/x_elliptic_quotient_maps/m9_incidence_profiles,2026-09-04,
+no breaking objection. The normalization-first formulation isolates what
+that proof actually uses; global degree minimality is used only at the end.
+Sections2–3 retain the author-only norm-field/line identities of2026-09-05.
+Version2 extends norm-coordinate recovery from ω³ to ANY very ample line
+bundle, with the same explicit inverse; this addition is not independently
+audited. Consolidation: /root/library_generalization_cleanup_max.
+
+## 1. The exact incidence square and the missing second leg
+
+Work over algebraically closed k in ANY characteristic. Let Z have actual
+finite etale maps f:Z→X,g:Z→Y, with X,Y smooth projective connected of
+genus≥2. The normalization of their reduced joint image in X×Y is again
+an actual common finite etale cover: both original maps factor through
+it, the intermediate function fields are separable, and ramification
+indices multiply to1. Thus a degree-minimal common cover is birational
+to its joint image. From now on take Z to be that normalization; this
+joint-normalization condition suffices for the incidence argument.
+
+Suppose the integral image Γ has O(Γ)=A⊠B. Its defining section gives
+a divisor-family morphism h:Y→P(H⁰(X,A)), with no zero coefficient
+fiber because Γ is finite over Y. Suppose
+
+    h:Y --q--> D --h₀--> P(H⁰(X,A)),       d=deg q,
+
+where D is a smooth projective curve and q is finite; separability
+is NOT assumed. Put B₀=h₀*O(1). Pulling back the tautological line
+subbundle gives B=q*B₀ and an incidence divisor Γ₀ on X×D with
+
+    Γ=(1_X×q)*Γ₀               scheme-theoretically.                (1)
+
+Since q is finite faithfully flat, Γ₀ is integral and dominates both
+factors. Let Z₀ normalize Γ₀, with s:Z₀→X and φ:Z₀→D. Then
+
+    Z = Norm(Z₀×_D Y),        f=s r,        φ r=q g,
+    deg r=d,                 Z --r--> Z₀ --s--> X finite etale.     (2)
+
+The ENTIRE fiber product in(2) is integral. Both q and φ are separable,
+but neither is asserted to be etale.
+
+Here is the field-level justification, including the degree and
+inseparability issues. Let E=k(D), L=k(Y), K₀=k(Z₀). From(1),
+
+    k(Z)=K₀⊗_E L
+
+is a FIELD of dimension d over K₀. Normalization changes neither
+this generic algebra nor the degree. Also Z₀×_D Y is finite flat
+over Z₀, hence torsion-free with this field as generic algebra;
+it has no additional vertical or nilpotent component and is integral.
+Since f=s r is etale, r,s are etale by the intermediate-field
+argument above. Base change gives
+
+    Ω_(L/E)⊗_L k(Z)=Ω_(k(Z)/K₀)=0,
+
+so q is separable. Similarly etaleness of g forces K₀/E separable.
+This retains the original map to Y on Z, not a replacement map.
+
+If d>1, the original g CANNOT descend through r: an equality
+g=λr would imply L⊂K₀ inside k(Z), hence k(Z)=K₀, contradicting
+[k(Z):K₀]=d. Equivalently g pr₁=g pr₂ fails on Z×_(Z₀)Z.
+The natural second target of Z₀ is D, not the fixed Y.
+
+If J(Y) is simple, q has degree1 or D=P¹. Indeed a positive-genus
+D gives, via q_*q^*=[d] on J(D), a positive-dimensional
+abelian subvariety q*J(D)⊂J(Y) of dimension g(D). Thus g(D)=g(Y).
+Separability and Riemann–Hurwitz then force d=1. There is no extra
+purely inseparable alternative, even if char(k) divides d.
+
+For the degree-minimal boundary, write
+
+    g(Y)−1=r₀(g(X)−1),     b=deg(Z/Y),     ℓ=deg(Z₀/X).
+
+Then dℓ=r₀b. If one ADDITIONALLY constructs an actual finite etale
+map λ:Z₀→Y, Riemann–Hurwitz forces deg λ=ℓ/r₀=b/d<b for d>1,
+contradicting minimality. When r₀ is integral, r₀|ℓ (equivalently
+d|b) is necessary, NOT sufficient. In the endpoint ℓ=r₀, such a
+map would require the extra geometric fact Z₀≅Y.
+For the historical genus-(3,15) pair with r₀=7,b=9, the remaining
+(d,ℓ)=(21,3),(63,1) give genera7 and3 for Z₀: neither can cover
+the fixed genus15 Y etale. These descended curves therefore yield
+no minimality contradiction.
+
+The [connecting-class theorem](105_NONGALOIS_DESCENT_THROUGH_THE_CONNECTING_MAP.md)
+can FORCE an incidence factor(1); it does not manufacture the missing
+map Z₀→Y.
+
+## 2. Norm coefficients recover the exact field for any very ample bundle
+
+This section needs joint normalization and the actual etale maps above,
+but NO split class O(Γ)=A⊠B and NO degree-range or Hom hypothesis.
+Let H be ANY very ample line bundle on X, V=H⁰(X,H), b=deg g.
+Compare h:Y→Sym^bX with the projective norm-polynomial map
+
+    n:Y→P(Sym^b V*),       y↦[s↦Nm_g(f*s)(y)].
+
+They generate the SAME subfield of k(Y), hence have the same normalized
+image quotient. In particular H=ω_X³ gives the earlier tricanonical
+statement. The proof preserves the coefficient field, not just geometric
+pointwise injectivity.
+
+Indeed Γ→Y is finite flat: its finite module is torsion-free over the
+smooth base curve. Fiberwise the norm is the product of nonzero evaluation
+linear forms at the points of the effective divisor Γ_y, with their
+multiplicities, including collisions. Thus its coefficients have no
+common zero and n is the Chow-product map applied to h.
+Any differential framing contributes only a scalar discarded here.
+
+Put L=k(Y), E=the incidence field, K=the norm coefficient field.
+The product description gives K⊂E. For the converse choose a basis
+s₀,…,s_m of V with s₀ nonzero on all b geometric generic points x_i
+and t_i=s₁(x_i)/s₀(x_i) pairwise distinct. Very ampleness and the
+infinitude of k allow these choices; the generic points are distinct
+because Γ has normalization Z and g is etale. Put
+u_ji=s_j(x_i)/s₀(x_i). After dividing the norm by its nonzero s₀^b
+coefficient, substitute s=z s₀−s₁+Σ_(j≥2)w_j s_j. This gives
+
+    F(z,w)=∏_i(z−t_i+Σ_(j≥2)w_j u_ji),
+    P(z)=F(z,0)=∏_i(z−t_i),
+    Q_j(z)=[w_j]F=Σ_i u_ji∏_(l≠i)(z−t_l),                 all over K.
+
+The bracket selects the term linear in w_j, with no other w variables;
+there is no division by an integer. P is separable, so P' is invertible
+in the etale K-algebra R=K[z]/(P). The assignments
+
+    s₁/s₀↦z,                s_j/s₀↦Q_j(z)/P'(z)
+
+embed Spec R as a closed subscheme of the affine projective chart:
+the first coordinate generates R. After faithful scalar extension they
+are exactly the x_i, because Q_j(t_i)=u_ji P'(t_i). All equations of X
+therefore already vanish over K. This recovers the generic reduced
+degree-b divisor over K, proving E⊂K and hence E=K.
+
+Reducedness is essential for this inverse. Merely factoring geometric
+polynomials would miss inseparability: replacing a norm by its p-th power
+replaces its coefficient field K by K^p in characteristic p. No such
+operation occurs in the argument.
+
+The [canonical connecting-field identity, §4](105_NONGALOIS_DESCENT_THROUGH_THE_CONNECTING_MAP.md#4-the-canonical-unit-recovers-exactly-the-incidence-field)
+identifies its strict-range quotient with this same field. Norm
+coordinates give a uniform input bundle and explicit nonlinear
+reconstruction, not a finer quotient or a common-cover obstruction.
+
+## 3. Exact normline identities and why free line bundles do not obstruct
+
+Again suppose O(Γ)=A⊠B, for example when Hom(J(X),J(Y))=0.
+Set a=deg f,b=deg g, so deg A=b,deg B=a. For EVERY line bundle H on X,
+
+    Nm_g(f*H) ≅ B^(deg H).                                        (3)
+
+For H=O_X(Σm_x[x]), its norm divisor is Σm_x g_*f*[x].
+The divisor g_*f*[x] on Y is the intersection fiber Γ_x, whose line
+bundle is B. Etaleness over X describes each completed branch as a
+graph over X; restricting the product of branch equations counts
+each branch once, including collision multiplicities. This proves(3)
+for arbitrary integer m_x. It is an isomorphism class, not a preferred
+scalar trivialization.
+
+Norming the ACTUAL differential isomorphism f*ω_X≅g*ω_Y, and its
+symmetric version, gives
+
+    ω_Y^b ≅ B^(2g(X)−2),           ω_X^a ≅ A^(2g(Y)−2).             (4)
+
+No descent of the canonical unit to singular Γ is needed for(4).
+They can reject FIXED candidate bundles A,B and are stronger than
+the numerical Riemann–Hurwitz identity. If one weakens the premise to
+only a trivial n-th power on Γ, its norm yields only the n-th powers
+of(4); a possible n-torsion discrepancy cannot be discarded.
+
+With A,B free, however, these line-bundle equations alone are always
+solvable subject to a(2g(X)−2)=b(2g(Y)−2). Starting with any degree-a
+B₁, the degree-zero bundle ω_Y^b B₁^−(2g(X)−2) has a
+(2g(X)−2)-th root in Pic⁰(Y): multiplication by any positive integer
+is surjective on geometric points, including in the characteristic.
+Adjust B₁ by that root; do the same for A. At fixed degrees the choices
+form finite torsors, possibly nonreduced scheme-theoretically.
+This constructs bundle classes only, not an integral Γ, its defining
+section or its two etale projections. The common-cover problem remains
+unsolved.

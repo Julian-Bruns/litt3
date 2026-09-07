@@ -62,6 +62,10 @@ the reported final affine line is
 \end{aligned}
 \]
 
+The same unreproduced transcript gives the remaining pivots
+\(u5_3=1,\ u0_0=a,\ u2_1=3+3a,\ u2_0=3a\); these are regression data,
+not an independently derived solve.
+
 On this line, with parameter \(a\), the reported simple-\(e50\) residual is
 
 \[

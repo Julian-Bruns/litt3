@@ -3,3 +3,6 @@ reference/prove2me_workspace/
 scripts/__pycache__/
 tests/__pycache__/
 /scripts/*.sage.py
+
+# Local raw computation buffers; retain small results and certificates in Git.
+/Research/computations/*.u8

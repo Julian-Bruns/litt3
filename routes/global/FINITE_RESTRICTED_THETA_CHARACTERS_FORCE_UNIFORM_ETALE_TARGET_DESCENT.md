@@ -1,162 +1,169 @@
 # Finite bad characters force one finite etale descent level
 
-Date: 2026-09-05. Proposal: `/root`.
-Proof and write-up: `/root/canonical_trace_algebra`.
-Status: author proof using the previously checked whole-Jacobian
-orthogonality theorem; no independent audit or novelty claim.
+Author proof/root/canonical_trace_algebra,2026-09-05; consolidated2026-09-07.
+Uses the independently checked whole-Jacobian non-Galois descent theorem.
+The finite-support torsion input has its separately scoped check;
+the combined target theorem is not independently audited.
+Version2,2026-09-07 integrates the earlier translate-free corollary
+and Tong's ordinary-genus-two application, without a new audit claim.
+No novelty or common-cover exclusion claimed.
 
-## 1. Arbitrary prime-to-p torsion directions
+## 1. General finite-character theorem
 
-Let k be algebraically closed of characteristic p>0, and let U be a
-smooth projective connected curve of genus at least two. Write
+Let k be algebraically closed of characteristic p>0, U smooth projective
+connected of genus≥2, B_U=F_(U/k)*O_U/O_(U^(1)), and Θ_U its Raynaud
+divisor. Let Γ be ANY subgroup of J(U^(1))(k) of prime-to-p torsion.
+Assume ONLY
 
-\[
- B_U=F_{U/k*}O_U/O_{U^{(1)}},\qquad
- \Theta_U=\{L\in J(U^{(1)}):h^0(B_U\otimes L)>0\}.
-\]
+    S_bad=Θ_U(k)∩Γ is finite.
 
-Let Gamma be **any subgroup** of J(U^(1))(k) consisting of torsion
-points of order prime to p. Assume only that
+No fixed prime support, divisibility, ambient abelian subvariety or
+ordinarity of U is imposed. For finite Λ⊂Γ, form the actual connected
+abelian etale character cover W_Λ→U on the scalar twist, then
+transport it by etale Frobenius base change. Compatible basepoints
+put all covers in one separable closure. Set
 
-\[
-                          S=\Theta_U(k)\cap\Gamma
-                    \quad\hbox{is finite}.                 \tag{1.1}
-\]
+    Λ₀=⟨S_bad⟩, W₀=W_Λ₀.
 
-No fixed prime support, divisibility of Gamma, ambient abelian
-subvariety, or geometric dimension hypothesis is imposed. No
-ordinarity hypothesis on U is imposed.
+The generated group is finite even if Γ uses infinitely many primes.
+For EVERY finite Λ⊃Λ₀, W_Λ/W₀ has ordinary Prym and
+Δ(W_Λ)=Δ(W₀), where Δ=g−f. For arbitrary finite Λ⊂Γ,
+Δ(W_Λ)≤Δ(W₀). Every cofinal nested sequence is eventually
+new-ordinary, for successive and composite Pryms.
 
-For each finite Lambda<=Gamma, let W_Lambda -> U be the connected
-abelian etale character cover of degree |Lambda|. Construct it on U^(1)
-by Kummer theory and transport it to U by etale Frobenius base change.
-Compatible basepoints realize all these covers in one separable closure
-of k(U), with W_(Lambda+Lambda') dominating W_Lambda and W_Lambda'.
-Put
+Proof. Etale functoriality and character decomposition give
 
-\[
-                  \Lambda_0=\langle S\rangle,
-                  \qquad W_0=W_{\Lambda_0}.                 \tag{1.2}
-\]
+    a(W_Λ)=Σ_(L∈Λ)h⁰(U^(1),B_U⊗L).                        (1)
 
-This is a finite group, even when Gamma has infinitely many primes.
+Up to harmless label inversion, these are exactly the relative
+Frobenius kernel summands. Absolute Frobenius on coherent H¹ is
+semilinear and permutes characters by[p]. Every finite prime-to-p
+subgroup, including Λ₀, is stable under[p] and its inverse.
+Thus the old Λ₀ block and its complementary new block are invariant.
+All first-kernel summands in the latter vanish by the definition of
+S_bad, so Frobenius is injective, hence bijective there. Equivalently
+the old block is the averaging projector for the prime-to-p group
+Gal(W_Λ/W₀). The new block is the Prym's coherent H¹, proving it
+ordinary and the defect equality by isogeny additivity.
 
-### Theorem 1
+This controls ALL Frobenius iterates: the last nonzero image of a
+nilpotent vector lies in a first-kernel block, whose complete[p]-orbit
+is contained in Λ₀. S_bad itself need not be[p]-stable.
+Equation(1) is an a-number formula, NOT Δ=|S_bad| or Δ=a.
+For arbitrary Λ dominate by Λ+Λ₀ and use nonnegative relative-Prym
+defect. Cofinality eventually includes the finite group Λ₀.
 
-For every finite Lambda containing Lambda_0, the Prym of
-W_Lambda -> W_0 is ordinary. In particular
+## 2. All actual target maps and a bounded common quotient
 
-\[
-                         \Delta(W_\Lambda)=\Delta(W_0),
-                  \qquad \Delta(V)=g(V)-f_V.                \tag{1.3}
-\]
+Let T vary over ALL hyperbolic curves with NO ordinary simple
+isogeny factor in J(T). This includes p-rank-zero Jacobians,
+supersingular Jacobians and simple nonordinary positive-p-rank
+Jacobians; it does not require the whole Jacobian to be simple.
 
-For arbitrary finite Lambda<=Gamma, Delta(W_Lambda)<=Delta(W_0).
-Every cofinal nested sequence in this directed family eventually has
-ordinary successive and composite Pryms.
+Every morphism W_Λ→T, Λ⊃Λ₀, descends uniquely to W₀; if etale,
+the descended map is etale. The ordinary Prym has no homomorphism
+to J(T), so this is exactly
+[TheoremA of non-Galois Jacobian descent](NONGALOIS_JACOBIAN_ORTHOGONALITY_AND_ETALE_MAP_STABILIZATION.md).
+Its Section7 proves that a fixed hyperbolic W₀ has finitely many
+hyperbolic etale quotients: outgoing degree≤g(W₀)−1, bounded-degree
+Galois closures over W₀, finite generation of proper π₁, and finite
+automorphism groups. Therefore only finitely many such T occur
+as etale targets anywhere in the directed family or from ACTUAL
+etale quotients of its members. For arbitrary Λ first pull up to
+W_(Λ+Λ₀); for a quotient first compose with its actual quotient map.
 
-### Proof, including all Frobenius iterates
+To preserve a specified SECOND leg, fix actual finite etale b:U→B
+of degree e. Let Z be an actual intermediate of W_Λ→B and let
+r:Z→T be finite etale. Inside k(W_(Λ+Λ₀)), target descent gives
 
-Etale functoriality of B and the character decomposition give
+    k(D)=k(B)r^*k(T)⊂k(Z)∩k(W₀),
+    [k(D):k(B)]≤e|Λ₀|.                                    (2)
 
-\[
- a(W_\Lambda)=h^0(W_\Lambda^{(1)},B_{W_\Lambda})
-                =\sum_{L\in\Lambda}h^0(U^{(1)},B_U\otimes L), \tag{1.4}
-\]
+Normalize: Z→D→B and D→T are actual finite etale maps, with r
+factoring through D. Each is an intermediate of the original etale
+maps. Neither Z/B nor Z/T need be Galois; neither Z nor W_Λ is
+assumed to contain W₀. The single level is uniform in T, its genus
+and both original degrees.
 
-and the corresponding direct sum decomposition as a deck module.
-Inverting character labels, if necessary, does not change a subgroup
-Lambda. Every nonzero summand lies in S and hence in Lambda_0.
+## 3. Finite prime support and the exact translate-free hypothesis
 
-Multiplication by p is an automorphism of every prime-to-p torsion
-subgroup: each individual point has an inverse p-multiple obtained
-by multiplication by an integer. Thus Lambda_0 and its complement
-in Lambda are invariant under the p-power permutation of characters.
+Now assume k=bar(F_p), C hyperbolic, S a fixed FINITE set of
+primes≠p, and that Θ_C contains NO translate of a positive-dimensional
+abelian subvariety. Its maximal exponent
 
-Absolute Frobenius on H^1(W_Lambda,O) is semilinear and sends the
-chi-eigenspace to the chi^p-eigenspace. Its old part, indexed by
-Lambda_0, and the complementary new part are invariant. Equivalently
-use the averaging projector for Gal(W_Lambda/W_0), whose order is
-prime to p and which commutes with Frobenius.
+    N_n=∏_(ℓ∈S)ℓ^n
 
-The defining sequence for B identifies its global sections with the
-kernel of relative Frobenius on H^1: the preceding map on H^0(O)
-is an isomorphism. After scalar twisting, (1.4) therefore says that
-the new part has zero Frobenius kernel. Frobenius is bijective there,
-since it is injective on a finite-dimensional space over the perfect
-field k. That new part is the coherent H^1 of the relative Prym,
-which is consequently ordinary.
+abelian etale covers C_n/C have degree N_n^(2g(C)) and contain
+every abelian cover with prime support S. The
+[finite-support torsion-coset theorem, Section3](BOXALL_PRUFER_TORSION_AND_EVERY_CYCLIC_TOWER.md)
+writes Θ_C∩J(C^(1))[S∞] as finitely many torsion cosets contained
+in Θ_C. The hypothesis forces all their abelian directions to be zero.
+Choose m containing this finite bad set. Sections1–2 give ordinary
+Pryms C_n/C_m and uniform actual target descent, hence finitely many
+allowed target isomorphism classes, whether or not C is ordinary.
 
-This addresses stable nilpotence, not merely the first kernel. Any
-nonzero nilpotent character component eventually maps into a first
-kernel component; its character lies in the multiplication-by-p orbit
-of a point of S. All those orbits are finite and contained in Lambda_0.
-The finite set S itself need not be invariant under multiplication by p.
+The hypothesis holds for geometrically SIMPLE J(C), since Θ_C is
+proper; the direct simple-ambient proof and its focused evidence
+remain in Section2 of the Boxall record. It ALSO holds for EVERY
+ordinary genus-two C, including split Jacobians, in any characteristic:
+[Tong, Corollary4.2.3.3](https://arxiv.org/pdf/0712.2046) makes each
+irreducible theta component ample. An abelian translate contained in
+a divisor on a surface would be an elliptic component, with square0,
+contradicting ampleness. Tong's proof separately handles components
+meeting p-torsion (Corollary4.2.2.1) and the remaining components
+(Proposition4.2.3.2, using elliptic vector bundles); it depends on
+genus two and does not extend this conclusion to arbitrary covers.
 
-Poincare reducibility now proves (1.3). For arbitrary Lambda, dominate
-it by Lambda+Lambda_0 and use nonnegativity of the defect of its relative
-Prym. This also proves the assertion for every cofinal sequence.
-\(\square\)
+For ANY actual abelian S-cover W/C with etale r:W→T, embed W in
+some C_n with n≥m. Its image field descends to C_m, and
 
-Equation (1.4) is an a-number formula. It does not identify the
-a-number with Delta or bound Delta by the number of points of S.
-Long p-power character orbits are relevant to the latter distinction.
+    k(D)=k(C)r^*k(T)⊂k(W)∩k(C_m)
 
-## 2. Uniform actual target descent
+gives a bi-etale quotient with deg(D/C)≤deg(C_m/C), by(2).
+The target leg need not be Galois. This retains the prior
+finite-support theorem, not just a bound on its Jacobian data.
 
-Let T vary over all hyperbolic curves whose Jacobians have no ordinary
-simple isogeny factor. The fixed W_0 in (1.2) works simultaneously
-for all such targets and all their genera.
+There is also the distinct conditional initial-cover case. Here
+ASSUME J(C) geometrically simple. Fix actual etale a:Z→C, with
+no Galois requirement, and suppose
 
-### Theorem 2
+    D_Z={L∈J(C^(1)):h⁰(Z^(1),B_Z⊗a^(1)*L)≠0}
 
-Every actual morphism W_Lambda -> T, with Lambda containing Lambda_0,
-descends uniquely to W_0. An etale morphism descends etale. There are
-only finitely many isomorphism classes of such T admitting a finite
-etale map from any member of the entire directed family or from an
-actual etale quotient of a member.
+is PROPER. It has finitely many S-primary points by the same
+simple-ambient lemma. Apply Section1 directly to
+Γ′=a^(1)*(J(C^(1))[S∞])⊂J(Z^(1)); its bad characters are finite.
+The connected components of Z×_C C_n are character covers for
+a^(1)*(J(C^(1))[N_n]), and these exhaust Γ′. Thus one fixed
+component level controls all later ordinary Pryms and allowed
+target maps. This also recovers the earlier component-stabilization
+proof: the number of components is bounded and eventually constant.
+Actual maps to BOTH Z and C_n remain. Properness of D_Z is NOT
+automatic and fails in Raynaud's no-theta examples.
 
-**Proof.** The Prym in Theorem 1 is ordinary, so it has no nonzero
-homomorphism to J(T). Apply
-[Theorem A of the checked non-Galois Jacobian descent theorem](NONGALOIS_JACOBIAN_ORTHOGONALITY_AND_ETALE_MAP_STABILIZATION.md).
-For arbitrary Lambda first pull the map up to W_(Lambda+Lambda_0);
-the same W_0 receives its descent. The same argument handles maps
-from an actual etale quotient by first composing with the quotient map.
+## 4. Other applications and nonimplications
 
-The fixed hyperbolic curve W_0 has only finitely many hyperbolic etale
-quotient curves, by Section 7 of that theorem. Its proof bounds the
-outgoing degrees by g(W_0)-1 and their Galois closures by bounded-degree
-etale covers of W_0, then uses finite generation of its etale
-fundamental group and finite automorphism groups. \(\square\)
+For an ordinary genus-two base and an etale double U, its elliptic
+Prym P has ordinary complementary quotient. The proper restriction
+Θ_U|P is therefore finite, even with unrestricted prime support.
+The [genus-two inversion theorem](GENUS_TWO_INVERSION_TOWERS_AND_FINITE_TARGETS.md)
+gives the odd-kernel consequence and its separate H4 extension to
+even/nonsplit kernels, including actual non-Galois intermediates.
 
-### Retaining a given second-leg diagram
+Finiteness of bad CHARACTER points here is stronger than finiteness
+of bad fibers in a quotient Jacobian. The latter only stabilizes
+generic theta dimensions along a parameter family, as in
+[the canonical Frobenius sieve](../../Theorems/Thm_frobenius_exception_sieve.md);
+it does not imply our ordinary-Prym or actual-target conclusions.
 
-Suppose also b:U -> B is fixed finite etale of degree e. Let Z be an
-actual intermediate of W_Lambda -> B, and let r:Z -> T be finite
-etale. In k(W_(Lambda+Lambda_0)), the pulled-up map descends to W_0.
-Therefore
-
-\[
-                  k(D)=k(B)\,r^*k(T)
-                       \subset k(Z)\cap k(W_0),
-        \qquad [k(D):k(B)]\le e|\Lambda_0|.                  \tag{2.1}
-\]
-
-Normalization gives actual etale maps Z -> D -> B and D -> T, with
-r factoring through D. Each is an intermediate map of one of the
-original etale maps. This requires neither Z/B nor Z/T to be Galois,
-and does not require W_0 to be contained in Z or W_Lambda.
-
-## 3. Application and boundary
-
-For an ordinary genus-two Y in characteristic five and an etale double
-cover U -> Y, its elliptic Prym has ordinary complementary quotient.
-Its Raynaud theta restriction is therefore finite. Applying this
-theorem to all odd prime-to-five Prym torsion gives
-[the generalized-dihedral corollary](ODD_GENERALIZED_DIHEDRAL_TOWERS_OVER_ORDINARY_GENUS_TWO_HAVE_FINITE_NONORDINARY_TARGETS.md),
-including actual non-Galois intermediate covers.
-
-The substantive hypothesis here is (1.1). Properness of theta on a
-higher-dimensional parameter subvariety alone does not imply it. No
-assertion for arbitrary nonabelian towers, unrestricted prime-to-p
-torsion in a full Jacobian, or p-primary character covers follows.
+This does not supersede the different arithmetic/genus hypotheses of
+[abelian towers and endomorphism fields](95_ABELIAN_ETALE_TOWERS_AND_ENDOMORPHISM_FIELDS.md),
+which can treat arbitrary nonconstant maps and characteristic-divisible
+abelian groups. Here S is fixed and prime to p, and simplicity is a
+BASE-Jacobian condition in that specialization. No finiteness follows
+by taking the union over all finite S: the [prime-avoiding cyclic
+tower construction](PRIME_AVOIDING_THETA_CHARACTERS_FORCE_UNBOUNDED_CYCLIC_TOWERS.md)
+gives unbounded defect even on ordinary genus-two bases when new primes
+are allowed. Fixed-support recursive core towers need not be abelian,
+and proper theta in higher dimension need not have finite torsion
+intersection without a proved extra hypothesis.
+No cofinal arbitrary-cover or p-primary-character assertion is made.

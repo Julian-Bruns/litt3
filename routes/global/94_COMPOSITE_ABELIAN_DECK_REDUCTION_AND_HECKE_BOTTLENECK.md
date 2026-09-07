@@ -1,396 +1,157 @@
-# Composite abelian deck groups: the exact normalizer and Hecke bottleneck
+# Composite abelian decks: the normalizer and rational Hecke constraint
 
-**Status: proved below; author self-check PASS, 2026-09-04.**
+Author proof; self-check recorded2026-09-04, NOT independently audited.
+Version2,2026-09-07: compressed proof and explicit trivial-cover correction.
+The bound d<=|H|-1 requires |H|>1; the exact dimension inequality remains
+valid for H=1 and then gives d=1. Also A>H need not be a counterexample
+to normality: only A>N_A(H) is. Division-algebra actions below are written
+as LEFT-module actions, so the rank-one corner is the opposite algebra.
 
-This note tests whether file 92 extends from abelian prime-power deck
-groups to arbitrary finite abelian deck groups.  It does not prove that
-extension.  Instead it gives a rigid reduction of every possible failure:
-the bottom of the subgroup lattice is forced, the prime-to-\(p\) part is a
-fixed-point-free Fitting subgroup, and simplicity leaves exactly one
-rank-one rational Hecke packet of sharply bounded degree.  The two smallest
-simple-group envelopes satisfying the raw normalizer conditions are then
-excluded uniformly.
+All curves are smooth projective connected over algebraically closed k.
+Fix an odd prime p, possibly char(k), and assume
 
-All curves are smooth, projective, and connected over an algebraically
-closed field \(k\).  Fix an odd prime \(p\), possibly equal to
-\(\operatorname{char}k\), and assume
+    g(X)=g>=2, JX simple, Aut(X)=C_p, X/C_p=P1,
 
-\[
- g(X)=g\ge2,\qquad J(X)\text{ is simple},\qquad
- \operatorname{Aut}(X)=C_p,\qquad X/C_p\simeq\mathbf P^1.       \tag{94.1}
-\]
+with trivial PGL2(k)-stabilizer of the reduced branch set Bcal.
+Let D->X be connected finite etale Galois with ANY finite abelian
+deck group H. Put A=Aut(D), N=N_A(H), h=|H|. The
+[abelian rigidity toolkit](91_ARBITRARY_ABELIAN_DECK_RIGIDITY.md) and
+[branch-rigid prime-power theorem](92_BRANCH_RIGID_ABELIAN_PRIME_POWER_COVERS.md)
+are the inputs. This note does not extend the latter to arbitrary H.
 
-Let \(\mathcal B\) be the reduced branch set of \(X\to\mathbf P^1\), and
-assume
+## 1. The forced bottom of the subgroup lattice
 
-\[
- \operatorname{Stab}_{\operatorname{PGL}_2(k)}(\mathcal B)=1.  \tag{94.2}
-\]
+**Lemma94.1.** No M<=A satisfies H<M, H maximal in M and N_M(H)=H.
+This is exactly the relative minimal-overgroup proof of Theorem91.1:
+D/M=P1 by simplicity, the core-free coset action is Frobenius, and
+its derangement kernel would give a nontrivial etale quotient of P1.
 
-Let \(D\to X\) be a connected finite etale Galois cover with arbitrary
-finite abelian deck group \(H\), and put
+**Theorem94.2.** If A>H, then
 
-\[
- A=\operatorname{Aut}(D),\qquad N=N_A(H).
-\]
+    N/H=C_p, D/N=P1, N_A(N)=N.
 
-## 1. The bottom interval is forced
+Moreover every K with H<K<=A contains N, so N is the unique minimal
+overgroup of H.
 
-We first isolate the part of file 91 which applies inside any finite
-subgroup of \(\operatorname{Aut}(D)\).
+**Proof.** The normalizer injection gives N/H<=Aut(X)=C_p. If N=H,
+Theorem91.1 gives A=H. Otherwise N/H=C_p and D/N=X/C_p=P1.
+Because D/X is etale its N-quotient has branch set exactly Bcal.
+The normalizer quotient N_A(N)/N acts faithfully on P1 preserving
+Bcal, hence is trivial. Given H<K, choose M<=K minimal over H.
+Its normalizer of H is H or M; Lemma94.1 rules out the former.
+Thus M<=N, and [N:H]=p forces M=N. QED.
 
-### Lemma 94.1 (no self-normalizing minimal overgroup)
+## 2. The coprime part and its normalizer
 
-There is no subgroup \(M\le A\) such that
+Write H=H_p x L with L the characteristic p-prime Hall subgroup.
 
-\[
- H<M,\qquad H\text{ is maximal in }M,\qquad N_M(H)=H.           \tag{94.3}
-\]
+**Theorem94.3.** If A>H, there is t in N of order p such that
 
-#### Proof
+    N=H semidirect<t>,
+    L=[L,t], C_L(t)=1, N_A(L)=N.
 
-The nontrivial map \(D/H=X\to D/M\), together with simplicity of \(J(X)\),
-forces \(D/M\simeq\mathbf P^1\): a positive-genus quotient would pull back
-to a nonzero abelian subvariety of \(J(X)\), and Riemann--Hurwitz then rules
-out the resulting equality of genera.
+If L!=1, then the Fitting subgroup F(N)=H.
 
-Put \(C=\operatorname{Core}_M(H)\), \(G=M/C\), and \(B=H/C\).  The coset
-action of \(G\) is faithful and primitive, and its abelian point stabilizer
-\(B\) is self-normalizing.  If \(1\ne c\in B\cap B^u\), with \(u\notin B\),
-then
+**Proof.** The ramified cover D->D/N=P1 has inertia meeting H trivially,
+so every nontrivial inertia group has order p and supplies t. Inertia
+normally generates N: otherwise its normal closure would leave a
+nontrivial connected etale quotient of P1.
 
-\[
- \langle B,B^u\rangle\le C_G(c).
-\]
+For an inertia generator h t^i with i!=0, the L-component lambda has
+norm1 under t^i. Coprime cyclic cohomology and the abelian decomposition
+give
 
-Maximality of \(B\) makes the left side all of \(G\), so \(c\) is central.
-A central element fixing a point in a faithful transitive action is trivial.
-Thus the action is Frobenius.
+    ker(1+t+...+t^(p-1))=(t-1)L,
+    L=C_L(t) x [L,t].
 
-Let \(K\triangleleft G\) be its Frobenius kernel and let \(\widetilde K\)
-be the inverse image in \(M\).  Since \(C\subseteq H\) acts freely on
-\(D\), every geometric point stabilizer injects into \(G\).  A nonidentity
-element in its image cannot fix a coset: it would then belong to a conjugate
-of the free group \(H\).  It is therefore a derangement and lies in \(K\).
-Hence
+Thus every inertia generator maps to identity in L/[L,t]; their normal
+generation forces L=[L,t] and C_L(t)=1.
 
-\[
- D/\widetilde K\longrightarrow D/M\simeq\mathbf P^1
-\]
+The curve E=D/L is an actual etale abelian p-group cover of X, including
+the trivial-cover case. Theorem92.1 gives |Aut(E)|<=p|H_p|. But N/L
+already embeds in Aut(E) with exactly that order. The injection
+N_A(L)/L->Aut(E) therefore gives N_A(L)=N.
 
-is a nontrivial connected finite etale cover, impossible.  This is the
-minimal-overgroup argument of file 91, stated in the relative form needed
-here. \(\square\)
+Finally H is nilpotent normal in N, so H<=F(N). Since [N:H]=p, a larger
+Fitting subgroup would equal N, making N nilpotent. Its p-subgroup would
+then centralize the nontrivial L, contrary to C_L(t)=1. QED.
 
-### Theorem 94.2 (unique atom and self-normalizing first layer)
+Only A>N could violate deck normality. In that case L!=1 by Theorem92.1.
+The possibilities A=N>H with H a p-group are NOT excluded by that theorem.
 
-If \(A>H\), then
+## 3. One active rational packet
 
-\[
- N/H=C_p,\qquad D/N\simeq\mathbf P^1,\qquad N_A(N)=N.           \tag{94.4}
-\]
+For an irreducible rational A-module W, let Delta_W=End_QA(W), acting
+on W on the left. Call W active if its central idempotent acts nontrivially
+on JD and W^H!=0. Put d=dim_(Delta_W) W.
 
-Moreover, every subgroup \(K\) with \(H<K\le A\) contains \(N\).
-Equivalently, \(N\) is the unique minimal overgroup of \(H\) in \(A\).
+**Theorem94.4.** If A>H, exactly one packet W is active. It satisfies
 
-#### Proof
+    dim_(Delta_W) W^H=1, W^N=0,
+    Q(zeta_p) embeds in Delta_W^op embeds in End^0(JX),
+    d*g <= 1+h(g-1).                                 (A)
 
-The usual descent map is injective:
+For h>1 this implies d<=h-1; for h=1 it implies d=1.
+The last case was missing from the former abbreviated statement.
 
-\[
- N_A(H)/H\hookrightarrow\operatorname{Aut}(X)=C_p.             \tag{94.5}
-\]
+**Proof.** The averaging idempotent e_H=(1/h)sum_(u in H)u has image
+the pullback of JX inside JD, up to isogeny. Distinct rational central
+simple components cut out independent abelian subvarieties of that
+image, so simplicity allows only one active component. In that component,
 
-If \(N=H\), Theorem 91.1 (or its proof, which is Lemma 94.1) gives
-\(A=H\).  Thus \(A>H\) implies \(N/H=C_p\), and then
-\(D/N=X/C_p=\mathbf P^1\).
+    S_W=End_(Delta_W)(W),
+    e_H S_W e_H=End_(Delta_W)(W^H).
 
-Because \(D\to X\) is etale, the reduced branch set of the \(N\)-quotient
-is exactly \(\mathcal B\).  The group \(N_A(N)/N\) acts faithfully on
-\(D/N\) and preserves this set.  Hypothesis (94.2) gives \(N_A(N)=N\).
+If W^H had Delta_W-dimension>1, its matrix corner would have a proper
+nonzero idempotent and split JX. Thus it has dimension1, and the corner
+is Delta_W^op. Every active simple component acts faithfully on its
+nonzero isotypic abelian subvariety. Since D/N=P1, e_N acts as zero
+on JD, hence as zero on W; thus W^N=0.
 
-Now take \(H<K\le A\) and choose \(M\le K\) minimal over \(H\).  If \(M\)
-does not normalize \(H\), then \(N_M(H)=H\), contrary to Lemma 94.1.  Thus
-\(M\le N\).  Since \([N:H]=p\), one has \(M=N\), and hence \(N\le K\).
-\(\square\)
+The order-p inertia lift t preserves W^H. Its action in the division
+corner is a unit u with
 
-## 2. What the prime-to-\(p\) part must do
+    u^p=1, 1+u+...+u^(p-1)=0.
 
-Write
+It is not1 and has minimal polynomial Phi_p, giving the cyclotomic
+embedding. The faithful corner action gives its embedding into End^0(JX).
 
-\[
- H=H_p\times L,
-\]
+Finally the d rank-one matrix idempotents in S_W have mutually isogenous
+images; one is the g-dimensional JX. The active isotypic subvariety thus
+has dimension d*g, at most g(D)=1+h(g-1). This proves(A).
+For h>1, division by g gives d<=h-(h-1)/g<h; for h=1 it gives d=1.
+No tame assumption is used: all averaging is in rational endomorphisms.
+QED.
 
-where \(H_p\) is the Sylow \(p\)-subgroup and \(L\) is the characteristic
-Hall \(p'\)-subgroup of \(H\).
+## 4. Two excluded abstract envelopes
 
-### Theorem 94.3 (fixed-point-free coprime carrier)
+**Corollary94.5.** Neither
 
-Assume \(A>H\).  There is an element \(t\in N\) of order \(p\) such that
+    (A,N,H)=(A5,A4,V4)
+    nor (PSL2(7),C7 semidirect C3,C7)
 
-\[
- N=H\rtimes\langle t\rangle.                                  \tag{94.6}
-\]
+can occur under these geometric hypotheses.
 
-The prime-to-\(p\) part satisfies
+**Proof.** The rational A5 packets have dimensions1,6,4,5, with the
+six-dimensional packet combining the conjugate3-dimensional characters.
+Their pairs of Delta-dimensions (W^H,W^N) are respectively
 
-\[
- L=[L,t],\qquad C_L(t)=1.                                      \tag{94.7}
-\]
+    (1,1), (0,0), (1,1), (2,0).
 
-Furthermore,
+None has (1,0), as Theorem94.4 requires. For PSL2(7), the two conjugate
+3-dimensional representations and the rational6-dimensional one have
+no C7-invariants. The7-dimensional one has both C7- and
+(C7 semidirect C3)-fixed rank1. The8-dimensional one has fixed ranks
+(2,0), again the only N-anisotropic possibility. It also fails the
+rank-one condition. These are character calculations, independent of
+branch signature and characteristic. QED.
 
-\[
- N_A(L)=N.                                                      \tag{94.8}
-\]
+## Remaining boundary
 
-If \(L\ne1\), then
-
-\[
- F(N)=H,                                                        \tag{94.9}
-\]
-
-where \(F(N)\) denotes the Fitting subgroup.
-
-#### Proof
-
-The cover \(D\to D/N=\mathbf P^1\) is ramified.  Its inertia groups meet
-the free deck group \(H\) trivially and inject into \(N/H=C_p\).  Every
-nontrivial inertia group consequently has order \(p\), and any one of them
-supplies a complement \(\langle t\rangle\), proving (94.6).  The inertia
-groups normally generate \(N\), since otherwise their normal closure would
-leave a nontrivial connected etale quotient of \(\mathbf P^1\).
-
-Consider an inertia generator \(h t^i\), with \(i\ne0\), and its
-\(L\)-component \(\lambda\).  The order-\(p\) relation says that the norm
-of \(\lambda\) for the coprime \(C_p\)-action is one.  Coprime cohomology
-gives
-
-\[
- \ker(1+t+\cdots+t^{p-1})=(t-1)L=[L,t].                          \tag{94.10}
-\]
-
-Thus every inertia generator has trivial \(L/[L,t]\)-component.  Since
-they normally generate \(N\), this forces \(L=[L,t]\).  The standard
-coprime decomposition
-
-\[
- L=C_L(t)\times[L,t]
-\]
-
-then gives \(C_L(t)=1\).
-
-Put \(E=D/L\).  It is an etale abelian \(p\)-group cover of \(X\), with
-deck group \(H_p\).  File 92, including its trivial-cover case, gives
-
-\[
- |\operatorname{Aut}(E)|\le p|H_p|.
-\]
-
-On the other hand \(N/L\le\operatorname{Aut}(E)\) already has order
-\(p|H_p|\).  Descent gives
-
-\[
- N_A(L)/L\hookrightarrow\operatorname{Aut}(E),
-\]
-
-and therefore equality in (94.8).
-
-Finally suppose \(L\ne1\).  The nilpotent normal subgroup \(H\) lies in
-\(F(N)\), and \([N:H]=p\).  If \(F(N)>H\), it must equal \(N\), making
-\(N\) nilpotent.  In a nilpotent group its Sylow \(p\)-subgroup centralizes
-\(L\), contrary to (94.7).  Hence \(F(N)=H\). \(\square\)
-
-The prime-power case \(L=1\) is already impossible by file 92.  Thus every
-genuinely new counterexample to arbitrary-abelian deck normality must have
-\(L\ne1\) and must extend the self-normalizing local configuration
-
-\[
- F(N)=H\triangleleft N=H\rtimes C_p,\qquad N_A(N)=N<A
-\]
-
-inside a larger automorphism group.
-
-## 3. The rational Hecke obstruction
-
-The local configuration alone does not force normality: the abstract
-triple \(A_5>A_4>V_4\), with \(p=3\), has exactly this shape.  Simplicity
-adds a stronger representation-theoretic condition.
-
-For a rational irreducible \(A\)-module \(W\), put
-
-\[
- \Delta_W=\operatorname{End}_{\mathbf Q A}(W),
-\]
-
-and view \(W\) as a right \(\Delta_W\)-space.  Say that \(W\) is active if
-its rational central idempotent acts nontrivially on \(J(D)\) and
-\(W^H\ne0\).
-
-### Theorem 94.4 (single cyclotomic packet of bounded degree)
-
-Assume \(A>H\), and put \(h=|H|\).  There is exactly one active rational
-irreducible packet \(W\).  It satisfies
-
-\[
- \dim_{\Delta_W}W^H=1,qquad W^N=0,                              \tag{94.11}
-\]
-
-and
-
-\[
- \mathbf Q(\zeta_p)\hookrightarrow\Delta_W^{\mathrm{op}}
-       \hookrightarrow\operatorname{End}^0(J(X)).                \tag{94.12}
-\]
-
-Writing \(d=\dim_{\Delta_W}W\), one moreover has the sharp dimension
-bound
-
-\[
- d\,g\le 1+h(g-1),qquad	ext{hence}\qquad d\le h-1.             \tag{94.13}
-\]
-
-#### Proof
-
-Let
-
-\[
- e_H={1\over h}\sum_{u\in H}u\in\mathbf Q[A].
-\]
-
-Its image on \(J(D)\) is, up to isogeny, the pullback copy of \(J(X)\).
-Distinct rational central simple components of \(\mathbf Q[A]\) cut out
-mutually orthogonal abelian subvarieties inside this copy.  Simplicity of
-\(J(X)\) allows exactly one nonzero component.  In a component
-
-\[
- S_W\simeq\operatorname{End}_{\Delta_W}(W),
-\]
-
-the corner is
-
-\[
- e_HS_We_H\simeq
- \operatorname{End}_{\Delta_W}(W^H).                             \tag{94.14}
-\]
-
-If \(\dim_{\Delta_W}W^H>1\), this matrix algebra has a proper nonzero
-idempotent and splits \(J(X)\), again impossible.  This proves uniqueness
-and the first part of (94.11).
-
-Since \(D/N=\mathbf P^1\), the averaging idempotent \(e_N\) acts as zero
-on \(J(D)\).  The active simple algebra \(S_W\) acts faithfully on its
-nonzero isotypic abelian subvariety, so \(e_N|_W=0\), or \(W^N=0\).
-
-Choose the order-\(p\) inertia lift \(t\) from Theorem 94.3.  It preserves
-the rank-one \(\Delta_W\)-space \(W^H\).  Its action is a unit \(u\) of the
-division corner (94.14), satisfying
-
-\[
- u^p=1,qquad 1+u+\cdots+u^{p-1}=0.
-\]
-
-Therefore \(u\ne1\) has minimal polynomial \(\Phi_p\), proving the first
-embedding in (94.12).  Faithfulness of the corner action on \(J(X)\) gives
-the second.
-
-Let \(B_W\subseteq J(D)\) be the active isotypic abelian subvariety.  A
-rank-one idempotent in \(M_d(\Delta_W)\) cuts out \(J(X)\), up to isogeny;
-the \(d\) standard rank-one idempotents have mutually isogenous images.
-Consequently
-
-\[
- \dim B_W=d\,g.
-\]
-
-The etale genus formula gives
-
-\[
- \dim J(D)=g(D)=1+h(g-1).
-\]
-
-This proves the first inequality in (94.13).  For \(h>1\), its right side
-divided by \(g\) is
-
-\[
- h-{h-1\over g}<h,
-\]
-
-so the integral number \(d\) is at most \(h-1\). \(\square\)
-
-No tame hypothesis is used here.  Averaging takes place in rational
-endomorphism algebras, and all geometric covers from \(H\) are etale even
-when their order is divisible by \(\operatorname{char}k\).
-
-## 4. Two uniform envelope exclusions
-
-### Corollary 94.5
-
-In the situation above, the subgroup triples
-
-\[
- (A,N,H)=(A_5,A_4,V_4)
- \quad\text{or}\quad
- (\operatorname{PSL}_2(7),C_7\rtimes C_3,C_7)                    \tag{94.15}
-\]
-
-cannot occur.
-
-#### Proof
-
-For \(A_5>A_4>V_4\), the rational irreducible packets have dimensions
-\(1,6,4,5\), where the six-dimensional packet combines the two conjugate
-three-dimensional characters.  The corresponding pairs
-
-\[
- \bigl(\dim_{\Delta_W}W^H,\dim_{\Delta_W}W^N\bigr)
-\]
-
-are respectively
-
-\[
- (1,1),\ (0,0),\ (1,1),\ (2,0).                                  \tag{94.16}
-\]
-
-Thus the only possible \(N\)-anisotropic active packet has \(H\)-fixed
-rank two, contradicting (94.11).
-
-For \(\operatorname{PSL}_2(7)>C_7\rtimes C_3>C_7\), the two conjugate
-three-dimensional representations and the rational six-dimensional
-representation have no \(C_7\)-fixed vectors.  The seven-dimensional
-representation has one \(C_7\)-fixed vector but also one
-\((C_7\rtimes C_3)\)-fixed vector.  The remaining eight-dimensional
-rational representation has
-
-\[
- \dim W^{C_7}=2,qquad \dim W^{C_7\rtimes C_3}=0.
-\]
-
-It is again the only possible active packet and violates (94.11).
-\(\square\)
-
-These exclusions are independent of a branch signature and of the
-characteristic.  They explain why the abstract \(A_5\) obstruction does
-not produce a simple-Jacobian curve in this setup.
-
-## Exact remaining boundary
-
-Files 91 and 92 prove normality when \(N=H\) and when \(H\) is a
-\(p\)-group, respectively.  The results above show that every unresolved
-composite-order case must supply a larger finite group \(A>N\) together
-with one rational irreducible \(W\) satisfying all of
-
-\[
- \dim_{\Delta_W}W^H=1,quad W^N=0,quad
- \mathbf Q(\zeta_p)\subseteq\Delta_W^{\mathrm{op}},quad
- \dim_{\Delta_W}W\le |H|-1.                                    \tag{94.17}
-\]
-
-In addition, that packet must actually occur in the cohomology of the
-curve action.  Local normalizer and Fitting arguments alone cannot remove
-this possibility; \(A_5>A_4>V_4\) already satisfies those raw group
-conditions.  Ruling out (94.17), or realizing it geometrically, is the
-precise remaining step for extending file 92 to arbitrary abelian deck
-groups.  This boundary is separate from the non-Galois common-cover
-problem.
+A genuinely nonnormal composite-order cover must realize A>N with
+L!=1 and the SINGLE packet in Theorem94.4. Such a packet must actually
+occur in the curve's cohomology; satisfying numerical ranks alone does
+not construct a cover. The raw group configuration A5>A4>V4 already
+satisfies the local normalizer and Fitting conditions, so those conditions
+alone cannot prove deck normality. Nor may arbitrary bi-etale spans be
+replaced by Galois ones. The composite-order and non-Galois gaps remain.

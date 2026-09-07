@@ -1,49 +1,71 @@
-# Polarization bounds for finite bad-fiber schemes and determinant defects
+# Intrinsic polarization bounds for finite bad fibers and determinant defects
+
+Version 2, 2026-09-07. Author prose; not independently audited.
 
 Let k be algebraically closed, J an abelian variety, A⊂J an abelian
-subvariety, π:J→Q=J/A, and P a complementary abelian subvariety. Put
-ψ=π|P, r=dim P=dim Q≥1, and e=deg ψ. Let L be ample on J with
-nonzero section s. Assume addition a:A×P→J satisfies
+subvariety, π:J→Q=J/A, and r=dim Q≥1. Let L be ample on J with a
+nonzero section s. The vector bundle E=π_*L carries its induced
+section σ. Put B=Z(σ), whose support parametrizes the fibers entirely
+contained in div(s), and assume B is finite. Then
 
-    a^*L≅L_A⊠L_P
+    length(B) ≤ V(J,A,L) := r! χ(J,L)/χ(A,L|A).
 
-for ample L_A and L_P, including any Picard-zero twists. The bundle
-E=π_*L has section σ corresponding to s. Let B=Z(σ), the scheme
-whose support parametrizes fibers entirely contained in div(s).
-If B is finite, then
+No chosen complement or external-product splitting is a hypothesis.
+For an L-orthogonal complement P and ψ=π|P, this is exactly
 
-    e length(B)≤c_1(L_P)^r.
+    V(J,A,L)=c_1(L|P)^r/deg ψ.
 
-Both degree and length are scheme-theoretic; ψ need not be separable.
+All degrees and lengths are scheme-theoretic; inseparable isogenies
+are allowed.
 
-Now suppose J=J(C^(1)) in characteristic p>0, and (L,s) is the
-Raynaud determinant line bundle and section for B_C, with numerical
-class (p−1)Theta. For z∈supp B put
-δ_z=generic_(N∈π^(-1)(z)) h^0(C^(1),B_C⊗N). Then
+Suppose locally s is the determinant of a square cohomology matrix,
+and let δ_z be its generic corank along π^(-1)(z). For every z∈supp B,
 
     I_(B,z)⊂m_z^(δ_z),
-    length(O_(B,z))≥binomial(r+δ_z−1,r).
+    length(O_(B,z))≥w_r(δ_z),   w_r(d):=binomial(r+d−1,r).
 
-Under the finiteness assumption,
+Consequently
 
-    ∑_(z∈supp B) binomial(r+δ_z−1,r)
-       ≤floor(c_1(L_P)^r/e).
+    ∑_(z∈supp B) w_r(δ_z) ≤ floor(V(J,A,L)).
 
-If a finite group preserves the quotient, determinant family, and
-bad scheme, δ is constant on each orbit; the same inequality is the
-sum of orbit size times the corresponding binomial coefficient.
+A finite symmetry group preserving the quotient and determinant
+family makes δ constant on each orbit, so the same budget is the
+sum of orbit size times w_r(δ).
 
-For an ordinary cyclic étale triple U/Y over F̄_5 with Y ordinary
-of genus two and U ordinary, use J=J(U^(1)) and A=im J(Y^(1)).
-Then r=2, e=9, c_1(L_P)^2=96, and
+In particular, let q:U→Y be ANY connected finite étale cover of degree
+n≥2 in characteristic p>0, with h=g(Y)≥2. On scalar Frobenius twists
+take J=J(U^(1)), A=im(q^(1)*), and the Raynaud determinant pair
+(L,s) for B_U. Put
+
+    r=(n−1)(h−1),       κ=deg ker(q^(1)*:J(Y^(1))→J(U^(1))).
+
+The integer κ is the degree of the maximal abelian intermediate
+étale cover of q, so κ divides n, including when p divides n. If
+the bad-fiber scheme B is finite, then
+
+    ∑_(z∈supp B) w_r(δ_z)
+       ≤ floor(r! (p−1)^r κ/n^h)
+       ≤ floor(r! (p−1)^r/n^(h−1)).
+
+Here δ_z=generic_(N∈π^(-1)(z)) h^0(U^(1),B_U⊗N). Finiteness of B
+is an additional assumption for arbitrary q; neither ordinarity nor
+the displayed degree budget establishes it.
+
+For the audited ordinary cyclic étale triple U/Y in characteristic
+five, with Y ordinary of genus two and U ordinary, finiteness IS
+known. One has r=2, κ=3, V=32/3, hence
 
     ∑_(z∈B) δ_z(δ_z+1)/2≤10.
 
-There are at most ten bad geometric cosets and δ_z≤2. Under
+There are at most ten bad geometric cosets and δ_z≤2. With
 Q≅E^2 and R=[[-1,-1],[1,0]], every defect-two point lies in
-Q[2]∪ker(R−1). Outside that union, all possible bad points have
-defect one and form at most one free orbit under ⟨R,−1⟩≅C_6.
+Q[2]∪ker(R−1). Outside that union all bad points have defect one
+and form at most one free orbit under ⟨R,−1⟩≅C_6. Every finite
+prime-to-five abelian character refinement from the complementary
+P has generic defect along the actual Y-parameter family at most 90.
 
-These bounds do not eliminate reduced isolated defect-one exceptions.
+These bounds do not eliminate isolated defect-one exceptions,
+produce a second map, or obstruct arbitrary common étale covers.
 [Proof](../Solutions/Sol_polarization_bad_fiber_bound.md).
-Verification: author prose, not independently audited.
+The ordinary cyclic-triple finiteness input remains separately audited;
+that audit is not an audit of this generalization.

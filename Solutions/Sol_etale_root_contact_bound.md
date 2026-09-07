@@ -1,160 +1,81 @@
-# Proof record: Linear-in-weight bounds via etale roots
+# Proof: compatible etale roots and the linear weight bound
 
-Canonical statement: [`etale_root_contact_bound`](../Theorems/Thm_etale_root_contact_bound.md).
-Migrated 2026-09-06; hypotheses restated below are proof context.
-The canonical statement and registry control promoted scope and evidence.
+[Statement and audit evidence](../Theorems/Thm_etale_root_contact_bound.md).
+The linear improvement is due to /root/contact_root_extension_audit,
+2026-09-06. Work with the actual jointly minimal span in the statement
+in characteristic p>=5, p not dividing d, and put c_p=4p/(p-4).
 
----
+## 1. A single common root torsor
 
-# Etale roots extend the contact bound to higher canonical weights
+Let L_X=omega_X(-D_X). The tensor s_X trivializes L_X^d and defines a
+finite etale mu_d root torsor T_X->X. Its tautological root is a regular
+one-form whose zeros are the inverse image of the reduced D_X.
+Construct T_Y similarly.
 
-Author: /root, 2026-09-06. The linear-in-weight improvement in Section 4
-is due to /root/contact_root_extension_audit. Status: independently
-audited PASS by that agent, including the final version, 2026-09-06.
-[Audit record](../routes/global/audits/ETALE_ROOT_REDUCTION_OF_THE_CONTACT_BOUND_AUDIT_2026_09_06.md).
-This is a degree bound under a specified shared-tensor hypothesis, NOT
-a bound on every common cover. Both original maps remain in the argument.
+Equality of the tensor pullbacks and etaleness identify f^*D_X=g^*D_Y
+and f^*L_X=g^*L_Y, INCLUDING their d-th-power trivializations. Hence
 
-## Theorem
+    T_Z=Z x_X T_X=Z x_Y T_Y.                          (1)
 
-Let k be algebraically closed of characteristic five. Suppose
-X <-f- Z -g-> Y is a jointly minimal span of finite etale maps of smooth
-connected projective curves of genus at least two. Write
+Choose a component W of this SAME torsor, with images in components
+X' of T_X and Y' of T_Y. These are smooth projective curves; W->X',Y'
+are surjective finite etale maps. Write
 
-    a=deg f, b=deg g, sX=g(X)-1, sY=g(Y)-1.
+    hX=deg(X'/X), hY=deg(Y'/Y), c=deg(W/Z).
 
-Suppose nonzero regular tensors s_X,s_Y of weight d, with 5 not dividing d,
-have equal actual differential pullbacks and
+The component degrees hX,hY are the orders of L_X,L_Y: the cyclic root
+torsor monodromy has exactly the order of the torsion line bundle.
+All three degrees divide d, and c divides both hX,hY. Disconnectedness
+is allowed throughout. The two tautological forms pull back to the
+SAME simple-zero form on W by(1).
 
-    div(s_X)=d D_X, div(s_Y)=d D_Y,
+Joint minimality also survives. Write s_X=A_X eta_X^d in a rational
+differential frame, with root xi_X^d=A_X. Then
 
-where D_X,D_Y are reduced. Then
+    k(W)=k(Z)(xi_X), k(X')=k(X)(xi_X),
+    xi_X f^*eta_X=xi_Y g^*eta_Y.
 
-    b <= 20 d sX,         a <= 20 d sY.                  (1)
+The frame ratio is in k(Z)=k(X)k(Y), so k(X')k(Y')=k(W).
+No irreducibility of a binomial defining the whole torsor is assumed.
 
-More precisely, let hX,hY be the orders of omega_X(-D_X) and
-omega_Y(-D_Y). These divide d, and
+## 2. Keep every component with the chosen endpoint pair
 
-    b <= 20 lcm(hX,hY) sX, a <= 20 lcm(hX,hY) sY.       (2)
+Put h=gcd(hX,hY). The diagonal mu_d action stabilizes X',Y' through
+mu_hX,mu_hY and their pair through mu_h. The stabilizer of W is mu_c.
+Thus exactly h/c components of T_Z lie over this pair, of total degree
+h over Z.
 
-No hypothesis about Hom(JX,JY) or about corelessness is needed. The
-parameter d in (1) is essential to the current statement: it has not
-been bounded in the general Cartier-zero branch.
+Their joint images are DISTINCT: the original endpoint coordinates
+recover k(Z), and either root coordinate then recovers the torsor point.
+The whole joint map is generically injective onto its reduced image,
+not merely birational separately on each component.
 
-## 1. The contact inequality does not require Jacobian orthogonality
+Let C* be that reduced union in X' x Y'. If a=deg f,b=deg g and
+t=a(g(X)-1)=b(g(Y)-1), its total degrees are
 
-The [contact theorem](Sol_contact_degree_bound.md)
-now includes the audited removal of Hom(JX,JY)=0. Its proof uses Hodge
-index to obtain delta(C)<=ab+t, where t=a sX=b sY, instead of requiring
-equality. In particular, for any jointly minimal span with a shared
-one-form having only simple zeros,
+    A=a h/hX, B=b h/hY, T=sum_i(g(W_i)-1)=h t,
+    g(X')-1=hX(g(X)-1), g(Y')-1=hY(g(Y)-1).
 
-    deg(Z/Y)<=20(g(X)-1), deg(Z/X)<=20(g(Y)-1).          (4)
+The [reduced-union contact theorem](Sol_contact_degree_bound.md) applies
+directly, including all cross-component contacts. Hence
 
-The individual branches are still smooth graphs because BOTH maps are
-etale. Nothing about the local proof or its double counting is changed.
+    b h/hY=B<=c_p hX(g(X)-1),
+    a h/hX=A<=c_p hY(g(Y)-1).
 
-## 2. A simultaneous etale root construction
+Since hX hY/h=lcm(hX,hY) divides d, these are the stated linear bounds.
+Keeping only one component would lose this cancellation and give a
+weaker bound.
 
-Set L_X=omega_X(-D_X). The tensor s_X trivializes L_X^d, and defines its
-finite etale mu_d root torsor T_X->X. There is a tautological root
-alpha_X in the pullback of L_X; its image in omega_(T_X) is a regular
-one-form whose zero divisor is exactly the inverse image of D_X.
-The same construction gives T_Y,alpha_Y.
+## 3. Primitive weight and the scope boundary
 
-On Z, the reduced divisors f^*D_X and g^*D_Y agree: their multiples by
-d are the same zero divisor, and the maps are etale. The canonical
-identifications f^*omega_X=omega_Z=g^*omega_Y consequently identify
-f^*L_X and g^*L_Y AND their d-th-power trivializations. Thus the entire
-root torsors are canonically identified:
+If the span is coreless and d is its primitive shared weight, then
+d=lcm(hX,hY). The line-bundle orders supply endpoint tensors of weights
+hX,hY; at their least common multiple the pullbacks have the same divisor
+and differ by a constant. Rescale to obtain a shared tensor. Primitivity,
+together with lcm(hX,hY)|d, proves equality but does NOT bound d.
 
-    T_Z=Z x_X T_X = Z x_Y T_Y.                         (5)
-
-Choose a connected component W of T_Z. Its images lie in connected
-components X' of T_X and Y' of T_Y. All these curves are smooth and
-projective. The maps W->X',W->Y' are finite etale and surjective, being
-restrictions of finite etale base changes to connected components.
-Write hX=deg(X'/X),hY=deg(Y'/Y),c=deg(W/Z). Each divides d: the components
-of a mu_d torsor are permuted transitively by mu_d, and a component is
-a torsor under its stabilizer. In fact c divides each of hX,hY. The
-connected component degrees hX,hY equal the orders of L_X,L_Y: a root
-torsor over an algebraically closed constant field has monodromy of
-exactly the order of its torsion line bundle.
-
-The tautological one-forms on X',Y' have simple zeros and pull back to
-the SAME form on W by (5). It is important to take components of this
-single common torsor, rather than choosing unrelated covers of X and Y.
-
-## 3. Joint minimality survives this construction
-
-Let K=k(Z)=k(X)k(Y). A rational frame eta_X of omega_X writes
-s_X=A_X eta_X^d. Inside k(W), let xi_X be the corresponding root;
-then k(W)=K(xi_X), xi_X^d=A_X, and k(X')=k(X)(xi_X).
-For a frame eta_Y, the tautological identity reads
-
-    xi_X f^*eta_X = xi_Y g^*eta_Y.
-
-Their frame ratio belongs to K, so xi_Y is a K-multiple of xi_X.
-Consequently
-
-    k(X')k(Y')=K(xi_X)=k(W).                            (6)
-
-This proof allows every torsor in (5) to be disconnected; no unproved
-irreducibility of a binomial is being used.
-
-## 4. Keep all compatible components to obtain a linear bound
-
-Applying (4) to just W would give a weaker quadratic-in-d bound. Instead
-put h=gcd(hX,hY) and keep every component of T_Z whose image lies in the
-chosen pair X',Y'. The diagonal mu_d action stabilizes X' through mu_hX
-and Y' through mu_hY. Their common stabilizer is mu_h, whereas W has
-stabilizer mu_c. Therefore the components in this pair form one orbit
-of size h/c. Their total degree over Z is h.
-
-The joint images of these components are DISTINCT. Indeed, over the
-generic point the original endpoint coordinates recover k(Z) by joint
-minimality, and either root coordinate recovers the point of T_Z.
-Thus the joint map of the whole torsor is generically injective onto
-its reduced image, not merely birational component by component.
-
-Let C* be the reduced union of these images in X' times Y'. Its
-normalization has h/c components W_i, and set
-
-    A=deg(C*/X')=a h/hX,  B=deg(C*/Y')=b h/hY,
-    T=sum_i(g(W_i)-1)=h t.
-
-In particular A(g(X')-1)=B(g(Y')-1)=T. The contact proof also holds
-for this reducible image: every normalized component is etale over
-both endpoints and preserves the SAME simple-zero one-form. Hodge
-index still gives C*^2<=2AB. The normalization genus formula is
-
-    delta(C*)=p_a(C*)-sum_i g(W_i)+(h/c)-1=C*^2/2+T.
-
-Consequently delta(C*)<=AB+T, exactly the upper bound required by the
-same local contact count. The common inverse-image zero set has size 2T, and the
-counts, including intersections between distinct components, are
-unchanged. This proves B<=20(g(X')-1)=20hX sX and symmetrically for A.
-Substitution yields
-
-    b <= 20(hX hY/h)sX = 20 lcm(hX,hY)sX.
-
-Since lcm(hX,hY) divides d, this proves (1)--(2). QED.
-
-If the original span is coreless and d is its primitive shared weight,
-then d=lcm(hX,hY). To see this, the torsion orders give tensors of
-weights hX and hY with divisors hX D_X and hY D_Y. Raise them to weight
-lcm(hX,hY); their pullbacks have the same divisor, so differ by a
-constant and can be made equal. Primitivity and lcm(hX,hY)|d force
-equality. This identifies the parameter, but does not bound it.
-
-## Role in the current proof
-
-This bound is a necessary intermediate lemma in the stronger audited
-[simple-root tensors force a core theorem](Sol_shared_tensor_core.md).
-Combined with unbounded joint-image growth, it excludes every coreless
-span with uniform e=d, in all weights and all degrees. The former
-degree-specific conclusions are superseded by that theorem.
-
-Weight-two simple zeros and weight-four double zeros have e/d=1/2,
-not 1; this root reduction does not bound them. It also does not settle
-the absence of shared tensors.
+The [canonical marked quotient](Sol_canonical_marked_quotient.md) uses
+this bound to control all reduced canonical markings. It cannot be
+applied to weight2 simple zeros or weight4 double zeros, whose zero
+order/weight ratio is1/2, or to roots on ramified covers. No shared
+tensor has been produced for an arbitrary unmarked span.

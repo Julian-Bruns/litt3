@@ -1,185 +1,142 @@
-# Dormant-oper ordinarity does not supply the missing two-leg matching
+# Dormant matching, automatic rank-four reductions and ordinarity boundaries
 
-**Status:** bounded primary-source boundary check, 2026-09-05.  This note
-does not assert that a matching pair never exists.  It identifies the exact
-extra datum required by the available lifting theorems and shows that neither
-the generic five-element count nor uniqueness in rank four provides it.
+Version 2, 2026-09-08. Consolidated author/source check, not an independent
+audit. Retains the explicit symmetric-cube normalization proof. Corrects
+version 1's conflation of ordinary DORMANT opers with Mochizuki's ordinary
+ACTIVE nilpotent indigenous bundles; matching dormant opers alone does not
+satisfy his canonical-lifting hypotheses. The original problem is UNSOLVED.
 
-Let
+## 1. Matching is extra structure on the same source
 
-\[
-                 Z\xrightarrow{f}X,\qquad Z\xrightarrow{g}Y
-\]
-
-be finite etale maps of smooth proper curves in characteristic five.  Write
-`DOp_2(C)` for the set of isomorphism classes of dormant rank-two projective
-opers on a curve `C`.
-
-## 1. The functorial theorem is a theorem about a specified oper
-
-Pullback gives
+For ACTUAL finite etale maps f:Z→X, g:Z→Y of smooth projective hyperbolic
+curves in characteristic five, put DOp_n(C)=dormant projective rank-n
+oper classes on C. The condition for a common dormant oper is
 
 \[
- f^*:DOp_2(X)\longrightarrow DOp_2(Z),\qquad
- g^*:DOp_2(Y)\longrightarrow DOp_2(Z).                 \tag{1}
+ f^*DOp_2(X)\cap g^*DOp_2(Y)\ne\varnothing
+       \quad\hbox{inside }DOp_2(Z).                       \tag{1}
 \]
 
-Wakabayashi's Definition 2.1.2 calls a finite etale map of *dormant curves*
-an underlying finite etale map together with the equality of the specified
-upstairs oper and the pullback of the specified downstairs oper.  His
-Theorem B says:
+The maps here retain the SAME Z. Separate endpoint existence, separate
+ordinary choices, or even ordinary pullback of EVERY endpoint choice does
+not imply (1). Two finite nonempty subsets need not meet.
 
-1. if the pullback of a specified dormant oper is ordinary, then that oper
-   is ordinary downstairs; and
-2. in the converse direction, pullback ordinarity is proved only for a
-   general base dormant curve and a cyclic prime-to-`p` cover.
+A general genus-two curve has five distinct ordinary dormant rank-two
+opers, while every genus-two fiber has scheme length (5³−5)/24=5.
+This follows from finite flatness, the ordinary etale locus and the
+degree formula in [Wakabayashi, Theorem 3.3 and Corollary 5.4](https://ems.press/content/serial-article-files/41233);
+the required inequality is 5>2(2−1). The five-element count is an endpoint
+count, not an upper bound for DOp_2(Z) on a higher-genus common source.
+Thus it gives no pigeonhole argument. Genuine rank-two uniqueness upstairs,
+TOGETHER with ordinary chosen pullbacks, would be additional information.
 
-Neither assertion says that an oper on the covering curve descends, and
-neither compares the two maps in (1).
+For canonical Witt lifting the relevant object is instead a specified
+ordinary active nilpotent indigenous PAIR. The exact compatible-marking,
+ordinary-pullback and same-source hypotheses, and the one-leg proof, are in
+[the canonical lifting theorem, Section 2](33_MOCHIZUKI_CANONICAL_LIFTING_LIMIT.md).
+Uniqueness identifies lifts of the SAME pair, not unspecified bundles on
+the same underlying curve. Ordinary dormant opers are not eligible merely
+because the word “ordinary” occurs: the two loci are disjoint in the
+nilpotent moduli ([Wakabayashi, Remark 2.1.6](https://arxiv.org/pdf/1602.07061)).
+Nor do [canonical diagonal liftings](https://arxiv.org/abs/2209.08528) of
+selected dormant structures select a common rank-two reduction or identify
+two independently constructed curve lifts.
 
-Mochizuki's corresponding canonical-lifting statement has exactly the same
-one-leg form.  Chapter III, Theorem 2.10 and Corollary 3.5 apply to a
-specified indigenous bundle and its pullback, assuming that the pullback is
-ordinary.  Applied to the two legs separately they canonically lift the two
-pairs
+## 2. Rank four is automatic, even with a specified theta normalization
+
+[Hoshi, Proposition 1.4, Remark 1.4.2 and Theorem 2.1](https://www.kurims.kyoto-u.ac.jp/~yuichiro/rims1822revised.pdf)
+supply the Cartier rank-(p−1) oper, rank-two dormant existence on EVERY
+smooth projective curve of genus≥2, and uniqueness in rank p−1 up to
+dormant line twist. At p=5 the map Sym³:DOp_2(C)→DOp_4(C) is therefore
+constant. Its five distinct generic genus-two inputs prove noninjectivity.
+Functoriality makes the rank-four pullbacks equal automatically; it cannot
+recover (1). The independent rank-n/rank-(p−n) duality endpoint is also in
+[Wakabayashi, Corollary 4.3.3 and Theorem 6.2.2](https://www.ms.u-tokyo.ac.jp/journal/jms240301.pdf);
+a separate counting bound is not a uniqueness hypothesis.
+
+The stronger bundle statement retains the line twist explicitly.
+Let C/k have genus≥2, k=bar(F5), F:C→C^(1), L²≅ω_(C^(1)), and
+E=B_C^1⊗L^(−1). Then for some rank-two Q on C^(1) with det Q≅O,
 
 \[
-                 (Z,f^*P_X),\qquad (Z,g^*P_Y).          \tag{2}
+ E\simeq\operatorname{Sym}^3Q.                            \tag{2}
 \]
 
-The uniqueness theorem identifies these lifts only if
+The isomorphism can be symplectic; after F-pullback it respects the
+canonical zero-p-curvature connection AND the oper filtration.
+
+Proof of normalization. Set θ=F^*L⊗ω_C^(−2), so θ²≅ω_C. The lowest
+quotient of F^*E is ω_C⊗F^*L^(−1)=θ^(−3). Choose a dormant SL₂-oper U
+with oper subline θ: twist any initial choice by the required two-torsion
+line with its dormant connection. Its symmetric cube has the same lowest
+quotient and remains an oper because the Kodaira–Spencer multipliers
+1,2,3 are invertible. Hoshi's uniqueness gives
 
 \[
-                         f^*P_X\simeq g^*P_Y.            \tag{3}
+ F^*E\simeq\operatorname{Sym}^3U\otimes(N,\nabla_N).
 \]
 
-Thus the exact usable hypothesis is that the two images in (1) meet in an
-ordinary oper (with the pullbacks ordinary in the lifting sense).  Equivalently,
-one may assume an ordinary oper on `Z` which descends through both legs.
-Separate existence or separate ordinarity is not this hypothesis.
+The lowest quotient forces N≅O. Both determinant connections are trivial,
+so (N,∇_N)^4 is trivial. Writing ∇_N=d+η gives 4η=0, hence η=0.
+Cartier descent now gives (2) with Q=U^∇ and trivial determinant.
+The alternating Cartier pairing on E and the symmetric-cube pairing
+differ by a scalar because E is stable; rescale the isomorphism over k.
+The needed stability/pairing input is retained in the
+[Cartier tensor proof](../../Solutions/Sol_all_tensor_cartier_hn.md).
+This is the original author twist-removal argument, not a new audited result.
 
-[Wakabayashi, Definitions 2.1.2--2.1.3 and Theorems A--B](https://arxiv.org/abs/1602.07061).
-[Mochizuki, Chapter III](https://www.kurims.kyoto-u.ac.jp/~motizuki/A%20Theory%20of%20Ordinary%20p-adic%20Curves.pdf).
-See also Theorem 33.6 and Corollary 33.7 of file 33 for the precise
-scheme-etale lifting consequence.
+Thus even an untwisted symplectic rank-four reduction is universal in
+this setting. Its existence on both endpoints cannot serve as a new
+common-cover test or choose compatible rank-two reductions.
 
-## 2. Finiteness does not force the intersection
+## 3. Fixed-degree preservation is not arbitrary-cover preservation
 
-For a general genus-two curve in characteristic five, `DOp_2(C)` has five
-elements:
+[Wakabayashi, Definition 2.1.2, Theorem B and Section 5](https://arxiv.org/pdf/1602.07061)
+treats a specified oper and its pullback. Upstairs ordinarity implies
+downstairs ordinarity. Conversely, for n=2 and p=5, the precise generic
+assertion fixes d prime to 5 FIRST: there is a dense open U_d in curve
+moduli on which EVERY dormant rank-two oper stays ordinary on EVERY
+cyclic etale cover of degree dividing d (Definition 5.1.1/Lemma 5.1.2).
 
-\[
-                    \frac{5^3-5}{24}=5.                 \tag{4}
-\]
+This is ∀d ∃U_d, not one asserted finite-type open working for all degrees,
+nor membership of a specified bar(F5)-curve in their infinite intersection.
+It neither descends an arbitrary upstairs oper nor compares two legs.
 
-Even if all five opers on each of `X` and `Y` are ordinary and even if all
-their pullbacks remain ordinary, (1) merely produces two subsets, each of
-cardinality at most five, in `DOp_2(Z)`.  No theorem cited above gives
-surjectivity, equality, or nonempty intersection of those subsets.  The
-generic dormant-oper count on the usually much higher-genus curve `Z` is
-not five, so there is no pigeonhole argument either.
+The new [tangent_bundle_cyclic_refinements](../../Theorems/Thm_tangent_bundle_cyclic_refinements.md)
+is AUTHOR PROSE. It gives controlled good cyclic choices under its stated
+theta hypotheses, but also prime-avoiding cyclic towers making every
+defect in a finite endpoint pool grow when the endpoint Jacobians are
+simple over bar(F5). Both actual legs survive above any prescribed common
+source. Degrees in these bad towers need not be prime; refined sources
+need not be jointly minimal. This does not refute the fixed-d theorem or
+an ordinary-MINIMAL-source assertion. It still supplies no matching datum.
 
-A finite-set hypothesis which would make this automatic is a genuine
-uniqueness statement upstairs--for example, that `Z` has a unique ordinary
-dormant rank-two oper and that both chosen pullbacks are ordinary.  No such
-statement follows from genus-two ordinarity of either target.
+## 4. Jacobian ordinarity and oper ordinarity remain separate
 
-[Wakabayashi, Theorem 3.3 and Corollary 5.4](https://ems.press/content/serial-article-files/41233).
+Maximal p-rank of J(C) is not the definition of ordinary dormant oper:
+the latter is etaleness at the chosen point of dormant-oper moduli.
+Dormant existence alone does not assert an ordinary point; a length-five
+genus-two fiber need not be reduced merely from its length.
 
-## 3. The unique rank-four oper loses precisely the needed information
+[Lange--Pauly, Theorem 2, Proposition 3.1 and Section 8](https://arxiv.org/pdf/math/0309456)
+give, for every classically ordinary genus-two curve in odd characteristic,
+a zero-dimensional local-complete-intersection Frobenius-destabilized base
+locus of length 2p(p²−1)/3, or 80 at p=5. The sixteen theta-characteristic
+blocks are isomorphic and have length five. Reducedness is stated for a
+GENERAL curve, not every ordinary curve. The counting proof cited in
+Section 1 separately chooses classical ordinarity and avoidance of the
+nonordinary dormant locus. No universal implication between these two
+conditions is imported here; a bounded literature check is not a proof
+that no stronger theorem or counterexample exists.
 
-Hoshi proves that on every curve in characteristic `p`, the dormant oper of
-rank `p-1` is unique up to the stated equivalence (Theorem 2.1).  In
-characteristic five this is the unique rank-four projective oper.  The
-symmetric cube of any dormant rank-two oper is a dormant rank-four oper, so
-uniqueness identifies all of these symmetric cubes with that one rank-four
-object.
-
-Consequently the composite
-
-\[
-              DOp_2(C)\xrightarrow{\operatorname{Sym}^3}DOp_4(C)
-\]
-
-is constant.  On a general genus-two curve its five distinct ordinary
-rank-two inputs already map to the same unique rank-four output.  Hence rank
-four cannot canonically select one of the five reductions.  After pullback to
-`Z`, equality of the two rank-four symmetric cubes is automatic and is
-strictly weaker than (3).
-
-This also explains why functoriality of symmetric powers does not repair the
-argument: it proves
-
-\[
- \operatorname{Sym}^3(f^*P_X)\simeq
- \operatorname{Sym}^3(g^*P_Y),
-\]
-
-but the symmetric-cube map is visibly noninjective in the very case under
-consideration.  Wakabayashi's canonical diagonal lifting similarly lifts
-each selected ordinary dormant oper on a preselected lift of the curve; it
-does not turn the unique rank-four object into a unique rank-two reduction
-or identify the two curve liftings in (2).
-
-[Hoshi, Proposition 1.4, Remark 1.4.2, and Theorem 2.1](https://www.kurims.kyoto-u.ac.jp/~yuichiro/rims1822revised.pdf).
-[Wakabayashi, canonical diagonal liftings](https://arxiv.org/abs/2209.08528).
-
-## 4. Classical ordinary genus two does not currently supply dormant-ordinary
-
-The two notions of ordinarity must not be conflated.  Wakabayashi defines an
-oper to be ordinary by the etaleness of the dormant-oper moduli over curve
-moduli at that oper.  He explicitly distinguishes this from maximal
-`p`-rank of the Jacobian and states that for hyperbolic curves their relation
-is not well understood.  The equivalence with classical ordinarity proved in
-that paper is for elliptic curves, not genus two.
-
-Every such curve does have at least one *dormant* rank-two oper (this is the
-existence input used in Hoshi's Remark 1.4.2), but the assertion that at
-least one of them is *ordinary* is the additional hyperbolic-ordinarity
-condition.  It is not a consequence of the bare existence theorem.
-
-For genus two in characteristic five the finite flat dormant-oper fiber has
-scheme length five.  All five are ordinary exactly on the etale locus of
-this finite map; a general curve lies there.  Wakabayashi's proof of his
-generic formula explicitly chooses a curve which is both classically
-ordinary and outside the image of the nonordinary dormant locus.  These are
-two separate open conditions in the proof.
-
-There is a useful equivalent boundary in Lange--Pauly.  For every
-classically ordinary genus-two curve in odd characteristic, the
-Frobenius-destabilized base locus is a zero-dimensional local complete
-intersection of length
-
-\[
-                   \frac23p(p^2-1),
-\]
-
-which is `80` for `p=5`; its sixteen theta-characteristic blocks have length
-five.  They state reducedness only for a general curve, not for every
-ordinary curve.  Thus this theorem supplies the correct length but not the
-assertion that all five dormant opers are ordinary on every ordinary
-genus-two curve.
-
-The bounded search found neither a primary theorem proving
-
-\[
- \text{ordinary Jacobian of a genus-two curve in characteristic five}
- \Longrightarrow \text{all five dormant rank-two opers ordinary}
-\]
-
-nor a published explicit ordinary genus-two counterexample.  The exact
-known statement is the branch-locus formulation above.  Even a future proof
-of the displayed implication would not supply (3), so it would still not
-give a joint lift of a coreless correspondence by itself.
-
-[Wakabayashi, introduction, Definition 2.1.3, and Remark 2.1.5](https://arxiv.org/abs/1602.07061).
-[Lange--Pauly, Theorem 2 and Section 8](https://arxiv.org/abs/math/0309456).
-
-## Conclusion
-
-The dormant-oper route has one sharp missing condition: a **common
-rank-two reduction upstairs**, not merely ordinary opers on both targets.
-The five-element generic count does not force such a reduction, and the
-canonical rank-four oper deliberately forgets it.  Therefore no checked
-Mochizuki--Hoshi--Wakabayashi theorem turns ordinary genus two alone into a
-simultaneous lift of a coreless bi-etale correspondence.
+The [exact common-connection spectrum](../../Theorems/Thm_coreless_connection_spectrum.md)
+now limits possible compatible structures, with author-only evidence.
+Its empty alternative is not a cover exclusion. Conversely the separate
+[audited coreless Mumford construction](DORMANT_OPER_CORELESS_MUMFORD_CONSTRUCTION.md)
+DOES provide actual coreless bi-etale examples with a shared dormant oper,
+including specialization to bar(F5); it identifies none of our fixed
+endpoints and asserts no ordinary shared-source property.
+The [audited finite-pool destruction example](FINITE_ETALE_COVER_DESTROYS_ALL_ORDINARY_INDIGENOUS_DATA_ON_ONE_CURVE.md)
+has a distinct nonsimple-Jacobian scope and is retained independently.
+Neither these positive examples nor this boundary note resolve (1) for
+the project's chosen pair.

@@ -1,268 +1,147 @@
-# Cyclic tower new-ordinarity: exact quantifiers and fixed-support boundary
+# Cyclic towers: new ordinarity and the fixed-support boundary
 
-Date: 2026-09-05.
-Status: bounded primary-source comparison and author proofs by the
-canonical-trace-algebra agent; not an independent audit or a novelty claim.
-The fixed curves in file 76 are unchanged.
+Author proofs and bounded primary-source comparison, 2026-09-05;
+not independently audited. These results do not change the fixed curves.
 
-## 1. Primary statements and their quantifiers
+## 1. Existence at a level does not prescribe a tower
 
-Akio Tamagawa, *The Grothendieck conjecture for affine curves*, Compositio
-109 (1997), 135–194, Lemma 1.9, p. 145
-([primary PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/1992BA14A2D63FA076DB39A34EC45E83/S0010437X97000614a.pdf/grothendieck_conjecture_for_affine_curves.pdf)),
-proves the following. For a smooth proper curve C of genus g at least two
-in characteristic p and a prime ell different from p, if
-\[
- \ell^m>
- \frac{\ell^{2g}-\ell^{2g-1}}{\ell^{2g}-1}(p-1)g,
-\]
-there exists a connected cyclic degree-\(\ell^m\) étale cover C_m/C whose
-last new factor
-\[
- J(C_m)/\operatorname{Im}J(C_{m-1})
-\]
-is ordinary. The intermediate cover has degree \(\ell^{m-1}\) over C.
+[Tamagawa, Lemma1.9, p.145](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/1992BA14A2D63FA076DB39A34EC45E83/S0010437X97000614a.pdf/grothendieck_conjecture_for_affine_curves.pdf)
+gives, for genus g≥2 and a prime ℓ≠p, a connected cyclic degree-ℓ^m
+étale cover C_m/C with ordinary last new Jacobian factor whenever
 
-The proof modifies Raynaud's divisor-counting argument. It selects a cyclic
-torsion subgroup avoiding the Raynaud theta divisor at its primitive
-points. It neither prescribes the lower levels nor asserts compatibility
-between the choices for different m. The quotation in OWR 2023-42,
-p. 2467, Theorem 3, has this same existence quantifier.
+    ℓ^m > ((ℓ^(2g)−ℓ^(2g−1))/(ℓ^(2g)−1))(p−1)g.
 
-Michel Raynaud, *Sections des fibrés vectoriels sur une courbe*, Bull. SMF
-110 (1982), 103–125, Theorem 4.3.1 and Lemma 4.3.5, pp. 123–125
-([primary PDF](https://www.numdam.org/item/10.24033/bsmf.1955.pdf)),
-selects a degree-ell cover with ordinary new part when
-\(\ell+1\ge(p-1)g\). This is not a theorem about every cover.
+It neither prescribes lower levels nor ensures compatible choices
+for different m. The OWR2023-42 quotation,p.2467, has the same quantifier.
+[Raynaud, Theorem4.3.1 and Lemma4.3.5, pp.123–125](https://www.numdam.org/item/10.24033/bsmf.1955.pdf)
+similarly selects a degree-ℓ cover with ordinary new part if
+ℓ+1≥(p−1)g; it does not assert this for every cover.
 
-Nakajima/Zhang's geometric-generic-curve theorem controls all abelian
-covers of that geometric generic curve, not all covers of an arbitrarily
-fixed ordinary curve over an algebraic closure of a finite field.
-See the already recorded
-[proof-level prior-art comparison](BOUNDED_ABELIAN_ORDINARITY_PRIOR_ART_AND_SOLVABLE_BOUNDARY.md).
-An infinite intersection of finite-level open conditions does not by
-itself supply a point over \(\overline{\mathbf F}_5\).
+The Nakajima/Zhang all-abelian-cover theorem concerns a geometric
+generic curve, not an arbitrary fixed ordinary curve over Fbar_p.
+See the [prior-art comparison](BOUNDED_ABELIAN_ORDINARITY_PRIOR_ART_AND_SOLVABLE_BOUNDARY.md).
+An infinite intersection of finite-level open conditions need not
+have an Fbar_5 point.
 
-## 2. Exact criterion for a specified cyclic tower
+## 2. The exact criterion for a specified compatible cyclic tower
 
-Put \(A=J(C^{(1)})\), where \(C^{(1)}\) is the relative Frobenius twist, and
-\[
- B_C=F_{C/k*}\mathcal O_C/\mathcal O_{C^{(1)}}.
-\]
-Let \(D=\Theta_{B_C}\subset A\). Thus
-\[
- L\in D(k)\quad\Longleftrightarrow\quad
- H^0(C^{(1)},B_C\otimes L)\ne0.
-\]
-Raynaud proves that D is an effective divisor numerically equivalent to
-\((p-1)\Theta\), for a principal polarization \(\Theta\).
+Put A=J(C^(1)), B_C=F_*O_C/O_(C^(1)) and D=Θ_(B_C)≡(p−1)Θ.
+A compatible Z_ℓ-tower corresponds to nested cyclic subgroups
 
-A compatible cyclic \(\mathbf Z_\ell\)-tower is equivalent to nested
-cyclic subgroups
-\[
- G_m\subset A[\ell^m](k),\qquad |G_m|=\ell^m,\qquad
- G_{m-1}=\ell G_m.
-\]
-The finite étale covers are transported from \(C^{(1)}\) to C by the
-equivalence of étale sites under relative Frobenius. These are actual
-covers, not merely formal character sets.
+    G_m⊂A[ℓ^m](k), |G_m|=ℓ^m, G_(m−1)=ℓG_m.
 
-**Exact last-factor criterion.**
-The last new factor of \(J(C_m)\) is ordinary if and only if
-\[
- D(k)\cap(G_m\setminus G_{m-1})=\varnothing.                 \tag{2.1}
-\]
+The equivalence of étale sites under relative Frobenius transports
+these to actual covers of C. The last new Jacobian factor is ordinary
+exactly when
 
-Proof. The direct image of the structure sheaf of the twisted cover
-decomposes into the character line bundles indexed by \(G_m\).
-The old part uses \(G_{m-1}\); the complementary primitive character
-summand is preserved by semilinear Frobenius, which permutes characters
-by their p-th powers. The Frobenius exact sequence, projection formula,
-and the canonical étale pullback of B give its Frobenius kernel as
-\[
- \bigoplus_{L\in G_m\setminus G_{m-1}}
- H^0(C^{(1)},B_C\otimes L).
-\]
-Injective Frobenius on this finite-dimensional space is equivalent to
-bijective Frobenius, hence to ordinarity of the new abelian factor.
-The relative twists are retained in this formula; no identification
-of the relative Frobenius with a k-linear endomorphism is required.
+    D(k)∩(G_m∖G_(m−1))=∅.                                  (1)
 
-Write \(\Delta(C)=g(C)-f(C)\). Isogeny additivity of dimension and p-rank
-gives
-\[
- \Delta(C_m)-\Delta(C_{m-1})
- =\Delta\!\left(J(C_m)/\operatorname{Im}J(C_{m-1})\right)\ge0. \tag{2.2}
-\]
-Consequently, for a specified tower, the following are equivalent:
+Indeed, the twisted direct image of O is the sum of character lines.
+The primitive characters form the new summand, preserved by semilinear
+Frobenius, which permutes them by pth powers. Étale base change for B
+and projection formula identify its Frobenius kernel with
 
-1. The integers \(\Delta(C_m)\) are bounded.
-2. Every sufficiently late last new factor is ordinary.
-3. \(D(k)\cap\bigcup_mG_m\) is a finite set.
+    ⊕_(L∈G_m∖G_(m−1)) H⁰(C^(1),B_C⊗L).
 
-This is a necessary and sufficient avoidance condition, not a conclusion
-from ordinarity of C alone. Ordinary C says only that \(0\notin D\).
+Injectivity is bijectivity here, equivalent to ordinarity of that factor.
+No k-linear identification with relative Frobenius is imposed.
 
-## 3. A compatible-tower consequence of the counting argument
+For Δ(C)=g(C)−f(C), isogeny additivity gives
+Δ(C_m)−Δ(C_(m−1))=Δ(new factor)≥0. Thus the following are equivalent:
+bounded Δ(C_m); eventual ordinarity of every last new factor;
+finiteness of D(k)∩⋃_mG_m.
+Ordinarity of C says only0∉D, not this avoidance condition.
 
-**Proposition.** For every fixed smooth proper curve C of genus at least
-two and every prime \(\ell\ne p\), Haar-almost every compatible cyclic
-\(\mathbf Z_\ell\)-tower is eventually new-ordinary. Its Frobenius-nilpotent
-dimension is therefore bounded. This remains true after prescribing any
-finite initial cyclic tower.
+## 3. Almost every compatible tower is eventually new-ordinary
 
-This assertion is an elementary consequence proved here; it is not
-attributed as the statement of Tamagawa's lemma.
+For every fixed C and ℓ≠p, Haar-almost every compatible cyclic
+Z_ℓ-tower satisfies(1) eventually, even after any prescribed finite
+initial tower. This is an elementary consequence, not Tamagawa's
+stated theorem.
 
-Choose a symmetric principal polarization \(\Theta\) on A and the very
-ample class \(H=3\Theta\). Let
-\[
- K=D\cdot H^{g-1}=(p-1)3^{g-1}g!.
-\]
-For every integer n prime to p,
-\[
- \#(D(k)\cap A[n](k))\le K n^{2g-2}.                        \tag{3.1}
-\]
-Indeed, the effective divisor \([n]_*D\) has numerical class
-\(n^{2g-2}D\). Since [n] is étale, its multiplicity at zero is at least
-the number of points of \(D\cap A[n]\), counting a point of D with at least
-multiplicity one. Equivalently, use
-\([n]^*[n]_*D=\sum_{a\in A[n]}t_a^*D\) and take multiplicities at zero.
-Intersecting with g-1 general members of the very ample system H through
-zero bounds that multiplicity by
-\(([n]_*D)\cdot H^{g-1}=Kn^{2g-2}\). This also covers nonreduced D.
+Choose H=3Θ very ample and K=D·H^(g−1)=(p−1)3^(g−1)g!.
+For n prime to p,
 
-The number of cyclic subgroups of exact order \(\ell^m\) in
-\(A[\ell^m]\cong(\mathbf Z/\ell^m)^{2g}\) is
-\[
- c_m=\ell^{(2g-1)(m-1)}\frac{\ell^{2g}-1}{\ell-1}.
-\]
-A primitive torsion point belongs to exactly one such cyclic subgroup.
-Thus the number of groups failing (2.1) is at most
-\(K\ell^{m(2g-2)}\). For a uniformly chosen group the failure probability
-is at most
-\[
- K\,\frac{(\ell-1)\ell^{2g-1}}{\ell^{2g}-1}\,\ell^{-m}.       \tag{3.2}
-\]
-These probabilities are summable.
+    #(D(k)∩A[n](k))≤K n^(2g−2).                             (2)
 
-To make compatibility precise, put normalized Haar measure on the
-primitive vectors of \(T_\ell A\cong\mathbf Z_\ell^{2g}\). A primitive vector
-defines its compatible cyclic groups; reduction modulo \(\ell^m\) is
-uniform on primitive vectors, hence uniform on the \(c_m\) groups.
-The first Borel–Cantelli lemma, which needs no independence, implies
-that only finitely many levels fail (2.1) almost surely. Every finite
-prefix is a positive-measure cylinder, so conditioning on it preserves
+The divisor[n]_*D has numerical class n^(2g−2)D, and its multiplicity
+at0 is at least the number of D-points above0, since[n] is étale.
+Intersecting with g−1 general H-divisors through0 bounds that
+multiplicity by K n^(2g−2). This also handles nonreduced D.
+
+The number of cyclic subgroups of exact orderℓ^m is
+
+    c_m=ℓ^((2g−1)(m−1))(ℓ^(2g)−1)/(ℓ−1).
+
+Each primitive point belongs to exactly one such group. By (2) the
+probability that a uniformly chosen group fails(1) is at most
+
+    K(ℓ−1)ℓ^(2g−1)/(ℓ^(2g)−1) · ℓ^(-m).                     (3)
+
+Put normalized Haar measure on primitive vectors of T_ℓA≅Z_ℓ^(2g).
+Reduction is uniform on primitive vectors, hence on these cyclic groups.
+The probabilities(3) are summable, so the first Borel–Cantelli lemma
+(no independence needed) gives only finitely many failures.
+A fixed finite prefix is a positive-measure cylinder and retains
 the measure-zero exceptional set.
 
-For \(p=5,g=2\), the constant K in this proof is 24. The eventual constant
-\(\Delta(C_m)\) depends on the chosen tower; no uniform bound on that
-constant has been proved. An ordinary base does not force the constant
-to be zero. The Haar statement is about geometric towers over k; it
-does not claim descent of an entire infinite tower to one fixed finite
-constant field.
+For p=5,g=2, K=24. The eventual Δ depends on the tower: no uniform
+bound or zero-defect conclusion is proved. These are geometric towers,
+not necessarily an infinite tower over one fixed finite constant field.
 
-## 4. An actual unbounded-defect counterexample to fixed prime support
+## 4. Actual unbounded defect with fixed finite prime support
 
-The following uses Michel Raynaud, *Revêtements des courbes en
-caractéristique p > 0 et ordinarité*, Compositio 123 (2000), 73–88,
-Theorem 2, Proposition 1, and the proof on pp. 85–86
-([primary PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/16AB72912D3CE32BFC5D012B1025A8E4/S0010437X00000440a.pdf/revetements-des-courbes-en-caracteristique-pandgt0-et-ordinarite.pdf)).
-The theorem supplies, for any fixed C of genus at least two, an actual
-finite étale Galois cover W/C with a finite prime-to-p solvable group G
-and a representation through G having no theta divisor.
+The no-theta construction in
+[the audited cofinal-saturation proof, §1](../../Solutions/Sol_raynaud_cofinal_saturation.md)
+supplies an actual prime-to-p solvable G-cover W/C and an irreducible
+representation ρ of dimension r with
 
-Here is a tower consequence, with all covers remaining actual.
-Since kG is semisimple, some irreducible constituent \(\rho\), of dimension
-r, has no theta divisor. Otherwise generic vanishing for every one of
-the finitely many constituents would give generic vanishing for their
-sum. For the associated bundle \(E_\rho\) on \(C^{(1)}\), semicontinuity
-therefore gives
-\[
- H^0(C^{(1)},B_C\otimes E_\rho\otimes L)\ne0
- \quad\hbox{for every }L\in\operatorname{Pic}^0(C^{(1)})(k). \tag{4.1}
-\]
-Choose a prime \(\ell\nmid p|G|\) and any compatible connected cyclic
-\(\mathbf Z_\ell\)-tower \(C_m/C\). Then
-\[
- W_m=W\times_C C_m
-\]
-is connected, smooth, proper, and étale over C, because the two Galois
-extensions have relatively prime degrees. Its group over C is
-\(G\times C_{\ell^m}\), and \(W_{m+1}/W_m\) is cyclic étale of degree ell.
+    H⁰(C^(1),B_C⊗E_ρ⊗L)≠0 for every L∈J(C^(1))(k).           (4)
 
-In the regular representation of \(G\times C_{\ell^m}\), each
-\(\rho\otimes\chi\) occurs with multiplicity r. All \(\ell^m\) character
-line bundles are covered by (4.1). Étale pullback for B and projection
-formula therefore yield
-\[
- \begin{split}
- \Delta(W_m)
- &\ge\dim\ker\!\left(F:H^1(W_m,\mathcal O)\to
-                         H^1(W_m,\mathcal O)\right)\\
- &=h^0(W_m^{(1)},B_{W_m})\\
- &=h^0(C^{(1)},B_C\otimes(\pi_m^{(1)})_*\mathcal O_{W_m^{(1)}})\\
- &\ge r\ell^m.                                             \tag{4.2}
- \end{split}
-\]
-The displayed Frobenius is semilinear; its kernel dimension agrees with
-the relative-Frobenius kernel dimension used by the B sequence.
+Choose ℓ∤p|G| and any compatible connected cyclic Z_ℓ-tower C_m/C.
+Then W_m=W×_C C_m is connected, since the two Galois degrees are
+coprime. It is smooth projective étale over C, with group G×C_(ℓ^m),
+and W_(m+1)→W_m is cyclic étale of degreeℓ.
 
-Thus EVERY fixed ordinary genus-two curve over \(\overline{\mathbf F}_5\)
-admits a bounded-step prime-to-5 tower with fixed finite prime support
-and unbounded Frobenius-nilpotent dimension. All total monodromies belong
-to the subgroup/quotient/product/extension closure of the two fixed
-groups G and \(C_\ell\).
+Each ρ⊗χ occurs r times in its regular representation. Formula(4)
+covers allℓ^m character lines. Projection formula therefore gives
 
-This is not a pure pro-ell tower over C: it has the fixed initial
-G-cover. Over W its tail is pro-ell, but W is nonordinary. It does not
-construct a second fixed target curve or a coreless correspondence.
-It disproves an inference from bounded step degrees or fixed prime
-support alone, not an inference using additional two-leg geometry.
+    Δ(W_m)≥h⁰(W_m^(1),B_(W_m))≥rℓ^m.                        (5)
 
-The coprimality condition \(\ell\nmid|G|\) is only a convenience. For any
-fixed \(\ell\ne p\), the full fiber product has \(c_m\le|G|\) connected
-components, all isomorphic over C. The preceding direct-image computation
-still applies to their disjoint union. Choose compatible components V_m.
-Then
-\[
- \Delta(V_m)\ge r\ell^m/c_m\ge r\ell^m/|G|.
-\]
-The fields \(k(W)\cap k(C_m)\) stabilize inside the finite extension
-\(k(W)/k(C)\). After that finite stage, \(V_{m+1}/V_m\) has degree ell.
-Its total monodromy is a subgroup of \(G\times C_{\ell^m}\), as required
-for the same fixed-group closure boundary. Connectedness and the actual
-maps are retained; one does not treat the disconnected fiber product as
-a connected cover.
+The first inequality is kernel dimension≤total Frobenius-nilpotent
+dimension; its relative and semilinear descriptions agree.
 
-In the particular case \(p=5,g=2\), Raynaud's proof permits the fixed
-prime support \(\{2,3\}\): take his auxiliary cyclic degree \(m=8\),
-giving genus \(g'=9\), and his Heisenberg parameter \(n=9\).
-The numerical requirement is \(g'/n=1\le(g'-1)/(p-1)=2\).
-The Heisenberg group is a 3-group; taking the normal closure over the
-cyclic degree-eight base change embeds the resulting G in a wreath
-product of that 3-group with \(C_8\). Thus G has no other prime divisors.
-Taking ell equal to 2 or 3 in the preceding component argument gives
-unbounded defect without enlarging that prime support. This is a direct
-specialization of Raynaud's construction, not an independently audited
-reproof of his Heisenberg/Brill–Noether theorem.
+For any fixed ℓ≠p, coprimality with |G| is unnecessary. The full fiber
+product has c_m≤|G| connected components, all isomorphic over C.
+The same direct-image calculation applies to their disjoint union.
+Choose compatible components V_m; then
+Δ(V_m)≥rℓ^m/c_m≥rℓ^m/|G|.
+The fields k(W)∩k(C_m) stabilize inside the finite Galois extension
+k(W)/k(C), so eventually V_(m+1)→V_m has degreeℓ.
+Their monodromies lie in subgroups of G×C_(ℓ^m).
+The disconnected fiber product is never treated as a connected cover.
 
-## 5. Exact remaining boundary
+Hence even a fixed ordinary genus-two curve over Fbar_5 admits a
+bounded-step prime-to-five tower with fixed finite prime support and
+unbounded defect. It has an initial G-cover; it is NOT a pure pro-ℓ
+tower over the ordinary base. Its pro-ℓ tail starts over nonordinary W.
+All monodromies remain in the subgroup/quotient/product/extension closure
+of the two fixed groups G,C_ℓ. No second fixed target is constructed.
 
-For a specified pure pro-ell tower over an ordinary genus-two curve,
-the cited primary statements do not establish bounded defect.
-For cyclic towers, Section 2 identifies exactly the missing
-theta-avoidance condition, and Section 3 supplies a measure-one
-existence statement. Neither automatically applies to a tower selected
-by iterating an actual correspondence.
+For p=5,g=2, Raynaud's proof permits prime support{2,3}: use an
+auxiliary cyclic degree8 cover (genus9), then Heisenberg parameter n=9.
+Its requirement g′/n=1≤(g′−1)/(p−1)=2 holds. The Heisenberg group
+is a3-group; its normal closure embeds in its wreath product with C_8.
+Taking ℓ=2 or3 and the component argument preserves this prime support.
+This specialization is author prose, not an independently audited
+reproof of Raynaud's Heisenberg/Brill–Noether theorem.
 
-For nonabelian pro-ell towers, character line bundles on the fixed base
-no longer exhaust the representation blocks. A bound must control the
-actual new finite representations, or supply a geometric mechanism
-forcing their ordinarity. Ordinarity of the base, bounded step degree,
-and finite prime support do not provide that mechanism.
+## 5. What remains open
 
-The bounded search did not establish or refute a universal bounded-defect
-theorem for EVERY pure pro-ell tower over an ordinary genus-two curve.
-No such universal theorem, and no pure pro-ell counterexample in that
-precise scope, is claimed here.
+The almost-everywhere result does not settle a particular tower selected
+by iterating an actual correspondence. For nonabelian pro-ℓ towers,
+character lines no longer exhaust the new representation blocks.
+Neither bounded steps, finite prime support nor ordinary base alone
+controls those blocks. No universal bound for EVERY pure pro-ℓ tower
+over an ordinary genus-two curve, or counterexample within that precise
+scope, is asserted here. Additional two-leg geometry remains essential.

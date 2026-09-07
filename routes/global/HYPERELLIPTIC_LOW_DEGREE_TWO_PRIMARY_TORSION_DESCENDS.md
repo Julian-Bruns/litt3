@@ -82,7 +82,7 @@ The earlier pole-order argument excludes exact orders4 and8 on W6.
 It does not exclude orders16 and higher in the remaining finite-field
 set. We do not infer such an exclusion from these rationality statements.
 
-Inputs: the checked [finite-field translation lemma](BOXALL_PRUFER_TORSION_AND_EVERY_CYCLIC_TOWER.md#11-the-elementary-finite-field-translation-lemma);
+Inputs: the checked [finite-field translation lemma, Section1](BOXALL_PRUFER_TORSION_AND_EVERY_CYCLIC_TOWER.md);
 reduced-divisor uniqueness as recalled in
 [Zarhin, Section2](https://archive.mpim-bonn.mpg.de/3152/1/preprint_2018_31.pdf).
 The low-degree map and Frobenius arguments are included above.

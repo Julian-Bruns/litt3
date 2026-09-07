@@ -1,287 +1,210 @@
-# Proof record: Finite bad cosets for ordinary cyclic etale triples of genus-two curves
-
-Canonical statement: [`ordinary_cyclic_triple_finite_bad_cosets`](../Theorems/Thm_ordinary_cyclic_triple_finite_bad_cosets.md).
-Migrated 2026-09-06; hypotheses restated below are proof context.
-The canonical statement and registry control promoted scope and evidence.
-
----
-
-# Elliptic torsion grids and finite bad fibers for ordinary cyclic triples
-
-Date: 2026-09-05. Author: `/root`.
-Status: focused independent audit of the combined theorem: PASS,
-`/root/ordinary_triple_finite_bad_fibers_check`, 2026-09-05.
-[Verdict and nonbreaking clarifications](../routes/global/audits/ORDINARY_CYCLIC_TRIPLE_FINITE_BAD_FIBERS_AUDIT.md).
-The elementary grid bounds also received a separate focused check from
-the fresh agent `/root/elliptic_grid_divisor_bound` on this date. This is a
-finite-exception theorem, NOT vanishing for every character and NOT a
-solution of Litt 3. No existing special case is deleted.
-
-## 1. The reusable finite-grid obstruction
-
-Let E be an elliptic curve over an algebraically closed field, S a
-finite subset of E(k) with n elements, and G=S times S. Use coordinates
-(x,y), vertical fibers V_x={x} times E, and horizontal fibers H_y=E
-times {y}. A divisor with product-polarization Hermitian matrix
-
-    [[a,b],[b^dagger,c]]
-
-has intersection degrees a with H_y and c with V_x. The off-diagonal
-entry is an actual elliptic-curve homomorphism. No assumption on the
-endomorphism ring is made.
-
-### Lemma 1.1
-
-(a) If an effective divisor D contains no vertical fiber through a
-point of S, then |supp(D) intersect G| <= nc.
-
-(b) If a=c=2 and b is nonzero, then
-
-    |supp(D) intersect G| <= 3n-2,                 n>=2.
-
-(c) If D is an irreducible nonelliptic curve with a=c=2, its grid
-intersection has at most 2n points.
-
-### Proof
-
-For (a), intersect D with each of the n vertical fibers. The degree
-of the proper intersection is c; it bounds the number of distinct
-grid points in that fiber, regardless of tangencies or multiplicity.
-
-For (b), D contains at most one vertical fiber, counted with total
-divisor multiplicity. Otherwise removing two vertical fibers leaves
-an effective divisor with horizontal intersection zero and the same
-nonzero off-diagonal entry. But every irreducible component of an
-effective divisor of horizontal intersection zero is a horizontal
-fiber: its projection to the y-coordinate is constant. Such a divisor
-has off-diagonal entry zero, a contradiction. If one grid column is
-contained, it contributes n points, and the other columns contribute
-at most 2 each. If none is contained, the bound 2n is stronger.
-Part (c) follows from (a), since an irreducible nonelliptic curve is
-not a vertical fiber. QED.
-
-In particular, if n>=5 and u:G -> G is any bijection, the inverse
-image under u of a grid zero set as in (c), together with a zero set
-as in (b), cannot contain G minus one point. Indeed
-
-    2n+(3n-2)=5n-2 < n^2-1.
-
-The [general sharp grid bound](../routes/global/SHARP_ELLIPTIC_GRID_DIVISOR_INTERSECTION_BOUNDS.md)
-treats arbitrary positive coordinate degrees, with sharp examples.
-This is a counting obstruction for divisors under different finite-grid
-parameterizations. It is not an assertion that a low-degree divisor
-avoids all torsion. The bound in (b) is sharp: the two coordinate
-fibers through zero and the diagonal give 3n-2 points when S is a
-subgroup.
-
-## 2. An actual geometric application
-
-Let k=Fbar_5, let Y be ordinary of genus two, and let
-
-                     q:U -> Y
-
-be a connected finite etale cyclic cover of degree three. Assume U
-is ordinary. On scalar Frobenius twists put
-
-    J=J(U^(1)),  A=im(q^(1)*),  P=(ker Nm_q^(1))^0,
-    Q=J/A,      pi:J -> Q.
-
-Define the bad-fiber locus
-
-    B={z in Q : pi^(-1)(z) is contained in Theta_U},
-
-where Theta_U is the Raynaud divisor of B_U. These are actual fibers
-of the one fixed Jacobian quotient, not arbitrary Jacobian factors.
-
-### Theorem 2.1
-
-B is a finite closed subset of Q and does not contain zero.
-Equivalently, only finitely many cosets of A can be contained in
-Theta_U. Every other coset has a nonempty open good locus.
-
-The finiteness includes all geometric points, with no restriction on
-torsion order. It does NOT prove B empty or eliminate isolated bad
-fibers. The ordinary-U hypothesis is additional to ordinary Y.
-
-## 3. Polarization data and the whole divisorial bad locus
-
-The exact algebraic Prym calculation in
-[the cyclic-triple note](../routes/global/CYCLIC_TRIPLE_GENUS_TWO_PRYM_AND_BAD_AXIS_COMPONENT_BOUNDARY.md),
-Section 1, gives an ordinary elliptic curve E and identifications
-
-    P=E^2,       Q=E^2,
-    L_P = H = [[2,-1],[-1,2]],
-    L_Q = H# = [[2,1],[1,2]],
-    psi=pi|P = H,      deg(psi)=9.
-
-Here E denotes the scalar-twisted elliptic curve. Its ordinarity is
-equivalent to that of U when Y is ordinary, since J(U) is isogenous
-to J(Y) times E^2. The generator of C3 acts on Q by
-
-    R=[[-1,-1],[1,0]].
-
-The source note proves these statements by algebraic pullback and norm
-identities in characteristic five, not a characteristic-zero lift.
-
-The locus B is closed: its complement is the image of
-J minus Theta_U under the smooth map pi, hence is open. The zero
-fiber A is good by the C3 character decomposition and Raynaud's theta
-theorem for Y. Since U is ordinary, zero is not in Theta_U, so the
-restriction Theta_U|P is an effective divisor of class 4H.
-
-Suppose B has a curve component. For each such component D, pi^(-1)D
-is an irreducible divisor component of Theta_U; take its actual
-multiplicity. Let D_Q be their sum with these multiplicities. It is
-a nonzero effective divisor on Q, invariant under R and inversion,
-and it avoids zero. We have an effective residual divisor on P:
-
-    D_P = Theta_U|P - psi^*D_Q.                       (1)
-
-Write the Hermitian class of D_Q as M. Invariance R^dagger M R=M
-gives
-
-    M=[[a,b],[b^dagger,a]],       b+b^dagger=[a].       (2)
-
-Here a is a positive integer; an effective nonzero divisor cannot
-have both coordinate degrees zero. On an abelian variety every
-effective divisor is nef. Therefore M and
-
-    N=4H-HMH
-     =[[8-3a, 3a-4-3b],
-       [3a-4-3b^dagger, 8-3a]]                      (3)
-
-are positive semidefinite Hermitian matrices. In particular a=1 or2.
-These numerical computations remain valid for arbitrary End(E).
-
-If a=1, (2) and nefness give 0<deg b<=1, hence deg b=1 and
-b^2-b+1=0. Thus E has an automorphism of order three. In characteristic
-five its short Weierstrass model then has the form y^2=x^3+c, whose
-Hasse invariant is zero. This contradicts ordinarity of E.
-
-If a=2, set u=b-1. Then u+u^dagger=0 and (3) becomes
-
-    N=[[2,-1-3u],[-1-3u^dagger,2]].
-
-The norm of its off-diagonal entry is 1+9 deg(u). Nefness gives
-
-    1+9 deg(u)<=4.
-
-Degree is a nonnegative integer and vanishes only for the zero
-endomorphism. Hence u=0. We have proved the exact numerical classes
-
-                    D_Q equivalent L_Q,
-                    D_P equivalent L_P.                    (4)
-
-This uses the entire invariant divisorial bad locus at once, not a
-dimension-specific enumeration of covering degrees or endomorphism
-rings.
-
-## 4. The remaining effective configurations
-
-For any irreducible curve C in Q, L_Q.C>=2. For an elliptic translate,
-write L_Q as the sum of the two coordinate elliptic curves and the
-anti-diagonal. Its degree is the sum of degrees of x,y,x+y on its
-underlying elliptic subgroup. If any is zero, the subgroup is one of
-these three directions and the sum is two. If none is zero the sum
-is at least three. Thus equality two singles out these three
-directions, with no restriction on End(E).
-
-For a nonelliptic curve, C^2>=2; the Hodge index theorem and L_Q^2=6
-give (L_Q.C)^2>=12, so L_Q.C>=4. There are no rational curves in Q.
-There is no R-stable elliptic translate: its underlying subgroup
-would carry a nontrivial order-three automorphism and be isogenous
-to the ordinary E, contradicting the preceding Hasse argument.
-
-Since L_Q.D_Q=6 by (4), there are just two possibilities needed here:
-
-* D_Q is one irreducible nonelliptic curve of multiplicity one; or
-* D_Q consists of a single R-orbit of three elliptic translates,
-  each of L_Q-degree two and multiplicity one.
-
-Indeed, a nonelliptic component in an orbit of length three would
-already cost at least twelve. An invariant such component has degree
-divisible by three by (2), hence costs at least six. All elliptic
-orbits have length three and cost at least six.
-
-In the second case inversion fixes each orbit member: its permutation
-commutes with the transitive three-cycle and has order at most two.
-Each coordinate or anti-diagonal translate is therefore given by a
-nonzero two-torsion coordinate constant. The constant is nonzero
-because D_Q avoids zero.
-
-## 5. The forced five-torsion zeros contradict (4)
-
-Let S=E[5](k), a subgroup of order five, and let G=S^2. On the
-already scalar-twisted ordinary elliptic curve, these are exactly
-the geometric points of the relevant Verschiebung kernel. With the
-identifications above, the same grid is used in P and Q, and psi=H
-permutes it because det(H)=3 is invertible modulo five.
-
-Every nonidentity alpha in G, regarded as a line bundle on U^(1),
-satisfies F_U^*alpha=O_U. Tensoring the Frobenius exact sequence by
-alpha gives an injection
-
-    k=H^0(U,O_U) -> H^0(U^(1),B_U tensor alpha).
-
-Consequently Theta_U|P contains all 24 nonidentity grid points.
-
-In the first case of Section 4, Lemma 1.1(c) bounds D_Q intersect G
-by ten points; in the second case its grid intersection is empty,
-since nonzero two-torsion constants cannot be five-torsion.
-By (4), D_P has diagonal degrees two and off-diagonal entry -1,
-so Lemma 1.1(b) bounds D_P intersect G by thirteen points.
-
-Equation (1) and bijectivity of psi on G would therefore put the 24
-mandatory points in a union of at most 10+13=23 points. Contradiction.
-There is no curve component of B. A proper closed subset of the
-projective surface Q with no curve component is finite. This proves
-Theorem 2.1. QED.
-
-## 6. A parameterized consequence in unbounded abelian degree
-
-For alpha in P(k), let
-
-    delta_alpha = generic_L h^0(U^(1),
-                         B_U tensor alpha tensor q^(1)*L).
-
-It is positive exactly when psi(alpha) belongs to B. Theorem 2.1 and
-finiteness of psi imply that the set of such alpha is finite.
-
-Restrict to prime-to-five torsion alpha, and let Lambda_0 be the
-finite subgroup they generate. For every finite prime-to-five
-character subgroup Lambda of P(k), construct its connected abelian
-etale character cover first on U^(1), and untwist to obtain
-W_Lambda -> U. Character decomposition on the scalar twists gives
-
-    generic_L h^0(W_Lambda^(1),
-           B_WLambda tensor (q b_Lambda)^(1)*L)
-       = sum_(alpha in Lambda) delta_alpha.                 (5)
-
-The generic locus is a finite intersection for each Lambda, so no
-single point good for infinitely many covers is assumed. Equation
-(5) is uniformly bounded in Lambda and becomes constant whenever
-Lambda contains Lambda_0, with no bound on its degree or prime support.
-The constant is allowed to be positive. If Lambda meets the finite
-exceptional set trivially, (5) is zero, since the zero character is
-good.
-
-This is bounded generic defect along the actual Y-parameter family.
-It is NOT a uniform a-number bound for W_Lambda, NOT ordinarity of its
-relative Prym, and NOT vanishing for every abelian cover. Those
-stronger conclusions do not follow from the generic parameter test.
-If an actual second etale map from W_Lambda exists, it is preserved;
-no second map is constructed by this argument.
-
-## 7. Sources and remaining boundary
-
-Prym and polarization inputs are proved algebraically and compared
-with Lange--Ortega and Agostini in the linked source note. Raynaud's
-class, symmetry, and Frobenius exact sequence are recorded in
-[Tong, Sections 1.2.1 and 1.2.3](https://arxiv.org/pdf/0712.2046).
-Only the ordinary case is used here; no claim for supersingular E
-is made. The finite-grid lemma is elementary and parameterized.
-
-The remaining obstruction is now a finite set of isolated cosets
-for this whole cyclic-triple family. Proving that set empty would
-require additional input. Arbitrary covering groups and the separate
-cofinal-correspondence-tower bridge remain outside the theorem.
+# Proof: finite bad cosets for ordinary cyclic triples
+
+[Canonical statement](../Theorems/Thm_ordinary_cyclic_triple_finite_bad_cosets.md).
+Ordinary theorem audited PASS by /root/ordinary_triple_finite_bad_fibers_check
+2026-09-05; elementary grid bound separately checked by
+/root/elliptic_grid_divisor_bound. [Audit metadata](../routes/global/audits/ORDINARY_CYCLIC_TRIPLE_FINITE_BAD_FIBERS_AUDIT.md)
+is reference-only. The direct coordinate-fiber proof below retains the
+2026-09-07 exposition; no separate new audit is claimed.
+Section1 incorporates the formerly separate algebraic Prym input.
+Section5 retains its AUTHOR-only nonordinary component bounds, outside
+the audited canonical statement. No hypothesis on U is silently removed.
+
+## 1. Actual Prym isomorphism, not merely an isogeny class
+
+Over k=bar(F5), let q:U→Y be connected finite etale cyclic of degree3,
+Y ordinary of genus2, and σ a generator. Then g(U)=4. Put
+J=J(U), A=q^*J(Y), P=(ker Nm_q)^0, Q=J/A.
+For Raynaud calculations below use their SCALAR Frobenius twists;
+this is not polarization pullback by a degree-five isogeny.
+
+The hyperelliptic involution inverts the defining three-torsion line,
+so lifts to j on U with jσj^(-1)=σ^(-1). Its square lies in C3 and
+is fixed by this conjugation, so j²=1. It fixes exactly one point
+above each of the six Weierstrass points. Hurwitz makes the quotient
+r:U→E=U/<j> elliptic, with six ramification points.
+
+The pullback i=r^*:E→J is injective. Its kernel is killed by2;
+a nontrivial kernel character would factor r through an etale double
+of E, contrary to ramification and equality of degrees.
+Since j is identity on i(E) but−1 on J(Y), Nm_q i=0 by connectedness.
+Thus i(E)⊂P. For Φ:E²→P, (x,y)↦i(x)+σi(y), put b=i^†σi.
+The identities i^†i=2, ji=i and jσ=σ^(-1)j give b=b^†.
+As1+σ+σ²=0 on P, 2+b+b^†=0, hence b=−1. Therefore
+
+    Φ^*L_P ↔ H=[[2,−1],[−1,2]],   deg λ_H=9.               (1)
+
+This makes Φ an isogeny onto P. Meanwhile ker(q^*) has order3 and
+q^* pulls L_A back to three times the genus-two principal polarization,
+so deg λ_LA=3^4/3²=9. Complementarity in principally polarized J
+gives deg λ_LP=9 too. Thus(deg Φ)²=1 and Φ is an ISOMORPHISM.
+Both restricted polarization types are(1,3).
+
+With the product principal identification (E²)^∨=E², we obtain
+
+    P=E², Q=P^∨=E², ψ=π|P=H, deg ψ=9, ker ψ=C3²,
+    L_P↔H, L_Q↔H#=[[2,1],[1,2]],
+    L_P²=L_Q²=6, ψ^*L_Q≡3L_P,
+    σ_P↔S=[[0,−1],[1,−1]], σ_Q↔R=S^(-T)=[[-1,−1],[1,0]]. (2)
+
+No ordinarity of E or U was needed. With Y ordinary, U is ordinary
+IFF E is ordinary, by the isogeny J(U)∼J(Y)×E².
+This is an algebraic norm/polarization proof in characteristic5.
+Compare Lange–Ortega, [Theorem2.1(a)](https://arxiv.org/pdf/1601.04082),
+and Agostini, [equation(2.2)](https://arxiv.org/pdf/2001.06264);
+no analytic lifting argument is being substituted.
+
+## 2. The two grid counts needed
+
+For a finite set S⊂E(k), |S|=n≥2, a Hermitian divisor class
+[[a,b],[b^†,c]] meets horizontal/vertical fibers in degrees a/c.
+An effective divisor without a vertical GRID fiber meets S² in≤nc
+distinct points, including tangencies and inseparable projections.
+
+For a=c=2 and b≠0 there is at most one vertical component, counted
+with multiplicity: removing two would leave horizontal intersection0,
+hence a union of horizontal fibers, impossible with off-diagonal b≠0.
+Thus its grid support has size≤n+2(n−1)=3n−2, or≤2n if it has
+no vertical grid fiber. The
+[sharp general lemma](../routes/global/SHARP_ELLIPTIC_GRID_DIVISOR_INTERSECTION_BOUNDS.md)
+retains arbitrary-degree bounds, norm refinements and sharp examples.
+
+## 3. Ordinary U forces the bad-fiber locus finite
+
+NOW assume U ordinary. For π:J→Q define
+B={z:π^(-1)(z)⊂Θ_U}. Its complement π(J∖Θ_U) is open since π
+is smooth. Also0∉B: the C3 character decomposition restricts Θ_U
+to a union of three proper translated theta divisors on J(Y).
+Ordinary U gives0∉Θ_U, so Θ_U|P is effective of class4H.
+
+Suppose B has curve components. Their inverse images under π are
+irreducible divisor components of Θ_U. Sum the curves with their
+ACTUAL multiplicities to obtain D_Q≠0, invariant under R and
+inversion and avoiding0. The residual
+
+    D_P=Θ_U|P−ψ^*D_Q
+
+is effective. Write D_Q's Hermitian class M. The equation R^†MR=M
+and nefness of effective divisors give
+
+    M=[[a,b],[b^†,a]], b+b^†=[a],
+    N=4H−HMH=[[8−3a,3a−4−3b],[3a−4−3b^†,8−3a]]≥0.
+
+Here a is a positive integer, so a=1 or2. Arbitrary End(E), including
+quaternionic endomorphisms, is allowed.
+
+If a=1, nefness of M gives0<deg b≤1 and b²−b+1=0. Hence E has
+an order-three automorphism. In characteristic5 its short Weierstrass
+model is y²=x³+c, with Hasse invariant0, contradicting ordinarity.
+If a=2, put u=b−1, so u+u^†=0 and
+
+    N=[[2,−1−3u],[−1−3u^†,2]],   1+9deg(u)≤4.
+
+Integrality of endomorphism degree forces u=0. Consequently
+
+    D_Q≡L_Q,   D_P≡L_P.                                   (3)
+
+If D_Q contains a vertical V_a, R-invariance forces
+V_a+{y=a}+{x+y=−a}≤D_Q. The left side already has class L_Q;
+the effective numerically trivial difference is zero. Inversion
+preserves the unique vertical component, so a=−a. Avoidance of0
+makes a NONZERO two-torsion. This three-component divisor misses
+every odd-primary torsion grid. If there is no vertical component,
+Section2 bounds its n×n grid support by2n.
+No classification of other components is required.
+
+Take `S=E[5](k)`, of size5 since E ordinary, on the scalar-twisted E.
+These are precisely its Verschiebung-kernel points; the same grid
+G=S² is used in P and Q and ψ=H permutes it, since det H=3.
+For every0≠α∈G, F_U^*α=O_U and the twisted Frobenius sequence
+injects k into H⁰(B_U⊗α). Thus Θ_U|P contains all24 nonzero points.
+But D_Q meets G in≤10 points (or zero in the vertical case), while
+D_P meets it in≤13 by(3) and Section2. The residual equation would
+cover24 mandatory points with≤23, contradiction.
+
+Thus B has no curve component. Being a proper closed subset of the
+projective surface Q, it is finite. Every other coset has a nonempty
+open good locus, including geometric points of arbitrary torsion order.
+Neither emptiness of B nor the theorem without ordinary U follows.
+
+## 4. Generic defects stabilize in unbounded abelian degree
+
+For α∈P(k), put δ_α=generic_L h⁰(B_U⊗α⊗q^(1)*L).
+It is positive exactly when ψ(α)∈B, hence for finitely many α.
+Let Λ_0 be the finite subgroup generated by exceptional α of
+prime-to-five order.
+
+For any finite prime-to-five character subgroup Λ⊂P(k), construct
+its connected abelian etale character cover on U^(1), then untwist
+to b_Λ:W_Λ→U. Character decomposition gives
+
+    generic_L h⁰(B_WΛ⊗(q b_Λ)^(1)*L)=∑_(α∈Λ) δ_α.          (4)
+
+The generic open is a finite intersection for EACH Λ; no one point
+is assumed good for infinitely many covers. The right side is uniformly
+bounded and constant once Λ contains Λ_0. It may be positive.
+If Λ avoids every nonzero exception it is zero, since δ_0=0.
+No bound on degree or prime support is required.
+
+This is NOT a uniform a-number bound, ordinarity of those covers,
+or vanishing for every abelian cover. An existing second etale map
+is preserved; none is constructed. The cofinal correspondence-tower
+bridge and arbitrary monodromy remain outside the statement.
+
+## 5. Retained author-only nonordinary component boundary
+
+Keep Y ordinary but do NOT assume U or E ordinary. This section is
+the formerly separate author's necessary-condition argument, not an
+extension of the audited theorem. The geometry(2) still holds.
+The zero A-fiber is good as before. Also Θ_U|P is proper of class4L_P
+because J/P is ordinary, by the
+[ordinary-complement criterion](../routes/global/RESTRICTED_RAYNAUD_THETA_SUFFICIENT_CONDITIONS_AND_STABILITY_BOUNDARY.md),
+Section2. Unlike the ordinary case it may pass through0.
+
+For a curve component D⊂B let k be its orbit size under⟨R,−1⟩,
+m the multiplicity of π^(-1)(D) in Θ_U, and d=L_Q·D. Then
+
+    m∑_(D' in orbit) ψ^*D'≤Θ_U|P,
+    L_P·ψ^*D=3d,   mkd≤8.                                 (5)
+
+Different component orbits share the TOTAL budget∑m_j k_j d_j≤8.
+These are component intersections, not counts of isolated bad fibers.
+
+Any irreducible D has d≥2. For an elliptic subgroup T⊂E², the
+degree of L_Q on T is the sum of the degrees of x,y,x+y:T→E.
+A zero map gives a coordinate/anti-diagonal direction and the other
+two are isomorphisms, giving d=2; otherwise all three are positive.
+This allows arbitrary endomorphism slopes. For a nonelliptic D,
+D²≥2 and Hodge index gives
+
+    6D²≤d²,   d≥4,   p_a(D)≤1+floor(d²/12).                (6)
+
+If R(D)=D, writing its Hermitian class as M yields equal diagonal
+entries a and b+b^†=a, so d=3a. An R-stable elliptic translate has
+an underlying subgroup with a nontrivial order-three automorphism:
+R−1 is an isogeny, so cannot kill that subgroup. In characteristic5
+this makes it, and its isogenous E, supersingular.
+
+Since k∈{1,2,3,6}, (5)–(6) give exactly these NECESSARY rows:
+
+| Orbit size k | Curve and degree d | Multiplicity |
+| --- | --- | --- |
+| 6 | Impossible | — |
+| 3 | Inversion-stable elliptic translates, d=2 | m=1 |
+| 2 | R-stable elliptic translates, d=3; E supersingular | m=1 |
+| 1 | Elliptic, d=3; E supersingular | m≤2 |
+| 1 | d=6, p_a≤4; if elliptic, E supersingular | m=1 |
+
+Every listed curve avoids0, and all orbits share(5).
+The symmetry configurations themselves need not be empty: for
+0≠a∈E[2], the three curves x=a,y=a,x+y=a avoid0, form an
+inversion-stable R-orbit and have class L_Q and total d-degree6.
+This is a genuine divisor configuration, NOT a claim that its inverse
+images occur in Θ_U. Section3 rules that out for ordinary U.
+Isolated points of B give codimension-two A-fibers in J, so this
+divisorial table does not address them.
+
+Raynaud's numerical class and symmetry are recorded in
+[Tong, Corollaries1.2.3.2/1.2.3.4](https://arxiv.org/pdf/0712.2046).
+All quotient and covering maps above are actual. No fixed-pair
+exclusion or unrestricted common-cover theorem is asserted.

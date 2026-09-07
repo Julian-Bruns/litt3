@@ -45,4 +45,28 @@ endpoint, and neither 0 nor 2 modulo 5 at a genus-25 endpoint.
 
 These are conditional constraints: they do not force \(d\mid4\),
 produce a generator/clump, or exclude the span.
+
+There is also a one-endpoint power test. If the primitive endpoint
+tensor is \(s_X=t^m\), where \(t\) has weight \(b\) and \(d=bm\),
+choose \(1\le a\le4\) with \(ab\equiv1\pmod5\), and put
+\(n_b=(ab-1)/5\). For the above inverse \(r\) of \(d\), write
+\(mr=a+5j\), \(j\ge0\). Then
+\[
+C_{X,n}(s_X^r)=t^j C_{X,n_b}(t^a).
+\]
+Thus if \(d\nmid4\), the SAME bounded root test
+\(C_{X,n_b}(t^a)=0\) is necessary, independently of the exponent \(m\).
+In particular, if \(s_X=\omega^d\) for a regular one-form \(\omega\), then
+\(C(\omega)=0\) when \(d\nmid4\), and \(C(\omega)=c\omega\)
+when \(d\mid4\). The same conclusion holds at either endpoint.
+Consequently, if every regular Cartier eigenform on an endpoint
+(including eigenvalue zero) with uniform positive zero multiplicity
+has simple zeros, NO nonzero shared weight-\(m\) tensor can be an
+\(m\)-th power of a regular one-form on that endpoint.
+This conclusion concerns a coreless span and does not assume the
+root descends through the other actual étale map.
+
+Version2,2026-09-07: one-endpoint power test added; proof shortened
+without changing the Frobenius conventions or preceding assertions.
+Author prose; no independent whole-statement audit claimed.
 [Proof](../Solutions/Sol_cartier_generator.md).

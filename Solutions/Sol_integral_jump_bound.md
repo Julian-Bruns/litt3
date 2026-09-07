@@ -1,199 +1,170 @@
-# Proof record: Integral wild-subgroup jumps bound atlas degree
+# Proof: integral jumps and numerical single-jump atlas bounds
 
-Canonical statement: [`integral_jump_bound`](../Theorems/Thm_integral_jump_bound.md).
-Migrated 2026-09-06; hypotheses restated below are proof context.
-The canonical statement and registry control promoted scope and evidence.
+[Statement, hypotheses and audit scopes](../Theorems/Thm_integral_jump_bound.md).
+Write d for the other, tame inertia order, g0=gcd(t,d),
+t=g0 t0 and d=g0 m. Thus gcd(t0,m)=1 and p∤g0 t0 m.
 
----
+## 1. Shared atlas arithmetic
 
-# Integral wild jumps force a genus-dependent atlas degree bound
+Uniform ramification gives qt|n and d|n. Hurwitz reads
+h=n(c/(qt)−1/d), so, writing n=N lcm(qt,d),
 
-Author: /root, 2026-09-06. Status: independently audited PASS by
-/root/integral_jump_degree_bound_audit, 2026-09-06, including a separate
-valuation-based enumeration of the complete search tree.
-[Audit record](../routes/global/audits/INTEGRAL_WILD_JUMP_DEGREE_BOUND_AUDIT_2026_09_06.md).
+    D=h/N=cm−qt0>0,   D|h,
+    n=(h/D)qg0t0m.                                          (1)
 
-## Theorem and scope
+The local congruence t|δ+1, equivalently t|c+1, follows by linearizing
+a tame complement as z↦ζz. An invariant base differential has leading
+term a z^δ dz, whose character is ζ^(δ+1). Linearization averages a
+uniformizer with its desired character; it divides only by t, not by
+an atlas degree. Consequently t0|m+D and g0|(c+1)/t0.
+This does not assert t|q−1.
 
-Let a smooth projective curve X, with h=2g(X)-2>0 in characteristic
-p>=3, be a finite etale atlas of degree n of an effective proper
-orbifold with coarse curve P1 and exactly two branch points, one wild
-and one tame. At the wild point write
+For any fixed q, all remaining variables are bounded. Since c≥q−2
+and t0≤c+1, (1) gives
 
-    e=q t,  q=|I_1| a power of p,  p does not divide t,
-    c=delta-e,  0<c<e.
+    m≤q+(q+D)/(q−2).
 
-Assume that the upper jumps of the local P=I_1 extension are INTEGERS.
-Here the extension is L/L^P, not L/L^I; confusing these two upper
-numberings would change the hypothesis. Then n has an effectively
-computable bound depending only on h and p.
+Put v=(c+1)/t0. Then c=(q+vD)/(vm−q), with vm>q. This decreases in v;
+its smallest allowed integer v is at most q+1. Thus
 
-For p=5,h=16 there cannot be more than one positive jump under this
-hypothesis. Consequently q=5 and n<=2240, by the retained
-[single-jump theorem](../routes/global/TWO_BRANCH_SINGLE_JUMP_ORBIFOLD_ATLASES_ARE_DEGREE_BOUNDED.md).
+    c≤q+(q+1)D,
 
-The hypothesis holds whenever P is abelian, by Hasse--Arf. No assumption
-that the whole inertia group, the global monodromy, or the atlas itself
-is abelian or Galois is made. In particular a jointly minimal CORED
-common-cover candidate for the fixed genus9/genus25 pair with M>2240
-must have a NONINTEGRAL upper jump of its wild-subgroup extension, and
-thus nonabelian wild inertia. Coreless candidates are not addressed.
+and t0,g0 range over the bounded divisors above. We can therefore
+concentrate on bounding q.
 
-## 1. Ramification data without character assumptions
+## 2. The numerical single-jump criterion
 
-Use the notation of the single-jump theorem:
+Assume c=j(q−1)−1 for an integer j≥1 and put ℓ=jm−t0. Equation(1)
+gives qℓ=(j+1)m+D, so ℓ>0. Since t0|j(q−1), multiplying by ℓ gives
+t0|ℓ+jD. Write R=(ℓ+jD)/t0≥1; substitution yields
 
-    t=g0 t0,  m=g0 m0,  gcd(t0,m0)=1,
-    n=(h/D) q g0 t0 m0,  D|h,
-    c m0-q t0=D,  t|(c+1).                            (1)
+    j(Rm−D)=ℓ(R+1),   j/ℓ=(R+1)/(Rm−D)≤D+2.
 
-Here m is the inertia order at the other, tame branch point and
-p does not divide g0 t0 m0. The congruence follows by linearizing a tame
-complement on a local uniformizer and applying it to the leading term
-of an invariant differential. In particular t0|(m0+D), by (1).
+For R≤D+1 use denominator≥1; for R≥D+1 use denominator≥R−D.
+Also t0≤ℓ+jD gives m≤D+2ℓ/j. Therefore
 
-Let the positive upper jumps of P be
+    q=((j+1)m+D)/ℓ
+      ≤D(j/ℓ)+2D/ℓ+2+2/j≤(D+2)²≤(h+2)².                    (2)
 
-    1<=u_1<...<u_r,
+Section1 now proves finiteness. An explicit j-range for the retained
+certificate follows by putting v=j(q−1)/t0 in (1):
 
-and put [P:P^(u_i+)]=p^a_i, with 0=a_0<a_1<...<a_r=a and q=p^a.
-The lower filtration of P is the positive lower filtration of I. The
-different formula and the definition of the Herbrand function give
+    j(q−1)(vm−q)=v(m+D),
+    j≤(m+D)(q+1)/(q−1).                                    (3)
 
-    c+1 = sum_i (p^a_i-p^a_(i-1)) u_i
-        = q u_r-u_1-sum_(i<r) (u_(i+1)-u_i) p^a_i.    (2)
+Here v/(vm−q) decreases for vm>q, and its largest integer-argument
+value is at v=floor(q/m)+1 and is at most q+1.
+Enumerate q,D,m,j within these bounds; t0 divides c+1, (1) fixes m,
+and g0 divides (c+1)/t0 with p∤g0, c<qg0t0 and d≥2.
 
-For clarity, a lower interval corresponding to the upper interval
-(u_i,u_(i+1)] has length p^a_i (u_(i+1)-u_i), and its group has
-order q/p^a_i. Thus its contribution to the positive different sum is
-(q-p^a_i)(u_(i+1)-u_i). Adding (q-1)u_1 proves (2).
-This calculation does NOT require P abelian or a character decomposition.
+For p=5,h=16, the [single-jump certificate](../routes/global/TWO_BRANCH_SINGLE_JUMP_SIGNATURE_CERTIFICATE.py)
+finds24 full tuples, all q=5. The nine reduced tuples(j,t0,m,D),
+with their largest n over allowed g0, are
 
-If r=1, (2) is exactly the already proved single-jump case. Assume r>=2.
-Then q>=p^2 and, since the jumps are distinct positive integers,
+    (1,4,7,1):2240   (2,4,3,1):1920   (3,2,1,1):960
+    (1,1,2,1):640    (2,1,1,2):320    (1,1,3,4):240
+    (6,3,1,8):240    (1,1,7,16):140   (2,1,3,16):120.
 
-    c >= (2-1/p)q-2.                                  (3)
+All positive j in (3) are allowed; no hidden conductor-primality or
+local-realizability filter is used. This proves hypothesis2 completely.
 
-More generally, putting U=u_r gives
+## 3. Integral jumps: finite small-side ranges
 
-    c+1 >= ((p-1)U+1)q/p-1.                           (4)
+Let P=I_1, q=p^a, with upper jumps1≤u_1<⋯<u_r in the numbering
+of P. Put0=a_0<a_1<⋯<a_r=a, where [P:P^(u_i+)]=p^a_i.
+The positive lower filtration agrees with that of the full inertia.
+Herbrand's formula and the different give, without a character hypothesis,
 
-Indeed, if A is the last coefficient in (2)'s first expression, then
-A>=q-q/p and all coefficients sum to q-1. Their weighted sum is at
-least AU+(q-1-A)=q-1+A(U-1), which proves (4).
+    c+1=∑_i(p^a_i−p^a_(i−1))u_i
+       =qu_r−u_1−∑_(i<r)(u_(i+1)−u_i)p^a_i.                (4)
 
-## 2. A bounded-q case and the finite small-side ranges
+Indeed an upper interval(u_i,u_(i+1)] has lower length
+p^a_i(u_(i+1)−u_i) and group size q/p^a_i; its contribution is
+(q−p^a_i)(u_(i+1)−u_i), in addition to(q−1)u_1.
 
-If m0>=t0, (1) and (3) imply
+For r=1 use Section2. Otherwise q≥p² and the integral distinct jumps
+give, with U=u_r,
 
-    D >= c-q >= (p-1)q/p-2,
-    q <= p(D+2)/(p-1).                                (5)
+    c≥(2−1/p)q−2,   c+1≥((p−1)U+1)q/p−1.                  (5)
 
-Bounded q alone suffices to bound all variables. Namely c>=q-2 and
-t0<=c+1 give
+The last coefficient in (4)'s first sum is at least(q−q/p);
+all others have weights≥1, proving both estimates.
 
-    m0<=q+(q+D)/(q-2).
+If m≥t0, (1) and (5) give q≤p(D+2)/(p−1), handled by Section1.
+If m<t0, put w=(m+D)/t0. For w≥2, m<D; for w=1,
+(c−q)m=D(q+1). The ratio(q+1)/((p−1)q/p−2) decreases for q≥p²,
+so in both cases
 
-Writing v=(c+1)/t0>=1 in (1) gives
+    m≤M(D,p)=floor[D(p²+1)/(p(p−1)−2)],
+    t0 is a divisor of m+D greater than m.                   (6)
 
-    c=(q+vD)/(v m0-q),  v m0>q.
+Using t0/m≤1+D/m, (1) and the second inequality in (5) gives
 
-For fixed m0 the right side decreases with v; the least allowed integer
-v is at most q+1. Hence c<=q+(q+1)D. Then t0 and g0 are bounded divisors
-of c+1, completing this case.
+    (p−1)U+1≤p t0/m+p(D+2m)/(mq)
+              ≤p(D+1)+(D+2)/p,
+    U≤U(D,p)=floor[(p²(D+1)−p+D+2)/(p(p−1))].                (7)
 
-Now suppose m0<t0. Put w=(m0+D)/t0, a positive integer. If w>=2 then
-m0<D. If w=1, (1) gives
+These bound the jumps and small-side variables before the rank.
 
-    (c-q)m0=D(q+1).
+## 4. A finite carry lemma, including the scaled form
 
-Using (3), q>=p^2, and the decreasing function
-(q+1)/((p-1)q/p-2) gives the uniform bounds
+For fixed positive integers m,E,V and1≤v_1≤V, and integer T, consider
 
-    m0 <= M(D,p) := floor[D(p^2+1)/(p(p-1)-2)],
-    t0 is a divisor of m0+D larger than m0.            (6)
+    p^a(mv_r−T)=E+m∑_(i<r)(v_(i+1)−v_i)p^a_i,               (8)
 
-In particular t0/m0<=1+D/m0. Combining this with (1), (4) and q>=p^2
-yields
+with strictly increasing integer v_i≤V and cumulative ranks a_i.
+Necessarily p|E. Start at(rank,value,carry)=(1,v_1,E/p).
+At a state(n,v,R), termination at a=n requires R=mv−T.
+Otherwise choose0≤Δ≤V−v with p|(R+mΔ), and pass to
 
-    U <= U(D,p)
-      := floor[(p^2(D+1)-p+D+2)/(p(p-1))].             (7)
+    (n+1,v+Δ,(R+mΔ)/p).
 
-Explicitly ((p-1)U+1)<=p t0/m0+p(D+2m0)/(m0 q), and the right side
-is at most p(D+1)+(D+2)/p. There is no bound on the rank a assumed here.
+Positive Δ records a jump change at cumulative rank n; Δ=0 records
+no change. Require at least one positive change for the multijump
+branch. Successive division of (8) proves completeness both ways.
 
-## 3. Exact carry recursion bounds the rank too
+All carries are positive. Choose B≥E/p and B≥mV, for example E+mV.
+Then a transition stays≤B since(R+mΔ)/p≤2B/p≤B.
+There are at most V−1 positive changes, while each run of zero changes
+has length≤floor(log_p B). Hence
 
-Fix D,m0,t0,u_1 in the finite ranges (6)--(7). Write
-E=m0(u_1+1)+D. Substituting (2) in (1) gives
+    a≤V(1+floor(log_p B)).                                  (9)
 
-    p^a(u_r m0-t0)
-       = E + m0 sum_(i<r) (u_(i+1)-u_i) p^a_i.        (8)
+For (4) and (1), use v_i=u_i, V=U(D,p), T=t0 and
+E=m(u_1+1)+D; (8) is exactly their rearrangement. One may take
+B=2mU(D,p)+D, as in the certificate. Equations(6)–(9) bound q;
+Section1 then bounds n, completing hypothesis1.
 
-The following finite tree enumerates all solutions, without a rank cutoff.
-Necessarily p|E. Start at rank n=1, current jump u=u_1, carry R=E/p.
-At a state (n,u,R), one can end at total rank a=n precisely when
-R=u m0-t0. Alternatively choose an integer Delta with
+The scaled version T=Lt0, v_i=Lu_i,
+E=m(v_1+L)+LD is recorded for the separately labeled author proof of
+[bounded denominators](../routes/global/BOUNDED_WILD_JUMP_DENOMINATORS_BOUND_ATLAS_DEGREES.md).
+Its generalization is not needed to establish the audited integral case.
 
-    0<=Delta<=U(D,p)-u,  p|(R+m0 Delta),
+## 5. The complete integral genus-nine specialization
 
-and pass to (n+1,u+Delta,(R+m0 Delta)/p). A positive Delta records a
-jump change at cumulative rank n; Delta=0 records no change. For the
-multi-jump branch keep only endpoints with at least one positive change.
-Successive division of (8) by p proves completeness in both directions.
-
-The tree is finite: carries are positive; a zero-change step divides
-the carry by p; a positive change strictly increases the bounded u.
-For an explicit uniform bound set B=2m0 U(D,p)+D. Every carry is <=B:
-this holds initially and follows inductively from
-(R+m0 Delta)/p<=(B+B)/p<=B. There are at most U(D,p)-1 positive changes,
-and each run of zero changes has length at most floor(log_p B).
-Therefore
-
-    a <= U(D,p)(1+floor(log_p B)).                     (9)
-
-Thus q is bounded in this case also. The bounds from Section 2 then
-bound c,t0,g0,n. This proves the parameterized theorem.
-
-## 4. The complete genus-nine calculation
-
-For p=5,h=16, (5) would give q<=22.5, contradicting q>=25. Thus every
-multi-jump candidate belongs to (6)--(8). The finite ranges are
+For p=5,h=16, the m≥t0 bound gives q≤22.5<25. On the other side,
 
     D:       1  2  4   8  16
     M(D,5):  1  2  5  11  23
     U(D,5):  2  3  6  11  21.
 
-The [standard-library certificate](../routes/global/INTEGRAL_WILD_JUMP_CARRY_CERTIFICATE.py)
-visits 1351 states, with no truncation in rank or jump count. It finds
-exactly one multi-jump tuple (D,m0,t0,q; (a_i,u_i); c):
+The [integral carry certificate](../routes/global/INTEGRAL_WILD_JUMP_CARRY_CERTIFICATE.py)
+visits1351 states with no cutoff in rank or jump count. Its sole
+multijump tuple(D,m,t0,q; (a_i,u_i); c) is
 
-    (8,1,3,25; ((1,1),(2,4)); 83).                    (10)
+    (8,1,3,25; ((1,1),(2,4)); 83).
 
-This is only a necessary numerical tuple, and it is NOT locally realizable.
-Its first upper jump is 1 and [P:P^(1+)]=5. Hence its first lower jump
-is also 1, and |I_1/I_2|=5. Choose a local uniformizer z linearizing
-the tame complement as z->zeta z, where zeta has order t. The map
+This tuple is locally impossible. Its first lower jump is1 and
+|I_1/I_2|=5. In a parameter linearizing the tame generator, the
+leading coefficient of γ(z)=z+b_γ z²+⋯ embeds I_1/I_2 as an F_5-line
+stable under multiplication by ζ or ζ^(-1). Thus ζ∈F_5^*, so t|4,
+contradicting3=t0|t. No multijump tuple remains. Section2 gives q=5
+and n≤2240.
 
-    I_1/I_2 -> k,  gamma(z)=z+b_gamma z^2+O(z^3)
-                         -> b_gamma
-
-embeds it as a one-dimensional F_5 vector subspace. Conjugation by the
-tame generator multiplies b_gamma by zeta or zeta^(-1), depending on
-the conjugation convention. Stability of a nonzero one-dimensional
-F_5 space implies zeta belongs to F_5^*, and so t|4. But t is a multiple
-of t0=3 in (10), a contradiction. All multi-jump possibilities are excluded.
-
-## References and boundary
-
-For lower/upper numbering, subgroup compatibility, and the precise
-generality of Hasse--Arf, see
-[Kedlaya, Class field theory, Section 4.4, especially Remark 4.4.13](https://kskedlaya.org/cft/sec_filtration.html).
-Only the integrality consequence of Hasse--Arf is external to the
-elementary filtration calculations above.
-
-Fractional upper jumps are genuinely possible: the wild group of a
-Hermitian curve has jumps 1 and 1+1/Q, with order Q^3, Q a power of p.
-Thus replacing the integral jumps by arbitrary positive rational numbers
-would invalidate (3), (6), and the finite carry argument. No general
-bound in that remaining case is claimed.
+For upper/lower numbering, subgroup compatibility and Hasse–Arf see
+[Kedlaya, §4.4, especially Remark4.4.13](https://kskedlaya.org/cft/sec_filtration.html).
+Hasse–Arf supplies integrality for abelian P, not arbitrary P.
+Hermitian wild groups genuinely have fractional jumps1,1+1/Q and
+order Q³. Substituting arbitrary rational jumps into (5)–(7) would
+invalidate the proof. Neither these finite necessary lists nor the
+degree bound treats coreless spans or constructs a common cover.

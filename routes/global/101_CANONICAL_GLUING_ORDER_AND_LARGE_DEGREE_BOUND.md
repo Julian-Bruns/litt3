@@ -1,283 +1,230 @@
-# Canonical gluing order and a large-degree bound
+# Canonical gluing orders: exact two-branch and uniform multibranch bounds
+
+Version2,2026-09-08: consolidated by /root/library_generalization_cleanup_max,
+with both original audited scopes preserved and no stronger audit claim.
+[Global degree and exact two-branch results: PASS,2026-09-04](audits/101_CANONICAL_GLUING_ORDER_AND_LARGE_DEGREE_BOUND_AUDIT.md);
+[valuation interpolation and multibranch bounds: PASS,2026-09-05](audits/102_MULTIBRANCH_INTERPOLATION_AND_CANONICAL_GLUING_EXPONENT_AUDIT.md).
+Both auditors: abelian_p_index_group_audit. No breaking objections;
+the first audit suggested only see-saw and completion-test exposition.
+The sharper exact two-branch order is NOT replaced by the general bound.
+Section5 preserves author-level comparison/bookkeeping from a superseded
+strategy note; the above audit claims concern Sections1–4 only.
+
+## 1. The same two etale legs and their singular-image invariant
+
+Work over k=Fbar_p. Let X,Y be smooth projective connected curves,
+s_X=g(X)−1>0,s_Y=g(Y)−1>0, with Hom(J(X),J(Y))=0.
+Let Z normalize its integral joint image C⊂X×Y, with BOTH original
+projections f:Z→X,g:Z→Y finite etale, degrees d_X,d_Y. An arbitrary
+common cover can be replaced by this joint normalization without
+losing either leg: each is an intermediate of an etale map.
+Riemann–Hurwitz gives s_Xd_X=s_Yd_Y.
+
+The split-class identity is
+
+    O(C)=A⊠B,             deg A=d_Y,             deg B=d_X.         (1)
+
+Indeed the fiber restrictions to Y give a map X→Pic^(d_X)(Y).
+After translation this factors through Hom(J(X),J(Y))=0, so
+see-saw gives(1). Define M=ω_X⊠ω_Y⁻¹. The differential maps give
+a SPECIFIED unit τ=(df)⁻¹dg of ν*(M|C), viewed as
+Hom(g*ω_Y,f*ω_X), and deg(M|C)=0.
+
+The canonical gluing order t(C) is the order of M|C in Pic(C).
+It is finite: the degree-zero generalized-Jacobian point and its
+curve descend to a finite field, where that finite-type group's
+rational-point group is finite. Equivalently t(C) is the least n>0
+such that τ^n descends to a UNIT on singular C. Any trivialization
+on C pulls back to a constant multiple of τ^n, since Z has only
+constant global units. Triviality on the normalization is automatic;
+triviality on C is an extra gluing condition.
+
+**Audited degree bound.** If M^n|C is trivial, then
+
+    d_Y≤2ns_X,       d_X≤2ns_Y,
+    t(C)≥ceil(d_Y/(2s_X))=ceil(d_X/(2s_Y)),
+    g(Z)−1≤2t(C)s_Xs_Y.                                      (2)
+
+Retain the direct proof independently of later coefficient refinements.
+The sequence0→M^n(−C)→M^n→M^n|C→0 has H⁰(M^n)=0, so its
+connecting class is nonzero. By(1), the only nonzero possible
+Kunneth summand of H¹(M^n(−C)) is
+
+    H⁰(X,ω_X^n A⁻¹)⊗H¹(Y,ω_Y^−n B⁻¹).
+
+Thus ω_X^n A⁻¹ has a section; interchange factors and use M^−n
+for the other inequality. This proves the stronger necessary
+EFFECTIVITY of both displayed connecting line bundles as well
+as(2). The [coefficient/equality theorem](105_NONGALOIS_DESCENT_THROUGH_THE_CONNECTING_MAP.md)
+gives additional author-level structure, with evidence separated there.
+
+## 2. Exact local and global orders for two branches
+
+Every formal branch is a graph y=u_i(x), with u_i' a unit, because
+both original projections are etale. Hence a unibranch point is
+smooth. For exactly two branches y=u(x),y=v(x), put
+m=ord_x(u−v). Their completed local ring inside its normalization is
+
+    {(a,b)∈k[[x]]² : a−b∈(u−v)}.                              (3)
+
+Monic division by(y−u)(y−v) writes a local function as A(x)+B(x)y,
+which proves both directions of(3). In the frame dx⊗dy⁻¹ the
+coefficients of τ are u',v'. Therefore τ^n descends precisely when
+u'^n−v'^n∈(u−v), and its EXACT local order is:
+
+| Contact | Local order |
+| --- | --- |
+| m=1 (ordinary node) | ord(u'(0)/v'(0)), prime to p |
+| m≥2 and p divides m | 1 |
+| m≥2 and p does not divide m | p |
+
+For m=1, the congruence is equality of constant terms. For m≥2,
+the derivative constants agree. If p|m, differentiation kills the
+leading term of u−v and ord(u'−v')≥m, so n=1 works.
+Otherwise ord(u'−v')=m−1; writing n=p^a b with p∤b gives
+
+    ord(u'^n−v'^n)=p^a(m−1).
+
+This reaches m exactly when a≥1. Thus arbitrarily large contact
+order alone does not increase the local gluing order.
+
+If EVERY singular point has two branches, let e be the lcm of
+ordinary-node tangent-ratio orders (e=1 if none), and ε=1 if
+some tangency has contact order not divisible by p, otherwise0.
+Then
+
+    t(C)=e p^ε,       d_Y≤2s_X e p^ε,       d_X≤2s_Y e p^ε.        (4)
+
+Descent is local and can be checked after faithfully flat completion;
+a descended section with unit branch values is itself a unit.
+Consequently the global order is exactly the lcm of the local orders.
+
+With no ordinary nodes, d_Y≤2ps_X, or≤2s_X if all contacts
+are divisible by p. If the node tangent ratios lie in F_q×,
+then e|(q−1); rationality of both endpoints over F_q alone does
+NOT put their singular points, branches or slopes over F_q.
+For the genus-(9,25) pair in char5, N=d_Y and d_X=3N give
+N≤16e5^ε, hence N≤80 without nodes and N≤16 when additionally
+all tangencies have contact order divisible by5.
 
-**Status: independently audited PASS. 2026-09-04.**
+## 3. Integral interpolation over an arbitrary DVR
 
-Auditor: `abelian_p_index_group_audit`, 2026-09-04. No breaking
-objections; optional suggestions concern exposition of the see-saw
-cross-term and the completion test for descent.
-[Audit record](audits/101_CANONICAL_GLUING_ORDER_AND_LARGE_DEGREE_BOUND_AUDIT.md).
+Let R be a DVR with uniformizer π and normalized valuation v.
+For distinct u₁,…,u_r∈R and b₁,…,b_r∈R, assume an integer L≥r−1
+satisfies
 
-This is a parameterized obstruction for genuine common **etale** covers.
-Both maps and their differential identifications remain on the same
-normalization throughout. It does not exclude all common covers: the
-orders of tangent ratios, and singularities with three or more branches,
-are not bounded here.
+    v(b_i−b_j)≥L v(u_i−u_j)                  for every i≠j.        (5)
 
-All curves are smooth, projective and connected over
-\(k=\overline{\mathbf F}_p\), except the possibly singular joint image.
-Put \(s_X=g(X)-1>0\), \(s_Y=g(Y)-1>0\), and assume
+Then the unique degree-<r interpolating polynomial belongs to R[y].
+For r=1 this is immediate. Inductively set
 
-\[
-                  \operatorname{Hom}(J(X),J(Y))=0.
-                                                        \tag{101.1}
-\]
-
-Start with a common finite etale cover and replace it by the
-normalization of its joint image, as in Proposition 100.1. Thus
-
-\[
- C\subset X\times Y,\qquad \nu:Z\longrightarrow C,
- \qquad f:Z\longrightarrow X,\quad g:Z\longrightarrow Y
-\]
-
-have \(f,g\) finite etale, and \(\nu\) is birational. Write
-\(d_X=\deg f\), \(d_Y=\deg g\). Necessarily
-
-\[
-                         s_Xd_X=s_Yd_Y.                 \tag{101.2}
-\]
-
-## 1. The invariant records gluing, not merely a differential divisor
-
-On \(S=X\times Y\) define
-
-\[
- M=\operatorname{pr}_X^*\omega_X\otimes
-                         \operatorname{pr}_Y^*\omega_Y^{-1}.
-\]
-
-The two etale differential maps give a specified trivialization
-\(\tau\) of \(\nu^*(M|_C)\). More precisely, viewed as a section
-of \(\operatorname{Hom}(g^*\omega_Y,f^*\omega_X)\), it is
-\((df)^{-1}\circ dg\).
-
-The degree of \(M|_C\) is zero by (101.2). It is therefore a point
-of the generalized Jacobian \(\operatorname{Pic}^0(C)\). Every such
-point over \(\overline{\mathbf F}_p\) is torsion: the curve and the
-point descend to some finite field, and the rational points of its
-finite-type group scheme form a finite group.
-
-Define the **canonical gluing order**
-
-\[
-             t(C)=\operatorname{ord}_{\operatorname{Pic}(C)}(M|_C).
-                                                        \tag{101.3}
-\]
-
-Equivalently, \(t(C)\) is the least positive integer \(n\) for which
-\(\tau^n\) descends from the normalization to a nowhere-vanishing
-section of \(M^n|_C\). To see the equivalence, any trivialization on
-\(C\) pulls back to a constant multiple of \(\tau^n\), since the
-only global units on \(Z\) are \(k^\times\).
-
-Thus triviality on the normalization is automatic, whereas triviality
-on the singular image is an additional, measurable condition.
-
-## 2. Gluing order must grow with the degree
-
-### Theorem 101.1
-
-For every positive integer \(n\) such that \(M^n|_C\simeq\mathcal O_C\),
-
-\[
-                     d_Y\le 2ns_X,\qquad d_X\le 2ns_Y.
-                                                        \tag{101.4}
-\]
-
-In particular,
-
-\[
- t(C)\ge
-   \left\lceil\frac{d_Y}{2s_X}\right\rceil
- = \left\lceil\frac{d_X}{2s_Y}\right\rceil,
- \qquad
-             g(Z)-1\le 2t(C)s_Xs_Y.                    \tag{101.5}
-\]
-
-#### Proof
-
-Hypothesis (101.1) implies that
-
-\[
-                    \mathcal O_S(C)\simeq A\boxtimes B,
-                  \qquad \deg A=d_Y,\quad \deg B=d_X.  \tag{101.6}
-\]
-
-Indeed, restricting the line bundle to the fibers over \(X\) gives
-a morphism \(X\to\operatorname{Pic}^{d_X}(Y)\). After translation
-by its value at a base point, this factors through a homomorphism
-\(J(X)\to J(Y)\), which is zero. The see-saw principle then gives
-(101.6).
-
-Use the restriction sequence
-
-\[
- 0\longrightarrow M^n(-C)\longrightarrow M^n
-                \longrightarrow M^n|_C\longrightarrow0.
-                                                        \tag{101.7}
-\]
-
-The space \(H^0(S,M^n)\) is zero, since its \(Y\)-factor has negative
-degree. Under the assumption of the theorem,
-\(H^0(C,M^n|_C)=k\), so (101.7) implies
-
-\[
-                         H^1(S,M^n(-C))\ne0.
-\]
-
-By (101.6) and the Kunneth formula this space is
-
-\[
- H^0(X,\omega_X^n\otimes A^{-1})\otimes
- H^1(Y,\omega_Y^{-n}\otimes B^{-1}).                    \tag{101.8}
-\]
-
-The other Kunneth summand is zero because
-\(\deg(\omega_Y^{-n}\otimes B^{-1})<0\). In particular,
-\(H^0(X,\omega_X^n\otimes A^{-1})\ne0\), which gives
-\(d_Y\le 2ns_X\). Applying the same argument to \(M^{-n}\), with
-the two factors exchanged, gives \(d_X\le2ns_Y\).
-Now use (101.2) and Riemann--Hurwitz. \(\square\)
-
-The proof actually gives the stronger necessary effectivity conditions
-\(\omega_X^n\otimes A^{-1}\ge0\) and
-\(\omega_Y^n\otimes B^{-1}\ge0\), not just their degree inequalities.
-
-## 3. Exact local orders at every two-branch singularity
-
-Since both maps on the normalization are etale, every formal branch
-of \(C\) is smooth and is a graph over either coordinate. A
-unibranch point is therefore smooth. Suppose a singular point has
-exactly two branches. In local coordinates \(x,y\) these are
-
-\[
-                         y=u(x),\qquad y=v(x),
-\]
-
-where \(u(0)=v(0)=0\) and \(u',v'\) are units. Its completed local
-ring, inside the normalization, is
-
-\[
- \widehat{\mathcal O}_{C,P}
-  =\{(a,b)\in k[[x]]\oplus k[[x]]:
-                                 a-b\in(u-v)k[[x]]\}.   \tag{101.9}
-\]
-
-For completeness, reduction modulo the monic polynomial
-\((y-u)(y-v)\) expresses every element as \(A(x)+B(x)y\).
-Its two values differ by \(B(x)(u-v)\); conversely every pair in
-the right side has this form. This proves (101.9).
-
-In the frame \(dx\otimes dy^{-1}\) of \(M\), the two coefficients
-of \(\tau\) are \(u'\) and \(v'\). Consequently
-
-\[
- \tau^n\text{ descends at }P
-       \quad\Longleftrightarrow\quad
-                     u'^{,n}-v'^{,n}\in(u-v)k[[x]].  \tag{101.10}
-\]
-
-### Proposition 101.2
-
-Let \(m=\operatorname{ord}_x(u-v)\), the intersection multiplicity
-of the two branches.
-
-1. If \(m=1\), the local gluing order is the multiplicative order
-   of \(\lambda=u'(0)/v'(0)\in k^\times\). This is an ordinary
-   node and \(\lambda\ne1\).
-2. If \(m\ge2\) and \(p\mid m\), the local gluing order is one.
-3. If \(m\ge2\) and \(p\nmid m\), the local gluing order is exactly
-   \(p\).
-
-These orders do not grow with the tangency multiplicity.
-
-#### Proof
-
-For \(m=1\), congruence (101.10) is just equality of the constant
-terms, equivalently \(\lambda^n=1\).
-
-For \(m\ge2\), the two derivative constants coincide. If \(p\mid m\),
-differentiating \(u-v\) kills its leading term and gives
-\(\operatorname{ord}_x(u'-v')\ge m\), including the possibility
-that the derivative is zero. Thus \(n=1\) works.
-
-If \(p\nmid m\), this derivative has order \(m-1\). Write
-\(n=p^a b\) with \(p\nmid b\). The equality of the nonzero
-derivative constants implies
-
-\[
-          \operatorname{ord}_x(u'^{,n}-v'^{,n})
-                             =p^a(m-1).                \tag{101.11}
-\]
-
-This is at least \(m\) exactly when \(a\ge1\): here
-\(p(m-1)\ge m\) for \(m\ge2\). Thus (101.10) holds exactly
-when \(p\mid n\). \(\square\)
-
-## 4. A whole geometric class has bounded degree
-
-Assume every singular point of \(C\) has exactly two branches.
-Let \(e\) be the least common multiple of the multiplicative orders
-of the tangent ratios at its ordinary nodes; put \(e=1\) if there
-are no ordinary nodes. Define \(\epsilon=1\) if some tangency has
-intersection multiplicity not divisible by \(p\), and \(\epsilon=0\)
-otherwise. Since \(e\) is prime to \(p\), Proposition 101.2 gives
-
-\[
-                         t(C)=e p^\epsilon.            \tag{101.12}
-\]
-
-Indeed, descent is local on \(C\), can be checked after completion,
-and a section whose normalized values are units is a unit whenever
-it descends. Hence the global order is exactly the least common
-multiple of the displayed local orders.
-
-### Corollary 101.3
-
-Under these hypotheses,
-
-\[
-                  d_Y\le2s_X e p^\epsilon,
-       \qquad     d_X\le2s_Y e p^\epsilon.              \tag{101.13}
-\]
-
-Thus arbitrarily high two-branch tangencies alone cannot produce
-unbounded covering degrees. In the absence of ordinary nodes, there
-is the uniform bound \(d_Y\le2p s_X\), independent of all contact
-orders. If every such contact order is divisible by \(p\), the
-stronger bound is \(d_Y\le2s_X\).
-
-If all ordinary-node tangent ratios belong to \(\mathbf F_q^\times\),
-then \(e\mid q-1\). In particular, this holds if the nodes, their
-two branches, and the maps are all rational over \(\mathbf F_q\).
-The bound is then \(d_Y\le2s_Xp^\epsilon(q-1)\). This is a
-conditional bound on the tangent data, **not** an assertion that
-defining \(X,Y\) over \(\mathbf F_q\) makes all nodes rational.
-
-For the current genera \((9,25)\) in characteristic five, put
-\(N=d_Y\), so \(d_X=3N\). The bounds become
-
-\[
-                       N\le16e5^\epsilon.              \tag{101.14}
-\]
-
-In particular, joint images with only two-branch tangencies and no
-ordinary nodes have \(N\le80\); if all their contact orders are
-divisible by five, they have \(N\le16\). These are not exclusions
-of arbitrary common covers of higher degree.
-
-## 5. What remains, and the link to file 100
-
-The conductor criterion in file 100 keeps the full different of each
-projection. This note additionally retains how the two differential
-identifications glue between branches of the same singular image.
-Its local test applies even to the high-contact model
-\((y-x)(y-x-x^{5^m})\) from that file: its local gluing order is one,
-despite its arbitrarily large normalization defect.
-
-The current unbounded-degree escape is now more precise within the
-two-branch class: the ordinary-node tangent ratios must have unbounded
-combined multiplicative order. Singularities with three or more
-branches require additional analysis. Neither escape has yet been
-excluded for our fixed curves, so this theorem does not solve the
-common-cover problem.
+    d=min_(i≠j)v(u_i−u_j),
+    v_i=(u_i−u₁)/π^d,       c_i=(b_i−b₁)/π^(Ld).
+
+These are integral and v(c_i−c_j)≥L v(v_i−v_j). Partition v_i
+by residue class. There are at least two classes, each smaller
+than r; induction supplies integral interpolants within each.
+The monic polynomials F_α=∏_(i∈α)(y−v_i) have pairwise unit
+resultants. Chinese remaindering and monic division therefore give
+Q∈R[y],deg Q<r, with Q(v_i)=c_i. Finally
+
+    b₁+π^(Ld) Q((y−u₁)/π^d)
+
+interpolates the original data. Every denominator introduced has
+exponent at most(r−1)d≤Ld, proving integrality and the claim.
+
+## 4. Multibranch differential powers and their exact tame part
+
+Locally let r≥2 branches be y=u_i(x), u_i∈xk[[x]], u_i' units.
+Their ring is k[[x]][y]/∏(y−u_i), inside ∏_i k[[x]].
+A tuple belongs to this ring exactly when its degree-<r interpolation
+polynomial is integral, by monic division.
+
+Let e, prime to p, kill all ratios of the constants u_i'(0).
+For a p-power q≥2(r−1), the tuple ((u_i')^(eq)) descends to a
+UNIT. If every pair with contact m_ij=ord(u_i−u_j)≥2 has p|m_ij,
+it suffices that q≥r−1. Indeed:
+
+- for m_ij=1, taking e-th powers makes the constants equal, and
+  the q-th power gives difference valuation≥q;
+- for m_ij≥2, differentiation gives valuation≥m_ij−1. Raising
+  to e cannot lower it, and raising to q gives at least
+  q(m_ij−1)≥(r−1)m_ij;
+- if p|m_ij, the derivative valuation is already≥m_ij, giving
+  the sharper bound with q≥r−1.
+
+Thus(5) holds with L=r−1. The interpolant descends, and its
+branch values have the same nonzero residue, so it is a unit.
+
+Globally let R_max be the largest number of branches at a point
+of C, and let e be the lcm of ALL pairwise slope-ratio orders
+at its singular points. The ratios are intrinsic: a coordinate
+change multiplies all slopes at that point by the same scalar.
+One has R_max≥2: if C were smooth, adjunction using(1) would give
+g(Z)−1=d_Xd_Y+2s_Xd_X, contradicting etale Riemann–Hurwitz.
+
+Let q_R be the least p-power≥2(R_max−1). Then
+
+    t(C) divides e q_R,      prime-to-p part of t(C) is EXACTLY e,
+    d_Y≤2s_X e q_R,          d_X≤2s_Y e q_R,
+    g(Z)−1≤2s_Xs_Y e q_R.                                   (6)
+
+The local result gives descent of τ^(e q_R) everywhere. Conversely
+descent requires equality of all branch residues, so e divides
+every descending exponent. Together these prove the divisibility
+and the exact tame part. Apply(2) for the degree bounds.
+If all higher contact orders are divisible by p, replace q_R
+by the least p-power≥R_max−1; the sharper EXACT two-branch
+formula(4) remains available.
+
+Since q_R<2p(R_max−1), one has d_Y<4ps_X e(R_max−1).
+For genus-(9,25) in char5,
+
+    N≤16e·5^ceil(log_5(2(R_max−1))) <160e(R_max−1).
+
+Thus unbounded primitive common-cover degrees require unbounded
+branch multiplicity or unbounded combined tangent-ratio order.
+Huge contacts by themselves do not evade the bound: the local
+model(y−x)(y−x−x^(p^m)) has arbitrarily large conductor defect but
+gluing order1. The remaining parameters are NOT uniformly bounded
+on our fixed product. No Galois hypothesis, simultaneous closure,
+or exclusion of all common covers has been obtained.
+
+## 5. What an actual cyclic diagram contributes to these bounds
+
+Suppose an ACTUAL diagram V --p--> B --c--> X, V --a--> Y has
+p cyclic etale of degree r and c,a etale of degree M. Let Z
+normalize the image of(cp,a), and κ=deg(V/Z). Then V/Z is etale,
+
+    d_X=rM/κ,        d_Y=M/κ,        κ divides M.
+
+Every normalization point over(x,y) has κ preimages on V. Hence
+the number of branches of the X×Y image at(x,y) is exactly
+
+    κ⁻¹ #{v∈V : cp(v)=x, a(v)=y}.
+
+For ANY point P∈Y set D_P=p_*a*P on B. The same count gives
+
+    mult_x(c_*D_P)=κ·r_C(x,P).                                  (7)
+
+Thus a collision bound on B before pushforward is not the required
+branch bound on X after pushforward. Bounds only at marked points
+do not control unmarked singularities either. Likewise the small
+branch count for a B×Y image cannot simply be substituted into(6):
+its intermediate Jacobian may have a nonzero norm from J(Y),
+whereas the global degree proof needs Hom between its two endpoints
+to vanish. Coefficient-field indices, sign-choice counts and tangent-
+ratio orders are different data; none is identified with R_max here.
+
+The [actual diamond/coefficient sieve](68_PRIME_RATIO_DIAMOND_AND_ALL_DEGREE_COEFFICIENT_SIEVE.md)
+and [signed-orbit proof](81_FULL_ORBIT_INTERPOLATION_AND_CUBIC_SIGN_MONODROMY.md)
+retain their own hypotheses, not an automatic bound for(7).
+The [incidence square](MINIMAL_COMMON_COVER_AND_INCIDENCE_DESCENT.md)
+also preserves its missing-second-leg boundary.
+
+Finally the gluing class lies in ker(Pic(C)→Pic(Z)) and is already
+trivial on smooth Z. Torsion information only on Z does not control
+its order in this kernel. Local residue p-th-power conditions are
+vacuous over Fbar_p; a GLOBAL p-th-power or higher-order differential
+identity still needs a proof. These comparisons preserve the useful
+limits of the older route without reinstating its superseded plan.

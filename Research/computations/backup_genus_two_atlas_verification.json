@@ -1,0 +1,164 @@
+{
+  "status": "independent_no_solver_original_equation_identity_replay",
+  "construction_independently_audited": false,
+  "certificates": [
+    {
+      "twist": -1,
+      "chart": 0,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/debug_solve_trivial_chart0.json",
+      "certificate_sha256": "5741de8097622da72dda9fcbc787f85736bbd361003a8d2faaabbfc3fe13fe79",
+      "tensor_filename": "tensor_twist-1_p500.json",
+      "tensor_sha256": "d48b84a649323a8365beb11136f8e280427c4613532214756ca206b03976791b",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": -1,
+      "chart": 1,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/debug_solve_trivial_chart1.json",
+      "certificate_sha256": "edb7e7de481a99155abfbe61002e07b9c68d5232813d93be38cc69efde375056",
+      "tensor_filename": "tensor_twist-1_p500.json",
+      "tensor_sha256": "d48b84a649323a8365beb11136f8e280427c4613532214756ca206b03976791b",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": -1,
+      "chart": 2,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/debug_solve_trivial_chart2.json",
+      "certificate_sha256": "2d80ab7b2e595c0024b424f7aa3e72e6454121ade427e1491aac3a71a99451f2",
+      "tensor_filename": "tensor_twist-1_p500.json",
+      "tensor_sha256": "d48b84a649323a8365beb11136f8e280427c4613532214756ca206b03976791b",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": -1,
+      "chart": 3,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/debug_solve_trivial_chart3.json",
+      "certificate_sha256": "7380f00a18521c64f869e94362ff8de5ce05e7977f48ecb8fcbfc9b73895b3b6",
+      "tensor_filename": "tensor_twist-1_p500.json",
+      "tensor_sha256": "d48b84a649323a8365beb11136f8e280427c4613532214756ca206b03976791b",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": 0,
+      "chart": 0,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/solve_twist0_chart0.json",
+      "certificate_sha256": "f71643a8e7651cb3b485e1236642c31554e1b29060e4a3c652f8a096da49de8d",
+      "tensor_filename": "tensor_twist0_p500.json",
+      "tensor_sha256": "a42612f60341558f902f0005ddc09ee3762ec820ef2c4ca157e55e6088398dfd",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": 0,
+      "chart": 1,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/solve_twist0_chart1.json",
+      "certificate_sha256": "955a93a16b5987585d8ee7721f7e9f556be24d891f45812a9ef5f769e14a2067",
+      "tensor_filename": "tensor_twist0_p500.json",
+      "tensor_sha256": "a42612f60341558f902f0005ddc09ee3762ec820ef2c4ca157e55e6088398dfd",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": 0,
+      "chart": 2,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/solve_twist0_chart2.json",
+      "certificate_sha256": "d96c2c5dd90c1721132554b0618c126ce476474cbbbfa1b7c872e47b621910ad",
+      "tensor_filename": "tensor_twist0_p500.json",
+      "tensor_sha256": "a42612f60341558f902f0005ddc09ee3762ec820ef2c4ca157e55e6088398dfd",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": 0,
+      "chart": 3,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/solve_twist0_chart3.json",
+      "certificate_sha256": "96b113717fab3ed9c3dcea5ac4eff2c067f30dae019ffe092383b29059381c4c",
+      "tensor_filename": "tensor_twist0_p500.json",
+      "tensor_sha256": "a42612f60341558f902f0005ddc09ee3762ec820ef2c4ca157e55e6088398dfd",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": 1,
+      "chart": 1,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/solve_twist1_chart1.json",
+      "certificate_sha256": "8055e1b508d4adcbbca4b32ab8c9db1e9738258233e11a38a19e2d9e05a5ec7b",
+      "tensor_filename": "tensor_twist1_p500.json",
+      "tensor_sha256": "fb4e81f7d9de776e4685b1da10488b2fa53eeabed5e61d1b341c977fc4b5cbcb",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": 1,
+      "chart": 2,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/solve_twist1_chart2.json",
+      "certificate_sha256": "9639b0aedabb7e656fcdc9c77f4f64c2718a7ff9b7281d6182b09adf3e1f7a82",
+      "tensor_filename": "tensor_twist1_p500.json",
+      "tensor_sha256": "fb4e81f7d9de776e4685b1da10488b2fa53eeabed5e61d1b341c977fc4b5cbcb",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": 1,
+      "chart": 3,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/solve_twist1_chart3.json",
+      "certificate_sha256": "4d12d725e38a7fc3ec8d1e2cff644c73d43483f5cb61274d38f3fc7b4887f576",
+      "tensor_filename": "tensor_twist1_p500.json",
+      "tensor_sha256": "fb4e81f7d9de776e4685b1da10488b2fa53eeabed5e61d1b341c977fc4b5cbcb",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": 2,
+      "chart": 1,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/solve_twist2_chart1.json",
+      "certificate_sha256": "1a594b7484a7b7c7f4c6fa2250683c02227050dab55b8754b744d30c79ba0c25",
+      "tensor_filename": "tensor_twist2_p500.json",
+      "tensor_sha256": "f613a5f2074aa8e4664009dfed078463a4ad8b7695cf03dc21856c88ef1aaa89",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": 2,
+      "chart": 2,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/solve_twist2_chart2.json",
+      "certificate_sha256": "45fcadde12038304ee3321805cf0098bee7cea46525cdc459fecf9dff37f85fa",
+      "tensor_filename": "tensor_twist2_p500.json",
+      "tensor_sha256": "f613a5f2074aa8e4664009dfed078463a4ad8b7695cf03dc21856c88ef1aaa89",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": 2,
+      "chart": 3,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/solve_twist2_chart3.json",
+      "certificate_sha256": "9e2505bb94f7e7c3ac9cf8dccf0e55ce1178ad45d2ec5d297e69ecb7a3993361",
+      "tensor_filename": "tensor_twist2_p500.json",
+      "tensor_sha256": "f613a5f2074aa8e4664009dfed078463a4ad8b7695cf03dc21856c88ef1aaa89",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": 3,
+      "chart": 1,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/solve_twist3_chart1.json",
+      "certificate_sha256": "cda2525afe7c44a06980a4d65ed43ecac0cb02c15c8fd4a32205a84f909be59e",
+      "tensor_filename": "tensor_twist3_p500.json",
+      "tensor_sha256": "a29c5b9ba5d025f34d1c160638add598c2540dc59db16ab45c8bdfc7be687c74",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": 3,
+      "chart": 2,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/solve_twist3_chart2.json",
+      "certificate_sha256": "36ca83dbe53ce88d657236b6f0b9646f4a82ba20524366ef21906baa78a9c4d7",
+      "tensor_filename": "tensor_twist3_p500.json",
+      "tensor_sha256": "a29c5b9ba5d025f34d1c160638add598c2540dc59db16ab45c8bdfc7be687c74",
+      "verified_exact_unit_identity": true
+    },
+    {
+      "twist": 3,
+      "chart": 3,
+      "certificate": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/solve_twist3_chart3.json",
+      "certificate_sha256": "1a4fca7719e013b25b1747ffeb446549f6eee0d8fe258acd3420312a0b086b01",
+      "tensor_filename": "tensor_twist3_p500.json",
+      "tensor_sha256": "a29c5b9ba5d025f34d1c160638add598c2540dc59db16ab45c8bdfc7be687c74",
+      "verified_exact_unit_identity": true
+    }
+  ],
+  "whole_empty_representatives": [
+    -1,
+    0
+  ],
+  "scope": "Endpoint coefficient systems only; no common-cover or complete cored exclusion."
+}

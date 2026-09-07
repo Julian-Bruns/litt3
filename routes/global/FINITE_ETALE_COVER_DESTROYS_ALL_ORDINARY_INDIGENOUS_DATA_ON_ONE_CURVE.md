@@ -1,199 +1,195 @@
-# One finite étale cover destroys every ordinary nilpotent datum on a fixed curve
+# One finite etale cover destroys every ordinary nilpotent datum on a fixed curve
 
-Date: 2026-09-05. Author: /root.
-Audit: PASS, /root/all_ordinary_data_killed_finite_cover_audit, 2026-09-05.
-[Scoped audit and non-breaking qualifications](audits/ALL_ORDINARY_DATA_KILLED_ON_ONE_FINITE_ETALE_2_COVER_AUDIT_2026_09_05.md).
+Author/root,2026-09-05. Audit PASS,/root/all_ordinary_data_killed_finite_cover_audit,
+2026-09-05, for the seventy-object destruction theorem and its proof
+in Sections1–3.
+[Scoped verdict and qualifications](audits/ALL_ORDINARY_DATA_KILLED_ON_ONE_FINITE_ETALE_2_COVER_AUDIT_2026_09_05.md).
+Consolidation2026-09-07 retains that scope; Sections4–5 are separately
+AUTHOR-only counterexample/source comparison, not additions to the audit.
+“Ordinary” means Mochizuki's nilpotent indigenous ordinariness, NOT
+ordinary dormant opers. Curves and bundles in Sections1–4 are unmarked.
 
-Here “ordinary” always means Mochizuki's ordinariness for nilpotent
-indigenous projective bundles, not the different ordinary-dormant-oper
-condition. All curves and indigenous bundles are unmarked.
+## 1. Exact audited theorem and complete pool
 
-## Theorem
+Over algebraically closed k of characteristic5, put X:y²=x⁵−x,
+η=dx/y. There is a connected finite etale Galois2-group cover V→X
+on which EVERY ordinary nilpotent indigenous PGL₂ bundle from X
+becomes nonordinary, permanently under further connected etale covers.
 
-Over an algebraically closed field of characteristic five let
-
-    X: y² = x⁵ − x,    η = dx/y.
-
-There is a connected finite étale Galois cover V → X with a 2-group as
-Galois group such that the pullback of every ordinary nilpotent indigenous
-PGL2 bundle on X is nonordinary on V. These pullbacks remain nonordinary
-on every further connected finite étale cover of V.
-
-More precisely, X has seventy such ordinary objects. Each of ten of
-them becomes nonordinary on a degree-two étale cover; each of the other
-sixty becomes nonordinary on a degree-four étale cover.
-
-This does not assert that V has no ordinary indigenous bundles of its
-own. It proves neither that V fails to lift, nor that two curves lack
-a common étale cover.
-
-## 1. The finite pool and its two orbits
+There are exactly70 such objects:10 have degree2 killing witnesses
+and the other60 have degree4 witnesses. This does NOT say V has no
+ordinary indigenous bundles of its own, that V cannot lift, or that
+two curves have no common cover.
 
 The [complete unmarked quartic pool](GENUS_TWO_HYPERELLIPTIC_INDIGENOUS_INVARIANCE_AND_COMPLETE_UNMARKED_QUARTIC_POOL.md)
-consists of seventy tensors A satisfying
+consists of70 ordinary normalized A with
 
-    C_3(A⁴) = A,       div(A) = 2D,    D reduced.
+    C₃(A⁴)=A, div(A)=2D, D reduced.
 
-Ten are squares of quadratic differentials, and sixty are nonsquares.
-All seventy corresponding indigenous projective bundles are ordinary.
-The construction is intrinsic: their square Hasse invariant is −A.
-Thus distinct normalized tensors give distinct projective objects.
+Ten are squares and60 nonsquares. Their square Hasse invariants are−A,
+so distinct tensors give distinct projective objects. Completeness
+uses the [primary deformation-data translation](CARTIER_EIGENFORMS_AS_MULTIPLICATIVE_DEFORMATION_DATA.md):
+dormant objects have zero square Hasse invariant, hence zero induced
+Frobenius on H¹(T_X), so are not ordinary here. Ordinary nilpotent
+objects are admissible (Mochizuki II Proposition3.2); unmarked active
+admissible data have no spikes and local signatures1 or3/2. Thus
+their quartics have precisely the displayed divisor, and conversely.
+The [inverse-character criterion](ORDINARY_INDIGENOUS_INVERSE_CHARACTER_CARTIER_CRITERION.md)
+identifies ordinariness with bijectivity of T_A(q)=C₁(Aq).
 
-For completeness, ordinary nilpotent indigenous objects are exhausted
-by this pool, not merely included in it. A dormant object has zero
-p-curvature and zero square Hasse invariant, so the induced Frobenius
-on H¹(X,T_X) is zero; it is not ordinary in the convention used here.
-An ordinary nilpotent object is admissible by Mochizuki II, Proposition
-3.2. For an unmarked admissible active object, the Bouw–Wewers
-deformation-data classification has no spikes and has local signature
-1 at ordinary points and 3/2 at supersingular points. Its normalized
-quartic consequently has divisor 2D with D reduced. Conversely these
-quartics give the unmarked admissible objects.
+The60 nonsquares form one automorphism orbit by the complete-pool
+certificate. The10 squares correspond to conjugate pairs in
+P¹(F₂₅)−P¹(F₅). The affine group x↦ax+b acts transitively on its
+20 points; PGL₂(F₅) lifts to X. Naturality and unique quartic
+normalization therefore make the10 squares one orbit too.
 
-These implications and the operator convention are recorded in the
-[inverse-character criterion](ORDINARY_INDIGENOUS_INVERSE_CHARACTER_CARTIER_CRITERION.md)
-and the [primary-source identification](CARTIER_EIGENFORMS_AS_MULTIPLICATIVE_DEFORMATION_DATA.md).
-In particular ordinariness is equivalent to invertibility of
+## 2. Actual degree2 and degree4 witnesses
 
-    T_A: H⁰(X,ω_X²) → H⁰(X,ω_X²),    q ↦ C_1(Aq).
+For the square orbit take
 
-This is a semilinear operator. It commutes with étale pullback.
+    q₀=2(1+x+2x²)η², A=q₀²=(x⁴+x³+3x+4)η⁴.
 
-The sixty nonsquares form one automorphism orbit, as proved in the
-complete-pool note. The ten squares also form one orbit: they correspond
-to the ten unordered conjugate pairs in P¹(F₂₅) outside P¹(F₅).
-The affine subgroup x ↦ ax+b, with a in F₅* and b in F₅, is already
-transitive on the twenty non-F₅ points. Every PGL₂(F₅) transformation
-of the six branch points lifts to X over the algebraic closure.
-Naturality and uniqueness of normalization identify the transformed
-quartics, without a remaining scalar choice.
+The quadratic certificate gives normalization and ordinariness;
+discriminant3 is nonsquare, proving the reduced divisor. The connected
+etale double T:v²=u⁸−1→X, (x,y)=(u²,uv), represents{0,∞} in Pic(X)[2].
+With ρ=du/v, η pulls back to2ρ and
 
-## 2. A degree-two witness for the square orbit
+    A_T=(u⁸+u⁶+3u²+4)ρ⁴,
+    T_(A_T)(vρ²)=ρ C((u⁸+u⁶+3u²+4)du)=0.
 
-Take the normalized quadratic
+No exponent is4mod5. The quadratic vρ² is nonzero and regular:
+at finite branches ρ is a unit and v vanishes; at either infinity
+ord(ρ)=2,ord(v)=−4. Automorphisms give witnesses for all10 squares.
 
-    q₀ = 2(1+x+2x²)η²
-
-and its square
-
-    A = q₀² = (x⁴+x³+3x+4)η⁴.
-
-Its quadratic polynomial has nonsquare discriminant 3 in F₅, so its
-zero divisor is reduced. The quadratic certificate proves its
-normalization and ordinariness.
-
-Let
-
-    T: v² = u⁸−1,    x=u²,    y=uv,    ρ=du/v.
-
-The map T → X is connected and étale: it adjoins a square root of x,
-whose divisor is 2P₀−2P∞; its associated nontrivial 2-torsion class
-is represented by the branch pair {0,∞}. Here g(T)=3 and η pulls
-back to 2ρ. The pulled-back quartic is
-
-    A_T = (u⁸+u⁶+3u²+4)ρ⁴.
-
-The quadratic differential vρ² is nonzero and regular. At finite
-branch points ρ is a unit and v vanishes; at the two points at
-infinity ρ has order 2 and v has pole order 4. Directly,
-
-    T_(A_T)(vρ²)
-      = ρ C((u⁸+u⁶+3u²+4)du)
-      = 0.
-
-Indeed none of the exponents 8,6,2,0 is 4 modulo 5. The first equality
-uses the local formula C_1(Fρ⁶)=ρ C(Fρ) and vρ=du.
-Thus A becomes nonordinary on T. Composing this map with suitable
-automorphisms of X supplies a degree-two witness for every square
-member of the pool.
-
-## 3. A degree-four witness for the nonsquare orbit
-
-Choose t with t²=2 and use the ordinary normalized nonsquare
-
-    A₀ = (tx+3x²+3tx³)η⁴.
-
-The [explicit degree-four failure certificate](ORDINARY_NONSQUARE_INDIGENOUS_DATUM_FAILS_ON_ETALE_DEGREE_FOUR_COVER.md)
+For the nonsquare orbit take t²=2 and
+A₀=(tx+3x²+3tx³)η⁴. The [full degree4/D8 certificate](D8_NONLINEAR_CARTIER_FAILURE_INVISIBLE_ON_QUADRATIC_SUBCOVERS.md)
 proves that the smooth projective normalization of
 
-    Y: v²=u⁸−1,     z²=(u−1)(u−3t)
+    Y:v²=u⁸−1, z²=(u−1)(u−3t),
+    Y→X: x=u²/(2u²+1), y=uv/(2u²+1)³
 
-has a connected étale degree-four map to X given by
-
-    x = u²/(2u²+1),       y = uv/(2u²+1)³.
-
-This is a tower of two étale double covers followed by an automorphism
-of X. The second cover is étale because {1,3t} is a nontrivial even
-subset of the eight branch points of T; its defining square class
-has even valuations everywhere. The genus of Y is five.
-
-On Y the nonzero regular quadratic
+is connected etale of degree4 and genus5. It is a tower of actual
+etale doubles followed by an automorphism, NOT a presumed common
+Galois closure of two arbitrary maps. The nonzero regular quadratic
 
     (v/z)(u+2+4t)(du/v)²
 
-belongs to the kernel of T_(A₀|Y). The exact scalar certificate computes
-the relevant block, before inverse Frobenius, as
+lies in its kernel: before inverse Frobenius, the block is
 
-    [3+2t  3+4t]
-    [1+2t  2+2t],
+    [3+2t  3+4t; 1+2t  2+2t]*(2+4t,1)^T=0.
 
-with kernel vector (2+4t,1). The other blocks are invertible; the
-whole quadratic kernel has dimension one. Only existence of this
-kernel is needed here. Automorphism transitivity supplies a witness
-for each of the sixty nonsquares.
+The full scalar certificate proves the other blocks invertible and
+kernel dimension1. Automorphism transitivity gives all60 witnesses.
+The additional63-good-cover test retained there concerns a DIFFERENT
+specified first-double map; it does not contradict this witness.
 
-## 4. Finite-family destruction lemma
+## 3. Finite-family destruction, with the actual source
 
-The following elementary mechanism is not particular to X or to
-seventy data.
+Let C be smooth connected projective in characteristic5 and A₁,…,A_r
+quartics. Suppose each has a connected finite etale C_i→C carrying
+a nonzero regular quadratic q_i with T_(A_i|C_i)(q_i)=0.
 
-Let C be a smooth connected projective curve, and let A₁,...,A_r be
-quartics on C in characteristic five. Suppose that for every i there
-is a connected finite étale cover C_i → C and a nonzero quadratic
-q_i on C_i such that
+Any connected component V of their fiber product is finite etale over
+C. Its projection to each connected C_i is nonempty, open and closed,
+hence surjective. Differential pullback is injective and Cartier
+commutes with etale pullback. Thus ALL q_i remain nonzero kernel
+vectors on the SAME V and on every further connected etale cover.
 
-    T_(A_i|C_i)(q_i) = 0.
+If all Galois closures have groups in a class closed under products
+and subgroups, choose their connected compositum instead. Its group
+is a subgroup of the product. Here each degree2 closure is C₂, and
+each degree4 tower closure embeds in C₂ wr C₂, of order8. Hence
+the compositum is a2-group cover, proving Section1.
 
-Then a connected component V of the fiber product of the C_i over C
-is a finite étale cover of C on which every pulled-back operator has
-a nonzero kernel.
+A finite endpoint pool therefore cannot ensure that some member
+stays ordinary on every source. This does not decide a compatible
+ordinary datum on an unknown minimal common source. There is no
+conflict with [Galois5-group preservation](TWISTED_CARTIER_ETALE_COVERS_AND_SIMPLE_MONODROMY_FACTORS.md):
+these witnesses have2-group monodromy.
 
-To prove this, its projection V → C_i is finite étale and nonempty.
-Its image is open and closed in connected C_i and is therefore all
-of C_i. Pullback of a nonzero differential along a separable
-surjective map is injective, and Cartier commutes with étale
-pullback. Thus q_i pulls back to a nonzero kernel vector on V.
-Exactly the same argument proves persistence on every further
-connected étale cover of V.
+## 4. Two good covers with no good common refinement — author only
 
-If the Galois closures of all C_i → C have groups in a class closed
-under finite products and subgroups, V may instead be chosen as the
-connected Galois cover corresponding to their compositum. Its group
-is a subgroup of the product of the closure groups and belongs to
-that class.
+Keep the square A=(x⁴+x³+3x+4)η⁴. Call an actual cover π:C→X
+good if T_(π^*A) is bijective. The doubles adjoining sqrt(x(x−1))
+and sqrt(x−1) are BOTH good; their connected degree4 fiber product
+and EVERY further connected etale refinement are bad.
 
-In our examples every degree-two witness is Galois with group C₂.
-Every degree-four witness is a tower of two double covers, so its
-Galois-closure group embeds in the imprimitive wreath product
-C₂ wr C₂, a group of order eight. Hence all the closures have
-2-groups as groups. Applying the lemma to all seventy witnesses
-proves the theorem.
+The [double-cover calculus, Section2](D8_NONLINEAR_CARTIER_FAILURE_INVISIBLE_ON_QUADRATIC_SUBCOVERS.md)
+proves that, for F=a+bx+cx²+dx³+ex⁴ and an ordinary base, the standard
+double is good iff c≠0 and3(a²+e²)−bd≠0, and gives the GL₂(F₅)
+transformation formula. Applying it to this F gives:
 
-## 5. Strategic scope
+| Branch pair | Matrix | Coefficients, increasing degree | c | Determinant |
+|---|---|---|---|---|
+| {0,1} | (1,0;1,1) | (4,4,3,1,4) |3|2|
+| {1,∞} | (1,1;0,1) | (4,0,4,0,1) |4|1|
+| {0,∞} | identity | (4,3,0,1,1) |0|3|
 
-This is a characteristic-five obstruction to a specific proposed
-method: a finite supply of ordinary nilpotent data on an endpoint
-does not ensure that at least one stays ordinary on every étale
-source. On this fixed endpoint, one cover simultaneously destroys
-the whole supply.
+These exact scalar expansions can be replayed after loading the
+scalar functions in that certificate:
 
-The theorem does not settle whether an unknown minimal common source
-has a compatible ordinary datum, nor whether either proposed Litt
-endpoint has the same behavior. Conditional simultaneous lifting
-requires an ordinary common datum on the actual source; that
-hypothesis cannot simply be removed by choosing among a finite
-endpoint list.
+```python
+for g,expected,c0,d0 in [
+    ((1,0,1,1),[4,4,3,1,4],3,2),
+    ((1,1,0,1),[4,0,4,0,1],4,1),
+    ((1,0,0,1),[4,3,0,1,1],0,3)]:
+    a,b,c,d=g; D=(a*d-b*c)%5; F=[0]*5
+    for i,fi in enumerate([4,3,0,1,1]):
+        p=pmul(ppow([b,a],i),ppow([d,c],4-i))
+        for j,v in enumerate(p): F[j]=add(F[j],mul(D*D%5,mul(fi,v)))
+    aa,bb,cc,dd,ee=F
+    determinant=add(mul(3,add(mul(aa,aa),mul(ee,ee))),neg(mul(bb,dd)))
+    assert F==expected and cc==c0 and determinant==d0
+print("Two good doubles, bad product character: exact scalar checks PASS.")
+```
 
-There is no conflict with preservation for Galois 5-group closures
-in the [simple-monodromy-factor theorem](TWISTED_CARTIER_ETALE_COVERS_AND_SIMPLE_MONODROMY_FACTORS.md).
-The witnesses here have 2-group monodromy.
+The two nonzero distinct Pic(X)[2] classes are independent, so their
+fiber product is connected degree4. It contains
+sqrt(x(x−1))/sqrt(x−1)=sqrt(x), hence dominates the bad T of Section2.
+Every further cover retains its explicit kernel vector. Every common
+refinement OVER X factors through this fiber product and is bad.
+
+Equivalently, in G=C₂×C₂, coefficient modules1,χ₁,χ₂ are good
+but χ₁χ₂ is bad. Thus the exact good-module Serre subcategory is
+not tensor-closed, and goodness is not simply factoring through a
+quotient of π₁. This is not a common-cover obstruction: the two good
+curves already have the displayed common etale cover.
+
+## 5. Bounded primary-source comparison — author only
+
+[Hoshi, characteristic3, Corollary5.4/TheoremC](https://www.kurims.kyoto-u.ac.jp/~yuichiro/rims1811revised.pdf)
+already gives individual destruction on EVERY smooth proper
+genus≥2 curve in characteristic3. The finite-family argument then
+gives simultaneous destruction for any finite list; that formal
+step is not new content of Section1.
+His [February2022 Theorem2.4/Corollary2.6](https://www.kurims.kyoto-u.ac.jp/~yuichiro/rims1918revised.pdf)
+also treats pointed curves and tame maps, still at3.
+
+That proof trivializes the2-torsion Hasse defect, then uses a
+nonordinary-Jacobian cover. Its local kernel argument (Claim2.4.A)
+forces vanishing at supersingular points from a second-derivative
+identity. The corresponding fourth-derivative implication is false:
+φ=t,δ=ψ=1 gives (φ²δψ)''''=0 but ψ(0)=1. Also the Hasse invariant
+has weight(p−1)/2; dividing a quadratic gives a one-form at3 but
+not at5. These are failures of THAT mechanism, not disproofs of
+every possible general characteristic5 destruction theorem.
+
+There is a concrete failure of its trivial-defect/Jacobian equivalence:
+our10 square quartics have trivial Hasse defect and ordinary indigenous
+bundles, while Cartier on H⁰(X,ω_X) is zero. Indeed coefficients
+of(x⁵−x)²=x¹⁰+3x⁶+x² at exponents4,3,9,8 vanish. Raynaud's
+[nonordinary-cover theorem, Theorem2](https://doi.org/10.1023/A:1001840726893)
+holds at5, with solvable prime-to-p Galois monodromy, but alone cannot
+replace the missing indigenous/Jacobian equivalence.
+
+[Borne, Section2.5, Definition2.10/Lemmas2.11–2.12](https://arxiv.org/pdf/math/0204088)
+is a precedent for simple-representation tests of ordinary Jacobians
+and normal p-group comparisons, not a theorem about this fixed quartic.
+Our exact coefficient proof is independent; its lack of tensor closure
+and its nonlinear D8 failure are explicit above.
+
+The honest comparison is an explicit characteristic5 analogue on ONE
+curve with2-group monodromy. Its substantive inputs are the complete70
+objects and their degree2/4 witnesses. The bounded checked literature
+does not establish publication priority or exclude a broader theorem.
+Nothing here proves nonliftability or a missing common etale source.

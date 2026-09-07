@@ -35,4 +35,28 @@ existence of a nonempty clump. Neither alternative is asserted to occur
 in a specified positive-characteristic span; this theorem does not
 establish existence of a clump or force \(d=1\).
 
+The primitive weight is determined exactly by endpoint torsion. For a
+clump with reduced endpoint divisors \(D_X,D_Y\), write
+\(r_i=\deg D_i\), \(h_i=2g(i)-2\),
+\(m=\gcd(r_X,r_Y)\), \(h=\gcd(h_X,h_Y)\), and
+\[
+d_0=m/\gcd(m,h),\qquad e_0=h/\gcd(m,h),\qquad
+L_i=\mathcal O_i(e_0D_i)\otimes\omega_i^{-d_0}.
+\]
+These are degree-zero torsion line bundles over \(\overline{\mathbf F}_5\).
+If \(q_i\) is their exact order and \(q=\operatorname{lcm}(q_X,q_Y)\),
+then the primitive generator has \(d=d_0q\) and \(e=e_0q\).
+Each endpoint separately has a regular weight-\(d_0q_i\) tensor \(t_i\)
+with divisor \(e_0q_iD_i\), and, up to scalar,
+\(s_i=t_i^{q/q_i}\). Such a root is not asserted shared.
+
+If moreover \(\operatorname{Hom}(J(X),J(Y))=0\), then
+\(q_X\mid\deg f\), \(q_Y\mid\deg g\). Thus
+\(d/d_0\mid\operatorname{lcm}(\deg f,\deg g)\).
+This uses the common pullback of the two actual line bundles, not
+an independent one-leg Jacobian condition.
+
+Version2,2026-09-07: exact clump-weight and endpoint-root formulas added;
+proof consolidated. Author prose; no independent audit claimed.
+
 [Proof](../Solutions/Sol_canonical_intersection.md).

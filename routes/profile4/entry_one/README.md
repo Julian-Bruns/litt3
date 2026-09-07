@@ -41,5 +41,14 @@ coefficient is free in the global bidegree equation. None of files
 
 Files `171` and `174` still depend on normal-form inputs from missing
 predecessor note `165`; check
-[MISSING_INPUTS.md](../../../MISSING_INPUTS.md). The archived trace and
-fiber-partition calculations are not proof dependencies for this route.
+[MISSING_INPUTS.md](../../../MISSING_INPUTS.md).
+
+One discarded shortcut is worth recording: local fiber partitions do not
+exclude the representative degree-five case. For the formal equation
+`delta^4 z=z-z^5`, `delta=(x-1)d/dx`, a fiber over `lambda in F5` can have
+order `1,2,3,5` at an ordinary point of delta, or `1,2,3,4` at a simple
+zero of delta. The forced points above `1` and `-1` admit compatible
+degree-five partitions (complete the first with simple points; the four
+forced points of the second can all be simple with one further point).
+This is only compatibility, not existence of a global solution. The
+automatic trace identity is already explained in file `176`.

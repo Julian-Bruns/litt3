@@ -211,10 +211,11 @@ projective or to have a p-rank-one compactification.
 
 Let gamma(D) = gamma(X) = r > 0.
 
-If r >= 2, Corollary 113.3 says that deg(D/X) is prime to p.
+If r >= 2, the [rank-preservation bound, Section 4](112_P_RANK_ONE_NONGALOIS_FACTORIZATION.md)
+says that deg(D/X) is prime to p.
 Corollary 115.3 immediately proves (115.1).
 
-Suppose r = 1. The non-Galois factorization in Theorem 112.3 gives
+Suppose r = 1. The [rank-one factorization, Section 3](112_P_RANK_ONE_NONGALOIS_FACTORIZATION.md) gives
 
 \[
                         D\longrightarrow E\longrightarrow X,

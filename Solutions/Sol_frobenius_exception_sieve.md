@@ -1,44 +1,110 @@
-# Proof record: Frobenius localization of finite theta exceptions
+# Proof record: Frobenius localization and explicit stabilization
 
 Canonical statement: [`frobenius_exception_sieve`](../Theorems/Thm_frobenius_exception_sieve.md).
-Migrated 2026-09-06; hypotheses restated below are proof context.
-The canonical statement and registry control promoted scope and evidence.
-
----
-
-# Frobenius and symmetry locate finite theta exceptions
-
-Date: 2026-09-06. Author: `/root`.
+Version 2, 2026-09-07: `/root/library_generalization_cleanup_max`.
+Original proof: `/root`, 2026-09-06.
 Status: author proof. The elliptic kernel calculation was independently
-derived by `/root/frobenius_c6_exception_kernel_calculation` on this date;
+derived by `/root/frobenius_c6_exception_kernel_calculation`, 2026-09-06;
 this is not a full theorem audit. No common-cover exclusion is claimed.
 
 ## 1. Finite exceptions and symmetry orbits
 
-Let Q be an abelian variety over F_q, F its q-power Frobenius
-endomorphism, and Gamma a finite group of F_q-defined group
-automorphisms. Let B be a finite Frobenius- and Gamma-stable set of
-geometric points. Suppose a Gamma- and Frobenius-stable stratum of B
-has at most t Gamma-orbits. Then every point z of that stratum satisfies
+Let Q/F_q have Frobenius F. A finite group Gamma of geometric group
+automorphisms is Frobenius-normalized if F gamma=alpha(gamma)F
+for an automorphism alpha of Gamma. This permits automorphisms
+defined over extensions of F_q. For a finite Frobenius- and
+Gamma-stable set B, Frobenius permutes the Gamma-orbits. If a stable
+stratum has at most t orbits, every point in it therefore satisfies
 
     F^m(z)=gamma(z)     for some 1<=m<=t and gamma in Gamma.       (1)
 
-Indeed, Frobenius permutes its Gamma-orbits; the orbit containing z
-returns to itself after some m<=t. This is exactly (1). Each
-F^m-gamma is an isogeny with finite etale kernel: its differential is
--d gamma, an isomorphism, so its image has full dimension and its
-kernel is finite and etale. Thus (1) gives an explicit finite union
-of finite groups containing the stratum.
+Each F^m-gamma has differential -d gamma, an isomorphism. It is
+therefore an isogeny with finite etale kernel, even without commutation.
+Thus (1) gives a finite union of finite groups containing the stratum.
 
-If t=1 and Gamma acts freely, the field degree of z is exactly the
-order of the particular gamma in (1). This follows from
-F^n(z)=gamma^n(z), since F commutes with Gamma.
+Take m minimal for return of Gamma z, and write H_z=Stab_Gamma(z).
+Iteration gives
 
-This elementary mechanism adds arithmetic to a geometric orbit budget.
-It requires a common field of definition for the automorphisms. A finite
-extension arranging this is allowed, but changes the arithmetic bounds.
+    F^(km)z=alpha^((k-1)m)(gamma)...alpha^m(gamma)gamma z.      (1a)
 
-## 2. Application to ordinary cyclic triples
+The field degree of z is m times the least k for which the product
+in (1a) belongs to H_z. Any return of z must be a multiple of m,
+which proves the assertion, including its minimality. For alpha=1
+and H_z=1 this becomes m ord(gamma). In general the return time
+of a point is at most the size of its finite Frobenius-stable
+stratum. One must use the twisted product in (1a) when alpha≠1.
+
+Suppose a determinant bad scheme has the budget
+
+    sum_(z in B) w_r(delta_z)<=K,
+    w_r(d)=binomial(r+d-1,r),
+
+and Frobenius and Gamma preserve delta. Every orbit in a stratum
+with delta>=d and orbit size>=s costs at least s w_r(d). Hence its
+orbit count is at most floor(K/(s w_r(d))), and its point count is
+at most floor(K/w_r(d)). This proves both candidate and field-degree
+bounds. Grouping by Frobenius orbits instead gives the exact closed-
+point budget sum_z [k(z):F_q]w_r(delta_z)<=K. In the general cover
+case, the [intrinsic polarization theorem](Sol_polarization_bad_fiber_bound.md)
+supplies K=floor(r!(p-1)^r kappa/n^h), provided the actual bad
+scheme is finite. No extension defining every automorphism is needed
+for the normalized-group version.
+
+## 2. An explicit character level for any finite bad locus
+
+For an actual degree-n étale cover f:U→Y with h=g(Y)≥2, suppose
+the bad-fiber scheme is finite. Put r=(n−1)(h−1), let kappa be
+the scheme degree of ker(f^(1)*), and take
+K=floor(r!(p−1)^r kappa/n^h), as in the polarization theorem.
+Choose an actual F_q-model of the quotient and determinant family.
+Every bad geometric point has field degree at most K, so it belongs
+to some Q(F_(q^j)) with 1≤j≤K and is killed by
+
+    M_K=lcm_(1≤j≤K) |Q(F_(q^j))|.                            (1b)
+
+When K=0 the bad locus is empty and take M_K=1. This is a finite
+integer determined by the quotient's Frobenius polynomial; it need
+not be a practical small search. The normalized symmetry version
+of Section 1 can make the candidate set much smaller.
+
+Choose an abelian complement P, let psi:P→Q have degree e, and put
+N=(e M_K)_(p'). If alpha∈P(k) is exceptional, then M_K alpha lies
+in ker(psi)(k), a finite group whose order divides e. Thus eM_K
+kills alpha, and a prime-to-p alpha belongs to P[N]. Every finite
+prime-to-p subgroup Lambda⊂P(k) gives an actual connected étale
+character cover b_Lambda:W_Lambda→U, first on scalar twists and
+then untwisted. The map f^(1)* is onto A, so the generic parameter
+on J(Y^(1)) computes the same minimum as on its image coset.
+Etale base change for B_U and character decomposition give
+
+    generic_L h^0(W_Lambda^(1),B_(W_Lambda)⊗(f b_Lambda)^(1)*L)
+       =sum_(alpha∈Lambda) delta_(psi(alpha)),               (1c)
+
+where delta is zero off B. There are at most e_(p') elements of
+Lambda in any fiber of psi: their pairwise differences belong to
+the prime-to-p subgroup of ker(psi)(k). Since delta≤w_r(delta),
+the sum in (1c) is at most e_(p')K. All exceptional prime-to-p
+characters are already in P[N], so this bound has its stabilized
+value for every Lambda containing P[N]. That group has N^(2r)
+elements and gives the asserted degree of a level reaching that
+value. A separate nonempty generic open is used for each Lambda.
+
+For the principal-polarization complement, the principal duality
+of J identifies A∩P with ker(lambda_(Theta_U|A)). Therefore
+e=deg psi=chi(A,Theta_U|A)^2=(n^h/kappa)^2. Arbitrary inseparable
+parts are retained in this identity. Only prime-to-p characters
+are used to construct the refinements in (1c).
+
+This is stabilization of a generic section dimension along one
+specified parameter family, not the cofinal saturation or vanishing
+of all Raynaud directions. Any actual second étale map from U
+composes with b_Lambda on the same source; none is constructed here.
+The retained [finite-character target-descent note](../routes/global/FINITE_RESTRICTED_THETA_CHARACTERS_FORCE_UNIFORM_ETALE_TARGET_DESCENT.md)
+assumes the stronger condition that the actual intersection
+Theta_U∩Gamma is finite. Finite bad cosets do not give that condition;
+ordinary relative Pryms and target descent do not follow here.
+
+## 3. Application to ordinary cyclic triples
 
 Let U/Y be a connected cyclic etale triple in characteristic five,
 with Y ordinary of genus two and U ordinary. On scalar Frobenius
@@ -67,7 +133,7 @@ defect-one points is now bounded explicitly in terms of this field
 of definition and E. This does not establish that any candidate is
 actually bad or actually good.
 
-## 3. Explicit elliptic arithmetic
+## 4. Explicit elliptic arithmetic
 
 Write pi=Frob_q on E and pi^2-a pi+q=0. Define
 
@@ -118,13 +184,38 @@ negating a exchanges the plus and minus columns.
 | 3 | 3,9 | 12,6 | 36 |
 | 4 | 2,10 | 61,13 | 23790 |
 
-## 4. Scope and an important generic-field caveat
+## 5. The smaller cyclic-triple character level
+
+On P=E^2 the isogeny psi:P→Q has matrix H=[[2,-1],[-1,2]], with
+H# H=3I. If alpha is exceptional, then psi(alpha) belongs to B
+and is killed by M=M(q,a). Therefore
+
+    [3M]alpha=H# [M]psi(alpha)=0.
+
+For a prime-to-five alpha this is equivalent to [N]alpha=0,
+where N is the prime-to-five part of 3M. Thus the finite exceptional
+character set is contained in P[N], not merely in an unspecified
+finite subgroup. Since dim P=2 and 5 does not divide N, P[N](k)
+has order N^4. It defines an actual connected abelian etale
+character cover on U^(1), which untwists to a degree-N^4 cover of U.
+
+For every finite prime-to-five character subgroup Lambda containing
+P[N], character decomposition expresses the generic defect as the
+sum of delta_(psi(alpha)) over alpha in Lambda. Every exceptional
+character is already present. The sum is therefore independent of
+Lambda and at most 90 by the polarization theorem. This is an
+explicit bound on a level achieving the stabilized generic defect,
+which may be positive. The equality concerns a nonempty generic
+open for each Lambda; it does not select one point for infinitely
+many covers or make any assertion about a-numbers.
+
+## 6. Scope and the generic-field caveat
 
 Equation (3) is valid for each actual finite-field model. Testing its
 candidates still requires an actual nonvanishing witness on each
 coset, or another geometric exclusion. The bound is not uniform as
-the field of definition varies, and it is not an all-degree theorem
-for arbitrary covers.
+the field of definition varies. The general mechanism applies to
+arbitrary covers only after finite bad support has been established.
 
 Do not infer a generic-moduli torsion statement from this argument:
 over the function field of a moduli space, a finite exceptional locus

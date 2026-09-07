@@ -3,7 +3,7 @@
 **Status: author-checked structural identification and strategy record,
 2026-09-05. No new degree exclusion or solution is claimed.**
 
-This follows `FRONTIER_RECONNECTION_2026_09_05.md`. Bounded checks by
+This uses the [gluing/incidence comparison](101_CANONICAL_GLUING_ORDER_AND_LARGE_DEGREE_BOUND.md#5-what-an-actual-cyclic-diagram-contributes-to-these-bounds). Bounded checks by
 `x_elliptic_quotient_maps` supplied the local interpolation calculations;
 `c14_elliptic_translation` checked the symmetric-power identification and
 the literature comparison. These were comparison tasks, not independent

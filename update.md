@@ -1,41 +1,59 @@
-# Research update — 2026-09-07, 10:37 CEST
+# Research update — 2026-09-08, 00:22 CEST
 
 ## How close are we?
 
-The common-cover problem is still unsolved. The full candidate list is
-certified, but no whole candidate on our genus-nine curve has been ruled
-out. Two other branches also remain. There is no reliable finishing
-estimate or percentage-to-proof.
+The common-cover problem is still unsolved. We now have stronger tools for
+comparing the extra structures on a cover, but we still cannot show that
+every possible cover must preserve one of them. Both small proposed pairs
+also have unfinished shared-quotient cases. There is no reliable finish date.
 
 ## What changed this hour
 
-The earlier positive examples have all passed their independent checks.
-I returned to the remaining candidate equations and proved more about
-how their intermediate families fit together. Passing the weaker test
-leaves a whole family of possibilities; it does not isolate a cover.
+A complete small calculation found85 active connections and five dormant
+ones on the backup curve, preserving all multiplicities. A new proof turns
+each active connection into a pair of dormant connections on a particular
+double cover. The count then determines every dormant connection on all
+fifteen connected double covers at once.
 
-I also proved how characteristic five can give a single possibility a
-large algebraic multiplicity in those weaker equations. This separates
-repeated equations from genuinely different solutions. The complete
-atlas test itself has no such multiplicities.
+The same proof breaks the relevant fourth-order test into two second-order
+tests. It explains exactly what this double-cover construction preserves,
+and why it cannot fix a failure of the ordinary condition.
 
-One hoped-for fifth-root shortcut failed an exact test. A different,
-quadratic matrix now describes the local obstruction and has been checked
-against the original equations. Its rank at all relevant points remains
-to be established; the checked point alone does not settle that.
+These results also control an unbounded class of non-Galois covers, with
+explicit restrictions on their groups. They do not control arbitrary covers.
+Separate exact checks now eliminate every order-two and order-four twisted
+deformation direction for the five backup connections.
 
-## Current strategy
+An apparent source conflict has been resolved: a later published correction
+already explains it. Our proof now allows the two kinds of exceptional
+points to overlap. Existing results using the narrower hypotheses survive.
 
-Turn the new description into a smaller exact test that retains all valid
-possibilities, including exceptional points. Keep the actual positive
-examples as checks against overly broad claims. No new claim replaces
-the requirement for both covering maps from the same curve.
+## Computation and library
 
-The large solver has not been restarted. I consolidated the new proof
-and its transversality calculation into one canonical theorem, keeping
-the exact computational checks separately.
+The backup's three remaining large tests now have provisional empty-set
+outputs, but their original-equation certificates are not complete. They
+have NOT yet been counted as exclusions. Three smaller cases remain open.
 
-The completed list has28,990 distinct candidates, counting to29,375
-with multiplicity. [STATE.md](Research/STATE.md) records the exact next
-step; [the roadmap](Research/AFTER_ENUMERATION.md) retains every remaining
-branch and the limits of the current results.
+The main selected14 run is paused safely for a tested native-code upgrade.
+Completed data and certificates are preserved. Some difficult chart tests
+now finish in under a second; others still time out. There is still no
+whole-representative exclusion or trustworthy short total-time forecast.
+
+The library cleanup has removed roughly16,000 lines and about70 redundant
+source files, retaining distinct hypotheses, useful counterexamples and
+evidence. Tracked removals remain recoverable through Git.
+
+## Continuation and timer
+
+Continue from etale_double_dormant_pairs and the exact connection spectrum.
+The active fixed pair has not changed; the genus-two curve remains a backup.
+Do not repeat the completed oper enumeration.
+
+The user has now turned fast mode off manually. The later speed-change
+timer is cancelled; no automatic UI action remains scheduled.
+
+The user reports the previous Pro request did not run. The revised
+nine-versus-three torsion prompt is ready for the user to paste manually;
+no new submission is confirmed. No browser polling or automatic submission.
+
+[Exact continuation state](Research/STATE.md)

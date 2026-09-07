@@ -19,11 +19,11 @@ their existing linked paths. This is selective promotion, not a claim
 to have reviewed or formalized every historical note.
 
 The selective review identified superseded pointers (now removed) and
-one additional cleanup: file87's prime-power Theorem87.3 proof was replaced
-by the audited general file91 result. Its distinct branch-rigidity
-theorem and useful preliminary lemmas remain. The removed specialized
-proof can also be recovered from repository history. No computational
-certificate, audit record, or unresolved route was discarded.
+an audited arbitrary-abelian result subsuming its prime-power special case.
+The later deck consolidation retains the general theorem and shared lemmas
+in file91, and the distinct branch/higher-cyclic theorems in file92.
+Their original proofs remain recoverable from Git history. This migration
+did not discard computational certificates or audit records.
 
 Checks: 16 isolated CLI tests PASS; actual registry path/status/hash/DAG
 validation PASS; statement-only display and metadata-only search tested;

@@ -6,8 +6,9 @@ finite-group certificate PASS.**
 [Exact Sage certificate](93_PSL28_NONABELIAN_DECK_BOUNDARY_CERTIFICATE.sage).
 [Audit record](audits/93_NONABELIAN_DECK_RIGIDITY_BOUNDARY_AUDIT.md).
 
-File 87 proves absolute deck rigidity when the deck group is an abelian
-prime-power group.  This note determines a sharp boundary of that method.
+[The arbitrary-abelian theorem](91_ARBITRARY_ABELIAN_DECK_RIGIDITY.md)
+proves absolute deck rigidity for every finite abelian deck group.
+This note determines a sharp boundary of that method.
 There are curves (X/overline{\mathbf F}_5) with
 
 \[
@@ -364,7 +365,7 @@ of elements of order nine is inverse-stable; its elements are nine-cycles,
 and one such class contains a generating pair.  All hypotheses of Theorem
 93.2 hold with (p=5) and (n=9).  Formula (93.12) is (93.3). \(\square\)
 
-This proves that the abelian hypothesis in file 87 is essential even over
+This proves that the abelian hypothesis in file91 is essential even over
 the exact ground field of the common-cover problem.  It also identifies the
 precise representation-theoretic escape: the permutation module has rank
 two, so (H^1(X)) is a single multiplicity space rather than a sum or a

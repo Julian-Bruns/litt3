@@ -1,128 +1,46 @@
-# Proof record: A cored span has a common effective orbifold
+# Proof: a cored span has a common effective orbifold
 
-Canonical statement: [`cored_orbifold_bridge`](../Theorems/Thm_cored_orbifold_bridge.md).
-Migrated 2026-09-06; hypotheses restated below are proof context.
-The canonical statement and registry control promoted scope and evidence.
+[Statement and author-proof metadata](../Theorems/Thm_cored_orbifold_bridge.md).
+Keep the actual étale span X←f—Z—g→Y and its transcendence-degree-one
+field intersection inside k(Z).
 
----
+## 1. The core makes the alternating étale closures finite
 
-# A cored bi-etale correspondence has a common effective orbifold
+Since Z is hyperbolic and the span has a core,
+[Krishnamoorthy, Lemma4.2](https://doi.org/10.2140/ant.2018.12.1173)
+supplies a finite field extension F/k(Z) Galois over BOTH endpoint
+fields. Its finite constant-field extension is unnecessary over
+algebraically closed k. The corresponding curve over Z might be
+ramified, so do not use it directly as a common atlas.
 
-**Status:** author proof, 2026-09-05. Author:
-`/root/x_elliptic_quotient_maps`.
+Instead start with L_0=k(Z) inside F and alternately take its Galois
+closures over k(X) and k(Y). They stay inside F, which is normal over
+each. Every step remains étale over Z: inductively the current curve
+is étale over the next endpoint, and its Galois closure is a compositum
+of unramified conjugates, hence unramified on smooth projective curves.
 
-This is the bridge from the field-theoretic notion of a core to the
-finite-orbifold results.  It works in arbitrary characteristic and does not
-assume either original leg is Galois.
+This increasing chain inside a finite extension stabilizes. Because
+the closure operations alternate, the stable field is Galois over
+both endpoints. Its smooth projective curve W is the required actual
+finite étale refinement of Z. The finite envelope F came from the CORE;
+this argument cannot be started for an arbitrary span.
 
-## Theorem
+## 2. The quotient retains both actual étale legs
 
-Let `k` be an algebraically closed field.  Let
+Put A=Gal(W/X), B=Gal(W/Y) and G=⟨A,B⟩⊂Aut_k(W).
+Hyperbolicity makes G finite, and S=[W/G] is a smooth proper connected
+effective DM curve. Even if p divides |G|, G is a constant finite
+étale group scheme; fixed points cause wild coarse ramification.
 
-\[
-                    X\xleftarrow{f}Z\xrightarrow{g}Y
-\]
+Since A,B act freely, X=[W/A] and Y=[W/B].
+Subgroup inclusion gives representable finite étale surjections
+X,Y→S: after base change to W they are the corresponding finite
+coset covers. Finally,
 
-be finite etale maps of smooth projective connected curves, with
-`g(X),g(Y)>=2`.  Suppose the correspondence has a core, equivalently
+    k(W)^G=k(W)^A∩k(W)^B=k(X)∩k(Y),
 
-\[
-       \operatorname{trdeg}_k\bigl(k(X)\cap k(Y)\bigr)=1
-       \quad\text{inside }k(Z).
-\]
-
-Then there is a smooth proper connected effective Deligne--Mumford
-orbifold curve `S` and representable finite etale surjections
-
-\[
-                         X\longrightarrow S,
-                         \qquad Y\longrightarrow S.
-\]
-
-The coarse curve of `S` has function field `k(X) cap k(Y)`.  The statement
-allows wild stabilizers and the original maps `Z -> X,Y` may be non-Galois.
-
-## Proof
-
-### 1. A simultaneous Galois refinement which remains etale
-
-The curve `Z` is hyperbolic.  Krishnamoorthy,
-[Correspondences without a Core, Lemma 4.2](https://doi.org/10.2140/ant.2018.12.1173),
-therefore gives a finite extension `F/k(Z)` which is Galois over both
-`k(X)` and `k(Y)`.  His stated finite ground-field extension is unnecessary
-because `k` is already algebraically closed.  The associated cover over `Z`
-need not itself be etale, so one cannot use it directly.
-
-Instead start with `L_0=k(Z)` inside `F` and alternately take the Galois
-closure over `k(X)` and over `k(Y)`, always inside a fixed algebraic closure.
-Every resulting field remains inside `F`: a Galois closure of a subfield of
-the finite normal extension `F/k(X)` (respectively `F/k(Y)`) is contained in
-`F`.
-
-Every step is also unramified over `Z`.  Inductively, the curve belonging to
-`L_i` is finite etale over `Z`, hence finite etale over whichever of `X` or
-`Y` is used next.  The Galois closure of an unramified extension of smooth
-projective curves is unramified: its conjugates are unramified, and so is
-their compositum.  Thus the next curve is again finite etale over `Z`.
-
-The increasing chain of subfields `L_i` lies in the finite extension `F`, so
-it stabilizes.  Since the two closure operations alternate, the stable field
-`L` is Galois over both `k(X)` and `k(Y)`.  Let `W` be its smooth projective
-curve.  We have obtained actual finite etale maps
-
-\[
-                         W\longrightarrow Z,
-\]
-
-for which both composites `W -> X` and `W -> Y` are Galois and etale.
-
-### 2. The quotient orbifold
-
-Put
-
-\[
- A=\operatorname{Gal}(W/X),\qquad
- B=\operatorname{Gal}(W/Y),\qquad
- G=\langle A,B\rangle\subset\operatorname{Aut}_k(W).
-\]
-
-The group `G` is finite because `g(W)>=2`.  Define
-
-\[
-                              S=[W/G].
-\]
-
-This is a smooth proper connected Deligne--Mumford curve.  It is effective
-because `G` acts faithfully on `W`.  This remains true when the order of `G`
-is divisible by `char(k)`: `G` is the constant finite etale group scheme,
-while its fixed points account for wild ramification of the coarse map.
-
-Both `A` and `B` act freely, since `W -> X,Y` are etale Galois covers.  Hence
-
-\[
-                  X\simeq[W/A],\qquad Y\simeq[W/B].
-\]
-
-For an inclusion of finite constant groups `A<=G`, the induced map
-`[W/A] -> [W/G]` is representable finite etale and surjective (after base
-change by the atlas `W -> [W/G]`, it is the finite etale coset cover
-`G/A`).  The same applies to `B`, yielding the two required atlases.
-
-Finally, Galois correspondence gives
-
-\[
- k(W)^G=k(W)^A\cap k(W)^B=k(X)\cap k(Y).
-\]
-
-Thus the coarse curve of `S` is the coarse core.  This completes the proof.
-
-## Relation to prior files
-
-Krishnamoorthy's Lemma 4.2 supplies the finite simultaneous *field*
-envelope.  The alternating unramified-closure argument above is the needed
-extra step ensuring a simultaneous Galois refinement remains etale.
-Proposition 21.3 of
-`21_SIMULTANEOUS_ENVELOPE_CORE_TOWER_CRITERION.md` contains the same quotient
-stack construction once such a refinement is available, in the self-orbifold
-setting.  Neither source by itself licenses taking the possibly ramified
-Galois closure over the coarse core as the common atlas.
+so the coarse field is exactly the prescribed core.
+The [profinite core-tower criterion](../routes/global/21_SIMULTANEOUS_ENVELOPE_CORE_TOWER_CRITERION.md)
+records the general termination obstruction and an actual counterexample
+without a core. Neither a separate pair of Galois closures nor a possibly
+ramified closure over the coarse curve substitutes for W.

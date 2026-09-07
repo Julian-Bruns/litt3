@@ -87,12 +87,12 @@ counterexamples remain essential boundaries, not counterexamples to Litt.
 
 Promoted old paths are deleted; references lead directly to the canonical
 records. There are no compatibility aliases for the migrated library.
-Unpromoted material remains in `routes/`, `archive/`, and `tasks/`, indexed
+Unpromoted material remains in `routes/` and `tasks/`, indexed
 conservatively and excluded from default rg/file discovery by `.ignore`.
 Retrieve a needed older input through metadata search or its explicit path.
 [Selective review](Research/migration/LEGACY_REVIEW.md) records reusable
 older bundles, superseded cases, and status hazards. `STRUCTURE.md`,
-`MISSING_INPUTS.md`, old frontiers, and task indexes are historical maps,
+`MISSING_INPUTS.md` and task indexes are historical maps,
 not the current continuation queue.
 
 When changing scope, update the statement version, evidence, dependencies,

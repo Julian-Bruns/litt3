@@ -1,188 +1,103 @@
 # Elliptic character directions: polarization-controlled a-numbers
 
-Date: 2026-09-05. Author: `/root`.
-Status: author proof. The ordinary-complement numerical specialization
-received a focused PASS from `/root/gluing_cohomology_rigidity` on this
-date; the more general supersingular-subgroup argument below is not
-included in that verdict. No novelty claim. Existing special cases are
-retained pending a consolidated check.
+Author /root,2026-09-05; consolidated2026-09-07.
+The ordinary-complement specialization received focused PASS from
+/root/gluing_cohomology_rigidity2026-09-05. The general supersingular
+subgroup argument remains AUTHOR-only; no audit body was opened.
+Version2 adds the direct one-unit refinement when that subgroup is
+proper, without extending the earlier audit's scope.
 
-## 1. Statement without a genus or covering-degree bound
+## 1. Exact statement
 
-Let k be algebraically closed of characteristic p>0, let C/k be a
-smooth projective connected hyperbolic curve, and let i:E -> J(C) be
-an elliptic abelian subvariety. Let
+Over algebraically closed k of characteristic p>0, let C be smooth
+projective connected hyperbolic, i:E↪J(C) an elliptic subvariety, and
 
-\[
- e=\deg(i^*\mathcal O_{J(C)}(\Theta_{\rm principal})).
-\]
+    e=deg i*O(Θ_principal),        ASSUME E^(1)⊄Θ_C.       (1)
 
-On Frobenius twists assume the substantive geometric condition
+For every finite prime-to-p subgroup Λ⊂E^(1)(k), form its actual
+connected abelian etale character cover W_Λ/C. There is a finite Λ₀
+such that all W_Λ/W_Λ₀ with Λ⊃Λ₀ have ordinary Prym. All these
+covers and their actual etale intermediate curves have only finitely
+many hyperbolic etale targets with NO ordinary simple Jacobian factor.
+This permits ALL prime supports at once, not just one fixed finite set.
 
-\[
-                  E^{(1)}\not\subset\Theta_C,                 \tag{1}
-\]
+Uniformly in Λ and its degree,
 
-where Theta_C is the Raynaud determinant divisor of
-B_C=F_{C/k*}O_C/O_{C^(1)}. For every finite subgroup
-Lambda of E^(1)(k) of order prime to p, let W_Lambda -> C be its
-connected abelian etale character cover. All finite prime supports
-are allowed simultaneously.
+    a(W_Λ)≤(p−1)(e−1)                    if E is ordinary,
+    a(W_Λ)≤(p−1)(e−1)+a(C)               if E is supersingular. (2)
 
-### Theorem
+For supersingular E and H=ker V_E PROPER in K=(ker V_J(C))^0,
+the second bound improves to
 
-There is one finite exceptional character subgroup Lambda_0 such
-that every W_Lambda with Lambda containing Lambda_0 has ordinary
-relative Prym over W_(Lambda_0). Consequently this directed family
-has only finitely many hyperbolic etale targets whose Jacobians have
-no ordinary simple isogeny factor, including targets reached through
-actual non-Galois intermediate curves.
+    a(W_Λ)≤(p−1)(e−1)+a(C)−1.                             (3)
 
-Independently of Lambda, its degree, and its prime support,
+Every ACTUAL etale target of W_Λ or an etale intermediate satisfies
+the same numerical bound, WITHOUT a restriction on its Jacobian factors.
+Neither a-number bound is asserted to bound Δ=g−f or |Λ₀|.
 
-\[
- a(W_\Lambda)\le
- \begin{cases}
- (p-1)(e-1),& E\text{ ordinary},\\
- (p-1)(e-1)+a(C),&E\text{ supersingular}.
- \end{cases}                                                \tag{2}
-\]
+If J(C)/E is ordinary, hypothesis(1) is automatic and a(C)=0 or1
+according as E is ordinary or supersingular. The previously focused
+checked bound is therefore (p−1)(e−1)+a(C); it is retained in full.
 
-Every actual finite etale target T of W_Lambda, or of an etale
-intermediate source, satisfies the same a-number bound. This numerical
-conclusion has no restriction on the simple factors of J(T).
+## 2. One determinant calculation gives finiteness and multiplicity bounds
 
-Condition (1) holds in particular if J(C)/E is ordinary. In that
-case a(C)=0 or 1 according as E is ordinary or supersingular, so the
-bound can be written uniformly as
+Set D=Θ_C|E^(1), an effective divisor by(1). Its degree is(p−1)e,
+by Raynaud's divisor class. Over a local DVR of E^(1), a two-term
+free complex computes B_C⊗L; Euler characteristic0 makes its matrix
+square and(1) makes it generically invertible. Smith normal form gives
 
-\[
-                    a(W_\Lambda)\le(p-1)(e-1)+a(C).           \tag{3}
-\]
+    h⁰(C^(1),B_C⊗L)≤mult_L D,
+    a(W_Λ)=Σ_(L∈Λ)h⁰(C^(1),B_C⊗L), B_C=F_*O_C/O_C^(1).  (4)
 
-The number in (2) or (3) is NOT asserted to bound the stable defect
-g(W_Lambda)-f(W_Lambda), or the order of Lambda_0.
+The second identity is etale Frobenius base change and character
+decomposition. The prime-to-p torsion points of D form a finite set.
+Their generated Λ₀ is finite, so the [finite-character descent theorem](FINITE_RESTRICTED_THETA_CHARACTERS_FORCE_UNIFORM_ETALE_TARGET_DESCENT.md)
+proves the ordinary-Prym and actual-target assertions, controlling
+all Frobenius iterates rather than only the first kernel.
 
-## 2. Determinants and the finite exceptional subgroup
+If E is ORDINARY, ker V_E contains p−1 nonidentity geometric points,
+each of order p. Functoriality embeds them in ker V_J(C); for the
+corresponding nontrivial line bundle L, F_C*L=O_C. Thus the
+Frobenius exact sequence gives k↪H⁰(B_C⊗L). Each consumes at
+least one unit of deg D and none belongs to Λ. Subtract these p−1
+units in(4) to obtain the first bound in(2), without requiring C ordinary.
 
-Put D=Theta_C|E^(1), a genuine effective divisor by (1). Raynaud's
-divisor class is (p-1) times the principal polarization, and scalar
-Frobenius twisting preserves e. Therefore
+## 3. Supersingular subgroups: keep the scheme structure
 
-\[
-                             \deg D=(p-1)e.                 \tag{4}
-\]
+For supersingular E, H=ker V_E has algebra k[t]/(t^p) and lies
+in K=(ker V_J(C))^0. Tong's Dirac property says that a local theta
+equation restricts to a NONZERO socle element of the Artin local
+Gorenstein algebra O_K.
 
-At any alpha in E^(1)(k), compute the cohomology of the family
-B_C tensor L over the local DVR of E^(1) by a two-term complex of
-free modules. Its Euler characteristic is zero, so the matrix is
-square. Its determinant defines D; it is generically invertible by
-(1). Its special-fiber kernel has dimension h^0(B_C tensor alpha).
-Smith normal form gives
+If H=K, its image on H is a unit times t^(p−1), so mult_0 D=p−1.
+If H is proper, its image is ZERO: the one-dimensional socle of
+O_K lies in every nonzero ideal. Indeed, the last nonzero term of
+the maximal-ideal filtration of an ideal lies in, hence spans, the
+socle; apply this to ker(O_K→O_H). Therefore the local equation
+on E vanishes modulo t^p and mult_0 D≥p. It is not identically
+zero by(1). In all cases mult_0 D≥p−1; in the proper case it is
+at least one larger. Separate the zero character in(4):
 
-\[
-               h^0(B_C\otimes\alpha)\le\operatorname{mult}_\alpha D.
-                                                               \tag{5}
-\]
+    a(W_Λ)≤a(C)+(p−1)e−mult_0 D.
 
-Etale Frobenius base change and character decomposition give
+This proves both the old supersingular bound and refinement(3).
+No claim about a(C)'s invariance under a p-divisible isogeny is used.
+Sources read directly: [Tong, Definitions1.2.7.1/1.2.7.4 and
+Theorem1.2.7.7; divisor class Corollary1.2.3.2](https://arxiv.org/pdf/0712.2046).
+The proper-subgroup refinement is this note's elementary author inference.
 
-\[
- a(W_\Lambda)=\sum_{\alpha\in\Lambda}h^0(B_C\otimes\alpha).    \tag{6}
-\]
+If J(C)/E is ordinary, K maps trivially to its etale Verschiebung
+kernel, hence lies in E^(1). Nonzero restriction of the theta equation
+to K prevents identically zero restriction to E^(1), proving(1).
+Poincare reducibility and p-rank additivity give Δ(C)=1−f(E).
+Since a(C)=0 exactly when ordinary and a(C)≤Δ(C), the stated
+values0/1 follow. In particular H=K in the supersingular-complement
+case, consistent with keeping its old bound separate from(3).
 
-Since D is finite, its prime-to-p torsion points generate a finite
-group Lambda_0. Apply the
-[finite-bad-character descent theorem](FINITE_RESTRICTED_THETA_CHARACTERS_FORCE_UNIFORM_ETALE_TARGET_DESCENT.md)
-to Gamma=E^(1)(k)_(p'). This proves the first paragraph of the theorem,
-including all Frobenius iterates and actual intermediate maps. It uses
-the finite bad set, not a bound for only the first Frobenius kernel.
-
-## 3. Removing the compulsory characteristic-p contribution
-
-Verschiebung functoriality makes ker(V_E) a closed subgroup scheme of
-ker(V_J), with both regarded in the Frobenius-twisted varieties.
-
-### 3.1. E ordinary
-
-There are p-1 distinct nonidentity points alpha of ker(V_E). Viewed
-as line bundles on C^(1), they satisfy F_C^*alpha=O_C. The Frobenius
-exact sequence tensored by alpha gives
-
-\[
- 0=H^0(C^{(1)},\alpha)\longrightarrow H^0(C,O_C)=k
-       \longrightarrow H^0(C^{(1)},B_C\otimes\alpha).
-\]
-
-Thus all these points lie in D. They have order p and none lies in
-the allowed Lambda. Subtracting their multiplicities, at least one
-each, from (4), and using (5)--(6), proves
-a(W_Lambda)<=(p-1)(e-1). This argument does not require C itself
-to be ordinary and does not use Dirac.
-
-### 3.2. E supersingular
-
-Here H=ker(V_E) is connected of length p, with local ring
-k[t]/(t^p). It lies in K=(ker V_J)^0. Tong's Dirac property says that
-a local equation of Theta_C restricts on K to a nonzero socle element.
-
-If H=K, that element restricts on H to a nonzero multiple of
-t^(p-1). If H is a proper closed subgroup scheme of K, it restricts
-to zero. Indeed O_K is an Artin local Gorenstein ring, whose
-one-dimensional socle is contained in every nonzero ideal: given a
-nonzero ideal I, a last nonzero term of its maximal-ideal filtration
-lies in the socle and hence spans it. Apply this to the nonzero
-kernel of O_K -> O_H.
-
-In either case the local equation restricted to E^(1) vanishes to
-order at least p-1 at zero. It is not identically zero by (1). Hence
-
-\[
-                         \operatorname{mult}_0 D\ge p-1.    \tag{7}
-\]
-
-The zero character contributes a(C), rather than its possibly larger
-intersection multiplicity. Separate it in (6) and apply (5), (4),
-and (7) to the other terms:
-
-\[
- a(W_\Lambda)\le a(C)+\deg D-\operatorname{mult}_0D
-                         \le a(C)+(p-1)(e-1).
-\]
-
-This proves (2). The precise source is
-[Tong, Definitions 1.2.7.1 and 1.2.7.4 and Theorem 1.2.7.7](https://arxiv.org/pdf/0712.2046),
-PDF pp. 11--12. These statements and their local-ring discussion were
-read directly. The same paper's introduction and Corollary 1.2.3.2
-give the divisor class used in (4).
-
-## 4. Ordinary complement and actual targets
-
-If J(C)/E is ordinary, the connected kernel K above is contained in
-E^(1): its image in the etale Verschiebung kernel of the ordinary
-quotient is the identity. Since the local theta equation is nonzero
-on K, it cannot vanish identically on E^(1). This proves (1).
-
-By Poincare reducibility and isogeny invariance of p-rank,
-
-\[
-                   g(C)-f(C)=1-f(E)\in\{0,1\}.
-\]
-
-For a curve the a-number is zero exactly in the ordinary case, and
-is at most g-f. Thus a(C)=0 in the ordinary-E case and a(C)=1 in the
-supersingular-E case. This proves (3) without using a-number invariance
-under a possibly p-divisible isogeny.
-
-Finally, for an actual finite etale map W_Lambda -> T, etale base
-change identifies the pullback of B_T with B_WLambda. Faithfully flat
-pullback injects global sections, so a(T)<=a(W_Lambda). Composing two
-actual etale maps proves the intermediate-source assertion. No
-replacement by unrelated Jacobian inclusions is used.
-
-For the elliptic Prym of an etale double cover of an ordinary
-genus-two base, e=2. Formula (3) is exactly the uniform four/five
-bound of the
-[generalized-dihedral theorem](ODD_GENERALIZED_DIHEDRAL_TOWERS_OVER_ORDINARY_GENUS_TWO_HAVE_FINITE_NONORDINARY_TARGETS.md).
-That corollary is retained separately because it also classifies
-actual monodromy and its entire allowed family.
+Finally an actual finite etale W_Λ→T pulls B_T back to B_W_Λ.
+Faithfully flat pullback injects global sections, so a(T)≤a(W_Λ).
+For an intermediate source, compose its TWO actual maps first.
+For the elliptic Prym of a double cover of an ordinary genus-two
+base, e=2; the old four/five bound in characteristic5 is retained in
+the [genus-two inversion theorem](GENUS_TWO_INVERSION_TOWERS_AND_FINITE_TARGETS.md),
+whose additional monodromy and nonsplit-family conclusions are distinct.

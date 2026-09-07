@@ -1,23 +1,23 @@
-# Repository structure and theorem index
+# Historical profile-4 route index
 
-This is a routing index, not a proof. Status attaches to the particular
+Current work follows [Research/STATE.md](Research/STATE.md), not this older
+route. This is a routing index, not a proof. Status attaches to the particular
 claim described in each row; several files deliberately contain both proved
 lemmas and open or transcript-only consequences.
 
 ## Folder map
 
 ```text
-README.md                    canonical status and dependency graph
-STRUCTURE.md                 this per-file theorem index
+Research/STATE.md            current continuation record
+STRUCTURE.md                 this historical per-file route index
 MISSING_INPUTS.md            absent sources and reproducibility limits
-tasks/                       one scoped prompt per open gate
+tasks/                       parked profile-4 proof obligations
 routes/global/               visibility and common-cover consequences
 routes/profile4/             conditional degree-35/profile-4 route
   entry_one/                 entry-one branch
   no_highpoint/              no-highpoint residual proposal
   double_fiber/              conditional double-fiber tower and frontier
 reference/synthesis_2026-06/ dated monolithic snapshot
-archive/                     inactive provenance and superseded work
 ```
 
 ## Global route
@@ -83,18 +83,3 @@ archive/                     inactive provenance and superseded work
 | `tasks/06_FINAL_ASSEMBLY.md` | Audit the conditional assembly after every preceding theorem and evidence prerequisite is proved. | not currently actionable |
 | `reference/synthesis_2026-06/partial_progress_note.tex` | Dated monolithic source for the June 2026 conditional reduction. | reference snapshot; not canonical status |
 | `reference/synthesis_2026-06/litt3_partial_progress.pdf` | Rendered copy of the same synthesis. | human reference only |
-
-## Archive
-
-| File | Preserved content | Why inactive |
-| --- | --- | --- |
-| `archive/PROVENANCE.md` | Original workflow description. | no theorem content |
-| `archive/status_snapshots/DEPENDENCY_LEDGER_2026-06-05.md` | Older status table. | superseded and incomplete |
-| `archive/status_snapshots/167_SHORTEST_REDUCTION_AUDIT_GATES.md` | Earlier reduction map and warnings. | stale gate numbering/status |
-| `archive/inconclusive/169_ENTRY1_TRACE_REFINEMENT.md` | Compatible trace formula. | no obstruction; subsumed by file `176` |
-| `archive/inconclusive/173_ENTRY1_FIBER_PARTITION_AUDIT.md` | Exhaustion of one fiber-partition shortcut. | proves that shortcut is inconclusive |
-| `archive/strategy_notes/178_BASIN127_THEORETICAL_REDUCTION_PLAN.md` | Earlier basin strategy. | planning only |
-| `archive/redundant/145_SYMBOLIC_FINAL_LINE_SIMPLE_E50_CERTIFICATE.md` | Special final-line calculation at `P129`. | subsumed as a transcript by file `148` |
-| `archive/redundant/160_E50_FINAL_LINE_SINGULAR_CHECKS.md` | Five final-line unit-ideal checks. | no missing extraction or coverage proof |
-
-No active proof may cite an archived file as an established dependency.

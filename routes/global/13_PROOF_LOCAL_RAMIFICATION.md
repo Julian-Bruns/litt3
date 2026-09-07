@@ -1,238 +1,99 @@
 # Local ramification results
 
-All groups in this file act faithfully on `k[[z]]`, where
-`k = \bar F_5`. The statements below are the local facts that can be
-proved from the retained material. They are necessary inputs to the wild
-over-orbifold analysis in
-[file `11`](11_PROOF_OVER_ORBIFOLD_CLASSIFICATION.md); they do **not**
-supply the missing global arithmetic elimination in that file.
-
-## Status
-
-Every named lemma and theorem in this file is `proved-text`. The downstream
-weak and non-weak wild exclusions remain open in file `11`.
-
-For a nonidentity automorphism `sigma`, put
-
-`j(sigma) = v_z(sigma(z)-z)-1`,
-
-and, for a finite `5`-group `P`, use the lower filtration
-
-`P_i = {sigma in P : j(sigma) >= i}` (`i >= 1`).
-
-Thus a lower break `b` means `P_b != P_{b+1}`. We write
-
-`epsilon(P) = sum_{i >= 1} (|P_i|-1)`.
+Status: author proved-text. All actions are faithful on k[[z]],
+k=Fbar_5. For σ≠1 put j(σ)=v_z(σ(z)−z)−1, and for a finite
+5-group P put P_i={σ:j(σ)≥i} and ε(P)=∑_(i≥1)(|P_i|−1).
+A lower break b means P_b≠P_(b+1).
 
 ## LEM-WILD-EXCESS-IDENTITY — wild excess as a sum of breaks
 
-**Status: `proved-text`.**
+    ε(P)=∑_(σ≠1)j(σ),
+    ε(P)−(|P|−1)=∑_(σ≠1)(j(σ)−1).
 
-For every finite `5`-subgroup `P` of `Aut_k k[[z]]`,
-
-`epsilon(P) = sum_{sigma != 1} j(sigma)`.
-
-Consequently,
-
-`epsilon(P)-(|P|-1) = sum_{sigma != 1}(j(sigma)-1)`.
-
-Indeed, a fixed nonidentity `sigma` is counted in `|P_i|-1` exactly for
-`1 <= i <= j(sigma)`. Interchanging the two finite sums proves both
-identities.
+Indeed σ contributes to |P_i|−1 exactly for1≤i≤j(σ).
 
 ## THM-LOCAL-SWAN-DIVISIBILITY — divisibility at the first break
 
-**Status: `proved-text`.** This proves, and slightly generalizes, the
-first-break-`1` statement previously recorded only as a proof sketch.
+If P=P_1=⋯=P_b and q=dim_F5(P/P_(b+1)), then
 
-Let `P` be a nontrivial finite `5`-subgroup of `Aut_k k[[z]]`. Suppose its
-first lower break is `b`, so
+    5^ceil(q/2) | ε(P)−b(|P|−1).                            (1)
 
-`P=P_1=...=P_b` and `P_{b+1}` is a proper subgroup of `P`.
+In particular b=1 gives divisibility of ε(P)−(|P|−1).
+The quotient A=P/P_(b+1) is elementary abelian. For complex
+representations use the integral additive Swan conductor
 
-Put
+    Sw(V)=∑_(i≥1)(|P_i|/|P|) codim V^(P_i).
 
-`q = dim_{F_5}(P/P_{b+1})`.
+The regular representation has Sw(C[P])=ε(P). Decomposing it gives
 
-Then
+    ε(P)−b(|P|−1)
+      =∑_(χ≠1)(dimχ)(Sw(χ)−b dimχ).                         (2)
 
-`5^{ceil(q/2)} | epsilon(P)-b(|P|-1)`.
+Characters factoring through A are one-dimensional of conductor b,
+so contribute zero. Group the other irreducibles into twisting orbits
+under A^∨. Their Swan conductors are constant on each orbit: the
+restrictions to P_i for i>b agree, and for i≤b none has a P-fixed vector.
 
-In particular, if the first lower break is `1`, then
+If dimχ=5^a and its twisting stabilizer has order5^s, then s≤2a.
+For each stabilizing character, an intertwiner χ→χ⊗λ lies in its
+distinct character eigenspace of End(χ); these independent vectors
+give5^s≤(dimχ)². The orbit's contribution to (2) is
 
-`5^{ceil(q/2)} | epsilon(P)-(|P|-1)`,
+    5^(q−s+a)(Sw(χ)−b5^a).
 
-where `q=dim_{F_5}(P/P_2)`.
+The last factor is integral. If a≥ceil(q/2), divisibility follows
+already from dimχ; otherwise q−s+a≥q−a≥ceil(q/2).
+Summing proves (1).
 
-### Proof
-
-The first ramification quotient `A=P/P_{b+1}` is elementary abelian. Let
-`A^vee=Hom(A,C^times)`, so `|A^vee|=5^q`. We use the usual Swan conductor
-of a complex representation of `P`:
-
-`Sw(V) = sum_{i>=1} (|P_i|/|P|) codim(V^{P_i})`.
-
-Swan conductors are integers. For the regular representation, the
-`P_i`-fixed subspace has dimension `|P|/|P_i|`; hence
-
-`Sw(C[P]) = sum_{i>=1}(|P_i|-1) = epsilon(P)`.
-
-Decompose the regular character as
-
-`C[P] = direct_sum_chi (dim chi) chi`,
-
-where `chi` runs over the irreducible complex representations of `P`. It
-follows that
-
-`epsilon(P)-b(|P|-1)`
-
-`= sum_{chi != 1} (dim chi)(Sw(chi)-b dim chi)`.                 `(1)`
-
-Every nontrivial irreducible representation that factors through `A` is a
-one-dimensional character. Its Swan conductor is exactly `b`, so its term
-in `(1)` is zero. It remains to group the irreducibles nontrivial on
-`P_{b+1}` into orbits under twisting by `A^vee`.
-
-For such a `chi` and `lambda in A^vee`, the restrictions of `chi` and
-`chi tensor lambda` to every `P_i` with `i>b` agree. For `i<=b`, neither
-irreducible has a `P`-fixed vector. Thus
-
-`Sw(chi tensor lambda)=Sw(chi)`.
-
-Write `dim chi=5^a` and let the stabilizer of `chi` in `A^vee` have order
-`5^s`. The standard facts that irreducible degrees of a finite `5`-group
-are powers of `5` and that
-
-`5^s <= (dim chi)^2 = 5^{2a}`                              `(2)`
-
-are enough. For completeness, `(2)` follows by choosing, for each
-stabilizing `lambda`, a nonzero intertwiner
-`chi -> chi tensor lambda`. Under conjugation by `P`, these intertwiners
-belong to distinct character eigenspaces of `End_C(chi)`, and are therefore
-linearly independent.
-
-The total contribution of the twisting orbit of `chi` to `(1)` is
-
-`5^{q-s} 5^a (Sw(chi)-b 5^a)`.
-
-The last factor is an integer. If `a >= ceil(q/2)`, the factor `5^a`
-already gives the required divisibility. Otherwise `(2)` gives
-
-`q-s+a >= q-2a+a = q-a >= ceil(q/2)`.
-
-Every orbit contribution is therefore divisible by `5^{ceil(q/2)}`, which
-proves the theorem.
-
-The standard representation-theoretic inputs used here are precisely:
-additivity and integrality of Swan conductors, the displayed filtration
-formula for the Swan conductor, the regular-character decomposition, and
-the fact that irreducible degrees of a finite `p`-group are powers of `p`.
-We also use the standard ramification fact that the first nonzero lower
-quotient is elementary abelian. No classification of finite subgroups of
-`Aut_k k[[z]]` is being assumed.
-
-### Scope
-
-This is a divisibility for the sum of the breaks. It gives no congruence
-for an individual break, and it does not say that a formal break sequence is
-realized by a finite subgroup of `Aut_k k[[z]]`.
+The inputs are precisely Swan integrality/additivity and its displayed
+filtration formula, the regular-character decomposition, p-power
+irreducible degrees for p-groups, and elementary-abelian ramification
+quotients. The proof works with any prime p in place of5.
+It bounds a sum of breaks; it does not prescribe individual breaks
+or realize a formal filtration.
 
 ## LEM-TAME-CHARACTER-GRADED — the tame action on a lower quotient
 
-**Status: `proved-text`.**
+Let I=P⋊C_T with5∤T. Linearize a tame generator as z↦ζz,
+ζ primitive of order T. For a nonzero P_b/P_(b+1), put its
+F_5-dimension q_b. Then
 
-Let
+    ord_(T/gcd(T,b))(5) | q_b,
+    equivalently T | b(5^q_b−1).                            (3)
 
-`I = P ⋊ C_T` be a finite subgroup of `Aut_k k[[z]]`,
+The order modulo1 is1. Indeed σ(z)=z+a z^(b+1)+⋯ gives
 
-where `P` is its wild `5`-Sylow subgroup and `T` is prime to `5`. Choose a
-generator `tau` of `C_T` and a parameter in which
+    τστ^(-1)(z)=z+aζ^(-b)z^(b+1)+⋯.
 
-`tau(z)=zeta z`,
-
-with `zeta` a primitive `T`-th root of unity. If `P_b/P_{b+1}` is nonzero,
-then
-
-`ord_{T/gcd(T,b)}(5) | dim_{F_5}(P_b/P_{b+1})`.              `(3)`
-
-Here the multiplicative order modulo `1` is understood to be `1`.
-
-To see this, write an element of exact break `b` as
-
-`sigma(z)=z+a z^{b+1}+O(z^{b+2})`.
-
-The leading-coefficient map embeds `P_b/P_{b+1}` into the additive group of
-`k`. Direct substitution gives
-
-`tau sigma tau^{-1}(z)=z+a zeta^{-b}z^{b+1}+O(z^{b+2})`.
-
-Thus the image is an `F_5`-subspace stable under multiplication by
-`zeta^{-b}`, hence a vector space over `F_5(zeta^b)`. The degree of this
-field over `F_5` is the order in `(3)`. Replacing `zeta^{-b}` by
-`zeta^b` changes no dimension statement.
-
-Equivalently, if `q_b=dim_{F_5}(P_b/P_{b+1})`, then
-
-`T | b(5^{q_b}-1)`.                                          `(4)`
-
-This is a necessary condition only.
+Leading coefficients embed P_b/P_(b+1) as an additive F_5-subspace
+stable under ζ^b, hence a vector space over F_5(ζ^b). Its extension
+degree is precisely the multiplicative order in (3).
+The sign convention for conjugation changes none of these conclusions.
 
 ## LEM-LEADING-COMMUTATOR — exact lower-break commutator
 
-**Status: `proved-text`.** This replaces the former vague “same-residue
-Lie obstruction.”
+If σ,τ have exact breaks r,s and leading coefficients a,c, and5∤s−r,
+their commutator has exact break r+s. Direct substitution gives first
+nonzero term(s−r)ac z^(r+s+1), up to commutator convention.
+Thus P_(r+s)/P_(r+s+1)≠0.
 
-Suppose `sigma` and `tau` have exact lower breaks `r` and `s`, with leading
-coefficients `a` and `c`:
-
-`sigma(z)=z+a z^{r+1}+O(z^{r+2})`,
-
-`tau(z)=z+c z^{s+1}+O(z^{s+2})`.
-
-If `5` does not divide `s-r`, then their commutator has exact break `r+s`.
-Indeed, its first nonzero term is
-
-`(s-r)ac z^{r+s+1}`
-
-up to the choice of commutator convention. In particular,
-`P_{r+s}/P_{r+s+1}` is nonzero.
-
-This exact statement can rule out a proposed filtration when it has pieces
-at `r` and `s` but no piece at `r+s`. It does **not**, by itself, imply that
-all breaks of an arbitrary finite local group have one residue modulo `5`.
-Any use of such a blanket “common residue” rule needs an additional maximal-
-break or vanishing argument.
+This excludes a proposed filtration with breaks r,s but none at r+s.
+A blanket common-residue rule still requires a maximal-break or
+vanishing argument; it is not contained in this calculation alone.
 
 ## LEM-SUMMATION-BY-PARTS-TAME — tame divisibility of the excess
 
-**Status: `proved-text`.**
+For lower breaks b_1<⋯<b_r, put
+q_i=dim_F5(P_(b_i)/P_(b_i+1)) and d_i=∑_(j>i)q_j. Counting exact breaks,
 
-Let `b_1<...<b_r` be all lower breaks. Set
+    ε(P)=∑_i b_i(|P_(b_i)|−|P_(b_i+1)|)
+        =∑_i b_i 5^d_i(5^q_i−1).
 
-`q_i=dim_{F_5}(P_{b_i}/P_{b_i+1})`
+Each summand is divisible by T by (3), so T|ε(P).
 
-and
-
-`d_i=log_5 |P_{b_i+1}|=sum_{j>i}q_j`.
-
-Counting elements according to their exact break gives
-
-`epsilon(P)`
-
-`= sum_i b_i(|P_{b_i}|-|P_{b_i+1}|)`
-
-`= sum_i b_i 5^{d_i}(5^{q_i}-1)`.                            `(5)`
-
-If `P` is normalized by the tame cyclic group `C_T` above, `(4)` says that
-every summand in `(5)` is divisible by `T`. Therefore
-
-`T | epsilon(P)`.
-
-## What remains open downstream
-
-The results above justify the local divisibility filters used in file `11`.
-They do not prove `PROP-NONWEAK-WILD-EXCLUSION`: the retained repository has
-neither the claimed finite arithmetic table nor the cited
-`COMP-LOCAL-ARITHMETIC-CHECKS`/`ALG-LOCAL-SEARCH` sources. In particular,
-the exact commutator lemma must not be silently strengthened to manufacture
-that missing elimination.
+These necessary local lemmas do not validate the historical global
+exclusions in [file11](11_PROOF_OVER_ORBIFOLD_CLASSIFICATION.md).
+In particular that file's missing arithmetic table and cited
+COMP-LOCAL-ARITHMETIC-CHECKS/ALG-LOCAL-SEARCH sources are not supplied
+by the commutator lemma. Use canonical atlas theorems for their
+separately proved degree bounds.

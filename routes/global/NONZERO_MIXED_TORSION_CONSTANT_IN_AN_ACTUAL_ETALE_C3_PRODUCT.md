@@ -1,271 +1,219 @@
-# A nonzero mixed torsion constant for an actual étale product action
+# An actual etale C₃×C₃ diamond with nonzero mixed pairing
 
-Date: 2026-09-05.
-Author: /root/gluing_cohomology_rigidity.
-Status: proved and author-checked; not independently audited.
+Version2,2026-09-08: the geometric example and its exact arithmetic
+parameter are consolidated, with no promotion of evidence.
+Geometry: /root/gluing_cohomology_rigidity,2026-09-05, author-checked,
+NOT independently audited. Arithmetic: author proof plus exact scalar
+certificate, replayed PASS2026-09-08 by
+/root/library_generalization_cleanup_max (not a fresh prose audit).
+The unchanged [Sage certificate](EXPLICIT_C3_CUBIC_DIAMOND_WEIL_CERTIFICATE.sage)
+retains the finite-field counts and character enumeration.
 
-## 1. Statement and scope
+## 1. Result and scope
 
-Let \(k\) be algebraically closed of characteristic different from \(3\),
-choose \(\lambda\notin\{0,1\}\), and fix a primitive cube root \(\zeta\).
-In particular, take characteristic \(5\) and \(\lambda=2\).
+For every algebraically closed k of characteristic≠3 and
+λ∈k\{0,1}, there are ACTUAL finite etale maps
 
-There exist a smooth projective curve \(W\) of genus \(10\), a free action
-\[
-                    H=H_1\times H_2\simeq C_3\times C_3,
-\]
-and an **actual finite étale map** \(r:W\to T\) of degree \(3\), where
-\(T\) is nonhyperelliptic of genus \(4\), such that:
+    T ← W → V,      (g(T),g(W),g(V))=(4,10,2),
+                    (deg(W/T),deg(W/V))=(3,9),
 
-1. For every \(h_i\in H_i\), the exact homomorphism of Jacobians
-   \[
-                         r_*(h_{1*}-1)(h_{2*}-1)=0.          \tag{1.1}
-   \]
-2. Neither factor fixes \(r\); both stabilizers are trivial.
-3. For generators, the constant
-   \[
-   c=\iota_T rh_1h_2-\iota_T rh_1-\iota_T rh_2+\iota_T r      \tag{1.2}
-   \]
-   has exact order \(3\) in \(J(T)(k)\). It is the difference of the
-   two trigonal-pencil classes on the displayed \((3,3)\) model.
+with T nonhyperelliptic, W/V Galois with group H₁×H₂=C₃×C₃,
+and k(W)=k(T)k(V). For r:W→T,
 
-Moreover \(V=W/H\) has genus \(2\), and
-\[
-                         T\longleftarrow W\longrightarrow V \tag{1.3}
-\]
-is a minimal bi-étale correspondence of degrees \(3\) and \(9\).
+    r_*(a_*−1)(b_*−1)=0       for all a∈H₁,b∈H₂,
 
-Thus coprimality cannot simply be removed from
-[the coprime mixed-Jacobian descent theorem](COPRIME_PRODUCT_MIXED_JACOBIAN_VANISHING_FORCES_DESCENT.md),
-even for an actual étale map to a nonhyperelliptic target and a free
-product action of odd-order groups. There is no contradiction: here the
-two factor orders share the prime \(3\).
+but the constant mixed pairing c:H₁×H₂→J(T)[3](k) is nonzero
+with trivial radicals. Neither factor fixes r. Thus unrestricted
+axis descent is FALSE, exactly as allowed by the
+[bounded residual theorem](MIXED_JACOBIAN_VANISHING_AND_BOUNDED_RESIDUAL_DESCENT.md).
 
-No ordinarity claim about \(V\), and no claim that
-\(\operatorname{Hom}(J(T),J(V))=0\), is made. This is an auxiliary
-family, not the fixed pair of the main problem or a verified example
-satisfying all of its additional hypotheses.
+In characteristic5 the explicit parameter
 
-## 2. A complete intersection with free actions
+    k₀=F₅[α]/(α²−α+2),       λ=α+3∈F₂₅
 
-Define \(W\subset\mathbf P^3_{[U:Z:A:S]}\) by
-\[
-                  U^3-Z^3=S^3,\qquad U^3-A^3=\lambda S^3.   \tag{2.1}
-\]
-On \(S\ne0\), put \(u=U/S,\ z=Z/S,\ a=A/S,\ t=u^3\). Then
-\[
-                      u^3=t,\quad z^3=t-1,\quad a^3=t-\lambda.
-                                                               \tag{2.2}
-\]
-The three Kummer classes are independent: their valuations at
-\(0,1,\lambda\), reduced modulo \(3\), form the identity matrix.
-The affine field therefore has degree \(27\) over \(k(t)\), with group
-\[
- G=(\mathbf Z/3)^3,\qquad
- (x,y,z_0):(u,z,a)\longmapsto
-                  (\zeta^xu,\zeta^yz,\zeta^{z_0}a).          \tag{2.3}
-\]
+makes BOTH endpoints ordinary and Hom_(Fbar₅)(J(T),J(V))=0,
+while a(W)=4 and f(W)=6. This is a common-cover example, NOT a
+counterexample to Litt. The arithmetic assertions are for this
+specified parameter, not for every λ or for the active fixed X.
 
-The projective complete intersection is smooth. Neither gradient in
-(2.1) vanishes at a point of the intersection. Dependence of the two
-nonzero gradients would, from their \(Z\) and \(A\) coordinates, force
-\(Z=A=0\). The equations would then give
-\(U^3=S^3=\lambda S^3\), impossible. Its intersection with \(S=0\)
-is nine points, so it has no curve component there. Independence of the
-affine Kummer field consequently proves irreducibility of the whole
-smooth complete intersection.
+## 2. One compact curve, both free actions
 
-The four branch points of \(W\to\mathbf P^1_t\) are
-\(0,1,\lambda,\infty\), with inertia lines
-\[
-                  (1,0,0),\quad(0,1,0),\quad(0,0,1),\quad(1,1,1).
-                                                               \tag{2.4}
-\]
-Every inertia group has order \(3\). At infinity the three radicands
-all have valuation \(-1\); over the algebraically closed residue field
-their local tame cubic extensions are the same. There is no other
-ramification. Hence
-\[
- 2g(W)-2=27\left(-2+4\left(1-\frac13\right)\right)=18,
- \qquad g(W)=10.                                             \tag{2.5}
-\]
+Choose ζ of order3. Let W⊂P³_[U:Z:A:S] be
 
-Set
-\[
-\begin{aligned}
- h_1&=\operatorname{diag}(\zeta,\zeta,1,1),\\
- h_2&=\operatorname{diag}(\zeta,1,\zeta,1),\\
- k_0&=\operatorname{diag}(1,\zeta,\zeta,1),
-\end{aligned}                                                \tag{2.6}
-\]
-and \(H_i=\langle h_i\rangle,\ H=\langle h_1,h_2\rangle,\
-K=\langle k_0\rangle\). In (2.3),
-\[
- H=\{(i+j,i,j)\}=\ker(x-y-z_0),\qquad K=\langle(0,1,1)\rangle.
-                                                               \tag{2.7}
-\]
-The displayed functional is nonzero on every inertia generator (2.4).
-Thus the **whole** group \(H\), not just each factor, acts freely.
-The line \(K\) also differs from all four inertia lines and acts freely.
-Moreover its generator has functional value \(-2=1\) in \(\mathbf F_3\);
-therefore \(G=H\times K\).
+    U³−Z³=S³,                  U³−A³=λS³.
 
-Consequently the actual quotient maps
-\[
-                    r:W\to W/K,\qquad s:W\to W/H             \tag{2.8}
-\]
-are finite étale of degrees \(3\) and \(9\). These freeness checks
-include every point at infinity.
+Its affine function field is
 
-## 3. The nonhyperelliptic target and its two genus-two quotients
+    u³=t,      z³=t−1,      a³=t−λ,                 u=U/S.
 
-Put \(T=W/K\). Its invariant functions \(u,v=z/a\) satisfy
-\[
-                       v^3(u^3-\lambda)=u^3-1,               \tag{3.1}
-\]
-or equivalently
-\[
-                       u^3=t,\qquad v^3=(t-1)/(t-\lambda).
-                                                               \tag{3.2}
-\]
-They generate the invariant field: adjoining \(z\) has degree at most
-three and recovers \(a=z/v\), whereas \(K\) has order three.
+The three Kummer classes are independent by their valuations at
+0,1,λ, so the extension of k(t) has degree27, with group G=F₃³
+acting by (u,z,a)↦(ζ^x u,ζ^y z,ζ^z₀ a).
+The complete intersection is smooth: neither gradient can vanish,
+and a dependence between them forces Z=A=0, then U=S=0 because
+λ≠1. Its affine generic field is irreducible; S=0 contains only
+nine points, so no additional curve component lies at infinity.
+Thus this is the smooth projective connected Kummer model.
 
-Equation (3.1) is a smooth \((3,3)\) curve in
-\(\mathbf P^1_u\times\mathbf P^1_v\). On the affine chart with \(u,v\)
-nonzero, simultaneous vanishing of its two partial derivatives would
-give \(v^3=1,\ u^3=\lambda\), contrary to \(\lambda\ne1\).
-At \(u=0\) or \(v=0\) the remaining derivative is nonzero.
-At \(u=\infty\) the equation has \(v^3=1\) and nonzero \(v\)-derivative;
-at \(v=\infty\) it has \(u^3=\lambda\) and nonzero \(u\)-derivative.
-There is no point with both coordinates infinite.
+The only inertia lines in G are
 
-Adjunction gives
-\[
-                         \omega_T=\mathcal O_T(1,1),\qquad g(T)=4.
-                                                               \tag{3.3}
-\]
-The four sections of \(\mathcal O(1,1)\) restrict to a canonical basis,
-and the canonical map is the restricted Segre embedding. Thus \(T\)
-is nonhyperelliptic. Its genus also follows from the étale map \(r\).
+    <e₁>, <e₂>, <e₃>, <(1,1,1)>       at0,1,λ,∞ respectively.
 
-Write \(\sigma(u,v)=(\zeta u,v)\) and
-\(\tau(u,v)=(u,\zeta v)\). The two factors induce
-\[
-                      \bar h_1=\sigma\tau,\qquad
-                      \bar h_2=\sigma\tau^{-1}.              \tag{3.4}
-\]
-They generate the full \(C_3^2\)-group of (3.2), whose quotient is
-\(\mathbf P^1_t\). Its only inertia lines are \(\langle\sigma\rangle\)
-and \(\langle\tau\rangle\), so each cyclic subgroup in (3.4) acts
-freely. Therefore
-\[
-              q_i:T\to T_i=T/\langle\bar h_i\rangle
-       \quad\text{is degree-three étale, with }g(T_i)=2.      \tag{3.5}
-\]
-Both induced actions are faithful, so neither \(H_i\) fixes \(r\).
-Explicit quotient models, useful independently, are
-\[
- T_1:\ b^3=\frac{t(t-\lambda)}{t-1},\quad b=u/v;\qquad
- T_2:\ d^3=\frac{t(t-1)}{t-\lambda},\quad d=uv.                \tag{3.6}
-\]
-As usual these equations denote smooth projective normalizations.
+At infinity the three radicands all have valuation−1 and yield
+the same local tame cubic extension. There is no other ramification.
+Riemann–Hurwitz gives 2g(W)−2=27(−2+4·2/3)=18.
 
-## 4. Exact Jacobian vanishing
+Put h₁=(1,1,0), h₂=(1,0,1), k₀=(0,1,1), and
 
-In \(\operatorname{End}^0(J(T))\), let
-\[
-                       e_i=\frac13\sum_{j=0}^2\bar h_{i*}^{\,j}.
-\]
-Their images are \(q_i^*J(T_i)\), each of dimension two. Since the
-whole group quotient is \(\mathbf P^1\), its norm is zero on \(J(T)\):
-\[
-                 e_1e_2=\frac19\sum_{h\in C_3^2}h_*=0.       \tag{4.1}
-\]
-Thus these two images intersect only in a finite subgroup and together
-have dimension four. Addition gives an isogeny
-\[
-                          J(T_1)\times J(T_2)\longrightarrow J(T).
-                                                               \tag{4.2}
-\]
-Every element of the first cyclic group acts identically on the first
-summand; the second group acts identically on the second. Since the
-actions commute, for all elements of the respective groups
-\[
-                         (\bar h_{1*}-1)(\bar h_{2*}-1)=0.    \tag{4.3}
-\]
-This identity holds exactly in \(\operatorname{End}(J(T))\): the
-endomorphism is zero after precomposition with the surjective isogeny
-(4.2), hence is zero. Equivariance of \(r\) yields
-\[
- r_*(h_{1*}-1)(h_{2*}-1)
-       =(\bar h_{1*}-1)(\bar h_{2*}-1)r_*=0.                 \tag{4.4}
-\]
-No inference from zero differential to zero homomorphism in positive
-characteristic is used.
+    H_i=<h_i>,    H=H₁×H₂=ker(x−y−z₀),    K=<k₀>.
 
-## 5. The constant is a nonzero difference of trigonal pencils
+The functional x−y−z₀ is nonzero on every inertia generator.
+Hence the WHOLE H acts freely, not just its individual factors.
+K also differs from all inertia lines and acts freely. Its
+functional value is−2=1 in F₃, so G=H×K. Therefore
 
-Choose \(v_0^3=1/\lambda\) and set
-\[
-                         P_j=(0,\zeta^jv_0),\qquad j\in\mathbf Z/3.
-\]
-Let \(H_u,H_v\) denote the degree-three fiber classes of the maps
-\(u,v:T\to\mathbf P^1\). Their fibers show
-\[
-                  H_u=[P_0+P_1+P_2],\qquad H_v=[3P_j]
-                         \quad\text{for every }j.           \tag{5.1}
-\]
-Indeed the \(u\)-fiber at zero is reduced, and (3.1) gives order three
-for \(v-\zeta^jv_0\) at \(P_j\).
+    r:W→T=W/K,        s:W→V=W/H
 
-By (4.4) and the universal property of the Jacobian, (1.2) is constant.
-At any point over \(P_0\), its value is
-\[
-                  c=[2P_0-P_1-P_2]=H_v-H_u.                 \tag{5.2}
-\]
-Equation (5.1) implies \(3c=0\). If \(c=0\), the distinct effective
-degree-two divisors \(2P_0\) and \(P_1+P_2\) would be linearly
-equivalent. That would give a degree-two pencil on \(T\), contrary to
-nonhyperellipticity. Thus \(c\) has **exact order three**.
+are finite etale of degrees3 and9, including at infinity.
 
-The telescoping identities for constant mixed differences give
-\[
-                             c(h_1^i,h_2^j)=ijc.             \tag{5.3}
-\]
-This is a nonzero pairing on \(H_1\times H_2\) with trivial radicals.
-Both residual quotient indices are exactly three, and \(r\) descends
-through neither axis.
+## 3. The target models and the exact mixed identity
 
-## 6. The retained genus-two leg and minimality
+The K-invariants u,v=z/a generate k(T), with
 
-The \(H\)-invariant functions \(t=u^3,\ w=uz^2/a\) satisfy
-\[
-                            w^3=\frac{t(t-1)^2}{t-\lambda}. \tag{6.1}
-\]
-Let \(V\) be the smooth projective normalization. Its radicand has
-valuation vector \((1,1,2,2)\) modulo three at
-\((0,\infty,1,\lambda)\). This is a connected cyclic degree-three
-cover with four branch points of inertia three, and Riemann–Hurwitz
-gives \(g(V)=2\). Its field is exactly \(k(W)^H\) by the degree count,
-so \(s:W\to V\) is the already verified degree-nine étale quotient.
+    v³(u³−λ)=u³−1,       equivalently u³=t, v³=(t−1)/(t−λ).
 
-Finally the two target function fields generate \(k(W)\): from
-\(u,v\) on \(T\) and \(w\) on \(V\), one recovers
-\[
-                               z=\frac{w}{uv},\qquad a=\frac zv.
-                                                               \tag{6.2}
-\]
-These are rational-function identities, so vanishing denominators at
-some points cause no function-field exception. The normalization of
-the joint image in \(T\times V\) is therefore \(W\) itself. This proves
-minimality without replacing either target or discarding either map.
+This is a smooth (3,3) curve in P¹_u×P¹_v. In the affine chart
+simultaneously vanishing partial derivatives would force
+v³=1,u³=λ, contrary to λ≠1; at u=0 or v=0 the other derivative
+is nonzero. At u=∞ one has v³=1 and nonzero v-derivative; at
+v=∞ one has u³=λ and nonzero u-derivative. There is no point
+with both coordinates infinite. Adjunction gives g(T)=4 and
+ω_T=O_T(1,1); its four canonical sections give the restricted
+Segre embedding, so T is nonhyperelliptic in every allowed characteristic.
 
-The resulting data are
-\[
-              (g(T),g(V),g(W))=(4,2,10),\qquad
-                         (\deg r,\deg s)=(3,9).
-\]
-Both degrees are prime to five. The additional ordinarity and
-Hom-vanishing conditions mentioned in §1 remain unchecked and are not
-part of this counterexample.
+Let σ(u,v)=(ζu,v), τ(u,v)=(u,ζv). The two factors induce
+h̄₁=στ, h̄₂=στ⁻¹, generating the C₃²-action with quotient P¹_t.
+Its only inertia lines are <σ> and <τ>, so each <h̄_i> acts
+freely. Their etale degree3 quotients have genus2 and models
+
+    T₁: b³=t(t−λ)/(t−1),  b=u/v;
+    T₂: d³=t(t−1)/(t−λ),  d=uv.
+
+For e_i=(1+h̄_i*+h̄_i*²)/3 in End⁰(J(T)), the image is
+q_i*J(T_i), of dimension2. The product e₁e₂ is the whole-group
+norm divided by9, hence zero because T/C₃²=P¹. Their images
+therefore have finite intersection and sum to J(T), giving an
+isogeny J(T₁)×J(T₂)→J(T). The first factor action fixes the first
+summand, the second fixes the second. Since the actions commute,
+
+    (ā_*−1)(b̄_*−1)=0 in End(J(T)),     a∈H₁,b∈H₂.
+
+This is EXACT: the endomorphism vanishes after precomposition
+with a surjective isogeny. It is not an inference from a zero
+differential. Equivariance of r gives the asserted mixed vanishing.
+
+Choose v₀³=1/λ and P_j=(0,ζ^j v₀). The trigonal fiber classes satisfy
+
+    H_u=[P₀+P₁+P₂],             H_v=[3P_j] for every j.
+
+At a point of W over P₀, the mixed constant is
+
+    c(h₁,h₂)=[2P₀−P₁−P₂]=H_v−H_u.
+
+The fiber identities give3c=0. If c=0, the distinct effective
+degree-two divisors2P₀ and P₁+P₂ would be equivalent, contradicting
+nonhyperellipticity. Hence c has exact order3. Biadditivity gives
+c(h₁^i,h₂^j)=ijc, proving trivial radicals and residual indices3.
+
+The H-invariants t,w=uz²/a generate
+
+    k(V): w³=t(t−1)²/(t−λ).
+
+The four branch valuations at0,∞,1,λ are1,1,2,2 modulo3, giving
+g(V)=2. The field degree verifies k(V)=k(W)^H. Finally, from the
+two target fields one recovers z=w/(uv), a=z/v. Thus k(T)k(V)=k(W):
+W is the normalization of the joint image in T×V, with BOTH original
+etale legs retained.
+
+## 4. The exact ordinary, Hom-orthogonal parameter
+
+Now use characteristic5 and λ=α+3 above. For each cubic model,
+every branch fiber contributes one rational point, and every other
+fiber is counted by its cube roots. The scalar certificate gives:
+
+| Curve | # over F₂₅ | # over F₆₂₅ |
+| --- | ---: | ---: |
+| V | 28 | 724 |
+| T₁ | 22 | 592 |
+| T₂ | 10 | 598 |
+
+These determine the genus-two Frobenius polynomials
+
+    P_V(t)=t⁴+2t³+51t²+50t+625=(t²+t+25)²,
+    P₁(t)=t⁴−4t³−9t²−100t+625,
+    P₂(t)=t⁴−16t³+114t²−400t+625=(t²−8t+25)².
+
+All three middle coefficients are prime to5, so V,T₁,T₂ are
+ordinary, as is T via the preceding isogeny.
+
+For a root β of t²+t+25, Q(β)=Q(√−11) and
+Q(β^n)=Q(√−11) for every n≥1: β/β̄ belongs to that quadratic
+field, has neither value±1, and cannot be any other root of unity.
+The roots of P₂ lie in Q(i). The polynomial P₁ has root field
+L=Q(√−3,√7), as seen from
+
+    P₁(t)=(t²+(−2+3√7)t+25)(t²+(−2−3√7)t+25).
+
+The quadratic discriminants are−3(2±√7)²; the four conjugates
+are distinct, proving irreducibility and the asserted field.
+Its quadratic subfields are Q(√−3),Q(√7),Q(√−21). Thus both
+L and Q(i) intersect Q(√−11) only in Q.
+
+A nonzero geometric Hom from either J(T_i) to J(V) is defined
+over some F_(25^n). On Tate modules it forces a common Frobenius
+eigenvalue γ^n=β^n, with γ a root of P_i. But the right side
+generates Q(√−11), while the left side lies in L or Q(i).
+This contradiction proves both Hom groups zero and therefore
+Hom(J(T),J(V))=0. It is a geometric, not merely base-field,
+Hom-vanishing certificate.
+
+## 5. Nonordinary common source despite proper restricted theta
+
+For a nonzero character χ=(i,j,k)∈F₃³, put
+r(χ)=#{nonzero entries among i,j,k,i+j+k}. The cyclic quotient
+attached to {χ,−χ} has genus r(χ)−2. The exact distribution of
+the13 pairs, also enumerated in the certificate, is
+
+    r=2:6 pairs;          r=3:4 pairs;          r=4:3 pairs.
+
+The genus-two packets are exactly J(T₁),J(T₂),J(V).
+The four genus-one quotients each have an order3 automorphism
+with a fixed point, so j=0 and they are supersingular in char5.
+The others are rational. Group-algebra projectors, whose denominators
+are powers of3, consequently give a PRIME-TO-5 isogeny
+
+    J(W) ∼ J(T)×J(V)×E_ss⁴.
+
+Here the four elliptic curves are isomorphic over Fbar₅ to the
+j=0 curve E_ss. Pullbacks and norms provide the inverse after
+inverting3; the kernel is killed by a power of3. Thus this
+isogeny identifies5-divisible groups, justifying
+
+    f(W)=6,          g(W)−f(W)=4,          a(W)=4.
+
+The a-number claim uses the prime-to-5 isogeny, NOT arbitrary
+isogeny invariance. The origin therefore lies in the two-leg
+restricted Raynaud bad locus on J(T^(1))×J(V^(1)). Nevertheless
+that locus is proper: either original leg is abelian Galois of
+prime-to-5 degree, so its axis is proper by the
+[character-filtration criterion, §1](RESTRICTED_RAYNAUD_THETA_SUFFICIENT_CONDITIONS_AND_STABILITY_BOUNDARY.md).
+This retains the concrete distinction between theta properness
+and ordinarity of the common source.
+
+The small-parameter boundary is also exact: over F₂₅, λ=2 gives
+P_V=P₂, λ=3 gives P_V=P₁, with this common polynomial ordinary;
+λ=4 gives P_V=(t+5)⁴, nonordinary. Thus no λ∈F₅\{0,1} has both
+desired properties. These extra scalar counts were replayed on
+2026-09-08 using the certificate's point-count functions.
+Passing to F₂₅ is substantive. No absence of common covers or
+ordinary-pullback theorem is inferred.

@@ -1,0 +1,625 @@
+--- a/src/neogb/f4.c
++++ b/src/neogb/f4.c
+@@ -21,6 +21,8 @@
+ 
+ #include "f4.h"
+ #include "../msolve/streams.h"
++#include "f4_checkpoint.h"
++#include "f4_hash_compact.h"
+ 
+ static void final_remove_redundant_elements(
+         bs_t *bs,
+@@ -686,7 +688,42 @@
+     /* timings for one round */
+     double rrt, crt;
+ 
++    const char *cp_path=getenv("MSOLVE_F4_CHECKPOINT");
++    const char *cp_resume=getenv("MSOLVE_F4_RESUME");
++    const char *cp_telemetry=getenv("MSOLVE_F4_TELEMETRY");
++    const char *cp_stop_env=getenv("MSOLVE_F4_STOP_AFTER_ROUNDS");
++    const char *cp_interval_env=getenv("MSOLVE_F4_CHECKPOINT_INTERVAL");
++    unsigned long cp_stop=cp_stop_env?strtoul(cp_stop_env,NULL,10):0;
++    unsigned long cp_interval=cp_interval_env?strtoul(cp_interval_env,NULL,10):1;
++    int cp_enabled=cp_path||cp_resume||cp_telemetry||cp_stop;
++    uint64_t cp_fingerprint=0;
++    unsigned long cp_rounds=0;
++    uint64_t cp_next_hash_scan=UINT64_C(1048576);
++    if(cp_enabled) {
++        if(fc!=5 || gmd->fc!=5 || gmd->laopt!=2 || gmd->use_signatures ||
++            gmd->trace_level!=NO_TRACER)
++            f4cp_die("supported only for F5 exact LA2, no signatures or tracer");
++        if(cp_stop && !cp_path) f4cp_die("stop requires checkpoint path");
++        cp_fingerprint=f4cp_input(gbs,gmd);
++        f4cp_requested=0;
++        if(cp_path) signal(SIGUSR1,f4cp_signal);
++    }
++
+     done = initialize_f4(&bs, &md, &mat, gmd, gbs, fc);
++    if(cp_resume) {
++        f4cp_load(cp_resume,bs,md,cp_fingerprint);
++        done=bs->constant || !md->ps->ld;
++    }
++    if(cp_enabled && !getenv("MSOLVE_F4_COMPACT_ONLY"))
++        f4cp_compact_hash(bs,md,cp_telemetry,&cp_next_hash_scan,0);
++    /* Maintenance-only exact old-format load/compact/save, with no F4 work.
++     * Exit 75 retains the established incomplete-versus-complete distinction. */
++    if(getenv("MSOLVE_F4_COMPACT_ONLY")) {
++        if(!cp_resume || !cp_path) f4cp_die("compact-only requires resume and output checkpoint");
++        f4cp_compact_hash(bs,md,cp_telemetry,&cp_next_hash_scan,1);
++        f4cp_save(cp_path,bs,md,cp_fingerprint);
++        fflush(NULL); exit(done?0:75);
++    }
+ 
+ 
+     /* let's start the f4 rounds, we are done when no more spairs
+@@ -698,10 +735,25 @@
+     while (!done) {
+         rrt = realtime();
+         crt = cputime();
++        double cp_t[]={md->select_rtime,md->symbol_rtime,md->la_rtime,md->update_rtime};
++        uint64_t cp_rows=0,cp_cols=0,cp_nnz=0,cp_degree_pairs=0;
++        uint64_t cp_pairs_before=cp_enabled?md->ps->ld:0,cp_selected=0;
++        if(cp_enabled) {
++            deg_t d=INT32_MAX;
++            for(unsigned i=0;i<md->ps->ld;++i) if(md->ps->p[i].deg<d)d=md->ps->p[i].deg;
++            for(unsigned i=0;i<md->ps->ld;++i) if(md->ps->p[i].deg==d)++cp_degree_pairs;
++        }
+         md->max_bht_size = md->max_bht_size > bs->ht->esz ?
+             md->max_bht_size : bs->ht->esz;
+ 
+         done = preprocessing(mat, bs, md);
++        if(cp_enabled) {
++            cp_selected=cp_pairs_before-md->ps->ld;
++            cp_rows=mat->nru+mat->nrl; cp_cols=md->ht->eld-1;
++            for(unsigned i=0;i<mat->nru;++i) cp_nnz+=mat->rr[i][LENGTH];
++            for(unsigned i=0;i<mat->nrl;++i) cp_nnz+=mat->tr[i][LENGTH];
++            if(!done) f4cp_pre_la(cp_telemetry,bs,md,cp_rows,cp_cols,cp_nnz);
++        }
+ 
+         if (!done) {
+             done = compute_new_elements(mat, bs, md, errp);
+@@ -711,6 +763,19 @@
+         }
+ 
+         print_round_timings(VERBSTREAM, md, rrt, crt);
++        if(cp_enabled) {
++            ++md->current_rd; ++cp_rounds;
++            f4cp_compact_hash(bs,md,cp_telemetry,&cp_next_hash_scan,0);
++            f4cp_telemetry(cp_telemetry,bs,md,cp_rows,cp_cols,cp_nnz,
++                cp_degree_pairs,cp_selected,cp_t,realtime()-rrt);
++            int stop=f4cp_requested || (cp_stop && cp_rounds>=cp_stop);
++            if(cp_path && (done || stop || (cp_interval && cp_rounds%cp_interval==0)))
++                f4cp_save(cp_path,bs,md,cp_fingerprint);
++            if(stop && !done) {
++                fprintf(stderr,"F4_INCOMPLETE: saved round %d; %u S-pairs remain; no Groebner basis exported\n",md->current_rd,md->ps->ld);
++                fflush(NULL); exit(75);
++            }
++        }
+     }
+     if (*errp > 0) {
+         free_basis_and_only_local_hash_table_data(&bs);
+--- a/src/neogb/f4_checkpoint.h
++++ b/src/neogb/f4_checkpoint.h
+@@ -0,0 +1,220 @@
++/* Algorithmic round-boundary checkpoints for the exact, untraced F5 F4 path.
++ * Native-endian arrays, explicitly versioned and ABI checked. No pointers,
++ * matrices, thread state, or process images are persisted. */
++#include <signal.h>
++#include <unistd.h>
++#include <errno.h>
++#include <inttypes.h>
++#include <fcntl.h>
++#include <sys/time.h>
++
++static volatile sig_atomic_t f4cp_requested;
++static void f4cp_signal(int sig) { (void)sig; f4cp_requested = 1; }
++static void f4cp_die(const char *s) {
++    fprintf(stderr, "F4_CHECKPOINT_ERROR: %s (%s)\n", s, strerror(errno));
++    exit(74);
++}
++static void *f4cp_alloc(size_t n, size_t z) {
++    if (z && n > SIZE_MAX/z) f4cp_die("allocation overflow");
++    void *p = calloc(n ? n : 1, z);
++    if (!p) f4cp_die("allocation");
++    return p;
++}
++static uint64_t f4cp_hash(uint64_t h, const void *p, size_t n) {
++    const unsigned char *q = p;
++    while (n--) { h ^= *q++; h *= UINT64_C(1099511628211); }
++    return h;
++}
++static void *f4cp_cf(bs_t *b, unsigned i, int bits) {
++    return bits == 8 ? (void *)b->cf_8[i] : bits == 16 ?
++        (void *)b->cf_16[i] : (void *)b->cf_32[i];
++}
++static uint64_t f4cp_input(bs_t *b, md_t *m) {
++    uint64_t h = UINT64_C(14695981039346656037);
++    h = f4cp_hash(h, &b->ld, sizeof(b->ld));
++    for (unsigned i=0; i<b->ld; ++i) {
++        hm_t *r = b->hm[i];
++        h = f4cp_hash(h, &r[LENGTH], sizeof(hm_t));
++        h = f4cp_hash(h, f4cp_cf(b,r[COEFFS],m->ff_bits),
++                (size_t)r[LENGTH]*(m->ff_bits/8));
++        for(unsigned j=0;j<r[LENGTH];++j)
++            h=f4cp_hash(h,b->ht->ev[r[OFFSET+j]],b->ht->evl*sizeof(exp_t));
++    }
++    return h;
++}
++typedef struct { FILE *f; uint64_t hash; int reading; } f4cp_io;
++static void f4cp_bytes(f4cp_io *s, void *p, size_t n) {
++    if ((s->reading ? fread(p,1,n,s->f) : fwrite(p,1,n,s->f)) != n)
++        f4cp_die("short checkpoint IO");
++    s->hash=f4cp_hash(s->hash,p,n);
++}
++static uint64_t f4cp_num(f4cp_io *s, uint64_t n) {
++    f4cp_bytes(s,&n,sizeof(n)); return n;
++}
++#define CP_SCALAR(o,f) ((o)->f=f4cp_num(s,(o)->f))
++#define CP_ARRAY(p,n) f4cp_bytes(s,(p),(size_t)(n)*sizeof(*(p)))
++static void f4cp_body(f4cp_io *s, bs_t *b, md_t *m) {
++    ht_t *h=b->ht;
++    CP_SCALAR(b,ld); CP_SCALAR(b,sz); CP_SCALAR(b,lo);
++    CP_SCALAR(b,constant); CP_SCALAR(b,mltdeg); CP_SCALAR(b,lml);
++    CP_SCALAR(h,elo); CP_SCALAR(h,eld); CP_SCALAR(h,esz);
++    CP_SCALAR(h,hsz); CP_SCALAR(h,ebl); CP_SCALAR(h,nv);
++    CP_SCALAR(h,evl); CP_SCALAR(h,ndv); CP_SCALAR(h,bpv); CP_SCALAR(h,rsd);
++    if (b->ld>b->sz || b->lml>b->ld || b->lo>b->ld || h->eld>h->esz ||
++        h->esz*2!=h->hsz || h->hsz<8 || (h->hsz&(h->hsz-1)) ||
++        h->nv!=(unsigned)m->nvars || h->ebl!=(unsigned)(m->nev?m->nev+1:0) ||
++        h->evl!=h->nv+1+(h->ebl!=0) || h->ndv>32 || h->ndv*h->bpv>32)
++        f4cp_die("invalid dimensions");
++    if (s->reading) {
++        b->hm=f4cp_alloc(b->sz,sizeof(*b->hm));
++        b->red=f4cp_alloc(b->sz,sizeof(*b->red));
++        b->lm=f4cp_alloc(b->sz,sizeof(*b->lm));
++        b->lmps=f4cp_alloc(b->sz,sizeof(*b->lmps));
++        if(m->ff_bits==8) b->cf_8=f4cp_alloc(b->sz,sizeof(*b->cf_8));
++        else if(m->ff_bits==16) b->cf_16=f4cp_alloc(b->sz,sizeof(*b->cf_16));
++        else b->cf_32=f4cp_alloc(b->sz,sizeof(*b->cf_32));
++        h->ev=f4cp_alloc(h->esz,sizeof(*h->ev));
++        h->ev[0]=f4cp_alloc(h->esz,h->evl*sizeof(exp_t));
++        for(hl_t i=1;i<h->esz;++i) h->ev[i]=h->ev[0]+i*h->evl;
++        h->hd=f4cp_alloc(h->esz,sizeof(*h->hd));
++        h->hmap=f4cp_alloc(h->hsz,sizeof(*h->hmap));
++        h->dm=f4cp_alloc(h->ndv*h->bpv,sizeof(*h->dm));
++        h->dv=f4cp_alloc(h->ndv,sizeof(*h->dv));
++        h->rn=f4cp_alloc(h->evl,sizeof(*h->rn));
++    }
++    CP_ARRAY(h->ev[0],h->eld*h->evl); CP_ARRAY(h->hd,h->eld);
++    CP_ARRAY(h->hmap,h->hsz); CP_ARRAY(h->dm,h->ndv*h->bpv);
++    CP_ARRAY(h->dv,h->ndv); CP_ARRAY(h->rn,h->evl);
++    CP_ARRAY(b->red,b->ld); CP_ARRAY(b->lm,b->lml); CP_ARRAY(b->lmps,b->lml);
++    for(unsigned i=0;i<b->ld;++i) {
++        uint64_t n=f4cp_num(s,s->reading?0:b->hm[i][LENGTH]);
++        if(!n || n>UINT32_MAX-OFFSET) f4cp_die("invalid polynomial size");
++        if(s->reading) b->hm[i]=f4cp_alloc(n+OFFSET,sizeof(hm_t));
++        CP_ARRAY(b->hm[i],n+OFFSET);
++        unsigned c=b->hm[i][COEFFS];
++        if(c>=b->ld || b->hm[i][LENGTH]!=n) f4cp_die("invalid coefficient index");
++        if(s->reading) {
++            if(f4cp_cf(b,c,m->ff_bits)) f4cp_die("duplicate coefficient index");
++            void *p=f4cp_alloc(n,m->ff_bits/8);
++            if(m->ff_bits==8) b->cf_8[c]=p;
++            else if(m->ff_bits==16) b->cf_16[c]=p; else b->cf_32[c]=p;
++        }
++        f4cp_bytes(s,f4cp_cf(b,c,m->ff_bits),n*(m->ff_bits/8));
++        for(unsigned j=0;j<n;++j)
++            if(b->hm[i][OFFSET+j]>=h->eld) f4cp_die("invalid monomial index");
++    }
++    CP_SCALAR(m->ps,ld); CP_SCALAR(m->ps,sz);
++    if(m->ps->ld>m->ps->sz) f4cp_die("invalid pair count");
++    if(s->reading) m->ps->p=f4cp_alloc(m->ps->sz,sizeof(spair_t));
++    /* Explicit fields: enum padding is not part of the format. */
++    for(unsigned i=0;i<m->ps->ld;++i) {
++        spair_t *p=m->ps->p+i;
++        CP_SCALAR(p,lcm); CP_SCALAR(p,gen1); CP_SCALAR(p,gen2);
++        CP_SCALAR(p,deg); CP_SCALAR(p,type);
++        if(p->lcm>=h->eld || p->gen1>=b->ld || p->gen2>=b->ld)
++            f4cp_die("invalid S-pair reference");
++    }
++    CP_SCALAR(m,np); CP_SCALAR(m,current_rd); CP_SCALAR(m,current_deg);
++    CP_SCALAR(m,homogeneous); CP_SCALAR(m,max_gb_degree);
++    CP_SCALAR(m,min_deg_in_first_deg_fall);
++    CP_SCALAR(m,num_pairsred); CP_SCALAR(m,num_gb_crit);
++    CP_SCALAR(m,num_redundant); CP_SCALAR(m,num_redundant_old);
++    CP_SCALAR(m,num_rowsred); CP_SCALAR(m,num_zerored); CP_SCALAR(m,num_rht);
++    CP_SCALAR(m,max_bht_size); CP_SCALAR(m,max_sht_size); CP_SCALAR(m,max_uht_size);
++    CP_ARRAY(&m->select_rtime,1); CP_ARRAY(&m->symbol_rtime,1);
++    CP_ARRAY(&m->la_rtime,1); CP_ARRAY(&m->update_rtime,1);
++}
++static void f4cp_header(f4cp_io *s, md_t *m, uint64_t input) {
++    uint64_t v[]={UINT64_C(0x41544c4153463443),1,0x01020304,
++        sizeof(exp_t),sizeof(hm_t),sizeof(hd_t),sizeof(double),OFFSET,
++        m->fc,m->nvars,m->mo,m->nev,m->ff_bits,m->laopt,input};
++    for(unsigned i=0;i<sizeof(v)/sizeof(*v);++i)
++        if(f4cp_num(s,v[i])!=v[i]) f4cp_die("header/input mismatch");
++}
++static void f4cp_save(const char *path, bs_t *b, md_t *m, uint64_t input) {
++    char *tmp=f4cp_alloc(strlen(path)+48,1), *prev=f4cp_alloc(strlen(path)+8,1);
++    sprintf(tmp,"%s.tmp.%ld",path,(long)getpid()); sprintf(prev,"%s.prev",path);
++    f4cp_io io={fopen(tmp,"wb"),UINT64_C(14695981039346656037),0};
++    if(!io.f) f4cp_die("open temporary checkpoint");
++    f4cp_header(&io,m,input); f4cp_body(&io,b,m);
++    if(fwrite(&io.hash,8,1,io.f)!=1 || fflush(io.f) || fsync(fileno(io.f)))
++        f4cp_die("sync checkpoint");
++    if(fclose(io.f)) f4cp_die("close checkpoint");
++    /* Hard-link the existing valid snapshot before atomic replacement. */
++    if(unlink(prev) && errno!=ENOENT) f4cp_die("unlink previous checkpoint link");
++    if(link(path,prev) && errno!=ENOENT) f4cp_die("retain previous checkpoint");
++    if(rename(tmp,path)) f4cp_die("promote checkpoint");
++    char *dir=f4cp_alloc(strlen(path)+2,1); strcpy(dir,path);
++    char *slash=strrchr(dir,'/');
++    if(slash) { if(slash==dir) slash[1]=0; else *slash=0; }
++    else strcpy(dir,".");
++    int dfd=open(dir,O_RDONLY);
++    if(dfd<0 || fsync(dfd)) f4cp_die("sync checkpoint directory");
++    close(dfd); free(dir);
++    fprintf(stderr,"F4_CHECKPOINT_SAVED round=%d pairs=%u path=%s\n",m->current_rd,m->ps->ld,path);
++    free(tmp); free(prev);
++}
++static void f4cp_load(const char *path, bs_t *b, md_t *m, uint64_t input) {
++    f4cp_io io={fopen(path,"rb"),UINT64_C(14695981039346656037),1};
++    if(!io.f) f4cp_die("open checkpoint");
++    /* Verify the entire checksum BEFORE trusting allocation dimensions. */
++    if(fseek(io.f,0,SEEK_END)) f4cp_die("seek");
++    long length=ftell(io.f); if(length<128) f4cp_die("short checkpoint");
++    rewind(io.f); unsigned char buf[65536]; uint64_t h=io.hash, stored;
++    for(long left=length-8;left>0;) {
++        size_t n=left>(long)sizeof(buf)?sizeof(buf):(size_t)left;
++        if(fread(buf,1,n,io.f)!=n) f4cp_die("read integrity pass");
++        h=f4cp_hash(h,buf,n); left-=n;
++    }
++    if(fread(&stored,8,1,io.f)!=1 || stored!=h) f4cp_die("checksum mismatch");
++    rewind(io.f); f4cp_header(&io,m,input);
++    bs_t *nb=f4cp_alloc(1,sizeof(*nb)); nb->ht=f4cp_alloc(1,sizeof(ht_t));
++    md_t nm=*m; nm.ps=f4cp_alloc(1,sizeof(ps_t));
++    f4cp_body(&io,nb,&nm);
++    if(ftell(io.f)!=length-8 || io.hash!=stored) f4cp_die("checkpoint trailing data");
++    fclose(io.f);
++    free_hash_table(&m->ht); free_pairset(&m->ps);
++    /* Retain the externally owned bs and basis-hash object addresses. */
++    ht_t *oldh=b->ht;
++    free_shared_hash_data(oldh); free(oldh->hmap); free(oldh->hd);
++    free(oldh->ev[0]); free(oldh->ev);
++    *oldh=*nb->ht; free(nb->ht); nb->ht=oldh;
++    bs_t *oldb=f4cp_alloc(1,sizeof(*oldb)); *oldb=*b;
++    free_basis_without_hash_table(&oldb); *b=*nb; free(nb);
++    *m=nm; m->ht=initialize_secondary_hash_table(b->ht,m);
++    fprintf(stderr,"F4_CHECKPOINT_RESUMED round=%d pairs=%u path=%s\n",m->current_rd,m->ps->ld,path);
++}
++static int f4cp_degcmp(const void *a,const void *b) {
++    deg_t x=*(const deg_t *)a,y=*(const deg_t *)b; return (x>y)-(x<y);
++}
++static double f4cp_unix_time(void) {
++    struct timeval t; gettimeofday(&t,NULL); return t.tv_sec+t.tv_usec*1e-6;
++}
++static void f4cp_pre_la(const char *path,bs_t *b,md_t *m,
++        uint64_t rows,uint64_t cols,uint64_t nnz) {
++    if(!path) return;
++    FILE *f=fopen(path,"a"); if(!f) f4cp_die("telemetry open");
++    fprintf(f,"{\"event\":\"pre_la\",\"unix_seconds\":%.6f,\"round\":%d,\"degree\":%d,\"rows\":%"PRIu64",\"cols\":%"PRIu64",\"nnz\":%"PRIu64",\"basis_count\":%u,\"pending_pairs\":%u}\n",
++        f4cp_unix_time(),m->current_rd+1,m->current_deg,rows,cols,nnz,b->ld,m->ps->ld);
++    if(fclose(f)) f4cp_die("telemetry close");
++}
++static void f4cp_telemetry(const char *path,bs_t *b,md_t *m,
++        uint64_t rows,uint64_t cols,uint64_t nnz,uint64_t before,
++        uint64_t selected,double *t,double roundtime) {
++    if(!path) return;
++    FILE *f=fopen(path,"a"); if(!f) f4cp_die("telemetry open");
++    deg_t *d=f4cp_alloc(m->ps->ld,sizeof(deg_t));
++    for(unsigned i=0;i<m->ps->ld;++i) d[i]=m->ps->p[i].deg;
++    qsort(d,m->ps->ld,sizeof(*d),f4cp_degcmp);
++    fprintf(f,"{\"event\":\"round\",\"round\":%d,\"degree\":%d,\"pending_pairs\":%u,\"current_degree_pairs_before\":%"PRIu64",\"selected_pairs\":%"PRIu64",\"rows\":%"PRIu64",\"cols\":%"PRIu64",\"nnz\":%"PRIu64",\"new_pivots\":%u,\"basis_count\":%u,\"select_seconds\":%.9g,\"symbol_seconds\":%.9g,\"la_seconds\":%.9g,\"update_seconds\":%.9g,\"round_seconds\":%.9g,\"pending_by_degree\":{",
++        m->current_rd,m->current_deg,m->ps->ld,before,selected,rows,cols,nnz,
++        m->np,b->ld,m->select_rtime-t[0],m->symbol_rtime-t[1],
++        m->la_rtime-t[2],m->update_rtime-t[3],roundtime);
++    for(unsigned i=0;i<m->ps->ld;) {
++        unsigned j=i+1;while(j<m->ps->ld&&d[j]==d[i])++j;
++        fprintf(f,"%s\"%d\":%u",i?",":"",d[i],j-i);i=j;
++    }
++    fprintf(f,"},\"unix_seconds\":%.6f}\n",f4cp_unix_time());free(d);if(fclose(f)) f4cp_die("telemetry close");
++}
++#undef CP_SCALAR
++#undef CP_ARRAY
+--- a/src/neogb/f4_hash_compact.h
++++ b/src/neogb/f4_hash_compact.h
+@@ -0,0 +1,97 @@
++/* Round-boundary primary-hash garbage collection, exact untraced F5 LA2.
++ * No basis rows or pending pairs are removed. Hash IDs alone are renamed.
++ * Shared rn/dm/dv and the externally owned ht_t object remain in place. */
++static void f4cp_compact_hash(bs_t *b, md_t *m, const char *telemetry,
++        uint64_t *next_scan, int force) {
++    ht_t *h=b->ht;
++    const char *option=getenv("MSOLVE_F4_HASH_COMPACT");
++    if(option && !strcmp(option,"0")) return;
++    if(option && !strcmp(option,"force")) force=1;
++    if(!force && h->eld<*next_scan) return;
++    if(m->fc!=5 || m->laopt!=2 || m->use_signatures ||
++            m->trace_level!=NO_TRACER || m->ht->eld!=1 || b->lo!=b->ld)
++        f4cp_die("hash compaction requires an untraced empty-scratch round boundary");
++    double start=realtime();
++    const hl_t oldeld=h->eld, oldesz=h->esz;
++    hi_t *map=f4cp_alloc(oldeld,sizeof(*map));
++    for(bl_t i=0;i<b->ld;++i) {
++        hm_t *r=b->hm[i];
++        for(len_t j=0;j<r[LENGTH];++j) {
++            hi_t id=r[OFFSET+j];
++            if(!id || id>=oldeld) f4cp_die("invalid live polynomial hash");
++            map[id]=1;
++        }
++    }
++    for(pl_t i=0;i<m->ps->ld;++i) {
++        hi_t id=m->ps->p[i].lcm;
++        if(!id || id>=oldeld) f4cp_die("invalid live pair hash");
++        map[id]=1;
++    }
++    hl_t live=1, newelo=0;
++    for(hl_t i=1;i<oldeld;++i) if(map[i]) map[i]=(hi_t)live++;
++    /* elo is a boundary, not an individual monomial ID. Usually zero here. */
++    if(h->elo) {
++        newelo=1;
++        for(hl_t i=1;i<h->elo && i<oldeld;++i) if(map[i]) ++newelo;
++    }
++    hl_t capacity=4;
++    while(capacity<live+live/4+1) capacity*=2;
++    /* Scan again only after substantial new hash growth. Avoid scanning all
++     * polynomial terms merely because another small F4 batch completed. */
++    *next_scan=oldeld*2>UINT64_C(1048576)?oldeld*2:UINT64_C(1048576);
++    if(!force && oldeld-live<oldeld/4 && capacity>=oldesz/2) {
++        free(map); return;
++    }
++    if(capacity>oldesz) capacity=oldesz;
++    exp_t **ev=f4cp_alloc(capacity,sizeof(*ev));
++    exp_t *exps=f4cp_alloc(capacity,h->evl*sizeof(*exps));
++    hd_t *hd=f4cp_alloc(capacity,sizeof(*hd));
++    hi_t *hmap=f4cp_alloc(capacity*2,sizeof(*hmap));
++    for(hl_t i=0;i<capacity;++i) ev[i]=exps+i*h->evl;
++    memcpy(ev[0],h->ev[0],h->evl*sizeof(exp_t));
++    hd[0]=h->hd[0];
++    const hi_t mask=(hi_t)(capacity*2-1);
++    for(hl_t i=1;i<oldeld;++i) if(map[i]) {
++        hi_t id=map[i];
++        memcpy(ev[id],h->ev[i],h->evl*sizeof(exp_t));
++        hd[id]=h->hd[i];
++        /* Same triangular probing as insert_in_hash_table(). */
++        hi_t k=hd[id].val;
++        hl_t probe=0;
++        do { k=(hi_t)((k+probe)&mask); ++probe; } while(hmap[k]);
++        hmap[k]=id;
++    }
++    /* Validate unique-entry exponent/metadata preservation and lookup before
++     * changing any basis or pair references. This is exact byte comparison. */
++    ht_t nh=*h; nh.ev=ev; nh.hd=hd; nh.hmap=hmap;
++    nh.eld=live; nh.esz=capacity; nh.hsz=capacity*2; nh.elo=newelo;
++    for(hl_t i=1;i<oldeld;++i) if(map[i]) {
++        hi_t id=map[i], found=0;
++        if(memcmp(h->ev[i],ev[id],h->evl*sizeof(exp_t)) ||
++                memcmp(h->hd+i,hd+id,sizeof(hd_t)) ||
++                is_contained_in_hash_table(ev[id],&nh,hd[id].val,&found)!=1 ||
++                found!=id) f4cp_die("compacted hash equivalence check failed");
++    }
++    for(bl_t i=0;i<b->ld;++i) {
++        hm_t *r=b->hm[i];
++        for(len_t j=0;j<r[LENGTH];++j) r[OFFSET+j]=map[r[OFFSET+j]];
++    }
++    for(pl_t i=0;i<m->ps->ld;++i) m->ps->p[i].lcm=map[m->ps->p[i].lcm];
++    free(h->ev[0]); free(h->ev); free(h->hd); free(h->hmap);
++    *h=nh; free(map);
++    *next_scan=live*2>UINT64_C(1048576)?live*2:UINT64_C(1048576);
++    double seconds=realtime()-start;
++    fprintf(stderr,"F4_HASH_COMPACT round=%d eld=%"PRIu64"->%"PRIu64
++            " esz=%"PRIu64"->%"PRIu64" seconds=%.6f\n",
++            m->current_rd,(uint64_t)oldeld,(uint64_t)live,
++            (uint64_t)oldesz,(uint64_t)capacity,seconds);
++    if(telemetry) {
++        FILE *f=fopen(telemetry,"a"); if(!f) f4cp_die("compact telemetry open");
++        fprintf(f,"{\"event\":\"hash_compact\",\"round\":%d,\"degree\":%d,\"unix_seconds\":%.6f,"
++                "\"old_eld\":%"PRIu64",\"new_eld\":%"PRIu64",\"old_esz\":%"PRIu64
++                ",\"new_esz\":%"PRIu64",\"live_count\":%"PRIu64",\"seconds\":%.9g}\n",
++                m->current_rd,m->current_deg,f4cp_unix_time(),(uint64_t)oldeld,(uint64_t)live,
++                (uint64_t)oldesz,(uint64_t)capacity,(uint64_t)live,seconds);
++        if(fclose(f)) f4cp_die("compact telemetry close");
++    }
++}
+--- a/checkpoint_test.py
++++ b/checkpoint_test.py
+@@ -0,0 +1,65 @@
++import os, subprocess, pathlib, json, hashlib, signal
++root=pathlib.Path(__file__).resolve().parent
++out=root/'checkpoint-tests'
++out.mkdir(exist_ok=True)
++results=[]
++def run(name, inp, env=None, threads=1, pairs=2, extra=()):
++    dest=out/(name+'.gb')
++    cmd=[str(root/'msolve'),'-f',str(inp),'-o',str(dest),'-g','2','-l','2','-t',str(threads),'-m',str(pairs),'-c','0',*extra]
++    p=subprocess.run(cmd,env={**os.environ,**(env or {})},capture_output=True,text=True,timeout=90)
++    (out/(name+'.log')).write_text(p.stdout+p.stderr)
++    return p, dest.read_bytes() if dest.exists() else b''
++for n in (3,4,5):
++    v=['x'+str(i+1) for i in range(n)]
++    polys=['+'.join('*'.join(v[(i+j)%n] for j in range(k)) for i in range(n)) for k in range(1,n)]
++    polys+=['*'.join(v)+'-1']
++    inp=out/f'cyclic{n}.ms';inp.write_text(','.join(v)+'\n5\n'+',\n'.join(polys)+'\n')
++    base,b=run(f'cyclic{n}-base',inp)
++    cp=out/f'cyclic{n}.cp';tele=out/f'cyclic{n}.jsonl'
++    stop,s=run(f'cyclic{n}-stop',inp,{'MSOLVE_F4_CHECKPOINT':str(cp),'MSOLVE_F4_TELEMETRY':str(tele),'MSOLVE_F4_STOP_AFTER_ROUNDS':'1'})
++    resume,r=run(f'cyclic{n}-resume',inp,{'MSOLVE_F4_RESUME':str(cp),'MSOLVE_F4_CHECKPOINT':str(cp),'MSOLVE_F4_TELEMETRY':str(tele)},threads=2,pairs=7)
++    rec={'test':f'cyclic{n}','baseline_rc':base.returncode,'stop_rc':stop.returncode,'resume_rc':resume.returncode,'identical':b==r,'baseline_bytes':len(b),'stop_bytes':len(s),'checkpoint_sha256':hashlib.sha256(cp.read_bytes()).hexdigest() if cp.exists() else None}
++    results.append(rec); print(rec,flush=True)
++    if stop.returncode!=75 or resume.returncode!=0 or b!=r: print(stop.stderr,resume.stderr,flush=True)
++    # The completed snapshot itself and retained previous snapshot must both load.
++    for suffix in ('','.prev'):
++        p,data=run(f'cyclic{n}-reload{suffix}',inp,{'MSOLVE_F4_RESUME':str(cp)+suffix},threads=2,pairs=3)
++        results.append({'test':f'cyclic{n}-reload{suffix}','rc':p.returncode,'identical':data==b})
++    # Same variable count/field but different input must be rejected.
++    wrong=out/f'cyclic{n}-wrong.ms';wrong.write_text(inp.read_text().replace('-1','-2'))
++    p,data=run(f'cyclic{n}-wrong',wrong,{'MSOLVE_F4_RESUME':str(cp)})
++    results.append({'test':f'cyclic{n}-wrong-input','rc':p.returncode,'rejected':p.returncode==74,'bytes':len(data)})
++    damaged=out/f'cyclic{n}-damaged.cp';data=bytearray(cp.read_bytes());data[len(data)//2]^=1;damaged.write_bytes(data)
++    p,data=run(f'cyclic{n}-damaged',inp,{'MSOLVE_F4_RESUME':str(damaged)})
++    results.append({'test':f'cyclic{n}-corruption','rc':p.returncode,'rejected':p.returncode==74,'bytes':len(data)})
++
++# Nonhomogeneous systems, redundant input, and a ten-variable system.
++for n in (2,6,10):
++    v=['z'+str(i) for i in range(n)]
++    polys=[f'{v[i]}^2-{v[(i+1)%n]}' for i in range(n)]
++    polys += [f'{v[0]}*{v[-1]}-1',f'2*{v[0]}^2-2*{v[1]}']
++    inp=out/f'chain{n}.ms';inp.write_text(','.join(v)+'\n5\n'+',\n'.join(polys)+'\n')
++    base,b=run(f'chain{n}-base',inp)
++    cp=out/f'chain{n}.cp';tele=out/f'chain{n}.jsonl'
++    stop,s=run(f'chain{n}-stop',inp,{'MSOLVE_F4_CHECKPOINT':str(cp),'MSOLVE_F4_STOP_AFTER_ROUNDS':'1','MSOLVE_F4_TELEMETRY':str(tele)})
++    resume,r=run(f'chain{n}-resume',inp,{'MSOLVE_F4_RESUME':str(cp),'MSOLVE_F4_CHECKPOINT':str(cp),'MSOLVE_F4_TELEMETRY':str(tele)},threads=2,pairs=13)
++    rec={'test':f'chain{n}','baseline_rc':base.returncode,'stop_rc':stop.returncode,'resume_rc':resume.returncode,'identical':b==r,'baseline_bytes':len(b),'stop_bytes':len(s)}
++    results.append(rec); print(rec,flush=True)
++
++# Deliver SIGUSR1 after observing first successfully promoted checkpoint.
++inp=out/'cyclic5.ms';cp=out/'signal.cp'
++cmd=[str(root/'msolve'),'-f',str(inp),'-o',str(out/'signal.gb'),'-g','2','-l','2','-m','1']
++p=subprocess.Popen(cmd,env={**os.environ,'MSOLVE_F4_CHECKPOINT':str(cp)},stdout=subprocess.DEVNULL,stderr=subprocess.PIPE,text=True)
++first=p.stderr.readline();p.send_signal(signal.SIGUSR1)
++rest=p.communicate(timeout=30)[1];(out/'signal.log').write_text(first+rest)
++results.append({'test':'SIGUSR1','rc':p.returncode,'incomplete':p.returncode==75,'output_bytes':(out/'signal.gb').stat().st_size})
++resume,r=run('signal-resume',inp,{'MSOLVE_F4_RESUME':str(cp)},threads=2,pairs=11)
++results.append({'test':'SIGUSR1-resume','rc':resume.returncode,'identical':r==(out/'cyclic5-base.gb').read_bytes()})
++original=pathlib.Path('/tmp/litt3-msolve-lowmem.bQGL6w/msolve-0.10.1/msolve')
++if original.exists():
++    for name in ('cyclic3','cyclic4','cyclic5','chain2','chain6','chain10'):
++        target=out/(name+'-original.gb')
++        p=subprocess.run([str(original),'-f',str(out/(name+'.ms')),'-o',str(target),'-g','2','-l','2','-m','2','-c','0'],capture_output=True,timeout=90)
++        results.append({'test':name+'-original-binary','rc':p.returncode,'identical':target.read_bytes()==(out/(name+'-base.gb')).read_bytes()})
++(out/'results.json').write_text(json.dumps(results,indent=2)+'\n')
++assert all(x.get('identical',True) and x.get('rejected',True) and x.get('incomplete',True) for x in results)
+--- a/hash_compact_compare.py
++++ b/hash_compact_compare.py
+@@ -0,0 +1,89 @@
++"""Exact whole-checkpoint hash-renaming comparison; does not run a solver.
++
++Memory maps both snapshots; auxiliary memory is one old-ID map plus a bitmap.
++Checks every polynomial term, coefficient byte, row header and queued pair,
++and exact exponent/hash metadata for every retained unique hash ID.
++"""
++import argparse, json, mmap, struct, time
++import numpy as np
++
++class Checkpoint:
++    def __init__(self, path):
++        self.file=open(path,'rb')
++        self.data=mmap.mmap(self.file.fileno(),0,access=mmap.ACCESS_READ)
++        self.pos=0
++        self.header=self.array(15,'<u8').copy()
++        names='ld sz lo constant mltdeg lml elo eld esz hsz ebl nv evl ndv bpv rsd'.split()
++        self.d=dict(zip(names,map(int,self.array(16,'<u8'))))
++        d=self.d
++        self.ev=self.array(d['eld']*d['evl'],'<u2').reshape(-1,d['evl'])
++        self.hd=self.array(d['eld']*4,'<u4').reshape(-1,4)
++        self.hmap=self.array(d['hsz'],'<u4')
++        self.shared=self.array(d['ndv']*d['bpv']+d['ndv']+d['evl'],'<u4')
++        self.red=self.array(d['ld'],'u1')
++        self.lm=self.array(d['lml'],'<u4')
++        self.lmps=self.array(d['lml'],'<u4')
++        self.rows=[]
++        for _ in range(d['ld']):
++            n=int(self.array(1,'<u8')[0])
++            prefix=self.array(int(self.header[7]),'<u4')
++            terms=self.array(n,'<u4')
++            coeffs=self.array(n*int(self.header[12])//8,'u1')
++            self.rows.append((prefix,terms,coeffs))
++        self.pld,self.psz=map(int,self.array(2,'<u8'))
++        self.pairs=self.array(self.pld*5,'<u8').reshape(-1,5)
++        self.tail=self.data[self.pos:-8]
++    def array(self,n,dtype):
++        result=np.frombuffer(self.data,dtype=dtype,count=n,offset=self.pos)
++        self.pos+=result.nbytes
++        return result
++
++def compare(oldpath,newpath,ignore_timings=False):
++    start=time.monotonic();a,b=Checkpoint(oldpath),Checkpoint(newpath)
++    eq=lambda x,y: np.array_equal(x,y)
++    assert eq(a.header,b.header),'header/input changed'
++    for k in a.d:
++        if k not in ('elo','eld','esz','hsz'): assert a.d[k]==b.d[k],k
++    for k in ('shared','red','lm','lmps'): assert eq(getattr(a,k),getattr(b,k)),k
++    atail=a.tail[:-32] if ignore_timings else a.tail
++    btail=b.tail[:-32] if ignore_timings else b.tail
++    assert (a.pld,a.psz,atail)==(b.pld,b.psz,btail),'queue capacity or progress changed'
++    used=np.zeros(a.d['eld'],dtype=np.bool_);used[0]=True
++    for _,terms,_ in a.rows: used[terms]=True
++    used[a.pairs[:,0]]=True
++    ids=np.flatnonzero(used)
++    assert len(ids)==b.d['eld'],'new table not exactly live hashes'
++    mapping=np.zeros(a.d['eld'],dtype='<u4')
++    mapping[ids]=np.arange(len(ids),dtype='<u4')
++    for j in range(0,len(ids),8192):
++        block=ids[j:j+8192]
++        assert eq(a.ev[block],b.ev[j:j+len(block)]),'exponents changed'
++        assert eq(a.hd[block],b.hd[j:j+len(block)]),'hash metadata changed'
++    nterms=0
++    for (ap,at,ac),(bp,bt,bc) in zip(a.rows,b.rows):
++        assert eq(ap,bp),'row metadata changed'
++        assert eq(ac,bc),'coefficients changed'
++        assert eq(mapping[at],bt),'polynomial terms changed'
++        nterms+=len(at)
++    assert eq(mapping[a.pairs[:,0]],b.pairs[:,0]),'pair LCM changed'
++    assert eq(a.pairs[:,1:],b.pairs[:,1:]),'pair endpoints/degree/type/order changed'
++    refs=set(map(int,a.lmps));refs.update(map(int,a.pairs[:,1]));refs.update(map(int,a.pairs[:,2]))
++    deadrows=[i for i in range(a.d['ld']) if a.red[i] and i not in refs]
++    return dict(old_path=oldpath,new_path=newpath,exact_equivalence=True,
++        timing_counters_ignored=ignore_timings,
++        round=struct.unpack_from('<Q',a.tail,8)[0],
++        old_dimensions=a.d,new_dimensions=b.d,all_terms_checked=nterms,
++        all_pairs_checked=a.pld,dead_basis_rows=len(deadrows),
++        old_bytes=len(a.data),new_bytes=len(b.data),
++        old_hash_capacity_bytes=a.d['esz']*(2*a.d['evl']+32),
++        new_hash_capacity_bytes=b.d['esz']*(2*b.d['evl']+32),
++        seconds=time.monotonic()-start)
++
++if __name__=='__main__':
++    p=argparse.ArgumentParser();p.add_argument('old');p.add_argument('new')
++    p.add_argument('--output');p.add_argument('--ignore-timings',action='store_true')
++    args=p.parse_args()
++    result=compare(args.old,args.new,args.ignore_timings)
++    if args.output:
++        with open(args.output,'w') as f: json.dump(result,f,indent=2);f.write('\n')
++    print(json.dumps(result,indent=2))
+--- a/hash_compact_test.py
++++ b/hash_compact_test.py
+@@ -0,0 +1,39 @@
++"""Reproduce forced-compaction regression tests and optional large differential.
++
++python3 hash_compact_test.py --input /path/input.ms --checkpoint /path/state.cp
++Without arguments only the existing small regression suite runs.
++Large outputs stay in checkpoint-tests; the supplied checkpoint is never changed.
++"""
++import argparse, json, os, pathlib, subprocess
++from hash_compact_compare import compare
++
++p=argparse.ArgumentParser();p.add_argument('--input');p.add_argument('--checkpoint')
++args=p.parse_args();root=pathlib.Path(__file__).resolve().parent
++subprocess.run(['python3',str(root/'checkpoint_test.py')],
++    env={**os.environ,'MSOLVE_F4_HASH_COMPACT':'force'},check=True)
++if args.checkpoint:
++    assert args.input,'--input required with --checkpoint'
++    out=root/'checkpoint-tests'
++    def run(name,source,option,maintenance=False):
++        target=out/(name+'.cp')
++        env={**os.environ,'MSOLVE_F4_RESUME':str(source),
++            'MSOLVE_F4_CHECKPOINT':str(target),'MSOLVE_F4_HASH_COMPACT':option,
++            'MSOLVE_F4_TELEMETRY':str(out/(name+'.jsonl')),
++            'MSOLVE_F4_STOP_AFTER_ROUNDS':'1'}
++        if maintenance: env['MSOLVE_F4_COMPACT_ONLY']='1'
++        cmd=[str(root/'msolve'),'-f',args.input,'-o',str(out/(name+'.gb')),
++            '-g','2','-l','2','-t','10','-m','64','-c','0']
++        with open(out/(name+'.log'),'w') as f:
++            r=subprocess.run(cmd,env=env,stdout=f,stderr=subprocess.STDOUT)
++        assert r.returncode==75,(name,r.returncode)
++        return target
++    compact=run('hash-test-compact',args.checkpoint,'force',True)
++    first=compare(args.checkpoint,str(compact))
++    # Sequential runs deliberately avoid duplicating large resident bases.
++    baseline=run('hash-test-disabled',compact,'0')
++    collected=run('hash-test-forced',compact,'force')
++    # Timing counters differ after a real F4 round; compare's default is
++    # strict for maintenance snapshots, so use the explicit timing exception.
++    second=compare(str(baseline),str(collected),ignore_timings=True)
++    with open(out/'hash-test-results.json','w') as f:
++        json.dump(dict(maintenance=first,one_round=second),f,indent=2)

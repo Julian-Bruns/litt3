@@ -1,0 +1,46 @@
+{
+  "status": "PASS_exact_small_identities",
+  "group_order": 27,
+  "PSU_intersection_order": 9,
+  "group_exponent": 3,
+  "ordinary_C_Cartier_matrix": [
+    [
+      0,
+      2
+    ],
+    [
+      2,
+      0
+    ]
+  ],
+  "Q_Cartier_matrix": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "branch_points": [
+    "0",
+    "1",
+    "-1",
+    "infinity"
+  ],
+  "C_Kummer_valuations": [
+    1,
+    1,
+    -1,
+    -1
+  ],
+  "Q_Kummer_valuations": [
+    1,
+    -1,
+    -1,
+    1
+  ],
+  "global_proof": "Solutions/Sol_nonliftable_hermitian_atlas_family.md",
+  "scope": "Exact identities and finite group check, not a replacement for the connectedness/etaleness proof."
+}

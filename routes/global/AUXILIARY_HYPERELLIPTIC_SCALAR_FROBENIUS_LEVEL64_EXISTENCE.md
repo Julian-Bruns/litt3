@@ -4,7 +4,7 @@
 Authors: gluing_cohomology_rigidity, in collaboration with root.
 This is an existence statement for a freely chosen auxiliary curve.
 It does not replace the fixed curve of file 76; its obstruction is recorded
-in [the fixed-Y boundary note](FIXED_Y_LOW_DEGREE_TORSION_FROBENIUS_BOUNDARY.md).
+in [the fixed-Y theorem's scope discussion](FIXED_Y_TWO_PRIMARY_W6_HAS_ONLY_TWO_TORSION.md#3-what-this-restores-and-what-it-does-not-prove).
 
 ## Statement
 

@@ -84,3 +84,11 @@ close that same unbounded branch, useful if one endpoint is changed.
 This does not settle other cored signatures or produce a clump for a
 coreless span. It also does not imply that all small cyclic etale covers
 of Y are ordinary; a checked nonordinary double cover still exists.
+
+The stronger global scalar-Frobenius shortcut remains false for this Y.
+All J[2] is rational over F125, of size2^50, while v2(#J(F125))=56;
+there is therefore an F125-rational point a of order4. Its F5-Galois
+orbit has odd size dividing3 and cannot contain -a=3a: if pi^j(a)=-a,
+then (pi^j)^3(a)=-a, contradicting pi^3(a)=a. This point is not on W6.
+The exact Weil coefficients and resultant are retained in the
+[integer data certificate](FIXED_Y_LOW_DEGREE_TORSION_FROBENIUS_CERTIFICATE.py).

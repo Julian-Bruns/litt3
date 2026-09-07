@@ -1,0 +1,13 @@
+{
+  "actual_tensor_restriction_verified": true,
+  "rooted_normalized_length": 33,
+  "rooted_normalized_reduced": true,
+  "projective_chart_coordinates": "first nonzero among b2=x,b3=y",
+  "disjoint_chart_lengths": [
+    11,
+    0
+  ],
+  "projective_length": 11,
+  "all_nonempty_charts_reduced": true,
+  "scope": "Actual genus-two untwisted test only; no genus-nine exclusion or all-torsion claim."
+}

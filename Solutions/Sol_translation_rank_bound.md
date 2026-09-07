@@ -1,133 +1,90 @@
-# Proof record: Translation rank detects fractional wild jumps
+# Proof: Artin–Schreier translation rank and fractional jumps
 
-Canonical statement: [`translation_rank_bound`](../Theorems/Thm_translation_rank_bound.md).
-Migrated 2026-09-06; hypotheses restated below are proof context.
-The canonical statement and registry control promoted scope and evidence.
+[Statement and audit metadata](../Theorems/Thm_translation_rank_bound.md).
+Write V_f={a:f(x+a)−f(x)∈(F−1)k[x]} and f_B≠0 for the leading
+coefficient, with B>1 prime to p.
 
----
+## 1. One reduced coefficient bounds every translation subgroup
 
-# Translation rank detects the fractional jumps with a prime-order second group
+Reduction modulo(F−1)k[x] replaces c x^(pj) by c^(1/p)x^j until
+all positive exponents are prime to p. These reduced positive-degree
+coefficients are unique; constants pose no obstruction over algebraically
+closed k.
 
-Author: /root, 2026-09-06. Status: independently audited PASS by
-/root/integral_jump_degree_bound_audit, 2026-09-06; 275 separate exact
-polynomial checks across 25 characteristic/degree pairs also passed.
-[Audit record](../routes/global/audits/ARTIN_SCHREIER_TRANSLATION_RANK_AUDIT_2026_09_06.md).
+If B≢1 mod p, the reduced coefficient at x^(B−1) is B f_B a.
+No smaller term contributes and no larger exponent reduces to B−1.
+Thus V_f={0}, contradicting the nontrivial subgroup in the theorem.
 
-## 1. A polynomial theorem
+Now write B=1+uQ, where Q=p^s, s=v_p(B−1), and p∤u.
+For u>1 let j=B−Q. Then p∤j and pj>B−1, so the reduced x^j
+coefficient is its ordinary coefficient. As a polynomial in a it has
+degree Q and leading coefficient
 
-Let k be algebraically closed of characteristic p>0. Let f in k[x] have
-degree B>1 prime to p, and put
+    f_B binom(B,Q)=u f_B≠0.
 
-    V_f={a in k: f(x+a)-f(x) belongs to (F-1)k[x]}.
+Lower terms of f contribute lower powers of a. Every a∈V is a root,
+giving |V|≤Q.
 
-Suppose V is a finite additive subgroup of V_f of order p^r>1.
-Then B is congruent to one modulo p. Put Q=p^s, s=v_p(B-1). Exactly
-the following degree-dependent bounds hold:
+For u=1, raise the reduced x coefficient to the Qth power. It becomes
 
-    B=Q+1:       |V|<=Q^2;
-    B>Q+1:       |V|<=Q.                              (1)
+    P(a)=∑_(j=0)^s ([x^(p^j)](f(x+a)−f(x)))^(Q/p^j).
 
-Only necessary bounds are claimed; no sufficient conditions on f.
+Its j=0 summand has leading term f_B^Q a^(Q²). Every j≥1 term has
+degree≤(B−p^j)Q/p^j<Q², as do the remaining j=0 terms.
+Thus P has degree exactly Q² and vanishes on V, proving |V|≤Q².
+These root counts are necessary conditions, not sufficiency criteria.
 
-### Proof by a single coefficient
+## 2. The local application and the actual auxiliary curve
 
-For a polynomial g, reduction modulo (F-1)k[x] replaces a term c x^(pj)
-by c^(1/p) x^j and repeats until all positive exponents are prime to p.
-Its positive-degree reduced coefficients are unique. The constant term
-causes no obstruction over the algebraically closed field k.
+Let P=I_1, |P|=p^(r+1), and |P_2|=p. The lower jumps are1 and B;
+the last group has order p, so B is prime to p. Realize the P-action
+by its HKG curve H: H/P=P¹ with one totally ramified point.
 
-If B is not congruent to one modulo p, the exponent B-1 is prime to p.
-Its coefficient in f(x+a)-f(x) is B f_B a. No larger exponent in this
-difference can reduce to B-1, and no lower term of f contributes to it.
-Thus a=0 for every a in V_f, a contradiction.
+For any subgroup N⊂P, subtract Hurwitz for H/P and H/N.
+Since P_0=P_1=P, the constant terms cancel to give
 
-Now B=1+uQ, where u is positive and prime to p. If u>1, set j=B-Q;
-then j is prime to p and p j>B-1. Therefore the x^j coefficient of the
-reduced difference is already its ordinary x^j coefficient. As a
-polynomial in a, it has degree Q and leading coefficient
+    2|N|g(H/N)=∑_(i≥2)(|P_i|−|N∩P_i|).                     (1)
 
-    f_B binom(B,Q)=u f_B !=0.
+Taking N=P_2 proves H/P_2=P¹, with no large-action hypothesis.
+Hence H has Artin–Schreier equation w^p−w=f(x) over that quotient,
+with f reduced of degree B. The group P/P_2 acts on this x-line as
+translations by an F_p-space V of dimension r.
 
-Terms of f of smaller degree contribute smaller powers of a. Every a
-in V is a root, so |V|<=Q. This proves the second line of (1).
+The last ramification group P_2 is central in P: its commutators would
+have break greater than B. A lift of x↦x+a therefore commutes with
+w↦w+1 and has form w↦w+h_a(x), h_a∈k(x). Thus
 
-If u=1, take the coefficient of x in the reduced difference and raise
-it to the Q-th power. Explicitly this is the polynomial in a
+    f(x+a)−f(x)=h_a(x)^p−h_a(x).
 
-    P(a)=sum_(0<=j<=s) ([x^(p^j)](f(x+a)-f(x)))^(Q/p^j).
+No h_a can have a finite pole, since its Artin–Schreier difference
+would retain a pole of p times that order. So h_a∈k[x], and V⊂V_f.
 
-Its degree is exactly Q^2: the j=0 term has leading contribution
-f_B^Q a^(Q^2), since B=Q+1=1 in k. Every j>=1 term has degree at most
-(B-p^j)Q/p^j<Q^2, and the lower terms of f in the j=0 summand also
-have smaller degree. Again all a in V are roots, so |V|<=Q^2.
-This proves (1). QED.
+Section1 is now exhaustive. If B>p^s+1 then r≤s and p^r|(B−1).
+If B=p^s+1 then r≤2s; either r≤s, again integral, or s<r≤2s.
+These give exactly the two upper-jump alternatives in the statement.
+In the fractional case the local genus satisfies q/g(H)>2p/(p−1);
+that inequality is a consequence, not an imported classification
+hypothesis.
 
-## 2. Local application with |I_2|=p<|I_1|
+## 3. Retained atlas consequence and evidence boundary
 
-Let I act faithfully on k[[z]], put P=I_1, and assume |I_2|=p<q=|P|.
-Write q=p^(r+1). The positive lower jumps are 1 and B, and the last
-nontrivial group has order p, hence B is prime to p.
+The fractional alternative has numerical data
 
-Construct the HKG P-curve H for this local action. Then H/P is P1 and
-the P-cover has just one, totally ramified point. The quotient H/P_2
-is also P1. Here is the direct proof of the latter assertion, avoiding
-any large-action hypothesis. For any subgroup N of P, subtract the
-two Hurwitz formulas for H/P and H/N, using P_0=P_1=P, to obtain
+    Q=p^s, R=p^(r−s), p≤R≤Q,
+    q=pQR, c=q+(p−1)Q−2.
 
-    2|N| g(H/N)=sum_(i>=2)(|P_i|-|N intersect P_i|).
+These are the inputs to the separate
+[order-p-second-group degree bound](../routes/global/ORDER_P_SECOND_RAMIFICATION_GROUP_FORCES_A_DEGREE_BOUND.md);
+the other alternative uses the [integral theorem](Sol_integral_jump_bound.md).
+For p=5,h=16, the putative B=66 pattern requires |V|=25, whereas
+v_5(65)=1 and B>6 force |V|≤5. Thus only the B=6 necessary full tuples
+of degrees112000 or336000 survive. Global genus-nine atlas existence
+is not asserted.
 
-Taking N=P_2 makes the right side zero. Consequently H is an
-Artin--Schreier curve w^p-w=f(x) over H/P_2=P1, with f a reduced
-polynomial of degree B, and the quotient P/P_2 acts on the x-line
-through translations by an F_p space V of dimension r.
-
-The last ramification group P_2 is central in P. Indeed commutators
-with an element of final break B have break greater than B. Thus a
-lift of any translation a in V commutes with w->w+1 and must act
-as w->w+h_a(x), with h_a in k(x). It follows that
-
-    f(x+a)-f(x)=h_a(x)^p-h_a(x).
-
-The function h_a has no finite pole, since the left side is polynomial
-and a pole of h_a would give a pole of order p times as large on the
-right. Therefore h_a is polynomial, and V is a subgroup of V_f.
-
-There are now only two possibilities:
-
-* B-1 is divisible by p^r. Both upper jumps of P are integers, namely
-  1 and 1+(B-1)/p^r.
-* B=p^s+1 for an integer s with s<r<=2s. Its second upper jump is
-  1+p^(s-r), lying strictly between one and two.
-
-To see exhaustiveness, use (1): if B>p^s+1 then r<=s, so p^r divides
-B-1; if B=p^s+1 the bound is r<=2s, with r<=s again the integral case.
-
-In particular any NONINTEGRAL case automatically has
-q/g(H)>2p/(p-1), but this inequality is a consequence, not an assumption
-or an input from a classification theorem.
-
-## 3. Consequences for the current atlas theorem
-
-The nonintegral case gives precisely the numerical data
-
-    Q=p^s, R=p^(r-s), p<=R<=Q,
-    q=p Q R, c=q+(p-1)Q-2,
-
-used in Section 3 of
-[the order-p-second-group degree bound](../routes/global/ORDER_P_SECOND_RAMIFICATION_GROUP_FORCES_A_DEGREE_BOUND.md).
-Its elementary tame/genus arithmetic therefore applies unchanged.
-The other case is covered by the checked integral-jump bound.
-
-For h16,p5 this eliminates the apparent B=66 numerical pattern outright:
-v_5(66-1)=1 and B>5+1 force the translation space to have order at most
-5, whereas that pattern requires order25. The two remaining full
-necessary tuples have B=6 and n=112000 or336000. They are still not
-claimed to be globally realizable genus-nine atlases.
-
-The polynomial theorem is independent of the atlas, chosen endpoints,
-genus, or covering degree. The only external geometric input in Section 2
-is HKG realization; compare
-[Bleher--Chinburg--Poonen--Symonds, Section 1.B and Proposition 4.8](https://math.mit.edu/~poonen/papers/AutK.pdf).
-The rationality calculation is also Matignon--Rocher Lemma 2.4(1), but
-its full short proof is included above and no big-action classification
-is required.
+The polynomial argument is independent of atlas, genus or endpoints.
+For HKG realization see
+[Bleher–Chinburg–Poonen–Symonds, §1.B and Proposition4.8](https://math.mit.edu/~poonen/papers/AutK.pdf).
+Equation(1) is also Matignon–Rocher Lemma2.4(1), proved here directly.
+The HKG curve is NOT an étale cover of an endpoint and inherits none
+of its ordinarity assumptions. The retained275 exact polynomial checks
+support, but do not replace, the audited all-degree proof.

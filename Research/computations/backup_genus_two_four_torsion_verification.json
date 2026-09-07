@@ -1,0 +1,12 @@
+{
+  "status": "PASS independent no-solver order-four torsion/Bol replay",
+  "certificate_sha256": "30572418c5741732b08fd7e4c003748bfebeebb073653999e54428c590eaf3ff",
+  "halving_fibers": 15,
+  "distinct_halves_per_fiber": 16,
+  "exact_order4_classes": 240,
+  "oper_frobenius_orbit_over_F15625": 5,
+  "order4_twisted_kernel_cases_verified": 1200,
+  "all_order4_twisted_kernels_zero": true,
+  "elapsed_seconds": 21.414899791998323,
+  "scope": "Exact identities and rank minors only; the divisor/torsion/twisted-basis application is author prose, not an independent mathematical audit."
+}

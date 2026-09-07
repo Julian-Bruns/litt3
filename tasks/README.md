@@ -1,6 +1,8 @@
-# Open-task router
+# Parked profile-4 tasks
 
-Choose one row and follow its reading boundary. Tasks 00 and 00A repair
+These are unresolved obligations in an older route, not the current work
+queue; follow [Research/STATE.md](../Research/STATE.md). If revisiting a
+particular obligation, use its reading boundary. Tasks 00 and 00A repair
 different formal evidence gaps; Task 00B repairs the earlier geometric entry
 into that tower. None subsumes another. Task 06 is only a final audit after
 every relevant theorem and certificate has been supplied.

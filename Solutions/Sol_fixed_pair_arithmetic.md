@@ -6,15 +6,11 @@ The canonical statement and registry control promoted scope and evidence.
 
 ---
 
-# An explicit branch-rational order-three redesign
+## Fixed curves and proof scope
 
-## Status and purpose
-
-**Status: proved; exact arithmetic certificate included; independent audit
-pending.**
-
-This note gives a concrete specialization of the universal construction in
-file 68 for which the entire first possible diamond degree is excluded.  Put
+Author-proved geometry and arithmetic; no independent whole-statement
+verification is claimed. This proof contains only the registered curve
+and Jacobian assertions, not historical continuation instructions. Put
 
 \[
                          k=\overline{\mathbf F}_5.
@@ -50,9 +46,7 @@ Then
 
 Both Jacobians are absolutely simple, \(X\) is nonhyperelliptic, and all
 52 branch points of the hyperelliptic map \(Y\to\mathbf P^1\) are rational
-over \(\mathbf F_{125}\).  The Prym-packing theorem in file 74 and the
-birational genus bound in file 71 then exclude every order-three diamond of
-degree \(M=5\).
+over \(\mathbf F_{125}\).
 
 The exact calculations below are reproduced by
 [`76_EXPLICIT_R3_REDESIGN_CERTIFICATE.sage`](../routes/global/76_EXPLICIT_R3_REDESIGN_CERTIFICATE.sage).
@@ -273,82 +267,6 @@ abelian, while the normal closure here has group \(S_{25}\).  Finally,
 as its \(T^{49}\)-coefficient is \(-2\).  All three hypotheses of
 Howe--Zhu, Lemma 8, now hold.  It follows that \(J(Y)\) is absolutely
 simple. \(\square\)
-
-## 4. The entire first diamond degree is impossible
-
-### Theorem 76.4 (no degree-five order-three diamond)
-
-For the explicit pair (76.1)--(76.2), a common finite-etale cover cannot
-produce a prime-ratio diamond of degree \(M=5\).  Equivalently, every
-diamond supplied by Theorem 68.1 has
-
-\[
-                              M\geq6.                  \tag{76.13}
-\]
-
-#### Proof
-
-Here \(r=3\) and \(s=g(X)-1=8\).  Theorem 68.3 gives \(M\geq r+2=5\).
-At \(M=5<2r\), Corollary 68.6 says that the coefficient degree is
-
-\[
-                              e=1\quad\hbox{or}\quad e=2.            \tag{76.14}
-\]
-
-The quadratic case is impossible by Corollary 74.5, because \(X\) is
-nonhyperelliptic and both Jacobians are absolutely simple.
-
-In the birational case, the coefficient curve has normalization \(C\),
-degree \(2M=10\), and
-
-\[
-                              g(C)=Ms+1=41.
-\]
-
-Generic plane projection preserves degree and birationality, while the
-plane genus bound is
-
-\[
-                      g(C)\leq{(10-1)(10-2)\over2}=36,
-\]
-
-a contradiction.  This is also the specialization of Corollary 74.6 to
-\(s=2r+2=8\). \(\square\)
-
-## 5. Strategic meaning and the next row
-
-The pair is optimized for the universal first-degree argument:
-
-- \(r=3\) gives the smallest possible lower bound \(M\geq r+2=5\);
-- \(s=8\) is the smallest integer for which the universal birational
-  bound \(s>2M-3\) excludes \(M=5\);
-- absolute simplicity of \(J(X)\), rather than a scalar endomorphism-ring
-  hypothesis, excludes the quadratic case uniformly by Prym packing; and
-- the full hyperelliptic branch divisor is already rational over the
-  small field \(\mathbf F_{125}\), which is useful for later branch-label
-  and Weil-bound arguments.
-
-This is a strict improvement at the first admissible degree, but it is not
-yet a counterexample.  The next unresolved degree is \(M=6\).  Corollary
-68.6 leaves coefficient degrees
-
-\[
-                              e\in\{1,2,4\}.            \tag{76.15}
-\]
-
-The birational curve then has degree 12 and genus 49, so the plane genus
-bound no longer contradicts it.  The quadratic row has two branches.  In
-the square-root-spectral branch, the endpoint formula in file 68 makes the
-cover unramified and gives \(g(B)=g(Y)=25\).  In the quadratic-core branch,
-the unramified inequality of file 74 is impossible at \(M=2r\); hence the
-cover is ramified and its base genus is confined to
-
-\[
-                              9\leq g(B)\leq15.         \tag{76.16}
-\]
-
-The degree-four case is the reduced quadratic-core endpoint \(d=r=3\)
-of file 68.  These explicit rows are the next targets.
 
 For the absolute-simplicity criteria used above, see E. Howe and H. Zhu,
 [*On the existence of absolutely simple abelian varieties of a given

@@ -1,0 +1,1182 @@
+{
+  "status": "exact preparation complete; signatures necessary, atlases not solved",
+  "active_pair_replaced": false,
+  "field": {
+    "characteristic": 5,
+    "degree": 3,
+    "generator": "a",
+    "modulus": [
+      1,
+      1,
+      0,
+      1
+    ]
+  },
+  "curve": {
+    "equation": "v^2=u(u-1)(u-2)(u-3)(u-a)",
+    "F_coefficients": [
+      [],
+      [
+        0,
+        1
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        1
+      ]
+    ],
+    "genus": 2,
+    "squarefree": true,
+    "point_at_infinity": "unique O",
+    "pole_semigroup": [
+      2,
+      5
+    ],
+    "canonical_divisor": "2O"
+  },
+  "arithmetic": {
+    "Hasse_Witt": [
+      [
+        [
+          1,
+          4,
+          3
+        ],
+        [
+          0,
+          3,
+          3
+        ]
+      ],
+      [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ]
+    ],
+    "ordinary": true,
+    "point_count_q": 125,
+    "point_counts": [
+      118,
+      15926
+    ],
+    "Weil_polynomial_coefficients": [
+      15625,
+      -1000,
+      182,
+      -8,
+      1
+    ],
+    "ratio_factors": [
+      {
+        "polynomial": "z - 1",
+        "degree": 1,
+        "multiplicity": 4,
+        "cyclotomic": true
+      },
+      {
+        "polynomial": "z^4 + 12/5*z^3 + 48374/15625*z^2 + 12/5*z + 1",
+        "degree": 4,
+        "multiplicity": 1,
+        "cyclotomic": false
+      },
+      {
+        "polynomial": "z^4 + 68/125*z^3 - 2/5*z^2 + 68/125*z + 1",
+        "degree": 4,
+        "multiplicity": 2,
+        "cyclotomic": false
+      }
+    ],
+    "geometrically_absolutely_simple": true,
+    "Hom_with_fixed_X": "zero, by dimensions and simplicity",
+    "Cartier_Weierstrass_tests": [
+      {
+        "branch": [],
+        "eigen_determinant": [
+          0,
+          3,
+          3
+        ]
+      },
+      {
+        "branch": [
+          1
+        ],
+        "eigen_determinant": [
+          4,
+          0,
+          1
+        ]
+      },
+      {
+        "branch": [
+          2
+        ],
+        "eigen_determinant": [
+          2,
+          1,
+          4
+        ]
+      },
+      {
+        "branch": [
+          3
+        ],
+        "eigen_determinant": [
+          4,
+          1,
+          2
+        ]
+      },
+      {
+        "branch": [
+          0,
+          1
+        ],
+        "eigen_determinant": [
+          4,
+          0,
+          3
+        ]
+      }
+    ],
+    "Cartier_infinity_eigen_determinant": [
+      3,
+      3
+    ],
+    "all_Cartier_eigenforms_have_simple_zeros": true,
+    "all_J2_rational": true,
+    "J_F125_order_2adic_valuation": 4,
+    "Frobenius_plus_one_determinant": 16816,
+    "Frobenius_plus_one_2adic_valuation": 4,
+    "Frobenius_mod3": "T^4 + T^3 + 2*T^2 + 2*T + 1",
+    "J3_field_extension_bound_over_F125": 24,
+    "J_orders_3adic_valuations": {
+      "1": 0,
+      "2": 0,
+      "4": 0,
+      "8": 2,
+      "24": 8
+    }
+  },
+  "opers": {
+    "potential": "r_eta+(2u^3+b0+b1u+b2u^2)/F",
+    "scalar_P": "2u^3+b0+b1u+b2u^2",
+    "scheme_length": 5,
+    "reduced": true,
+    "original_curvature_coefficients": [
+      "(2*a^2)*b0^2 + (2*a + 2)*b1 + (-a^2 - a - 2)",
+      "(a^2 + a)*b0^2 + (-a^2)*b0*b1 + (-2*a^2 + 2*a + 2)*b1 + (2*a + 2)*b2 + (-2*a^2 - a + 2)",
+      "(a^2 - 2*a + 2)*b0^2 + (2*a^2 + 2*a)*b0*b1 + (-a^2)*b0*b2 + (2*a^2)*b1^2 + (-a^2 + 1)",
+      "(2*a^2 - 2*a + 1)*b0^2 + (2*a^2 + a - 1)*b0*b1 + (2*a^2 + 2*a)*b0*b2 + (-2*a^2)*b0 + (a^2 + a)*b1^2 + (-a^2)*b1*b2 + (2*a^2 + a - 1)*b1 + (-2*a^2 - a - 2)*b2 + (a^2 - a - 1)",
+      "(a^2 + a + 1)*b0^2 + (-a^2 + a + 2)*b0*b1 + (2*a^2 + a - 1)*b0*b2 + (-a^2 - a)*b0 + (a^2 - 2*a + 2)*b1^2 + (2*a^2 + 2*a)*b1*b2 + (-2*a^2 + 2*a + 2)*b1 + (2*a^2)*b2^2 + (-2*a^2 - a + 1)*b2 + (-2*a^2 - a - 1)",
+      "(a^2 - 2*a + 2)*b0^2 + (2*a^2 + 2*a + 2)*b0*b1 + (-a^2 + a + 2)*b0*b2 + (-a^2 + 2*a - 2)*b0 + (2*a^2 - 2*a + 1)*b1^2 + (2*a^2 + a - 1)*b1*b2 + (a^2 - 2)*b1 + (a^2 + a)*b2^2 + (-2*a^2 + a + 1)*b2 + (-a^2 - a - 1)",
+      "(2*a^2 - 2*a + 1)*b0^2 + (2*a^2 + a - 1)*b0*b1 + (2*a^2 + 2*a + 2)*b0*b2 + (-2*a^2 + 2*a - 1)*b0 + (a^2 + a + 1)*b1^2 + (-a^2 + a + 2)*b1*b2 + (-2*a^2 + a - 2)*b1 + (a^2 - 2*a + 2)*b2^2 + (a^2 - 2)*b2 + (a^2 - 2)",
+      "(a + 1)*b0^2 + (-a^2 + a + 2)*b0*b1 + (2*a^2 + a - 1)*b0*b2 + (-a^2 - a - 1)*b0 + (a^2 - 2*a + 2)*b1^2 + (2*a^2 + 2*a + 2)*b1*b2 + (-2*a^2 + 2*a - 1)*b1 + (2*a^2 - 2*a + 1)*b2^2 + (-a^2 + 2*a - 2)*b2 - 1",
+      "2*b0^2 + (2*a + 2)*b0*b1 + (-a^2 + a + 2)*b0*b2 + (-a^2 + 2*a - 2)*b0 + (2*a^2 - 2*a + 1)*b1^2 + (2*a^2 + a - 1)*b1*b2 + (2*a^2 + a - 2)*b1 + (a^2 + a + 1)*b2^2 + (-2*a^2 + 2*a + 2)*b2 + (-a^2 - a - 1)",
+      "-b0*b1 + (2*a + 2)*b0*b2 + (-2*a^2 + 2*a - 1)*b0 + (a + 1)*b1^2 + (-a^2 + a + 2)*b1*b2 + (a^2 - 2*a)*b1 + (a^2 - 2*a + 2)*b2^2 + (a^2 + 2*a)*b2 + (2*a^2 - a + 2)",
+      "-b0*b2 + (-a - 1)*b0 + 2*b1^2 + (2*a + 2)*b1*b2 + (2*a^2 - a + 2)*b1 + (2*a^2 - 2*a + 1)*b2^2 - b2 + (a^2 - 2*a - 2)",
+      "-2*b0 - b1*b2 + (2*a + 2)*b1 + (a + 1)*b2^2 + (2*a^2 - a + 2)*b2 + (-2*a^2 - 2*a)",
+      "-2*b1 + 2*b2^2 + (-a - 1)*b2 + (a + 1)"
+    ],
+    "groebner_basis": [
+      "b0 - 2*b2^3 + (2*a + 2)*b2^2 + (2*a^2 - 2*a + 1)*b2 + (-2*a^2 + 2)",
+      "b1 - b2^2 + (-2*a - 2)*b2 + (2*a + 2)",
+      "b2^5 + (a + 1)*b2^4 + (2*a^2 - 2)*b2^3 + (-2*a^2)*b2^2 + (-2*a^2 + a + 1)*b2 + (2*a^2 + 2*a - 2)"
+    ],
+    "separator_coefficients": [
+      [
+        3,
+        2,
+        2
+      ],
+      [
+        1,
+        1,
+        3
+      ],
+      [
+        0,
+        0,
+        3
+      ],
+      [
+        3,
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "b0_coefficients": [
+      [
+        3,
+        0,
+        2
+      ],
+      [
+        4,
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "b1_coefficients": [
+      [
+        3,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        1
+      ]
+    ],
+    "closed_points": [
+      {
+        "degree": 5,
+        "coefficients": [
+          [
+            3,
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            3
+          ],
+          [
+            0,
+            0,
+            3
+          ],
+          [
+            3,
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    ],
+    "original_equations_verified_in_full_length5_algebra": true,
+    "original_Jacobian_minors_gcd_one": true,
+    "minors_checked": 2
+  },
+  "quotient_signatures": {
+    "coarse_genus": 0,
+    "N_X_equals": "8*n_C",
+    "all_branch_fibers_X_degree_at_least": 8,
+    "tame": [
+      {
+        "N_X": 16,
+        "n_C": 2,
+        "inertia": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "E": 2,
+        "A": 2,
+        "torsion_annihilators_C": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "fiber_degrees_X": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "fiber_degrees_C": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "N_X": 24,
+        "n_C": 3,
+        "inertia": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "E": 3,
+        "A": 2,
+        "torsion_annihilators_C": [
+          6,
+          6,
+          6,
+          6
+        ],
+        "fiber_degrees_X": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "fiber_degrees_C": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "N_X": 32,
+        "n_C": 4,
+        "inertia": [
+          2,
+          2,
+          4,
+          4
+        ],
+        "E": 4,
+        "A": 2,
+        "torsion_annihilators_C": [
+          4,
+          4,
+          8,
+          8
+        ],
+        "fiber_degrees_X": [
+          16,
+          16,
+          8,
+          8
+        ],
+        "fiber_degrees_C": [
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "N_X": 32,
+        "n_C": 4,
+        "inertia": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "E": 2,
+        "A": 1,
+        "torsion_annihilators_C": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "fiber_degrees_X": [
+          16,
+          16,
+          16,
+          16,
+          16
+        ],
+        "fiber_degrees_C": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "N_X": 48,
+        "n_C": 6,
+        "inertia": [
+          3,
+          6,
+          6
+        ],
+        "E": 6,
+        "A": 2,
+        "torsion_annihilators_C": [
+          6,
+          12,
+          12
+        ],
+        "fiber_degrees_X": [
+          16,
+          8,
+          8
+        ],
+        "fiber_degrees_C": [
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "N_X": 48,
+        "n_C": 6,
+        "inertia": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "E": 6,
+        "A": 2,
+        "torsion_annihilators_C": [
+          4,
+          4,
+          6,
+          6
+        ],
+        "fiber_degrees_X": [
+          24,
+          24,
+          16,
+          16
+        ],
+        "fiber_degrees_C": [
+          3,
+          3,
+          2,
+          2
+        ]
+      },
+      {
+        "N_X": 48,
+        "n_C": 6,
+        "inertia": [
+          2,
+          2,
+          2,
+          6
+        ],
+        "E": 6,
+        "A": 2,
+        "torsion_annihilators_C": [
+          4,
+          4,
+          4,
+          12
+        ],
+        "fiber_degrees_X": [
+          24,
+          24,
+          24,
+          8
+        ],
+        "fiber_degrees_C": [
+          3,
+          3,
+          3,
+          1
+        ]
+      },
+      {
+        "N_X": 64,
+        "n_C": 8,
+        "inertia": [
+          4,
+          4,
+          4
+        ],
+        "E": 4,
+        "A": 1,
+        "torsion_annihilators_C": [
+          4,
+          4,
+          4
+        ],
+        "fiber_degrees_X": [
+          16,
+          16,
+          16
+        ],
+        "fiber_degrees_C": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "N_X": 64,
+        "n_C": 8,
+        "inertia": [
+          2,
+          8,
+          8
+        ],
+        "E": 8,
+        "A": 2,
+        "torsion_annihilators_C": [
+          4,
+          16,
+          16
+        ],
+        "fiber_degrees_X": [
+          32,
+          8,
+          8
+        ],
+        "fiber_degrees_C": [
+          4,
+          1,
+          1
+        ]
+      },
+      {
+        "N_X": 64,
+        "n_C": 8,
+        "inertia": [
+          2,
+          2,
+          2,
+          4
+        ],
+        "E": 4,
+        "A": 1,
+        "torsion_annihilators_C": [
+          2,
+          2,
+          2,
+          4
+        ],
+        "fiber_degrees_X": [
+          32,
+          32,
+          32,
+          16
+        ],
+        "fiber_degrees_C": [
+          4,
+          4,
+          4,
+          2
+        ]
+      },
+      {
+        "N_X": 72,
+        "n_C": 9,
+        "inertia": [
+          3,
+          3,
+          9
+        ],
+        "E": 9,
+        "A": 2,
+        "torsion_annihilators_C": [
+          6,
+          6,
+          18
+        ],
+        "fiber_degrees_X": [
+          24,
+          24,
+          8
+        ],
+        "fiber_degrees_C": [
+          3,
+          3,
+          1
+        ]
+      },
+      {
+        "N_X": 96,
+        "n_C": 12,
+        "inertia": [
+          3,
+          4,
+          4
+        ],
+        "E": 12,
+        "A": 2,
+        "torsion_annihilators_C": [
+          6,
+          8,
+          8
+        ],
+        "fiber_degrees_X": [
+          32,
+          24,
+          24
+        ],
+        "fiber_degrees_C": [
+          4,
+          3,
+          3
+        ]
+      },
+      {
+        "N_X": 96,
+        "n_C": 12,
+        "inertia": [
+          3,
+          3,
+          6
+        ],
+        "E": 6,
+        "A": 1,
+        "torsion_annihilators_C": [
+          3,
+          3,
+          6
+        ],
+        "fiber_degrees_X": [
+          32,
+          32,
+          16
+        ],
+        "fiber_degrees_C": [
+          4,
+          4,
+          2
+        ]
+      },
+      {
+        "N_X": 96,
+        "n_C": 12,
+        "inertia": [
+          2,
+          6,
+          6
+        ],
+        "E": 6,
+        "A": 1,
+        "torsion_annihilators_C": [
+          2,
+          6,
+          6
+        ],
+        "fiber_degrees_X": [
+          48,
+          16,
+          16
+        ],
+        "fiber_degrees_C": [
+          6,
+          2,
+          2
+        ]
+      },
+      {
+        "N_X": 96,
+        "n_C": 12,
+        "inertia": [
+          2,
+          4,
+          12
+        ],
+        "E": 12,
+        "A": 2,
+        "torsion_annihilators_C": [
+          4,
+          8,
+          24
+        ],
+        "fiber_degrees_X": [
+          48,
+          24,
+          8
+        ],
+        "fiber_degrees_C": [
+          6,
+          3,
+          1
+        ]
+      },
+      {
+        "N_X": 96,
+        "n_C": 12,
+        "inertia": [
+          2,
+          2,
+          2,
+          3
+        ],
+        "E": 6,
+        "A": 1,
+        "torsion_annihilators_C": [
+          2,
+          2,
+          2,
+          3
+        ],
+        "fiber_degrees_X": [
+          48,
+          48,
+          48,
+          32
+        ],
+        "fiber_degrees_C": [
+          6,
+          6,
+          6,
+          4
+        ]
+      },
+      {
+        "N_X": 128,
+        "n_C": 16,
+        "inertia": [
+          2,
+          4,
+          8
+        ],
+        "E": 8,
+        "A": 1,
+        "torsion_annihilators_C": [
+          2,
+          4,
+          8
+        ],
+        "fiber_degrees_X": [
+          64,
+          32,
+          16
+        ],
+        "fiber_degrees_C": [
+          8,
+          4,
+          2
+        ]
+      },
+      {
+        "N_X": 144,
+        "n_C": 18,
+        "inertia": [
+          2,
+          3,
+          18
+        ],
+        "E": 18,
+        "A": 2,
+        "torsion_annihilators_C": [
+          4,
+          6,
+          36
+        ],
+        "fiber_degrees_X": [
+          72,
+          48,
+          8
+        ],
+        "fiber_degrees_C": [
+          9,
+          6,
+          1
+        ]
+      },
+      {
+        "N_X": 192,
+        "n_C": 24,
+        "inertia": [
+          3,
+          3,
+          4
+        ],
+        "E": 12,
+        "A": 1,
+        "torsion_annihilators_C": [
+          3,
+          3,
+          4
+        ],
+        "fiber_degrees_X": [
+          64,
+          64,
+          48
+        ],
+        "fiber_degrees_C": [
+          8,
+          8,
+          6
+        ]
+      },
+      {
+        "N_X": 192,
+        "n_C": 24,
+        "inertia": [
+          2,
+          4,
+          6
+        ],
+        "E": 12,
+        "A": 1,
+        "torsion_annihilators_C": [
+          2,
+          4,
+          6
+        ],
+        "fiber_degrees_X": [
+          96,
+          48,
+          32
+        ],
+        "fiber_degrees_C": [
+          12,
+          6,
+          4
+        ]
+      },
+      {
+        "N_X": 192,
+        "n_C": 24,
+        "inertia": [
+          2,
+          3,
+          12
+        ],
+        "E": 12,
+        "A": 1,
+        "torsion_annihilators_C": [
+          2,
+          3,
+          12
+        ],
+        "fiber_degrees_X": [
+          96,
+          64,
+          16
+        ],
+        "fiber_degrees_C": [
+          12,
+          8,
+          2
+        ]
+      },
+      {
+        "N_X": 288,
+        "n_C": 36,
+        "inertia": [
+          2,
+          3,
+          9
+        ],
+        "E": 18,
+        "A": 1,
+        "torsion_annihilators_C": [
+          2,
+          3,
+          9
+        ],
+        "fiber_degrees_X": [
+          144,
+          96,
+          32
+        ],
+        "fiber_degrees_C": [
+          18,
+          12,
+          4
+        ]
+      },
+      {
+        "N_X": 384,
+        "n_C": 48,
+        "inertia": [
+          2,
+          3,
+          8
+        ],
+        "E": 24,
+        "A": 1,
+        "torsion_annihilators_C": [
+          2,
+          3,
+          8
+        ],
+        "fiber_degrees_X": [
+          192,
+          128,
+          48
+        ],
+        "fiber_degrees_C": [
+          24,
+          16,
+          6
+        ]
+      },
+      {
+        "N_X": 672,
+        "n_C": 84,
+        "inertia": [
+          2,
+          3,
+          7
+        ],
+        "E": 42,
+        "A": 1,
+        "torsion_annihilators_C": [
+          2,
+          3,
+          7
+        ],
+        "fiber_degrees_X": [
+          336,
+          224,
+          96
+        ],
+        "fiber_degrees_C": [
+          42,
+          28,
+          12
+        ]
+      }
+    ],
+    "small_wild_q5": [
+      {
+        "N_X": 80,
+        "n_C": 10,
+        "wild_order": 10,
+        "tame_part": 2,
+        "wild_group_order": 5,
+        "lower_break": 2,
+        "different": 17,
+        "other_tame_order": 2,
+        "fiber_degrees_C": [
+          1,
+          5
+        ]
+      },
+      {
+        "N_X": 160,
+        "n_C": 20,
+        "wild_order": 5,
+        "tame_part": 1,
+        "wild_group_order": 5,
+        "lower_break": 1,
+        "different": 8,
+        "other_tame_order": 2,
+        "fiber_degrees_C": [
+          4,
+          10
+        ]
+      },
+      {
+        "N_X": 160,
+        "n_C": 20,
+        "wild_order": 20,
+        "tame_part": 4,
+        "wild_group_order": 5,
+        "lower_break": 2,
+        "different": 27,
+        "other_tame_order": 4,
+        "fiber_degrees_C": [
+          1,
+          5
+        ]
+      },
+      {
+        "N_X": 320,
+        "n_C": 40,
+        "wild_order": 10,
+        "tame_part": 2,
+        "wild_group_order": 5,
+        "lower_break": 1,
+        "different": 13,
+        "other_tame_order": 4,
+        "fiber_degrees_C": [
+          4,
+          10
+        ]
+      },
+      {
+        "N_X": 320,
+        "n_C": 40,
+        "wild_order": 20,
+        "tame_part": 4,
+        "wild_group_order": 5,
+        "lower_break": 3,
+        "different": 31,
+        "other_tame_order": 2,
+        "fiber_degrees_C": [
+          2,
+          20
+        ]
+      },
+      {
+        "N_X": 320,
+        "n_C": 40,
+        "wild_order": 40,
+        "tame_part": 8,
+        "wild_group_order": 5,
+        "lower_break": 2,
+        "different": 47,
+        "other_tame_order": 8,
+        "fiber_degrees_C": [
+          1,
+          5
+        ]
+      },
+      {
+        "N_X": 480,
+        "n_C": 60,
+        "wild_order": 30,
+        "tame_part": 6,
+        "wild_group_order": 5,
+        "lower_break": 3,
+        "different": 41,
+        "other_tame_order": 3,
+        "fiber_degrees_C": [
+          2,
+          20
+        ]
+      },
+      {
+        "N_X": 640,
+        "n_C": 80,
+        "wild_order": 20,
+        "tame_part": 4,
+        "wild_group_order": 5,
+        "lower_break": 1,
+        "different": 23,
+        "other_tame_order": 8,
+        "fiber_degrees_C": [
+          4,
+          10
+        ]
+      },
+      {
+        "N_X": 960,
+        "n_C": 120,
+        "wild_order": 20,
+        "tame_part": 4,
+        "wild_group_order": 5,
+        "lower_break": 2,
+        "different": 27,
+        "other_tame_order": 3,
+        "fiber_degrees_C": [
+          6,
+          40
+        ]
+      },
+      {
+        "N_X": 960,
+        "n_C": 120,
+        "wild_order": 60,
+        "tame_part": 12,
+        "wild_group_order": 5,
+        "lower_break": 3,
+        "different": 71,
+        "other_tame_order": 6,
+        "fiber_degrees_C": [
+          2,
+          20
+        ]
+      },
+      {
+        "N_X": 1920,
+        "n_C": 240,
+        "wild_order": 40,
+        "tame_part": 8,
+        "wild_group_order": 5,
+        "lower_break": 2,
+        "different": 47,
+        "other_tame_order": 6,
+        "fiber_degrees_C": [
+          6,
+          40
+        ]
+      },
+      {
+        "N_X": 2240,
+        "n_C": 280,
+        "wild_order": 20,
+        "tame_part": 4,
+        "wild_group_order": 5,
+        "lower_break": 1,
+        "different": 23,
+        "other_tame_order": 7,
+        "fiber_degrees_C": [
+          14,
+          40
+        ]
+      }
+    ],
+    "large_wild": [
+      {
+        "N_X": 112000,
+        "n_C": 14000,
+        "wild_order": 1000,
+        "different": 1143,
+        "other_tame_order": 7,
+        "lower_breaks": [
+          1,
+          6
+        ],
+        "lower_group_orders": [
+          125,
+          5
+        ]
+      },
+      {
+        "N_X": 336000,
+        "n_C": 42000,
+        "wild_order": 3000,
+        "different": 3143,
+        "other_tame_order": 21,
+        "lower_breaks": [
+          1,
+          6
+        ],
+        "lower_group_orders": [
+          125,
+          5
+        ]
+      }
+    ],
+    "warning": "Numerical/local necessary conditions only. No atlas realization or exclusion is inferred."
+  },
+  "elapsed_seconds": 0.33444770897040144
+}

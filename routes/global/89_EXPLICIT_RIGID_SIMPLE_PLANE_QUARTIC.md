@@ -4,7 +4,7 @@
 
 **Status: proved, with an exact arithmetic certificate; independent audit
 pending.** This is a nonempty explicit test case for the parameterized
-theorem in file 87, not a claim to settle arbitrary common covers and not
+arbitrary-abelian theorem in file91, not a claim to settle arbitrary common covers and not
 a replacement for the pair in file 76.
 
 Throughout, let \(k=\overline{\mathbf F}_5\). Define the plane curve
@@ -113,8 +113,11 @@ automorphism inducing \([-1]\), if it exists, is the hyperelliptic
 involution. Since \(X_0\) is nonhyperelliptic, only the identity occurs.
 This proves (89.2).
 
-Equation (89.3) is now Theorem 87.3, with the trivial-cover case immediate.
-The common-cover exclusion is Theorem 87.8. \(\square\)
+Equation (89.3) follows from
+[Theorem91.1](91_ARBITRARY_ABELIAN_DECK_RIGIDITY.md#theorem911),
+including the trivial cover. Its
+[Corollary91.4](91_ARBITRARY_ABELIAN_DECK_RIGIDITY.md#3-consequences-for-the-same-actual-source)
+gives the common-cover exclusion. \(\square\)
 
 ## Certificate and scope
 

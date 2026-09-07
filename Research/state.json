@@ -1,82 +1,122 @@
 {
-  "phase": "post_enumeration_structural_compatibility",
-  "active_target_ids": [
-    "ordinary_simple_common_cover",
-    "bolza_prime_to_five_coreless_neighborhood",
-    "hermitian_oper_noninvariance",
-    "cubic_genus_two_common_covers",
-    "picard_simple_common_cover",
-    "genus_two_atlas_dynamics",
-    "cartier_jet_tensor_surjectivity",
-    "acyclic_atlas_towers",
-    "hermitian_genus_two_test",
-    "theta_open_atlas_projection",
-    "intrinsic_atlas_incidence",
-    "twisted_bol_complex",
-    "cohomological_bezout",
-    "inverse_cup_atlas_system",
-    "compact_etale_atlas_system",
-    "resultant_gradient_atlas",
-    "dormant_differential_projection",
-    "wronskian_matrix_pencil",
-    "direct_wronskian_atlas",
-    "semilinear_hermitian_lift",
-    "fixed_x_oper_cubic_quotient"
-  ],
-  "next_action": "All positive-test audits PASS and promoted, including ordinary_simple_common_cover. Continue nonlinear atlas constraints or a genuine two-leg geometric obstruction. Genus4bothJabssimple, p-ranks2/4, Homzero, actualtwoGaloisetale3legs samegenus10source; fixedcertificate cubic_ordinary_common_cover_certificate. Earlier genus3pair and Bolzacorelessfamily auditedPASS. Natural H-oper compatibility false evencoredGalois. No fixedX oper excluded, no solver jobs/retries. WeakN dimension7 remains heuristicnotproved. No more Jacobianconditions-only exclusions.",
-  "last_completed_ids": [
-    "ordinary_simple_common_cover",
-    "bolza_prime_to_five_coreless_neighborhood",
-    "hermitian_oper_noninvariance",
-    "cubic_genus_two_common_covers",
-    "picard_simple_common_cover",
-    "genus_two_atlas_dynamics",
-    "cartier_jet_tensor_surjectivity",
-    "acyclic_atlas_towers",
-    "finite_algebra_completion_certificates",
-    "dormant_first_integral_charts",
-    "semilinear_hermitian_lift",
-    "scalar_hermitian_reconstruction",
-    "fixed_x_oper_cubic_quotient"
-  ],
-  "last_updated_local": "2026-09-07 09:35 CEST",
+  "phase": "conditional_post_enumeration_mathematics_with_selected14_live",
   "problem_status": "unsolved",
-  "pro_requests_remaining": 0,
-  "migration_status": "complete",
-  "timer": {
-    "due_local": "2026-09-07 10:37 CEST",
-    "exec_cell": "282",
-    "status": "active_non_polling_hourly_reminder"
+  "last_updated_local": "2026-09-08 00:52 CEST",
+  "next_action": "tangent_bundle_cyclic_refinements v2 now PROVED author-only: stable rank2 dormant and full-double rank4 active tangent bundles commute with arbitrary etale pullback; explicit good prime choices preserve exact finite-family defects; simple-J finite-field cyclic towers make ALL defects grow, including both actual endpoints above any prescribed common source. Thus do NOT seek universal ordinary preservation or replace compatibility by endpoint pools. Next exploit TWO-leg bundle compatibility, after checking existing matching/unique-rank4/Mumford boundaries. No common-cover or minimal-source theorem yet. Backup N4 no-solver replay PASS21.41s;3smallwild+3chart0 certificates open. Main selected14 live57786, orbit6 all32 directions97s, fullR221s, actual940–955%CPU; encoding/checkpoint conversions being optimized. Fast timer CANCELLED by user, g2:11 terminated; no later UI change. Pro exact9 revised prompt delivered for USER manual paste; no confirmed outstanding submission.",
+  "representative_selection": {
+    "selected_count": 14,
+    "deferred": [
+      "orbit_0008",
+      "orbit_0009",
+      "orbit_0010",
+      "orbit_0011"
+    ],
+    "whole_representatives_completed": 0,
+    "reason": "user_defers_four_largest_for_later",
+    "resume_requires_user_direction": true,
+    "checkpoints_preserved": true
   },
-  "active_computations": [],
-  "raw_basis_external_path": "/Users/julian/Documents/litt3-computation-data/normalized_oper_msolve.gb",
-  "compact_postprocessing": {
-    "lossless_encoding": "Research/computations/normalized_oper_rewrite.json",
-    "staircase_only_not_certificate": "Research/computations/normalized_oper_basis_structure.json",
-    "normal_forms": "All2403 computed and checkpointed with exact neogb LA2;38 batches, no GB recomputation.",
-    "multiplication_matrix": "Research/computations/normalized_oper_a9.u8",
-    "moments": "Research/computations/normalized_oper_a9.moments.json",
-    "moment_arithmetic": "Exact ARM integer dot products, 38644steps completed in about72sec; no floating point.",
-    "certification_status": "COMPLETE: original identities and independent43-input substitution pass; separator/full knownlength prove algebra isomorphism; squarefree P and12 factors verified. Fresh audit PASS."
+  "eta_monitor": {
+    "implementation": "scripts/atlas_eta.py",
+    "documentation": "Research/ATLAS_ETA_MODEL.md",
+    "command": "python3 /Users/julian/Documents/litt3/scripts/run_all_atlases.py watch",
+    "status": "read_only_live_progress_and_numerical_heuristic_forecast",
+    "validation": "22 selection/watcher/controller/schema tests PASS",
+    "forecast_years_at_snapshot": 32.3,
+    "uncertainty": "Factor10 smaller/larger scenarios; not a bound or statistical confidence interval",
+    "forecast_scope": "selected14 only,448 charts; four deferred cases omitted",
+    "large_field_runtime_measured": false
   },
-  "completed_computations": [
+  "active_target_ids": [
+    "cyclic_cubic_low_abel_torsion",
+    "cored_quotient_torsion_sieves",
+    "nonliftable_hermitian_atlas_family",
+    "solvable_atlas_frobenius_periods",
+    "hermitian_monodromy_genus_sieve",
+    "fixed_x_orbifold_bound",
+    "hermitian_atlas_extension_criterion",
+    "completed_local_orbifold_rigidity",
+    "canonical_intersection",
+    "cartier_generator",
+    "small_clump_root_reduction",
+    "bounded_atlas_partner_finiteness",
+    "low_pencil_torsion_rigidity",
+    "fixed_x_nonzero_cartier_profiles",
+    "cartier_dormant_secants",
+    "coreless_connection_spectrum",
+    "nilpotent_scalar_model",
+    "etale_double_dormant_pairs",
+    "tangent_bundle_cyclic_refinements"
+  ],
+  "active_agents": [
     {
-      "supervisor_pid": 9989,
-      "pid": 9991,
-      "status": "finished_exact_certificate_and_full_export_completed",
-      "returncode": 0,
-      "ended_utc": "2026-09-06T23:47:42.029515+00:00",
-      "output_bytes": 4517491660,
-      "status_file": "Research/computations/normalized_oper_run.json",
-      "log_file": "Research/computations/normalized_oper_solver.log",
-      "threads": 10,
-      "pair_cap": 250,
-      "script": "patched msolve normalized_oper_msolve.in",
-      "expected_F25_length": 9645,
-      "expected_F5_length": 19290
+      "name": "library_generalization_cleanup_max",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "status": "sustained source cleanup explicitly reactivated by user; root owns shared registry/state"
+    },
+    {
+      "name": "orbit11_structural_max",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "status": "REACTIVATED at user request: profile and optimize entire18-representative pipeline including serial export and large fields; exact checkpoints/certificates, meaningful ETA,10-core utilization; coordinate restart with root"
+    },
+    {
+      "name": "alternative_curve_candidates_max",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "status": "RUNNING backup only: same X, genus2 C_alpha overF125; arithmetic/5-oper/80 torsion census complete, whole untwisted atlas exact identities author-verified; remaining twists and small cored signatures open; coordinated10-core windows"
     }
   ],
+  "active_computations": [
+    "Main selected14 controller57786, orbit6 builder57787/57790 restarted after fullR/all32/native/original-equation regression tests. All39 orbit5 files304355110bytes rehashed preserved. Narrow invariant2 reporting recovery recorded, only replayed certificate adopted. Current sequential setup; agent will report actual10core phase.",
+    "Backup three chart0 unit bases saved at75.6–76sec, original13-row lifts/replay pending. All240 exact-order4 torsion/1200 Bol rank checks PASS15.13sec; no-solver replay being written. Only3small-wild rows remain author-open. Coordinate10core windows."
+  ],
+  "atlas_solver": {
+    "engine": "/Users/julian/Documents/litt3-computation-data/atlas-f4-telemetry/msolve/msolve",
+    "source_patch": "scripts/vendor/f4-checkpoint.patch",
+    "engine_status": "LIVE hybrid native_F25_predecessor_tail_and_improved_F4_other_fields_or_harder_charts",
+    "checkpoint_status": "complete basis/hash/pending pairs; active matrix not checkpointable",
+    "first_directory": "/Users/julian/Documents/litt3-computation-data/atlas-rooted-first",
+    "first_adopted_by_all18": true,
+    "last_saved_first_chart": 23,
+    "last_saved_checkpoint_sha256": "ce1c79f92e6af94820c90f1fde13191573ea926d155e4ec86fc21fecfd81925e",
+    "constant_certificate_charts": [
+      30,
+      31
+    ],
+    "polynomial_certificate_charts": [
+      22,
+      23,
+      28,
+      29
+    ],
+    "unit_candidates_need_verification": [
+      24,
+      25,
+      26,
+      27
+    ],
+    "whole_opers_excluded": 0
+  },
+  "validation": {
+    "native_parallel": "PASS exact mathematical checkpoint/DAG/certificates oldserial vs new1/10workers; oldprefix resume and zero-descendantsPASS; fullactual23B4 original identity checked15.95sec native vs29.80sec. Production10workers measured808%CPU. Research/NATIVE_PARALLEL.md",
+    "all18_original_oper_equations": "PASS",
+    "first_generic_tensor_exact_cache_equality": "PASS",
+    "exceptional_h0V3_full_tensor": "PASS",
+    "arbitrary_field_export": "cached31/29/0 exact; invariant and F625 tower PASS",
+    "orchestration_unit_tests": "8 PASS",
+    "base_field_preparation": "First and invariant0 tensor equality PASS; invariant2 local0.40sec, coordinate stage complete23.44sec; no full invariant2 tensor yet",
+    "native_field_backend": "All18 native field models and actual optional towers PASS; field240 original-coordinate N/R and Wronskian checks PASS. Exact solver advances remain bounded until independent replay/deployment.",
+    "mixed_certificate_chart23": "Complete degree_v<=1 degree_b<=1 space gives NO certificate:26136rows,rank22227,25245columns,349sec. Not an exclusion.",
+    "granular_telemetry": "10 unit/schema tests PASS; F4 baseline/on/off exact bases+oldcheckpoint resumePASS; native stop/resume countertotals+zero-row testPASS. Hardcaseloggingoverheadunmeasured.",
+    "chart22_B4": "Complete62205rows,rank62205,no pure-b relation,821.765native seconds,1349741841832coefficient updates; bounded ansatz failure,not existence.",
+    "predecessor_reuse": "Fullchart23PASS exact certificate38.27sec total,4.17x baseline;stop30000/resume byte-identical polynomial DAG/pivots/weightsPASS. GeneralizedF25 tensor input deployed,largerfields explicitly useF4.",
+    "chart22_B5": "EXACT UNIT certificate verified against original87rows,all multipliers b-degree<=5;129161processed/rank,1485pure-b relations;526.26sec total,474.95native,3.38GiB peak. Adopted by liveall18.",
+    "hybrid_queue": "10existing unit/schema testsPASS while live; firstchart21 first5min slice checkpointed; actual invariant_0/1chart23 both exact original-equation unit certificates7.56/7.38sec. Completed certificate hashes checked. No whole-oper exclusion."
+  },
   "enumeration": {
+    "status": "complete_and_audited",
     "distinct_exported": 28990,
     "total_multiplicity": 29375,
     "invariant_distinct": 55,
@@ -99,55 +139,66 @@
       7324
     ],
     "complete_list": "Research/computations/complete_oper_solutions.json",
-    "certificate": "Research/computations/normalized_oper_algebra_certificate.json"
+    "certificate": "Research/computations/normalized_oper_algebra_certificate.json",
+    "raw_basis_external": "/Users/julian/Documents/litt3-computation-data/normalized_oper_msolve.gb"
   },
-  "active_agents": [],
+  "timer": {
+    "status": "Hourly update00:22CEST complete; passive sleep88006 due01:22CEST. Old29400 consumed. Fast timer g2:11 CANCELLED and terminated; no speed action remains.",
+    "next_review_local": "2026-09-08 01:22 CEST"
+  },
   "completion_watcher": {
-    "pid": 56616,
-    "status": "stopped_after_user_requested_cli_interrupt",
-    "codex_pid": 26787,
-    "resume_returncode": 1,
-    "ended_utc": "2026-09-06T23:56:44.148052+00:00",
+    "status": "disabled",
     "rearm_allowed": false,
-    "preferred_interface": "T3",
-    "recovery": "Codex and its helpers exited; original transcript retained, writer lock released, T3 resume cursor retained.",
-    "session_id": "01a06bb7-7c2a-7eb1-971c-2b890a7e0bf7",
-    "state_file": "Research/computations/normalized_oper_completion_watch.json",
-    "resume_log": "Research/computations/normalized_oper_resume.jsonl",
-    "reply_file": "Research/computations/normalized_oper_resume_reply.md"
+    "reason": "User forbids automatic wake-up or Codex CLI relaunch"
   },
-  "pro_prompt": "Research/PRO_SCALAR_HERMITIAN_RECONSTRUCTION.md",
-  "pro_status": "Integrated pointwise reconstruction;10 identification parameters and40 extension variables removed. General horizontal retraction audited in all allowed genera/torsion twists.",
-  "proof_scope": "Complete intrinsic criterion for all large PSU/PGU torsion choices; no whole fixedX oper excluded. Small cored and coreless branches remain. Genus2 positive test not replacement for fixed pair.",
-  "patched_solver": "/tmp/litt3-msolve-lowmem.bQGL6w/msolve-0.10.1/msolve",
-  "retired_algorithms": "Removed from active code; obsolete artifacts recoverable in /Users/julian/.Trash/litt3-retired-solvers.2a0Fl7. All old processes terminated.",
+  "fast_mode_deadline": {
+    "user_confirmed": "User now turns fast mode OFF manually; cancels the later automatic switch",
+    "deadline_utc": "2026-09-08T02:00:00Z",
+    "deadline_local": "2026-09-08 04:00 CEST",
+    "timer": "functions.exec cell g2:11 terminated successfully at user request",
+    "status": "cancelled; user handles speed manually",
+    "requested_action": "None. Do not rearm or change speed later. Subagents unchanged.",
+    "blocker": null
+  },
+  "proof_scope": "Untwisted calculations only; PGU3-torsion, small-cored<=2240 and independent coreless gap remain.",
   "handoff": "Research/AFTER_ENUMERATION.md",
-  "unadopted_algorithm": "12-variable triangular probe: degree22,242362terms; no speed benchmark, trial retired; see Research/TRIANGULAR_COORDINATE_PROBE.md",
-  "small_positive_test": {
-    "curve": "v^2=t^6+3",
-    "actual_atlas": "H/(C3 x C3), H Hermitian genus10",
-    "opers": 5,
-    "all_opers_actual": true,
-    "incidence_tensor": "Research/computations/genus_two_intrinsic_tensor.json",
-    "tensor_audit": "PASS 2026-09-07 /root/small_intrinsic_tensor_audit",
-    "four_linear_restrictions": "All exact original-ideal certificates completed",
-    "dynamics": "COMPLETE audited PASS:11 simple directions,3 normalizations each,33 reduced geometric solutions, entire coordinate algebra verified inoriginalequations. Mapconjugate z->z10.",
-    "generic_solver": "Retired recoverably to /Users/julian/.Trash/litt3-genus-two-pilot.pOxZIW; minimal exact certificate generator and dynamics replace prototypes."
+  "pro_requests_remaining": null,
+  "pro_concurrency": {
+    "allowed_outstanding": 1,
+    "outstanding": false,
+    "submitted_local": null,
+    "prompt_file": "Research/PRO_NINE_TORSION_REQUEST.md",
+    "topic": "Decide fixed-X W3[9]=W3[3], with all orders27+ already rigorously excluded",
+    "chat_url": "https://chatgpt.com/c/WEB:5ea37674-1911-4b65-922c-9e31b8af3651",
+    "ui_confirmation": "Historical UI appeared submitted2026-09-07 at20:43, but user2026-09-08 reports it did not run. Cause unverified. No successful outstanding request assumed.",
+    "status": "Revised same nine-versus-three prompt ready for USER manual paste; not resubmitted by agent",
+    "revision": "2026-09-08: add proved second-difference rigidity; prevent ineffective multiplication and ordinary-derivative shortcuts; omit unrelated new tangent results",
+    "rule": "One concurrent GPT6Pro request. User will paste this submission manually and supply its result; no computer-use submission or polling. Wait for user confirmation before marking it outstanding."
   },
-  "atlas_solver_frontier": {
-    "status": "all_bounded_pilots_stopped_without_basis",
-    "active": false,
-    "seeded_native": {
-      "seconds": 180.031,
-      "peak_rss": 1394032640,
-      "degree": 7
-    },
-    "frobenius_graph": {
-      "seconds": 180.044,
-      "peak_rss": 2293858304,
-      "degree": 3
-    },
-    "retired_code_and_inputs": "/Users/julian/.Trash/litt3-atlas-pilots.sucrLn",
-    "scope": "No unit ideal, atlas exclusion, solution or checkpoint produced; exit0 forced bySIGTERM wasnot success."
+  "migration_status": "complete",
+  "pending_agent_roles": [],
+  "conditional_assumptions": {
+    "A14": "Selected14 untwisted systems empty; not proved",
+    "A18": "All18 untwisted systems empty; not proved",
+    "uncovered": "nontrivial Pic(X)[3] twists; small cored; arbitrary coreless"
+  },
+  "last_proved_step": "tangent_bundle_cyclic_refinements v2 author: V_r stable rank2, E_r rank4 from full canonical double, both chi0 and actual tangent functors under etale pullback. Every finite dormant family and theta-proper active family admits exact-defect-preserving cyclic prime covers for ell+1>g(2nD+4nA). Over barF5 simple J, arbitrary finite families instead admit cyclic prime-avoiding towers with all defects unbounded, retaining BOTH legs above any actual shared source. No independent audit, compatibility existence or common-cover exclusion. Backup full J[4] no-solver replay PASS21.41s.",
+  "orbit11_structural_frontier": "Prior structural task COMPLETE: all5 reductions transfer8/9/10, deck-graded coefficient fields403/578/718 instead1209/1734/2154; intrinsic7324 remains. Generic nullity1 open;88 actual cubic tests passed, pointwise strengthening has counterexamples. REACTIVATED on whole18 solver performance; must preserve allR/higher-corank charts and original-equation verification.",
+  "solver_attention": "No whole selected14 representative exclusion. New affine row/substitution preconditioning (not yet deployed): invariant2chart28 25.88s→0.323s; orbit1chart29 raw60s timeout→0.848s original97-row identity. Independent replay pending. Orbit5 now serial fullR check; agent replacing 1.5GiB Sage worker direction with shared-context FLINT C++. Preserve all original equations and checkpoints. Previous32.5year forecast obsolete as kernel benchmark but not yet replaced by credible whole-run forecast.",
+  "formalization": {
+    "request": "Write separate-agent prompt only when all pieces for chosen no-cored theorem are ready; continue coreless meanwhile",
+    "map": "Research/CORED_FORMALIZATION_MAP.md",
+    "root_read": true,
+    "complete_prose_target": "fixed X plus high-prime-degree genus2 C_t from bounded_atlas_partner_finiteness; not small C_alpha",
+    "prompt_delivered": false,
+    "boundary": "No Lean implementation or mathlib support audit. Fixed-X arithmetic identification, effective atlas bound and cored bridge must not be axiomatized. ActiveY25 and smallC_alpha no-cored claims remain open."
+  },
+  "bounded_test": {
+    "task": "first ramified cubic Frobenius layer",
+    "script": "scripts/check_cubic_frobenius_layer.sage",
+    "status": "complete; independently replayed and source formula audited PASS",
+    "result": "rankUbar8, nullity(Ubar^2-I)2, bound9 and W1 classification",
+    "superseded": "Former W1[27] jet script/certificate removed after audited stronger result; general Hasse criterion retained",
+    "scope": "No W2/W3 exact9 classification or common-cover exclusion"
   }
 }

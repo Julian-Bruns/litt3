@@ -218,7 +218,17 @@ the trace formulation detects all intrinsic first-order directions.
 Outside this case one should retain H itself or develop higher-order
 deformations; one must not silently divide by the cover degrees.
 
-## 5. Current proof task
+## 5. The unresolved restricted claim (R)
+
+The earlier question was: over k=Fbar5, take actual finite etale maps
+X <-f- Z -g-> Y with 5 not dividing either degree, Y ordinary of genus2,
+X nonhyperelliptic of genus at least3, and Hom(JX,JY)=0. Assume joint
+minimality, namely k(Z)=k(X)k(Y) inside the SAME function field k(Z).
+Must the generic value in (3) be zero? This restricted claim remains OPEN.
+The cofinal-refinement counterexamples do not settle it: a nontrivial
+refinement of Z destroys this joint minimality. No former prompt is proof.
+
+## 6. Remaining implication
 
 For an actual minimal bi-etale correspondence with ordinary genus-two
 Y and the chosen nonhyperelliptic X, either prove that the positive

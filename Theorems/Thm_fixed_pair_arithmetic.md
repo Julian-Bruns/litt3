@@ -28,4 +28,8 @@ With \(\theta=dx/y^2\), one has
 Proof: [retained arithmetic proof](../Solutions/Sol_fixed_pair_arithmetic.md),
 Propositions 76.1–76.3. The frame valuations and divisor are also recorded
 in [the eigenform proof](../Solutions/Sol_fixed_x_cartier_eigenforms.md),
-Section 3. This card does not promote Theorem 76.4's degree-five exclusion.
+Section 3.
+
+Version 2, 2026-09-07: arithmetic statement unchanged; the proof no longer
+includes the unregistered degree-five special case or its stale strategy
+discussion. Verification remains author prose, not an independent audit.

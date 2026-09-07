@@ -1,6 +1,6 @@
 """Exact integral-upper-jump sieve; Python 3 standard library only.
 
-Completeness and termination: INTEGRAL_WILD_JUMPS_FORCE_A_CORED_DEGREE_BOUND.md.
+Completeness and termination: ../../Solutions/Sol_integral_jump_bound.md.
 No search cutoff in rank, number of jumps, or group order is imposed.
 Rows are necessary signatures, NOT a construction of local/global covers.
 """

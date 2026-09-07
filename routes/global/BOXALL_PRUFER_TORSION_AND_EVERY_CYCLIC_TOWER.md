@@ -1,261 +1,267 @@
-# Boxall-style Prüfer torsion finiteness and every cyclic tower
+# Boxall finite-support torsion, Pruefer directions, and abelian-defect growth
 
-Date: 2026-09-05.
-Author: canonical-trace-algebra agent.
-Status: Sections 1--3 independently checked **PASS**, with no breaking
-objection, by `/root/gluing_cohomology_rigidity`, 2026-09-05. Section 4
-is a bounded author source comparison, not covered by that verdict.
-Not a novelty claim.
-[Audit record: scope, auditor, date and retained hypothesis](audits/BOXALL_PRUFER_CYCLIC_TOWER_AUDIT.md).
-The fixed curves of file 76 are unchanged.
+Version2,2026-09-07, consolidated author proof.
+Original single-prime translation/Pruefer/simple-ambient results and
+their cyclic/base-change consequences: focused PASS
+/root/gluing_cohomology_rigidity2026-09-05,
+[verdict, scope and qualifications](audits/BOXALL_PRUFER_CYCLIC_TOWER_AUDIT.md).
+The finite-prime isolation lemma separately received focused PASS
+/root/canonical_trace_algebra2026-09-05.
+The full finite-support torsion-coset theorem was already collaborative
+AUTHOR work in the two-leg rectangle proof. This record consolidates it;
+extending maximal-abelian growth from one prime to finite S below is
+NEW AUTHOR-only2026-09-07.
+The audited single-Pruefer statement retains its direct proof in Section2.
+No whole-record audit or novelty claim is made.
 
-## 1. Exact torsion statement
+Let k=bar(F_p), A/k abelian, and S a fixed FINITE set of primes≠p.
+Write A[S∞] for its geometric torsion with orders supported on S,
+not for a Tate module. All points of A(k) are torsion. Nonreduced
+subvarieties below are treated through their supports.
 
-Let k be an algebraic closure of a finite field of characteristic p,
-let A/k be an abelian variety, let ell be a prime different from p,
-and let Gamma be any subgroup of A(k) isomorphic to Q_ell/Z_ell.
-No invariance of Gamma under any arithmetic Frobenius is assumed.
+## 1. Checked finite-field translation and prime isolation
 
-**Theorem.** For any closed subvariety D of A, exactly one of the following
-occurs:
+Choose F_q defining A and the closed subvariety under discussion,
+with Frobenius M fixing A[ℓ] for each ℓ∈S and A[4] if2∈S.
+On T_ℓA, M−1∈ℓ End(T_ℓA), or4 End(T₂A) at2.
 
-1. D(k) intersect Gamma is finite;
-2. Gamma is contained in D(k).
+For P∈A[ℓ∞] not fixed by M, let Q=(M−1)P have exact orderℓ^s.
+For n=ℓ^r the binomial identity gives
 
-In particular, if 0 is not in D, the intersection is finite.
-The same statement holds for the support of a nonreduced closed subscheme.
-This is a rank-one consequence of the Boxall method, not a claim about
-all prime-to-p torsion or about arbitrary torsion groups.
+    M^n−1=n(M−1)U,
+    U=1+Σ_(j=2)^n (binom(n,j)/n)(M−1)^(j−1) ≡1modℓ.
 
-### 1.1. The elementary finite-field translation lemma
+Indeed v_ℓ(binom(ℓ^r,j)/ℓ^r)≥−v_ℓ(j).
+For odd ℓ, (j−1)−v_ℓ(j)≥1; at2 use2(j−1)−v₂(j)≥1.
+Thus U is integral invertible and commutes with M. With r=s−1,
 
-Enlarge a finite field of definition F_q so that its Frobenius M acts as
-the identity on A[ell], and on A[4] when ell=2. Write T=T_ell(A).
-Thus M-I is in ell End(T), and in 4 End(T) when ell=2.
+    (M^(ℓ^(s−1))−1)P=ℓ^(s−1)UQ ∈ A[ℓ]∖{0}.              (1)
 
-For any P in A[ell^infinity](k) not in A(F_q), put Q=(M-I)P and let
-ell^s be its exact order. Then s is positive and
+This includes s=1, U=1. No arithmetic invariance of a geometric
+Pruefer direction is needed.
 
-    (M^(ell^(s-1))-I)P
+For mixed S-primary P=ΣP_ℓ, choose ℓ with(M−1)P_ℓ≠0.
+The orbit length of each P_j under M is a j-power, since M lies
+in the indicated congruence subgroup. Let a be the PRODUCT of the
+other orbit lengths; it is prime toℓ and M^a fixes those components.
+Since1+M+⋯+M^(a−1)≡a modℓ is invertible, (M^a−1)P_ℓ has the
+same exact orderℓ^s as(M−1)P_ℓ. Apply(1) to M^a:
 
-is a nonzero point of A[ell]. Consequently some power sigma of the
-arithmetic Frobenius satisfies sigma(P)=P+T_P, with
-T_P in A[ell](k) minus {0}.
+    (M^(aℓ^(s−1))−1)P=T, 0≠T∈A[ℓ].                      (2)
 
-Here is a direct check, including ell=2. For n=ell^r, the binomial
-identity gives
+Thus every non-F_q-rational S-primary point is shifted by some
+Frobenius power through ONE of the finite set⋃_(ℓ∈S)(A[ℓ]∖{0}).
+In particular P∈D implies P∈D∩(D−T). The translated point need
+not belong to any specified subgroup containing P.
 
-    M^n-I = n (M-I) U,
-    U = I + sum_(j=2)^n (binom(n,j)/n)(M-I)^(j-1).
+## 2. Direct audited Pruefer dichotomy and simple-ambient case
 
-Every summand after I is divisible by ell. Indeed
-v_ell(binom(ell^r,j)/ell^r) >= -v_ell(j), whereas
-(j-1)-v_ell(j)>=1 for odd ell and j>=2. For ell=2 use instead
-2(j-1)-v_2(j)>=1. Hence U is an invertible integral endomorphism of T,
-commuting with M. Taking r=s-1, the displayed difference is
-ell^(s-1) UQ, of exact order ell. The case s=1 has U=I.
+For any geometric subgroup Γ≅Q_ℓ/Z_ℓ, and ANY closed D⊂A,
 
-### 1.2. Induction on the dimension of D
+    either D(k)∩Γ is finite, or Γ⊂D(k).                    (3)
 
-It suffices first to prove finiteness when 0 is not in D. Reduce to an
-irreducible component and induct on dim D; dimension zero is immediate.
+In particular0∉D gives finiteness. Γ need not be Frobenius-stable.
+Here is the original direct proof, independent of the broader author
+torsion-coset theorem below.
 
-Let S be the full reduced translation stabilizer of D, a smooth closed
-subgroup of A, possibly disconnected. Form the abelian quotient
-pi:A -> A/S and its closed image Dbar. Set-theoretically
-pi^(-1)(Dbar)=D, so 0 is not in Dbar. The reduced translation stabilizer
-of Dbar is trivial: a stabilizing point lifts to a point of A preserving
-D, hence belongs to S. All these objects descend to some finite field.
+First assume0∉D, reduce to irreducible D and induct on its dimension.
+Let H be its full reduced translation stabilizer and π:A→A/H.
+It is smooth, possibly disconnected, and
+π⁻¹(πD)=D set-theoretically; πD avoids0 and has trivial reduced
+stabilizer. Every proper subgroup of Γ is finite. If Γ⊂H then
+D∩Γ is empty; otherwise Γ∩H is finite, πΓ is again Pruefer
+and π has finite fibers on Γ. If dim πD decreases use induction;
+otherwise replace by this quotient, with trivial stabilizer.
+Outside the finite set A(F_q), (1) puts every relevant point in
+one of finitely many lower-dimensional D∩(D−T), still avoiding0.
+Induction proves finiteness. For general D not containing Γ, choose
+γ₀∈Γ∖D and translate D by−γ₀ to reduce to that case.
 
-Every proper subgroup of Q_ell/Z_ell is finite. Therefore either
-Gamma intersect S(k)=Gamma, in which case D intersect Gamma is empty,
-or that intersection is finite. In the latter case pi(Gamma) is again
-a Prüfer ell-group, and pi has finite fibers on Gamma. It suffices to
-prove finiteness for (Dbar,pi(Gamma)). If dim Dbar<dim D, use induction.
-Otherwise replace (A,D,Gamma) by this quotient: D now has trivial reduced
-stabilizer, without increasing its dimension.
+If A is geometrically SIMPLE and D proper, D∩A[S∞] is finite.
+For S={ℓ} this is the separately checked simple-ambient variant;
+the checked prime-isolation argument gives the finite-S version.
+Every proper irreducible D has finite reduced stabilizer. Quotient
+by it; the ambient remains simple and fibers are finite. S-primary
+points lift through this quotient by taking the S-primary part of
+a torsion lift. Now (2) and dimension induction prove finiteness.
+Infinitesimal stabilizers cause no issue: all translations used
+are nonzero geometric prime-to-p points.
 
-Choose F_q as in the translation lemma, also defining D. For every
-P in D intersect Gamma outside the finite set A(F_q), that lemma gives
+## 3. Full finite-support torsion cosets — author generalization
 
-    P in D intersect (D-T_P),  T_P in A[ell](k) minus {0}.
+For EVERY closed D⊂A there are finitely many S-primary t_i and
+abelian subvarieties B_i, possibly0, such that
 
-Each such intersection is a proper closed subvariety of D because the
-reduced stabilizer is trivial. It still avoids 0. There are only finitely
-many possible T_P, so induction proves finiteness.
+    D(k)∩A[S∞]=⋃_i(t_i+B_i[S∞]),   t_i+B_i⊂D.              (4)
 
-Notice that sigma(P) is used only as a point of D, not as a point of
-Gamma. This is why a prescribed geometric tower need not descend to a
-single finite field, nor have a Frobenius-stable defining direction.
+The union may be empty. For S={ℓ} this retains the earlier author
+coset theorem; the extension uses(2), not a claim for all primes.
 
-Finally, if Gamma is not contained in a general D, choose
-gamma_0 in Gamma minus D. The subvariety D-gamma_0 avoids 0, and
+For a reduced subgroup H and quotient π:A→A/H, every S-primary
+point lifts: take the S-primary part of any torsion lift.
+For an abelian subvariety Bbar downstairs, π⁻¹(Bbar) is smooth;
+its identity component B is abelian and its component group finite.
+The S-primary points of that inverse image are a finite union
+of h_j+B[S∞], one for each S-primary component. Therefore each
+torsion coset downstairs lifts to finitely many cosets as in(4),
+all geometrically contained in its inverse image. Components whose
+orders are not supported on S do not contribute.
 
-    (D-gamma_0) intersect Gamma = (D intersect Gamma)-gamma_0.
+Induct on dim D, component by component. Quotient by its full
+reduced stabilizer H, so π⁻¹(πD)=D. If dimension decreases use
+induction and the preceding lifting argument; otherwise reduce
+to trivial reduced stabilizer. Outside finitely many F_q-rational
+points, (2) places D∩A[S∞] in finitely many strictly smaller
+D∩(D−T). Induction supplies their cosets, and the remaining rational
+S-primary points are zero-dimensional cosets. This proves(4),
+including nonreduced residual stabilizers on supports.
 
-The already proved case gives the full dichotomy.
+For nonempty S, each B_i[S∞] is Zariski dense in B_i: its closure
+is a subgroup, and a positive-dimensional quotient would have
+nonzero ℓ-primary torsion for ℓ∈S, contradicting torsion surjectivity.
+Thus b=max_i dim B_i is the dimension of the torsion closure,
+independent of the chosen decomposition.
 
-**Simple-ambient variant.** If A is geometrically simple and D is proper,
-then D intersect A[ell^infinity](k) is finite, without a rank-one
-restriction. The same induction proves this: the reduced stabilizer of
-every proper subvariety is finite; quotienting by it has finite fibers
-on the full ell-primary torsion, and preserves geometric simplicity.
-The finite-field translation lemma then reduces dimension as before.
-This variant does not require 0 to be absent from D.
+Let e_i be the order of scalar multiplication by p on t_i, and set
 
-## 2. Consequence for actual unramified cyclic towers
+    Σ=⋃_i⋃_(j=0)^(e_i−1)([p]^j t_i+B_i[S∞]), R=Σ_i e_i.
+    N_n=∏_(ℓ∈S)ℓ^n.
 
-Let C/k be a smooth proper connected curve of genus at least two. On
-the relative Frobenius twist C^(1), put
+Scalar[p], NOT arithmetic Frobenius, permutes Σ. Each nonempty
+coset intersection with A[N_n] is a coset of B_i[N_n], so
 
-    B_C = F_(C/k)* O_C / O_(C^(1)),
-    D = Theta_(B_C) in J(C^(1)).
+    |Σ∩A[N_n]|≤R N_n^(2b).                                (5)
 
-Raynaud's theta divisor is defined by
-L in D iff H^0(C^(1),B_C tensor L) is nonzero. For a prescribed compatible
-connected cyclic Z_ell-tower C_m/C, its character line bundles form
-nested cyclic groups Gamma_m of order ell^m, with union Gamma a Prüfer
-ell-group. Relative Frobenius transports the actual étale covers between
-C and C^(1); these are not hypothetical character data.
+For all sufficiently large n, killing some t_i of maximal dimension,
+|D∩A[N_n]|≥N_n^(2b). S=∅ is the separate trivial finite-group case.
 
-The last new Jacobian factor J(C_m)/Im J(C_(m-1)) is ordinary exactly
-when D misses Gamma_m minus Gamma_(m-1). This follows from character
-decomposition, projection formula, and the étale pullback identity for B.
-The twists and the Frobenius permutation of characters are explained in
-[the earlier exact character criterion](CYCLIC_TOWER_NEW_ORDINARITY_AND_FIXED_SUPPORT_BOUNDARY.md#2-exact-criterion-for-a-specified-cyclic-tower).
+## 4. One Frobenius-block argument and exact maximal-abelian growth
 
-**Corollary.** If C is ordinary, every prescribed cyclic Z_ell-tower is
-eventually new-ordinary. Equivalently, g(C_m)-f(C_m) is bounded and
-eventually constant. No generic choice of the tower is needed.
+Let C/k be smooth projective connected of genus g≥2. On the scalar
+twist put A=J(C^(1)), B_C=F_(C/k)*O_C/O_(C^(1)), D=Θ_(B_C).
+The [Raynaud/etale character conventions](CYCLIC_TOWER_NEW_ORDINARITY_AND_FIXED_SUPPORT_BOUNDARY.md)
+make D a proper effective divisor. For a finite prime-to-p
+character subgroup Λ, its ACTUAL connected cover C_Λ/C has
 
-Proof: ordinarity gives 0 not in D, so Theorem 1 makes D intersect Gamma
-finite. Isogeny additivity of dimension and p-rank gives the equivalence
-with eventual constancy of the defect.
+    a(C_Λ)=Σ_(L∈Λ)h⁰(B_C⊗L).                              (6)
 
-More generally, for an arbitrary C and a prescribed cyclic tower, either
-the defect is bounded, or every character line bundle in Gamma belongs
-to D. In the latter case
+In H¹(C_Λ,O), each nontrivial character space has dimension g−1,
+the trivial one g. Label a space by L=N_χ^(1), where N_χ is its
+line on C. Absolute Frobenius sends L to L^p. Transporting covers
+across relative Frobenius only permutes this subgroup by[p].
+Tensoring0→O→F_*O→B_C→0 by L identifies the Frobenius kernel
+on that source block with H⁰(B_C⊗L), up to scalar twist; both
+degree-zero H⁰ terms vanish unless L=O, when their map is an
+isomorphism. Hence this statement includes the trivial character.
 
-    g(C_m)-f(C_m) >= a(C_m) >= ell^m.
+If a[p]-stable envelope contains all bad characters, Frobenius
+has zero kernel on the complementary invariant block and is
+bijective there. The WHOLE nilpotent part, not just its first
+kernel, lies in the envelope. Its dimension is Δ=g−f.
 
-Indeed the direct sum expressing H^0(B_(C_m)) has at least one nonzero
-summand for each of its ell^m character line bundles. In particular this
-alternative requires C itself to be nonordinary.
+For maximal exponent-N_n covers C_n/C, degree N_n^(2g), if
+D∩A[S∞] is empty all levels are ordinary. Otherwise(4)–(6) give
 
-This strengthens the earlier note's Haar-generic conclusion over the
-algebraic closure of a finite field. It does NOT assert that all C_m are
-ordinary, that the bound is uniform among all towers, or that the entire
-maximal abelian ell-power tower has bounded defect. Rank-one directions
-can have different finite exceptional sets.
+    N_n^(2b)≤Δ(C_n)≤gR N_n^(2b) for n≫0,   0≤b≤g−1.        (7)
 
-For every fixed nonordinary simple abelian variety A, the bounded-defect
-alternative implies a bound for its multiplicity:
+The upper bound uses Σ, each block's dimension≤g; the lower uses
+a(C_n)≥|D∩A[N_n]| and Δ≥a. Thus Δ=Θ(N_n^(2b)), with logarithmic
+exponent2b. This is an exponent, NOT convergence of the normalized
+ratio or an eventual exact polynomial. The bounded b=0 case
+stabilizes as an integer by isogeny monotonicity, with ordinary
+successive and composite Pryms thereafter.
 
-    m_A(J(C_m)) (dim A-f(A)) <= g(C_m)-f(C_m).
+For a PRESCRIBED cyclic Z_ℓ-tower, its characters form Γ≅Q_ℓ/Z_ℓ.
+By the direct audited(3), either D∩Γ is finite, giving eventually
+ordinary new Pryms by the same block argument, or Γ⊂D and
 
-## 3. Boundary for a fixed étale Z/C
+    Δ(C_m)≥a(C_m)≥ℓ^m.
 
-For a constant abelian variety A/k, properness and the Albanese universal
-property give
+For ordinary C,0∉D, so EVERY prescribed tower is eventually
+new-ordinary. The bound is not uniform among directions and does
+not say every level is ordinary. This old checked consequence is
+retained independently of the general finite-support growth formula.
 
-    A(k(Z_m))/A(k) = Hom(J(Z_m),A).
+## 5. Finite-rank directions and actual base changes
 
-For simple A this group's rank is m_A(J(Z_m)) times dim_Q End^0(A).
-It is this geometric constant-variety rank, not a non-isotrivial or
-finite-constant-field arithmetic rank, that is at issue here.
+For a SINGLE ℓ, let Γ≅(Q_ℓ/Z_ℓ)^r⊂A[ℓ∞],1≤r≤2g.
+For each coset in(4) meeting Γ choose γ_i in the intersection.
+Then Γ∩(t_i+B_i[ℓ∞])=γ_i+H_i, with
 
-If Z is nonordinary and Z_m is a compatible connected component of
-Z times_C C_m, then after a finite initial stage the tower Z_m/Z_M is
-a cyclic Z_ell-tower. Apply the dichotomy to this ACTUAL base Z_M.
-Its character direction can be entirely contained in Theta_(B_(Z_M));
-ordinarity of C does not prevent that. Raynaud's no-theta examples already
-give actual initial covers with unbounded total defect after such
-base changes; see the earlier note's Section 4.
+    H_i=Γ∩B_i[ℓ∞]≅(Q_ℓ/Z_ℓ)^(s_i)⊕F_i,
+    s_i=dim_(Q_ℓ)(U_Γ∩V_ℓB_i), F_i finite.
 
-Thus the new cyclic theorem does not settle boundedness of one fixed
-nonordinary isogeny factor in these base-changed towers. Even exponential
-growth of total defect can be accounted for by changing isogeny types.
-No actual fixed-type unbounded example, nor a universal fixed-type bound
-in this general unramified setting, was established in this bounded check.
+Smith form of the Z_ℓ matrix Γ→(A/B_i)[ℓ∞] proves this and
+|H_i[ℓ^n]|=|F_i|ℓ^(s_i n) for n≫0. Killing γ_i then identifies
+the finite intersections with cosets of those groups.
+Scalar[p] preserves Γ and its finite orbit enlargement has the
+same maximal s=max_i s_i. The proof of(7) gives
+Δ(C_(Γ,n))=Θ(ℓ^(sn)); if D∩Γ is empty every level is ordinary.
 
-There is nevertheless an exact useful conditional maximal-abelian result.
-Suppose J(C) is geometrically simple and let
+For Haar-generic rational r-planes U_Γ in V_ℓA, simultaneous
+transversality to finitely many V_ℓB_i gives
 
-    B = Im(J(C^(1)) -> J(Z^(1))).
+    dim(U_Γ∩V_ℓB_i)=max(0,r+2dim B_i−2g).
 
-The pullback map to B has finite kernel, since norm composed with
-pullback is multiplication by deg(Z/C). Hence B is simple. If
-Theta_(B_Z) does NOT contain B, the simple-ambient variant shows that
-only finitely many ell-primary character line bundles on C pull back
-into Theta_(B_Z). Thus in the maximal abelian ell-power base-change
-tower, all sufficiently high-order character summands are ordinary.
-The nonordinary part is already present at a finite stage, so total
-defect, and therefore every fixed nonordinary factor multiplicity,
-is bounded. This also bounds every cyclic subtower.
+The exceptions are proper Schubert loci of measure zero.
+This does NOT assert that any translated coset meets Γ.
+Because dim B_i≤g−1, generic ranks1 and2 have bounded defect
+for EVERY C. Ordinary C has bounded defect along EVERY rank1
+direction by(3). No arithmetic-Frobenius invariance is needed.
 
-For precision, the full fiber products may be disconnected. The number
-of their components stabilizes, because the finite extension k(Z)/k(C)
-has only finitely many subextensions inside the abelian tower. Use its
-finite connected-component base change as the initial stage. Character
-decomposition on the full fiber products gives the same bound on each
-actual connected component. Absence of bad high-order characters makes
-Frobenius injective on each entire new character-orbit block, not merely
-a bound on the dimension of its kernel.
+For an ACTUAL finite etale Z→C, not necessarily Galois, replace D by
 
-The required properness is exactly what no-theta finite-cover examples
-can fail. It is not implied by Hom(A,J(C))=0, and no such implication
-is claimed. For Z=C and simple J(C), this argument gives bounded total
-defect in the maximal abelian ell-power tower even without ordinarity
-of C. No analogous general statement for non-simple Jacobians is proved.
+    D_Z={L∈J(C^(1)):h⁰(Z^(1),B_Z⊗L|Z^(1))≠0}.
 
-## 4. Primary-source provenance and near-match limits
+It may be all of A. The same coset/block proof gives total defect
+Θ(N_n^(2b)) in the full fiber products Z×_C C_n, with upper constant
+g(Z)R; empty bad set makes all components ordinary. The abelian deck
+group is transitive on components. Their number stabilizes, since
+k(Z)∩k(C_n) stabilizes inside a fixed finite separable extension.
+Thus every compatible connected-component tower has the same exponent
+and retains its ACTUAL maps to Z and C_n.
 
-John Boxall, *Sous-variétés algébriques de variétés semi-abéliennes sur un
-corps fini*, Number Theory (Paris 1992-3), LMS Lecture Note Series 215
-(1995), 69-80,
-[publisher record and first-page preview](https://doi.org/10.1017/CBO9780511661990.005).
-The preview was inspected; the full chapter was not accessible. Therefore
-the precise theorem above is supplied with its own proof, rather than
-claimed to be a verbatim reading of a numbered theorem in that chapter.
-The preview refers to preceding abelian-variety work; the earlier
-reference, also identified by Voloch below, is Boxall,
-*Autour d'un problème de Coleman*, CRAS 315 (1992), 1063-1066.
+If J(C) is simple and D_Z proper, Section2 gives b=0 and bounded
+defect, even without ordinary C. The single-ℓ case and ordinary
+new-Prym conclusion here are among the original checked results;
+finite S follows from the checked prime-isolation variant.
+No-theta examples can make D_Z ALL of A despite ordinary C or
+a Hom-zero condition. Such base changes can have unbounded defect.
 
-J. F. Voloch, *Integrality of torsion points on abelian varieties over
-p-adic fields*, the lemma and proof on p. 3 of the
-[author PDF](https://www.math.canterbury.ac.nz/~f.voloch/Pdfs/torsion.pdf),
-explicitly reproduce the Galois-translation method of Boxall. Section 1.1
-above proves exactly the finite-field version needed here, with the
-2-primary congruence checked directly.
+For a fixed nonordinary simple A₀, m_(A₀)(J(V))·(dim A₀−f(A₀))≤Δ(V).
+Bounded defect bounds this multiplicity; exponential TOTAL growth
+does not isolate a fixed isogeny type. The geometric constant-variety
+identity A₀(k(V))/A₀(k)=Hom(J(V),A₀) has rank
+m_(A₀)(J(V))dim_Q End⁰(A₀). Neither a fixed-type unbounded example
+nor a universal fixed-type bound in arbitrary etale base changes
+is proved here. The [uniform actual-target consequence](FINITE_RESTRICTED_THETA_CHARACTERS_FORCE_UNIFORM_ETALE_TARGET_DESCENT.md)
+requires its stated finite bad CHARACTER set, not finite bad cosets.
 
-T. Scanlon and J. F. Voloch, *Difference subgroups of commutative
-algebraic groups over finite fields*,
-[primary preprint](https://arxiv.org/pdf/math/9809188), introduction and
-Theorem 2, explain that their difference-group method recovers only part
-of Boxall's m-power torsion theorem. Failure of their modular-group
-construction is not a counterexample to the torsion intersection result.
+## 6. Primary provenance and limits
 
-For the original fixed-isogeny multiplicity question, the inspected near
-matches do not apply:
+[Boxall's publisher preview](https://doi.org/10.1017/CBO9780511661990.005)
+was checked, not the inaccessible full chapter (*Sous-variétés
+algébriques…*,1995,pp.69–80). The earlier source is *Autour d'un
+problème de Coleman*,CRAS315(1992),1063–1066. The precise theorem
+here has its own proof, not a claimed verbatim numbered citation.
+[Voloch, p.3](https://www.math.canterbury.ac.nz/~f.voloch/Pdfs/torsion.pdf)
+reproduces Boxall's Galois-translation method; Section1 supplies
+the needed finite-field version including2.
+[Scanlon–Voloch, introduction/Theorem2](https://arxiv.org/pdf/math/9809188)
+recover only part of the m-power result; failure of that
+difference-group construction does not refute the torsion theorem.
 
-- J. Ellenberg, *Selmer groups and Mordell-Weil groups of elliptic curves
-  over towers of function fields*, Theorem 4.4 and Remark 4.6
-  ([author PDF](https://people.math.wisc.edu/~ellenberg/CMECTFF.pdf)),
-  require a non-isotrivial elliptic curve and an arithmetic large-image
-  condition. Remark 4.6 explicitly says that theorem never applies over
-  a finite constant field. A constant A over geometric function fields
-  is not within those hypotheses.
-- A. Bandini and I. Longhi, *Selmer groups for elliptic curves in
-  Z_l^d-extensions of function fields of characteristic p*, setup and
-  Theorem 1.2
-  ([primary PDF](https://www.numdam.org/item/10.5802/aif.2491.pdf)),
-  also assume a non-isotrivial elliptic curve; torsionness additionally
-  needs a finite initial Selmer group. This is not a constant-A theorem.
-- D. Ulmer, *Jacobi sums, Fermat Jacobians, and ranks of abelian varieties
-  over towers of function fields*, Theorem 3.3 and proof in Section 3.9
-  ([primary preprint](https://arxiv.org/pdf/math/0609716)), bounds the
-  multiplicities of fixed bounded-dimensional positive-p-rank factors
-  in Fermat Jacobians. The proof uses explicit Jacobi sums and their
-  valuations. The supersingular exception is real, but these Fermat
-  towers ramify. Neither direction establishes the assertion for the
-  proper étale towers in Section 3.
+Nearby arithmetic-rank results do not close the fixed-type gap:
+[Ellenberg, Theorem4.4/Remark4.6](https://people.math.wisc.edu/~ellenberg/CMECTFF.pdf)
+requires non-isotrivial elliptic/large-image data and explicitly
+does not apply over finite constants;
+[Bandini–Longhi, Theorem1.2](https://www.numdam.org/item/10.5802/aif.2491.pdf)
+is also non-isotrivial, with a finite-initial-Selmer condition;
+[Ulmer, Theorem3.3/Section3.9](https://arxiv.org/pdf/math/0609716)
+uses Jacobi sums in RAMIFIED Fermat towers and bounded-dimensional
+positive-p-rank factors. None is a constant-A₀ proper-etale theorem.
+
+S must be fixed finite and avoid p; the union of its finite
+exceptional sets over all S need not be finite. Rank-one results
+do not make a chosen cyclic tower cofinal in a core tower. Nothing
+controls arbitrary nonabelian towers or proves a common-cover exclusion.

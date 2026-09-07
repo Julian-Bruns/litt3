@@ -1,191 +1,137 @@
-# Proof record: Genus bounds for the first wild ramification layer
+# Proof: the first wild ramification layer is genus-bounded
 
-Canonical statement: [`wild_first_layer`](../Theorems/Thm_wild_first_layer.md).
-Migrated 2026-09-06; hypotheses restated below are proof context.
-The canonical statement and registry control promoted scope and evidence.
+[Statement and audit metadata](../Theorems/Thm_wild_first_layer.md).
+Use the [integral-bound proof's atlas notation](Sol_integral_jump_bound.md):
+cm−qt0=D|h, gcd(m,t0)=1, t0|m+D, P=I_1 and q=|P|.
+Let b be the first lower break, N=P_(b+1), |P/N|=p^r and
+Q=p^ceil(r/2). No integrality assumption on later upper jumps is made.
 
----
+## 1. First-break divisibility and the auxiliary genus
 
-# The first wild ramification layer is bounded by the atlas genus
+The positive different sum ε=c+1 obeys
 
-Author: /root, 2026-09-06. Status: independently audited PASS by
-`/root/contact_bound_to_core_audit`, 2026-09-06;
-[audit record](../routes/global/audits/FIRST_WILD_RAMIFICATION_LAYER_GENUS_BOUND_AUDIT_2026_09_06.md).
-This bounds a quotient, not the full wild group. It does not address
-coreless correspondences or establish a counterexample to Litt's problem.
+    b(q−1)≤ε≤(q+1)(1+D/m),   b≤2(h+1).                     (1)
 
-## Theorem
+The [first-break Swan lemma](../routes/global/13_PROOF_LOCAL_RAMIFICATION.md),
+whose proof is identical with p in place of5, gives
+Q|ε−b(q−1). Multiply by m and use the genus equation and Q|q:
 
-Fix p>=3 and h>0. Use the two-branch atlas setting and notation of the
-[checked integral-jump theorem](Sol_integral_jump_bound.md):
+    Q | D+(b+1)m.                                           (2)
 
-    P=I_1, q=|P|, c=delta-|I|,
-    c m-q t0=D, D|h, gcd(m,t0)=1, t0|(m+D).
+Realize the local P-action by its HKG curve H, with H/P=P¹ and one
+totally ramified point. Hurwitz gives S:=2g(H)=c−q+2.
+If S=0 then P_2=1 and the [numerical single-jump bound](Sol_integral_jump_bound.md)
+applies. For S>0 call the auxiliary action large when
 
-Let b be the first positive lower break, N=P_(b+1), and |P/N|=p^r.
-Then b and r are effectively bounded in terms of p,h, WITHOUT any
-assumption on P, on N, or on upper-jump denominators.
+    S<(p−1)q/p.                                             (3)
 
-Consequently, if N has an abelian subgroup of index at most J, the
-atlas degree is bounded in terms of p,h,J. In particular this applies
-whenever the first deeper ramification subgroup N is abelian, however
-large its order. For b=1 this subgroup is I_2.
+H is not an étale refinement of either endpoint.
 
-For h=16,p=5 there is a sharper conclusion in the large-action case
-defined below: necessarily b=1 and P/P_2 is C_5^2.
+## 2. Non-large actions
 
-## 1. Basic estimates and conventions
+Here c−q≥(p−1)q/p−2. For q=p the first rank is already bounded;
+otherwise q≥p². If m≥t0, the genus equation bounds
+q≤p(D+2)/(p−1). If m<t0, put w=(m+D)/t0.
+For w≥2, m<D; for w=1, (c−q)m=D(q+1).
+The decreasing ratio(q+1)/((p−1)q/p−2) for q≥p² gives
 
-Put epsilon=c+1=sum_(i>=1)(|P_i|-1). Since t0<=m+D,
+    m≤M(D,p)=floor[D(p²+1)/(p(p−1)−2)].
 
-    b(q-1)<=c+1<=(q+1)(1+D/m),
-    b<=2(h+1).                                      (1)
+Thus (1)–(2) give Q≤D+(2h+3)M(D,p), bounding r.
+This includes every case where b is not one.
 
-The first-break Swan divisibility in
-[file 13](../routes/global/13_PROOF_LOCAL_RAMIFICATION.md), whose proof works with any
-prime p in place of 5, gives, on writing Q=p^ceil(r/2),
+## 3. The large-action genus lower bound
 
-    Q | epsilon-b(q-1), hence Q | D+(b+1)m.           (2)
+Condition(3) forces b=1: if b≥2, S≥q−1≥(p−1)q/p.
+Now N=P_2 is nontrivial; put v=|N|≥p and
 
-Realize the local P-action by its HKG curve H. Its P-quotient is P1,
-with just one totally ramified point, and
+    A=|P/N|=p^r=Q²/e,  e∈{1,p},  q=vA.
 
-    S:=2g(H)=c-q+2.
+Choose a P-normal subgroup N0⊂N of index p. Indeed, the p-group P
+acting on the nonzero dual of N/Φ(N) has a nonzero fixed vector;
+its kernel is such an N0. The quotient H/N0 is HKG for P/N0.
+Upper-numbering quotient compatibility at jump1 gives
+(P/N0)_2=N/N0 of order p, while its first quotient still has rank r.
 
-The case S=0 has P_2=1 and a single jump, so is already degree-bounded
-by the checked single-jump theorem. For S>0, call the action large if
+The [translation-rank theorem](Sol_translation_rank_bound.md) forces
+its final lower break B to satisfy B−1≥Q: either p^r|(B−1), or
+B−1=p^s with r≤2s. Consequently2g(H/N0)≥(p−1)Q.
+The Hurwitz subtraction proved in that theorem gives, for any K⊂P,
 
-    S<(p-1)q/p.                                      (3)
+    2|K|g(H/K)=∑_(i≥2)(|P_i|−|K∩P_i|)
+               ≤∑_(i≥2)(|P_i|−1)=S.
 
-These names concern only the auxiliary local HKG curve, not a common
-etale refinement of the original curves.
+With K=N0 this proves the claimed unrestricted lower bound
 
-## 2. The non-large case
+    S≥(p−1)vQ/p.                                           (4)
 
-Here c-q>=((p-1)/p)q-2. If q=p it is already bounded; assume q>=p^2.
-If m>=t0, the genus equation gives q<=p(D+2)/(p-1). Otherwise the same
-elementary argument as in the integral-jump theorem gives
+No commutativity of N is used. The first tame graded character and (2)
+also give
 
-    m<=M(D,p):=floor[D(p^2+1)/(p(p-1)-2)].
+    t0 | A−1,   Q | D+2m.                                  (5)
 
-For clarity, set w=(m+D)/t0. If w>=2 then m<D; if w=1 use
-(c-q)m=D(q+1) and the decreasing ratio
-(q+1)/((p-1)q/p-2) for q>=p^2. Combining this bound with (1)--(2) gives
+## 4. Bounding the first quotient without bounding N
 
-    Q<=D+(2(h+1)+1)M(D,p).
+For m≥t0, D≥S−2≥(p−1)Q−2 bounds Q.
+For m<t0 and w=(m+D)/t0≥2, m<D and (5) gives Q<3D.
+It remains w=1: t0=m+D and (S−2)m=D(q+1).
+Using (4), v≥p, and monotonicity in v gives
 
-Thus r is bounded, including all cases where the first break is not one.
+    m≤D(pA+1)/((p−1)Q−2).
 
-## 3. A lower bound for the local genus in the large case
+Put k=(D+2m)/Q, a positive integer. Since Q≥p≥3 and A≤Q²,
 
-Condition (3) forces b=1: if b>=2, then S>=q-1>=(p-1)q/p.
-Let N=P_2 be nontrivial, v=|N|, and A=|P/N|=p^r. Write
+    k≤D/p+4D(p+1/p²)/(p−1)<7D.                              (6)
 
-    Q=p^ceil(r/2), A=Q^2/e, e in {1,p}, q=vA.
+Here((p−1)Q−2)≥(p−1)Q/2. Since2t0=kQ+D and t0|A−1,
+squaring kQ≡−D modulo t0 gives
 
-Choose a P-normal subgroup N0 of N of index p. Such a subgroup exists:
-the p-group P acts on the nonzero dual of N/Phi(N), which has a nonzero
-fixed vector, and its kernel is P-stable. The quotient H/N0 is an HKG
-curve for P/N0. Upper-numbering quotient compatibility at the first
-jump 1 gives (P/N0)_2=N/N0, of order p; its first quotient still has
-rank r.
+    t0 | D²−ek².
 
-The checked [translation-rank theorem](Sol_translation_rank_bound.md)
-then says that its last lower break B satisfies B-1>=Q. Indeed either
-p^r divides B-1, or B-1=p^s with r<=2s. Thus
+If this integer is nonzero, t0≤(1+49p)D² and
+Q=(2t0−D)/k≤2(1+49p)D². If it vanishes, e=p is impossible
+because p is not a rational square. Thus e=1,k=D and
+m=D(Q−1)/2. Coprimality gcd(m,D)=gcd(m,t0)=1 forces D=1.
 
-    2g(H/N0)=(p-1)(B-1)>=(p-1)Q.
+In this exceptional case m=(Q−1)/2 divides q+1.
+Write v=p^a,Q=p^s; since Q≡1 mod m, also m|p^a+1.
+Reduce a modulo s, obtaining0≤j<s and
 
-For any subgroup K of P, subtraction of the two Hurwitz formulas gives
+    (p^s−1)/2≤p^j+1≤p^(s−1)+1,
+    (p−2)p^(s−1)≤3.
 
-    2|K|g(H/K)=sum_(i>=2)(|P_i|-|K intersect P_i|)
-                <=sum_(i>=2)(|P_i|-1)=2g(H).
+Therefore Q≤9 here as well. This completes the bounds on b and r.
 
-Apply this to K=N0. We obtain the general lower bound
+If N contains an abelian subgroup B of index≤J, then
+[P:B]=p^r[N:B] is bounded. The explicitly conditional
+[bounded-denominator corollary](../routes/global/BOUNDED_WILD_JUMP_DENOMINATORS_BOUND_ATLAS_DEGREES.md)
+bounds the atlas degree: irreducible dimensions are at most[P:B],
+and each upper-jump denominator divides one of those p-power dimensions.
+This does not supply the missing bound on arbitrary N.
 
-    S>=(p-1)vQ/p.                                    (4)
+## 5. Large actions for p=5,h=16
 
-No commutativity or centrality assumption on N was used. The other
-two inputs now available are the first tame graded-character rule
-and (2):
+Here D∈{1,2,4,8,16}. The m≥t0 case would give D≥4Q−2≥18.
+If w≥2, then m<D and Q|D+2m<48. For r≥3 one has Q≥25;
+D=1 has no m<D, and otherwise D+2m is even and cannot be a positive
+multiple of25 below48. Thus r≤2 in this case.
 
-    t0 | A-1,   Q | D+2m.                            (5)
+For w=1, ε is divisible by4 because every |P_i|−1 is.
+Hence c−q≡q+1≡2 mod4. The equation(c−q)m=D(q+1) and
+gcd(m,D)=1 force D=1. Now
 
-## 4. Arithmetic bounds the first quotient, even when N is unrestricted
+    Q|1+2m,   m≤(5A+1)/(4Q−2).
 
-If m>=t0, then D>=c-q=S-2>=(p-1)Q-2, bounding Q.
-Assume m<t0 and again set w=(m+D)/t0. If w>=2, then m<D, and (5)
-gives Q<=D+2m<3D. It remains that w=1, so t0=m+D and
+If r is odd, A=Q²/5 and1+2m≤1+2(Q²+1)/(4Q−2)<Q for Q≥5,
+impossible. If r is even and r≥4, then Q≥25,A=Q² and1+2m<3Q.
+This odd multiple of Q must equal Q. Section4's exceptional case
+would then require Q≤5 when p=5, again impossible.
+Finally r=1 is excluded for w≥2 by (4): S≥4v contradicts(3), S<4v.
+Thus every large case has r=2, so P/P_2≅C_5².
 
-    (S-2)m=D(q+1).
-
-By (4), v>=p, and monotonicity in v,
-
-    m<=D(pA+1)/((p-1)Q-2).
-
-Set k=(D+2m)/Q, a positive integer. Since Q>=p>=3 and A<=Q^2,
-
-    k<=D/p+4D(p+1/p^2)/(p-1)<7D.                     (6)
-
-Here we used ((p-1)Q-2)>=(p-1)Q/2. Also 2t0=kQ+D.
-Combining this identity with t0|(A-1) and A=Q^2/e gives
-
-    t0 | D^2-e k^2.                                  (7)
-
-If the integer on the right is nonzero, then
-
-    t0<=D^2+p k^2<=(1+49p)D^2,
-    Q=(2t0-D)/k<=2(1+49p)D^2.
-
-If it is zero, e=p is impossible because p is not a rational square.
-Thus e=1, k=D, m=D(Q-1)/2. Since gcd(m,D)=gcd(m,t0)=1, we get D=1.
-Now m=(Q-1)/2 and m|(q+1). Writing v=p^a, Q=p^s, reduction modulo m
-gives m|(p^a+1). Reduce a modulo s, obtaining 0<=j<s and
-
-    (p^s-1)/2<=p^j+1<=p^(s-1)+1,
-    (p-2)p^(s-1)<=3.
-
-Thus Q<=9 in this exceptional case as well. This completes the uniform
-bound for r, and the theorem's first assertion.
-
-If N contains an abelian subgroup B of index <=J, then
-[P:B]=p^r[N:B] is bounded. The representation-theoretic corollary of
-the [bounded-denominator theorem](../routes/global/BOUNDED_WILD_JUMP_DENOMINATORS_BOUND_ATLAS_DEGREES.md)
-therefore bounds the atlas degree. This implication is conditional only
-on the explicitly stated bounded-abelian-index hypothesis on N.
-
-## 5. Sharpening for h=16,p=5 in the large case
-
-Here D is one of 1,2,4,8,16. If m>=t0, (4) gives D>=4Q-2>=18,
-impossible. In the w>=2 case m<D and Q|D+2m<48. If r>=3 then Q>=25.
-D=1 cannot have m<D, and for the remaining D the positive integer
-D+2m is even, so cannot be a positive multiple of 25 below 48.
-Thus r<=2 in this case.
-
-For w=1, epsilon is divisible by 4, since each |P_i|-1 is. Hence
-c-q=2 mod 4, and q+1=2 mod 4. The equation
-(c-q)m=D(q+1), together with gcd(m,D)=1, forces D=1. Now
-
-    Q | 1+2m,    m<=(5A+1)/(4Q-2).
-
-If r is odd, A=Q^2/5 and
-
-    1+2m<=1+2(Q^2+1)/(4Q-2)<Q  (Q>=5),
-
-which is impossible. If r is even and r>=4, then Q>=25, A=Q^2, and
-1+2m<3Q. As 1+2m is odd, it must equal Q. This is exactly the
-exceptional case of Section 4, which for p=5 requires Q<=5, again a
-contradiction. Thus r=2 in the w=1 case.
-
-Finally r=1 is also impossible when w>=2: (4) would say
-S>=4v, whereas (3) with q=5v says S<4v. Therefore every large case
-has r=2, as claimed.
-
-## Boundary
-
-Bounding the number of generators of a p-group does not bound its
-order, its noncommutative depth, or the degrees of its irreducible
-representations. We have NOT yet bounded N in general. This is the
-precise gap left by the theorem, rather than a tacit finiteness claim.
-HKG realization is the only external geometric construction in the
-proof; see [Bleher--Chinburg--Poonen--Symonds, Section 1.B and Proposition 4.8](https://math.mit.edu/~poonen/papers/AutK.pdf).
+For HKG realization see
+[Bleher–Chinburg–Poonen–Symonds, §1.B and Proposition4.8](https://math.mit.edu/~poonen/papers/AutK.pdf).
+The first quotient's bounded rank does not bound the order,
+noncommutative depth or irreducible dimensions of N. Neither the
+unrestricted atlas degree nor the coreless common-cover problem is
+settled by this theorem.

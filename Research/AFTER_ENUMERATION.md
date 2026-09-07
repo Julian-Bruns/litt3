@@ -93,6 +93,16 @@ reduced U32/eta32 spaces. A degree-one Wronskian syzygy and a fixed bilinear
 symmetry shortcut failed exact tests; witnesses are recorded in STATE.md.
 Excluding one line alone is not a global exclusion.
 
+`extension_fiber_geometry` now proves the admissible extension map is a
+scheme-theoretic immersion, with constant normal bundle of rank24. Thus
+its linear P31 section has local dimension at least7 at every admissible
+point. Existence and smoothness are still unproved. The exact dual
+normal test is quadratic in the section; see EXTENSION_NORMAL_SYMBOL.md.
+The weaker Frobenius incidence is the Frobenius preimage of this linear
+section, and can carry substantial nilpotent thickness. This is NOT
+multiplicity in the full reduced atlas scheme. It supplies no additional
+exclusion and is not a prerequisite for solving the existing97 equations.
+
 The small actual genus-two atlas test is now completely solved and audited:
 `genus_two_atlas_dynamics` gives33 reduced normalized solutions via a
 degree-eleven fixed-point equation and exact original-ideal reductions.
@@ -150,8 +160,37 @@ assuming every torsion class needs an unrelated brute-force run.
 References: `hermitian_atlas_extension_criterion`,
 `dormant_rank_two_candidates`, `semilinear_hermitian_lift`.
 
+`hermitian_monodromy_genus_sieve` now restricts nontrivial twists for
+EVERY genus-nine curve: the monodromy is full PGU, or lies in one of two
+order216 maximal groups. The proper cases give actual degree192 atlases
+of X to their tame quotient stacks. This is a group/genus restriction,
+not an exclusion, and does not assert that Y factors through the same
+smaller target. It does not collapse the torsion lines into three points.
+
+`solvable_atlas_frobenius_periods` version3 excludes216-monodromy for
+orbits0010 and0011 for EVERY tau, but not fullPGU. It also proves that
+all cubic torsion lines on fixedX are defined over F_(25^36), without
+identifying them. `nonliftable_hermitian_atlas_family` gives genuine
+nontrivial-tau atlases in genus9 and unbounded genus; their Jacobians
+are nonsimple. Thus twists cannot be removed merely from genus or
+the existence of a common cover; fixed-X arithmetic may still help.
+
+The independently audited `cyclic_cubic_low_abel_torsion` improves the
+field containing every cubic twist to F_(25^12). It also bounds all
+three-primary W3 classes by9 and counts276 classes killed by3. W1 has
+only the eleven native branch classes. Exact9 in W2/W3 remains open;
+the currently outstanding Pro request addresses precisely this question.
+These facts do not identify every twist or exclude all effective classes.
+
 Even excluding BOTH large stacks only closes the large cored branch.
 Do not conclude that every H-commensurable curve is an atlas of these stacks.
+
+The author theorem `cored_quotient_torsion_sieves` now excludes common
+effective orbifold atlases of degree deg(X/S)<=8, using both endpoints.
+Its reusable inputs are a coprime-inertia genus inequality and a uniform
+branch-fiber torsion identity. This is NOT a lower bound on the degree
+of a component of X x_S Y. Larger small-cored cases and coreless spans
+remain unresolved.
 
 ## 4. The smaller cored cases remain
 
@@ -166,6 +205,16 @@ them together. Boundedness is not nonexistence. One may use the genus25 Y
 and its proved arithmetic properties, but must establish their connection
 to both actual etale maps. A different endpoint could be chosen if justified;
 that is a new target choice, not an automatic consequence of the enumeration.
+
+There is now an audited way to avoid ALL cored cases by changing the
+partner: version2 of `bounded_atlas_partner_finiteness` gives an explicit
+finite upper countK and an ordinary genus-two family. A parameter of
+prime degree greater thanK and120 has moduli orbit too long to be a
+cored partner of X. The boundB=336000 used here is unconditional, so
+this construction needs neither A14 nor A18 and includes all twists.
+It is a deterministic but impractical prescription, not an explicit
+small displayed curve. It leaves the entire coreless branch unresolved;
+the active fixed pair has not silently been changed.
 
 ## 5. The coreless branch is a separate major gap
 
