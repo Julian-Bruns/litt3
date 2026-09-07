@@ -1,0 +1,8 @@
+{
+  "status": "candidate_multiplication_operator_NOT_original_ideal_certified",
+  "dimension": 19290,
+  "dense_rows": 9713,
+  "variable": "a9",
+  "missing_normal_forms": 2403,
+  "matrix_bytes": 187363770
+}

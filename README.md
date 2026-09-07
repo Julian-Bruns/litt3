@@ -14,6 +14,12 @@ The [post-enumeration roadmap](Research/AFTER_ENUMERATION.md) distinguishes
 the current finite calculation from the cored and coreless exclusions
 still needed for an actual counterexample.
 
+The [complete oper census](Theorems/Thm_fixed_x_oper_enumeration.md) now has
+[an exact list with multiplicities](Research/computations/complete_oper_solutions_README.md).
+Its18 symmetry representatives still require the actual
+[Wronskian atlas test](Theorems/Thm_direct_wronskian_atlas.md) over every
+allowed quotient direction; a complete list is not an exclusion.
+
 ## The research library
 
 The layout adapts [Prove2Me](https://github.com/prove2me/prove2me_workspace)

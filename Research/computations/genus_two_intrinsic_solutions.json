@@ -1,0 +1,72 @@
+{
+  "field": "F5[a]/(a^2+4a+2)",
+  "basis": "genus_two_intrinsic_tensor.json, variables p0..p3,b0..b3",
+  "all_four_original_ideal_certificates_verified": true,
+  "all_twelve_equations_span_exact_three_after_linear_restriction": true,
+  "projective_degree11_polynomial": "z^11 + (a + 2)*z^10 + (3*a + 3)*z^6 + (2*a + 1)*z^5 + (3*a + 1)*z + 4*a + 2",
+  "normalization_lambda_cubed": "(2*a + 4)*z^7 + a*z^6 + 4*a*z^5 + (3*a + 2)*z^2 + (a + 2)*z",
+  "coordinate_z_is_b2_over_b3": true,
+  "all_original_equations_verified_in_full_solution_algebra": true,
+  "solution_encoding": "For every root z of f and every lambda^3=h(z), use the formulas in Sol_genus_two_atlas_dynamics.md. Each choice is one distinct solution.",
+  "all_geometric_multiplicities": 1,
+  "distinct_geometric_solutions": 33,
+  "projective_directions": 11,
+  "factors": [
+    {
+      "polynomial": "z + 2",
+      "degree": 1,
+      "normalizing_scalar_is_cube_in_residue_field": true,
+      "normalized_closed_point_degree": 1,
+      "normalized_closed_point_count": 3
+    },
+    {
+      "polynomial": "z + a + 1",
+      "degree": 1,
+      "normalizing_scalar_is_cube_in_residue_field": true,
+      "normalized_closed_point_degree": 1,
+      "normalized_closed_point_count": 3
+    },
+    {
+      "polynomial": "z + a + 3",
+      "degree": 1,
+      "normalizing_scalar_is_cube_in_residue_field": true,
+      "normalized_closed_point_degree": 1,
+      "normalized_closed_point_count": 3
+    },
+    {
+      "polynomial": "z + a + 4",
+      "degree": 1,
+      "normalizing_scalar_is_cube_in_residue_field": true,
+      "normalized_closed_point_degree": 1,
+      "normalized_closed_point_count": 3
+    },
+    {
+      "polynomial": "z + 2*a + 1",
+      "degree": 1,
+      "normalizing_scalar_is_cube_in_residue_field": true,
+      "normalized_closed_point_degree": 1,
+      "normalized_closed_point_count": 3
+    },
+    {
+      "polynomial": "z^3 + 2*z^2 + (a + 4)*z + a + 4",
+      "degree": 3,
+      "normalizing_scalar_is_cube_in_residue_field": true,
+      "normalized_closed_point_degree": 3,
+      "normalized_closed_point_count": 3
+    },
+    {
+      "polynomial": "z^3 + (a + 4)*z^2 + 2*a*z + 4*a + 2",
+      "degree": 3,
+      "normalizing_scalar_is_cube_in_residue_field": true,
+      "normalized_closed_point_degree": 3,
+      "normalized_closed_point_count": 3
+    }
+  ],
+  "normalized_F25_closed_point_counts": {
+    "1": 15,
+    "3": 6
+  },
+  "frobenius_dynamics_conjugacy": "((a + 1)*z + 3*a + 4)/(z + a + 4)",
+  "conjugate_map": "w -> w^10; fixed w=0,infinity, or w^9=1",
+  "status": "Exact full export and reconstruction, no unverified Groebner claim; no Litt3 exclusion."
+}

@@ -2,6 +2,26 @@
   "schema_version": 1,
   "definitions": [
     {
+      "id": "prime_to_p_etale_commensurability",
+      "title": "Prime-to-p geometric monodromy and actual etale commensurability",
+      "path": "Definitions/Def_prime_to_p_etale_commensurability.md"
+    },
+    {
+      "id": "intrinsic_atlas_incidence_data",
+      "title": "Intrinsic extension and Frobenius incidence conventions",
+      "path": "Definitions/Def_intrinsic_atlas_incidence.md"
+    },
+    {
+      "id": "cohomological_bezout_data",
+      "title": "Cech resultant and inverse-cup conventions",
+      "path": "Definitions/Def_cohomological_bezout.md"
+    },
+    {
+      "id": "rank_two_extension_space",
+      "title": "Rank-two section and extension-space conventions",
+      "path": "Definitions/Def_rank_two_extension_space.md"
+    },
+    {
       "id": "finite_algebra_certificates",
       "title": "Exact finite-algebra computation conventions",
       "path": "Definitions/Def_finite_algebra_certificates.md"
@@ -53,6 +73,427 @@
     }
   ],
   "theorems": [
+    {
+      "id": "extension_fiber_geometry",
+      "title": "Fixed-bundle extension immersion and constant normal bundle",
+      "statement": "Theorems/Thm_extension_fiber_geometry.md",
+      "solution": "Solutions/Sol_extension_fiber_geometry.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "rank_two_extension_space"
+      ],
+      "dependencies": [
+        "rank_two_extension_pencil"
+      ],
+      "audits": [],
+      "statement_version": 2,
+      "scope": "Any characteristic immersion; constant normal bundle and exact dual transversality test in char!=2; weak incidence is Frobenius preimage of classical linear section. Conditional local dimension/thickness, no existence or exclusion.",
+      "evidence_summary": "Bounded agent author proof read by main: determinantal universal Hom line, evaluation/Euler and exact dual map. Main added scheme-theoretic Frobenius-preimage/local-thickness proof. Primary Stacks0A1H verified. No audit or incidence nonemptiness claim.",
+      "statement_sha256": "f94d3403828e7328a468340d3af5e46527da145a4b0d672be29e68b0563f380b"
+    },
+    {
+      "id": "ordinary_simple_common_cover",
+      "title": "Ordinary and nonordinary absolutely simple Hom-zero endpoints with actual cubic etale legs",
+      "statement": "Theorems/Thm_ordinary_simple_common_cover.md",
+      "solution": "Solutions/Sol_ordinary_simple_common_cover.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "correspondences"
+      ],
+      "dependencies": [
+        "picard_simple_common_cover"
+      ],
+      "audits": [
+        "Research/audits/ORDINARY_SIMPLE_COMMON_COVER_AUDIT_2026_09_07.md"
+      ],
+      "statement_version": 1,
+      "scope": "Parameterized coprime cubic geometry; explicit genus4 pair both Jabsolutelysimple, p-ranks2/4, Hom-zero; samegenus10source withbothGaloisetale3legs. Cored; no fixed-pair orcoreless conclusion.",
+      "evidence_summary": "PASS /root/ordinary_simple_pair_audit,2026-09-07. Geometry at all points, full exact certificate reproduction and independent F25 count, irreducibility/self-cross root ratios and p-ranks checked. No objections.",
+      "statement_sha256": "948685f564cb5e8f747a2cef72a9250f2be8900941510a172949538f25181c39"
+    },
+    {
+      "id": "picard_simple_common_cover",
+      "title": "Absolutely simple Hom-zero genus-three Jacobians with an actual cubic etale common cover",
+      "statement": "Theorems/Thm_picard_simple_common_cover.md",
+      "solution": "Solutions/Sol_picard_simple_common_cover.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "correspondences"
+      ],
+      "dependencies": [],
+      "audits": [
+        "Research/audits/PICARD_SIMPLE_COMMON_COVER_AUDIT_2026_09_07.md"
+      ],
+      "scope": "Two actual Galois etale degree3 legs from genus7 to genus3, both endpoint Jacobians absolutely simple and geometrically Hom-zero. Cored and nonordinary, not a fixed-pair exclusion.",
+      "statement_version": 1,
+      "evidence_summary": "PASS /root/picard_simple_pair_audit,2026-09-07. All infinity geometry, whole exact certificate reproduction, independent F25 count and Frobenius-ratio implications checked. No mathematical objections.",
+      "statement_sha256": "2c65d51250e37717476a7f6ebfcdc6209c2d10f4125653dc4cc48fe35b6cd027"
+    },
+    {
+      "id": "cubic_genus_two_common_covers",
+      "title": "Parameterized cubic etale spans and ordinary-superspecial genus-two endpoints",
+      "statement": "Theorems/Thm_cubic_genus_two_common_covers.md",
+      "solution": "Solutions/Sol_cubic_genus_two_common_covers.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "correspondences",
+        "prime_to_p_etale_commensurability"
+      ],
+      "dependencies": [
+        "bolza_prime_to_five_coreless_neighborhood"
+      ],
+      "audits": [
+        "Research/audits/CUBIC_GENUS_TWO_FAMILY_AUDIT_2026_09_07.md"
+      ],
+      "scope": "Actual genus4 source, two degree3 Galois etale genus2 quotients. At char5 lambda3 ordinary/superspecial Hom-zero endpoints; separate audited arithmetic theorem supplies coreless variant. All endpoints elliptic-split, not absolutely simple.",
+      "statement_version": 1,
+      "evidence_summary": "Elementary family PASS /root/cubic_genus_two_family_check,2026-09-07, including smooth boundary, exact quotient fields and Cartier convention. Coreless corollary directly applies separately audited Bolza theorem.",
+      "statement_sha256": "6a48aa50e5a9d903c525d256587dec8e7165a4d2cf4dc4da539ad0ca08d2a1b3"
+    },
+    {
+      "id": "bolza_prime_to_five_coreless_neighborhood",
+      "title": "Coreless common covers throughout the prime-to-five Bolza commensurability class",
+      "statement": "Theorems/Thm_bolza_prime_to_five_coreless_neighborhood.md",
+      "solution": "Solutions/Sol_bolza_prime_to_five_coreless_neighborhood.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "correspondences",
+        "prime_to_p_etale_commensurability"
+      ],
+      "dependencies": [
+        "hermitian_genus_two_test"
+      ],
+      "audits": [
+        "Research/audits/BOLZA_CORELESS_FAMILY_AUDIT_2026_09_07.md"
+      ],
+      "source": "Solutions/Sol_bolza_prime_to_five_coreless_neighborhood.md",
+      "scope": "Arbitrary two endpoints in the prime-to5 etale commensurability class of the explicit superspecial genus2 seed, including H; actual coreless span, prime-to5 leg closures. No fixed-pair exclusion.",
+      "statement_version": 2,
+      "evidence_summary": "PASS /root/bolza_coreless_family_audit,2026-09-07, including Version2. Primary arithmetic construction, normal-core control, same-source prime-to5 good reduction and corelessness specialization; endpoint descent on special fiber. Four nonblocking exposition clarifications incorporated.",
+      "statement_sha256": "38ee91f8d893f61a7b60689d4b012de7396a4cd240145ea11eed3f7452389db0"
+    },
+    {
+      "id": "hermitian_oper_noninvariance",
+      "title": "Natural Hermitian oper incompatibility even for cored Galois spans",
+      "statement": "Theorems/Thm_hermitian_oper_noninvariance.md",
+      "solution": "Solutions/Sol_hermitian_oper_noninvariance.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "correspondences"
+      ],
+      "dependencies": [
+        "hermitian_genus_two_test"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_hermitian_oper_noninvariance.md",
+      "scope": "Actual cored finite etale Galois selfspan on H with unequal pulled-back natural rank-two opers. Not a coreless construction or common-cover exclusion.",
+      "statement_version": 1,
+      "evidence_summary": "Short exact corollary: t->-t exchanges two quotient potentials; connected fiber product retains both actual Galois etale maps, core C, and nonzero quadratic-differential difference. No separate audit.",
+      "statement_sha256": "beea48604e67ca1a6b63109cf1167cb96a53cb684c5c68fcb9c7b3f17c877bb3"
+    },
+    {
+      "id": "theta_open_atlas_projection",
+      "title": "Full-rank rectangular atlas pencil and projective elimination on the theta complement",
+      "statement": "Theorems/Thm_theta_open_atlas_projection.md",
+      "solution": "Solutions/Sol_theta_open_atlas_projection.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "intrinsic_atlas_incidence_data"
+      ],
+      "dependencies": [
+        "intrinsic_atlas_incidence"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_theta_open_atlas_projection.md",
+      "scope": "All allowed genera/tau; exact projective reduction for acyclic V, with whole theta-open rectangular rank. Not a square-pivot assertion or emptiness proof.",
+      "statement_version": 1,
+      "evidence_summary": "Author uniform rank-one morphism exclusion via stability/acyclicity and nonsplit K; actual atlas reconstruction, unique quotient and mu3-normalization quotient. No independent audit yet.",
+      "statement_sha256": "0bb91769c795c652a57bec1dd7ab08dbd888e5eef5dc5e226ff5072f7259eb52"
+    },
+    {
+      "id": "intrinsic_atlas_incidence",
+      "title": "Uniform finite reduced atlas equations for every cubic torsion choice",
+      "statement": "Theorems/Thm_intrinsic_atlas_incidence.md",
+      "solution": "Solutions/Sol_intrinsic_atlas_incidence.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "intrinsic_atlas_incidence_data",
+        "frobenius_form_atlases"
+      ],
+      "dependencies": [
+        "hermitian_atlas_extension_criterion",
+        "dormant_rank_two_candidates"
+      ],
+      "audits": [
+        "Research/audits/INTRINSIC_ATLAS_INCIDENCE_AUDIT_2026_09_07.md"
+      ],
+      "source": "Solutions/Sol_intrinsic_atlas_incidence.md",
+      "scope": "Every allowed genus and cubic torsion; complete actual Hermitian atlas criterion, finite reduced possibly empty. No atlas exclusion or coefficient-basis comparison claimed.",
+      "statement_version": 1,
+      "evidence_summary": "Fresh independent major audit PASS2026-09-07: global extension morphism, all bad quotient fibers, arbitrary fixed j0, scalar normalization, dimensions and tangent finiteness. No material objections; exact geometric criterion, no emptiness claim.",
+      "statement_sha256": "d177ab7e612cfec1b7c0c7cdf2c853be2d43dd3d496bdd97f3d478bff64cee16"
+    },
+    {
+      "id": "twisted_bol_complex",
+      "title": "Intrinsic dormant differential complex and dual space for all cubic twists",
+      "statement": "Theorems/Thm_twisted_bol_complex.md",
+      "solution": "Solutions/Sol_twisted_bol_complex.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "frobenius_form_atlases",
+        "cohomological_bezout_data"
+      ],
+      "dependencies": [
+        "dormant_horizontal_tensor_tower",
+        "cohomological_bezout"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_twisted_bol_complex.md",
+      "scope": "Any genus>=2 in characteristic5 with fixed stable dormant rank-two descent, all cubic torsion classes. Exact operator complex and dual space; not a complete twisted atlas criterion.",
+      "statement_version": 1,
+      "evidence_summary": "Author intrinsic oper/symmetric-square construction, local Frobenius basis exactness, cohomology and Cartier-residue duality. Both torsion exponents and the loss of cup symmetry for nontrivial tau are explicit.",
+      "statement_sha256": "1bce1572c8188c4a1c30cd7c24ba4f0f01dde877aadc8925b3178d3939c78fb9"
+    },
+    {
+      "id": "inverse_cup_atlas_system",
+      "title": "Structured inverse-cup atlas equations and their unavoidable boundary strata",
+      "statement": "Theorems/Thm_inverse_cup_atlas_system.md",
+      "solution": "Solutions/Sol_inverse_cup_atlas_system.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "cohomological_bezout_data",
+        "rank_two_extension_space",
+        "scalar_hermitian_data"
+      ],
+      "dependencies": [
+        "cohomological_bezout",
+        "compact_etale_atlas_system",
+        "resultant_gradient_atlas",
+        "dormant_differential_projection",
+        "rank_two_extension_pencil"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_inverse_cup_atlas_system.md",
+      "scope": "Exact alternative atlas scheme for acyclic opers; all-oper boundary secants explain large invalid N components. Singular polar charts retained; no emptiness claim.",
+      "statement_version": 1,
+      "evidence_summary": "Author proof using audited inverse cup/gradient and compact scheme. First-oper trace identity checked in all coefficients; two coprime determinant-line certificates disprove the proposed unconditional H inversion.",
+      "statement_sha256": "ff821c14ca4cd07a4068860f272fe0a69b448f981b1dff1041827ceea4db76a9"
+    },
+    {
+      "id": "cohomological_bezout",
+      "title": "Quadratic Bezout matrices and exact corank on every zero stratum",
+      "statement": "Theorems/Thm_cohomological_bezout.md",
+      "solution": "Solutions/Sol_cohomological_bezout.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "cohomological_bezout_data",
+        "scalar_hermitian_data"
+      ],
+      "dependencies": [
+        "dormant_horizontal_tensor_tower",
+        "fixed_x_dormant_equations",
+        "fixed_x_oper_enumeration"
+      ],
+      "audits": [
+        "Research/audits/COHOMOLOGICAL_BEZOUT_AUDIT_2026_09_07.md"
+      ],
+      "source": "Solutions/Sol_cohomological_bezout.md",
+      "scope": "Characteristic-free general rank-two resultant matrix;24x24 acyclic and27x27 exceptional fixed-curve cases. No atlas exclusion.",
+      "statement_version": 1,
+      "evidence_summary": "Independent bounded audit PASS2026-09-07 of all-characteristic Cech kernel, all-strata corank, reduced degree, inverse cup and fixed-curve24/27 specialization. Full first-oper tensor verified exactly.",
+      "statement_sha256": "b2467a12467e3b9ec54921458dd932073f0c707d88a4059e2141025b98cdc483"
+    },
+    {
+      "id": "compact_etale_atlas_system",
+      "title": "Compact97-equation atlas scheme: exact, finite and reduced",
+      "statement": "Theorems/Thm_compact_etale_atlas_system.md",
+      "solution": "Solutions/Sol_compact_etale_atlas_system.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "scalar_hermitian_data",
+        "rank_two_extension_space"
+      ],
+      "dependencies": [
+        "dormant_differential_projection",
+        "wronskian_matrix_pencil",
+        "rank_two_extension_pencil"
+      ],
+      "audits": [
+        "Research/audits/UNIVERSAL_RADIAL_COMPACT_AUDIT_2026_09_07.md"
+      ],
+      "source": "Solutions/Sol_compact_etale_atlas_system.md",
+      "scope": "Every fixed geometric oper, all untwisted atlas presentations, no saturation or infinity exceptions. Finite reduced possibly empty, not an exclusion.",
+      "statement_version": 1,
+      "evidence_summary": "Bounded independent audit PASS2026-09-07 of universal all-strata radial identity, automatic admissibility, swapped cup kernel and full Jacobianrank. First oper exact tensors and radial syzygy exported and all coefficients verified.",
+      "statement_sha256": "5afae8688d25458f2646cd724c88bf75b02879deabd6f1119726e985a8a14dab"
+    },
+    {
+      "id": "resultant_gradient_atlas",
+      "title": "Global resultant-gradient identity and Frobenius-polar atlas equation",
+      "statement": "Theorems/Thm_resultant_gradient_atlas.md",
+      "solution": "Solutions/Sol_resultant_gradient_atlas.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "scalar_hermitian_data",
+        "rank_two_extension_space"
+      ],
+      "dependencies": [
+        "dormant_differential_projection",
+        "rank_two_extension_pencil",
+        "wronskian_matrix_pencil"
+      ],
+      "audits": [
+        "Research/audits/RESULTANT_GRADIENT_AUDIT_2026_09_07.md"
+      ],
+      "source": "Solutions/Sol_resultant_gradient_atlas.md",
+      "scope": "Every fixed geometric oper on the chosen curve; full polynomial identity and exact untwisted atlas criterion. No emptiness claim.",
+      "statement_version": 1,
+      "evidence_summary": "Fresh Astra medium major audit PASS2026-09-07 of reduced resultant, boundary local residue normalization, polynomial continuation and atlas equivalence. No objections; coefficient Frobenius twist explicitly separated from pullback.",
+      "statement_sha256": "a78524c45a1a8a802a13744a9ab5d760f387bbd0856e3040c17ef3147d9dd1a0"
+    },
+    {
+      "id": "dormant_differential_projection",
+      "title": "Third-order dormant projection and a uniform32-dimensional atlas space",
+      "statement": "Theorems/Thm_dormant_differential_projection.md",
+      "solution": "Solutions/Sol_dormant_differential_projection.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "scalar_hermitian_data"
+      ],
+      "dependencies": [
+        "rank_two_extension_pencil",
+        "wronskian_matrix_pencil"
+      ],
+      "audits": [
+        "Research/audits/COHOMOLOGICAL_ODE_COMPARISON_2026_09_07.md"
+      ],
+      "source": "Solutions/Sol_dormant_differential_projection.md",
+      "scope": "Every fixed geometric oper on the chosen curve; exact sheaf complex and full-tensor necessary32-space. Not an atlas exclusion or a nonreduced family assertion.",
+      "statement_version": 1,
+      "evidence_summary": "Independent bounded audit PASS2026-09-07 of full-tensor comparison and universal differential projection; explicit Frobenius conventions and all local poles checked. Exact56-column computation corroborates one oper.",
+      "statement_sha256": "b92d3b093b64e5611c3fe2ec86218a7d7b280bfa3d698aa93138e29ce25aca07"
+    },
+    {
+      "id": "semilinear_incidence_sieve",
+      "title": "Coupled semilinear incidence sieve and exact32-dimensional reduction",
+      "statement": "Theorems/Thm_semilinear_incidence_sieve.md",
+      "solution": "Solutions/Sol_semilinear_incidence_sieve.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "scalar_hermitian_data"
+      ],
+      "dependencies": [
+        "rank_two_extension_pencil",
+        "wronskian_matrix_pencil"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_semilinear_incidence_sieve.md",
+      "scope": "General necessary linear sieve, exact56->32->32 for one complete fixed oper; positive stable space is not existence or exclusion.",
+      "statement_version": 1,
+      "evidence_summary": "Author inductive proof; all32 pencil tensors,2048 polynomial Wronskians, both kernel-image transitions, and the ODE-annihilator equality verified exactly. No sampling inference.",
+      "statement_sha256": "bf1323225ebee26756ded18e8699646696b94df8a2a59976277eccccbf750215"
+    },
+    {
+      "id": "rank_two_extension_pencil",
+      "title": "Characteristic-free extension kernel lines and their degree",
+      "statement": "Theorems/Thm_rank_two_extension_pencil.md",
+      "solution": "Solutions/Sol_rank_two_extension_pencil.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "rank_two_extension_space",
+        "scalar_hermitian_data"
+      ],
+      "dependencies": [
+        "wronskian_matrix_pencil"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_rank_two_extension_pencil.md",
+      "scope": "Any characteristic, stable rank2 determinantO, degL>2g. Fixed-curve specialization gives64-row pencil and degree46, not an atlas exclusion.",
+      "statement_version": 1,
+      "evidence_summary": "Author algebraic cup-product/determinant proof. Degree agrees with Thaddeus5.5(iii) complex precedent; characteristic5 proof given independently. Five exact dual-pencil tests match all kernels and320 Wronskians.",
+      "statement_sha256": "0324efec6e70ff9c5603b85d267ace7804d10ce385351b6513f7ea0c1a96254e"
+    },
+    {
+      "id": "wronskian_matrix_pencil",
+      "title": "Linear matrix pencils and Frobenius kernel-line atlas criterion",
+      "statement": "Theorems/Thm_wronskian_matrix_pencil.md",
+      "solution": "Solutions/Sol_wronskian_matrix_pencil.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "scalar_hermitian_data"
+      ],
+      "dependencies": [
+        "direct_wronskian_atlas"
+      ],
+      "audits": [],
+      "source": "Solutions/Sol_wronskian_matrix_pencil.md",
+      "scope": "Fixed geometric oper, all quotient directions; rank55 exact on admissible locus, finite polynomial atlas system. No global atlas exclusion.",
+      "statement_version": 1,
+      "evidence_summary": "Author proof reducing to U32/eta56 and136x56/56x56 linear pencils. Five independent exact checks reconstruct polynomial T, Wronskian1, rank55 and identical residual. New pencil theorem not separately audited.",
+      "statement_sha256": "7e61dd78eed1c0fa77e25c8794c80e668abbce7973c890293b95d9ca8d0b9057"
+    },
+    {
+      "id": "direct_wronskian_atlas",
+      "title": "Direct Wronskian and projective-direction Hermitian atlas test",
+      "statement": "Theorems/Thm_direct_wronskian_atlas.md",
+      "solution": "Solutions/Sol_direct_wronskian_atlas.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "scalar_hermitian_data"
+      ],
+      "dependencies": [
+        "scalar_hermitian_reconstruction"
+      ],
+      "audits": [
+        "Research/audits/DIRECT_WRONSKIAN_ATLAS_AUDIT_2026_09_07.md"
+      ],
+      "source": "Solutions/Sol_direct_wronskian_atlas.md",
+      "scope": "Fixed geometric oper, untwisted PSU atlas existence including every quotient direction. No atlas exclusion; nonreduced families and nontrivial torsion twists not asserted.",
+      "statement_version": 1,
+      "evidence_summary": "Accepted fresh Astra medium audit2026-09-07, conditional on existing scalar reconstruction. Both infinity charts, Cartier local normalization,9-dimensional certificate gauge, B nonzero and three-scale criterion; no objections. Five exact samples are limited implementation evidence.",
+      "statement_sha256": "e5446c6611355e27c8d0bca7171ce26c921d39911d68e1693e00181bf3266c22"
+    },
+    {
+      "id": "fixed_x_oper_enumeration",
+      "title": "Complete fixed-X dormant-oper census and18 symmetry representatives",
+      "statement": "Theorems/Thm_fixed_x_oper_enumeration.md",
+      "solution": "Solutions/Sol_fixed_x_oper_enumeration.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "fixed_pair",
+        "frobenius_form_atlases"
+      ],
+      "dependencies": [
+        "fixed_x_oper_cubic_quotient"
+      ],
+      "audits": [
+        "Research/audits/NORMALIZED_OPER_ENUMERATION_AUDIT_2026_09_07.md"
+      ],
+      "source": "Research/computations/normalized_oper_algebra_certificate.json",
+      "scope": "Complete fixed-X rank-two candidate census and symmetry reduction; no rank-three atlas or common-cover exclusion.",
+      "statement_version": 1,
+      "evidence_summary": "PASS fresh audit2026-09-07: all43 original input relations, separator, degree and squarefreeness independently checked. Subsequent12-factor exact output and18-representative symmetry argument are additional author proof, not an atlas exclusion.",
+      "statement_sha256": "6560b239c4914f240461c452c120497989a67b369ff3fba055362aa033ad4ca9"
+    },
     {
       "id": "finite_algebra_completion_certificates",
       "title": "Known-length stopping and exact Frobenius root extraction",
@@ -140,10 +581,10 @@
       ],
       "audits": [],
       "source": "scripts/normalized_oper_quotient.sage",
-      "scope": "Fixed-X enumeration:55 exceptional points and etale cubic reconstruction from the14-variable scheme of length9645. Inverse variable proved redundant, local multiplicities preserved. Enumeration not completed.",
-      "statement_version": 3,
-      "evidence_summary": "Author reconstruction and exact certificates: c4-zero slice length330/radical55/local6; rank5 C-block minors at all55 invariant points prove scale is a unit. No independent whole-result audit claimed.",
-      "statement_sha256": "dd889efb8e435babead8e40790765feb9396c482ac361c3d6c9fd2703b0339e4"
+      "scope": "Fixed-X reduction:55 exceptional points and etale cubic reconstruction from the14-variable scheme of length9645. Inverse variable redundant, multiplicities preserved. Completed census is the separate fixed_x_oper_enumeration theorem.",
+      "statement_version": 4,
+      "evidence_summary": "Author reconstruction and exact certificates: c4-zero slice length330/radical55/local6; rank5 C-block minors at all55 invariant points prove scale is a unit. No independent whole-result audit claimed. Version4 links the separately completed census without changing the reduction's mathematical scope.",
+      "statement_sha256": "2aedf49854b30365d6cb72338f62f9d07c4e991438b4525611c9c4290b9af45b"
     },
     {
       "id": "dormant_horizontal_tensor_tower",
@@ -186,9 +627,9 @@
       ],
       "source": "scripts/fixed_x_dormant_opers.sage",
       "scope": "All regular dormant projective opers scheme-theoretically; total length literature-derived. Invariant slice has55 distinct points, each with full local multiplicity8. No rank-three lift or cover exclusion.",
-      "statement_version": 2,
-      "evidence_summary": "PASS core chart/curvature audit, /root/fixed_x_dormant_equations_audit, 2026-09-06. Additional exact computations:55 invariant points, full local length8 each,55 distinct tuples checked in all96 equations; not part of that audit.",
-      "statement_sha256": "4284acba6afef3f4449692c0258be3e2d116dccb175f0a0b849b2132a99b4959"
+      "statement_version": 3,
+      "evidence_summary": "PASS core chart/curvature audit, /root/fixed_x_dormant_equations_audit, 2026-09-06. Additional exact computations:55 invariant points, full local length8 each,55 distinct tuples checked in all96 equations; not part of that audit. Version3 removes a stale pending-enumeration sentence and links the separately audited complete certificate; mathematical scope unchanged.",
+      "statement_sha256": "0f802ee40e17ebcb61bf8e90ecc081fe2f9ba89b84205c0388c00be52b75c8da"
     },
     {
       "id": "dormant_rank_two_candidates",
@@ -972,6 +1413,84 @@
       "statement_version": 1,
       "evidence_summary": "PASS, /root/cored_ring_normality_major_check, 2026-09-06. Nonbreaking clarification: [W/H] is the scheme C only after H is free; wording incorporated.",
       "statement_sha256": "51ce078bed53e5c103096c84fba85a51527adc03f41af9689b63fd1bd5551bd9"
+    },
+    {
+      "id": "hermitian_genus_two_test",
+      "title": "An actual acyclic genus-two Hermitian atlas and its five opers",
+      "statement": "Theorems/Thm_hermitian_genus_two_test.md",
+      "solution": "Solutions/Sol_hermitian_genus_two_test.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [],
+      "dependencies": [
+        "hermitian_atlas_extension_criterion",
+        "intrinsic_atlas_incidence"
+      ],
+      "audits": [],
+      "scope": "Actual finite etale free C3^2 quotient of H, acyclic V, complete reduced five-oper test; all five realized by actual automorphism translates. Positive test only; no fixed-pair replacement or common-cover exclusion.",
+      "statement_version": 2,
+      "evidence_summary": "Author proof /root and exact bounded program /root/genus_two_intrinsic_tensor_program,2026-09-07; version2 adds exact120-Mobius check. No independent audit claimed.",
+      "statement_sha256": "df14b6b196f010e2d078ce9d2d979edef7cdc6a9bf4763a1c86038cadd17ba3b"
+    },
+    {
+      "id": "genus_two_atlas_dynamics",
+      "title": "Complete33-point intrinsic atlas scheme as Frobenius dynamics",
+      "statement": "Theorems/Thm_genus_two_atlas_dynamics.md",
+      "solution": "Solutions/Sol_genus_two_atlas_dynamics.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [],
+      "dependencies": [
+        "hermitian_genus_two_test",
+        "intrinsic_atlas_incidence"
+      ],
+      "audits": [
+        "Research/audits/GENUS_TWO_INTRINSIC_TENSOR_AUDIT_2026_09_07.md",
+        "Research/audits/GENUS_TWO_ATLAS_DYNAMICS_AUDIT_2026_09_07.md"
+      ],
+      "scope": "One fixed actual genus2 oper/tau0:33 normalized solutions,11 projective directions; no count of nonisomorphic covers or fixedX exclusion.",
+      "statement_version": 2,
+      "evidence_summary": "PASS /root/genus_two_dynamics_completion_audit,2026-09-07. Exact original-ideal certificates, projective infinity,33dim universal algebra and residue degrees checked; no material objections.",
+      "statement_sha256": "3c05f1432a404655f20a33b6db2a4f3408a76753f26a3a136e6fa3d8c6f19e37"
+    },
+    {
+      "id": "cartier_jet_tensor_surjectivity",
+      "title": "Jet detection and universal Frobenius-extension tensor surjectivity",
+      "statement": "Theorems/Thm_cartier_jet_tensor_surjectivity.md",
+      "solution": "Solutions/Sol_cartier_jet_tensor_surjectivity.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [],
+      "dependencies": [
+        "intrinsic_atlas_incidence"
+      ],
+      "audits": [
+        "Research/audits/CARTIER_JETS_AND_ACYCLIC_TOWERS_AUDIT_2026_09_07.md"
+      ],
+      "scope": "General Cartier p-jet criterion; every allowed genus>=6 intrinsic tensor has full output rank, regardless of atlas existence. No old scalar basis comparison asserted.",
+      "statement_version": 2,
+      "evidence_summary": "PASS /root/cartier_jet_and_atlas_towers_audit,2026-09-07. Cartier twists, dense-open local detection and slope-zero jet bound checked; no substantive objections.",
+      "statement_sha256": "fb0eee2aad84c6fc9b9e1faa64e82365c501684bfe9942f48da89b0b12e38c55"
+    },
+    {
+      "id": "acyclic_atlas_towers",
+      "title": "Unbounded actual acyclic atlas towers with full intrinsic tensor rank",
+      "statement": "Theorems/Thm_acyclic_atlas_towers.md",
+      "solution": "Solutions/Sol_acyclic_atlas_towers.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [],
+      "dependencies": [
+        "hermitian_genus_two_test",
+        "cartier_jet_tensor_surjectivity"
+      ],
+      "audits": [
+        "Research/audits/CARTIER_JETS_AND_ACYCLIC_TOWERS_AUDIT_2026_09_07.md"
+      ],
+      "scope": "For all sufficiently large primes ell, an actual cyclic etale cover of genus ell+1 retains an acyclic stable atlas bundle and full tensor output. Robust positive family, not Litt3 exclusion.",
+      "statement_version": 2,
+      "evidence_summary": "PASS /root/cartier_jet_and_atlas_towers_audit,2026-09-07. Uniform torsion counting, actual etale pullbacks, oper stability and extension nonsplitting checked; no substantive objections.",
+      "statement_sha256": "03e9cc81c121a7eeb8bcf63f833474e33ff3a8b9252c8f776f609e448271e4cf"
     }
   ]
 }

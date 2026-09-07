@@ -1,0 +1,9 @@
+{
+"dimension":19290,
+"separator":"a9",
+"coordinate_names":["c0","c1","c2","c3","a0","a1","a2","a3","a4","a5","a6","a7","a8","a9","zeta"],
+"binary_file":"normalized_oper_a9.moments.u8",
+"sequence_length":38644,
+"arithmetic":"exact uint8 products and uint32 sums with 16D<2^32",
+"certified_original_algebra":false
+}

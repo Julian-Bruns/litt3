@@ -1,32 +1,72 @@
 {
-  "phase": "idle_solver_wait_with_post_enumeration_roadmap",
+  "phase": "post_enumeration_structural_compatibility",
   "active_target_ids": [
-    "scalar_hermitian_reconstruction",
+    "ordinary_simple_common_cover",
+    "bolza_prime_to_five_coreless_neighborhood",
+    "hermitian_oper_noninvariance",
+    "cubic_genus_two_common_covers",
+    "picard_simple_common_cover",
+    "genus_two_atlas_dynamics",
+    "cartier_jet_tensor_surjectivity",
+    "acyclic_atlas_towers",
+    "hermitian_genus_two_test",
+    "theta_open_atlas_projection",
+    "intrinsic_atlas_incidence",
+    "twisted_bol_complex",
+    "cohomological_bezout",
+    "inverse_cup_atlas_system",
+    "compact_etale_atlas_system",
+    "resultant_gradient_atlas",
+    "dormant_differential_projection",
+    "wronskian_matrix_pencil",
+    "direct_wronskian_atlas",
     "semilinear_hermitian_lift",
     "fixed_x_oper_cubic_quotient"
   ],
-  "next_action": "User requested pause after handoff. Watcher56616 resumes exact chat on solver exit. On success verify/export normalized basis, then exact closed-point/cubic/multiplicity extraction. Read AFTER_ENUMERATION.md before atlas work; no candidate list alone excludes covers.",
+  "next_action": "All positive-test audits PASS and promoted, including ordinary_simple_common_cover. Continue nonlinear atlas constraints or a genuine two-leg geometric obstruction. Genus4bothJabssimple, p-ranks2/4, Homzero, actualtwoGaloisetale3legs samegenus10source; fixedcertificate cubic_ordinary_common_cover_certificate. Earlier genus3pair and Bolzacorelessfamily auditedPASS. Natural H-oper compatibility false evencoredGalois. No fixedX oper excluded, no solver jobs/retries. WeakN dimension7 remains heuristicnotproved. No more Jacobianconditions-only exclusions.",
   "last_completed_ids": [
+    "ordinary_simple_common_cover",
+    "bolza_prime_to_five_coreless_neighborhood",
+    "hermitian_oper_noninvariance",
+    "cubic_genus_two_common_covers",
+    "picard_simple_common_cover",
+    "genus_two_atlas_dynamics",
+    "cartier_jet_tensor_surjectivity",
+    "acyclic_atlas_towers",
     "finite_algebra_completion_certificates",
     "dormant_first_integral_charts",
     "semilinear_hermitian_lift",
     "scalar_hermitian_reconstruction",
     "fixed_x_oper_cubic_quotient"
   ],
-  "last_updated_local": "2026-09-06 21:17 CEST",
+  "last_updated_local": "2026-09-07 09:35 CEST",
   "problem_status": "unsolved",
   "pro_requests_remaining": 0,
   "migration_status": "complete",
   "timer": {
-    "due_local": null,
-    "exec_cell": null,
-    "status": "cancelled_user_requested_idle_wait_rearm_when_research_resumes"
+    "due_local": "2026-09-07 10:37 CEST",
+    "exec_cell": "282",
+    "status": "active_non_polling_hourly_reminder"
   },
-  "active_computations": [
+  "active_computations": [],
+  "raw_basis_external_path": "/Users/julian/Documents/litt3-computation-data/normalized_oper_msolve.gb",
+  "compact_postprocessing": {
+    "lossless_encoding": "Research/computations/normalized_oper_rewrite.json",
+    "staircase_only_not_certificate": "Research/computations/normalized_oper_basis_structure.json",
+    "normal_forms": "All2403 computed and checkpointed with exact neogb LA2;38 batches, no GB recomputation.",
+    "multiplication_matrix": "Research/computations/normalized_oper_a9.u8",
+    "moments": "Research/computations/normalized_oper_a9.moments.json",
+    "moment_arithmetic": "Exact ARM integer dot products, 38644steps completed in about72sec; no floating point.",
+    "certification_status": "COMPLETE: original identities and independent43-input substitution pass; separator/full knownlength prove algebra isomorphism; squarefree P and12 factors verified. Fresh audit PASS."
+  },
+  "completed_computations": [
     {
       "supervisor_pid": 9989,
       "pid": 9991,
-      "status": "running_detached_only_solver",
+      "status": "finished_exact_certificate_and_full_export_completed",
+      "returncode": 0,
+      "ended_utc": "2026-09-06T23:47:42.029515+00:00",
+      "output_bytes": 4517491660,
       "status_file": "Research/computations/normalized_oper_run.json",
       "log_file": "Research/computations/normalized_oper_solver.log",
       "threads": 10,
@@ -37,15 +77,40 @@
     }
   ],
   "enumeration": {
-    "distinct_exported": 55,
-    "full_multiplicity_each": 8,
-    "remaining_full_length": 28935,
-    "remaining_distinct_count": null
+    "distinct_exported": 28990,
+    "total_multiplicity": 29375,
+    "invariant_distinct": 55,
+    "invariant_multiplicity_each": 8,
+    "noninvariant_distinct": 28935,
+    "noninvariant_multiplicity_each": 1,
+    "untwisted_oper_representatives": 18,
+    "normalized_F25_residue_degrees": [
+      1,
+      2,
+      13,
+      17,
+      40,
+      124,
+      205,
+      220,
+      403,
+      578,
+      718,
+      7324
+    ],
+    "complete_list": "Research/computations/complete_oper_solutions.json",
+    "certificate": "Research/computations/normalized_oper_algebra_certificate.json"
   },
   "active_agents": [],
   "completion_watcher": {
     "pid": 56616,
-    "status": "armed_kernel_exit_event",
+    "status": "stopped_after_user_requested_cli_interrupt",
+    "codex_pid": 26787,
+    "resume_returncode": 1,
+    "ended_utc": "2026-09-06T23:56:44.148052+00:00",
+    "rearm_allowed": false,
+    "preferred_interface": "T3",
+    "recovery": "Codex and its helpers exited; original transcript retained, writer lock released, T3 resume cursor retained.",
     "session_id": "01a06bb7-7c2a-7eb1-971c-2b890a7e0bf7",
     "state_file": "Research/computations/normalized_oper_completion_watch.json",
     "resume_log": "Research/computations/normalized_oper_resume.jsonl",
@@ -53,9 +118,36 @@
   },
   "pro_prompt": "Research/PRO_SCALAR_HERMITIAN_RECONSTRUCTION.md",
   "pro_status": "Integrated pointwise reconstruction;10 identification parameters and40 extension variables removed. General horizontal retraction audited in all allowed genera/torsion twists.",
-  "proof_scope": "Large cored untwisted PSU branch only; small cored, nontrivial PGU twists and coreless cases remain.",
+  "proof_scope": "Complete intrinsic criterion for all large PSU/PGU torsion choices; no whole fixedX oper excluded. Small cored and coreless branches remain. Genus2 positive test not replacement for fixed pair.",
   "patched_solver": "/tmp/litt3-msolve-lowmem.bQGL6w/msolve-0.10.1/msolve",
   "retired_algorithms": "Removed from active code; obsolete artifacts recoverable in /Users/julian/.Trash/litt3-retired-solvers.2a0Fl7. All old processes terminated.",
   "handoff": "Research/AFTER_ENUMERATION.md",
-  "unadopted_algorithm": "12-variable triangular probe: degree22,242362terms; no speed benchmark, trial retired; see Research/TRIANGULAR_COORDINATE_PROBE.md"
+  "unadopted_algorithm": "12-variable triangular probe: degree22,242362terms; no speed benchmark, trial retired; see Research/TRIANGULAR_COORDINATE_PROBE.md",
+  "small_positive_test": {
+    "curve": "v^2=t^6+3",
+    "actual_atlas": "H/(C3 x C3), H Hermitian genus10",
+    "opers": 5,
+    "all_opers_actual": true,
+    "incidence_tensor": "Research/computations/genus_two_intrinsic_tensor.json",
+    "tensor_audit": "PASS 2026-09-07 /root/small_intrinsic_tensor_audit",
+    "four_linear_restrictions": "All exact original-ideal certificates completed",
+    "dynamics": "COMPLETE audited PASS:11 simple directions,3 normalizations each,33 reduced geometric solutions, entire coordinate algebra verified inoriginalequations. Mapconjugate z->z10.",
+    "generic_solver": "Retired recoverably to /Users/julian/.Trash/litt3-genus-two-pilot.pOxZIW; minimal exact certificate generator and dynamics replace prototypes."
+  },
+  "atlas_solver_frontier": {
+    "status": "all_bounded_pilots_stopped_without_basis",
+    "active": false,
+    "seeded_native": {
+      "seconds": 180.031,
+      "peak_rss": 1394032640,
+      "degree": 7
+    },
+    "frobenius_graph": {
+      "seconds": 180.044,
+      "peak_rss": 2293858304,
+      "degree": 3
+    },
+    "retired_code_and_inputs": "/Users/julian/.Trash/litt3-atlas-pilots.sucrLn",
+    "scope": "No unit ideal, atlas exclusion, solution or checkpoint produced; exit0 forced bySIGTERM wasnot success."
+  }
 }

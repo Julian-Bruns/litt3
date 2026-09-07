@@ -1,0 +1,121 @@
+{
+  "basis_path": "/Users/julian/Documents/litt3-computation-data/normalized_oper_msolve.gb",
+  "status": "leading_staircase_only_NOT_a_Groebner_certificate",
+  "basis_bytes": 4517491660,
+  "basis_sha256": "b429962b5e4d24344bee80fe36e1231bc00e5e138d6b2dca220cc2972931dd09",
+  "polynomial_count": 15845,
+  "term_count": 198818903,
+  "variables": [
+    "c0",
+    "c1",
+    "c2",
+    "c3",
+    "a0",
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a6",
+    "a7",
+    "a8",
+    "a9",
+    "zeta"
+  ],
+  "leading_colength_F5": 19290,
+  "expected_actual_length_F25": 9645,
+  "standard_max_degree": 8,
+  "standard_monomials": "Research/computations/normalized_oper_standard_monomials.tsv",
+  "multiplication_border": [
+    {
+      "variable": "c0",
+      "standard": 6331,
+      "direct_rewrite": 5350,
+      "needs_reduction": 7609
+    },
+    {
+      "variable": "c1",
+      "standard": 5501,
+      "direct_rewrite": 4914,
+      "needs_reduction": 8875
+    },
+    {
+      "variable": "c2",
+      "standard": 4848,
+      "direct_rewrite": 4549,
+      "needs_reduction": 9893
+    },
+    {
+      "variable": "c3",
+      "standard": 4072,
+      "direct_rewrite": 3654,
+      "needs_reduction": 11564
+    },
+    {
+      "variable": "a0",
+      "standard": 3954,
+      "direct_rewrite": 3502,
+      "needs_reduction": 11834
+    },
+    {
+      "variable": "a1",
+      "standard": 4277,
+      "direct_rewrite": 3777,
+      "needs_reduction": 11236
+    },
+    {
+      "variable": "a2",
+      "standard": 4688,
+      "direct_rewrite": 4220,
+      "needs_reduction": 10382
+    },
+    {
+      "variable": "a3",
+      "standard": 4937,
+      "direct_rewrite": 4520,
+      "needs_reduction": 9833
+    },
+    {
+      "variable": "a4",
+      "standard": 5227,
+      "direct_rewrite": 4918,
+      "needs_reduction": 9145
+    },
+    {
+      "variable": "a5",
+      "standard": 5434,
+      "direct_rewrite": 5160,
+      "needs_reduction": 8696
+    },
+    {
+      "variable": "a6",
+      "standard": 5863,
+      "direct_rewrite": 5955,
+      "needs_reduction": 7472
+    },
+    {
+      "variable": "a7",
+      "standard": 6664,
+      "direct_rewrite": 6565,
+      "needs_reduction": 6061
+    },
+    {
+      "variable": "a8",
+      "standard": 6928,
+      "direct_rewrite": 6783,
+      "needs_reduction": 5579
+    },
+    {
+      "variable": "a9",
+      "standard": 9577,
+      "direct_rewrite": 7310,
+      "needs_reduction": 2403
+    },
+    {
+      "variable": "zeta",
+      "standard": 2805,
+      "direct_rewrite": 939,
+      "needs_reduction": 15546
+    }
+  ]
+}

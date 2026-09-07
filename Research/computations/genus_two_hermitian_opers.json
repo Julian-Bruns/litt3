@@ -1,0 +1,93 @@
+{
+  "field": "F5[a]/(a^2+4a+2)",
+  "curve": "v^2=t^6+3",
+  "potential": "4*t^4/(t^6+3)^2+(b0+b1*t+b2*t^2)/(t^6+3)",
+  "groebner_basis": [
+    "b0 + b2^2",
+    "b1^2 - 2*b2^3 - 1",
+    "b1*b2",
+    "b2^4 - 2*b2"
+  ],
+  "length": 5,
+  "points": [
+    [
+      "0",
+      "4",
+      "0"
+    ],
+    [
+      "0",
+      "1",
+      "0"
+    ],
+    [
+      "1",
+      "0",
+      "3"
+    ],
+    [
+      "2*a + 1",
+      "0",
+      "4*a + 4"
+    ],
+    [
+      "3*a + 3",
+      "0",
+      "a + 3"
+    ]
+  ],
+  "all_original_curvatures_zero": true,
+  "all_jacobian_ranks": 3,
+  "quotient_equation_verified_in_H": true,
+  "atlas_oper": [
+    "0",
+    "1",
+    "0"
+  ],
+  "atlas_identification": "Exact Schwarzian identity in k(H); D=d/dx, D^2y=0.",
+  "branch_mobius_group_order": 120,
+  "actual_atlas_oper_orbit": [
+    {
+      "point": [
+        "0",
+        "1",
+        "0"
+      ],
+      "multiplicity": 24
+    },
+    {
+      "point": [
+        "2*a + 1",
+        "0",
+        "4*a + 4"
+      ],
+      "multiplicity": 24
+    },
+    {
+      "point": [
+        "0",
+        "4",
+        "0"
+      ],
+      "multiplicity": 24
+    },
+    {
+      "point": [
+        "3*a + 3",
+        "0",
+        "a + 3"
+      ],
+      "multiplicity": 24
+    },
+    {
+      "point": [
+        "1",
+        "0",
+        "3"
+      ],
+      "multiplicity": 24
+    }
+  ],
+  "all_five_opers_realized_by_actual_atlases": true,
+  "limitations": "One actual genus-two atlas example; no common-cover exclusion or intrinsic incidence tensor computed."
+}

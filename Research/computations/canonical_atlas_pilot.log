@@ -1,0 +1,62 @@
+Initial seed for pseudo-random number generator is 1788752339
+
+--------------- INPUT DATA ---------------
+#variables                      65
+#equations                      98
+#invalid equations               0
+field characteristic             5
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             250
+reduce gb                        1
+#threads                        10
+info level                       2
+generate pbm files               0
+------------------------------------------
+
+Legend for f4 information
+--------------------------------------------------------
+deg       current degree of pairs selected in this round
+sel       number of pairs selected in this round
+pairs     total number of pairs in pair list
+mat       matrix dimensions (# rows x # columns)
+density   density of the matrix
+new data  # new elements for basis in this round
+          # zero reductions during linear algebra
+time(rd)  time of the current f4 round in seconds given
+          for real and cpu time
+--------------------------------------------------------
+
+deg     sel   pairs        mat          density            new data         time(rd) in sec (real|cpu)
+------------------------------------------------------------------------------------------------------
+  7      86     121      98 x 2119       64.08%       86 new       0 zero         0.01 | 0.02         
+  8     250    1392    1926 x 59211       0.86%      250 new       0 zero         0.12 | 0.19         
+  8     250    3286    2721 x 70708       1.50%      154 new      96 zero         0.21 | 0.31         
+  8     250    5980    1490 x 26314      15.90%      250 new       0 zero         0.41 | 0.75         
+  8     250   12606    2207 x 78916       6.83%      248 new       2 zero         0.73 | 1.44         
+  8     250   19633    2157 x 30811      22.44%      250 new       0 zero         0.85 | 1.83         
+  8     250   25739    3439 x 88481       7.20%      250 new       0 zero         1.23 | 2.35         
+  8     250   33251    3289 x 34646      24.62%      250 new       0 zero         1.51 | 3.09         
+  8     250   40176    6589 x 93617       6.32%      250 new       0 zero         2.08 | 4.43         
+  8     250   49150    4613 x 35471      25.26%      249 new       1 zero         2.23 | 5.28         
+  8     250   56709    7824 x 96039       6.83%      249 new       1 zero         2.70 | 6.22         
+  8     188   66008    5587 x 36753      26.24%      174 new      14 zero         2.55 | 5.68         
+  9     250   70531   22493 x 64888       4.37%        0 new     250 zero         2.41 | 5.47         
+  9     250   70281   18166 x 49809       7.13%        0 new     250 zero         2.58 | 7.34         
+  9     250   70031   17711 x 47928       7.42%        0 new     250 zero         2.35 | 5.43         
+  9     250   69781   22705 x 65126       4.27%        0 new     250 zero         2.31 | 4.78         
+  9     250   69531   39219 x 114346      1.46%        0 new     250 zero         2.46 | 4.39         
+  9     250   69281   46765 x 135155      1.10%        0 new     250 zero         2.69 | 5.13         
+  9     250   69031   18204 x 48421       7.19%        0 new     250 zero         2.48 | 6.33         
+  9     250   68781   48082 x 137599      1.09%        0 new     250 zero         3.08 | 7.56         
+  9     250   68531   18930 x 50574       6.77%        0 new     250 zero         2.65 | 7.62         
+  9     250   68281   24526 x 683396      0.60%       97 new     153 zero         6.31 | 9.19         
+  9     250   70258    3681 x 239510      4.88%      250 new       0 zero         4.77 | 9.41         
+  9     250   77007    4151 x 239730      9.09%      250 new       0 zero         7.53 | 17.73        
+  9     251   84145   12267 x 946064      1.92%      251 new       0 zero        16.64 | 31.32        
+  9     251   91554    9131 x 387240      7.07%      251 new       0 zero        20.39 | 47.04        
+  9     251   99980

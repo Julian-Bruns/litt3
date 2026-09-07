@@ -1,0 +1,12 @@
+{
+  "verdict": "PASS",
+  "date": "2026-09-07",
+  "auditor": "/root/normalized_enumeration_certificate_audit",
+  "input_sha256": "c378d97ee11e2f1e306402a47a90cca586316734df3475d0099d3eabe2253f2a",
+  "parametrization_sha256": "85633b12efadad46e02563796fbe2b6c3bb316ec4746785bc22267b8402ef518",
+  "original_input_equations_verified": 43,
+  "degree": 19290,
+  "squarefree": true,
+  "separator_a9_is_z": true,
+  "elapsed_seconds": 13.440023333008867
+}

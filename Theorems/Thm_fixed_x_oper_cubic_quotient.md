@@ -29,6 +29,7 @@ cube roots of lambda for each point. These triples are DISTINCT solutions,
 not duplicates to discard.
 
 Status: author proof plus exact computations, not independently audited.
-This reduces the enumeration; it does not claim that it is completed or
-that a common cover has been excluded.
+This is the reduction used by the now-completed
+[oper census](Thm_fixed_x_oper_enumeration.md). Neither result excludes
+a common cover.
 [Proof](../Solutions/Sol_fixed_x_oper_cubic_quotient.md).

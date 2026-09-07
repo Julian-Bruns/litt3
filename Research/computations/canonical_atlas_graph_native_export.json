@@ -1,0 +1,160 @@
+{
+  "scope": "Exact Frobenius graph c=b^[5]: all97 original equations rewritten plus32 graph equations and24 diagonal certified cubic inverse-cup seeds.",
+  "source_sha256": {
+    "canonical_atlas_system": "bcc027f5e4c283d35f71bc0cdd58a404ee880a5f65b6df1685a62fa670339a06",
+    "wronskian_quadratic_bezout": "e6486cc21b99313c5660668526db10bf3e263247ae08c0e0c17c80e1c255ffa3",
+    "wronskian_serre_dual": "cc243ee0ee92ddc2269bff70ca29b8179b3191d9fe76ffcc0b3104474dd0de70"
+  },
+  "certificate_sha256": "d8437a3f53bc4cf22c60072714993eb8dda9df774e539844ed8752b038a802da",
+  "input": "Research/computations/canonical_atlas_graph_native.sing",
+  "input_sha256": "0639a0563341b544d48cec17095d38582e0ca596c775a9c9709d20e00360773d",
+  "input_bytes": 6398950,
+  "original_equation_count": 97,
+  "certified_seed_count": 24,
+  "equation_count": 153,
+  "variable_count": 96,
+  "max_total_degree": 5,
+  "seed_entries": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      9,
+      9
+    ],
+    [
+      10,
+      10
+    ],
+    [
+      11,
+      11
+    ],
+    [
+      12,
+      12
+    ],
+    [
+      13,
+      13
+    ],
+    [
+      14,
+      14
+    ],
+    [
+      15,
+      15
+    ],
+    [
+      16,
+      16
+    ],
+    [
+      17,
+      17
+    ],
+    [
+      18,
+      18
+    ],
+    [
+      19,
+      19
+    ],
+    [
+      20,
+      20
+    ],
+    [
+      21,
+      21
+    ],
+    [
+      22,
+      22
+    ],
+    [
+      23,
+      23
+    ]
+  ],
+  "seed_term_counts": [
+    5392,
+    9478,
+    12190,
+    13675,
+    5365,
+    13807,
+    9466,
+    13095,
+    12223,
+    12782,
+    13674,
+    5393,
+    12410,
+    13763,
+    9460,
+    11700,
+    13068,
+    12208,
+    10841,
+    12900,
+    13673,
+    10042,
+    12356,
+    13746
+  ],
+  "seed_total_terms": 272707,
+  "all_original_equations_reconstructed_and_match_prior_export": true,
+  "all_seed_original_generator_certificates_reconstructed_and_every_coefficient_verified": true,
+  "coefficient_identity_shape": [
+    24,
+    16896
+  ],
+  "elapsed_seconds": 4.649389291007537,
+  "graph_equation_count": 32,
+  "graph_substitution_all97_exact": true,
+  "independent_Singular_evaluation_all153_verified": true,
+  "evaluation_seed": 202609122,
+  "degrees": {
+    "original_graph_equations": 2,
+    "Frobenius_graph_equations": 5,
+    "diagonal_inverse_cup_seeds": 3
+  },
+  "diagonal_seed_identity": "(B Gamma(c)-I)_aa=sum d_ir U_i N_r(U,c)+(sum_i U_i(R_i(U,c)-b_i)+(U.b-2))/2",
+  "graph_equivalence": "Elimination of the monic relations c_i-b_i^5 recovers the97 originals exactly. No field equations on unknowns."
+}

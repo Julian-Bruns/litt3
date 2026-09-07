@@ -1,0 +1,189 @@
+{
+  "scope": "All97 original equations plus32 smallest-support certified inverse-cup consequences; no slices or field equations.",
+  "source_sha256": {
+    "canonical_atlas_system": "bcc027f5e4c283d35f71bc0cdd58a404ee880a5f65b6df1685a62fa670339a06",
+    "wronskian_quadratic_bezout": "e6486cc21b99313c5660668526db10bf3e263247ae08c0e0c17c80e1c255ffa3",
+    "wronskian_serre_dual": "cc243ee0ee92ddc2269bff70ca29b8179b3191d9fe76ffcc0b3104474dd0de70"
+  },
+  "certificate_sha256": "d8437a3f53bc4cf22c60072714993eb8dda9df774e539844ed8752b038a802da",
+  "input": "Research/computations/canonical_atlas_seeded_native.sing",
+  "input_sha256": "6956c5972a3ac3af67b9fc38bdd6e0cf0bce438d9fd79b5dfd0fa0a7397f1605",
+  "input_bytes": 4064687,
+  "original_equation_count": 97,
+  "certified_seed_count": 32,
+  "equation_count": 129,
+  "variable_count": 64,
+  "max_total_degree": 7,
+  "seed_entries": [
+    [
+      4,
+      21
+    ],
+    [
+      0,
+      21
+    ],
+    [
+      11,
+      21
+    ],
+    [
+      0,
+      18
+    ],
+    [
+      4,
+      18
+    ],
+    [
+      11,
+      18
+    ],
+    [
+      0,
+      15
+    ],
+    [
+      4,
+      15
+    ],
+    [
+      11,
+      15
+    ],
+    [
+      4,
+      22
+    ],
+    [
+      0,
+      12
+    ],
+    [
+      4,
+      12
+    ],
+    [
+      11,
+      22
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      0,
+      22
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      4,
+      19
+    ],
+    [
+      0,
+      19
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      11,
+      19
+    ],
+    [
+      11,
+      9
+    ],
+    [
+      4,
+      16
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      11,
+      7
+    ],
+    [
+      11,
+      16
+    ],
+    [
+      0,
+      16
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      11,
+      13
+    ],
+    [
+      0,
+      23
+    ],
+    [
+      11,
+      23
+    ],
+    [
+      0,
+      13
+    ]
+  ],
+  "seed_term_counts": [
+    3328,
+    3345,
+    3363,
+    3547,
+    3574,
+    3578,
+    3775,
+    3788,
+    3798,
+    3968,
+    3972,
+    4018,
+    4022,
+    4025,
+    4029,
+    4189,
+    4198,
+    4206,
+    4211,
+    4215,
+    4216,
+    4343,
+    4350,
+    4368,
+    4374,
+    4381,
+    4385,
+    4570,
+    4581,
+    4582,
+    4585,
+    4587
+  ],
+  "seed_total_terms": 130471,
+  "all_original_equations_reconstructed_and_match_prior_export": true,
+  "all_seed_original_generator_certificates_reconstructed_and_every_coefficient_verified": true,
+  "coefficient_identity_shape": [
+    32,
+    16896
+  ],
+  "elapsed_seconds": 3.525494209025055
+}

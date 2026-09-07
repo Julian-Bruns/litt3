@@ -1,0 +1,15 @@
+{
+  "format": "msolve-negative-tail-u8-v1",
+  "characteristic": 5,
+  "variables": 15,
+  "rows": 15845,
+  "columns": 19290,
+  "source_terms": 198818903,
+  "source_bytes": 4517491660,
+  "matrix_bytes": 305650050,
+  "coefficient_convention": "LM = sum(row[j] * standard[j]) modulo 5",
+  "monomial_encoding": "uint64 little endian; variable i exponent in bits 4*i through 4*i+3",
+  "standard_order": "strictly ascending graded reverse lexicographic",
+  "validated": ["monic leading terms", "ascending distinct leading monomials", "all tails in supplied standard list", "distinct tail terms", "tails less than leading term", "four-bit exponents", "declared polynomial count"],
+  "groebner_basis_certified": false
+}

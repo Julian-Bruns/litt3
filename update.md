@@ -1,39 +1,41 @@
-# Research update — 2026-09-06, 21:17 CEST
+# Research update — 2026-09-07, 10:37 CEST
 
 ## How close are we?
 
-The problem is still unsolved. Completing this calculation would finish
-a useful candidate list, not the proof. We would still have to exclude
-the corresponding covers, handle the remaining kinds of covers, and
-overcome a separate major gap for covers without a common quotient.
-There is no reliable percentage-to-proof or finishing estimate.
+The common-cover problem is still unsolved. The full candidate list is
+certified, but no whole candidate on our genus-nine curve has been ruled
+out. Two other branches also remain. There is no reliable finishing
+estimate or percentage-to-proof.
 
-## What changed
+## What changed this hour
 
-We proved exact rules for recognizing a complete calculation and for
-separating distinct answers from their repeated counts. These rules passed
-an independent audit. The55 known answers count eight times each, so they
-cannot account for the total29375 by themselves.
+The earlier positive examples have all passed their independent checks.
+I returned to the remaining candidate equations and proved more about
+how their intermediate families fit together. Passing the weaker test
+leaves a whole family of possibilities; it does not isolate a cover.
 
-We also found an explicit description of the differential equation and
-removed an exceptional case for a whole family of curves. This has not yet
-become a faster complete search. A12-variable trial made the equations much
-larger; it was not adopted. Its short mathematical record is preserved.
+I also proved how characteristic five can give a single possibility a
+large algebraic multiplicity in those weaker equations. This separates
+repeated equations from genuinely different solutions. The complete
+atlas test itself has no such multiplicities.
 
-A testing discrepancy was traced to Sage treating a zero rational function
-as nonzero. Corrected exact checks pass all125 examples; no earlier
-certificate was found affected.
+One hoped-for fifth-root shortcut failed an exact test. A different,
+quadratic matrix now describes the local obstruction and has been checked
+against the original equations. Its rank at all relevant points remains
+to be established; the checked point alone does not settle that.
 
-## Current strategy and pause
+## Current strategy
 
-The original optimized calculation is still running, now in degree8.
-Its pending pairs are checks between equations, not candidate answers.
-The live display remains available.
+Turn the new description into a smaller exact test that retains all valid
+possibilities, including exceptional points. Keep the actual positive
+examples as checks against overly broad claims. No new claim replaces
+the requirement for both covering maps from the same curve.
 
-As requested, active research is paused. A one-shot watcher waits without
-model calls and will notify you and resume this exact chat when the
-calculation ends. Its final result must then be checked before use.
+The large solver has not been restarted. I consolidated the new proof
+and its transversality calculation into one canonical theorem, keeping
+the exact computational checks separately.
 
-The [post-enumeration roadmap](Research/AFTER_ENUMERATION.md) explains
-precisely what still needs proving, for you and the next agent.
-Continue at [Research/STATE.md](Research/STATE.md).
+The completed list has28,990 distinct candidates, counting to29,375
+with multiplicity. [STATE.md](Research/STATE.md) records the exact next
+step; [the roadmap](Research/AFTER_ENUMERATION.md) retains every remaining
+branch and the limits of the current results.

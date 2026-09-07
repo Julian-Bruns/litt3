@@ -1,5 +1,5 @@
 {
-  "status": "running",
+  "status": "finished",
   "started_utc": "2026-09-06T17:27:38.882959+00:00",
   "supervisor_pid": 9989,
   "command": [
@@ -21,6 +21,12 @@
   ],
   "input_sha256": "c378d97ee11e2f1e306402a47a90cca586316734df3475d0099d3eabe2253f2a",
   "log": "/Users/julian/Documents/litt3/Research/computations/normalized_oper_solver.log",
-  "output": "/Users/julian/Documents/litt3/Research/computations/normalized_oper_msolve.gb",
-  "solver_pid": 9991
+  "output": "/Users/julian/Documents/litt3-computation-data/normalized_oper_msolve.gb",
+  "original_output": "/Users/julian/Documents/litt3/Research/computations/normalized_oper_msolve.gb",
+  "output_relocated_utc": "2026-09-07T00:15:23Z",
+  "relocation_reason": "User requested raw output outside repository after lossless compact extraction. Same filesystem inode19023124 and byte count4517491660 preserved.",
+  "solver_pid": 9991,
+  "ended_utc": "2026-09-06T23:47:42.029515+00:00",
+  "returncode": 0,
+  "output_bytes": 4517491660
 }
