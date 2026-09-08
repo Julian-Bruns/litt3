@@ -38,9 +38,9 @@
     },
     {
       "path": "routes/global/108_UNIT_ROOT_PACKETS_AND_NONGALOIS_P_RANK_BRIDGES.md",
-      "title": "Unit-root packets and non-Galois p-rank bridges",
-      "sha256": "1cc5ec130c6a78c69fd4518d8383404e3182a2cbf398144dd6b3aba76acfea9b",
-      "bytes": 10241,
+      "title": "Rational unit-root packets and Frobenius-group p-rank bridges",
+      "sha256": "af474be5dedf61104dbf394e96cb05bad4bed4350976b651ae7779b5affafdac",
+      "bytes": 7001,
       "classification": "legacy_unreviewed"
     },
     {
@@ -66,23 +66,16 @@
     },
     {
       "path": "routes/global/111_P_RANK_ONE_TANGO_DESCENT.md",
-      "title": "P-rank-one maximal Tango structures descend through etale p-groups",
-      "sha256": "3a281584104c0cb5577e80810aa0f63f4301d6c3c68ddcaa04bce08fd9c591cb",
-      "bytes": 13515,
+      "title": "Maximal Tango connections: counts, saturated lines and p-group descent",
+      "sha256": "da59b4d66404732b3e303a349f444ef1fb222103fbbf40cb8d8007dc98241499",
+      "bytes": 11752,
       "classification": "legacy_unreviewed"
     },
     {
       "path": "routes/global/112_P_RANK_ONE_NONGALOIS_FACTORIZATION.md",
-      "title": "P-rank amplification and rank-one non-Galois factorization",
-      "sha256": "fae2df0389dfe63b8e937a012d19b628288bd84f1e513b518470450bcc94df6b",
-      "bytes": 12929,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/113_GENERAL_NONGALOIS_P_RANK_AMPLIFICATION.md",
-      "title": "General non-Galois p-rank amplification",
-      "sha256": "e7ac8ee71165fd08053507d84509278ae11deebfc9875164395e8dcf15a59fae",
-      "bytes": 8711,
+      "title": "Non-Galois p-rank amplification and the p-monodromy factor",
+      "sha256": "6838cc1ada12d7778debdc12d195ef840c27650198e32cc0e8b40ab2a1a9f274",
+      "bytes": 10175,
       "classification": "legacy_unreviewed"
     },
     {
@@ -94,9 +87,9 @@
     },
     {
       "path": "routes/global/115_POSITIVE_RANK_PRESERVING_TANGO_DESCENT.md",
-      "title": "Maximal Tango descent without a Galois hypothesis",
-      "sha256": "117f19db128cec96338f16e7070b119f2f27d5b944979eb8615a698259b0dff6",
-      "bytes": 10922,
+      "title": "Rank-preserving Tango descent and the exact norm defect",
+      "sha256": "c838f8e6dec5ace23fdb83ed12909fc9feb091bace75e115490b7e5821389987",
+      "bytes": 8943,
       "classification": "legacy_unreviewed"
     },
     {
@@ -107,24 +100,10 @@
       "classification": "legacy_unreviewed"
     },
     {
-      "path": "routes/global/117_SATURATED_TANGO_LINES_AND_A_SHARPER_COUNT.md",
-      "title": "Saturated Tango lines and a sharper all-rank count",
-      "sha256": "5e5e51f770bbb513a63c99f666cba0a0d2b6097fb7e8cbf131dc8cb7b2766f43",
-      "bytes": 8106,
-      "classification": "legacy_unreviewed"
-    },
-    {
       "path": "routes/global/118_COMMON_TANGENT_SPACE_ORBIFOLD_FORMULA_AND_CORE_BOUNDARY.md",
       "title": "Common tangent spaces, tame orbifold quotients, and the core boundary",
       "sha256": "bc004e3fe4155599305ba47d584ba0d2a323a2a142bb2fd00b4ee158d9aba002",
       "bytes": 7351,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/119_QUADRATIC_TWIST_RANK_BRIDGE_FOR_TANGO_DESCENT.md",
-      "title": "A quadratic-twist rank bridge for testing unrestricted Tango descent",
-      "sha256": "e120802acb7a130477e4707fc5401a7e6d22f3e243eddcc05d32b218e37f87ee",
-      "bytes": 6771,
       "classification": "legacy_unreviewed"
     },
     {
@@ -136,9 +115,9 @@
     },
     {
       "path": "routes/global/120_TANGO_FIXED_STRUCTURES_UNDER_UNRAMIFIED_TWISTING.md",
-      "title": "Fixed Tango structures are unchanged by unramified quadratic twisting",
-      "sha256": "8c89f4f24ab9338127bd8288ba006e34500a319658d87d4d79e02ab83a211261",
-      "bytes": 5299,
+      "title": "Quadratic twists: fixed Tango structures and exact p-rank bridges",
+      "sha256": "d111e99790420ef68e7ed21d2b7d1377f1e417ffd43fe8ad995124ac6ee94dac",
+      "bytes": 5649,
       "classification": "legacy_unreviewed"
     },
     {
@@ -352,59 +331,45 @@
       "classification": "legacy_unreviewed"
     },
     {
-      "path": "routes/global/42_ROSATI_NORM_AND_POLARIZATION_LIMIT.md",
-      "title": "The Rosati norm in the seven-diamond and its polarization limit",
-      "sha256": "faae2a3216aedf37a4f1e63d74fb33306ce9156ec12f0d61ea39043c05fcd4d7",
-      "bytes": 12526,
-      "classification": "legacy_unreviewed"
-    },
-    {
       "path": "routes/global/43_PUSHING_THE_TANGO_LINE_TO_THE_FIXED_CURVE.md",
-      "title": "Pushing the Tango line to the fixed curve",
-      "sha256": "090718f648a0628a07428a5d1386e5be185bb8679d4f659fa2d9c32a4334d97a",
-      "bytes": 28219,
+      "title": "Tango pushdown: exact constraints and geometric escape models",
+      "sha256": "d6f4e4084ab74987c8f966aab77daacfe52a08fdf95ed108ca5563992ef13815",
+      "bytes": 14490,
       "classification": "legacy_unreviewed"
     },
     {
       "path": "routes/global/44_NORMED_HYPERELLIPTIC_BRANCH_PENCIL.md",
-      "title": "The normed hyperelliptic branch pencil in the seven-diamond",
-      "sha256": "0964c406ace2ec5eb52d6f4669c890c30a0b8cfceb0f751d3ab920dcca4a73f1",
-      "bytes": 11083,
+      "title": "Normed branch sections and the nonpencil theorem",
+      "sha256": "9fd185829f82a934867bc0e427d365bddc51d776278485cb1596c604a5d28338",
+      "bytes": 9399,
       "classification": "legacy_unreviewed"
     },
     {
       "path": "routes/global/45_EFFECTIVE_CORRESPONDENCE_AND_CONDUCTOR_FORMULAS.md",
-      "title": "Effective correspondences in the seven-diamond",
-      "sha256": "8b66d7bccdec5279659e3b3969c813e28a305eb6df6edd79c44e5611056bd4bc",
-      "bytes": 14414,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/46_NORM_PENCIL_CANNOT_BE_A_PENCIL.md",
-      "title": "The norm-polynomial system cannot be a pencil",
-      "sha256": "bfe0de9b886bf28bc78254848799e9b6c96ce291a73cb8bd38abeed9e802a7ac",
-      "bytes": 11556,
+      "title": "Actual effectivity versus Rosati and polarization compatibility",
+      "sha256": "23d711d1f707c0a69fb9e726a42828e44cf89cbba8ee63705f2b441dd93633c5",
+      "bytes": 12076,
       "classification": "legacy_unreviewed"
     },
     {
       "path": "routes/global/47_COEFFICIENT_FIELD_COARSENING.md",
-      "title": "Coarsening through the norm-coefficient curve",
-      "sha256": "b671f8d0f4a296ea2ccb3d35538c29888dfbc51961919ceeb02f6b4bbe530ce1",
-      "bytes": 11062,
+      "title": "Coefficient-field coarsening and the four degree-fourteen profiles",
+      "sha256": "e4a3ee7eebab352d1af1c870cd20214dfb9df4147f67fffcf166de0448546d92",
+      "bytes": 7282,
       "classification": "legacy_unreviewed"
     },
     {
       "path": "routes/global/48_M9_CROSS_CORRESPONDENCE_RANK_OBSTRUCTION.md",
       "title": "Cross-correspondence and Gram-rank restrictions at \\(M=9\\)",
-      "sha256": "12e5accbf836c2a35b114a51bd672b06af426626edce31342f9058e4f5203134",
-      "bytes": 11087,
+      "sha256": "16ae57ad9220420c3506003e6f84a7ccb0777604f637c85823c0e34670948197",
+      "bytes": 11844,
       "classification": "legacy_unreviewed"
     },
     {
       "path": "routes/global/49_FROBENIUS_GRAPH_TRACE_LATTICE.md",
-      "title": "Frobenius-graph tests and the trace lattice at \\(M=9\\)",
-      "sha256": "fc874baf39aeae93450434350c75fd5536d5e876c180b0c6deeaaa2422986ed5",
-      "bytes": 18380,
+      "title": "Frobenius trace frames and the exact ramified endomorphism order",
+      "sha256": "65c9019a5e982dbe59c2625547fc1e59d05b8c9713332ff925f569e4e80197b5",
+      "bytes": 12326,
       "classification": "legacy_unreviewed"
     },
     {
@@ -429,31 +394,10 @@
       "classification": "legacy_unreviewed"
     },
     {
-      "path": "routes/global/53_M9_GENUS_ONE_COARSENING_IS_HYPERELLIPTIC.md",
-      "title": "The genus-one full-span coarsening is hyperelliptic",
-      "sha256": "bb73dc14ca39e0dc2c3e1c33b9033e85b1f963a7f1cd22063296f52e6fc009d5",
-      "bytes": 8290,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/54_EXACT_31_ADIC_ENDOMORPHISM_ORDER.md",
-      "title": "The exact endomorphism order at \\(31\\)",
-      "sha256": "8ca96eec139856b2916fd5113939dd55bfdd12f9f028dbbac29b58d1fb6839ef",
-      "bytes": 7083,
-      "classification": "legacy_unreviewed"
-    },
-    {
       "path": "routes/global/55_SQUARE_LABEL_COLLISIONS_AND_SPECTRAL_CONDUCTOR.md",
-      "title": "Square-label collisions and the spectral conductor budget",
-      "sha256": "9ceea015b29d71c554dca74237cb48a77e9d4022d3a7f5b19799871e5f5d80fb",
-      "bytes": 11700,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/56_M9_GENUS_TWO_COARSENING_SPECTRUM.md",
-      "title": "The genus-two full-span coarsening has a finite involution spectrum",
-      "sha256": "94ddc56c134f5d0a306cf52fd9041496feec486b7c52ed5edea88c5944e6842c",
-      "bytes": 9156,
+      "title": "Power-label coarsening and the spectral conductor",
+      "sha256": "ba11eaa2a2b1c6fb09afa22e2d5c6848c3715be89f319769a1311608dc2ced24",
+      "bytes": 7998,
       "classification": "legacy_unreviewed"
     },
     {
@@ -472,30 +416,23 @@
     },
     {
       "path": "routes/global/58_X_CENTRAL_GLUE_CONGRUENCES.md",
-      "title": "Central gluing congruences for the three elliptic factors of `J(X)`",
-      "sha256": "e89b4c5e329b22d991be614ef2f2f676551e083209b7699a056af5dcc253326e",
-      "bytes": 12310,
+      "title": "Integral gluing, hyperelliptic descent and the residual Prym",
+      "sha256": "88e0465d58bf6817fe053d89cb0f9fb8729c123a6ff3a7cf0324127d8356a5a1",
+      "bytes": 15189,
       "classification": "legacy_unreviewed"
     },
     {
       "path": "routes/global/59_C14_ELLIPTIC_LABEL_RIGIDITY.md",
       "title": "Label rigidity in the cyclic genus-one coarsening",
-      "sha256": "a33a64647add5cd03c97533c7103dba4cb96db8b23d15a580d2cc0232c7d926f",
-      "bytes": 19130,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/60_ANTI_INVARIANT_PRYM_DECOMPOSITION.md",
-      "title": "The anti-invariant Prym decomposition at `M=9`",
-      "sha256": "1f8eed8dff784c1efe89e50a143bd9e3a7578dc7c15012e3b37c2b373e5ef4b6",
-      "bytes": 11229,
+      "sha256": "653166e71c8dcb9f04947461b72d2891f6b0637ce4c53d0afc73cf50fa19dcb1",
+      "bytes": 19263,
       "classification": "legacy_unreviewed"
     },
     {
       "path": "routes/global/61_D14_GENUS_ONE_ROW_IMPOSSIBLE.md",
       "title": "The dihedral genus-one coarsening is impossible",
-      "sha256": "62dcf6c6410fb0842953b6c906bf3211008ec94730b0d4b0c2d1f392e2e48fd6",
-      "bytes": 10573,
+      "sha256": "f8b179956ccc2aac37d82c81f7289dd1cca3d41a510206dcd64bae7e6a21b4e9",
+      "bytes": 10785,
       "classification": "legacy_unreviewed"
     },
     {
@@ -508,8 +445,8 @@
     {
       "path": "routes/global/65_GENUS_TWO_REDESIGN_FULL_SPAN_ENDPOINT.md",
       "title": "The genus-two redesign and its full-span endpoint",
-      "sha256": "c00b0b0431993ccf31384aa3f33068e396ea6c671aa67acf0445669642cad290",
-      "bytes": 15658,
+      "sha256": "73dd9534a3d67a4d19198cbad6b6a52547b5ceca2460b505514a45476fcd1e64",
+      "bytes": 15771,
       "classification": "legacy_unreviewed"
     },
     {
@@ -522,15 +459,15 @@
     {
       "path": "routes/global/67_CUBIC_CROSS_ROSATI_GAP.md",
       "title": "The global Rosati gap for cubic cross correspondences",
-      "sha256": "90d5158d793e534e700c93bae1b84bdb16f722a764e0feb77f3bf0c7eb6750c5",
-      "bytes": 11974,
+      "sha256": "8ab2370dc0ed3ef6bf818a38a0947c64b4cb366e9c69d9cb3a8b2685444e7868",
+      "bytes": 12223,
       "classification": "legacy_unreviewed"
     },
     {
       "path": "routes/global/67_GENERAL_DOUBLE_COEFFICIENT_COARSENING.md",
       "title": "Quadratic coefficient coarsening: compression and parity",
-      "sha256": "ab03d2348afad12d2d3d0c77535661d466c4f72fddb88c3c171cd436bd81752f",
-      "bytes": 9769,
+      "sha256": "1dc7881727106cdce55a8580d4c4295454607a6b15d3335513aa9a9485149135",
+      "bytes": 9856,
       "classification": "legacy_unreviewed"
     },
     {
@@ -542,9 +479,9 @@
     },
     {
       "path": "routes/global/69_PARAMETERIZED_CYCLIC_HYPERELLIPTIC_HONDA_SIEVE.md",
-      "title": "A parameterized cyclic-hyperelliptic Honda sieve",
-      "sha256": "8b5ea12b183ceed808335d5c023ac82738004c2bde524af4c89ef63a9357f721",
-      "bytes": 21413,
+      "title": "Cyclic-hyperelliptic Honda and full-order correspondence sieve",
+      "sha256": "b880f928935ed1dd198c5afaae1e315406713c98fb09919a72095d9b940c157e",
+      "bytes": 13612,
       "classification": "legacy_unreviewed"
     },
     {
@@ -556,23 +493,9 @@
     },
     {
       "path": "routes/global/71_SCALAR_COMPRESSION_AT_THE_FIRST_DIAMOND_DEGREE.md",
-      "title": "Scalar compression at the first admissible diamond degree",
-      "sha256": "47e07f4ae285e4435cfd30e2a9af5da66882bf86f77e1fb01186ced21266ef32",
-      "bytes": 9023,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/72_DEGREE19_REDESIGN_FULL_SPAN.md",
-      "title": "The degree-19 redesign and its full-span obstruction",
-      "sha256": "d87493a076bbc242fcf2a8674a53066d709bd65c289047dcf7fb9e8fb731737d",
-      "bytes": 10418,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/73_DEFECT_FREE_ENDPOINT_FORCES_A_PENCIL.md",
-      "title": "A defect-free coefficient endpoint forces a pencil",
-      "sha256": "5d4d88304c1ac9f2a0a7adee4f800b90eee42feaf314627a61c3b80608e6808c",
-      "bytes": 6356,
+      "title": "Scalar compression and the degree-19 endpoint example",
+      "sha256": "ef9d60ab7bfe468da526bd7f3eccd4453e1125a53f6e6a494e844530b83e22cf",
+      "bytes": 10327,
       "classification": "legacy_unreviewed"
     },
     {
@@ -584,23 +507,16 @@
     },
     {
       "path": "routes/global/75_ORTHOGONAL_COMPLEMENT_DIVISOR_SIEVE.md",
-      "title": "The orthogonal-complement divisor sieve",
-      "sha256": "3a0d1ecd614aa725256c9e6f8bfea4317cd60a12085c086733e09869e23b7406",
-      "bytes": 7381,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/77_M9_BIRATIONAL_PUSHED_INCIDENCE_AND_SPLITTING.md",
-      "title": "The pushed incidence curve and the exact genus-three splitting type",
-      "sha256": "c39f1f5512bf83835b73279b2f1828d3367c6d8b30442596aafa5d1b4ecbe021",
-      "bytes": 24174,
+      "title": "Gonality, orthogonal images and the actual full-orbit endpoint",
+      "sha256": "5eb81f42fe7d32f5c0b152846021e482dbbf05db1470dbf0b2d0ba220e67ebb5",
+      "bytes": 7711,
       "classification": "legacy_unreviewed"
     },
     {
       "path": "routes/global/78_M6_PLANE_CONTACT_AND_SPECTRAL_DISCRIMINANT.md",
       "title": "The degree-six plane contact budget and discriminant double plane",
-      "sha256": "810c1b1e78398c37f9197b114cada8872b5afa58e36c412d66da5339473a92e9",
-      "bytes": 23401,
+      "sha256": "5cc23078e12f3b48544aca06a4e6905c72259b42f6995776aff9e829ec4a76f9",
+      "bytes": 24206,
       "classification": "legacy_unreviewed"
     },
     {
@@ -1290,52 +1206,17 @@
       "classification": "legacy_unreviewed"
     },
     {
-      "path": "routes/global/HOSHI_GENUS2_UNRAMIFIED_PRYM_FILTER.md",
-      "title": "The fifteen-class elliptic-Prym filter for the explicit genus-two quotient",
-      "sha256": "c97c8de72a30a6b129969fe9bd8fe597d6622d7d9fd4fb5c3bfd7a65618d0020",
-      "bytes": 2544,
-      "classification": "legacy_unreviewed"
-    },
-    {
       "path": "routes/global/HOSHI_GENUS6_EXACT_TANGO_COUNT.md",
-      "title": "A genus-six curve with exactly ten maximal Tango structures in characteristic five",
-      "sha256": "9e817864a9cd318d339896f749081d816790ec4873dc8300f1e17d5b19ec8f9e",
-      "bytes": 7557,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/HOSHI_GENUS6_F5_KUMMER_P_RANK.md",
-      "title": "Hoshi's genus-six Kummer construction over F5: exact p-rank four",
-      "sha256": "522a00b7bb53085d38bf884fd86f13a936037965dfc5092d7c95e541e28e24fe",
-      "bytes": 2355,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/HOSHI_GENUS6_GENUS2_QUOTIENT_MODEL.md",
-      "title": "Explicit genus-two quotient and quadratic presentation of the Hoshi curve",
-      "sha256": "5d7c43bda4e2aa2538ad467ef2043f8045b86e38e0ded24bd39a5741c911cf38",
-      "bytes": 3879,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/HOSHI_GENUS6_REFLECTION_AND_TWIST_BOUNDARY.md",
-      "title": "Reflections of the ten-Tango genus-six curve and an étale twist boundary",
-      "sha256": "846c1286d5899f020745bebc1ab542eb3b929fbbb2c5800844bce67100ddecd5",
-      "bytes": 6270,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/HOSHI_GENUS6_SINGLE_TWIST_P_RANK.md",
-      "title": "The surviving genus-six twist has p-rank five: a negative finite-packet result",
-      "sha256": "de2ab8a58618373121bcb6f28bbb81e7b558e2bd87b0cc82cb294d55a43aea74",
-      "bytes": 6045,
+      "title": "The ten-Tango Hoshi curve: exact count, symmetries and quotient",
+      "sha256": "012588f0112c03f1efb5ef4ed8a48bb4ddf664b2a9329e3a84ec6990dcc1da81",
+      "bytes": 9142,
       "classification": "legacy_unreviewed"
     },
     {
       "path": "routes/global/HOSHI_GENUS6_TWIST_WITH_NO_MAXIMAL_TANGO.md",
-      "title": "An explicit failure of unrestricted étale descent for maximal Tango structures",
-      "sha256": "8c0b2db620f25ce92a1089aa9482e7ebf53ba0f0f3f3bf6479c241dcaed35dfc",
-      "bytes": 9785,
+      "title": "A projective etale cover acquires Tango: the complete Hoshi twist certificate",
+      "sha256": "dae4c2ae72e8181f086a54e43bc400d8f7f79ca88363d44eca9d730c01ec2b27",
+      "bytes": 10887,
       "classification": "legacy_unreviewed"
     },
     {
@@ -1372,13 +1253,6 @@
       "sha256": "d48b84082de17059c48abc98c2cb6db0e54b8c78a7e3553d7e244aac809bb2da",
       "bytes": 39631,
       "classification": "audit_reference_only"
-    },
-    {
-      "path": "routes/global/LOCAL_MAXIMAL_TANGO_CONNECTION_EQUATION_CHAR5.md",
-      "title": "The local connection equation for maximal Tango structures in characteristic five",
-      "sha256": "b91a8e592849e635c97710a57d306c1f86ed1a833ff05301ec30afc1fc02f8b6",
-      "bytes": 8004,
-      "classification": "legacy_unreviewed"
     },
     {
       "path": "routes/global/MINIMAL_BIETALE_CORRESPONDENCES_SPECIALIZATION.md",
@@ -1529,9 +1403,9 @@
     },
     {
       "path": "routes/global/PARAMETERIZED_PUSHED_INCIDENCE_DICHOTOMY.md",
-      "title": "The parameterized pushed-incidence dichotomy",
-      "sha256": "1b407fc6d61264c1c251cd7a4d06f9023a4e8c93d326a8f6044cc642c07fcd99",
-      "bytes": 15583,
+      "title": "Parameterized incidence and hyperelliptic pushdown splitting",
+      "sha256": "5134dd72be11e26f6d6b37432dd1e4e07b6b810e29ede5d208df188f649e73bc",
+      "bytes": 14360,
       "classification": "legacy_unreviewed"
     },
     {
@@ -1621,8 +1495,8 @@
     {
       "path": "routes/global/RATIONAL_FACTOR_PROFILE_SHARPNESS.md",
       "title": "Rational-factor profiles are orbifold profiles, and the two residual profiles are sharp",
-      "sha256": "e11259701514710433e0596ac2fdffae299d98153a573ea39737b9680e0ebd2f",
-      "bytes": 9603,
+      "sha256": "2eae54ace38f69a9b90eebebd74b064395ccee01c2fb2cb9942967500b904ee7",
+      "bytes": 9675,
       "classification": "legacy_unreviewed"
     },
     {
@@ -1749,13 +1623,6 @@
       "title": "Degree-four regularization of shared Cartier-zero equations",
       "sha256": "bfc1772875eed8ee18db6c9ed9d0cf228d7b64f251cf8447ed16f6280494a375",
       "bytes": 5078,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/TANGO_NORM_DEFECT_AND_CONNECTED_AFFINE_COUNTEREXAMPLE.md",
-      "title": "Normalized norm connections: descent under equal p-rank, and the Tango defect",
-      "sha256": "523c3730926f7da5db33328e86251f6509b850b066525946f9d1a7b5e9b92af7",
-      "bytes": 7757,
       "classification": "legacy_unreviewed"
     },
     {

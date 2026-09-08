@@ -1,7 +1,8 @@
 # Proof: localizing the shared ring leaves only a point or a line
 
 [Statement](../Theorems/Thm_coreless_connection_spectrum.md).
-Author /root,2026-09-07; no independent audit yet.
+Author /root,2026-09-07; version2,2026-09-08. No independent audit of
+the whole statement; the retained Igusa construction has its own scoped audit.
 
 ## 1. The curvature quantities used
 
@@ -122,3 +123,54 @@ It does not prove existence of a common regular connection in the
 no-generator case, nor identify compatible endpoint opers in the other
 cases. Ordinary-indigenous lifting hypotheses concern a larger tangent
 space on the source; they do not follow from these intersection lengths.
+
+## 6. Weight one and a genuine empty-connection family
+
+Let alpha=f*alpha_X=g*alpha_Y be a nonzero common one-form in an actual
+coreless span. In a separating coordinate write alpha=a dt and put
+
+    r_alpha=-a''/(2a)+3(a'/a)^2/4.
+
+The projective coordinate rule makes this an intrinsic rational connection,
+as in Section2. It is shared because its formula commutes with the actual
+etale maps. For ANY shared rational connection r,
+(r-r_alpha)/alpha^2 belongs to both endpoint function fields. Corelessness
+makes it constant. Hence the ENTIRE common rational-connection space is
+
+    r_alpha+k alpha^2.                                      (3)
+
+In particular no other rational connection can cancel a pole of r_alpha
+while being regular at both endpoints: alpha^2 is already regular.
+
+At a zero write a=t^e u, with u a unit, and b=u'/u. Then
+
+    r_alpha=e(e+2)/(4t^2)+e*b/(2t)-b'/2+b^2/4.             (4)
+
+Cartier carries the shared one-dimensional space to itself, so after
+rescaling C(alpha)=epsilon alpha, epsilon=0 or1. If e=0mod5, (4) is
+regular. If e=3mod5, write e=5m+3. The coefficient u_1 of t^(e+1)
+in alpha contributes u_1^(1/5)t^m dt to C(alpha). Since m<e, the
+Cartier eigenrelation forces u_1=0. Thus b(0)=0 and (4) is regular.
+For all other e modulo5 its double-pole coefficient is nonzero.
+This proves the same regularity criterion for d=1, including the possible
+simple pole, rather than merely checking the double-pole coefficient.
+
+Put q=alpha^2. In characteristic5, r_alpha=q''/q. Cartier's product
+rule gives C_1(q^3)=epsilon q. Consequently Section4 applies verbatim
+with q in place of s, proving the exact dormant/nilpotent algebras in
+the statement. No claim that q is primitive is needed for that calculation.
+
+Now use the already constructed
+[genus-seventeen partial Igusa family](../routes/global/UNBOUNDED_DOUBLE_ZERO_HECKE_LEAVES_ON_A_FIXED_GENUS17_CURVE.md),
+audited relative to its retained quaternionic Igusa input. Its fixed
+curve P has a Cartier-fixed alpha with div(alpha)=2D, D reduced, and
+jointly minimal coreless etale spans of degrees12*11^(n-1), n>=1,
+preserving alpha through BOTH maps. At every zero, (4) has double-pole
+coefficient2 in F5. Equation(3) therefore contains no regular connection.
+
+This is an explicit counterexample to universal existence of a shared
+regular projective connection in positive characteristic, even with a
+nonempty clump, fixed endpoints, and unbounded actual etale degrees.
+It is not a counterexample to Litt, and its endpoints need not have
+the fixed pair's absolute simplicity or Hom-zero condition. Those
+extra endpoint hypotheses would have to enter any proposed repair.

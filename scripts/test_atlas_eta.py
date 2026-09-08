@@ -126,5 +126,29 @@ class EtaTests(unittest.TestCase):
             self.assertGreater(report['estimated_work_percent'],0)
             self.assertGreater(report['eta_seconds'],0)
 
+    def test_memory_limited_attempt_waves(self):
+        self.assertEqual(eta.bounded_parallel_time([1]*10,10,10,305),305)
+        self.assertEqual(eta.bounded_parallel_time([3]*10,10,10,305),1220)
+        self.assertEqual(eta.bounded_parallel_time([],10,10,305),0)
+
+    def test_native_batch_reports_phases_without_counting_timeouts_as_certificates(self):
+        with tempfile.TemporaryDirectory() as td:
+            state=self.fixture(td);out=Path(td)/'native';out.mkdir()
+            chart=out/'chart-21';chart.mkdir()
+            (chart/'events.jsonl').write_text(json.dumps(dict(stage='exact_affine_preconditioning',seconds=20))+'\n')
+            (out/'telemetry.jsonl').write_text(json.dumps(dict(cpu_percent=887,rss_bytes=12345))+'\n')
+            (out/'batch.json').write_text(json.dumps(dict(status='running',updated_epoch=99,
+                active={'21':dict(pid=42,phase='solve',elapsed_seconds=20)},
+                charts={'20':dict(status='bounded_native_slice_incomplete',reason='time_limit')})))
+            state['active']=dict(rep='orbit_0000',stage='native_original_solving',started=0,
+                command=['batch','--output',str(out),'--charts','21','20','--seconds','300','--rss-gib','8'])
+            report=eta.forecast(state,now=100)
+            self.assertEqual(report['charts_certified'],31)
+            self.assertEqual(report['active']['done'],1)
+            self.assertEqual(report['active']['sampled_cpu_percent'],887)
+            self.assertEqual(report['active']['live_charts'][0]['stage'],'exact_affine_preconditioning')
+            self.assertIn('NOT a completion forecast',eta.render(report))
+            self.assertIn('Legacy F4 fallback scenario',eta.render(report))
+
 
 if __name__=='__main__':unittest.main()

@@ -27,7 +27,7 @@ of degree TWO, with involution delta. Put
     [K:F]=[E:k(B)]=7, [K:E]=[F:k(B)]=2, [E:k(t)]=M.
 
 No additional hypothesis on3<=w<=8 or on M is implicit. The fixed-X
-arithmetic input from [53](53_M9_GENUS_ONE_COARSENING_IS_HYPERELLIPTIC.md) is
+arithmetic input from [the integral-gluing proof](58_X_CENTRAL_GLUE_CONGRUENCES.md#1-integral-scalars-on-the-fixed-genus-three-jacobian) is
 
     End^0(JX)=Q(sqrt(-11)) x Q(sqrt(-19)) x Q(i),
     its Rosati-fixed algebra is Q^3,  Aut(X)={1,iota_X}.
@@ -224,9 +224,9 @@ therefore lie in the same Delta_xi, of size at most M. But
 
 The preceding results retain their full all-w scope. At M=9, case A is
 impossible and the direct Prym inequality gives b<=4. Theorems67.1,67.4
-exclude b=0,3,4. For b=2, the local arguments in files56,58,60 use full
-coefficient span only to PRODUCE the quadratic quotient; once e=2,b=2
-are assumed, they force c delta=iota_X c. Then the orthogonal
+exclude b=0,3,4. For b=2, the [gluing and Prym proof](58_X_CENTRAL_GLUE_CONGRUENCES.md)
+uses full coefficient span only to PRODUCE the quadratic quotient;
+once e=2,b=2 are assumed, it forces c delta=iota_X c. Then the orthogonal
 15-dimensional h(JY) and3-dimensional c^*JX cannot fit inside the
 17-dimensional Prym. This is a combined consequence, not a replacement
 proof of those local inputs.

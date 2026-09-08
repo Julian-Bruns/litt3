@@ -1,0 +1,34 @@
+{
+  "updated_local": "2026-09-08 04:15 CEST",
+  "status": "all405 systems empty; geometric atlas bridge independently audited PASS",
+  "whole_empty_representatives": [
+    -1,
+    0,
+    1,
+    2,
+    3
+  ],
+  "covered_oper_twist_pairs": 405,
+  "total_oper_twist_pairs": 405,
+  "accepted_chart_identities": 20,
+  "original_expanded_receipt": "Research/computations/backup_genus_two_atlas_verification.json",
+  "additional_factored_receipts": [
+    "Research/computations/backup_genus_two_factored_replay_twist1.json",
+    "Research/computations/backup_genus_two_factored_replay_twist2.json",
+    "Research/computations/backup_genus_two_factored_replay_twist3.json"
+  ],
+  "remaining_chart0_representatives": [],
+  "cored_or_coreless_exclusion": false,
+  "resource_policy": "one CPU core total; no agents",
+  "audit": "Research/audits/BACKUP_ATLAS_BRIDGE_AUDIT_2026_09_08.md",
+  "canonical_theorem": "backup_hermitian_atlas_exclusion",
+  "cored_profiles": {
+    "tame_excluded": 15,
+    "tame_total": 24,
+    "small_wild_excluded": 9,
+    "small_wild_total": 12,
+    "large_excluded": 2,
+    "large_total": 2,
+    "scope": "Earlier signature exclusions author prose; new atlas bridge independently audited. Original common-cover problem unsolved."
+  }
+}

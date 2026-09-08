@@ -2,7 +2,7 @@
 
 Run with sage -python. No extension-field matrix backend is used.
 The geometric basis justification is the same divisor calculation as in
-HOSHI_GENUS6_SINGLE_TWIST_P_RANK.md, with q any pair of branch roots.
+HOSHI_GENUS6_TWIST_WITH_NO_MAXIMAL_TANGO.md, Section 2, for any root pair q.
 The reusable twist_data(q) returns the four anti-invariant holomorphic
 basis pairs, their Cartier matrix, and four semilinear-image ranks.
 """

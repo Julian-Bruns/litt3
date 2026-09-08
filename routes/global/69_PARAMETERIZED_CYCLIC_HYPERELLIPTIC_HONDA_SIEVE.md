@@ -1,730 +1,300 @@
-# A parameterized cyclic-hyperelliptic Honda sieve
+# Cyclic-hyperelliptic Honda and full-order correspondence sieve
 
-## Status and scope
+Version 2, 2026-09-08. The original claims were audited PASS by
+/root/genus2_counterexample_variant, 2026-09-04, with no breaking objection:
+[audit metadata](audits/69_72_PARAMETERIZED_HONDA_AND_DEGREE19_AUDIT.md).
+This replaces the stale “audit pending” header. The common arguments
+are shortened; the wider multiplicity corollary in Section 2 is explicitly
+AUTHOR-ONLY. No new independent whole-note audit is claimed.
 
-**Status: proved.**  Independent audit pending.
+Work over k=Fbar_p, p odd. The arithmetic screen concerns
+Y_ell:z²=1−t^ell for an odd PRIME ell≠p, with h=(ell−1)/2 and
+J=Jac(Y_ell). Composite exponents require factor-by-factor arguments;
+no screen here discards their old factors. The geometric statements
+always retain BOTH actual finite etale maps from the SAME source.
 
-This note supplies the arithmetic complement to file 68.  That file proves
-the universal prime-ratio diamond, the lower bound $M\ge r+2$, and the
-all-degree coefficient/core sieve.  Here we identify the extra information
-available when the hyperelliptic curve is the cyclic curve
-$Y_\ell:z^2=1-t^\ell$, and separate it from the numerical choices
+## 1. Proposition 69.1: finite Honda screen and absolute simplicity
+
+Put G=(Z/ell)^×, H=〈p〉, f=|H|=ord_ell(p), K=Q(ζ_ell),
+E=K^H, and Φ={1,…,h}. For aH∈G/H let m(aH)=|aH∩Φ|.
+Assume
 
 \[
-                 (p,\ell,r,g)=(5,31,7,3).
+ \operatorname{Stab}_{G/H}(m)=1,\qquad
+ \operatorname{lcm}_{aH}\frac{f}{\gcd(f,m(aH))}=f,       \tag{1}
 \]
 
-Here $p$ is the characteristic, $\ell$ is the exponent in the cyclic
-hyperelliptic curve, $r$ is the order of the quotient in the diamond, and
-$g$ is the genus of the other curve.  The new conclusions are:
-
-1. the Honda algebra and absolute simplicity are decided by a finite coset
-   count attached to $(p,\ell)$;
-2. the primitive orbit multiplicity is controlled by
-   $\operatorname{ord}_\ell(p)$ and $r-1$;
-3. all Rosati, coincidence, image, and conductor formulas admit uniform
-   versions; and
-4. a finite-difference test followed by explicit ideal-
-   lattice minima gives an exact algorithm for excluding small odd cross
-   correspondences in the *full* geometric endomorphism order.
-
-For composite exponents the Jacobian normally has old factors, so the
-Honda and lattice statements must be replaced by factor-by-factor versions.
-
-Throughout, $k=\overline{\mathbf F}_p$, where $p$ is odd.
-
-## 1. A checkable absolute-simplicity criterion
-
-Let $\ell\ne p$ be an odd prime, put
-
-\[
- Y_\ell:\ z^2=1-t^\ell,
- \qquad h=g(Y_\ell)=\frac{\ell-1}{2},
- \qquad J_\ell=\operatorname{Jac}(Y_\ell),              \tag{69.1}
-\]
-
-and write
-
-\[
- G=(\mathbf Z/\ell\mathbf Z)^\times,
- \qquad H=\langle p\rangle\le G,
- \qquad f=|H|=\operatorname{ord}_\ell(p),               \tag{69.2}
-\]
-
-\[
- K=\mathbf Q(\zeta_\ell),
- \qquad E=K^H,
- \qquad \Phi=\{1,2,\ldots,h\}\subset G.                \tag{69.3}
-\]
-
-For a coset $aH\in G/H$, define
-
-\[
-                         m(aH)=|aH\cap\Phi|.             \tag{69.4}
-\]
-
-### Proposition 69.1 (Honda screen)
-
-Assume that:
-
-1. the function $m:G/H\to\{0,\ldots,f\}$ has trivial stabilizer under
-   translation by $G/H$; and
-2. the least common multiple of
-   \[
-       \frac{f}{\gcd(f,m(aH))}\qquad(aH\in G/H),         \tag{69.5}
-   \]
-   with the value $1$ used when $m(aH)=0$, is $f$.
-
-Then $J_\ell$ is absolutely simple.  Its geometric rational endomorphism
-algebra
-
-\[
-                  \mathscr D=\operatorname{End}^0_k(J_\ell)
-\]
-
-is a central division algebra of degree $f$ over $E$, and $K$ is a maximal
-commutative subfield.  If $F$ denotes $p$-power Frobenius, then
-
-\[
- FxF^{-1}=\sigma(x),\qquad \sigma(\zeta_\ell)=\zeta_\ell^p,
- \qquad F^f=\pi\in E,                                   \tag{69.6}
-\]
-
-and
-
-\[
-                \mathscr D=\bigoplus_{s=0}^{f-1}KF^s.   \tag{69.7}
-\]
-
-#### Proof
-
-The automorphism $t\mapsto\zeta_\ell t$ embeds $K$ in
-$\operatorname{End}^0(J_\ell)$.  Its eigencharacters on regular
-differentials
-
-\[
-                         t^{i-1}\frac{dt}{z},
-                         \qquad1\le i\le h,
-\]
-
-give the CM type $\Phi$.  The Shimura--Taniyama slope formula says that,
-at the prime represented by $aH$, the slope is
-
-\[
-                            \frac{m(aH)}{f}.             \tag{69.8}
-\]
-
-Conjugation by $F$ induces $\sigma$ on $K$.  Hence $F^f$ centralizes $K$.
-The $K$-action has rank one on prime-to-$p$ rational Tate modules, so its
-centralizer is $K$; therefore $\pi=F^f\in K$.  Since $F$ fixes $F^f$ by
-conjugation, $\pi\in E$.
-
-The prime $p$ splits completely in $E$ and is unramified of residue degree
-$f$ in $K/E$.  The local Honda invariants are thus the fractions (69.8)
-modulo one.  Assumption 2 says that their least common denominator, hence
-the Schur index of the associated simple isogeny class, is $f$.
-
-If an automorphism of $E/\mathbf Q$ fixed $\pi^N$ for some $N\ge1$, it
-would preserve the valuations of its principal ideal at all primes above
-$p$.  Those valuations are $N m(aH)$, so Assumption 1 forces the
-automorphism to be trivial.  Consequently
-
-\[
-                         \mathbf Q(\pi^N)=E
-                         \qquad(N\ge1).                  \tag{69.9}
-\]
-
-The simple Honda factor attached to $\pi$ has dimension
-
-\[
-             \frac12[E:\mathbf Q]f
-                =\frac{\ell-1}{2}=h.                    \tag{69.10}
-\]
-
-It therefore accounts for all of $J_\ell$.  Equation (69.9), together
-with the unchanged normalized local invariants after finite constant-field
-extension, shows that this factor stays simple over every finite extension.
-Thus $J_\ell$ is absolutely simple and its geometric division algebra has
-degree $f$ over $E$.  Dimension now makes $K/E$ a maximal subfield and
-gives (69.7). \(\square\)
-
-### Remark 69.2
-
-Both hypotheses are finite combinatorics on subsets of
-$(\mathbf Z/\ell\mathbf Z)^\times$.  If every value strictly between $0$
-and $f$ is coprime to $f$, then Assumption 2 follows as soon as one such
-value occurs.  The stronger condition
-
-\[
-        \gcd(m(aH),f)=1\quad\text{whenever }0<m(aH)<f    \tag{69.11}
-\]
-
-will later ensure coefficientwise control at $p$.  It is automatic when
-$f$ is prime.
-
-## 2. Arithmetic multiplicity in the prime-order diamond
-
-Let $Y$ be any hyperelliptic curve of genus $h\ge2$.  Let $X$ be a smooth
-projective curve of genus $g\ge2$, and let $r\ne p$ be an odd prime.
-Suppose a common-cover reduction has produced smooth curves $V,C$ and
-finite etale maps
-
-\[
- \begin{array}{ccc}
- V&\xrightarrow{\ a\ }&Y\\
- \big\downarrow\scriptstyle q&&\\[-2mm]
- C&\xrightarrow{\ c\ }&X
- \end{array}
- \qquad
- \deg a=\deg c=M,qquad \deg q=r,                       \tag{69.12}
-\]
-
-where $q$ is a $C_r$-torsor generated by $\beta$ and
-$a\beta\ne a$.
-
-### Lemma 69.3 (maps are detected by Jacobian pullback)
-
-If $f_1,f_2:W\to Y$ are nonconstant maps to a curve of genus at least two
-and
-
-\[
-                         f_1^*=f_2^*:J(Y)\to J(W),       \tag{69.13}
-\]
-
-then $f_1=f_2$.
-
-#### Proof
-
-Dualizing (69.13) gives equality of the pushforwards.  Abel--Jacobi applied
-to divisors $w-w_0$ then shows that the two maps into the Abel--Jacobi copy
-of $Y\subset J(Y)$ differ by one fixed translation.  That translation
-preserves the Abel--Jacobi curve and induces an automorphism of $Y$ acting
-trivially on its Jacobian.  The natural action of the automorphism group of
-a genus-at-least-two curve on its principally polarized Jacobian is
-faithful.  Hence the translation and the automorphism are trivial.
-\(\square\)
-
-Theorem 68.1 produces (69.12) from any common cover whenever
-$h-1=r(g-1)$.  Its norm theorem and hyperelliptic corollary give
-
-\[
-              \eta=q_*a^*\ne0,\qquad M\ge r+2.          \tag{69.14}
-\]
-
-For $Y=Y_\ell$, the genus relation is the useful design equation
-
-\[
-                         \ell=2r(g-1)+3.                 \tag{69.15}
-\]
-
-We use these results from file 68 without reproving them.
-
-### Theorem 69.4 (primitive orbit multiplicity)
-
-Assume now that $Y=Y_\ell$ satisfies Proposition 69.1, that $r\ne\ell$,
-and that
-
-\[
-                                f<r-1.                   \tag{69.16}
-\]
-
-Put
-
-\[
-                     m_0=\frac{r-1}{\gcd(r-1,f)}.        \tag{69.17}
-\]
-
-The $J_\ell$-isotypic part generated in $J(V)$ by
-
-\[
-                 a^*J_\ell,\ \beta^*a^*J_\ell,\ldots,
-                 \beta^{(r-1)*}a^*J_\ell
-\]
-
-contains one invariant copy and at least $m_0$ primitive copies of
-$J_\ell$.  More precisely, its primitive multiplicity is a positive
-multiple of $m_0$.  The primitive part lies in
-$\operatorname{Prym}(V/C)$, so necessarily
-
-\[
- m_0h\le(r-1)M(g-1).                                    \tag{69.22}
-\]
-
-#### Proof
-
-Let $\mathscr D=\operatorname{End}^0(J_\ell)$ and
-
-\[
- \mathcal H=\operatorname{Hom}^0(J_\ell,J(V)),
- \qquad e=a^*,\qquad T=\beta^*.
-
-This is a right $\mathscr D$-space and $T$ is $\mathscr D$-linear.
-If the line $e\mathscr D$ were $T$-invariant, then $Te=e u$ for some
-$u\in\mathscr D$ with $u^r=1$.  Since $E\subset\mathbf Q(\zeta_\ell)$
-and $r,\ell$ are distinct primes,
-
-\[
-                       E\cap\mathbf Q(\zeta_r)=\mathbf Q.
-\]
-
-A nontrivial $u$ would therefore generate a degree-$(r-1)$ field over
-$E$ inside the degree-$f$ division algebra $\mathscr D$, contradicting
-(69.16).  Thus $u=1$.  Lemma 69.3 would then give $a\beta=a$, contrary to
-(69.12).  The primitive part of the cyclic module generated by $e$ is
-therefore nonzero.
-
-Because $\Phi_r$ is irreducible over $E$, the action on a primitive
-$\mathscr D$-space of dimension $m$ embeds
-
-\[
-                         E(\zeta_r)\hookrightarrow M_m(\mathscr D).
-\tag{69.23}
-\]
-
-A separable field embedded in a central simple algebra has degree dividing
-the degree of that algebra.  Hence
-
-\[
-                              r-1\mid fm,
-\]
-
-so $m$ is a positive multiple of $m_0$.
-
-The norm $1+T+\cdots+T^{r-1}$ kills this primitive part.  On the other
-hand,
-
-\[
- (1+T+\cdots+T^{r-1})e=q^*q_*a^*=q^*\eta\ne0
-\]
-
-by (69.14).  Thus the invariant multiplicity is exactly one in
-the cyclic span: it is nonzero, while all $r$ cyclic generators have the
-same image under the invariant projector, so it is at most one.  Finally
-
-\[
- \dim\operatorname{Prym}(V/C)
-      =g(V)-g(C)=(r-1)M(g-1),
-\]
-
-which gives (69.22). \(\square\)
-
-## 3. Uniform Rosati and conductor identities
-
-Continue with the abstract diamond (69.12) under the prime-ratio and
-hyperelliptic hypotheses of file 68, and put
-
-\[
- e=a^*,\qquad T=\beta^*,\qquad
- N=1+T+\cdots+T^{r-1}=q^*q_*,                          \tag{69.24}
-\]
-
-\[
- \eta=q_*a^*,\qquad s=\eta^\dagger\eta=e^\dagger Ne.  \tag{69.25}
-\]
-
-For $1\le j\le r-1$, let
-
-\[
- I_j=\deg(a,a\beta^j)^*\Delta_Y                         \tag{69.26}
-\]
-
-with local intersection multiplicities.
-
-### Proposition 69.7 (norm and coincidence formulas)
-
-If $J(Y)$ is absolutely simple, then
-
-\[
- e^\dagger e=[M],\qquad N^\dagger=N,\qquad N^2=rN,     \tag{69.27}
-\]
-
-\[
-                         0<s<[rM]                       \tag{69.28}
-\]
-
-in the Rosati-positive cone, and
-
-\[
- \operatorname{Tr}(s\mid H^1(Y))
-       =2M(h+r-1)-\sum_{j=1}^{r-1}I_j.                  \tag{69.29}
-\]
-
-Moreover $I_j=I_{r-j}$.
-
-#### Proof
-
-The pull--push identities give (69.27) and (69.25).  Equation (69.14) and
-absolute simplicity make $s$ positive definite.  Also
-
-\[
-                   [rM]-s=e^\dagger(r-N)e
-\]
-
-is positive.  If it vanished, the image of $e$ would lie in the invariant
-part of $J(V)$, giving $Te=e$ and then $a\beta=a$ by Lemma 69.3.  This
-proves strictness.
-
-The $j=0$ term $a_*a^*=[M]$ has trace $2hM$ on $H^1(Y)$.  For $j\ne0$,
-the Lefschetz formula gives
-
-\[
- \operatorname{Tr}(a_*\beta^{j*}a^*\mid H^1(Y))=2M-I_j.
-\]
-
-Summing proves (69.29).  The substitution $v\mapsto\beta^jv$ identifies
-the coincidence divisors for $j$ and $r-j$, including multiplicities.
-\(\square\)
-
-### Proposition 69.8 (image and conductor formulas)
-
-The map
-
-\[
-                         (q,a):V\longrightarrow C\times Y
-\]
-
-is birational onto its reduced image $D$.  All branches of $D$ are smooth,
-and
-
-\[
- D^2=\sum_{j=1}^{r-1}I_j-2M(h-1),                       \tag{69.30}
-\]
-
-\[
- \mathfrak C_D=\sum_{j=1}^{r-1}(a,a\beta^j)^*\Delta_Y, \tag{69.31}
-\]
-
-\[
- \delta(D)=\frac12\sum_{j=1}^{r-1}I_j,
- \qquad
- p_a(D)=M(h-1)+1+\frac12\sum_{j=1}^{r-1}I_j.           \tag{69.32}
-\]
-
-#### Proof
-
-The generic degree of $V$ over the normalization of $D$ divides the prime
-degree $r$ of $q$.  If it were $r$, then $a$ would factor through $q$ and
-$a\beta=a$.  Hence it is one.
-
-In $\operatorname{NS}(C\times Y)$, the class of $D$ has fiber part of
-bidegree $(r,M)$ and correspondence part represented by $\eta$.  The
-correspondence summand has square
-$-\operatorname{Tr}(s\mid H^1(Y))$.  Therefore (69.29) gives
-
-\[
- D^2=2rM-\operatorname{Tr}(s\mid H^1(Y))
-     =\sum_{j=1}^{r-1}I_j-2M(h-1).
-\]
-
-Etale-locally on $C$, the $r$ normalization branches are graphs of etale
-maps to $Y$.  On one branch, its conductor exponent is the sum of its
-intersection multiplicities with the other $r-1$ branches.  These are
-exactly the divisors in (69.31).  Every unordered pair is counted twice,
-which proves the delta formula.  Finally $g(V)=M(h-1)+1$, giving the
-arithmetic-genus formula. \(\square\)
-
-### Proposition 69.9 (individual cross images)
-
-For $1\le j\le r-1$, let $\Gamma_j$ be the reduced image of
-$(a,a\beta^j):V\to Y\times Y$, let $e_j$ be its generic degree, and put
-
-\[
-                              d_j=M/e_j.                 \tag{69.33}
-\]
-
-Then $e_j\mid M$, the normalization projections of $\Gamma_j$ are etale
-of degree $d_j$, and its induced endomorphism $w_j\in\operatorname{End}J(Y)$
+where a zero coset count contributes denominator 1. Then J is absolutely
+simple, its geometric D=End^0_k(J) is a central division algebra of
+degree f over E, and K is a maximal subfield. Covariant p-Frobenius F
 satisfies
 
 \[
- \delta(\Gamma_j)
-   =d_j^2+(h-1)d_j-\frac12\langle w_j,w_j\rangle.       \tag{69.34}
+ FxF^{-1}=\sigma(x),\quad\sigma(\zeta_\ell)=\zeta_\ell^p,
+ \quad F^f=\pi\in E,\quad
+ D=\bigoplus_{s=0}^{f-1}KF^s.                           \tag{2}
 \]
 
+Proof. The rotation embeds K in End^0(J); its differential eigencharacters
+on t^(i−1)dt/z give CM type Φ. The Shimura–Taniyama slope formula gives
+m(aH)/f. The prime-to-p rational Tate module is rank one over K, so
+the centralizer of K is K. Hence F^f∈K, and commutation with F gives π∈E.
+
+The prime p splits completely in E and is unramified of residue degree f
+in K/E. The local Honda invariants are m(aH)/f modulo 1; the second
+condition in (1) gives Schur index f. If an automorphism of E/Q fixed
+π^N, it would preserve the valuation vector N m(aH), so the first
+condition forces it to be trivial. Thus Q(π^N)=E for EVERY N≥1.
+The simple Honda factor has dimension [E:Q]f/2=h and accounts for all J.
+Normalized local invariants stay unchanged under finite constant
+extension, so this factor remains simple over every such extension.
+This proves absolute simplicity, degree f, and the decomposition (2).
+
+Both tests in (1) are finite coset arithmetic. The stronger condition
+
+\[
+ \gcd(m(aH),f)=1\quad\text{whenever }0<m(aH)<f            \tag{3}
+\]
+
+will be needed at p in Section 4. It is automatic for prime f, and
+implies the second condition in (1) if an intermediate count occurs.
+
+## 2. Prime-ratio diamonds and primitive multiplicity
+
+Let X have genus g≥2, let Y be hyperelliptic of genus h≥2, and let
+r≠p be an odd prime, with h−1=r(g−1). An ACTUAL common finite etale
+cover gives, by the [one-leg Sylow construction](68_PRIME_RATIO_DIAMOND_AND_ALL_DEGREE_COEFFICIENT_SIEVE.md#1-the-prime-ratio-diamond-theorem-681),
+
+\[
+ V\xrightarrow[\;M\;]{a}Y,\quad
+ V\xrightarrow[\;r\;]{q}C\xrightarrow[\;M\;]{c}X,\quad
+ q\text{ a }C_r\text{-torsor},\quad a\beta\ne a.         \tag{4}
+\]
+
+The [norm argument](68_PRIME_RATIO_DIAMOND_AND_ALL_DEGREE_COEFFICIENT_SIEVE.md#2-norm-obstruction-lemma-682-theorem-683-corollary-684)
+gives η=q_*a^*≠0: otherwise the moving degree-r norm divisors yield a
+basepoint-free degree-r pencil on Y. The odd r-pencil and the hyperelliptic
+pencil would generate k(Y), forcing h≤r−1 by Castelnuovo–Severi.
+If J(Y) is ALSO absolutely simple, then c_*η=0 by the genus inequality,
+and dim im η=h≤(M−1)(g−1), so M≥r+2. The simplicity hypothesis
+belongs to this dimension bound, not to norm nonvanishing.
+
+For Y=Y_ell satisfying (1), the design equation is
+ell=2r(g−1)+3. Assume r≠ell, and put
+
+\[
+                         m_0=\frac{r-1}{\gcd(r-1,f)}.  \tag{5}
+\]
+
+Theorem 69.4 in its ORIGINAL AUDITED scope assumes f<r−1:
+the cyclic J-isotypic span of a^*J in J(V) has exactly one invariant
+copy, and its primitive multiplicity m is a POSITIVE multiple of m_0.
 Consequently
 
 \[
-                    \langle w_j,w_j\rangle
-                       \le2d_j(d_j+h-1).                 \tag{69.35}
+                        m_0h\le(r-1)M(g-1).            \tag{6}
 \]
 
-If $d_j\le h$ is odd, then $w_j\ne0$.
+AUTHOR-ONLY wider corollary: the SAME conclusion holds without f<r−1.
+The following shorter proof covers both scopes. In the right D-space
+Hom^0(J,J(V)), let e=a^* and T=β^*. If the primitive part of its
+cyclic span were zero, then Te=e. Equality of Jacobian pullbacks for
+maps to a genus≥2 curve implies equality of the maps, contradicting (4).
+For completeness, Abel–Jacobi shows two such maps differ by a fixed
+translation preserving the Abel–Jacobi curve; that translation induces
+an automorphism acting trivially on its Jacobian. Faithfulness of
+Aut(Y)→Aut(J(Y),λ_Y) makes it trivial (the original Lemma 69.3).
 
-#### Proof
+Since E⊂Q(ζ_ell) and r≠ell, Φ_r is irreducible over E. The primitive
+action therefore embeds E(ζ_r) in M_m(D). A separable field embedded
+in a central simple algebra has degree dividing its degree, so r−1|fm,
+giving (5). The invariant projector sends every cyclic generator to
+the SAME D-line, nonzero because q^*η≠0, so the invariant multiplicity
+is exactly one. The primitive part lies in Prym(V/C), of dimension
+(r−1)M(g−1), proving (6). The original f<r−1 theorem is retained
+as an audited special case, not deleted in favor of this extension.
 
-The function-field factorization proves the divisibility and etaleness.
-For an effective bidegree-$(d_j,d_j)$ curve on $Y\times Y$, its
-self-intersection is
+The cyclic span has at most r generators over D, so also m≤r−1.
+Thus the possible primitive multiplicities are m_0,2m_0,…,r−1.
+In particular gcd(f,r−1)=1 forces EXACTLY r−1 primitive copies
+for EVERY M. This sharper stated corollary is author-only; it retains
+the original audited endpoint specializations.
+
+## 3. Uniform Rosati, conductor and actual image formulas
+
+For the diagram (4), put e=a^*, T=β^*, N=1+T+⋯+T^(r−1)=q^*q_*,
+s=η^†η=e^†Ne, and E_j=(a,aβ^j)^*Δ_Y, I_j=deg E_j for j≠0.
+With canonical Rosati adjoints,
 
 \[
-                         2d_j^2-\langle w_j,w_j\rangle.
+ e^\dagger e=M,\quad N^\dagger=N,\quad N^2=rN,\quad
+ \operatorname{Tr}s=2M(h+r-1)-\sum_{j=1}^{r-1}I_j,\quad
+ I_j=I_{r-j}.                                         \tag{7}
 \]
 
-Adjunction, followed by subtraction of the etale-normalization genus
-$d_j(h-1)+1$, gives (69.34), and nonnegativity of delta gives (69.35).
-If $w_j=0$ and $d_j\le h$, the low-degree hyperelliptic correspondence
-theorem (Theorem 45.4) says that $d_j$ must be even. \(\square\)
+If J(Y) is simple, also 0<s<rM in the positive cone (Proposition 69.7).
+Indeed N/r is an orthogonal projector; s≠0 by the norm argument.
+Equality at the upper endpoint gives Te=e, forbidden by map rigidity.
+A nonzero semipositive endomorphism of a simple abelian variety is
+positive definite. For the trace formula, j=0 contributes 2hM and each
+j≠0 contributes 2M−I_j by Lefschetz; the source substitution by β^j
+gives I_j=I_(r−j), including multiplicities. The identities in (7)
+do not themselves require simplicity.
 
-## 4. A general Frobenius-lattice exclusion test
-
-Return to $Y=Y_\ell$ and assume Proposition 69.1.  In addition assume
-$f\ge2$ and the slope-coprimality condition (69.11).  For each prime
-$\mathfrak P$ of $K$ over $p$, put
+The joint map (q,a) is birational onto its reduced image D: its generic
+degree divides r, and degree r would make a factor through q.
+Thus the ORIGINAL etale maps normalize D. Its class has fiber part
+of bidegree(r,M) and correspondence square −Tr s, giving
 
 \[
-                         m_{\mathfrak P}=v_{\mathfrak P}(\pi).
+ D^2=\sum_jI_j-2M(h-1),\quad
+ \mathfrak C_D=\sum_jE_j,\quad
+ \delta(D)=\tfrac12\sum_jI_j,\quad
+ p_a(D)=M(h-1)+1+\tfrac12\sum_jI_j.                     \tag{8}
 \]
 
-These are the integers (69.4), up to permutation.  For
-$0\le s\le f-1$, define
+This is Proposition 69.8. Etale-locally on C, D is a union of smooth
+graph branches. On each branch the conductor exponent is the sum
+of its contacts with all others; summing over branches counts each
+unordered contact twice. This proves the divisor, not merely a degree
+bound; the last identity subtracts g(V)=M(h−1)+1.
+
+For a reduced cross image Γ_j of generic degree e_j, its normalization
+and the intermediate maps are finite etale, e_j|M, and both projection
+degrees are d_j=M/e_j. If w_j is its action, adjunction gives
 
 \[
+ \delta(\Gamma_j)=d_j^2+(h-1)d_j-\tfrac12\langle w_j,w_j\rangle,
+ \quad \langle w_j,w_j\rangle\le2d_j(d_j+h-1).           \tag{9}
+\]
+
+Its self-intersection is 2d_j²−〈w_j,w_j〉; subtracting the actual
+normalization genus d_j(h−1)+1 from the adjunction genus proves (9).
+This is Proposition 69.9, including NONBIRATIONAL original cross maps.
+
+If d_j≤h is odd, w_j≠0. Here is the low-degree argument in arbitrary
+odd characteristic, as needed in this parameterized statement. Zero
+action gives O(Γ_j)=A⊠B with basepoint-free factors of degree d_j.
+A basepoint-free pencil of degree d≤h on hyperelliptic Y factors
+through its double pencil: extract its pth-power inseparability first;
+otherwise Castelnuovo–Severi for the remaining separable pencil gives
+h≤d−1. Its line bundle is therefore a power of the hyperelliptic
+degree-two line, so d must be even, a contradiction.
+
+## 4. Proposition 69.10: full-order coefficient ideals and Rosati minima
+
+Return to Y_ell satisfying (1); assume f≥2 AND the local coprimality
+condition (3). For each prime P of K over p let m_P=v_P(π), the
+coset counts above. Put λ=1−ζ_ell and
+
+\[
+ \mathfrak D_{K/E}=(\lambda^{f-1}),\qquad
  \mathcal I_s=\mathfrak D_{K/E}^{-1}
-       \prod_{\mathfrak P\mid p}
-       \mathfrak P^{-\lfloor s m_{\mathfrak P}/f\rfloor}.             \tag{69.36}
+   \prod_{P\mid p}P^{-\lfloor s m_P/f\rfloor},
+                \quad0\le s<f.                        \tag{10}
 \]
 
-Here
+EVERY v=∑_s x_sF^s in the FULL geometric End(J), not merely a
+coefficientwise crossed order, satisfies
 
 \[
-                  \mathfrak D_{K/E}=(1-\zeta_\ell)^{f-1}.             \tag{69.37}
-\]
-
-For $1\le s\le f-1$, let
-
-\[
- \mu_s=\min_{0\ne x\in\mathcal I_s}
-        p^s\operatorname{Tr}_{K/\mathbf Q}(x\overline x),
- \qquad
- \mu=\min_{1\le s<f}\mu_s.                           \tag{69.38}
-\]
-
-These are exact minima of positive-definite ideal lattices of rank
-$\ell-1$.
-
-### Proposition 69.10 (full-order coefficient envelope)
-
-If
-
-\[
-             v=\sum_{s=0}^{f-1}x_sF^s\in\operatorname{End}(J_\ell),
-\]
-
-then
-
-\[
-                              x_s\in\mathcal I_s
-                              \qquad(0\le s<f).           \tag{69.39}
-\]
-
-Moreover the graded pieces are Rosati-orthogonal and
-
-\[
+ x_s\in\mathcal I_s,\qquad
  \langle v,v\rangle
-   =\sum_{s=0}^{f-1}p^s
-        \operatorname{Tr}_{K/\mathbf Q}(x_s\overline{x_s}).            \tag{69.40}
+    =\sum_{s=0}^{f-1}p^s\operatorname{Tr}_{K/\mathbf Q}(x_s\bar x_s).
+                                                               \tag{11}
 \]
 
-#### Proof
+Proof away from p. A prime-to-p Tate lattice is rank one over the local
+O_K. In a trivialization, F is a semilinear automorphism with unit
+coefficient. If A=∑_s a_sσ^s preserves this lattice, then for every
+integral u the matrix trace of uAσ^(−s) is Tr_(K/E)(u a_s).
+Its integrality puts a_s in the inverse relative different. This works
+in the FULL matrix order at the ramified prime ell; coefficientwise
+integrality is not assumed there.
 
-At every prime away from $p$, a prime-to-$p$ Tate lattice is locally free
-of rank one over $\mathcal O_K$.  Frobenius is a semilinear automorphism.
-If an $E$-linear operator
-
-\[
-                         A=\sum_s a_s\sigma^s
-\]
-
-preserves this lattice, then $a_s\in\mathfrak D_{K/E}^{-1}$.  Indeed,
-for every integral $u$, the integral matrix trace of
-$uA\sigma^{-s}$ is $\operatorname{Tr}_{K/E}(u a_s)$; this is exactly the
-definition of the inverse different.  The semilinear coefficient of $F$
-is a unit away from $p$, proving the inverse-different part of (69.39).
-This argument includes the full matrix order at the ramified prime
-$\ell$.
-
-At a prime over $p$ with $0<m_{\mathfrak P}<f$, condition (69.11) makes
-the local Honda algebra a division algebra of degree $f$.  In its unique
-valuation ring, the $f$ terms $x_sF^s$ have pairwise distinct fractional
-valuations
-
-\[
-                       v_{\mathfrak P}(x_s)
-                            +\frac{s m_{\mathfrak P}}f.
-\]
-
-They cannot cancel.  Integrality therefore gives
-
-\[
- v_{\mathfrak P}(x_s)
-      \ge-\left\lfloor\frac{s m_{\mathfrak P}}f\right\rfloor.
-\tag{69.41}
-\]
-
-When $m_{\mathfrak P}=0$, the etale height-$f$ factor of the
-$p$-divisible group has a Tate lattice free of rank one over the
-unramified ring $\mathcal O_{K,\mathfrak P}$, and the trace argument gives
-$v_{\mathfrak P}(x_s)\ge0$.
-
-If $m_{\mathfrak P}=f$, complex conjugation carries $\mathfrak P$ to an
-$m=0$ prime, since $\pi\overline\pi=p^f$.  The adjoint of one term is
+At p, if 0<m_P<f, condition (3) makes the local Honda algebra a
+division algebra of degree f. The summands have distinct fractional
+valuations v_P(x_s)+s m_P/f, so they cannot cancel. Integrality gives
+v_P(x_s)≥−floor(s m_P/f). At m_P=0, the etale height-f factor has a
+Tate lattice free of rank one over the unramified O_(K,P); the same
+trace argument gives v_P(x_s)≥0. At m_P=f, use conjugation to its
+m=0 prime, ππ̄=p^f, and integrality of the adjoint. For 1≤s<f,
 
 \[
  (x_sF^s)^\dagger
-   =p^s\pi^{-1}\sigma^{f-s}(\overline{x_s})F^{f-s}.     \tag{69.42}
+   =p^s\pi^{-1}\sigma^{f-s}(\bar x_s)F^{f-s}.           \tag{12}
 \]
 
-Applying the $m=0$ result to the integral endomorphism $v^\dagger$ gives
-$v_{\mathfrak P}(x_s)\ge-s$, which is (69.41) at $m=f$.
-This proves (69.39) globally.
+The m=0 bound applied there gives v_P(x_s)≥−s; the s=0 term is simply
+conjugated. These are precisely the remaining bounds in (10).
+Finally F^†F=p, vanishing reduced trace on nontrivial graded summands
+and ordinary field trace on K prove their orthogonality and (11).
 
-Finally $F^\dagger F=p$, the reduced trace vanishes on every nontrivial
-graded summand, and the cohomological trace on $K$ is the field trace.
-These facts give (69.40). \(\square\)
-
-### Remark 69.10A (adjoint symmetry halves the enumeration)
-
-For $1\le s<f$, adjunction gives an isometry between the two weighted
-ideal lattices indexed by $s$ and $f-s$.  Explicitly,
+Define positive-definite ideal-lattice minima
 
 \[
- x\longmapsto
- p^s\pi^{-1}\sigma^{f-s}(\overline x)                 \tag{69.40A}
+ \mu_s=\min_{0\ne x\in\mathcal I_s}
+      p^s\operatorname{Tr}_{K/\mathbf Q}(x\bar x),\quad
+ \mu=\min_{1\le s<f}\mu_s .                             \tag{13}
 \]
 
-carries $\mathcal I_s$ bijectively to $\mathcal I_{f-s}$ and preserves
-the weighted trace norm.  The ideal statement follows directly by
-comparing the valuations in (69.36), using
-$m_{\overline{\mathfrak P}}=f-m_{\mathfrak P}$; norm preservation is
-also immediate from (69.42).  Hence
+Their ranks are ell−1. Adjunction gives the weighted-lattice ISOMETRY
 
 \[
-                              \mu_s=\mu_{f-s}.
+ \mathcal I_s\xrightarrow{\sim}\mathcal I_{f-s},\quad
+ x\longmapsto p^s\pi^{-1}\sigma^{f-s}(\bar x),           \tag{14}
 \]
 
-Only $\lfloor f/2\rfloor$ ideal lattices need to be enumerated.
+so μ_s=μ_(f−s) and only floor(f/2) lattices need enumeration.
+Indeed m_(bar P)=f−m_P gives exactly the floor exponents in (10)
+on both sides; ππ̄=p^f gives norm preservation. This retains the
+adjoint-symmetry reduction, not an unweighted identification of ideals.
 
-### Proposition 69.11 (finite-difference elimination of the $K$-part)
+## 5. Finite-difference elimination and the exact exclusion test
 
-Let $\Gamma\subset Y_\ell\times Y_\ell$ be a reduced irreducible
-effective correspondence of bidegree $(d,d)$, with etale normalization
-projections, where $d\ge2$.  Let
-$v\in\operatorname{End}(J_\ell)$ be its induced endomorphism.  If
+Let Γ⊂Y_ell² be REDUCED IRREDUCIBLE effective of bidegree(d,d),
+d≥2, with BOTH normalization projections etale, and action v.
+If
 
 \[
-                    4d+1<\left\lceil\frac{\ell}{f-1}\right\rceil,     \tag{69.43}
+                    4d+1<\left\lceil\frac{\ell}{f-1}\right\rceil,
+                                                               \tag{15}
 \]
 
-then the $K$-component of $v$ in (69.7) is zero.
+then its K-component is zero (Proposition 69.11).
 
-#### Proof
+Proof. The rotation and hyperelliptic-companion graphs have degree-one
+projections and share no component with Γ. Their intersections give
+integer traces t_b=〈v,ρ^b〉 in[−2d,2d]. If x is the K-component
+of v^†, coefficient extraction gives x∈λ^(1−f)O_K and
+t_b=Tr_(K/Q)(xζ_ell^b). Taking f forward differences introduces
+(ζ_ell−1)^f. Its product with x lies in λO_K, whose absolute trace
+lies in ell Z. Thus Δ^f t_b=0 mod ell; the resulting function on
+F_ell is a polynomial of degree≤f−1. A nonconstant one has at least
+ceil(ell/(f−1)) values, whereas the trace interval supplies at most 4d+1.
+It is constant. Inequality (15) also gives 4d<ell, so reduction is
+injective on the interval. The integer traces are equal and sum to
+zero by ∑_bρ^b=0. Nondegeneracy of the cyclotomic trace frame gives x=0.
 
-For $b\in\mathbf F_\ell$, put
+Theorem 69.12: under (1), f≥2 and (3), there is NO such correspondence
+when d is odd and
 
 \[
- t_b=\langle v,\rho^b\rangle,
- \qquad \rho(t,z)=(\zeta_\ell t,z).
+ 2\le d\le h,\qquad
+ 4d+1<\left\lceil\frac{\ell}{f-1}\right\rceil,\qquad
+ \mu>2d(d+h-1).                                        \tag{16}
 \]
 
-Intersecting $\Gamma$ with the graphs of $\rho^b$ and of the composite
-of $\rho^b$ with the hyperelliptic involution gives
+Indeed Section 3 gives v≠0, (15) kills its K-component, and (11)–(13)
+force norm≥μ, contradicting the actual surface bound (9).
+This also excludes every normalized cross degree d_j satisfying (16).
+It excludes neither arbitrary d nor a whole common-cover diagram.
 
-\[
-                         t_b\in\mathbf Z,
-                         \qquad |t_b|\le2d.              \tag{69.44}
-\]
-
-Write $x$ for the $K$-component of $v^\dagger$.  Coefficient extraction
-at $\ell$ gives
-
-\[
-                  x\in\mathfrak D_{K/E}^{-1}
-                    =(1-\zeta_\ell)^{1-f}\mathcal O_K.
-\]
-
-\[
-                         t_b=\operatorname{Tr}_{K/\mathbf Q}
-                                  (x\zeta_\ell^b).
-\]
-
-Taking $f$ forward differences multiplies the trace argument by
-$(\zeta_\ell-1)^f$.  Since
-
-\[
- \operatorname{Tr}_{K/\mathbf Q}
-       ((1-\zeta_\ell)\mathcal O_K)\subset\ell\mathbf Z,
-\]
-
-we get $\Delta^ft_b=0$ modulo $\ell$.  Thus $b\mapsto t_b\pmod\ell$ is
-a polynomial function of degree at most $f-1$ on $\mathbf F_\ell$.
-
-A nonconstant polynomial of that degree has at least
-$\lceil\ell/(f-1)\rceil$ values.  But (69.44) supplies at most $4d+1$
-values, so (69.43) makes the polynomial constant.  The same inequality
-implies $4d<\ell$, hence reduction modulo $\ell$ is injective on
-$[-2d,2d]$; all the integers $t_b$ are equal.  Their sum is zero because
-$\sum_b\rho^b=0$, so every $t_b=0$.  Nondegeneracy of the cyclotomic trace
-frame gives $x=0$, and hence the $K$-component of $v$ is zero.
-\(\square\)
-
-### Theorem 69.12 (algorithmic exclusion of odd cross degrees)
-
-Under the hypotheses of Proposition 69.10, let $d$ be odd with
-
-\[
- 2\le d\le h,
- \qquad
- 4d+1<\left\lceil\frac{\ell}{f-1}\right\rceil,
- \qquad
- \mu>2d(d+h-1).                                        \tag{69.45}
-\]
-
-Then $Y_\ell\times Y_\ell$ has no reduced irreducible effective
-bidegree-$(d,d)$ correspondence whose normalization projections are
-etale.
-
-Consequently, in a diamond (69.12), no cross map
-$(a,a\beta^j)$ can have normalized image degree $d_j$ satisfying
-(69.45).
-
-#### Proof
-
-If such a correspondence existed, its endomorphism $v$ would be nonzero:
-$d\le h$ and Theorem 45.4 exclude zero action in odd degree.  Proposition
-69.11 kills its $K$-component.  Propositions 69.10 and (69.38) then give
-
-\[
-                             \langle v,v\rangle\ge\mu.
-\]
-
-On the other hand, (69.35), applied to its normalization, gives
-
-\[
-                     \langle v,v\rangle\le2d(d+h-1),
-\]
-
-contradicting (69.45).  The cross-map statement follows from Proposition
-69.9. \(\square\)
-
-## 5. How to use the parameterized theorem
-
-For a proposed prime-order reduction, the inexpensive screen is now:
-
-1. solve the forced design equation $\ell=2r(g-1)+3$ and retain prime
-   $\ell$;
-2. choose $p$ and compute the finite coset counts (69.4);
-3. test Proposition 69.1 and record $f=\operatorname{ord}_\ell(p)$;
-4. conclude immediately that any residual diamond has $M\ge r+2$ and,
-   when $f<r-1$, impose the primitive multiplicity (69.17);
-5. for each possible proper divisor $d=M/e$, test the elementary
-   value-set inequality (69.43); and
-6. only for the surviving small $d$, enumerate the exact ideal lattices
-   (69.36)--(69.38).
-
-For $(p,\ell,r,g)=(5,31,7,3)$, the coset values are
-$0,0,1,1,1,2,2,2,3,3$, one has $f=3$ and $m_0=2$, and (69.17) gives
-the primitive multiplicity two; file 68 gives $M\ge9$.  At $d=3$,
-(69.43) reads $13<16$.  File 67 computes
-$\mu=106$, while the surface bound is $2\cdot3(3+14)=102$.  Thus the
-special cubic exclusion is exactly the first strict instance of the
-general test, rather than an isolated numerical coincidence.
+For the OLD numerical choice (p,ell,r,g)=(5,31,7,3), the coset counts
+are 0,0,1,1,1,2,2,2,3,3; f=3 and m_0=2. The norm bound gives M≥9.
+For d=3, (15) is 13<16, while the
+[exact global lattice certificate](67_CUBIC_CROSS_ROSATI_GAP.md)
+gives μ=106>102=2·3(3+14). Thus the special cubic exclusion is an
+instance of the general test. The [degree-19 example](71_SCALAR_COMPRESSION_AT_THE_FIRST_DIAMOND_DEGREE.md#4-audited-degree-19-specialization-and-full-span-obstruction)
+has a different cyclic exponent and retains lower-span and higher-degree
+cases. These historical tests are not a pivot from the active fixed pair.

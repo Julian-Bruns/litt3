@@ -16,35 +16,39 @@ ASSUMED clump image, on X has size divisible by8. Thus its W3/small-clump
 theorems do not reach those supports. No counterexample probability is
 assigned to the candidate.
 
-## Result and exact status
+## Current outcome —2026-09-08,04:15 CEST
 
-Author computation, not independently audited: **the untwisted and
-first nonzero cubic-twist representatives have empty Hermitian-atlas
-systems.** All four disjoint projective charts of EACH representative
-have explicit unit identities against the original13 equations, replayed
-by a separate no-solver verifier. These cover all5 untwisted pairs and
-40 nontrivially twisted pairs:45 of405 total. Of the remaining three
-representatives, each covering120 pairs, charts1,2,3 are also exactly
-empty. Only their three chart0 systems remain open. All17 saved unit
-identities have passed the separate no-solver replay.
-This does not assert that C avoids every cored span with X, and does not
-address arbitrary coreless spans. In particular alpha has degree3,
-not the enormous prime degree required by the separate audited
-`bounded_atlas_partner_finiteness` construction.
+**All five Hermitian atlas systems are empty:405/405 oper/twist pairs,
+twenty original-row chart identities.** The geometric bridge has a fresh
+Astra-medium major audit PASS with no material objections. See the
+[canonical theorem](../Theorems/Thm_backup_hermitian_atlas_exclusion.md)
+and [proof/certificate map](../Solutions/Sol_backup_hermitian_atlas_exclusion.md).
+Do not repeat the completed census, tensor construction or atlas search.
 
-Exact model/arithmetic/oper and cubic-torsion calculations are complete.
-ALL FIVE full tensors are published, agree EXACTLY at precisions500 and600,
-and pass all12 coboundary-generator checks. The new nilpotent census has
-length125, with five dormant points of multiplicity8 and85 active simple
-points; its explicit solution certificates also pass a no-solver replay.
-Nine tame and nine small-wild common-orbifold profiles are author-excluded.
-All256 order-dividing-four twists have zero Bol kernel at each of the
-five dormant opers. The240 exact-order-four torsion points and their
-1,200 kernel checks have explicit coefficient/minor certificates;
-the separate no-solver replay passed in21.41s, including distinctness
-of all240 reduced Mumford divisors.
-No determinant-only, N-only,
-acyclicity-only, or generic-position stratum has replaced the equations.
+Root completed the three final chart certificates by an exact length-eight
+necessary algebra and a polynomial Frobenius unit transfer back to the
+original equations. Final two constructions took23.77/23.92s, each onONE
+core; factored lifts2.45s, independent replays2–3s including negative
+mutations. Generic multivariate replay was the avoidable cost. All large
+data remain outside Git in the external backup directory.
+
+Both large Hermitian cored profiles are now excluded. The existing
+[Hessian quotient identity](../Theorems/Thm_hermitian_monodromy_genus_sieve.md)
+also excludes the tame row(n;signature)=(24;3,3,4): any such atlas
+C->[H/M216] would compose with[H/M216]->[H/PGU3(5)] to contradict the new
+theorem. Two further tame exclusions, (16;2,4,8) and(36;2,3,9), follow
+from the new [radical quadratic obstruction](../Theorems/Thm_radical_quadratic_atlas_obstruction.md).
+The first uses the existing J[4] Bol tests; the second uses four exact
+minor tests covering all400 nontrivial cubic oper/twist pairs, generated
+and replayed in2.37s each onONE core. Both are AUTHOR proofs, not new audits.
+Thus **17/24 tame and9/12 small-wild rows are excluded**;
+seven tame and three small-wild remain. The Hessian corollary uses the
+existing author-prose Hessian presentation, not a new audit of that input.
+
+All research agents are stopped. At mostONE CPU core TOTAL overnight.
+The original problem remains UNSOLVED; neither the active pair nor its
+main selected14 data was changed. Every assertion below concerns the
+backup or a stated conditional span, not arbitrary etale commensurability.
 
 ## Arithmetic and portability
 
@@ -110,6 +114,60 @@ The cleared coefficient ideal has reduced length5. Its separator is
 It is irreducible over F125. The saved coefficient formulas recover
 b0,b1 from z=b2. Every original curvature equation vanishes in the
 full length-five algebra; the original Jacobian minors generate1 there.
+
+### Ten dormant secants: exact genus-three marked curves
+
+Let z_i=z^(125^i), i=0,...,4, in the degree-five separator field above.
+Write r_i-r_j=A_ij(u)(du)^2/v^2. ALL ten polynomials are specified by
+
+    A_ij(u)=(z_i-z_j)[u^2+(z_i+z_j+2alpha+2)u
+       +2(z_i^2+z_i*z_j+z_j^2)
+       -(2alpha+2)(z_i+z_j)-(2alpha^2-2alpha+1)], i<j.
+
+Every A_ij has degree2, nonzero discriminant and gcd(A_ij,F)=1,
+checked in the exact field F125[z]/(separator). Thus none of the ten
+pairs is a degenerate or branch-intersecting exception. The known
+F125-Frobenius/unordered-pair symmetries give TWO orbits of size5,
+represented by(0,1) and(0,2). Reversing a pair sends A to-A;
+w->2w identifies the curves below and multiplies their marked eta by2.
+This is not a classification under every possible genus-three isomorphism.
+
+For each A, the connected spectral curve D has equations
+
+    v^2=F(u),       b^2=2A(u),
+    E_A: w^2=2A(u)F(u),       D -> E_A: w=bv.
+
+The two square classes have disjoint nonempty branch loci over P1, so
+D is connected. The degree-seven squarefree equation makes E_A smooth
+of genus3. On E_A, valuations of2A are2 at its two A-branch points,
+-4 at infinity, and0 elsewhere. Therefore adjoining b is an ACTUAL
+etale double cover; D has genus5. Its other double map D->C is
+RAMIFIED at the four points over the two roots of A, and must not be
+mistaken for an etale leg to C or for a common source with fixed X.
+
+Set P=2AF and c_m=[u^m]P^2. In the basis du/w,u du/w,u^2 du/w,
+
+    H=[[c4,c3,c2],[c9,c8,c7],[c14,c13,c12]],
+    Cartier(x)=H^(1/5) x^(1/5).
+
+`backup_genus_two_secant_curves.sage` saves the exact H AND actual
+inverse-Frobenius-semilinear Cartier matrix for all ten pairs, along
+with their nonzero determinants and inverses. For M=H^(1/5), all
+three ranks of M, M sigma(M), M sigma(M) sigma^2(M) are(3,3,3),
+where sigma is inverse fifth-power Frobenius. Thus ALL ten E_A have
+p-rank3, not merely a nonzero Cartier-fixed subspace.
+
+The marked differential is eta=2A du/w. Its divisor is twice each of
+the two A-branch points. The exact identity H*(2A)=(2A)^[5] proves
+Cartier(eta)=eta, and direct extraction of the coefficients u^(5j+4)
+of(2A)P^2 independently checks that same identity. The original dormancy
+equations of all five opers are rechecked before the packet is generated.
+The computation took0.60s, with no point count or new oper solve.
+The portable file `Research/computations/backup_genus_two_secant_curves.json`
+freezes every A, both field moduli, all matrices, determinants, threefold
+Cartier ranks and eta coefficients. These are author exact endpoint
+certificates and spectral-cover geometry, not a proof that compatible
+opers exist on an actual common etale source.
 
 ## Complete125-nilpotent endpoint census
 
@@ -235,8 +293,9 @@ size at least8. The numerical census is24 tame rows with N<=672,12
 small wild rows with N<=2240, and the two large wild rows below.
 
 For each tame row, the saved data includes E=lcm(e_i), A=2E/n and
-the actual fiber torsion bounds A e_i[D_i-(n/e_i)O]=0. **Nine of24
-tame rows are now author-excluded**, by the following three mechanisms.
+the actual fiber torsion bounds A e_i[D_i-(n/e_i)O]=0. **Fourteen of24
+tame rows are now author-excluded**, by the following five mechanisms
+and the complete(4,4,4) secant test recorded below.
 This is not an independently audited full cored theorem.
 
 The extra exact Hasse-jet script `backup_genus_two_one_point_orders.sage`
@@ -291,6 +350,83 @@ fixed point has degree at most2, contradicting degree(alpha)=3.
    absolutely simple Jacobian. This constructed auxiliary map is
    used only for contradiction; it never replaces either etale leg
    of the original assumed common span.
+
+4. **Prym branch translations force an extra automorphism.** This
+   excludes(n,signature)=(8,(2,2,2,4)). Suppose the actual tame map
+   f:C->P1 exists, and take the elliptic double E->P1 branched at its
+   four branch values. The normalized pullback D->C is etale: every
+   inertia index of f is even. It is connected, since otherwise f
+   factors through E, contrary to Hom(JC,E)=0. Thus D has genus3.
+
+   Every connected etale double of a genus-two curve is hyperelliptic
+   and has a complementary elliptic quotient E'. Indeed its nonzero
+   two-torsion class is represented by two of the six hyperelliptic
+   branch points. Write the branch polynomial as A2*B4. Then D is
+   the actual biquadratic curve obtained by adjoining sqrt(A2) and
+   sqrt(B4), with quotients C, the genus-zero sqrt(A2) curve, and the
+   elliptic sqrt(B4) curve E'. Write iota for its central hyperelliptic
+   involution, tau for the D->E' involution, and sigma=iota*tau for
+   the original free D->C involution.
+
+   The induced h:D->E has degree8 and has exactly four simple
+   ramification points, all over the single point of E above the
+   order-four branch value. On JD, iota acts by-1. Since
+   1-tau=1+sigma factors through JC and Hom(JC,E)=0, h induces a
+   tau-invariant Jacobian homomorphism. Hence h∘tau-h is constant;
+   tau has four fixed points, so the constant is zero. Therefore
+   h=phi∘(D->E') for a degree-four map phi:E'->E. After choosing
+   origins, phi is an isogeny; it is etale since5 does not divide4.
+   Its one fiber containing the four branch points is exactly their
+   reduced branch divisor B on E'.
+
+   The following lifting step is reusable. An elliptic double cover
+   has data(M,section of M^2) with div(section)=B and deg(M)=2.
+   If a nonzero t in E'[2] preserves B, then translation by t also
+   preserves M: on Pic^2(E'), its difference is the class-2t=0.
+   After rescaling the line-bundle isomorphism by a square root,
+   translation lifts to an automorphism rho of D. It commutes with
+   tau and with the central iota, hence descends through sigma to C.
+   This descended automorphism is neither the identity nor C's
+   hyperelliptic involution: their lifts lie in{1,sigma,iota,tau},
+   whose actions on E' are identity or an elliptic inversion, not
+   a nonzero translation. This contradicts Aut(C)=C2.
+
+   Here such t exists because ker(phi) has order4 and contains a
+   nonzero two-torsion point, and its translations preserve the fiber
+   B. Connectedness, the elliptic factorization and preservation of
+   the square-root line are all necessary parts of this argument.
+   It applies to any genus-two C with no elliptic Jacobian factor
+   and no automorphisms besides its hyperelliptic involution. This
+   is an author proof, not yet an independent audit of the full packet.
+
+5. **Ordinary cyclic covers cannot dominate a supersingular elliptic
+   curve.** The complete calculations below prove that EVERY connected
+   cyclic etale cover of C of degree1,2,3 or6 is ordinary. Therefore no
+   actual tame map C->P1 can have three chosen branch indices respectively
+   divisible by(3,3,3), or by(2,3,6), in some ordering. This excludes
+   THREE further rows:(12;(3,3,6)),(12;(2,6,6)),(24;(2,3,12)).
+
+   Here are the actual maps and connected-component hypotheses. The
+   elliptic curve E:y^2=x^3+1 is supersingular: the coefficient of x^4
+   in(x^3+1)^2 is zero, so its nonzero regular dx/y has Cartier image0.
+   Its cyclic degree-three quotient has branch indices(3,3,3); its
+   cyclic degree-six quotient t=x^3 has indices3,2,6 at0,-1,infinity.
+   Move these branch values to the specified three values of f.
+   Normalize C times_(P1) E and take ANY connected component D.
+   The divisibility of the actual tame ramification indices makes
+   D->C etale by the local tame base-change calculation. Its Galois
+   group is a subgroup of the indicated cyclic group, hence its degree
+   is1,3 in the first case and1,2,3 or6 in the second. No full-degree
+   connectedness is assumed: all possible component degrees were tested.
+
+   The other projection D->E is an ACTUAL nonconstant separable map.
+   It pulls dx/y back to a nonzero regular Cartier-zero differential
+   on ordinary D, contradiction. Equivalently, an ordinary Jacobian
+   cannot have a supersingular elliptic quotient. This uses only the
+   finite cyclic-cover census, not preservation of ordinarity under
+   arbitrary etale covers, and not a simultaneous Galois closure of
+   the original two legs. The new corollary is author prose resting on
+   the explicit cyclic-cover certificates and their pending audit.
 
 For wild signatures, the fixed-X theorem permits at most one wild
 branch. A sole wild branch would make the pullback of dz a nonzero
@@ -470,17 +606,48 @@ and positive lower groups125,5. The COMPLETE audited proofs of
 `completed_local_orbifold_rigidity` and
 `hermitian_atlas_extension_criterion` identify their ACTUAL stacks as
 [H/PSU_3(5)] and[H/PGU_3(5)], respectively, and identify the PSU lift
-with tau=O. The whole untwisted C calculation therefore author-excludes
-the first large row, subject to the NEW backup construction's pending
-audit. This uses no A18 assumption. The full-PGU row still requires
-the remaining cubic twists.
+with tau=O. The whole untwisted C calculation excludes
+the first large row by the completed backup construction's fresh audit.
+This uses no A18 assumption. The full-PGU row is excluded by the completed and audited
+all-character theorem linked at the top; no remaining atlas computation
+is needed on C.
 
-Current cored remainder:15 tame,3 small-wild, and1 full-PGU profile.
+Current cored remainder:7 tame and3 small-wild; both large profiles are excluded.
+The tame rows are exactly(n;signature)=(2;2,2,2,2,2,2),
+(6;2,2,3,3),(12;3,4,4),(12;2,2,2,3),
+(24;2,4,6),(48;2,3,8),(84;2,3,7).
+The first is realized by C's own hyperelliptic pencil, so no condition
+on C alone can exclude that row; the actual X leg is essential.
 The small-wild rows are exactly(n,e,delta,d)=(120,20,27,3),
 (240,40,47,6),(280,20,23,7). Their natural roots have weights3 or7;
 the preceding regular quadratic/dormant argument does not apply.
 This bounded list is neither a realization list nor a full exclusion;
 arbitrary coreless spans are separate.
+
+The eleventh tame exclusion is n=8 with signature(4,4,4). For this
+profile, Hurwitz gives4K_C~4D_i for each reduced degree-two branch
+fiber. Each nonzero J[4] class has its unique effective degree-two
+representative; the255 functions h_D with div(h_D)=4D-8O are already
+explicit in H0(8O). Three such fibers require three collinear sections.
+The trivial class is exceptional: its entire canonical pencil contributes
+the rational normal quartic{(a+bu)^4}, not just one section. The new
+`backup_genus_two_tame444.sage` tests all32,385 secants among
+the255 isolated points AND their intersections with this entire quartic.
+Repeated or intersecting branch fibers are rejected. Two canonical
+fibers cannot occur: their ratio forces f=c*h^4 through the hyperelliptic
+pencil and produces incompatible order-two ramification at its six
+Weierstrass points. Thus the test omits no Abel-fiber boundary.
+The complete exact calculation took2.53s: all32,385 projective secant
+lines are DISTINCT, so no three isolated sections are collinear, and
+none meets the full canonical fourth-power quartic at a reduced divisor.
+Of the pairs,28,560 have independent v-components,3,720 have rank one,
+and105 are both polynomial; all three strata were retained. In fact
+there are no finite canonical intersections even before disjointness
+filtering. These results exclude the necessary three-fiber pencil.
+The coefficient certificate is
+`Research/computations/backup_genus_two_tame444.json`; this is author
+exact algebra with a written divisor dictionary, not an independent
+audit or a common-cover exclusion.
 
 ## Reproduction, solver and remaining work
 
@@ -488,6 +655,9 @@ Small, portable inputs/certificates:
 
 * `scripts/backup_genus_two_prepare.sage` and
   `Research/computations/backup_genus_two_preparation.json`.
+  `backup_genus_two_secant_curves.sage` and its same-stem JSON give
+  all ten dormant-pair A polynomials, the actual spectral-to-genus-three
+  etale double legs, and the complete Cartier-fixed marked packet.
 * `scripts/backup_genus_two_torsion.sage` and
   `Research/computations/backup_genus_two_torsion.json`.
 * `scripts/backup_genus_two_small_torsion.sage` and its same-stem JSON
@@ -501,6 +671,8 @@ Small, portable inputs/certificates:
   same-stem JSON give the240 exact-order4 points and1,200 additional
   rank-minor certificates. Its `_verification.json` receipt records
   the passed no-solver replay and exact input hash.
+  `backup_genus_two_tame444.sage` and its same-stem JSON record the
+  complete255-point/secant/canonical-pencil exclusion for(8;4,4,4).
 * `scripts/backup_genus_two_one_point_orders.sage` provides the additional
   one-point8,16,18,24,36 polynomial identities; full outputs stay outside
   the repo. `backup_genus_two_double_covers.sage` and its same-stem JSON
@@ -527,83 +699,34 @@ Small, portable inputs/certificates:
   Its `--tensor-directory` option permits relocated data while retaining
   exact tensor hashes.
 
-Large tensors, native unit certificates, checkpoints and logs are ONLY in
+All large tensors/certificates are local-only in
 `/Users/julian/Documents/litt3-computation-data/backup-genus-two/`.
-The untwisted certificates are `debug_solve_trivial_chart0.json` through
-`debug_solve_trivial_chart3.json`, against `tensor_twist-1_p500.json`.
-The full first nonzero-twist tensor is `tensor_twist0_p500.json`; its
-certificates are `solve_twist0_chart0.json` through
-`solve_twist0_chart3.json`. The old `debug_solve_twist0_chart0.json`
-is only an incomplete15-second diagnostic, superseded by the exact
-certificate. Its first chart needed120.95seconds including unit-identity
-construction and verification, although the native unit Groebner basis
-appeared after7.66seconds. A basis[1] without its verified lift was never
-promoted to an exclusion.
+The canonical proof above identifies the complete twenty-chart evidence.
+The live compact receipt is
+`Research/computations/backup_genus_two_completion_status.json`.
+No solver is running or scheduled to restart.
 
-Ten-worker scheduling is in `scripts/backup_genus_two_batch.py`, and
-requires a coordinated main-pipeline pause. The first280-second window
-peaked at970% CPU and4.24GiB sampled RSS. The four smaller jobs finished;
-six larger jobs hit the cutoff without completed tensors. Their later
-checkpoint implementation prevents losing finished blocks on a new slice.
-Do not report the child-CPU aggregate from that first batch as utilization:
-terminated grandchildren were omitted; use its sampled process-group CPU.
+To replay a final factored chart, with i=1,2,3, use a SINGLE sequential job:
 
-The second window stopped automatically after285.055seconds, with every
-backup worker group gone. It finished the four first-twist certificates
-and saved every large-field tensor block. It averaged6.32 sampled busy
-cores, peaking at755% CPU and3.84GiB RSS: after the four small solves,
-only six tensor/check jobs remained. This is NOT ten-core saturation.
-The third285.031-second window completed all66 remaining checks, all
-six final tensors, and nine more original-equation chart certificates.
-It peaked at932% CPU, with6.66 sampled mean busy cores and3.48GiB RSS;
-only the final three chart0 jobs remained in its tail. All worker groups
-were confirmed gone before releasing the window. Those three jobs
-received only78-86seconds and produced no completed certificate.
-The solver now checkpoints a unit-basis candidate BEFORE its potentially
-long identity lift; only the subsequent verified lift counts as exclusion.
+    sage scripts/backup_genus_two_factored_verify.sage \
+      --tensor /Users/julian/Documents/litt3-computation-data/backup-genus-two/tensor_twist1_p500.json \
+      --certificate /Users/julian/Documents/litt3-computation-data/backup-genus-two/factored_unit_twist1_chart0.json \
+      --output Research/computations/backup_genus_two_factored_replay_twist1.json \
+      --negative-tests
 
-A fourth, three-worker window lasted284.156s, with2.94 mean busy cores,
-300% peak CPU and0.837GiB peak RSS. All three remaining chart0 unit
-bases were saved at75.6-76.0s, but their original-row lifts remained
-incomplete at282s. They are candidates, not exclusions. All descendants
-were confirmed gone before the main pipeline resumed. A one-pass
-`liftstd` backup adapter is being tested to avoid a second provenance
-search; the field120 incidence ideal also has a unit-basis candidate
-without its inverse variable. No candidate is promoted until an
-explicit identity is replayed against all13 original rows.
+Change all three twist1 names together for another final chart. This
+replays exact original-row identities, not the eliminated necessary system.
+The finite-algebra generator and its source cache are discovery evidence;
+they need not run again to check the final proof.
 
-The same backup-only adapter now has a bounded-tested rooted-incidence mode.
-Choose an exact left inverse L of I and an eight-row projection Q with
-QI=0. Taking coefficientwise fifth roots gives bilinear n,s with
-n(v,b)^5=QF(p,b), s(v,b)^5=b-LF(p,b), where p=v^[5] and F denotes
-the twelve original incidence rows. On the first-nonzero-b chart j,
-use n=0, s_h=b_h for h<=j, and b_h=s_h^5 for h>j. This retains all
-incidence conditions, while replacing most degree-six rows by bilinear
-ones. A unit identity in these rows is raised to the fifth power;
-v_i^5 is replaced by p_i and the remaining graph terms by powers of
-LF. The result is an explicit identity against the ORIGINAL twelve
-rows, padded by zero for the normalization row. Thus no reduced-scheme
-assumption is required for this sufficient exclusion certificate.
-Only a successful standard thirteen-row replay will count as progress.
-The first-twist chart3 regression constructed and verified its original
-thirteen-row unit identity in0.58s. The known positive-control chart0
-instead returned a nonunit incidence basis in1.78s, as required by its
-actual atlas solutions. The complete sequential regression used5.95s
-wall time including startup, under an outer30-second cleanup deadline.
-The three harder chart0 searches have not yet used this adapter.
+Positive control retained: the generic builder on the actual Hermitian
+quotient v²=t⁶+3 recovers a first-chart length11 and33 normalized atlas
+points; the other three charts are empty. Files
+`tensor_positive_control.json` and `positive_control_chart0..3.json`
+remain external. This is additional consistency evidence, not a proof
+substituting for the audited geometric bridge.
 
-Next: solve ONLY the three remaining degree360 chart0 systems in a
-coordinated compute window, and independently replay any completed lift.
-The native chart backend is serial per chart, so this remaining task
-does not itself furnish ten independent expensive jobs. Obtain
-one independent audit of the generic oper/twisted-Cech construction and
-chart reduction before promoting the computed atlas exclusion. Even
-complete PGU atlas emptiness would leave the small cored and coreless gaps.
-
-Positive control: the NEW generic tensor builder was also run on the
-known actual Hermitian quotient v^2=t^6+3, after an exact odd-degree
-coordinate change. It recovers tensor rank10, two linear b-consequences,
-and a finite first chart of length11, hence33 normalized atlas points;
-the other three charts are exactly empty. The files are
-`tensor_positive_control.json` and `positive_control_chart0..3.json`.
-This is a different curve, not a solution or exclusion for C_alpha.
+The retired solver-history paragraphs were removed after preserving
+their only live lesson: truncated Hilbert counts alone did not certify
+finiteness; exact borders and original-row polynomial identities do.
+No computation data or proof certificates were deleted.

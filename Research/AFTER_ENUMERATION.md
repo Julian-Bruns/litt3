@@ -179,7 +179,8 @@ The independently audited `cyclic_cubic_low_abel_torsion` improves the
 field containing every cubic twist to F_(25^12). It also bounds all
 three-primary W3 classes by9 and counts276 classes killed by3. W1 has
 only the eleven native branch classes. Exact9 in W2/W3 remains open;
-the currently outstanding Pro request addresses precisely this question.
+the revised Pro prompt addresses precisely this question; consult STATE.md
+for submission status rather than assuming a request is outstanding.
 These facts do not identify every twist or exclude all effective classes.
 
 Even excluding BOTH large stacks only closes the large cored branch.

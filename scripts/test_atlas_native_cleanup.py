@@ -23,6 +23,18 @@ class NativeCleanupTests(unittest.TestCase):
         rows=[(10,1,10,100,5),(11,1,10,200,10),(12,11,10,300,20),(20,1,20,400,30)]
         self.assertEqual(batch.descendants(rows,10),{10,11,12})
 
+    def test_foreign_uid_is_recorded_never_signalled(self):
+        group=198765;owned=198766;foreign=198767
+        lines=f'{owned} {group} {os.getuid()} S\n{foreign} {group} {os.getuid()+1} S\n'
+        remaining=f'{foreign} {group} {os.getuid()+1} S\n'
+        proc=type('Proc',(),{'pid':group,'poll':lambda _:0})()
+        job=dict(proc=proc)
+        with patch.object(batch.subprocess,'check_output',side_effect=[lines,remaining]),\
+             patch.object(batch.os,'kill') as kill:
+            batch.stop(job,grace=.2)
+        kill.assert_called_once_with(owned,signal.SIGTERM)
+        self.assertEqual([r['pid'] for r in job['foreign_uid_members_not_signalled']],[foreign])
+
     def test_exited_wrapper_ignoring_child_is_killed(self):
         child='import signal,time; signal.signal(signal.SIGTERM,signal.SIG_IGN); print("ready",flush=True); time.sleep(60)'
         wrapper=('import subprocess,sys; p=subprocess.Popen([sys.executable,"-c",'+repr(child)+'],stdout=subprocess.PIPE,text=True); '

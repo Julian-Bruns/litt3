@@ -502,7 +502,7 @@ back by \(\varpi\) now gives
 and hence the first equality in (65.26).
 
 File 40 identifies the center of \(\operatorname{End}^0(J(Y))\), and
-file 60 shows that the reduced norm of a Rosati-positive integral
+[the reduced-norm calculation](58_X_CENTRAL_GLUE_CONGRUENCES.md#5-local-restrictions-on-the-actual-norm-proposition-605) shows that the reduced norm of a Rosati-positive integral
 endomorphism has norm from the real center equal to
 \(\sqrt{\deg s}\).  The prime two is inert in that real degree-five
 field.  Its valuation in this norm is therefore divisible by five.

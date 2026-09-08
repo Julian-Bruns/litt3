@@ -9,16 +9,31 @@ from pathlib import Path
 
 
 def sha(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    digest=hashlib.sha256()
+    with Path(path).open('rb') as stream:
+        while chunk:=stream.read(8*1024**2):digest.update(chunk)
+    return digest.hexdigest()
 
 
 class OriginalChart:
-    def __init__(self,tensor_path,chart,field_model=None):
+    def __init__(self,tensor_path,chart,field_model=None,native_input=False,retain_terms=False):
         started=time.monotonic();self.timings={}
         from sage.all import GF,PolynomialRing,sage_eval
+        from atlas_field_maps import from_power_coordinates
         from atlas_native_rref import NativeRref
         self.path=Path(tensor_path).resolve();self.source_sha256=sha(self.path)
-        self.data=json.loads(self.path.read_text());self.chart=int(chart)
+        self.native_input=None
+        if native_input:
+            from atlas_native_tensor_input import NativeTensorInput,cache_path
+            if cache_path(self.path).exists():
+                self.native_input=NativeTensorInput(self.path,self.source_sha256)
+        if self.native_input is None:self.data=json.loads(self.path.read_text())
+        else:
+            self.data=self.native_input.header
+            if field_model is None:field_model=self.data['field_model']
+            else:assert field_model==self.data['field_model']
+        self.chart=int(chart)
+        self.coefficients_rooted=bool(self.native_input is not None and self.native_input.rooted)
         self.timings['hash_and_json_seconds']=time.monotonic()-started
         assert 0<=self.chart<32
         assert self.data['variables']=={'u':32,'beta':32}
@@ -45,7 +60,7 @@ class OriginalChart:
             old=make(self.description);bridge=NativeRref(old,layers)
             self.degree=bridge.degree
             self.k=GF(5**self.degree,name='c',modulus=Z(list(bridge.modulus)),check_irreducible=False)
-            def native(value):return self.k(bridge.to_native(old(value)).polynomial().list())
+            def native(value):return from_power_coordinates(self.k,bridge.to_native(old(value)).polynomial().list())
             images={desc['generator']:native(fld.gen()) for fld,desc in layers}
             if 'base_F25_generator' in self.description:
                 images['a']=native(decode(self.description['base_F25_generator'],len(layers)-1))
@@ -56,8 +71,9 @@ class OriginalChart:
         else:
             self.field_model=field_model;self.degree=int(field_model['degree_F5'])
             # Unlike search, independent replay checks this defining field.
-            self.k=GF(5**self.degree,name='c',modulus=Z(field_model['modulus']))
-            images={name:self.k(cs) for name,cs in field_model['layer_generator_images'].items()}
+            self.k=GF(5**self.degree,name='c',modulus=Z(field_model['modulus']),
+                      check_irreducible=self.native_input is None)
+            images={name:from_power_coordinates(self.k,cs) for name,cs in field_model['layer_generator_images'].items()}
         self.images=images
         def decode_native(value,desc):
             generator=images[desc['generator']]
@@ -86,6 +102,8 @@ class OriginalChart:
             return self.k(sage_eval(value,locals=images))
         self.decode=decode_coefficient
         self.inverse_frobenius=5**(self.degree-1)
+        from atlas_field_maps import inverse_frobenius_map
+        self.frobenius_root=inverse_frobenius_map(self.k)
         self.root=functools.lru_cache(maxsize=max(32,min(16384,200000//self.degree)))(self._root)
         self.timings['field_setup_seconds']=time.monotonic()-started-self.timings['hash_and_json_seconds']
         before_rows=time.monotonic()
@@ -101,12 +119,20 @@ class OriginalChart:
                     if h>j:ex[31+h-j]=1
                     ex=tuple(ex)
                     for r in range(count):
-                        value=self.data[key][i][r][h]
-                        if not isinstance(value,str):value=json.dumps(value,separators=(',',':'))
+                        if self.native_input is None:
+                            value=self.data[key][i][r][h]
+                            if not isinstance(value,str):value=json.dumps(value,separators=(',',':'))
+                        else:value=self.native_input.coefficient(key,i,r,h)
                         c=self.root(value)
                         if c:rows[r][ex]=c
-            return [P(row) for row in rows]
-        n=tensor('N_tensor',64);s=tensor('R_tensor',32)
+            return [P(row) for row in rows],rows
+        n,n_terms=tensor('N_tensor',64);s,s_terms=tensor('R_tensor',32)
+        # Preserve native field elements before the Singular polynomial
+        # wrapper. Reading f.dict() converts every long field coefficient
+        # back again and dominated measured large-field preprocessing.
+        if retain_terms:
+            self.original_low_terms=[dict(row) for row in n_terms+s_terms[:j+1]]
+            self.original_low_terms[-1][(0,)*P.ngens()]=self.k(-1)
         def frob(f):return P({tuple(5*e for e in ex):c**5 for ex,c in f.dict().items()})
         self.original=(n+[s[h]-(1 if h==j else 0) for h in range(j+1)]+
                        [frob(s[h])-b[h] for h in range(j+1,32)]+
@@ -117,16 +143,21 @@ class OriginalChart:
         # Keep the original rows, not all32 charts' long coefficient strings.
         # This is also important before parallel independent certificate replay.
         self.data=None;self.root.cache_clear()
+        self.timings['indexed_native_input']=self.native_input is not None
+        self.timings['checked_native_root_cache']=self.coefficients_rooted
+        if self.native_input is not None:self.native_input.close();self.native_input=None
         from atlas_resources import release_scratch
         release_scratch()
         self.timings['total_seconds']=time.monotonic()-started
 
     def _root(self,text):
-        value=self.decode(json.loads(text) if text.startswith('[') else text)
-        # PARI caches the generator's inverse-Frobenius image once. Binary
-        # exponentiation to5^(d-1) repeated for every coefficient was dominant
-        # in large fields. Small Givaro fields retain their cheap old power.
-        answer=value.pth_power(-1) if self.degree>4 else value**self.inverse_frobenius
+        from atlas_field_maps import from_power_coordinates
+        value=(from_power_coordinates(self.k,text) if isinstance(text,bytes) else
+               self.decode(json.loads(text) if text.startswith('[') else text))
+        if self.coefficients_rooted:
+            assert isinstance(text,bytes)
+            return value
+        answer=self.frobenius_root(value)
         assert answer**5==value
         return answer
 

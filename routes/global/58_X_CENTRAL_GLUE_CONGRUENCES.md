@@ -1,364 +1,351 @@
-# Central gluing congruences for the three elliptic factors of `J(X)`
+# Integral gluing, hyperelliptic descent and the residual Prym
 
-## Status and purpose
+Version 3, 2026-09-08. Four original PASS scopes are retained:
 
-**Status: proved; independent audit pending.**
+- Fixed-X arithmetic and genus-one descent: /root/audit_m9_hyperelliptic,
+  2026-09-04, [audit metadata](audits/53_M9_GENUS_ONE_COARSENING_AUDIT.md).
+- Genus-two positivity/adjunction input: /root/audit_m9_genus2_spectrum,
+  2026-09-04, [audit metadata](audits/56_M9_GENUS_TWO_COARSENING_SPECTRUM_AUDIT.md).
+- Integral gluing and hyperelliptic descent:
+  /root/degree45_family_endpoint, 2026-09-04,
+  [audit metadata](audits/58_X_CENTRAL_GLUE_CONGRUENCES_AUDIT.md).
+- Prym decomposition, polarizations and norm restrictions: the same auditor
+  and date, [audit metadata](audits/60_ANTI_INVARIANT_PRYM_DECOMPOSITION_AUDIT.md).
 
-Let
+The two involution proofs now share the gluing/intersection argument;
+the genus-two case has a single congruence survivor. This rewrite has
+no new independent audit. Its wider hypothesis observation is AUTHOR
+prose, not an extension of those audits. The last section corrects
+“noncentral” to the actually proved “not an integer scalar.”
 
-\[
- X:\quad v^2=x^7-x+1
-\]
+## 1. Integral scalars on the fixed genus-three Jacobian
 
-over \(k=\overline{\mathbf F}_5\).  File 53 proves that
-
-\[
- \operatorname{End}^0(J(X))
- =K_1\times K_2\times K_3,
-\tag{58.1}
-\]
-
-where the three factors have Frobenius traces
-
-\[
-             t_1=3,\qquad t_2=-1,\qquad t_3=-4.
-\tag{58.2}
-\]
-
-The main result below determines enough of the *integral gluing* between
-these rational factors to finish the genus-two case left open in file 56.
-If an integral Rosati-fixed endomorphism has rational-factor coordinates
-\((\lambda _1,\lambda _2,\lambda _3)\), then
+Over k=Fbar5 put X:v²=x⁷−x+1. Lemma 53.1 gives three pairwise
+geometrically nonisogenous ordinary elliptic factors, with traces
+(3,−1,−4), and
 
 \[
- \lambda _1\equiv\lambda _2\pmod4,\qquad
- \lambda _1\equiv\lambda _3\pmod7,\qquad
- \lambda _2\equiv\lambda _3\pmod3.                 \tag{58.3}
+ \operatorname{End}^0(JX)=
+ \mathbf Q(\sqrt{-11})\times\mathbf Q(\sqrt{-19})\times\mathbf Q(i),
+ \qquad \operatorname{Aut}(X)=\{1,\iota_X\}.
 \]
 
-These three congruences exclude every non-hyperelliptic spectrum in
-Theorem 56.1.  Consequently all four full-span, degree-nine coarsening
-profiles of file 47 are normalized pullbacks of the hyperelliptic double
-cover of \(X\).
-
-The exact finite computations used below are reproduced by
-[`58_X_CENTRAL_GLUE_CERTIFICATE.sage`](58_X_CENTRAL_GLUE_CERTIFICATE.sage).
-
-## 1. A two-factor lattice lemma
-
-We first record the elementary local fact which turns a nonsplit reduction
-of Frobenius into a congruence between scalar coordinates.
-
-### Lemma 58.1 (cyclic collision forces scalar congruence)
-
-Let \(R\) be a complete discrete valuation ring with uniformizer \(\ell\),
-fraction field \(L\), and residue field \(k_0\).  Let \(V_1,V_2\) be
-two-dimensional \(L\)-spaces carrying an operator \(F\).  Suppose:
-
-1. the characteristic polynomials \(P_1,P_2\in R[T]\) of \(F\) on the
-   two summands reduce to the same separable irreducible quadratic
-   \(q\in k_0[T]\);
-2. after the unramified quadratic extension which splits \(q\),
-   corresponding roots of \(P_1,P_2\) differ by an element of valuation
-   exactly \(a\geq1\);
-3. \(M\subset V_1\oplus V_2\) is an \(F\)-stable lattice and
-   \(M/\ell M\), as a \(k_0[F]\)-module, is cyclic with characteristic
-   polynomial \(q^2\).
-
-If an \(R\)-linear endomorphism of \(M\) acts on \(V_i\) as the scalar
-\(b_i\in R\), then
+Here is its retained arithmetic proof. The unchanged
+[exact automorphism/point-count certificate](53_X_AUTOMORPHISM_CERTIFICATE.sage)
+gives #X(F5),#X(F25),#X(F125)=(8,30,134). Newton identities give
 
 \[
-                         b_1\equiv b_2\pmod{\ell^a}. \tag{58.4}
+ P_X(T)=T^6+2T^5+4T^4+8T^3+20T^2+50T+125
+       =(T^2-3T+5)(T^2+T+5)(T^2+4T+5).
 \]
 
-#### Proof
+All three elliptic factors are ordinary; their distinct geometric CM
+fields have discriminants −11,−19,−4, so they remain nonisogenous.
+Every automorphism of the hyperelliptic genus-three X descends to a
+projective transformation preserving its eight branch points, with
+kernel <ι_X>. The finite branch polynomial has factor degrees 1,6,
+so these points split over F_(5^6). A stabilizer is determined by the
+images of three branch points and is therefore defined over that field.
+The certificate tests ALL 336 ordered image triples and finds only the
+identity. This proves the automorphism assertion over k, not only over F5.
 
-Pass to the unramified quadratic extension of \(R\).  The two roots of
-\(q\) are distinct, so Hensel idempotents split \(M\) into two conjugate
-rank-two lattices.  Consider the summand belonging to one root.  After
-rescaling bases on its two rational eigenlines, every lattice projecting
-onto both coordinate lattices has the form
+The Rosati-fixed algebra is Q³. Every geometric endomorphism commutes
+with the fixed F5-Frobenius F because this algebra is commutative.
+Thus its action preserves the primary factors of the SAME geometric
+Tate lattices, even if a producing correspondence is defined over an
+extension. No field-of-definition assumption is hidden.
+
+**Lemma 58.1 (cyclic collision).** Let R be a complete DVR with
+uniformizer ℓ and fraction field L. Suppose two two-dimensional
+F-modules have integral characteristic polynomials reducing to the
+same separable irreducible quadratic q. After the unramified quadratic
+splitting extension, corresponding roots differ with valuation a≥1.
+If an F-stable lattice M has cyclic reduction with characteristic
+polynomial q², then every scalar pair (b_1,b_2)∈R² preserving M
+satisfies b_1≡b_2 mod ℓ^a.
+
+**Proof.** Hensel idempotents split M into the two conjugate rank-two
+lattices. On either, rescaling the rational eigenlines gives
 
 \[
- R'e_1+R'\ell^{-r}(e_1+u e_2),\qquad u\in R'^\times,quad 0\leq r\leq a.
-\tag{58.5}
+ R'e_1+R'\ell^{-u}(e_1+\varepsilon e_2),\qquad
+ \varepsilon\in R'^\times,\quad 0\le u\le a.
 \]
 
-The bound \(r\leq a\) is exactly the condition that this lattice be stable
-under \(F\).  In the displayed basis, the off-diagonal entry of \(F\) is
-a unit times
+F-stability is exactly u≤a. The off-diagonal entry is a unit times
+(α_1−α_2)/ℓ^u, so the nonsplit Jordan reduction forced by cyclicity
+requires u=a. A scalar pair preserves this lattice only when
+(b_1−b_2)/ℓ^u∈R'. The extension is unramified, proving the claim. QED.
+
+**Proposition 58.2.** Every integral Rosati-fixed endomorphism, in trace
+order (3,−1,−4), has integer coordinates satisfying
 
 \[
-                 \frac{\alpha _1-\alpha _2}{\ell^r}, \tag{58.6}
+ \lambda_1\equiv\lambda_2\pmod4,\quad
+ \lambda_1\equiv\lambda_3\pmod7,\quad
+ \lambda_2\equiv\lambda_3\pmod3.                     \tag{58.3}
 \]
 
-where \(\alpha_i\) are the corresponding roots.  Thus reduction modulo
-\(\ell\) is nonsplit precisely when \(r=a\).  Assumption 3 says that it
-is nonsplit: over the residue splitting field, the cyclic module
-\(k_0[T]/(q^2)\) gives one Jordan block at each root.  Hence \(r=a\).
+Rational coordinates are algebraic integers and hence integers. For
+the remaining assertion, set P_i(T)=T²−t_iT+5. The original audited
+finite-group computations in the [exact certificate](58_X_CENTRAL_GLUE_CERTIFICATE.sage)
+give:
 
-The scalar pair \((b_1,b_2)\) preserves (58.5) only if
+| ℓ | colliding factors | q modulo ℓ | a | n | Sylow subgroup of JX(F_(5^n)) |
+|---|---|---|---:|---:|---|
+| 2 | 1,2 | T²+T+1 | 2 | 3 | C2 × C16 × C16 |
+| 7 | 1,3 | T²+4T+5 | 1 | 48 | C7² × C49² |
+| 3 | 2,3 | T²+T+2 | 1 | 8 | C3 × C9³ |
+
+The q are separable irreducible, with root orders n. Their trace
+differences are 4,7,3; a simple-root derivative is a unit, giving the
+displayed exact root-difference valuations. The certificate computes
+the total Jacobian order independently as |Res(P_X,T^n−1)| and finds
+a subgroup of the FULL ℓ-primary order. Randomness only finds generators;
+full-order equality and invariant-factor assertions certify the result.
+
+The corresponding ℓ-torsion fixed-space dimensions are 3,4,4.
+At ℓ=2 the colliding four-dimensional factor, if split, would alone
+contribute four fixed dimensions, impossible. At ℓ=7 or 3 the
+noncolliding factor contributes two: its roots are (1,5) or (1,−1),
+respectively. Only two fixed dimensions remain for the colliding factor,
+so it is cyclic rather than two copies of q. Lemma 58.1 proves (58.3).
+
+**Corollary 58.3 (least elliptic degrees).** The least degrees of
+nonconstant maps from X to elliptic curves in these three isogeny classes
+are 28,12,21. If e_i are the rational projectors and S=F+V, then
 
 \[
-                    (b_1-b_2)/\ell^r\in R'.
+ (S+1)(S+4)=28e_1,\quad
+ -(S-3)(S+4)=12e_2,\quad
+ (S-3)(S+1)=21e_3.                                  \tag{58.14}
 \]
 
-Since the extension is unramified and \(r=a\), this is (58.4). \(\square\)
+These are integral. Conversely (58.3) makes every integral multiple
+ne_i divisible by d_i=28,12,21 respectively. Thus d_i e_i is the
+primitive symmetric norm endomorphism of its elliptic image E_i; the
+restricted theta line bundle has degree d_i, with polarization [d_i].
+Its polarized projection composed with the Abel–Jacobi map gives X→E_i of degree d_i.
+For any other f in that class, f^*f_*=(deg f)e_i, so d_i divides deg f.
+This proves both existence and minimality, not merely denominator bounds.
 
-## 2. The three collisions in the Tate lattice of `J(X)`
+## 2. The genus-one and genus-two involutions
 
-Write
+For the original audited Theorems 53.3 and 58.4, assume the degree-nine
+full-span [coefficient setup](47_COEFFICIENT_FIELD_COARSENING.md), with
+etale c:C→X of degree nine and a double cover q:C→B, b=g(B)∈{1,2},
+involution δ. Then g(C)=19 and q has 40−4b tame ramification points.
+The common conclusion, also Corollary 58.5, is
 
 \[
- P_i(T)=T^2-t_iT+5.
-\tag{58.7}
+                         c\delta=\iota_X c.          \tag{58.15}
 \]
 
-The trace differences are
+Here is a shorter proof retaining the audited positivity and adjunction
+inputs. Put u=c_*δ^*c^*, with integral coordinates λ_i. Positivity of
+9 id±u gives −9≤λ_i≤9. The identity
 
 \[
- t_1-t_2=4,qquad t_1-t_3=7,qquad t_2-t_3=3.        \tag{58.8}
+ (q_*c^*)^\dagger(q_*c^*)=9\operatorname{id}+u
 \]
 
-Modulo respectively \(2,7,3\), the colliding quadratic factors are
+has rank at most 2b on H1; thus at least 3−b coordinates equal −9.
+
+Suppose (58.15) false and put Z=(c,cδ)_*[C]. The diagonal intersection
+is proper: cδ=c is impossible at a δ-fixed point, since δ has derivative
+−1 and c is etale. Each of the 40−4b fixed points contributes one. The
+hyperelliptic graph also meets Z properly by the supposition. Writing
+S_λ=Σλ_i, the two intersection formulas give
 
 \[
-\begin{array}{c|c|c|c}
-\ell&\text{pair}&q(T)&a=v_\ell(t_i-t_j)\\ \hline
-2&(1,2)&T^2+T+1&2\\
-7&(1,3)&T^2+4T+5&1\\
-3&(2,3)&T^2+T+2&1.
-\end{array}                                           \tag{58.9}
+ 40-4b\le Z\cdot\Delta_X=18-2S_\lambda,\quad
+ 0\le Z\cdot\operatorname{Graph}(\iota_X)=18+2S_\lambda,
+ \quad -9\le S_\lambda\le2b-11.                         \tag{56.11}
 \]
 
-All three displayed quadratics are irreducible and separable.  For a
-simple root, the implicit derivative of a root of
-\(T^2-tT+5\) with respect to \(t\) is a unit.  Therefore the corresponding
-lifted roots differ with exactly the valuations in the last column of
-(58.9), as required in Lemma 58.1.
+If b=1, the sum is −9 and two coordinates are −9, forcing a
+permutation of (−9,−9,9). None satisfies (58.3): when the +9 is
+first or second it fails mod 4; when third it fails mod 7. This proves
+the genus-one case using the already audited gluing condition.
 
-### Proposition 58.2 (the integral scalar order)
-
-Let \(s\in\operatorname{End}_k(J(X))\) be Rosati-fixed, and write its
-coordinates in (58.1) as
+For b=2 the sum lies in [−9,−7]. Let e be the degree from C to the
+reduced joint image Γ. Then e|9, and both maps through its normalization are etale, because their
+composites to X are etale and differents are effective and additive.
+Thus g(Γ~)=1+18/e. The actual correspondence Γ induces u/e, so
+e divides every λ_i. For Q=Σλ_i², adjunction gives
 
 \[
-                         s=(\lambda _1,\lambda _2,\lambda _3).
+ p_a(\Gamma)=1+(81-Q)/e^2+36/e,\qquad Q\le81+18e.     \tag{56.17}
 \]
 
-If the coordinates are rational, then they are integers and satisfy
-(58.3).
+Only ONE integral triple satisfies the interval, sum and congruence
+conditions before using this last bound: (5,−3,−9). For completeness:
 
-#### Proof
+- If λ_1=−9, the mod-4 and mod-7 conditions with the sum bound leave
+  (λ_2,λ_3)=(-5,5) or (3,-2); both fail mod 3.
+- If λ_2=−9, the mod-4 and mod-3 conditions leave
+  (λ_1,λ_3)=(-9,9),(-5,6),(-1,3),(3,-3),(7,-6);
+  all fail mod 7.
+- If λ_3=−9, the mod-7 and mod-3 conditions leave
+  (λ_1,λ_2)=(-9,9),(-2,3),(5,-3); only the last passes mod 4.
 
-Rational coordinates of an integral endomorphism are rational algebraic
-integers, hence integers.  It remains to verify the cyclic-reduction
-hypothesis in Lemma 58.1 for the three rows of (58.9).
+For the survivor, e|gcd(9,5,3)=1, while Q=115>99=81+18e.
+This contradiction proves (58.15). In particular the earlier finite
+nonhyperelliptic spectra are excluded; no automorphism classification
+is needed to eliminate e=9 in this proof.
 
-There is no hidden field-of-definition assumption here.  Equation (58.1)
-is a product of commutative fields, so every *geometric* endomorphism of
-\(J(X)\) commutes with the \(5\)-Frobenius \(F\) of the displayed
-\(\mathbf F _5\)-model.  Consequently it preserves every \(F\)-primary
-summand of every Tate lattice.  We may therefore use this one fixed
-Frobenius to test the integral lattice even if the correspondence which
-produced \(s\) was initially written over a finite extension.  Enlarging
-that field changes neither the geometric Tate lattice nor the congruences
-in its multiplier ring.
-
-The exact Sylow subgroup calculations are
+The function x c descends to a degree-nine map r_X:B→P1_x, and C is
+the normalization of B×_(P1_x)X, since v c is anti-invariant and
+generates the quadratic extension. Etaleness of c forces r_X unramified
+off the eight branch values of X, with fiber types 1^(a_s)2^(b_s)
+there. The 40−4b δ-fixed points are exactly the index-one points, so
 
 \[
-\begin{array}{c|c|c}
-(n,\ell)&J(X)(\mathbf F_{5^n})[\ell^\infty]
- &\dim_{\mathbf F_\ell}J(X)(\mathbf F_{5^n})[\ell]\\ \hline
-(3,2)&C_2\times C_{16}\times C_{16}&3\\
-(8,3)&C_3\times C_9\times C_9\times C_9&4\\
-(48,7)&C_7\times C_7\times C_{49}\times C_{49}&4.
-\end{array}                                           \tag{58.10}
+       a_s+2b_s=9,\quad \sum_s a_s=40-4b,\quad
+       \sum_s b_s=16+2b.
 \]
 
-These are finite, exact Jacobian computations.  The group order is first
-computed independently from
+These are respectively the original totals (36,18) and (32,20).
+
+**Author scope observation.** This proof uses only the actual degree-nine
+etale c, a double quotient q of genus one or two, and the fixed-X
+arithmetic, not the full coefficient span or the Y-leg. Its extension
+to any such (c,q) is not relabelled as part of the old audit.
+
+## 3. Both factors lie in the Prym; genus two is impossible
+
+Retain M=9 AND dim W=8 in the actual seven-diamond of file 47:
+Y:z²=1−t³¹, the maps V→Y and C→X have degree nine, and p:V→C
+is cyclic etale of degree seven. Its coefficient double q:C→B has a
+lifted involution γ on V satisfying
 
 \[
- \#J(X)(\mathbf F_{5^n})
-   =\left|\operatorname{Res}\bigl(P_X(T),T^n-1\bigr)\right|. \tag{58.11}
+ p\gamma=\delta p,\qquad a\gamma=\iota_Ya,\qquad
+ c\delta=\iota_Xc.
 \]
 
-The certificate then generates an \(\ell\)-primary subgroup of that full
-order using exact Mumford-divisor arithmetic.  Thus randomness is used
-only to find generators, not to certify either the order or the invariant
-factors.
+Set J=J(Y), h=p_*a^*, A=im h, D=im c^*, and P=Prym(C/B).
+By the [norm input](40_JACOBIAN_NORM_OBSTRUCTION_FOR_THE_SEVEN_DIAMOND.md),
+J is simple of dimension 15, h≠0 and c_*h=0. Also c_*c^*=[9].
 
-For \(\ell=2\), the roots of \(q=T^2+T+1\) have order three.  The
-\(q^2\)-primary four-dimensional module contributes either two fixed
-dimensions (if cyclic) or four (if split).  Since the *entire* fixed
-space has dimension only three by the first row of (58.10), the latter is
-impossible.  It is consequently the cyclic module
-\(\mathbf F_2[T]/(q^2)\), rather than the split module
-\(\mathbf F_2[T]/(q)\oplus\mathbf F_2[T]/(q)\).
+Norm functoriality gives δ^*h=p_*γ^*a^*=−h, while δ^*c^*=−c^*.
+The images A,D are connected and anti-invariant, so q_* kills them:
+its image would be connected and contained in finite 2-torsion.
+Thus A,D⊂P, with dimensions 15,3. Their intersection is finite by
+simplicity of A and is orthogonal by c_*h=0. If g(B)=2,
+dim P=17 cannot contain their 18-dimensional sum. This is the original
+Theorem 60.2 excluding BOTH genus-two full-span rows.
 
-For \(\ell=3\), the roots of \(q=T^2+T+2\) have order eight.  The
-noncolliding first factor splits with roots \(1,-1\) modulo three and
-contributes two fixed dimensions to \(F^8\).  The second row of (58.10)
-leaves only two fixed dimensions for the four-dimensional \(q^2\)-primary
-module, so it too is cyclic.
-
-For \(\ell=7\), the roots of \(q=T^2+4T+5\) have order forty-eight.  The
-noncolliding second factor has roots \(1,5\) modulo seven, and hence
-contributes two fixed dimensions to \(F^{48}\).  The last row of (58.10)
-again leaves two, rather than four, dimensions for the colliding pair.
-That pair is cyclic as well.
-
-Apply Lemma 58.1 to the three rows of (58.9).  It gives respectively
+If g(B)=1, q is branched at 36 points, dim P=18, and its induced
+polarization has type (1^17,2). Indeed the standard tame-double-cover
+formula for b base genus and R>0 branch points is (1^(R/2−1),2^b):
+the branch-cut pairs are unimodular and the anti-invariant base pairs
+have intersection multiplied by two. The prime-to-five polarization
+calculation is unchanged in characteristic five. Addition
 
 \[
- \lambda _1\equiv\lambda _2\pmod4,\qquad
- \lambda _1\equiv\lambda _3\pmod7,\qquad
- \lambda _2\equiv\lambda _3\pmod3,
+                       \mu:A\times D\longrightarrow P
 \]
 
-which proves the proposition. \(\square\)
+is an isogeny of orthogonal factors. These retain Lemma 60.1 and
+Proposition 60.3.
 
-### Corollary 58.3 (exact elliptic quotient degrees)
+## 4. Exact finite gluing and polarization types (Proposition 60.4)
 
-In trace order \((3,-1,-4)\), the least degrees of nonconstant maps from
-\(X\) to elliptic curves in the three geometric isogeny classes are
+Assume g(B)=1 throughout the rest of the proof.
+Let K_c=ker(c^*:JX→D), κ=deg K_c. Then κ∈{1,3,9}. It is a
+finite etale group scheme here, since its exponent divides 9 in
+characteristic five. Write ρ=log_3 κ. The possibilities are:
+
+| K_c | type of λ_D | full type of λ_A |
+|---|---|---|
+| 0 | (9,9,9) | (1^12,9,9,18) |
+| C3 | (3,9,9) | (1^12,3,9,18) |
+| C9 | (1,9,9) | (1^13,9,18) |
+| C3² | (1,9,9) or (3,3,9) | (1^13,9,18) or (1^12,3,3,18) |
+
+In all cases
 
 \[
-                              28,\qquad12,\qquad21.   \tag{58.12}
+ \deg\lambda_D=3^{12-2\rho},\quad
+ \deg\lambda_A=4\cdot3^{12-2\rho},\quad
+ \deg(A\cap D)=3^{12-2\rho}.
 \]
 
-More precisely, if \(e_i\in\operatorname{End}^0(J(X))\) denotes the
-rational projector onto the \(i\)-th factor, then the primitive integral
-norm endomorphisms are
+The addition kernel is purely 3-primary and is the graph of an
+anti-isometry of the FULL 3-primary polarization kernels.
+
+**Proof.** Characters trivialized by the connected degree-nine cover
+give an abelian monodromy quotient whose order divides that index;
+their full character group is K_c. Also c_*c^*=[9], so κ|9 and the
+four listed structures exhaust it. Pullback gives
 
 \[
-                         28e_1,\qquad12e_2,\qquad21e_3. \tag{58.13}
+                    (c^*)^*\lambda_D=9\lambda_X.
 \]
 
-#### Proof
+Thus K_c is isotropic in JX[9]≃(Z/9)^6, and
+ker λ_D=K_c^perp/K_c. The elementary symplectic calculation gives the
+listed λ_D types: for C3² its plane in JX[3] is either nondegenerate
+or isotropic, giving (1,9,9) or (3,3,9), respectively.
+Taking degrees also gives deg λ_D=9^6/κ².
 
-Let \(F\) and \(V\) be Frobenius and Verschiebung and put
-\(S=F+V\).  On the three factors, \(S\) acts respectively as
-\(3,-1,-4\).  Lagrange interpolation therefore gives the integral
-endomorphisms
+At odd primes P is principally polarized. Complementary orthogonal
+factors have anti-isometric polarization kernels, with their graph as
+the addition kernel. Only the prime 3 occurs for D. At two, λ_D is
+principal, so addition has no 2-primary kernel; the single divisor two
+of P belongs to A. Combining the primary parts gives the table and
+all stated degrees. No additional 5-primary kernel is possible, since
+the addition kernel embeds into the prime-to-five ker λ_D. QED.
+
+## 5. Local restrictions on the actual norm (Proposition 60.5)
+
+Factor h:J→A⊂J(C), let d_h=deg(J→A), and put s=h†h.
+Then s is positive and
 
 \[
-\begin{aligned}
- (S+1)(S+4)&=28e_1,\\
- -(S-3)(S+4)&=12e_2,\\
- (S-3)(S+1)&=21e_3.                                  \tag{58.14}
-\end{aligned}
+ \sqrt{\deg s}=2d_h3^{6-\rho},\quad
+ v_2(d_h)\equiv4\pmod 5,\quad
+ v_3(d_h)\equiv\rho-1\pmod5.                         \tag{60.25}
 \]
 
-Conversely, if \(ne_i\) is integral, Proposition 58.2 says that \(n\)
-is divisible by both \(4,7\) for \(i=1\), by both \(4,3\) for \(i=2\),
-and by both \(7,3\) for \(i=3\).  Thus the three endomorphisms in
-(58.14) are the primitive integral multiples of the projectors.
+In particular the last residues are 4,0,1 for ρ=0,1,2.
 
-For completeness, the standard norm construction gives the asserted
-maps directly.  The connected image \(E_i=\operatorname{im}(d_i e_i)\)
-is an elliptic subvariety of the principally polarized Jacobian, where
-\((d_1,d_2,d_3)=(28,12,21)\).  The endomorphism \(d_i e_i\) is symmetric,
-has square \(d_i(d_i e_i)\), and is primitive.  Hence it is the norm
-endomorphism of \(E_i\); the restriction of the principal polarization to
-\(E_i\) is \([d_i]\).  Composing the Abel--Jacobi map of \(X\) with the
-polarized projection to \(E_i\) gives a map
+**Proof.** Pullback of λ_A is λ_J s. Taking degrees gives
+deg s=d_h² deg λ_A and hence the first identity.
+The Honda division algebra of J has index three and center
+E=Q(ζ31)^<5>. Its real subfield E+ has degree five. The integral
+reduced norm n=Nrd(s) lies in E+ by Rosati symmetry, and
 
 \[
-                              f_i:X\longrightarrow E_i
+ \deg s=N_{E/\mathbf Q}(n)=N_{E^+/\mathbf Q}(n)^2 .
 \]
 
-of degree \(d_i\), and \(f_i^*f_{i*}=d_i e_i\).
+Both 2 and 3 are inert in E+: their classes have order five in
+(Z/31)^×/<−1,5>, with 2^5=1 and 3^5=−5 mod 31 and no smaller
+positive exponent in that subgroup. Thus the two valuations of
+|N_(E+/Q)(n)| are multiples of five. Applying this to the first
+identity gives v_2(d_h)+1≡0 and v_3(d_h)+6−ρ≡0 mod5. QED.
 
-If \(f:X\to E\) is any map to an elliptic curve in the \(i\)-th isogeny
-class, then \(f^*f_*\) has coordinates \(\deg(f)e_i\).  Proposition 58.2
-forces \(d_i\mid\deg(f)\).  Thus the displayed degrees are minimal.
-\(\square\)
-
-## 3. Elimination of the non-hyperelliptic genus-two spectra
-
-Retain the degree-nine full-span coarsening
+The endomorphism s is NOT multiplication by an integer. Indeed every
+λ_A type has kernel exponent 18. If s=[m], its realization as the
+quotient of mλ_J forces 18|m. But the
+[norm-trace calculation](45_EFFECTIVE_CORRESPONDENCE_AND_CONDUCTOR_FORMULAS.md#3-author-norm-interval-and-induced-polarization-constraints)
+gives
 
 \[
- q:C\longrightarrow B,qquad c:C\longrightarrow X,qquad g(B)=2
+ \operatorname{Tr}(s\mid H^1(Y))
+        =378-\sum_{j=1}^6 I_j\le378 ,
 \]
 
-from files 47 and 56, and let \(\delta\) be the involution of \(C/B\).
+where the proper effective translate intersections I_j are nonnegative.
+For [m], positivity gives m≥18, so the trace 30m≥540, contradiction.
 
-### Theorem 58.4 (the genus-two coarsening is hyperelliptic)
-
-One has
-
-\[
-                         c\delta=\iota_Xc.            \tag{58.15}
-\]
-
-Consequently there is a degree-nine map
-
-\[
-                         B\longrightarrow\mathbf P^1_x
-\]
-
-such that \(C\) is the normalization of
-\(B\times_{\mathbf P^1_x}X\), with the ramification profiles stated in
-alternative 1 of Theorem 56.1.
-
-#### Proof
-
-Suppose (58.15) were false.  Theorem 56.1 applies to the integral
-Rosati-fixed endomorphism
-
-\[
-                       u=c_*\delta^*c^*.
-\]
-
-Write its three coordinates in trace order \((3,-1,-4)\) as
-\((\lambda _1,\lambda _2,\lambda _3)\).  Proposition 58.2 imposes all
-three congruences (58.3).
-
-The finite list (56.8) is now empty.  Here is an exhaustive check without
-relying on a search.  When \(e=1\), write the two coordinates other than
-the unique \(-9\) as \(a,b\).  Theorem 56.1 gives
-\(a+b\in\{0,1,2\}\) and \(a^2+b^2\leq18\), so
-\(-3\leq a,b\leq3\).  If the first coordinate is \(-9\), the congruences
-modulo four and seven force the other two to be \(3,-2\).  If the second
-coordinate is \(-9\), they force the two live coordinates to be equal to
-one another and congruent to \(3\) modulo four; neither possible value has
-sum \(0,1\), or \(2\).  If the third coordinate is \(-9\), they force the
-first two coordinates to be \(-2,2\).  Hence the first two congruences
-leave precisely
-
-\[
-                    (-9,3,-2),\qquad(-2,2,-9).        \tag{58.16}
-\]
-
-Neither satisfies \(\lambda _2\equiv\lambda _3\pmod3\).  This check is
-also reproduced at the end of the certificate.  When \(e=3\), the two
-live coordinates are \((a,-a)\) with \(a\in\{-3,0,3\}\).  The same three
-positions for \(-9\) show immediately that no ordered triple satisfies
-even the congruences modulo four and seven.
-
-Thus alternative 2 of Theorem 56.1 is impossible.  Alternative 1 is
-exactly (58.15) and gives all the asserted consequences. \(\square\)
-
-### Corollary 58.5
-
-In every one of the four numerical rows (47.15), the coefficient
-involution on \(C\) lies over the hyperelliptic involution of \(X\).
-
-#### Proof
-
-The two genus-one rows are Theorem 53.3.  The two genus-two rows are
-Theorem 58.4. \(\square\)
-
-## 4. What this does and does not finish
-
-The arbitrary involution left by file 47 has now disappeared: in the
-entire \(M=9\), full-span branch, both hyperelliptic double covers descend
-through the same order-two symmetry on the common curve.  The remaining
-question is the compatibility of the two resulting degree-nine maps and
-the simultaneous \(C_{14}\)- or \(D_{14}\)-closure.  This note does not
-yet exclude those hyperelliptic pullback configurations.
+This excludes INTEGER SCALARS, not every central element: non-rational
+positive elements of the degree-five real central subfield E+ are not ruled out by
+this argument. The retained norm interval is 0<s<[63], with the
+trace bound and polarization/valuation restrictions above. These are
+necessary conditions, not an existence construction or a contradiction
+from the rational Honda algebra alone. The
+[dihedral genus-one exclusion](61_D14_GENUS_ONE_ROW_IMPOSSIBLE.md)
+is a separate argument; no arbitrary common-cover exclusion is claimed.

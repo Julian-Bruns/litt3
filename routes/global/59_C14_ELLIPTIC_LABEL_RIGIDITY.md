@@ -4,7 +4,7 @@
 
 **Status: proved; independent audit pending.**
 
-Assume the full-span degree-nine situation of files 47 and 53, in the
+Assume the full-span degree-nine situation of files 47 and 58, in the
 row
 
 \[
@@ -24,7 +24,7 @@ Thus there is a cartesian square after normalization
 
 where \(\pi\) is an etale cyclic isogeny of degree seven and \(q\) is a
 double cover branched at a reduced divisor \(\Delta\) of degree 36.  The
-maps of Theorems 47.3 and 53.3 are
+maps of the coefficient theorem and hyperelliptic-descent theorem are
 
 \[
  t:E\longrightarrow\mathbf P^1_t,
@@ -106,7 +106,7 @@ seven have trivial intersection and generate the whole group.  Their fixed
 fields are \(k(E)\) and \(k(C)\), respectively.  It follows that
 \(k(V)=k(E)k(C)\) over \(k(B)\), so the quadratic extension \(k(V)/k(E)\)
 is the pullback of \(k(C)/k(B)\).  The first extension is defined by
-\(1-t^{31}\).  Theorem 53.3 identifies the second with the pullback of
+\(1-t^{31}\). The [hyperelliptic-descent theorem](58_X_CENTRAL_GLUE_CONGRUENCES.md#2-the-genus-one-and-genus-two-involutions) identifies the second with the pullback of
 \(X\to\mathbf P^1_x\), hence it is defined by \(r^7-r+1\).  Two elements
 of a field define the same quadratic extension precisely when their ratio
 is a square.  This proves (59.5).  It also proves the assertion about the

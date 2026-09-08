@@ -16,11 +16,13 @@ import signal
 import subprocess
 import threading
 import time
+from atlas_native_batch import live_group_members,stop as stop_owned_group
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=Path('/Users/julian/Documents/litt3-computation-data/backup-genus-two')
 LOCK=threading.Lock()
 GROUPS=set()
+PROCESSES={}
 
 
 def run_job(job,limit):
@@ -33,22 +35,17 @@ def run_job(job,limit):
     if '--seconds' in command:command[command.index('--seconds')+1]=str(max(1,int(limit)-2))
     with log.open('w') as handle:
         proc=subprocess.Popen(command,cwd=ROOT,stdout=handle,stderr=subprocess.STDOUT,start_new_session=True)
-        with LOCK: GROUPS.add(proc.pid)
+        with LOCK: GROUPS.add(proc.pid);PROCESSES[proc.pid]=proc
         try:
             code=proc.wait(timeout=limit)
         except subprocess.TimeoutExpired:
-            os.killpg(proc.pid,signal.SIGTERM)
-            try: code=proc.wait(timeout=5)
-            except subprocess.TimeoutExpired:
-                os.killpg(proc.pid,signal.SIGKILL);code=proc.wait()
+            stop_owned_group({'proc':proc},grace=.1);code=proc.wait()
         finally:
-            # A parent exit does not prove its native descendants exited.
-            try:os.killpg(proc.pid,0)
-            except ProcessLookupError:pass
-            else:
-                try:os.killpg(proc.pid,signal.SIGKILL)
-                except ProcessLookupError:pass
-            with LOCK: GROUPS.discard(proc.pid)
+            # Reuse the tested UID-checked exact-PID guard, including
+            # children reparented after an already exited shell wrapper.
+            stop_owned_group({'proc':proc},grace=.1)
+            assert not live_group_members(proc.pid)
+            with LOCK: GROUPS.discard(proc.pid);PROCESSES.pop(proc.pid,None)
     return {'name':name,'exit_code':code,'elapsed_seconds':time.monotonic()-started,'log':str(log)}
 
 
@@ -92,7 +89,17 @@ if __name__=='__main__':
             command=['sage',str(ROOT/('scripts/backup_genus_two_solve.sage' if args.solver_backend=='original' else 'scripts/backup_genus_two_native_solve.sage')),
                      '--tensor',str(tensor),'--chart',str(chart),'--seconds',str(args.seconds),'--output',str(target)]
             if args.solver_backend!='original':
-                command+=['--'+args.solver_backend,'--work',str(OUT/('native_'+STAMP+'_'+name))]
+                source_hash=hashlib.sha256(tensor.read_bytes()).hexdigest();resumable=[]
+                for folder in OUT.glob('native_*_'+name):
+                    info=folder/'result.json'
+                    if not info.exists() or not (folder/'complete.txt').exists():continue
+                    record=json.loads(info.read_text())
+                    if (record.get('tensor_sha256')==source_hash and record.get('chart_first_nonzero_b')==chart
+                        and bool(record.get('rooted_full_atlas'))==(args.solver_backend=='rooted-atlas')
+                        and bool(record.get('rooted_incidence'))==(args.solver_backend=='rooted-incidence')):
+                        resumable.append(folder)
+                work=max(resumable,key=lambda folder:folder.stat().st_mtime_ns) if resumable else OUT/('native_'+STAMP+'_'+name)
+                command+=['--'+args.solver_backend,'--work',str(work)]
             add(name,command)
     manifests=[]
     if args.mode=='finish':
@@ -167,10 +174,14 @@ if __name__=='__main__':
                 memory_cap_triggered=True;DEADLINE=min(DEADLINE,time.monotonic())
                 with LOCK: groups_to_stop=list(GROUPS)
                 for group in groups_to_stop:
-                    try:os.killpg(group,signal.SIGTERM)
-                    except ProcessLookupError:pass
+                    with LOCK: proc=PROCESSES.get(group)
+                    if proc is not None:stop_owned_group({'proc':proc},grace=.1)
             for future in done:
-                result=future.result();results.append(result);del pending[future]
+                try:result=future.result()
+                except Exception as exc:
+                    result={'name':pending[future],'exit_code':None,'status':'job_wrapper_exception',
+                            'error':repr(exc),'elapsed_seconds':time.monotonic()-START}
+                results.append(result);del pending[future]
                 print(json.dumps({'completed':result}),flush=True)
             if args.mode in ['pipeline','finish'] and time.monotonic()<DEADLINE-2:
                 jobs=[]
@@ -178,6 +189,12 @@ if __name__=='__main__':
                 else:
                     for twist in [-1,0,1,2,3]:add_solvers(twist)
                 for job in jobs:pending[pool.submit(run_job,job,args.seconds+10)]=job[0]
+    with LOCK: remaining_groups=list(GROUPS);remaining_processes=dict(PROCESSES)
+    cleanup_failures=[]
+    for group in remaining_groups:
+        try:stop_owned_group({'proc':remaining_processes[group]},grace=.1)
+        except Exception as exc:cleanup_failures.append({'group':group,'error':repr(exc)})
+    live_groups_at_exit={str(group):live_group_members(group) for group in remaining_groups if live_group_members(group)}
     elapsed=time.monotonic()-START;usage=resource.getrusage(resource.RUSAGE_CHILDREN)
     cpu_seconds=usage.ru_utime+usage.ru_stime-usage0.ru_utime-usage0.ru_stime
     sampled_cpu=0;previous={'elapsed_seconds':0,'aggregate_cpu_percent':0}
@@ -186,6 +203,8 @@ if __name__=='__main__':
         previous=sample
     result={'mode':args.mode,'solver_backend':args.solver_backend,'workers':args.workers,'jobs':results,'telemetry':samples,'wall_seconds':elapsed,
             'aggregate_rss_gib_cap':args.rss_gib,'memory_cap_triggered':memory_cap_triggered,
+            'live_process_groups_at_exit':live_groups_at_exit,
+            'cleanup_failures':cleanup_failures,
             'reaped_child_cpu_seconds_incomplete_after_group_kills':cpu_seconds,
             'sampled_cpu_seconds_estimate':sampled_cpu,'sampled_mean_busy_cores_estimate':sampled_cpu/elapsed,
             'peak_sampled_cpu_percent':max((s['aggregate_cpu_percent'] for s in samples),default=0),
@@ -193,3 +212,4 @@ if __name__=='__main__':
     path=OUT/f'batch_{args.mode}_{STAMP}.json';path.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({key:value for key,value in result.items() if key not in ['jobs','telemetry']},indent=2),flush=True)
     print('SUMMARY',path,flush=True)
+    if live_groups_at_exit or cleanup_failures:raise SystemExit('Backup cleanup incomplete: inspect the recorded group/failure summary.')

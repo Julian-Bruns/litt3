@@ -1,0 +1,18 @@
+{
+  "status": "exact_certificate_replayed_pass",
+  "source": "User-supplied GPT6Pro response and original ZIP, 2026-09-08",
+  "artifact": "Research/computations/pro_nine_torsion_reduction_20260908.zip",
+  "sha256": "5d889c1293a00dbe7697c164aa61ff5045a8ff2d2f93fd2ec42554724886e822",
+  "supplied_transcript_sha256": "225149344eecfa34c2f7350aebe57410f54863f3033d0b2143e13219f0e63693",
+  "replayed_by": "/root",
+  "date_local": "2026-09-08 CEST",
+  "command": "python3 verify.py",
+  "working_directory": "/Users/julian/Documents/litt3-computation-data/pro-nine-torsion-20260908.ystUT5/torsion_reduction_certificate",
+  "source_review": "All five Python source files read before execution; standard library, local JSON output only",
+  "exit_code": 0,
+  "last_line": "ALL CERTIFICATES PASS",
+  "elapsed_seconds": 0.6886,
+  "proved_computational_scope": "Exact degree-two nine-torsion sieve and complete shared-fiber degree-three exclusion using the previously proved F25^12 field bound",
+  "canonical_use": "kummer_norm_and_nine_torsion_support; degree-two/binomial steps replaced by the simpler no-elliptic-quotient norm argument",
+  "not_proved": "No exclusion of branch-free 2P+Q or P+Q+R at distinct abscissas; no independent whole-proof audit; no common-cover exclusion"
+}

@@ -1,0 +1,22 @@
+{
+ "status": "original13_factored_polynomial_unit_identity_replay_PASS",
+ "original_incidence_rows_reconstructed": 12,
+ "original_inverse_norm_row_reconstructed": true,
+ "original_linear_in_p_identities_verified": 13,
+ "three_variable_scalar_polynomial_identities_verified": 2,
+ "original13_unit_identity_exact_by_frobenius_composition": true,
+ "original_inverse_norm_multiplier_zero": true,
+ "expanded_multivariate_unit_polynomial_materialized": false,
+ "elimination_or_point_evaluation_used": false,
+ "elapsed_seconds": 0.8638137499801815,
+ "negative_mutations_rejected": [
+  "unit_inverse",
+  "original_annihilator_weight"
+ ],
+ "tensor_sha256": "fb4e81f7d9de776e4685b1da10488b2fa53eeabed5e61d1b341c977fc4b5cbcb",
+ "certificate_sha256": "d6084f05690e501710cc0100c986ceefe0fba5279ba0623b4eec7b3113d426f2",
+ "twist_index": 1,
+ "chart_first_nonzero_b": 0,
+ "total_seconds": 2.0292357910075225,
+ "scope": "Original-row arithmetic replay only. Twisted Cech geometry audit and whole common-cover gaps are separate."
+}

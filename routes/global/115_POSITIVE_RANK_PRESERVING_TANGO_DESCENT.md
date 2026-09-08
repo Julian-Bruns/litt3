@@ -1,296 +1,212 @@
-# Maximal Tango descent without a Galois hypothesis
+# Rank-preserving Tango descent and the exact norm defect
 
-**Status: audited PASS, 2026-09-05; no breaking objections.**
-Auditor: `/root/x_elliptic_quotient_maps`. The audit covers this theorem
-and its required input chain, not every claim in files 111--113. The
-auditor previously contributed finite-group examples in file 112 that
-are not used here. One optional exposition suggestion concerns explicit
-fpqc descent of the subbundle property.
-[Audit record](audits/115_POSITIVE_RANK_PRESERVING_TANGO_DESCENT_AUDIT.md).
+Version 2, 2026-09-08. The all-degree Tango theorem and Frobenius-root
+proof retain their PASS audit, /root/x_elliptic_quotient_maps, 2026-09-05,
+with no breaking objections. Its exact required input chain is included,
+not every example in those inputs; the auditor had contributed unused
+prime-degree group examples. [Audit record](audits/115_POSITIVE_RANK_PRESERVING_TANGO_DESCENT_AUDIT.md).
+Original proof: /root; separate author verification:
+/root/gluing_cohomology_rigidity. The merged symmetric norm-defect formula
+and connected AFFINE counterexample retain AUTHOR/exact-arithmetic scope,
+not that audit. No unrestricted projective-descent claim is made.
 
-Main theorem and Frobenius-root proof: `/root`. Separate
-verification of normalized-norm connection descent and its combination
-with files 111--113: `/root/gluing_cohomology_rigidity`.
+Let k be algebraically closed, and curves smooth projective connected
+unless explicitly affine. Use the
+[embedded maximal Tango and connection conventions](111_P_RANK_ONE_TANGO_DESCENT.md).
+Write γ(C) for p-rank; p is odd for the all-degree Tango theorem.
+Section 1's prime-to-p root lemma allows p=2 and common rank zero.
 
-This is the selected result of the second three-route comparison.
-It removes the Galois hypothesis for covers preserving positive p-rank.
-It does NOT assume that a Galois closure preserves p-rank. Files
-111--113 are retained pending an audit of the combined theorem.
+## 1. The reusable Frobenius-root descent lemma
 
-Throughout, k is algebraically closed of odd characteristic p, and
-curves are smooth, projective and connected. Write gamma(C) for the
-p-rank. The prime-to-p root lemma below works also in characteristic
-two and with p-rank zero.
-
-## 1. The all-degree theorem
-
-Use the relative Frobenius F_C:C -> C^(1), and set
-
-\[
- B_C^1=\ker\bigl(\operatorname{Car}:F_{C*}\omega_C
-                               \longrightarrow\omega_{C^{(1)}}\bigr).
-\]
-
-A maximal Tango structure on C is an embedded line subbundle L of
-B_C^1 whose adjoint F_C^*L -> omega_C is an isomorphism. Denote its
-set by Tan(C). This is exact maximality, not equality with a
-floor-rounded integer bound. Equivalently, a structure is represented
-by a rational exact differential xi with div(xi) = pD.
-
-### Theorem 115.1
-
-For every connected finite etale map f:D -> X such that
-
-\[
-                         \gamma(D)=\gamma(X)>0,
-\]
-
-pullback induces a bijection
-
-\[
-                 \boxed{\operatorname{Tan}(X)
-                           \xrightarrow{\sim}\operatorname{Tan}(D).}
-                                                               \tag{115.1}
-\]
-
-No condition is imposed on the degree, on the monodromy group, or
-on the p-rank of the Galois closure.
-
-In particular, a finite etale cover of a positive-p-rank curve cannot
-acquire its first maximal Tango structure without increasing p-rank.
-
-## 2. Frobenius roots descend through rank-preserving prime-to-p covers
-
-The structural input here is more general than canonical bundles.
-
-For a line bundle M on C, let Root_C(M) be the set of isomorphism
-classes of line bundles L on C^(1) with F_C^*L isomorphic to M.
-An isomorphism is not part of the set; changing it by a global scalar
-does not affect its associated connection or embedded canonical line.
-
-### Lemma 115.2
-
-Let f:D -> X be finite etale of degree n prime to p, with
-gamma(D) = gamma(X), possibly zero. For every line bundle M on X,
-the natural pullback map is bijective:
+For a line bundle M on C, let Root_C(M) consist of isomorphism classes
+L on C^(1) with F_C^*L≅M; a choice of isomorphism is not part of the set.
+For an actual finite etale f:D→X of degree n prime to p and
+γ(D)=γ(X), pullback gives a bijection for EVERY line bundle M on X:
 
 \[
  \operatorname{Root}_X(M)\xrightarrow{\sim}
-                    \operatorname{Root}_D(f^*M).        \tag{115.2}
+                       \operatorname{Root}_D(f^*M).      \tag{1}
 \]
 
-In particular, the right side is nonempty if and only if the left
-side is nonempty.
-
-#### Proof
-
-The Frobenius square for a finite etale map is Cartesian. Consequently
-finite-flat norm and its base-change compatibility give
+Proof. Relative Frobenius is Cartesian under etale base change, so
+for any upstairs root L_D and N=Nm_(f^(1))(L_D),
 
 \[
- F_X^*\operatorname{Nm}_{f^{(1)}}(L_D)
- \simeq\operatorname{Nm}_f(F_D^*L_D)
- \simeq\operatorname{Nm}_f(f^*M)
- \simeq M^{\otimes n}                                   \tag{115.3}
+ F_X^*N\simeq\operatorname{Nm}_f(F_D^*L_D)
+       \simeq\operatorname{Nm}_f(f^*M)\simeq M^n.
 \]
 
-for every L_D in Root_D(f^*M).
+Choose u,v∈Z with un+vp=1. Then
+L_0=N^u⊗(M^(1))^v satisfies F_X^*L_0≅M, since F_X^*M^(1)≅M^p.
+Thus an upstairs root supplies one downstairs. Negative exponents
+mean dual powers.
 
-Choose integers u,v with un + vp = 1. If N is the norm of L_D,
-define a line bundle on X^(1) by
+The geometric Verschiebung kernel
+K_C=ker(F_C^*:J(C^(1))(k)→J(C)(k)) is killed by p and has p^γ(C)
+elements. Pullback K_X→K_D is injective: its kernel is killed by n
+using norm and by p, hence zero. Equal p-ranks make it an isomorphism.
+The two nonempty root sets are torsors under these groups, and pullback
+respects their actions; this proves both directions of (1).
+
+Apply (1) to M=ω_X, using f^*ω_X=ω_D. The resulting root class also
+descends the SPECIFIED EMBEDDED Tango line. Choose F_X^*L_X≅ω_X
+and use adjunction. Its pulled-back adjoint differs from the prescribed
+one by a global scalar, since H^0(O_D)=k. Thus the embedded images
+agree. Subbundle local freeness and maximality descend by faithful
+flatness; Cartier commutes with etale pullback, so lying in its kernel
+descends too. Consequently
 
 \[
-                   L_0=N^{\otimes u}\otimes(M^{(1)})^{\otimes v}.
+ \operatorname{Tan}(X)\xrightarrow{\sim}\operatorname{Tan}(D)
+ \quad\text{if }p\nmid n,\ \gamma(D)=\gamma(X),            \tag{2}
 \]
 
-Negative tensor exponents mean dual powers. Since
-F_X^*(M^(1)) is canonically M^p, equation (115.3) gives
+including common rank zero. No Galois assumption occurs.
+
+## 2. The audited all-degree positive-rank theorem
+
+For EVERY actual finite etale f:D→X in odd characteristic satisfying
+γ(D)=γ(X)>0, pullback induces the same bijection (2), with NO degree,
+monodromy or Galois-closure-rank restriction.
+
+If the common rank r≥2, the
+[non-Galois amplification theorem, Section 4](112_P_RANK_ONE_NONGALOIS_FACTORIZATION.md)
+forces p∤deg f, so Section 1 applies. If r=1, its original direct
+[rank-one factorization, Section 3](112_P_RANK_ONE_NONGALOIS_FACTORIZATION.md)
+gives D→E→X, where D/E has prime-to-p degree and E/X is cyclic Galois
+of p-power degree. All three ranks are one. Section 1 descends through
+D→E. The [rank-one p-group theorem](111_P_RANK_ONE_TANGO_DESCENT.md#3-descent-through-an-etale-p-group)
+then descends through E→X: its at-most-p−1 embedded structures are
+fixed individually by the p-group, and inherit actual descent data.
+Composing proves the theorem, without ever taking the Galois closure
+of the prime-to-p remainder or supposing it rank-preserving.
+
+In particular, if γ(X)>0 and Tan(X)=∅, acquisition of a Tango structure
+by an etale cover D requires γ(D)>γ(X): p-rank cannot decrease since
+norm/pullback makes J(X) an isogeny factor of J(D), and equality is
+excluded above. The premise Tan(X)=∅ is automatic when p∤(g(X)−1).
+The theorem is not extended to arbitrary degree at common rank zero.
+
+## 3. Normalized norm and the precise trace-zero obstruction
+
+For f:D→X finite etale of degree n prime to p, a regular connection
+on ω_D=f^*ω_X has coefficient a in a local base frame dx. Define
 
 \[
-                              F_X^*L_0\simeq M.          \tag{115.4}
+ m=n^{-1}\operatorname{Tr}_f(a).
 \]
 
-Thus existence of an upstairs root implies existence downstairs.
+It transforms as a canonical connection: under dt=q du, each conjugate
+has coefficient q a_t−q'/q, and normalized trace gives the same law.
+Trace preserves regularity. Intrinsically take the determinant norm
+connection on Nm_f(ω_D)=ω_X^n, subtracting the connection on det(f_*O_D);
+division by n gives its unique connection root on ω_X. Neither splitting
+over X nor prime-to-p Galois closure is required.
 
-Now let
+If the original connection is dormant, so is its normalized norm. For
+a separating x, D_x^p=0, and in a separable splitting field the coefficients
+a_i satisfy a_i^p+D_x^(p−1)a_i=0. Since n^(−1)∈F_p,
 
 \[
- K_C=\ker\bigl(F_C^*:\operatorname{Pic}^0(C^{(1)})(k)
-                                   \to\operatorname{Pic}^0(C)(k)\bigr).
+ m^p+D_x^{p-1}m
+       =n^{-1}\sum_i\bigl(a_i^p+D_x^{p-1}a_i\bigr)=0.     \tag{3}
 \]
 
-As recalled in file 111, this is an elementary abelian p-group of
-order p^gamma(C). Equivalently, it is the geometric kernel of
-Verschiebung on the Jacobian. Pullback K_X -> K_D is injective:
-if f^(1)*T is trivial, then taking norms gives T^n trivial, while
-T^p is trivial and gcd(n,p) = 1. Since the two groups have equal
-finite cardinality, pullback is an isomorphism.
-
-When nonempty, each root set in (115.2) is a torsor under its K_C,
-and pullback respects those torsor actions. Existence (115.4) and
-the isomorphism K_X -> K_D prove both surjectivity and injectivity
-of (115.2). \(\square\)
-
-### Corollary 115.3
-
-Under the hypotheses of Lemma 115.2, pullback induces a bijection
-Tan(X) -> Tan(D).
-
-#### Proof
-
-Use omega_D = f^*omega_X. Every upstairs maximal Tango line has
-a unique root class L_X downstairs by Lemma 115.2. Choose an
-isomorphism F_X^*L_X -> omega_X. Adjunction supplies its embedded
-line in F_X*omega_X. Its pullback is the specified embedded line
-upstairs: after identifying the roots, the two isomorphisms upstairs
-differ only by a scalar, since H^0(D,O_D) = k.
-
-The Cartier operator commutes with etale pullback. Therefore the
-downstairs line lies in its kernel if and only if the upstairs line
-does; the reverse implication uses faithful flatness of f^(1).
-This proves surjectivity on Tango structures, and uniqueness of
-the downstairs root proves injectivity. \(\square\)
-
-## 3. Connection interpretation and the exact failed shortcut
-
-The preceding lemma also has a useful differential proof. It explains
-why the p-rank hypothesis is essential to the argument.
-
-Regular zero-p-curvature connections on a fixed line bundle form,
-when nonempty, an affine torsor under the F_p-vector space
+For projective curves let V_C be their F_p-space of regular Cartier-fixed
+differentials. Cartier commutes with trace and pullback, giving the exact
+direct sum
 
 \[
- V_C=\{\beta\in H^0(C,\omega_C):\operatorname{Car}(\beta)=\beta\},
- \qquad \dim_{\mathbf F_p}V_C=\gamma(C).
+ V_D=f^*V_X\oplus\ker(\operatorname{Tr}_f:V_D\to V_X),
+ \qquad\dim\ker\operatorname{Tr}_f=\gamma(D)-\gamma(X).    \tag{4}
 \]
 
-Suppose f:D -> X is finite etale of degree n prime to p, and a
-dormant connection is given on omega_D = f^*omega_X. In an etale
-local splitting over a base coordinate x, write its coefficients
-as a_1,...,a_n in the frame dx. Put
+The difference δ=∇_D−f^*∇_m is Cartier-fixed with trace zero. Equal
+ranks make δ=0 and recover the actual connection/Tango descent of (2).
+Base rank one alone does not kill this kernel if upstairs rank grew.
+This is a second proof of the audited prime-to-p mechanism, not an
+argument that averaging by itself preserves the nonlinear Tango equation.
+
+In characteristic five write
+P_4(a)=a^4−a²a'+3(a')²+4aa''−a''' and use normalized trace brackets.
+Put b_i=a_i−m, μ_j=〈b^j〉 and σ=〈(b')²〉. If every P_4(a_i)=0, then
+the retained AUTHOR defect formula is
 
 \[
-                            \bar a=\frac1n\sum_i a_i.    \tag{115.5}
+ \boxed{P_4(m)=(m'-m^2)\mu_2+m\mu_2'+m\mu_3
+             +2\mu_3'+3\mu_2''+\sigma-\mu_4.}            \tag{5}
 \]
 
-This is the normalized norm connection on omega_X. The coordinate
-change rule is preserved, since all coefficients transform by the
-same affine rule. Its p-curvature is zero: with partial = d/dx,
-one has partial^p = 0 on the separable function field and
+For verification, expand before eliminating mixed moments:
 
 \[
- \bar a^p+\partial^{p-1}\bar a
-       =\frac1n\sum_i(a_i^p+\partial^{p-1}a_i)=0.        \tag{115.6}
+\begin{aligned}
+ \langle P_4(a)\rangle-P_4(m)
+   ={}&(m^2-m')\mu_2+4m\mu_3+\mu_4
+          -2m\langle bb'\rangle-\langle b^2b'\rangle\\
+     &+3\sigma+4\langle bb''\rangle .
+\end{aligned}
 \]
 
-Here 1/n belongs to F_p. The difference between the original
-connection and the pullback of its normalized norm is therefore
-a Cartier-fixed regular differential delta on D with trace zero.
-Pullback V_X -> V_D is injective. When the p-ranks agree, it is
-an isomorphism; thus delta = f^*beta. Its trace is n beta, so
-delta = 0. The connection itself descends.
+Substitute μ_2'=2〈bb'〉, μ_3'=3〈b²b'〉 and
+μ_2''=2σ+2〈bb''〉 to obtain (5). The combined expression has weight
+four, although individual derivative moments need not be tensorial.
+Trace zero of b does not kill its quadratic or quartic moments.
 
-Without equality of ranks, the trace-zero space has dimension
-gamma(D) - gamma(X). It need not vanish. Moreover averaging alone
-does not preserve the Tango condition, even when each conjugate
-connection satisfies it. In characteristic five the condition is
-the nonlinear equation
+## 4. A connected affine etale counterexample, not a projective one
+
+In characteristic five set N=x²+x+1 and
 
 \[
- P_4(a)=a^4-a^2a'+3(a')^2+4aa''-a'''=0.
+ X_{\rm aff}=\operatorname{Spec}k[x,1/(xN)],\qquad
+ D_{\rm aff}=X_{\rm aff}\times_{\mathbf A^1_x}\mathbf A^1_z,
+ \qquad x=z^2.
 \]
 
-The supporting note
-[Tango norm defect and connected affine counterexample](TANGO_NORM_DEFECT_AND_CONNECTED_AFFINE_COUNTEREXAMPLE.md)
-gives both the exact trace defect and a connected affine etale
-double-cover example where each original conjugate is Tango but
-its normalized norm is not. That example is NOT asserted to be
-projective or to have a p-rank-one compactification.
-
-## 4. Completion of the all-degree proof
-
-Let gamma(D) = gamma(X) = r > 0.
-
-If r >= 2, the [rank-preservation bound, Section 4](112_P_RANK_ONE_NONGALOIS_FACTORIZATION.md)
-says that deg(D/X) is prime to p.
-Corollary 115.3 immediately proves (115.1).
-
-Suppose r = 1. The [rank-one factorization, Section 3](112_P_RANK_ONE_NONGALOIS_FACTORIZATION.md) gives
+The map is finite etale of degree two: z and 2z are units. The source
+is a localization of k[z], hence connected, with involution z↦−z.
+The function u=1+z+z² is a unit since
+u(z)u(−z)=N. The nowhere-zero differential
 
 \[
-                        D\longrightarrow E\longrightarrow X,
+ \xi=u\,dx=(2z+2z^2+2z^3)\,dz=d(z^2+4z^3+3z^4)
 \]
 
-where D/E has degree prime to p and E/X is cyclic Galois of
-p-power degree. All three curves have p-rank one. By Corollary
-115.3, Tan(E) -> Tan(D) is bijective.
-
-It remains to use the rank-one p-group descent of file 111.
-For clarity, its mechanism is the following. The space of dormant
-canonical connections on E, if nonempty, is an affine F_p-line.
-The local Tango equation has degree p-1 with nonzero leading
-coefficient along that line. Thus
+is exact. Declaring ξ horizontal gives ONE regular dormant Tango
+connection upstairs; both conjugate coefficients satisfy P_4=0.
+They are not arbitrary choices on disconnected sheets. Its normalized
+norm coefficient and a horizontal differential downstairs are
 
 \[
-                         |\operatorname{Tan}(E)|\le p-1.
+ m=-\tfrac12N'/N=2N'/N,\qquad N^3dx.
 \]
 
-The p-group Aut(E/X) acts on this finite set. Every orbit has
-p-power size; since the entire set has fewer than p elements,
-each structure is fixed. Its embedded line or its canonical
-connection then descends along the actual etale torsor E/X.
-Cartier-zero descends by faithful flatness. Pullback is injective
-for embedded structures. Hence Tan(X) -> Tan(E) is bijective.
+But N³=x^6+3x^5+x^4+2x^3+x²+3x+1, so
 
-Composing the two bijections proves Theorem 115.1. \(\square\)
+\[
+ \operatorname{Car}(N^3dx)=dx\ne0,\qquad
+                    P_4(m)=4/N^3\ne0.                  \tag{6}
+\]
 
-The argument never takes the Galois closure of D/E. In particular,
-it does not need the unproved assertion that a rank-preserving
-prime-to-p cover has a rank-preserving Galois closure.
+Fourth differentiation of N³ or substitution into P_4 proves the latter
+identity; direct symbolic replay passed 2026-09-08. Thus even a
+connected AFFINE etale double with a nowhere-zero exact horizontal
+differential need not have Tango normalized norm. The projective
+compactification is RAMIFIED and the connections need not extend
+regularly at the omitted points. This does not refute (2), or supply a
+projective rank-one counterexample to unrestricted descent.
 
-## 5. Consequences and application boundaries
+## 5. Fixed-pair scope
 
-### Corollary 115.4 (rank growth is necessary)
+The [optional rank-one genus-nine curve](P_RANK_ONE_GENUS9_ALTERNATIVE_SOURCE.md)
+has no Tango structure, and neither does any rank-preserving etale cover
+of it, of arbitrary degree. It is not the fixed X. In the unchanged
+genus-(9,25) pair, γ(X)=6 and γ(Y)=25, so a common etale Z has rank
+at least25 and its X-leg is NOT rank-preserving. Both endpoint
+genus-minus-one values 8,24 are prime to5, so neither endpoint has
+a maximal Tango structure to pull back directly.
 
-If gamma(X) > 0, Tan(X) is empty, and D -> X is finite etale
-with Tan(D) nonempty, then gamma(D) > gamma(X).
-
-Indeed p-rank cannot decrease under a finite separable map of
-smooth projective curves: the base Jacobian is an isogeny factor
-of the upstairs Jacobian. Equality is excluded by Theorem 115.1.
-
-If p does not divide g(X) - 1, then Tan(X) is automatically
-empty. Thus the same strict-growth conclusion applies.
-
-### Optional rank-one genus-nine source
-
-For the optional curve X_1 in
-`P_RANK_ONE_GENUS9_ALTERNATIVE_SOURCE.md`, one has p=5,
-g(X_1)-1=8, and gamma(X_1)=1. Every rank-preserving finite etale
-cover of X_1 has no maximal Tango structure, regardless of its
-degree or whether it is Galois.
-
-This strictly improves the p-group-only statement of file 111.
-It still does not exclude a common cover whose rank has grown.
-X_1 is not the fixed source in file 76.
-
-### The actual fixed pair
-
-The fixed genus-nine X has rank 6 and the fixed genus-25 Y is
-ordinary, of rank 25. A common cover Z necessarily has rank at
-least 25, so its X-leg is NOT rank-preserving. Theorem 115.1
-therefore gives no contradiction for that pair. Neither original
-genus-minus-one (8 or 24) is divisible by 5, so neither original
-curve has a maximal Tango structure to pull back directly.
-
-The theorem is a parameterized structural result for possible
-future optimization of the curves, not a new excluded common
-degree for the fixed pair.
-
-### What remains to extend
-
-The open issue has become genuine p-rank growth, not the missing
-Galois-closure reduction. A full common-cover obstruction needs a
-quantitative or geometric restriction on that growth while
-retaining both actual etale maps from the same projective curve.
-Theorem 115.1 does not supply such a restriction.
+The theorem needs actual rank preservation. A new common-cover obstruction
+would have to control rank growth while retaining BOTH actual finite
+etale maps from the SAME smooth projective source; neither (5) nor the
+affine counterexample supplies that control.

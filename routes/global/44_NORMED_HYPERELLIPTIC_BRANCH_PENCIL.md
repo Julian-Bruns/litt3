@@ -1,389 +1,237 @@
-# The normed hyperelliptic branch pencil in the seven-diamond
+# Normed branch sections and the nonpencil theorem
 
-## Status and purpose
+Version 2, 2026-09-08: combines the two proofs, with separate evidence:
 
-**Status: proved.**  **Audit: PASS with one minor wording correction** --
-`/root/norm_polarization_refinement`, 2026-09-04.  The sentence after
-(44.27) misses a factor of two when describing its divisor; no displayed
-identity or theorem is affected.  [Audit record](audits/44_NORMED_BRANCH_PENCIL_AUDIT.md).
+- Propositions 44.1, 44.3 and Theorem 44.2: PASS with a minor divisor
+  wording correction, /root/norm_polarization_refinement, 2026-09-04,
+  [audit metadata](audits/44_NORMED_BRANCH_PENCIL_AUDIT.md).
+- The nonpencil theorem in §4: PASS, /root/norm_pencil_dimension_audit,
+  2026-09-04, [audit metadata](audits/46_NORM_PENCIL_DIMENSION_AUDIT.md).
 
-Assume the exact seven-diamond of files 38 and 40:
+The original proofs and hypotheses are retained. The corrected factor two
+in (44.27) is explicit below. The final birational-evaluation corollary is
+author prose; this consolidation has no new independent audit.
 
-\[
- \begin{array}{ccc}
- V&\xrightarrow{a}&Y\\
- \downarrow p&&\\[-2mm]
- C&\xrightarrow{c}&X,
- \end{array}
- \qquad
- \deg a=\deg c=M,
- \qquad \deg p=7,
- \tag{44.1}
-\]
-
-where all three maps are finite etale, (p) is cyclic with generator
-\(\beta\), and (a\beta\ne a).  Write the two fixed curves as
+Over k=Fbar5 all curves are smooth projective connected. Keep the ACTUAL
+finite etale diamond
 
 \[
-       Y:\ z^2=1-t^{31},
-       \qquad
-       X:\ v^2=q^7-q+1.
-\tag{44.2}
+ V\xrightarrow[\;M\;]{a}Y,\qquad
+ V\xrightarrow[\;7\;]{p}C\xrightarrow[\;M\;]{c}X,\qquad
+ Y:z^2=1-t^{31},\quad X:v^2=q^7-q+1,
 \]
 
-This note retains the entire hyperelliptic pencil on (Y) while taking the
-norm through (p).  Its 32 ramified fibers give 32 effective degree-(M)
-divisors on (C), each of whose double lies in one fixed degree-(2M)
-linear system.  That system is a 14-torsion translate of the pullback of the
-hyperelliptic pencil on (X).  All 32 doubled divisors lie on a rational
-curve of degree at most seven in that linear system.
+where p is a cyclic torsor, β generates its group, and aβ≠a.
+Thus g(Y)=15, g(X)=3, g(C)=2M+1 and g(V)=14M+1.
+The [Jacobian input](40_JACOBIAN_NORM_OBSTRUCTION_FOR_THE_SEVEN_DIAMOND.md)
+is that J(Y) is absolutely simple and h=p_*a^*≠0.
+Both original etale legs remain on the SAME source.
 
-This is stronger than retaining only the norm line or its degree.  It is not
-yet a contradiction: the remaining question is whether such a norm-polynomial
-configuration can occur on an etale cover of the explicit curve (X) without
-descending to a visible correspondence.
+## 1. Doubled branch divisors (Proposition 44.1)
 
-## 1. The 32 doubled divisors
-
-Let
+Let \(\mathcal A=\mu_{31}\cup\{\infty\}\), and let P_α be the
+Weierstrass point of Y over α. Set
 
 \[
- \mathcal W=\{\alpha\in k:\alpha^{31}=1\}\cup\{\infty\}
-\tag{44.3}
+ R_\alpha=a^*P_\alpha,\quad D_\alpha=p_*R_\alpha,\quad
+ L=\mathcal O_C(2D_\infty),\quad
+ \epsilon_\alpha=\mathcal O_C(D_\alpha-D_\infty).
 \]
 
-be the branch set of the hyperelliptic map (t:Y\to\mathbf P^1), and let
-(P_\alpha\) be its ramification point over \(\alpha\).  Thus
+Every R_α is reduced of degree M; D_α is effective of degree M and
+need NOT be reduced. Since div_Y(t−α)=2P_α−2P_∞, the norm-divisor
+identity gives
 
 \[
- \operatorname{div}_Y(t-\alpha)=2P_\alpha-2P_\infty
- \qquad(\alpha^{31}=1).
-\tag{44.4}
+ \operatorname{div}_C\operatorname{Nm}_{V/C}(t-\alpha)
+       =2D_\alpha-2D_\infty,\quad
+ \epsilon_\alpha=h([P_\alpha-P_\infty])\in J(C)[2].   \tag{44.6}
 \]
 
-Put
+Hence L has a section with zero divisor 2D_α for every α∈𝒜;
+at infinity it is represented by the rational function 1.
+The 31 finite Weierstrass differences generate J(Y)[2] with their sum
+as the unique relation, because
 
 \[
- R_\alpha=a^*P_\alpha,\qquad
- D_\alpha=p_*R_\alpha,
- \qquad
- R_\infty=a^*P_\infty,\qquad D_\infty=p_*R_\infty.
-\tag{44.5}
+ \operatorname{div}_Y(z)=\sum_{\alpha^{31}=1}P_\alpha-31P_\infty .
 \]
 
-Each (R_\alpha) is a reduced divisor of degree (M), and each
-(D_\alpha) is an effective divisor of degree (M); the latter need not be
-reduced.
+Their images can collide according to ker(h|J(Y)[2]); injectivity is
+NOT assumed. This proves all branch-section assertions directly.
 
-### Proposition 44.1 (normed branch fibers)
+## 2. The translated pencil (Theorem 44.2)
 
-For every finite \(\alpha\in\mathcal W\),
+Let H_Y=O_Y(2P_∞), H_X=O_X(2Q_∞), and Q_X=O_X(Q_∞). Then
 
 \[
- \operatorname{div}_C\!\left(\operatorname{Nm}_{V/C}(t-\alpha)\right)
-             =2D_\alpha-2D_\infty.
-\tag{44.6}
+ \begin{gathered}
+ L^{14}\simeq\omega_C^7,\qquad
+ \delta=L\otimes(c^*H_X)^{-1}\in J(C)[14],\\
+ \tau=L^2\otimes\omega_C^{-1}=\delta^2\in J(C)[7],\\
+ \varepsilon=\mathcal O_C(D_\infty)\otimes(c^*Q_X)^{-1}
+                 \in J(C)[28],\\
+ \mathcal O_C(D_\alpha)\simeq
+       c^*Q_X\otimes\varepsilon\otimes\epsilon_\alpha .
+ \end{gathered}                                      \tag{44.19}
 \]
 
-Consequently, if
+**Proof.** Put A_V=a^*H_Y. Etaleness gives
+A_V^14=a^*ω_Y=ω_V=p^*ω_C. Norm through p has degree seven and sends
+A_V to L; thus L^14=ω_C^7. Also ω_C=c^*ω_X=(c^*H_X)^2.
+The formulas for δ,τ follow, while ε²=δ gives ε^28=1.
+The last identity is the definition of ε_α. QED.
+
+Since deg L=g(C)−1=2M, Riemann–Roch also gives the symmetry
 
 \[
-                         L=\mathcal O_C(2D_\infty),
-\tag{44.7}
+ h^0(C,L)=h^0(C,L\otimes\tau^{-1}),                    \tag{44.22}
 \]
 
-then (L) has, for every \(\alpha\in\mathcal W\), a nonzero section
-(s_\alpha) with
+because ω_C⊗L^(-1)=L⊗τ^(-1). In particular all 32 D_α are
+28-torsion translates of the pulled degree-one divisor, and their
+relative differences lie in the particular subgroup h(J(Y)[2]).
+
+## 3. The norm polynomial and evaluation curve (Proposition 44.3)
+
+Put F=k(C), K=k(V) and
 
 \[
-                         \operatorname{div}(s_\alpha)=2D_\alpha.
-\tag{44.8}
+ P(T)=\operatorname{Nm}_{K/F}(T-t)
+        =\prod_{i=0}^6(T-\beta^i t).
 \]
 
-Equivalently,
+The t-orbit has size seven. Otherwise β fixes t; its action on z differs
+by a constant sign, and odd order forces that sign to be positive,
+contrary to aβ≠a. Thus P is the separable minimal polynomial and K=F(t).
+
+Every coefficient is a section of L: above x∈C split the etale p-cover
+over a strict henselian neighborhood. If m_x sheets lie over P_∞,
+exactly those conjugates have poles of order two. Each elementary
+symmetric polynomial has pole order at most 2m_x, the multiplicity of
+2D_∞. Thus the coefficient span W satisfies dim W≤8.
+
+For α∈𝒜, evaluation at α, including the homogeneous leading coefficient at
+infinity, has zero divisor 2D_α. These sections have no common zero:
+at x, choose a finite branch value among the 31 values avoiding the
+at most seven t-values on the sheets over x. Its norm section is
+nonzero at x, including when some sheets lie over infinity. Hence W
+is basepoint-free.
+
+No evaluation P(α) is the zero section, since a constant α cannot be
+a root of the irreducible P (and the leading coefficient is nonzero).
+Consequently evaluation is an everywhere-defined projected Veronese map
 
 \[
- \epsilon_\alpha:=\mathcal O_C(D_\alpha-D_\infty)
-                         \in J(C)[2].
-\tag{44.9}
+ \nu:\mathbf P^1_t\to\mathbf P(W),\qquad
+ \nu^*\mathcal O(1)=\mathcal O_{\mathbf P^1}(7).        \tag{46.11}
 \]
 
-Here (s_\infty) is the canonical section represented by the rational
-function (1).
+The homogeneous norm equation defines an integral divisor Σ in
+C×P1_t, of bidegree (7,2M), whose normalization is V via (p,t).
+Integrality follows from minimality and the absence of a vertical
+component by basepoint-freeness.
 
-#### Proof
-
-Pulling (44.4) back through the etale map (a) gives
-
-\[
-       \operatorname{div}_V(t-\alpha)=2R_\alpha-2R_\infty.
-\]
-
-For a finite flat map of smooth curves, the divisor of the field norm is the
-pushforward of the divisor.  Applying (p_*) proves (44.6).  A rational
-function with divisor (44.6), regarded as a section of
-(\mathcal O_C(2D_\infty)), has zero divisor (2D_\alpha).  The same
-statement for \(\alpha=\infty\) is represented by (1).  Finally, (44.6)
-is exactly the assertion that twice (D_\alpha-D_\infty) is principal,
-which proves (44.9).  \(\square\)
-
-The two-torsion classes in (44.9) are not unrelated accidental points.  If
-
-\[
-                         h=p_*a^*:J(Y)\longrightarrow J(C),
-\tag{44.10}
-\]
-
-then
-
-\[
-       \epsilon_\alpha=h([P_\alpha-P_\infty]).
-\tag{44.11}
-\]
-
-The 31 classes ([P_\alpha-P_\infty]) generate (J(Y)[2]); their unique
-linear relation is their sum, obtained from
-
-\[
-             \operatorname{div}_Y(z)
-                =\sum_{\alpha^{31}=1}P_\alpha-31P_\infty.
-\tag{44.12}
-\]
-
-Thus the possible coincidences among the classes (\epsilon_\alpha) are
-controlled exactly by the kernel of the already nonzero homomorphism (h)
-on two-torsion.
-
-## 2. The torsion relation with the fixed curve (X)
-
-Let
-
-\[
- H_Y=\mathcal O_Y(2P_\infty),\qquad
- H_X=\mathcal O_X(2Q_\infty)
-\tag{44.13}
-\]
-
-be the hyperelliptic pencil line bundles.  Since (g(Y)=15) and (g(X)=3),
-
-\[
-                   \omega_Y\simeq H_Y^{14},
-                   \qquad \omega_X\simeq H_X^2.
-\tag{44.14}
-\]
-
-### Theorem 44.2 (a torsion-translated pulled pencil)
-
-The line bundle (L) in (44.7) satisfies
-
-\[
-                         L^{14}\simeq\omega_C^7.
-\tag{44.15}
-\]
-
-In particular,
-
-\[
-       \delta:=L\otimes(c^*H_X)^{-1}\in J(C)[14],
-\tag{44.16}
-\]
-
-and
-
-\[
-       \tau:=L^2\otimes\omega_C^{-1}=\delta^2\in J(C)[7].
-\tag{44.17}
-\]
-
-More finely, put (Q_X=\mathcal O_X(Q_\infty)), so that
-(Q_X^2=H_X), and define
-
-\[
-       \varepsilon=\mathcal O_C(D_\infty)\otimes(c^*Q_X)^{-1}.
-\tag{44.18}
-\]
-
-Then
-
-\[
-       \varepsilon\in J(C)[28],
-       \qquad
-       \mathcal O_C(D_\alpha)
-          \simeq c^*Q_X\otimes\varepsilon\otimes\epsilon_\alpha
-          \quad(\alpha\in\mathcal W).
-\tag{44.19}
-\]
-
-Thus all 32 effective degree-(M) divisors differ from the pullback of the
-degree-one divisor (Q_\infty) on (X) by 28-torsion; their relative
-differences belong to the particular subgroup (h(J(Y)[2])\).
-
-#### Proof
-
-Set (A=a^*H_Y=\mathcal O_V(2R_\infty)).  Since (a) and (p) are
-etale, (44.14) gives
-
-\[
-                  A^{14}\simeq a^*\omega_Y
-                     \simeq\omega_V\simeq p^*\omega_C.
-\tag{44.20}
-\]
-
-Taking the norm through the degree-seven map (p), and using
-
-\[
- \operatorname{Nm}_{V/C}(A)=\mathcal O_C(2D_\infty)=L,
- \qquad
- \operatorname{Nm}_{V/C}(p^*\omega_C)=\omega_C^7,
-\]
-
-proves (44.15).
-
-The map (c) is etale, so
-
-\[
-                 \omega_C\simeq c^*\omega_X\simeq(c^*H_X)^2.
-\tag{44.21}
-\]
-
-Equations (44.15) and (44.21) imply
-(L^{14}\simeq(c^*H_X)^{14}), proving (44.16).  Squaring (44.16) and
-using (44.21) gives (44.17).
-
-The square of (44.18) is precisely \(\delta\).  Since
-(\delta^{14}\simeq\mathcal O_C), one gets
-(\varepsilon^{28}\simeq\mathcal O_C).  Finally, (44.9) gives
-
-\[
- \mathcal O_C(D_\alpha)
-   \simeq\mathcal O_C(D_\infty)\otimes\epsilon_\alpha
-   \simeq c^*Q_X\otimes\varepsilon\otimes\epsilon_\alpha,
-\]
-
-which is (44.19).  \(\square\)
-
-As a small additional symmetry, Riemann--Roch and (44.17) give
-
-\[
-                 h^0(C,L)=h^0(C,L\otimes\tau^{-1}),
-\tag{44.22}
-\]
-
-because \(\deg L=g(C)-1=2M\) and
-(\omega_C\otimes L^{-1}\simeq L\otimes\tau^{-1}).
-
-## 3. The degree-seven norm polynomial
-
-Let (K=k(V)), (F=k(C)), and form
-
-\[
-       P(T)=\operatorname{Nm}_{K/F}(T-t)
-            =\prod_{j=0}^6\bigl(T-\beta^j(t)\bigr)
-            \in F[T].
-\tag{44.23}
-\]
-
-### Proposition 44.3 (a low-dimensional curve of square sections)
-
-The orbit of (t) under \(\beta\) has size seven.  Consequently (P) is
-the separable minimal polynomial of (t) over (F).
-
-Every coefficient of (P(T)), viewed as a rational function on (C), has
-pole divisor bounded by (2D_\infty).  Hence its eight coefficients span a
-subspace
-
-\[
-                 W_P\subseteq H^0(C,L),
-                 \qquad \dim W_P\leq8.
-\tag{44.24}
-\]
-
-This subspace is base-point free, contains all the sections in Proposition
-44.1, and the map
-
-\[
-       \nu:\mathbf P^1\longrightarrow\mathbf P(W_P),
-       \qquad \alpha\longmapsto[P(\alpha)]
-\tag{44.25}
-\]
-
-is the projection of the degree-seven Veronese curve.  At the 32 points of
-\(\mathcal W\), its corresponding section has an even zero divisor:
-
-\[
-                         \operatorname{div}(P(\alpha))=2D_\alpha
-\tag{44.26}
-\]
-
-when (P(\alpha)) is regarded as a section of (L), with the evident
-leading-coefficient interpretation at infinity.
-
-#### Proof
-
-Suppose \(\beta^j(t)=t\) for some (1\leq j\leq6).  Since seven is prime,
-(t) is then fixed by all of \(\langle\beta\rangle\).  The two maps (a)
-and (a\beta) have the same hyperelliptic coordinate.  Their (z)-coordinates
-therefore differ by a constant sign.  The negative sign is impossible after
-the seventh iterate, while the positive sign gives (a\beta=a).  Both
-contradict (44.1).  Thus the orbit has size seven.  Since ([K:F]=7), the
-element (t) generates (K/F), proving the first assertion.
-
-Fix a point (x\in C).  On the seven sheets above a strict henselian
-neighborhood of (x), suppose exactly (m_x) points occur in
-(R_\infty), counted with the multiplicity appearing in (D_\infty).
-Each conjugate of (t) has a pole of order two on its corresponding selected
-sheet and is regular on the other sheets.  An elementary symmetric polynomial
-in the seven conjugates can therefore have a pole of order at most (2m_x).
-This is exactly the coefficient of (x) in (2D_\infty).  Hence all eight
-coefficients of (P) are sections of (L), proving (44.24).
-
-Evaluation of the polynomial gives, up to the harmless sign
-((-1)^7), the norm in (44.6).  This proves (44.26) for finite
-\(\alpha\); the monic leading coefficient gives the section at infinity.
-The evaluation map (44.25) is obtained from
-([1:\alpha:\cdots:\alpha^7]) by the linear map whose coordinates are the
-coefficients of (P), proving the Veronese assertion.
-
-It remains to check base-point freeness.  At a fixed (x\in C), at most
-seven finite values of \(\alpha\) can occur among the (t)-values of the
-seven points above (x).  If some of those points lie over (t=\infty),
-the leading-coefficient section may vanish at (x), but one may choose a
-finite branch value \(\alpha^{31}=1\) not among the remaining at most seven
-values.  The corresponding norm section does not vanish at (x).  If no
-point lies over infinity, the leading-coefficient section is already
-nonzero.  Thus the sections have no common zero.  \(\square\)
-
-The 31 finite norm sections satisfy the exact product relation
+The exact product identity is
 
 \[
  \prod_{\alpha^{31}=1}\operatorname{Nm}_{V/C}(t-\alpha)
-   =\operatorname{Nm}_{V/C}(t^{31}-1)
-   =-\operatorname{Nm}_{V/C}(z)^2.
-\tag{44.27}
+      =-\operatorname{Nm}_{V/C}(z)^2.                 \tag{44.27}
 \]
 
-Its divisor is the norm of (44.12), and it is the section-level form of the
-unique relation among the 31 generating Weierstrass two-torsion classes.
+Its rational-function divisor is
+\(2\sum_{\alpha^{31}=1}D_\alpha-62D_\infty\), namely TWICE
+p_*a^*div_Y(z). This corrects the old prose omission of a factor
+two; the displayed identity is unchanged. It records the unique
+Weierstrass relation before possible additional collisions under h.
 
-## 4. Exact remaining question exposed by the lemma
+## 4. The audited nonpencil theorem
 
-The preceding statements package data which the rank, degree, stability,
-Rosati, and generic trace calculations of files 40--43 discard.  A putative
-common cover forces all of the following simultaneously on the etale
-degree-(M) cover (c:C\to X):
+One has 3≤dim W≤8. This proof retains the ramification/parity
+argument, not just its dimension conclusion.
 
-1. a line (L=c^*H_X\otimes\delta) with
-   \(\delta\in J(C)[14]\);
-2. an at-most eight-dimensional base-point-free subsystem of (L) traced
-   by a degree-at-most-seven rational curve;
-3. 32 specified points of that rational curve whose sections have doubled
-   effective zero divisors of degree (M);
-4. relative square roots forming exactly the image of the Weierstrass
-   configuration (J(Y)[2]\) under (h=p_*a^*\).
+A one-dimensional basepoint-free space would trivialize L of positive
+degree. If dim W=2, choose a basis u_0,u_1 and write
 
-To finish the counterexample along this route, it would be enough to prove
-that such a configuration on an etale cover of the explicit (X) forces the
-degree-seven polynomial (44.23), and hence the map to (Y), to descend to a
-finite common quotient.  No assertion of that kind is made here.  In
-particular, a count of torsion points alone is far too weak because
-\(|J(C)[2]|=2^{4M+2}\).
+\[
+ \mathscr P(T)=A(T)u_0+B(T)u_1 .
+\]
+
+The binary forms A,B have degree seven and no common zero by (46.11).
+They give R=[−B:A]:P1_t→P1_b of exact degree seven. The coefficient
+pencil gives f:C→P1_b of degree 2M, with
+
+\[
+                      f p=R t .
+\]
+
+The curve V is the normalization of C×_(P1_b)P1_t. R is separable
+since its degree is prime to five; t is separable by the actual etale
+Y-leg, so f is separable too.
+
+For b∈P1_b write R^*b=Σr_ξ[ξ]. At EVERY c∈f^(-1)(b), the
+multiset {t(v):v∈p^(-1)(c)} contains each ξ exactly r_ξ times.
+Indeed, after splitting p locally, the specialized binary norm form is
+the product of its seven root factors. The L-twist turns a pole of t
+into the root at infinity. It is the same binary form as R^*b, including
+multiplicities. This supplies every root in the ramification comparison.
+
+Put B_0=R(𝒜), m=|B_0|. For b∈B_0 let k_b count its roots in 𝒜 and
+ℓ_b its other roots. Since e_p=1, e_t=2 over 𝒜 and e_t=1 elsewhere,
+the equality f p=R t forces, for some integer r_b,
+
+\[
+ r_\xi=r_b\ (\xi\in\mathcal A),\quad r_\xi=2r_b\ (\xi\notin\mathcal A),\quad
+ e_f(c)=2r_b,\quad 7=r_b(k_b+2\ell_b).                \tag{46.23}
+\]
+
+Thus r_b∈{1,7} and k_b is odd; for r_b=7, (k_b,ℓ_b)=(1,0).
+There are M/r_b points of C over b, so their different contribution
+is at least (M/r_b)(2r_b−1)≥M. This uses only d_x≥e_x−1 and
+allows wild ramification elsewhere. Riemann–Hurwitz gives
+
+\[
+ \deg\operatorname{Diff}(f)=8M,\quad m\le8 .
+\]
+
+On the other hand 32 distinct branch parameters require m≥ceil(32/7)=5, and
+32=Σk_b with each k_b odd forces m even. Hence m∈{6,8}. More
+precisely, as reduced divisors on the projective lines,
+
+\[
+                  R^*B_0\equiv\mathcal A\pmod2.              \tag{46.30}
+\]
+
+Let Y_(B_0)→P1_b be the double cover branched at B_0. It has genus
+(m−2)/2∈{2,3}. Congruence (46.30) produces a lift
+Y→Y_(B_0): choose rational branch functions F_A,F_B; then
+F_B(R(t))/F_A(t) has even divisor, so is a square because
+Pic^0(P1)=0 and k is algebraically closed. The degree-seven extension
+k(t)/k(R(t)) cannot contain the quadratic target extension. Their
+quadratic base change therefore has degree seven.
+
+The resulting pullback J(Y_(B_0))→J(Y) has finite kernel, since its
+norm composite is [7]. It is a nonzero proper abelian subvariety of
+the simple 15-dimensional J(Y), contradiction. This proves the bound.
+Only the degree/genus identities, the cyclic etale cover with primitive t,
+the 32 tame hyperelliptic branch points and simple J(Y) were used here.
+The explicit X equation and §2's torsion relations are not needed for
+this argument. No injectivity of h on two-torsion is used; it survives
+all label collisions.
+
+## 5. A consequence and the boundary
+
+**Author corollary.** The evaluation map ν is birational onto a rational
+curve of degree SEVEN. Indeed its degree times the degree of its image
+is seven by (46.11), while dim W≥3 makes the nondegenerate image
+nonlinear. Primality forces degree one. At dim W=8 it is the complete
+degree-seven Veronese embedding. No injectivity for dim W<8 or for
+the two-torsion labels is inferred.
+
+Thus one retains a torsion-translated pulled pencil, all 32 actual
+doubled divisors, their relative Weierstrass labels, and the integral
+spectral equation—not merely a rank or degree. These data alone do
+not force a common quotient. The [coefficient-field theorem](47_COEFFICIENT_FIELD_COARSENING.md)
+and [label/conductor bounds](55_SQUARE_LABEL_COLLISIONS_AND_SPECTRAL_CONDUCTOR.md)
+are distinct subsequent restrictions. No arbitrary common-cover
+exclusion is proved here.

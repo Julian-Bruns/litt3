@@ -9,7 +9,7 @@ import time
 
 
 class AffinePrecondition:
-    def __init__(self,model):
+    def __init__(self,model,reuse_native_terms=False):
         from sage.all import matrix
         from atlas_native_rref import NativeRref
         self.model=model;self.ring=model.ring;self.steps=[];self.statistics=[]
@@ -17,8 +17,14 @@ class AffinePrecondition:
         self.low_count=64+model.chart+1;native=NativeRref(model.k)
         P=self.ring;v=P.gens()[:32];started=time.monotonic()
         def row_reduce():
+            stages={};mark=time.monotonic()
             before=self.low_count;low=self.rows[:before];high=self.rows[before:]
-            terms=[{tuple(ex):c for ex,c in f.dict().items()} for f in low]
+            if reuse_native_terms and not self.steps and hasattr(model,'original_low_terms'):
+                terms=[dict(row) for row in model.original_low_terms]
+                assert len(terms)==before
+                stages['native_input_terms_reused']=True
+            else:terms=[{tuple(ex):c for ex,c in f.dict().items()} for f in low]
+            stages['polynomial_coefficient_extraction_seconds']=time.monotonic()-mark;mark=time.monotonic()
             exponents=set(ex for d in terms for ex in d)
             def order(ex):
                 degree=sum(ex)
@@ -28,12 +34,18 @@ class AffinePrecondition:
                     return (1 if pos<32 else 2,pos)
                 return (3,0)
             exponents=sorted(exponents,key=order)
+            stages['monomial_order_seconds']=time.monotonic()-mark;mark=time.monotonic()
             M=matrix(model.k,[[d.get(ex,0) for ex in exponents] for d in terms],implementation='generic')
+            stages['matrix_construction_seconds']=time.monotonic()-mark;mark=time.monotonic()
             A,C=native.rref(M)
+            stages['native_bridge_seconds']=time.monotonic()-mark;mark=time.monotonic()
             low=[P({ex:c for ex,c in zip(exponents,row) if c}) for row in A.rows()]
+            stages['polynomial_reconstruction_seconds']=time.monotonic()-mark
             self.steps.append(dict(kind='linear',matrix=C,low_before=before,high_count=len(high)))
             self.low_count=len(low);self.rows=low+high
-            self.statistics.append(dict(rows_before=before,rank=len(low),columns=len(exponents)))
+            self.statistics.append(dict(rows_before=before,rank=len(low),columns=len(exponents),
+                native_linear_record=dict(native.records[-1]) if native.records else None,
+                stage_seconds=stages))
         row_reduce()
         for _ in range(33):
             if any(f and f.total_degree()==0 for f in self.rows):break

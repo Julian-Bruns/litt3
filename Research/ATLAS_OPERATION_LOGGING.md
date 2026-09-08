@@ -7,7 +7,13 @@ in a few hours or less, including large coefficient fields. That full-run
 runtime goal is NOT achieved. The improvements below address measured
 preparation bottlenecks, not a proved algebraic complexity bound.
 
-At15:00 the user requested production instead of further standalone tests.
+CURRENT HANDOFF,2026-09-08 03:50CEST: the user requires at most ONE CPU
+core TOTAL and asked agents to wind down. The run is STOPPED, not scheduled
+to restart. See the final "Overnight pause and exact one-core handoff"
+section for process census, saved frontier and the NOT-RUN resume command.
+All intervening timings and worker counts below are historical snapshots.
+
+Historical deployment: at15:00 the user requested production instead of further standalone tests.
 The all18 HYBRID queue is now running: predecessor reuse for supported F25
 tail charts, exact F4 for other fields/harder charts. Granular logs are enabled
 only on the first representative. No timeout is counted as an exclusion.
@@ -555,3 +561,347 @@ representatives. Orbit7's refreshed process does use ten direction workers,
 with roughly900--945% sampled aggregate CPU; its preparation took389.09s.
 The next optimization is shared/fast exact coefficient conversion, not
 another unguarded retry of an unfinished native search.
+
+### Deployment25961: shared roots, original-row replay and remaining memory wall
+
+Snapshot2026-09-08 02:13CEST. Controller25961 is live on the SAME selected14;
+orbits8--11 remain deferred. There are47 adopted chart certificates,
+58 completed chart calculations,14 completed tensors and ZERO whole
+representatives. These numbers are distinct from the completed oper census.
+The legacy F4 fallback forecast is still32.5years; this is NOT a calibrated
+finish estimate for the new native algorithm. Hard low-index charts remain
+unresolved and no reasonable whole-run completion date is established.
+
+Orbit7's previous full tensor took2181.66s: all32 directions by610.58s,
+full coupled-R verification by1441.44s, then about740s final old-coordinate
+serialization. Its JSON is415MiB. The new native56-row checker passes all32
+actual invariant1 blocks (0.423s including packing) and individual ACTUAL
+degree410/1320 blocks in0.259/2.534 native seconds, with all56 raw rows and
+the compact projection retained. Incorrect raw-block/projection fixtures
+are rejected. Old degree1320 block checks took63--74s. The resumed orbit4
+builder used this native stage on ten workers and completed its full-R
+witness in20.55s; this is a RESUMED preparation benchmark, not from scratch.
+
+Three exact coefficient conversions are now explicit in
+`atlas_field_maps.py`: verified PARI finite-field embeddings, one inverse
+Frobenius map (instead of Sage's cache of all intermediate powers), and
+degree-length coordinate vectors. Sage PARI treats a SHORT list as a
+polynomial and evaluates it by Horner; a full-degree list uses its vector
+constructor. Zero padding therefore matters for Kummer/subfield elements.
+Actual tower fixtures at degrees12,240,744,1320 agree with independent
+Sage evaluation, including scalar fifth-power identities. At degree1320,
+six dense tower coefficients decode in0.0154s versus1.081s previously.
+These are conversion timings, not atlas exclusions or overall speedups.
+
+`prepare_native_atlas_input.sage` builds a786432-byte offset index into
+the retained, hash-bound ORIGINAL native direction blocks. Searches may
+read this cache; `verify_native_original_atlas.sage` ALWAYS reconstructs
+all97 equations from original JSON. The field model, source tensor and
+every binary/checkpoint binding are checked. Per-chart memory reservations
+now reflect actual chart width, and memory-limited mathematical attempts
+are not silently retried. Small/degree410/degree1320 original97-row
+comparisons pass exactly, including the full chart0 small-field system.
+
+Profiling degree1320 chart31 found18.84s of26.87s row construction in
+3075 inverse-Frobenius applications. `atlas_frobenius_roots.cpp` now uses
+shared modular-composition precomputation and checks EACH answer's fifth
+power against its original coefficient. One actual3072-coefficient block
+took4.131s and5.47MB RSS; a fresh Sage process independently checked every
+fifth-power identity in4.097s. The complete32-block cache verified all98304
+coefficients in21.988s on ten native workers, observed near902% aggregate
+CPU, with only about5.4MB per native worker. Every completed block persists
+and resumes by hashes. Original/indexed chart31 reconstruction then matched
+ALL97 rows exactly in25.277/7.144s, respectively. The same cache preserves
+all97 original rows on the full small-field chart0 test. No corank condition
+is used anywhere in this optimization.
+
+The approved stop retired controller57786 and all owned descendants after
+orbit4 published its completed tensor. All812 inventoried tensor, direction
+and proof artifacts (1856864993bytes) remained hash-identical under
+`orbit11-structure/preserved-before-root-cache-restart-20260908.json`.
+Orbit2 and orbit6 cleanup failures were recovered only after exact named
+log, batch and tensor hashes matched and charts31/30/29 all had fresh
+original97-row replays. Orbit6 replay times were14.55/23.84/64.73s. Failed
+search/time/memory records were retained; the controller only resumes
+previously unattempted work. A separate narrowly checked resume archives
+explicit USER stops made before any native search/input artifact, such as
+the approved orbit4 preparation stop. Three recovery tests, five cleanup
+tests and sixteen scheduling tests pass. Foreign-UID members of a dying or
+reused group are recorded and NEVER signalled; they cannot prevent cleanup
+of the remaining owned PIDs. No foreign process is treated as our worker.
+
+The first restarted degree744 batch genuinely ran ten workers, with974.9%
+sampled CPU. Its OLDER tensor lacks retained native binary bindings, so
+that batch still uses legacy JSON and encounters preparation memory limits.
+Extending the cache to those legacy tensors remains work in progress. The
+degree1320 wider-chart batch uses the checked cache, but is memory-reserved
+to five workers (about500% CPU,6.6GB RSS). Thus the task is not yet solved
+merely by requesting ten workers: coefficient storage and harder symbolic
+elimination remain substantive limits.
+
+A bounded degree1320 chart31 search obtained an original97-row unit identity
+in59.51s;49.19s was affine preprocessing. Its independent original-JSON
+replay passed in36.04s. It remains an EXTERNAL, not yet adopted, certificate:
+`orbit11-structure/native-root-cache-orbit7-chart31/{result,replay}.json`.
+The source hash is32f4bed4816c53a49259dbb0535d62e59a2981547d0ef15fec8924f7f6bdeb9d.
+
+The next exact reduction now has a complete coefficient test, not just an
+abstract applicability statement. `check_atlas_tensor_grading.py` checked
+ALL98304 rooted N/R coefficients of orbit7 in3.139s (83232 nonzero), finding
+shared weightsw_i forv_i andbeta_i and row weightsn_r modulo3. In the native
+Kummer fieldt³=lambda, they satisfygrade(N_rih)+w_i+w_h=n_r and
+grade(R_rih)+w_i+w_h=2w_r. This descends coefficients1320->440 overF5.
+On chartj put a_i=w_i-w_j and substitute v_i=t^a_i V_i,
+beta_i=t^a_i B_i. All N rows are rescaled by nonzero constants; R graph
+rows become lambda^(3a_i)*s_i^5-B_i and normalization becomes
+w*sum(lambda^a_i V_i s_i)-1. The lower R rows and every nongeneric/rank
+stratum remain. An exporter with exact original-row certificate lifts is
+being implemented; the coefficient test alone is NOT an exclusion and
+does not reduce orbit11's intrinsic absolute degree14648.
+
+### Deployment46381: checked deck descent and exact term reuse
+
+Snapshot2026-09-08 03:18CEST. Controller46381 is live on the SAME selected14;
+orbits8--11 remain deferred. There are51 adopted original-equation chart
+certificates,62 completed chart calculations,14 full tensors and ZERO
+whole representatives. The remaining external first-oper28 identity adds
+one unique known chart, not a whole-oper exclusion. The current native
+attempt sweep has78 unfinished/unattempted charts and319 terminal
+noncertificate attempts. Its nominal memory-reserved sweep estimate is
+3355s (about56min), NOT an all-chart completion ETA; it excludes replay,
+unmeasured preparation and later hard searches. The old32.5year F4 forecast
+remains a labelled historical model, not a calibrated new-method forecast.
+
+The tested `CubicDescendedChart` implementation retains every original
+rooted row. On orbit7, all97 diagonal change-of-variable/row identities
+pass on chart28, including negative integer weights and the inverse norm;
+that complete comparison took316.398s. Exact units on charts31/30 then
+lifted from degree440 to the ORIGINAL degree1320 field. Fresh no-solver
+original-JSON replays passed in31.455s and62.047s. Certificate hashes:
+
+- chart31: d9fb62395d7c57a32a1b9ab8a42980f8b04277a9a2eedf696a0191cb1a572a70;
+- chart30: 4baf91f74ddd98fa9a8a1dbddbba413809c976e6a29be9303648f4c949f6ee52.
+
+Search results retain the ORIGINAL field model and source hash; the smaller
+search model is separately labelled. `search-unit.json` checkpoints the
+complete search-row multiplier identity before original-field conversion.
+Resuming it rechecks that identity without another Groebner search. The
+independent verifier still reconstructs ALL original97 rows from JSON,
+not the search cache or grading. No generic-corank condition enters.
+
+The dominant measured degree1320 chart30 cost was not native elimination:
+affine preprocessing took46.801s, including36.913s in Sage polynomial
+coefficient extraction and2.292s in native FLINT elimination. Exact low-row
+dictionaries already existed before polynomial construction. Retaining
+them and passing them explicitly to `AffinePrecondition` removes that
+repeated conversion. The actual chart30 regression checks all95 retained
+row dictionaries against the original polynomials, rejects a wrong-constant
+control, and produces BYTE-IDENTICAL search-unit multipliers. Extraction
+then takes0.0000564s and total affine preprocessing12.830s (3.65x faster
+under the recorded load). This is a specific stage speedup, not an overall
+all18 completion claim. The reusable field-native coefficient bridge still
+performs the same verified arithmetic and original-row lift.
+
+Four production-adapter regression charts were independently replayed:
+orbit4 charts31/30 over degree240->80, complete batch13.958s; invariant3
+charts31/30 over its intrinsic degree18, complete batch5.194s. The latter
+is a deliberate negative descent control: its modulus is NOT f(t^3), so
+the guarded batch uses the original model. Degree divisibility alone is
+never treated as a valid Kummer presentation.
+
+The legacy packing implementation had previously exposed six OPERATIONAL
+metadata-write errors before its JSON Integer conversion was fixed. Each
+had already saved32 native binaries; none was a mathematical failure.
+The opt-in repaired path uses a fresh Sage subprocess per direction,
+retains stdout/stderr, and checks every original coefficient roundtrip.
+All six cases (orbit1/3/5,invariant3/4/5) passed off-controller in149.545s
+total with six workers. All192 original direction files and192 old native
+binaries remained hash-identical, with all32 bindings checked per case.
+The fixed approved recovery report has SHA256
+6d0c49b87667a96c1a54519e4e3e3e18c545c371260fb2d375c6ce7ab2c2f18c.
+Recovery checks the exact six targets, report/source/log/binary hashes
+BEFORE changing any job status. It does not reset mathematical search
+limits, old attempts or certificates. Sixteen scheduler, four recovery,
+thirteen ETA and five owned-process-cleanup tests pass.
+
+The old controller25961 was stopped using its own stop command; its
+active invariant2 batch22619 and groups22621/22622/Sage22626/22627 were
+confirmed exited. The restart preserved all1008 inventoried tensor,
+direction and proof artifacts (1,857,303,568 bytes), under
+`orbit11-structure/preserved-before-deck-restart-20260908.json`.
+The separate six-case report covers its192 legacy binaries. This is not
+a claim that the manifest hashes every unrelated F4 scratch file.
+
+New controller46381 launched with ten workers/threads,300s bounded slices,
+8GiB batch budget, and explicit `--legacy-native-cache --deck-descended
+--native-term-cache --recover-legacy-packing --recover-native-cleanup
+--resume-unstarted-native`. Only the approved operational holds and
+never-attempted work were requeued. Orbit7 charts31/30 were adopted only
+after their fresh original-row replays. The first new orbit2 ten-worker
+batch measured963.4% aggregate CPU and4.60GiB peak RSS. Its bounded jobs
+hit memory limits and did NOT give new exclusions. Orbit6 later used a
+five-worker tail when only five independent charts remained. At this
+snapshot the controller is resuming first-oper chart21's native bilinear
+checkpoint with ten threads; no backup heavy pool overlaps it.
+
+The new coefficient caches/descent remove repeated field conversions,
+but low-index symbolic elimination still produces resource-limited
+attempts. Their evidence is preserved, not repeatedly retried under
+unchanged limits. The new shared-root algorithm has actual degree1320
+all-coefficient verification; the all18 arithmetic fixtures for the older
+native field backend do NOT yet count as tests of this newer root cache
+at degree14648 or the optional degree4308 field. Those bounded fresh-
+process fixtures remain the next all18 preflight task, without exporting
+the four deferred tensors or altering the selection.
+
+### All18 NEW root-cache preflight PASS; checkpoint I/O diagnosis
+
+The just-mentioned missing arithmetic coverage is now CLOSED,2026-09-08
+03:35CEST. `test_atlas_native_roots_fields.sage`, launched by
+`run_atlas_native_roots_field_tests.py`, checked all18 intrinsic fields
+and the eight GENUINELY larger chosen coefficient fields (orbits1/3/4/5/
+7/8/9/10). It uses the actual census moduli and verified Kummer conversion,
+not fields selected only by degree. Each real3072-slot native direction
+fixture has24 selected coefficient positions and zeros elsewhere, with
+dense, sparse, graded, monomial, product and fifth-power values. Every
+slot's returned fifth power is replayed independently in Sage; the24
+selected positions also match its independent inverse-Frobenius map.
+Hash-bound completed cache reuse passes. A native wrong-generator input
+and a wrong source hash are rejected by separate negative controls.
+
+All26 cases PASS in31.130s wall. A genuinely ten-process phase sampled
+887% aggregate CPU; peak aggregate RSS2.62GiB. The later single-worker
+tail is the largest field, not a missing worker configuration. Intrinsic
+degree14648 takes25.827s algebra:0.694s fixture/field setup,9.604s root-map
+and native stage,15.529s independent scalar replay. Its native worker
+itself takes0.818s/39.3MiB for this SPARSE fixture. Chosen degree4308 takes
+9.243s algebra, including6.985s verified Kummer-field preparation; native
+root work is0.155s. These timings do not estimate dense full tensors.
+Sage10.9, exact element types, seed, source hashes, modulus, selected slots
+and all native bytes are retained per case.
+
+External summary:
+`orbit11-structure/all18-new-root-fixtures/batch-1788831327678514000.json`,
+SHA256 f317e584648b1775080fde0124d5aea16fd64b21af540422fcdbeee6b6fa13db.
+The degree14648 report SHA256 is
+13a791f2aed669db9fe6d04451e2d2bf787f76e89ccddae4af8766370dd9c775.
+Launcher16919 and every fresh worker group exited; an independent census
+confirms no remaining descendants. No tensor for a deferred representative,
+new oper enumeration, atlas certificate or whole-oper exclusion was made.
+
+The approved checkpoint-safe pause retired46381 after invariant1's bounded
+slice completed. The controller had just entered invariant2's next F4
+attempt; wrapper15707 and solver15775 also exited through its own stop
+path. All1008 inventoried artifacts were rehashed unchanged in0.879s.
+The completed invariant1 checkpoint and invariant2's available round
+checkpoints remain. Root's reserved one-core120s symbolic test and backup's
+30s no-solver replay follow the field window; the same selected14 resumes
+after those bounded slots, with no changed mathematical limits.
+
+A new measured performance issue is FULL CHECKPOINT SERIALIZATION:
+first-oper chart21's latest slice spent97.439s of320.478s in four saves,
+writing34,154,398,506 bytes. Invariant0 chart21 spent45.488s of297.711s in
+five saves, writing17,632,783,935 bytes. First-oper state.cp alone is8.1GiB.
+Saved rows/pivots are immutable after insertion, and the provenance DAG
+already appends. Therefore an exact incremental pivot log plus a small
+atomic committed-prefix manifest is a plausible next design. It must
+retain checksum/truncation checks, the last committed input and DAG offsets,
+fallback to the previous complete prefix, and validated old-format resume.
+No new checkpoint format or interval change is currently deployed. A
+checkpoint I/O saving is not a proof that the remaining bilinear ideal is
+finite or that the full R equations have no solution.
+
+### Overnight pause and exact one-core handoff —2026-09-08 03:50CEST
+
+The NEW user resource policy supersedes every ten-worker command above:
+at most ONE CPU core TOTAL while the user sleeps. Do not run a background
+solver concurrently with a root/backup diagnostic. No automatic resume,
+new test, new research branch or new agent is authorized by this handoff.
+
+Controller26046 was safely stopped using `run_all_atlases.py stop`.
+Its active export was orbit6, wrapper49270/Sage49273, with owned workers
+49467,49594,49595,49596,49597. Every named PID and the whole owned group
+are gone; a separate command census finds no atlas builder, exporter,
+solver or new-root-fixture process. The authority says `status: stopped`,
+`active: null`, orbit6 `paused`, and no representative needs_attention.
+Selected14 and deferred orbit0008--0011 are UNCHANGED. No file was deleted.
+
+Exact final counts:51 adopted original-equation chart certificates,
+64 completed chart calculations,14 full tensors, ZERO whole representatives.
+The13 unverified basis records are not certificates. One additional unique
+external first-oper28 certificate is not adopted, so52 distinct chart
+exclusions are known. All26 NEW root-cache arithmetic fixtures passed as
+recorded above; no deferred tensor or atlas exclusion was produced by them.
+The last restarted ten-chart orbit1 batch measured926.1% peak CPU but
+yielded no new certificate. Its resource-limited attempts remain preserved.
+The saved watcher has6 unfinished/unattempted native charts and391 terminal
+noncertificate attempts; its OLD ten-worker sweep estimate is not valid
+under the new resource policy and is never a completion estimate.
+
+IMMEDIATE OPERATIONAL ISSUE, found during the final log read: orbit6's
+fallback exporter did not spend the whole256.32s on useful algebra.
+`multiprocessing.Pool`'s `_handle_results` thread segfaulted while unpickling
+a PARI finite-field element returned by `_rooted_block`. The parent then
+waited with idle workers. This is the same prohibited PARI-on-background-
+thread boundary, not an atlas failure. Evidence:
+
+    atlas-all18/orbit_0006/logs/exporting-1788831920807299000.log
+
+The source tensor hash is
+2205623fed2ecace5c33c9702e5f8d1d76f6e543e27f10cd1207d1e587a47012.
+Five completed, hash-bound rooted blocks0--4 remain in
+`atlas-all18/orbit_0006/charts/rooted_coefficients/`, with their `.sobj`
+and `.json` files. There is no newly exported chart or chart manifest;
+the earlier original-row chart certificates29/30/31 are untouched.
+No coefficient corruption or affected completed certificate was identified.
+
+`export_rooted_atlas.sage` has an explicit `root_workers==1` serial branch,
+which bypasses this result-thread unpickle. It was inspected, NOT newly
+regression-tested tonight. Before any future multiworker export, return
+only plain metadata/path values from workers and load/verify field objects
+on the main Sage thread, or consume the already checked native root cache.
+Do not simply restart the same PARI-returning pool. The new cache itself
+has already passed every all18 field fixture; this old exporter has not
+yet been connected to it.
+
+Only after root coordinates use of the SINGLE global core, the exact
+one-worker resume command is below. It was NOT run. The stored selection,
+limits, terminal attempts and checkpoints are reused; no recovery/retry
+flags or new selection flags are added.
+
+```sh
+cd /Users/julian/Documents/litt3
+env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  VECLIB_MAXIMUM_THREADS=1 BLIS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 \
+  python3 scripts/run_all_atlases.py launch \
+  --threads 1 --pairs 1024 --slice-minutes 5 --rss-gib 8 \
+  --export-batch 1 --native-batch 1 \
+  --legacy-native-cache --deck-descended --native-term-cache
+```
+
+Safe read-only status command: `python3 scripts/run_all_atlases.py status`.
+The authoritative state is external `atlas-all18/all18.json`; do not edit
+it manually. Exact checkpoint/log paths and each representative's original
+certificate adoption are recorded there and in its per-chart `run.json`.
+The previously verified1008-file preservation inventory and six-case
+192-binary report are unchanged. Current native chart21 checkpoints in
+orbit0/invariant0/invariant1 also retain their last completed row prefixes.
+
+UNVALIDATED NEXT CODE, not deployed or executed: the newly prepared
+`scripts/test_native_checkpoint_bulk_io.py` generates a separate same-format
+bulk-I/O candidate from `CPP_GENERAL`. Only Python syntax was checked.
+Its native compilation, exact old-prefix/weight/DAG comparisons, corrupted-
+checkpoint fallback and synthetic I/O benchmark have NOT run. As currently
+written the regression includes ten-thread cases, so DO NOT invoke it
+under the overnight policy; first parameterize it to a one-thread limit
+if root later authorizes that test. Neither `mixed_atlas_certificate.sage`
+nor its deployed checkpoint format/interval was changed. A delta checkpoint
+design remains only a proposal, with the measured serialization evidence
+above. No pending test process or timer belongs to this agent.
+
+Mathematical next action, independently of profiling: the exact remaining
+Wronskian obstruction is nonzero proportionality of the two56-coordinate
+vectors on the nonempty admissible P31 open. All R/normalization conditions
+and higher-corank strata must remain. See `ORBIT11_STRUCTURE.md`, and
+`CORED_COMPUTATION_STATUS.md` for what a completed untwisted calculation
+would and would NOT prove. No credible whole18 finish date is established.

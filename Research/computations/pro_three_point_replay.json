@@ -1,0 +1,20 @@
+{
+  "status": "exact_certificate_replayed_pass",
+  "source": "User-supplied GPT6Pro result and C++ source,2026-09-08",
+  "original_source_sha256": "fe6859a844cbdde88845bfb64577ba2cd6443aa45121c77a5fc27d3bec783c09",
+  "supplied_output_sha256": "daa11413e84b6c21f64dca70436cd8b72c676e6cb347348af6bf05e362b6c7e7",
+  "retained_source": "scripts/check_three_point_weierstrass.cpp",
+  "retained_source_sha256": "383f2e570ba8e5586e8ac0dc15c1472eccd8e0ec5bfaed43109bb37f1933db99",
+  "change": "Final PASS additionally requires no low-rank or smaller-pole cases and all135 first-equation failures; original reported counts already satisfy these stronger requirements.",
+  "review": "All197 lines read before compilation; arithmetic only, no filesystem/network side effects.",
+  "replayed_by": "/root",
+  "date_local": "2026-09-08 CEST",
+  "command": "c++ -std=c++17 -O2 scripts/check_three_point_weierstrass.cpp -o <external>/certificate; <external>/certificate",
+  "binary_directory": "/Users/julian/Documents/litt3-computation-data/pro-three-point-20260908.ADXbYl",
+  "elapsed_seconds": 0.32,
+  "exit_code": 0,
+  "pair_counts": {"total":135,"low_rank":0,"smaller_pole":0,"first_ninth_power_failure":135,"norm_candidates":0},
+  "triple_counts": {"total":540,"full_rank":540},
+  "scope": "Exhaustive two-Weierstrass-point exclusion under proved field bound; at least two invertible pair charts cover every residual target triple.",
+  "not_proved": "No exclusion of zero/one Weierstrass cases or common covers; no independent whole-proof audit or Lean verification."
+}

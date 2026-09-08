@@ -1,0 +1,16 @@
+{
+ "status": "finite_module_solver_free_replay_PASS",
+ "certificate_sha256": "e8b5aa890707eb1bdcd6bda1aad2b52811194968144b965cbcb6b961cf520ee5",
+ "checks": {
+  "original_projected_row_identities": 16,
+  "polynomial_annihilator_border_identities": 24,
+  "commuting_multiplication_matrices": 3,
+  "original_projected_relations_in_representation": 8,
+  "basis_words_represent_standard_basis": true,
+  "s0_represents_unit": true,
+  "necessary_nine_row_affine_quotient_dimension": 8,
+  "core_certificate_alone_does_not_check_frobenius_or_inverse_norm": true
+ },
+ "all_remaining_conditions_status": "finite_quotient_exact_exclusion_identity_pending_original13_lift",
+ "elapsed_seconds": 1.4886212919955142
+}

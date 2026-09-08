@@ -178,3 +178,64 @@ Its generic-cover theorem is not a single open locus controlling every
 cyclic degree on every finite-field-valued curve. Hence the bad towers
 do not contradict it. Neither construction proves that two endpoint
 connections are compatible, supplies a clump, or excludes a common cover.
+
+## 8. Recovering the connection and its canonical double from the bundles
+
+The stable bundles V_r,V_s have equal slopes, so a nonzero morphism is
+an isomorphism. Pull it back by Frobenius. Cartier descent gives a
+horizontal isomorphism between the two scalar connections on
+J=J^1(omega²). The subbundle omega³ is the unique maximal-slope line
+in J: its quotient omega² has strictly smaller degree. Thus the
+isomorphism preserves this line. Its maps on the subbundle and quotient
+are constant nonzero scalars d and a, respectively, since C is projective.
+
+In the local jet coordinates (v,v'), its matrix is consequently
+A=[[a,0],[b,d]]. Put M_r=[[0,1],[r,0]], and likewise for s.
+Horizontality means
+
+    A'=M_s A−A M_r=[[b,d−a],[s a−d r,−b]].
+
+The upper row forces b=0 and d=a; the lower left entry then forces
+s=r. Conversely scalar maps are horizontal. This proves(4), including
+the dimension claim, without any assumption that the jet extension is
+nonsplit. Apply it on the common source using etale functoriality to
+obtain(5). Equality after a further cover descends because pullback of
+the regular quadratic difference f^*r_X−g^*r_Y is injective.
+
+Now suppose the canonical double pi:T→C of an active r is connected.
+Its deck transformation exchanges the two distinct dormant connections
+r_+=pi^*r+q and r_−=pi^*r−q. Formula(4) shows that V_+ and V_− are
+nonisomorphic stable bundles of the same slope. Etale base change gives
+
+    pi^(1)*E_r=V_+ direct-sum V_−.
+
+In particular E_r is semistable: a destabilizing subbundle would pull
+back to one of this semistable direct sum. If E_r were not stable, a
+proper saturated subbundle of equal slope would pull back to an
+equal-slope subbundle of V_+ direct-sum V_−. Such a subbundle is one
+of the summands. Indeed, in the category of semistable bundles of this
+slope the two summands are nonisomorphic simple objects, so the subobjects
+of their direct sum are precisely the sums of subsets. One can also
+prove this by projecting to each summand and using stability. But the
+deck involution exchanges the two summands, whereas a pulled-back
+subbundle is invariant. This contradiction proves stability of E_r.
+For a split torsor the displayed decomposition occurs already on C,
+and E_r is polystable but not stable. The same argument on any actual
+etale cover proves the asserted splitting test, even if its degree is
+divisible by5 or its map is not Galois.
+
+Finally suppose E_r is isomorphic to E_s for two active connections.
+Choose a connected component of the fiber product of their canonical
+double torsors. It is finite etale and surjects onto C, and both torsors
+split there. The isomorphism therefore identifies two unordered pairs
+of distinct stable dormant bundles. Uniqueness of the stable summands
+and(4) identify the unordered pairs of dormant connections themselves.
+Taking the midpoint, which is defined since2 is invertible, gives the
+equality of the pulled-back r and s. The quadratic difference descends
+this equality to C. The converse follows from the definition of E.
+Apply the same argument on Z to obtain the two-leg active criterion.
+
+Thus growth of H^0(V_r) under refinements does not undermine these exact
+matching tests. It concerns maps from O, whose slope is different, not
+the equal-slope Hom spaces used above. Nevertheless no argument here
+forces a nonzero Hom between the two endpoint families.

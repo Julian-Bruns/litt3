@@ -1,7 +1,7 @@
 """Exact reflection calculation; run with sage -python.
 
 Imports and reruns the complete ten-Tango certificate in the same directory.
-No twists are enumerated. See HOSHI_GENUS6_REFLECTION_AND_TWIST_BOUNDARY.md.
+No twists are enumerated. See HOSHI_GENUS6_EXACT_TANGO_COUNT.md, Section 4.
 """
 
 import HOSHI_GENUS6_EXACT_TANGO_COUNT_CERTIFICATE as m

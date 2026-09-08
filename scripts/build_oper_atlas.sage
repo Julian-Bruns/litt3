@@ -41,6 +41,7 @@ def build_oper_atlas(rep, output, verify_full=False, workers=1, memory_gib=8,dir
          'scripts/atlas_series.py','scripts/atlas_resources.py','scripts/atlas_native_directions.py',
          'scripts/atlas_complete_directions.py','scripts/atlas_direction_kernel.cpp',
          'scripts/atlas_factored_R_witness.py',
+         'scripts/atlas_native_R_checks.py','scripts/atlas_R_check.cpp','scripts/atlas_field_maps.py',
          'scripts/atlas_native_rref.py','scripts/atlas_native_rref.cpp','scripts/atlas_residue_projection.py'])).hexdigest()
     manifest = out/'builder.json'
     preparation_offset=0.0

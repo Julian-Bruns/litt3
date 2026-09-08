@@ -69,7 +69,8 @@ def canonical_coefficient_decoder(field,description,images):
         source=GF(5**degree,name=generator,
                   modulus=PolynomialRing(GF(5),'z')(description['modulus']),
                   check_irreducible=False)
-        embedding=source.hom([images[generator]],field)
+        from atlas_field_maps import verified_embedding
+        embedding=verified_embedding(source,field,images[generator])
         assert embedding(source.gen())==images[generator]
         digits=power_basis_digits(description)
         def decode(value):

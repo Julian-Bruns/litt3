@@ -69,8 +69,8 @@ sylow_invariants(8, 3, (3, 9, 9, 9))
 sylow_invariants(48, 7, (7, 7, 49, 49))
 
 
-# The final finite check in Theorem 57.3.  Generate the ordered spectra from
-# Theorem 56.1, impose first the mod-4 and mod-7 congruences, and then mod 3.
+# The original audited genus-two check: generate its full finite spectrum,
+# impose first the mod-4 and mod-7 congruences, and then mod 3.
 spectra_e1 = set()
 spectra_e3 = set()
 for killed in range(3):
@@ -102,3 +102,18 @@ assert remaining_e1 == [(-9, 3, -2), (-2, 2, -9)]
 assert remaining_e3 == []
 assert all((lam[1] - lam[2]) % 3 != 0 for lam in remaining_e1)
 print("remaining spectra after all congruences: none")
+
+# Author v2 proof: the congruences alone leave one triple, then adjunction
+# rules it out. This does not change the audited subgroup calculations.
+from itertools import product
+
+short_survivors = [
+    lam for lam in product(range(-9, 10), repeat=3)
+    if -9 in lam and -9 <= sum(lam) <= -7
+    and first_two_congruences(lam)
+    and (lam[1] - lam[2]) % 3 == 0
+]
+assert short_survivors == [(5, -3, -9)]
+assert gcd([9] + list(short_survivors[0])) == 1
+assert sum(x^2 for x in short_survivors[0]) == 115 > 81 + 18
+print("short genus-two proof: sole congruence survivor violates adjunction")

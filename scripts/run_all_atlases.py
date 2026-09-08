@@ -36,6 +36,12 @@ FILES = ['scripts/run_all_atlases.py', 'scripts/atlas_f4.py',
          'scripts/atlas_factored_R_witness.py',
          'scripts/atlas_native_batch.py','scripts/native_original_atlas.sage',
          'scripts/atlas_coefficient_codec.py',
+         'scripts/atlas_native_R_checks.py','scripts/atlas_R_check.cpp','scripts/atlas_field_maps.py',
+         'scripts/atlas_native_tensor_input.py','scripts/prepare_native_atlas_input.sage',
+         'scripts/atlas_native_roots.py','scripts/atlas_frobenius_roots.cpp',
+         'scripts/prepare_native_atlas_roots.sage','scripts/atlas_native_recovery.py',
+         'scripts/atlas_legacy_native_blocks.py','scripts/pack_legacy_native_direction.sage',
+         'scripts/atlas_deck_chart.py','scripts/check_atlas_tensor_grading.py',
          'scripts/atlas_original_chart.py','scripts/atlas_affine_precondition.py',
          'scripts/verify_native_original_atlas.sage']
 DONE = f4.COMPLETED
@@ -328,6 +334,8 @@ class Queue:
             '--tensor',job['tensor'],'--output',str(directory),'--charts',*map(str,selected),
             '--workers',str(self.args.threads),'--seconds',str(self.args.slice_minutes*60),
             '--rss-gib',str(self.args.rss_gib),'--sage',self.args.sage]
+        for name in ['legacy_native_cache','deck_descended','native_term_cache']:
+            if getattr(self.args,name,False):cmd.append('--'+name.replace('_','-'))
         if not self.command(job,'native_original_solving',cmd):return True
         batch=f4.read_json(directory/'batch.json',{})
         if batch.get('source_sha256')!=job['tensor_sha256']:
@@ -465,6 +473,30 @@ class Queue:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         select_representatives(self.state, getattr(self.args, 'defer', ()),
                                getattr(self.args, 'resume_representatives', ()))
+        if getattr(self.args,'recover_legacy_packing',False):
+            from atlas_native_recovery import recover_verified_packing
+            recover_verified_packing(self.state,ROOT.parent/'litt3-computation-data/orbit11-structure/legacy-six-held-packing-verification.json')
+        if getattr(self.args,'deck_descended',False):
+            # These two completed original-coordinate identities were
+            # independently replayed BEFORE deployment. No search is rerun.
+            job=self.state['jobs'].get('orbit_0007')
+            if job and not job.get('deferred'):
+                for chart in [31,30]:
+                    path=ROOT.parent/('litt3-computation-data/orbit11-structure/descended-native-orbit7-chart%d/result.json'%chart)
+                    if path.exists():adopt_certificate(job,path)
+        if getattr(self.args,'recover_native_cleanup',False):
+            from atlas_native_recovery import recover_cleanup,APPROVED_CLEANUP_FAILURES
+            for rep in APPROVED_CLEANUP_FAILURES:
+                job=self.state['jobs'][rep]
+                if not job.get('deferred',False):
+                    recover_cleanup(job,ROOT.parent/'litt3-computation-data/atlas-native-affine'/rep,
+                                    adopt_certificate)
+        if getattr(self.args,'resume_unstarted_native',False):
+            from atlas_native_recovery import resume_unstarted_user_stop
+            for rep,job in self.state['jobs'].items():
+                if not job.get('deferred',False):
+                    resume_unstarted_user_stop(job,ROOT.parent/'litt3-computation-data/atlas-native-affine'/rep,
+                                              f4.atomic)
         if getattr(self.args,'recover_invariant2_telemetry',False):
             job=self.state['jobs']['invariant_2']
             expected='8c0bb4081bd8ce45e626c197b9fbd586a868c077e434d74eb14267a458761fd5'
@@ -513,6 +545,8 @@ class Queue:
                           algorithm='complete_native_directions_affine_native_batches_F4_fallback',
                           threads=self.args.threads, slice_minutes=self.args.slice_minutes,
                           code_sha256={p:f4.sha(ROOT/p) for p in FILES})
+        self.state['native_optimizations']={name:bool(getattr(self.args,name,False)) for name in
+            ['legacy_native_cache','deck_descended','native_term_cache']}
         signal.signal(signal.SIGTERM, lambda *_: setattr(self, 'requested', True))
         signal.signal(signal.SIGINT, lambda *_: setattr(self, 'requested', True))
         self.save()
@@ -568,10 +602,18 @@ def main():
                         help='Maximum missing charts exported before returning to algebra')
     parser.add_argument('--native-batch',type=int,default=10,
                         help='One bounded native-field attempt per chart before F4; 0 disables this stage')
+    parser.add_argument('--legacy-native-cache',action='store_true',help='Opt-in verified packing of retained legacy directions')
+    parser.add_argument('--deck-descended',action='store_true',help='Use all-coefficient-checked cubic descent where applicable')
+    parser.add_argument('--native-term-cache',action='store_true',help='Reuse exact low-row native coefficient dictionaries')
+    parser.add_argument('--recover-legacy-packing',action='store_true',help='Only the six approved hash-bound metadata packing failures')
     parser.add_argument('--retry-interrupted',action='store_true',
                         help='Once at launch, requeue explicitly signal-interrupted jobs, not algebra/resource failures')
     parser.add_argument('--recover-invariant2-telemetry',action='store_true',
                         help='Explicitly authorized exact log/source/chart30-identity guarded reporting repair')
+    parser.add_argument('--recover-native-cleanup',action='store_true',
+                        help='Only the two approved orbit2/6 cleanup logs, with original97-row replays')
+    parser.add_argument('--resume-unstarted-native',action='store_true',
+                        help='Resume archived explicit user stops before any native search/input artifact')
     parser.add_argument('--restart-schedule',action='store_true',
                         help='Restart scheduling visits without discarding mathematical checkpoints')
     parser.add_argument('--defer', nargs='+', default=[], metavar='REP',

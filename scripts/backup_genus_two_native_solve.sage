@@ -14,7 +14,7 @@ import argparse,hashlib,json,os,signal,subprocess,time
 from pathlib import Path
 
 
-def run(tensor_path,chart,seconds,work,output,incidence_subideal,row_reduce,rooted_incidence,rooted_atlas):
+def run(tensor_path,chart,seconds,work,output,incidence_subideal,row_reduce,rooted_incidence,rooted_atlas,prepare_only,rooted_linear_core):
     started=time.monotonic();raw=Path(tensor_path).read_bytes();data=json.loads(raw)
     prime=PolynomialRing(GF(5),'x')
     k=GF(5**data['field_degree'],name='c',modulus=prime(data['field_modulus']));c=k.gen()
@@ -26,6 +26,7 @@ def run(tensor_path,chart,seconds,work,output,incidence_subideal,row_reduce,root
         sum(decode(data['tensor'][i][j][h])*pp[i]*bb[j]**5 for i in range(4) for j in range(4)) for h in range(12)]
     norm=sum(decode(data['ell'][i][j])*pp[i]*bb[j] for i in range(4) for j in range(4))
     original.append(z*norm-1)
+    rooted_incidence=rooted_incidence or rooted_linear_core
     assert not(rooted_incidence and rooted_atlas)
     assert not(rooted_atlas and incidence_subideal)
     rooted=rooted_incidence or rooted_atlas
@@ -35,6 +36,10 @@ def run(tensor_path,chart,seconds,work,output,incidence_subideal,row_reduce,root
     loc=dict(zip(names,R.gens()));loc['c']=c
     search_loc=dict(zip(search_names,S.gens()));search_loc['c']=c
     parse=lambda text:S(sage_eval(text,locals=search_loc))
+    def fifth(poly):
+        # LibSingular's general power expansion is catastrophically slow
+        # here; Frobenius has no mixed terms in characteristic five.
+        return poly.parent()({tuple(5*power for power in ex):co**5 for ex,co in poly.dict().items()})
     if rooted:
         I=matrix(k,[[decode(co) for co in row] for row in data['I']],implementation='generic')
         pivots=list(I.transpose().pivots());assert len(pivots)==4
@@ -56,7 +61,7 @@ def run(tensor_path,chart,seconds,work,output,incidence_subideal,row_reduce,root
             return sum((coefficients[4*i+j]*vv[i]*bs[j] for i in range(4) for j in range(4)),S.zero())
         nn=[rooted_bilinear(row) for row in NN.rows()]
         ss=[rooted_bilinear(row) for row in SS.rows()]
-        base_search=nn+[ss[h]-bs[h] if h<=chart else bs[h]-ss[h]**5 for h in range(4)]
+        base_search=nn+[ss[h]-bs[h] if h<=chart else bs[h]-fifth(ss[h]) for h in range(4)]
         def push_fifth(poly):
             # Replace v_i^5 by p_i and, in full mode, w^5 by z.
             return R({tuple(list(ex[:4])+[5*power for power in ex[4:7-chart]]+[ex[len(ex)-1] if rooted_atlas else 0]):co**5
@@ -65,7 +70,7 @@ def run(tensor_path,chart,seconds,work,output,incidence_subideal,row_reduce,root
         for h in range(8):
             assert push_fifth(nn[h])==sum((co*f for co,f in zip(projection.row(h),original[:12])),R.zero())
         for h in range(4):
-            assert push_fifth(base_search[8+h])==(-left_original[h] if h<=chart else left_original[h]**5)
+            assert push_fifth(base_search[8+h])==(-left_original[h] if h<=chart else fifth(left_original[h]))
         if rooted_atlas:
             ell=matrix(k,[[decode(co) for co in row] for row in data['ell']],implementation='generic')
             root_norm=sum((ell[i,j]**root_exponent*vv[i]*ss[j] for i in range(4) for j in range(4)),S.zero())
@@ -75,13 +80,18 @@ def run(tensor_path,chart,seconds,work,output,incidence_subideal,row_reduce,root
             assert push_fifth(base_search[-1])==original[-1]+sum((cc*f for cc,f in zip(norm_correction,original[:12])),R.zero())
     else:
         base_search=[S(f) for f in original[:12 if incidence_subideal else 13]]
-    search=list(base_search)
-    transformation=identity_matrix(k,len(search))
+    # This smaller ideal is used ONLY for sufficient unit certificates.
+    # Its eight projected bilinear rows and chart+1 fixed-coordinate root
+    # equations are all necessary. No graph or inverse-norm condition is
+    # inferred from a nonunit basis of this subideal.
+    search=list(base_search[:9+chart] if rooted_linear_core else base_search)
+    transformation=matrix(k,len(search),len(base_search),lambda i,j:k(i==j))
     if row_reduce:
         from atlas_native_rref import NativeRref
         exponents=sorted(set(ex for f in search for ex in f.dict()),key=lambda ex:(-sum(ex),tuple(ex)))
         M=matrix(k,[[f.dict().get(ex,k.zero()) for ex in exponents] for f in search],implementation='generic')
-        reduced,transformation=NativeRref(k).rref(M,audit_sage=True)
+        reduced,row_operation=NativeRref(k).rref(M,audit_sage=True)
+        transformation=row_operation*transformation
         search=[S({ex:co for ex,co in zip(exponents,row) if co}) for row in reduced.rows()]
         assert search==[sum((cc*f for cc,f in zip(row,base_search)),S.zero()) for row in transformation.rows()]
     work=Path(work);work.mkdir(parents=True,exist_ok=True);target=Path(output)
@@ -99,6 +109,7 @@ def run(tensor_path,chart,seconds,work,output,incidence_subideal,row_reduce,root
          'variables':names,'original_equations':[str(f) for f in original],
          'engine':'native Singular liftstd with simultaneous original-row provenance',
          'incidence_subideal':bool(incidence_subideal),'rooted_incidence':bool(rooted_incidence),
+         'rooted_linear_core':bool(rooted_linear_core),
          'rooted_full_atlas':bool(rooted_atlas),
          'search_variables':search_names,'constant_row_reduction':bool(row_reduce),
          'search_rows':len(search),'input_sha256':input_hash,'status':'native_liftstd_pending'}
@@ -107,6 +118,9 @@ def run(tensor_path,chart,seconds,work,output,incidence_subideal,row_reduce,root
     def checkpoint():
         out['elapsed_seconds']=time.monotonic()-started
         temporary=work/'result.json.tmp';temporary.write_text(json.dumps(out,indent=1,default=int)+'\n');temporary.replace(work/'result.json')
+    if prepare_only:
+        out['status']='exact_transformed_equation_preparation_verified_no_solver_run'
+        checkpoint();print(json.dumps({'status':out['status'],'elapsed_seconds':out['elapsed_seconds']}),flush=True);return
     if not complete.exists():
         assert not basis_path.exists() and not weights_path.exists(), 'Preserve partial solver artifacts; use a new bounded attempt directory.'
         # Parser roundtrip validates every search coefficient independently.
@@ -151,8 +165,11 @@ def run(tensor_path,chart,seconds,work,output,incidence_subideal,row_reduce,root
         assert sum((h*f for h,f in zip(weights,base_search)),S.zero())==1
         if rooted:
             fifth_weights=[push_fifth(h) for h in weights]
+            # Compute each genuine fourth power once, not once per output
+            # row. Completed native weights are already checkpointed above.
+            back_factors=[R(-1) if j<=chart else (left_original[j]**4 if fifth_weights[8+j] else R.zero()) for j in range(4)]
             lifted=[sum((fifth_weights[a]*projection[a,h] for a in range(8)),R.zero())+
-                    sum((fifth_weights[8+j]*(-1 if j<=chart else left_original[j]**4)*left[j,h]
+                    sum((fifth_weights[8+j]*back_factors[j]*left[j,h]
                          for j in range(4)),R.zero()) for h in range(12)]
             if rooted_atlas:
                 lifted=[h+fifth_weights[-1]*cc for h,cc in zip(lifted,norm_correction)]+[fifth_weights[-1]]
@@ -166,7 +183,7 @@ def run(tensor_path,chart,seconds,work,output,incidence_subideal,row_reduce,root
         checkpoint();target.parent.mkdir(parents=True,exist_ok=True)
         temporary=Path(str(target)+'.tmp');temporary.write_text(json.dumps(out,indent=1,default=int)+'\n');temporary.replace(target)
     else:
-        out['status']='nonunit_subideal_basis_candidate_not_an_atlas_solution';checkpoint()
+        out['status']='nonunit_transformed_basis_candidate_not_an_atlas_solution';checkpoint()
     print(json.dumps({key:out[key] for key in ['twist_index','chart_first_nonzero_b','status','elapsed_seconds']},indent=1,default=int),flush=True)
 
 
@@ -177,4 +194,6 @@ if __name__=='__main__':
     parser.add_argument('--incidence-subideal',action='store_true');parser.add_argument('--row-reduce',action='store_true')
     parser.add_argument('--rooted-incidence',action='store_true',help='All projected/rooted incidence equations; exact fifth-power descent of unit identities.')
     parser.add_argument('--rooted-atlas',action='store_true',help='Root all incidence rows AND retain the inverse-norm equation, with exact original-row descent.')
-    args=parser.parse_args();run(args.tensor,args.chart,args.seconds,args.work,args.output,args.incidence_subideal,args.row_reduce,args.rooted_incidence,args.rooted_atlas)
+    parser.add_argument('--rooted-linear-core',action='store_true',help='Sufficient unit test in only the eight projected bilinear rows and fixed-coordinate root equations; never an atlas-solution test.')
+    parser.add_argument('--prepare-only',action='store_true',help='Verify and save transformed equations without starting a native solver.')
+    args=parser.parse_args();run(args.tensor,args.chart,args.seconds,args.work,args.output,args.incidence_subideal,args.row_reduce,args.rooted_incidence,args.rooted_atlas,args.prepare_only,args.rooted_linear_core)

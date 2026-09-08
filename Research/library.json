@@ -2,6 +2,11 @@
   "schema_version": 1,
   "definitions": [
     {
+      "id": "backup_genus_two_curve",
+      "title": "The small genus-two backup curve",
+      "path": "Definitions/Def_backup_genus_two_curve.md"
+    },
+    {
       "id": "projective_connections",
       "title": "Projective connections and common curvature loci",
       "path": "Definitions/Def_projective_connections.md"
@@ -79,6 +84,99 @@
   ],
   "theorems": [
     {
+      "id": "backup_hermitian_atlas_exclusion",
+      "title": "The small backup has no Hermitian quotient atlas",
+      "statement": "Theorems/Thm_backup_hermitian_atlas_exclusion.md",
+      "solution": "Solutions/Sol_backup_hermitian_atlas_exclusion.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "base_conventions",
+        "backup_genus_two_curve",
+        "finite_algebra_certificates",
+        "intrinsic_atlas_incidence_data"
+      ],
+      "dependencies": [
+        "intrinsic_atlas_incidence",
+        "dormant_rank_two_candidates",
+        "hermitian_atlas_extension_criterion",
+        "completed_local_orbifold_rigidity"
+      ],
+      "audits": [
+        "Research/audits/BACKUP_ATLAS_BRIDGE_AUDIT_2026_09_08.md"
+      ],
+      "statement_version": 1,
+      "scope": "All405 oper/cubic-character pairs and20 original charts empty; no representable finite etale C_alpha->[H/PGU3(5)] or PSU atlas. Both large cored profiles excluded for X,C_alpha by existing classification. Smaller cored and all arbitrary coreless covers remain.",
+      "evidence_summary": "PASS fresh /root/audit_backup_atlas_bridge_medium2026-09-08; no material objections. Complete geometric candidate exhaustion, twisted bundle/cohomology/section and precision proofs, original unrooted chart coverage and exact Frobenius certificate composition. Root completed/replayed final3 identities on one core; all20 original-row receipts verified. Prose/code audit, not Lean.",
+      "statement_sha256": "c9d6a0d5538fa12d492a8f02600676798ee43d348723837d024610ffc3f6cd4d"
+    },
+    {
+      "id": "weierstrass_pair_interpolation",
+      "title": "Nonspecial residual points give complete pair-interpolation charts",
+      "statement": "Theorems/Thm_weierstrass_pair_interpolation.md",
+      "solution": "Solutions/Sol_weierstrass_pair_interpolation.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "base_conventions",
+        "fixed_pair",
+        "finite_algebra_certificates"
+      ],
+      "dependencies": [
+        "fixed_pair_arithmetic",
+        "cyclic_cubic_low_abel_torsion"
+      ],
+      "audits": [],
+      "statement_version": 1,
+      "scope": "General genus-g nonspecial residual point yields an invertible 2g-jet pair chart. Fixed-X certificate excludes all135 relevant Weierstrass pairs; complete9x9 charts and eight norm equations with sheetwise saturation. Residual pair locus NOT excluded.",
+      "evidence_summary": "Returned Pro source fully read by root2026-09-08; final PASS guard strengthened to require every claimed rank and norm count. Independent execution PASS0.32s. Author proof review; no independent whole-proof audit or Lean verification.",
+      "statement_sha256": "6346d6a90c26354a0e62cd710d51d4c3d0e0145417834c00f20f787bd125a825"
+    },
+    {
+      "id": "spectral_dormant_prym_lines",
+      "title": "Dormant secants as spectral five-torsion lines",
+      "statement": "Theorems/Thm_spectral_dormant_prym_lines.md",
+      "solution": "Solutions/Sol_spectral_dormant_prym_lines.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "base_conventions",
+        "projective_connections",
+        "correspondences"
+      ],
+      "dependencies": [
+        "cartier_dormant_secants",
+        "tangent_bundle_cyclic_refinements"
+      ],
+      "audits": [],
+      "statement_version": 1,
+      "scope": "Global polynomial horizontal Higgs matrix for distinct dormant pairs. For simple difference zeros: smooth spectral double, exact order5 norm-trivial line reconstructing V, fixed logarithmic differential and actual bi-etale functoriality. No common-pair existence or core criterion, no etale mu5 torsor assertion.",
+      "evidence_summary": "Author /root2026-09-08. Global transition, determinant connection, saturated eigen-quotient including branch points, Cartier descent and norm proof. Existing symbolic secant checker augmented: all spectral identities PASS. No independent whole-proof audit.",
+      "statement_sha256": "fd3f973c3823d7d5806eaa1b38fd8f9f57517a69af857bf7b524f6e232eb7b3c"
+    },
+    {
+      "id": "kummer_norm_and_nine_torsion_support",
+      "title": "Binomial Kummer norms and fixed-X nine-torsion support",
+      "statement": "Theorems/Thm_kummer_norm_and_nine_torsion_support.md",
+      "solution": "Solutions/Sol_kummer_norm_and_nine_torsion_support.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "definitions": [
+        "base_conventions",
+        "fixed_pair",
+        "finite_algebra_certificates"
+      ],
+      "dependencies": [
+        "fixed_pair_arithmetic",
+        "cyclic_cubic_low_abel_torsion"
+      ],
+      "audits": [],
+      "statement_version": 2,
+      "scope": "General binomial norm obstruction via Fermat Jacobians; fixed-X W2 pure3-primary exactly66 branch classes. Version2 excludes2P+Q with explicit global Hasse/norm Bezout certificates; exact9 W3 now only THREE distinct finite nonbranch points at distinct abscissas, both B,C nonzero. Residual lambda and arbitrary-Frobenius quadratic rigidity retained; no final W3 or common-cover exclusion.",
+      "evidence_summary": "Author /root2026-09-08. Returned Pro certificate independently replayed PASS0.69s; structural norm argument replaces W2/binomial computations. New2P+Q proof: everywhere-rank8 matrix and two coprime norm equations, all explicit coefficients/Bezout identities generated and checked5.69s. Dependencies preserve old audit scopes; no independent whole-proof audit.",
+      "statement_sha256": "b44ec48ebb0f4671ddd6d35ceeee706ebc82203be1d92b3540ea1f75291124b8"
+    },
+    {
       "id": "tangent_bundle_cyclic_refinements",
       "title": "Tangent bundles and controlled cyclic refinements",
       "statement": "Theorems/Thm_tangent_bundle_cyclic_refinements.md",
@@ -95,10 +193,10 @@
         "etale_double_dormant_pairs"
       ],
       "audits": [],
-      "statement_version": 2,
-      "scope": "Rank2 dormant and rank4 admissible-active tangent bundles, functorial for both actual etale legs; explicit prime-degree choices preserve exact defects for every finite dormant family and theta-proper active family; simple-Jacobian finite-field cyclic towers grow every defect, even above any existing two-leg source. Does not supply compatible endpoint opers or ordinary minimal source.",
-      "evidence_summary": "Author /root2026-09-08. Coordinate/jet and full-double descent proof; Raynaud1.6.2/1.8/4.3.5 and Poonen6.4–6.6 proofs read. Version2 uses stable rank2 proper theta to remove dormant zero-defect assumption. Builds on exact canonical-double factorization. No independent audit or common-cover exclusion claimed.",
-      "statement_sha256": "137179bf8c7c3731faad00be167750a3cbe60ce52a9f0dab8c308f209f84bc0a"
+      "statement_version": 3,
+      "scope": "Rank2 dormant and rank4 admissible-active tangent bundles functorial for both actual etale legs; dormant Hom and active isomorphism detect exact connection equality; active bundle stable exactly when canonical double connected. Explicit good cyclic choices preserve defects, while simple-J finite-field cyclic towers grow all finite-family defects. Does not supply compatible endpoint opers or ordinary minimal source.",
+      "evidence_summary": "Author /root2026-09-08. Coordinate/jet and full-double descent proof; Raynaud1.6.2/1.8/4.3.5 and Poonen6.4–6.6 proofs read. Version3 uses intrinsic jet filtration and the horizontal matrix equation to recover the connection, then stable-summand descent for active bundles. No independent audit or common-cover exclusion claimed.",
+      "statement_sha256": "6f1a89af7164ed3cb852e29b360cfaaefec095475b42e38c68ca578c072fbb06"
     },
     {
       "id": "etale_double_dormant_pairs",
@@ -173,13 +271,14 @@
         "fixed_x_nonzero_cartier_profiles"
       ],
       "legacy_dependencies": [
-        "routes/global/EXPLICIT_SECOND_ORDER_EQUATION_FOR_CARTIER_ZERO_PLURIFORMS.md"
+        "routes/global/EXPLICIT_SECOND_ORDER_EQUATION_FOR_CARTIER_ZERO_PLURIFORMS.md",
+        "routes/global/UNBOUNDED_DOUBLE_ZERO_HECKE_LEAVES_ON_A_FIXED_GENUS17_CURVE.md"
       ],
       "audits": [],
-      "statement_version": 1,
-      "statement_sha256": "a33a5a38f9fedb7eade2fb335e21630d4fdee5ab9b8638493499797f5cafd3ca",
-      "scope": "Actual coreless bi-etale spans with A=k or primitive weight d>=2. Pole localization classifies the whole common regular-connection space and its exact dormant/nilpotent schemes. Fixed-X regularity is clump image size2mod5. No existence of an invariant, compatible oper, or common-cover exclusion from an empty locus.",
-      "evidence_summary": "Author /root2026-09-07. Exact symbolic jet, full p-curvature and nilpotent-line checker PASS. Fresh independent audit attempted but runtime thread limit blocks spawning; result remains unaudited author prose."
+      "statement_version": 2,
+      "statement_sha256": "241ae457d7a9bf8691712eb06ee3c11e998c8975652216f851187c60f1fdab23",
+      "scope": "Actual coreless bi-etale spans with A=k or primitive weight d>=1: exact common regular-connection space and dormant/nilpotent schemes. Version2 includes shared one-forms and actual unbounded genus17 etale spans with EMPTY common-connection space. No common-connection existence or fixed-pair exclusion.",
+      "evidence_summary": "Author /root2026-09-07/08. Existing exact curvature checker; new weight-one case by rational-function intersection, local Laurent/Cartier computation and retained independently audited genus17 Igusa construction. New empty-connection corollary has no separate audit."
     },
     {
       "id": "cartier_dormant_secants",
@@ -846,7 +945,7 @@
     },
     {
       "id": "inverse_cup_atlas_system",
-      "title": "Structured inverse-cup atlas equations and their unavoidable boundary strata",
+      "title": "Inverse-cup atlas equations for all eighteen representatives",
       "statement": "Theorems/Thm_inverse_cup_atlas_system.md",
       "solution": "Solutions/Sol_inverse_cup_atlas_system.md",
       "status": "proved",
@@ -865,10 +964,10 @@
       ],
       "audits": [],
       "source": "Solutions/Sol_inverse_cup_atlas_system.md",
-      "scope": "Exact alternative atlas scheme for acyclic opers; all-oper boundary secants explain large invalid N components. Singular polar charts retained; no emptiness claim.",
-      "statement_version": 1,
-      "evidence_summary": "Author proof using audited inverse cup/gradient and compact scheme. First-oper trace identity checked in all coefficients; two coprime determinant-line certificates disprove the proposed unconditional H inversion.",
-      "statement_sha256": "ff821c14ca4cd07a4068860f272fe0a69b448f981b1dff1041827ceea4db76a9"
+      "scope": "Exact mixed inverse-cup atlas scheme for every geometric untwisted oper; all six r=3 representatives retained through rank21 cup blocks and invertible27-square augmented matrices; symmetric21-square minor patches in original64 variables. No emptiness or runtime claim.",
+      "statement_version": 2,
+      "evidence_summary": "Author mixed inverse-block Cech proof and scheme equivalence using audited Bezout/gradient/compact inputs; Serre-dual single-minor reduction and weighted normalization. General bounded symbolic matrix checks PASS; optional additional duality check stopped under CPU cap, no result claimed. No independent audit of this reformulation.",
+      "statement_sha256": "819864092c71d98f633c3ef367dc20b0119065c64ca1f67c31ddaf7864ed3395"
     },
     {
       "id": "cohomological_bezout",

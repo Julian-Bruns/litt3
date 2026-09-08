@@ -2,11 +2,15 @@
 
 ## Status and purpose
 
-**Status: proved; self-check complete; independent audit pending.**
+Version 2, 2026-09-08: Theorem 78.1 now uses the audited full-orbit
+reduction directly; explicit characteristic-five nonstrangeness checks
+are added below. These edits are author prose, not a new independent audit.
+The original proof received PASS from `/root/genus2_counterexample_variant`,
+2026-09-04: [audit metadata](audits/78_M6_PLANE_CONTACT_AND_SPECTRAL_DISCRIMINANT_AUDIT.md).
 
 **Dependency correction, 2026-09-04:** the original reduction in Theorem
 78.1 used the unproved all-degree quadratic core in file 68. Its omitted
-case-B possibilities are handled separately in Corollary 81.4 of
+case-B possibilities are handled by the actual full-orbit construction in
 [file 81](81_FULL_ORBIT_INTERPOLATION_AND_CUBIC_SIGN_MONODROMY.md).
 The cubic-closure and discriminant-surface arguments below remain valid.
 The earlier PASS audit did not detect this inherited dependency issue;
@@ -72,8 +76,8 @@ image, and put \(e=[k(C):k(B)]\).
 
 ### Theorem 78.1 (the two residual plane rows)
 
-Exactly the following two coefficient configurations remain after files
-68, 74, and 75.
+Exactly the following two coefficient configurations remain after the
+coefficient, Prym and audited full-orbit bounds (files 68, 74 and 81).
 
 1. **Birational row:**
    \[
@@ -99,27 +103,23 @@ Exactly the following two coefficient configurations remain after files
 #### Proof
 
 The degree-three equation of \(X\) and its nonhyperellipticity give
-\(\operatorname{gon}(X)=3\).  At \(M=6\), the divisor list of file 68
-has four presentations:
-
-\[
-\begin{array}{c|c|c}
-\text{case}&\text{lower divisor}&\text{coefficient degree}\\ \hline
-A&n=3&e=2\\
-A&n=6&e=1\\
-B&d=3&m=2,\ e=4\\
-B&d=6&m=1,\ e=2.
-\end{array}                                             \tag{78.5}
-\]
-
-The two rows with lower divisor three are the defect-free endpoints.
-Their complementary degree is two, smaller than the gonality of \(X\),
-so Theorem 75.2 and Theorem 75.3 exclude them.  This leaves precisely
-the case-A coefficient degree one and the case-B coefficient degree two.
+\(\operatorname{gon}(X)=3\). The ACTUAL full-orbit square of
+[Theorems 81.1–81.2](81_FULL_ORBIT_INTERPOLATION_AND_CUBIC_SIGN_MONODROMY.md)
+has \(m\mid6\), \(N=6/m\ge3\), hence \(m=1\) or 2. If \(m=2\),
+the orthogonal-image bound, using simplicity of both Jacobians, forces
+\(N\ge r+2=5\), contrary to \(N=3\). Thus \(m=1\). Corollary 82.4
+gives \(j\in\{1,2\}\), since \(M=6<2r+2=8\), and \(e=mj=j\).
+Here \(j=1\) is case A. At \(j=2\), the full-orbit field is all of
+\(k(C)\), so the actual quadratic square required by case B exists.
+No unproved intersection-degree inference is used.
 
 File 68 gives \(3\leq w\leq r+1=4\).  If \(e=1,w=4\), the
 coefficient image is a nondegenerate degree-12 curve in
-\(\mathbf P^3\).  Castelnuovo's bound is
+\(\mathbf P^3\). It is nonstrange: otherwise projection from its strange
+point has zero differential, and fifth roots of its three remaining
+coordinates give three independent sections of a line bundle of degree
+at most \(\lfloor12/5\rfloor=2\) on \(C\), contradicting Clifford's
+bound at genus 49. Thus Castelnuovo's bound applies in characteristic five:
 
 \[
                          \operatorname{Cast}(12,3)=25<49=g(C),
@@ -137,7 +137,9 @@ The ramified Prym interval gives
 \]
 
 If \(w=4\), the degree-six coefficient image lies nondegenerately in
-\(\mathbf P^3\), where Castelnuovo gives genus at most four.  Therefore
+\(\mathbf P^3\). The same nonstrangeness test would otherwise give three
+sections in degree at most \(\lfloor6/5\rfloor=1\), impossible.
+Castelnuovo therefore gives genus at most four, and hence
 \(w=3\).  A plane sextic has arithmetic genus ten, so (78.6) reduces to
 \(g(B)=9\) or 10.  Finally Riemann--Hurwitz for the ramified double cover
 of the genus-49 curve \(C\) gives

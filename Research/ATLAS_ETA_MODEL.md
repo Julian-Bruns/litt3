@@ -1,4 +1,25 @@
-# Read-only operation-based ETA — 2026-09-07
+# Read-only operation-based ETA — updated 2026-09-08
+
+## Current native algorithm: attempts are not completion
+
+The watcher now identifies `native_original_solving`, the actual live chart
+phases, sampled aggregate CPU/RSS, and the current bounded batch's remaining
+slice time. It separately estimates a sweep of the still-unattempted charts
+using the explicit slice cap, worker limit and per-chart memory reservation.
+At02:40 CEST this was about2.7hours for198 pending/unattempted charts;
+201 bounded attempts had no certificate. Cache preparation, independent
+replay and repair of held operational failures are additional. A finished
+bounded attempt need not exclude its chart. The estimate is therefore NOT
+a forecast that the14 representatives, let alone the18, will be finished.
+
+The former32.5year extrapolation remains visible, explicitly labelled
+**legacy F4 fallback scenario**, not calibrated to the new native algorithm.
+No measured credible whole-run completion date has yet been established.
+The exact chart/certificate counts continue to come from the owning
+controller's adopted records; no timeout, candidate basis or external
+unadopted identity is counted as an adopted certificate.
+
+## Historical work model
 
 User explicitly requests a numerical guess and intermediate progress rather
 than an unavailable-ETA message. The live solver is NOT changed or restarted.

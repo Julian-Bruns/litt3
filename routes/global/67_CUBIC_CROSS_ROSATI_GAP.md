@@ -25,8 +25,10 @@ and retain the cyclic-algebra notation of files 40 and 49:
 \tag{67.1}
 \]
 
-This note resolves the integral endomorphism-lattice gap left in files 48,
-49, and 54.  Although the completed endomorphism order at \(31\) is the
+This note resolves the cubic integral-lattice gap in the
+[conditional Gram-rank proof](48_M9_CROSS_CORRESPONDENCE_RANK_OBSTRUCTION.md)
+and [Frobenius trace/order analysis](49_FROBENIUS_GRAPH_TRACE_LATTICE.md).
+Although the completed endomorphism order at \(31\) is the
 full matrix order rather than the coefficientwise crossed order, its extra
 divided operators are still too long in the global Rosati lattice.  More
 precisely, every nonzero integral endomorphism in the two noncommutative
@@ -157,7 +159,8 @@ At \(31\), this argument uses the whole lattice
        \simeq M_3(\mathcal O_{E,31})
 \]
 
-from Theorem 54.1.  Thus the factors \(\lambda^{-2}\) allowed in
+from the [exact completed-order theorem](49_FROBENIUS_GRAPH_TRACE_LATTICE.md#4-exact-completed-order-and-the-divided-ramification-counterexample).
+Thus the factors \(\lambda^{-2}\) allowed in
 (67.9) include, rather than discard, the divided ramification operators
 which made the crossed-order argument fail.
 

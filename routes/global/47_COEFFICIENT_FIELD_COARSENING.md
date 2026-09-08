@@ -1,333 +1,164 @@
-# Coarsening through the norm-coefficient curve
+# Coefficient-field coarsening and the four degree-fourteen profiles
 
-## Status and purpose
+Version 2, 2026-09-08: same three audited statements, compressed proofs
+and explicit characteristic-five Castelnuovo applicability. Original PASS
+with one minor wording correction: /root/coefficient_coarsening_audit,
+2026-09-04, [audit metadata](audits/47_COEFFICIENT_COARSENING_AUDIT.md).
+This edit is not a new independent audit. The parameter-free observation
+at the end of §1 is author prose.
 
-**Status: proved.**  **Audit: PASS with one minor wording correction** --
-`/root/coefficient_coarsening_audit`, 2026-09-04.
-[Audit record](audits/47_COEFFICIENT_COARSENING_AUDIT.md).
-
-Keep the exact seven-diamond and the norm polynomial of files 38 and 44:
-
-\[
- \begin{array}{ccc}
- V&\xrightarrow{a}&Y\\
- \downarrow p&&\\[-2mm]
- C&\xrightarrow{c}&X,
- \end{array}
- \qquad
- \deg a=\deg c=M,
- \qquad \deg p=7,
-\tag{47.1}
-\]
+Over k=Fbar5 retain the ACTUAL etale seven-diamond
 
 \[
- Y:z^2=1-t^{31},\qquad
- P(T)=\operatorname{Nm}_{V/C}(T-t),\qquad
- W_P=\langle\text{coefficients of }P\rangle.
-\tag{47.2}
+ V\xrightarrow[\;M\;]{a}Y,\qquad
+ V\xrightarrow[\;7\;]{p}C\xrightarrow[\;M\;]{c}X,\qquad
+ X:v^2=q^7-q+1,\quad Y:z^2=1-t^{31},
 \]
 
-File 46 proves \(3\leq\dim W_P\leq8\).  This note records what happens
-when the morphism defined by \(W_P\) is not birational.  Its coefficient
-field is not merely an auxiliary subfield: the entire spectral cover is the
-normalization of a fiber product over the resulting curve.
-
-For \(M=9\), an eight-dimensional coefficient space forces a particularly
-short list.  The coefficient map has degree two onto a curve of genus one or
-two, and the degree-fourteen function-field closure has group \(C_{14}\) or
-\(D_{14}\).  Four explicit genus and ramification profiles remain.
-
-## 1. The coefficient-field factorization
-
-Write \(r=\dim W_P-1\), and let
+with p cyclic, generator β, and aβ≠a. Thus g(C)=2M+1,
+g(V)=14M+1. Both original legs are retained on the SAME source.
+The [norm-polynomial construction](44_NORMED_HYPERELLIPTIC_BRANCH_PENCIL.md)
+gives the separable minimal polynomial P(T)=Nm_(V/C)(T−t), a
+basepoint-free coefficient space W⊂H^0(C,L), and deg L=2M.
+The [nonpencil theorem](44_NORMED_HYPERELLIPTIC_BRANCH_PENCIL.md#4-the-audited-nonpencil-theorem) gives
+3≤dim W≤8. Write
 
 \[
-             \phi:C\longrightarrow\mathbf P(W_P^\vee)
-\tag{47.3}
+ F=k(C),\quad K=k(V)=F(t),\quad
+ B=\text{normalization of the coefficient image},\quad
+ e=[F:k(B)],\quad A=\mathcal O(1)|_B,\quad d=\deg A .
 \]
 
-be the base-point-free morphism defined by the coefficient sections.  Let
-\(B\) be the normalization of its image, and put
+The same letter denotes a curve and its function field only when specified.
+
+## 1. The exact spectral square (Proposition 47.1)
+
+Put E=k(B)(t), also denoting its smooth projective curve. Then
 
 \[
- e=[k(C):k(B)],\qquad
- A=\mathcal O_{\phi(C)}(1)|_B,\qquad d=\deg A.
-\tag{47.4}
+ ed=2M,\quad [E:k(B)]=7,\quad [E:k(t)]=d,\quad
+ [K:E]=e,\quad F\otimes_{k(B)}E=K.                    \tag{47.5}
 \]
 
-### Proposition 47.1 (the normalized spectral square)
+Thus V is the normalization of C×_B E, with horizontal degree e and
+vertical degree seven. All coefficients of monic P belong to k(B).
 
-One has
+**Proof.** If b_7 is the leading coefficient section, the ratios b_i/b_7
+generate k(B) and are exactly the coefficients of P. A factorization
+over k(B) would factor P over F, so P stays irreducible of degree seven.
+Basepoint-freeness gives L=q_B^*A, where q_B:C→B, proving ed=2M.
+Now FE=K and [K:F]=[E:k(B)]=7. This DEGREE EQUALITY proves linear
+disjointness, the tensor identity, and [K:E]=e; an intersection-degree
+shortcut is not used. Finally [K:k(t)]=2M gives [E:k(t)]=d. QED.
+
+The algebraic proof uses only that P is the minimal polynomial of a
+primitive t and that its coefficient sections are basepoint-free. Replacing
+seven by ANY finite degree preserves the same normalized-square argument;
+no group action or Jacobian simplicity is used in this step. This is a
+scope observation, not an enlargement of the original audit.
+
+## 2. Where the hyperelliptic root lies (Proposition 47.2)
+
+Exactly one of the following holds:
+
+- z∈E: e divides M, and V→E→Y are finite etale of degrees e,M/e.
+- z∉E: e is even, E'=E(z) is the normalized pullback of Y→P1_t
+  to E, and V→E'→Y are finite etale of degrees e/2,2M/e.
+
+**Proof.** The polynomial Z²−(1−t³¹) either splits over E or gives a
+quadratic subextension of K/E. Tower degrees prove the formulas. Each
+displayed field containing k(Y) is intermediate in the ACTUAL etale
+extension K/k(Y), so its two maps are etale. QED.
+
+In particular every odd-degree coefficient coarsening with e>1 factors the original
+Y-leg through a smaller etale cover. In the second case one must NOT
+infer a quadratic field inside F from compositum degrees: the
+[full-orbit construction](81_FULL_ORBIT_INTERPOLATION_AND_CUBIC_SIGN_MONODROMY.md)
+retains every sign choice. At e=2 specifically, E'=K, so this issue vanishes.
+
+## 3. Full span at M=9 (Theorem 47.3)
+
+If M=9 and dim W=8, then e=2 and the coefficient image has degree
+nine in P7. Put b=g(B). Necessarily b∈{1,2}, and:
+
+- z∉E, K=E(z), and V is the normalization of E×_(P1_t)Y.
+- K/k(B) is Galois with group C14 or D14. The involution γ fixing E
+  satisfies γ(t)=t, γ(z)=−z, and aγ=ι_Y a.
+- C→B is a tame double cover with 40−4b reduced branch points.
+- The degree-nine map t:E→P1 is unramified off
+  \(\mathcal A=\mu_{31}\cup\{\infty\}\); above that set its indices
+  belong to {1,2}.
+
+The four necessary numerical profiles, retaining (47.15), are:
+
+| Gal(K/k(B)) | g(B) | g(E) | #Br(C/B) | deg Diff(E/P1_t) |
+|---|---:|---:|---:|---:|
+| C14 | 1 | 1 | 36 | 18 |
+| C14 | 2 | 8 | 32 | 32 |
+| D14 | 1 | 55 | 36 | 126 |
+| D14 | 2 | 56 | 32 | 128 |
+
+In the last row EVERY one of the 32 special fibers has type \(2^4 1\).
+These are necessary profiles, not assertions that any is realized.
+
+**Proof.** Nondegeneracy in P7 gives d≥7. As ed=18, e≤2. The
+Castelnuovo bounds are
 
 \[
-                         ed=2M.                       \tag{47.5}
+ \pi(18,7)=16<19=g(C),\qquad \pi(9,7)=2.              \tag{47.12}
 \]
 
-All coefficients of the monic polynomial \(P(T)\) belong to \(k(B)\).
-The polynomial remains irreducible over \(k(B)\).  If \(E\) is the smooth
-curve with
+They apply in characteristic five: if a nondegenerate degree-d curve
+in P7 were strange, projection from its strange point would have zero
+differential. After removing common zeros and taking fifth roots, its
+seven remaining coordinates would give seven independent sections in
+degree at most floor(d/5). But h^0 of a nonnegative degree-a line
+bundle on any smooth curve is at most a+1, which is at most four here.
+Thus both images are nonstrange. The first bound excludes e=1; the
+second gives e=2,d=9,b≤2.
+
+Since 2 does not divide 9, §2 gives z∉E and K=E(z). The splitting
+field of P over k(B) lies between E and K, so is E or K. If it is E,
+its compositum with the Galois quadratic F/k(B) is still Galois; if
+it is K, normality is immediate. Thus K/k(B) is Galois of order 14,
+hence C14 or D14. The root stabilizer has order two and fixes t but
+negates z, giving γ and aγ=ι_Y a.
+
+Because V→C is etale, every inertia group meets its C7 subgroup
+trivially; it therefore has order one or two. Riemann–Hurwitz for C/B
+gives 40−4b branch points. Also the composite V→Y→P1_t has index
+two over \(\mathcal A\), and index one elsewhere. The tower through E
+therefore gives exactly the asserted index restrictions for E/P1_t,
+without a separability assumption about a plane Gauss map.
+
+For C14, all order-two inertia dies in E/B, so E→B is etale and
 
 \[
-                         k(E)=k(B)(t),                 \tag{47.6}
+ g(E)=7b-6.                                           \tag{47.16}
 \]
 
-then
+For D14, a reflection has cycle type \(2^3 1\) on its seven cosets,
+giving three different contributions per branch point and hence
 
 \[
- [k(E):k(B)]=7,\qquad [k(E):k(t)]=d,                  \tag{47.7}
+ g(E)=b+54.                                           \tag{47.17}
 \]
 
-and the square
+The cyclic formula excludes b=0. In the dihedral case, E=k(B)(t)
+means the maps of degrees seven and nine generate E; Castelnuovo–Severi
+gives g(E)≤7b+48, excluding b=0 as well. Thus b∈{1,2}.
+Finally the separable degree-nine t-map has different degree 2g(E)+16,
+giving the table. At most four index-two points lie in each degree-nine
+fiber. The last row reaches the total maximum 32·4=128, forcing type
+\(2^4 1\) in all special fibers. QED.
 
-\[
- \begin{array}{ccc}
- V&\longrightarrow&E\\
- \downarrow p&&\downarrow\\[-2mm]
- C&\longrightarrow&B
- \end{array}                                           \tag{47.8}
-\]
+## Scope
 
-is a fiber product after normalization.  Its horizontal maps have degree
-\(e\), and its vertical maps have degree seven.
-
-#### Proof
-
-Let \(b_0,\ldots,b_7\in H^0(C,L)\) be the homogeneous coefficient
-sections of \(P\), with \(b_7\) the monic leading-coefficient section.
-The function field of \(B\) is generated by the ratios \(b_i/b_7\).
-These ratios are exactly the ordinary coefficients of the monic polynomial
-\(P(T)\).  Thus \(P\in k(B)[T]\).
-
-Because \(W_P\) is base-point free, \(L\simeq\phi^*A\).  File 44 gives
-\(\deg L=2M\), so taking degrees proves (47.5).  A factorization of \(P\)
-over \(k(B)\) would remain a factorization over \(k(C)\), contrary to the
-minimal-polynomial assertion in Proposition 44.3.  Hence (47.6) defines a
-degree-seven extension.
-
-Put \(F=k(C)\) and \(K=k(V)=F(t)\).  The compositum of \(F\) and \(k(E)\)
-inside \(K\) is all of \(K\), and
-
-\[
- [K:F]=[k(E):k(B)]=7.
-\]
-
-It follows that \(F\cap k(E)=k(B)\), that \([K:k(E)]=[F:k(B)]=e\),
-and that the normalization of the fiber product is \(V\).  Finally,
-
-\[
- [k(E):k(t)]
-   =\frac{[K:k(t)]}{[K:k(E)]}
-   =\frac{2M}{e}=d,
-\]
-
-which proves (47.7) and all degree assertions. \(\square\)
-
-## 2. The quadratic subfield dichotomy
-
-The element \(z\in K\) satisfies \(z^2=1-t^{31}\), while
-\(k(Y)=k(t,z)\).
-
-### Proposition 47.2 (where the hyperelliptic square root lies)
-
-With the notation of Proposition 47.1, exactly one of the following occurs.
-
-1. One has \(z\in k(E)\).  Then \(e\mid M\), the map \(a\) factors as
-   \[
-                V\longrightarrow E\longrightarrow Y, \tag{47.9}
-   \]
-   and these two maps are finite etale of degrees \(e\) and \(M/e\).
-
-2. One has \(z\notin k(E)\).  Then \(e\) is even.  If \(E'\) is the
-   normalization of the pullback of \(Y\to\mathbf P^1_t\) along
-   \(E\to\mathbf P^1_t\), then
-   \[
-       k(E')=k(E)(z),\qquad
-       [K:k(E')]=e/2,qquad
-       [k(E'):k(Y)]=2M/e.                              \tag{47.10}
-   \]
-   The maps \(V\to E'\to Y\) are finite etale.
-
-In particular, if \(e\) is odd, only the first case is possible.
-
-#### Proof
-
-The polynomial \(Z^2-(1-t^{31})\) over \(k(E)\) either splits or defines
-a quadratic subextension of \(K/k(E)\).  The latter can occur only when
-\(2\mid e=[K:k(E)]\).  If it splits, then \(k(Y)\subseteq k(E)\), and
-
-\[
- [k(E):k(Y)]
-   =\frac{[k(E):k(t)]}{[k(Y):k(t)]}
-   =\frac{2M/e}{2}=\frac Me.
-\]
-
-This proves the degree statements in the first case.  In the second case,
-\(k(E)\cap k(Y)=k(t)\), so the same tower calculation proves (47.10).
-
-In either case, the displayed fields are intermediate fields of the finite
-etale extension \(K/k(Y)\).  Every intermediate extension of an unramified
-extension of smooth function fields is unramified.  Thus all maps in
-(47.9) and (47.10) are finite etale. \(\square\)
-
-This proposition is useful even without knowing \(e\): every odd-degree
-coarsening of the coefficient map forces the original map to \(Y\) itself
-to factor through a smaller etale cover.
-
-## 3. The full-span case when \(M=9\)
-
-Assume now that
-
-\[
-                         M=9,\qquad\dim W_P=8.         \tag{47.11}
-\]
-
-### Theorem 47.3 (the degree-fourteen closure)
-
-Under (47.11), the coefficient map has degree
-
-\[
-                         e=2                           \tag{47.12}
-\]
-
-onto a nondegenerate degree-nine curve in \(\mathbf P^7\).  Its
-normalization \(B\) has genus one or two.  Moreover:
-
-1. \(z\notin k(E)\), \(K=k(E)(z)\), and \(V\) is the normalization of
-   \(E\times_{\mathbf P^1_t}Y\);
-2. \(K/k(B)\) is Galois with group \(C_{14}\) or \(D_{14}\);
-3. if \(\gamma\) generates \(\operatorname{Gal}(K/k(E))\), then
-   \[
-                     \gamma(t)=t,\qquad\gamma(z)=-z,
-                     \qquad a\gamma=\iota a,           \tag{47.13}
-   \]
-   where \(\iota\) is the hyperelliptic involution of \(Y\);
-4. \(C\to B\) is a tame double cover branched at
-   \[
-                            40-4g(B)                   \tag{47.14}
-   \]
-   points;
-5. the degree-nine map \(t:E\to\mathbf P^1\) is unramified away from
-   \(\mathcal A=\mu_{31}\cup\{\infty\}\), and every ramification index
-   above \(\mathcal A\) belongs to \(\{1,2\}\) (equivalently, every
-   ramified point there has index two).
-
-The remaining possibilities are exactly the following numerical profiles:
-
-\[
-\begin{array}{c|c|c|c|c}
-\operatorname{Gal}(K/B)&g(B)&g(E)&
- \#\operatorname{Br}(C/B)&\deg\operatorname{Diff}(t:E\to\mathbf P^1)\\
-\hline
-C_{14}&1&1&36&18\\
-C_{14}&2&8&32&32\\
-D_{14}&1&55&36&126\\
-D_{14}&2&56&32&128
-\end{array}                                             \tag{47.15}
-\]
-
-In the last row, every one of the 32 fibers over \(\mathcal A\) has
-ramification type \(2^4 1\).
-
-#### Proof
-
-Let \(d=\deg A\).  By (47.5), \(ed=18\).  A nondegenerate integral curve
-in \(\mathbf P^7\) has degree at least seven, so \(e\leq2\).  If \(e=1\),
-then \(C\) would be the normalization of a nondegenerate degree-eighteen
-curve in \(\mathbf P^7\).  Castelnuovo's bound is sixteen: indeed
-
-\[
- 18-1=2(7-1)+5,qquad
- \pi(18,7)=\binom22(7-1)+2\cdot5=16.
-\]
-
-This contradicts \(g(C)=19\).  Hence \(e=2\) and \(d=9\).  Castelnuovo's
-bound for a degree-nine curve in \(\mathbf P^7\) is two, so \(g(B)\leq2\).
-
-Since \(e=2\nmid9\), Proposition 47.2 gives \(z\notin k(E)\) and
-\(K=k(E)(z)\).  The polynomial \(P\in k(B)[T]\) splits completely in
-\(K\): its roots are the seven \(C_7\)-translates of \(t\).  Its splitting
-field over \(k(B)\) is therefore either the degree-seven subfield generated
-by those roots or all of the degree-fourteen field \(K\).  In the former
-case it is Galois, and adjoining the Galois quadratic field \(k(C)\) still
-makes \(K/k(B)\) Galois.  Thus \(K/k(B)\) is Galois in either case.  Its
-group has order fourteen and contains the normal subgroup
-\(\operatorname{Gal}(K/k(C))\simeq C_7\), so it is \(C_{14}\) or
-\(D_{14}\).
-
-The field \(k(E)=k(B)(t)\) is the fixed field of a root stabilizer
-\(\langle\gamma\rangle\) of order two.  Because \(K=k(E)(z)\), this
-involution fixes \(t\) and negates \(z\), proving (47.13).
-
-The cover \(K/k(C)\) is etale.  Consequently every inertia group in
-\(K/k(B)\) meets its normal \(C_7\) subgroup trivially.  All nontrivial
-inertia therefore has order two.  Thus \(C\to B\) is tame and simply
-ramified.  Riemann--Hurwitz gives
-
-\[
- \#\operatorname{Br}(C/B)
- =2g(C)-2-2(2g(B)-2)=40-4g(B),
-\]
-
-which is (47.14).
-
-The equality \(K=k(E)(z)\) identifies \(V\to E\) with the normalized
-pullback of the hyperelliptic double cover \(Y\to\mathbf P^1_t\).  The
-other projection of this pullback is the etale map \(a:V\to Y\).  The
-local ramification-index formula for a normalized fiber product now says
-that \(E\to\mathbf P^1_t\) is unramified off \(\mathcal A\), and that its
-indices over \(\mathcal A\) belong to \(\{1,2\}\).  This proves item 5.
-
-It remains to obtain the table and to exclude \(g(B)=0\).  In the cyclic
-case the unique order-two inertia subgroup is killed in the quotient
-\(E=V/\langle\gamma\rangle\), so \(E\to B\) is an etale \(C_7\)-cover.
-Hence
-
-\[
-                         g(E)=7g(B)-6.                 \tag{47.16}
-\]
-
-This already excludes \(g(B)=0\).  In the dihedral case, a reflection in
-the degree-seven coset action has cycle type \(2^3 1\).  Each of the
-\(40-4g(B)\) branch points therefore contributes three to the different
-of \(E/B\).  Riemann--Hurwitz gives
-
-\[
-                         g(E)=g(B)+54.                 \tag{47.17}
-\]
-
-The degree-seven map \(E\to B\) and degree-nine map
-\(E\to\mathbf P^1\) generate \(k(E)\), because their degrees are coprime.
-Castelnuovo--Severi therefore yields
-
-\[
-                         g(E)\leq7g(B)+48.             \tag{47.18}
-\]
-
-Together with (47.17), this excludes \(g(B)=0\) in the dihedral case.
-Thus \(g(B)\in\{1,2\}\).
-
-Finally, Riemann--Hurwitz for the separable degree-nine map \(t:E\to
-\mathbf P^1\) gives
-
-\[
-                  \deg\operatorname{Diff}(t)=2g(E)+16.\tag{47.19}
-\]
-
-Substitution of (47.16)--(47.17) gives the four rows of (47.15).  There
-are at most four simple ramification points in a degree-nine fiber.  In the
-last row, (47.19) reaches the maximum \(32\cdot4=128\), so every special
-fiber has type \(2^4 1\). \(\square\)
-
-## 4. Boundary of the reduction
-
-Theorem 47.3 does not itself exclude the full coefficient span.  It replaces
-that case by four rigid profiles in which the hyperelliptic involution of
-\(Y\) lifts to \(V\), while the order-seven deck group and this involution
-generate \(C_{14}\) or \(D_{14}\).  A completion may now attack these four
-profiles by their monodromy, their two low-genus quotients, or their nearly
-maximal degree-nine branch data.
-
-For coefficient dimensions three through seven, Proposition 47.1 remains
-available: any nonbirational coefficient morphism produces an exact
-normalized fiber-product coarsening, and Proposition 47.2 determines whether
-the hyperelliptic square root already descends to its spectral factor.
+The audited four-profile theorem is retained independently of later
+generalizations. The [Prym refinement](58_X_CENTRAL_GLUE_CONGRUENCES.md#3-both-factors-lie-in-the-prym-genus-two-is-impossible)
+and [dihedral genus-one exclusion](61_D14_GENUS_ONE_ROW_IMPOSSIBLE.md)
+are separate arguments; they are not duplicated here. The later
+[all-dimension quadratic sieve](67_GENERAL_DOUBLE_COEFFICIENT_COARSENING.md)
+has author-only scope. For dimensions three through seven, §1–2 still
+apply, but the four-row theorem does not. No arbitrary common-cover
+exclusion or simultaneous Galois closure is asserted.

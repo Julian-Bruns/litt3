@@ -71,18 +71,29 @@ class NativeRref:
             native_modulus=ring({3*i:c for i,c in enumerate(minimal) if c})
             self.native_field=GF(5**self.degree,name='native_z',
                 modulus=native_modulus,check_irreducible=False)
+            # Use same-degree PARI field maps for EACH base coefficient.
+            # A generic embedding into the3n-degree field (or a fresh dense
+            # prime-field matrix/vector product for every coefficient) is
+            # much slower. The proven lambda power basis fixes these maps.
+            native_base=GF(5**n,name='lambda_base',modulus=minimal,check_irreducible=False)
+            native_alpha=native_base(list(inverse*base_coordinates(base.gen())))
+            from atlas_field_maps import verified_embedding
+            base_to_native=verified_embedding(base,native_base,native_alpha)
+            native_to_base=verified_embedding(native_base,base,lam)
+            assert native_to_base(base_to_native(base.gen()))==base.gen()
+            assert base_to_native(lam)==native_base.gen()
             def to_native(c):
                 cs=field(c).lift().list();cs += [base.zero()]*(3-len(cs))
                 values=[self.prime.zero()]*self.degree
                 for j,cj in enumerate(cs):
                     if cj:
-                        column=inverse*base_coordinates(cj)
-                        values[j::3]=column
+                        column=base_to_native(cj).polynomial().list()
+                        values[j::3]=column+[self.prime.zero()]*(n-len(column))
                 return self.native_field(values)
             def from_native(c):
                 values=self.native_field(c).polynomial().list()
                 values += [0]*(self.degree-len(values))
-                return field([base(list(basis*vector(self.prime,values[j::3]))) for j in range(3)])
+                return field([native_to_base(native_base(values[j::3])) for j in range(3)])
             self.to_native=to_native;self.from_native=from_native
             self.field_model='verified_Kummer_base_power_basis'
             # The invertible lambda basis and the defining cubic prove the
@@ -145,7 +156,8 @@ class NativeRref:
         return encoded
 
     def _decode(self,value):
-        native=self.native_field(list(value))
+        from atlas_field_maps import from_power_coordinates
+        native=from_power_coordinates(self.native_field,value)
         return self.from_native(native)
 
     def _write_matrix(self,stream,M):

@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 import run_all_atlases as all18
 from atlas_resources import fork_workers
-from atlas_native_batch import reservation
+from atlas_native_batch import reservation,indexed_reservation
 
 
 class All18Tests(unittest.TestCase):
@@ -23,6 +23,7 @@ class All18Tests(unittest.TestCase):
                 elapsed_seconds=1,engine='native_field_liftstd_original'))
             job=dict(tensor=str(tensor),charts=str(folder/'charts'))
             self.assertFalse(all18.adopt_certificate(job,path))
+
             replay=dict(source_sha256=source,certificate_sha256=all18.f4.sha(path),
                 verified_original_unit_identity=True,search_or_groebner_solver_used=False)
             all18.f4.atomic(folder/'replay.json',replay)
@@ -32,6 +33,13 @@ class All18Tests(unittest.TestCase):
             self.assertTrue(record['independent_replay_verified'])
             replay['certificate_sha256']='wrong';all18.f4.atomic(folder/'replay.json',replay)
             self.assertFalse(all18.adopt_certificate(job,path))
+
+    def test_indexed_actual_prefix_fits_ten_but_original_replay_reserves_its_JSON(self):
+        size=800*1024**2
+        estimates=[indexed_reservation(c,'solve',1320,size) for c in range(31,21,-1)]
+        self.assertLessEqual(sum(estimates),8*1024**3)
+        self.assertGreater(indexed_reservation(31,'replay',1320,size),estimates[0])
+        self.assertGreater(indexed_reservation(0,'solve',14648,size),8*1024**3)
 
     def test_native_batch_precedes_unnecessary_export(self):
         with tempfile.TemporaryDirectory(prefix='atlas-native-priority-test-') as td:

@@ -1,275 +1,199 @@
-# The orthogonal-complement divisor sieve
+# Gonality, orthogonal images and the actual full-orbit endpoint
 
-## Status and purpose
+Version 2, 2026-09-08: combines the endpoint and orthogonal-complement
+proofs, retaining their different simplicity hypotheses. The original
+norm-zero and actual-square arguments were within the PASS audit by
+/root/c14_elliptic_translation, 2026-09-04:
+[structural audit metadata](audits/73_75_STRUCTURAL_REFINEMENTS_AUDIT.md).
+The later [field-intersection FAIL](audits/66_68_QUADRATIC_CORE_FIELD_INTERSECTION_AUDIT.md)
+by the same auditor, 2026-09-04, rejected the presumed quadratic core,
+NOT those arguments for a supplied square. Accordingly the old case-B
+application below is explicitly conditional. The wider endpoint application
+to the actual full-orbit square is AUTHOR prose; no new independent audit.
 
-**Status: proved; self-check complete; independent audit pending.**
-
-**Dependency correction, 2026-09-04:** Lemma 75.1 and case A are valid
-as stated. Case B and its displayed divisor list require an actual
-quadratic core, which file 68 did not establish in general. See the
-[FAIL audit](audits/66_68_QUADRATIC_CORE_FIELD_INTERSECTION_AUDIT.md)
-by `/root/c14_elliptic_translation`. Theorem 81.2 in
-[file 81](81_FULL_ORBIT_INTERPOLATION_AND_CUBIC_SIGN_MONODROMY.md)
-proves the corresponding bound for the corrected full-orbit square.
-
-This note strengthens the divisor sieve of file 68 and the endpoint theorem
-of file 73.  In either branch of the square-root dichotomy, the norm
-construction puts a copy of \(J(Y)\) in the Jacobian of the lower
-coefficient curve.  The pushforward of \(J(X)\) to that curve is orthogonal
-to this copy.  If \(J(X)\) is simple, that pushforward is either zero or has
-the full dimension of \(J(X)\).  The zero case forces a pencil on \(X\);
-the nonzero case forces two large orthogonal blocks to fit in the lower
-Jacobian.
-
-The result is an all-degree numerical refinement:
+Let k be algebraically closed, char(k)≠2,r, r an odd prime, and
+g(X)=s+1, g(Y)=rs+1, s≥1. Assume Y hyperelliptic with absolutely
+simple Jacobian and an ACTUAL finite etale diamond
 
 \[
- \begin{array}{ll}
- \text{case A:}& e\geq\operatorname{gon}(X)\quad\text{or}\quad n\geq r+2,\\
- \text{case B:}& m\geq\operatorname{gon}(X)\quad\text{or}\quad d\geq r+2.
- \end{array}                                                           \tag{75.1}
+ V\xrightarrow[\;M\;]{a}Y,\qquad
+ V\xrightarrow[\;r\;]{p}C\xrightarrow[\;M\;]{c}X,\qquad
+ p\text{ cyclic},\quad a\beta\ne a.
 \]
 
-Thus the quotient degrees \(r\) and \(r+1\) can occur only when the
-complementary degree is at least the gonality of \(X\).
+The SAME smooth projective source retains both original legs. The
+[norm theorem](68_PRIME_RATIO_DIAMOND_AND_ALL_DEGREE_COEFFICIENT_SIEVE.md)
+gives h=p_*a^*≠0, finite kernel, and c_*h=0.
+Write γ=gon(X). Simplicity of J(X) will be imposed ONLY where used.
 
-Retain the notation and hypotheses of file 68:
+## 1. Norm zero gives a pencil; an isogeny endpoint needs no simple J(X)
+
+The following general lemma retains Lemma 73.1 over ANY algebraically
+closed field, without the ambient characteristic restrictions. If q:R→D
+is finite separable of degree m and b:R→X is finite, then
 
 \[
- g(X)=s+1,\qquad g(Y)=rs+1,                                            \tag{75.2}
+ q_*b^*=0\Longrightarrow
+       X\text{ has a degree-}m\text{ morphism to }\mathbf P^1,
+       \quad\operatorname{gon}(X)\le m.                \tag{1}
 \]
+
+Indeed the Rosati-dual norm family d↦O_X(b_*q^*d) becomes constant
+in Pic^m(X). The effective divisors move nontrivially because b is
+surjective. They have no common base point: for fixed x the parameters
+whose divisor contains x form the finite set q(b^(-1)(x)).
+Two suitable sections of that basepoint-free system give the pencil.
+No primality or etaleness of q, or simplicity of either Jacobian, is
+needed. The degree-m map need not itself be separable; the gonality bound
+still holds.
+
+Now suppose an ACTUAL compatible lower square supplies a finite separable
+q_0:C→D of degree m_0 and
 
 \[
- \begin{array}{ccc}
- V&\xrightarrow{a}&Y\\
- \big\downarrow p&&\\[-2mm]
- C&\xrightarrow{c}&X,
- \end{array}
- \qquad
- \deg p=r,\qquad \deg a=\deg c=M,                                     \tag{75.3}
+ h=q_0^*h_0,\qquad h_0:J(Y)\to J(D)\text{ an ISOGENY}.  \tag{2}
 \]
 
-where \(Y\) is hyperelliptic, \(J(Y)\) is absolutely simple, and
+Since c_*q_0^*h_0=0, cancellation of this isogeny in Hom^0 gives
+c_*q_0^*=0, hence (q_0)_*c^*=0 by adjunction. Hom groups are
+torsion-free, so this is exact vanishing. Formula (1) yields
 
 \[
-                         h=p_*a^*:J(Y)\longrightarrow J(C)             \tag{75.4}
+                         \gamma\le m_0.               \tag{3}
 \]
 
-is nonzero with \(c_*h=0\).
+This is the common proof of Theorems 73.2–73.3 for their actual squares.
+It requires NO simplicity of J(X); even simplicity of J(Y) can be
+replaced by the explicit isogeny hypothesis in (2).
 
-Assume additionally that \(J(X)\) is absolutely simple, and put
+## 2. Orthogonal-complement lemma and the near-endpoint bound
+
+More generally suppose h=q_0^*h_0 with h_0 having finite kernel,
+and put v=(q_0)_*c^*:J(X)→J(D). If v=0, (1) gives γ≤m_0.
+Otherwise
 
 \[
-                              \gamma=\operatorname{gon}(X).            \tag{75.5}
+ v^\dagger h_0=c_*q_0^*h_0=c_*h=0,
+ \qquad g(D)\ge g(Y)+\dim\operatorname{im}v.            \tag{4}
 \]
 
-## 1. The common orthogonal-complement lemma
-
-### Lemma 75.1
-
-Suppose that the coefficient construction supplies a normalized fiber
-square and a factorization
+The second inequality follows because these two abelian images are
+orthogonal for the principal polarization and have finite intersection.
+If J(X) is ALSO simple, nonzero v has finite kernel. Thus Lemma 75.1 is
 
 \[
- \begin{array}{ccc}
- V&\longrightarrow&R\\
- \big\downarrow&&\big\downarrow\\[-2mm]
- C&\xrightarrow{q_0}&D,
- \end{array}
- \qquad
- h=q_0^*h_0,                                                           \tag{75.6}
+            m_0\ge\gamma\quad\text{or}\quad
+            g(D)\ge g(Y)+g(X)=(r+1)s+2.                \tag{5}
 \]
 
-where \(q_0:C\to D\) is finite separable of degree \(m_0\) and
+In any such square with g(D)≤Ns+1, this becomes
 
 \[
-             0\ne h_0:J(Y)\longrightarrow J(D).                        \tag{75.7}
+                         m_0\ge\gamma
+                         \quad\text{or}\quad N\ge r+2, \tag{6}
 \]
 
-Then either
+since (N−r−1)s≥1 forces the integral N≥r+2.
+The extra simple-J(X) hypothesis in (5)–(6) cannot be suppressed.
+It may instead be replaced by the precise condition that the nonzero
+map v under consideration has finite kernel.
+
+## 3. The old A/B applications, with their exact scope
+
+Let F=k(C), K=k(V), k(Y)=k(t,z), E=k(B)(t), where B is the
+normalized norm-coefficient image. Write e=[F:k(B)] and d_coeff=2M/e.
+
+In case A, z∈E, the [coefficient theorem](68_PRIME_RATIO_DIAMOND_AND_ALL_DEGREE_COEFFICIENT_SIEVE.md)
+supplies the ACTUAL normalized square over B with lower degree m_0=e,
+Y-leg degree N=M/e, and g(B)≤Ns+1. Thus, with both Jacobians simple,
 
 \[
-                              \gamma\leq m_0,                           \tag{75.8}
+                    e\ge\gamma\quad\text{or}\quad N\ge r+2
+                                                               \tag{7}
 \]
 
-or
+(Theorem 75.2). At N=r, the same theorem gives g(B)=g(Y), so h_0
+is an isogeny and (3) proves e≥γ WITHOUT simple J(X).
+
+In case B, z∉E, put E'=E(z). The asserted quadratic lower square
+exists under the EXTRA hypothesis
 
 \[
-                              g(D)\geq g(Y)+g(X)=(r+1)s+2.              \tag{75.9}
+                    [F\cap E':k(B)]=2.                \tag{8}
 \]
 
-#### Proof
-
-Let
+Under (8), the quadratic lower curve D with function field F∩E' has
+m_0=e/2=M/d_coeff and N=d_coeff.
+The actual square gives h=q_0^*h_0≠0 and g(D)≤Ns+1, so
 
 \[
-                         v=(q_0)_*c^*:J(X)\longrightarrow J(D).        \tag{75.10}
+                   m_0\ge\gamma\quad\text{or}\quad N\ge r+2
+                                                               \tag{9}
 \]
 
-If \(v=0\), Lemma 73.1 applied to \((q_0,c)\) produces a degree-\(m_0\)
-pencil on \(X\), proving (75.8).
+with simple J(X) (Theorem 75.3). At N=r, (3) gives m_0≥γ
+without that additional simplicity assumption. These retain the original
+endpoint and near-endpoint statements; an unconditional two-choice
+divisor list is NOT asserted.
 
-Suppose \(v\ne0\).  Since \(J(X)\) is simple, \(v\) has finite kernel and
-its image has dimension \(g(X)\).  Since \(J(Y)\) is simple and \(h_0\ne0\),
-the image of \(h_0\) has dimension \(g(Y)\).  The two images are
-orthogonal.  Indeed,
+For r=3 and γ≥3, the pairs (m_0,N)=(2,3) or (2,4), at M=6 or 8,
+are excluded by these results in case A or in an ACTUAL case-B square.
+The (2,3) endpoint needs no simple J(X); the (2,4) conclusion uses it.
+In particular the old nonhyperelliptic M=6, coefficient e=4 statement
+is valid under (8). Its unconditional repair is below.
+
+## 4. Replacement by the full orbit—every sign choice retained
+
+The [audited full-orbit construction, Theorems 81.1–81.2](81_FULL_ORBIT_INTERPOLATION_AND_CUBIC_SIGN_MONODROMY.md)
+uses the FULL interpolation polynomial Q(t_i)=z_i. Its coefficient
+field D and E_*=D(t) supply an ACTUAL normalized square with
 
 \[
- v^\dagger h_0=c_*q_0^*h_0=c_*h=0.                                   \tag{75.11}
+ q_0:C\to D,\quad E_*\to D,\quad E_*\to Y,\qquad
+ \deg q_0=m,\quad\deg(E_*/D)=r,\quad\deg(E_*/Y)=N,
+\]
+\[
+ m\mid M,\quad M=mN,\quad e=mj,\quad
+ j=[D:k(B)]\le2^r,\quad d_{\rm coeff}=2N/j .
 \]
 
-Their intersection is therefore finite, and both fit in \(J(D)\).  This
-gives (75.9).  \(\square\)
-
-## 2. Applying the lemma in case A
-
-In case A of Theorem 68.5, write
+The maps V→E_*→Y are etale, q_0 is separable, and
 
 \[
- q:C\to B,\qquad \pi:E\to B,\qquad a_E:E\to Y,                         \tag{75.12}
+ h=q_0^*h_D,\quad h_D\ne0,\quad
+ rs+1\le g(D)\le Ns+1,\quad N\ge r.
 \]
 
-and
+This D is NOT presumed quadratic over B; j=1 corresponds to case A,
+and otherwise j is even, possibly greater than 2. With simple J(X),
+(6) is exactly the audited full-orbit conclusion
 
 \[
- \deg q=e,\qquad \deg\pi=r,\qquad
- \deg a_E=n=M/e.                                                       \tag{75.13}
+                          m\ge\gamma\quad\text{or}\quad N\ge r+2.
 \]
 
-Finite-flat base change in the normalized fiber square gives
+The separate author endpoint corollary removes the simple-J(X) hypothesis
+at N=r. Indeed, N=r forces g(D)=g(Y), so h_D is an isogeny and (3)
+gives
 
 \[
- h=q^*h_B,\qquad
- h_B=\pi_*a_E^*:J(Y)\longrightarrow J(B).                              \tag{75.14}
+ N=r\Longrightarrow m=M/r\ge\gamma
+               \qquad\text{WITHOUT simple }J(X).      \tag{10}
 \]
 
-Lemma 68.2 gives \(h_B\ne0\), and Theorem 68.5 gives
+Thus M<rγ excludes this endpoint for EVERY number of sign choices,
+not merely a supplied quadratic core. It does not exclude arbitrary
+defect-zero squares with N>r.
 
-\[
-                              g(B)\leq ns+1.                           \tag{75.15}
-\]
+As a concrete repair, take r=3, M=6 and X nonhyperelliptic, so γ≥3.
+The full orbit has m|6 and N=6/m≥3, hence m=1 or 2. The latter
+has N=3 and is excluded by (10). Thus m=1. The
+[audited short-degree sieve](81_FULL_ORBIT_INTERPOLATION_AND_CUBIC_SIGN_MONODROMY.md#corollary824)
+has M=6<2r+2=8 and gives j∈{1,2}; therefore e=mj∈{1,2}.
+In particular coefficient degree 4 is impossible WITHOUT (8) or
+simple J(X). This repairs the old endpoint application by an actual
+full-orbit argument; it does not relabel the failed intersection claim.
 
-### Theorem 75.2 (case A refinement)
-
-In case A,
-
-\[
-                    e\geq\gamma\qquad\text{or}\qquad n\geq r+2.       \tag{75.16}
-\]
-
-Equivalently, if \(n\in\{r,r+1\}\), then \(e\geq\gamma\).
-
-#### Proof
-
-If \(e<\gamma\), Lemma 75.1 and (75.15) give
-
-\[
-                    (r+1)s+2\leq g(B)\leq ns+1.
-\]
-
-Thus
-
-\[
-                              (n-r-1)s\geq1,
-\]
-
-which forces \(n\geq r+2\).  \(\square\)
-
-## 3. Applying the lemma in case B
-
-In case B of Theorem 68.5, write
-
-\[
- q_D:C\to D,\qquad \pi_D:E'\to D,\qquad a_{E'}:E'\to Y,                \tag{75.17}
-\]
-
-and
-
-\[
- \deg q_D=m=M/d,\qquad \deg\pi_D=r,\qquad
- \deg a_{E'}=d.                                                       \tag{75.18}
-\]
-
-File 68 proves
-
-\[
- h=q_D^*h_D,\qquad
- 0\ne h_D=(\pi_D)_*a_{E'}^*:J(Y)\longrightarrow J(D),                 \tag{75.19}
-\]
-
-and
-
-\[
-                              g(D)\leq ds+1.                           \tag{75.20}
-\]
-
-### Theorem 75.3 (case B refinement)
-
-In case B,
-
-\[
-                    m\geq\gamma\qquad\text{or}\qquad d\geq r+2.       \tag{75.21}
-\]
-
-Equivalently, if \(d\in\{r,r+1\}\), then \(m\geq\gamma\).
-
-#### Proof
-
-Apply Lemma 75.1 with \(q_0=q_D\), and combine (75.9) with (75.20).
-If \(m<\gamma\), the resulting inequality is
-
-\[
-                     (r+1)s+2\leq ds+1,
-\]
-
-so \(d\geq r+2\).  \(\square\)
-
-## 4. Refined all-degree divisor list
-
-### Corollary 75.4
-
-Under the hypotheses above, every coefficient degree in Corollary 68.6
-obeys one of the following stronger alternatives.
-
-1. In case A there is a divisor \(n\mid M\) with \(n\geq r\),
-   \[
-                         e=M/n,\qquad d_{\mathrm{coeff}}=2n,
-   \]
-   and
-   \[
-                         M/n\geq\gamma\quad\text{or}\quad n\geq r+2.
-                                                                         \tag{75.22}
-   \]
-
-2. In case B there is a divisor \(d\mid M\) with \(d\geq r\),
-   \[
-                         e_{\mathrm{coeff}}=2M/d,\qquad m=M/d,
-   \]
-   and
-   \[
-                         M/d\geq\gamma\quad\text{or}\quad d\geq r+2.
-                                                                         \tag{75.23}
-   \]
-
-In particular, the defect-free endpoint \(n=r\) or \(d=r\), and also the
-near-endpoint \(r+1\), are impossible whenever the complementary divisor
-of \(M\) is smaller than \(\gamma\).
-
-### Example 75.5 (the \(r=3\), \(\gamma\geq3\) initial rows)
-
-For a nonhyperelliptic \(X\), one has \(\gamma\geq3\).  At \(M=6\), the
-case-A choice \((e,n)=(2,3)\) and the case-B choice \((m,d)=(2,3)\)
-are impossible.  At \(M=8\), the case-A choice \((e,n)=(2,4)\) and the
-case-B choice \((m,d)=(2,4)\) are impossible.  These conclusions are
-independent of equations for \(X\) and \(Y\).
-
-## 5. Scope
-
-The new test is strongest near the lower divisor endpoint and when \(X\)
-has high gonality.  It is genuinely all-degree, but it does not remove
-the persistent choices \(e_{\mathrm{coeff}}=1,2\), nor divisors for which
-both factors are large.  Those remain the main infinite families.
-
-As in file 73, absolute simplicity can be weakened: it is enough that
-\(h_0\) have finite kernel and that every nonzero map
-\(J(X)\to J(D)\) under consideration have finite kernel.
+These are all-degree constraints, not an all-degree exclusion.
+Non-endpoint choices, e∈{1,2} and large complementary factors remain.
+The original common-cover problem is unsolved.

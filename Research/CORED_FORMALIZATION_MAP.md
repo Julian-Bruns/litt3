@@ -1,6 +1,6 @@
 # No-cored-common-cover formalization map
 
-Snapshot: 2026-09-07. This is a target-selection and dependency map, not a
+Snapshot: 2026-09-08. This is a target-selection and dependency map, not a
 Lean development. The active pair is unchanged and Litt's unrestricted
 common-cover problem is UNSOLVED. Root owns strategy and the registry.
 
@@ -26,7 +26,7 @@ in the final statement. This theorem ALLOWS coreless common covers.
 | Partner, with the same X | Present mathematical status | Principal remaining issue |
 | --- | --- | --- |
 | Active Y25: z²=(t²⁵+t⁵+t)(t²⁵+t⁵+t−1)(t−4) | No-cored theorem OPEN | Untwisted atlas tests, nontrivial twists, and smaller cored cases |
-| Small C_alpha: v²=u(u−1)(u−2)(u−3)(u−alpha), alpha³+alpha+1=0/F125 | No-cored theorem OPEN; much smaller exact tests | Five joint oper/twist representatives plus remaining small signatures |
+| Small C_alpha: v²=u(u−1)(u−2)(u−3)(u−alpha), alpha³+alpha+1=0/F125 | All Hermitian atlas tests COMPLETE AND AUDITED; no-cored OPEN | Seven tame and three small-wild profiles |
 | C_t in that same genus-two family, with prime deg_F25(t)>max(K,120) below | No-cored conclusion already follows from library proofs | Formalize the substantial geometric chain; no new atlas emptiness computation |
 
 “Already proved” here means author/audited prose with the stated exact
@@ -131,8 +131,9 @@ An atlas found on just one endpoint does not supply a common cover.
 
 The [backup entrypoint](BACKUP_CANDIDATE.md) and
 [candidate comparison](ALTERNATIVE_CURVE_CANDIDATES.md) own this changing
-calculation. Evidence below is the candidate agent's exact author work,
-not an independent audit or a new canonical theorem.
+calculation. The complete Hermitian exclusion now has a fresh audit and
+the canonical record backup_hermitian_atlas_exclusion. Smaller-signature
+arithmetic/proofs remain author work with their explicitly scoped replays.
 
 [Preparation data](computations/backup_genus_two_preparation.json) certify
 the ordinary simple genus-two curve, Hom-zero with J(X), six nonzero
@@ -143,14 +144,12 @@ F125-Frobenius orbit lengths8,24,24,24; repeated support was retained in
 the equations and proved absent in the result. Together with the degree-five
 oper orbit, all405 oper/twist pairs reduce to five joint representatives.
 
-Each intrinsic system has8 variables and13 equations. At the September7
-snapshot, all five tensors agree at precisions500/600 and pass their
-coboundary checks;17 original-row chart identities have separate no-solver
-replays. Only the untwisted and first nonzero-twist representatives are
-WHOLE empty:45 of405 pairs. Each of the other three representatives
-still has its chart0 open. The geometric conclusion remains CONDITIONAL
-on the new generic/twisted Cech construction, whose audit is pending.
-Use the backup entrypoint, not these snapshot counts, for live status.
+Each intrinsic system has8 variables and13 equations. All405 pairs and
+all20 original projective charts are now excluded. The last three use
+exact length8 finite algebras and factored polynomial unit identities
+in the ORIGINAL equations. The fresh medium audit passed the complete
+geometric bridge, candidate exhaustion, local bounds and all certificates.
+Both large Hermitian cases are therefore unconditionally excluded.
 
 The actual common-orbifold degrees obey n_C=N_X/8 and8|N_X. The September8
 backup snapshot records nine tame and nine small-wild author exclusions,
@@ -164,8 +163,9 @@ This checks the author computation, not the remaining geometric hypotheses.
 Their exact hypotheses, certificates and remaining necessary profiles
 belong to that entrypoint. Neither these author results nor the new
 nilpotent census constitute an independently audited no-cored theorem.
-Even empty systems for all405 pairs would only eliminate the large
-Hermitian alternatives. Fixed-Y25 exclusions do not transfer.
+The completed all405 exclusion eliminates the large Hermitian alternatives,
+not arbitrary common covers. The current smaller remainder is seven tame
+and three small-wild profiles. Fixed-Y25 exclusions do not transfer.
 
 ## Lean work packages and exact certificate boundary
 

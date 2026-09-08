@@ -1,8 +1,9 @@
 # Orbit0011 structural work —2026-09-07
 
 The original unmarked common-cover problem is UNSOLVED. Orbit0011 has
-NOT been excluded. Its atlas solver remains deferred; the selected14
-production run was not changed by this work.
+NOT been excluded. Its atlas solver remains deferred. The structural
+checks below did not change the selected14 run; a later user-authorized
+algorithm deployment is recorded separately below.
 
 ## Concrete result
 
@@ -61,7 +62,7 @@ new horizontal kernel or oper-dependent row search is needed.
 | Reduction | Hypotheses for EACH of0008/0009/0010; unchanged conclusion | Remaining preparation / implementation boundary |
 | --- | --- | --- |
 | Acyclic alternating atlas | H0(V)=0 and the same basepoint-free canonical pencil hold. The same verified I,J give97 equations in64 variables: two alternating32-square N blocks,32 R equations and normalization. | Relative fields and frame checks DONE. The fixed F25 residue operators can be reused; the factored equation evaluator still has to be connected to an elimination backend. |
-| Cubic deck grading | All three have c4!=0 and lambda a unit. The same diagonal weights descend the ENTIRE N,R,normalization system; no change of the original curve formulas. | Relative moduli, cube characters and normalized frame arithmetic DONE. A full descended97-equation exporter/solver is NOT implemented. |
+| Cubic deck grading | All three have c4!=0 and lambda a unit. The same diagonal weights descend the ENTIRE N,R,normalization system; no change of the original curve formulas. | Relative moduli, cube characters and normalized frame arithmetic DONE. The later2026-09-08 cached-tensor descent is implemented and deployed on selected14 where its complete coefficient guard passes; no tensor or solve for these deferred three is thereby supplied. The inverse-free Q-frame evaluator is still not integrated. |
 | Constant-kernel / Pfaffian charts | At every ACTUAL atlas the common constant kernel is a line, for all three. Exact charts with retained R apply unchanged, including normal coranks2,4,6,8,10 and the16-parameter maximum-rank cover. | Same universal chart formulas; choose/evaluate the principal Pfaffian and cofactor charts, retaining nonzero conditions. Only the positive genus-two checker is implemented, not an all-representative chart backend. Corank-two charts alone are NOT yet justified. |
 | 24-square Higgs reduction | Stability and acyclicity hold for all three. The24 L32 monomials and action -Q(Uh) are unchanged. At ACTUAL N,R,normalized points, the pole111/112 charts and the scalar-block determinant c^8 cover all points. | Same fixed coefficient projections and eight-column Schur rule. The first-oper identity checker is implemented; a field-generic factored rank evaluator is not. No representative-specific rank23 assertion was checked or proved. |
 | Actual liftable radical / Frobenius geometry | At any ACTUAL untwisted atlas, all three have the required rank-three Frobenius-form extension, osculating flag, stable acyclic V and 5 not dividing16. The31-dimensional liftable hyperplane, degree15 Pfaffian candidate and parabolic-Higgs interpretation apply unchanged. | No extra oper census test is needed. These are conditional geometric constructions from an actual solution, not extra structures supplied by an oper alone. Generic nonvanishing of the candidate remains unproved for all three. |
@@ -82,7 +83,7 @@ all-strata charts remain exact, but the proposed smallest chart family
 cannot replace them. No atlas point of these four representatives was
 constructed or excluded by these preparation checks.
 
-Implementation audit: `build_oper_atlas.sage` already provides the OLD
+Historical implementation audit,2026-09-07: `build_oper_atlas.sage` provides the OLD
 generic97-equation expanded-tensor construction for all18 representatives,
 and `export_rooted_atlas.sage` consumes those tensors. That path still
 constructs actual cube roots, horizontal kernels and field-dependent
@@ -92,6 +93,79 @@ Proof-level transferability must not be reported as completed production
 integration. Only the bounded `orbit11_q_frame.sage` helper was generalized
 here, removing its unnecessary orbit0011/cube assertions; production was
 not modified or restarted.
+
+### Later algorithm integration —2026-09-08
+
+The user subsequently authorized whole18 algorithm optimization, without
+reenabling the four deferred representatives. Controller46381 now uses
+`check_atlas_tensor_grading.py` and `atlas_deck_chart.py`: every one of
+98304 rooted N/R coefficients must pass the diagonal character identities
+before the optional cubic descent is used. All97 rooted rows, the full
+coupled56-row R witness, every higher-corank stratum and the nonzero
+normalization are retained. Search identities are converted back to the
+original field and independently replayed from the original tensor JSON.
+Actual degree1320->440 and240->80 checks and original-row certificates
+pass. An intrinsic degree18 field whose saved modulus is not f(t^3)
+correctly falls back to the unchanged original representation; divisibility
+of a field degree by3 is NOT a descent criterion.
+
+This implements a verified descent of EXISTING cached tensors, not yet
+the low-memory factored Q-frame construction promised by the structural
+formulas. It gives no completed tensor or atlas exclusion for0008--0011,
+and cannot lower0011's intrinsic absolute degree14648. Pfaffian-chart
+and24-square-rank methods remain proof-level reductions/test helpers,
+not substitutes for the deployed all-original-row solver.
+
+### Exact geometric obstruction left after linear elimination
+
+This paragraph collates existing canonical records; it does not assert
+a new emptiness theorem. For EACH of the18 stable untwisted V, put
+E=V omega. It has h0(E)=32 and is globally generated: at every P,
+H1(E(-P)) is dual to a stable negative-slope space, of slope-7.
+The incidence of sections vanishing at a point has dimension at most31
+inside the32-dimensional section space. Hence nowhere-zero sections
+form a nonempty open, and their directions form a nonempty open in P31.
+The audited `direct_wronskian_atlas` supplies a Wronskian-one complement
+for every such U; all complements form an affine9-dimensional gauge.
+Thus the quotient/Wronskian incidence is genuinely positive-dimensional
+for every oper, including the six exceptional nonacyclic representatives.
+
+The essential residual is two gauge-independent vectors in the56-dimensional
+principal-part space:
+
+    A_U=rho48(kappa^5 V0-U lambda^5),   B_U=rho48(eta).
+
+One ALWAYS has B_U!=0. A projective direction supports an atlas precisely
+when A_U is a NONZERO multiple of B_U; then exactly three scales work.
+The five existing first-oper controls have rank[A_U B_U]=2. They do not
+show this rank is2 everywhere. A uniform no-proportionality theorem on
+the admissible P31 open would directly exclude the untwisted atlas branch;
+no such theorem has been proved for even one whole representative.
+
+The unnormalized N-incidence has a different, explicitly invalid boundary.
+`inverse_cup_atlas_system` exhibits a24-dimensional family for EVERY
+oper: choose P in X, a section vanishing on4P (P23), and the Q-third-jet
+functional supported on4P in P(J). Its cup rank is at most23; normalization
+removes it. On admissible directions the raw64x56 determinant pencil has
+rank55 and a single extension-kernel line. Full R asks that this line be
+preserved semilinearly, and not killed. It is not implied by that rank.
+
+In the ACYCLIC swapped-pencil presentation, the actual common constant
+kernel is one-dimensional, but normal coranks2,4,6,8,10 remain possible.
+The equivalent24-square Higgs nullities are1,3,5,7,9. At rooted chart j,
+q=31-j parameters b remain and the linear matrix H_j has size(65+j)x32;
+its rank is32 at every actual point. One must still impose all q graph
+equations b_h=s_h^5 and c=v.s!=0. No bounded pure-b elimination has been
+proved to give a finite algebra on all charts. Actual genus-two atlases
+give genuine weak N-plus-normalization scaling families on which full R
+cuts the scale by t^3=1. Full Jacobian rank, extra Higgs-kernel dimensions
+and the invalid boundary are distinct facts, not interchangeable.
+
+Shared metadata/theorems give SU dimension32, S40 dimension64 and Q rank32
+across18; h0(V)=0 on12 noninvariant representatives and3 on6 invariant
+ones. The latter need three additional directions beyond the two canonical
+pencil copies. No uniform vanishing invariant was inferred from timings
+or finite sample ranks. All original cored/coreless gaps remain.
 
 Exact external reports, in the directory listed below, are
 `orbit_0008_relative_field.json`, `orbit_0009_relative_field.json`,

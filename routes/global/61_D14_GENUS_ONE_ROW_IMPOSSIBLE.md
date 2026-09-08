@@ -4,7 +4,7 @@
 
 **Status: proved; independent audit pending.**
 
-Assume the full-span degree-nine situation of files 47 and 53, in the
+Assume the full-span degree-nine situation of files 47 and 58, in the
 numerical row
 
 \[
@@ -28,7 +28,7 @@ Write
 
 where \(p\) is the etale \(C_7\)-quotient, \(q\) is a double cover
 branched at a reduced divisor \(\Delta\) of degree 36, and \(\pi\) has
-degree seven.  The two degree-nine maps supplied by files 47 and 53 are
+degree seven. The two degree-nine maps supplied by files 47 and 58 are
 
 \[
        t:E\longrightarrow\mathbf P^1_t,
@@ -210,7 +210,7 @@ map \(X\to\mathbf P^1_x\).  For \(\xi\in\mathcal A_X\), set
 \tag{61.13}
 \]
 
-Theorem 53.3 says that these eight sets partition \(\Delta\).  Each has
+The [hyperelliptic-descent theorem](58_X_CENTRAL_GLUE_CONGRUENCES.md#2-the-genus-one-and-genus-two-involutions) says that these eight sets partition \(\Delta\). Each has
 odd size, and
 
 \[
@@ -256,7 +256,7 @@ and its Weil pairing is intersection parity.  Namely, the pairing of
 the classes represented by even subsets \(S,T\subseteq\Delta\) is
 \((-1)^{|S\cap T|}\).
 
-Theorem 53.3 gives \(c\delta=\iota_Xc\), where \(\delta\) is the deck
+The same descent theorem gives \(c\delta=\iota_Xc\), where \(\delta\) is the deck
 involution of \(q\), so \(c^*J(X)\) lies in the Prym.  Although
 \(\gamma\) does not commute with \(\beta\) in \(D_{14}\), it normalizes
 \(\langle\beta\rangle\) and hence descends to \(\delta\) on \(C\).
@@ -361,5 +361,5 @@ therefore eliminated unconditionally.  The proof uses no choice of a
 finite affine coordinate: both the norm-support partition and the
 ramification-deficiency count include \(\infty\).  Its only global input
 beyond the degree-fourteen reduction is the already proved genus-one
-factorization of file 53 and the vanishing
+factorization proved in [the integral-gluing proof](58_X_CENTRAL_GLUE_CONGRUENCES.md#2-the-genus-one-and-genus-two-involutions) and the vanishing
 \(\operatorname{Hom}(J(Y),J(X))=0\) from file 40.

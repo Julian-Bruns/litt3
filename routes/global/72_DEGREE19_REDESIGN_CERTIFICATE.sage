@@ -1,4 +1,5 @@
-# Exact certificate for file 72.
+# Exact certificate for the degree-19 example in
+# 71_SCALAR_COMPRESSION_AT_THE_FIRST_DIAMOND_DEGREE.md, Sections 4-5.
 
 F = GF(5)
 P2.<x,y,z> = ProjectiveSpace(F, 2)
@@ -65,4 +66,4 @@ for i in range(14):
 assert counts == [3, 4, 4, 2, 3, 0, 2, 2, 1, 1, 3, 2, 5, 3]
 assert all(counts[j:] + counts[:j] != counts for j in range(1, 14))
 
-print("file 72 certificate: PASS")
+print("degree-19 endpoint certificate: PASS")

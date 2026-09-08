@@ -1,147 +1,128 @@
-# Fixed Tango structures are unchanged by unramified quadratic twisting
+# Quadratic twists: fixed Tango structures and exact p-rank bridges
 
-**Status: collaborative author proof, 2026-09-05.**
-Authors: `/root` and `/root/gluing_cohomology_rigidity`.
-The second author independently checked the descent and affine-action
-arguments. This is not yet a full independent audit of the associated
-explicit curve computations.
+Version 2, 2026-09-08. Consolidates the original rank bridge and the
+stronger invariant-structure theorem. AUTHOR proof, 2026-09-05, by /root
+and /root/gluing_cohomology_rigidity; the latter separately checked
+descent and the affine action. No new independent audit. The original
+rank-bridge proof through the audited positive-rank descent theorem is
+retained in Section 3, not replaced by an evidence upgrade.
 
-This generalizes the sufficient criterion of file 119: the rank of the
-auxiliary unramified double cover is no longer restricted. File 119 is
-retained pending an audit of the more general theorem, as requested.
+Work over an algebraically closed field of odd characteristic p.
+Curves are smooth projective connected; γ is p-rank and Tan denotes
+[embedded maximal Tango structures](111_P_RANK_ONE_TANGO_DESCENT.md).
 
-## 1. Construction and notation
+## 1. Both actual etale legs and the exact rank identity
 
-Work over an algebraically closed field of odd characteristic p. Let
-Y -> B be a ramified double cover of smooth projective connected curves,
-and let B' -> B be a connected finite etale double cover. Suppose
-g(B) >= 2. Form the connected smooth fiber product
-
-\[
- W=Y\times_B B'.
-\]
-
-Write a for the involution acting on the Y-coordinate and b for the
-involution acting on the B'-coordinate. Then G=<a,b> is a Klein four
-group, and
+Let Y→B be a RAMIFIED double cover with involution τ, and B'→B a
+connected ETALE double cover with involution ε; assume g(B)≥2. Put
 
 \[
- W/\langle b\rangle=Y,\qquad
- W/\langle ab\rangle=X,
+ W=Y\times_B B',\qquad X=W/\langle(\tau,\epsilon)\rangle.
 \]
 
-where X is the quadratic twist of Y by B'. Both displayed quotient
-maps are finite etale: b and ab are fixed-point-free. Let tau_Y and
-tau_X be the residual involutions of Y/B and X/B.
-
-As in files 111 and 115, maximal Tango structures mean embedded
-Cartier-zero Frobenius roots of the canonical bundle. Equivalently,
-they are regular dormant canonical connections whose horizontal
-rational differential line is Cartier-zero. This formulation includes
-the descent data on the structure, not just an isomorphism class of
-an unspecified line bundle.
-
-## 2. Invariant structures survive the twist exactly
-
-### Theorem 120.1
-
-Pullback to W and finite etale descent give canonical bijections
+The quadratic function fields are distinct, since just one is ramified,
+hence linearly disjoint. Therefore W is connected and, being etale over
+Y, smooth. The product involution is free because ε is free. Thus
 
 \[
- \boxed{
- \operatorname{Tan}(Y)^{\tau_Y}
- \ \simeq\ \operatorname{Tan}(W)^G
- \ \simeq\ \operatorname{Tan}(X)^{\tau_X}.}
-                                                               \tag{120.1}
+ q:W\to Y,\qquad r:W\to X
 \]
 
-There is no p-rank hypothesis.
+are BOTH connected finite etale doubles from the SAME projective source.
+The characters of Y/B and B'/B multiply to that of X/B. The latter
+unramified character does not change inertia, so X/B has the same branch
+divisor as Y/B, and g(X)=g(Y), g(W)=2g(Y)−1.
 
-#### Proof
-
-A tau_Y-invariant Tango connection pulls back to a connection on W
-fixed by both a and b. Conversely, a G-invariant Tango connection on W
-descends through the finite etale b-quotient to a Tango connection on Y,
-and its invariance under a gives tau_Y-invariance. Descent here is
-ordinary faithfully flat descent for a connection on the fixed
-canonical bundle, with its canonical group action. Zero p-curvature
-and the Cartier-zero condition are checked after the faithfully flat
-etale pullback. Thus the first pair of operations is inverse.
-
-The same argument with the free involution ab gives the second
-bijection. The residual action of G/<ab> is tau_X. No descent through
-the ramified maps Y/B or X/B is being asserted. QED.
-
-## 3. Minimal p-rank forces every canonical dormant connection to be fixed
-
-Write gamma(C) for p-rank and
+The Klein-four cover W/B has intermediate quotients Y,X,B'. Character
+idempotents give the actual Jacobian isogeny
 
 \[
- V_C=\{\beta\in H^0(C,\omega_C):\operatorname{Car}(\beta)=\beta\}.
+ J(W)\times J(B)^2\sim J(Y)\times J(X)\times J(B'),
+ \quad
+ \boxed{\gamma(W)=\gamma(Y)+\gamma(X)+\gamma(B')-2\gamma(B).} \tag{1}
 \]
 
-Its dimension over F_p is gamma(C).
+Indeed J(B) is the trivial character factor, and each other character
+appears once among the three intermediate Jacobians. The denominators
+are powers of two; p-rank is isogeny-invariant and additive. Norm after
+pullback is [2], so γ(Y),γ(X),γ(B') are each at least γ(B).
 
-### Lemma 120.2
+## 2. Invariant structures and the minimal-rank criterion
 
-Let pi:C -> B be a double cover of smooth projective curves in odd
-characteristic, with involution tau. If gamma(C)=gamma(B), then tau
-fixes every regular dormant connection on omega_C.
-
-#### Proof
-
-Pullback of regular differentials is injective for a separable map and
-commutes with Cartier. Hence pi^*:V_B -> V_C is injective and, by the
-rank hypothesis, bijective. Thus tau acts trivially on V_C.
-
-If the set D(C) of regular dormant canonical connections is empty,
-there is nothing to prove. Otherwise it is an affine torsor under V_C.
-For any nabla in D(C), put delta=tau^*nabla-nabla. Then delta is in V_C,
-so tau^*delta=delta. Applying tau twice gives
+Write a=(τ,1), b=(1,ε), G=〈a,b〉 and let τ_Y,τ_X be the residual
+involutions of Y/B,X/B. There are canonical bijections, with NO rank
+hypothesis,
 
 \[
- 0=(\tau^*)^2\nabla-\nabla=\delta+\tau^*\delta=2\delta.
+ \boxed{\operatorname{Tan}(Y)^{\tau_Y}
+       \simeq\operatorname{Tan}(W)^G
+       \simeq\operatorname{Tan}(X)^{\tau_X}.}             \tag{2}
 \]
 
-Since p is odd, delta=0. Every nabla is fixed, as claimed. QED.
+A τ_Y-fixed canonical connection pulls back to a G-fixed one.
+Conversely the specified connection on the fixed bundle ω_W, with its
+canonical action, descends through the FREE b-quotient; zero p-curvature
+and the Cartier-zero condition descend faithfully flat locally. The
+remaining a-action gives τ_Y-invariance. These operations are inverse.
+Use the free ab-quotient for X. No descent through either RAMIFIED leg
+to B is asserted. Equivalently, invariant embedded lines inherit the
+ambient canonical linearization and its actual cocycle.
 
-This argument does not assume gamma(B)>0 and does not require choosing
-an invariant origin in the affine torsor.
+For ANY double cover C→B with involution τ, if γ(C)=γ(B), then τ fixes
+EVERY regular dormant connection on ω_C, including when that rank is
+zero. Pullback identifies the Cartier-fixed F_p-spaces V_B≅V_C, hence τ
+acts trivially on V_C. If the connection torsor is nonempty, put
+δ=τ^*∇−∇∈V_C. Then 0=δ+τ^*δ=2δ, so δ=0. This neither assumes an
+invariant torsor origin nor asserts that the torsor is nonempty.
 
-### Corollary 120.3
-
-In the construction of Section 1, assume
+Consequently
 
 \[
- \operatorname{Tan}(Y)^{\tau_Y}=\varnothing,
- \qquad \gamma(X)=\gamma(B).
+ \operatorname{Tan}(Y)^{\tau_Y}=\varnothing,\quad
+ \gamma(X)=\gamma(B)
+ \quad\Longrightarrow\quad\operatorname{Tan}(X)=\varnothing. \tag{3}
 \]
 
-Then Tan(X) is empty. If Tan(Y) is nonempty, the etale double cover
-W -> X has a maximal Tango structure although X does not.
+If Tan(Y)≠∅, its pullback supplies a Tango structure on W, and r is
+then an actual failure of unrestricted etale descent. This criterion
+places NO restriction on γ(B') and allows γ(B)=0.
 
-#### Proof
+## 3. The original positive-rank bridge, with its separate proof
 
-By Lemma 120.2 every Tango structure on X is tau_X-invariant.
-Theorem 120.1 identifies such structures with an empty set. Pulling
-back any Tango structure on Y proves the last assertion. QED.
+The older sufficient assumptions were
 
-## 4. Exact role in the current test
+\[
+ \gamma(B)=s>0,\quad \gamma(X)=\gamma(B')=s,\quad
+ \operatorname{Tan}(Y)\ne\varnothing,\quad
+ \operatorname{Tan}(Y)^{\tau_Y}=\varnothing.
+\]
 
-For the genus-six Hoshi curve, the reflection quotient B has genus two
-and p-rank one. The ten verified Tango structures on Y are exchanged
-in five pairs. Therefore every unramified quadratic twist X has no
-tau_X-invariant Tango structure. In particular, any Tango structures
-on such an X must come in pairs.
+They imply the same failure of descent. Here is the retained original
+argument. Equation (1) gives γ(W)=γ(Y)>0. The audited
+[positive-rank-preserving theorem](115_POSITIVE_RANK_PRESERVING_TANGO_DESCENT.md)
+makes q^*:Tan(Y)→Tan(W) a bijection. Since q∘ab=τ_Y∘q, no Tango
+structure on W is fixed by ab. A structure on X would pull back to
+one, a contradiction; pulling back from Y proves nonemptiness on W.
+Thus both the existence and nonexistence assertions hold independently
+of the stronger argument in Section 2.
 
-This observation is useful even when gamma(X)>gamma(B): it is a
-consistency check on a complete geometric Tango count, and excludes
-all invariant candidates at once. A p-rank-one twist would satisfy
-Corollary 120.3 immediately, without the extra gamma(B')=1 condition
-of file 119.
+By (1) and the three rank inequalities, γ(W)=γ(Y) is equivalent to
+γ(X)=γ(B')=γ(B). It is an exact condition on the constructed double
+covers, not a premise about an unspecified Galois closure.
 
-The root's scalar-only calculation of the fifteen nontrivial twists
-found thirteen of p-rank five and two of p-rank three, not one.
-Thus that finite test does not meet the rank hypothesis either.
-Direct Tango enumeration of selected twists is a separate remaining
-test, not a consequence of this theorem.
+## 4. Completed auxiliary test and its limitation
+
+The [Hoshi model and reflection calculation](HOSHI_GENUS6_EXACT_TANGO_COUNT.md)
+give g(Y)=6, γ(Y)=4, g(B)=2, γ(B)=1, and ten Tango structures exchanged
+in five pairs by τ_Y. Thus EVERY unramified twist has no τ_X-fixed
+Tango structure; any Tango structures it has occur in pairs.
+
+The [complete fifteen-class calculation and selected zero-Tango theorem](HOSHI_GENUS6_TWIST_WITH_NO_MAXIMAL_TANGO.md)
+give thirteen twists of rank five and two of rank three, not one.
+Only two auxiliary B' have rank one, and their X have rank five.
+Hence neither rank criterion above proves nonexistence in that packet.
+Nevertheless direct exhaustive Tango testing proves that one of those
+rank-five twists (and its Frobenius conjugate) has no Tango structure.
+That actual projective counterexample supersedes the historical open
+test, not the conditional theorems. These auxiliary curves share W;
+they do not disprove Litt or change the project's fixed pair.

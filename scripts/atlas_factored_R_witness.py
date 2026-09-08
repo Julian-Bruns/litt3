@@ -9,6 +9,7 @@ projection identity, without forming a huge expanded coefficient matrix.
 import hashlib
 import json
 import multiprocessing
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import struct
 import time
@@ -112,6 +113,11 @@ class FactoredRWitness(NativeDirections):
                 print(json.dumps(dict(stage='full_R_small_determining_system',directions=selected,
                     N_rank=rank,seconds=time.monotonic()-started)),flush=True)
             candidate_digest=sha(candidate_path)
+            native_checks=None
+            if all((p.parent/'complete_native'/('binding-%02d.json'%i)).exists()
+                   for i,p in enumerate(paths)):
+                from atlas_native_R_checks import NativeRChecks
+                native_checks=NativeRChecks(candidate,self.Bc,self.Iproj,folder)
             def check(i):
                 target=folder/('check-%02d-%s.json'%(i,candidate_digest))
                 if target.exists():
@@ -119,21 +125,36 @@ class FactoredRWitness(NativeDirections):
                     assert record['direction_sha256']==hashes[i] and record['candidate_sha256']==candidate_digest
                     assert record['identity']==identity
                     return i,record['valid']
-                one=time.monotonic();n,d=block(i)
-                valid=self.native.multiply(candidate,n)==d
+                one=time.monotonic();native_record=None
+                if native_checks is not None:
+                    native_record=native_checks.check_bound(paths[i],i,hashes[i])
+                    valid=native_record['valid']
+                else:
+                    n,d=block(i);valid=self.native.multiply(candidate,n)==d
                 atomic(target,dict(identity=identity,direction=int(i),direction_sha256=hashes[i],
                     candidate_sha256=candidate_digest,valid=bool(valid),
                     compact_projection_identity_verified=True,raw_R_rows=56,
-                    seconds=time.monotonic()-one))
+                    native_check=native_record,seconds=time.monotonic()-one))
                 return i,valid
             global _CHECK
             _CHECK=check
-            count,estimate=fork_workers(workers,32,resident_rss(),memory_gib*1024**3)
+            if native_checks is not None:
+                # No forked Sage field or arithmetic scratch per job. The
+                # one-shot C++ process reads immutable native coefficients.
+                # The tested d1320 context/matrices peak around200MiB on a
+                # sparse fixture; reserve twice the dense coefficient size.
+                estimate=max(128*1024**2,32*16640*self.bridge.degree)
+                room=max(0,int(memory_gib*1024**3)-resident_rss())
+                count=max(1,min(int(workers),32,room//estimate))
+            else:count,estimate=fork_workers(workers,32,resident_rss(),memory_gib*1024**3)
             print(json.dumps(dict(stage='full_R_all_original_blocks',workers=count,
                 estimated_worker_rss_bytes=estimate,completed_checks=sum(
                     (folder/('check-%02d-%s.json'%(i,candidate_digest))).exists() for i in range(32)))),flush=True)
             failed=[]
             if count==1:answers=map(check,range(32))
+            elif native_checks is not None:
+                pool=ThreadPoolExecutor(max_workers=int(count))
+                answers=pool.map(check,range(32))
             else:
                 # Pool replacement forks originate in a management thread and
                 # cannot inherit PARI's main-thread-local arithmetic state.
@@ -143,11 +164,12 @@ class FactoredRWitness(NativeDirections):
                 for i,valid in answers:
                     if not valid:failed.append(i)
             except BaseException:
-                if count!=1:pool.terminate()
+                if count!=1 and native_checks is None:pool.terminate()
                 raise
             finally:
                 if count!=1:
-                    pool.close();pool.join()
+                    if native_checks is not None:pool.shutdown(wait=True,cancel_futures=True)
+                    else:pool.close();pool.join()
             if not failed:
                 result=self.restore(candidate)
                 atomic(folder/'verified.json',dict(identity=identity,candidate_sha256=candidate_digest,

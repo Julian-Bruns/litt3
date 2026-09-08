@@ -1,0 +1,233 @@
+{
+ "status": "finite_eight_dimensional_necessary_quotient_exact_border_certificate",
+ "tensor_path": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/tensor_twist2_p500.json",
+ "tensor_sha256": "f613a5f2074aa8e4664009dfed078463a4ad8b7695cf03dc21856c88ef1aaa89",
+ "twist_index": 2,
+ "field_degree": 360,
+ "chart_first_nonzero_b": 0,
+ "truncated_kernel_columns": 8,
+ "degree_of_original_row_multipliers": 3,
+ "scope": "This necessary nine-row quotient is NOT the full atlas; all three Frobenius graph equations and the inverse-norm equation remain.",
+ "s0_word_rank_through_degree": {
+  "0": 1,
+  "1": 4,
+  "2": 7,
+  "3": 8
+ },
+ "annihilator_border_matrix_shape": [
+  48,
+  35
+ ],
+ "annihilator_truncated_kernel_columns": 8,
+ "basis_word_exponents": [
+  [
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1
+  ],
+  [
+   0,
+   1,
+   0
+  ],
+  [
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   2
+  ],
+  [
+   0,
+   1,
+   1
+  ],
+  [
+   0,
+   2,
+   0
+  ],
+  [
+   0,
+   0,
+   3
+  ]
+ ],
+ "native_records": [
+  {
+   "backend": "backup_FLINT_bounded_module",
+   "operation": "kernel",
+   "degree_F5": 360,
+   "rows": 2,
+   "columns": 3,
+   "targets": 0,
+   "rank": 1,
+   "read_seconds": 5.2333e-05,
+   "solve_seconds": 1.6375e-05,
+   "identity_verification_seconds": 4.17e-07,
+   "total_seconds": 0.000270083,
+   "original_matrix_identity_verified": true,
+   "cached_binary_sha256": "619c63bb54161af901ea5d9387eddccb0e7c1af22fd4a597377c9f9a3d9c5dab",
+   "cache_authority": "Native exact identity only until the mandatory scalar original-matrix replay below.",
+   "encode_seconds": 0.0006865000468678772,
+   "bridge_seconds": 0.01608933403622359,
+   "independent_original_matrix_identity_verified": true,
+   "reused_exact_input_cache": false,
+   "input_and_backend_sha256": "1efbe002af31bcec13abb6cb59295b7b49bd6af700d36059ceae6de63194b654"
+  },
+  {
+   "backend": "backup_FLINT_bounded_module",
+   "operation": "row_identities",
+   "degree_F5": 360,
+   "rows": 2,
+   "columns": 3,
+   "targets": 2,
+   "rank": 1,
+   "read_seconds": 4.8292e-05,
+   "solve_seconds": 1.4833e-05,
+   "identity_verification_seconds": 3.33e-07,
+   "total_seconds": 0.00015825,
+   "original_matrix_identity_verified": true,
+   "cached_binary_sha256": "0c5f89267badec7abc9e5a7962edfe19cd4d20448535f83edda1f21296eccf0a",
+   "cache_authority": "Native exact identity only until the mandatory scalar original-matrix replay below.",
+   "encode_seconds": 0.0006180419586598873,
+   "bridge_seconds": 0.0064811669872142375,
+   "independent_original_matrix_identity_verified": true,
+   "reused_exact_input_cache": false,
+   "input_and_backend_sha256": "d0e9e9281a689bf9960798d300454676236b6457661c2abc58816d2605199fa5"
+  },
+  {
+   "backend": "backup_FLINT_bounded_module",
+   "operation": "kernel",
+   "degree_F5": 360,
+   "rows": 160,
+   "columns": 140,
+   "targets": 0,
+   "rank": 132,
+   "read_seconds": 0.0169672,
+   "solve_seconds": 1.62193,
+   "identity_verification_seconds": 0.137333,
+   "total_seconds": 1.77842,
+   "original_matrix_identity_verified": true,
+   "cached_binary_sha256": "581f267bdb15c9dfa200773d25372f23f3fb17a11093160d7d9179b14fc2a375",
+   "cache_authority": "Native exact identity only until the mandatory scalar original-matrix replay below.",
+   "encode_seconds": 0.49714374996256083,
+   "bridge_seconds": 2.8224015419837087,
+   "independent_original_matrix_identity_verified": true,
+   "reused_exact_input_cache": false,
+   "input_and_backend_sha256": "c57831f43966dc4b1d3ded53e0e3ff15c2eb9c09cf7704fd7a0c9865ae9bb947"
+  },
+  {
+   "backend": "backup_FLINT_bounded_module",
+   "operation": "kernel",
+   "degree_F5": 360,
+   "rows": 48,
+   "columns": 35,
+   "targets": 0,
+   "rank": 27,
+   "read_seconds": 0.00182479,
+   "solve_seconds": 0.0214813,
+   "identity_verification_seconds": 0.0106342,
+   "total_seconds": 0.0344726,
+   "original_matrix_identity_verified": true,
+   "cached_binary_sha256": "95f7cc9749600ca8af67c6dae3db3be1ab08d4957c57e571cb91077a17eb5ec3",
+   "cache_authority": "Native exact identity only until the mandatory scalar original-matrix replay below.",
+   "encode_seconds": 0.09717212500981987,
+   "bridge_seconds": 0.18316520802909508,
+   "independent_original_matrix_identity_verified": true,
+   "reused_exact_input_cache": false,
+   "input_and_backend_sha256": "d2c6d3fd2a844f4a63b1e0af31cdb83c796a0097b6c88c083d08d7b6853152e1"
+  },
+  {
+   "backend": "backup_FLINT_bounded_module",
+   "operation": "row_identities",
+   "degree_F5": 360,
+   "rows": 48,
+   "columns": 35,
+   "targets": 24,
+   "rank": 27,
+   "read_seconds": 0.00250217,
+   "solve_seconds": 0.0367461,
+   "identity_verification_seconds": 0.0220639,
+   "total_seconds": 0.0621805,
+   "original_matrix_identity_verified": true,
+   "cached_binary_sha256": "02c80157c0cdb0b802ce60fe68d2c0dc1c87ee7fe382c66d80a628b09d0f8c3a",
+   "cache_authority": "Native exact identity only until the mandatory scalar original-matrix replay below.",
+   "encode_seconds": 0.11815575003856793,
+   "bridge_seconds": 0.28415008302545175,
+   "independent_original_matrix_identity_verified": true,
+   "reused_exact_input_cache": false,
+   "input_and_backend_sha256": "a5962d8efae260420d83e4248b4734c44f48b25ab0a732e27936554bf36069db"
+  },
+  {
+   "backend": "backup_FLINT_bounded_module",
+   "operation": "row_identities",
+   "degree_F5": 360,
+   "rows": 160,
+   "columns": 140,
+   "targets": 16,
+   "rank": 132,
+   "read_seconds": 0.0221318,
+   "solve_seconds": 2.75631,
+   "identity_verification_seconds": 0.244695,
+   "total_seconds": 3.02939,
+   "original_matrix_identity_verified": true,
+   "cached_binary_sha256": "d79770d9db6b83ca93e9411cf1593811e51af2b77267f4261a9a220b6ffe4c63",
+   "cache_authority": "Native exact identity only until the mandatory scalar original-matrix replay below.",
+   "encode_seconds": 1.1005495419958606,
+   "bridge_seconds": 5.087847666989546,
+   "independent_original_matrix_identity_verified": true,
+   "reused_exact_input_cache": false,
+   "input_and_backend_sha256": "696c90b4217ffd3c2b1e04e3bb9d7bec91eb6abd2f567e9733ff9232d57f6763"
+  },
+  {
+   "backend": "backup_FLINT_single_rhs",
+   "degree_F5": 360,
+   "rows": 24,
+   "columns": 8,
+   "rank": 8,
+   "dual": false,
+   "read_seconds": 0.000676583,
+   "solve_seconds": 0.00744096,
+   "identity_verification_seconds": 0.00045975,
+   "total_seconds": 0.00871288,
+   "original_vector_identity_verified": true,
+   "encode_seconds": 0.0873527079820633,
+   "bridge_seconds": 0.10533683298854157,
+   "independent_original_vector_identity_verified": true
+  }
+ ],
+ "elapsed_seconds": 23.769397541007493,
+ "exact_certificate_checks": {
+  "original_projected_row_identities": 16,
+  "polynomial_annihilator_border_identities": 24,
+  "commuting_multiplication_matrices": 3,
+  "original_projected_relations_in_representation": 8,
+  "basis_words_represent_standard_basis": true,
+  "s0_represents_unit": true,
+  "necessary_nine_row_affine_quotient_dimension": 8,
+  "core_certificate_alone_does_not_check_frobenius_or_inverse_norm": true
+ },
+ "all_remaining_conditions_in_finite_algebra": {
+  "status": "finite_quotient_exact_exclusion_identity_pending_original13_lift",
+  "rooted_graph_equations_evaluated": [
+   1,
+   2,
+   3
+  ],
+  "graph_ideal_dimension": 8,
+  "target_kind": "one",
+  "target_membership_identity": true,
+  "original13_polynomial_lift_verified": false
+ },
+ "certificate_path": "/Users/julian/Documents/litt3-computation-data/backup-genus-two/finite_module_twist2_root_20260908.json",
+ "certificate_sha256": "6aaa440269172c9b8470ffb6b1d1221626824a5400922e82e607d74141f12a9b"
+}

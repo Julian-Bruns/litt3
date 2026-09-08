@@ -92,7 +92,44 @@ boundary to ordinary-source arguments, NOT a counterexample to an
 ordinary-minimal-source assertion and NOT a common-cover exclusion.
 Nothing here supplies compatible connections on two given endpoints.
 
-Version2,2026-09-08: the good-choice conclusion preserves exact defects,
-not only zero defects; for dormant objects the extra properness hypothesis
-is eliminated by the rank-two theta theorem. Author proof; no audit claimed.
+## 5. Exact bundle tests for two-leg compatibility
+
+For any two dormant connections r,s on C,
+
+    Hom(V_r,V_s)=k if r=s, and 0 otherwise.                  (4)
+
+The same formula holds after EVERY connected finite etale pullback.
+Consequently actual X←Z→Y and dormant endpoint connections r_X,r_Y satisfy
+
+    Hom(f^(1)*V_(r_X),g^(1)*V_(r_Y)) != 0
+        iff f^*r_X=g^*r_Y.                                  (5)
+
+In the affirmative case this Hom space is one-dimensional. Refining Z
+by any connected finite etale cover cannot create a missing match.
+No choice of oper flags, theta characteristics or scalar identifications
+has been omitted from this bundle criterion.
+
+For an admissible active r, E_r is polystable. It is stable exactly
+when its canonical double torsor is connected. If that torsor is split,
+
+    E_r=V_(r+q) direct-sum V_(r−q),
+
+with two nonisomorphic stable summands. More generally h^(1)*E_r is
+stable exactly when the pulled-back canonical double is connected.
+Thus E_r determines whether this double splits on each actual cover.
+Moreover E_r is isomorphic to E_s exactly when r=s. For two active
+endpoint connections, their pulled-back E bundles are isomorphic on
+the common source exactly when the connections themselves agree there.
+An arbitrary nonzero Hom is NOT substituted for isomorphism in this
+rank-four assertion: split objects can share just one dormant summand.
+
+These tests remain valid on sources with nonzero tangent defects. They
+test a proposed match; they do NOT force any pair of endpoint objects
+to match. In particular they do not remove the empty common-connection
+branch of the common-cover problem.
+
+Version3,2026-09-08 adds exact dormant Hom/active isomorphism tests and
+the stable-versus-split criterion for active bundles. Version2's good-choice
+conclusion preserves exact defects; the rank-two theta theorem removes
+the dormant properness hypothesis. Author proof; no audit claimed.
 [Proof](../Solutions/Sol_tangent_bundle_cyclic_refinements.md).

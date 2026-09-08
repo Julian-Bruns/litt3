@@ -79,3 +79,57 @@ assert vzero(r1) == 9
 assert sorted(vzero(f) for f in psi1.list()) == [5,6,6,7]
 assert vzero(-e1.derivative()/(3*e1)) == -1
 print('PASS: Cartier radicals, secants, tangents, horizontal determinant, fifth-power leading term, nilpotent line')
+
+# The relative dormant spectral Higgs field is polynomial even at q=0.
+SP = PolynomialRing(GF(5), names=('q','b','s','u','v'))
+q,b,s,u,v = SP.gens()
+SK = SP.fraction_field()
+def spectral_phi(qq,bb):
+    return matrix(SK,[[-qq*bb,qq**2],[2*qq**3-bb**2,qq*bb]])
+Phi = spectral_phi(q,b)
+Ms = matrix(SK,[[0,1],[s,0]])
+def spectral_D(z):
+    z = SK(z)
+    return z.derivative(q)*b+z.derivative(b)*(s*q+3*q**2)
+assert matrix(SK,2,2,[spectral_D(z) for z in Phi.list()]) == Ms*Phi-Phi*Ms
+assert Phi**2 == 2*q**5*identity_matrix(SK,2)
+T = matrix(SK,[[u**2,0],[2*u*v,u**3]])
+assert spectral_phi(u**2*q,u**3*b+2*u*v*q) == u**5*T*Phi*T.inverse()
+
+# Eigen-quotient on a^2=2q; only the secant equation is imposed.
+LP = PolynomialRing(GF(5),names=('a','b','s','u','v'))
+aa,bb,ss,uu,vv = LP.gens()
+LK = LP.fraction_field()
+qq = 3*aa**2
+PP = matrix(LK,[[-qq*bb,qq**2],[2*qq**3-bb**2,qq*bb]])
+MM = matrix(LK,[[0,1],[ss,0]])
+LL = matrix(LK,[[2*aa**3-bb,qq]])
+def eigen_D(z):
+    z=LK(z)
+    return z.derivative(aa)*bb/aa+z.derivative(bb)*(ss*qq+3*qq**2)
+assert LL*PP == aa**5*LL
+assert matrix(LK,1,2,[eigen_D(z) for z in LL.list()])+LL*MM == -aa*LL
+TT = matrix(LK,[[uu**2,0],[2*uu*vv,uu**3]])
+LLt = matrix(LK,[[2*(uu*aa)**3-(uu**3*bb+2*uu*vv*qq),uu**2*qq]])
+assert LLt == uu**5*LL*TT.inverse()
+print('PASS: horizontal spectral matrix, characteristic polynomial, all coordinate changes, eigen-quotient and quotient connection')
+
+# Relative Sym^3 reductions have the diagonal in their affine orbit closure.
+RP = PolynomialRing(GF(5), names=('r','s','dr','ds','z'))
+rr,ss,dr,ds,zz = RP.gens()
+RK = RP.fraction_field()
+def cubic_jet(p,dp):
+    return matrix(RK, [[1,0,0,0],[0,3,0,0],[3*p,0,1,0],[3*dp,p,0,1]])
+relative = cubic_jet(ss,ds).inverse()*cubic_jet(rr,dr)
+expected = identity_matrix(RK,4)
+expected[2,0],expected[3,0],expected[3,1] = 3*(rr-ss),3*(dr-ds),rr-ss
+assert relative == expected
+symp = matrix(RK, [[0,0,0,1],[0,0,2,0],[0,-2,0,0],[-1,0,0,0]])
+assert relative.transpose()*symp*relative == symp
+cochar = diagonal_matrix(RK,[zz**(-3),zz**(-1),zz,zz**3])
+contracted = cochar*relative*cochar.inverse()
+expected[2,0] *= zz**4
+expected[3,0] *= zz**6
+expected[3,1] *= zz**4
+assert contracted == expected
+print('PASS: relative cubic-jet matrix, symplectic form and affine contraction')

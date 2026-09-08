@@ -181,6 +181,100 @@ def sparse_export_progress(folder,exported,now):
         calibrated_sparse_charts=len(samples),method='sparse_phase_and_worker_Fermi_model')
 
 
+def bounded_parallel_time(memory_charges,workers,memory_bytes,seconds):
+    """Deterministic memory-constrained waves; this predicts ATTEMPTS only."""
+    pending=list(memory_charges);running=[];clock=0.
+    while pending or running:
+        while pending and len(running)<workers:
+            room=memory_bytes-sum(charge for _,charge in running)
+            fitting=next((i for i,charge in enumerate(pending) if charge<=room),None)
+            if fitting is None:break
+            charge=pending.pop(fitting);running.append((clock+seconds,charge))
+        if not running:raise ValueError('A bounded job exceeds the complete memory budget')
+        clock=min(end for end,_ in running);running=[x for x in running if x[0]>clock]
+    return clock
+
+
+def native_batch_progress(active,now):
+    """Live native phases and sampled aggregate CPU, without process writes."""
+    command=active.get('command',[])
+    if '--output' not in command:return {}
+    folder=Path(command[command.index('--output')+1]);batch=read(folder/'batch.json')
+    start=command.index('--charts')+1;requested=[]
+    for value in command[start:]:
+        if value.startswith('--'):break
+        requested.append(int(value))
+    limit=float(command[command.index('--seconds')+1])
+    age=max(0.,now-batch.get('updated_epoch',now));live=[]
+    for chart,job in batch.get('active',{}).items():
+        if int(chart) not in requested:continue
+        path=folder/f'chart-{int(chart):02d}'/'events.jsonl';rows=events(path);event=rows[-1] if rows else {}
+        elapsed=job.get('elapsed_seconds')
+        if elapsed is None:
+            elapsed=float(event.get('seconds',0))+(max(0.,now-path.stat().st_mtime) if path.exists() else 0)
+        else:elapsed+=age
+        live.append(dict(chart=int(chart),pid=job['pid'],phase=job['phase'],
+            stage=event.get('stage','starting'),elapsed_seconds=elapsed,
+            remaining_slice_seconds=max(0.,limit+5-elapsed)))
+    telemetry=events(folder/'telemetry.jsonl');sample=telemetry[-1] if telemetry else {}
+    terminal={'verified_polynomial_certificate','bounded_native_slice_incomplete','nonunit_basis_candidate',
+              'native_solver_error','bounded_native_batch_interrupted'}
+    done=sum(batch.get('charts',{}).get(str(c),{}).get('status') in terminal for c in requested)
+    return dict(rep=active['rep'],stage='native_original',done=done,total=len(requested),
+        unit='bounded chart attempts finished (not exclusions)',live_charts=live,
+        sampled_cpu_percent=sample.get('cpu_percent',0),sampled_rss_bytes=sample.get('rss_bytes',0),
+        peak_cpu_percent=batch.get('peak_aggregate_cpu_percent',0),
+        eta_seconds=max([r['remaining_slice_seconds'] for r in live]+[0.])+
+            max(0,len(requested)-done-len(live))*(limit+5)/max(1,len(live)),
+        estimated_work_percent=100*done/max(1,len(requested)),
+        scope='Only the current bounded batch; a timeout or nonunit candidate is not an exclusion')
+
+
+def native_sweep_progress(selected,state,active):
+    from atlas_native_batch import TERMINAL,indexed_reservation,reservation
+    workers=max(1,int(state.get('threads',10)));limit=float(state.get('slice_minutes',5))*60
+    command=active.get('command',[])
+    memory_gib=float(command[command.index('--rss-gib')+1]) if '--rss-gib' in command else 8.
+    memory_bytes=memory_gib*1024**3;remaining_count=attempted=noncert=0;seconds=0.;uncached=[]
+    for rid,job in selected.items():
+        directory=DATA/'atlas-native-affine'/rid
+        if active.get('rep')==rid and active.get('stage')=='native_original_solving' and '--output' in command:
+            directory=Path(command[command.index('--output')+1])
+        batch=read(directory/'batch.json');records=dict(job.get('native_original_attempts',{}))
+        records.update(batch.get('charts',{}))
+        folder=Path(job['charts']);manifest=read(folder/'manifest.json');run=read(folder/'run.json')
+        calculated={str(r['chart']):r for r in manifest.get('jobs',[])};calculated.update(run.get('jobs',{}))
+        pending=[]
+        for j in range(31,-1,-1):
+            if calculated.get(str(j),{}).get('status') in CERTIFIED:continue
+            status=records.get(str(j),{}).get('status')
+            if status in TERMINAL:
+                attempted+=1;noncert+=int(status!='verified_polynomial_certificate');continue
+            pending.append(j)
+        remaining_count+=len(pending)
+        if not pending:continue
+        source=Path(job['tensor']);size=source.stat().st_size if source.exists() else 0
+        header=read(source.parent/'native-original-input.json')
+        if header:
+            degree=header['field_model']['degree_F5']
+            if state.get('native_optimizations',{}).get('deck_descended'):
+                checked=read(source.parent/'native-deck-grading.json')
+                if checked.get('source_sha256')==header.get('source_sha256') and checked.get('all_original_N_and_R_character_identities_verified'):
+                    degree=checked['descended_degree_F5']
+            charges=[min(memory_bytes,indexed_reservation(j,'solve',degree,size))
+                     for j in pending]
+        else:
+            uncached.append(rid);slots,_=reservation(workers,len(pending),memory_bytes,size)
+            charges=[memory_bytes/slots]*len(pending)
+        seconds+=bounded_parallel_time(charges,workers,memory_bytes,limit+5)
+    return dict(remaining_unfinished_or_unattempted_charts=remaining_count,
+        terminal_uncertified_native_attempts=noncert,terminal_native_attempts_not_already_adopted=attempted,
+        nominal_attempt_sweep_seconds=seconds,slice_seconds=limit,workers=workers,rss_budget_gib=memory_gib,
+        uncached_representatives=uncached,
+        scope='Memory-reserved bounded ATTEMPT sweep only, not a whole-run completion ETA; '
+              'excludes unmeasured cache preparation and independent replay; held jobs require explicit repair')
+
+
 def forecast(state, now=None):
     now=time.time() if now is None else now
     selected={rid:job for rid,job in state.get('jobs',{}).items() if not job.get('deferred',False)}
@@ -316,6 +410,10 @@ def forecast(state, now=None):
             left+=rem
             details.append(dict(rep=rid,chart=j,field_degree_F25=field,remaining_update_equivalents=rem))
     status=state.get('status','unknown')
+    native_sweep=None
+    if any('native_original_attempts' in j for j in selected.values()) or active.get('stage')=='native_original_solving':
+        native_sweep=native_sweep_progress(selected,state,active)
+    if active.get('stage')=='native_original_solving':active_view=native_batch_progress(active,now)
     if status=='calculation_finished_verification_required':left=0.
     return dict(schema=1,status=status,eta_seconds=left/RATE,
         eta_low_seconds=left/RATE/10,eta_high_seconds=left/RATE*10,
@@ -324,6 +422,7 @@ def forecast(state, now=None):
         charts_certified=certified,charts_total=32*len(selected),
         inputs_built=built,representatives=len(selected),active=active_view,
         deferred_representatives=deferred,
+        bounded_native_sweep=native_sweep,
         blocked_representatives=blocked,state_age_seconds=max(0.,now-state.get('updated',now)),
         assumptions=dict(native_exponent=1.982,native_reference_rate=RATE,
             F4_effective_degree=6,F4_matrix_exponent=2,field_cost_exponent=1,
@@ -339,6 +438,13 @@ def render(report):
     lines=[f"{label} ETA ~{eta} (rough /10 to x10: {duration(report['eta_low_seconds'])}–{duration(report['eta_high_seconds'])})",
            f"Estimated work: {number(report['estimated_updates_done'])} / {number(report['estimated_updates_total'])} update-equivalents ({report['estimated_work_percent']:.3g}%)"]
     a=report['active']
+    sweep=report.get('bounded_native_sweep')
+    if sweep:
+        lines[0]='Legacy F4 fallback scenario: '+lines[0]+'; not calibrated to the new native algorithm.'
+        lines.insert(0,f"Bounded native attempt sweep ~{duration(sweep['nominal_attempt_sweep_seconds'])}: "
+            f"{sweep['remaining_unfinished_or_unattempted_charts']} remaining; "
+            f"{sweep['terminal_uncertified_native_attempts']} bounded attempts have no certificate. "
+            'This is NOT a completion forecast; cache preparation/replay are additional.')
     if a:
         prefix=f"Now {a['rep']} / {a['stage']}"+(f" / chart {a['chart']}" if 'chart' in a else '')
         if a['stage']=='F4':
@@ -346,7 +452,12 @@ def render(report):
         else:detail=f"{a['done']:,}/{a['total']:,} {a['unit']}"
         if 'updates' in a:detail+=f"; this invocation {number(a['updates'])} measured updates, {number(a['updates_per_second'])}/s"
         if 'native_threads' in a:detail+=f"; {a['native_threads']} native workers"
+        if a['stage']=='native_original':
+            detail+=f"; {len(a['live_charts'])} active workers; sampled {a['sampled_cpu_percent']:.0f}% CPU, "
+            detail+=f"{a['sampled_rss_bytes']/1024**3:.2f} GiB RSS"
         lines.append(f"{prefix}: {detail}; stage/chart ETA ~{duration(a['eta_seconds'])}")
+        if a['stage']=='native_original' and a['live_charts']:
+            lines.append('Live phases: '+', '.join(f"{r['chart']} {r['stage']}" for r in a['live_charts']))
     lines.append(f"Finished: {report['charts_finished']}/{report['charts_total']} chart calculations ({report['charts_certified']} certified); inputs {report['inputs_built']}/{report['representatives']}")
     if report.get('deferred_representatives'):
         lines.append(f"Scope: {report['representatives']} representatives selected; {len(report['deferred_representatives'])} deferred, not excluded mathematically.")

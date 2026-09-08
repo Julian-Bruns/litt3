@@ -259,7 +259,9 @@ makes both projections etale, and Riemann--Hurwitz gives genera \(3,15\).
 ## 4. Consequence for the fixed curves
 
 Degrees, genera, common branch supports, and uniform tame ramification
-cannot eliminate either residual alternative in file 77. An exclusion
+cannot eliminate either residual alternative in
+[the incidence theorem, Section 6](PARAMETERIZED_PUSHED_INCIDENCE_DICHOTOMY.md).
+An exclusion
 must use the fixed equations
 
 \[
