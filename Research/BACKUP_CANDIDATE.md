@@ -79,6 +79,16 @@ Cartier test on C, and its mixed-prime-support refinement are usable
 on clumps with rC=1, even though rX=8 is outside the fixed-X W3 theorem.
 No clump is asserted to exist.
 
+NEW2026-09-08: [backup_singleton_root_exclusion](../Theorems/Thm_backup_singleton_root_exclusion.md)
+excludes the ENTIRE singleton Cartier-zero branch, for every cover
+degree/prime-to5 root weight. The stronger endpoint statement excludes
+every nonbranch(P,M) with V(M)=2[P-O] from Raynaud theta, including M
+with five-primary part. Three exhaustive norm charts have exact original
+unit identities; corrected full-kernel replay takes0.535s. The geometric
+bridge passed a fresh medium audit. No new subcase solver is needed.
+Together with the following nonzero-Cartier argument this removes ALL
+singleton clump images on C, but not larger clumps or no-clump spans.
+
 There is one further concrete coreless exclusion. Under the new
 author-prose `fixed_x_nonzero_cartier_profiles` theorem, a primitive
 shared tensor with NONZERO Cartier image has (d,e)=(2,1),(2,4),(4,2)
@@ -88,8 +98,8 @@ Weierstrass; hence s_C is a scalar d-th power of a one-form with double
 zero at P. The endpoint-root Cartier test makes that form a Cartier
 eigenform, contradicting the six exact checks. Thus the two
 double-weight profiles(2,4),(4,8) are excluded. The C-support-four
-profiles, Cartier-zero branch, and possibility of no shared generator
-remain. This conclusion retains both actual finite-etale legs and the
+profiles, nonsingleton Cartier-zero branch, and possibility of no shared
+generator remain. This conclusion retains both actual finite-etale legs and the
 explicit nonzero-Cartier hypothesis; its new theorem dependencies have
 not yet had an independent audit.
 

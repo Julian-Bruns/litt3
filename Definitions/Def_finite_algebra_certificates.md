@@ -9,6 +9,16 @@ A derived polynomial is an element of I obtained by exact ideal-preserving
 operations. Numerical agreement at sampled points does not certify this.
 Coefficient arithmetic, polynomial reductions, and matrix ranks are exact.
 
+An exact-arithmetic library result still requires the relevant identity
+checks. In this environment the default dense right-kernel routine over
+the specified non-Conway F125 returned a basis NOT annihilated by its
+input matrix (caught2026-09-08 before theorem promotion). For a kernel
+used as a COMPLETE parametrization, check its product with the ORIGINAL
+matrix, its independence, and the original matrix rank/nullity. Use
+generic arithmetic when that dense backend is involved. A valid unit
+identity on an incorrectly parametrized subspace proves no exclusion
+of the intended full space. See the corrected singleton-root certificate.
+
 When K=F_q, write F_A(a)=a^q and N for the nilradical of A. This F_A is
 F_q-linear. The p-power map is generally only semilinear if q is not p.
 A closed point P has residue degree d_P=[kappa(P):F_q] and local length

@@ -1,8 +1,8 @@
 {
-  "phase": "resource_limited_structural_research_after_backup_atlas_exclusion",
+  "phase": "resource_limited_coreless_after_singleton_exclusion",
   "problem_status": "unsolved",
-  "last_updated_local": "2026-09-08 04:35 CEST",
-  "next_action": "All agents stopped. Backup Hermitian atlas exclusion complete and audited (405 pairs/20 charts). Short triangle p-curvature diagnostic shows remaining triangles nilpotent; check whether exact local regularity and existing genus2 census imply new exclusions, otherwise return to endpoint-specific coreless obstruction. Universal shared regular projective connection existence is now refuted by retained actual genus17 Hecke spans.",
+  "last_updated_local": "2026-09-08 08:34 CEST",
+  "next_action": "NEW AUDITED inertia_generated_core_preserving_refinement: degree168 perfect PSL2(F7) endpoint covers make every positive Cartier-zero generator transverse dormant while preserving BOTH actual etale legs, corelessness and EXACT primitive weight. Exploit the RETAINED bounded perfect-Galois maps to the original endpoints, or address no-clump. Genus still grows with unbounded support; do NOT apply original A18 to new curves or repeat false Tango=>core claims. uniform_cartier_root_locus v2 already proves independent endpoint tests cannot eliminate all large profiles. Generic singleton Pro prompt ready UNSENT, no repeat solver. All agents stopped, no heavy computation.",
   "representative_selection": {
     "selected_count": 14,
     "deferred": [
@@ -28,6 +28,13 @@
     "large_field_runtime_measured": false
   },
   "active_target_ids": [
+    "inertia_generated_core_preserving_refinement",
+    "uniform_cartier_root_locus",
+    "raynaud_genus_two_determinant",
+    "backup_singleton_root_exclusion",
+    "backup_raynaud_quadric",
+    "singleton_cartier_theta_bound",
+    "radical_quadratic_atlas_obstruction",
     "backup_hermitian_atlas_exclusion",
     "inverse_cup_atlas_system",
     "weierstrass_pair_interpolation",
@@ -126,8 +133,8 @@
     "raw_basis_external": "/Users/julian/Documents/litt3-computation-data/normalized_oper_msolve.gb"
   },
   "timer": {
-    "status": "Passive sleep82297 due04:47CEST; no CPU loop or automatic wake-up.",
-    "next_review_local": "2026-09-08 04:47 CEST"
+    "status": "Passive sleep9979 started08:08 due09:08CEST. Latest update refreshed08:34. No CPU loop or automatic chat restart.",
+    "next_review_local": "2026-09-08 09:08 CEST"
   },
   "completion_watcher": {
     "status": "disabled",
@@ -143,21 +150,21 @@
     "requested_action": "None. Do not rearm or change speed later. Subagents unchanged.",
     "blocker": null
   },
-  "proof_scope": "Original X/Y25 still open. Backup C_alpha has audited no-Hermitian-PGU-atlas theorem for all twists; nine tame/three small-wild cored profiles and arbitrary coreless remain. High-prime-degree genus2 no-cored prose theorem independent of computation.",
+  "proof_scope": "Original X/Y25 still open. Backup C_alpha has audited no-Hermitian-PGU-atlas theorem; seven tame/three small-wild cored profiles remain. Singleton Cartier-zero roots now excluded ALL weights by three exact charts; larger clumps/no-clump remain. High-prime-degree genus2 no-cored prose theorem independent of computation.",
   "handoff": "Research/AFTER_ENUMERATION.md",
   "pro_requests_remaining": null,
   "pro_concurrency": {
     "allowed_outstanding": 1,
     "outstanding": false,
     "submitted_local": null,
-    "prompt_file": "Research/PRO_THREE_POINT_TORSION_REQUEST.md",
-    "topic": "Exclude residual three-distinct-point fixed-X W3 exact-nine torsion by exact17x9 rank test",
+    "prompt_file": "Research/PRO_GENERIC_SINGLETON_REQUEST.md",
+    "topic": "Transfer the complete singleton exclusion to the generic one-parameter high-degree partner family, or produce actual residual data",
     "chat_url": "https://chatgpt.com/c/WEB:5ea37674-1911-4b65-922c-9e31b8af3651",
     "ui_confirmation": "User supplied full answer and attached C++ source/output; root replayPASS0.32s.",
-    "status": "RETURNED: exact second three-point Pro certificate replayed and theorem registered. No new request outstanding.",
-    "revision": "2026-09-08: include completed2P+Q exclusion, exact sheetwise rank formulation, finite-field coefficient bound and all proved support reductions",
+    "status": "Generic-family extension prompt ready, NOT SENT. Specialized singleton prompt removed after local solution. User pastes manually; no automated submission.",
+    "revision": "2026-09-08 07:25: includes whole-family Q_t and exact6-square principal V-theta cubic recipe plus8-square theta(2N) matrix. Both symbolic identities0.13s. Three audited charts retained, generic intersection still undecided. User pastes manually.",
     "rule": "One concurrent GPT6Pro request. User pastes prompts manually and supplies results; no computer-use submission or polling. This result has returned, freeing the slot. Prepare a new request only after identifying a precise useful remaining lemma.",
-    "previous_prompt_file": "Research/PRO_NINE_TORSION_REQUEST.md",
+    "previous_prompt_file": "Research/PRO_THREE_POINT_TORSION_REQUEST.md",
     "previous_result_status": "Returned2026-09-08, full supplied certificate replayPASS; useful results integrated."
   },
   "migration_status": "complete",
@@ -167,7 +174,7 @@
     "A18": "All18 untwisted systems empty; not proved",
     "uncovered": "nontrivial Pic(X)[3] twists; small cored; arbitrary coreless"
   },
-  "last_proved_step": "backup_hermitian_atlas_exclusion v1 AUDITED PASS: all405 oper/twist pairs,20 original charts; no C_alpha -> [Fermat6/PGU3(5)] atlas. coreless_connection_spectrum v2 AUTHOR: explicit actual genus17 coreless spans with no common REGULAR projective connection. inverse_cup_atlas_system v2 AUTHOR registered.",
+  "last_proved_step": "inertia_generated_core_preserving_refinement v2 AUDITED PASS2026-09-08: inertia-generated Galois covers preserve corelessness without degree coprimality; perfect groups preserve primitive weights. Fixed PSL2(F7) degree168 realizes inertia2/3/4, giving all-positive-Cartier-zero transverse dormant reduction with same weight. Group replay0.018s. Genus/support and no-clump gaps remain. Earlier uniform root/matrix v2 and audited backup405/singleton exclusions intact.",
   "orbit11_structural_frontier": "STOPPED with final handoff Research/ATLAS_OPERATION_LOGGING.md. All18 field descent/tests pass; no whole exclusions. Inverse-cup v2 registered, exceptional72x32 necessary incidence unexcluded.",
   "solver_attention": "Controller26046/descendants STOPPED.51accepted64calculated0whole. Orbit6 PARI result-thread unpickle segfault;5blocks saved/no manifest. Serial worker1 bypass not newly regression-tested. Bulk checkpoint IO proposal undeployed.",
   "formalization": {
@@ -219,6 +226,6 @@
     "representatives": 5,
     "audit": "Research/audits/BACKUP_ATLAS_BRIDGE_AUDIT_2026_09_08.md",
     "completion": "Research/computations/backup_genus_two_completion_status.json",
-    "remaining": "9 tame and3 small-wild cored profiles; arbitrary coreless"
+    "remaining": "7 tame and3 small-wild cored profiles; arbitrary coreless"
   }
 }

@@ -15,6 +15,32 @@ to a complete counterexample, not by convenience or amount already invested.
    Tango, Prym, ordinarity, and simultaneous-Galois repairs are false.
    Before another subcase calculation, state which missing implication it
    could establish and test against retained Hecke examples.
+   SINGLETON STEP NOW COMPLETE: backup_singleton_root_exclusion excludes
+   all singleton Cartier-zero data on C_alpha for every root weight.
+   Three full charts have original unit certificates,0.535s replay;
+   geometric bridge audited PASS. No sixteen-point enumeration remains.
+   Combined with saved nonzero-Cartier torsion/eigenform argument, all
+   singleton clump images on C are excluded. Next major gap: larger
+   clumps or no clump; do not repeat singleton calculations. The explicit
+   Raynaud quadric and general degree16 theorem remain reusable inputs.
+   NEW uniform_cartier_root_locus v2 removes unbounded weight for EVERY
+   clump size and identifies the preferred prime-to5 theta exactly.
+   More importantly r=5k+2 has ACTUAL unbounded-weight endpoint-root
+   families on every ordinary genus2 curve. All subcanonical curves,
+   including BOTH fixed endpoints, have primitive weight7/double-zero
+   tensors passing Cartier. Any actual coreless match of those tensors
+   would have NO common regular connection. Do NOT attempt to exclude
+   all large clumps by independent endpoint tests: this is now false.
+   No actual matching span was constructed. Use the weight7 two-leg
+   compatibility equation as a bounded test of a genuinely shared
+   obstruction; no-clump remains separate and open.
+   NEW AUDITED operation: inertia_generated_core_preserving_refinement
+   uses genuinely ramified PERFECT PSL2(F7) covers of degree168 to
+   preserve BOTH etale legs, corelessness and EXACT primitive weight.
+   It makes every positive Cartier-zero generator transverse dormant,
+   independent of original degrees. This does not bound clump size or
+   new genera, and does not justify applying original A18 to new curves.
+   Any next use must retain the degree168 maps to the original endpoints.
 
 2. **Make the existing no-cored theorem a usable foundation.** Fixed X
    and a high-prime-degree genus2 partner already have a complete prose
@@ -32,11 +58,11 @@ to a complete counterexample, not by convenience or amount already invested.
    Do not add generic solver variants or drop exceptional equations.
 
 4. **Small-backup atlas exclusion DONE AND AUDITED.** All405 pairs and
-   all20 original charts excluded; no Hermitian PGU atlas. Nine tame and
-   three small-wild profiles remain. A short triangle-connection diagnostic
-   found nilpotent p-curvature throughout the remaining triangles; test
-   whether existing genus2 census data now provides an actual exclusion.
-   No new generic map solver; stop this branch if there is no concrete bridge.
+   all20 original charts excluded; no Hermitian PGU atlas. The short
+   triangle diagnostic now excludes248 and239 by the new parameterized
+   radical_quadratic_atlas_obstruction. Seven tame and three small-wild
+   profiles remain. Cubic400-pair check and replay each2.4s. This bounded
+   branch is COMPLETE; return to coreless, not another generic map solver.
 
 5. **Three-point torsion pair locus.** New exact9x9 chart leaves eight
    equations on an open surface. One-Weierstrass matrix saved; generic
@@ -52,6 +78,16 @@ whose affirmative OR negative answer would redirect a high-ranked goal.
 Do not request fresh strategies in a vacuum or another incremental finite
 exclusion without explaining its downstream mathematical use. User pastes
 requests manually; no computer-use submission or polling.
+The singleton request was solved locally and removed before submission.
+The separate generic-family extension request is now ready in
+PRO_GENERIC_SINGLETON_REQUEST.md, after a60s symbolic diagnostic reached
+its cap. It would transfer the result to the family already used by the
+complete no-cored theorem. No generic exclusion is claimed; no submission.
+It includes the explicit entire-family Raynaud quadric and new exact
+six-square V-theta matrix/cubic plus eight-square theta(2N) matrix.
+These are now PROVED, not future derivations; each symbolic family
+identity takes0.13s. The all-power formula is(p-1)m-square for all odd p.
+The generic intersection remains open; do not repeat the9-variable solve.
 
 ## Parking rule
 

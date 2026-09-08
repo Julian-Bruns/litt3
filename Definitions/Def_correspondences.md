@@ -30,3 +30,10 @@ A *finite correspondence groupoid* uses distinct normalized joint
 images as arrows, with source/target the two etale maps and composition
 obtained from outer joint images. Its existence from a finite
 composition-closed list is a theorem, not part of this definition.
+
+A finite separable map of smooth projective curves is *genuinely
+ramified* if it factors through no nontrivial connected finite etale
+cover of its target. The equivalence with surjectivity on etale
+fundamental groups, and the Galois inertia criterion, are proved/cited
+in `inertia_generated_core_preserving_refinement`. This term does not
+mean merely that some point is ramified.
