@@ -61,3 +61,17 @@ non-polling timer; do not run a CPU-consuming reminder loop. Keep the
 user informed during work. Prioritize parameterized mechanisms; individual
 degrees are tests. Never claim the original problem solved from a marked
 variant, a conditional reduction, or a bounded but unexcluded case list.
+
+## Pro requests
+
+User instruction, 2026-09-09: make requests narrower and more attainable,
+and avoid returning mostly known results. Before drafting, check the
+canonical inventory and latest computation. Ask for ONE bounded new
+lemma or explicit construction, not the entire remaining global arrow.
+State exactly how either a proof or a counterexample changes our next
+action. Supply the relevant established facts concisely as inputs not to
+be reproved, including stronger existing results than obvious fallbacks.
+Do not invite a catalogue of weaker reductions if the target is missed.
+Smaller scope must retain mathematical usefulness; an easy but irrelevant
+result is not success. Do not promise that a narrower question will be
+solved. One manually submitted request at a time; no browser submission.

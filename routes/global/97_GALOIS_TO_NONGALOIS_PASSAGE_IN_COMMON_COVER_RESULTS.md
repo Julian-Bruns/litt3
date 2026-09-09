@@ -220,7 +220,7 @@ proves transitivity while preserving etaleness over \(X\).
 
 There is an exact consequence for the internal exclusion program.  For the
 fixed genus-25 curve \(Y\) in
-[file 95](95_ABELIAN_ETALE_TOWERS_AND_ENDOMORPHISM_FIELDS.md), Corollary 95.6
+[the packet theorem](../../Theorems/Thm_etale_endomorphism_packets.md), its abelian bound with a0≤2
 shows that no finite **abelian Galois** etale cover of any curve \(X\) of
 genus at most \(13\) can even admit a nonconstant map to \(Y\).  If such an
 \(X\) is hyperelliptic, Bogomolov--Tschinkel nevertheless produces an etale

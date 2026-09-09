@@ -31,15 +31,16 @@ nonzero; in the latter case the two separating functions also agree.
 This proves finiteness of cross-images as well. If roots were first
 extracted, use the reduced weight, which only improves the bound.
 
-When the remaining weight is prime to p, the
-[etale-root bound](Sol_etale_root_contact_bound.md) bounds each jointly
-minimal self-image degree by c_p d(g-1), and likewise bounds cross-image
-degrees for two fixed endpoints. A hyperbolic curve has finitely many
-etale covers of bounded degree. For each such source W, its bounded-degree
-maps to the other endpoint form a finite set: their Hom scheme is finite
-type and has tangent space H0(W,h^*T_target)=0 by negative degree.
-Hence there are finitely many exact preserving joint images in this case
-too. A fixed scalar multiplier is handled by rescaling one tensor.
+When the remaining weight is prime to p, apply the
+[ramified-root contact theorem](Sol_ramified_root_contact_core.md)
+with e=d, d0=e0=1, N=2, q=p-1, mu=p-2. Its constant is
+4pd/(p-4)=c_p d. It bounds the TOTAL degree of every finite reduced
+union of preserving self-images, and likewise cross-images between
+fixed endpoints. Since each image contributes a positive integral
+degree, there are finitely many images. A fixed scalar multiplier is
+handled by rescaling one tensor. This specialization includes the
+possibly disconnected etale root torsors through the theorem's
+component-pair accounting.
 
 No inseparable root torsor is treated as etale. The nonhorizontal bound
 2d(g-1) is at most c_p d(g-1).
@@ -62,22 +63,13 @@ The reduced divisor also descends to D_S, with div(beta)=dD_S.
 Any effective atlas C->T to which s descends has self-relation a subunion
 of F_s and factors uniquely C->T->S_s.
 
-The nonhorizontal case in section1 already bounds the whole relation;
-horizontal p-th roots do not change it. For the prime-to-p case, put
-n=deg(C/S_s), L=omega_(S_s)(-D_S), and take the mu_d root torsor
-trivialized by beta. Choose a component T->S_s of degree h|d and a
-component C' of C x_(S_s) T of degree c over C. Then
+Section1 already bounds the WHOLE finite relation in both cases, and
+horizontal p-th roots do not change it. Consequently
 
-    deg(C'/T)=n c/h,  g(C')-1=c(g-1).
+    n=deg(C/S_s)<=c_p d(g-1).                         (1)
 
-The tautological form on the effective stack T becomes a simple-zero
-one-form on C'. Its rational differential on the coarse curve satisfies
-the [atlas contact corollary](Sol_contact_degree_bound.md#3-orbifold-atlases-use-the-same-reduced-union),
-which bounds the WHOLE reduced self-fiber product. Hence
-
-    n c/h<=c_p c(g-1),  so n<=c_p h(g-1)<=c_p d(g-1).  (1)
-
-These component degrees account for possibly disconnected root torsors.
+This uses the reduced-union bound before forming the quotient, so no
+additional root torsor on the quotient stack is needed.
 
 ## 3. Different endpoints and scalar multipliers
 

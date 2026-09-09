@@ -251,7 +251,7 @@ Finite-target descent excludes ordinary SIMPLE factors in J(T);
 the4/5/28 a-number obstruction does not. Neither controls stable
 defect or forces one particular factor to grow. Arbitrary solvable
 groups, iterated nonabelian depth and five-primary characters are
-not included. The [bounded-index packet result](96_NONABELIAN_PACKET_SCHUR_INDEX_DOMINATION_BOUND.md)
+not included. The [bounded-index packet result](../../Theorems/Thm_etale_endomorphism_packets.md)
 already treats the fixed genus9 target in overlapping cases; no new
 fixed-pair exclusion is claimed. Both original etale legs remain
 actual throughout, and the unmarked common-cover problem is unsolved.

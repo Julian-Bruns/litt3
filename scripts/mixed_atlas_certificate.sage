@@ -431,7 +431,7 @@ int main(int argc,char**argv){
 def run(chart, output, seconds=120, memory_gib=2, v_degree=1, b_degree=1,
         checkpoint_seconds=30, max_rows=4294967295, extract_node=-1, interval_log=True,
         predecessor_reuse=False, tensor_path=None, atlas_input=None, representative=None,
-        threads=1, batch_rows=0):
+        threads=1, batch_rows=0, export_only=False, verify_weights=None):
     if threads < 1 or batch_rows < 0:
         raise ValueError('threads must be positive and batch-rows nonnegative')
     assert not predecessor_reuse or v_degree==0, 'Predecessor reuse currently requires A=0 and a total b-degree bound'
@@ -506,6 +506,38 @@ def run(chart, output, seconds=120, memory_gib=2, v_degree=1, b_degree=1,
     raw=[]
     for f in rows:
         raw.append([(tags(ex),enc(c)) for ex,c in f.dict().items()])
+    if verify_weights:
+        # Independent polynomial replay: rebuild original tensors and the
+        # multiplier monomials, without trusting any saved matrix column.
+        weights=Path(verify_weights).read_bytes()
+        assert len(weights)==len(rows)*len(multipliers) and all(c<25 for c in weights)
+        dictionaries=[{} for _ in rows]
+        for h,code in enumerate(weights):
+            if not code: continue
+            mv,mb=multipliers[h//len(rows)]
+            ex=[0]*len(names)
+            for i in mv: ex[i]+=1
+            for i in mb: ex[32+i]+=1
+            dictionaries[h%len(rows)][tuple(ex)]=elements[code]
+        reduced_weights=[P(d) for d in dictionaries]
+        assert sum((c*f for c,f in zip(reduced_weights,rows)),P.zero())==1
+        original_weights=vector(P,reduced_weights)*C.change_ring(P)
+        assert sum((c*f for c,f in zip(original_weights,original)),P.zero())==1
+        assert all(sum(ex[:32])<=v_degree and sum(ex[32:])<=b_degree
+                   for f in original_weights for ex in f.dict())
+        record=dict(status='verified_original_polynomial_unit_certificate',
+            source=str(source),source_sha256=meta['source_sha256'],representative=representative,
+            chart=int(chart),variables=names,field_modulus=[2,4,1],
+            original_equation_order=meta['original_low_equation_order'],
+            multiplier_bidegree_bound=[int(v_degree),int(b_degree)],
+            weights_sha256=hashlib.sha256(weights).hexdigest(),
+            polynomial_multipliers=[str(f) for f in original_weights],
+            identity_sum_original_rows_times_multipliers_equals_one_verified=True,
+            seconds=time.monotonic()-began,
+            scope='This rooted chart is empty over the algebraic closure. No whole-representative claim.')
+        (out/'original_polynomial_certificate.json').write_text(json.dumps(record,indent=2,default=int)+'\n')
+        print(json.dumps({key:val for key,val in record.items() if key!='polynomial_multipliers'},indent=2,default=int),flush=True)
+        return record
     matrixfile=out/'matrix.bin'
     predecessor_file=out/'predecessor.bin'
     predecessor_data=None
@@ -558,6 +590,11 @@ def run(chart, output, seconds=120, memory_gib=2, v_degree=1, b_degree=1,
         if predecessor_reuse: predecessor_file.write_bytes(predecessor_data)
         identity['matrix_sha256']=hashlib.sha256(matrixfile.read_bytes()).hexdigest()
         manifest.write_text(json.dumps(identity,indent=2,default=int)+'\n')
+    if export_only:
+        print(json.dumps(dict(status='matrix_exported_only',matrix=str(matrixfile),
+            manifest=str(manifest),rows=identity['rows'],columns=identity['columns'],
+            seconds=time.monotonic()-began,scope='Weak necessary subsystem; no exclusion or existence claim'),default=int),flush=True)
+        return
     cpp=out/'eliminate.cpp';cpp.write_text(CPP_GENERAL);binary=out/'eliminate'
     subprocess.run(['c++','-O3','-std=c++17','-pthread',str(cpp),'-o',str(binary)],check=True,capture_output=True)
     # This example has no b-only module certificate, but admits mixed ones:
@@ -668,6 +705,8 @@ if __name__=='__main__':
     ap.add_argument('--representative',help='Representative ID recorded in results and telemetry')
     ap.add_argument('--threads',type=int,default=1,help='Native prefix-reduction workers')
     ap.add_argument('--batch-rows',type=int,default=0,help='Rows prefetched per batch;0 uses native thread-dependent default')
+    ap.add_argument('--export-only',action='store_true',help='Export verified equation-multiple matrix without starting elimination')
+    ap.add_argument('--verify-weights',type=Path,help='Replay external row weights directly against the original polynomial tensors; do not solve')
     args=ap.parse_args();run(args.chart,args.output,args.seconds,args.memory_gib,args.v_degree,args.b_degree,
         args.checkpoint_seconds,args.max_rows,args.extract_node,not args.no_interval_log,args.predecessor_reuse,
-        args.tensor,args.atlas_input,args.representative,args.threads,args.batch_rows)
+        args.tensor,args.atlas_input,args.representative,args.threads,args.batch_rows,args.export_only,args.verify_weights)

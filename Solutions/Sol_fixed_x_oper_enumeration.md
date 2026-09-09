@@ -4,41 +4,52 @@ Canonical [statement](../Theorems/Thm_fixed_x_oper_enumeration.md).
 
 ## Independent certificate, without trusting the large candidate basis
 
-Let I be the retained43-generator F5 input ideal, including
-zeta^2+4zeta+2. The cubic-quotient theorem independently gives
-dim_F5(F5[c0,...,a9,zeta]/I)=19290. The computer-produced data give a
-monic P of degree19290 and polynomials h_i modulo P. Exact substitution
-of every original generator in the h_i gives zero. Moreover h_a9=z.
-Thus substitution gives a surjection
+### Short verification by exhausting the global length
 
-    F5[c0,...,a9,zeta]/I -> F5[z]/P.
+The standalone `scripts/verify_oper_census.sage --out DIRECTORY` replays
+the entire census certificate in13.08s on one core (2026-09-08 receipt:
+external `oper-census-fast-verification-20260908/verification.json`). It
+does not read the large Groebner basis, calculate the exceptional slice,
+or redo formal elimination. Its mathematical input is the global length
+29375 from `fixed_x_dormant_equations`.
 
-Both sides have the same finite dimension, so it is an isomorphism.
-This argument does not require the original msolve output, its reported
-leading terms, or the proposed multiplication matrix to be correct.
-They were used to FIND the certificate, not as assumptions in verifying it.
+Direct substitution of the recorded coordinate polynomials modulo the
+squarefree degree19290 polynomial P constructs an F25 algebra of9645
+distinct normalized points. The separator a9=z distinguishes them;
+the specified coefficient-field embedding halves the F5 degree. The
+original differential identities and gcd(lambda,P)=1 imply that adjoining
+t with t^3=lambda constructs28935 DISTINCT original solutions, all with
+c4=t nonzero. This direction requires no prior completeness of the
+normalized scheme or the c4=0 slice.
 
-The main check in `scripts/certify_oper_parametrization.sage` reconstructs
-B and lambda by monic polynomial division, valid over nonreduced algebras,
-and verifies all normalized differential identities. A fresh independent
-check in `tests/check_oper_original_input.sage` directly substitutes in
-all43 retained input polynomials, without using the rewritten identities
-or any candidate basis. Both tests passed; their source hashes and
-scope are preserved in the linked audit and machine evidence.
+At each of the six invariant closed points, the verifier substitutes the
+SAVED24 local-coordinate expressions into all96 freshly generated original
+quadrics, modulo (t0,t1,t2)^4. The three designated free coordinates are
+exactly t0,t1,t2, so these substitutions give a SURJECTIVE map from the
+original local algebra to the truncated three-variable quotient. All
+monomial multiples of the residual equations have rank12 in the20
+monomials of degree<4. Thus this quotient has dimension8, proving a
+local length LOWER bound8, without needing formal implicit elimination
+or a stabilization test. Irreducible, pairwise coprime b7 factors of
+degrees1,1,2,9,19,23 distinguish55 geometric invariant points.
 
-Exact gcd(P,P')=1 proves that the normalized algebra is reduced.
-The coefficient-field relation makes the displayed map a specified
-F25 algebra of dimension9645. This is NOT a Weil restriction.
+The disjoint contributions have total lower length
 
-## Counts and exact algebraic specification of every solution
+    28935 + 55*8 =29375.
 
-The cubic-quotient theorem reconstructs the original c4-invertible
-scheme by adjoining t with t^3=lambda. The certificate also checks
-gcd(P,lambda)=1. Since3 is invertible, this is an etale cubic algebra.
-It therefore gives3*9645=28935 distinct simple geometric points.
-The complementary support consists of the55 previously certified
-invariant points, of full local length8, not their slice length6.
-The distinct count is28935+55=28990 and the full length is29375.
+They exhaust the independent global length. Hence there are no additional
+points, every non-invariant point has length1, and every invariant point
+has length8. This also proves that the constructed normalized algebra
+is the whole normalized scheme. Multiplication and irreducibility of
+the12 saved factors are checked directly, not rediscovered by a search.
+
+The separate `tests/check_oper_original_input.sage` previously substituted
+in all43 retained input polynomials directly, independently of the
+rewritten differential identities. That audited cross-check remains
+available; the large candidate basis was used to FIND the certificate,
+not to validate its completeness.
+
+## Exact algebraic specification and symmetry classes
 
 The exact factorization of P is checked by multiplication and irreducibility
 in `scripts/factor_oper_parametrization.sage`. Each irreducible F5 factor

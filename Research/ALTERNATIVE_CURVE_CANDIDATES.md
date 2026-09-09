@@ -1,7 +1,10 @@
 # Alternative curve families and computable priorities
 
 2026-09-07, `/root/alternative_curve_candidates_max`. Bounded research
-report; the active fixed pair and the live computation are unchanged.
+report, status corrected2026-09-09 by root. See the current
+[pivot decision](CANDIDATE_PIVOT_DECISION.md) before choosing a candidate.
+The C_alpha atlas calculation below is now COMPLETE AND AUDITED; the
+high-degree genus-two option is the strongest selected proof pair.
 The original unmarked common finite-etale-cover problem is UNSOLVED.
 
 Three explicit small-genus families merit testing as replacements for Y
@@ -276,13 +279,12 @@ families of coreless correspondences. None supplies a degree-independent
 Frobenius-period bound for arbitrary coreless partners.
 [Primary source, Sections3 and9](https://msp.org/ant/2018/12-5/ant-v12-n5-p05-p.pdf).
 
-If a small alternative experiment is chosen, prepare the complete
-intrinsic atlas equations for C_alpha, including all81 cubic torsion
-lines and the complete oper scheme of length five, with actual coefficient fields
-and symmetry orbits recorded. This is a proposed bounded next task;
-no such run or implementation change was started here. For a theoretical
-reduction to a purely coreless pair, the required count and parameter
-argument have now passed audit and are registered as noted in Section3.
+The proposed small experiment was subsequently COMPLETED: all405
+C_alpha oper/twist pairs and all20 charts are excluded with an audited
+geometric bridge. See backup_hermitian_atlas_exclusion and
+BACKUP_CANDIDATE.md; do not repeat that preparation or search. Seven
+tame and three small-wild cored profiles remain for that small seed.
+The high-degree family's no-cored result needs no atlas computation.
 
 References inspected by metadata/show/dependencies include
 `fixed_x_orbifold_bound`, `bounded_atlas_partner_finiteness`,

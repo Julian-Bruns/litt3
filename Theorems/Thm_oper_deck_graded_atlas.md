@@ -1,5 +1,11 @@
 # Descend an atlas frame by the cubic grading, without extracting a cube root
 
+Version2,2026-09-09: the same fixed frame is now certified on ALL twelve
+noninvariant representatives of the completed census, not only orbit0011.
+No atlas exclusion or treatment of the six exceptional representatives is
+asserted by this extension. Verification remains author proof plus exact
+computational certificates, not an independent prose audit or Lean proof.
+
 Work on the fixed curve y^3=F(x) over F25. On the noninvariant oper locus
 write c4=t, t^3=lambda, A=t^2 Ahat, C=t Chat, as in
 `fixed_x_oper_cubic_quotient`. Here t is an OPER coefficient, not the local
@@ -55,11 +61,29 @@ has determinant norm1 over F25. Universally over the23 normalized
 coordinates Ahat,Chat,B,lambda, that same minor has26 constant pivots
 and determinant -det H for an explicit6-square polynomial matrix H.
 The entries of H have degree at most9. This is a frame-selection test,
-not the atlas obstruction. H is invertible at orbit0011; no claim that
-it is invertible at every other oper is made.
+not the atlas obstruction.
 
-Status: author proof,2026-09-07; no independent audit claimed. The grading
+The SAME minor is invertible on the entire completed noninvariant census,
+hence for all twelve representatives and all their Frobenius and cubic-
+deck conjugates. In monomial ordering by pole order, its zero-indexed
+column list is
+
+    I=(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,17,18,
+       21,22,26,27,31,32,36,37,41,42,46,47,51,52).
+
+The row list J is the high-pole list in descending order from112 to36,
+retaining precisely orders congruent to1 or2 modulo5.
+An exact polynomial identity d(T)e(T)+P(T)f(T)=1 certifies invertibility,
+where P is the19290-degree F5 census polynomial and d is this normalized
+minor's determinant modulo P. The coefficient lists are in the
+[compact certificate](../Research/computations/uniform_q_frame_certificate.json).
+This removes representative-by-representative frame selection in the
+inverse-free construction for the twelve noninvariant representatives.
+It does not bound later elimination complexity.
+
+Status: author proof,extended2026-09-09; no independent audit claimed. The grading
 of a32-square Q minor is checked exactly against the saved first-oper
 matrix. The orbit11 minor and universal constant elimination are verified
-exactly; see the proof and orbit11 structure note for the bounded tests.
+exactly. The whole-census determinant was computed by two distinct exact
+algorithms and its polynomial Bezout identity replayed. See the proof.
 [Proof](../Solutions/Sol_oper_deck_graded_atlas.md).

@@ -10,15 +10,16 @@ Read [update.md](update.md), then [Research/STATE.md](Research/STATE.md).
 That short continuation record, not a historical file number or route
 index, specifies the active strategy, last result, missing implication,
 and next action. [AGENTS.md](AGENTS.md) contains the continuation contract.
-The [post-enumeration roadmap](Research/AFTER_ENUMERATION.md) distinguishes
-the current finite calculation from the cored and coreless exclusions
-still needed for an actual counterexample.
+The current pair is the fixed genus-nine X and the high-prime-degree
+genus-two Y_t. [Priorities](Research/PRIORITIES.md) records the remaining
+coreless problem and the decision to park the large atlas calculation.
 
 The [complete oper census](Theorems/Thm_fixed_x_oper_enumeration.md) now has
 [an exact list with multiplicities](Research/computations/complete_oper_solutions_README.md).
 Its18 symmetry representatives still require the actual
 [Wronskian atlas test](Theorems/Thm_direct_wronskian_atlas.md) over every
-allowed quotient direction; a complete list is not an exclusion.
+allowed quotient direction; a complete list is not an exclusion. This
+optional calculation is NOT needed for the current pair's no-cored result.
 
 ## The research library
 
@@ -59,19 +60,19 @@ unless there is a concrete mathematical doubt or objection to investigate.**
 An author proof, audited prose, and computational transcript are different
 evidence levels. Algebraic-closure claims require more than finite sampling.
 
+For the CURRENT pair, the [bounded-atlas partner theorem](Theorems/Thm_bounded_atlas_partner_finiteness.md)
+already excludes every cored common cover. The newly audited
+[arithmetic count](Theorems/Thm_arithmetic_genus_two_reduction_bound.md)
+also excludes every [fully liftable common span](Theorems/Thm_liftable_coreless_target_finiteness.md)
+for the same parameter. Neither conclusion excludes intrinsically
+nonliftable coreless spans, which are the current frontier.
+
 The [canonical marked-quotient theorem](Theorems/Thm_canonical_marked_quotient.md)
-classifies all correspondences
-preserving a specified reduced canonical-size marking. Arbitrary common
-covers are NOT known to preserve such a marking. The
-[genus-nine atlas bound](Theorems/Thm_fixed_x_orbifold_bound.md) still leaves
-bounded cored cases and the coreless case unexcluded. The current extension
-is the [cored ring and marking theorem](Theorems/Thm_cored_ring_and_marking_spectrum.md)
-and its [exact local-normality criterion](Theorems/Thm_unimodular_atlas_normality.md).
-The completed [local classification](Theorems/Thm_hermitian_local_normality.md)
-and [global identification](Theorems/Thm_completed_local_orbifold_rigidity.md)
-now identify the two large cases with Hermitian quotient stacks; whether
-our chosen curve covers them is still open.
-Use the continuation record for the next action, not this overview.
+classifies correspondences preserving a specified marking; arbitrary
+common covers are NOT known to preserve it. Likewise, a common dormant
+connection does not automatically give a Hermitian atlas. Read the
+continuation record before using older numbered routes or computation
+roadmaps as a research agenda.
 
 Keep both actual etale maps from the SAME source. Do not assume a
 simultaneous Galois closure before establishing a core or finite relation.

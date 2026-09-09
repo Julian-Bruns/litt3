@@ -1,0 +1,225 @@
+{"torsion": 0, "stage": "matrix", "height": 2, "field": 125, "R": "1", "shape": [27, 23], "blocks": [[15, 13], [12, 10]], "seconds": 0.274}
+{"torsion": 0, "chart": 0, "stage": "ideal", "block": 0, "minors": 30, "basis_size": 1, "excluded": true, "seconds": 2.0896}
+{"torsion": 0, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 30, "seconds": 2.1508}
+{"torsion": 0, "chart": 0, "stage": "ideal", "block": 1, "minors": 25, "basis_size": 1, "excluded": true, "seconds": 2.5271}
+{"torsion": 0, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 25, "seconds": 2.5437}
+{"torsion": 0, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 2.5438}
+{"torsion": 0, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 2.6037}
+{"torsion": 0, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 2.604}
+{"torsion": 0, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 2.6189}
+{"torsion": 0, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 2.6191}
+{"torsion": 0, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 2.6192}
+{"torsion": 0, "chart": 2, "stage": "point", "block": 0, "rank": 13, "columns": 13, "excluded": true, "seconds": 2.6196}
+{"torsion": 0, "chart": 2, "stage": "point", "block": 1, "rank": 10, "columns": 10, "excluded": true, "seconds": 2.6198}
+{"torsion": 0, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 2.6198}
+{"torsion": 1, "stage": "matrix", "height": 2, "field": 125, "R": "u", "shape": [27, 23], "blocks": [[13, 11], [14, 12]], "seconds": 2.768}
+{"torsion": 1, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 3.1561}
+{"torsion": 1, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 3.1895}
+{"torsion": 1, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 3.7653}
+{"torsion": 1, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 3.8237}
+{"torsion": 1, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 3.8238}
+{"torsion": 1, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 3.8458}
+{"torsion": 1, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 3.8461}
+{"torsion": 1, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 3.875}
+{"torsion": 1, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 3.8752}
+{"torsion": 1, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 3.8752}
+{"torsion": 1, "chart": 2, "stage": "point", "block": 0, "rank": 11, "columns": 11, "excluded": true, "seconds": 3.8754}
+{"torsion": 1, "chart": 2, "stage": "point", "block": 1, "rank": 12, "columns": 12, "excluded": true, "seconds": 3.8756}
+{"torsion": 1, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 3.8756}
+{"torsion": 2, "stage": "matrix", "height": 2, "field": 125, "R": "u + 4", "shape": [27, 23], "blocks": [[13, 11], [14, 12]], "seconds": 4.0262}
+{"torsion": 2, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 4.4208}
+{"torsion": 2, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 4.4531}
+{"torsion": 2, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 5.0487}
+{"torsion": 2, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 5.1072}
+{"torsion": 2, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 5.1072}
+{"torsion": 2, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 5.1285}
+{"torsion": 2, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 5.1287}
+{"torsion": 2, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 5.1571}
+{"torsion": 2, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 5.1573}
+{"torsion": 2, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 5.1574}
+{"torsion": 2, "chart": 2, "stage": "point", "block": 0, "rank": 11, "columns": 11, "excluded": true, "seconds": 5.1574}
+{"torsion": 2, "chart": 2, "stage": "point", "block": 1, "rank": 12, "columns": 12, "excluded": true, "seconds": 5.1574}
+{"torsion": 2, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 5.1574}
+{"torsion": 3, "stage": "matrix", "height": 2, "field": 125, "R": "u + 3", "shape": [27, 23], "blocks": [[13, 11], [14, 12]], "seconds": 5.3102}
+{"torsion": 3, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 5.7077}
+{"torsion": 3, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 5.7402}
+{"torsion": 3, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 6.3522}
+{"torsion": 3, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 6.4105}
+{"torsion": 3, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 6.4106}
+{"torsion": 3, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 6.432}
+{"torsion": 3, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 6.4322}
+{"torsion": 3, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 6.4612}
+{"torsion": 3, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 6.4615}
+{"torsion": 3, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 6.4615}
+{"torsion": 3, "chart": 2, "stage": "point", "block": 0, "rank": 11, "columns": 11, "excluded": true, "seconds": 6.4615}
+{"torsion": 3, "chart": 2, "stage": "point", "block": 1, "rank": 12, "columns": 12, "excluded": true, "seconds": 6.4616}
+{"torsion": 3, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 6.4616}
+{"torsion": 4, "stage": "matrix", "height": 2, "field": 125, "R": "u + 2", "shape": [27, 23], "blocks": [[13, 11], [14, 12]], "seconds": 6.6146}
+{"torsion": 4, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 7.0094}
+{"torsion": 4, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 7.0419}
+{"torsion": 4, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 7.6474}
+{"torsion": 4, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 7.7057}
+{"torsion": 4, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 7.7057}
+{"torsion": 4, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 7.7275}
+{"torsion": 4, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 7.7277}
+{"torsion": 4, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 7.7571}
+{"torsion": 4, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 7.7574}
+{"torsion": 4, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 7.7574}
+{"torsion": 4, "chart": 2, "stage": "point", "block": 0, "rank": 11, "columns": 11, "excluded": true, "seconds": 7.7574}
+{"torsion": 4, "chart": 2, "stage": "point", "block": 1, "rank": 12, "columns": 12, "excluded": true, "seconds": 7.7575}
+{"torsion": 4, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 7.7575}
+{"torsion": 5, "stage": "matrix", "height": 2, "field": 125, "R": "u + 4*a", "shape": [27, 23], "blocks": [[13, 11], [14, 12]], "seconds": 7.9094}
+{"torsion": 5, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 8.3058}
+{"torsion": 5, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 8.3383}
+{"torsion": 5, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 8.941}
+{"torsion": 5, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 8.9993}
+{"torsion": 5, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 8.9994}
+{"torsion": 5, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 9.0211}
+{"torsion": 5, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 9.0213}
+{"torsion": 5, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 9.0503}
+{"torsion": 5, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 9.0505}
+{"torsion": 5, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 9.0505}
+{"torsion": 5, "chart": 2, "stage": "point", "block": 0, "rank": 11, "columns": 11, "excluded": true, "seconds": 9.0506}
+{"torsion": 5, "chart": 2, "stage": "point", "block": 1, "rank": 12, "columns": 12, "excluded": true, "seconds": 9.0506}
+{"torsion": 5, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 9.0506}
+{"torsion": 6, "stage": "matrix", "height": 2, "field": 125, "R": "u^2 + 4*u", "shape": [27, 23], "blocks": [[14, 12], [13, 11]], "seconds": 9.2034}
+{"torsion": 6, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 9.8132}
+{"torsion": 6, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 9.8729}
+{"torsion": 6, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 10.2562}
+{"torsion": 6, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 10.2892}
+{"torsion": 6, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 10.2892}
+{"torsion": 6, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 10.3199}
+{"torsion": 6, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 10.3201}
+{"torsion": 6, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 10.3407}
+{"torsion": 6, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 10.3409}
+{"torsion": 6, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 10.341}
+{"torsion": 6, "chart": 2, "stage": "point", "block": 0, "rank": 12, "columns": 12, "excluded": true, "seconds": 10.341}
+{"torsion": 6, "chart": 2, "stage": "point", "block": 1, "rank": 11, "columns": 11, "excluded": true, "seconds": 10.3411}
+{"torsion": 6, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 10.3411}
+{"torsion": 7, "stage": "matrix", "height": 2, "field": 125, "R": "u^2 + 3*u", "shape": [27, 23], "blocks": [[14, 12], [13, 11]], "seconds": 10.4962}
+{"torsion": 7, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 11.1253}
+{"torsion": 7, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 11.1846}
+{"torsion": 7, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 11.5794}
+{"torsion": 7, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 11.6121}
+{"torsion": 7, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 11.6122}
+{"torsion": 7, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 11.6429}
+{"torsion": 7, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 11.6431}
+{"torsion": 7, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 11.6638}
+{"torsion": 7, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 11.6641}
+{"torsion": 7, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 11.6641}
+{"torsion": 7, "chart": 2, "stage": "point", "block": 0, "rank": 12, "columns": 12, "excluded": true, "seconds": 11.6642}
+{"torsion": 7, "chart": 2, "stage": "point", "block": 1, "rank": 11, "columns": 11, "excluded": true, "seconds": 11.6642}
+{"torsion": 7, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 11.6642}
+{"torsion": 8, "stage": "matrix", "height": 2, "field": 125, "R": "u^2 + 2*u", "shape": [27, 23], "blocks": [[14, 12], [13, 11]], "seconds": 11.8205}
+{"torsion": 8, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 12.4416}
+{"torsion": 8, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 12.5013}
+{"torsion": 8, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 12.8894}
+{"torsion": 8, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 12.9226}
+{"torsion": 8, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 12.9226}
+{"torsion": 8, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 12.9529}
+{"torsion": 8, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 12.9532}
+{"torsion": 8, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 12.9741}
+{"torsion": 8, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 12.9743}
+{"torsion": 8, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 12.9743}
+{"torsion": 8, "chart": 2, "stage": "point", "block": 0, "rank": 12, "columns": 12, "excluded": true, "seconds": 12.9744}
+{"torsion": 8, "chart": 2, "stage": "point", "block": 1, "rank": 11, "columns": 11, "excluded": true, "seconds": 12.9744}
+{"torsion": 8, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 12.9744}
+{"torsion": 9, "stage": "matrix", "height": 2, "field": 125, "R": "u^2 + 4*a*u", "shape": [27, 23], "blocks": [[14, 12], [13, 11]], "seconds": 13.1297}
+{"torsion": 9, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 13.7541}
+{"torsion": 9, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 13.8138}
+{"torsion": 9, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 14.2014}
+{"torsion": 9, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 14.2339}
+{"torsion": 9, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 14.234}
+{"torsion": 9, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 14.2646}
+{"torsion": 9, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 14.2648}
+{"torsion": 9, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 14.2861}
+{"torsion": 9, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 14.2863}
+{"torsion": 9, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 14.2864}
+{"torsion": 9, "chart": 2, "stage": "point", "block": 0, "rank": 12, "columns": 12, "excluded": true, "seconds": 14.2864}
+{"torsion": 9, "chart": 2, "stage": "point", "block": 1, "rank": 11, "columns": 11, "excluded": true, "seconds": 14.2864}
+{"torsion": 9, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 14.2864}
+{"torsion": 10, "stage": "matrix", "height": 2, "field": 125, "R": "u^2 + 2*u + 2", "shape": [27, 23], "blocks": [[14, 12], [13, 11]], "seconds": 14.4421}
+{"torsion": 10, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 15.0797}
+{"torsion": 10, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 15.1392}
+{"torsion": 10, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 15.5322}
+{"torsion": 10, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 15.5652}
+{"torsion": 10, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 15.5652}
+{"torsion": 10, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 15.5961}
+{"torsion": 10, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 15.5964}
+{"torsion": 10, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 15.6178}
+{"torsion": 10, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 15.618}
+{"torsion": 10, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 15.6181}
+{"torsion": 10, "chart": 2, "stage": "point", "block": 0, "rank": 12, "columns": 12, "excluded": true, "seconds": 15.6181}
+{"torsion": 10, "chart": 2, "stage": "point", "block": 1, "rank": 11, "columns": 11, "excluded": true, "seconds": 15.6181}
+{"torsion": 10, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 15.6182}
+{"torsion": 11, "stage": "matrix", "height": 2, "field": 125, "R": "u^2 + u + 3", "shape": [27, 23], "blocks": [[14, 12], [13, 11]], "seconds": 15.7749}
+{"torsion": 11, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 16.4014}
+{"torsion": 11, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 16.4612}
+{"torsion": 11, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 16.8595}
+{"torsion": 11, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 16.8925}
+{"torsion": 11, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 16.8925}
+{"torsion": 11, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 16.9233}
+{"torsion": 11, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 16.9236}
+{"torsion": 11, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 16.945}
+{"torsion": 11, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 16.9452}
+{"torsion": 11, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 16.9452}
+{"torsion": 11, "chart": 2, "stage": "point", "block": 0, "rank": 12, "columns": 12, "excluded": true, "seconds": 16.9453}
+{"torsion": 11, "chart": 2, "stage": "point", "block": 1, "rank": 11, "columns": 11, "excluded": true, "seconds": 16.9453}
+{"torsion": 11, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 16.9453}
+{"torsion": 12, "stage": "matrix", "height": 2, "field": 125, "R": "u^2 + (4*a + 4)*u + a", "shape": [27, 23], "blocks": [[14, 12], [13, 11]], "seconds": 17.1018}
+{"torsion": 12, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 17.7297}
+{"torsion": 12, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 17.7913}
+{"torsion": 12, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 18.1978}
+{"torsion": 12, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 18.2309}
+{"torsion": 12, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 18.2309}
+{"torsion": 12, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 18.2622}
+{"torsion": 12, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 18.2625}
+{"torsion": 12, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 18.2837}
+{"torsion": 12, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 18.284}
+{"torsion": 12, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 18.284}
+{"torsion": 12, "chart": 2, "stage": "point", "block": 0, "rank": 12, "columns": 12, "excluded": true, "seconds": 18.2841}
+{"torsion": 12, "chart": 2, "stage": "point", "block": 1, "rank": 11, "columns": 11, "excluded": true, "seconds": 18.2841}
+{"torsion": 12, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 18.2841}
+{"torsion": 13, "stage": "matrix", "height": 2, "field": 125, "R": "u^2 + 1", "shape": [27, 23], "blocks": [[14, 12], [13, 11]], "seconds": 18.4464}
+{"torsion": 13, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 19.0742}
+{"torsion": 13, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 19.1342}
+{"torsion": 13, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 19.5197}
+{"torsion": 13, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 19.5529}
+{"torsion": 13, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 19.553}
+{"torsion": 13, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 19.5839}
+{"torsion": 13, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 19.5842}
+{"torsion": 13, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 19.6049}
+{"torsion": 13, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 19.6051}
+{"torsion": 13, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 19.6052}
+{"torsion": 13, "chart": 2, "stage": "point", "block": 0, "rank": 12, "columns": 12, "excluded": true, "seconds": 19.6052}
+{"torsion": 13, "chart": 2, "stage": "point", "block": 1, "rank": 11, "columns": 11, "excluded": true, "seconds": 19.6053}
+{"torsion": 13, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 19.6053}
+{"torsion": 14, "stage": "matrix", "height": 2, "field": 125, "R": "u^2 + (4*a + 3)*u + 2*a", "shape": [27, 23], "blocks": [[14, 12], [13, 11]], "seconds": 19.7632}
+{"torsion": 14, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 20.3869}
+{"torsion": 14, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 20.4471}
+{"torsion": 14, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 20.8346}
+{"torsion": 14, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 20.8675}
+{"torsion": 14, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 20.8675}
+{"torsion": 14, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 20.8982}
+{"torsion": 14, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 20.8984}
+{"torsion": 14, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 20.9193}
+{"torsion": 14, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 20.9196}
+{"torsion": 14, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 20.9196}
+{"torsion": 14, "chart": 2, "stage": "point", "block": 0, "rank": 12, "columns": 12, "excluded": true, "seconds": 20.9196}
+{"torsion": 14, "chart": 2, "stage": "point", "block": 1, "rank": 11, "columns": 11, "excluded": true, "seconds": 20.9197}
+{"torsion": 14, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 20.9197}
+{"torsion": 15, "stage": "matrix", "height": 2, "field": 125, "R": "u^2 + (4*a + 2)*u + 3*a", "shape": [27, 23], "blocks": [[14, 12], [13, 11]], "seconds": 21.0767}
+{"torsion": 15, "chart": 0, "stage": "ideal", "block": 0, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 21.709}
+{"torsion": 15, "chart": 0, "stage": "verified_unit", "block": 0, "minors": 15, "seconds": 21.7694}
+{"torsion": 15, "chart": 0, "stage": "ideal", "block": 1, "minors": 15, "basis_size": 1, "excluded": true, "seconds": 22.1654}
+{"torsion": 15, "chart": 0, "stage": "verified_unit", "block": 1, "minors": 15, "seconds": 22.1983}
+{"torsion": 15, "chart": 0, "stage": "chart_finished", "excluded": true, "seconds": 22.1983}
+{"torsion": 15, "chart": 1, "stage": "ideal", "block": 0, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 22.2296}
+{"torsion": 15, "chart": 1, "stage": "verified_unit", "block": 0, "minors": 2, "seconds": 22.2299}
+{"torsion": 15, "chart": 1, "stage": "ideal", "block": 1, "minors": 2, "basis_size": 1, "excluded": true, "seconds": 22.2512}
+{"torsion": 15, "chart": 1, "stage": "verified_unit", "block": 1, "minors": 2, "seconds": 22.2514}
+{"torsion": 15, "chart": 1, "stage": "chart_finished", "excluded": true, "seconds": 22.2515}
+{"torsion": 15, "chart": 2, "stage": "point", "block": 0, "rank": 12, "columns": 12, "excluded": true, "seconds": 22.2515}
+{"torsion": 15, "chart": 2, "stage": "point", "block": 1, "rank": 11, "columns": 11, "excluded": true, "seconds": 22.2516}
+{"torsion": 15, "chart": 2, "stage": "chart_finished", "excluded": true, "seconds": 22.2516}
+{"stage": "done", "height": 2, "verified_cases": 48, "expected_cases": 48, "excluded": true, "scope": "these torsion labels and projective charts ONLY", "seconds": 22.2516}

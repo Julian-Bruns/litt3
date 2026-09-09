@@ -172,6 +172,46 @@ presumed invertible at every point of the oper census.
 These are bounded preparation checks, not atlas calculations or emptiness
 certificates. No97-equation expanded tensor or new atlas solver was built.
 
+## Uniform frame on all twelve noninvariant representatives
+
+Use the verified normalized algebra from `fixed_x_oper_enumeration`:
+R=F5[T]/(P), with deg P=19290 and the recorded elements zeta,Ahat,B,Chat,
+lambda. Here zeta^2+4zeta+2=0 supplies the F25 coefficient embedding.
+This is a product of fields, not a field; arbitrary nonzero elements
+cannot be inverted. Its twelve factors encode the completed noninvariant
+census, with the usual F25 and cubic-deck interpretation.
+
+Form the normalized32-square minor of formula(2) directly over R, with
+the fixed I,J of the statement. Apply the same26 constant pivot operations
+as in the polynomial identity above. Every pivot belongs to F25^*;
+the implementation also checks its inverse after specialization.
+The resulting6-square H_R satisfies det Ghat=-det H_R over R, even if
+some nonconstant entries are zero divisors.
+
+Compute det H_R without division. Subset expansion along the last row
+gives one calculation; the complete720-term permutation expansion, with
+independently counted inversion signs, gives another. They agree in R.
+Let d(T) be the canonical representative of det Ghat. The Euclidean
+algorithm supplies e,f in F5[T] with the verified polynomial identity
+
+    d(T)e(T)+P(T)f(T)=1.
+
+All three coefficient lists and source hashes are retained in
+`Research/computations/uniform_q_frame_certificate.json`. Thus d is a
+unit in R, and the minor is nonzero at EVERY geometric point of Spec R.
+Section3's diagonal deck comparison proves the same for all three
+chosen-oper branches. This proves uniformity on all twelve representatives.
+No finite-field sampling or division by an unproved unit is involved.
+
+Reproduction: `scripts/orbit11_q_frame.sage --symbolic --census-algebra`,
+with the recorded relative input and an output path. It reconstructs the
+original minor and26-pivot identity, not the large expanded Schur formulas.
+The run took4.55seconds on one core including both determinant algorithms
+(1.95seconds without the second expansion). The twelve intrinsic fields
+are not constructed individually. These are author-executed exact
+certificates, not an independent whole-proof audit. The six invariant
+representatives and atlas existence remain separate.
+
 No Frobenius-orbit or cubic-symmetry argument here excludes an oper.
 The unmarked common-cover problem remains unsolved; both actual finite
 etale legs from the same smooth projective source remain required.

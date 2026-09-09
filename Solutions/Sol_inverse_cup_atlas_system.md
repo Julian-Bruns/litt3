@@ -1,7 +1,7 @@
 # Proof: mixed inverse blocks retain all cohomology and polar charts
 
 [Statement](../Theorems/Thm_inverse_cup_atlas_system.md).
-Version2,2026-09-08, /root/library_generalization_cleanup_max. The new
+Version5,2026-09-08, /root; version2 by /root/library_generalization_cleanup_max. The
 mixed-block and minor-patch arguments below are author proofs, not a new
 audit of the existing Bezout, resultant-gradient or compact-atlas inputs.
 
@@ -237,23 +237,151 @@ factorizations and exact coefficients are saved in the matching JSON.
 This rigorously rules out eliminating U by an unconditional inverse of H.
 It does NOT imply that any such point meets the remaining atlas equations.
 
-## 7. Actual computational gain and next bounded action
+## 7. Exact failure of the rank-only shortcut
 
 The12 acyclic representatives have exactly their old equations; this
-extension alone does not shorten their unresolved elimination. For the
-six exceptional representatives the strongest inexpensive new interface
-is Gamma(beta)q(U)=0: for each beta it is a72 by32 linear system in U.
-Every atlas has rank Gamma=21 and nonzero U, so uniform full column
-rank on that exact cup-rank stratum would suffice to exclude an oper.
-No such assertion follows from dimension counts or sample ranks.
+extension alone does not shorten their unresolved elimination. The proposed
+exceptional shortcut was tested by
+[exceptional_inverse_cup_diagnostic.sage](../scripts/exceptional_inverse_cup_diagnostic.sage);
+the frozen coefficients and kernels are in
+[its exact receipt](../Research/computations/exceptional_inverse_cup_invariant0.json).
+This polynomial-only calculation took0.313 seconds on one CPU core.
 
-First assess this linear map for ONE existing low-field exceptional
-representative using its already known cohomology data, retaining every
-rank-deficient stratum. If it helps, construct its symmetric21-square
-minor-patch system(S), with all patch opens, original Frobenius equations
-and normalization retained. The larger global augmented inverse is a
-correctness reference, not a predicted solver improvement; introducing
-its153 auxiliary variables could instead make computation worse. No
-export, solver change, fresh oper enumeration or atlas exclusion was
-performed in this batch. The optional additional duality sanity check
-was stopped for the resource cap; its result is not used or claimed.
+It reconstructs H0(V), the32-dimensional quotient-section space, the
+third-order map Q and the cup and q tensors. Every computed kernel and
+fifth-power reconstruction is replayed against its original matrix.
+For invariant_0, the recorded sector-zero cup matrix Gamma has rank21,
+but mu_Gamma:U->Gamma q(U) has rank29, not32. Its three kernel basis
+directions have q ranks3,3,1. These exact matrices disprove uniform
+full column rank on the rank21 cup stratum. They do not satisfy, or claim
+to satisfy, the remaining inverse and gradient equations.
+
+Consequently no rank-deficient stratum may be discarded, and repeating
+the proposed rank-only diagnostic cannot exclude this oper. Any further
+computation must retain the full system(S), including all minor opens,
+coefficient Frobenius and normalization. The larger augmented inverse
+is a correctness reference, not a predicted solver improvement. The full
+exceptional B/minor-patch tensor was not exported; no representative was
+excluded. An earlier optional duality sanity check was stopped under the
+CPU cap and contributes no claimed evidence.
+
+## 8. A reduced rooted inverse scheme, without weak-incidence equations
+
+Use the coefficient roots in(R), and write z for all its auxiliary
+inverse-block entries. Every entry of Dtilde(v)Gtilde(b,z) raised to
+the fifth power is the corresponding entry of D(U)G(beta,Z), under
+U=v^[5], beta=b, Z=z^[5]. The same holds for the trace defining t.
+Thus(R) maps to(1), and unique fifth roots give a bijection on geometric
+points. It is essential also to prove reducedness.
+
+At a geometric point a tangent vector (dv,db,dz) to(R) has db=0.
+Taking fifth powers of the linearized inverse equation gives the
+linearized original inverse equation with dU=dv^[5], dZ=dz^[5].
+Set d(beta)=dt^[5]. The original gradient equation is beta-t_original=0;
+its differential is then zero too. Indeed t_original depends on beta
+only through beta^[5], so this new choice of d(beta) changes neither
+the inverse differential nor the differentiated trace. Coefficient
+rooting commutes with both first and second derivatives here.
+
+We have constructed a tangent vector to the original finite reduced
+scheme(1). It is zero, hence dv=dz=0, and already db=0. The rooted
+scheme consequently has zero tangent space at each of its finitely
+many geometric points. It is finite reduced. The geometric-point
+bijection is therefore an isomorphism of finite reduced schemes over
+the perfect coefficient field. This argument does not assert that the
+raw substitution ideal, before taking roots of its equations, is reduced.
+
+Finally, mixed homogeneity gives
+sum v_i partial_i Dtilde=E0 Dtilde+Dtilde E0. Since both products of
+the inverse matrices equal I, v.t=-2n=2. Degrees follow directly from
+the quadratic B and linear q,a, with linear Gammatilde and auxiliary
+inverse entries. This proves(R) for both cohomology profiles, without
+assuming an invertible exceptional cup block or a generic pencil rank.
+
+For the first acyclic oper, check_rooted_inverse_cup.sage independently
+replays twelve sparse cubic inverse equations against saved original
+N/R provenance, including four diagonal equations with constant1.
+Every coefficient passes. A60-second one-core diagnostic adding these
+seeds to the weak normalized system did not finish; it did NOT test a
+complete replacement by(R). Its raw evidence is external under
+litt3-computation-data/atlas-normalized-rooted-cubic-20260908.
+
+## 9. A multiplication-spanning set tests the entire inverse
+
+Retain all hypotheses of cohomological_bezout, in particular global
+generation of M and the exact description of D on every zero stratum.
+Let S*H0(M)=H0(M²). Then S has no base point: otherwise every section
+of the globally generated M² would vanish there. Moreover evaluation
+A->A Q is injective on the fixed linear cup-matrix space im K, since
+the associated functional vanishes on every product S*H0(M). This
+linear injection is split over the coefficient field, hence stays
+injective over every coefficient algebra.
+
+At a geometric solution of(C), write xi,z for a column of its proposed
+inverse. The lower equation a xi=0 makes
+h_V a_u i_T xi+z a Cech0-cochain whose differential is a_u i_T xi.
+It is a PAIR of regular local sections, not generally a global section
+of V. Applying b_u makes it closed and therefore global; the upper
+equation says its image is the selected section of S. If u has zero
+divisor E, every such image lies in H0(M(-E)). Since S has no base
+point, E is empty. The case u=0 contradicts Q!=0 as well.
+
+Thus det D vanishes at no geometric point of the finite-type coordinate
+ring defined by(C); it is a UNIT in that ring, without reducing it.
+The inverse then gives [Gamma Q;Z]=D^-1[Q;0]. Its top-left block lies
+in im K as a regular-function identity on the admissible open, by
+Section1. Split injectivity of evaluation on Q gives Gamma=(D^-1)_11
+over the whole coordinate ring, including nilpotents. The remaining
+entries of the inverse and Z are uniquely recovered. This proves the
+scheme-theoretic equivalence; the converse is immediate.
+
+After coefficient rooting, the same argument identifies(C) with the
+full rooted inverse incidence in Section8. On that incidence N=0 and
+the extension is normalized. The FULL projected compact R equals the
+full mixed logarithmic gradient, by Section2. Taking coefficient roots
+therefore identifies b=s(v,b)^[5] with all the gradient equations in(R),
+including the nonacyclic trace terms. Finiteness and reducedness follow
+from Section8. No exceptional direction, field-extension point, or
+normal-corank stratum is discarded.
+
+For the fixed curve the exact multiplication matrix for S=<y,x^10,x^4y²>
+has size56x72 and rank56. Its nonzero56-square minor is recorded in
+the external pencil-bezout-first-20260908-v2/certificate.json and checked
+by scripts/check_pencil_bezout.sage. This calculation depends only on
+the fixed curve and its monomial basis, NOT on the oper or its field.
+The geometric equations count as stated follows from dim S=3.
+
+## 10. A compact acyclic construction from a rational pencil
+
+For a finite degree-d map pi:C->P1 and acyclic rank2 V with det V=omega,
+pi_*V=O(-1)^(2d): every summand in its splitting has H0=H1=0.
+Dualizing trace of the wedge pairing makes it symplectic with values in
+omega_P1. A frame of H0(V tensor pi*O(1)) therefore gives a CONSTANT
+nondegenerate2d-square alternating matrix J, over the same field.
+No change of the curve to a rational curve is asserted.
+
+For pi=x of degree3, M=O(32O) pushes forward to O(10)+O(7)+O(4).
+The map b_u is a3x6 polynomial matrix P(z), linear in u, with row
+degrees<=11,8,5. The self-dual section complex implies pointwise
+isotropy P(z)J^-1 P(z)^T=0. Consequently its divided-difference matrix
+P(z)J^-1 P(w)^T/(z-w) is polynomial, symmetric on exchanging the two
+arguments, of row/column degrees<=10,7,4. The usual two-affine-open
+Cech splitting on P1 identifies its coefficient matrix, with the
+fixed Cech sign, with B. Indeed multiplication of a principal part by
+the adjoint P has a unique primitive in O(-1)^6; splitting its positive
+and negative powers gives exactly the divided difference. This is
+the same connecting-map calculation as Section1, after finite pushforward.
+
+The first-oper implementation verifies the coordinate/sign comparison
+against EVERY one of the528 existing quadratic matrices, not only at
+sample sections. It uses six horizontal functions in L47 representing
+H0(W11O),15 frame Wronskians and192 quotient/frame Wronskians. Each is
+replayed as a fifth power in L22 or L35, respectively. The trace formula
+Tr_x(h theta)=3*[y²]h dx gives J. In the script's explicit convention,
+the kernel -P(z)J^-1 P(w)^T/(z-w) must be multiplied by4 to match the
+old B tensor. All304128 coefficients agree. The check and multiplication
+minor took1.56s on one core; this is NOT an atlas-solver timing.
+
+The same construction is proved for every acyclic V, but has not yet
+been implemented on all twelve coefficient fields. For r=3 the trivial
+pushforward splitting is false; use the mixed construction instead.

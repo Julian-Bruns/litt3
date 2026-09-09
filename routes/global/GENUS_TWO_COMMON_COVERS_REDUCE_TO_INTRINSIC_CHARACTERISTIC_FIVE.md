@@ -67,7 +67,7 @@ is the required orbifold. Thus `Y` outside `E_X^orb` admits no cored
 correspondence with `X`.
 
 Independently, let `E_2,5^arith` be the finite set supplied by
-[the jointly-liftable coreless target theorem](FINITE_TARGET_SET_FOR_JOINTLY_LIFTABLE_CORELESS_CORRESPONDENCES.md).
+[the jointly-liftable coreless target theorem](../../Theorems/Thm_liftable_coreless_target_finiteness.md).
 This set does not depend on `X`. Its proof uses three exact ingredients:
 
 - a coreless bi-étale diagram which lifts jointly has arithmetic

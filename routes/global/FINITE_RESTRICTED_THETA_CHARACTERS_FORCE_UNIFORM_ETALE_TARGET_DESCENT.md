@@ -156,7 +156,7 @@ generic theta dimensions along a parameter family, as in
 it does not imply our ordinary-Prym or actual-target conclusions.
 
 This does not supersede the different arithmetic/genus hypotheses of
-[abelian towers and endomorphism fields](95_ABELIAN_ETALE_TOWERS_AND_ENDOMORPHISM_FIELDS.md),
+[abelian towers and endomorphism fields](../../Theorems/Thm_etale_endomorphism_packets.md),
 which can treat arbitrary nonconstant maps and characteristic-divisible
 abelian groups. Here S is fixed and prime to p, and simplicity is a
 BASE-Jacobian condition in that specialization. No finiteness follows

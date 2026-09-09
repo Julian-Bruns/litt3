@@ -148,13 +148,13 @@ is proper and \(Y/R\) separated, and quasi-finite, since \(g\) is
 finite and \(q\) surjective. Therefore it is finite étale. This
 proves Theorem 1.
 
-### Relation to file 116 and coherence at every order
+### Refinement invariance and coherence at every order
 
 One may equivalently apply
-[file 116](116_ETALE_REFINEMENT_PRESERVES_SIMULTANEOUS_DEFORMATIONS.md)
+[the refinement theorem](../../Theorems/Thm_etale_refinement_deformations.md)
 at \(R/\mathfrak m^n\): lift \(Z_s/X_s\) and \(Z_s/Y_s\)
 separately. Both induced marked \(W_s\)-deformations are the supplied
-one. Lemma 116.3 identifies the two \(Z\)-deformations uniquely.
+one. Its monomorphism assertion identifies the two \(Z\)-deformations uniquely.
 Uniqueness makes these identifications compatible under every
 transition \(R/\mathfrak m^{n+1}\to R/\mathfrak m^n\).
 The finite-étale equivalence (3) algebraizes the first leg and its

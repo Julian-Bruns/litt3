@@ -1,5 +1,8 @@
 # The extra atlas radical is a space of liftable parabolic Higgs fields
 
+Version2,2026-09-08: includes the exact osculating-modification Hom
+description and parameterized line-subundle bounds from the R9 follow-up.
+
 Work in characteristic5 with an ACTUAL normalized untwisted Hermitian
 atlas on C, with 5 not dividing2g-2. Write omega=omega_C, n=g-1, and
 write its actual rank-three bundle and osculating flag as
@@ -75,7 +78,34 @@ only to the actual E3 furnished by the full Hermitian atlas equations.
 They do not show that the Frobenius form forces generic nullity1, nor
 construct a higher-normal-corank atlas. Orbit0011 is not excluded.
 
-Status: author proof,2026-09-07; no independent audit claimed. The intrinsic
+6. Define the OSCULATING modification
+
+       G_s=ker(V->omega²|D_s),       det G_s=O, H0(G_s)=0.
+
+   There is an exact sequence
+
+       0 -> k i_s -> Hom(G_s,V) -> ker M_s ->0.
+
+   In particular Hom(G_s,V) is even-dimensional. For every saturated
+   line N in G_s,
+
+       h0(V N) <= h0(G_s^vee V) <= h0(V N)+h0(V N^-1),
+       h0(V N)-h0(V N^-1)=2deg N.
+
+   If deg N=d>0 this forces dim ker M_s>=2d+1. If N=O(-D), D effective
+   of degree e>0, it forces dim ker M_s<=2e-1. In particular e=1
+   forces nullity1. A degree-zero N with h0(V N)=1 also forces nullity1.
+   Thus generic nullity1 would imply generic semistability of G_s, not
+   merely of the DIFFERENT covector kernel F_s in part5.
+
+   A concrete sufficient e=1 certificate is an everywhere-surjective
+   map E3->omega(x) killing e and K|D_s. Its kernel on V is O(-x)
+   and is saturated in G_s. Existence of this certificate is NOT proved.
+   For each x, acyclicity leaves only ONE candidate line once its
+   restriction to the osculating line is required to be regular at x;
+   factorization by s and global surjectivity remain genuine conditions.
+
+Status: author proof,2026-09-07; version2 extension2026-09-08. No independent audit claimed. The intrinsic
 Pfaffian candidate is nonzero at all26 F25 pencil parameters for all33
 known genus-two atlas points; every resulting extra vector is liftable
 but fails the common-kernel condition. Full original equations and

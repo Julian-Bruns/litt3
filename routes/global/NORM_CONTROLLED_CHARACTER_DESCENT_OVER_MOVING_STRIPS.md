@@ -158,7 +158,7 @@ No Galoisness of \(C_0/Y_0\) is required.
 
 If the covers \(Y_n/Y_0\) are abelian and \(Y_0\) has genus two
 over \(\overline{\mathbf F}_5\), the prior
-[no-new-large-simple-factor theorem](ABELIAN_ETALE_TOWERS_ACQUIRE_NO_LARGE_SIMPLE_FACTOR.md#4-all-genus-two-bases-with-no-ordinarity-assumption)
+[no-new-large-simple-factor theorem](../../Theorems/Thm_etale_endomorphism_packets.md#the-selected-genus-nine-curve)
 gives, for the fixed genus-nine \(X\) of file 76,
 \[
                          \operatorname{Hom}(J_X,J_{Y_n})=0

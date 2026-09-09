@@ -45,7 +45,7 @@ space is exactly
 This is the direction space in [110](110_TWO_LEG_WITT_OBSTRUCTION_AND_NONZERO_CROSS_TRACE.md),
 not the affine mixed-characteristic lifting obstruction. Even its
 vanishing would not prove that the W_2 intersection is nonempty.
-[116](116_ETALE_REFINEMENT_PRESERVES_SIMULTANEOUS_DEFORMATIONS.md)
+[Etale refinement](../../Theorems/Thm_etale_refinement_deformations.md)
 preserves the full simultaneous deformation functor under refinement;
 it does not force either existence of a lift or tangent-space vanishing.
 

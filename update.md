@@ -1,52 +1,50 @@
-# Research update — 2026-09-08, 08:34 CEST
+# Research update — 2026-09-10, 00:22 CEST
 
-## How close are we?
+The common-cover problem is still unsolved. The main choice excludes
+covers with a common quotient and covers that lift completely to
+characteristic zero, but characteristic-five-only covers remain.
+There is no reliable finishing estimate.
 
-The common-cover problem is still unsolved. A major gap remains for covers
-with no shared quotient. This hour clarified why several separate tests
-on the two curves cannot close that gap. There is no reliable finish date.
+## Current experiment
 
-## Progress this hour
+Following your clarification, the small example is a test of a mechanism,
+not another case to cross off. I examined the point where trace-divisor
+families stop being pencils and become plane systems. That did not yet
+give a mechanism for larger covers, so I did not send a degree-four
+exclusion question or start a search.
 
-I proved a description covering every size of the shared set being
-tested. It removes an unbounded parameter from those tests. It also
-shows their limitation: infinitely many genuine objects pass the test
-on either curve separately, including a particularly simple pattern
-available on both selected curves. This does NOT construct a common cover.
+Instead I found an explicit smooth genus-two curve over F625 with an
+ordinary Jacobian but a nonordinary active connection having exactly
+ONE infinitesimal defect direction. The original equations, global
+regularity and full tangent calculation verify in about0.1seconds.
+The completed check including the explicit residue functional takes
+about2seconds. All assertions passed; the higher cocycle is still unknown.
+This is not a common-cover example and it does not replace our endpoints.
 
-If that pattern could be matched on the same source, the existing
-connection calculations would not detect it. The matching condition
-must therefore remain explicit; dropping it cannot finish the proof.
+The revised [Pro prompt](Research/PRO_SINGLE_OPER_W3_REQUEST.md) asks
+for the single scalar deciding whether this pair's canonical lift
+modulo25 extends compatibly modulo125, using a reusable residue or
+gluing calculation. It is ready to paste, not submitted. The previous
+unsent universal single-curve question has been replaced, not duplicated.
+Neither a nonzero tangent nor a repeated critical root decides that
+scalar. Its value is still unknown.
 
-That strengthening is now proved and has passed a fresh medium audit.
-Auxiliary covers of degree 168 retain both actual maps, the absence of
-a shared quotient, and the original differential weight. The earlier
-method needed degrees depending on the unknown cover. Its small exact
-group calculation took 0.02 seconds on one core.
+The broader payoff is to separate a genuine obstruction already on one
+endpoint from a failure to match two otherwise valid lifts. We proved
+that a nonzero endpoint class cannot be removed by a prime-to-five
+etale cover. A zero value for this example would NOT establish universal
+lifting or remove the separate two-map mismatch.
 
-The limitation is important: the changed curves can still have arbitrarily
-large genus. The theorem does not let us apply the old calculation to
-them. The maps back to the original curves must remain in the argument;
-the special differential structure upstairs alone is not a contradiction.
+## Preserved frontier
 
-The earlier completed backup calculation, one-point exclusion, and their
-scoped audit records remain intact. The whole-family formulas passed
-48 checks against their original equations; those new generalizations
-are author proofs, not independently audited results.
-The separate formalization prompt is ready for the already proved
-no-shared-quotient theorem using a high-degree family member. Neither
-result settles the remaining coreless case, and neither is a Lean proof.
+The audited all-level result remains: any existing lift of a rigid active
+span must use the one canonical ordinary genus-two endpoint lift. It
+does not make the other map descend. The no-clump branch fails already
+at W2; neither that branch's existence nor finite-height clumped spans
+has been excluded.
 
-## Resources and next focus
+A18 and backup-only source comparisons remain paused. The backup still
+needs five cored cases and a separate no-full-lift result to catch up.
+No solver, agent or Pro request is running.
 
-All subagents have stopped and documented their results, including the
-one new audit allowed by your exception. The large
-eighteen-representative calculation is paused with its progress preserved;
-no whole representative has been excluded. Its last export hit a data-transfer
-fault, not a proved mathematical obstruction. No heavy computation runs now.
-
-I am prioritizing the coreless gap. Further jobs are limited to one CPU
-core total while you sleep. No Pro request is outstanding, and no automatic
-chat restart is scheduled.
-
-[Ranked goals](Research/PRIORITIES.md) · [Exact continuation state](Research/STATE.md)
+[Continuation](Research/STATE.md) · [Playground findings](Research/SMALL_CASE_PLAYGROUND.md)

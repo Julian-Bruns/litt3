@@ -39,8 +39,8 @@
     {
       "path": "routes/global/108_UNIT_ROOT_PACKETS_AND_NONGALOIS_P_RANK_BRIDGES.md",
       "title": "Rational unit-root packets and Frobenius-group p-rank bridges",
-      "sha256": "af474be5dedf61104dbf394e96cb05bad4bed4350976b651ae7779b5affafdac",
-      "bytes": 7001,
+      "sha256": "4ed29cee4c04bdc0ae1fa8d37f5686fc077d6fdee0f56cf12ee9eb534891adc2",
+      "bytes": 6974,
       "classification": "legacy_unreviewed"
     },
     {
@@ -90,13 +90,6 @@
       "title": "Rank-preserving Tango descent and the exact norm defect",
       "sha256": "c838f8e6dec5ace23fdb83ed12909fc9feb091bace75e115490b7e5821389987",
       "bytes": 8943,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/116_ETALE_REFINEMENT_PRESERVES_SIMULTANEOUS_DEFORMATIONS.md",
-      "title": "Etale refinement cannot repair a simultaneous-lifting obstruction",
-      "sha256": "220142255373ad8f65613bbd29e0042b1beea34955a1641031ab791739bc9d86",
-      "bytes": 10807,
       "classification": "legacy_unreviewed"
     },
     {
@@ -611,24 +604,10 @@
       "classification": "legacy_unreviewed"
     },
     {
-      "path": "routes/global/95_ABELIAN_ETALE_TOWERS_AND_ENDOMORPHISM_FIELDS.md",
-      "title": "Abelian etale towers and endomorphism fields",
-      "sha256": "5c70730fe20d749a347682588753f30ce55ed70818a97f9ee5ef370af2b294d7",
-      "bytes": 10015,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/96_NONABELIAN_PACKET_SCHUR_INDEX_DOMINATION_BOUND.md",
-      "title": "Nonabelian packet and Schur-index domination bound",
-      "sha256": "05be78f36d997d4a5304a0abf888c20928af9babe2b2050df5f962560edd24dd",
-      "bytes": 12137,
-      "classification": "legacy_unreviewed"
-    },
-    {
       "path": "routes/global/97_GALOIS_TO_NONGALOIS_PASSAGE_IN_COMMON_COVER_RESULTS.md",
       "title": "How resolved common-cover variants handle non-Galois legs",
-      "sha256": "bce0869d74d9245465e8b5aa78a823f0540be3c7618c058c7307960e70094e6b",
-      "bytes": 27787,
+      "sha256": "c4dd4343cccb3559ab383b4e283c716b72a5bbf327f46f2af3011aaf5fc3f948",
+      "bytes": 27811,
       "classification": "legacy_unreviewed"
     },
     {
@@ -650,13 +629,6 @@
       "title": "A two-point cover from A9 with the exact prescribed wild local field",
       "sha256": "6de67e68230cbca191f73631a5d0f2b9cfe9004d928866f4bd9f914956e636af",
       "bytes": 5856,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/ABELIAN_ETALE_TOWERS_ACQUIRE_NO_LARGE_SIMPLE_FACTOR.md",
-      "title": "Abelian étale towers acquire no sufficiently large simple factor",
-      "sha256": "3effe1b995bd5005e8f5a22abbea5b0c4ebf6bfd3fc9be4d0c0f370b1cf25852",
-      "bytes": 10431,
       "classification": "legacy_unreviewed"
     },
     {
@@ -851,8 +823,8 @@
     {
       "path": "routes/global/CORELESS_JOINT_DEFORMATION_RIGIDITY_SOURCE_BOUNDARY.md",
       "title": "Coreless joint deformation: the exact rigidity-source boundary",
-      "sha256": "a3fce75ed9085c860fc692090654845f4d48c4e2d9457acd95cb569ebfd3c6fe",
-      "bytes": 2911,
+      "sha256": "887e8e159c1e8cae070ff30a4e7a996e06fb4b064f569caac6672ad5e100f758",
+      "bytes": 2916,
       "classification": "legacy_unreviewed"
     },
     {
@@ -975,13 +947,6 @@
       "classification": "legacy_unreviewed"
     },
     {
-      "path": "routes/global/EXPLICIT_GENUS9_ENDOMORPHISM_FIELD_ABELIAN_PART.md",
-      "title": "The abelian part of the explicit genus-nine endomorphism field",
-      "sha256": "e6012aeb4802269b18d41e4fb6abb17ff96a926211246eb678aa32f69c6bac42",
-      "bytes": 5138,
-      "classification": "legacy_unreviewed"
-    },
-    {
       "path": "routes/global/EXPLICIT_SECOND_ORDER_EQUATION_FOR_CARTIER_ZERO_PLURIFORMS.md",
       "title": "An explicitly soluble second-order equation for higher differentials",
       "sha256": "feb555f4c61e672a6e8279a10694abde06215b55ed027e471f0ba7d77afa12d8",
@@ -1019,8 +984,8 @@
     {
       "path": "routes/global/FINITE_RESTRICTED_THETA_CHARACTERS_FORCE_UNIFORM_ETALE_TARGET_DESCENT.md",
       "title": "Finite bad characters force one finite etale descent level",
-      "sha256": "4f5ead7b1bfc6ec7b383954a21c0c00a4a31b12fa6a8bd72e5caf758a0c8356c",
-      "bytes": 8766,
+      "sha256": "428d527c8bdc385b3c0d3443e58ffe3cde36888022acdffb3a164efd77a47ef9",
+      "bytes": 8764,
       "classification": "legacy_unreviewed"
     },
     {
@@ -1028,13 +993,6 @@
       "title": "Finite seed monodromy closure and unbounded primitive covers",
       "sha256": "1a9c9cc506042456fdcfbf9b97e3ee5a09a71a3a916d6ecd241beed1f4e7f5b3",
       "bytes": 7032,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/FINITE_TARGET_SET_FOR_JOINTLY_LIFTABLE_CORELESS_CORRESPONDENCES.md",
-      "title": "A finite target set for jointly liftable coreless correspondences",
-      "sha256": "046f9cc6fc426fd8bf07c46f98b13b7992f64590f64bb7630c8f5ed0faeb8c14",
-      "bytes": 8942,
       "classification": "legacy_unreviewed"
     },
     {
@@ -1152,8 +1110,8 @@
     {
       "path": "routes/global/GENUS_TWO_COMMON_COVERS_REDUCE_TO_INTRINSIC_CHARACTERISTIC_FIVE.md",
       "title": "Ordinary genus-two partners: the remaining case is intrinsically characteristic five",
-      "sha256": "8e7e357e57e3ac93c2bf5ae4fc16a6f8b68a6d460bb1f50e08017c614d19d1ad",
-      "bytes": 8136,
+      "sha256": "a28633905a182d0238b509a0e2aef05fceb4e95f04179649439998ba5ef1e6e6",
+      "bytes": 8127,
       "classification": "legacy_unreviewed"
     },
     {
@@ -1180,8 +1138,8 @@
     {
       "path": "routes/global/GENUS_TWO_INVERSION_TOWERS_AND_FINITE_TARGETS.md",
       "title": "Genus-two inversion towers: finite targets and uniform a-number bounds",
-      "sha256": "2724980c0385f46f7d8d2a77a7c37b1703f941e5f001990ed14e937cc08c1ef5",
-      "bytes": 12530,
+      "sha256": "bcbd37a9dff15efd039da0919b599888aebeba8efc82d64d3012ddbb488f3853",
+      "bytes": 12526,
       "classification": "legacy_unreviewed"
     },
     {
@@ -1257,8 +1215,8 @@
     {
       "path": "routes/global/MINIMAL_BIETALE_CORRESPONDENCES_SPECIALIZATION.md",
       "title": "Minimal hyperbolic bi-étale correspondences remain minimal under specialization",
-      "sha256": "f3624bb5929687da9fdc373976d8c32700e8ef56b94b6d2d0d47c535859d486a",
-      "bytes": 11015,
+      "sha256": "7d6c191ecad4a9451cddbe5721a695de6d59d9cbeaa6e355c7bbc7a90e119e58",
+      "bytes": 11037,
       "classification": "legacy_unreviewed"
     },
     {
@@ -1266,13 +1224,6 @@
       "title": "Minimal bi-etale correspondences and the relative Gauss map",
       "sha256": "16b817b17baddcef5800c5dbc3541b296ddcacdb63aa3848a0bc2887799aea8e",
       "bytes": 5721,
-      "classification": "legacy_unreviewed"
-    },
-    {
-      "path": "routes/global/MINIMAL_BIETALE_MONODROMY_FAITHFULLY_ACTS_ON_THE_ENDPOINT_PACKET.md",
-      "title": "Minimality makes the endpoint multiplicity representation faithful",
-      "sha256": "8a9679d19209452f1d6ee47aa12612d9039d1489c636ec702a7a9bee939af34a",
-      "bytes": 4284,
       "classification": "legacy_unreviewed"
     },
     {
@@ -1334,8 +1285,8 @@
     {
       "path": "routes/global/NORM_CONTROLLED_CHARACTER_DESCENT_OVER_MOVING_STRIPS.md",
       "title": "Norm-controlled character descent over moving strips",
-      "sha256": "5190fd809744f09913338acd214e45ce1867d0baf4fb722289f2a187d69389cf",
-      "bytes": 10394,
+      "sha256": "c86fb5d0a72a6f8f874f120648744c65c8be9853b85e76e3a966333b4ec67082",
+      "bytes": 10366,
       "classification": "legacy_unreviewed"
     },
     {

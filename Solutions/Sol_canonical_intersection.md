@@ -1,7 +1,7 @@
 # Proof: canonical intersection and exact primitive clump weight
 
 [Statement](../Theorems/Thm_canonical_intersection.md).
-Version2,2026-09-07; author prose, not independently audited.
+Version3,2026-09-08; author prose, not independently audited as a whole.
 The two subrings use the ACTUAL etale differential pullbacks.
 
 ## 1. Normality saturates precisely the generated degree group
@@ -31,6 +31,21 @@ The inherited Poisson bracket is zero by the biderivation rule and
 {t,t}=0, not because t is central in either larger ring.
 
 ## 2. Shared sections and clumps
+
+First note a useful rational strengthening of Section1. If tau is any
+nonzero common rational tensor of weight m, then tau^d/s^m belongs to
+both endpoint function fields and is a nonzero constant. For m>0 this
+forces div(tau)=(m/d)div(s)>=0, so tau was regular and Section1 gives
+d dividing m. For m<0 apply the same argument to tau^(-1); for m=0
+use the coreless intersection directly. This proves the full rational
+algebra k[s,s^(-1)] without any coprimality condition on divisor orders.
+
+Write s=A theta_X^d=B theta_Y^d using the actual pullbacks. Then
+delta^d=A/B. Conversely, any delta^m=A_m/B_m, with nonzero endpoint
+functions, gives the common rational tensor A_m theta_X^m=B_m theta_Y^m.
+The rational-weight conclusion therefore makes d the exact order of
+[delta] in the displayed multiplicative quotient. This is equivalent
+information in a useful scalar form, not a separate exclusion theorem.
 
 For nonzero s=f*s_X=g*s_Y, etaleness gives
 

@@ -74,6 +74,18 @@ but each still has its entire continuous quotient-map search.
 
 ## Reproduction and proof boundary
 
+Fast complete verification (no large basis or discovery rerun):
+
+```sh
+env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 sage scripts/verify_oper_census.sage --out /tmp/litt3-census-check
+```
+
+Use a new output directory. An executed one-core run took13.08seconds,
+including all12 factor checks and all multiplicities. The proof uses the
+independently proved total oper length29375; it is not a Lean verification.
+See the census proof's short global-length argument. The old separate
+checks below are retained cross-checks, not a required six-hour replay.
+
 - `sage scripts/certify_oper_parametrization.sage ...` verifies the original
   normalized identities in the proposed full-length algebra.
 - `sage tests/check_oper_original_input.sage` independently verifies the

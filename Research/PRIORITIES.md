@@ -1,96 +1,83 @@
 # Ranked research goals
 
-Updated2026-09-08. Read STATE first. Problem UNSOLVED.
-User budget: no agents except medium audit of substantial uncertain proof;
-one CPU core TOTAL overnight. No automatic wakeups. Rank by contribution
-to a complete counterexample, not by convenience or amount already invested.
+Updated2026-09-10 00:22CEST. Read STATE first. Full problem UNSOLVED.
+Keep genus-nine X/high-prime-degree Y_t. No-cored/no-full-lift already
+proved; no A18 needed. Backup now has FIVE cored profiles, not six.
+No active Pro/solver/agent. Height2 audit PASS; ordinary agents forbidden.
+Latest user: attack the simplest failing case to find a TRANSFERABLE
+mechanism, not a new degree-by-degree exclusion campaign.
 
-1. **Coreless obstruction preserving both actual etale maps.** Highest
-   impact: even a complete atlas computation leaves this gap. The most
-   dangerous missing case has no clump and no common regular connection.
-   A retained actual genus17 coreless family now PROVES common regular
-   connections need not exist (coreless_connection_spectrum v2).
-   Seek a necessary structure of every actual span, or a finiteness theorem
-   for bounded-genus partners that covers this case. Universal two-oper,
-   Tango, Prym, ordinarity, and simultaneous-Galois repairs are false.
-   Before another subcase calculation, state which missing implication it
-   could establish and test against retained Hecke examples.
-   SINGLETON STEP NOW COMPLETE: backup_singleton_root_exclusion excludes
-   all singleton Cartier-zero data on C_alpha for every root weight.
-   Three full charts have original unit certificates,0.535s replay;
-   geometric bridge audited PASS. No sixteen-point enumeration remains.
-   Combined with saved nonzero-Cartier torsion/eigenform argument, all
-   singleton clump images on C are excluded. Next major gap: larger
-   clumps or no clump; do not repeat singleton calculations. The explicit
-   Raynaud quadric and general degree16 theorem remain reusable inputs.
-   NEW uniform_cartier_root_locus v2 removes unbounded weight for EVERY
-   clump size and identifies the preferred prime-to5 theta exactly.
-   More importantly r=5k+2 has ACTUAL unbounded-weight endpoint-root
-   families on every ordinary genus2 curve. All subcanonical curves,
-   including BOTH fixed endpoints, have primitive weight7/double-zero
-   tensors passing Cartier. Any actual coreless match of those tensors
-   would have NO common regular connection. Do NOT attempt to exclude
-   all large clumps by independent endpoint tests: this is now false.
-   No actual matching span was constructed. Use the weight7 two-leg
-   compatibility equation as a bounded test of a genuinely shared
-   obstruction; no-clump remains separate and open.
-   NEW AUDITED operation: inertia_generated_core_preserving_refinement
-   uses genuinely ramified PERFECT PSL2(F7) covers of degree168 to
-   preserve BOTH etale legs, corelessness and EXACT primitive weight.
-   It makes every positive Cartier-zero generator transverse dormant,
-   independent of original degrees. This does not bound clump size or
-   new genera, and does not justify applying original A18 to new curves.
-   Any next use must retain the degree168 maps to the original endpoints.
+1. **Actual two-leg characteristic-five obstruction.**
+   CURRENT experiment: genus_two_active_critical_quartics v2 now gives
+   an explicit smooth F625 genus2 curve, ordinary Jacobian, active
+   connection with exactly ONE nonordinary tangent direction. Exact
+  0.096s tangent check; full Serre-functional replay2.17s. Pro draft
+   now supplies that explicit functional and asks for its ONE W3 scalar,
+   with a reusable Cech/residue computation; ready, NOT submitted.
+   See SMALL_CASE_PLAYGROUND.md. Degree4 trace-zero incidence was
+   explored and recorded but supplied no higher-degree mechanism; do
+   not start a cover enumeration. A nonzero epsilon would persist under
+   prime-to5 etale covers and constrain all such matched spans; zero
+   would still leave the independent two-leg source-kernel mismatch.
+   NEW audited two_leg_negative_extensions v2: no-clump has FULL ring k,
+   because arbitrary W2 lifts give a common J5 class and every common
+   negative extension forces a clump. Weighted genus2 secant hypersurfaces
+   additionally prove EVERY W2-liftable coreless span rigid, including
+   dormant matches. The remaining one-tangent branch cannot lift W2.
+   These refine but do not exclude isolated characteristic-five spans.
+   The retained-FL-connection test is CLOSED: contact2 still survives
+   formally at every positive height, with all original connection data.
+   FL_CONTACT_TWO_BOUNDARY contains the proof and0.147s diagnostic.
+   PRO_ACTIVE_W3_REQUEST RETURNED without a verdict. Pro proves
+   barPsi(o3)=0 and forces canonical Y3 for any successful diagram.
+   The all-level NECESSITY induction is now proved and medium-audited:
+   forced_canonical_witt_endpoint. No next curve lift is supplied.
+   PRO_SINGLE_OPER_W3_REQUEST has been narrowed to the explicit
+   corank-one test above; the universal all-curves draft is superseded.
+   Stable-image containment merely restates o3=0. Do not send that
+   or a full-lifting prompt again.
+   NEW audited conic theorem gives dim T_joint<=1 in EVERY genus2
+   coreless span. No-clump has ring k; W2-liftable branches have ring
+   W(k)/(5^e), finite e for main but no bound. Intrinsic-dormant branch can have
+   one OFF-CONIC tangent and a vertical formal curve. Push that actual
+   gap, not the already proved dimension bound. First-instability n1 AND
+   n2 now excluded on mainY and backup by the exact dormant model plus
+   full pointed-extension matrices. Remaining n>=3; don't substitute a
+   finite-height result for all-height strong semistability.
+   Version4 gives reduced clumps and full-height contacts, but contact2
+   at a clump has an explicit pointed-compatible LOCAL model. Seek a
+   GLOBAL two-leg constraint. Even eliminating the last tangent would
+   NOT exclude isolated covers; prioritize mechanisms that can do that.
 
-2. **Make the existing no-cored theorem a usable foundation.** Fixed X
-   and a high-prime-degree genus2 partner already have a complete prose
-   no-cored proof; this bypasses A18 and torsion calculations. Prepare the
-   requested separate formalization handoff from CORED_FORMALIZATION_MAP,
-   without claiming Lean verification or changing the active small pair.
-   DONE: CORED_FORMALIZATION_REQUEST.md is ready to paste. No Lean work
-   has been done; do not repeat prompt preparation.
+2. **Backup-only work PAUSED.**
+   Degree84 Pro RETURNED and full archive replayed locally:155classes,
+   45survivors, no source verdict. About6.013s total algorithm time.
+   See DEGREE84_CENSUS_STATUS.md. Do not start45source comparisons or
+   work on the other cored profiles; the common coreless gap has priority.
 
-3. **Exploit all18 inverse-cup structure only if it gives an actual new
-   obstruction or large complexity reduction.** Library v2 covers all18,
-   including h0(V)=3 using mixed Bezout/inverse blocks and3-minor patches.
-   Exact nonzero proportionality of56-vectors remains; weak incidence has
-   invalid positive-dimensional families. Main computation PAUSED overnight.
-   Do not add generic solver variants or drop exceptional equations.
+3. **All-degree geometric mechanisms.**
+   Understand the lone tangent's nonsingular genus2 cup form, or constrain
+   finite Witt height using both endpoints. Refinement cannot fix it.
+   Existing packet results leave large alternating actions. Source
+   connection defects are NOT joint curve tangents.
 
-4. **Small-backup atlas exclusion DONE AND AUDITED.** All405 pairs and
-   all20 original charts excluded; no Hermitian PGU atlas. The short
-   triangle diagnostic now excludes248 and239 by the new parameterized
-   radical_quadratic_atlas_obstruction. Seven tame and three small-wild
-   profiles remain. Cubic400-pair check and replay each2.4s. This bounded
-   branch is COMPLETE; return to coreless, not another generic map solver.
+4. **Completed height2 step; don't repeat it.**
+   All16torsion x3charts replay22.252s with exact Bezout and precision
+   checks. Geometric dictionary and parameter-degree transfer now written:
+   entry degree62, Koszul/Macaulay bound597246, hence mainY covered too.
+   Focused audit of new Sections5--8 PASS, independent replay22.1591s.
+   Avoid blind height3 escalation.
 
-5. **Three-point torsion pair locus.** New exact9x9 chart leaves eight
-   equations on an open surface. One-Weierstrass matrix saved; generic
-   solve timed out. Fraction-free9x9 cubic-algebra method is ready to
-   implement if a short diagnostic is justified. No separate singular
-   chart is necessary after relabelling. Finishing W3 does NOT classify
-   arbitrary3-torsion twists and is not itself the central proof gap.
+5. **Parked A18; formalization; backup.**
+   Census length29375 /28990distinct complete, replay13.08s. No whole
+   atlas representative excluded; no demonstrated benefit to restart.
+   Main no-cored formalization prompt/map ready, no implementation.
+   Backup remainder: tame2(2^6),84(2,3,7); wild120/240/280 rows.
+   Degree2 actually EXISTS on backup: exclusion needs BOTH original legs.
+   BACKUP_CANDIDATE owns the list. Three-point torsion is lower priority.
 
-## Pro requests
-
-No request outstanding. Stockpile only precise, independent questions
-whose affirmative OR negative answer would redirect a high-ranked goal.
-Do not request fresh strategies in a vacuum or another incremental finite
-exclusion without explaining its downstream mathematical use. User pastes
-requests manually; no computer-use submission or polling.
-The singleton request was solved locally and removed before submission.
-The separate generic-family extension request is now ready in
-PRO_GENERIC_SINGLETON_REQUEST.md, after a60s symbolic diagnostic reached
-its cap. It would transfer the result to the family already used by the
-complete no-cored theorem. No generic exclusion is claimed; no submission.
-It includes the explicit entire-family Raynaud quadric and new exact
-six-square V-theta matrix/cubic plus eight-square theta(2N) matrix.
-These are now PROVED, not future derivations; each symbolic family
-identity takes0.13s. The all-power formula is(p-1)m-square for all odd p.
-The generic intersection remains open; do not repeat the9-variable solve.
-
-## Parking rule
-
-For every paused goal keep one current artifact, exact obstruction, and
-next executable action in STATE or its linked handoff. Do not preserve a
-large chronological diary or restart a finished census after compaction.
+Guardrails: upper ordinariness cannot be inferred from endpoint
+ordinariness; nilpotent and dormant tangent spaces differ. No assumed
+simultaneous finite Galois closure or replacement of either actual etale
+leg. J7 solved; spectral-only and universal Tango-to-core routes refuted.
+An isolated or one-parameter deformation ring does NOT exclude a cover.

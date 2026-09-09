@@ -1,7 +1,7 @@
 # Proof: tame branch orders create a genuine etale twisted tangent
 
 [Statement](../Theorems/Thm_radical_quadratic_atlas_obstruction.md).
-Author /root,2026-09-08. Numerical coefficients below are in char5;
+Author /root, version2,2026-09-09. Numerical coefficients below are in char5;
 valuation exponents are ordinary rational/integer numbers.
 
 ## 1. The torsion line and the actual cover
@@ -104,3 +104,55 @@ the independent21.41-second replay of all1,200 order-four cases.
 Their geometric character-basis proof is the same finite-valuation
 argument; their audit status is AUTHOR, not inherited from the separate
 Hermitian-atlas audit. No new large computation is needed.
+
+## 4. An exact scalar alternative for the active (2,4,6) case
+
+An actual uniform tame map of this type has degree24 by Hurwitz.
+The intrinsic tensor
+
+    s=2(df)^4/[f^2(f-1)^3]
+
+has divisor2Dinf: at the three fibers the orders are respectively
+4(2-1)-2*2=0, 4(4-1)-3*4=0, and -4(6+1)+5*6=2.
+Writing s=A eta^4 gives(A), with f in H0(O(6Dinf)). Riemann--Roch
+gives dimension24+1-2=23, with no assumption that infinity on a chosen
+hyperelliptic model is outside Dinf.
+
+Conversely impose(A) and the exact pole divisor6D. It makes df nonzero,
+since its right side is nonzero. At a zero of f of order e, away from
+D, it gives4 ord(df)=2e. If5 divides e, ord(df)>=e, impossible.
+Otherwise ord(df)=e-1 and e=2. At a zero of f-1 the same argument
+gives e=4. At a point outside these fibers and D it gives ord(df)=0.
+At D the stipulated pole order6 is prime to5. Thus every ramification
+point and its actual local index is accounted for; no wild or extra
+branch point is hidden in the scalar test.
+
+For r0=3/[t^2(t-1)], direct rational differentiation gives
+
+    E(r0)=1/[t^2(t-1)^3],       N(r0)=0.
+
+The same identities have been replayed in GF(5)(t). Locally choose a
+uniformizer with f=z^e (after moving a branch value to zero); tameness
+permits this choice. At the index2 point the leading coefficient of
+r0 is2 and e^2*2+(e^2-1)/4=0. At the index4 and index6 points r0
+has only a simple pole in the respective base uniformizer, and
+(e^2-1)/4=0 in characteristic5. All remaining terms pull back regularly.
+The projective transformation rule therefore gives a regular connection
+on C. Its nonzero normalized curvature is s, so it is active nilpotent.
+The complete85-point backup list is recorded in BACKUP_CANDIDATE; its
+branch-pair formulas are proved in
+[genus_two_active_critical_quartics](Sol_genus_two_active_critical_quartics.md).
+
+Finally normalize a connected component of z^4=A. The functions
+t=f, w=delta(f)/z satisfy the displayed elliptic equation, and
+dt/w=z eta. To see the elliptic curve explicitly, put
+
+    x=w^2/[t(t-1)],      y=2w/x.
+
+Then x^2=3(t-1), y^2=x^3+3x, and dt/w=3dx/y. The latter cubic is
+smooth; its Cartier coefficient is [x^4](x^3+3x)^2=1, so it is ordinary.
+Since div(s)=2D, each fourth-root component has degree h=2 or4 over C,
+with tame index2 at each point of D and no other ramification. Hurwitz
+gives g(B)=2h+1. Degree comparison over P1 gives deg(B/E)=24h/4=6h.
+This is a ramified auxiliary cover of C; its possible elliptic factors
+are not controlled merely by simplicity of J(C).

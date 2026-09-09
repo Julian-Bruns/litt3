@@ -1,6 +1,8 @@
 # Inverse-cup atlas equations for all eighteen representatives
 
-Version2,2026-09-08: the author reformulation now includes nonacyclic opers.
+Version5,2026-09-08: adds the audited selected-column inverse criterion.
+Nonacyclic opers and the exact negative rank diagnostic remain included;
+no atlas equations have been weakened.
 Fix ANY geometric dormant oper on X, put V=W(8O), and let
 r=h0(V)=0 or3. In coefficient-Frobenius coordinates use the audited
 mixed matrix of `cohomological_bezout`, with n=24:
@@ -63,8 +65,9 @@ Every admissible direction lies on one of these patches. Thus the six
 exceptional representatives have21-square patch equations with essential
 3-square minors and their logarithmic derivative terms. Denominators are
 units on the named patch; clearing them without retaining that open is
-not equivalent. No matrix coefficients for these exceptional systems
-have been computed here, and no runtime improvement is claimed.
+not equivalent. The q and cup matrices for invariant_0 have now been
+computed; its full B/minor-patch system has not. No runtime improvement
+is claimed.
 
 Since det V=omega, Serre-dual bases further give a=q^T. One q minor q0
 then suffices: L=P^T, Bbar=P^T B P is symmetric, and
@@ -83,9 +86,12 @@ block, with no inverse-block auxiliary variables. For r=0 take
 det(q0)=1 and P=I; it recovers the original acyclic equations.
 
 In particular, for r=3 the necessary equation Gamma(beta)q(U)=0 is
-a72 by32 linear system in U. Uniform full column rank on the rank21
-cup stratum would be a sufficient atlas exclusion for that oper. This
-condition is NOT proved; no rank-deficient stratum may be discarded.
+a72 by32 linear system in U. The proposed uniform full-column-rank
+shortcut is FALSE: an exact invariant_0 cup matrix has rank21 while
+this linear system has rank29; its three-dimensional kernel contains
+directions with rank q=3. Thus even these two necessary ranks do not
+give an exclusion. The full inverse and gradient equations in(S) remain
+essential. The diagnostic does not assert that an atlas exists.
 
 There is a characteristic-free description of the invalid quotient strata.
 Use `rank_two_extension_space`, with nonzero u and zero divisor D>0.
@@ -123,7 +129,73 @@ two exact projective-line computations give coprime det H and det Gamma,
 of degrees32 and24. Thus even an invertible cup matrix does not ensure
 that H can be inverted. These are matrix-chart counterexamples, not atlases.
 
-Status: author proof,2026-09-07; version2 extension2026-09-08. Uses audited
+## Start with the full inverse constraint in degree three
+
+Let Dtilde(v) be D with coefficient fifth roots and U replaced by v.
+Let Gtilde have top-left block Gammatilde(b), the coefficient fifth root
+of the LINEAR map beta^[5] -> Gamma, applied to b. Its other blocks
+Xtilde,Ytilde,Ztilde are independent auxiliary variables. Define
+
+    t_i=-Tr(Gtilde partial_i Dtilde).
+
+Then the following is another EXACT finite reduced atlas scheme:
+
+    Dtilde(v) Gtilde=I,       b_i=t_i^[5], i=1,...,32.          (R)
+
+The isomorphism to(1) sends U=v^[5], beta=b and each auxiliary block
+to its entrywise fifth power. The inverse equations have degree at most
+three and t has degree at most two. No N-incidence equations, extra
+normalization, or inverse variables are needed: v.t=2 follows from the
+weighted Euler identity. For r=0 this is64 variables and
+
+    Btilde(v)Gammatilde(b)=I_24,
+    b_i=(-Tr(Gammatilde(b) partial_i Btilde(v)))^5.
+
+This is the FULL normalized scheme, not an old projective chart with
+b_j=s_j=1. Adding only a few inverse equations is not a replacement
+for the whole inverse matrix. Lower equation degree is not a runtime
+bound; no whole representative is excluded by this reformulation.
+
+## Only three columns are needed, including the exceptional representatives
+
+Under the full inherited Bezout hypotheses, choose a fixed subspace
+S subset H0(M) such that S*H0(M)=H0(M²), and let Q be its basis-column
+matrix. Introduce only r*dim(S) auxiliary entries Z. Then
+
+    D(U) [Gamma Q; Z] = [Q;0]                            (C)
+
+is SCHEME-THEORETICALLY the entire inverse-cup incidence. It forces
+det D invertible, including on every invalid-quotient boundary; Z is
+uniquely the indicated part of D^-1. No other inverse columns or
+nonvanishing condition need be imposed.
+
+For the fixed curve a single choice works for EVERY oper:
+
+    S=<y,x^10,x^4*y²> subset L32.
+
+Its products span all56 dimensions of L64, by an exact nonzero minor.
+These are columns(4,21,23) in the pole-ordered basis. Hence the rooted
+version of(C), plus ALL32 original projected-R Frobenius equations,
+is the full finite reduced atlas scheme with the following sizes:
+
+    r=0:72 inverse equations +32 R equations in64 variables;
+    r=3:81 inverse equations +32 R equations in73 variables.
+
+For r=3 retain ALL9 entries of Z. The inverse equations have degree
+at most3. Write n(v,b),s(v,b) for coefficient fifth roots of the ENTIRE
+compact N/R tensors; the R equations here are exactly b=s(v,b)^[5].
+Weak n equations and a separate normalization are redundant and omitted.
+All normal pencil-corank strata remain; R9 is not needed for this test.
+
+The selected-column argument passed a fresh bounded audit: /root/
+audit_inverse_column_compression,2026-09-08, PASS. No blocking objections.
+[Audit reference](../Research/audits/INVERSE_COLUMN_COMPRESSION_AUDIT_2026_09_08.md).
+The twelve acyclic cases also admit a six-section matrix-polynomial
+construction of B; the full first-oper coefficient replay is recorded
+in the proof. No solver speed or atlas exclusion has yet been established.
+
+Status: earlier mixed-inverse reformulations are author proofs,2026-09-07/08;
+the selected-column extension in version5 is independently audited. Uses audited
 Bezout, gradient and compact-atlas inputs; the combined reformulation,
 mixed inverse-block lemma and minor-patch reduction are not independently
 audited. No whole representative, other twist, or common-cover branch

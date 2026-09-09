@@ -1,0 +1,11 @@
+2233: 9 rows checked; elliptic double quotients=6; icosahedral Hecke identities=0
+2223: 39 rows checked; elliptic double quotients=0; icosahedral Hecke identities=9
+PASS exact integer A^2=5I+2A+2B for both five-valent relations in all nine A5 cases
+seconds=0.013167
+
+Executed by /root, 2026-09-09. This verifies every row of the separately
+complete GAP censuses, not completeness by itself. No geometric or Lean
+verification is claimed from a program exit code.
+
+2026-09-09 replay after adding explicit permutation validity and ordered
+product-one checks: PASS, seconds=0.013255. No census change.

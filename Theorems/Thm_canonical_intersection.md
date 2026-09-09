@@ -18,6 +18,18 @@ A_m=\begin{cases}ks^{m/d}&d\mid m,\\0&d\nmid m,\end{cases}
 The inherited Poisson bracket on \(A\) is zero; this does not assert
 centrality in either endpoint ring.
 
+In the positive-generator case the intersection of the RATIONAL canonical
+tensor algebras, allowing every integral weight, is exactly k[s,s^(-1)].
+Thus a nonzero common rational weight-m tensor exists iff d divides m,
+and it is a scalar multiple of s^(m/d). For arbitrary nonzero rational
+endpoint one-forms theta_X,theta_Y, put delta=g*theta_Y/f*theta_X in the
+actual joint field M=k(X)k(Y). The class of delta in
+
+    M* / (k(X)* k(Y)*)
+
+has exact order d. These assertions do not require gcd(d,e)=1 and do
+not assert that the multiplicative quotient vanishes for arbitrary spans.
+
 If \(A=k[s]\), its divisor is \(D=eS\), where \(e>0\) is an integer
 and \(S\) is the nonempty reduced finite support, saturated under the
 fibers of both maps (a clump). It is the unique nonempty clump. Writing
@@ -56,7 +68,9 @@ If moreover \(\operatorname{Hom}(J(X),J(Y))=0\), then
 This uses the common pullback of the two actual line bundles, not
 an independent one-leg Jacobian condition.
 
-Version2,2026-09-07: exact clump-weight and endpoint-root formulas added;
-proof consolidated. Author prose; no independent audit claimed.
+Version3,2026-09-08: adds the rational graded intersection and exact
+multiplicative order. These additions are author-checked, inspired by
+the returned Pro weight-seven argument. The existing scoped audit covers
+only the earlier clump-root formulas, not this whole theorem.
 
 [Proof](../Solutions/Sol_canonical_intersection.md).

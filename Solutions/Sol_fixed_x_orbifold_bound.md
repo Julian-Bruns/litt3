@@ -1,39 +1,11 @@
-# Proof record: All effective orbifold quotients of the fixed genus-nine curve
+# Proof: all effective orbifold quotients of the fixed genus-nine curve
 
-Canonical statement: [`fixed_x_orbifold_bound`](../Theorems/Thm_fixed_x_orbifold_bound.md).
-Migrated 2026-09-06; hypotheses restated below are proof context.
-The canonical statement and registry control promoted scope and evidence.
-
----
-
-# Every effective orbifold quotient of the fixed genus-nine curve is bounded
-
-Author: /root, 2026-09-06. Status: independently audited PASS by
-`/root/integral_jump_degree_bound_audit`, including assertion 3, 2026-09-06.
-[Audit record](../routes/global/audits/GENUS9_ALL_EFFECTIVE_ORBIFOLD_QUOTIENTS_AUDIT_2026_09_06.md).
-This removes ALL hypotheses on the second endpoint from the
-earlier cored degree bound. Its reusable new ingredient is the full
-self-fiber-product contact bound, not a new cutoff in local group order.
-
-## Theorem
-
-Let X be the exact genus-nine curve of file76. For every representable
-finite etale atlas X -> S of a smooth proper connected effective
-Deligne--Mumford orbifold curve over Fbar_5,
-
-    deg(X/S) <= 336000.
-
-Wild stabilizers and non-Galois atlases are allowed. Consequently:
-
-1. For ANY smooth projective hyperbolic Y, every jointly minimal CORED
-   finite bi-etale span X <- Z -> Y has deg(Z/Y)<=336000.
-2. For each fixed genus h>=2, only finitely many isomorphism classes of
-   Y of genus h admit a cored common cover with X.
-3. No CORELESS finite bi-etale span involving X and any hyperbolic Y
-   has a nonzero shared regular one-form, even a Cartier-zero one.
-
-There is no ordinarity, Jacobian simplicity, or Hom-zero hypothesis on Y.
-This does not exclude a coreless span, nor all bounded cored spans.
+[Statement](../Theorems/Thm_fixed_x_orbifold_bound.md).
+Author /root,2026-09-06. Independent audit PASS by
+`/root/integral_jump_degree_bound_audit`, including assertion3;
+[reference-only metadata](../routes/global/audits/GENUS9_ALL_EFFECTIVE_ORBIFOLD_QUOTIENTS_AUDIT_2026_09_06.md).
+Duplicate statement and migration boilerplate removed2026-09-09;
+the mathematical proof below is unchanged.
 
 ## 1. A parameterized contact bound for an orbifold atlas
 

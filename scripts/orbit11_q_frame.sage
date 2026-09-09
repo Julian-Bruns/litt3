@@ -6,6 +6,7 @@ matrix arithmetic only; it never builds atlas tensors or runs their solver.
 """
 import argparse
 import hashlib
+import itertools
 import json
 import signal
 import time
@@ -13,7 +14,7 @@ from copy import copy
 from pathlib import Path
 
 
-def inspect(relative, output, max_seconds, row_order, symbolic):
+def inspect(relative, output, max_seconds, row_order, symbolic, census_algebra=False):
     started = time.monotonic()
     root = Path(__file__).resolve().parents[1]
     report = {'scope': 'Q-frame minor only; no atlas solving or exclusion.',
@@ -145,6 +146,42 @@ def inspect(relative, output, max_seconds, row_order, symbolic):
             [coordinates['b%d'%i] for i in range(8)],
             [coordinates['c%d'%i] for i in range(4)]+[field.one()], lam)
         announce('normalized minor constructed')
+        special=None
+        if census_algebra:
+            assert symbolic, '--census-algebra requires --symbolic'
+            certificate_path=root/'Research/computations/normalized_oper_algebra_certificate.json'
+            certificate=json.loads(certificate_path.read_text())
+            PR=PolynomialRing(GF(5),'z',implementation='FLINT')
+            modulus_all=PR(certificate['P'])
+            assert modulus_all.degree()==19290
+            from sage.rings.polynomial.polynomial_quotient_ring import PolynomialQuotientRing_generic
+            algebra=PolynomialQuotientRing_generic(PR,modulus_all,('alpha',))
+            za=algebra(PR(certificate['coordinates']['zeta']))
+            assert za**2+4*za+2==0
+            embed=lambda c:algebra(int(k(c)[0]))+int(k(c)[1])*za
+            values=[algebra(PR(certificate['coordinates']['a%d'%i])) for i in range(10)]
+            values += [algebra(PR(c)) for c in certificate['B']]
+            values += [algebra(PR(certificate['coordinates']['c%d'%i])) for i in range(4)]
+            values += [algebra(PR(certificate['lambda']))]
+            assert len(values)==len(field.gens())
+            # Evaluate only the small original Q minor, never the expanded
+            # degree-nine Schur expressions. Subsequent elimination is a
+            # straight-line computation in the whole finite census algebra.
+            monomial_cache={}
+            def specialize(f):
+                result=algebra.zero()
+                for ex,c in f.dict().items():
+                    ex=tuple(ex)
+                    if ex not in monomial_cache:
+                        value=algebra.one()
+                        for i,power in enumerate(ex):
+                            if power:value*=values[i]**power
+                        monomial_cache[ex]=value
+                    result+=embed(c)*monomial_cache[ex]
+                return result
+            special=matrix(algebra,[[specialize(c) for c in row] for row in matrix_g.rows()])
+            report['census_source_sha256']=hashlib.sha256(certificate_path.read_bytes()).hexdigest()
+            announce('whole19290-dimensional census algebra specialized')
         g = copy(matrix_g)
         determinant = field.one()
         pivot_degrees = []
@@ -165,14 +202,71 @@ def inspect(relative, output, max_seconds, row_order, symbolic):
                 report['remaining_term_counts'] = [[len(c.dict()) for c in row] for row in remaining.rows()]
                 report['constant_determinant_factor'] = str(determinant)
                 report['universal_constant_elimination_verified'] = True
-                report['status'] = 'complete'
+                report['status'] = 'census_determinant_pending' if special is not None else 'complete'
                 announce('constant elimination leaves %d by %d polynomial matrix'%(32-step, 32-step))
+                if special is not None:
+                    h=special[step:,step:];n=h.nrows()
+                    # Division-free subset determinant; the census algebra
+                    # is a PRODUCT of fields, not a field. No inverse of an
+                    # unproved unit is allowed in this final6x6 determinant.
+                    minors={0:algebra.one()}
+                    for mask in range(1,1<<n):
+                        row=int(mask).bit_count()-1;ans=algebra.zero()
+                        for column in range(n):
+                            if mask&(1<<column):
+                                sign=-1 if (row+int(mask&((1<<column)-1)).bit_count())%2 else 1
+                                ans+=sign*minors[mask-(1<<column)]*h[row,column]
+                        minors[mask]=ans
+                    det_all=embed(determinant.constant_coefficient())*minors[(1<<n)-1]
+                    # Independent determinant algorithm: all permutations,
+                    # with signs counted directly, not the subset recurrence.
+                    direct=algebra.zero()
+                    for permutation in itertools.permutations(range(n)):
+                        inversions=sum(permutation[i]>permutation[j]
+                                       for i in range(n) for j in range(i+1,n))
+                        term=algebra.one()
+                        for i in range(n):term*=h[i,permutation[i]]
+                        direct+=(-1 if inversions%2 else 1)*term
+                    assert direct==minors[(1<<n)-1]
+                    det_poly=PR(det_all.lift())
+                    common,bez_det,bez_mod=det_poly.xgcd(modulus_all)
+                    assert bez_det*det_poly+bez_mod*modulus_all==common
+                    closed=json.loads((root/'Research/computations/normalized_oper_closed_points.json').read_text())['factors']
+                    assert prod(PR(row['polynomial']) for row in closed)==modulus_all
+                    if common!=1:
+                        report.update(status='census_frame_minor_has_zeros',
+                            failing_representatives=[row['id'] for row in closed
+                                if PR(row['polynomial']).gcd(det_poly).degree()>0],
+                            determinant_gcd=[int(c) for c in common.list()])
+                        announce('chosen frame does not cover all12 representatives')
+                        return
+                    report.update(status='complete',all12_noninvariant_frames_nonzero=True,
+                        representative_ids=[row['id'] for row in closed],
+                        determinant_mod_census=[int(c) for c in det_poly.list()],
+                        determinant_inverse_mod_census=[int(c) for c in bez_det.list()],
+                        determinant_modulus_multiplier=[int(c) for c in bez_mod.list()],
+                        exact_global_bezout_identity_verified=True,
+                        independent_permutation_determinant_verified=True,
+                        scope='Uniform Q frame for all12 noninvariant representatives; no atlas exclusion.')
+                    compact={key:report[key] for key in [
+                        'status','scope','row_indices','column_indices',
+                        'source_minor_sha256','census_source_sha256','constant_pivots',
+                        'constant_determinant_factor','representative_ids',
+                        'determinant_mod_census','determinant_inverse_mod_census',
+                        'determinant_modulus_multiplier','exact_global_bezout_identity_verified',
+                        'independent_permutation_determinant_verified']}
+                    compact['generator_source_sha256']=hashlib.sha256(Path(__file__).with_suffix('').with_suffix('.sage').read_bytes()).hexdigest() if str(__file__).endswith('.sage.py') else hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+                    compact['seconds']=elapsed()
+                    output.with_suffix('.certificate.json').write_text(json.dumps(compact,indent=2,default=int)+'\n')
+                    announce('all12 frames NONZERO: exact global Bezout certificate')
                 return
             if row != step:
                 g.swap_rows(row, step)
+                if special is not None:special.swap_rows(row,step)
                 determinant = -determinant
             if column != step:
                 g.swap_columns(column, step)
+                if special is not None:special.swap_columns(column,step)
                 determinant = -determinant
             pivot = g[step, step]
             determinant *= pivot
@@ -180,14 +274,19 @@ def inspect(relative, output, max_seconds, row_order, symbolic):
             report['completed_pivots'] = step+1
             report['pivot_degrees'] = pivot_degrees[:]
             inv = field(~k(pivot.constant_coefficient())) if symbolic else ~pivot
+            special_inv=embed(inv.constant_coefficient()) if special is not None else None
+            if special is not None:assert special[step,step]*special_inv==1
             for j in range(step+1, 32):
                 g[step, j] *= inv
+                if special is not None:special[step,j]*=special_inv
             for i in range(step+1, 32):
                 entry = g[i, step]
                 if entry:
                     for j in range(step+1, 32):
                         g[i, j] -= entry*g[step, j]
+                        if special is not None:special[i,j]-=special[i,step]*special[step,j]
                 g[i, step] = 0
+                if special is not None:special[i,step]=0
             if (step+1)%4 == 0:
                 announce('exact elimination through pivot %d'%(step+1))
         report['pivot_degrees'] = pivot_degrees
@@ -222,5 +321,7 @@ if __name__ == '__main__':
                         help='High pole rows expose the constant indicial pivots first.')
     parser.add_argument('--symbolic', action='store_true',
                         help='Stop after all constant pivots over the normalized coordinate polynomial ring.')
+    parser.add_argument('--census-algebra',action='store_true',
+                        help='Replay constant elimination simultaneously on all12 normalized oper factors, with an exact determinant Bezout certificate')
     args = parser.parse_args()
-    inspect(args.relative, args.output, args.max_seconds, args.row_order, args.symbolic)
+    inspect(args.relative, args.output, args.max_seconds, args.row_order, args.symbolic,args.census_algebra)

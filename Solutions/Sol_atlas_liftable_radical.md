@@ -1,5 +1,8 @@
 # Proof: retain the actual rank-three extension while interpreting the radical
 
+Version2,2026-09-08; Section9 incorporates the R9 response and the
+parameterized line-subundle extension. Generic rank remains open.
+
 [Statement](../Theorems/Thm_atlas_liftable_radical.md).
 This record supplies an intrinsic geometric interpretation of the
 remaining rank problem. It does not settle its generic-rank assertion.
@@ -266,3 +269,43 @@ The report is the existing external
 cohomological tensor-interface check, not a separately rebuilt rank-three
 bundle chart. No orbit0011 tensor, new atlas search, or production change
 was made. No geometric higher-normal-corank counterexample is claimed.
+
+## 9. The osculating modification and uniform line-subundle bounds
+
+Write G=G_s and i:G->V. Multiplication by s gives mu:V->G omega.
+Send T:G->V to the trace-free part of (T tensor omega)mu. On the
+osculating line its action modulo D_s is scalar, namely minus half
+the trace; that scalar comes from H0(omega). Thus it lies in ker M_s.
+Conversely, for phi in that kernel choose r in H0(omega) with
+(phi-rI)(omega^-1)|D_s=0. Then (phi-rI)/s is regular on G. Locally,
+if s=z^m and V=<ell,n>, then G=<ell,z^m n>; both images are regular.
+Taking trace-free part recovers phi. A kernel element is a rational
+scalar times i. Its restriction to the everywhere-subbundle <ell>
+forbids any pole, so the scalar is constant. This proves exactness,
+including arbitrary multiplicities of D_s. Parity is inherited from(2).
+
+For a saturated N in G, det G=O gives 0->N->G->N^-1->0. Applying
+Hom(-,V) bounds its middle H0 between h0(V N) and
+h0(V N)+h0(V N^-1). Since V^vee omega=V, Serre duality and RR give
+their difference2deg N. If deg N=d>0, the inclusion N->V supplies a
+nonzero section of V N^-1, so h0(G^vee V)>=2d+1. Its evenness raises
+this to2d+2, proving the lower radical bound. For N=O(-D), D effective
+of degree e>0, H0(V(-D))=0 and h0(V(D))=2e by acyclicity; the upper
+radical bound follows. Degree zero with either twist having one section
+gives an upper Hom bound2 and hence nullity1.
+
+A surjection tau:E3->omega(x) killing e descends to V with kernel
+N=O(-x). Killing K|D_s makes this kernel coincide with the osculating
+line there, also over the nonreduced divisor scheme: both are direct
+summands and the inclusion between them is multiplication by a unit.
+Thus N lies saturated in G. This proves the certificate by e=1.
+
+Finally H0(V(x)) maps isomorphically to its two-dimensional principal-
+part space, since V is acyclic. Under V^vee omega=V the pole of
+h_tau=tau|omega^-1 is the pairing of that principal part with the
+nonzero osculating vector at x. Its vanishing imposes exactly one
+nonzero linear condition. Products s*r with r in H0(omega(x)) are
+regular at x, since H0(omega(x))=H0(omega). Hence at most one projective
+tau survives this necessary condition for each x. Global surjectivity
+and divisibility by a prescribed pencil member are not consequences of
+this dimension calculation. The R9 response remains undecided.

@@ -3,7 +3,7 @@
 Version 2, 2026-09-08: compressed author proofs from 2026-09-05 by /root,
 with /root/canonical_trace_algebra and /root/x_elliptic_quotient_maps.
 No independent audit of this note. The representation-descent input is
-the separately audited [Schur-index lemma](96_NONABELIAN_PACKET_SCHUR_INDEX_DOMINATION_BOUND.md#1-representation-descent-over-an-endomorphism-field).
+the separately audited [Schur-index lemma](../../Solutions/Sol_etale_endomorphism_packets.md#1-free-action-and-one-rational-packet).
 
 Let k be algebraically closed of characteristic p>0; curves are smooth
 projective connected. Write γ(C) for p-rank and V_pJ(C) for the rational
@@ -122,7 +122,7 @@ A=J(Y), End^0(A)=K and K∩Q^ab=Q. If A is not a factor of J(B), then
 \]
 
 The exclusion from J(B) is automatic when g(Y)>g(X), by the
-[audited abelian-packet bound](95_ABELIAN_ETALE_TOWERS_AND_ENDOMORPHISM_FIELDS.md):
+[abelian-packet bound](../../Theorems/Thm_etale_endomorphism_packets.md):
 B→X is cyclic etale and the proof applies to its simple isogeny factors.
 If g(X)=1, the same conclusion follows directly from g(B)=1.
 

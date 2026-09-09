@@ -1,278 +1,118 @@
-# What remains after the dormant-oper enumeration
+# After enumeration: scope and remaining proof obligations
 
-Last updated2026-09-07. The original unmarked common-cover problem is
-UNSOLVED. This is a roadmap, not a chain of already-proved exclusions.
-Read STATE.md first for the current computation and user instruction.
+Updated 2026-09-09. Read STATE.md and PRIORITIES.md for the active task.
+The common-cover problem is UNSOLVED. This is a short roadmap, not
+authority to resume historical algorithms.
 
-## What the enumeration actually gives
+## What is finished
 
-The number29375 is the scheme length of the rank-two dormant-oper candidates
-on the fixed genus-nine X, including multiplicities. The complete census
-has28990 distinct opers, not that many curves or covers. These rank-two
-objects exist on every curve; their existence is not an obstruction.
+The fixed genus-nine curve has 28,990 distinct dormant opers, with total
+scheme length 29,375. Fifty-five points have multiplicity eight; the
+other 28,935 have multiplicity one. All multiplicities are preserved.
+The independent verification now takes about 13 seconds; the expensive
+discovery calculation need not be repeated for proof verification.
 
-The55 known geometric points have full local length8, accounting for440.
-The remaining length28935 is an etale cubic reconstruction of the normalized
-F25 algebra of length9645. The current F5 encoding has dimension19290.
-References: `fixed_x_dormant_equations`, `fixed_x_oper_cubic_quotient`,
-`dormant_rank_two_candidates`.
+Frobenius and the cubic deck action reduce the UNTWISTED atlas tests to
+18 representatives. These are opers, not common covers. Dormant opers
+exist on every curve, so enumeration alone excludes no curve.
 
-## 1. Certification and full export — COMPLETED
+Canonical records: fixed_x_oper_enumeration,
+finite_algebra_completion_certificates, dormant_rank_two_candidates.
+Data: computations/complete_oper_solutions.json. The large raw basis is
+outside the repository. Open the census proof only when needed.
 
-Read normalized_oper_run.json and the durable log; an exit0 or a nonempty
-file is not itself a mathematical certificate. Use
+## The exact unfinished atlas computation
 
-    sage scripts/export_oper_basis.sage --normalized
+The audited inverse_cup_atlas_system v5 is the current criterion, not the
+old 96-equation reconstruction or auxiliary-frame search. Three fixed
+inverse columns suffice, including all boundary and exceptional strata:
 
-to reproduce the completed small certificate and export, without importing
-the4.5GB raw basis. All original equations, separator and known length
-certify a squarefree polynomial algebra; an independent43-input check passed.
-All28990 distinct points are exported with multiplicities in
-computations/complete_oper_solutions.json. Its README defines the exact
-root and Frobenius-orbit conventions. The55 earlier points have multiplicity8;
-the other28935 points have multiplicity1. Total29375 is verified.
-Reference: `fixed_x_oper_enumeration` and its fresh major-chunk audit.
+- twelve acyclic representatives: 72 cubic inverse equations and all
+  32 Frobenius equations, in 64 variables;
+- six exceptional representatives: 81 inverse equations and all
+  32 Frobenius equations, in 73 variables; the nine extra entries matter.
 
-Frobenius and the actual cubic deck symmetry reduce the next UNTWISTED
-test to18 representatives:12 new closed points and6 invariant ones.
-Each still retains every possible quotient direction. The normalized
-algebra's12 F25 residue degrees sum to9645; the three cubic branches
-are distinct and all have multiplicity1.
+Its solution scheme is finite and reduced, possibly empty. A unit
+certificate must be checked against the ORIGINAL equations. A bounded
+dual rejects only that certificate ansatz, not the chart. A time cap,
+inconclusive solve, or lack of sampled points proves no exclusion.
 
-## 2. Solve the actual rank-three atlas obstruction
+The COMPLETED quiet queue tested weak necessary systems on three F25
+representatives only. Seven charts have exact weak fixed-point families
+with normalization zero, so weak-only unit searches there cannot succeed
+at ANY degree. These are skipped, not excluded. See
+ATLAS_NORMALIZATION_CANCELLATION.md and verify_atlas_weak_points.py.
+Full normalization is mandatory when returning to them.
 
-For EACH geometric oper r, `scalar_hermitian_reconstruction` gives an exact
-test for an atlas X->[H/PSU_3(5)], where H is the genus-ten Hermitian curve.
-It is necessary to prove nonexistence for ALL allowed quotient maps p,
-not just sample a few p or compute their generic rank.
+Live run, accepted charts, checkpoints, resource limits and next action
+are recorded ONLY in STATE.md and the external sweep.json. No whole
+representative has been excluded. Do not infer an all18 ETA from three
+small-field representatives; orbit_0011 has coefficient degree 7324.
 
-The implemented `direct_wronskian_atlas` theorem replaces auxiliary frames
-by polynomial horizontal solutions U in S_U (dimension32) and T in S_T
-(dimension66), with Wronskian1 and pole U111/112. Its audited Cartier
-normalization gives eta and lambda=-rho32(delta eta), with sharper pole197.
-The subsequent `wronskian_matrix_pencil` theorem removes T altogether:
+A genuine solution reconstructs a Hermitian quotient atlas; it does not
+itself produce a common cover with the selected genus-two partner.
+An empty untwisted scheme does not address nontrivial cubic determinant
+classes. The same oper census applies to those classes, but the
+rank-three obstruction changes. See intrinsic_atlas_incidence and
+hermitian_monodromy_genus_sieve if that branch is actually needed.
 
-    T=-aff(U eta^5),  eta in P48 (dimension56),
-    N_U eta^[5]=0,  Wronskian(U,T)=1,  R_U eta^[5]=eta.
+## What the stronger selected pair already avoids
 
-N_U is136x56, R_U is56x56, and BOTH are linear in U. For every admissible
-U, N_U has rank55. Some scale of a projective direction works precisely
-when [N_U;N_U^[1/5]R_U] still has rank55 and R_U does not kill its kernel.
-This is an exact structural test; all quotient directions remain.
+Our strongest selected pair is the fixed genus-nine X and the
+high-prime-degree genus-two Y_t of bounded_atlas_partner_finiteness.
+ALL cored common covers are excluded for this pair, independently of
+A18 and of the oper census. The no-cored Lean handoff is in
+CORED_FORMALIZATION_REQUEST.md and CORED_FORMALIZATION_MAP.md;
+no Lean implementation or verification is claimed.
 
-Two subsequent uniform reductions are now available. The cup-product
-theorem `rank_two_extension_pencil` replaces136 rows by64 and gives a
-primitive degree46 kernel vector. The audited `dormant_differential_projection`
-puts every possible eta in J_r=Ann ker(Q_r:L64->S_U), dimension32, for
-EVERY oper. Here Q_r=delta^3+Pdelta+3(delta P) and the bounded global Q_r
-is onto. The first complete-oper tensor test stabilizes at exactly J_r.
-This is a necessary linear restriction, not an exclusion.
+The new fixed_quotient_atlas_avoidance additionally shows that the SAME
+Y_t has no atlas to the Hermitian PGU quotient, hence none to its subgroup
+quotients, including every cubic determinant type. The already imposed
+parameter bound suffices. This is a finite-cover count, not a computation.
 
-The audited `resultant_gradient_atlas` identifies the remaining output
-with minus the gradient of the reduced degree48 resultant. The audited
-`compact_etale_atlas_system` now gives an exact97-equation system in64
-variables:64 N equations,32 R equations, and U.beta=2. It automatically
-retains all valid quotients and removes invalid ones, including at infinity.
-Its solution scheme is finite and reduced, possibly empty. Full tensors for
-the first new oper are exported; no entire candidate is excluded yet.
-The audited `cohomological_bezout` replaces expansion of the degree48
-resultant by24x24 quadratic matrices for acyclic V=W(8O), or27x27 mixed
-matrices for the55 exceptional opers. It proves exact rank loss on all
-zero strata. The author `inverse_cup_atlas_system` gives a structured
-all-chart matrix-inverse/gradient system and explains a large invalid
-boundary family in the weaker N equations. Do not invert its polar
-matrix H without retaining singular charts: an exact test disproves
-that shortcut even when the cup matrix is invertible.
+Do not confuse this with A18 on X, or descend an atlas from an arbitrary
+further cover of Y. Both endpoint atlas exclusions require an ACTUAL atlas
+on that endpoint. A common dormant connection does not provide one.
 
-Do not restore Pro's96-equation system or repeat the discarded auxiliary
-frame search. Exact matrix/direct sample tests agree, but samples do NOT
-exclude whole families. One whole projective line HAS been excluded by
-exact polynomial-kernel/Bezout identities, retaining its exceptional values
-and infinity. The next task is the full nonlinear incidence inside the
-reduced U32/eta32 spaces. A degree-one Wronskian syzygy and a fixed bilinear
-symmetry shortcut failed exact tests; witnesses are recorded in STATE.md.
-Excluding one line alone is not a global exclusion.
+## The remaining coreless problem
 
-`extension_fiber_geometry` now proves the admissible extension map is a
-scheme-theoretic immersion, with constant normal bundle of rank24. Thus
-its linear P31 section has local dimension at least7 at every admissible
-point. Existence and smoothness are still unproved. The exact dual
-normal test is quadratic in the section; see EXTENSION_NORMAL_SYMBOL.md.
-The weaker Frobenius incidence is the Frobenius preimage of this linear
-section, and can carry substantial nilpotent thickness. This is NOT
-multiplicity in the full reduced atlas scheme. It supplies no additional
-exclusion and is not a prerequisite for solving the existing97 equations.
+Preserve both actual finite étale maps from the same projective curve
+and their embedded endpoint fields. For the selected pair the remaining
+possibilities are:
 
-The small actual genus-two atlas test is now completely solved and audited:
-`genus_two_atlas_dynamics` gives33 reduced normalized solutions via a
-degree-eleven fixed-point equation and exact original-ideal reductions.
-Its constant-annihilator shortcut cannot transfer to large genus:
-`cartier_jet_tensor_surjectivity` proves full tensor rank for EVERY intrinsic
-oper when g−1>=p. Moreover, `acyclic_atlas_towers` gives actual atlas curves
-in unbounded genus with both full tensor rank and H0(V)=0. These are robust
-limitations, not additional exclusions. The genus-nine next test uses
-nonlinear identities: all576 inverse-cup matrix equations now have explicit
-coefficient-verified original-ideal certificates. See
-INVERSE_CUP_SEED_CERTIFICATE.md and STATE.md for the bounded next calculation.
+1. A positive clump whose image on Y has size 4 modulo five. Such a span
+   has a common regular nilpotent connection.
+2. No clump. The common-connection space is empty or a single dormant
+   point; existence of that point is not proved.
 
-Success condition for exclusion: a certified empty solution set over the
-algebraic closure for every r and both scalar charts, including nongeneric
-quotient strata. Alternatively a structural theorem may exclude all these
-tests simultaneously. A solution instead reconstructs a genuine atlas;
-it defeats this particular non-atlas obstruction. It does not by itself
-prove that the fixed genus25 Y shares a cover with X.
+The general ramified_root_contact_core theorem is audited and finishes
+the old weight-seven/J7 branch. Do not resume its superseded spin-growth,
+primitive or Prym calculations as though that gap were still open.
 
-## 3. The other large Hermitian case is not yet covered by that computation
+ordinary_source_partner_finiteness excludes all but finitely many
+partners with an ordinary COMMON connection. Endpoint ordinariness is
+not enough. Admissible matching active connections give a canonical
+joint W2 lift, not an automatic full lift. etale_refinement_deformations
+shows further common covers cannot repair a joint obstruction.
+compatible_bt_lifting supplies a full lift from extra compatible
+arbitrarily high versal BT data; those data have not been constructed
+from the connections. HIGHER_LEVEL_BOUNDARY.md records the exact gap.
 
-The other large case is X->[H/PGU_3(5)]. The full criterion includes
-tau in Pic(X)[3], with3^18 geometric torsion-line classes. The scalar
-coefficient file implemented above treats tau=O only.
+The unmarked problem is solved only after ALL coreless spans are
+excluded as well. Neither a census, atlas exclusion, marked variant,
+nor a conditional lifting criterion is that final step. There is no
+defensible percentage-to-proof estimate.
 
-The independently audited `intrinsic_atlas_incidence` now gives a complete
-uniform97-equation criterion in64 variables for EVERY tau and oper:
-I alpha=p*D(alpha), ell(p,alpha)=1, with alpha in Ext1(V,O),
-p in Hom(V,M). Its specified cohomological maps use actual dual Frobenius.
-The extension-morphism proof includes nonsingularity, all bad quotient
-strata, and finite/reducedness. This closes the earlier formulation gap
-without globalizing the cumbersome scalar R formula. It has NOT proved
-emptiness or computed coefficient tensors for all tau.
+## Parked alternatives
 
-The author-proved `theta_open_atlas_projection` further handles every
-acyclic V by an exact projective elimination: on the24x24 cup-determinant
-open in P31, the full96x32 pullback matrix is everywhere injective and
-recovers p uniquely. The remaining zero scheme is a section of a rank64
-quotient bundle. This is not a proof of emptiness, a single square-pivot
-chart, or a reduction for nonacyclic V.
+The [candidate review](CANDIDATE_PIVOT_DECISION.md) distinguishes a cheaper
+calculation from a stronger overall proof. The small backup has all405
+Hermitian oper/twist pairs excluded, but
+seven tame and three small-wild cored profiles remain. The old W3
+three-point torsion locus also remains open. Neither replaces the
+stronger selected pair or its current frontier.
 
-The author-proved `twisted_bol_complex` now supplies the intrinsic
-order-two/order-three exact complex and the32-dimensional dual space
-for EVERY torsion class. The general small Bezout matrix also applies,
-though it need not be symmetric. The intrinsic criterion above now
-supplies actual compatibility independently. A twisted gradient formula
-or scalar basis comparison is optional further structure, not a missing
-condition silently assumed in that theorem.
-
-The SAME rank-two oper list can be reused: for fixed theta,
-V=W tensor(theta tensor tau^2). New torsion choices are not new independent
-rank-two enumerations. They do change the remaining rank-three obstruction.
-Seek a structural treatment or justified orbit reduction rather than
-assuming every torsion class needs an unrelated brute-force run.
-References: `hermitian_atlas_extension_criterion`,
-`dormant_rank_two_candidates`, `semilinear_hermitian_lift`.
-
-`hermitian_monodromy_genus_sieve` now restricts nontrivial twists for
-EVERY genus-nine curve: the monodromy is full PGU, or lies in one of two
-order216 maximal groups. The proper cases give actual degree192 atlases
-of X to their tame quotient stacks. This is a group/genus restriction,
-not an exclusion, and does not assert that Y factors through the same
-smaller target. It does not collapse the torsion lines into three points.
-
-`solvable_atlas_frobenius_periods` version3 excludes216-monodromy for
-orbits0010 and0011 for EVERY tau, but not fullPGU. It also proves that
-all cubic torsion lines on fixedX are defined over F_(25^36), without
-identifying them. `nonliftable_hermitian_atlas_family` gives genuine
-nontrivial-tau atlases in genus9 and unbounded genus; their Jacobians
-are nonsimple. Thus twists cannot be removed merely from genus or
-the existence of a common cover; fixed-X arithmetic may still help.
-
-The independently audited `cyclic_cubic_low_abel_torsion` improves the
-field containing every cubic twist to F_(25^12). It also bounds all
-three-primary W3 classes by9 and counts276 classes killed by3. W1 has
-only the eleven native branch classes. Exact9 in W2/W3 remains open;
-the revised Pro prompt addresses precisely this question; consult STATE.md
-for submission status rather than assuming a request is outstanding.
-These facts do not identify every twist or exclude all effective classes.
-
-Even excluding BOTH large stacks only closes the large cored branch.
-Do not conclude that every H-commensurable curve is an atlas of these stacks.
-
-The author theorem `cored_quotient_torsion_sieves` now excludes common
-effective orbifold atlases of degree deg(X/S)<=8, using both endpoints.
-Its reusable inputs are a coprime-inertia genus inequality and a uniform
-branch-fiber torsion identity. This is NOT a lower bound on the degree
-of a component of X x_S Y. Larger small-cored cases and coreless spans
-remain unresolved.
-
-## 4. The smaller cored cases remain
-
-A cored span has the actual effective common orbifold supplied by
-`cored_orbifold_bridge`. For the fixed X, the complete signature proof in
-`fixed_x_orbifold_bound` gives either deg(X/S)<=2240 or the two large
-degrees112000 and336000. No theorem here excludes all small cases.
-
-These must still be ruled out for the selected endpoints, using actual
-atlas/correspondence conditions, or treated by a stronger theorem covering
-them together. Boundedness is not nonexistence. One may use the genus25 Y
-and its proved arithmetic properties, but must establish their connection
-to both actual etale maps. A different endpoint could be chosen if justified;
-that is a new target choice, not an automatic consequence of the enumeration.
-
-There is now an audited way to avoid ALL cored cases by changing the
-partner: version2 of `bounded_atlas_partner_finiteness` gives an explicit
-finite upper countK and an ordinary genus-two family. A parameter of
-prime degree greater thanK and120 has moduli orbit too long to be a
-cored partner of X. The boundB=336000 used here is unconditional, so
-this construction needs neither A14 nor A18 and includes all twists.
-It is a deterministic but impractical prescription, not an explicit
-small displayed curve. It leaves the entire coreless branch unresolved;
-the active fixed pair has not silently been changed.
-
-## 5. The coreless branch is a separate major gap
-
-An arbitrary common cover need not have a core or a simultaneous Galois
-refinement. The oper enumeration does not cover this branch.
-The proved shared-one-form intersection is zero for a coreless span with X.
-Its full shared canonical ring is either k or k[s]; nonconstant s is NOT
-known to exist. Conditional constraints on such an s do not exclude the
-k case. References: `fixed_x_orbifold_bound`, `canonical_intersection`,
-`cartier_generator` and the parameterized tensor statements they reference.
-
-Needed: an independent obstruction preserving both etale maps from the
-SAME source, or a valid theorem forcing this putative span into a branch
-already excluded. Do not resurrect universal Tango-preservation implies
-core, arbitrary simultaneous lifting/Galois closure, or ordinarity as a
-commensurability obstruction; actual counterexamples defeated those routes.
-
-New audited boundary tests (2026-09-07):
-`bolza_prime_to_five_coreless_neighborhood` constructs coreless common
-covers throughout the prime-to-five commensurability class of the
-superspecial genus-two seed, including H. `cubic_genus_two_common_covers`
-adds an ordinary genus-two endpoint to that class. Both closures can
-still have prime-to-five order. Separately `picard_simple_common_cover`
-gives two absolutely simple Hom-zero genus-three Jacobians with an
-actual cored cubic etale common cover (both endpoints nonordinary).
-The strengthened `ordinary_simple_common_cover` gives BOTH absolutely
-simple genus-four Jacobians with p-ranks2/4, geometric Hom-zero and
-actual two Galois etale cubic legs. Even adding an ordinary endpoint
-therefore does not rescue a general Jacobian-only exclusion.
-`hermitian_oper_noninvariance` disproves shared natural Hermitian-oper
-compatibility even for cored spans with both legs Galois. These examples
-do not settle the fixed pair; use their exact scopes when testing any
-proposed additional hypothesis.
-
-## Final stopping condition
-
-A counterexample is proved only when every possible actual finite etale
-span between a specified pair has been excluded: BOTH all cored possibilities
-and all coreless ones. Completing29375 multiplicities, or even excluding
-all untwisted Hermitian atlases, is a meaningful intermediate achievement,
-not that final conclusion. There is no defensible percentage-to-proof.
-
-## Recent mathematical tools worth preserving
-
-- `finite_algebra_completion_certificates`: audited exact stopping,
-  Frobenius radical extraction, and local/global completeness criteria.
-- `dormant_first_integral_charts`: explicit field-level solution of
-  r''=3r^2 and a uniform partial-fraction proof that D^4r!=0 throughout
-  the degree-ten trigonal potential family. The fixed-X first-integral
-  map has affine rank17. Translating the field chart into a smaller
-  scheme-equivalent GLOBAL search is still open; do not lose multiplicities.
-- A12-variable triangular-coordinate probe succeeded algebraically but
-  expanded to42 equations of maximum degree22 and242362 terms, versus
-  current14 variables/maxdegree16/39368 terms. No speed advantage was
-  established, and it was NOT substituted for the active solver. See
-  TRIANGULAR_COORDINATE_PROBE.md only if revisiting representation choices.
-
-Do not reopen audit bodies absent a concrete doubt. For the reproduced Sage
-rational-function zero-test bug, use numerator-based tests; the prior
-polynomial/Laurent certificates were not found affected.
+Use the searchable canonical library for a particular proof or
+counterexample. Do not load old theorem inventories or audit bodies
+without a concrete reason. This roadmap intentionally omits superseded
+formulas and diagnostic logs.

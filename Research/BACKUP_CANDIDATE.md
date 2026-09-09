@@ -41,14 +41,34 @@ from the new [radical quadratic obstruction](../Theorems/Thm_radical_quadratic_a
 The first uses the existing J[4] Bol tests; the second uses four exact
 minor tests covering all400 nontrivial cubic oper/twist pairs, generated
 and replayed in2.37s each onONE core. Both are AUTHOR proofs, not new audits.
-Thus **17/24 tame and9/12 small-wild rows are excluded**;
-seven tame and three small-wild remain. The Hessian corollary uses the
+The new [Frobenius-orbit obstruction](../Theorems/Thm_triangle344_frobenius_obstruction.md)
+also excludes(12;3,4,4). Version2 uses a ten-class census and an actual
+elliptic double quotient, hence only Aut(C_alpha)=C2 and moduli orbit3;
+Jacobian arithmetic is unnecessary here. Complete native replay0.052s.
+The [quadrangular Hecke obstruction](../Theorems/Thm_quadrangular_genus_two_hecke_obstruction.md)
+now also excludes(6;2,2,3,3) and(12;2,2,2,3): an actual elliptic
+double quotient in the first case, and an integral symmetric square root
+of[5] incompatible with the real endomorphism field in the second.
+All finite geometric inputs replay in0.013s; no new polynomial solve.
+The [degree24 obstruction](../Theorems/Thm_triangle246_frobenius_quotient_obstruction.md)
+now excludes(24;2,4,6). Pro's40-class census and all intermediate-cover
+data replayed, with an independently written unpruned C++ cross-check,
+in0.472s. Four cases reduce to the existing degree12 theorem; four
+force an actual degree-four elliptic quotient. No new polynomial solve.
+The [degree48 obstruction](../Theorems/Thm_triangle238_frobenius_factor_obstruction.md)
+now excludes(48;2,3,8). Pro's77-class list is complete by two independent
+exact character-mass calculations; regeneration matches every array.
+Full local replay3.733s. Only two classes survive the existing smaller-map
+exclusions, contradicting moduli Frobenius orbit3.
+Thus **22/24 tame and9/12 small-wild rows are excluded**;
+two tame and three small-wild remain. These theorems are author-checked,
+not independently audited. The Hessian corollary uses the
 existing author-prose Hessian presentation, not a new audit of that input.
 
-All research agents are stopped. At mostONE CPU core TOTAL overnight.
-The original problem remains UNSOLVED; neither the active pair nor its
-main selected14 data was changed. Every assertion below concerns the
-backup or a stated conditional span, not arbitrary etale commensurability.
+No agent or solver is running; current operating policy is in STATE.md.
+The original problem remains UNSOLVED. The main pair is still fixed X
+and high-prime-degree Y_t. Everything below concerns this backup or an
+explicitly conditional span, not arbitrary etale commensurability.
 
 ## Arithmetic and portability
 
@@ -79,13 +99,15 @@ Cartier test on C, and its mixed-prime-support refinement are usable
 on clumps with rC=1, even though rX=8 is outside the fixed-X W3 theorem.
 No clump is asserted to exist.
 
-NEW2026-09-08: [backup_singleton_root_exclusion](../Theorems/Thm_backup_singleton_root_exclusion.md)
+NEW2026-09-08: [family_singleton_root_exclusion](../Theorems/Thm_family_singleton_root_exclusion.md)
 excludes the ENTIRE singleton Cartier-zero branch, for every cover
 degree/prime-to5 root weight. The stronger endpoint statement excludes
 every nonbranch(P,M) with V(M)=2[P-O] from Raynaud theta, including M
-with five-primary part. Three exhaustive norm charts have exact original
-unit identities; corrected full-kernel replay takes0.535s. The geometric
-bridge passed a fresh medium audit. No new subcase solver is needed.
+with five-primary part. The AUDITED entire-family proof now replaces
+the three specialized norm solves: two explicit contacts exhaust degree160,
+with twelve exact polynomial identities. The obsolete special proof,
+solver and2.18MB certificates were removed; they remain recoverable in Git.
+No new subcase solver is needed.
 Together with the following nonzero-Cartier argument this removes ALL
 singleton clump images on C, but not larger clumps or no-clump spans.
 
@@ -303,10 +325,10 @@ size at least8. The numerical census is24 tame rows with N<=672,12
 small wild rows with N<=2240, and the two large wild rows below.
 
 For each tame row, the saved data includes E=lcm(e_i), A=2E/n and
-the actual fiber torsion bounds A e_i[D_i-(n/e_i)O]=0. **Fourteen of24
-tame rows are now author-excluded**, by the following five mechanisms
-and the complete(4,4,4) secant test recorded below.
-This is not an independently audited full cored theorem.
+the actual fiber torsion bounds A e_i[D_i-(n/e_i)O]=0. The following
+mechanisms supply the earlier fourteen exclusions; the current total,
+including later canonical theorems, is recorded at the top. This is not
+an independently audited full cored theorem.
 
 The extra exact Hasse-jet script `backup_genus_two_one_point_orders.sage`
 proves W1[N] is precisely the six Weierstrass classes for
@@ -622,10 +644,17 @@ This uses no A18 assumption. The full-PGU row is excluded by the completed and a
 all-character theorem linked at the top; no remaining atlas computation
 is needed on C.
 
-Current cored remainder:7 tame and3 small-wild; both large profiles are excluded.
+Current cored remainder:2 tame and3 small-wild; both large profiles are excluded.
+The degree84 Pro census leaves42 hyperelliptic-factor and3 primitive
+classes. Full native regeneration, independent character mass and all
+witnesses were locally replayed in about6.013s on one core.
+See [census verification](DEGREE84_CENSUS_STATUS.md).
+This does NOT remove the degree84 row or change the five-case remainder.
 The tame rows are exactly(n;signature)=(2;2,2,2,2,2,2),
-(6;2,2,3,3),(12;3,4,4),(12;2,2,2,3),
-(24;2,4,6),(48;2,3,8),(84;2,3,7).
+(84;2,3,7). The degree24(2,4,6) row is excluded by
+triangle246_frobenius_quotient_obstruction, with a complete40-class census.
+The degree48(2,3,8) row is excluded by
+triangle238_frobenius_factor_obstruction, with a complete77-class census.
 The first is realized by C's own hyperelliptic pencil, so no condition
 on C alone can exclude that row; the actual X leg is essential.
 The small-wild rows are exactly(n,e,delta,d)=(120,20,27,3),

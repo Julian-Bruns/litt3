@@ -8,6 +8,7 @@ be the smooth projective model of
 Write O for its unique point at infinity, theta=O_C(O), and
 eta=du/v. Then genus(C_alpha)=2 and div(eta)=2O, as established in the
 [atlas exclusion proof](../Solutions/Sol_backup_hermitian_atlas_exclusion.md).
-This is a BACKUP partner for the fixed genus-nine X, not a redefinition
-of the active genus-twenty-five Y. No common-cover exclusion is part of
-this definition.
+This is the small BACKUP partner for the fixed genus-nine X. It is
+distinct both from the original genus-twenty-five Y and from the current
+high-prime-degree genus-two partner. No common-cover exclusion is part
+of this definition; current target selection belongs to Research/STATE.md.

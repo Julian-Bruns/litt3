@@ -1,0 +1,20 @@
+tables_sha256 = 9f4c6a1b44a32314f604ea6b018f598d6bb2bd9cbe9f8398fb21d0b794a91ecb
+verified_distinct_transitive_classes = 77
+centralizer_order_distribution = {1: 2, 2: 41, 4: 24, 6: 6, 8: 1, 12: 2, 48: 1}
+census_mass = 477/16
+character_small_cross_checks = 763
+partitions_of_48 = 147273
+nonzero_character_products = 2586
+direct_Murnaghan_Nakayama_mass = 477/16
+independent_abacus_mass = 477/16
+EXHAUSTIVENESS_CERTIFICATE_PASSED
+nonhyperelliptic_deck_involution = 20
+deck_order_gt_2 = 34
+intermediate_3_3_4 = 10
+intermediate_2_2_2_3 = 9
+remaining = 2
+intermediate_2_4_8 = 2
+remaining_class_numbers = [26, 50]
+remaining_classes_are_primitive = True
+FINITE_GROUP_CERTIFICATE_COMPLETE
+verification_seconds = 3.733

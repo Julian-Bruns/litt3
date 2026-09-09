@@ -1,0 +1,19 @@
+{
+  "date_local": "2026-09-10",
+  "command": "sage scripts/nonordinary_active_playground.sage",
+  "status": "PASS",
+  "field_modulus": "T^4+4*T^3+T^2+4*T+3",
+  "double_root": "4*t+3",
+  "tangent_numerator": "u^2+(t+3)*u+2*t^2+4",
+  "linearized_matrix_shape": [11, 3],
+  "linearized_nilpotent_rank": 2,
+  "nilpotent_tangent_dimension": 1,
+  "rank_two_rows": [0, 5],
+  "rank_two_minor_determinant": "2*t^2+4*t+4",
+  "jacobian_cartier_determinant": "4",
+  "serre_basis_orders": [-3, -1, 1],
+  "serre_functional": ["3*t^2+t+1", "3*t+4", "3"],
+  "seconds_excluding_startup": 0.09599195804912597,
+  "full_replay_with_serre_seconds_excluding_startup": 2.168499084073119,
+  "scope": "Actual regular admissible active connection, ordinary Jacobian, exactly one indigenous tangent direction. No W3 value, compatible higher flow, or common cover constructed."
+}

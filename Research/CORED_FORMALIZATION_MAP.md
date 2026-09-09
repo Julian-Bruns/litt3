@@ -1,6 +1,6 @@
 # No-cored-common-cover formalization map
 
-Snapshot: 2026-09-08. This is a target-selection and dependency map, not a
+Snapshot: 2026-09-09. This is a target-selection and dependency map, not a
 Lean development. The active pair is unchanged and Litt's unrestricted
 common-cover problem is UNSOLVED. Root owns strategy and the registry.
 
@@ -25,8 +25,8 @@ in the final statement. This theorem ALLOWS coreless common covers.
 
 | Partner, with the same X | Present mathematical status | Principal remaining issue |
 | --- | --- | --- |
-| Active Y25: z²=(t²⁵+t⁵+t)(t²⁵+t⁵+t−1)(t−4) | No-cored theorem OPEN | Untwisted atlas tests, nontrivial twists, and smaller cored cases |
-| Small C_alpha: v²=u(u−1)(u−2)(u−3)(u−alpha), alpha³+alpha+1=0/F125 | All Hermitian atlas tests COMPLETE AND AUDITED; no-cored OPEN | Seven tame and three small-wild profiles |
+| Historical Y25: z²=(t²⁵+t⁵+t)(t²⁵+t⁵+t−1)(t−4) | No-cored theorem OPEN | Untwisted atlas tests, nontrivial twists, and smaller cored cases |
+| Small C_alpha: v²=u(u−1)(u−2)(u−3)(u−alpha), alpha³+alpha+1=0/F125 | All Hermitian atlas tests COMPLETE AND AUDITED; no-cored OPEN | Remaining profiles are maintained in [BACKUP_CANDIDATE](BACKUP_CANDIDATE.md), not duplicated here |
 | C_t in that same genus-two family, with prime deg_F25(t)>max(K,120) below | No-cored conclusion already follows from library proofs | Formalize the substantial geometric chain; no new atlas emptiness computation |
 
 “Already proved” here means author/audited prose with the stated exact
@@ -99,73 +99,18 @@ Read the actual required lemma, not the inventory status as proof.
 The conditional bounded-index/deeper-group corollary is not needed for
 the final unrestricted genus-nine bound.
 
-## Concrete computational targets: what is still OPEN
+## Other candidates are not part of this formalization
 
-### Active X/Y25
+The historical genus25 partner still has open cored cases. The small
+C_alpha has all405 Hermitian atlas systems excluded, but its cored
+case list is not exhausted. The newer small-profile exclusions do not
+change the formalization target.
+[Current candidate decision](CANDIDATE_PIVOT_DECISION.md)
+and [backup evidence](BACKUP_CANDIDATE.md) own those changing details.
 
-Use [AFTER_ENUMERATION](AFTER_ENUMERATION.md) for the exact implication chain
-and [CORED_COMPUTATION_STATUS](CORED_COMPUTATION_STATUS.md) for chart evidence.
-
-The audited local/global classification
-completed_local_orbifold_rigidity identifies the two large signatures
-with the PSU/PGU Hermitian stacks. The audited
-hermitian_atlas_extension_criterion and intrinsic_atlas_incidence give
-exact atlas tests. dormant_rank_two_candidates is author prose with
-primary-source inputs; fixed_x_oper_enumeration has an audited algebra
-certificate, with additional author factorization/symmetry consequences.
-
-The census is COMPLETE:28990 distinct opers, total length29375, comprising
-55 local-length-eight points and28935 reduced points. Eighteen representatives
-suffice ONLY for the untwisted test. They are not eighteen atlas solutions
-or eighteen exclusions. At the linked snapshot no whole representative is
-excluded. A14 and A18 are hypotheses, not certificates.
-
-Even proving every untwisted system empty leaves every required nontrivial
-tau in Pic(X)[3] (3^18 choices before symmetry) and smaller common-orbifold
-degrees N<=2240. cored_quotient_torsion_sieves is an author proof excluding
-N<=8 for THIS pair only; it is not a bound on deg(Z/Y). Thus the remaining
-small range is9<=N<=2240, with additional necessary signature restrictions.
-An atlas found on just one endpoint does not supply a common cover.
-
-### Small C_alpha
-
-The [backup entrypoint](BACKUP_CANDIDATE.md) and
-[candidate comparison](ALTERNATIVE_CURVE_CANDIDATES.md) own this changing
-calculation. The complete Hermitian exclusion now has a fresh audit and
-the canonical record backup_hermitian_atlas_exclusion. Smaller-signature
-arithmetic/proofs remain author work with their explicitly scoped replays.
-
-[Preparation data](computations/backup_genus_two_preparation.json) certify
-the ordinary simple genus-two curve, Hom-zero with J(X), six nonzero
-Weierstrass Cartier-eigen tests and a reduced length-five oper algebra.
-[Cubic-torsion data](computations/backup_genus_two_torsion.json) give the
-complete reduced length40 norm algebra and all80 nonzero classes, with
-F125-Frobenius orbit lengths8,24,24,24; repeated support was retained in
-the equations and proved absent in the result. Together with the degree-five
-oper orbit, all405 oper/twist pairs reduce to five joint representatives.
-
-Each intrinsic system has8 variables and13 equations. All405 pairs and
-all20 original projective charts are now excluded. The last three use
-exact length8 finite algebras and factored polynomial unit identities
-in the ORIGINAL equations. The fresh medium audit passed the complete
-geometric bridge, candidate exhaustion, local bounds and all certificates.
-Both large Hermitian cases are therefore unconditionally excluded.
-
-The actual common-orbifold degrees obey n_C=N_X/8 and8|N_X. The September8
-backup snapshot records nine tame and nine small-wild author exclusions,
-including W1 torsion, automorphism and cyclic-cover ordinarity arguments;
-the latter have all40 cyclic3 and all600 cyclic6 arithmetic tests.
-The additional240 exact-order-four classes and1,200 Bol-minor tests have
-a separate no-solver replay PASS (21.41 seconds), including distinctness
-and the original operator/minor identities; see the
-[replay receipt](computations/backup_genus_two_four_torsion_verification.json).
-This checks the author computation, not the remaining geometric hypotheses.
-Their exact hypotheses, certificates and remaining necessary profiles
-belong to that entrypoint. Neither these author results nor the new
-nilpotent census constitute an independently audited no-cored theorem.
-The completed all405 exclusion eliminates the large Hermitian alternatives,
-not arbitrary common covers. The current smaller remainder is seven tame
-and three small-wild profiles. Fixed-Y25 exclusions do not transfer.
+Do not open the A18 solver history, oper/twist arrays or backup certificates
+for this task. None is a dependency of the chosen no-cored proof. The
+full problem's intrinsically characteristic-five coreless case is separate.
 
 ## Lean work packages and exact certificate boundary
 
@@ -215,19 +160,6 @@ ACTUAL Tate module; and exhaustive bounded integer-case proofs.
 A displayed Weil polynomial plus modular arithmetic is insufficient without
 its identification with this curve. The present Sage p-adic reconstruction
 is an external computation, not already a kernel-checkable certificate.
-
-For atlas emptiness the portable certificate is, for EACH required oper,
-twist and chart, an identity sum_i H_i f_i=1 in the specified polynomial
-ring over a certified finite field, using ORIGINAL chart equations.
-Record sparse coefficient/exponent arrays, variable/row order, field tower
-and embeddings, chart substitution/inverses, and source-tensor hashes.
-The checker must establish the identity and the geometric derivation and
-exhaustiveness of the charts. Hashes and verified flags only identify data.
-The independent known dimension plus original-equation substitutions and
-separator certify the oper algebra; retain local multiplicities as in
-[finite_algebra_completion_certificates](../Theorems/Thm_finite_algebra_completion_certificates.md).
-Root evaluations alone, a solver exit code, finite sampling or a generic
-full-rank minor cannot prove algebraic-closure emptiness.
 
 A suitable first Lean milestone is the finite-partner/prime-orbit avoidance
 lemma. It is NOT the requested two-curve theorem until the fixed-X geometric

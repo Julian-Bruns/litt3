@@ -77,8 +77,13 @@ of the original unsolved problem.
 
 This paragraph is by /root, NOT an additional auditor verdict. The
 reviewed draft is now the canonical
-[statement](../../Theorems/Thm_backup_singleton_root_exclusion.md) and
-[proof](../../Solutions/Sol_backup_singleton_root_exclusion.md).
+[superseding family statement](../../Theorems/Thm_family_singleton_root_exclusion.md) and
+[superseding family proof](../../Solutions/Sol_family_singleton_root_exclusion.md).
+This historical audit concerned the former specialized proof, NOT that
+new argument; the family has its own separately linked2026-09-08 audit.
+The specialized proof, scripts and certificates below were removed after
+the general audit PASS, and remain recoverable in Git. Their hashes here
+are historical evidence, not an instruction to reopen or recreate them.
 Statement SHA256:652977a96a22c1f7e86be21efe1fbea9bd1764ddc4a1eb25382ad56a66221b78.
 The corrected source is scripts/backup_singleton_root_exclusion.sage.
 Its default replay checks full Cartier kernels against the ORIGINAL
