@@ -141,3 +141,67 @@ Thus E_(2,p) is contained in the image of this one partial map on the
 Galois-stable set S_2. This proves |E_(2,p)|<=|S_2| and the theorem.
 Nothing depends on p=5 in this counting argument. The role of p=5
 in Litt3 is in the separate application, not the arithmetic bound.
+
+## 5. Version2: genus three and a uniform partner bound
+
+New extension,2026-09-10, separately reviewed PASS by
+/root/audit_defect_preserving_descent; the preceding genus-two audit
+retains its own scope. Reuse exactly the primary inputs and counting
+arguments of Sections1--4, changing the homology-cover genus as follows.
+
+For a compact arithmetic genus-three Gamma, the square subgroup has
+index2^6=64. Its curve has genus129 and area512pi. Thus it lies in a
+maximal-order norm-one Lambda of area at most512pi and
+
+                     d^(3/2)P <=64(4pi²)^n.
+
+Odlyzko's same inequality gives8^n<64e^105<2^174; hence n<=64 still.
+The convenient resulting bounds are
+
+          d<=2^260, P<=2^390, N(D_B)<=2^844.
+
+The primitive integral generator has conjugates bounded by2^148 and
+minimal-polynomial coefficients bounded by2^9536<2^10000. Thus the
+field count remains below2^700000. The finite discriminant count is
+below2^(64+2*844)=2^1752<2^1800, and the maximal-order type count is
+below2^(128+260)=2^388<2^400. Allowing the split real place and
+orientation as before gives the SAME norm-one group bound2^710000.
+
+The orbifold minimum area pi/21 now gives [Lambda:Delta]<=10752.
+If Lambda has signature(h;m_1,...,m_s), then4h+s<=516, so516
+generators suffice. The number of candidate subgroups is therefore
+
+    <=10752*(10752!)^516
+     <2^(14+516*10752*14)=2^77672462<2^78000000.
+
+The genus129 homology-cover curve has at most84*128=10752
+automorphisms, so at most2^10752<2^11000 subgroups. Recovering the
+original genus-three curve as its quotient gives
+
+          |S_3|<2^(710000+78000000+11000)
+               =2^78721000<2^80000000.                  (8)
+
+The Galois-stability and fixed-place reduction argument in Section4
+is genus-independent, so |E_(3,p)|<=|S_3| for every p.
+
+Now fix ANY compact hyperbolic complex curve A. If A is arithmetic,
+every curve sharing a finite etale cover with it is arithmetic, so(8)
+bounds all its genus-three partners. Otherwise its commensurator
+Lambda is discrete, and every partner lattice lies inside this SAME
+Lambda, as proved in [Mochizuki, Sections2--3, Proposition3.2](https://www.kurims.kyoto-u.ac.jp/~motizuki/Correspondences%20on%20Hyperbolic%20Curves.pdf).
+If there is a genus-three partner at all, its area8pi makes the area
+of Lambda at most8pi. Its signature consequently satisfies4h+s<=12,
+so it has at most12 generators. Each genus-three partner corresponds
+to a subgroup of index at most168. Hence their number is at most
+
+             168*(168!)^12 <2^(8+12*168*8)
+                            =2^16136<2^17000.          (9)
+
+Distinct subgroups can give the same curve, which only decreases the
+count. The larger universal bound2^80000000 thus applies regardless
+of A's genus or arithmeticity. For any other algebraically closed
+characteristic-zero field, descend any finite collection of proposed
+partners together with its witnessing maps and A to a finitely generated
+field and embed it in C. The complex bound applies to every such finite
+collection, so applies to the whole set. This is the finite-subset
+argument of Mochizuki Theorem4.2, now with an explicit uniform bound.

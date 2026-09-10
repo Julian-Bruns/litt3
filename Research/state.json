@@ -1,8 +1,8 @@
 {
-  "phase": "shared_coreless_global_obstruction_backup_paused",
+  "phase": "shared_coreless_cyclic125_bootstrap_ready",
   "problem_status": "unsolved",
-  "last_updated_local": "2026-09-10 00:22 CEST",
-  "next_action": "Latest user wants a PLAYGROUND yielding a transferable mechanism. Explicit genus2/F625 pair now has ordinary Jacobian and exactly one nonordinary active tangent; full formulas and0.096s exact check in genus_two_active_critical_quartics v2. Revised PRO_SINGLE_OPER_W3_REQUEST asks to evaluate its ONE intrinsic W3 Serre-pairing scalar with a reusable Cech/residue recipe. READY, not submitted. Independently construct the canonical FL C2 and higher Hodge cocycle. Norm-zero degree4 plane case was recorded but did not yield a mechanism; no case enumeration, pivot, A18/height3/backup restart.",
+  "last_updated_local": "2026-09-10 19:48 CEST",
+  "next_action": "Hand off READY Research/PRO_CYCLIC125_BOOTSTRAP_REQUEST.md for the user's manual submission; no request outstanding yet. Then continue the independent trace-zero residual using ACTUAL cored maps/functions phi_X²/s_X, not the failed regular-module short-string bound. B125 asks given compatible T7 -> its GIVEN T4 descent along original cyclic125 h, supplying C3,C4 for the already proved late induction. Do not duplicate this task while Pro runs or restart A18.",
   "candidate_scope": "Fixed genus-nine X and genus-two high-prime-degree Y_t of bounded_atlas_partner_finiteness, NOT original genus25 Y. No cored span; no full simultaneous mixed-characteristic lift. Neither assertion excludes all common spans. Do not assume J(Y_t) simple.",
   "resource_policy": {
     "ordinary_subagents": "forbidden",
@@ -14,6 +14,23 @@
     "browser_pro": "user pastes manually; no submission or polling"
   },
   "active_target_ids": [
+    "cyclic_twentyfive_delayed_descent",
+    "cyclic_power_late_descent",
+    "cyclic_twentyfive_initial_descent",
+    "cyclic_power_additive_norm",
+    "cyclic_five_delayed_descent",
+    "frobenius_defect_order_bound",
+    "cyclic_five_compatible_reference_descent",
+    "two_leg_defect_orbit_bound",
+    "two_defect_deck_reduction",
+    "defect_preserving_etale_descent",
+    "arithmetic_genus_two_reduction_bound",
+    "bad_double_cubic_defect",
+    "symplectic_p_cover_section_growth",
+    "abelian_p_defect_node",
+    "genus_two_active_theta",
+    "etale_p_witt_obstruction",
+    "explicit_genus_two_witt_obstruction",
     "genus_two_active_critical_quartics",
     "forced_canonical_witt_endpoint",
     "two_leg_negative_extensions",
@@ -26,7 +43,6 @@
     "triangle344_frobenius_obstruction",
     "radical_quadratic_atlas_obstruction",
     "liftable_coreless_target_finiteness",
-    "arithmetic_genus_two_reduction_bound",
     "genus_two_clump_connection_reduction",
     "coreless_connection_spectrum",
     "etale_refinement_deformations",
@@ -36,13 +52,21 @@
   "active_agents": [],
   "active_computations": [],
   "latest_completed_computation": {
-    "directory": "/Users/julian/Documents/litt3-computation-data/n-hybrid-comparison-20260909-EiVm0t",
-    "scope": "Four full-normalized60-second comparisons: inverse23, compact23, hybrid23, hybrid21; every Frobenius equation and correct chart guard retained",
+    "scripts": [
+      "scripts/d25_checks.py",
+      "scripts/verify_cyclic_power_late_budget.py",
+      "scripts/verify_cyclic125_early_algebra.py",
+      "scripts/verify_cyclic_power_additive_carry.py"
+    ],
+    "scope": "Bounded exact local algebra supporting D25 replay, all-power late proof, and early125 prompt selection. Not global geometric proof.",
     "counts": {
-      "time_limit": 4,
-      "unit_candidate": 0
+      "late_precision_checks": 1089375,
+      "late_boundary_products": 27,
+      "early125_pairs_per_inclusion": 15625,
+      "early125_inclusions": 2,
+      "mixed_additive_samples": 1337
     },
-    "status": "All completed at degree3; compact and hybrid trajectories nearly identical; no demonstrated acceleration or new exclusion"
+    "status": "All PASS. d25_checks uses existing sage -python for SymPy; other scripts standard library. Each replay under1second. No sustained job."
   },
   "completed_overnight_queue": {
     "directory": "/Users/julian/Documents/litt3-computation-data/degree5-overnight-sweep-20260909",
@@ -57,8 +81,8 @@
     "unit_chart": "orbit_0000 chart28",
     "status": "complete; former PID50409 and child exited; no whole representative excluded; no restart authorized by these results alone"
   },
-  "last_proved_step": "NEW genus_two_active_critical_quartics v2 author proof: actual smooth genus2/F625 pair with ordinary Jacobian, nonsplit admissible active connection and exactly one fixed-curve nilpotent tangent. All rational identities and11x3 rank2 test replay0.096s; no W3 scalar computed. All-level forced canonical endpoint v1 AUDITED PASS and earlier two-leg rigidity retained. Degree84 still45survivors.",
-  "unresolved_implication": "No-clump special-fiber-only isolated spans and positive-clump rigid spans of finite Witt height remain. A one-tangent dormant span cannot lift W2, but may still have nonzero nilpotent5 or a vertical formal curve. No common-cover exclusion.",
+  "last_proved_step": "cyclic_twentyfive_delayed_descent v1: all n>=2 original-map delayed descent, GIVEN full towers and algebraization. Focused auxiliary-oper audit PASS; separate main application PASS excludes C50,D50,C2xD50 actual Sylow25/nontrivial-five-action/ordinary-X/source2/Galois-Y for SAME main parameter. Root extension cyclic_power_late_descent v1 also independently audited PASS: ALL q=5^a,a>=2, n>=a+1, given T_(n+a+1) forces given T_(n+1) descent. All relevant scalar-feedback digits included. Early q125 n2,n3 remain open; no full all-power or global common-cover theorem.",
+  "unresolved_implication": "For the nontrivial-action longer cyclic branch, recover the early lower lifts: next bounded target B125 is GIVEN compatible T7 implies its GIVEN T4 descends compatibly along original h, with a given initial C7 reference and simple-zero/source2 hypotheses. Late n>=4 is proved. Early coupled Hodge/curve repairs can have a second-repair square outside eA, so unrestricted filtration does not settle it. Independent trace-zero trivial-five-action branch, higher defects, non-Galois sources, dormant/absent matches remain.",
   "failed_routes": [
     "Retaining the ORIGINAL FL connection does not remove contact2 at a clump after positive Frobenius height: exact all-height formal construction in FL_CONTACT_TWO_BOUNDARY.md, with pointed oper line and full connection preserved. Not an actual global span, but invalidates that proposed local improvement.",
     "Refining the actual span preserves its entire joint deformation ring, so cannot repair nonliftability. At most3 parameters does not bound the p-nilpotence exponent; one-leg higher extensions do not synchronize two legs.",
@@ -67,22 +91,24 @@
     "defect_bundles_no_frobenius_operators rules out direct Cartier-crystal vanishing on the one-step defect bundles. spectral_dormant_prym_lines alone does not force a core.",
     "etale_endomorphism_packets and genus_two_maximal_four_cover exclude broad groups but large alternating natural-action representations survive.",
     "Universal common-connection and Tango-to-core claims have actual counterexamples. ramified_root_contact_core/J7 is solved; use its exact scope rather than restarting old spin routes.",
-    "The small-cover Hecke success uses N_G(H)/H as the ACTUAL hyperelliptic involution on a genus-two source. Arbitrary main Y-leg closures do not carry that identification. Degree-dependent trace moments and large alternating packets remain consistent with arbitrarily large covers; no new main-case exclusion obtained from them."
+    "The small-cover Hecke success uses N_G(H)/H as the ACTUAL hyperelliptic involution on a genus-two source. Arbitrary main Y-leg closures do not carry that identification. Degree-dependent trace moments and large alternating packets remain consistent with arbitrarily large covers; no new main-case exclusion obtained from them.",
+    "At cyclic125 the second-repair space e23A=P101 contains a SINGLE square outside eA: [B124](B100+B24)^2=2 mod5. Not an actual Hodge-repair counterexample, but disproves blanket vanishing by the unrestricted product filtration. Keep actual coupled repairs and divided carries.",
+    "Trace-zero regular-module model allows arbitrary large prime-to5 image even with regular deck cohomology, q5/25, reciprocal source defect2, ordinary base, short X injection and surjective Psi-compatible trace with trace∘injection=0. No geometric example constructed. Need actual cored maps/functions, not another bound from these linear properties."
   ],
   "pro_concurrency": {
     "allowed_outstanding": 1,
     "outstanding": false,
-    "prompt_file": "Research/PRO_SINGLE_OPER_W3_REQUEST.md",
-    "status": "READY for manual submission, NOT running. The unsent universal single-curve question was REPLACED by evaluating the single obstruction for an explicit corank-one F625 pair, requiring a reusable residue recipe. All finite-field inputs verified locally; no higher-Witt result. Not a new degree exclusion or two-leg vanishing restatement. Backup source comparison remains paused.",
-    "previous_result": "User-pasted answer to PRO_ACTIVE_W3_REQUEST, 2026-09-09; no attached certificate",
+    "prompt_file": "Research/PRO_CYCLIC125_BOOTSTRAP_REQUEST.md",
+    "status": "READY for user's manual submission; not reported sent. One larger finite bootstrap B125, supplying missing C3,C4; later all-power theorem and full mixed-additive norm algebra supplied as known. Entire file model-directed.",
+    "previous_result": "Returned D25 fully integrated as cyclic_twentyfive_delayed_descent v1, new auxiliary-oper geometry and main Sylow25 application independently audited PASS. Supplied d25_checks.py saved unchanged and all local checks replayed PASS. Further author all-power late descent also audited PASS.",
     "rule": "One manual request at a time. Narrow attainable target, explicit known-results inputs not to reprove, concrete use of either verdict. No broad fallback catalogue or browser submission. See AGENTS.md.",
     "ready_awaiting_manual_submission": true
   },
   "latest_local_reduction": {
-    "id": "genus_two_active_critical_quartics",
-    "version": 2,
-    "scope": "Actual minimal-nonzero-dimension indigenous defect on an ordinary-Jacobian genus2/F625 curve. A legitimate critical collision, nonsplit double, full original nilpotent tangent rank2 and explicit kernel. No W3 value or common-cover realization.",
-    "verification": "Author proof; exact0.096s Sage replay with nonzero2x2 minor. Not independently audited. Existing all-level forced-canonical v1 audit remains valid for its own scope."
+    "id": "cyclic_power_late_descent",
+    "version": 1,
+    "scope": "All actual cyclic5^a covers,a>=2, simple-zero base/source defect2; n>=a+1, GIVEN T_(n+a+1) descends its GIVEN T_(n+1). Early stages excluded from scope.",
+    "verification": "Fresh bounded audit PASS with explicit all-digit scalar recurrence; 1,089,375 precision inequalities and27 boundary products PASS. No full all-power tower theorem or unmarked common-cover exclusion."
   },
   "formalization": {
     "prompt_file": "Research/CORED_FORMALIZATION_REQUEST.md",
@@ -93,7 +119,7 @@
   "timer": {
     "status": "Detached marker armed; never wait on worker",
     "marker": "/tmp/litt3-hourly-reminder.json",
-    "next_review_local": "2026-09-10 01:16:11 CEST"
+    "next_review_local": "2026-09-10 20:16 CEST"
   },
   "paused_work": {
     "all18": "PARKED; census28,990 distinct/length29,375 complete, replay13.08s; zero whole atlas representatives excluded. No restart. Read ATLAS_PLAYGROUND and ATLAS_NORMALIZATION_CANCELLATION only if resuming.",
@@ -103,6 +129,132 @@
     "torsion_W3": "Residual nine-by-nine pair interpolation problem open and lower priority; not a common-cover exclusion."
   },
   "recent_audits": [
+    {
+      "id": "cyclic_twentyfive_delayed_descent",
+      "verdict": "PASS uniform auxiliary-oper comparison and full towers; separate PASS scoped main application",
+      "auditor": "/root/audit_d25_auxiliary_comparison",
+      "date": "2026-09-10",
+      "objections": "Reduction-compatible local module identifications made explicit: same previous graph from actual tuple, no presumed H3 descent. Actual scalar feedback, norm error and original maps checked. Excludes all C50/D50/C2xD50 actual Sylow25 carriers only in ordinary-X/source2/Galois-Y/nontrivial-action branch."
+    },
+    {
+      "id": "cyclic_power_late_descent",
+      "verdict": "PASS a>=2,n>=a+1 only",
+      "auditor": "/root/audit_cyclic_power_late_descent",
+      "date": "2026-09-10",
+      "objections": "All-digit scalar recurrence and finite additive feedback inverse made explicit. Boundary product, integral norm, given-truncation recovery checked. No early125 comparison/full all-power towers audited; those remain open."
+    },
+    {
+      "id": "cyclic_twentyfive_initial_descent",
+      "verdict": "PASS initial actual comparison; separate PASS general simple-defect scope",
+      "auditor": "/root/audit_cyclic25_initial_comparison",
+      "date": "2026-09-10",
+      "objections": "Explicit unit-square-root oper normalization incorporated; no p division. Integral quadratic carry, previous tuple, Schur complement, sign and single Frobenius checked. General input derivation identifies base Psi on invariants first, then augmentation via norm. Requires GIVEN compatible C5 reference; no later-level/full-tower claim."
+    },
+    {
+      "id": "cyclic_power_additive_norm",
+      "verdict": "PASS pure integral algebra, arbitrary free coefficient rank and mixed additive operators",
+      "auditor": "/root/audit_cyclic_additive_preparation",
+      "date": "2026-09-10",
+      "objections": "No blockers. Explicit norm valuation bound added as requested. Finite preparation, noncommuting coefficient maps, direct primitive-kernel argument and norm solution reductions checked. No actual higher Hodge comparison or common-cover consequence audited."
+    },
+    {
+      "id": "cyclic_five_delayed_descent_v2",
+      "verdict": "PASS AS-product initial comparison; separate PASS general inputs and all-three-carrier consequence",
+      "auditor": "/root/audit_dihedral_initial_as_product",
+      "date": "2026-09-10",
+      "objections": "Corrected high-Taylor exactly-two-factor coefficient to 1/(2(n-2)!). Vanishing survives. No involution needed; rank-independent simple-defect cochain/Fitting inputs checked and genus5 intermediate descends further to original genus3. No longer-cover claim."
+    },
+    {
+      "id": "cyclic_power_norm_smith_algebra",
+      "verdict": "PASS all-a pure integral algebra only",
+      "auditor": "/root/audit_cyclic_power_smith",
+      "date": "2026-09-10",
+      "objections": "No blockers. Corrected diagnostic total to293 and clarified lower-precision base change with q unchanged. No actual inverse-Cartier or descent conclusion audited. Proof: Research/CYCLIC_POWER_SMITH_LEMMA.md."
+    },
+    {
+      "id": "cyclic_five_delayed_descent",
+      "verdict": "PASS relative comparison/all n>=3; separate PASS full-tower and scoped main application",
+      "auditor": "/root/audit_secondary_deck_transfer",
+      "date": "2026-09-10",
+      "objections": "No blockers. Actual prescribed filtered/graded construction, integral Cech primitive, W2 precision deck equivariance, sign and marked translate checked. Intrinsic transport under ten-label symmetry stated explicitly. Initial step inherited from earlier audit."
+    },
+    {
+      "id": "frobenius_defect_order_bound",
+      "verdict": "PASS",
+      "auditor": "/root/audit_frobenius_character_order",
+      "date": "2026-09-10",
+      "objections": "No blockers. Explicit representation-level Serre--Cartier pairing added. Trace direct summand, graded short string, finite projective image, actual cored quotient, enlarged Frobenius-stable count and unchanged K checked. No full problem claim."
+    },
+    {
+      "id": "cyclic_five_compatible_reference_descent",
+      "verdict": "PASS n2 and all n with compatible lower reference; full D5 GAPS",
+      "auditor": "/root/audit_d5_two_digit_descent",
+      "date": "2026-09-10",
+      "objections": "Uniform proof's incompatible local Hodge reference has lower-left overlap losing one factor of5; combine with upper repair before rescaling. Positive cases include explicit gamma/graded normalization, equivariant Cech primitive and initial tau quadratic cancellation. No counterexample. Historical full-D5 gap subsequently resolved by separate audited cyclic_five_delayed_descent; positive cases unchanged."
+    },
+    {
+      "id": "two_leg_defect_orbit_bound",
+      "verdict": "PASS",
+      "auditor": "/root/audit_two_leg_defect_orbit",
+      "date": "2026-09-10",
+      "objections": "None: exact ratio nonconstancy, actual tangent/deck identification, inseparable/non-normal compositum degree, unchanged K one-leg closure count, and projective threshold5250 checked. No full problem claim."
+    },
+    {
+      "id": "two_defect_deck_reduction",
+      "verdict": "PASS Sections1--5 and separate PASS Section6",
+      "auditor": "/root/audit_two_defect_monodromy",
+      "date": "2026-09-10",
+      "objections": "None. Actual Sylow and normalizer, reciprocal Brauer character, SL2 order-four exclusion, characteristic prime-to5 complements, AS-cup determinant action and actual quotient maps checked. Minor curve/scope clarifications incorporated. No cyclic-tower descent or common-cover exclusion inferred."
+    },
+    {
+      "id": "w4_defect_additive_candidate",
+      "verdict": "GAPS; exact algebraic certificate PASS",
+      "auditor": "/root/audit_w4_defect_comparison",
+      "date": "2026-09-10",
+      "objections": "Actual order5 Hodge correction can have a linear order25 carry changing z^5. Lifted dual-normal/Serre cancellation and canonical flat reference identification not established. No counterexample or changed coefficient proved. Audit record: Research/audits/W4_DEFECT_COMPARISON_AUDIT_2026_09_10.md."
+    },
+    {
+      "id": "defect_preserving_etale_descent_v2",
+      "verdict": "PASS Sections1--5; separately PASS v2 quantitative extension",
+      "auditor": "/root/audit_defect_preserving_descent",
+      "date": "2026-09-10",
+      "objections": "None. Whole-germ elimination, full previous-tuple all-level descent, actual intermediate-map construction, uniform genus3 arithmetic/nonarithmetic counts and current-parameter avoidance checked. Explicit defect/Psi bridge citation added. Inherited inputs not re-audited; no full common-cover claim."
+    },
+    {
+      "id": "symplectic_p_cover_section_growth_v4_section8",
+      "verdict": "PASS",
+      "auditor": "/root/audit_simple_zero_towers",
+      "date": "2026-09-10",
+      "objections": "None in NEW Section8: actual semilinear Fitting, order-two twisted theta and prime-to5 transfer checked. Earlier Sections1--7 treated as inputs. Header typo suggesting Lean verification corrected. No mixed obstruction constructed or repaired."
+    },
+    {
+      "id": "abelian_p_defect_node",
+      "verdict": "PASS",
+      "auditor": "/root/audit_p_cover_witt_repair",
+      "date": "2026-09-10",
+      "objections": "None. Norm/base-change, formal-node all-degree colength and non-Galois5-group-closure corollary checked. Independent reconstruction of stored relation, discriminant, six directions and colength9; expensive new Laurent columns code-reviewed rather than independently replayed."
+    },
+    {
+      "id": "genus_two_active_theta",
+      "verdict": "PASS",
+      "auditor": "/root/audit_genus_two_active_theta",
+      "date": "2026-09-10",
+      "objections": "None. Characteristic5 simple-minor reconstruction, lift retaining base points and Raynaud specialization, actual determinant, parity, [2]Theta intersection and nonreduced mu5 character family checked."
+    },
+    {
+      "id": "etale_p_witt_obstruction",
+      "verdict": "PASS",
+      "auditor": "/root/audit_p_cover_witt_repair",
+      "date": "2026-09-10",
+      "objections": "None. Noncommutative module conventions, pre-cohomology Psi multiplier, actual AS gluing, six-cover completeness, tangent lattice and precision verified; independent replay62.41s."
+    },
+    {
+      "id": "explicit_genus_two_witt_obstruction",
+      "verdict": "PASS",
+      "auditor": "/root/audit_explicit_w3_obstruction",
+      "date": "2026-09-10",
+      "objections": "None. Actual first lift/flat comparison, nonsplit previous twist, weight-rescaled jet, Taylor terms and Hodge projection checked. Not main endpoint or whole common-cover theorem."
+    },
     {
       "id": "forced_canonical_witt_endpoint",
       "verdict": "PASS",
@@ -148,23 +300,71 @@
   ],
   "latest_auxiliary_computation": {
     "status": "complete",
+    "bad_double_cyclic5_defect": {
+      "script": "scripts/bad_double_cyclic5_defect.sage",
+      "receipt": "Research/computations/bad_double_cyclic5_defect.json",
+      "precision_check_receipt": "Research/computations/bad_double_cyclic5_defect_precision180.json",
+      "source_genus": 11,
+      "actual_covers_checked": 1,
+      "anti_invariant_matrix_dimension": 15,
+      "defect": 2,
+      "semilinear_iterate_ranks": [
+        13,
+        11,
+        10,
+        10,
+        10
+      ],
+      "deck_fixed_kernel_dimension": 1,
+      "precisions": [
+        160,
+        180
+      ],
+      "seconds": [
+        11.0943,
+        12.5961
+      ],
+      "scope": "Actual AS etale cover of genus2 Y pulled to bad double C; full anti-tau Cech/deck matrices identical at both precisions. Invariant block bijective by known5-group vanishing. Author diagnostic, not a geometric higher-Witt certificate."
+    },
+    "cyclic5_integral_carry": {
+      "script": "scripts/verify_cyclic5_integral_carry.py",
+      "status": "PASS exact integer identities",
+      "residual": "-eta*(1+2e)-d^5*e modulo(5,e^2)",
+      "determinant": 1,
+      "scope": "All5B(e) scalar lift perturbations vanish on relevant inputs. Actual higher-Hodge identification OPEN. Defect4 and degree25 boundaries checked; no claimed universal descent theorem."
+    },
     "nonordinary_active_playground": {
       "field_order": 625,
       "genus": 2,
       "critical_root": "4t+3",
       "nilpotent_tangent_dimension": 1,
-      "matrix_shape": [11, 3],
+      "matrix_shape": [
+        11,
+        3
+      ],
       "jacobian_cartier_determinant": "4",
       "seconds_excluding_startup": 0.09599195804912597,
       "full_replay_with_serre_seconds_excluding_startup": 2.168499084073119,
-      "serre_functional_in_basis_zminus3_zminus1_z": ["3*t^2+t+1", "3*t+4", "3"],
+      "serre_functional_in_basis_zminus3_zminus1_z": [
+        "3*t^2+t+1",
+        "3*t+4",
+        "3"
+      ],
       "receipt": "Research/computations/nonordinary_active_playground.json",
-      "scope": "All finite-field and regularity inputs verified. One-dimensional higher obstruction identified but not evaluated; no common cover."
+      "scope": "Finite-field inputs verified; higher obstruction subsequently nonzero and audited in explicit_genus_two_witt_obstruction."
     },
     "fl_contact_two": {
       "cases": 12,
-      "heights": [1, 2, 3],
-      "precision": [69, 269, 1269],
+      "heights": [
+        1,
+        2,
+        3
+      ],
+      "precision": [
+        69,
+        269,
+        1269
+      ],
       "seconds": 0.146846,
       "script": "scripts/verify_fl_contact_two.sage",
       "proof": "Research/FL_CONTACT_TWO_BOUNDARY.md",
@@ -228,6 +428,150 @@
       "transfer_polynomial_degree_bound": 597246,
       "scope": "All pointed extensions on C_alpha and on family parameters of degree>600000, including currentY; both parity blocks and all geometric projective parameters retained.",
       "limitation": "First instability n>=3 remains possible. Not all-height strongSS or a common-cover exclusion. Four superseded preliminary logs removed after consolidated replay."
+    },
+    "explicit_w3": {
+      "status": "PASS",
+      "script": "scripts/compute_genus2_w3_obstruction.py",
+      "sha256": "35974221c69c86a843af87afcb4e225f9cdb35a4397c17e7b69b20a8a057d9e9",
+      "lambda": [
+        3,
+        4,
+        4,
+        3
+      ],
+      "precision": 71,
+      "runs": [
+        "precision500,variant0",
+        "precision800,variant1"
+      ],
+      "audit": "Research/audits/EXPLICIT_GENUS_TWO_W3_OBSTRUCTION_AUDIT_2026_09_10.md"
+    },
+    "cyclic25_witt": {
+      "status": "PASS_focused_audit",
+      "script": "scripts/cyclic25_witt_module.sage",
+      "receipt": "Research/computations/cyclic25_witt_module.json",
+      "precision": 260,
+      "free_module_columns": 3,
+      "full_matrix_dimension": 75,
+      "defect": 9,
+      "new_part_seconds": 56.3224,
+      "scope": "Quadratic node, nonzero discriminant and all six F5 directions. With the audited norm/base-change and formal-node proof, gives every abelian5-cover defect of the lab pair; not a main common-cover exclusion."
+    },
+    "cyclic5_witt": {
+      "status": "PASS",
+      "script": "scripts/cyclic5_witt_obstruction.sage",
+      "receipt": "Research/computations/cyclic5_witt_obstruction.json",
+      "geometric_covers": 6,
+      "field_degree": 40,
+      "source_genus": 6,
+      "matrix": [
+        15,
+        15
+      ],
+      "ranks": [
+        13,
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "defects": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "obstructions_killed": 6,
+      "precision": 160,
+      "root_seconds": 62.69,
+      "audit_seconds": 62.41,
+      "scope": "Actual one-endpoint higher repair, necessarily not preserving original C-leg. Sage/PARI exact-constant-indexing bug guarded by tests. No actual two-leg source constructed."
+    },
+    "incompatible_hodge_graph": {
+      "script": "scripts/verify_incompatible_hodge_graph.py",
+      "status": "PASS exact formal polynomial identity",
+      "result": "Rescaled graph error at n3 is5L+125Q modulo625; cubic zero, quadratic can survive. n>=4 quadratic zero at stated precision.",
+      "scope": "Formal overlap bookkeeping; actual normal projection/cancellation uncomputed. Independently checked by scoped medium auditor. Not a counterexample."
+    },
+    "dihedral_cyclic5_defect": {
+      "script": "scripts/bad_double_dihedral5_defect.sage",
+      "generic_receipt": "Research/computations/bad_double_dihedral5_defect_generic.json",
+      "source_genus": 11,
+      "source_defect": 2,
+      "block_sizes": [
+        10,
+        20
+      ],
+      "iterate_ranks": [
+        [
+          10,
+          10,
+          10,
+          10
+        ],
+        [
+          18,
+          16,
+          15,
+          15
+        ]
+      ],
+      "tau_kernel_signs": [
+        1,
+        1
+      ],
+      "generic_seconds": 3.2787,
+      "scope": "Actual AS cover w5-Hw=gamma*(u+4-2t), H=t2+2t+3. Symbolic rank minors nonzero away from (t5-t)H(t2+2t+4). F625 matrices agree at160/200. Characteristic-five author diagnostic, NOT higher-Witt proof or fresh audit."
+    },
+    "cyclic25_function_filtration": {
+      "script": "scripts/verify_cyclic25_function_filtration.py",
+      "basis_products": 625,
+      "status": "PASS",
+      "scope": "Actual torsor regular function algebra and first integral carry only"
+    },
+    "cyclic25_initial_certificate": {
+      "script": "scripts/check_hodge25.py",
+      "status": "PASS",
+      "integral_products": 625,
+      "pure_cases": 25,
+      "mixed_cases": 200,
+      "scope": "Supplied exact algebra replay; geometric initial comparison independently audited separately"
+    },
+    "cyclic25_jet_precision": {
+      "script": "scripts/verify_cyclic25_jet_precision.py",
+      "status": "PASS",
+      "scope": "Independent symbolic K2,K3,K5, previous-scalar precision and factorial-tail bounds through20000"
+    },
+    "cyclic25_later_budget": {
+      "script": "scripts/verify_cyclic25_later_level_budget.py",
+      "status": "PASS",
+      "basis_products": 86,
+      "scope": "Function products and n2..20 precision budgets only; actual later Hodge comparison remains open. Cyclic125 second-repair square can escape even eA."
+    },
+    "trace_zero_regular_model": {
+      "script": "scripts/verify_trace_zero_regular_model.py",
+      "status": "PASS",
+      "cases": 8,
+      "scope": "Parameterized regular-module stress test, bounded cyclic5/25 part and unbounded reciprocal image, with short X injection/surjective zero-composition trace. No actual curve or cored maps constructed."
+    },
+    "witt_correction_provenance": {
+      "script": "scripts/verify_witt_comparison_conventions.py",
+      "sign_triples": 125,
+      "taylor_degree": 20000,
+      "status": "PASS",
+      "scope": "Two corrections have different provenance; shared primary filtered/graded construction rechecked"
     }
+  },
+  "last_atlas_comparison": {
+    "directory": "/Users/julian/Documents/litt3-computation-data/n-hybrid-comparison-20260909-EiVm0t",
+    "scope": "Four full-normalized60-second comparisons: inverse23, compact23, hybrid23, hybrid21; every Frobenius equation and correct chart guard retained",
+    "counts": {
+      "time_limit": 4,
+      "unit_candidate": 0
+    },
+    "status": "All completed at degree3; compact and hybrid trajectories nearly identical; no demonstrated acceleration or new exclusion"
   }
 }

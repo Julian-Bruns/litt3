@@ -2,6 +2,11 @@
   "schema_version": 1,
   "definitions": [
     {
+      "id": "witt_hodge_obstruction",
+      "title": "The intrinsic one-endpoint higher Hodge obstruction",
+      "path": "Definitions/Def_witt_hodge_obstruction.md"
+    },
+    {
       "id": "arithmetic_curve_reductions",
       "title": "Arithmetic curve classes and geometric potential good reductions",
       "path": "Definitions/Def_arithmetic_curve_reductions.md"
@@ -103,6 +108,421 @@
     }
   ],
   "theorems": [
+    {
+      "id": "cyclic_power_late_descent",
+      "title": "Late-stage descent along an original cyclic power-of-five cover",
+      "statement": "Theorems/Thm_cyclic_power_late_descent.md",
+      "solution": "Solutions/Sol_cyclic_power_late_descent.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "marked_curve_deformations",
+        "witt_hodge_obstruction",
+        "correspondences"
+      ],
+      "dependencies": [
+        "cyclic_twentyfive_delayed_descent",
+        "cyclic_power_additive_norm",
+        "symplectic_p_cover_section_growth"
+      ],
+      "audits": [
+        "Research/audits/CYCLIC_POWER_LATE_DESCENT_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh bounded audit PASS /root/audit_cyclic_power_late_descent for all a>=2, n>=a+1. Explicit scalar recurrence R=V+A(X)+D(u)+K_r(R), K_r valuation gain2, makes all-digit reduction-compatible feedback additive. Ordinary boundary square e^(q-5), integral Cech inverse and norm/Schur elimination checked. 1,089,375 Taylor/order inequalities and27 function products PASS; these diagnostics are not geometry verification. No early125 or all-power full-tower claim.",
+      "statement_sha256": "f8f44d15940a4b4894e478f889141f2116c25075af73db6083209449cc780d77"
+    },
+    {
+      "id": "cyclic_twentyfive_delayed_descent",
+      "title": "Uniform delayed descent along an original cyclic-twenty-five cover",
+      "statement": "Theorems/Thm_cyclic_twentyfive_delayed_descent.md",
+      "solution": "Solutions/Sol_cyclic_twentyfive_delayed_descent.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "marked_curve_deformations",
+        "witt_hodge_obstruction",
+        "correspondences"
+      ],
+      "dependencies": [
+        "cyclic_twentyfive_initial_descent",
+        "cyclic_power_additive_norm",
+        "cyclic_five_delayed_descent",
+        "defect_preserving_etale_descent",
+        "two_defect_deck_reduction",
+        "admissible_two_leg_w2_lifts",
+        "bounded_atlas_partner_finiteness"
+      ],
+      "audits": [
+        "Research/audits/CYCLIC25_UNIFORM_COMPARISON_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh bounded audit PASS /root/audit_d25_auxiliary_comparison for genuine auxiliary oper, n3 scalar feedback and actual cochain comparison through norm equation; reduction-compatible local identifications made explicit. Full towers and algebraization PASS; separate scoped PASS all C50/D50/C2xD50 actual Sylow25 main carriers, unchanged parameter and same source. Supplied SymPy checks replay with existing sage -python, all PASS including F25 sign/exponent. No all-power or unmarked common-cover claim.",
+      "statement_sha256": "9d44629abe0ca16b8d7751e82e54aec912b73d7df32304b84b1ec23c25a74178"
+    },
+    {
+      "id": "cyclic_twentyfive_initial_descent",
+      "title": "Initial two-digit descent along an original cyclic-twenty-five cover",
+      "statement": "Theorems/Thm_cyclic_twentyfive_initial_descent.md",
+      "solution": "Solutions/Sol_cyclic_twentyfive_initial_descent.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "marked_curve_deformations",
+        "witt_hodge_obstruction",
+        "correspondences"
+      ],
+      "dependencies": [
+        "cyclic_power_additive_norm",
+        "cyclic_five_delayed_descent",
+        "symplectic_p_cover_section_growth",
+        "bad_double_cubic_defect"
+      ],
+      "audits": [
+        "Research/audits/CYCLIC25_INITIAL_COMPARISON_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh bounded medium audit PASS /root/audit_cyclic25_initial_comparison: actual initial geometric comparison, integral divided quadratic repair, full previous tuple/graded jet, sign and single Frobenius. Explicit unit-square-root oper normalization incorporated. Separate PASS general simple-defect input derivation, with base operator identified first on invariants and then via norm on augmentation. Supplied certificate replay PASS625 products/25 pure cases/all free fourth digits/200 mixed cases; independent jet-recursion and factorial precision PASS. Initial W5-to-given-W3 descent only, with a GIVEN compatible C5 reference; no all-level or common-cover claim.",
+      "statement_sha256": "5e8d8e3b704a547cf61b229891dc3dd3979c229ca8abe0d951f68d171cc60d17"
+    },
+    {
+      "id": "cyclic_power_additive_norm",
+      "title": "Cyclic-power norm obstruction for mixed additive operators",
+      "statement": "Theorems/Thm_cyclic_power_additive_norm.md",
+      "solution": "Solutions/Sol_cyclic_power_additive_norm.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [],
+      "dependencies": [],
+      "audits": [
+        "Research/audits/CYCLIC_POWER_ADDITIVE_PREPARATION_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh bounded medium audit PASS /root/audit_cyclic_additive_preparation: vector-valued finite preparation, noncommuting coefficient maps, arbitrary free coefficient rank, norm action and direct primitive-kernel argument. Requested explicit norm valuation bound added. Independent standard-library diagnostic: 1,337 exact mixed-operator samples for q5,25,125 PASS in0.284s. Pure integral algebra only; actual higher Hodge comparison and nonlinear divided repairs remain separate. Not formal verification.",
+      "statement_sha256": "d2cf772e0df0d1ad7e25615ffaf593f4694b2c4cd5feba7c64eaab439e4fc975"
+    },
+    {
+      "id": "cyclic_five_delayed_descent",
+      "title": "Uniform cyclic-five delayed descent by AS products and compatible deck transfer",
+      "statement": "Theorems/Thm_cyclic_five_delayed_descent.md",
+      "solution": "Solutions/Sol_cyclic_five_delayed_descent.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 2,
+      "definitions": [
+        "projective_connections",
+        "marked_curve_deformations",
+        "witt_hodge_obstruction",
+        "correspondences"
+      ],
+      "dependencies": [
+        "cyclic_five_compatible_reference_descent",
+        "defect_preserving_etale_descent",
+        "two_defect_deck_reduction",
+        "symplectic_p_cover_section_growth",
+        "genus_two_active_twists",
+        "admissible_two_leg_w2_lifts",
+        "bounded_atlas_partner_finiteness"
+      ],
+      "audits": [
+        "Research/audits/SECONDARY_DECK_TRANSFER_AUDIT_2026_09_10.md",
+        "Research/audits/DIHEDRAL_INITIAL_AS_PRODUCT_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Version2 extends the retained audited C10 theorem: fresh medium PASS /root/audit_dihedral_initial_as_product for actual AS P1*P1 in P2 quadratic cancellation (corrected high-Taylor combinatorial bound), no involution needed under exact inputs. Separate PASS verifies free modules/Fitting/cochain inputs for any simple-defect base and source defect2, and excludes ALL reduced C10,D10,C2xD10 groups with five-part exactly5 via original g3 carrier. All-level relative transfer/full-tower/original maps retain earlier audit. Both actual common-cover legs, full previous tuple and flat twist preserved; no arbitrary5^a or full problem claim.",
+      "statement_sha256": "8c592bd99dbbdd81dce8811b7481743d29667e24a4d7f75541c7bb2df76fa86f"
+    },
+    {
+      "id": "frobenius_defect_order_bound",
+      "title": "An opposite endpoint bounds prime-to-five defect images by short Frobenius strings",
+      "statement": "Theorems/Thm_frobenius_defect_order_bound.md",
+      "solution": "Solutions/Sol_frobenius_defect_order_bound.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "correspondences",
+        "marked_curve_deformations",
+        "orbifolds"
+      ],
+      "dependencies": [
+        "defect_preserving_etale_descent",
+        "symplectic_p_cover_section_growth",
+        "two_defect_deck_reduction",
+        "two_leg_defect_orbit_bound",
+        "cored_orbifold_bridge",
+        "bounded_atlas_partner_finiteness"
+      ],
+      "audits": [
+        "Research/audits/FROBENIUS_DEFECT_ORDER_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh focused medium PASS /root/audit_frobenius_character_order: actual trace/Psi direct summand; regular cyclic-deck negative cohomology; explicit equivariant Serre--Cartier duality; graded short strings imply orders divide5^ell±1; actual cored X--Z--defect-carrier and atlas degree64; bounded-genus/quotient count below unchanged K. Excludes prime-to5-Galois-Y/source-defect2/nonordinary-X branch only. Standard-library integer checks PASS; no full problem or Lean claim.",
+      "statement_sha256": "e79fb39e568473b89f84952a655e748750939362f8716c87d1161a154eb2a8d4"
+    },
+    {
+      "id": "cyclic_five_compatible_reference_descent",
+      "title": "Delayed cyclic-five descent with a compatible lower reference",
+      "statement": "Theorems/Thm_cyclic_five_compatible_reference_descent.md",
+      "solution": "Solutions/Sol_cyclic_five_compatible_reference_descent.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 2,
+      "definitions": [
+        "projective_connections",
+        "marked_curve_deformations",
+        "witt_hodge_obstruction",
+        "correspondences"
+      ],
+      "dependencies": [
+        "forced_canonical_witt_endpoint",
+        "etale_p_witt_obstruction",
+        "genus_two_active_twists",
+        "bad_double_cubic_defect"
+      ],
+      "audits": [
+        "Research/audits/D5_TWO_DIGIT_DESCENT_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh medium audit PASS /root/audit_d5_two_digit_descent for n2 canonical reference and all n with compatible lower-reference existence. Actual gamma/graded normalization, equivariant Cech primitives, Taylor carry and initial tau cancellation retain the given upper curve/original map/full tuple. Version2 leaves these positive assertions unchanged and updates their historical limitation: uniform D5 is now separately proved and audited as cyclic_five_delayed_descent, not assumed in this proof. Not Lean.",
+      "statement_sha256": "2e7e700bade3822abc4fcd5c3c6265d701d53fa4872a3df450c07d004a062b2c"
+    },
+    {
+      "id": "two_leg_defect_orbit_bound",
+      "title": "An endpoint defect and its deck orbit bound the actual joint degree",
+      "statement": "Theorems/Thm_two_leg_defect_orbit_bound.md",
+      "solution": "Solutions/Sol_two_leg_defect_orbit_bound.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "base_conventions",
+        "correspondences",
+        "projective_connections"
+      ],
+      "dependencies": [
+        "two_defect_deck_reduction",
+        "etale_double_dormant_pairs",
+        "tangent_bundle_cyclic_refinements",
+        "bounded_atlas_partner_finiteness"
+      ],
+      "audits": [
+        "Research/audits/TWO_LEG_DEFECT_ORBIT_BOUND_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh medium audit PASS /root/audit_two_leg_defect_orbit: exact tangent derivative/nonconstant ratio, natural deck module, inseparable function degree and nonnormal joint compositum, one-leg Galois-closure count under unchanged K, scalar quotient and Faber projective classification. Source defect2/nonordinary X/nontrivial5 image has joint Y-degree<=640 and is excluded for SAME main pair. No full common-cover claim or Lean verification.",
+      "statement_sha256": "dbcab8d0a4918f6ed7bce912685fecb7970154b282e1e53aff3ca33b30c271d1"
+    },
+    {
+      "id": "two_defect_deck_reduction",
+      "title": "Two-section etale deck groups reduce to cyclic five-towers and controlled finite images",
+      "statement": "Theorems/Thm_two_defect_deck_reduction.md",
+      "solution": "Solutions/Sol_two_defect_deck_reduction.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "base_conventions",
+        "correspondences",
+        "projective_connections"
+      ],
+      "dependencies": [
+        "symplectic_p_cover_section_growth",
+        "defect_preserving_etale_descent",
+        "genus_two_active_twists"
+      ],
+      "audits": [
+        "Research/audits/TWO_DEFECT_FIVE_MONODROMY_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh medium PASS /root/audit_two_defect_monodromy for Sections1--5 and separate PASS for Section6. Actual cyclic Sylow, normalizer quadratic character, reciprocal Brauer module, irreducible PSL2/SL2 exclusion, characteristic normal prime-to5 complement, and AS-cup determinant action checked. Both actual quotient maps and unchanged-defect application retained. Cyclic exponent and trivial-action prime-to5 image unbounded; not a common-cover exclusion or Lean verification.",
+      "statement_sha256": "f0e1deab5215f102f381c08053a5c500a34c22ece37ea70f4cd02ae080880694"
+    },
+    {
+      "id": "defect_preserving_etale_descent",
+      "title": "Defect-preserving etale descent of nonlinear germs and compatible Witt towers",
+      "statement": "Theorems/Thm_defect_preserving_etale_descent.md",
+      "solution": "Solutions/Sol_defect_preserving_etale_descent.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 2,
+      "definitions": [
+        "projective_connections",
+        "marked_curve_deformations",
+        "witt_hodge_obstruction",
+        "correspondences"
+      ],
+      "dependencies": [
+        "nilpotent_scalar_model",
+        "forced_canonical_witt_endpoint",
+        "admissible_two_leg_w2_lifts",
+        "etale_refinement_deformations",
+        "symplectic_p_cover_section_growth",
+        "genus_two_active_twists",
+        "ordinary_source_partner_finiteness",
+        "bad_double_cubic_defect",
+        "arithmetic_genus_two_reduction_bound",
+        "bounded_atlas_partner_finiteness"
+      ],
+      "audits": [
+        "Research/audits/DEFECT_PRESERVING_ETALE_DESCENT_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh medium audit PASS /root/audit_defect_preserving_descent for whole-germ trace elimination, all-level full-tuple Witt descent along original prime-to5 h with unchanged defect, and qualitative partner finiteness. Separate v2 PASS for genus3 uniform count, 80640 quotient/parameter bound, Frobenius-degree avoidance and exclusion of the entire Galois Y-leg source-defect1 active branch for the unchanged main pair. Inherited inputs not re-audited. No Lean verification or full common-cover proof.",
+      "statement_sha256": "b975bc2df1eea78b213d61f6801f39b7a48016fd704b354493400b21a3cb2e48"
+    },
+    {
+      "id": "bad_double_cubic_defect",
+      "title": "The simple defect on an explicit etale double has cubic local length",
+      "statement": "Theorems/Thm_bad_double_cubic_defect.md",
+      "solution": "Solutions/Sol_bad_double_cubic_defect.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "statement_version": 1,
+      "definitions": [
+        "base_conventions",
+        "projective_connections"
+      ],
+      "dependencies": [
+        "genus_two_active_twists",
+        "nilpotent_scalar_model"
+      ],
+      "evidence": "Author exact symbolic calculation over F5(t), complete five-variable implicit elimination and transverse F5(t,c) check. Local algebra k[[z]]/(z^3), coefficient3(t+1). Not a higher-Witt computation; no independent audit or Lean verification.",
+      "statement_sha256": "68a7dbaaf46d5b6ae5a02afc69e9dcead50382ef0329d5aac34701434c8f073b"
+    },
+    {
+      "id": "symplectic_p_cover_section_growth",
+      "title": "Symplectic defect growth and cyclic refinements of a simple zero",
+      "statement": "Theorems/Thm_symplectic_p_cover_section_growth.md",
+      "solution": "Solutions/Sol_symplectic_p_cover_section_growth.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "statement_version": 4,
+      "definitions": [
+        "base_conventions",
+        "correspondences",
+        "projective_connections"
+      ],
+      "dependencies": [
+        "tangent_bundle_cyclic_refinements",
+        "genus_two_active_twists",
+        "nilpotent_scalar_model",
+        "genus_two_active_theta",
+        "etale_p_witt_obstruction",
+        "abelian_p_defect_node",
+        "forced_canonical_witt_endpoint"
+      ],
+      "legacy_dependencies": [],
+      "audits": [
+        "Research/audits/SIMPLE_ZERO_CYCLIC_TOWERS_AUDIT_2026_09_10.md"
+      ],
+      "scope": "Odd symplectic growth, Galois one-defect quadratic origin, opposite-leg strictness. Version4 adds exact semilinear rank/depth formulas in cyclic5-power towers from a simple zero, and at least two chosen towers in the selected Galois one-defect branch: defect2 or4 stays fixed while nilpotence grows. A hypothetical mixed obstruction survives both legs but becomes arbitrarily deep in finite Psi images. No actual nonzero mixed example, vanishing or non-Galois monodromy bound.",
+      "evidence_summary": "Sections1--7 retain author status. NEW Section8 focused medium audit PASS /root/audit_simple_zero_towers: actual semilinear Fitting over deck algebra, norm base change, genus-two proper theta on bad order-two twists and prime-to5 trace transfer checked. No inherited-input, whole-statement or Lean verification; no large calculation.",
+      "statement_sha256": "56a8cfc24388ecf572e4bcba3d9b966f23d6fedc332ee8328647f272558fb704"
+    },
+    {
+      "id": "abelian_p_defect_node",
+      "title": "One finite node controls all abelian5-cover defects; p-group closure kills the test obstruction",
+      "statement": "Theorems/Thm_abelian_p_defect_node.md",
+      "solution": "Solutions/Sol_abelian_p_defect_node.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "witt_hodge_obstruction",
+        "projective_connections",
+        "marked_curve_deformations",
+        "correspondences"
+      ],
+      "dependencies": [
+        "etale_p_witt_obstruction",
+        "explicit_genus_two_witt_obstruction"
+      ],
+      "legacy_dependencies": [],
+      "audits": [
+        "Research/audits/ABELIAN_P_DEFECT_NODE_AUDIT_2026_09_10.md"
+      ],
+      "scope": "Actual p-group quotient compatibility; exact defect for every abelian5 cover of the explicit F625 pair. Any nontrivial cover with5-group Galois closure kills its epsilon, but repair loses the original leg. No common-cover construction or exclusion.",
+      "evidence_summary": "Focused medium audit PASS /root/audit_p_cover_witt_repair. Reviewed norm/base-change and all-degree node colength proof. Full Laurent calculation replayed by author at220/260; auditor independently reconstructed the finite relation, its quadratic discriminant and six directions, and colength9. No independent repeat of new expensive Laurent columns or Lean verification.",
+      "statement_sha256": "91f153b3fd215668a863bb5b97ba7bc26494e569fb90b1cf17e91d0edb688b52"
+    },
+    {
+      "id": "genus_two_active_theta",
+      "title": "Active genus-two tangent bundles have proper theta; uniform cyclic-five obstruction removal",
+      "statement": "Theorems/Thm_genus_two_active_theta.md",
+      "solution": "Solutions/Sol_genus_two_active_theta.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "base_conventions",
+        "projective_connections",
+        "theta_cartier",
+        "witt_hodge_obstruction"
+      ],
+      "dependencies": [
+        "tangent_bundle_cyclic_refinements",
+        "etale_p_witt_obstruction"
+      ],
+      "legacy_dependencies": [],
+      "audits": [
+        "Research/audits/GENUS_TWO_ACTIVE_THETA_AUDIT_2026_09_10.md"
+      ],
+      "scope": "Characteristic-five stable rank4 no-theta bundles are etale equal-line split and stronglySS; all genus2 active tangent bundles have proper theta. With ordinary Jacobian, connected double and corank1, at least two cyclic5 covers kill epsilon. Not source ordinariness, two-leg lift, or common-cover exclusion.",
+      "evidence_summary": "Pro reconstruction expanded by root. Focused medium audit PASS: simple evaluation minors, base-point-preserving lift and Raynaud specialization, actual determinant, even theta, [2]Theta intersection and nonreduced mu5 character dictionary checked. No blocking objections or Lean verification.",
+      "statement_sha256": "fc1e216f6d125e802bb02052733e4d4434d527468cb4d0955121afde4a126990"
+    },
+    {
+      "id": "etale_p_witt_obstruction",
+      "title": "Free deck-module summands detect Witt-obstruction survival; six actual degree-five repairs",
+      "statement": "Theorems/Thm_etale_p_witt_obstruction.md",
+      "solution": "Solutions/Sol_etale_p_witt_obstruction.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "witt_hodge_obstruction",
+        "projective_connections",
+        "marked_curve_deformations",
+        "correspondences"
+      ],
+      "dependencies": [
+        "explicit_genus_two_witt_obstruction",
+        "etale_refinement_deformations"
+      ],
+      "legacy_dependencies": [],
+      "statement_version": 1,
+      "audits": [
+        "Research/audits/CYCLIC_P_WITT_REPAIR_AUDIT_2026_09_10.md"
+      ],
+      "scope": "Arbitrary actual Galois5-group covers: cokernel pullback rank counts free deck-module summands. Corank1 persistence iff maximal defect growth. All six cyclic5 covers of the explicit F625 pair have defect2 and kill epsilon, but no repaired W3 source preserves the original leg. No common cover constructed or excluded.",
+      "evidence_summary": "Focused medium audit PASS /root/audit_p_cover_witt_repair: noncommutative group-module proof, actual pre-cohomology Psi multiplier, AS gluing, complete15-class cohomology, six-cover completeness and finite precision. Independent full160 replay62.41s; explicit preimages and deck equivariance. Not Lean verified.",
+      "statement_sha256": "4785645b46f4ee4b7fc4d742aa3b8ca8af48615dc30012f5def97b533d473eca"
+    },
+    {
+      "id": "explicit_genus_two_witt_obstruction",
+      "title": "A genuine nonzero W3 Hodge obstruction on an ordinary-Jacobian genus-two curve",
+      "statement": "Theorems/Thm_explicit_genus_two_witt_obstruction.md",
+      "solution": "Solutions/Sol_explicit_genus_two_witt_obstruction.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "definitions": [
+        "witt_hodge_obstruction",
+        "projective_connections",
+        "marked_curve_deformations",
+        "correspondences"
+      ],
+      "dependencies": [
+        "genus_two_active_critical_quartics",
+        "forced_canonical_witt_endpoint",
+        "admissible_two_leg_w2_lifts",
+        "etale_refinement_deformations"
+      ],
+      "legacy_dependencies": [],
+      "statement_version": 1,
+      "audits": [
+        "Research/audits/EXPLICIT_GENUS_TWO_W3_OBSTRUCTION_AUDIT_2026_09_10.md"
+      ],
+      "scope": "Explicit F625 pair has nonzero intrinsic epsilon=(4+4t)^-1 in its normalized Serre coordinate. General prime-to5 etale persistence and consequent degree divisibility for actual matches to ordinary pairs. No value for main X, common-cover realization or global exclusion.",
+      "evidence_summary": "User-supplied Pro source preserved byte-for-byte, exact local replays at500 and800 with different affine Frobenius; fresh medium geometric audit PASS on actual first lift, nonsplit previous twist, weight-scaled jet term, Taylor gluing and Hodge projection. Not Lean verified.",
+      "statement_sha256": "337eddfd6cc6e041c410426dccc3ef792bc79829505866045a7715556d82dda9"
+    },
     {
       "id": "forced_canonical_witt_endpoint",
       "title": "A rigid active span forces its ordinary endpoint's canonical lift at every Witt level",
@@ -255,7 +675,7 @@
     },
     {
       "id": "arithmetic_genus_two_reduction_bound",
-      "title": "Explicit arithmetic genus-two potential-good-reduction bound",
+      "title": "Explicit low-genus arithmetic counts and genus-three partner bound",
       "statement": "Theorems/Thm_arithmetic_genus_two_reduction_bound.md",
       "solution": "Solutions/Sol_arithmetic_genus_two_reduction_bound.md",
       "status": "proved",
@@ -264,13 +684,14 @@
         "arithmetic_curve_reductions"
       ],
       "dependencies": [],
-      "statement_version": 1,
+      "statement_version": 2,
       "audits": [
-        "Research/audits/ARITHMETIC_REDUCTION_BOUND_AUDIT_2026_09_09.md"
+        "Research/audits/ARITHMETIC_REDUCTION_BOUND_AUDIT_2026_09_09.md",
+        "Research/audits/DEFECT_PRESERVING_ETALE_DESCENT_AUDIT_2026_09_10.md"
       ],
-      "scope": "All compact arithmetic genus-two lattices, noncongruence and non-derived included; all potential good geometric reductions at any prime. Audit covers p5, uniform-p extension follows by identical author argument.",
-      "evidence_summary": "User-supplied Pro proof; root primary-source check; PASS fresh medium audit /root/audit_arithmetic_reduction_bound2026-09-09. Fewer than2^2000000 classes, via genus17 mod2 homology covers, no enumeration. No blocking issue; clarified descent and residue action.",
-      "statement_sha256": "f2fca78deb28770e4ff00e211665e4f3e0360163f9fcda85effb96169c60baee"
+      "scope": "All compact arithmetic genus2 and genus3 lattices, including noncongruence/non-derived; geometric potential good reductions at any prime. Also a uniform genus3 common-etale-partner bound for any fixed characteristic-zero curve, arithmetic or not.",
+      "evidence_summary": "Genus2 bound2^2000000 retains fresh arithmetic audit PASS2026-09-09. Version2 genus3 extension2^80000000, via genus129 homology covers, and nonarithmetic bound2^17000 separately PASS /root/audit_defect_preserving_descent2026-09-10. No large enumeration or Lean verification.",
+      "statement_sha256": "579a5e9deee9458a923089515bc8e183fd8d19bd6f40524da49e02c76961d1c2"
     },
     {
       "id": "defect_bundles_no_frobenius_operators",

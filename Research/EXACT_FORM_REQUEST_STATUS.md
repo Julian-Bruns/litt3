@@ -1,4 +1,4 @@
-# Returned Pro request — FALSE, do not resend
+# Status of the refuted exact-form request
 
 Status2026-09-08: user returned a decisive counterexample. No request
 outstanding. User explicitly requires digesting it before any new prompt.

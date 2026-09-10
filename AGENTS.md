@@ -62,6 +62,10 @@ user informed during work. Prioritize parameterized mechanisms; individual
 degrees are tests. Never claim the original problem solved from a marked
 variant, a conditional reduction, or a bounded but unexcluded case list.
 
+User instruction, 2026-09-10:
+Before you stop, ask yourself "is there a next step that the user would
+want me to do?" if so, keep going jobs not finished.
+
 ## Pro requests
 
 User instruction, 2026-09-09: make requests narrower and more attainable,
@@ -75,3 +79,19 @@ Do not invite a catalogue of weaker reductions if the target is missed.
 Smaller scope must retain mathematical usefulness; an easy but irrelevant
 result is not success. Do not promise that a narrower question will be
 solved. One manually submitted request at a time; no browser submission.
+
+User instruction, 2026-09-10: improve question selection, not just scope.
+Lead with the mathematical opportunity and a direct positive task. Keep
+necessary hypotheses explicit, but avoid front-loaded disclaimers and
+long lists of forbidden answers. Before declaring a prompt ready, test
+its proposed mechanism locally and check that the target is not merely
+an equivalent renaming of the same unresolved implication. Record the
+new leverage and what has actually been tested. Short response times
+alone do not establish why a request failed.
+
+User instruction, 2026-09-10: Pro request files contain ONLY text addressed
+to the receiving model. The entire file must be directly copyable as its
+prompt. Never include instructions to the user, submission/status notes,
+attachment instructions for the user, or copy-boundary markers. Put any
+such communication in this chat and keep tracking in Research/STATE.md
+and Research/state.json instead.

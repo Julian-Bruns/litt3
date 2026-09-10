@@ -1,222 +1,182 @@
-# Continue here — focus on the shared coreless obstruction
+# Continue here — D25 proved; all-power late descent proved; B125 prompt READY
 
-Updated 2026-09-10 00:22 CEST. The unmarked common-cover problem is UNSOLVED.
+Updated 2026-09-10 19:48 CEST. The unmarked common-cover problem is UNSOLVED.
 Preserve BOTH actual finite etale maps from the SAME projective source.
+Keep the main genus-nine X/high-prime-degree genus-two Y_t.
 
-## Operating decision
+## Exact active phase and next action
 
-Keep genus-nine X and high-prime-degree genus-two Y_t of
-bounded_atlas_partner_finiteness. NOT the original genus25 Y; do not
-assume J(Y_t) simple. A18 stays PARKED; no large solver runs.
-LATEST USER: use the simplest failing case as a PLAYGROUND to discover
-transferable mechanisms, not just to exclude that individual case.
-Root tested the norm-zero pencil/plane transition, but did NOT choose
-a degree4 exclusion prompt: singular plane incidence retains the gap.
-Instead an ACTUAL genus2/F625 active pair with ordinary Jacobian and
-EXACTLY one nonordinary tangent was found, proved by original scalar
-identities and a rank2 11x3 matrix. Canonical
-genus_two_active_critical_quartics v2 contains the formulas/proof;
-scripts/nonordinary_active_playground.sage checks the connection/tangent
-in0.096s; final full replay including the Serre functional took2.17s
-after startup. Every assertion passed.
-The revised PRO_SINGLE_OPER_W3_REQUEST now asks for the ONE intrinsic
-Serre-pairing scalar deciding compatible W3 lifting of this pair, with
-a REUSABLE Cech/residue recipe. It replaces the unsent universal N1
-draft; no second prompt or request is outstanding. READY to paste.
-Research/SMALL_CASE_PLAYGROUND.md records the attempted plane route,
-the actual critical collision, and the all-degree prime-to5 trace
-consequence of a nonzero epsilon. No W3 scalar has been computed.
-The Serre functional is also explicit: in basis z^-3,z^-1,z with
-z=u²/v and tangent frame eta^-1, it is (3t²+t+1,3t+4,3). This and the
-generic quintic formula are supplied in the prompt. Only the ACTUAL
-higher Hodge cocycle is unknown; another pairing/dimension reduction
-would overlap known work. The pair's only symmetry is hyperelliptic,
-acting trivially on quadratic forms, so symmetry supplies no vanishing.
-Next independently: construct the canonical FL C2 and that cocycle,
-not another dimension or root enumeration.
+The returned uniform D25 proof has been replayed, focused-audited,
+integrated and applied. The root then proved and separately audited
+uniform LATE descent for every cyclic power of five. The next prompt,
+Research/PRO_CYCLIC125_BOOTSTRAP_REQUEST.md, is READY for manual submission.
+No request is outstanding; the user has not reported sending this one.
 
-The smaller C_alpha backup now has FIVE remaining cored profiles, not six.
-Both recent degree24 and degree48 Pro proofs are fully integrated/replayed.
-LATEST USER: focus on the hardest obstruction SHARED by main and backup.
-Pause backup-only cored-profile work. Degree84 Pro subsequently RETURNED:
-155 classes, mass64,45survivors (42hyperelliptic and3primitive).
-Full archive locally replayed in about6.013s SINGLEcore; regenerated all
-tables and independently computed character mass, verified every witness.
-No source-curve decision. No further backup computation started.
-Research/DEGREE84_CENSUS_STATUS.md records exact evidence scope.
-No Pro is running. Research/PRO_ACTIVE_W3_REQUEST.md RETURNED without a
-verdict. Pro obtains barPsi(o3)=0 and a forced-canonical-Y3 necessity.
-Stable-image containment is EQUIVALENT to o3=0, not a weaker next target.
-The actual missing implication remains extension of f-descent to the
-fixed source obtained by lifting g to canonical Y3. No W3 lift proved.
-Root has now proved and medium-AUDITED the ALL-level necessity in
-forced_canonical_witt_endpoint. Every EXISTING diagram uses canonical Y,
-and its whole deformation functor equals fixed-Y descent. Its next
-obstruction lies in ker barPsi with an exact endpoint/source-kernel
-decomposition. No next-level existence or bound on e. The smaller next
-Pro draft is Research/PRO_SINGLE_OPER_W3_REQUEST.md: evaluate the
-intrinsic one-dimensional class on the explicit F625 pair, with a
-reusable mechanism. The universal all-pairs version was superseded.
-No actual two-leg construction is requested; draft has not been sent.
-Previous user asked what backup catch-up requires; answer: finish five cored
-profiles AND independently prove no fully liftable coreless span.
-Shared genus-two/Witt machinery already applies to both. See
-Research/CANDIDATE_PIVOT_DECISION.md; no pivot or solver restart authorized.
-No pivot of endpoints or restart of A18.
+Its ONE new target (B125): given an actual cyclic125 cover with the
+simple-zero/source-defect-two hypotheses and a compatible initial C7
+reference, a GIVEN compatible upper T7 must have its GIVEN T4 descend
+compatibly along the ORIGINAL map. This recovers C3 and C4. The new
+late theorem then starts at n4 and gives full-tower descent. The task
+does not ask for descent of arbitrary T7 itself, or reprove the known
+late stages, norm algebra, degree5 or degree25 theorems.
 
-## Last proved main steps — do not redo or weaken them
+The prompt and selection record have been checked against the canonical
+inventory and new local calculations. All file text is model-addressed.
+The objective checklist and quality-over-speed closing are retained;
+no artificial time target or runtime guarantee. Selection and exact
+limits: Research/CYCLIC125_BOOTSTRAP_LOOKAHEAD.md.
 
-NEW two_leg_negative_extensions v2 is PROVED and focused medium-AUDITED:
-- For EVERY m>=1, a common nonzero H1(omega^-m) class forces a clump.
-- An ARBITRARY simultaneous W2 lift supplies a nonzero common J5 class
-  via normalized FL extensions; no shared indigenous connection assumed.
-  Consequently a no-clump span has FULL deformation ring k, not W/(5^e)
-  with unknown e. It cannot lift even to W2, including after refinement.
-- Genus2: the first FL instability n>=0 gives a reduced clump of size
-  5^(n+1)-1, intrinsic active at n0, intrinsic dormant at n>=1.
-- New m-secant hypersurface bounds dim J_m<=1 whenever all common
-  extension bundles are semistable, in particular for m<=clump size.
-  Combining this with independent FL/Frobenius tangent classes proves:
-  EVERY W2-liftable coreless genus2 span has J1=0. Its ring is W/(5^e),
-  e>=2 or infinity; for main endpoints e is finite. This includes
-  dormant W2-liftable spans, not merely the earlier ALL-active branch.
-These arguments reach isolated spans; they still do NOT exclude them.
+NEXT AFTER HANDOFF / WHILE PRO RUNS: continue the independent trace-zero
+two-leg residual using actual cored functions/maps, starting from
+TRACE_ZERO_TWO_DEFECT_REDUCTION.md and DEFECT_LINE_STABILIZER_BOUND.md.
+The regular-module stress test already defeats the purely linear
+short-string rescue. Do not duplicate the early125 task or restart A18.
 
-1. joint_tangent_clump_dormancy v3 is proved and AUDITED. A nonzero shared
-   curve tangent gives compatible pointed extensions0->O->E->omega.
-   Normalized strong semistability would force an actual core. First
-   Frobenius instability instead gives a clump, and genus2 forces a
-   regular dormant oper. The distinguished horizontal section identifies
-   this oper with EXACTLY the intrinsic r_s of the common tensor.
-   Thus ALL-active spans (including ten split exceptions of old v2) and
-   no-clump spans have T_joint=0. Only the positive-clump intrinsic-DORMANT
-   branch might have a nonzero joint CURVE tangent.
-   Version4 AUTHOR additions: the projection divisor Delta is REDUCED,
-   so primitive(weight,zero order) is exactly((5^n-1)/2,1) or(5^n-1,2).
-   Pointed Frobenius^n compatibility forces branch contact I=0 mod5^n
-   off Delta and I=2 mod5^n on Delta. Both bounds are locally SHARP:
-   explicit formal models retain contact2 at Delta. No global cover
-   is constructed by those models. The root-contact budget therefore
-   still fails exactly at the clump; do not claim a local improvement.
+## Last proved steps
 
-2. NEW genus_two_joint_tangent_conic is proved and fresh medium-audited,
-   PASS /root/audit_joint_tangent_conic. EVERY coreless span with genus2
-   endpoint has dim T_joint<=1. In P H1(T_Y)=P2 the bicanonical evaluation
-   conic is forbidden: its extension has saturated degree1 line
-   omega(-Q), hence normalized extension of degree0 lines, stronglySS
-   at EVERY Frobenius stage. Every projective line meets the conic.
-   A lone OFF-CONIC tangent is still allowed. Applies to main AND backup;
-   no Hom-zero, ordinariness, degree, or no-clump assumption.
+1. cyclic_twentyfive_delayed_descent v1: EVERY n>=2, given compatible
+   C_n and original cyclic25 T_n→C_n, a GIVEN compatible T_(n+3)
+   descends its GIVEN T_(n+1), with the full preceding filtered tuple,
+   graded identification and actual flat two-torsion line. The initial
+   reference C5 is given. Every GIVEN full upper tower descends uniquely
+   and algebraizes. Later lower compatibility is a conclusion.
+   Fresh audit /root/audit_d25_auxiliary_comparison PASS; separate PASS
+   main application. Initial theorem remains separately recorded.
 
-3. pointed_frobenius_dormant_model (author proof) identifies first
-   instability at n via the ACTUAL quotient jet connection:
-       F^(n-1)*E = V_r tensor omega^((5^(n-1)-1)/2) tensor tau,
-       tau in Pic[2].
-   At n1 a section contradicts all known Pic2 dormant-tangent vanishings.
-   Version2 additionally proves F²E semistable for EVERY nonsplit pointed
-   extension on C_alpha AND current high-degree Y. The exact48chart
-   cohomology test and Koszul parameter-degree transfer are written out.
-   First instability now n>=3, with a48-dimensional positive section
-   space. No ALL-height strongSS claim. Fresh medium audit of NEW
-   Sections5--8 PASS /root/audit_height2_frobenius_transfer, no blockers;
-   independent full replay22.1591s. Earlier model inputs not re-audited.
+   Key new geometry: genuine auxiliary filtered opers exist on the
+   chosen smooth lower reference by H1(omega²)=0, without asserting
+   periodicity. Retain their inverse-Cartier error before pullback
+   projection, as an integral norm. Choose local module identifications
+   compatibly under reduction: the preceding scalar graph is the SAME
+   reduced graph from the given upper tuple. Explicit oper variation
+   and the extra25 scalar response control the n3 non-descended digit.
+   Actual cochain comparison reduces to additive L X=N eta over W3.
+   The norm coordinate forces eta0=0, and solution reductions e24 force
+   d=0. Relative secondary class is d^5e, one coefficient Frobenius.
 
-## Exact remaining main obstruction
+   Main application: ordinary-X/source2/Galois-Y, NONTRIVIAL five-action,
+   ACTUAL Sylow5 order25. ALL reduced carriers C50,D50,C2×D50 excluded
+   for the SAME parameter by the existing genus3 partner count.
+   Dn means group of order n. Original actual maps are retained through
+   prime-to5 defect-neutral descents and cyclic25 descent. No lift of
+   the bad double C→Y is presumed or needed.
 
-Joint deformation ring is a quotient of W(k)[[z]] in EVERY branch.
-No-clump gives EXACTLY k. ANY W2-liftable branch is rigid and gives
-W(k)/(5^e); finite e for main by intrinsic nonliftability, e>=2.
-No upper bound on e or W3 lift is known. A remaining one-tangent dormant
-branch MUST fail to lift to W2. That does not imply5=0 in its full ring:
-W[[z]]/(z²-5,5²) illustrates the abstract distinction. Positive-dimensional
-vertical deformation is not yet excluded.
-No-cored/no-full-mixed-characteristic-lift results already apply to main
-pair and do not depend on A18 or backup. Shared curve tangent is NOT a
-source dormant/indigenous deformation defect.
+2. cyclic_power_late_descent v1: q=5^a, a>=2, n>=a+1, same actual
+   simple-zero/source2 hypotheses. GIVEN compatible C_n and original
+   cover, plus GIVEN compatible T_(n+a+1), imply descent of GIVEN
+   T_(n+1). No initial reference beyond the given C_n is needed.
+   Fresh audit /root/audit_cyclic_power_late_descent PASS.
+   ALL required scalar-feedback digits are retained by an additive
+   recurrence whose feedback raises valuation by2. A finite geometric
+   inverse eliminates it without dividing an equivariant map by25.
+   At n=a+1 the sole nonlinear term is an ordinary final product in
+   e^(q-5); terminal correction removes it. Integral norm then applies.
+   This is LATE descent only: q125 starts at n4; C3,C4 remain missing.
+   No full all-power tower theorem or early125 coefficient is claimed.
 
-## Next concrete actions
+3. cyclic_power_additive_norm v1 remains the all-power mixed-additive
+   integral algebra input: free coefficient rank, even infinite rank;
+   noncommuting coefficient-linear/Frobenius corrections allowed.
+   coker(L Phi^-1)=K⊕e(K/5^aK), norm class(5^a eta,0);
+   norm soluble iff eta∈5K, solution reductions exactly e^(q-1).
+   This algebra alone is not an actual early Hodge comparison.
 
-A. Push the NEW first-Witt/clump dichotomy toward an actual exclusion.
-   No-clump special-fiber-only spans and finite-height rigid W2 spans
-   still survive. The ORIGINAL FL-connection local test is now CLOSED:
-   contact2 survives together with that connection AND its later
-   Frobenius oper line. Research/FL_CONTACT_TWO_BOUNDARY.md proves this
-   for all positive heights by two z-adic contractions. Exact12-case
-   replay0.146846s, n1--3, mod z69/269/1269, confirms all identities.
-   These are FORMAL models, not actual projective spans or Witt lifts.
-   Do not ask Pro for a false stronger local contact bound.
-   CURRENT all-level necessity is COMPLETE, focused medium audit PASS
-   /root/audit_forced_canonical_witt. Full twisted previous-flow input,
-   etale naturality, canonical MF-tower comparison and Artinian functor
-   statement checked. LSYZ Prop5.2 and Mochizuki III2.5--2.8/3.3--3.4
-   are the precise source inputs. Next mathematical distinction:
-   epsilon(X,rX) in coker Psi_X is the connecting image of actual o3;
-   when it vanishes, remaining mismatch is in ker Psi_Z/ker Psi_X.
-   PRO_SINGLE_OPER_W3_REQUEST now targets ONLY the explicit corank-one
-   F625 pair, after the latest playground instruction. Its scalar
-   <rho,phi> is unknown; nonzero coker is not nonzero obstruction.
-   K-Y-Z arXiv2005.00579v1
-   Thm6.4 still assumes its compatible locus nonempty, so gives no
-   answer. Source checked this turn. No new existence result extracted.
-   Do not infer full lifting from a mod-p periodic Higgs/de Rham flow.
-B. Backup-only degree84 source comparison and hyperelliptic/wild-profile
-   work PAUSED. The census answer does not remove a case. Bounded archive
-   replay COMPLETE; do not drift into45source models.
-C. The focused height2 audit PASSED and is integrated. The written
-   transfer uses Koszul degree3c-2 and a Macaulay maximal minor of
-   T-degree<=binom(3c,2)cB<=597246, with c<=13,B=62. Thus parameter
-   degree>600000 suffices. Correct implicit equation is
-   U=1+c1 z²U+...+c5 z^10U^5 for U=(1/u)/z². Do not reuse the erroneous
-   preliminary w0 equation or the abandoned resultant bound408642.
-   No blind height3 escalation: seek an all-height/two-leg mechanism.
+Canonical proof links and audit records are attached to each theorem;
+use research_workspace.py show/dependencies before opening needed proofs.
 
-## Completed computations
+## Exact diagnostics completed this turn
 
-Degree48: triangle238_frobenius_factor_obstruction. ALL77 arrays check;
-84844-node native regeneration0.126s matches byte-for-byte. Character
-mass477/16 computed independently by MN and abacus on147273 partitions.
-Integrated verifier3.733s.54classes violate Aut=C2,21 force actual smaller
-source maps,2remaining contradict moduli Frobenius orbit3. Receipt:
-Research/computations/triangle238_verification.txt. No new whole-proof audit.
+- scripts/d25_checks.py is the supplied attachment saved UNCHANGED.
+  System python lacks SymPy; sage -python uses the existing environment.
+  All oper/Schwarzian, scalar-response, Taylor factorial, graph,
+  625 torsor-product, divided-residue, higher-norm and F25 checks PASS.
+  Replay about0.68s. No global geometry is simulated by this script.
+- verify_cyclic_power_late_budget.py: 1,089,375 precision inequalities,
+  27 boundary-product pairs at25/125/625 PASS, about0.11s.
+- verify_cyclic125_early_algebra.py: exact integral wrap bounds and ALL
+  15,625 delta-basis pairs for EACH of two product inclusions PASS,
+  via125 relative shifts and translation symmetry; about0.10s.
+- verify_cyclic_power_additive_carry.py --max-power3:1,337 mixed
+  coefficient/Frobenius samples PASS, including37 cyclic125 cases.
 
-Low-height script scripts/pointed_frobenius_theta_diagnostic.sage --height2
---all: consolidated SINGLE-process replay22.252s on ONEcore. All16 Pic2
-labels x3 disjoint projective charts, BOTH parity blocks, explicit Bezout
-identities, corrected univariate xgcd, and precision assertions pass.
-Receipt Research/computations/pointed_frobenius_height2_verified.jsonl.
-Four superseded preliminary logs removed; no useful evidence lost.
-No computation or agent running.
+New PROVED torsor-function algebra supplied to B125, with proof in
+CYCLIC125_BOOTSTRAP_LOOKAHEAD.md:
+  (e123 A2)^2 ⊂ e122 A2+5e22 A2;
+  (e122 A2)^2 ⊂ e120 A2+5e20 A2.
+The wrap bound is P_(c-1)+5P_(100+c-1), NOT100+c-2.
+However a second repair can be in e23A1=P101 and its square can leave
+even eA: B100 B24=B124 and [B124](B100+B24)^2=2 mod5.
+This is not an ACTUAL Hodge repair/counterexample; it invalidates an
+unrestricted square-filtration shortcut. The early actual coupled
+repairs, their carries, and free intermediate digits are the new task.
+At n3, 5^3/5^7 is not square-zero; retain quadratic curve gluing too.
 
-A18:28,990 distinct, length29,375 COMPLETE; replay13.08s. Zero WHOLE atlas
-representatives excluded.67quiet jobs only3 F25 reps:51boundedduals,
-4inconclusive,4caps,1unit,7weakpoints. Four later60s normalized tests
-timed out. No restart absent a new demonstrated mechanism.
-Metadata computations/atlas_research_checkpoint_metadata.json.
+## Independent trace-zero residual
 
-## Backup and preserved failures
+For nonordinary-X/source2/Galois-Y, nontrivial-five-action and prime-to5
+Galois branches are already excluded by the canonical orbit and
+Frobenius-string theorems. The residual five-part acts TRIVIALLY on
+defects, with large prime-to5 cyclic/dihedral projective image.
 
-Backup tame: degree2(2^6),84(2,3,7).
-Backup wild:(120,20,27,3),(240,40,47,6),(280,20,23,7).
-The degree2 map ACTUALLY exists as the hyperelliptic map; needs a BOTH-leg
-exclusion, never ask for endpoint-only nonexistence. BACKUP_CANDIDATE
-owns this changing list.405atlas pairs already solved/audited.
-CORED_FORMALIZATION_REQUEST/MAP ready, not Lean-implemented; main
-no-cored proof needs none of these backup computations.
+Author deductions (not new audited whole-stratum exclusions):
+TRACE_ZERO_TWO_DEFECT_REDUCTION.md retains both original endpoint
+fields, forms their actual joint with T0 and a Galois closure INSIDE
+the original Z. Its cyclic Sylow5 order is <=25 because the cored leg
+has degree<=64. Redundant towers cannot invalidate that minimal bound.
+DEFECT_LINE_STABILIZER_BOUND.md applies the already audited carrier
+COUNT without a degree-primality hypothesis, so
+|Gamma|>N=4(5^24+1). The actual X defect line is genuinely mixed.
+The squared scalar character has order<=B0=336000; its whole line
+stabilizer has order<=2B0=672000. The projective line orbit is at
+least354789552235. This is only a LOWER bound.
 
-- Refinement preserves the WHOLE joint deformation ring, cannot repair it.
-- Ordinary endpoint != ordinary source; no automatic compatible higher
-  BT data or lift. Nilpotent nonordinariness != dormant nonreducedness.
-- J7/ramified_root_contact_core solved. Spectral/Tango-only claims have
-  actual coreless counterexamples; direct Cartier-crystal defect vanishing
-  unavailable. Do not restart them.
-- Endomorphism packets exclude broad groups; arbitrary large alternating
-  actions survive. Small-cover Hecke success uses an ACTUAL genus2
-  hyperelliptic involution, not automatic on general main-leg closures.
+TRACE_ZERO_REGULAR_MODULE_TEST.md constructs arbitrary-large-image
+regular modules with q5/25, source2/ordinary base, reciprocal Frobenius
+characters, short X injection AND surjective compatible trace with
+zero degree composition. Eight compressed tests PASS. It is NOT a
+geometric span. The next mechanism must use the actual cored maps or
+the nonconstant function phi_X²/s_X, not those linear properties alone.
 
-## Resources and resumption
+## Other established exclusions and residual limits
 
-No ordinary agents. A fresh medium audit of a major uncertain theorem is
-allowed; conic and height2 audits COMPLETE. Quiet4worker (~3actualcores)
-ceiling, no simultaneous sustained runs. No chat/CLI wakeups/browser Pro.
-Hourly marker must be DETACHED; never wait on its worker.
-Read canonical statements first; audit bodies only for a concrete doubt.
+- defect_preserving_etale_descent v2: prime-to5 defect-neutral original
+  full-tower descent, and ALL Galois-Y/source-defect-one main matches
+  excluded with the SAME parameter.
+- cyclic_five_delayed_descent v2: ordinary-X/source2/Galois-Y,
+  nontrivial-five-action actual Sylow5 order5; ALL C10,D10,C2×D10.
+- two_leg_defect_orbit_bound: nonordinary-X/source2/nontrivial-five
+  action yields actual joint Y-degree<=640, excluded for SAME parameter.
+- frobenius_defect_order_bound: prime-to5 Galois-Y/source2/nonordinaryX
+  excluded by actual trace-preserved short Psi strings and carrier count.
+- two_defect_deck_reduction: actual Sylow5 cyclic; faithful five-image
+  small does NOT bound its actual order. Nontrivial-action longer
+  powers remain, now with only early descent missing; trivial-action
+  carriers, higher defects, non-Galois sources, dormant/absent matches
+  also remain. There is no reliable global finishing ETA.
+
+No-cored and no-full-simultaneous-lift results do NOT solve unmarked
+common-cover existence. Do not assume J(Y_t) simple. Etale refinement
+preserves the entire original two-map deformation functor and cannot
+repair nonliftability. Stable-image after barPsi(o)=0 is equivalent
+to o=0, not a weaker next lemma. Historical nongluing D5 reference gap
+is resolved only by the later audited compatible/auxiliary proofs.
+The numerical P_t=z-beta*z^5 remains geometrically UNAUDITED.
+Universal exact-zero-order-eight core lemma is FALSE.
+Constant defect in cyclic towers does not bound nilpotent depth.
+A fixed-curve w in k[[w]]/(w³) is NOT a Witt mismatch digit.
+Actual genus2 proper theta is not an assumed genus3 classification.
+
+## Operations and parked work
+
+All bounded audit agents FINISHED; no active computation or heavy run.
+No exploration agents. Fresh bounded audit only for major uncertainty.
+Quiet CPU ceiling4 native/~3actual; prefer bounded single-core diagnostics.
+Detached reminder /tmp/litt3-hourly-reminder.json, next20:16CEST;
+do not wait on it. Refresh update.md about hourly during active work.
+
+A18 PARKED: census28,990 distinct/length29,375, replay13.08s;
+zero whole representatives excluded. Backup PARKED:405atlas pairs solved;
+five cored profiles remain, including84 with45 unresolved source classes.
+Degree2 profile actually exists; BOTH legs are needed. No solver restart,
+pivot, Lean implementation, publication or upload.
+Before stopping ask whether a wanted next step remains and continue.

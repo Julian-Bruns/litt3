@@ -1,15 +1,5 @@
 # Pro prompt — scalar reconstruction of a Hermitian atlas
 
-Status: written 2026-09-06; SENT by the user on 2026-09-06. Await their
-response; do not send another request. The task is a mathematical reformulation needed by an actual
-computation, not a request to solve Litt3 or audit the supplied results.
-The outcome-first scope follows the current
-[official GPT-6 prompting guidance](https://developers.openai.com/api/docs/guides/latest-model).
-
-Copy the text below.
-
----
-
 Develop an explicit scalar reconstruction theorem for the following
 problem. The goal is to test a prescribed dormant rank-two projective
 connection for an additional Hermitian structure, without constructing
