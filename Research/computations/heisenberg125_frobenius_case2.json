@@ -1,0 +1,5774 @@
+{
+  "status": "PASS",
+  "case": 2,
+  "kind": "mixed",
+  "coefficient_frobenius_power": 125,
+  "cover_count": 155,
+  "orbit_count": 42,
+  "orbit_lengths": [
+    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    1,
+    4,
+    2,
+    4,
+    4,
+    2,
+    4,
+    4,
+    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "orbits": [
+    [
+      [
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        11,
+        0
+      ],
+      [
+        26,
+        0
+      ],
+      [
+        16,
+        0
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        11,
+        2
+      ],
+      [
+        26,
+        1
+      ],
+      [
+        16,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        2
+      ],
+      [
+        11,
+        4
+      ],
+      [
+        26,
+        2
+      ],
+      [
+        16,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        3
+      ],
+      [
+        11,
+        1
+      ],
+      [
+        26,
+        3
+      ],
+      [
+        16,
+        3
+      ]
+    ],
+    [
+      [
+        1,
+        4
+      ],
+      [
+        11,
+        3
+      ],
+      [
+        26,
+        4
+      ],
+      [
+        16,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        0
+      ],
+      [
+        13,
+        0
+      ],
+      [
+        27,
+        0
+      ],
+      [
+        17,
+        0
+      ]
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      [
+        13,
+        1
+      ],
+      [
+        27,
+        4
+      ],
+      [
+        17,
+        2
+      ]
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      [
+        13,
+        2
+      ],
+      [
+        27,
+        3
+      ],
+      [
+        17,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      [
+        13,
+        3
+      ],
+      [
+        27,
+        2
+      ],
+      [
+        17,
+        1
+      ]
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      [
+        13,
+        4
+      ],
+      [
+        27,
+        1
+      ],
+      [
+        17,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        15,
+        0
+      ],
+      [
+        28,
+        0
+      ],
+      [
+        18,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        15,
+        1
+      ],
+      [
+        28,
+        4
+      ],
+      [
+        18,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        2
+      ],
+      [
+        15,
+        2
+      ],
+      [
+        28,
+        3
+      ],
+      [
+        18,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        3
+      ],
+      [
+        15,
+        3
+      ],
+      [
+        28,
+        2
+      ],
+      [
+        18,
+        1
+      ]
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      [
+        15,
+        4
+      ],
+      [
+        28,
+        1
+      ],
+      [
+        18,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        12,
+        0
+      ],
+      [
+        29,
+        0
+      ],
+      [
+        19,
+        0
+      ]
+    ],
+    [
+      [
+        4,
+        1
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        29,
+        4
+      ],
+      [
+        19,
+        2
+      ]
+    ],
+    [
+      [
+        4,
+        2
+      ],
+      [
+        12,
+        2
+      ],
+      [
+        29,
+        3
+      ],
+      [
+        19,
+        4
+      ]
+    ],
+    [
+      [
+        4,
+        3
+      ],
+      [
+        12,
+        3
+      ],
+      [
+        29,
+        2
+      ],
+      [
+        19,
+        1
+      ]
+    ],
+    [
+      [
+        4,
+        4
+      ],
+      [
+        12,
+        4
+      ],
+      [
+        29,
+        1
+      ],
+      [
+        19,
+        3
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        14,
+        0
+      ],
+      [
+        30,
+        0
+      ],
+      [
+        20,
+        0
+      ]
+    ],
+    [
+      [
+        5,
+        1
+      ],
+      [
+        14,
+        1
+      ],
+      [
+        30,
+        4
+      ],
+      [
+        20,
+        2
+      ]
+    ],
+    [
+      [
+        5,
+        2
+      ],
+      [
+        14,
+        2
+      ],
+      [
+        30,
+        3
+      ],
+      [
+        20,
+        4
+      ]
+    ],
+    [
+      [
+        5,
+        3
+      ],
+      [
+        14,
+        3
+      ],
+      [
+        30,
+        2
+      ],
+      [
+        20,
+        1
+      ]
+    ],
+    [
+      [
+        5,
+        4
+      ],
+      [
+        14,
+        4
+      ],
+      [
+        30,
+        1
+      ],
+      [
+        20,
+        3
+      ]
+    ],
+    [
+      [
+        6,
+        0
+      ]
+    ],
+    [
+      [
+        6,
+        1
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        2
+      ]
+    ],
+    [
+      [
+        7,
+        0
+      ],
+      [
+        10,
+        0
+      ]
+    ],
+    [
+      [
+        7,
+        1
+      ],
+      [
+        10,
+        2
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        10,
+        3
+      ]
+    ],
+    [
+      [
+        7,
+        2
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        10,
+        1
+      ]
+    ],
+    [
+      [
+        8,
+        0
+      ],
+      [
+        9,
+        0
+      ]
+    ],
+    [
+      [
+        8,
+        1
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        9,
+        3
+      ]
+    ],
+    [
+      [
+        8,
+        2
+      ],
+      [
+        9,
+        4
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        9,
+        1
+      ]
+    ],
+    [
+      [
+        21,
+        0
+      ]
+    ],
+    [
+      [
+        21,
+        1
+      ],
+      [
+        21,
+        2
+      ],
+      [
+        21,
+        4
+      ],
+      [
+        21,
+        3
+      ]
+    ],
+    [
+      [
+        22,
+        0
+      ],
+      [
+        23,
+        0
+      ],
+      [
+        25,
+        0
+      ],
+      [
+        24,
+        0
+      ]
+    ],
+    [
+      [
+        22,
+        1
+      ],
+      [
+        23,
+        1
+      ],
+      [
+        25,
+        1
+      ],
+      [
+        24,
+        1
+      ]
+    ],
+    [
+      [
+        22,
+        2
+      ],
+      [
+        23,
+        2
+      ],
+      [
+        25,
+        2
+      ],
+      [
+        24,
+        2
+      ]
+    ],
+    [
+      [
+        22,
+        3
+      ],
+      [
+        23,
+        3
+      ],
+      [
+        25,
+        3
+      ],
+      [
+        24,
+        3
+      ]
+    ],
+    [
+      [
+        22,
+        4
+      ],
+      [
+        23,
+        4
+      ],
+      [
+        25,
+        4
+      ],
+      [
+        24,
+        4
+      ]
+    ]
+  ],
+  "sigma_as": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      4,
+      3,
+      0
+    ],
+    [
+      0,
+      0,
+      4
+    ]
+  ],
+  "witnesses": [
+    {
+      "source": [
+        0,
+        0
+      ],
+      "target": [
+        0,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        0,
+        1
+      ],
+      "target": [
+        0,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        4
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        0,
+        2
+      ],
+      "target": [
+        0,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        3
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        0,
+        3
+      ],
+      "target": [
+        0,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        2
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        0,
+        4
+      ],
+      "target": [
+        0,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        1
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        1,
+        0
+      ],
+      "target": [
+        11,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        1,
+        1
+      ],
+      "target": [
+        11,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        0,
+        3,
+        0
+      ],
+      "plane_repair": [
+        2,
+        0
+      ]
+    },
+    {
+      "source": [
+        1,
+        2
+      ],
+      "target": [
+        11,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        0,
+        1,
+        0
+      ],
+      "plane_repair": [
+        4,
+        0
+      ]
+    },
+    {
+      "source": [
+        1,
+        3
+      ],
+      "target": [
+        11,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        0,
+        4,
+        0
+      ],
+      "plane_repair": [
+        1,
+        0
+      ]
+    },
+    {
+      "source": [
+        1,
+        4
+      ],
+      "target": [
+        11,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        0,
+        2,
+        0
+      ],
+      "plane_repair": [
+        3,
+        0
+      ]
+    },
+    {
+      "source": [
+        2,
+        0
+      ],
+      "target": [
+        13,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        2,
+        1
+      ],
+      "target": [
+        13,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        3,
+        0
+      ],
+      "plane_repair": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": [
+        2,
+        2
+      ],
+      "target": [
+        13,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        1,
+        0
+      ],
+      "plane_repair": [
+        4,
+        1
+      ]
+    },
+    {
+      "source": [
+        2,
+        3
+      ],
+      "target": [
+        13,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        4,
+        0
+      ],
+      "plane_repair": [
+        1,
+        4
+      ]
+    },
+    {
+      "source": [
+        2,
+        4
+      ],
+      "target": [
+        13,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        2,
+        0
+      ],
+      "plane_repair": [
+        3,
+        2
+      ]
+    },
+    {
+      "source": [
+        3,
+        0
+      ],
+      "target": [
+        15,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        3,
+        1
+      ],
+      "target": [
+        15,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        3,
+        0
+      ],
+      "plane_repair": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": [
+        3,
+        2
+      ],
+      "target": [
+        15,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        1,
+        0
+      ],
+      "plane_repair": [
+        4,
+        1
+      ]
+    },
+    {
+      "source": [
+        3,
+        3
+      ],
+      "target": [
+        15,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        4,
+        0
+      ],
+      "plane_repair": [
+        1,
+        4
+      ]
+    },
+    {
+      "source": [
+        3,
+        4
+      ],
+      "target": [
+        15,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        2,
+        0
+      ],
+      "plane_repair": [
+        3,
+        2
+      ]
+    },
+    {
+      "source": [
+        4,
+        0
+      ],
+      "target": [
+        12,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        4,
+        1
+      ],
+      "target": [
+        12,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        3,
+        0
+      ],
+      "plane_repair": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": [
+        4,
+        2
+      ],
+      "target": [
+        12,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        1,
+        0
+      ],
+      "plane_repair": [
+        4,
+        1
+      ]
+    },
+    {
+      "source": [
+        4,
+        3
+      ],
+      "target": [
+        12,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        4,
+        0
+      ],
+      "plane_repair": [
+        1,
+        4
+      ]
+    },
+    {
+      "source": [
+        4,
+        4
+      ],
+      "target": [
+        12,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        2,
+        0
+      ],
+      "plane_repair": [
+        3,
+        2
+      ]
+    },
+    {
+      "source": [
+        5,
+        0
+      ],
+      "target": [
+        14,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        5,
+        1
+      ],
+      "target": [
+        14,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        3,
+        0
+      ],
+      "plane_repair": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": [
+        5,
+        2
+      ],
+      "target": [
+        14,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        1,
+        0
+      ],
+      "plane_repair": [
+        4,
+        1
+      ]
+    },
+    {
+      "source": [
+        5,
+        3
+      ],
+      "target": [
+        14,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        4,
+        0
+      ],
+      "plane_repair": [
+        1,
+        4
+      ]
+    },
+    {
+      "source": [
+        5,
+        4
+      ],
+      "target": [
+        14,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        2,
+        0
+      ],
+      "plane_repair": [
+        3,
+        2
+      ]
+    },
+    {
+      "source": [
+        6,
+        0
+      ],
+      "target": [
+        6,
+        0
+      ],
+      "abelian_change": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        6,
+        1
+      ],
+      "target": [
+        6,
+        3
+      ],
+      "abelian_change": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        4,
+        0
+      ]
+    },
+    {
+      "source": [
+        6,
+        2
+      ],
+      "target": [
+        6,
+        1
+      ],
+      "abelian_change": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        3,
+        0
+      ]
+    },
+    {
+      "source": [
+        6,
+        3
+      ],
+      "target": [
+        6,
+        4
+      ],
+      "abelian_change": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        2,
+        0
+      ]
+    },
+    {
+      "source": [
+        6,
+        4
+      ],
+      "target": [
+        6,
+        2
+      ],
+      "abelian_change": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        1,
+        0
+      ]
+    },
+    {
+      "source": [
+        7,
+        0
+      ],
+      "target": [
+        10,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        7,
+        1
+      ],
+      "target": [
+        10,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        0,
+        4
+      ]
+    },
+    {
+      "source": [
+        7,
+        2
+      ],
+      "target": [
+        10,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": [
+        7,
+        3
+      ],
+      "target": [
+        10,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": [
+        7,
+        4
+      ],
+      "target": [
+        10,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": [
+        8,
+        0
+      ],
+      "target": [
+        9,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        8,
+        1
+      ],
+      "target": [
+        9,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        0,
+        4
+      ]
+    },
+    {
+      "source": [
+        8,
+        2
+      ],
+      "target": [
+        9,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": [
+        8,
+        3
+      ],
+      "target": [
+        9,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": [
+        8,
+        4
+      ],
+      "target": [
+        9,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": [
+        9,
+        0
+      ],
+      "target": [
+        8,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        9,
+        1
+      ],
+      "target": [
+        8,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        0,
+        4
+      ]
+    },
+    {
+      "source": [
+        9,
+        2
+      ],
+      "target": [
+        8,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": [
+        9,
+        3
+      ],
+      "target": [
+        8,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": [
+        9,
+        4
+      ],
+      "target": [
+        8,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": [
+        10,
+        0
+      ],
+      "target": [
+        7,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        10,
+        1
+      ],
+      "target": [
+        7,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        0,
+        4
+      ]
+    },
+    {
+      "source": [
+        10,
+        2
+      ],
+      "target": [
+        7,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": [
+        10,
+        3
+      ],
+      "target": [
+        7,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": [
+        10,
+        4
+      ],
+      "target": [
+        7,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": [
+        11,
+        0
+      ],
+      "target": [
+        26,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        11,
+        1
+      ],
+      "target": [
+        26,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        4,
+        0
+      ]
+    },
+    {
+      "source": [
+        11,
+        2
+      ],
+      "target": [
+        26,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        3,
+        0
+      ]
+    },
+    {
+      "source": [
+        11,
+        3
+      ],
+      "target": [
+        26,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        2,
+        0
+      ]
+    },
+    {
+      "source": [
+        11,
+        4
+      ],
+      "target": [
+        26,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        1,
+        0
+      ]
+    },
+    {
+      "source": [
+        12,
+        0
+      ],
+      "target": [
+        29,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        12,
+        1
+      ],
+      "target": [
+        29,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        4,
+        4
+      ]
+    },
+    {
+      "source": [
+        12,
+        2
+      ],
+      "target": [
+        29,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        3,
+        3
+      ]
+    },
+    {
+      "source": [
+        12,
+        3
+      ],
+      "target": [
+        29,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        2,
+        2
+      ]
+    },
+    {
+      "source": [
+        12,
+        4
+      ],
+      "target": [
+        29,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        1,
+        1
+      ]
+    },
+    {
+      "source": [
+        13,
+        0
+      ],
+      "target": [
+        27,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        13,
+        1
+      ],
+      "target": [
+        27,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        4,
+        4
+      ]
+    },
+    {
+      "source": [
+        13,
+        2
+      ],
+      "target": [
+        27,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        3,
+        3
+      ]
+    },
+    {
+      "source": [
+        13,
+        3
+      ],
+      "target": [
+        27,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        2,
+        2
+      ]
+    },
+    {
+      "source": [
+        13,
+        4
+      ],
+      "target": [
+        27,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        1,
+        1
+      ]
+    },
+    {
+      "source": [
+        14,
+        0
+      ],
+      "target": [
+        30,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        14,
+        1
+      ],
+      "target": [
+        30,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        4,
+        4
+      ]
+    },
+    {
+      "source": [
+        14,
+        2
+      ],
+      "target": [
+        30,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        3,
+        3
+      ]
+    },
+    {
+      "source": [
+        14,
+        3
+      ],
+      "target": [
+        30,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        2,
+        2
+      ]
+    },
+    {
+      "source": [
+        14,
+        4
+      ],
+      "target": [
+        30,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        1,
+        1
+      ]
+    },
+    {
+      "source": [
+        15,
+        0
+      ],
+      "target": [
+        28,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        15,
+        1
+      ],
+      "target": [
+        28,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        4,
+        4
+      ]
+    },
+    {
+      "source": [
+        15,
+        2
+      ],
+      "target": [
+        28,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        3,
+        3
+      ]
+    },
+    {
+      "source": [
+        15,
+        3
+      ],
+      "target": [
+        28,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        2,
+        2
+      ]
+    },
+    {
+      "source": [
+        15,
+        4
+      ],
+      "target": [
+        28,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        1,
+        1
+      ]
+    },
+    {
+      "source": [
+        16,
+        0
+      ],
+      "target": [
+        1,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        16,
+        1
+      ],
+      "target": [
+        1,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        1,
+        0
+      ]
+    },
+    {
+      "source": [
+        16,
+        2
+      ],
+      "target": [
+        1,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        2,
+        0
+      ]
+    },
+    {
+      "source": [
+        16,
+        3
+      ],
+      "target": [
+        1,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        3,
+        0
+      ]
+    },
+    {
+      "source": [
+        16,
+        4
+      ],
+      "target": [
+        1,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        4,
+        0
+      ]
+    },
+    {
+      "source": [
+        17,
+        0
+      ],
+      "target": [
+        2,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        17,
+        1
+      ],
+      "target": [
+        2,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        1,
+        0
+      ]
+    },
+    {
+      "source": [
+        17,
+        2
+      ],
+      "target": [
+        2,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        2,
+        0
+      ]
+    },
+    {
+      "source": [
+        17,
+        3
+      ],
+      "target": [
+        2,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        3,
+        0
+      ]
+    },
+    {
+      "source": [
+        17,
+        4
+      ],
+      "target": [
+        2,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        4,
+        0
+      ]
+    },
+    {
+      "source": [
+        18,
+        0
+      ],
+      "target": [
+        3,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        18,
+        1
+      ],
+      "target": [
+        3,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        1,
+        0
+      ]
+    },
+    {
+      "source": [
+        18,
+        2
+      ],
+      "target": [
+        3,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        2,
+        0
+      ]
+    },
+    {
+      "source": [
+        18,
+        3
+      ],
+      "target": [
+        3,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        3,
+        0
+      ]
+    },
+    {
+      "source": [
+        18,
+        4
+      ],
+      "target": [
+        3,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        4,
+        0
+      ]
+    },
+    {
+      "source": [
+        19,
+        0
+      ],
+      "target": [
+        4,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        19,
+        1
+      ],
+      "target": [
+        4,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        1,
+        0
+      ]
+    },
+    {
+      "source": [
+        19,
+        2
+      ],
+      "target": [
+        4,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        2,
+        0
+      ]
+    },
+    {
+      "source": [
+        19,
+        3
+      ],
+      "target": [
+        4,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        3,
+        0
+      ]
+    },
+    {
+      "source": [
+        19,
+        4
+      ],
+      "target": [
+        4,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        4,
+        0
+      ]
+    },
+    {
+      "source": [
+        20,
+        0
+      ],
+      "target": [
+        5,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        20,
+        1
+      ],
+      "target": [
+        5,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        1,
+        0
+      ]
+    },
+    {
+      "source": [
+        20,
+        2
+      ],
+      "target": [
+        5,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        2,
+        0
+      ]
+    },
+    {
+      "source": [
+        20,
+        3
+      ],
+      "target": [
+        5,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        3,
+        0
+      ]
+    },
+    {
+      "source": [
+        20,
+        4
+      ],
+      "target": [
+        5,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        4,
+        0
+      ]
+    },
+    {
+      "source": [
+        21,
+        0
+      ],
+      "target": [
+        21,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        21,
+        1
+      ],
+      "target": [
+        21,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        3,
+        0
+      ]
+    },
+    {
+      "source": [
+        21,
+        2
+      ],
+      "target": [
+        21,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        1,
+        0
+      ]
+    },
+    {
+      "source": [
+        21,
+        3
+      ],
+      "target": [
+        21,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        4,
+        0
+      ]
+    },
+    {
+      "source": [
+        21,
+        4
+      ],
+      "target": [
+        21,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        2,
+        0
+      ]
+    },
+    {
+      "source": [
+        22,
+        0
+      ],
+      "target": [
+        23,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        22,
+        1
+      ],
+      "target": [
+        23,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        3,
+        4
+      ]
+    },
+    {
+      "source": [
+        22,
+        2
+      ],
+      "target": [
+        23,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": [
+        22,
+        3
+      ],
+      "target": [
+        23,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        4,
+        2
+      ]
+    },
+    {
+      "source": [
+        22,
+        4
+      ],
+      "target": [
+        23,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        2,
+        1
+      ]
+    },
+    {
+      "source": [
+        23,
+        0
+      ],
+      "target": [
+        25,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        23,
+        1
+      ],
+      "target": [
+        25,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        3,
+        4
+      ]
+    },
+    {
+      "source": [
+        23,
+        2
+      ],
+      "target": [
+        25,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": [
+        23,
+        3
+      ],
+      "target": [
+        25,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        4,
+        2
+      ]
+    },
+    {
+      "source": [
+        23,
+        4
+      ],
+      "target": [
+        25,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        2,
+        1
+      ]
+    },
+    {
+      "source": [
+        24,
+        0
+      ],
+      "target": [
+        22,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        24,
+        1
+      ],
+      "target": [
+        22,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        3,
+        4
+      ]
+    },
+    {
+      "source": [
+        24,
+        2
+      ],
+      "target": [
+        22,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": [
+        24,
+        3
+      ],
+      "target": [
+        22,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        4,
+        2
+      ]
+    },
+    {
+      "source": [
+        24,
+        4
+      ],
+      "target": [
+        22,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        2,
+        1
+      ]
+    },
+    {
+      "source": [
+        25,
+        0
+      ],
+      "target": [
+        24,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        25,
+        1
+      ],
+      "target": [
+        24,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        3,
+        4
+      ]
+    },
+    {
+      "source": [
+        25,
+        2
+      ],
+      "target": [
+        24,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": [
+        25,
+        3
+      ],
+      "target": [
+        24,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        4,
+        2
+      ]
+    },
+    {
+      "source": [
+        25,
+        4
+      ],
+      "target": [
+        24,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        2,
+        1
+      ]
+    },
+    {
+      "source": [
+        26,
+        0
+      ],
+      "target": [
+        16,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        26,
+        1
+      ],
+      "target": [
+        16,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        2,
+        0
+      ]
+    },
+    {
+      "source": [
+        26,
+        2
+      ],
+      "target": [
+        16,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        4,
+        0
+      ]
+    },
+    {
+      "source": [
+        26,
+        3
+      ],
+      "target": [
+        16,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        1,
+        0
+      ]
+    },
+    {
+      "source": [
+        26,
+        4
+      ],
+      "target": [
+        16,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        3,
+        0
+      ]
+    },
+    {
+      "source": [
+        27,
+        0
+      ],
+      "target": [
+        17,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        27,
+        1
+      ],
+      "target": [
+        17,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        2,
+        4
+      ]
+    },
+    {
+      "source": [
+        27,
+        2
+      ],
+      "target": [
+        17,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        4,
+        3
+      ]
+    },
+    {
+      "source": [
+        27,
+        3
+      ],
+      "target": [
+        17,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": [
+        27,
+        4
+      ],
+      "target": [
+        17,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        3,
+        1
+      ]
+    },
+    {
+      "source": [
+        28,
+        0
+      ],
+      "target": [
+        18,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        28,
+        1
+      ],
+      "target": [
+        18,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        2,
+        4
+      ]
+    },
+    {
+      "source": [
+        28,
+        2
+      ],
+      "target": [
+        18,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        4,
+        3
+      ]
+    },
+    {
+      "source": [
+        28,
+        3
+      ],
+      "target": [
+        18,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": [
+        28,
+        4
+      ],
+      "target": [
+        18,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        3,
+        1
+      ]
+    },
+    {
+      "source": [
+        29,
+        0
+      ],
+      "target": [
+        19,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        29,
+        1
+      ],
+      "target": [
+        19,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        2,
+        4
+      ]
+    },
+    {
+      "source": [
+        29,
+        2
+      ],
+      "target": [
+        19,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        4,
+        3
+      ]
+    },
+    {
+      "source": [
+        29,
+        3
+      ],
+      "target": [
+        19,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": [
+        29,
+        4
+      ],
+      "target": [
+        19,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        3,
+        1
+      ]
+    },
+    {
+      "source": [
+        30,
+        0
+      ],
+      "target": [
+        20,
+        0
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        0,
+        0,
+        0
+      ],
+      "plane_repair": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": [
+        30,
+        1
+      ],
+      "target": [
+        20,
+        3
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        1,
+        4,
+        0
+      ],
+      "plane_repair": [
+        2,
+        4
+      ]
+    },
+    {
+      "source": [
+        30,
+        2
+      ],
+      "target": [
+        20,
+        1
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        2,
+        3,
+        0
+      ],
+      "plane_repair": [
+        4,
+        3
+      ]
+    },
+    {
+      "source": [
+        30,
+        3
+      ],
+      "target": [
+        20,
+        4
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        3,
+        2,
+        0
+      ],
+      "plane_repair": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": [
+        30,
+        4
+      ],
+      "target": [
+        20,
+        2
+      ],
+      "abelian_change": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "central_difference": [
+        4,
+        1,
+        0
+      ],
+      "plane_repair": [
+        3,
+        1
+      ]
+    }
+  ],
+  "field_modulus": [
+    4,
+    2,
+    4,
+    2,
+    0,
+    2,
+    0,
+    0,
+    2,
+    4,
+    4,
+    1,
+    0,
+    4,
+    0,
+    2,
+    4,
+    4,
+    0,
+    0,
+    4,
+    4,
+    0,
+    0,
+    0,
+    0,
+    2,
+    4,
+    3,
+    1,
+    2,
+    3,
+    4,
+    1,
+    0,
+    3,
+    3,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    3,
+    2,
+    1,
+    0,
+    0,
+    3,
+    3,
+    0,
+    0,
+    0,
+    1
+  ],
+  "planes": [
+    {
+      "plane": 0,
+      "complement": [
+        0,
+        0,
+        1
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 1,
+      "complement": [
+        0,
+        1,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 2,
+      "complement": [
+        0,
+        1,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 3,
+      "complement": [
+        0,
+        1,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 4,
+      "complement": [
+        0,
+        1,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 5,
+      "complement": [
+        0,
+        1,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 6,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 7,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 8,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 9,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 10,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 11,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 12,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 13,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 14,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 15,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 16,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 17,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 18,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 19,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 20,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 21,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 22,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 23,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 24,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 25,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 26,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 27,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 28,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 29,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "plane": 30,
+      "complement": [
+        1,
+        0,
+        0
+      ],
+      "kappa": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    }
+  ],
+  "source_sha256": "f177cae3169218c9527e3e08e1153d710303da54845d1862d25324411d4e7f61",
+  "seconds": 3.5902465829858556,
+  "scope": "Actual coefficient conjugacy, including central characters; no Hodge ranks computed."
+}

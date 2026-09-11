@@ -1,6 +1,7 @@
 // Exact target-component restriction of a factored Macaulay matrix.
 // A row joins all its nonzero columns. Rows in other support components
 // cannot contribute to e_last, so the entire Krylov search stays here.
+// Optional row masks restrict the candidate search, not final verification.
 // Groups retain the original repeated-coefficient tables; no row reduction.
 #include <map>
 #include <numeric>
@@ -11,27 +12,30 @@ struct ComponentGram {
         std::vector<uint32_t> input_map,row_map;
         std::array<std::vector<float>,3> table,input,output;
         size_t offset;
+        bool prime=false;
         void run(const Bytes&x,const Bytes&diagonal,Bytes&coded) {
             size_t n=size_t(nbase)*nmult;
             for(size_t p=0;p<n;p++) {
                 auto c=x[input_map[p]];
                 input[0][p]=c%5;input[1][p]=c/5;input[2][p]=c%5+c/5;
             }
-            for(int c=0;c<3;c++)cblas_sgemm(CblasRowMajor,CblasNoTrans,CblasNoTrans,
-                neq,nmult,nbase,1,table[c].data(),nbase,input[c].data(),nmult,
+            for(int c=0;c<(prime?2:3);c++)cblas_sgemm(CblasRowMajor,CblasNoTrans,CblasNoTrans,
+                neq,nmult,nbase,1,table[prime?0:c].data(),nbase,input[c].data(),nmult,
                 0,output[c].data(),nmult);
             for(size_t p=0;p<size_t(neq)*nmult;p++) {
-                uint32_t t0=output[0][p],t1=output[1][p],t2=output[2][p];
-                auto a=(t0+3*t1)%5+5*((t2-t0)%5);
+                uint32_t t0=output[0][p],t1=output[1][p];
+                uint32_t t2=prime?0:output[2][p];
+                auto a=prime?t0%5+5*(t1%5):(t0+3*t1)%5+5*((t2-t0)%5);
                 auto c=product[a][diagonal[row_map[p]]];
                 input[0][p]=c%5;input[1][p]=c/5;input[2][p]=c%5+c/5;
             }
-            for(int c=0;c<3;c++)cblas_sgemm(CblasRowMajor,CblasTrans,CblasNoTrans,
-                nbase,nmult,neq,1,table[c].data(),nbase,input[c].data(),nmult,
+            for(int c=0;c<(prime?2:3);c++)cblas_sgemm(CblasRowMajor,CblasTrans,CblasNoTrans,
+                nbase,nmult,neq,1,table[prime?0:c].data(),nbase,input[c].data(),nmult,
                 0,output[c].data(),nmult);
             for(size_t p=0;p<n;p++) {
-                uint32_t t0=output[0][p],t1=output[1][p],t2=output[2][p];
-                coded[offset+p]=(t0+3*t1)%5+5*((t2-t0)%5);
+                uint32_t t0=output[0][p],t1=output[1][p];
+                uint32_t t2=prime?0:output[2][p];
+                coded[offset+p]=prime?t0%5+5*(t1%5):(t0+3*t1)%5+5*((t2-t0)%5);
             }
         }
     };
@@ -39,11 +43,13 @@ struct ComponentGram {
     Bytes active,coded;
     std::vector<uint32_t> ptr,idx;
     std::vector<Part> parts;
-    explicit ComponentGram(const CSR&M,const MacaulayFactor&F):cols(M.cols),active(M.cols,0) {
+    explicit ComponentGram(const CSR&M,const MacaulayFactor&F,
+                           const Bytes*row_mask=nullptr,bool prime=false):cols(M.cols),active(M.cols,0) {
+        if(row_mask&&row_mask->size()!=M.rows)throw std::runtime_error("invalid component row mask");
         std::vector<uint32_t> parent(cols),size(cols,1);
         std::iota(parent.begin(),parent.end(),0);
         auto root=[&](uint32_t a){while(parent[a]!=a){parent[a]=parent[parent[a]];a=parent[a];}return a;};
-        for(uint32_t r=0;r<M.rows;r++)if(M.ptr[r]<M.ptr[r+1]) {
+        for(uint32_t r=0;r<M.rows;r++)if((!row_mask||(*row_mask)[r])&&M.ptr[r]<M.ptr[r+1]) {
             auto first=M.idx[M.ptr[r]];
             for(auto p=M.ptr[r]+1;p<M.ptr[r+1];p++) {
                 auto a=root(first),b=root(M.idx[p]);if(a==b)continue;
@@ -55,13 +61,13 @@ struct ComponentGram {
         for(uint32_t c=0;c<cols;c++)if(root(c)==target){active[c]=1;++active_columns;}
         // Nothing to prune: the caller retains its faster persistent-team
         // full operator. Avoid allocating a duplicate full coefficient map.
-        if(active_columns==cols)return;
+        if(active_columns==cols&&!row_mask)return;
         std::map<Bytes,std::vector<uint32_t>> groups;
         for(uint32_t m=0;m<F.nmult;m++) {
             Bytes mask(F.neq,0);
             for(uint32_t e=0;e<F.neq;e++) {
                 auto r=m*F.neq+e;
-                if(M.ptr[r]<M.ptr[r+1])mask[e]=active[M.idx[M.ptr[r]]];
+                if((!row_mask||(*row_mask)[r])&&M.ptr[r]<M.ptr[r+1])mask[e]=active[M.idx[M.ptr[r]]];
                 active_rows+=mask[e];
             }
             groups[mask].push_back(m);
@@ -77,7 +83,7 @@ struct ComponentGram {
                 for(auto e:equations)if(F.table[0][size_t(e)*F.nbase+b]||F.table[1][size_t(e)*F.nbase+b])present=true;
                 if(present)bases.push_back(b);
             }
-            Part p;p.neq=equations.size();p.nbase=bases.size();p.nmult=group.second.size();p.offset=offset;
+            Part p;p.neq=equations.size();p.nbase=bases.size();p.nmult=group.second.size();p.offset=offset;p.prime=prime;
             auto cap=size_t(std::max(p.neq,p.nbase))*p.nmult;
             for(auto&v:p.input)v.resize(cap);for(auto&v:p.output)v.resize(cap);
             for(int c=0;c<3;c++) {

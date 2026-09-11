@@ -104,17 +104,35 @@ int main(int argc,char**argv)try {
     omp_set_num_threads(threads);omp_set_dynamic(0);tables();
     auto start=Clock::now();auto seconds=[&](){return std::chrono::duration<double>(Clock::now()-start).count();};
     CSR M(argv[1]);MacaulayFactor F(M,std::stoul(argv[4]));
-    std::unique_ptr<ComponentGram> component;
-    const char* component_setting=std::getenv("ATLAS_GRAM_COMPONENTS");
-    if(component_setting&&std::string(component_setting)!="0")component=std::make_unique<ComponentGram>(M,F);
-    if(component&&component->active_columns==M.cols)component.reset();
-    size_t search_columns=component?component->active_columns:M.cols;
     const char* team_setting=std::getenv("ATLAS_GRAM_TEAM");
     bool team=team_setting&&std::string(team_setting)!="0";
+    const char* prime_setting=std::getenv("ATLAS_GRAM_PRIME_INPUT");
+    bool prime=prime_setting&&std::string(prime_setting)!="0";
+    if(prime&&std::any_of(M.val.begin(),M.val.end(),[](auto c){return c>=5;}))
+        throw std::runtime_error("prime-input Gram requested for nonprime matrix");
+    Bytes row_mask;
+    const char* mask_path=std::getenv("ATLAS_ROW_MASK");
+    if(mask_path) {
+        std::ifstream f(mask_path,std::ios::binary);row_mask.resize(M.rows);
+        if(!f.read((char*)row_mask.data(),row_mask.size()))throw std::runtime_error("truncated row mask");
+        char extra;if(f.get(extra))throw std::runtime_error("trailing row mask bytes");
+        if(std::any_of(row_mask.begin(),row_mask.end(),[](auto c){return c>1;}))
+            throw std::runtime_error("row mask must contain only zero or one");
+    }
+    std::unique_ptr<ComponentGram> component;
+    const char* component_setting=std::getenv("ATLAS_GRAM_COMPONENTS");
+    if(!F.neq&&mask_path)throw std::runtime_error("use an explicitly compact matrix for sparse masked search");
+    if(F.neq&&(mask_path||(component_setting&&std::string(component_setting)!="0")))
+        component=std::make_unique<ComponentGram>(M,F,mask_path?&row_mask:nullptr,prime);
+    if(component&&component->active_columns==M.cols&&!mask_path)component.reset();
+    size_t search_columns=component?component->active_columns:M.cols;
     if(team)omp_set_schedule(omp_sched_dynamic,2048);
     int column_mode=argc>9?std::stoi(argv[9]):0;
     if(column_mode<0||column_mode>1)throw std::runtime_error("bad column scaling mode");
     Bytes column(M.cols,1),scaled(M.cols);
+    std::unique_ptr<CSR> sparse_transpose;
+    Bytes sparse_rows;
+    if(!F.neq)sparse_transpose=std::make_unique<CSR>(M.transpose());
     if(column_mode) {
         std::mt19937 crng(uint32_t(seed)^0x36e92917U);
         for(auto&c:column)c=1+crng()%24;
@@ -130,7 +148,13 @@ int main(int argc,char**argv)try {
     auto gram=[&](const Bytes& x,const Bytes& d,Bytes& y){
         if(column_mode)scale(x,scaled);
         const Bytes&input=column_mode?scaled:x;
-        if(component)component->gram(input,d,y);
+        if(sparse_transpose) {
+            M.apply(input,sparse_rows,1);
+            #pragma omp parallel for schedule(static)
+            for(size_t i=0;i<M.rows;i++)sparse_rows[i]=product[sparse_rows[i]][d[i]];
+            sparse_transpose->apply(sparse_rows,y,1);
+        }else if(component)component->gram(input,d,y);
+        else if(prime)F.gram_prime_team(input,d,y);
         else if(team)F.gram_team(input,d,y);else F.gram(input,d,y);
         if(column_mode)scale(y,y);
     };
@@ -138,12 +162,14 @@ int main(int argc,char**argv)try {
     for(auto&x:diagonal)x=1+rng()%24;w.back()=1;
     int mode=argc>8?std::stoi(argv[8]):0;
     if(mode<0||mode>4)throw std::runtime_error("bad diagonal mode");
+    if(!F.neq&&mode>1)throw std::runtime_error("factored diagonal mode requires a factored matrix");
     if(mode) {
         Bytes equation(F.neq,1),multiplier(F.nmult,1);
         if(mode==2||mode==4)for(auto&c:equation)c=1+rng()%24;
         if(mode==3||mode==4)for(auto&c:multiplier)c=1+rng()%24;
-        for(size_t i=0;i<M.rows;i++)diagonal[i]=product[equation[i%F.neq]][multiplier[i/F.neq]];
+        for(size_t i=0;i<M.rows;i++)diagonal[i]=F.neq?product[equation[i%F.neq]][multiplier[i/F.neq]]:1;
     }
+    if(mask_path)for(size_t i=0;i<M.rows;i++)if(!row_mask[i])diagonal[i]=0;
     Block previous,last,current;
     size_t steps=0,dimension=0,blocks=0;double gram_time=0,projection_time=0,small_time=0,update_time=0;
     std::vector<size_t> widths(maximum+1,0);
@@ -151,6 +177,12 @@ int main(int argc,char**argv)try {
     for(auto part:{std::pair<const void*,size_t>{&M.rows,4},{&M.cols,4},
         {M.ptr.data(),M.ptr.size()*8},{M.idx.data(),M.idx.size()*4},{M.val.data(),M.val.size()}})
         matrix_hash=hash_extend(matrix_hash,part.first,part.second);
+    // Masked and unmasked Krylov states must NEVER share a checkpoint.
+    if(mask_path) {
+        const uint64_t tag=0x524f575f4d41534bULL;
+        matrix_hash=hash_extend(matrix_hash,&tag,sizeof(tag));
+        matrix_hash=hash_extend(matrix_hash,row_mask.data(),row_mask.size());
+    }
     double inherited=0,checkpoint_seconds=0,last_checkpoint=seconds();
     size_t checkpoint_count=0;
     if(resume) {
@@ -173,7 +205,9 @@ int main(int argc,char**argv)try {
         }
         uint64_t saved;if(!f.read((char*)&saved,8)||saved!=hash)throw std::runtime_error("checkpoint checksum mismatch");
         char extra;if(f.get(extra))throw std::runtime_error("trailing checkpoint bytes");
-        if(dimension>M.cols||steps>M.cols+maximum||std::any_of(diagonal.begin(),diagonal.end(),[](auto c){return !c;}))
+        bool invalid_diagonal=false;
+        for(size_t i=0;i<M.rows;i++)if(bool(diagonal[i])!=(!mask_path||bool(row_mask[i])))invalid_diagonal=true;
+        if(dimension>M.cols||steps>M.cols+maximum||invalid_diagonal)
             throw std::runtime_error("invalid checkpoint state");
     }
     auto checkpoint=[&](){
@@ -224,6 +258,7 @@ int main(int argc,char**argv)try {
         if(fast!=scalar)throw std::runtime_error("input-specific fused Gram/scalar mismatch");
     }
     search_start=seconds();
+    double last_diagnostic=seconds();
     std::string status="diagnostic_inconclusive";Bytes dual;
     const size_t rank_bound=std::min<size_t>(search_columns,component?component->active_rows:M.rows);
     int lost_initial_orthogonality=-1;
@@ -233,6 +268,8 @@ int main(int argc,char**argv)try {
         <<",\"threads\":"<<threads<<",\"column_scaling\":"<<column_mode<<",\"resumed\":"<<(resume?"true":"false")
         <<",\"nonzeros\":"<<M.val.size()<<",\"persistent_team\":"<<(team?"true":"false")
         <<",\"search_columns\":"<<search_columns<<",\"component_groups\":"<<(component?component->parts.size():0)
+        <<",\"selected_rows\":"<<(mask_path?std::count(row_mask.begin(),row_mask.end(),1):M.rows)
+        <<",\"row_masked\":"<<(mask_path?"true":"false")
         <<",\"scalar_gram_replay\":true}"<<std::endl;
     while(dimension<=rank_bound) {
         if(seconds()>limit||interrupted){checkpoint();diagnostic("checkpointed_pause");return 2;}
@@ -256,7 +293,11 @@ int main(int argc,char**argv)try {
                 dual=scaled;status="bounded_ansatz_dual_verified";break;
             }
             std::ofstream f(out/"radical.bin",std::ios::binary);f.write((char*)scaled.data(),scaled.size());
-            status="gram_radical_inconclusive";break;
+            bool masked_null=mask_path&&radical_target;
+            if(mask_path)for(size_t i=0;i<M.rows;i++)if(row_mask[i]&&original[i])masked_null=false;
+            // This is only a masked certificate candidate. A field-aware
+            // reverse elimination must extend it before original-M replay.
+            status=masked_null?"masked_dual_requires_extension":"gram_radical_inconclusive";break;
         }
         current.v.push_back(std::move(w));current.av.push_back(std::move(av));
         t=seconds();bool accepted=current.nondegenerate();small_time+=seconds()-t;
@@ -278,7 +319,9 @@ int main(int argc,char**argv)try {
         }
         t=seconds();previous.project(w);last.project(w);projection_time+=seconds()-t;
         if(seconds()-last_checkpoint>=20)checkpoint();
-        if(steps%2000==0)diagnostic("lanczos");
+        if(steps%2000==0||seconds()-last_diagnostic>=15) {
+            diagnostic("lanczos");last_diagnostic=seconds();
+        }
     }
     // Regardless of the heuristic search's exit, only this original exact
     // identity can justify reporting a unit certificate.

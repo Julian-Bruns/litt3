@@ -1,6 +1,8 @@
 # Late-stage descent along an original cyclic power-of-five cover
 
-Version1,2026-09-10. Proved author extension; fresh bounded audit PASS
+Version2,2026-09-10. Contextual update after the separate B125 theorem;
+the mathematical late-range statement and audited proof are unchanged.
+Proved author extension; fresh bounded audit PASS
 by /root/audit_cyclic_power_late_descent, with the all-digit scalar
 feedback recurrence made explicit. Audited prose, not Lean.
 
@@ -31,9 +33,10 @@ before projection, handles ALL additive previous-scalar digits, and
 uses the ordinary boundary product at n=a+1. It never commutes
 division by5 with an augmentation image.
 
-This proves only the LATE range. For q125 it begins at n4 and does
-not recover the missing lower C3 or C4. Initial bootstrap at n2,n3
-and full-tower descent for q>25 remain open. In particular this is
+This proves only the LATE range. For q125 it begins at n4; the separate
+[cyclic125 bootstrap](Thm_cyclic125_bootstrap.md) now supplies C3,C4
+and hence full towers at125. Early stages for q>=625 still require
+a geometric comparison beyond this theorem. In particular this is
 not an unmarked common-cover exclusion.
 
 [Proof](../Solutions/Sol_cyclic_power_late_descent.md) ·

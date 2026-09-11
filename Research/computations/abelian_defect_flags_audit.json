@@ -1,0 +1,288 @@
+{
+  "status": "PASS",
+  "receipt_sha256": "f177cae3169218c9527e3e08e1153d710303da54845d1862d25324411d4e7f61",
+  "actual_direction_checks": 372,
+  "actual_plane_checks": 372,
+  "cases": [
+    {
+      "case": 0,
+      "directions": 31,
+      "original_base_directions": 6,
+      "original_anti_direction": 1,
+      "plane_ranks": {
+        "1": 1,
+        "2": 30
+      }
+    },
+    {
+      "case": 1,
+      "directions": 31,
+      "original_base_directions": 6,
+      "original_anti_direction": 1,
+      "plane_ranks": {
+        "1": 1,
+        "2": 30
+      }
+    },
+    {
+      "case": 2,
+      "directions": 31,
+      "original_base_directions": 6,
+      "original_anti_direction": 1,
+      "plane_ranks": {
+        "1": 0,
+        "2": 31
+      }
+    },
+    {
+      "case": 3,
+      "directions": 31,
+      "original_base_directions": 6,
+      "original_anti_direction": 1,
+      "plane_ranks": {
+        "1": 0,
+        "2": 31
+      }
+    },
+    {
+      "case": 4,
+      "directions": 31,
+      "original_base_directions": 6,
+      "original_anti_direction": 1,
+      "plane_ranks": {
+        "1": 1,
+        "2": 30
+      }
+    },
+    {
+      "case": 5,
+      "directions": 31,
+      "original_base_directions": 6,
+      "original_anti_direction": 1,
+      "plane_ranks": {
+        "1": 1,
+        "2": 30
+      }
+    },
+    {
+      "case": 6,
+      "directions": 31,
+      "original_base_directions": 6,
+      "original_anti_direction": 1,
+      "plane_ranks": {
+        "1": 1,
+        "2": 30
+      }
+    },
+    {
+      "case": 7,
+      "directions": 31,
+      "original_base_directions": 6,
+      "original_anti_direction": 1,
+      "plane_ranks": {
+        "1": 1,
+        "2": 30
+      }
+    },
+    {
+      "case": 8,
+      "directions": 31,
+      "original_base_directions": 6,
+      "original_anti_direction": 1,
+      "plane_ranks": {
+        "1": 1,
+        "2": 30
+      }
+    },
+    {
+      "case": 9,
+      "directions": 31,
+      "original_base_directions": 6,
+      "original_anti_direction": 1,
+      "plane_ranks": {
+        "1": 1,
+        "2": 30
+      }
+    },
+    {
+      "case": 10,
+      "directions": 31,
+      "original_base_directions": 6,
+      "original_anti_direction": 1,
+      "plane_ranks": {
+        "1": 1,
+        "2": 30
+      }
+    },
+    {
+      "case": 11,
+      "directions": 31,
+      "original_base_directions": 6,
+      "original_anti_direction": 1,
+      "plane_ranks": {
+        "1": 1,
+        "2": 30
+      }
+    }
+  ],
+  "symbolic_numerator_degree": 76,
+  "normalized_numerator_over_F5": "3*t^76 + 3*t^75 + 3*t^60 + 3*t^56 + 4*t^55 + 2*t^51 + t^50 + t^35 + t^31 + 3*t^30 + t^26 + 4*t^25 + 4*t^10 + t^6 + 4*t^5 + 2",
+  "normalized_factorization": [
+    [
+      "t + 3",
+      1
+    ],
+    [
+      "t + 4",
+      1
+    ],
+    [
+      "t^5 + 2*a*t^4 + (3*a + 4)*t^3 + 2*t^2 + 4*a*t + 2*a + 3",
+      1
+    ],
+    [
+      "t^5 + 3*a*t^4 + (2*a + 4)*t^3 + 2*t^2 + a*t + 3*a + 3",
+      1
+    ],
+    [
+      "t^9 + (a + 4)*t^8 + (3*a + 3)*t^7 + (3*a + 3)*t^6 + a*t^5 + t^4 + a*t^3 + (3*a + 1)*t^2 + 3*a*t + 2*a",
+      1
+    ],
+    [
+      "t^9 + (4*a + 4)*t^8 + (2*a + 3)*t^7 + (2*a + 3)*t^6 + 4*a*t^5 + t^4 + 4*a*t^3 + (2*a + 1)*t^2 + 2*a*t + 3*a",
+      1
+    ],
+    [
+      "t^23 + 3*t^22 + 4*t^21 + t^20 + 4*t^18 + 2*t^17 + 2*t^16 + 3*t^13 + 4*t^12 + t^11 + 4*t^10 + 2*t^8 + 3*t^7 + 2*t^6 + 3*t^5 + 3*t^4 + 2*t^3 + 2*t^2 + t + 2",
+      1
+    ],
+    [
+      "t^23 + 3*t^22 + 4*t^21 + 3*t^20 + 4*t^18 + 2*t^17 + t^15 + 3*t^13 + 4*t^12 + 4*t^8 + 4*t^7 + 4*t^6 + 4*t^5 + 2*t^4 + 3*t^2 + 3",
+      1
+    ]
+  ],
+  "semigroup_counts": [
+    {
+      "s": 2,
+      "q": 1,
+      "r": 1,
+      "length": 1
+    },
+    {
+      "s": 2,
+      "q": 5,
+      "r": 1,
+      "length": 9
+    },
+    {
+      "s": 2,
+      "q": 5,
+      "r": 5,
+      "length": 37
+    },
+    {
+      "s": 2,
+      "q": 25,
+      "r": 1,
+      "length": 49
+    },
+    {
+      "s": 2,
+      "q": 25,
+      "r": 5,
+      "length": 237
+    },
+    {
+      "s": 2,
+      "q": 25,
+      "r": 25,
+      "length": 937
+    },
+    {
+      "s": 2,
+      "q": 125,
+      "r": 1,
+      "length": 249
+    },
+    {
+      "s": 2,
+      "q": 125,
+      "r": 5,
+      "length": 1237
+    },
+    {
+      "s": 2,
+      "q": 125,
+      "r": 25,
+      "length": 5937
+    },
+    {
+      "s": 2,
+      "q": 125,
+      "r": 125,
+      "length": 23437
+    },
+    {
+      "s": 4,
+      "q": 1,
+      "r": 1,
+      "length": 1
+    },
+    {
+      "s": 4,
+      "q": 5,
+      "r": 1,
+      "length": 9
+    },
+    {
+      "s": 4,
+      "q": 5,
+      "r": 5,
+      "length": 43
+    },
+    {
+      "s": 4,
+      "q": 25,
+      "r": 1,
+      "length": 49
+    },
+    {
+      "s": 4,
+      "q": 25,
+      "r": 5,
+      "length": 243
+    },
+    {
+      "s": 4,
+      "q": 25,
+      "r": 25,
+      "length": 1093
+    },
+    {
+      "s": 4,
+      "q": 125,
+      "r": 1,
+      "length": 249
+    },
+    {
+      "s": 4,
+      "q": 125,
+      "r": 5,
+      "length": 1243
+    },
+    {
+      "s": 4,
+      "q": 125,
+      "r": 25,
+      "length": 6093
+    },
+    {
+      "s": 4,
+      "q": 125,
+      "r": 125,
+      "length": 27343
+    }
+  ],
+  "seconds": 0.2808352919528261,
+  "scope": "Independent actual H1(O)/AS and flag replay; no re-audit of upstream Picard jets."
+}

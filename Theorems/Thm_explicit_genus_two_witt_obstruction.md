@@ -12,7 +12,9 @@ Use the explicit genus-two/F625 pair of
     r=2(F'/F)^2-F''/F+P/F.
 
 This pair is admissible and active, with ordinary Jacobian, a nonsplit
-canonical double, and a one-dimensional nilpotent tangent. With the
+canonical double, and a one-dimensional Hodge kernel (defect one).
+This does not mean its Fitting nilpotent subspace is one-dimensional.
+With the
 [canonical first lift and higher obstruction](../Definitions/Def_witt_hodge_obstruction.md),
 
     epsilon(C,r) != 0.

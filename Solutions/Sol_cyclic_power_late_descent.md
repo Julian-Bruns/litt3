@@ -1,6 +1,8 @@
 # Late-stage descent for every cyclic power of five
 
-Version1,2026-09-10. Author extension, fresh bounded audit PASS by
+Version2,2026-09-10. Contextual scope notes updated after B125;
+the mathematical late-range statement and proof are unchanged.
+Author extension, fresh bounded audit PASS by
 /root/audit_cyclic_power_late_descent. The all-digit scalar recurrence
 requested by the auditor is explicit in Section3. This is audited prose,
 not Lean. The cyclic25 theorem is a proved input; no early-stage or
@@ -19,10 +21,10 @@ ORIGINAL pulled-back T_n, a GIVEN compatible T_(n+a+1) forces its GIVEN
 T_(n+1) truncation to descend compatibly along h to C_(n+1).
 
 No initial reference is needed beyond the GIVEN compatible C_n. This
-does not produce the missing low C_n for n<a+1 and does NOT prove
-full-tower descent for q>25. At q125 only n2,n3 remain before the
-induction begins at n4. A finite bootstrap recovering GIVEN
-T4→C4 from GIVEN T7 would suffice for full towers at125.
+does not produce the low C_n for n<a+1. At q125 the separate
+[B125 proof](Sol_cyclic125_bootstrap.md) now recovers GIVEN T4→C4
+from GIVEN T7, completing that full-tower induction. Early stages
+at q>=625 remain outside this late-range proof.
 
 ## 1. Actual modules and genuine reference
 

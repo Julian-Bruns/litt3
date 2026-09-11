@@ -44,26 +44,38 @@ def main():
     parser.add_argument("binary", type=Path)
     parser.add_argument("out", type=Path)
     parser.add_argument("--cases", type=int, default=100)
+    parser.add_argument("--prime",action="store_true",help="Test the prime-input adapter with nonprime Krylov coefficients")
+    parser.add_argument("--threads",type=int,default=1)
+    parser.add_argument("--row-mask",action="store_true",help="Stress selected-row search and original certificate replay")
+    parser.add_argument("--sparse",action="store_true",help="Test the compact ragged sparse fallback")
     args = parser.parse_args()
+    if args.sparse and args.row_mask:parser.error('sparse tests already use compact input; omit --row-mask')
     args.out.mkdir(exist_ok=False)
     rng = random.Random(125)
     environment = dict(os.environ, ATLAS_GRAM_TEAM="1",
                        VECLIB_MAXIMUM_THREADS="1", OMP_WAIT_POLICY="PASSIVE")
+    if args.prime: environment['ATLAS_GRAM_PRIME_INPUT']='1'
     records = []
     for case in range(args.cases):
         n = rng.randrange(2, 13)
         # Low-rank factorizations deliberately stress singular Gram operators.
         rows, rank = rng.randrange(1, n+4), rng.randrange(1, n+1)
-        left = [[rng.randrange(25) for _ in range(rank)] for _ in range(rows)]
-        right = [[rng.randrange(25) for _ in range(n)] for _ in range(rank)]
+        base=5 if args.prime else 25
+        left = [[rng.randrange(base) for _ in range(rank)] for _ in range(rows)]
+        right = [[rng.randrange(base) for _ in range(n)] for _ in range(rank)]
         matrix = [[dot(row, col) for col in zip(*right)] for row in left]
         matrix_path = args.out / f"matrix-{case:03d}.bin"
         write_matrix(matrix_path, matrix)
+        mask=[rng.randrange(2) for _ in range(rows)] if args.row_mask else [1]*rows
+        if args.row_mask:
+            mask_path=args.out/f"mask-{case:03d}.bin"
+            mask_path.write_bytes(bytes(mask))
+            environment['ATLAS_ROW_MASK']=str(mask_path.resolve())
         record = dict(case=case, rows=rows, columns=n)
         for mode in (0, 1):
             folder = args.out / f"solve-{case:03d}-{mode}"
             result = subprocess.run([str(args.binary), str(matrix_path), str(folder),
-                                     "10", str(rows), "20260908", "8", "1", "0", str(mode)],
+                                     "10", str(0 if args.sparse else rows), "20260908", "8", str(args.threads), "0", str(mode)],
                                     env=environment, capture_output=True, text=True, timeout=20)
             (args.out / f"log-{case:03d}-{mode}.txt").write_text(result.stdout+result.stderr)
             assert result.returncode in (0, 2), (case, mode, result.stderr)
@@ -75,11 +87,16 @@ def main():
                 coefficients = primal.read_bytes()
                 assert len(coefficients) == rows and all(c < 25 for c in coefficients)
                 assert [dot(coefficients, col) for col in zip(*matrix)] == [0]*(n-1)+[1]
+                assert all(mask[i] or coefficients[i]==0 for i in range(rows))
             if dual.exists():
                 coefficients = dual.read_bytes()
                 assert len(coefficients) == n and all(c < 25 for c in coefficients)
                 assert coefficients[-1] and all(dot(row, coefficients) == 0 for row in matrix)
             assert not (primal.exists() and dual.exists())
+            if data['status']=='masked_dual_requires_extension':
+                coefficients=(folder/'radical.bin').read_bytes()
+                assert len(coefficients)==n and coefficients[-1]
+                assert all(not mask[i] or dot(row,coefficients)==0 for i,row in enumerate(matrix))
             record[str(mode)] = data["status"]
         records.append(record)
     summary = dict(cases=len(records), certified={str(mode):sum(

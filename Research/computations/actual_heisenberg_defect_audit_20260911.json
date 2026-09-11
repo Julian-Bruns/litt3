@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "input_sha256": {
+    "Research/computations/heisenberg125_deck_full_case0_plane0.json": "723b952cd00c4911414633b809e846f805b0f2de77c925093066826e47dc113b",
+    "Research/computations/heisenberg125_pilot_high.json": "d2fe3183b287e48f035c1fbbb31d401033bc8a8d03efcc04fff202436c46547e"
+  },
+  "hodge_columns_replayed": [
+    744,
+    745,
+    746,
+    747,
+    748,
+    749
+  ],
+  "deck_columns_replayed": [
+    0,
+    24,
+    108,
+    300,
+    500,
+    738,
+    739,
+    740,
+    741,
+    742,
+    743,
+    744,
+    745,
+    746,
+    747,
+    748,
+    749
+  ],
+  "independent_group_element_PARI_rank": 713,
+  "defect": 37,
+  "seconds": 327.38056512502953,
+  "nested_quadratic_affine_Lang_identity": true,
+  "both_chart_equations_in_independent_torsor_algebra": true,
+  "exact_top_monomial_norm": -1,
+  "all_12_AS_fixed_bases_and_372_planes": true
+}

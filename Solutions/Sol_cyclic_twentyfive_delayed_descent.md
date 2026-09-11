@@ -355,9 +355,11 @@ Stable-model uniqueness and Frobenius stability give fewer than
 the SAME main parameter. The genus-five intermediate requires no new
 partner count, because the original neutral j descends further to C.
 
-Actual five-part125 and higher, trivial-five-action carriers,
-nonordinary-X trace-zero cases, higher source defects and non-Galois
-Y-legs remain. This is not the unmarked common-cover theorem.
+The actual-five-part125 case was subsequently excluded by the separate
+[B125 theorem and application](Sol_cyclic125_bootstrap.md). Higher
+powers, trivial-five-action carriers, nonordinary-X trace-zero cases,
+higher source defects and non-Galois Y-legs remain. This is not the
+unmarked common-cover theorem.
 
 ## Evidence and sources
 

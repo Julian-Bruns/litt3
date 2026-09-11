@@ -1,7 +1,8 @@
 # Backup candidate: fixed X and an ordinary genus-two partner
 
-Updated2026-09-08, `/root/alternative_curve_candidates_max`.
-Active fixed pair and all18/selected14 computation are unchanged.
+Updated2026-09-11,07:43CEST, `/root`.
+Main fixed X/high-prime-degree Y_t remains selected; A18 is not required
+for its current cored/atlas exclusion and is not being restarted.
 The original common finite-etale-cover problem remains UNSOLVED.
 
 Chosen partner:
@@ -16,7 +17,32 @@ ASSUMED clump image, on X has size divisible by8. Thus its W3/small-clump
 theorems do not reach those supports. No counterexample probability is
 assigned to the candidate.
 
-## Current outcome —2026-09-08,04:15 CEST
+## Current outcome —2026-09-11,07:43 CEST
+
+The [complete no-cored theorem](../Theorems/Thm_backup_cored_span_exclusion.md)
+is now canonical. The coherent 24+12+2 assembly and earlier small packet
+have a fresh PASS audit, including all bounded torsion/Cartier/secant
+replays. Its [canonical proof](../Solutions/Sol_backup_cored_span_exclusion.md)
+supersedes historical pending-audit labels below. The backup has caught
+up on cored exclusion; full-liftable coreless exclusion remains separate.
+
+NEW: [degree84 is excluded](../Theorems/Thm_triangle237_backup_exclusion.md).
+All42hyperelliptic survivors satisfy a necessary system with an explicit
+190-node unit identity; independent replay and full35-stage provenance
+audit PASS. Together with the earlier3primitive exclusions, this removes
+the final tame row. **All24tame,12small-wild and2large profiles now have
+individual exclusions.** The coherent no-cored assembly audit is PASS,
+including the earlier author small-signature packet. Coreless
+correspondences remain separate and unresolved.
+
+NEW: the [complete degree2 Prym sieve](../Theorems/Thm_backup_degree_two_atlas_exclusion.md)
+excludes ALL1533actual carrier-label orbits:1408mod5,114mod25,11mod125.
+Fresh final-assembly audit PASS; every model, twist and geometric factor
+is retained. This completed the degree2 row.
+The independently audited degree84 dormant decoration excludes its three
+primitive survivors; the new unit theorem removes its42hyperelliptic survivors. For a fixed
+dormant potential their complete coefficient algebra now has proved
+finite-etale rank at most2, not a solver-runtime bound or an exclusion.
 
 **All five Hermitian atlas systems are empty:405/405 oper/twist pairs,
 twenty original-row chart identities.** The geometric bridge has a fresh
@@ -60,12 +86,30 @@ now excludes(48;2,3,8). Pro's77-class list is complete by two independent
 exact character-mass calculations; regeneration matches every array.
 Full local replay3.733s. Only two classes survive the existing smaller-map
 exclusions, contradicting moduli Frobenius orbit3.
-Thus **22/24 tame and9/12 small-wild rows are excluded**;
-two tame and three small-wild remain. These theorems are author-checked,
-not independently audited. The Hessian corollary uses the
+The new [single-jump A7 reduction](../Theorems/Thm_single_jump_a7_hermitian_reduction.md)
+also excludes the small-wild row(280,20,23,7). Its actual orbifold is
+[H/A7], and the given C atlas composes with the degree50 subgroup map
+to[H/PSU3(5)]. Fixed-base Artin--Schreier rigidity and the actual A7
+ramification, not just numerical signatures, establish the identification.
+Fresh focused audit PASS; no atlas computation rerun.
+The new [conductor-two primitive theorem](../Theorems/Thm_backup_wild120_atlas_exclusion.md)
+excludes the small-wild row(120,20,27,3). Fixed-base local Galois
+compatibility leaves a single common scalar in three small exact ideals;
+all have basis[1]. Independent geometric audit and all3 replays PASS,
+the slowest4.63s internally. No long atlas computation was needed.
+The new [twisted primitive theorem](../Theorems/Thm_backup_wild240_atlas_exclusion.md)
+excludes the small-wild row(240,40,47,6). Its actual etale double is
+treated in all15 two-torsion classes, two charts each:29 unit ideals
+and one ideal forcing the required nonzero scalar to zero. All30 were
+computed in about44s on one core; the geometric audit is PASS.
+With both final theorems, **24/24 tame and12/12 small-wild rows are excluded**.
+The earlier small-
+signature theorems are largely author-checked; the new A7,120 and240
+reductions are independently audited.
+The Hessian corollary uses the
 existing author-prose Hessian presentation, not a new audit of that input.
 
-No agent or solver is running; current operating policy is in STATE.md.
+Current tasks and operating policy are in STATE.md.
 The original problem remains UNSOLVED. The main pair is still fixed X
 and high-prime-degree Y_t. Everything below concerns this backup or an
 explicitly conditional span, not arbitrary etale commensurability.
@@ -644,12 +688,15 @@ This uses no A18 assumption. The full-PGU row is excluded by the completed and a
 all-character theorem linked at the top; no remaining atlas computation
 is needed on C.
 
-Current cored remainder:2 tame and3 small-wild; both large profiles are excluded.
+The following records the historical last cases; ALL are now excluded by
+the canonical theorems linked at the top, with the coherent assembly under audit.
 The degree84 Pro census leaves42 hyperelliptic-factor and3 primitive
 classes. Full native regeneration, independent character mass and all
 witnesses were locally replayed in about6.013s on one core.
 See [census verification](DEGREE84_CENSUS_STATUS.md).
-This does NOT remove the degree84 row or change the five-case remainder.
+The new triangle237_backup_exclusion supplies the previously missing
+geometric emptiness certificate. The later A7 reduction removes
+degree280 independently of that census.
 The tame rows are exactly(n;signature)=(2;2,2,2,2,2,2),
 (84;2,3,7). The degree24(2,4,6) row is excluded by
 triangle246_frobenius_quotient_obstruction, with a complete40-class census.
@@ -657,11 +704,14 @@ The degree48(2,3,8) row is excluded by
 triangle238_frobenius_factor_obstruction, with a complete77-class census.
 The first is realized by C's own hyperelliptic pencil, so no condition
 on C alone can exclude that row; the actual X leg is essential.
-The small-wild rows are exactly(n,e,delta,d)=(120,20,27,3),
-(240,40,47,6),(280,20,23,7). Their natural roots have weights3 or7;
-the preceding regular quadratic/dormant argument does not apply.
-This bounded list is neither a realization list nor a full exclusion;
-arbitrary coreless spans are separate.
+The remaining small-wild row is exactly(n,e,delta,d)=(240,40,47,6).
+Its natural root has weight3 with a possible two-torsion twist; the
+regular quadratic/dormant argument does not apply. The untwisted
+(120,20,27,3) row is now excluded by the independently audited
+backup_wild120_atlas_exclusion. The weight7 row(280,20,23,7) is excluded by
+single_jump_a7_hermitian_reduction, not by a quadratic-root test.
+This historical bounded list is not a realization list. Its individual
+exclusions are now complete; arbitrary coreless spans are separate.
 
 The eleventh tame exclusion is n=8 with signature(4,4,4). For this
 profile, Hurwitz gives4K_C~4D_i for each reduced degree-two branch

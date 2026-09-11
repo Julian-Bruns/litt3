@@ -1,0 +1,141 @@
+{
+  "status": "PASS",
+  "active_connections": 85,
+  "geometric_nontrivial_twist_tests": 1275,
+  "identically_bad_twists": 10,
+  "parameter_degree_bound": null,
+  "specialization": "actual backup C_alpha",
+  "parameter_modulus": "z^3 + z + 1",
+  "dormant_factor_degrees": [
+    5
+  ],
+  "seconds": 0.38226458395365626,
+  "scope": "Exact endpoint/double-cover table, not arbitrary common-source ordinariness.",
+  "backup_bad_twist_histogram": {
+    "0": 79,
+    "2": 6
+  },
+  "geometric_bad_pairs": 12,
+  "bad_records": [
+    {
+      "kind": "branch",
+      "source": 4,
+      "factor": "u",
+      "geometric_connections": 1,
+      "bad_twists": [
+        {
+          "target": 7,
+          "corank": 1,
+          "rank_two_block": 2,
+          "rank_scalar": 0
+        },
+        {
+          "target": 9,
+          "corank": 1,
+          "rank_two_block": 2,
+          "rank_scalar": 0
+        }
+      ]
+    },
+    {
+      "kind": "mixed",
+      "source": 4,
+      "factor": "u + 2*a",
+      "geometric_connections": 1,
+      "bad_twists": [
+        {
+          "target": 6,
+          "corank": 1,
+          "rank_two_block": 1,
+          "rank_scalar": 1
+        },
+        {
+          "target": 10,
+          "corank": 1,
+          "rank_two_block": 2,
+          "rank_scalar": 0
+        }
+      ]
+    },
+    {
+      "kind": "branch",
+      "source": 8,
+      "factor": "u",
+      "geometric_connections": 1,
+      "bad_twists": [
+        {
+          "target": 2,
+          "corank": 1,
+          "rank_two_block": 2,
+          "rank_scalar": 0
+        },
+        {
+          "target": 10,
+          "corank": 1,
+          "rank_two_block": 2,
+          "rank_scalar": 0
+        }
+      ]
+    },
+    {
+      "kind": "branch",
+      "source": 11,
+      "factor": "u",
+      "geometric_connections": 1,
+      "bad_twists": [
+        {
+          "target": 0,
+          "corank": 1,
+          "rank_two_block": 2,
+          "rank_scalar": 0
+        },
+        {
+          "target": 12,
+          "corank": 1,
+          "rank_two_block": 2,
+          "rank_scalar": 0
+        }
+      ]
+    },
+    {
+      "kind": "branch",
+      "source": 13,
+      "factor": "u",
+      "geometric_connections": 1,
+      "bad_twists": [
+        {
+          "target": 3,
+          "corank": 1,
+          "rank_two_block": 2,
+          "rank_scalar": 0
+        },
+        {
+          "target": 5,
+          "corank": 1,
+          "rank_two_block": 2,
+          "rank_scalar": 0
+        }
+      ]
+    },
+    {
+      "kind": "branch",
+      "source": 14,
+      "factor": "u",
+      "geometric_connections": 1,
+      "bad_twists": [
+        {
+          "target": 1,
+          "corank": 1,
+          "rank_two_block": 2,
+          "rank_scalar": 0
+        },
+        {
+          "target": 6,
+          "corank": 1,
+          "rank_two_block": 2,
+          "rank_scalar": 0
+        }
+      ]
+    }
+  ]
+}

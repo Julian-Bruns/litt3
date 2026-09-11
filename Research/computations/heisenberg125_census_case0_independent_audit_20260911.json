@@ -1,0 +1,1061 @@
+{
+  "status": "PASS",
+  "case": 0,
+  "inputs": {
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/summary.json": "95876efc626ac221c25d5b0cc9d4d5567e92a5d9ca69ad653bbca5c7306d8979",
+    "/Users/julian/Documents/litt3/Research/computations/heisenberg125_frobenius_case0.json": "d92e030c6a86eb8a707333a7107da6e5ed1ef3915550fe776a17681d818fea54",
+    "/Users/julian/Documents/litt3/Research/computations/heisenberg_frobenius_independent_audit_20260911.json": "dcc57c4ac106219cdf3c935f63e6589335626f030bbf243c1581b5e2394bcafb",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_cyclic_directions.json": "f177cae3169218c9527e3e08e1153d710303da54845d1862d25324411d4e7f61",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_jet_0.json": "8a671fbcc9aeca205fc3ddcc35380a208159c6ea8fe889f190f673d9c4487f3a",
+    "/Users/julian/Documents/litt3/scripts/backup_heisenberg_defect.py": "ae3166a720728fe3284a7e04f3d3fb5b289136f69e41e78cb5b3ed8d8909aa4b",
+    "/Users/julian/Documents/litt3/scripts/rank_heisenberg_free_columns.py": "49159a5118253de168ccb0e4bc01a54951c9c332ce020079efd4b4f8c5d86120",
+    "/Users/julian/Documents/litt3/scripts/run_heisenberg_census.py": "6a0fce67b11cad9b6bfdd5a1adff2364b1f0dce09364ba70acb563efaabdc791",
+    "/Users/julian/Documents/litt3/scripts/audit_actual_heisenberg_defect.py": "9659239f82751aa96391417c648ad8d99ff656fe60831dbfe91fa725277d6d6b",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane00_central0_hodge.json": "62bc467a6301e06f724e5c8920daa279995301cf52b29baa46af07f8338ba5dd",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane00_central0_deck.json": "74d8a387a8625f331e6673f6991c751cdebeb7a672252fdc1c476c802b28ab1d",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane00_central0_rank.json": "c466916e09146002bd8e3806c5d4330bc44d2e7b3d505dde075c78ed75ef7263",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane00_central1_hodge.json": "61fee517a7d40f536dc6b59bf58959fcde4314b2fd31fc094c33f6e8859b5884",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane00_central1_deck.json": "097347ae8290af9f9e08130eeb1fa1b266c7ace3cad129428a90a32354b38a79",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane00_central1_rank.json": "55334edcef95c4b1d1501bde5121911dd3ac0108c176b6625a71e313bf17de44",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane00_central2_hodge.json": "d2d68382bd7cf415c49aa0a07774c95509d4074a91cac501702ea1e971349fec",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane00_central2_deck.json": "95d2e9f62df1b9048a0a48087b5cb413191896bc9d36a4e6184cbf556d1c8f1a",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane00_central2_rank.json": "7f47fc7d71f95b8570822f0602ee27cd388d3c996815de2c6bb7a82ba07874f8",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central0_hodge.json": "a37c43aa1ff648160e8ba919889a9e29b97b9481a46ddd03d7bddd93383d64ee",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central0_deck.json": "eba0a68d8bf15d9ed9eec3bf8074570cbb028ae7c8f3c1c36e8d95febf502d6f",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central0_rank.json": "794c688b8340a97914f4706dbd2a0df36402797fa585049a9bd8c5a175f9510e",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central1_hodge.json": "f0043068f1357008e35a3192fd614d20c5336b6ad36f5a8e860bb65b68ca151d",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central1_deck.json": "d79dd23a84e778a079fc7bbbab09b5dbaf7616eed559de290b08f3329451df6b",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central1_rank.json": "221082bf2c6f0ec62afab83ef639df8c630c6c669d07977ca982bfc004c3716d",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central2_hodge.json": "e719007af96c4bc910b56f7fa00bd2d33df3cf517fb48665958cb67dc2444aa9",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central2_deck.json": "90e68346dcf19788fa7d5d9d9e50d10413471c8a24fe83baac87690cecccad7a",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central2_rank.json": "50be41fc46e05224098e85dbcac3493bd5d82699bb12bb76a4b993ee275af7f3",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central3_hodge.json": "6870814a678fb28ec4c6678ec01378b57663e9138258921f2400b73bf8e41797",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central3_deck.json": "8d8b6a96ffed65fd9e6e69eed8c0842920e66438a4f352a158a94794897895c4",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central3_rank.json": "d8ee8ed3fbc7469b0e6c41a04dc5841ee807639a62c4017e6fafe2df490b6737",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central4_hodge.json": "df94f6fd847cccf3cf729169dbd86cb5831a6a6df2ffab93bf9866f08906b9db",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central4_deck.json": "b22b398a868caa11e68fc4cd4d4320f7e65f107cc20060bfeab6aec1c4643fd7",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane01_central4_rank.json": "ee1600836861b1699fbe44e1349c42db311f076edd9ddf416f411ba2ab6dd4f9",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central0_hodge.json": "039dab135cbb1b49db46867a8161bb988eb01d28cd563a2e5baf30997c394fd7",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central0_deck.json": "e5d971eb3886c38a5420fb78fb2daaed83d98a165cf1f26356b0205b6533a2be",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central0_rank.json": "9d35de1ebfe867a90104715a6217d94162874bbde038d6555a3a4a0dc4ef33b7",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central1_hodge.json": "2b29f588e0a0e39b0f73d6072c5bc22af5ea3922e03459df6935ea1306ce5092",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central1_deck.json": "d64c25bdebfb04dbca70933b318ef8dae522312d6fb92bf015c9d57c48fb0376",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central1_rank.json": "dc53c90faa6110550608335d44a83c7b7aa986c58ae69a56fcfc2abb9151e12b",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central2_hodge.json": "25b4bdbd3787a12c49758e3f843fc3a3d7849c6ccf47898d8a6b25d56c3bfa3e",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central2_deck.json": "8ee04248bdd5086a0d04958889391edddef75af57b68430d91f43fe1e7434932",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central2_rank.json": "8ff052d9ad34e3f9231fba4ef7ca63939745320b42265cb86e84aae7ad810cf0",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central3_hodge.json": "176d5c542930c461fe933a0f94186fd0850fa1f6dad764507cb3f4455d5e90d0",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central3_deck.json": "12a0caf8ea6fa49b9b1ddd35965a2ec8a300fc25094b34727450f6d69607b819",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central3_rank.json": "16cda757d411b45da212563059fafc27717fa378d095a13f47d9db1b6d3d7660",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central4_hodge.json": "694150bdd672547eead2d47d9277af23dcba052ebacb4122981291791a08c336",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central4_deck.json": "c7649191261848e40ce82f7e311e1c4f6fae3f928513511fd77215ac30f41309",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane02_central4_rank.json": "fb7dd2fa71776e1aa2e6c003e4eab10f14968e3cb78ef5741c15eb6f4f639166",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central0_hodge.json": "29b6495c9b65432d2086a1cbd7030832d749f270a048c0810d4f2e8955b86253",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central0_deck.json": "638cac8e9aaea807879e25b4f273d6d92f7e10aa576abd180cde9ab37cace388",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central0_rank.json": "e945e47ad720860c14bf77dbdb084b9c7573b392a4e215a9ff9f84f2da75c522",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central1_hodge.json": "6caa83fba19cb39a8d8ab08c138f268f583849c2e4096052fa4660607334c35f",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central1_deck.json": "cc74ffd3030578dfff8a159eb6a2f61cac9122fb22cf47fbc8018e36c50f73ef",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central1_rank.json": "db95c1c41de2b21952dcfda5329df6adc831a209370272743859bf6a8f5cec75",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central2_hodge.json": "2a973bf10bad56369cfd032fe7e4db4f0309a4ce873548734d7f87abc7f1585b",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central2_deck.json": "b780a78859956d0a2d07c18ba831fbe417a0a9f79a2bd7eab403b0ed4378aa28",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central2_rank.json": "87909a48279660ff1ec8a72ed64c929bbfea13b1bcd7354ba10f2374a2078516",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central3_hodge.json": "d2e00e301b8d995f7a9c33a2473ea546744cf3c3dbe4929f65ab701a25346dbd",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central3_deck.json": "929a8fe0cdb67e82c39b44a78dec6d541a6028722ade12c573ac10e73368665a",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central3_rank.json": "af6da66e95171ca634c0d7f0c1bd3ec9ef50dbb1404e653cfaf31946709789d6",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central4_hodge.json": "882ba99ce9e8710222920ad6d4708d953b7d7216d49b3156c40bb08f35917260",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central4_deck.json": "8d70d45795698b35ddd13a304a789f0fd39bfe9943eb7d146766625356037ddc",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane03_central4_rank.json": "bb250ed3d81107ce0ef6ded37292cfbcf8e67d00f7cffcd92998338e490ac832",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central0_hodge.json": "8aed0b6df695ac24468b7f5d3ceaafc1793108440f17a6e751a840ab23b750e3",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central0_deck.json": "10a738f542d107fcad9b9c0a60326ef40098da08988e8b92f59a51179b4df3b5",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central0_rank.json": "fce95ee9bd67470b654ea8a850990a49cda525f46717e00a7f9bb6ae55853999",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central1_hodge.json": "df65fefd233385f7247763bcc7b12f22446ca7bf83329107e310fcd68a329e87",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central1_deck.json": "ec1dfb9ef2ff1b32a580a87de5ee300bb65f358ea0e995c9ad923f50832ec92f",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central1_rank.json": "e302f0e3cf74887dab244d8d7f1b9a2e9f8db92c21e5a304ef8ed0e89735ac62",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central2_hodge.json": "c3a43404dda9856ef74e421a459f00d52c8a55f3f18626cbda7ab737746a33c7",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central2_deck.json": "3e6e5b1568bb8ad12fb72546682130b6a97a41dbd9b2d2dca3dd2af033ab554c",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central2_rank.json": "570f2ea0fcc6663a883afcb2337b31aaa03f13420a6a3ca6f537d6f4765f377b",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central3_hodge.json": "baf1787899882a4defb14f4547d00741c7d10d5494381e39aa1e38b70aba04a9",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central3_deck.json": "1bf52b76bd1efc2e480fcb4fd26dd083cec4ce2072d0ae59f38c26d61395bec0",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central3_rank.json": "f45918ddfba907b77d47e486c1b1f27b601e63d9d134fefa88b4cfeb119b3195",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central4_hodge.json": "528979c22152bc57b50c94c4db4a7acd609e34b2e5b91e77e23204e31426d744",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central4_deck.json": "2cf4fa434a6ead119cac1d8863756e2b4b19a2901046a856f8d866b1d31619f1",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane04_central4_rank.json": "9c32b6bf48aaee81860d82444166164943e0ce78a59f4b0cb8619dc7a289d731",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central0_hodge.json": "48b1fb852f8d1634b0798c1de6052127ea5eb6d0a3a918980643a64440dcbe2c",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central0_deck.json": "729b8a56f7c63238219aeb27f0c9c6de0f5510fb7bcfbbae0f32ace6ba077ef2",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central0_rank.json": "ca8f26e00579198dc9969cbe0a0c39ead7ed833657c2e302d3418d6948403e58",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central1_hodge.json": "98a60f3d533ad80dff3e3813b5d07fb4a436435627687263337ebd9e274ab6fd",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central1_deck.json": "03a3ae01016ac84535ac8821b2ab388861dfe19666934bc1b51e9d891feb30a2",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central1_rank.json": "327dd8d3bd0da35ffb5bc9864ee3f1e09ad0f8622584cbf6ebc6a22e63b74422",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central2_hodge.json": "7daae276032522260cbd68c23683bbf9e14f64aa86ab35bd97cbc3eab6e94d31",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central2_deck.json": "76558bd54587f39c6c5e7425bd899075f2164b90cc8e4e616ced237e19ba515d",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central2_rank.json": "fd0b1706da794fb0af81bbc63e615e570bb86df0f63b3ea88c5978a5d4e7f745",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central3_hodge.json": "ab8c26f2967ffceb7c679ee2ffc666a74afc49384c9a4bb3cf1dd6f432f950d0",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central3_deck.json": "bb720d4a58402bedf693d54801111e5990c679f28e942ae5debea34f7d3b2c18",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central3_rank.json": "027db3f57ca01578348d17e9474f5a14205ecb1e6f3083e326bf9ce2ffe6f8af",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central4_hodge.json": "912710f955f3d0945b116d46257cbccecda5ad96bdf385b875433944c672c8f2",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central4_deck.json": "98a2e8b6b37624f4b33bde98b151c124aa2a9999d89b63911f4f9ecff1946b03",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane05_central4_rank.json": "eec45cf46c28e8603e8f654f0dedad11e3e972bba03e20cbb62080d51bdf0318",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central0_hodge.json": "4917d1ece68df861a24a9584cac3be52acac04789af607de745360235235f6e2",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central0_deck.json": "220740d6b13b7840a45a405ea236457312f5a7f4bd56a4f905c01fc900bb144f",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central0_rank.json": "02a348da5c3d4cfe6c04ca243dd151ce554b50ccc37592fa636139973789bbd1",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central1_hodge.json": "39464b7ce289562e9c9f8646c3af867cfd69491e6c7994c4d376ae7a3cfab946",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central1_deck.json": "7013d5ba123fca23426a869ed1923aaa15b7c7629ed319d06c659016f41db808",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central1_rank.json": "2154d7e7223d33f07cddf6f83490fad94ff02eac1022d66976e18d47913f2e1e",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central2_hodge.json": "201b86c1fc05711e36d2db10d655541e7065fb75bd6788798d910e16e88f685f",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central2_deck.json": "ae66866c070891263c130d2f0153fdcaad2f0fed3e9e009e26c41229b8291646",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central2_rank.json": "a4797cd6d9e338268d2436fe5c495a862c858608faf37cdbc8b3d3a6ddc7d2d4",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central3_hodge.json": "ff5ec760cf6750b2263fbe0faefb08b5b45be074546fc63aee87f80004c62a33",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central3_deck.json": "431c4a61661f7512132f6d8cd587910563b95c75d1e75280eb7aea347fed378c",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central3_rank.json": "06ce63e550c122d5262728fdcf6329c5b4ff66c82bba56ff70975602df64d746",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central4_hodge.json": "0aa0e582a15d2e0991f781c5473f7c5c8535609b2024082c17d8c5d24b2ae90a",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central4_deck.json": "63f452e4e2372e37424a693d393d498f3ed89403d5915875894b9f6088b4e71b",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane06_central4_rank.json": "f8580153f9063021c2562c2aa9fb5739f55623a1924e530e83034b0b238352d0",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central0_hodge.json": "16a91fb9a4315469d96e135af1377f4b4cd3bc43cf4a803c7e6a61760b8dbe29",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central0_deck.json": "2d17e469be15f97a5aa6864b16fce95108ab5177a9e403db75d5c116780812c7",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central0_rank.json": "fcaa7b353163947d7ce1345f84cb919bca98f9b16a4d6e33bf51eb9af70036fd",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central1_hodge.json": "5958b6b2dc9a04982095eb80e51f14714cd381809fdbffdfa5b0796ea8a8e948",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central1_deck.json": "e3e8ed17055a4635436ad607fc24a6d31e34aa83d230b0ac87d0579c57494eac",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central1_rank.json": "5af0b29cfa25b3f6dda175c2518c9da10a0e3af483c0566afcd037e478627846",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central2_hodge.json": "fe3deb51a9736b704350a6f656db447f218044e357422ae22c64c9d4be2647ed",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central2_deck.json": "eb38860c6111428893f703abaefee2890fa89d4bdd5dd9667e1c553a66822857",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central2_rank.json": "aade714724858c0827f9e6413ed5c332bdfff92eb833ba7aa11725c944d14620",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central3_hodge.json": "5167466e81eada0b741615ed965e2028689c5162e98a094b2f4acd64d5c43f25",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central3_deck.json": "72944552997c98847de5cceb44881afe7b98b45354aa7df8fafa543a9ed8df50",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central3_rank.json": "ab56f8015706c012fc501512a8154dc7618f13a54daaa00e57d72bcd7338a349",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central4_hodge.json": "f7f9690ba3ff97da782c5b9cb0fde4b70213fd6c4e7cd13953b85c7b8d99b504",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central4_deck.json": "12e089f3bc52375c29eb8c6808d7c3af12c275868a0843de1aa104a85cb9a697",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane07_central4_rank.json": "92394dc0e6b8033e099d1246740733cb636a7094abe1321fa431a46c23d036c9",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane21_central0_hodge.json": "367a918f32d5d7bfdf5fe686c86e292806ef8d1d8fd81b4ff0647117e8efec5c",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane21_central0_deck.json": "6e7befebebb9dad7bca9b22bb5cf6a2fd3f65f347196687a579afe02fed52be4",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane21_central0_rank.json": "280b8776032c4758c15ae9b56d4c955999c47ce7de764a3a6e729b0fdda61b75",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane21_central1_hodge.json": "2ea5cffca9c7c47ae5ec6120881bfe1f48b3246cb1c229d988a5fa84f7c3462d",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane21_central1_deck.json": "6204ae368a6a5b7418a233b63b3bcd3611a0d113bf9440244b13a6d01c300487",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane21_central1_rank.json": "1fb94379b94609ec408ffe35fa5b73572443f01fa84881791fd38ec5dd730f96",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane21_central2_hodge.json": "f36177a4121963f4c22a48ee216eee429d030fa42243d56b346b13a0bd8c65a7",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane21_central2_deck.json": "a96f667cef049eaf8b10efb7cb0a3a83a198b2fe5b4885683daf9a09dc00722c",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane21_central2_rank.json": "7409cd317630db7a9b52b9ae4ef5de6afe557a75685f132e11d23f10b9cc0630",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central0_hodge.json": "cf369f78655c5d459003bd9c9b878bee5a86655e8997103f653cd0662a6fd909",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central0_deck.json": "1aaee61d5038f51e5a66871fe239112378288fa34c9648218586a69293918beb",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central0_rank.json": "50db0f5e97f0896c734499b2d958457570d79f77fd13fac108af4a34f1272ec7",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central1_hodge.json": "4811049ecb6c38fbbb12dd9ec8a7dac2bca41c06c14aa16e722a3fd3f9dc6e97",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central1_deck.json": "579f5a3a5290be6de76d6d68a16378b8330a469eaa324d7b8515df00d4473e68",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central1_rank.json": "fd0c3b55d997375f7dfd856a024d4702ef354651b1eea081a04c2110e4115a7c",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central2_hodge.json": "0084633f49197cb5c22dac357075551d02c5d2d5b35ac3e91ed11eedb5550587",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central2_deck.json": "dea3ebe9f6c3e1c27dcdd427057385c45e6725ce25e34faaf05b5de85bbeefe3",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central2_rank.json": "a6965c6647be6261ad3ded6e32a6e2468acf1d971535b4075b7c843bd3c94933",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central3_hodge.json": "fa907e10f943b214892c53e4ef15e4df03f1eeb6ec3452eb13d2dee0178b15ef",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central3_deck.json": "7e2eddace9004d7f0e00258f0a9e460e287c281893c010119b4a7fd8ca3f1602",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central3_rank.json": "66368cf2a81d9d1b7172a1e8167f55dc5a285e5cf7fb3fcfec7117423137abaa",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central4_hodge.json": "83ad3fd03f429f313debe3f31b8c54fe2110fcba1f15e8398d197654b5ab7ed4",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central4_deck.json": "07413c7ebddc4f83f77f6bd591fb42164cfc7f8af0e6641d9b34273347bb8e2e",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane22_central4_rank.json": "df511d28ff1c83bfc113f89ef59e4c959df51eff3f725979c18bec3c320d7579",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central0_hodge.json": "4fd4a913f2eded620a886b8cd2b0938e4d4ee2a40ebde8e88b839dea7fca0cc4",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central0_deck.json": "793805a575d8c3d21db20771649952822b6653d4785019b11fdb2f428537e6c8",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central0_rank.json": "f6f76fedacdd3dc545f8359de5c11d553fcb93d4c579d5dae0052e2cdcd49983",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central1_hodge.json": "5a43b0e880a7e05c5341ce7e9df3d3f61113bebc37ab3c447d1a328aacf35103",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central1_deck.json": "e2466593b4af461da8d20fd085d17740c9e31fafcd74d839bfa2c1b61169ad8a",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central1_rank.json": "ac8b1c06b5d7a8a0a665cf51c42233af5b833dc0609e7427e358c10d585bfa9b",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central2_hodge.json": "3524db8604fabe2ef6c9431666c93ab1c0ba540603763737ed66acd4c8d71d97",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central2_deck.json": "f44bce66435bda8f0f7d346781e91d09a9cb65bf878ec0c6301d5d08ed142e8f",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central2_rank.json": "0c948927b188323f186abb363bee18c757e63c405d503b55fe76711cb4a03ec9",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central3_hodge.json": "4155b306eeaffb7894bd89e47ec473a289729be9449c28e9bca1e7e2578f886f",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central3_deck.json": "b94de00daf6da24ac8eb0321349fd4978e6b0416ed598703d0f179ae812c8b9e",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central3_rank.json": "730707ab6aa8b3151cda65794dbb6e3d270b140b491f2bd156676b5c6f85e608",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central4_hodge.json": "d4ad952a58b2b32fa8447f8c8c09972bcd049ee026dcf8c3353fe4559eb95508",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central4_deck.json": "2594133285b2ff4a888c1787ff94ed7b6cd2eae91f2e9de58fcdc336bd882163",
+    "/Users/julian/Documents/litt3-computation-data/heisenberg125-census-20260911/case0/plane23_central4_rank.json": "9a547f1c2b1b3106346ee3ac70b5172e6a8437d352a36125a716e22c6f76d0d9"
+  },
+  "rows": [
+    {
+      "orbit": 0,
+      "representative": [
+        0,
+        0
+      ],
+      "orbit_size": 1,
+      "rank": 713,
+      "defect": 37,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 2.3433426670962945
+    },
+    {
+      "orbit": 1,
+      "representative": [
+        0,
+        1
+      ],
+      "orbit_size": 2,
+      "rank": 713,
+      "defect": 37,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.344147499999963
+    },
+    {
+      "orbit": 2,
+      "representative": [
+        0,
+        2
+      ],
+      "orbit_size": 2,
+      "rank": 713,
+      "defect": 37,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.37843416701071
+    },
+    {
+      "orbit": 3,
+      "representative": [
+        1,
+        0
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.152085791924037
+    },
+    {
+      "orbit": 4,
+      "representative": [
+        1,
+        1
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.465094042010605
+    },
+    {
+      "orbit": 5,
+      "representative": [
+        1,
+        2
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.461332750041038
+    },
+    {
+      "orbit": 6,
+      "representative": [
+        1,
+        3
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.472804874996655
+    },
+    {
+      "orbit": 7,
+      "representative": [
+        1,
+        4
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.483784290961921
+    },
+    {
+      "orbit": 8,
+      "representative": [
+        2,
+        0
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.948222666978836
+    },
+    {
+      "orbit": 9,
+      "representative": [
+        2,
+        1
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.232332542072982
+    },
+    {
+      "orbit": 10,
+      "representative": [
+        2,
+        2
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.260526875033975
+    },
+    {
+      "orbit": 11,
+      "representative": [
+        2,
+        3
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.291971083031967
+    },
+    {
+      "orbit": 12,
+      "representative": [
+        2,
+        4
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.340313332970254
+    },
+    {
+      "orbit": 13,
+      "representative": [
+        3,
+        0
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.057359957951121
+    },
+    {
+      "orbit": 14,
+      "representative": [
+        3,
+        1
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.349545208038762
+    },
+    {
+      "orbit": 15,
+      "representative": [
+        3,
+        2
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.373565000016242
+    },
+    {
+      "orbit": 16,
+      "representative": [
+        3,
+        3
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.390268540941179
+    },
+    {
+      "orbit": 17,
+      "representative": [
+        3,
+        4
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.356412792112678
+    },
+    {
+      "orbit": 18,
+      "representative": [
+        4,
+        0
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.076375957927667
+    },
+    {
+      "orbit": 19,
+      "representative": [
+        4,
+        1
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.468748458079062
+    },
+    {
+      "orbit": 20,
+      "representative": [
+        4,
+        2
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.477399166091345
+    },
+    {
+      "orbit": 21,
+      "representative": [
+        4,
+        3
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.525294375023805
+    },
+    {
+      "orbit": 22,
+      "representative": [
+        4,
+        4
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.463370958110318
+    },
+    {
+      "orbit": 23,
+      "representative": [
+        5,
+        0
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.149604707956314
+    },
+    {
+      "orbit": 24,
+      "representative": [
+        5,
+        1
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.5120717090321705
+    },
+    {
+      "orbit": 25,
+      "representative": [
+        5,
+        2
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.457799417083152
+    },
+    {
+      "orbit": 26,
+      "representative": [
+        5,
+        3
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.447617375059053
+    },
+    {
+      "orbit": 27,
+      "representative": [
+        5,
+        4
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.456907125073485
+    },
+    {
+      "orbit": 28,
+      "representative": [
+        6,
+        0
+      ],
+      "orbit_size": 1,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.504523457959294
+    },
+    {
+      "orbit": 29,
+      "representative": [
+        6,
+        1
+      ],
+      "orbit_size": 1,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.6867910829605535
+    },
+    {
+      "orbit": 30,
+      "representative": [
+        6,
+        2
+      ],
+      "orbit_size": 1,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.747202791040763
+    },
+    {
+      "orbit": 31,
+      "representative": [
+        6,
+        3
+      ],
+      "orbit_size": 1,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.674206417053938
+    },
+    {
+      "orbit": 32,
+      "representative": [
+        6,
+        4
+      ],
+      "orbit_size": 1,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.700197874917649
+    },
+    {
+      "orbit": 33,
+      "representative": [
+        7,
+        0
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.737302209017798
+    },
+    {
+      "orbit": 34,
+      "representative": [
+        7,
+        1
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.963652207981795
+    },
+    {
+      "orbit": 35,
+      "representative": [
+        7,
+        2
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.953183084027842
+    },
+    {
+      "orbit": 36,
+      "representative": [
+        7,
+        3
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 6.064905624953099
+    },
+    {
+      "orbit": 37,
+      "representative": [
+        7,
+        4
+      ],
+      "orbit_size": 4,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 6.158132917014882
+    },
+    {
+      "orbit": 38,
+      "representative": [
+        21,
+        0
+      ],
+      "orbit_size": 1,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.605157749960199
+    },
+    {
+      "orbit": 39,
+      "representative": [
+        21,
+        1
+      ],
+      "orbit_size": 2,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.811471582972445
+    },
+    {
+      "orbit": 40,
+      "representative": [
+        21,
+        2
+      ],
+      "orbit_size": 2,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 4.717494959011674
+    },
+    {
+      "orbit": 41,
+      "representative": [
+        22,
+        0
+      ],
+      "orbit_size": 2,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 5.929903417010792
+    },
+    {
+      "orbit": 42,
+      "representative": [
+        22,
+        1
+      ],
+      "orbit_size": 2,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 6.268431750009768
+    },
+    {
+      "orbit": 43,
+      "representative": [
+        22,
+        2
+      ],
+      "orbit_size": 2,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 6.360896917060018
+    },
+    {
+      "orbit": 44,
+      "representative": [
+        22,
+        3
+      ],
+      "orbit_size": 2,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 6.334513957961462
+    },
+    {
+      "orbit": 45,
+      "representative": [
+        22,
+        4
+      ],
+      "orbit_size": 2,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 6.2942512079607695
+    },
+    {
+      "orbit": 46,
+      "representative": [
+        23,
+        0
+      ],
+      "orbit_size": 2,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 6.148971084039658
+    },
+    {
+      "orbit": 47,
+      "representative": [
+        23,
+        1
+      ],
+      "orbit_size": 2,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 6.268262709025294
+    },
+    {
+      "orbit": 48,
+      "representative": [
+        23,
+        2
+      ],
+      "orbit_size": 2,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 6.282429249957204
+    },
+    {
+      "orbit": 49,
+      "representative": [
+        23,
+        3
+      ],
+      "orbit_size": 2,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 6.399862749967724
+    },
+    {
+      "orbit": 50,
+      "representative": [
+        23,
+        4
+      ],
+      "orbit_size": 2,
+      "rank": 721,
+      "defect": 29,
+      "all750_deck_relations": true,
+      "actual_cover_data": true,
+      "seconds": 6.329337583039887
+    }
+  ],
+  "original_base_plane": 0,
+  "fixed_pair": {
+    "kind": "branch",
+    "source_index": 4,
+    "twist_index": 7,
+    "parameter_modulus": [
+      1,
+      1,
+      0,
+      1
+    ],
+    "R": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "A": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        4,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        1
+      ]
+    ]
+  },
+  "seconds": 270.2999662910588,
+  "high_defect_plane": 0,
+  "high_defect_plane_is_original_base_plane": true,
+  "cover_defects": {
+    "0,0": 37,
+    "0,1": 37,
+    "0,2": 37,
+    "0,3": 37,
+    "0,4": 37,
+    "1,0": 29,
+    "1,1": 29,
+    "1,2": 29,
+    "1,3": 29,
+    "1,4": 29,
+    "2,0": 29,
+    "2,1": 29,
+    "2,2": 29,
+    "2,3": 29,
+    "2,4": 29,
+    "3,0": 29,
+    "3,1": 29,
+    "3,2": 29,
+    "3,3": 29,
+    "3,4": 29,
+    "4,0": 29,
+    "4,1": 29,
+    "4,2": 29,
+    "4,3": 29,
+    "4,4": 29,
+    "5,0": 29,
+    "5,1": 29,
+    "5,2": 29,
+    "5,3": 29,
+    "5,4": 29,
+    "6,0": 29,
+    "6,1": 29,
+    "6,2": 29,
+    "6,3": 29,
+    "6,4": 29,
+    "7,0": 29,
+    "7,1": 29,
+    "7,2": 29,
+    "7,3": 29,
+    "7,4": 29,
+    "8,0": 29,
+    "8,1": 29,
+    "8,2": 29,
+    "8,3": 29,
+    "8,4": 29,
+    "9,0": 29,
+    "9,1": 29,
+    "9,2": 29,
+    "9,3": 29,
+    "9,4": 29,
+    "10,0": 29,
+    "10,1": 29,
+    "10,2": 29,
+    "10,3": 29,
+    "10,4": 29,
+    "11,0": 29,
+    "11,1": 29,
+    "11,2": 29,
+    "11,3": 29,
+    "11,4": 29,
+    "12,0": 29,
+    "12,1": 29,
+    "12,2": 29,
+    "12,3": 29,
+    "12,4": 29,
+    "13,0": 29,
+    "13,1": 29,
+    "13,2": 29,
+    "13,3": 29,
+    "13,4": 29,
+    "14,0": 29,
+    "14,1": 29,
+    "14,2": 29,
+    "14,3": 29,
+    "14,4": 29,
+    "15,0": 29,
+    "15,1": 29,
+    "15,2": 29,
+    "15,3": 29,
+    "15,4": 29,
+    "16,0": 29,
+    "16,1": 29,
+    "16,2": 29,
+    "16,3": 29,
+    "16,4": 29,
+    "17,0": 29,
+    "17,1": 29,
+    "17,2": 29,
+    "17,3": 29,
+    "17,4": 29,
+    "18,0": 29,
+    "18,1": 29,
+    "18,2": 29,
+    "18,3": 29,
+    "18,4": 29,
+    "19,0": 29,
+    "19,1": 29,
+    "19,2": 29,
+    "19,3": 29,
+    "19,4": 29,
+    "20,0": 29,
+    "20,1": 29,
+    "20,2": 29,
+    "20,3": 29,
+    "20,4": 29,
+    "21,0": 29,
+    "21,1": 29,
+    "21,2": 29,
+    "21,3": 29,
+    "21,4": 29,
+    "22,0": 29,
+    "22,1": 29,
+    "22,2": 29,
+    "22,3": 29,
+    "22,4": 29,
+    "23,0": 29,
+    "23,1": 29,
+    "23,2": 29,
+    "23,3": 29,
+    "23,4": 29,
+    "24,0": 29,
+    "24,1": 29,
+    "24,2": 29,
+    "24,3": 29,
+    "24,4": 29,
+    "25,0": 29,
+    "25,1": 29,
+    "25,2": 29,
+    "25,3": 29,
+    "25,4": 29,
+    "26,0": 29,
+    "26,1": 29,
+    "26,2": 29,
+    "26,3": 29,
+    "26,4": 29,
+    "27,0": 29,
+    "27,1": 29,
+    "27,2": 29,
+    "27,3": 29,
+    "27,4": 29,
+    "28,0": 29,
+    "28,1": 29,
+    "28,2": 29,
+    "28,3": 29,
+    "28,4": 29,
+    "29,0": 29,
+    "29,1": 29,
+    "29,2": 29,
+    "29,3": 29,
+    "29,4": 29,
+    "30,0": 29,
+    "30,1": 29,
+    "30,2": 29,
+    "30,3": 29,
+    "30,4": 29
+  },
+  "orbit_rank_histogram": {
+    "713": 3,
+    "721": 48
+  },
+  "weighted_defect_histogram": {
+    "37": 5,
+    "29": 150
+  },
+  "orbits_checked": 51,
+  "cover_count": 155,
+  "matrix_artifacts_checked": 153,
+  "summary_sha256": "95876efc626ac221c25d5b0cc9d4d5567e92a5d9ca69ad653bbca5c7306d8979"
+}

@@ -1,8 +1,9 @@
-# Degree84 census — complete local replay, source comparison OPEN
+# Degree84 — complete census, primitive cases excluded,42 sources remain
 
 Received and replayed2026-09-09. This certifies the finite permutation
-census, NOT a curve-specific exclusion. The backup degree84(2,3,7)
-row and the five-case backup remainder are unchanged.
+census, NOT by itself a curve-specific exclusion. A new audited
+dormant-decoration argument on2026-09-10 excludes its THREE primitive
+survivors. The degree84 row remains open with42 hyperelliptic classes.
 
 The archive's checksums passed before execution. Its native generator
 visited522,737 nodes and reproduced every one of the155 supplied tables
@@ -21,11 +22,15 @@ The full mass algorithm is abacus/quotient based. Its independent direct
 Murnaghan–Nakayama cross-check covers3953 SMALL partitions, not a second
 full mass calculation. Do not claim the latter.
 
-Exactly three primitive survivors can accommodate a three-element
-Frobenius orbit. The earlier degree24/48 counting contradiction does not
-extend. Neither good tame reduction nor identification of the45 possible
-sources with the specified curve is established. Group identification
-alone excludes none of them.
+The new [dormant-decoration theorem](../Theorems/Thm_triangle237_dormant_orbit_obstruction.md)
+improves the required orbit from3 to15: the canonical dormant connection
+of an actual(2,3,7) map lands in the backup's five-cycle of dormant opers.
+Its automorphisms fix those points. The three primitive survivors are
+therefore excluded, without identifying their characteristic-five sources.
+The new geometric argument has a fresh audit PASS; the inherited census
+and earlier exclusions have their original verification status.
+All42 hyperelliptic survivors have the same monodromy order, so that
+additional bucket test gives no exclusion. Their source comparison is open.
 
 ## Reproduction / provenance
 
@@ -49,5 +54,8 @@ Table SHA256:
 97aad0a105d12d0905415d16c3df2094e87fd5522f62e11dc86680f6de053926
 
 Compact [local receipt](computations/triangle237_census_verification.txt).
-Latest user priority remains the SHARED coreless obstruction; backup-only
-source comparison is paused. No new Pro request or computation is running.
+Latest user asks for a harder shared Pro theorem, followed by completion
+of backup84/2 while Pro works. No census rerun is needed. The new
+horizontal-product diagnostic reduces H=A18*C6 from25 coefficients to
+a10-dimensional space for each of the five dormant opers. The remaining
+nonlinear factor/cube equation has not yet been solved.

@@ -109,13 +109,838 @@
   ],
   "theorems": [
     {
+      "id": "neutral_five_fourth_parameter_independence",
+      "title": "The actual neutral degree-five first-repair line has constant fourth obstruction",
+      "statement": "Theorems/Thm_neutral_five_fourth_parameter_independence.md",
+      "solution": "Solutions/Sol_neutral_five_fourth_parameter_independence.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": ["projective_connections", "witt_hodge_obstruction", "marked_curve_deformations"],
+      "dependencies": ["explicit_non_galois_neutral_five", "neutral_degree_five_obstruction_structure", "etale_p_witt_obstruction"],
+      "legacy_dependencies": ["Research/computations/neutral5_parameter_independence_audit.json"],
+      "audits": ["Research/audits/NEUTRAL5_PARAMETER_INDEPENDENCE_AUDIT_2026_09_11.md"],
+      "evidence_summary": "Focused actual LSZ filtered/graded comparison audit PASS. Full-lattice norm argument kills divided carry without moving division through augmentation images or using simple-zero Fitting. Relative P2/P0 products and all Taylor terms checked. P(b)=P(0) for the ONE selected R=u(u-1) cover; constant value, W4 existence and full tower remain open.",
+      "statement_sha256": "ca27b37491ace4a1ada2492ce3700e6bd9e8a30b9603a7e30aac19c25dd38b16"
+    },
+    {
+      "id": "backup_heisenberg_defects",
+      "title": "Exact first Heisenberg defects for two actual backup bad pairs",
+      "statement": "Theorems/Thm_backup_heisenberg_defects.md",
+      "solution": "Solutions/Sol_backup_heisenberg_defects.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": ["projective_connections", "correspondences", "witt_hodge_obstruction"],
+      "dependencies": ["backup_active_double_germs", "etale_p_witt_obstruction", "augmentation_width_defect"],
+      "legacy_dependencies": ["Research/computations/heisenberg125_frobenius_case0.json", "Research/computations/heisenberg125_frobenius_case2.json", "Research/computations/heisenberg125_census_case0_independent_audit_20260911.json", "Research/computations/heisenberg125_census_case2_independent_audit_20260911.json"],
+      "audits": ["Research/audits/ACTUAL_HEISENBERG_DEFECT_AUDIT_2026_09_11.md", "Research/audits/HEISENBERG_FROBENIUS_AND_ADDITIONAL_RANKS_AUDIT_2026_09_11.md", "Research/audits/HEISENBERG_CENSUS_COMPLETION_AUDIT_2026_09_11.md"],
+      "evidence_summary": "Actual UT3 Lang covers,155-class completeness for each fixed pair, all310central Frobenius transports and exact field descent independently checked. All93full Hodge ranks and279artifacts checked independently. Branch37x5 on precisely originalbaseplane and29x150; mixed29x155. No scope extension to all12 or generic parameters; no arbitrary common-source factorization claim.",
+      "statement_sha256": "543353bd386728217a3db17c117c4cb331b867ca119e82153838cd7039af67c0"
+    },
+    {
+      "id": "explicit_non_galois_neutral_five",
+      "title": "Actual neutral degree-five covers with source-only first Witt repair",
+      "statement": "Theorems/Thm_explicit_non_galois_neutral_five.md",
+      "solution": "Solutions/Sol_explicit_non_galois_neutral_five.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": ["projective_connections", "correspondences", "witt_hodge_obstruction", "marked_curve_deformations"],
+      "dependencies": ["explicit_genus_two_witt_obstruction", "neutral_degree_five_obstruction_structure", "etale_p_witt_obstruction", "etale_refinement_deformations"],
+      "legacy_dependencies": ["Research/computations/explicit_nonordinary_dihedral5.json", "Research/computations/explicit_nonordinary_dihedral5_fitting.json", "Research/computations/explicit_nonordinary_dihedral5_audit.json", "Research/computations/explicit_nonordinary_dihedral5_audit_window24.json"],
+      "audits": ["Research/audits/EXPLICIT_NON_GALOIS_NEUTRAL_FIVE_AUDIT_2026_09_11.md", "Research/audits/NEUTRAL5_HYPERELLIPTIC_PRIMARY_AUDIT_2026_09_11.md"],
+      "evidence_summary": "Independent actual AS/D10 quotient geometry, complete fifteen-class scope, all13500Hodge entries and enlarged Laurent window PASS. Fourteen neutral quotients d1, closured2; exceptional d4,closured8. All fifteen primary cokernel pullbacks zero by independently checked Smith lengths. Semilinear Fitting compositions independently match; base nilblock2 and neutral quotient6. No W4 or full-tower assertion.",
+      "statement_sha256": "601039f1c88e677923e31bea6aef806ac23bf267ce7a611748e24b8152729f93"
+    },
+    {
+      "id": "augmentation_width_defect",
+      "title": "Noncommutative augmentation width bounds actual indigenous defect",
+      "statement": "Theorems/Thm_augmentation_width_defect.md",
+      "solution": "Solutions/Sol_augmentation_width_defect.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "theta_cartier",
+        "correspondences"
+      ],
+      "dependencies": [
+        "etale_p_witt_obstruction",
+        "neutral_degree_five_obstruction_structure"
+      ],
+      "legacy_dependencies": [
+        "Research/computations/augmentation_width_checks.json",
+        "Research/computations/augmentation_width_audit.json"
+      ],
+      "audits": [
+        "Research/audits/AUGMENTATION_WIDTH_DEFECT_AUDIT_2026_09_11.md"
+      ],
+      "evidence_summary": "Focused independent audit PASS: actual norm/coinvariant quotient specialization on both free cohomology modules, noncommutative one-relation Schur reduction, symplectic cyclic-section argument forcing f in J^2, and width bound. Independent actual Heisenberg left/right radicals and all index-p norm matrices p3/5 PASS; width125=25. No arbitrary non-Galois quotient or common-cover conclusion.",
+      "statement_sha256": "ae429c625417c81f4709390a293ab05efeb4b5544ea3a755ea5c49e71360fca8"
+    },
+    {
+      "id": "abelian_defect_flags",
+      "title": "Exact flag-sensitive defects of every selected abelian five-cover",
+      "statement": "Theorems/Thm_abelian_defect_flags.md",
+      "solution": "Solutions/Sol_abelian_defect_flags.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "backup_genus_two_curve",
+        "projective_connections",
+        "theta_cartier",
+        "correspondences"
+      ],
+      "dependencies": [
+        "backup_active_double_germs",
+        "bad_double_abelian_a3_family",
+        "genus_two_active_twists",
+        "etale_p_witt_obstruction",
+        "symplectic_p_cover_section_growth"
+      ],
+      "legacy_dependencies": [
+        "Research/computations/backup_bad_double_cyclic_directions.json",
+        "Research/computations/abelian_defect_flag_checks.json",
+        "Research/computations/abelian_defect_flags_audit.json"
+      ],
+      "audits": [
+        "Research/audits/ABELIAN_DEFECT_FLAGS_AUDIT_2026_09_11.md"
+      ],
+      "evidence_summary": "Fresh bounded audit PASS: independently reconstructed all12 H1(O) matrices, all372 actual cyclic directions and372 plane restrictions, generic degree76 obstruction and original-divisor family transport; unequal-ideal/formal splitting arguments and independent semigroup counts checked. Every abelian cover, not only balanced; inherited odd-defect growth retains author status. No common-cover exclusion.",
+      "statement_sha256": "8e7b0b600f6f5f3cda3983c5fb3bcb3f7941798623dcfc6a279728408c88e4db"
+    },
+    {
+      "id": "backup_active_double_germs",
+      "title": "All active two-torsion defects and abelian germs at the backup",
+      "statement": "Theorems/Thm_backup_active_double_germs.md",
+      "solution": "Solutions/Sol_backup_active_double_germs.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "backup_genus_two_curve",
+        "projective_connections",
+        "theta_cartier",
+        "correspondences"
+      ],
+      "dependencies": [
+        "genus_two_active_critical_quartics",
+        "genus_two_active_twists",
+        "bad_double_abelian_a3_family",
+        "backup_cored_span_exclusion"
+      ],
+      "legacy_dependencies": [
+        "Research/computations/backup_active_twist_table.json",
+        "Research/computations/backup_all_bad_double_jet_audit.json"
+      ],
+      "audits": [
+        "Research/audits/BACKUP_ALL_BAD_DOUBLE_GERMS_AUDIT_2026_09_11.md"
+      ],
+      "evidence_summary": "Fresh bounded audit PASS. Complete1275 actual-twist replay:79good+6withtwo defects. Independent nested quadratic Laurent/determinant-ratio replay of106directional matrixjets,12Hessians,10radicalquartics and q5/25/125lengths PASS3.053s. TenA3,twoA1; no coefficient correction or unsupported transfer of high-degree table.",
+      "statement_sha256": "3463cff18edb6a8887b1c68e3b1a8fb71adaf43c90f14973e3633d97e9476d5b"
+    },
+    {
+      "id": "backup_elementary_two_x_obstruction",
+      "title": "No backup map from any elementary-abelian two-cover of X",
+      "statement": "Theorems/Thm_backup_elementary_two_x_obstruction.md",
+      "solution": "Solutions/Sol_backup_elementary_two_x_obstruction.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "statement_version": 1,
+      "definitions": [
+        "fixed_pair",
+        "backup_genus_two_curve",
+        "correspondences"
+      ],
+      "dependencies": [
+        "backup_degree_two_atlas_exclusion",
+        "fixed_pair_arithmetic",
+        "backup_cored_span_exclusion"
+      ],
+      "audits": [],
+      "evidence_summary": "Character-isogeny decomposition applies the complete audited 262143-two-class Prym exclusion to the actual maximal elementary-two cover of X. No new enumeration, no extension to further five-covers or arbitrary two-groups. Author corollary.",
+      "statement_sha256": "c151a36ddd0133f9ae9fe5e325404362d48773607637204fc7900d8a465a1ae9"
+    },
+    {
+      "id": "backup_coreless_frontier",
+      "title": "The backup reaches the clump and first-Witt frontier",
+      "statement": "Theorems/Thm_backup_coreless_frontier.md",
+      "solution": "Solutions/Sol_backup_coreless_frontier.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "statement_version": 1,
+      "definitions": [
+        "fixed_pair",
+        "backup_genus_two_curve",
+        "correspondences",
+        "canonical_tensors",
+        "projective_connections",
+        "marked_curve_deformations"
+      ],
+      "dependencies": [
+        "backup_cored_span_exclusion",
+        "family_singleton_root_exclusion",
+        "fixed_x_nonzero_cartier_profiles",
+        "genus_two_clump_connection_reduction",
+        "coreless_connection_spectrum",
+        "two_leg_negative_extensions",
+        "cartier_generator",
+        "canonical_intersection"
+      ],
+      "legacy_dependencies": [
+        "Solutions/Sol_family_small_torsion_specialization.md"
+      ],
+      "audits": [],
+      "evidence_summary": "Exact audited backup W1[8] Hasse-minor certificate replaces high-degree avoidance and general low-pencil claims. Family Cartier eigenline identities plus existing clump/first-Witt theorems give the stated frontier. No whole-input re-audit or exclusion of fully liftable backup spans.",
+      "statement_sha256": "6663216af2394a13c5829cc14b10f37732a426a5e8adb97aa77a08f3ebf865d6"
+    },
+    {
+      "id": "backup_small_abelian_ordinarity",
+      "title": "The backup excludes unbounded abelian-four-or-six by five monodromy",
+      "statement": "Theorems/Thm_backup_small_abelian_ordinarity.md",
+      "solution": "Solutions/Sol_backup_small_abelian_ordinarity.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "statement_version": 1,
+      "definitions": [
+        "backup_genus_two_curve",
+        "correspondences",
+        "theta_cartier"
+      ],
+      "dependencies": [
+        "backup_cored_span_exclusion",
+        "genus_two_maximal_four_cover",
+        "raynaud_genus_two_determinant",
+        "fixed_pair_arithmetic"
+      ],
+      "legacy_dependencies": [
+        "Research/computations/backup_maximal_four_ordinarity.json"
+      ],
+      "audits": [],
+      "evidence_summary": "Complete actual-backup J4 check:256 distinct classes,240 original Cartier and quadric determinants,236 independent additions PASS. Exponent6 uses separately audited complete cyclic1/2/3/6 tests. Standard character decomposition and5-group invariants retain both original maps. No exponent12 or general solvable claim.",
+      "statement_sha256": "dda2ab475fb4c2bbbfc8cc27e047340543fabbc5c2e2f5b4fb2d308d51bb359c"
+    },
+    {
+      "id": "moduli_residue_obstruction",
+      "title": "Residue degree bounds the moduli orbit of potential good reductions",
+      "statement": "Theorems/Thm_moduli_residue_obstruction.md",
+      "solution": "Solutions/Sol_moduli_residue_obstruction.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "statement_version": 1,
+      "definitions": [
+        "arithmetic_curve_reductions",
+        "backup_genus_two_curve"
+      ],
+      "dependencies": [
+        "triangle246_frobenius_quotient_obstruction"
+      ],
+      "audits": [],
+      "evidence_summary": "Stable-model uniqueness and surjectivity of local residue Galois give orbit length dividing actual residue degree. Backup orbit3 excludesQ/quadratic models. No trace-field identification or complete arithmetic classification claimed.",
+      "statement_sha256": "9726cea4b60983bef40240fd969b54a9f05b2c51fbcc47965501027c479cba2c"
+    },
+    {
+      "id": "backup_cored_span_exclusion",
+      "title": "The small backup has no cored common cover with the fixed X",
+      "statement": "Theorems/Thm_backup_cored_span_exclusion.md",
+      "solution": "Solutions/Sol_backup_cored_span_exclusion.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "fixed_pair",
+        "backup_genus_two_curve",
+        "correspondences",
+        "orbifolds"
+      ],
+      "dependencies": [
+        "cored_orbifold_bridge",
+        "fixed_pair_arithmetic",
+        "fixed_x_orbifold_bound",
+        "fixed_x_two_branch_bound",
+        "backup_degree_two_atlas_exclusion",
+        "triangle237_backup_exclusion",
+        "quadrangular_genus_two_hecke_obstruction",
+        "triangle344_frobenius_obstruction",
+        "radical_quadratic_atlas_obstruction",
+        "hermitian_monodromy_genus_sieve",
+        "backup_hermitian_atlas_exclusion",
+        "triangle246_frobenius_quotient_obstruction",
+        "triangle238_frobenius_factor_obstruction",
+        "cartier_dormant_secants",
+        "backup_wild120_atlas_exclusion",
+        "backup_wild240_atlas_exclusion",
+        "single_jump_a7_hermitian_reduction",
+        "completed_local_orbifold_rigidity",
+        "hermitian_atlas_extension_criterion"
+      ],
+      "legacy_dependencies": [
+        "Research/computations/backup_genus_two_preparation.json",
+        "Research/computations/backup_genus_two_torsion.json",
+        "Research/computations/backup_genus_two_double_covers.json",
+        "Research/computations/backup_genus_two_cyclic_covers.json",
+        "Research/computations/backup_genus_two_twisted_tangents.json",
+        "Research/computations/backup_genus_two_four_torsion.json",
+        "Research/computations/backup_genus_two_tame444.json",
+        "Research/computations/backup_genus_two_cubic_tangents.json"
+      ],
+      "audits": [
+        "Research/audits/BACKUP_CORED_COMPLETION_AUDIT_2026_09_11.md"
+      ],
+      "evidence_summary": "Coherent 24 tame+12 small-wild+2 large assembly PASS, with fresh small-packet geometric audit and complete bounded torsion/Cartier/secant replays. Degree84 and degree2 now complete independently. Inherited canonical evidence scopes retained; no general low-pencil torsion rigidity needed. Excludes actual CORED spans only, not coreless or all full lifts.",
+      "statement_sha256": "d4f335fb0e6158efcc752fefcc57fa3f4156ee420aa36f80073ce3a06dfd5ee8"
+    },
+    {
+      "id": "triangle237_backup_exclusion",
+      "title": "The backup has no uniform degree84 map of profile (2,3,7)",
+      "statement": "Theorems/Thm_triangle237_backup_exclusion.md",
+      "solution": "Solutions/Sol_triangle237_backup_exclusion.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "backup_genus_two_curve",
+        "projective_connections",
+        "orbifolds"
+      ],
+      "dependencies": [
+        "triangle237_cofactor_necessary_system",
+        "triangle237_dormant_orbit_obstruction"
+      ],
+      "audits": [
+        "Research/audits/DEGREE84_THREE_POLE_COFACTOR_CHART_AUDIT_2026_09_11.md",
+        "Research/audits/DEGREE84_FINAL_EXCLUSION_AUDIT_2026_09_11.md"
+      ],
+      "evidence_summary": "Fresh chart and final-assembly audits PASS. All35source edges/287hashes/127executed identity receipts checked; full native115rows,7+13pivots, actual C0 and cofactor nonvanishing retained. Explicit190node unit DAG independently806607products~5sPASS and mutation rejected. All42hyperelliptic cases excluded over algebraic closure; inherited3primitive and earlier census evidence retain scope. No coreless conclusion.",
+      "statement_sha256": "9a752d9b319fe54b54f5842b74901786867c5e08ba57a1968d7a491a63b8ab1c"
+    },
+    {
+      "id": "backup_degree_two_atlas_exclusion",
+      "title": "The backup's degree-two atlas is excluded",
+      "statement": "Theorems/Thm_backup_degree_two_atlas_exclusion.md",
+      "solution": "Solutions/Sol_backup_degree_two_atlas_exclusion.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "base_conventions",
+        "fixed_pair",
+        "backup_genus_two_curve",
+        "orbifolds"
+      ],
+      "dependencies": [
+        "backup_degree_two_prym_reduction",
+        "cyclic_trigonal_kummer_carriers",
+        "backup_prym_cartier_factor_sieve",
+        "backup_prym_toric_unit_root_sieve"
+      ],
+      "audits": [
+        "Research/audits/DEGREE2_COMPLETE_PRYM_SIEVE_AUDIT_2026_09_11.md"
+      ],
+      "scope": "ALL actual etale doubles of fixedX have Pryms without geometricJ(B)factor. No common etale source with degrees2/16; complete backupdegree2atlas exclusion. Notdegree84orallcommoncovers.",
+      "evidence_summary": "Complete1533carrier sieve1408mod5+114mod25+11mod125; independentfullcoverage5382hashes/allfactorremainders/source-model-twistlinks auditPASS. ADDITIONALfull1533Cartierreplay COMPLETE: allnormalspaces/eightanti-formequations/342-foldnormsrecomputed in two disjointranges1706.69/1705.61s, nofailure. NoLean.",
+      "statement_sha256": "a53521262c5fafe1109f24b79bdcdc0986a0c9ebf950acefc330a044d193a039"
+    },
+    {
+      "id": "backup_prym_toric_unit_root_sieve",
+      "title": "Small toric Prym models and higher-precision geometric factor sieves",
+      "statement": "Theorems/Thm_backup_prym_toric_unit_root_sieve.md",
+      "solution": "Solutions/Sol_backup_prym_toric_unit_root_sieve.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "base_conventions",
+        "fixed_pair",
+        "backup_genus_two_curve"
+      ],
+      "dependencies": [
+        "cyclic_trigonal_kummer_carriers",
+        "backup_prym_cartier_factor_sieve"
+      ],
+      "audits": [
+        "Research/audits/TORIC_PRYM_NORMALIZATION_AUDIT_2026_09_11.md",
+        "Research/audits/PRYM_HIGHER_PRECISION_FACTOR_SIEVE_AUDIT_2026_09_11.md"
+      ],
+      "scope": "Actual coprime quadratic-Q genus8 carrier normalization, checked boundary and ordinary interior unit-root matrices. All geometric backup twists force one of9 cyclotomic factors at every5-adic precision, sixmod25. No unchecked chart or whole-row exclusion.",
+      "evidence_summary": "Bounded toric/Dwork and arithmetic audits PASS. Actual beta5 matches Prym with verified Kummer quadratic character. Independent directbeta25/ghost64entry test and actual smoothcurve countsF5,F25,F125 PASS. Pilot1226,1430 fail allmod25filters,13s each.",
+      "statement_sha256": "06d91bc14f5cf0dbcf37b914f0396478135cda79a4de2675f3d4da4409a43b21"
+    },
+    {
+      "id": "backup_prym_cartier_factor_sieve",
+      "title": "A five-divisor Cartier sieve for geometric backup Jacobian factors",
+      "statement": "Theorems/Thm_backup_prym_cartier_factor_sieve.md",
+      "solution": "Solutions/Sol_backup_prym_cartier_factor_sieve.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "base_conventions",
+        "fixed_pair",
+        "backup_genus_two_curve"
+      ],
+      "dependencies": [
+        "fixed_pair_arithmetic",
+        "quadrangular_genus_two_hecke_obstruction",
+        "backup_degree_two_prym_reduction"
+      ],
+      "audits": [
+        "Research/audits/PRYM_CARTIER_FACTOR_SIEVE_AUDIT_2026_09_11.md"
+      ],
+      "scope": "Actual Prym8 overF5^342: all geometric backup factors force one of5 explicit Cartier characteristic-polynomial divisors. Actual anti-form formula and semilinear convention. Passing is inconclusive, no untested-carrier or whole degree2 exclusion.",
+      "evidence_summary": "Focused independent audit /root/audit_prym_cartier_sieve PASS: actual anti-Cartier, direct Frobenius convention, isotypic descent, finite-order twist over CM K, phi<=4, multiplicities and integer Weil-factor reduction. Base9form Sage differential audit and established Weil-polynomial checkPASS0.318s. Inherited backup arithmetic retains original scope.",
+      "statement_sha256": "b7ccd54dad41f3312372f1695caeabd200dbece762846f26e08262d0ccd13a22"
+    },
+    {
+      "id": "trigonal_unique_norm_representative",
+      "title": "Unique degree-nine representatives for the fixed trigonal two-torsion",
+      "statement": "Theorems/Thm_trigonal_unique_norm_representative.md",
+      "solution": "Solutions/Sol_trigonal_unique_norm_representative.md",
+      "status": "proved",
+      "verification": "author_prose",
+      "statement_version": 1,
+      "definitions": [
+        "base_conventions",
+        "fixed_pair"
+      ],
+      "dependencies": [
+        "trigonal_constant_norm_obstruction",
+        "cyclic_trigonal_kummer_carriers",
+        "backup_degree_two_prym_reduction",
+        "fixed_pair_arithmetic"
+      ],
+      "audits": [],
+      "scope": "Actual nonzero two-torsion: h0L7O=0,h0L9O=1, unique normalized norm modulo Rsign, exact odd765/even768 carrier-orbit split. No polynomial-scheme reducedness or factor/second-map exclusion.",
+      "evidence_summary": "Direct pole-degree/norm obstruction and Riemann--Roch, classical characteristic-not2 theta parity, established order171 Frobenius count. Author prose, not new independent audit.",
+      "statement_sha256": "c92c645cd1c844aed3b062b0b743f10509fb7d06338b54c074a1235b23759626"
+    },
+    {
+      "id": "trigonal_constant_norm_obstruction",
+      "title": "A binary Frobenius criterion excludes constant-Q trigonal norms",
+      "statement": "Theorems/Thm_trigonal_constant_norm_obstruction.md",
+      "solution": "Solutions/Sol_trigonal_constant_norm_obstruction.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "base_conventions",
+        "fixed_pair"
+      ],
+      "dependencies": [
+        "fixed_pair_arithmetic",
+        "cyclic_trigonal_kummer_carriers"
+      ],
+      "audits": [
+        "Research/audits/TRIGONAL_CONSTANT_NORM_AUDIT_2026_09_11.md"
+      ],
+      "scope": "General degree10 cyclic trigonal binary Frobenius criterion; fixed-X N171 excludes every rational constant-Q norm and all3bounded Q0charts over algebraicclosure. Q1/Q2 and wholedegree2/common-cover remainopen.",
+      "evidence_summary": "Author geometric Euler-factor congruence and actual primitive-sixth elliptic map; focused audit /root/audit_constant_q_norm_obstruction PASS2026-09-11. Existing binary Frobenius checker independently rerun. New207s sixth-root zeta computation corroborates only, not a proof dependency. No new coefficient correction; inherited fixed-X arithmetic remains its recorded status.",
+      "statement_sha256": "d39b00f5e2fdb216acb9c7e8d7cf9c61a3140fd4a014367ba49f567a80ab3270"
+    },
+    {
+      "id": "bad_double_abelian_a3_family",
+      "title": "The parameterized genus-three A3 abelian defect germ",
+      "statement": "Theorems/Thm_bad_double_abelian_a3_family.md",
+      "solution": "Solutions/Sol_bad_double_abelian_a3_family.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "correspondences"
+      ],
+      "dependencies": [
+        "bad_double_cubic_defect",
+        "abelian_p_defect_node"
+      ],
+      "audits": [
+        "Research/audits/PARAMETERIZED_BAD_DOUBLE_GERM_AUDIT_2026_09_11.md"
+      ],
+      "scope": "All Delta=(t^5-t)(t²+2t+3)!=0, including backupalpha and every algebraic degree>=3. Actual scalar abelian defect germUV+W4, all balanced(Z/5^n)^3 defects(7*5^(2n)-3)/4, and actual dominating-source lower bound. No unbalanced/Witt/second-map/common-cover exclusion.",
+      "evidence_summary": "Returned Pro generic exact Laurent-polynomial/Picard four-jet independently replayed1.954s; full6x6/scalarJSON byte-identical, allbundleSHA256checksPASS. Independent original-z Laurent audit PASS atalpha,benchmark,otherquartic andlargerprecision, recovered oldcorrectedquartic andbothtransverserepairs. Focused mathematical audit /root/audit_parameterized_bad_double_germ PASS2026-09-11: actualnormalbasis/traceaugmentation,twistedpresentation,Frobenius,Schur/transversecorrections,localization,formaltype andall-q length. No correction or extraexceptionalfactor; noLean.",
+      "statement_sha256": "af240c8eacf4c156db768e336e6c80d1bd0133ee342cf3d2d666396c21a93173"
+    },
+    {
+      "id": "bad_double_abelian_a3_specialization",
+      "title": "An actual genus-three A3 abelian defect germ",
+      "statement": "Theorems/Thm_bad_double_abelian_a3_specialization.md",
+      "solution": "Solutions/Sol_bad_double_abelian_a3_specialization.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "correspondences"
+      ],
+      "dependencies": [
+        "bad_double_cubic_defect",
+        "abelian_p_defect_node"
+      ],
+      "audits": [
+        "Research/audits/BAD_DOUBLE_ABELIAN_GERM_AUDIT_2026_09_11.md"
+      ],
+      "scope": "ONLY t²+2=0 genus3 bad double. Actual completed abelian defect module has typeUV+W4 and balanced(Z/5^n)^3 defect(7*5^(2n)-3)/4. No generic parameter, unbalanced, Witt or common-cover theorem.",
+      "evidence_summary": "Exact six-column actual degree125 computation200.215s, genus251/defect43; all31cyclic quadratic restrictions checked. Focused audit /root/audit_bad_double_abelian_germ PASS2026-09-11, replayed every column/full relation atprecision360 versus320, checked corrected quartic3a²+3a and finite-to-formal/colength proof. No coefficient correction or Lean.",
+      "statement_sha256": "5a7e719b96ead8b2961171b12369434cc7d41c2b9954435ba56c2f929a2630d2"
+    },
+    {
+      "id": "cyclic_trigonal_kummer_carriers",
+      "title": "Complete norm coordinates and actual quartic Prym carriers",
+      "statement": "Theorems/Thm_cyclic_trigonal_kummer_carriers.md",
+      "solution": "Solutions/Sol_cyclic_trigonal_kummer_carriers.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "base_conventions",
+        "fixed_pair",
+        "correspondences"
+      ],
+      "dependencies": [
+        "backup_degree_two_prym_reduction"
+      ],
+      "audits": [
+        "Research/audits/DEGREE2_KUMMER_DICTIONARY_AUDIT_2026_09_11.md"
+      ],
+      "scope": "Complete bounded Kummer norm representation, exact odd-gcd etaleness test, actual genus8 quartic Prym carriers and three monic-Q charts. No fixed-X solution enumeration, Jacobian-factor sieve or common-cover exclusion.",
+      "evidence_summary": "Author exact quartic/discriminant/resolvent and genus normalization; focused audit /root/audit_degree2_kummer_dictionary PASS2026-09-11 with no mathematical correction. Auditor separately checked common-root/lower-pole boundary examples including a ramified rejected norm solution. Not Lean.",
+      "statement_sha256": "adf02d96b44226ddb12c8714e4e8438244c0269c8eb5c2f10890cae76c8b5600"
+    },
+    {
+      "id": "backup_degree_two_prym_reduction",
+      "title": "The backup degree-two atlas forces a genus-eight Prym factor",
+      "statement": "Theorems/Thm_backup_degree_two_prym_reduction.md",
+      "solution": "Solutions/Sol_backup_degree_two_prym_reduction.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "base_conventions",
+        "backup_genus_two_curve",
+        "orbifolds",
+        "correspondences"
+      ],
+      "dependencies": [
+        "fixed_pair_arithmetic",
+        "quadrangular_genus_two_hecke_obstruction"
+      ],
+      "legacy_dependencies": [
+        "Research/BACKUP_CANDIDATE.md"
+      ],
+      "audits": [
+        "Research/audits/DEGREE2_A4_PRYM_AUDIT_2026_09_11.md"
+      ],
+      "scope": "Necessary actual V4/A4 carrier preserving original common maps, genus8 Prym factor and1533 geometric factor-test label orbits. No actual R-to-B map or factor sieve; degree2 remains open.",
+      "evidence_summary": "Author /root2026-09-11; focused audit /root/audit_degree2_a4_prym PASS. Pointed Abel cover, lifted order3, actual11 inertia/genera, Prym idempotents and binary irreducibility/order171 checked. Corrected isogeny-only Frobenius reduction before acceptance; no Lean.",
+      "statement_sha256": "d1f0f56f70db7fec96badf898ce6d416f2f6c844f4a2b361972754df46af8698"
+    },
+    {
+      "id": "neutral_galois_witt_descent",
+      "title": "Defect-neutral Galois covers descend every given compatible Witt tower",
+      "statement": "Theorems/Thm_neutral_galois_witt_descent.md",
+      "solution": "Solutions/Sol_neutral_galois_witt_descent.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "marked_curve_deformations",
+        "witt_hodge_obstruction",
+        "correspondences"
+      ],
+      "dependencies": [
+        "neutral_degree_five_obstruction_structure",
+        "cyclic_power_early_descent",
+        "defect_preserving_etale_descent"
+      ],
+      "audits": [
+        "Research/audits/CYCLIC_NEUTRAL_TWO_DIGIT_AUDIT_2026_09_11.md"
+      ],
+      "scope": "Actual active-admissible neutral Galois covers, arbitrary common defect and group. Every given full compatible source tower descends along original map; cyclic5 needs one extra digit at every n>=2. No arbitrary primitive/non-Galois N5 or existence of upper towers.",
+      "evidence_summary": "Author /root and focused audit /root/audit_cyclic_neutral_two_digit PASS2026-09-11, no coefficient correction. Actual incompatible n2 global-input oper comparison, independent left-right Smith e-blocks, quadratic augmentation, original Sylow-chain maps and effectivity checked. Exact625 mixed/rank-one and300 rank-three checks,3125 products; not Lean.",
+      "statement_sha256": "51f598c41f865bc279763f3658624e4e357e3b2fef9e9b09d6aa889df518dbd3"
+    },
+    {
+      "id": "neutral_degree_five_obstruction_structure",
+      "title": "Primary obstruction geometry of a defect-neutral degree-five cover",
+      "statement": "Theorems/Thm_neutral_degree_five_obstruction_structure.md",
+      "solution": "Solutions/Sol_neutral_degree_five_obstruction_structure.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "marked_curve_deformations",
+        "witt_hodge_obstruction",
+        "correspondences"
+      ],
+      "dependencies": [
+        "etale_double_dormant_pairs",
+        "nilpotent_scalar_model",
+        "symplectic_p_cover_section_growth",
+        "forced_canonical_witt_endpoint",
+        "etale_refinement_deformations"
+      ],
+      "audits": [
+        "Research/audits/N5_RETURNED_PARTIAL_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Focused audit PASS /root/audit_n5_returned_partial 2026-09-10: canonical-double identification of normal p-curvature cokernel, Cartier polarization, neutral degree5 obstruction pullback zero, relative defect d, individual-closure regular integral cohomology/Cech sections. Bol/Pfaffian and regular S5 norm tests replay unchanged in0.70s under SagePython. Cyclic parity inherited from stronger existing theorem. N5 remains unproved/undisproved; no geometric realization of integral norm mode.",
+      "statement_sha256": "9d3a1c04d273bdbbb33de383b695a42addd385d7eb8f5463ef64c140afaafb84"
+    },
+    {
+      "id": "triangle237_small_solution_algebra",
+      "title": "The remaining degree84 coefficient algebra has rank at most two",
+      "statement": "Theorems/Thm_triangle237_small_solution_algebra.md",
+      "solution": "Solutions/Sol_triangle237_small_solution_algebra.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "backup_genus_two_curve",
+        "projective_connections",
+        "orbifolds"
+      ],
+      "dependencies": [
+        "triangle237_cofactor_necessary_system",
+        "triangle237_dormant_orbit_obstruction"
+      ],
+      "audits": [
+        "Research/audits/DEGREE84_DECORATED_FIELD_BOUND_AUDIT_2026_09_11.md"
+      ],
+      "evidence": "Focused audit PASS: fifteen decorated fibers give at most2 normalized maps; no source-Aut ambiguity; all coefficients inF5^30. Complete pole guards recover omitted passport opens via cofactor root valuations and RH. Tame fixed-source tangent rigidity gives finite etale rank<=2. Not an exclusion or runtime bound.",
+      "statement_sha256": "4b008bbcba611cafa4cab59e10a9d64860af18c60fff506eebacaa1c742e3857"
+    },
+    {
+      "id": "triangle237_cofactor_necessary_system",
+      "title": "Six pole coefficients determine the degree84 numerator factor",
+      "statement": "Theorems/Thm_triangle237_cofactor_necessary_system.md",
+      "solution": "Solutions/Sol_triangle237_cofactor_necessary_system.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "backup_genus_two_curve",
+        "orbifolds"
+      ],
+      "dependencies": [
+        "triangle237_dormant_orbit_obstruction",
+        "nilpotent_scalar_model",
+        "backup_hermitian_atlas_exclusion"
+      ],
+      "audits": [
+        "Research/audits/DEGREE84_DIFFERENTIAL_SYSTEM_AUDIT_2026_09_10.md",
+        "Research/audits/DEGREE84_COFACTOR_REDUCTION_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Two focused geometric PASS audits: infinity/passport/half-density/ODE/one-beta dictionary and all-actual-cover cofactor boundary coverage. Squarefree C forces rank5; squarefree A makes the multiplier a nonzero constant. Exact symbolic cofactor/ODE identities replay0.22s. Necessary-system reduction ONLY; no unit ideal, atlas exclusion or runtime gain asserted. Inherited census and endpoint inputs retain their own evidence scopes.",
+      "statement_sha256": "62bedad5eb0549ee4c82a69dcb7acd4b4b9d5a6a03f2857bfc0cd87673e6bcb8"
+    },
+    {
+      "id": "triangle237_dormant_orbit_obstruction",
+      "title": "A dormant decoration excludes the primitive degree84 maps on the backup",
+      "statement": "Theorems/Thm_triangle237_dormant_orbit_obstruction.md",
+      "solution": "Solutions/Sol_triangle237_dormant_orbit_obstruction.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "backup_genus_two_curve",
+        "orbifolds"
+      ],
+      "dependencies": [
+        "nilpotent_scalar_model",
+        "backup_hermitian_atlas_exclusion",
+        "triangle238_frobenius_factor_obstruction",
+        "quadrangular_genus_two_hecke_obstruction"
+      ],
+      "audits": [
+        "Research/audits/TRIANGLE237_DORMANT_DECORATION_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh bounded audit PASS for new functorial orbit multiplier, full dormant p-curvature, universal covariance, all local tame branch charts, Aut action and primitive3 exclusion via orbit15. Full155 census and earlier exclusions retain author-check status documented in Research/DEGREE84_CENSUS_STATUS.md; no silent audit upgrade. Forty-two hyperelliptic cases remain; no whole degree84/common-cover claim.",
+      "statement_sha256": "eee3692bb8e6d6ec7dd9670ed7f3b2700bc3ad2be8cb14c0d8137a45a76ee95c"
+    },
+    {
+      "id": "backup_wild240_atlas_exclusion",
+      "title": "The backup excludes the two-torsion-twisted degree240 orbifold atlas",
+      "statement": "Theorems/Thm_backup_wild240_atlas_exclusion.md",
+      "solution": "Solutions/Sol_backup_wild240_atlas_exclusion.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "orbifolds",
+        "wild_ramification",
+        "backup_genus_two_curve"
+      ],
+      "dependencies": [
+        "backup_wild120_atlas_exclusion"
+      ],
+      "audits": [
+        "Research/audits/BACKUP_WILD240_TWIST_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh bounded geometric audit PASS /root/audit_backup_wild240_twist. Actual etale double and common fixed-base Galois extension, anti-invariant primitive, complete15twists/twocharts, both scheme-theoretic norm remainders and infinity normalization checked. Root all30 charts about44s/onecore:29unitideals and1forced-zero-lambda ideal, excluded because lambda=3/a^4!=0. Audit independently replayed exceptional and generic charts. No point-search or unlocalized30thunit claim.",
+      "statement_sha256": "e4249ac197ddbdd0ab502ee8498f0bdcbf6d803482b94893faf688d04fa3fcdf"
+    },
+    {
+      "id": "two_defect_nontrivial_five_exclusion",
+      "title": "Nontrivial five-action is excluded for matched two-defect Galois spans",
+      "statement": "Theorems/Thm_two_defect_nontrivial_five_exclusion.md",
+      "solution": "Solutions/Sol_two_defect_nontrivial_five_exclusion.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "correspondences",
+        "witt_hodge_obstruction"
+      ],
+      "dependencies": [
+        "cyclic_power_early_descent",
+        "two_defect_deck_reduction",
+        "defect_preserving_etale_descent",
+        "two_leg_defect_orbit_bound",
+        "genus_two_active_twists",
+        "bad_double_cubic_defect",
+        "admissible_two_leg_w2_lifts",
+        "bounded_atlas_partner_finiteness",
+        "cyclic_five_delayed_descent"
+      ],
+      "audits": [
+        "Research/audits/UNIFORM_CYCLIC_MAIN_APPLICATION_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh scoped application audit PASS /root/audit_uniform_cyclic_main_application,2026-09-10. Canonical ordinary Y supplies every finite initial reference; W2 marking aligns actual X source. Original chain Z→T→Y'→C and both legs retained through neutral and cyclic descents. One existing degree-uniform genus3 partner set counts ALL actual Sylow5^a together, bound<2^80000073<K unchanged. Nonordinary X handled by existing two-leg orbit bound. No trivial-action/higher-defect/non-Galois/dormant/absent-match extension.",
+      "statement_sha256": "5e14f03c9cd07cd94d29958bab99d0553770c4ee5757a7452d067912c20792bd"
+    },
+    {
+      "id": "cyclic_power_early_descent",
+      "title": "Uniform early descent and full towers for cyclic powers of five",
+      "statement": "Theorems/Thm_cyclic_power_early_descent.md",
+      "solution": "Solutions/Sol_cyclic_power_early_descent.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "marked_curve_deformations",
+        "witt_hodge_obstruction",
+        "correspondences"
+      ],
+      "dependencies": [
+        "cyclic_power_nonlinear_absorption",
+        "cyclic125_bootstrap",
+        "cyclic_power_late_descent",
+        "cyclic_twentyfive_delayed_descent",
+        "cyclic_five_delayed_descent"
+      ],
+      "audits": [
+        "Research/audits/UNIFORM_EARLY_CYCLIC_COMPARISON_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh bounded geometric audit PASS /root/audit_uniform_early_comparison under exact (U) inputs, no coefficient correction. Termwise all-order Taylor/Frobenius integrality including degree>=5, equivariant global-input-oper chart, finite additive elimination, actual lower norm and GIVEN original-map truncations checked. Attached exact local script saved/replayed unchanged PASS in0.53s,501500 mixed factorial budgets and nonprime Frobenius. Full towers follow from known late/effectivity results with GIVEN compatible initial reference. Broad common-cover application has a separate pending scope review.",
+      "statement_sha256": "0f1ab8499af37a848d105aa3737787382f3487a86e482c3e5e7558a1be3d0aa0"
+    },
+    {
+      "id": "backup_wild120_atlas_exclusion",
+      "title": "The backup excludes the conductor-two degree120 orbifold atlas",
+      "statement": "Theorems/Thm_backup_wild120_atlas_exclusion.md",
+      "solution": "Solutions/Sol_backup_wild120_atlas_exclusion.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "orbifolds",
+        "wild_ramification",
+        "backup_genus_two_curve"
+      ],
+      "dependencies": [],
+      "audits": [
+        "Research/audits/BACKUP_WILD120_DICTIONARY_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh bounded geometric audit PASS /root/audit_backup_wild120_dictionary. Explicit global rational primitive, common fixed-base AS invariant a^4, both jet signs, all charts, infinity bounds, finite Weierstrass and both c=0 sheets checked. All3 exact Groebner bases[1] independently replayed in4.631/0.161/0.141s with generic matrices and entrywise checks. No stored explicit unit multipliers or degree240 transfer claimed.",
+      "statement_sha256": "4e4facc0a0d1926295f2c55d83368d3ff3dd76d27e17af85be0181a441d43692"
+    },
+    {
+      "id": "single_jump_a7_hermitian_reduction",
+      "title": "A single-jump wild orbifold is the alternating Hermitian quotient",
+      "statement": "Theorems/Thm_single_jump_a7_hermitian_reduction.md",
+      "solution": "Solutions/Sol_single_jump_a7_hermitian_reduction.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "orbifolds",
+        "wild_ramification",
+        "backup_genus_two_curve"
+      ],
+      "dependencies": [
+        "completed_local_orbifold_rigidity",
+        "backup_hermitian_atlas_exclusion"
+      ],
+      "audits": [
+        "Research/audits/A7_SMALL_WILD_REDUCTION_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh focused audit PASS /root/audit_a7_small_wild_reduction, 2026-09-10. Fixed-base conductor1 Artin-Schreier normal form and global scalar alignment checked. Primary A7<PSU3(5) embedding independently verified; explicit Hermitian translations, inertia normalizers and exact Hurwitz determine actual quotient type. Standard-library group checks PASS. Actual finite-etale subgroup-stack maps reuse existing audited405-pair exclusion; no numerical-profile-to-Galois inference.",
+      "statement_sha256": "c233df70c2482a2b09fc4cd0f96e1e2fc721ec967b7e23fec0c448857bb42b04"
+    },
+    {
+      "id": "cyclic125_bootstrap",
+      "title": "Early bootstrap and full towers along an original cyclic125 cover",
+      "statement": "Theorems/Thm_cyclic125_bootstrap.md",
+      "solution": "Solutions/Sol_cyclic125_bootstrap.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [
+        "projective_connections",
+        "marked_curve_deformations",
+        "witt_hodge_obstruction",
+        "correspondences"
+      ],
+      "dependencies": [
+        "cyclic_power_nonlinear_absorption",
+        "cyclic_power_additive_norm",
+        "cyclic_power_late_descent",
+        "cyclic_twentyfive_delayed_descent",
+        "two_defect_deck_reduction",
+        "defect_preserving_etale_descent",
+        "admissible_two_leg_w2_lifts",
+        "bounded_atlas_partner_finiteness"
+      ],
+      "audits": [
+        "Research/audits/CYCLIC125_FINITE_CHART_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh bounded finite-chart audit PASS with substantive global auxiliary-oper projection/implicit-elimination construction incorporated: no nongluing Hodge graph used as LSZ input. Equivariant projective formal coordinates, finite polynomial valuations, combined repairs and original marked truncations checked. Partial-solution argument supplies exact d^5e. Both supplied scripts replay unchanged PASS, including36+24 generators,400 filtered examples and25 F25 carry tests. Full towers at125 follow from audited late theorem; no all-power early geometric claim. Separate application audit PASS excludes C250,D250,C2xD250 for SAME main parameter only in ordinary-X/source2/Galois-Y/nontrivial-five-action/actual-Sylow125 branch, retaining both original maps and unchanged genus3 count.",
+      "statement_sha256": "d8dd18b45629895e17b79f2b14c5242490647c81a9064470fa9284f6793634c0"
+    },
+    {
+      "id": "cyclic_power_nonlinear_absorption",
+      "title": "Nonlinear integral absorption for every cyclic power of five",
+      "statement": "Theorems/Thm_cyclic_power_nonlinear_absorption.md",
+      "solution": "Solutions/Sol_cyclic_power_nonlinear_absorption.md",
+      "status": "proved",
+      "verification": "audited_prose",
+      "statement_version": 1,
+      "definitions": [],
+      "dependencies": [
+        "cyclic_power_additive_norm"
+      ],
+      "audits": [
+        "Research/audits/CYCLIC_POWER_NONLINEAR_ABSORPTION_AUDIT_2026_09_10.md"
+      ],
+      "evidence": "Fresh bounded pure algebra audit PASS /root/audit_uniform_nonlinear_absorption, with perfect-field hypothesis explicit. Weighted binomial wraps, saturation and additive quotient precision, all-power combined repairs and absorption checked. Direct orbit-polynomial argument permits degree>=5 without factorial division or equivariance of individual multilinear presentations. 240 generators,80 nonlinear examples at5/25/125/625 and166650 budgets PASS in about1.3s. A further125 divided-Frobenius scaling checks also PASS. No actual all-order Hodge comparison is inferred.",
+      "statement_sha256": "aa6b49511b5dbd3de31c5d92bf9089333120b4f8887d04161651dcfceae87f20"
+    },
+    {
       "id": "cyclic_power_late_descent",
       "title": "Late-stage descent along an original cyclic power-of-five cover",
       "statement": "Theorems/Thm_cyclic_power_late_descent.md",
       "solution": "Solutions/Sol_cyclic_power_late_descent.md",
       "status": "proved",
       "verification": "audited_prose",
-      "statement_version": 1,
+      "statement_version": 2,
       "definitions": [
         "projective_connections",
         "marked_curve_deformations",
@@ -130,8 +955,8 @@
       "audits": [
         "Research/audits/CYCLIC_POWER_LATE_DESCENT_AUDIT_2026_09_10.md"
       ],
-      "evidence": "Fresh bounded audit PASS /root/audit_cyclic_power_late_descent for all a>=2, n>=a+1. Explicit scalar recurrence R=V+A(X)+D(u)+K_r(R), K_r valuation gain2, makes all-digit reduction-compatible feedback additive. Ordinary boundary square e^(q-5), integral Cech inverse and norm/Schur elimination checked. 1,089,375 Taylor/order inequalities and27 function products PASS; these diagnostics are not geometry verification. No early125 or all-power full-tower claim.",
-      "statement_sha256": "f8f44d15940a4b4894e478f889141f2116c25075af73db6083209449cc780d77"
+      "evidence": "Fresh bounded audit PASS /root/audit_cyclic_power_late_descent for all a>=2, n>=a+1. Explicit scalar recurrence R=V+A(X)+D(u)+K_r(R), K_r valuation gain2, makes all-digit reduction-compatible feedback additive. Ordinary boundary square e^(q-5), integral Cech inverse and norm/Schur elimination checked. 1,089,375 Taylor/order inequalities and27 function products PASS; these diagnostics are not geometry verification. Version2 updates historical scope notes after separately proved B125; mathematical late-range statement/proof and its audit are unchanged. This theorem itself makes no early-stage or full all-power claim.",
+      "statement_sha256": "bb74a7b83c5193ef0f36beb8ce656b030213a897170a182837148464f7aa129c"
     },
     {
       "id": "cyclic_twentyfive_delayed_descent",
@@ -521,7 +1346,7 @@
       ],
       "scope": "Explicit F625 pair has nonzero intrinsic epsilon=(4+4t)^-1 in its normalized Serre coordinate. General prime-to5 etale persistence and consequent degree divisibility for actual matches to ordinary pairs. No value for main X, common-cover realization or global exclusion.",
       "evidence_summary": "User-supplied Pro source preserved byte-for-byte, exact local replays at500 and800 with different affine Frobenius; fresh medium geometric audit PASS on actual first lift, nonsplit previous twist, weight-scaled jet term, Taylor gluing and Hodge projection. Not Lean verified.",
-      "statement_sha256": "337eddfd6cc6e041c410426dccc3ef792bc79829505866045a7715556d82dda9"
+      "statement_sha256": "100059b1490fdd31043ed87481d5495ed01935b04f99e6e31c6ed128108b9050"
     },
     {
       "id": "forced_canonical_witt_endpoint",

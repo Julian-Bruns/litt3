@@ -1,0 +1,323 @@
+{
+  "status": "PASS",
+  "method": "nested quadratic Laurent algebra; scalar determinant quotient",
+  "cases": [
+    {
+      "case": 0,
+      "kind": "branch",
+      "source": 4,
+      "target": 7,
+      "degree_R": 2,
+      "degree_S": 3,
+      "constant_rank": 5,
+      "second_semilinear_rank": 5,
+      "hessian_rank": 2,
+      "hessian_determinant": [
+        0,
+        0,
+        0
+      ],
+      "radial_quartic": [
+        3,
+        1,
+        3
+      ],
+      "full_matrix_directional_replays": 9,
+      "seconds": 0.3545574579620734
+    },
+    {
+      "case": 1,
+      "kind": "branch",
+      "source": 4,
+      "target": 9,
+      "degree_R": 2,
+      "degree_S": 3,
+      "constant_rank": 5,
+      "second_semilinear_rank": 5,
+      "hessian_rank": 2,
+      "hessian_determinant": [
+        0,
+        0,
+        0
+      ],
+      "radial_quartic": [
+        2,
+        4,
+        2
+      ],
+      "full_matrix_directional_replays": 9,
+      "seconds": 0.23532362503465265
+    },
+    {
+      "case": 2,
+      "kind": "mixed",
+      "source": 4,
+      "target": 6,
+      "degree_R": 2,
+      "degree_S": 3,
+      "constant_rank": 5,
+      "second_semilinear_rank": 5,
+      "hessian_rank": 3,
+      "hessian_determinant": [
+        0,
+        0,
+        3
+      ],
+      "radial_quartic": null,
+      "full_matrix_directional_replays": 8,
+      "seconds": 0.25716141692828387
+    },
+    {
+      "case": 3,
+      "kind": "mixed",
+      "source": 4,
+      "target": 10,
+      "degree_R": 2,
+      "degree_S": 3,
+      "constant_rank": 5,
+      "second_semilinear_rank": 5,
+      "hessian_rank": 3,
+      "hessian_determinant": [
+        3,
+        4,
+        2
+      ],
+      "radial_quartic": null,
+      "full_matrix_directional_replays": 8,
+      "seconds": 0.23436191608197987
+    },
+    {
+      "case": 4,
+      "kind": "branch",
+      "source": 8,
+      "target": 2,
+      "degree_R": 1,
+      "degree_S": 4,
+      "constant_rank": 5,
+      "second_semilinear_rank": 5,
+      "hessian_rank": 2,
+      "hessian_determinant": [
+        0,
+        0,
+        0
+      ],
+      "radial_quartic": [
+        3,
+        4,
+        3
+      ],
+      "full_matrix_directional_replays": 9,
+      "seconds": 0.253660749993287
+    },
+    {
+      "case": 5,
+      "kind": "branch",
+      "source": 8,
+      "target": 10,
+      "degree_R": 2,
+      "degree_S": 3,
+      "constant_rank": 5,
+      "second_semilinear_rank": 5,
+      "hessian_rank": 2,
+      "hessian_determinant": [
+        0,
+        0,
+        0
+      ],
+      "radial_quartic": [
+        2,
+        1,
+        2
+      ],
+      "full_matrix_directional_replays": 9,
+      "seconds": 0.24376741598825902
+    },
+    {
+      "case": 6,
+      "kind": "branch",
+      "source": 11,
+      "target": 0,
+      "degree_R": 1,
+      "degree_S": 4,
+      "constant_rank": 5,
+      "second_semilinear_rank": 5,
+      "hessian_rank": 2,
+      "hessian_determinant": [
+        0,
+        0,
+        0
+      ],
+      "radial_quartic": [
+        3,
+        2,
+        2
+      ],
+      "full_matrix_directional_replays": 9,
+      "seconds": 0.26522579207085073
+    },
+    {
+      "case": 7,
+      "kind": "branch",
+      "source": 11,
+      "target": 12,
+      "degree_R": 2,
+      "degree_S": 3,
+      "constant_rank": 5,
+      "second_semilinear_rank": 5,
+      "hessian_rank": 2,
+      "hessian_determinant": [
+        0,
+        0,
+        0
+      ],
+      "radial_quartic": [
+        3,
+        2,
+        2
+      ],
+      "full_matrix_directional_replays": 9,
+      "seconds": 0.21262787503656
+    },
+    {
+      "case": 8,
+      "kind": "branch",
+      "source": 13,
+      "target": 3,
+      "degree_R": 1,
+      "degree_S": 4,
+      "constant_rank": 5,
+      "second_semilinear_rank": 5,
+      "hessian_rank": 2,
+      "hessian_determinant": [
+        0,
+        0,
+        0
+      ],
+      "radial_quartic": [
+        0,
+        0,
+        3
+      ],
+      "full_matrix_directional_replays": 9,
+      "seconds": 0.2159397080540657
+    },
+    {
+      "case": 9,
+      "kind": "branch",
+      "source": 13,
+      "target": 5,
+      "degree_R": 2,
+      "degree_S": 3,
+      "constant_rank": 5,
+      "second_semilinear_rank": 5,
+      "hessian_rank": 2,
+      "hessian_determinant": [
+        0,
+        0,
+        0
+      ],
+      "radial_quartic": [
+        0,
+        0,
+        3
+      ],
+      "full_matrix_directional_replays": 9,
+      "seconds": 0.2645025420933962
+    },
+    {
+      "case": 10,
+      "kind": "branch",
+      "source": 14,
+      "target": 1,
+      "degree_R": 1,
+      "degree_S": 4,
+      "constant_rank": 5,
+      "second_semilinear_rank": 5,
+      "hessian_rank": 2,
+      "hessian_determinant": [
+        0,
+        0,
+        0
+      ],
+      "radial_quartic": [
+        2,
+        0,
+        0
+      ],
+      "full_matrix_directional_replays": 9,
+      "seconds": 0.2166573329595849
+    },
+    {
+      "case": 11,
+      "kind": "branch",
+      "source": 14,
+      "target": 6,
+      "degree_R": 2,
+      "degree_S": 3,
+      "constant_rank": 5,
+      "second_semilinear_rank": 5,
+      "hessian_rank": 2,
+      "hessian_determinant": [
+        0,
+        0,
+        0
+      ],
+      "radial_quartic": [
+        3,
+        0,
+        0
+      ],
+      "full_matrix_directional_replays": 9,
+      "seconds": 0.2611125831026584
+    }
+  ],
+  "source_sha256": {
+    "/Users/julian/Documents/litt3/Research/computations/backup_active_twist_table.json": "b93b779cdf75822193a361f53b0aae88bf76353fdbd4f3230d6540b445ea9908",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_jet_0.json": "8a671fbcc9aeca205fc3ddcc35380a208159c6ea8fe889f190f673d9c4487f3a",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_jet_1.json": "0c1b2d12aac269943dc4a621804db6f4815ab7dc382c5f646fd2627aaa9b0593",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_jet_2.json": "3bec94dd20e30dc2e516e636e8a5111e8aaefd3be53c11ae972273e37ea7e754",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_jet_3.json": "b166f506b68d50d91eba18407dd9dbbf590b4c82cb28b4d289ff6fd230953bfc",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_jet_4.json": "e65b2c93d145681587224350ccd067b9aaa04b30cbecdff3c83f912aa78e63a7",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_jet_5.json": "cd8af06ddbb2c0408d5a4f471e661334d26e54649cc34718c45cb9c34f1a692c",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_jet_6.json": "b9ec6be09cdbf5621e9a22ac2a32f2c9024de4bbe23404e5e9cdd79059a19a00",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_jet_7.json": "875d5750a0304e7a8ad90f8bfa0388b7f2526d2932c1ac2bd2eb10dd16394ade",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_jet_8.json": "99603fe192945e52cc18f2ced7e36a7eb783655286204098c5873da521d90a90",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_jet_9.json": "019945da5b8913bccb6d989bf81e9d9e6460caef1f52d245e690d72e1ddfedfd",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_jet_10.json": "008677a532ed975276673a8d485da4991a47c3e5f186fd4c6866132daff5dcdc",
+    "/Users/julian/Documents/litt3/Research/computations/backup_bad_double_jet_11.json": "9bdc7387c7ebe2357f225b6c8eb7085354fe855d395ea2728693fbc5caf9f802"
+  },
+  "normal_form_quotient_lengths": [
+    {
+      "exponent": 2,
+      "q": 5,
+      "length": 37
+    },
+    {
+      "exponent": 2,
+      "q": 25,
+      "length": 937
+    },
+    {
+      "exponent": 2,
+      "q": 125,
+      "length": 23437
+    },
+    {
+      "exponent": 4,
+      "q": 5,
+      "length": 43
+    },
+    {
+      "exponent": 4,
+      "q": 25,
+      "length": 1093
+    },
+    {
+      "exponent": 4,
+      "q": 125,
+      "length": 27343
+    }
+  ],
+  "seconds": 3.0533427089685574,
+  "scope": "Independent arithmetic replay; geometric interpretation audited separately."
+}

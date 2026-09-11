@@ -15,13 +15,21 @@ parser.add_argument('--precision', type=int, default=160)
 parser.add_argument('--field-only', action='store_true')
 parser.add_argument('--covers', type=int, default=1)
 parser.add_argument('--output', type=Path)
+parser.add_argument('--parameter-polynomial',default='3,4,1,4,1',
+                    help='irreducible F5 polynomial coefficients, constant first')
 args = parser.parse_args()
 started = time.monotonic()
 Fp = GF(5)
 PT = PolynomialRing(Fp, 'T')
 T = PT.gen()
-minimal = T**4+4*T**3+T**2+4*T+3
-k0 = GF(5**4, 't', modulus=minimal)
+minimal = PT([int(c) for c in args.parameter_polynomial.split(',')])
+assert minimal.is_irreducible() and minimal.degree()>=2
+parameter_degree=int(minimal.degree())
+# The optimized Givaro dense-matrix backend disagrees with direct
+# multiplication for some custom F25 moduli in this Sage build.
+# Use a generic matrix explicitly: apply_map otherwise reselects the
+# broken optimized backend even on a generic matrix over a PARI field.
+k0 = GF(5**parameter_degree, 't', modulus=minimal,impl='pari_ffelt')
 t0 = k0.gen()
 
 
@@ -84,20 +92,28 @@ def setup(k, t, precision):
 
 PR,u,F,LS,z,uf,vf,reduce0 = setup(k0,t0,args.precision)
 orders = [-3,-1]
-Fmat = matrix(k0,2,2,lambda i,j: laurent_coefficient(reduce0(z**(5*orders[j]))[0],orders[i]))
-linear_frob = identity_matrix(k0,2)
-for i in range(4):
-    linear_frob *= Fmat.apply_map(lambda c:c**(5**i))
-assert all(c**5 == c for c in linear_frob.charpoly())
+Fmat = matrix(k0,2,2,lambda i,j: laurent_coefficient(reduce0(z**(5*orders[j]))[0],orders[i]),implementation='generic')
+linear_frob = matrix(k0,[[1,0],[0,1]],implementation='generic')
+for i in range(parameter_degree):
+    linear_frob *= matrix(k0,2,2,[c**(5**i) for c in Fmat.list()],implementation='generic')
+assert all(c**5 == c for c in linear_frob.charpoly()), (parameter_degree,Fmat,linear_frob,linear_frob.charpoly())
 field_degree = linear_frob.multiplicative_order()
+# The anti-invariant H1(O) is the elliptic Prym with complementary
+# branch set {1,2,t,infinity}; include its F5-fixed AS character field.
+elliptic=((u-1)*(u-2)*(u-t0))**2
+hasse=elliptic[4]
+assert hasse
+anti_multiplier=prod(hasse**(5**i) for i in range(parameter_degree))
+assert anti_multiplier**5==anti_multiplier
+field_degree=lcm(field_degree,anti_multiplier.multiplicative_order())
 print(json.dumps(dict(stage='field', frobenius_matrix=str(Fmat),
     coefficient_frobenius_charpoly=str(linear_frob.charpoly()),
-    extension_over_F625=int(field_degree)), default=str),flush=True)
+    parameter_degree=parameter_degree,extension_over_parameter_field=int(field_degree)), default=str),flush=True)
 if args.field_only:
     import os
     os._exit(0)
 
-k = GF(5**(4*field_degree),'a')
+k = GF(5**(parameter_degree*field_degree),'a',impl='pari_ffelt')
 t = k0.embeddings(k)[0](t0)
 PR,u,F,LS,z,uf,vf,reduce0 = setup(k,t,args.precision)
 for ee in [-3,-1,1]:

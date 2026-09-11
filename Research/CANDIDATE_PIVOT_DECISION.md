@@ -1,6 +1,7 @@
 # Candidate review: smaller calculation versus stronger proof
 
-2026-09-09, /root. Requested by the user after the unsuccessful A18
+Current verdict updated2026-09-11,11:12CEST. Original review2026-09-09,
+/root. Requested by the user after the unsuccessful A18
 speed tests. No endpoint has been changed. Original problem UNSOLVED.
 
 ## Conclusion
@@ -9,8 +10,10 @@ The best computational backup is already successful: retain genus-nine X
 and use C_alpha: v²=u(u-1)(u-2)(u-3)(u-alpha), alpha³+alpha+1=0/F125.
 Its COMPLETE Hermitian-atlas calculation is finished and audited, with
 all cubic determinant twists. Do not run it again or rebuild its theory.
-But its no-cored theorem still has two tame and three small-wild cases
-open. It is not a stronger proof candidate than our high-degree Y_t.
+Its complete degree2 Prym sieve AND degree84exclusion are now
+proved/audited. The coherent no-cored theorem is COMPLETE, all38
+profiles excluded. It is not yet a stronger proof candidate than our
+high-degree Y_t: fullyliftable CORELESS exclusion is still missing.
 
 For the CURRENT strongest pair X,Y_t, both no-cored avoidance and a
 no-Hermitian-atlas theorem on Y_t already avoid A18 entirely. The latter
@@ -34,19 +37,32 @@ SIX backup rows now remain; the decision to retain the current pair is
 unchanged. The degree2 row is the backup's actual hyperelliptic pencil:
 it needs an X-side obstruction, not another one-leg nonexistence request.
 
-Latest update2026-09-09: degree48 is excluded, leaving FIVE backup rows.
+Update2026-09-09: degree48 is excluded, leaving FIVE backup rows.
 The degree84 census is complete and locally replayed, but its45 surviving
 source classes have not been compared with C_alpha. The new all-level
 forced-canonical-Witt-endpoint theorem applies to BOTH choices; it gives
 no extra curve-specific advantage to either one.
 
+Latest update2026-09-10: the new independently audited
+single_jump_a7_hermitian_reduction identifies the wild(20,23;7) orbifold
+with[H/A7]. Composition to[H/PSU3(5)] reuses the completed405-pair
+certificate and excludes degree280. The new independently audited
+backup_wild120_atlas_exclusion then removes120 with three exact small
+unit ideals, slowest4.63s. The newly audited twisted primitive theorem
+backup_wild240_atlas_exclusion removes240:29unitideals and1forced-zero-
+lambda among30charts, about44s total. At that stage two rows remained.
+Update2026-09-11,06:44: backup_degree_two_atlas_exclusion excludes ALL1533
+actual Prym carriers,1408mod5+114mod25+11mod125, with fresh assembly
+auditPASS. Only degree84remains. Its3primitive cases are already excluded;
+42hyperelliptic census cases remain, with at most2solutions per fixed
+dormant connection by the new audited small coefficient-algebra theorem.
+
 ## What the backup needs to reach the main choice's proved position
 
-1. Finish the no-CORED proof: degree84(2,3,7), the degree2 hyperelliptic
-   orbifold case, and the three small-wild rows of degrees120,240,280.
-   Degree84 requires actual characteristic-five source comparison for
-   42 hyperelliptic and3 primitive survivors, not another census.
-   Degree2 exists on C_alpha and must be excluded using the X leg.
+1. COMPLETE: no-CORED proof, including degree84(2,3,7) anddegree2.
+   The42hyperelliptic survivors now have an actual-source polynomial
+   unit certificate with190nodes and full35stage provenance replay.
+   All1533degree2Prym carriers are independently excluded. No rerun.
 
 2. Independently exclude fully mixed-characteristic-liftable CORELSS
    spans for X,C_alpha. The huge-parameter/Frobenius-orbit avoidance

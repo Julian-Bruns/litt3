@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "field_modulus": "x^6 + x^4 + 4*x^3 + x^2 + 2",
+  "parameter": "a^3 + 2*a^2 + 4*a + 1",
+  "parameter_degree_over_F25": 3,
+  "parameter_minpoly_over_F5": [
+    1,
+    1,
+    0,
+    1
+  ],
+  "distinct_J4_classes": 256,
+  "exact_order_four_tests": 240,
+  "coprime_Cramer_additions_replayed": 236,
+  "nonzero_quadric_and_original_determinants": 240,
+  "seconds": 0.31160808296408504,
+  "scope": "Complete J[4] check at the stated parameter; a family claim additionally uses the proof height bound."
+}

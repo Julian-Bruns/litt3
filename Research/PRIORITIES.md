@@ -1,85 +1,82 @@
 # Ranked research goals
 
-Updated 2026-09-10 19:48 CEST. Read STATE first. Full problem UNSOLVED.
-Keep main genus-nine X/high-prime-degree genus-two Y_t and BOTH maps.
+Updated 2026-09-11. Read STATE first. Original problem UNSOLVED.
+Keep the fixed genus-nine X and the selected high-degree Y_t as the main
+pair. The small F125 partner B is the backup. Preserve both actual maps.
 
-## 1. The early degree125 bootstrap — next Pro request READY
+## 1. Backup catch-up after the completed no-cored exclusion
 
-Uniform cyclic25 descent is now PROVED and independently audited,
-including every later level, every GIVEN full tower and algebraization.
-Its separate main application removes ALL C50,D50,C2×D50 carriers
-with actual five-part25 in the ordinary-X/source2/Galois-Y/
-nontrivial-five-action branch. The earlier degree5 and initial25
-results remain recorded in their exact scopes.
+The user's immediate overnight subgoal is achieved:
+`backup_cored_span_exclusion` is canonical and audited. All 24 tame,
+12 small-wild and 2 large common-orbifold cases are excluded. Degree84
+has a short identity-DAG unit and full fresh provenance replay; degree2
+has the complete 1533-carrier sieve and complete Cartier/norm replays.
+Do not restart any of these solver searches or A18.
 
-The root has also proved cyclic_power_late_descent: for EVERY q=5^a,
-a>=2, all stages n>=a+1 have delayed original-map descent. Every relevant
-preceding-scalar digit is controlled; this extension has a fresh audit
-PASS. It is not a theorem about the early stages or full all-power towers.
+The main gap between backup and main is now fully liftable CORELESS
+correspondences. The large-parameter arithmetic avoidance theorem does
+not apply to the F125 backup. The available congruence or derived
+arithmetic-curve lists are not classifications of all arithmetic curves.
+Arithmetic trace fields are not automatically Jacobian endomorphism
+fields. No common discrete overgroup of arbitrary commensurable
+arithmetic lattices may be presumed.
 
-The one larger new Pro target is B125: from a GIVEN compatible T7,
-recover its GIVEN T4 as pullback of compatible C4 along original h.
-A compatible initial C7 reference and simple-zero/source2 hypotheses
-are explicit. This recovers the missing C3,C4, then the already proved
-late theorem gives every full degree125 tower. A finite-level geometric
-counterexample would reveal insufficient precision or a surviving
-early term, not itself disprove infinite-tower descent.
-Prompt: PRO_CYCLIC125_BOOTSTRAP_REQUEST.md, READY, not reported submitted.
+Check other main inputs directly at the backup when they have only
+high-degree parameter proofs. The complete J[4] ordinarity test passes
+at the backup. Its active two-torsion table differs: 79 of 85 connections
+have no bad twist; six have two each, all corank one. The sixth is a
+mixed-support datum, not one of the five universal branch data.
 
-Selection was tested: integral first-product estimates work at125,
-but a SINGLE square in the second-repair space can leave even eA.
-Thus actual coupled repair relations and curve/jet compensation are
-needed; a blanket product-filtration argument would be false.
-CYCLIC125_BOOTSTRAP_LOOKAHEAD.md records the proofs and exact checks.
-The all-power mixed-additive norm theorem and late theorem are supplied
-as established inputs, not tasks for Pro to redo.
+## 2. Use the returned parameterized defect theorem geometrically
 
-## 2. Continue the independent trace-zero two-leg residual
+`bad_double_abelian_a3_family` is canonical and audited. The actual
+genus-three bad double has relation UV+W^4 and balanced-cover defect
+(7q^2-3)/4 on exactly the stated Delta-open, including both parameters.
+No extra quartic exception occurs. Do not reprove this result.
 
-The nonordinary-X/source2/Galois-Y residual has a nontrivial five-part
-acting trivially on defects, with large prime-to5 cyclic/dihedral image.
-Author deductions in TRACE_ZERO_TWO_DEFECT_REDUCTION.md reduce an actual
-Galois witness INSIDE the original source to Sylow5 order<=25 using
-the actual cored leg of degree<=64. BOTH endpoint embeddings survive.
+The extra backup datum is now fully checked: ten bad pairs haveA3,
+two haveA1. The flag-sensitive formula now covers EVERY abelian5-cover
+of these twelve pairs and the main branch family. Every cyclic cover
+has defect2 at every level. Unequal ideals were handled with their
+actual flags, not arbitrary formal coordinate invariance. Both
+155-cover Heisenberg censuses on two fixed representative pairs are
+also complete and independently audited. Do not repeat them.
 
-DEFECT_LINE_STABILIZER_BOUND.md applies the existing bounded-carrier
-COUNT without needing trace or prime-to5 degrees: |Gamma|>4(5^24+1).
-The X line must be genuinely mixed; scalar-character and line-stabilizer
-bounds give a huge lower bound on its orbit, not an upper bound.
+The remaining step is to constrain ACTUAL common sources, not just to
+construct more one-leg covers. The abelian germ and adjoint symmetry
+alone do not determine a nonabelian defect: exact group-algebra stress
+tests show why extra geometry is needed.
 
-TRACE_ZERO_REGULAR_MODULE_TEST.md supplies arbitrary-large-image models
-with all tested linear conditions, including a short X injection and
-surjective Psi-compatible trace with zero degree composition. This is
-not a geometric example, but rules out another purely linear rescue.
-NEXT: use the actual cored maps and the function phi_X²/s_X or a stronger
-geometric pairing. Do not silently turn a wild Sylow quotient into a
-smooth free quotient or an injection into a direct summand.
+## 3. Shared main frontier
 
-## 3. Extend only through actual geometric hypotheses
+`neutral_galois_witt_descent` already covers all defect-neutral Galois
+maps and given full upper towers. Uniform cyclic-power descent and its
+same-main source-defect-two application are also proved and audited.
+Do not ask Pro to repeat them.
 
-Completed main strata include source defect1; nonordinary-X/source2
-nontrivial-five-action; prime-to5 Galois-Y/source2/nonordinaryX; and
-ordinary-X/source2 nontrivial-five-action with actual five-part5 or25.
-The SAME previously selected parameter is used in these exclusions.
+The non-Galois neutral degree-five full-tower mode remains unresolved
+when the individual Galois closure increases defect. We now have14
+ACTUAL neutral D10 degree5covers of an explicitly obstructed genus2
+pair, all with source-only W3repair. On one selected genus6 source,
+the next obstruction is independently proved CONSTANT on its entire
+first-repair line. Evaluating that scalar is the ready Pro target;
+the26-file input package includes exact marked models/primary repairs.
+This gives a geometric test beyond the old abstract S5/S4 norm model.
 
-Longer nontrivial-action cyclic towers now reduce to their early
-bootstrap. Trivial-action carriers are different: their base has two
-defects, so the simple-zero cyclic descent theorem cannot be invoked
-merely because the remaining five-part is small.
-Non-Galois sources may gain defects in closures. No general five-group
-descent or whole common-cover exclusion is established.
+A new all-q dihedral tower candidate is under bounded audit: it aims
+to explain unbounded finite source-only repair with fixed defect1,
+while reducing full-tower existence to the first cover. It is not a
+proved input until that audit and canonical integration are complete.
+Higher defects, dormant or absent matches, and genuinely nonliftable
+coreless spans also remain. Etale refinement does not repair the joint
+deformation ring.
 
-## 4. Broader frontier and operations
+## 4. Operations
 
-Higher defects, non-Galois sources, dormant matches and absent matches
-remain. Favor parameterized mechanisms over isolated degrees.
-Refinement cannot repair an original diagram's deformation obstruction.
-Canonical-endpoint necessity is not mixed-lift existence.
-
-A18 and backup remain PARKED; no blind solver restart or pivot.
-No-cored formalization handoff exists; no Lean implementation,
-publication or upload is authorized. One manually submitted Pro at a
-time; request files are entirely model-directed. No exploration agents,
-only fresh bounded audits for substantial uncertainty. No active jobs.
-Detached reminder, never a blocking wait.
-Before stopping ask whether a wanted next step remains and continue.
+User has returned and requested progress and the Pro prompt. Quiet CPU limit four;
+no ordinary research agents, only fresh bounded major audits. No Pro is
+outstanding. The scalar fourth-obstruction prompt is ready for manual
+submission with its v2input archive. Stockpile only a useful model-addressed prompt,
+after testing its new mechanism; no browser submission or publication.
+Keep concise progress messages and refresh update.md about hourly.
+Before stopping, check for a wanted next step and continue.

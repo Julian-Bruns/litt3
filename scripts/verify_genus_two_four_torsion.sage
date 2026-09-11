@@ -8,6 +8,14 @@ this one specialization to the selected high-degree parameter.
 import itertools
 import json
 import time
+import argparse
+from pathlib import Path
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--parameter-polynomial', default=None,
+                    help='F5 coefficients constant first; choose a root in the fixed F5^6 field')
+parser.add_argument('--output', help='Write the executed certificate summary as JSON')
+args = parser.parse_args()
 
 started = time.monotonic()
 base = PolynomialRing(GF(5), 'z')
@@ -16,6 +24,12 @@ k = GF(5**6, name='a', modulus=z**6+z**4+4*z**3+z**2+2)
 a = k.gen()
 assert a.multiplicative_order() == 5**6-1
 t = a**126
+if args.parameter_polynomial is not None:
+    parameter_equation = PolynomialRing(k, 't0')(
+        [int(c) for c in args.parameter_polynomial.split(',')])
+    roots = parameter_equation.roots(multiplicities=False)
+    assert roots, 'Parameter has no root in the fixed six-dimensional field'
+    t = roots[0]
 assert t.minpoly().degree() == 3
 R = PolynomialRing(k, 'u')
 u = R.gen()
@@ -161,12 +175,16 @@ for (U, V), code in points.items():
     # Both the compressed quadric and the original matrix MUST pass.
     assert qvalue != 0 and cartier.det() != 0
 assert tested == 240
-print(json.dumps({
+result = {
     'status': 'PASS', 'field_modulus': str(k.modulus()),
     'parameter': str(t), 'parameter_degree_over_F25': 3,
+    'parameter_minpoly_over_F5': [int(c) for c in t.minpoly()],
     'distinct_J4_classes': 256, 'exact_order_four_tests': tested,
     'coprime_Cramer_additions_replayed': addition_checks,
     'nonzero_quadric_and_original_determinants': tested,
     'seconds': float(time.monotonic()-started),
-    'scope': 'Finite specialization certificate; use the proof height bound for the family.'
-}, indent=2, default=int))
+    'scope': 'Complete J[4] check at the stated parameter; a family claim additionally uses the proof height bound.'
+}
+if args.output:
+    Path(args.output).write_text(json.dumps(result, indent=2, default=int)+'\n')
+print(json.dumps(result, indent=2, default=int))

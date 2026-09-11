@@ -12,6 +12,8 @@ struct MacaulayFactor {
     Bytes coded;
     explicit MacaulayFactor(const CSR& M,uint32_t equations):
         rows(M.rows),cols(M.cols),neq(equations) {
+        // Ragged compact systems use the exact sparse fallback in the driver.
+        if(!neq){nbase=0;nmult=0;return;}
         if(!neq||rows%neq)throw std::runtime_error("invalid equation block size");
         nmult=rows/neq;
         std::vector<int32_t> basis(cols,-1);
@@ -149,6 +151,54 @@ struct MacaulayFactor {
                     auto h=reverse_idx[p];
                     uint32_t t0=output[0][h],t1=output[1][h],t2=output[2][h];
                     a0+=t0+3*t1;a1+=t2-t0;
+                }
+                y[j]=a0%5+5*(a1%5);
+            }
+        }
+    }
+
+    // Prime-subfield input adapter: the Krylov vectors still live in F25,
+    // but an F5 matrix needs two component GEMMs, not three. Tile both
+    // components over the actual worker team instead of three serial jobs.
+    // The caller must validate EVERY matrix coefficient is in F5.
+    void gram_prime_team(const Bytes& x,const Bytes& diagonal,Bytes& y) {
+        if(x.size()!=cols||diagonal.size()!=rows)throw std::runtime_error("bad prime Gram vectors");
+        y.resize(cols);
+        const int tiles=std::max(1,omp_get_max_threads()/2);
+        #pragma omp parallel
+        {
+            #pragma omp for schedule(runtime)
+            for(size_t p=0;p<map.size();p++) {
+                auto c=x[map[p]];input[0][p]=c%5;input[1][p]=c/5;
+            }
+            #pragma omp for schedule(dynamic,1)
+            for(int task=0;task<2*tiles;task++) {
+                int c=task/tiles,t=task%tiles;
+                uint32_t begin=uint64_t(neq)*t/tiles,end=uint64_t(neq)*(t+1)/tiles;
+                if(end>begin)cblas_sgemm(CblasRowMajor,CblasNoTrans,CblasNoTrans,
+                    end-begin,nmult,nbase,1,table[0].data()+size_t(begin)*nbase,nbase,
+                    input[c].data(),nmult,0,output[c].data()+size_t(begin)*nmult,nmult);
+            }
+            #pragma omp for schedule(runtime)
+            for(size_t p=0;p<size_t(neq)*nmult;p++) {
+                uint32_t a0=uint32_t(output[0][p])%5,a1=uint32_t(output[1][p])%5;
+                auto d=diagonal[(p%nmult)*neq+p/nmult];uint32_t d0=d%5,d1=d/5;
+                input[0][p]=(a0*d0+3*a1*d1)%5;
+                input[1][p]=(a0*d1+a1*d0+a1*d1)%5;
+            }
+            #pragma omp for schedule(dynamic,1)
+            for(int task=0;task<2*tiles;task++) {
+                int c=task/tiles,t=task%tiles;
+                uint32_t begin=uint64_t(nbase)*t/tiles,end=uint64_t(nbase)*(t+1)/tiles;
+                if(end>begin)cblas_sgemm(CblasRowMajor,CblasTrans,CblasNoTrans,
+                    end-begin,nmult,neq,1,table[0].data()+begin,nbase,
+                    input[c].data(),nmult,0,output[c].data()+size_t(begin)*nmult,nmult);
+            }
+            #pragma omp for schedule(runtime)
+            for(uint32_t j=0;j<cols;j++) {
+                uint64_t a0=0,a1=0;
+                for(auto p=reverse_ptr[j];p<reverse_ptr[j+1];p++) {
+                    auto h=reverse_idx[p];a0+=uint32_t(output[0][h]);a1+=uint32_t(output[1][h]);
                 }
                 y[j]=a0%5+5*(a1%5);
             }
