@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import re
 import sys
+from urllib.parse import unquote
 
 
 STATUSES = {"proved", "conditional", "open", "refuted", "superseded"}
@@ -160,7 +161,7 @@ def validate(root):
     registered.update(record.get("statement") for record in theorems.values())
     registered.update(record.get("solution") for record in theorems.values())
     for folder in ("Definitions", "Theorems", "Solutions"):
-        for path in (root / folder).glob("*.md"):
+        for path in (root / folder).rglob("*.md"):
             relative = path.relative_to(root).as_posix()
             if path.name != "README.md" and relative not in registered:
                 errors.append(f"unregistered canonical file: {relative}")
@@ -211,8 +212,6 @@ def display(root, identifier, proof=False):
     if proof or "statement" not in record:
         return body
     metadata = [f"Status: {record['status']} | Verification: {record['verification']}"]
-    if record.get("evidence_summary"):
-        metadata.append(f"Evidence: {record['evidence_summary']}")
     metadata.append("Audits: " + (", ".join(record.get("audits", [])) or "none recorded"))
     return "\n".join(metadata) + "\n\n" + body
 
@@ -302,11 +301,34 @@ def stamp(root):
     return len(pending)
 
 
+def check_links(root):
+    """Check local artifact links; this explicit command reads canonical proofs."""
+    pattern = re.compile(r'\[[^\]\n]*\]\((?:<([^>\n]+)>|([^\s)]+))(?:\s+[\"\x27][^\"\x27]*[\"\x27])?\)')
+    artifact = re.compile(r'\.(?:md|json|py|sage|zip|png|pdf|txt|gz|sobj|u8|tsv|bin)$')
+    errors, count = [], 0
+    for folder in ("Definitions", "Theorems", "Solutions"):
+        for path in sorted((root / folder).rglob("*.md")):
+            body = path.read_text(encoding="utf-8")
+            for match in pattern.finditer(body):
+                target = match.group(1) or match.group(2)
+                if re.match(r"^[A-Za-z][A-Za-z0-9+.-]*:", target) or target.startswith("#"):
+                    continue
+                destination = unquote(target.split("#", 1)[0].split("?", 1)[0])
+                # File suffixes distinguish destinations from math such as J[p](k).
+                if not artifact.search(destination):
+                    continue
+                count += 1
+                if not (path.parent / destination).is_file():
+                    line = body.count("\n", 0, match.start()) + 1
+                    errors.append(f"{path.relative_to(root)}:{line}: missing linked file {destination}")
+    return count, errors
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=DEFAULT_ROOT)
     commands = parser.add_subparsers(dest="command", required=True)
-    for name in ("validate", "show", "proof", "dependencies", "frontier", "search", "inventory", "stamp"):
+    for name in ("validate", "links", "show", "proof", "dependencies", "frontier", "search", "inventory", "stamp"):
         command = commands.add_parser(name)
         command.add_argument("--root", type=Path, default=argparse.SUPPRESS)
         if name in {"show", "proof", "dependencies"}:
@@ -322,6 +344,12 @@ def main(argv=None):
                 print("\n".join(errors), file=sys.stderr)
                 return 1
             print("Workspace valid (structure only; no mathematical verification).")
+        elif args.command == "links":
+            count, errors = check_links(root)
+            if errors:
+                print("\n".join(errors), file=sys.stderr)
+                return 1
+            print(f"Checked {count} local artifact links in canonical Markdown; all targets exist.")
         elif args.command in {"show", "proof"}:
             print(display(root, args.id, proof=args.command == "proof"), end="")
         elif args.command == "dependencies":

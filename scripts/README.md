@@ -6,6 +6,7 @@ The repository containing the script is the default root. Every command accepts
 
 ```sh
 python3 scripts/research_workspace.py validate
+python3 scripts/research_workspace.py links
 python3 scripts/research_workspace.py show THEOREM_ID
 python3 scripts/research_workspace.py proof THEOREM_ID
 python3 scripts/research_workspace.py dependencies THEOREM_ID
@@ -17,7 +18,7 @@ python3 -m unittest discover -s tests -v
 ```
 
 `show` prints the statement preceded by compact registry metadata: status,
-verification, optional evidence summary, and audit paths. It never reads solution
+verification and audit paths. It never reads solution
 or audit bodies. Definitions display their original text without a metadata
 prefix. `proof` explicitly prints the solution. `search` reads registry and inventory metadata only, returns up to 20
 matches, and requires every search word to match. It never loads statement,
@@ -26,6 +27,12 @@ dependencies; shared nodes are expanded once. Optional `legacy_dependencies`
 paths appear as unpromoted proof inputs, and validation checks that each exists
 inside the repository. These paths do not imply reviewed theorem status.
 `frontier` prints `Research/STATE.md`.
+
+`links` explicitly reads canonical definitions, statements and proofs to
+check local Markdown artifact links. It catches references to deleted
+proof inputs after cleanup. It ignores external URLs and mathematical
+bracket expressions; it checks file existence, not anchors or truth.
+The metadata-only commands retain their selective-read behavior.
 
 Only `inventory` and `stamp` write JSON. Inventory indexes Markdown in `routes`,
 `archive`, `tasks`, and top-level notes, excluding administrative top-level files.

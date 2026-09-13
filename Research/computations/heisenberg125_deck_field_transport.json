@@ -1,9 +1,0 @@
-{
-  "status": "PASS",
-  "columns": 750,
-  "coefficients_checked": 10471,
-  "small": "Research/computations/heisenberg125_deck_case0_plane1_k12.json",
-  "large": "Research/computations/heisenberg125_deck_case0_plane1.json",
-  "small_sha256": "d109e6609a3e6d9f38d4179ad85bf0b7e81952a44cdf9b4e8aa4f74f5f3f7723",
-  "large_sha256": "d3535b277cf2956e257d95975de96d02104171609cf39e9bc18f69d639ea441e"
-}
