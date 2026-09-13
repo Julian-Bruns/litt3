@@ -44,4 +44,4 @@ that the full atlas scheme, which is reduced, has multiplicities.
 
 Version2. Status: author proof,2026-09-07; not independently audited. This is
 parameterized extension geometry, not an atlas/common-cover exclusion.
-[Proof](../../Solutions/atlases/extension_fiber_geometry.md).
+[Proof](../../Proofs/atlases/extension_fiber_geometry.md).

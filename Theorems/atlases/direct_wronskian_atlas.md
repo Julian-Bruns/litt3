@@ -56,6 +56,6 @@ conditional on the scalar reconstruction input; no objections. Five
 exact samples on a noninvariant F25 oper check
 both pole charts, all scalar identities, Wronskian rank57/nullity9,
 the bounds, and nonzero rank-two observations. They do not exclude atlases.
-[Proof](../../Solutions/atlases/direct_wronskian_atlas.md).
+[Proof](../../Proofs/atlases/direct_wronskian_atlas.md).
 [Audit metadata](../../Research/audits/DIRECT_WRONSKIAN_ATLAS_AUDIT_2026_09_07.md);
 reference-only unless there is a concrete mathematical doubt.

@@ -86,4 +86,4 @@ of a32-square Q minor is checked exactly against the saved first-oper
 matrix. The orbit11 minor and universal constant elimination are verified
 exactly. The whole-census determinant was computed by two distinct exact
 algorithms and its polynomial Bezout identity replayed. See the proof.
-[Proof](../../Solutions/atlases/oper_deck_graded_atlas.md).
+[Proof](../../Proofs/atlases/oper_deck_graded_atlas.md).

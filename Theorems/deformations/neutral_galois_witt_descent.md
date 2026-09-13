@@ -40,5 +40,5 @@ the SAME given tower descends along both original maps and algebraizes
 to an actual two-leg span. Primitive/non-Galois(N5) and the original
 unmarked common-cover problem remain open.
 
-[Proof](../../Solutions/deformations/neutral_galois_witt_descent.md) ·
+[Proof](../../Proofs/deformations/neutral_galois_witt_descent.md) ·
 [Focused audit](../../Research/audits/CYCLIC_NEUTRAL_TWO_DIGIT_AUDIT_2026_09_11.md).

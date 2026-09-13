@@ -41,4 +41,4 @@ Status: proved, independently audited. Auditor: resultant_gradient_major_audit,
 2026-09-07. Verdict PASS; no remaining objections. The degree48 scalar
 resultant is a coefficient Frobenius twist, not its degree240 Frobenius
 pullback. [Audit reference](../../Research/audits/RESULTANT_GRADIENT_AUDIT_2026_09_07.md).
-[Proof](../../Solutions/atlases/resultant_gradient_atlas.md).
+[Proof](../../Proofs/atlases/resultant_gradient_atlas.md).

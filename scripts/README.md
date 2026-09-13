@@ -18,11 +18,11 @@ python3 -m unittest discover -s tests -v
 ```
 
 `show` prints the statement preceded by compact registry metadata: status,
-verification and audit paths. It never reads solution
+verification and audit paths. It never reads proof
 or audit bodies. Definitions display their original text without a metadata
-prefix. `proof` explicitly prints the solution. `search` reads registry and inventory metadata only, returns up to 20
+prefix. `proof` explicitly prints the proof. `search` reads registry and inventory metadata only, returns up to 20
 matches, and requires every search word to match. It never loads statement,
-solution, or audit bodies. `dependencies` includes definitions and theorem
+proof, or audit bodies. `dependencies` includes definitions and theorem
 dependencies; shared nodes are expanded once. Optional `legacy_dependencies`
 paths appear as unpromoted proof inputs, and validation checks that each exists
 inside the repository. These paths do not imply reviewed theorem status.
@@ -45,5 +45,5 @@ without writing. Intentional statement revisions require explicit review and
 registry hash maintenance; running `stamp` cannot conceal drift. `validate` checks
 registry structure, references, paths, dependency cycles and statuses, optional
 hashes, unregistered canonical files, and proof headings in statement files.
-It does not inspect solution bodies
+It does not inspect proof bodies
 or certify mathematical correctness. Its exit status is nonzero on errors.

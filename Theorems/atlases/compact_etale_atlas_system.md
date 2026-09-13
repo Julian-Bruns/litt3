@@ -38,4 +38,4 @@ result or an emptiness certificate. The original Litt3 problem remains open.
 Status: proved, bounded independent audit PASS. Auditor:
 resultant_gradient_major_audit, 2026-09-07. No remaining objections.
 [Audit reference](../../Research/audits/UNIVERSAL_RADIAL_COMPACT_AUDIT_2026_09_07.md).
-[Proof](../../Solutions/atlases/compact_etale_atlas_system.md).
+[Proof](../../Proofs/atlases/compact_etale_atlas_system.md).

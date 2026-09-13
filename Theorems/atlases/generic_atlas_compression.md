@@ -33,4 +33,4 @@ a proposed practical solver; use factored matrices if exploring this form.
 No runtime improvement or representative exclusion is claimed.
 
 Version1,2026-09-08. Author proof; no independent audit claimed.
-[Proof](../../Solutions/atlases/generic_atlas_compression.md).
+[Proof](../../Proofs/atlases/generic_atlas_compression.md).

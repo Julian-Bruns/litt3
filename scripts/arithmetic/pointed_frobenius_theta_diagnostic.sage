@@ -6,7 +6,7 @@ extension O -> E -> omega can destabilize at the given Frobenius height.
 Output distinguishes an exact minor-ideal unit from an unfinished ideal.
 Use --all to cover all16 two-torsion labels and all3 projective charts.
 The geometric dictionary and degree-bound transfer are in
-Solutions/connections/pointed_frobenius_dormant_model.md.
+Proofs/deformations/pointed_frobenius_dormant_model.md.
 """
 import argparse
 import itertools

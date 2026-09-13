@@ -85,7 +85,7 @@ Frobenius as a family construction over the nonreduced oper scheme.
 Differential elimination audit: PASS, /root/differential_elimination_audit,
 2026-09-06. Preserve fixed-oper scope, quotient regularity and sufficient
 Laurent precision. The full theorem, including normalization, is not
-independently audited. [Proof](../../Solutions/atlases/scalar_hermitian_reconstruction.md).
+independently audited. [Proof](../../Proofs/atlases/scalar_hermitian_reconstruction.md).
 [Frame audit](../../Research/audits/PRO_SCALAR_FRAME_CHECK_2026_09_06.md),
 [differential audit](../../Research/audits/HERMITIAN_DIFFERENTIAL_ELIMINATION_AUDIT_2026_09_06.md),
 reference-only: open their bodies only for a concrete doubt.

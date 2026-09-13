@@ -126,10 +126,10 @@ def validate(root):
                     errors.append(f"{identifier}: statement_sha256 mismatch (statement drift)")
             except (OSError, UnicodeError) as exc:
                 errors.append(f"{identifier}: unreadable statement: {exc}")
-        if record.get("solution") is not None:
-            check_file(identifier, "solution", record["solution"])
+        if record.get("proof") is not None:
+            check_file(identifier, "proof", record["proof"])
         elif record.get("status") == "proved":
-            errors.append(f"{identifier}: proved theorem requires a solution")
+            errors.append(f"{identifier}: proved theorem requires a proof")
         if record.get("source") is not None:
             check_file(identifier, "source", record["source"])
         audits = record.get("audits", [])
@@ -159,8 +159,8 @@ def validate(root):
     # Canonical files must not silently disappear from the continuation library.
     registered = {record.get("path") for record in definitions.values()}
     registered.update(record.get("statement") for record in theorems.values())
-    registered.update(record.get("solution") for record in theorems.values())
-    for folder in ("Definitions", "Theorems", "Solutions"):
+    registered.update(record.get("proof") for record in theorems.values())
+    for folder in ("Definitions", "Theorems", "Proofs"):
         for path in (root / folder).rglob("*.md"):
             relative = path.relative_to(root).as_posix()
             if path.name != "README.md" and relative not in registered:
@@ -205,9 +205,9 @@ def find_record(library, identifier):
 
 def display(root, identifier, proof=False):
     record = find_record(load_library(root), identifier)
-    path = record.get("solution") if proof else record.get("statement", record.get("path"))
+    path = record.get("proof") if proof else record.get("statement", record.get("path"))
     if not path:
-        raise ValueError(f"{identifier}: no solution recorded")
+        raise ValueError(f"{identifier}: no proof recorded")
     body = local_path(root, path).read_text(encoding="utf-8")
     if proof or "statement" not in record:
         return body
@@ -270,7 +270,7 @@ def inventory(root):
         body = raw.decode("utf-8", errors="replace")
         title = next((line.lstrip("# ").strip() for line in body.splitlines() if re.match(r"^#{1,6}\s+", line)), path.stem)
         lower = relative.casefold()
-        if re.search(r"(?im)^\s*(?:>\s*)?(?:\*\*)?(?:redirect\b|moved to\b|canonical (?:statement|location)\s*:)", body) or (len(raw) < 1800 and re.search(r"\]\([^)]*(?:Theorems/Thm_|Solutions/Sol_)", body)):
+        if re.search(r"(?im)^\s*(?:>\s*)?(?:\*\*)?(?:redirect\b|moved to\b|canonical (?:statement|location)\s*:)", body):
             classification = "redirect"
         elif "audit" in lower:
             classification = "audit_reference_only"
@@ -306,7 +306,7 @@ def check_links(root):
     pattern = re.compile(r'\[[^\]\n]*\]\((?:<([^>\n]+)>|([^\s)]+))(?:\s+[\"\x27][^\"\x27]*[\"\x27])?\)')
     artifact = re.compile(r'\.(?:md|json|py|sage|zip|png|pdf|txt|gz|sobj|u8|tsv|bin)$')
     errors, count = [], 0
-    for folder in ("Definitions", "Theorems", "Solutions"):
+    for folder in ("Definitions", "Theorems", "Proofs"):
         for path in sorted((root / folder).rglob("*.md")):
             body = path.read_text(encoding="utf-8")
             for match in pattern.finditer(body):

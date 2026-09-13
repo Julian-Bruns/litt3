@@ -41,4 +41,4 @@ the characteristic-zero extension-space literature; the proof here is
 characteristic-independent. Five exact fixed-curve tests verify every
 Wronskian expansion, residue pairing, rank, and equality of the two kernels.
 No atlas or common-cover exclusion follows merely from the degree formula.
-[Proof](../../Solutions/atlases/rank_two_extension_pencil.md).
+[Proof](../../Proofs/atlases/rank_two_extension_pencil.md).

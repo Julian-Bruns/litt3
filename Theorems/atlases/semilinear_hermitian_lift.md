@@ -77,6 +77,6 @@ elimination audit: PASS, /root/horizontal_retraction_audit, 2026-09-06.
 Non-breaking qualifications: fixed markings, k-vector-sheaf cohomology,
 connection transported after canceling M, no arbitrary nonreduced-family
 claim. The new proof supersedes the former finite-Frobenius-fiber step.
-[Proof](../../Solutions/atlases/semilinear_hermitian_lift.md).
+[Proof](../../Proofs/atlases/semilinear_hermitian_lift.md).
 [Audit](../../Research/audits/HERMITIAN_HORIZONTAL_RETRACTION_AUDIT_2026_09_06.md),
 reference-only; open its body only for a concrete mathematical doubt.

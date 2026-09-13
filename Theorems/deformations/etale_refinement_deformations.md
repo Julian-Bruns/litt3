@@ -1,6 +1,6 @@
 # Etale refinement preserves the entire simultaneous deformation problem
 
-Use the [marked deformation conventions](../../Definitions/Def_marked_curve_deformations.md).
+Use the [marked deformation conventions](../../Definitions/marked_curve_deformations.md).
 Let f_i:Z→C_i be any finite nonempty collection of actual finite etale
 maps, and h:W→Z a connected finite etale cover. Every curve is smooth,
 proper, connected, and of genus at least two. There is a natural bijection
@@ -64,4 +64,4 @@ cannot bound e; these are abstract ring examples, not realized spans.
 Version2,2026-09-09 adds the small ambient deformation ring, intrinsic
 p-nilpotence criterion and fixed-lift height. Version1 rederived the
 earlier116 note. Author proof; no independent audit or Lean verification.
-[Proof](../../Solutions/deformations/etale_refinement_deformations.md).
+[Proof](../../Proofs/deformations/etale_refinement_deformations.md).

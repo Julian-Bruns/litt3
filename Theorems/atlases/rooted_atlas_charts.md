@@ -52,7 +52,7 @@ normalized lifts. These count presentations, not necessarily distinct
 unmarked atlases. The theorem excludes no whole genus-nine oper or
 common cover.
 
-[Proof](../../Solutions/atlases/rooted_atlas_charts.md).
+[Proof](../../Proofs/atlases/rooted_atlas_charts.md).
 Independent bounded [audit](../../Research/audits/FROBENIUS_FEEDBACK_ROOTING_AUDIT_2026_09_13.md):
 PASS, /root/audit_cyclic_unification, 2026-09-13, no blocking objections.
 The original positive-test and tensor-export evidence remains unchanged.

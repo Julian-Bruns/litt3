@@ -34,7 +34,7 @@ Let Y^can/W be the canonical lift of (Y,r_Y).
    is asserted: the inverse-Cartier data are constructed one level lower.
 
 For a coreless span with g(Y)=2, condition(J) follows from the canonical
-W2 lift and [two-leg negative extensions](../common_covers/two_leg_negative_extensions.md).
+W2 lift and [two-leg negative extensions](two_leg_negative_extensions.md).
 Thus the result applies to the active branch for BOTH choices of
 endpoints. It does not need Hom(J_X,J_Y)=0, a restriction on map degrees,
 ordinary J(Y), or ordinariness of r_X or r_Z.
@@ -65,5 +65,5 @@ bijectivity of Psi_Y. Thus endpoint obstruction and extra source-kernel
 directions are both retained. If Psi_X is also bijective, the residual
 space ker barPsi is isomorphic to ker Psi_Z, not automatically zero.
 
-[Proof and precise induction](../../Solutions/deformations/forced_canonical_witt_endpoint.md) ·
+[Proof and precise induction](../../Proofs/deformations/forced_canonical_witt_endpoint.md) ·
 [Scoped audit](../../Research/audits/FORCED_CANONICAL_WITT_ENDPOINT_AUDIT_2026_09_09.md).

@@ -34,4 +34,4 @@ satisfy the admissibility hypothesis here.
 Version1,2026-09-09. Author source-checked corollary of Mochizuki II
 Propositions1.2 and2.5 and the explicit Frobenius-obstruction construction.
 No independent audit or Lean verification claimed.
-[Proof](../../Solutions/deformations/admissible_two_leg_w2_lifts.md).
+[Proof](../../Proofs/deformations/admissible_two_leg_w2_lifts.md).

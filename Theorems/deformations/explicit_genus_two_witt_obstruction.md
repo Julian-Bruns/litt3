@@ -4,7 +4,7 @@ Version1,2026-09-10. Pro calculation, locally reproduced and focused
 medium audit PASS /root/audit_explicit_w3_obstruction. Not Lean verified.
 
 Use the explicit genus-two/F625 pair of
-[critical quartics, version2](../genus_two/genus_two_active_critical_quartics.md):
+[critical quartics, version2](../projective_connections/genus_two_active_critical_quartics.md):
 
     t^4+4t^3+t^2+4t+3=0,
     C: v^2=F=u(u-1)(u-2)(u-3)(u-t),
@@ -15,7 +15,7 @@ This pair is admissible and active, with ordinary Jacobian, a nonsplit
 canonical double, and a one-dimensional Hodge kernel (defect one).
 This does not mean its Fitting nilpotent subspace is one-dimensional.
 With the
-[canonical first lift and higher obstruction](../../Definitions/Def_witt_hodge_obstruction.md),
+[canonical first lift and higher obstruction](../../Definitions/witt_hodge_obstruction.md),
 
     epsilon(C,r) != 0.
 
@@ -44,4 +44,4 @@ endpoints, or evaluate epsilon for their connections. It refutes a
 universal assertion that every admissible active pair has a compatible
 one-endpoint W3 lift. The two-leg source-kernel mismatch remains separate.
 
-[Proof and executable certificate](../../Solutions/deformations/explicit_genus_two_witt_obstruction.md).
+[Proof and executable certificate](../../Proofs/deformations/explicit_genus_two_witt_obstruction.md).

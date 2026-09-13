@@ -52,4 +52,4 @@ is excluded.
 Status: author proof, not separately audited. Exact five-sample tests
 verify (1)--(2), rank55, and reconstruction against the independently
 implemented direct test; samples are not global exclusions.
-[Proof](../../Solutions/atlases/wronskian_matrix_pencil.md).
+[Proof](../../Proofs/atlases/wronskian_matrix_pencil.md).

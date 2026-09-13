@@ -110,4 +110,4 @@ Pfaffian candidate is nonzero at all26 F25 pencil parameters for all33
 known genus-two atlas points; every resulting extra vector is liftable
 but fails the common-kernel condition. Full original equations and
 R-sensitive negative controls remain in the check.
-[Proof](../../Solutions/atlases/atlas_liftable_radical.md).
+[Proof](../../Proofs/atlases/atlas_liftable_radical.md).

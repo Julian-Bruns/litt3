@@ -2,7 +2,7 @@
 
 Let C/k be a smooth projective connected curve of genus g>=2 in
 characteristic five, H: X_0^6+X_1^6+X_2^6=0, and S=[H/PGU_3(5)].
-Use [Frobenius-form atlas conventions](../../Definitions/Def_frobenius_form_atlases.md).
+Use [Frobenius-form atlas conventions](../../Definitions/frobenius_form_atlases.md).
 
 1. A finite etale curve atlas C -> S exists if and only if C admits
    transverse nonsingular Frobenius-form data (E,M,L). Both directions
@@ -46,4 +46,4 @@ common covers.
 Audited PASS, /root/hermitian_bundle_major_audit, 2026-09-06.
 No material objections; affine-linear wording clarified. Audit metadata
 is in the library.
-[Proof](../../Solutions/atlases/hermitian_atlas_extension_criterion.md).
+[Proof](../../Proofs/atlases/hermitian_atlas_extension_criterion.md).

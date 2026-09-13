@@ -47,4 +47,4 @@ stays nonzero. Those are computational tasks, not missing hypotheses
 to suppress.
 
 Status: author proof, 2026-09-07. No separate audit claimed.
-[Proof](../../Solutions/atlases/rooted_atlas_projection.md).
+[Proof](../../Proofs/atlases/rooted_atlas_projection.md).

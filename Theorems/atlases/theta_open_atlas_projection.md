@@ -49,4 +49,4 @@ For H0(V)>0, the same projection need not cover actual atlases; they lie
 outside this acyclic open set and remain in the full intrinsic system.
 
 Status: author proof,2026-09-07; not independently audited.
-[Proof](../../Solutions/atlases/theta_open_atlas_projection.md).
+[Proof](../../Proofs/atlases/theta_open_atlas_projection.md).

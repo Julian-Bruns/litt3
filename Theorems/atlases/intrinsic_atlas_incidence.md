@@ -1,6 +1,6 @@
 # One intrinsic atlas system for every cubic torsion choice
 
-Use [intrinsic extension-incidence data](../../Definitions/Def_intrinsic_atlas_incidence.md).
+Use [intrinsic extension-incidence data](../../Definitions/intrinsic_atlas_incidence.md).
 In particular V is stable, det V=omega tau, tau^3=O, and j0 is fixed.
 Then a normalized Hermitian atlas with E/O isomorphic to V exists if
 and only if the following affine polynomial system has a geometric solution:
@@ -41,4 +41,4 @@ No material objections. Qualifications: stability and j0 are hypotheses;
 no moduli-representability, old-tensor identification or emptiness claim.
 [Audit metadata](../../Research/audits/INTRINSIC_ATLAS_INCIDENCE_AUDIT_2026_09_07.md)
 is reference-only; open the audit body only for a concrete doubt.
-[Proof](../../Solutions/atlases/intrinsic_atlas_incidence.md).
+[Proof](../../Proofs/atlases/intrinsic_atlas_incidence.md).

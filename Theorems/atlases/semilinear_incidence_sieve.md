@@ -40,4 +40,4 @@ certified finite linear algebra, not an asserted equality for every oper.
 
 Status: author proof plus exact complete-basis certificates; not separately
 audited. Data and reproduction are linked in the proof.
-[Proof](../../Solutions/atlases/semilinear_incidence_sieve.md).
+[Proof](../../Proofs/atlases/semilinear_incidence_sieve.md).

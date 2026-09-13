@@ -1,7 +1,7 @@
 # Compatible BT truncations bound the joint lifting obstruction
 
-Use the [BT conventions](../../Definitions/Def_versal_bt_data.md) and
-[marked deformation conventions](../../Definitions/Def_marked_curve_deformations.md).
+Use the [BT conventions](../../Definitions/versal_bt_data.md) and
+[marked deformation conventions](../../Definitions/marked_curve_deformations.md).
 Let X <-f- Z -g-> Y be an ACTUAL finite bi-etale span of smooth proper
 connected curves of genus at least two over k, with p>2.
 
@@ -34,4 +34,4 @@ one-leg lifts alone do not give simultaneous full lifts.
 Version1,2026-09-09. Author synthesis of Xia's full and truncated
 lifting proofs, Krishnamoorthy's full-BT correspondence argument,
 and etale_refinement_deformations v2. No independent audit or Lean
-verification. [Proof](../../Solutions/deformations/compatible_bt_lifting.md).
+verification. [Proof](../../Proofs/deformations/compatible_bt_lifting.md).

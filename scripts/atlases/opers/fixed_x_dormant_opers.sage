@@ -4,7 +4,7 @@
 Equation and certificate generator, not a common-cover exclusion. Use
 --invariant for the completed invariant slice; --build-only gives all24
 parameters. Enumerate the remaining points with normalized_oper_quotient.sage.
-The global regularity proof is Solutions/connections/fixed_x_dormant_equations.md.
+The global regularity proof is Proofs/projective_connections/fixed_x_dormant_equations.md.
 """
 import sys
 import time

@@ -108,7 +108,7 @@ coefficient comparisons are retained in the Bézout proof. No full
 exceptional B tensor, speed improvement, whole-oper exclusion or
 unmarked common-cover conclusion is asserted.
 
-[Proof](../../Solutions/atlases/inverse_cup_atlas_system.md). Independent audits:
+[Proof](../../Proofs/atlases/inverse_cup_atlas_system.md). Independent audits:
 [selected columns, 2026-09-08](../../Research/audits/INVERSE_COLUMN_COMPRESSION_AUDIT_2026_09_08.md),
 [inverse formulations, 2026-09-13](../../Research/audits/INVERSE_CUP_CONSOLIDATION_SCOPE_AUDIT_2026_09_13.md),
 and [feedback rooting](../../Research/audits/FROBENIUS_FEEDBACK_ROOTING_AUDIT_2026_09_13.md).

@@ -76,4 +76,4 @@ preserves a normalized common-kernel solution but fails R; all33 such
 weak points are rejected by (2). A size32 example attains c=10 and is
 reconstructed by (5), showing that the larger strata cannot be suppressed
 by the abstract matrix argument.
-[Proof](../../Solutions/atlases/alternating_constant_kernel_elimination.md).
+[Proof](../../Proofs/atlases/alternating_constant_kernel_elimination.md).

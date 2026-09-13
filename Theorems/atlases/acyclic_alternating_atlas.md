@@ -74,4 +74,4 @@ Status: author proof,2026-09-07; no independent audit claimed. The complete
 first-oper tensor verifies (2) and every alternating coefficient exactly.
 This is a representation and a necessary obstruction, not an atlas
 exclusion or a solution of the unmarked common-cover problem.
-[Proof](../../Solutions/atlases/acyclic_alternating_atlas.md).
+[Proof](../../Proofs/atlases/acyclic_alternating_atlas.md).

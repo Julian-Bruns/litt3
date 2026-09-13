@@ -2,7 +2,7 @@
 
 Version1,2026-09-10. Author proof and exact computation; focused medium
 audit PASS /root/audit_p_cover_witt_repair. Not Lean verified.
-Use the [intrinsic obstruction](../../Definitions/Def_witt_hodge_obstruction.md).
+Use the [intrinsic obstruction](../../Definitions/witt_hodge_obstruction.md).
 
 Let h:T->C be an actual connected finite etale Galois cover of smooth
 projective curves of genus>=2 over k=bar(F5), with finite5-group P of
@@ -50,4 +50,4 @@ The last assertion distinguishes one-curve repair from repair of an
 actual diagram. No second endpoint or common-cover counterexample is
 constructed. The main and backup common-cover problems remain unsolved.
 
-[Proof and exact finite certificate](../../Solutions/deformations/etale_p_witt_obstruction.md).
+[Proof and exact finite certificate](../../Proofs/deformations/etale_p_witt_obstruction.md).

@@ -79,5 +79,5 @@ match must now have source defect at least TWO. Non-Galois defect-one
 witnesses, higher defects, dormant matches and spans with no matching
 connection are not excluded. The full common-cover problem is open.
 
-[Proof](../../Solutions/deformations/defect_preserving_etale_descent.md) ·
+[Proof](../../Proofs/deformations/defect_preserving_etale_descent.md) ·
 [Scoped audit](../../Research/audits/DEFECT_PRESERVING_ETALE_DESCENT_AUDIT_2026_09_10.md).

@@ -87,7 +87,7 @@ report={
     'branch_points':['0','1','-1','infinity'],
     'C_Kummer_valuations':[1,1,-1,-1],
     'Q_Kummer_valuations':[1,-1,-1,1],
-    'global_proof':'Solutions/atlases/nonliftable_hermitian_atlas_family.md',
+    'global_proof':'Proofs/examples/nonliftable_hermitian_atlas_family.md',
     'scope':'Exact identities and finite group check, not a replacement for the connectedness/etaleness proof.'
 }
 print(json.dumps(report,indent=2,default=int))

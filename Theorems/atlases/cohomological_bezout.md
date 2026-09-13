@@ -4,7 +4,7 @@ Version2, 2026-09-13. The inverse-block and primitive-adjugate conclusions
 now include nonacyclic bundles; the selected-column criterion is stated
 with its exact characteristic-free hypotheses.
 
-Use the [cohomological Bézout conventions](../../Definitions/Def_cohomological_bezout.md):
+Use the [cohomological Bézout conventions](../../Definitions/cohomological_bezout.md):
 C is a smooth projective connected curve, V has rank2 and degree2g−2,
 T is a line bundle, M=det(V)T^-1, A=H0(VT^-1), H0(T)=H1(M)=0, and A
 separates every length-two divisor. Put n=h1(T)=h0(M), r=h0(V)=h1(V).
@@ -106,7 +106,7 @@ The first-oper quadratic tensor and its full six-section reconstruction
 remain exactly checked. Other exceptional B tensors are not asserted
 computed. These constructions do not exclude an atlas or common cover.
 
-[Proof](../../Solutions/atlases/cohomological_bezout.md). The original matrix,
+[Proof](../../Proofs/atlases/cohomological_bezout.md). The original matrix,
 corank and determinant argument has an independent
 [PASS audit](../../Research/audits/COHOMOLOGICAL_BEZOUT_AUDIT_2026_09_07.md).
 The extensions and consolidated inverse arguments have the separate
