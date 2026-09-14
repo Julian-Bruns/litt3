@@ -2,7 +2,7 @@
 
 [Statement](../../../Theorems/deformations/section_growth/backup_heisenberg_defects.md).
 Independent completion audit PASS, /root/audit_actual_heisenberg_defect,
-2026-09-11. Audits are reference-only:
+2026-09-11. Audits:
 ACTUAL_HEISENBERG_DEFECT_AUDIT_2026_09_11.md,
 HEISENBERG_FROBENIUS_AND_ADDITIONAL_RANKS_AUDIT_2026_09_11.md,
 HEISENBERG_CENSUS_COMPLETION_AUDIT_2026_09_11.md.

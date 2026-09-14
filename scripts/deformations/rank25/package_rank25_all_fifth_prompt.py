@@ -184,19 +184,17 @@ def main():
         assert check.returncode == 0, check.stdout+check.stderr
     target = root/'Research/pro_inputs/rank25_all_fifth_lifts_inputs.zip'
     target.write_bytes(blob)
-    prompt = (root/'Research/requests/rank25_all_fifth_lifts_request.md').read_bytes()
     result = {
         'status': 'PASS', 'packet_identity': IDENTITY, 'archive': str(target),
         'sha256': sha(blob), 'files': len(files), 'bytes': len(blob),
         'uncompressed_bytes': sum(map(len, files.values())), 'hard_limit_bytes': LIMIT,
-        'prompt_words': len(prompt.decode().split()), 'prompt_sha256': sha(prompt),
         'contents': {name: {'bytes': len(value), 'sha256': sha(value)} for name, value in files.items()},
         'provenance': {str(source): sha(source_blob), str(raw_path): sha(raw_blob),
                        str(cert_path): sha(cert_path.read_bytes()), str(trace_path): sha(trace_path.read_bytes())},
         'checks': 'Exact round-trip for every retained field coefficient and primitive sign; ZIP integrity, hard size limit, and isolated standard-library model.py execution.',
         'isolated_check_output': check.stdout.strip(),
         'omitted': 'Historical prompts, duplicate certificates, proofs, audit logs, receipts, full higher-Witt replay machinery, and data outside the required candidate cochain family. Original evidence retained locally.',
-        'scope': 'Finite mathematical support only. New target: reference-independent fifth residual on s!=0. Global trace candidate explicitly unproved; boundary families outside this request. Whole-family fifth verdict remains OPEN.',
+        'scope': 'Reconstruction inputs for the complete fourth locus. The retained theta candidate alone is not the fifth obstruction; the whole fifth-locus exclusion is proved separately.',
     }
     (root/'Research/computations/rank25_all_fifth_prompt_packet.json').write_text(json.dumps(result, indent=2)+'\n')
     print(json.dumps(result, indent=2))

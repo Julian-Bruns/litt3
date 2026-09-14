@@ -1,162 +1,127 @@
-# Proof: equivariant ramified roots improve the contact budget
+# Ramified roots amplify contact
 
+Version2,2026-09-14.
 [Statement](../../Theorems/shared_tensors/ramified_root_contact_core.md).
-Author /root,2026-09-08, prompted by the root-contact calculation in
-the returned J7 Pro response. That response did not observe the degree
-bound. Fresh medium audit /root/audit_equivariant_root_contact checked
-the spin case and identified the component-orbit distinction below.
+Use c,d0,e0,N,q,mu from the statement and put gx=g(X)-1, gy=g(Y)-1.
 
-## 1. Canonical root components and their actual common pullback
+## 1. Use the entire root covers
 
-The normalized d-th-root cover of a tensor s is defined on rational
-frames by alpha^d=s, with alpha a rational one-form. Since p does not
-divide d, it is a tame cyclic cover, possibly disconnected. Every
-connected component A->X has the same degree h_X dividing d. At a
-point of D_X its ramification index is d0, since the root coefficient
-has valuation e. Elsewhere it is etale. In particular d0 divides h_X.
-The tautological form has order N-1 at every point above D_X and
-no other zeros or poles. Riemann--Hurwitz gives
+The normalized d-th-root cover pi_X has tautological one-form alpha
+with alpha^d=pi_X^*s_X. It may be disconnected. Every component A_i->X
+has the same degree h_X dividing d, ramification index d0 above D_X,
+and no other ramification. The form alpha has zero order N-1 there.
+Writing R_A for the reduced inverse image of D_X gives
 
-    g(A)-1=h_X*(N-1)*(g(X)-1)/e0,
-    deg R_A=2h_X*(g(X)-1)/e0,                         (1)
+    g(A_i)-1=h_X*(N-1)*gx/e0,       deg R_A=2h_X*gx/e0.      (1)
 
-where R_A is the reduced inverse image of D_X. Construct B similarly.
+Construct B_j->Y similarly, with component degree h_Y.
 
-For a jointly minimal preserving span, equality of the actual tensors
-identifies the two pulled-back ROOT COVERS, not merely their branch
-indices. Any component W of this common cover has finite etale maps
-to its image components A,B by base change; normalization commutes
-with etale base change. If its degree over Z is h_Z, then h_Z divides
-both h_X,h_Y. Its joint field is k(W): the upper endpoint fields
-contain the original compositum k(Z), and either root then generates
-k(W). Thus its joint image is birational to W.
+For each original span, equality of its tensors identifies the two
+pulled-back root covers. Use this whole degree-d cover of Z. Its
+components W map etale to their endpoint components A_i,B_j. Each W
+is birational to its joint image: the two endpoint fields contain the
+original compositum k(Z), and either tautological root generates k(W).
+These images are distinct. Projection to X times Y recovers the
+original jointly minimal image, and the endpoint root recovers its
+upper component. Thus their union in each A_i times B_j is reduced.
 
-Put h=gcd(h_X,h_Y), L=lcm(h_X,h_Y). The diagonal mu_d action has
-d/L orbits on the pairs of connected endpoint components. All common
-root components of any one connected Z map to precisely ONE such
-orbit, since mu_d acts transitively on those components. Partition
-the downstairs images according to this orbit. Within one class fix
-a pair (A,B). Exactly h/h_Z components of its common root cover map
-to this pair, with total degree h over Z. This is the orbit-stabilizer
-calculation for stabilizers mu_h and mu_h_Z.
+Let a,b be the total original projection degrees and t=a gx=b gy.
+For the reduced upper union C_ij, write a_ij,b_ij for its projection
+degrees. Counting all root components gives
 
-The chosen upper images are distinct, also between components over
-the SAME Z: their generic joint endpoints recover both the base point
-of Z and its root. Images over different downstairs images are
-distinct after projection to X times Y. This rules out multiplicity
-in the reduced upper union used next.
+    sum a_ij=(d/h_X)a,       sum b_ij=(d/h_Y)b,
+    a_ij*h_X*gx=b_ij*h_Y*gy.                               (2)
 
-## 2. Global and local budgets in one compatibility class
+## 2. The amplified local contact
 
-Take a finite reduced union in one component-pair orbit. Write a,b for
-its total downstairs degrees, and
-t=a(g(X)-1)=b(g(Y)-1). The selected reduced upper union C in A times B
-has total degrees
+At a root-grid point above D_X times D_Y, choose parameters x=A0^d0,
+y=B0^d0. A downstairs branch y=psi(x) lifts equivariantly as
 
-    a'=a*h/h_X, b'=b*h/h_Y,
-    t'=sum(g(W_i)-1)=h*(N-1)*t/e0.                   (2)
+    B0=A0*U(A0^d0),       U(x)^d0=psi(x)/x.
 
-All its normalization maps are etale. By Hodge index, C^2<=2a'b'.
-Adjunction for a reduced union with smooth branches therefore gives
+Both tautological forms have order N-1, so the upper slope eta=U(0)
+satisfies eta^N=kappa for a fixed kappa!=0. There are at most N slopes.
 
-    delta(C)<=a'b'+t'.                              (3)
+For two distinct branches with the same upper slope, their downstairs
+slopes agree. If their downstairs contact is I>=2, comparison of the
+first changed coefficient of x^e*unit*(dx)^d gives e+dI=0 in k, hence
+I>=q. The downstairs germs cannot coincide: their lifted unit root
+with fixed constant U(0) is unique because p does not divide d0.
+The exact upper contact is therefore
 
-Here delta is the sum of pairwise local intersection multiplicities,
-including pairs belonging to different components. This is precisely
-the reduced-union budget in
-[contact_degree_bound](contact_degree_bound.md#1-global-intersection-budget).
+    1+d0*(I-1)>=1+mu.                                     (3)
 
-At a point of D_X times D_Y, choose base parameters x,y and compatible
-root parameters A0,B0 with x=A0^d0,y=B0^d0. A downstairs preserving
-branch y=psi(x) lifts to
+Different slopes have contact1. For r branches at a grid point, divided
+into at most N slope classes of sizes r_l, their intersection contribution
+is at least
 
-    B0=A0 U(A0^d0), U(x)^d0=psi(x)/x.                (4)
+    binom(r,2)+mu*sum_l binom(r_l,2)
+      >=(1+mu/N)*r²/2-(1+mu)*r/2.                         (4)
 
-Indeed the upper map is equivariant for the local cyclic inertia,
-which has the SAME parameter character on both roots because their
-tautological one-forms agree and gcd(e0,d0)=1. Equivalently, take
-the d0-th root of the unit psi(x)/x. The choice of its constant is
-the chosen upper branch. Both tautological forms have order N-1,
-so its slope eta=U(0) satisfies eta^N=kappa for one fixed nonzero
-kappa at the chosen root-grid point. There are at most N slope classes.
+## 3. One intersection budget for all components
 
-If two upper branches have the same slope, their downstairs branches
-do too. Write I>=2 for the downstairs contact. Comparing the first
-changed coefficient under x->x+a*x^I+... in a tensor
-x^e*unit*(dx)^d gives e+dI=0 in k. Thus I>=q. The branches cannot have
-identical downstairs formal germs: that would identify their integral
-joint image, and equality of the canonical root form selects a unique
-lift over a prescribed pair of root points. More explicitly, the
-two possible upper slopes would have both equal d0-th powers and
-equal N-th powers; gcd(d0,N)=1 makes them equal, after which the
-d0-th root of a unit is unique.
+Put V=sum_ij a_ij*b_ij, and let S be the total number of normalized
+branches above the root grids. From (1)--(2),
 
-For distinct same-slope branches, (4) therefore gives EXACT contact
+    S=2d*t/e0,       sum_W(g(W)-1)=(N-1)S/2.               (5)
 
-    1+d0*(I-1)>=1+mu.                               (5)
+On each product A_i times B_j, Hodge index and adjunction give
+delta(C_ij)<=a_ij*b_ij+sum_(W in C_ij)(g(W)-1), as in the
+[reduced-union contact proof](contact_degree_bound.md#1-global-intersection-budget).
+The grid has 4h_X*h_Y*gx*gy/e0² points and its branch count is
+S_ij=2a_ij*h_X*gx/e0, so S_ij²/grid=a_ij*b_ij. Summing (4) over
+each grid and then over the component products yields
 
-Different slopes have contact1. If r branches meet at this grid point,
-distributed among at most N classes r_j, its delta contribution is
+    (1+mu/N)V/2-(1+mu)S/2 <= sum delta(C_ij)
+                           <= V+(N-1)S/2.
 
-    binom(r,2)+mu*sum binom(r_j,2)
-      >=(1+mu/N)*r^2/2-(1+mu)*r/2.                  (6)
+Thus
 
-The total number of normalized branches over the root grid is
-S=2h*t/e0. By (1) its grid size is
-4h_X*h_Y*(g(X)-1)*(g(Y)-1)/e0^2. Consequently S^2/grid=a'b'.
-Sum (6), apply Cauchy--Schwarz over the grid, and compare with (3):
+    (mu-N)V/(2N)<=(N+mu)S/2=d*(N+mu)*t/e0.                (6)
 
-    (mu-N)/(2N)*a'b' <= h*(N+mu)*t/e0.               (7)
+It remains to bound V without choosing one component above each Z.
+Put h=gcd(h_X,h_Y), L=lcm(h_X,h_Y). A diagonal mu_d orbit of component
+pairs has d/h elements, and there are d/L such orbits. The full
+pullback of any connected Z occupies one entire orbit. If the union
+uses m orbits, the number of occupied pairs is K=md/h. The common
+positive ratio in (2) and Cauchy--Schwarz give
 
-Since mu>N, substituting (2) proves
+    V >= (sum a_ij)(sum b_ij)/K = d*a*b/(mL).
 
-    ab <= 2L*N*(N+mu)*t/(e0*(mu-N)).                (8)
+Substitution in (6) proves
 
-This bounds a and b separately after dividing by t. There are d/L
-component-pair orbits. Apply the bounds to each class and add, giving
-the statement with coefficient d in place of L. Using L for the
-UNRESTRICTED union would be unjustified when different images select
-different component-pair orbits.
+    ab <= 2mL*N*(N+mu)*t/[e0*(mu-N)].                      (7)
 
-For d=7,e=2 one has d0=7,e0=2,N=9,q=4,mu=21. The root covers are
-connected and no partition is needed. Formula (6) is
-(5/3)r^2-11r, while t'=28t and S=7t. Hence
+Divide by t to obtain both degree bounds. One class gives the L
+coefficient; m<=d/L gives the unrestricted coefficient d. This retains
+all components of disconnected root covers and needs no individual
+upper-component degrees.
 
-    (5/3)ab-77t <= delta(C) <= ab+28t,
-    ab <= (315/2)t.                                 (9)
+For d=7,e=2,p=5, the values are d0=7,e0=2,N=9,q=4,mu=21. Both root
+covers are connected, and (7) gives ab<=(315/2)t. For genus-two Y,
+the integral total degree toward X is at most157.
 
-No exactness or Cartier hypothesis occurs in this calculation.
+## 4. The finite relation gives a core
 
-## 3. A finite relation supplies an actual core
+Apply the bound to the four ordered endpoint pairs from X disjoint_union Y,
+with their specified tensors. Each distinct jointly minimal preserving
+image contributes a positive integral degree, so there are finitely many.
+The family contains the diagonals and is closed under transpose and
+normalized fiber-product composition. Etaleness and tensor equality
+survive these operations and joint minimalization.
 
-Apply the proved bound to each of the four ordered pairs from
-X disjoint_union Y, with its fixed tensors. Every distinct jointly
-minimal image has a positive integral projection degree. Thus there
-are finitely many tensor-preserving images. This includes all images
-generated by the original span, its transpose and the diagonals.
-Normalized fiber-product composition preserves BOTH actual etale legs
-and tensor equality; joint minimalization does too by injectivity of
-separable differential pullback.
+If a preserving span exists, this relation connects X and Y. The
+[finite correspondence groupoid theorem](../quotient_geometry/finite_correspondence_groupoid.md)
+therefore gives a common connected effective proper smooth DM curve S
+with finite etale atlases from X and Y. In each original specified source
+field, k(S) is a nonconstant subfield of both endpoint fields. This is
+the asserted core.
 
-The audited [finite_correspondence_groupoid](../quotient_geometry/finite_correspondence_groupoid.md)
-therefore gives a connected effective proper smooth DM curve S with
-actual finite etale atlases X,Y->S. In the original specified source
-field the coarse field k(S) lies in both endpoint fields. It has
-transcendence degree one, so their intersection is nonconstant.
-The Galois envelope, if wanted, is formed only AFTER this quotient;
-none was presumed in obtaining it.
+The extra local input is root equivariance, which amplifies contact
+by (3). Merely using the zero order of the upper one-form would lose
+that gain. The argument supplies no shared tensor and gives no degree
+bound when mu<=N.
 
-## Scope and sharp local boundary
-
-The new input is equivariance under the RAMIFIED tensor-root action.
-Using only the uniform zero order N-1 of the root form would allow
-many more local branches and lose (5). The earlier exact-form
-counterexamples supply no such ramified quotient with the required
-smaller endpoint tensor, and hence do not contradict the theorem.
-Tensor powers leave the positivity inequality invariant, though they
-can weaken the numerical constant. No improvement of the old sharp
-DOWNSTAIRS contact order is asserted; it is amplified upstairs.
-
-Neither this theorem nor the J7 Pro calculation establishes existence
-of a shared positive tensor. Profiles with mu<=N and the no-clump
-case remain separate. The unmarked common-cover problem is unsolved.
+The [original audit](../../Research/audits/EQUIVARIANT_ROOT_CONTACT_AUDIT_2026_09_08.md)
+checks the local contact and geometric quotient. A bounded medium audit
+on2026-09-14 checks (2),(5)--(7), including disconnected covers.

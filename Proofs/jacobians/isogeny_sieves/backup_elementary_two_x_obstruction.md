@@ -1,4 +1,4 @@
-# Proof: every two-character factor has already been excluded
+# Proof: character decomposition and the Prym-factor sieve
 
 2026-09-11. This is an elementary isogeny-decomposition corollary, not
 an independent audit of the retained finite arithmetic inputs.

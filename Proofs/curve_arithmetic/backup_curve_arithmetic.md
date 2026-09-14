@@ -53,13 +53,14 @@ On T₃J, division of T^24−1 by the monic P gives the short congruence
 
 Thus pi^24−I=9U, where U is integral and U mod3=2(I+pi)^3.
 Since P(−1)=16816 is prime to3, U is a3-adic unit. On T₂J,
-pi²−I=(pi−I)(pi+I) is4 times a unit; the
-[power formula](../jacobians/torsion/reduced_divisor_rigidity.md) makes pi^24−I
-equal16 times a unit. In particular pi^24 fixes J[3] and J[4].
+pi²−I=(pi−I)(pi+I) is4 times a unit.
+[Boxall–Grant's order law](../jacobians/torsion/reduced_divisor_rigidity.md#3-published-torsion-order-law-and-rationality)
+with τ=pi² and b=12 gives ker(pi^24−I)∩J[2^∞]=J[16].
+In particular pi^24 fixes J[3] and J[4].
 
 Apply the mixed-prime pencil theorem to the hyperelliptic map with
 r=1 and N=24. Every{2,3}-primary W1 point is rational over F_(125^24),
-and the two displayed units bound its order by16·9=144. The argument
+and the two primary kernel bounds give order dividing16·9=144. The argument
 uses the original effective class, without projecting it inside W1.
 
 The retained order24 and36 Hasse-jet certificates express a power of

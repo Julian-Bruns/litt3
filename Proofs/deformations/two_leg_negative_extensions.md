@@ -12,7 +12,7 @@ The matching is unique because H^0(Z,omega_Z^(-m))=0. Nonzero endpoint
 classes remain nonzero on Z by negative-degree etale cohomology
 injectivity. All Frobenius iterates remain nonsplit by the negative-power
 Cartier calculation in
-[joint_tangent_clump_dormancy, Section1](joint_tangent_clump_dormancy.md).
+[pointed_bundle_instability, Section1](pointed_bundle_instability.md).
 The positive-degree bundles in(1) have matching nowhere-zero sections,
 so the general pointed-bundle principle in that proof's Section2 rules
 out strong semistability directly.
@@ -20,8 +20,8 @@ out strong semistability directly.
 Thus some common Frobenius iterate is unstable. Etale preservation and
 reflection of semistability identify the first index and maximal HN line
 N_i on both endpoints after pullback. Its degree exceeds
-m*5^n(g(C_i)-1)>0, so N_i cannot map to O_i and has nonzero projection
-to omega_i^(m*5^n). An everywhere-invertible projection would split the
+m*p^n(g(C_i)-1)>0, so N_i cannot map to O_i and has nonzero projection
+to omega_i^(m*p^n). An everywhere-invertible projection would split the
 iterate of(1), already ruled out. Its nonempty zero divisors Delta_i have
 equal pullbacks. Their supports are saturated under BOTH original fiber
 relations, giving a clump.
@@ -30,7 +30,7 @@ relations, giving a clump.
 
 This step does NOT assume that the FL bundle is indigenous.
 
-For a curve C, set T=F_C^*T_(C^(1))=omega_C^(-5), with canonical
+For a curve C, set T=F_C^*T_(C^(1))=omega_C^(-p), with canonical
 connection. Mochizuki's Cartier/FL construction gives an injective
 forgetful map H1_dR(T)->H1(T) and an exact sequence
 
@@ -41,91 +41,54 @@ map at the fixed nonzero normalization. A class in that fiber represents
 a horizontal extension0->T->G->O->0. Its underlying extension is NONZERO
 by the injectivity in(2). These are II Propositions1.1--1.2 and
 Definition1.3 in [Mochizuki, A Theory of Ordinary p-adic Curves](https://www.kurims.kyoto-u.ac.jp/~motizuki/A%20Theory%20of%20Ordinary%20p-adic%20Curves.pdf),
-printed pp.58--60, read directly; none of their indigenous or ordinary
-specializations is required here.
+printed pp.58–60. Their torsor isomorphism F:D→A applies before
+any indigenous or ordinary specialization.
 
 The construction is functorial under finite etale maps with their marked
 W2 lifts. Indeed, form its obstruction cocycle using local lifts of
 relative Frobenius into the chosen lift of C^(1). The Frobenius square
 of an etale cover is Cartesian. Local lifts therefore extend uniquely to
-the etale cover; their differences divided by5 pull back under
+the etale cover; their differences divided by p pull back under
 a*F_C^*T_(C^(1))=F_W^*T_(W^(1)). This proves functoriality of the underlying
-H1 class AND its connection and normalization. This is the same
-local construction used in
-[admissible_two_leg_w2_lifts](admissible_two_leg_w2_lifts.md), before
-the additional step that starts from an indigenous connection.
+H1 class, connection and normalization.
 
 Given a simultaneous marked W2 lift of the span, Witt-Frobenius base
 change first gives such a lift of its Frobenius twist. Applying(2) on
 the original curves gives FL bundles G_X,G_Y with matching pullbacks
 on Z. Dualize to obtain matching pointed extensions
 
-    0->O_i->E_i=G_i^vee->omega_i^5->0.                     (3)
+    0->O_i->E_i=G_i^vee->omega_i^p->0.                     (3)
 
 Their common underlying class is nonzero, either by(2) on Z or by
-negative-cohomology etale injectivity. Hence J_5!=0. Section1 gives
+negative-cohomology etale injectivity. Hence J_p!=0. Section1 gives
 the clump. This applies to an ARBITRARY simultaneous W2 lift; no matching
 projective connection was inserted as an extra hypothesis.
 
 For a no-clump span Section1 with m=1 gives zero joint tangent. The
-marked deformation theorem then writes its whole ring as W(k)/(5^e),
+marked deformation theorem then writes its whole ring as W(k)/(p^e),
 where e>=1 or e=infinity. Section2 rules out a W2 point, so e=1.
 Every fixed etale refinement has the same deformation ring. This is a
 first-obstruction statement, not a nonexistence theorem for its special
 fiber.
 
-## 3. Genus two: the first destabilization, including index zero
+## 3. Genus two: one pointed-oper calculation at every index
 
-Normalize(3) by theta_i^(-5). The projective-monodromy argument rules
-out strong semistability, and identifies a finite common first index
-n>=0. Put P=5^(n+1), so det(F^n E_i)=omega_i^P.
+The positive pointed-bundle principle gives a finite common first
+instability index n>=0 for the dual FL extensions(3). Put P=p^(n+1).
+At n>=1 the maximal line cannot be horizontal for the canonical
+Frobenius connection: Cartier descent would destabilize the preceding
+iterate. At n=0 use the original dual FL connection.
+[Mochizuki II, Proposition1.4 and Corollary1.6](https://www.kurims.kyoto-u.ac.jp/~motizuki/A%20Theory%20of%20Ordinary%20p-adic%20Curves.pdf#page=60)
+give its nowhere-zero nilpotent p-curvature and distinguished degree-zero
+kernel. A horizontal positive-degree line is therefore impossible.
 
-If n>=1, use the canonical connection on F^n E_i=F*F^(n-1)E_i.
-The maximal line N_i cannot be horizontal: Cartier descent would give
-a destabilizing line one stage earlier. Hence its second fundamental
-map to Q_i tensor omega_i is nonzero, where Q_i=F^n E_i/N_i.
-
-If n=0, use the original dual FL connection. Its p-curvature is nonzero
-nilpotent everywhere, with kernel exactly the distinguished O-line.
-This follows either from the local matrix in II Proposition1.4
-(pp.60--61) or by dualizing that proposition. A horizontal line must be
-stable under p-curvature. A nilpotent endomorphism acts by zero on a
-stable line, so that line must be the O-kernel. But deg N_i>0. Thus the
-second fundamental map is again nonzero. This is the extra argument
-needed at index zero; the previous-stage Cartier argument cannot be
-used there.
-
-On genus-two Y, slope and second fundamental map give
-
-                P<deg N_Y<=P+1.
-
-Therefore deg N_Y=P+1, the second fundamental map is an isomorphism,
-and N_Y²=omega_Y^(P+1). Pull back to Z and descend the isomorphism
-along the other actual etale leg to obtain the same statement on X.
-This uses no division by a covering degree.
-
-Projection of N_i to omega_i^P has the nonempty divisor from Section1.
-It is reduced even for the FL connection at n=0. Locally write a generator
-of N as A e+B v with A a unit at a zero of B. Since e is horizontal,
-the coefficient of n wedge nabla(n), modulo B, is A dB. The second
-fundamental map being a unit implies that B has order exactly one.
-Thus Delta_Y has P-1 points and Delta_X has(P-1)(g(X)-1) points.
-
-These lines and connections give actual matching regular projective
-opers. For n=0 the p-curvature remains nonzero nilpotent everywhere;
-for n>=1 it is zero. The determinant connection is the canonical one
-on omega^P, and e is horizontal in both cases. The local calculation
-of Section4a of the pointed tangent proof therefore applies unchanged:
-with q the projection of e into Q, one has
-
-                Q²=omega^(P-1), sigma=q²,
-                sigma=u²(dx)^(P-1), u''=r u.
-
-That calculation uses horizontality of e and of the determinant, NOT
-zero p-curvature of the entire bundle. Since P=0 in k, it identifies
-r with the intrinsic r_s of the common generator. Reducedness of Delta
-then gives primitive(weight,zero order)=((P-1)/2,1) or(P-1,2).
-All tensors use the original specified pullback identifications.
+Both connections have horizontal e and canonical determinant connection.
+The shared [pointed-oper calculation, Sections4–4a](pointed_bundle_instability.md#4-a-common-pointed-oper-calculation)
+now gives all assertions at once: deg N_i=(P+1)(g(C_i)−1), an
+invertible second fundamental map, matching reduced divisors with
+|Delta_Y|=P−1, and the intrinsic potential r_s of the primitive tensor.
+The oper is active admissible at n=0 and dormant at n>=1.
+The primitive (weight,zero order) is ((P−1)/2,1) or (P−1,2).
 
 ## 4. Stable extensions, secants and genus-two W2 rigidity
 
@@ -198,7 +161,8 @@ of the forbidden tangents, as well as their dimension bound.
 
 The [marked deformation theorem](etale_refinement_deformations.md)
 now makes the joint ring a quotient of W(k)[[z]]. For the selected
-main pair its established mixed-characteristic nonliftability makes5
+characteristic-five main pair its
+[mixed-characteristic nonliftability](../curve_arithmetic/liftable_coreless_target_finiteness.md) makes5
 nilpotent. A ring such as W(k)[[z]]/(5^e) shows why neither this nor
 the parameter bound implies finite length or removes a vertical
 component; no realization of this example by a span is asserted.
@@ -206,34 +170,33 @@ component; no realization of this example by a span is asserted.
 ### A W2 lift and a joint tangent cannot coexist
 
 Assume both exist. The pointed tangent theorem gives a unique reduced
-endpoint clump of size r=5^a-1, a>=1, and says its intrinsic r_s is
+endpoint clump of size r=p^a-1, a>=1, and says its intrinsic r_s is
 DORMANT. Section3 applied to the W2 lift therefore cannot have n=0,
 which would make that SAME intrinsic r_s active. Thus n>=1, and
-uniqueness plus the two reduced divisor formulas give a=n+1 and r>=24.
+uniqueness plus the two reduced divisor formulas give a=n+1 and r>=p²−1.
 
-Apply the weighted bound with m=5: dim J_5<=1. On the other hand, a
+Apply the weighted bound with m=p: dim J_p<=1. On the other hand, a
 nonzero joint tangent on the Frobenius-twisted span pulls back to a
-nonzero element of J_5. Its image in(2)'s final k is zero. The actual
-W2 lift supplies the FL class in J_5 whose image is the fixed NONZERO
+nonzero element of J_p. Its image in(2)'s final k is zero. The actual
+W2 lift supplies the FL class in J_p whose image is the fixed NONZERO
 normalization. These classes are linearly independent, using(2) on Z
-and its injective forgetful map. Therefore dim J_5>=2, a contradiction.
+and its injective forgetful map. Therefore dim J_p>=2, a contradiction.
 
 So every W2-liftable coreless genus-two span has zero joint tangent.
-The marked deformation-ring theorem then gives W(k)/(5^e), with e>=2
+The marked deformation-ring theorem then gives W(k)/(p^e), with e>=2
 or infinity. This proof does not confuse source indigenous deformations
 with joint curve deformations, and never assumes source ordinariness.
 
-## 5. Where this stops
+## 5. Scope
 
-The new obstruction separates a genuinely first-order-nonliftable
-no-clump span from the positive-clump alternatives. It cannot create
-a W2 lift for such a span, and so does not exclude that span. On the
-positive-clump side the unstable FL case is precisely the already
-known active connection range; a semistable FL bundle can still become
-unstable at a later Frobenius stage. Section4 adds rigidity for all
-W2-liftable genus-two spans but does not prove they lift farther. No upper
-bound on that instability index or on e, no W3 lift, and no automatic
-source ordinariness is obtained. The remaining one-tangent branch must
-fail to lift to W2; that does not by itself make5 zero in its whole ring.
-For example W(k)[[z]]/(z²-5,5²) has no W2 point but5!=0. This is an
-abstract caution, not a realized correspondence ring.
+A no-clump span can still exist only in characteristic p; the obstruction
+does not exclude its special fiber. Positive-clump W2 lifts may have
+arbitrarily late first instability or fail at a higher Witt level.
+Conversely, a span with a nonzero joint tangent has no W2 point, but
+this alone does not make p zero in its entire deformation ring:
+W(k)[[z]]/(z²−p,p²) is an abstract counterexample to that inference.
+
+The common pointed-oper calculation and the all-odd-characteristic
+W2-rigidity argument have bounded medium audit PASS,
+/root/audit_extension_fiber_scope,2026-09-14. The inherited secant and
+lifting inputs retain the scoped audits linked from the statement.

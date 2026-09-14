@@ -32,8 +32,8 @@ identity. These residue coordinates are complete on geometric points;
 they are not asserted to be a scheme isomorphism at cusp points, or a
 finite/injective parametrization of the two-torsion classes.
 
-This theorem constructs the degree2 search space and carrier models.
-It does not enumerate the fixed-X carriers or exclude a common cover.
+For the fixed X, the [complete carrier sieve](backup_double_cover_exclusion.md)
+enumerates the required labels and excludes the backup Jacobian factor.
 
 [Proof](../../../Proofs/jacobians/isogeny_sieves/cyclic_trigonal_kummer_carriers.md) ·
 [Audit](../../../Research/audits/DEGREE2_KUMMER_DICTIONARY_AUDIT_2026_09_11.md) ·

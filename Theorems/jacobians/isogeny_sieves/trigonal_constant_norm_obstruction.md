@@ -28,10 +28,8 @@ factors. A norm solution gives an actual nonconstant primitive-sixth
 map D->E:v^2=u^3+1. Since Frobenius25 on E is -5, the binary order
 contradicts the degree of its required root-of-unity Weil eigenvalue.
 
-Qdegree1 and Qdegree2 remain open. This eliminates a complete boundary
-of the degree2 carrier computation, not the entire degree2 atlas row
-or the original common-cover problem. Both original source maps and
-the canonical Kummer/Prym dictionary are unchanged.
+For nonconstant Q, the fixed-X carriers and their backup-factor tests
+are handled by the [complete sieve](backup_double_cover_exclusion.md).
 
 [Proof](../../../Proofs/jacobians/isogeny_sieves/trigonal_constant_norm_obstruction.md) ·
 [Audit](../../../Research/audits/TRIGONAL_CONSTANT_NORM_AUDIT_2026_09_11.md) ·

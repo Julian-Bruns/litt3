@@ -16,18 +16,8 @@ phi_n^*M_n=L_n and H0(S_n,M_n)=E_n. Indeed every coordinate section
 descends, whereas every additional section on the normalization would
 pull back to an additional section of L_n, contradicting completeness.
 
-Suppose phi_2 were inseparable. All ratios of sections of E_2 would
-then be p-th powers in k(Z_2). On the open set where a section e is
-nonzero, declare e horizontal. The resulting connections glue: on an
-overlap the ratio of the two frames is a p-th power and has derivative
-zero. This gives a regular connection with zero p-curvature on L_2.
-It is invariant under Gal(Z_2/Y), since that group preserves E_2 and
-every k-linear combination of horizontal sections is horizontal.
-
-Etale Galois descent therefore supplies a regular zero-p-curvature
-connection on L_Y. Rank-one Cartier descent identifies L_Y with a
-Frobenius pullback from Y^(1), forcing p to divide deg L_Y=1. This is
-impossible. Thus phi_2 is separable. A separating ratio at stage2 remains
+The [complete-section separability lemma](complete_section_quotients.md#2-global-generation-and-separability)
+applies to Z_2→Y because deg L_Y=1. A separating ratio at stage2 remains
 separating after every finite etale extension of its function field;
 the larger ratio fields for n>=2 therefore also give separable phi_n.
 
@@ -104,19 +94,10 @@ and (2) gives R_n=0 for all n>=8. The finite separable phi_n are etale.
 
 ## 4. The image line really is a spin line
 
-Fix n>=8, and abbreviate phi:T->S, M=M_n, L=L_n. Etaleness and
-phi^*M=L give deg M=g(S)-1. Put M'=omega_S M^-1. Riemann--Roch yields
-h0(M')=h0(M)=r. The spin isomorphism L^2=omega_T=phi^*omega_S gives
-an isomorphism phi^*M' -> L. Thus the pullbacks of H0(M) and H0(M')
-are two r-dimensional subspaces of H0(T,L), itself of dimension r.
-Their images are equal.
+For n≥8, φ_n is étale and H0(S_n,M_n)=H0(Z_n,L_n). The
+[complete-section descent lemma](complete_section_quotients.md#3-descent-determined-by-complete-sections)
+therefore makes M_n a spin compatibly with L_n.
 
-Choose matching nonzero sections u of M and v of M'. The rational
-isomorphism M->M' sending u to v pulls back to the INVERSE of the preceding
-global isomorphism phi^*M'->L. It has no zeros or poles after finite pullback and therefore
-none on S. Hence M=M'=omega_S M^-1, with the compatible isomorphism
-M^2=omega_S. This establishes spin descent without silently discarding
-a possible torsion twist in the kernel of Pic(S)->Pic(T).
-
-The argument proves descent of the spin LINE, not descent of h_n or of
-the endpoint functions. Their descent is the next genuinely missing step.
+Under the additional endpoint hypotheses in
+[effective spin probes](spin_probe_common_cover_reduction.md), both endpoint
+fields and the original h descend after a bounded refinement.

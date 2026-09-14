@@ -3,7 +3,7 @@
 [Statement](../../Theorems/curve_arithmetic/fixed_pair_arithmetic.md).
 Use the defining models X:y³=F(x) and Y:z²=L(t)(L(t)−1)(t−4),
 where L=t²⁵+t⁵+t, from the [fixed-pair definition](../../Definitions/fixed_pair.md).
-The [exact arithmetic certificate](../../routes/global/76_EXPLICIT_R3_REDESIGN_CERTIFICATE.sage)
+The [exact arithmetic certificate](../../scripts/arithmetic/fixed_pair_frobenius.sage)
 checks the polynomial inputs below.
 
 ## 1. Geometry and canonical frame

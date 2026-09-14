@@ -1,7 +1,7 @@
 # Constancy of the secondary trace for minimal defect growth
 
 Version1,2026-09-11. Focused geometric audit PASS by
-/root/audit_cyclic5_returned_w4. Audited prose, not Lean verification.
+/root/audit_cyclic5_returned_w4. Audited prose.
 
 Let h:T→C be an actual connected finite etale cyclic degree-five cover
 of smooth projective curves of genus at least two over bar(F5). Pull

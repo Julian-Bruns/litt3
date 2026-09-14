@@ -5,8 +5,10 @@ Let \(k\) be algebraically closed and
 projective connected curves of genus at least two. Assume
 \(k(X)\cap k(Y)=k\) inside \(k(Z)\). Using actual differential
 pullbacks, put
-\(A=f^*R(X)\cap g^*R(Y)\subset R(Z)\), where
-\(R(C)=\bigoplus_{m\ge0}H^0(C,\omega_C^m)\).
+\(A=\bigoplus_{m\ge0}H^0(\Omega^m)=f^*R(X)\cap g^*R(Y)\subset R(Z)\),
+where \(\Omega\) is the
+[canonical invariant line bundle](../../Definitions/canonical_tensors.md)
+and \(R(C)=\bigoplus_{m\ge0}H^0(C,\omega_C^m)\).
 
 Either \(A=k\), or \(A=k[s]\) for a homogeneous element of uniquely
 determined degree \(d>0\), unique up to nonzero scalar. In the second
@@ -19,9 +21,9 @@ The inherited Poisson bracket on \(A\) is zero; this does not assert
 centrality in either endpoint ring.
 
 The polynomial-ring and Hilbert-series assertions hold more generally
-for any two line bundles L_X,L_Y with a specified identification
-f^*L_X=g^*L_Y, using that identification to intersect their section
-rings. The remaining conclusions below concern canonical tensors.
+for the section ring \(\bigoplus_{m\ge0}H^0(L^m)\) of any invariant
+line bundle \(L=(L_X,L_Y,\phi)\). The remaining conclusions concern
+canonical tensors.
 
 In the positive-generator case the intersection of the RATIONAL canonical
 tensor algebras, allowing every integral weight, is exactly k[s,s^(-1)].
@@ -46,9 +48,9 @@ e|S|=d(2g(Z)-2),
 \[
 e|f(S)|=d(2g(X)-2),\qquad e|g(S)|=d(2g(Y)-2).
 \]
-Over \(k=\overline{\mathbf F}_5\), conversely, any nonempty clump
-implies \(A\ne k\). Thus in that field \(A\ne k\) is equivalent to
-existence of a nonempty clump. Neither alternative is asserted to occur
+Conversely, over every algebraically closed \(k\), a nonempty clump
+implies \(A\ne k\). Thus \(A\ne k\) is equivalent to existence of a
+nonempty clump. Neither alternative is asserted to occur
 in a specified positive-characteristic span; this theorem does not
 establish existence of a clump or force \(d=1\).
 
@@ -60,7 +62,10 @@ clump with reduced endpoint divisors \(D_X,D_Y\), write
 d_0=m/\gcd(m,h),\qquad e_0=h/\gcd(m,h),\qquad
 L_i=\mathcal O_i(e_0D_i)\otimes\omega_i^{-d_0}.
 \]
-These are degree-zero torsion line bundles over \(\overline{\mathbf F}_5\).
+Their common pullback makes them a degree-zero invariant line bundle.
+They are torsion over \(k\), by the finiteness of
+\(\operatorname{Pic}^0(X\leftarrow Z\to Y)\) in
+[Krishnamoorthy, Lemma8.9](https://msp.org/ant/2018/12-5/ant-v12-n5-p05-p.pdf#page=34).
 If \(q_i\) is their exact order and \(q=\operatorname{lcm}(q_X,q_Y)\),
 then the primitive generator has \(d=d_0q\) and \(e=e_0q\).
 Each endpoint separately has a regular weight-\(d_0q_i\) tensor \(t_i\)
@@ -73,8 +78,9 @@ If moreover \(\operatorname{Hom}(J(X),J(Y))=0\), then
 This uses the common pullback of the two actual line bundles, not
 an independent one-leg Jacobian condition.
 
-Version4,2026-09-13: the primitive-tensor proof applies to any matched
-line bundles. The canonical divisor and endpoint-torsion conclusions
-retain their stated hypotheses.
+In characteristic zero, \(A=k\) and there are no clumps, by the same
+paper's Corollaries8.13 and9.2.
+
+Version5,2026-09-14.
 
 [Proof](../../Proofs/shared_tensors/matched_section_rings.md).

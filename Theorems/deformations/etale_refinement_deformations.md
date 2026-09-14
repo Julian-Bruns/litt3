@@ -61,7 +61,5 @@ canonical admissible W2 lift to W3 or bound e uniformly. Complete local
 rings W(k)[[t_1,t_2,t_3]]/(p^e) show that a three-parameter bound alone
 cannot bound e; these are abstract ring examples, not realized spans.
 
-Version2,2026-09-09 adds the small ambient deformation ring, intrinsic
-p-nilpotence criterion and fixed-lift height. Version1 rederived the
-earlier116 note. Author proof; no independent audit or Lean verification.
+Version2,2026-09-09. Author proof.
 [Proof](../../Proofs/deformations/etale_refinement_deformations.md).

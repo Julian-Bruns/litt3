@@ -1,4 +1,4 @@
-# A linear spin normal form for the first surviving root profile
+# Linear spin normal form for weight-(p+2) tensors with double zeros
 
 Let k be algebraically closed of odd characteristic p, ell=p+2, and C/k
 smooth projective of genus g>=2. Let L^2=omega_C be a spin line.
@@ -54,25 +54,28 @@ REDUCED-section open loci are relevant; their nonemptiness for every spin
 line is NOT asserted. They parametrize all weight7/divisor2D roots, but
 not tensors of unbounded different primitive weight.
 
-For p=5 the nontrivial Cartier block data (i,i',n,dimension/(g-1)) are
+The Cartier blocks give the all-odd-characteristic bound
 
-    (1,3,2,2), (2,6,4,3), (3,2,1,4),
-    (4,5,3,5), (5,1,0,6), (6,4,2,7).
+    a(A)>=a(C)+floor((p+1)(5p+3)/24)(g−1).
 
-Consequently a(A)>=a(C)+7(g-1), and
+For p-rank, use Bouw's notation sigma and generalized Hasse–Witt
+invariants gamma. With delta(w)=zeta^(-1)w, let O run over the orbits
+of multiplication by p on {1,...,ell−1}. Then
 
-    f_5(A)=f_5(C)+6b,   0<=b<=2(g-1),
+    sigma(A)=sigma(C)+sum_O |O| gamma_O,
+    0<=gamma_O<=min_(i in O)(i+1)(g−1).
 
-where f_5 is the5-rank. In particular the genus29 root of an ordinary
-genus2 curve has5-rank at most14 and a-number at least7. These dimension
-bounds scale with the degree of an etale base change. They are necessary
-constraints, NOT an exclusion of a common cover. A shared nonzero vector
-in the two pulled-back K-spaces is still an unresolved global condition.
+In characteristic five this becomes a(A)>=a(C)+7(g−1) and
+sigma(A)=sigma(C)+6gamma, 0<=gamma<=2(g−1). In particular the
+genus29 root of an ordinary genus2 curve has5-rank at most14 and
+a-number at least7. These bounds scale with etale base change.
+They do not exclude a common cover: an actual common nonzero vector
+in the two pulled-back K-spaces is still required.
 
-Version1,2026-09-08. Fresh medium prose audit PASS by
-/root/audit_spin_cartier_normal_form for parts1-5 and the numerical
-consequences; no Lean claim.
-[Audit metadata](../../Research/audits/SPIN_CARTIER_ROOT_NORMAL_FORM_AUDIT_2026_09_08.md)
-is reference-only.
+Version2,2026-09-14. The Cartier dimension bound is stated for every
+odd characteristic; Bouw's Definition2.1 and Lemma2.2 supply the
+p-rank formula. Parts1–5 and the characteristic-five consequences retain
+the scoped medium audit by /root/audit_spin_cartier_normal_form.
+[Audit](../../Research/audits/SPIN_CARTIER_ROOT_NORMAL_FORM_AUDIT_2026_09_08.md).
 [Definitions](../../Definitions/spin_cartier_roots.md) ·
 [Proof](../../Proofs/cartier_and_spin/spin_cartier_root_normal_form.md).

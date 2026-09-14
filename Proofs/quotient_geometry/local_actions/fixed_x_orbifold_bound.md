@@ -3,9 +3,7 @@
 [Statement](../../../Theorems/quotient_geometry/local_actions/fixed_x_orbifold_bound.md).
 Author /root,2026-09-06. Independent audit PASS by
 `/root/integral_jump_degree_bound_audit`, including assertion3;
-[reference-only metadata](../../../routes/global/audits/GENUS9_ALL_EFFECTIVE_ORBIFOLD_QUOTIENTS_AUDIT_2026_09_06.md).
-Duplicate statement and migration boilerplate removed2026-09-09;
-the mathematical proof below is unchanged.
+[audit](../../../routes/global/audits/GENUS9_ALL_EFFECTIVE_ORBIFOLD_QUOTIENTS_AUDIT_2026_09_06.md).
 
 ## 1. A parameterized contact bound for an orbifold atlas
 

@@ -1,6 +1,6 @@
 # Hyperelliptic roots have explicit etale quotients and Cartier tests
 
-Version2,2026-09-09. Author proof, not independently audited.
+Version3,2026-09-14. Author proof with the published inputs cited below.
 Let k be algebraically closed of odd characteristic p. Let
 
     Y: v²=F(u),  deg F=2g+1, g>=2,
@@ -9,19 +9,20 @@ Let k be algebraically closed of odd characteristic p. Let
 where F,P are squarefree and coprime. Thus q has simple zeros.
 Use smooth projective normalizations throughout. Put
 
-    B: v²=F(u), w²=P(u),
+    C̃: v²=F(u), w²=P(u),
     C: z²=F(u)P(u),       E: w²=P(u).
 
-1. B is the canonical quadratic root of q, of genus4g-3. The map
-   h:B→C, z=vw, is finite ETALE of degree2. The curve C has genus2g-1,
+1. C̃ is the canonical quadratic root of q, of genus4g-3. The map
+   h:C̃→C, z=vw, is finite ETALE of degree2. The curve C has genus2g-1,
    E has genus g-2, and a prime-to-p isogeny gives
 
-       J_B ~ J_Y x J_E x J_C.
+       J_C̃ ~ J_Y x J_E x J_C.
 
    The root form alpha=w du/v descends to alpha_C=P du/z. Its divisor
    is twice the reduced sum of the2g-2 branch points of C above P=0.
-   In particular, for g=2 the root Prym is isogenous to the explicit
-   GENUS-THREE Jacobian J_C; E is rational.
+   The étale Prym Prym(C̃/C) is J_Y×J_E with its product principal
+   polarization, by Mumford's hyperelliptic Prym theorem. The root Prym
+   Prym(C̃/Y) is2-isogenous to J_E×J_C, hence to J_C when g=2.
 
 2. Suppose an ACTUAL coreless finite etale span X←Z→Y matches q with
    a regular quadratic q_X on X. Let A be the canonical root of q_X.
@@ -69,7 +70,7 @@ Weierstrass point outside D as infinity. Then
 after absorbing a nonzero scalar into R or H. Here R,S are squarefree,
 R divides F, b=deg R is2 or4, deg H=2-b/2, and H is squarefree and
 coprime to F. Use the actual factorization, so the scalar is retained.
-The canonical fourth-root curve B, with w^4=A and v²=F, has genus9.
+The canonical fourth-root curve C̃, with w^4=A and v²=F, has genus9.
 The diagonal involution (v,w)↦(-v,-w) acts freely. Its genus-five
 quotient C has the explicit cyclic equation and descended root form
 

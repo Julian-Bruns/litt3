@@ -24,8 +24,7 @@ Audit: PASS, fresh Astra-medium auditor
 `/root/audit_backup_atlas_bridge_medium`,2026-09-08; no material objections.
 Scope includes geometric candidate exhaustion, twisted bundle/section/
 cohomology completeness, finite precision, all original charts, and
-certificate composition. Prose/code audit, not Lean verification.
-[Audit metadata](../../../Research/audits/BACKUP_ATLAS_BRIDGE_AUDIT_2026_09_08.md)
-is reference-only; open its body only for a concrete doubt.
+certificate composition. Prose/code audit.
+[Audit](../../../Research/audits/BACKUP_ATLAS_BRIDGE_AUDIT_2026_09_08.md).
 
 [Proof and exact certificates](../../../Proofs/quotient_geometry/endpoint_exclusions/backup_hermitian_atlas_exclusion.md).

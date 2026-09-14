@@ -1,7 +1,7 @@
 # An explicit maximal two-cover and an unbounded common-cover exclusion
 
-Version1,2026-09-09. Author proof, not independently audited.
-Let k=bar(F5), t not in {0,1,2,3}, and
+Version2,2026-09-14. Let k be algebraically closed of characteristic5,
+t not in {0,1,2,3}, and
 
     Y_t: v²=F_t(u)=u(u-1)(u-2)(u-3)(u-t).
 
@@ -36,11 +36,8 @@ genus-nine X. More generally it applies to every smooth curve
 x-cover y³=F(x) with F squarefree of degree10 in characteristic5:
 such an X has Cartier kernel dimension at least3.
 
-The explicit family assertion strengthens prior GENERIC bounded-abelian
-ordinarity inputs by determining the condition on this prescribed family.
-It does not assert ordinary pullback for arbitrary solvable groups,
-arbitrary2-groups, or cyclic degree3 covers. In particular, it does not
-exclude all common covers and does not solve the original problem.
+The monodromy restriction is essential; arbitrary solvable groups,
+two-groups and cyclic cubic covers are not excluded.
 
 [Proof](../../../Proofs/jacobians/ordinary_covers/genus_two_maximal_two_cover.md) ·
 [Small polynomial certificate](../../../scripts/genus_two/verify_genus_two_maximal_two_cover.py).

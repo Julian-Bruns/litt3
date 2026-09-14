@@ -60,13 +60,13 @@ Each row below denotes (n; complete inertia list), and occurs once.
 | (6;2,2,2,6), (9;3,3,9), (12;2,4,12), (18;2,3,18) | One singleton Weierstrass fiber, below |
 | (8;2,2,2,4) | Prym branch translation, below |
 | (12;3,3,6), (12;2,6,6), (24;2,3,12) | Ordinary cyclic covers, below |
-| (6;2,2,3,3), (12;2,2,2,3) | [Quadrangular elliptic/Hecke obstruction](../../../Theorems/quotient_geometry/triangles/quadrangular_genus_two_hecke_obstruction.md) |
-| (12;3,4,4) | [Frobenius orbit obstruction](../../../Theorems/quotient_geometry/triangles/triangle344_frobenius_obstruction.md) |
-| (16;2,4,8), (36;2,3,9) | [Radical quadratic obstruction](../../../Theorems/quotient_geometry/triangles/radical_quadratic_atlas_obstruction.md) |
-| (8;4,4,4), (24;3,3,4) | [Symmetry quotient](../../../Theorems/quotient_geometry/triangles/orbifold_symmetry_quotients.md), then the actual Hessian/Hermitian target, below |
-| (24;2,4,6) | [Degree24 elliptic/real-multiplication obstruction](../../../Theorems/quotient_geometry/triangles/triangle246_frobenius_quotient_obstruction.md) |
-| (48;2,3,8) | [Degree48 factor and Frobenius obstruction](../../../Theorems/quotient_geometry/triangles/triangle238_frobenius_factor_obstruction.md) |
-| (84;2,3,7) | [Complete degree84 exclusion](../../../Theorems/quotient_geometry/triangles/triangle237_backup_exclusion.md) |
+| (6;2,2,3,3), (12;2,2,2,3) | [Quadrangular elliptic/Hecke obstruction](../../../Theorems/quotient_geometry/tame_covers/quadrangular_genus_two_hecke_obstruction.md) |
+| (12;3,4,4) | [Frobenius orbit obstruction](../../../Theorems/quotient_geometry/tame_covers/tame_cover_frobenius_sieve.md) |
+| (16;2,4,8), (36;2,3,9) | [Radical quadratic obstruction](../../../Theorems/quotient_geometry/tame_covers/radical_quadratic_atlas_obstruction.md) |
+| (8;4,4,4), (24;3,3,4) | [Symmetry quotient](../../../Theorems/quotient_geometry/tame_covers/orbifold_symmetry_quotients.md), then the actual Hessian/Hermitian target, below |
+| (24;2,4,6) | [Degree24 elliptic/real-multiplication obstruction](../../../Theorems/quotient_geometry/tame_covers/triangle246_frobenius_quotient_obstruction.md) |
+| (48;2,3,8) | [Degree48 factor and Frobenius obstruction](../../../Theorems/quotient_geometry/tame_covers/triangle238_frobenius_factor_obstruction.md) |
+| (84;2,3,7) | [Complete degree84 exclusion](../../../Theorems/quotient_geometry/tame_covers/triangle237_backup_exclusion.md) |
 
 Here are the previously author-only small-packet arguments, now covered
 by the coherent audit.
@@ -150,8 +150,7 @@ Rows are (n,e,delta,d), with d the other, tame inertia order.
 | (20,5,8,2) | [Cartier dormant secant](../../../Theorems/projective_connections/cartier_dormant_secants.md), reduced five-oper scheme |
 | (40,10,13,4) | Complete J[2]-twisted Bol test |
 | (80,20,23,8) | Complete J[4]-twisted Bol test |
-| (120,20,27,3) | [Conductor-two exclusion](../../../Theorems/quotient_geometry/endpoint_exclusions/backup_wild120_atlas_exclusion.md) |
-| (240,40,47,6) | [Two-torsion-twisted conductor-two exclusion](../../../Theorems/quotient_geometry/endpoint_exclusions/backup_wild240_atlas_exclusion.md) |
+| (120,20,27,3), (240,40,47,6) | [Conductor-two exclusions](../../../Theorems/quotient_geometry/endpoint_exclusions/backup_conductor_two_atlas_exclusion.md) |
 | (280,20,23,7) | [Actual A7/Hermitian reduction](../../../Theorems/quotient_geometry/local_actions/single_jump_a7_hermitian_reduction.md) |
 
 For the singleton rows, put the wild point P at infinity. The actual

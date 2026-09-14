@@ -1,5 +1,7 @@
 # Explicit first-integral charts for the characteristic-five dormant equation
 
+Version2.
+
 Let K/k be a one-variable function field over a perfect field of
 characteristic5, let x be separating, D=d/dx, and C0=K^5=ker D. Put xi=x^5.
 The FIELD solutions of D^2r=3r^2 have the following exact description.
@@ -35,13 +37,19 @@ fifth root has the form
     gamma=(G0(x)+G1(x)y+G2(x)y^2)/F(x),
     deg G0<=8, deg G1<=5, deg G2<=2.
 
+More explicitly, put H=2x^8+B-F'' and
+C_x(P)=Cartier(P dx)/dx=sum_j P_(5j+4)^(1/5)x^j. Then
+
+    (G0,G1,G2)=-(C_x(H F^4), C_x(A F^2), C_x(C F)).
+
 For the [fixed X](../projective_connections/fixed_x_dormant_equations.md), before coefficient
 fifth roots, the map from the24 potential coefficients
-to the18 displayed numerator coefficients is affine linear of rank17,
-and its image does not contain zero. Thus every dormant solution in this
+to the18 displayed numerator coefficients is affine linear with three
+blocks of ranks8,6,3, hence rank17; its image does not contain zero.
+Thus every dormant solution in this
 degree-ten trigonal family belongs to the nonsingular c!=0 chart above.
 
-Status: author proof with exact polynomial/matrix certificate. This supplies
+Status: author proof with exact Cartier-block and small-minor checks. This supplies
 a structural description and removes a genuine global exceptional case;
 it does not yet impose all global regularity conditions in the new chart,
 enumerate the remaining opers, or exclude an atlas.

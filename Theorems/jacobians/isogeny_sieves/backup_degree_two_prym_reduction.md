@@ -28,8 +28,8 @@ are geometrically isogenous. These are label orbits, not a count of
 nonisomorphic curves R. For actual-map or source-isomorphism testing,
 retain all three backup conjugates or4599 Frobenius25^3 label orbits.
 
-No carrier equations or complete factor sieve are supplied by this
-reduction. The degree-two atlas case remains open.
+The [complete carrier sieve](backup_double_cover_exclusion.md) excludes
+all these possibilities for the fixed pair.
 
 [Proof](../../../Proofs/jacobians/isogeny_sieves/backup_degree_two_prym_reduction.md) ·
 [Audit](../../../Research/audits/DEGREE2_A4_PRYM_AUDIT_2026_09_11.md) ·

@@ -96,6 +96,11 @@ Riemann--Roch give dimensions32 and66. Bounds (6) give the indicated
 pole bounds59 and76. Setting the negative Laurent coefficients from
 degree-70 through-1 equal to zero implements their regularity conditions.
 
+Surjective quotients exist for every fixed oper. The stable rank-two
+bundle V^vee tensor omega^2 has slope24. Its twist by any -P has
+vanishing H1 by Serre duality, so it is globally generated. As in
+Section2, a general section is nowhere zero, giving such a quotient.
+
 Equation ps=1 ensures pi is surjective on U; p_O,j(0)!=0 ensures it at O.
 Conversely a surjection has kernel omega^-1. Twisting its exact sequence
 by omega^-2(65O) gives
@@ -167,24 +172,28 @@ one chart inverse variable. The reconstructed h_U has pole order<=1648.
 
 ## 5. Eliminating the ten identification parameters
 
-First remove b. For h=b/a in L(16), keep p and s, replace
+First remove b by the connecting map of the quotient extension
 
-    lambda by rho_32(lambda+h eta),      b by0.              (12)
+    eta: 0 -> T -> V --pi--> M -> 0,
+    T=omega^-1, M=omega^2.
 
-The Frobenius part introduced by h eta is a coboundary. Explicitly
+Put h=b/a in Hom(T,O_C)=H0(omega). Pulling eta back along its own
+quotient pi splits it, so pi^*(h_*eta)=0 in Ext^1(V,O_C).
+The [intrinsic extension formula](semilinear_hermitian_lift.md)
+therefore shows that shifting lambda by h_*eta leaves the class
+alpha of E as an extension of V by O_C unchanged. Its Frobenius
+adjoint is unchanged as well, while
 
-    G_J=[t^-112,0; -t^-112 eta^5,t^128],
-    (0,h^5 eta^5)^T
-       =h^5 e1-t^32 G_J(t^80 h^5 e1).
+    a lambda+b eta=a(lambda+h eta).
 
-Since h belongs to Acal and t^16h is regular at O, applying J_0^-1 and
-(8) proves Q(v(h eta)^5)=0. Thus the unnormalized substitution
-lambda -> lambda+h eta changes (11) only by a Q-zero term while
-canceling b eta. Reducing to P_32 is harmless: if lambda changes by
-f+t^32g, its ordinary contribution is a coboundary, as is the fifth-power
-contribution. The latter follows from v in Acal^2 and
+Consequently the equation with (a,b,lambda) is equivalent to that with
+(a,0,lambda'), where the prescribed principal-part representative is
 
-    t^160 v=t^32 G_K J_(0,O)^-1 e2.
+    lambda'=rho_32(lambda+h eta).                          (12)
+
+This is valid throughout the parameter chart a!=0. Principal-part
+reduction changes only the cocycle representative, hence both ordinary
+and Frobenius extension classes are preserved.
 
 Now remove a. Choose u in k^x with u^3=a and rescale
 
@@ -255,7 +264,7 @@ computing delta eta through31 from raw factors can require delta t
 through119. Reducing eta first to its gap principal part and coefficients
 through48 gives the same rho_32(delta eta), with much smaller bounds.
 
-## 7. Rank identity and its exact tests
+## 7. The lower block has rank31 for every quotient
 
 Matrix inversion using det S=det H=1 gives
 
@@ -266,23 +275,12 @@ It satisfies delta^2 U_0=P U_0. It is the weight-seven horizontal
 tensor attached to pi, so U_0 lies in L(112). The second component of
 Q immediately gives M_2[:,nu]=rho_48(U_0 ell_nu^5).
 Applying (13) to (-delta(U_0 lambda^5),U_0 lambda^5) proves
-M_1=Dbar M_2. Thus rank M=rank M_2 for every quotient. The general
-bound in `semilinear_hermitian_lift` gives rank M_2<=31. Its strengthened
-differential retraction supplies the intrinsic explanation in every
-allowed genus; the present proof makes that retraction explicit.
+M_1=Dbar M_2. The lower matrix represents the intrinsic map
+T_j=D_j pi^*. Its [exact-rank theorem](semilinear_hermitian_lift.md)
+uses Joshi's stability of B_1 to prove that D_j is injective and
+ker(pi^*) has dimension9. Therefore
 
-The exact script `scripts/connections/scalar_residual_rank.sage` computed the
-32-dimensional space ker(delta^2-P:L(112)->L(146)) for the first two
-F25-rational invariant opers. Eight reproducible samples for each all
-gave rank31. All16 full40-by40 upper matrices were then computed
-independently from (-delta U_0,U_0), including the c_48 correction,
-and verified to equal Dbar times the lower matrix. For one saved sample
-of each, the affine ideal
-(y^3-F,U_0,delta U_0) has Groebner basis[1], and
-ord_O(U_0 theta^7)=112-112=0. Thus their zeros are globally reduced,
-and their quotient maps are genuinely surjective. Data, not routine
-context: `Research/computations/scalar_residual_rank.json`.
+    rank M=rank M_2=40-9=31
 
-For each tested fixed oper the rank31 locus is therefore a nonempty
-open subset of the quotient space. This does NOT imply the same for
-every oper, or exclude solutions of the 56 remaining equations.
+for every valid quotient of every fixed geometric dormant oper.
+This is independent of any sampled section or rationality over F25.

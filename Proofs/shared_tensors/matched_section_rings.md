@@ -1,13 +1,15 @@
 # Proof: canonical intersection and exact primitive clump weight
 
 [Statement](../../Theorems/shared_tensors/matched_section_rings.md).
-The two subrings use the specified differential pullbacks.
+Use the invariant line bundles L and Ω from the
+[definitions](../../Definitions/canonical_tensors.md).
 
 ## 1. A primitive shared tensor
 
-Every nonzero weight space A_n is one-dimensional: the ratio of two
-of its sections belongs to k(X) intersect k(Y)=k. If positive weights
-occur, let d be their gcd. Choose finitely many nonzero a_i in A_(n_i)
+By [Krishnamoorthy, Proposition8.2](https://msp.org/ant/2018/12-5/ant-v12-n5-p05-p.pdf#page=32),
+h0(L)<=1. Write A=direct-sum_(n>=0)H0(L^n); every nonzero graded piece
+is one-dimensional. If positive weights occur, let d be their gcd.
+Choose finitely many nonzero a_i in A_(n_i)
 and integers e_i with sum e_i n_i=d. The rational shared tensor
 
     t=product_i a_i^(e_i)
@@ -31,8 +33,8 @@ rule and {t,t}=0, without making t central in either endpoint ring.
 
 ## 2. Shared sections and clumps
 
-First note a useful rational strengthening of Section1. If tau is any
-nonzero common rational tensor of weight m, then tau^d/s^m belongs to
+Now take L=Ω and assume A=k[s]. If tau is any nonzero common rational
+tensor of weight m, then tau^d/s^m belongs to
 both endpoint function fields and is a nonzero constant. For m>0 this
 forces div(tau)=(m/d)div(s)>=0, so tau was regular and Section1 gives
 d dividing m. For m<0 apply the same argument to tau^(-1); for m=0
@@ -52,11 +54,11 @@ For nonzero s=f*s_X=g*s_Y, etaleness gives
 
 Its support is nonempty because deg(s)>0 and g(Z)>=2, and is saturated
 under both maps. Each positive multiplicity stratum is itself a clump.
-The one-clump theorem therefore forces a uniform divisor eS and a
-unique nonempty clump. Counting degrees gives all three identities
-in the statement.
+By the same paper's Theorem9.6 there is at most one etale clump.
+Thus the divisor is uniform, eS, and its support is the unique nonempty
+clump. Counting degrees gives the three stated identities.
 
-Conversely, suppose a nonempty clump S is GIVEN over Fbar5. Let D_X,D_Y
+Conversely, suppose a nonempty clump S is given over k. Let D_X,D_Y
 be its reduced images. Both ACTUAL maps are etale, so
 
     f*D_X=g*D_Y=S,
@@ -67,9 +69,11 @@ h_X=h a,h_Y=h b, with h=gcd(h_X,h_Y). The coprime positive integers
 d_0=m/gcd(m,h), e_0=h/gcd(m,h) are thus exactly the primitive solution
 of e r_i=d h_i. All integral solutions are (d,e)=(d_0 n,e_0 n).
 
-The line bundles L_i=O_i(e_0D_i) tensor omega_i^(-d_0) have degree zero.
-Every such bundle over Fbar5 is torsion, since its Jacobian point is
-defined over a finite field. Let its exact order be q_i and put
+The line bundles L_i=O_i(e_0D_i) tensor omega_i^(-d_0) have degree zero
+and canonically identified pullbacks. Their pair lies in
+Pic0(X<-Z->Y), a finite group scheme by
+[Krishnamoorthy, Lemma8.9](https://msp.org/ant/2018/12-5/ant-v12-n5-p05-p.pdf#page=34).
+Hence both are torsion. Let their exact orders be q_i and put
 q=lcm(q_X,q_Y). Triviality of L_i^q gives a regular section of
 omega_i^(d_0q) with divisor e_0q D_i. Their pullbacks have the same
 divisor on Z; their ratio is constant. Rescale one section to make
@@ -99,16 +103,6 @@ proving the claimed divisibility for q. In particular prime support
 of these orders is controlled by the degrees of the ACTUAL legs.
 It is not legitimate to discard their common-pullback equality.
 
-## Boundary
-
-The external input is [Krishnamoorthy, Correspondences without a core](https://msp.org/ant/2018/12-5/ant-v12-n5-p05-p.pdf),
-Theorem9.6 (unique clump). Proposition8.2 and Corollary8.10 give the
-invariant-section context. Question9.7 leaves existence of a clump in
-positive characteristic open. In characteristic zero, Corollaries8.13
-and9.2 give A=k for a projective etale coreless span.
-
-An arbitrary divisor is not a clump: its reduced support must pull back
-to the SAME S under BOTH maps. The exact order formula only applies once
-this compatibility exists. It does not produce it, determine p-ranks,
-force d=1, or exclude a coreless span. Nor is the alternative A=k here
-a constructed positive-characteristic example answering Question9.7.
+In characteristic zero, Krishnamoorthy's Corollaries8.13 and9.2 give
+A=k and no clumps. In positive characteristic the equivalence above
+does not decide whether a clump exists on a given span.

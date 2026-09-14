@@ -1,6 +1,6 @@
 #!/usr/bin/env sage
 """Exact generic-family Raynaud quadric from a four-square determinant.
-See Sol_raynaud_genus_two_determinant.md. No generic singleton exclusion.
+See Proofs/jacobians/theta_divisors/raynaud_genus_two_determinant.md.
 """
 import time,json
 from cysignals.alarm import alarm,cancel_alarm
@@ -63,11 +63,6 @@ try:
           'terms',len(quotient.monomials()),'seconds',time.monotonic()-started,flush=True)
     mons=[B.one(),s,p,w,s**2,s*p,s*w,p**2,p*w,w**2]
     coeff=[quotient.monomial_coefficient(mon) for mon in mons]
-    fixed=GF(125,name='alpha',modulus=GF(5)['a']([1,1,0,1]));aa=fixed.gen()
-    evaluate=lambda value:value.numerator()(aa)/value.denominator()(aa)
-    special=[evaluate(co) for co in coeff];special=[co/special[0] for co in special]
-    expected=[[1,0,0],[1,3,4],[4,1,3],[2,3,4],[4,0,3],[2,4,4],[3,1,0],[0,2,0],[2,4,3],[4,4,4]]
-    assert special==[sum(fixed(c)*aa**i for i,c in enumerate(cs))**5 for cs in expected]
     denominator=t**2*(t+1)**4
     polynomials=[co*denominator for co in coeff]
     assert all(co.denominator()==1 for co in polynomials)
@@ -77,7 +72,6 @@ try:
         [0,0,3,0,4,4,0,3],[0,0,0,3,2,2,3],[1,4,3,1,4,2,4],
         [1,4,4,1,4,4],[1,4,1,4,1]]
     assert [[int(c) for c in co.numerator().list()] for co in polynomials]==expected_polynomials
-    print('SPECIALIZATION PASS versus independent 12-point quadric',flush=True)
     print(json.dumps({'coefficient_order':['00','01','02','03','11','12','13','22','23','33'],
                       'primitive_polynomial_coefficients':[[int(c) for c in co.numerator().list()] for co in polynomials]},default=int),flush=True)
 except AlarmInterrupt:

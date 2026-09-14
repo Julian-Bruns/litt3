@@ -1,110 +1,115 @@
-# Proof: two spin probes, actual field recovery, and descent of the common datum
+# Proof: effective probes recover the fields, then the common spin
 
 [Statement](../../Theorems/cartier_and_spin/spin_probe_common_cover_reduction.md).
-Author /root,2026-09-08. All field containments are inside the specified
-common source and its finite etale extensions. Put m=p+2.
+All field inclusions use the original embeddings into one common source.
+Write g=g(X), m=p+2 and L_i for the original endpoint spins.
 
-## 1. Two degree-two refinements supply the probes
+## 1. The probes and their étale trivializations
 
-The superelliptic curve X has a unique point O at infinity and
+The unique point O at infinity on X satisfies
 
-    theta=dx/y^(a-1),  div(theta)=(2g(X)-2)O,
-    ord_O(x)=-a.
+    θ=dx/y^(a−1),  div(θ)=2(g−1)O,  ord_O(x)=−a.
 
-These follow from tame ramification at the simple finite roots of F,
-total ramification at infinity, and Riemann--Hurwitz. Thus
-A_X=O_X((g(X)-1)O) is a spin line with a section e satisfying e^2=theta.
-The inequality g(X)-1>=a makes both e and xe regular sections of A_X.
-On Y use the specified effective spin A_Y=L_0 and section e_Y with
-e_Y^2=eta. Fix the displayed spin identifications.
+Thus A_0=O_X((g−1)O) is spin, with regular sections e_0 and xe_0,
+where e_0²=θ. On Y choose e_Y∈H0(Y,A_Y) with e_Y²=η.
 
-For i=X,Y, the quotient N_i=L_i A_i^(-1) is a two-torsion line with
-the square trivialization induced by the two spin identifications.
-Its mu_2-torsor is finite etale (or use the identity if N_i is trivial).
-Pull both torsors back to Z and take a connected component of their
-fiber product. This gives V->Z of degree1,2, or4. Both original maps
-remain finite etale and their embedded endpoint-field intersection
-remains k: enlarging the ambient field does not change that intersection.
+For each probe A on an endpoint, the line L_i A^−1 has a specified
+square trivialization. Its μ_2-torsor is étale and identifies the two
+spins compatibly with their squares. Trivialize the two probes A_0,A_Y
+over Z and take a connected component V; then deg(V/Z)≤4. Adding a
+third probe A' on X raises this bound to8. Both original maps stay
+étale and their embedded fields still intersect in k.
 
-The tautological trivializations identify the pulled-back L_i with A_i
-COMPATIBLY with squaring to omega_V. Consequently H0(V,L_V) contains
-sections e_X, xe_X, e_Y whose squared differentials, and mixed product,
-are precisely the pulled-back theta, x theta, and eta. These identities
-persist on every T_n. A choice of sign in a torsor trivialization has no
-effect on the squared forms or on the ratio x.
+## 2. An odd-degree separating probe
 
-## 2. Both embedded endpoint fields lie in the spin quotient
+Assume a is odd. Put G=Gal(X/P1)=C_a. In Mumford's notation S(X) is
+the set of theta characteristics, J_2=J(X)[2], and
+e_*(A)=h0(X,A) mod2. The number with e_*=1 is
 
-Apply spin_series_etale_reduction starting from the actual span through V.
-For n>=8 it supplies an etale phi:T_n->S and a compatible spin M on S,
-with phi^*M=L_n and ALL spin sections descending. Hence theta and
-x theta descend to regular differentials on S. Their ratio puts the
-specified x in k(S). If beta is the descended theta, then
+    2^(g−1)(2^g−1),
 
-    z=dx/beta in k(S)
+by [Mumford, Theta characteristics of an algebraic curve, §4, third theorem, pp190–191](https://www.numdam.org/article/ASENS_1971_4_4_2_181_0.pdf#page=11).
+All these classes are effective.
 
-pulls back to y^(a-1). It is nonzero because the maps are separable.
-Since y^a=F(x), the rational function F(x)/z in k(S) pulls back to y.
-Thus the full embedded k(X), not just its rational x-subfield, lies
-in k(S).
+For each prime ℓ|a, let H=C_ℓ. Its quotient has genus
 
-Likewise eta descends. Cartier naturality under separable pullback
-makes Cartier(eta) descend too. By hypothesis they span H0(Y,omega_Y).
-The elementary recovery argument of cartier_endpoint_recovery puts
-k(Y) in k(S): canonical ratios give a hyperelliptic coordinate u and
-the differential du/v then gives v. No assertion that e_Y descended
-to the ORIGINAL spin on Y is needed; its square is the fixed form eta.
+    g_H=(a/ℓ−1)(deg F−1)/2 < g/3.
 
-These two field inclusions extend to actual maps S->X,Y. Their composites
-with phi are the original maps from T_n. Each is finite etale because
-it is intermediate in an etale extension. Their field intersection is
-still k, so the new common span is coreless.
+Since A_0 is H-invariant, the H-fixed part of S(X) is A_0·J_2^H.
+Pullback and norm identify J_2^H with J(X/H)[2]: both composites
+are multiplication by the odd number ℓ on invariant two-torsion.
+Thus exactly2^(2g_H) theta classes are fixed by H.
 
-## 3. Removing the remaining spin ambiguity
+Every nontrivial stabilizer contains one such H. The number of
+prime divisors of a is at most g, and g−1≥a≥3 gives g≥4. Using
+g≤2^(g−2), the union of their fixed classes has size
 
-Field recovery alone would not identify M with the common spin: etale
-pullback can kill a nontrivial two-torsion difference. We now remove it.
+    ≤ sum_(prime ℓ|a) 2^(2g_H)
+    < g·2^(2g/3) ≤ 2^(5g/3−2) < 2^(2g−2)
+    < 2^(g−1)(2^g−1).
 
-The common canonical tensor s_i=h_i^2 of weight m descends to S through
-either endpoint. The two descended tensors agree, since they agree
-after pullback along phi. They have divisor2D_S with D_S nonempty reduced,
-because S->X,Y are etale. The intrinsic spin normal form therefore gives
+Choose an odd A' with trivial G-stabilizer and any nonzero section e'.
+If σ∈G fixes e'²/θ, then σ(e'²) is a scalar multiple of e'² because
+θ is a G-eigenform. Its half-divisor, and hence A', is σ-invariant.
+Therefore the ratio has trivial stabilizer and
 
-    L_S=O_S(D_S) tensor omega_S^(-(m-1)/2),
+    k(x,e'²/θ)=k(X).                                  (1)
 
-its canonical spin isomorphism, and the common h_S in K(S,L_S).
-This construction commutes with etale pullback, so phi^*L_S=L_n with
-the original compatible square isomorphism. It also identifies L_S
-with BOTH endpoint pullbacks and h_S with BOTH pulled-back sections.
+After the three torsors, take one Galois closure T→Y of V→Y.
+The pulled-back spin has at least two sections. Its complete series
+is base-point-free by
+[the degree-one lemma](complete_section_quotients.md#2-global-generation-and-separability).
+Let φ:T→S be its normalized image with image line M. All sections
+descend, and the ratios x=(xe_0)/e_0 and e'²/θ=(e'/e_0)² put k(X)
+in k(S) by(1). Both φ and S→X are therefore intermediate étale maps
+of T→X. No separate separability argument is needed.
 
-The effectivity assertion of spin_primitive_matching_defect applies to
-the actual coreless span X<-S->Y and gives H0(S,L_S)!=0. Choose 0!=u in
-that space. Its pullback, viewed in H0(T_n,L_n), equals phi^*v for some
-v in H0(S,M), by completeness. Under the fixed identification of the
-two pullback lines, these are the same section. The rational isomorphism
-L_S->M sending u to v therefore pulls back to the fixed global
-isomorphism phi^*L_S->phi^*M. Its divisor is zero after finite pullback,
-so is zero on S. It is a global isomorphism. The compatibility of its
-square with omega_S follows after the faithfully flat etale pullback.
+Bounded medium audit of the fixed-theta count and(1): PASS,
+/root/audit_extension_fiber_scope,2026-09-14. This extends the original
+prime-degree argument; its later geometric steps are unchanged.
 
-Thus M is the canonical common spin itself, h_S descends in that spin,
-and its section space is the entire section space upstairs. By definition
-of S as the ratio field of that complete space, its complete spin map
-is birational and base-point-free.
+## 3. The construction for any exponent
 
-For the specified characteristic-five family, Section4 of
-family_small_torsion_specialization verifies independence of eta and
-Cartier(eta) at every Weierstrass point; one may always use W=infinity.
-The X-side uses only its degree-ten trigonal presentation, not any of
-its coefficients, Jacobian decomposition, or finite oper enumeration.
+When k=bar(F_p), use only A_0,A_Y and the degree≤4 refinement.
+The [eight-closure theorem](spin_series_etale_reduction.md) gives,
+for every n≥8, a finite étale complete-series quotient φ:T_n→S
+with all sections descending. This construction permits even a.
 
-The result replaces a hypothetical span by a more structured ACTUAL span.
-It does not make a finite simultaneous Galois closure, and strict growth
-of spin sections remains compatible with increasing genus and degree.
+In both constructions the
+[complete-section descent lemma](complete_section_quotients.md#3-descent-determined-by-complete-sections)
+makes M a spin compatibly with L_T. Thus θ and xθ descend as regular
+differentials. Their ratio gives x∈k(S), and if β is the descended θ,
 
-## Immediate additional consequence (author, beyond the version1 audit)
+    dx/β=y^(a−1),  F(x)/(dx/β)=y
 
-Each phi_n is also GALOIS. Indeed T_n is Galois over one of the original
-endpoints, and S_n now contains that endpoint field. An extension normal
-over a field remains normal over every intermediate field. This statement
-is about T_n/S_n; it does NOT say S_n is Galois over both endpoints.
+inside k(T). Separability makes dx nonzero. This recovers k(X) for
+the construction of this section as well.
+
+## 4. Recover Y and the original common spin
+
+The section e_Y descends to M, so η and Cartier(η) descend to S.
+They span H0(Y,ω_Y), and
+[Cartier endpoint recovery](cartier_endpoint_recovery.md) gives
+k(Y)⊂k(S). Thus S→Y is intermediate étale too. The intersection of
+the two endpoint fields is still k. Since T is Galois over one of
+these endpoints, T→S is Galois.
+
+The common tensor s_i=h_i² descends through both maps to the same
+tensor on S, with divisor2D_S and D_S reduced. Its root normal form is
+
+    L_S=O_S(D_S) ω_S^−((p+1)/2),
+
+with the original common section h_S and compatible square. Hence
+φ*L_S=L_T=φ*M. Source effectivity from
+[spin primitives](spin_primitive_matching_defect.md) gives h0(S,L_S)>0.
+The complete-section descent lemma now identifies L_S with M,
+including the prescribed square; this removes any two-torsion ambiguity.
+
+Finally M generates its own ratio field k(S), so its complete series
+is birational and base-point-free. The
+[normal-closure lemma](complete_section_quotients.md#1-normal-closure-and-the-projective-kernel)
+preserves this in every restarted alternating tower.
+
+For the stated family, the needed independence of η and Cartier(η)
+for all six effective spins is proved in
+[the torsion specialization](../jacobians/torsion/family_small_torsion_specialization.md).

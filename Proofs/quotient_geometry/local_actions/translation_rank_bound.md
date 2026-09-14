@@ -1,90 +1,45 @@
-# Proof: Artin–Schreier translation rank and fractional jumps
+# Sources: translation bounds and their local application
 
-[Statement and audit metadata](../../../Theorems/quotient_geometry/local_actions/translation_rank_bound.md).
-Write V_f={a:f(x+a)−f(x)∈(F−1)k[x]} and f_B≠0 for the leading
-coefficient, with B>1 prime to p.
+## 1. The published translation theorem
 
-## 1. One reduced coefficient bounds every translation subgroup
+[Lehr–Matignon, *Automorphism groups for p-cyclic covers of the affine
+line*, Compositio141(2005), Corollaries3.4–3.5 and Proposition6.6](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B8E251C6126CAFE62BA6F414F82E1AA3/S0010437X05001296a.pdf/div-class-title-automorphism-groups-for-em-class-italic-p-em-cyclic-covers-of-the-affine-line-div.pdf#page=13)
+give(1) and(2) for g(C_f)>=2. The additive polynomial Ad_f and its
+translation roots are constructed in their Proposition5.5. Dividing
+their bounds for |G_(infinity,1)(f)| by p gives the displayed translation
+bounds, including the sharper characteristic-two case.
 
-Reduction modulo(F−1)k[x] replaces c x^(pj) by c^(1/p)x^j until
-all positive exponents are prime to p. These reduced positive-degree
-coefficients are unique; constants pose no obstruction over algebraically
-closed k.
+Only (p,m)=(3,2),(2,3) have positive genus below2. For the former, the
+reduced X coefficient of f(X+a)−f(X) is 2f_2 a, forcing a=0. For the
+latter, the reduced X coefficient vanishes exactly when
 
-If B≢1 mod p, the reduced coefficient at x^(B−1) is B f_B a.
-No smaller term contributes and no larger exponent reduces to B−1.
-Thus V_f={0}, contradicting the nontrivial subgroup in the theorem.
+    f_3² a^4+f_3 a=0,
 
-Now write B=1+uQ, where Q=p^s, s=v_p(B−1), and p∤u.
-For u>1 let j=B−Q. Then p∤j and pj>B−1, so the reduced x^j
-coefficient is its ordinary coefficient. As a polynomial in a it has
-degree Q and leading coefficient
+a separable polynomial of degree4. This proves the boundary cases.
+Constants are Artin–Schreier differences over k.
 
-    f_B binom(B,Q)=u f_B≠0.
+## 2. From local inertia to the translation theorem
 
-Lower terms of f contribute lower powers of a. Every a∈V is a root,
-giving |V|≤Q.
+Realize P=I_1 by its HKG curve H, with H/P=P1 and one totally ramified
+point; see [Bleher–Chinburg–Poonen–Symonds, §1.B and Proposition4.8](https://math.mit.edu/~poonen/papers/AutK.pdf).
+[Matignon–Rocher, *On smooth curves endowed with a large automorphism
+p-group in characteristic p>0*, Lemma2.4(1)](https://www.math.u-bordeaux.fr/~mmatigno/JANT-Ma-Ro.pdf#page=4)
+gives H/P_2=P1. That lemma needs only the one-point P-cover, and its
+Hurwitz identity, for every subgroup N⊂P, is
 
-For u=1, raise the reduced x coefficient to the Qth power. It becomes
+    2|N|g(H/N)=sum_(i>=2)(|P_i|−|N intersect P_i|).        (3)
 
-    P(a)=∑_(j=0)^s ([x^(p^j)](f(x+a)−f(x)))^(Q/p^j).
+Thus H has a reduced equation W^p−W=f(X) of degree i0 prime to p.
+The last group P_2 is central, since [P_1,P_(i0)]⊂P_(i0+1)=1.
+Hence P/P_2 acts on the quotient line by translations and lies in
+Z(Ad_f). Applying(2) with m=i0 gives either r<=s or i0=1+p^s with
+s<r<=2s. Herbrand's formula gives the two stated upper jumps.
 
-Its j=0 summand has leading term f_B^Q a^(Q²). Every j≥1 term has
-degree≤(B−p^j)Q/p^j<Q², as do the remaining j=0 terms.
-Thus P has degree exactly Q² and vanishes on V, proving |V|≤Q².
-These root counts are necessary conditions, not sufficiency criteria.
+In the latter case g(H)=(p−1)p^s/2 and
 
-## 2. The local application and the actual auxiliary curve
+    |P|/g(H)=2p^(r+1−s)/(p−1)>2p/(p−1).
 
-Let P=I_1, |P|=p^(r+1), and |P_2|=p. The lower jumps are1 and B;
-the last group has order p, so B is prime to p. Realize the P-action
-by its HKG curve H: H/P=P¹ with one totally ramified point.
-
-For any subgroup N⊂P, subtract Hurwitz for H/P and H/N.
-Since P_0=P_1=P, the constant terms cancel to give
-
-    2|N|g(H/N)=∑_(i≥2)(|P_i|−|N∩P_i|).                     (1)
-
-Taking N=P_2 proves H/P_2=P¹, with no large-action hypothesis.
-Hence H has Artin–Schreier equation w^p−w=f(x) over that quotient,
-with f reduced of degree B. The group P/P_2 acts on this x-line as
-translations by an F_p-space V of dimension r.
-
-The last ramification group P_2 is central in P: its commutators would
-have break greater than B. A lift of x↦x+a therefore commutes with
-w↦w+1 and has form w↦w+h_a(x), h_a∈k(x). Thus
-
-    f(x+a)−f(x)=h_a(x)^p−h_a(x).
-
-No h_a can have a finite pole, since its Artin–Schreier difference
-would retain a pole of p times that order. So h_a∈k[x], and V⊂V_f.
-
-Section1 is now exhaustive. If B>p^s+1 then r≤s and p^r|(B−1).
-If B=p^s+1 then r≤2s; either r≤s, again integral, or s<r≤2s.
-These give exactly the two upper-jump alternatives in the statement.
-In the fractional case the local genus satisfies q/g(H)>2p/(p−1);
-that inequality is a consequence, not an imported classification
-hypothesis.
-
-## 3. Retained atlas consequence and evidence boundary
-
-The fractional alternative has numerical data
-
-    Q=p^s, R=p^(r−s), p≤R≤Q,
-    q=pQR, c=q+(p−1)Q−2.
-
-These are the inputs to the separate
-[order-p-second-group degree bound](../../../routes/global/ORDER_P_SECOND_RAMIFICATION_GROUP_FORCES_A_DEGREE_BOUND.md);
-the other alternative uses the [integral theorem](integral_jump_bound.md).
-For p=5,h=16, the putative B=66 pattern requires |V|=25, whereas
-v_5(65)=1 and B>6 force |V|≤5. Thus only the B=6 necessary full tuples
-of degrees112000 or336000 survive. Global genus-nine atlas existence
-is not asserted.
-
-The polynomial argument is independent of atlas, genus or endpoints.
-For HKG realization see
-[Bleher–Chinburg–Poonen–Symonds, §1.B and Proposition4.8](https://math.mit.edu/~poonen/papers/AutK.pdf).
-Equation(1) is also Matignon–Rocher Lemma2.4(1), proved here directly.
-The HKG curve is NOT an étale cover of an endpoint and inherits none
-of its ordinarity assumptions. The retained275 exact polynomial checks
-support, but do not replace, the audited all-degree proof.
+Therefore [Matignon–Rocher, Proposition2.5](https://www.math.u-bordeaux.fr/~mmatigno/JANT-Ma-Ro.pdf#page=4)
+supplies f(X)=X S(X)+cX, the extraspecial wild group and the full inverse
+image description. Their Remark2.6 includes genus1 because P fixes the
+point at infinity.

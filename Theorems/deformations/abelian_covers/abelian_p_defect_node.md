@@ -1,8 +1,7 @@
 # A finite quadratic certificate controls every abelian 5-group cover
 
 Version1,2026-09-10. Focused medium audit PASS,
-/root/audit_p_cover_witt_repair. Audited prose and finite arithmetic,
-not Lean verification. Use the specified higher-Hodge operator Psi
+/root/audit_p_cover_witt_repair. Audited prose and finite arithmetic. Use the specified higher-Hodge operator Psi
 and obstruction epsilon, with relative-Frobenius twists retained.
 
 ## General quotient mechanism

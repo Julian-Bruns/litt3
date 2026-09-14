@@ -8,7 +8,7 @@ non-large HKG case, then isolates the two exceptional degrees.
 ## 1. Retained reductions and small wild orders
 
 Use the local atlas notation of the
-[checked signature reduction](../../routes/global/CORED_ZERO_ONE_FORM_INTERSECTION_AND_WILD_SIGNATURE_REDUCTION.md),
+[wild-jump atlas theorem](../quotient_geometry/local_actions/wild_jump_atlas_bounds.md),
 with reduced tame order m:
 
     c m-q t0=D, D|16, gcd(m,t0)=1, t0|(m+D),
@@ -16,7 +16,7 @@ with reduced tame order m:
 
 Every positive lower group is a 5-group, so c=3 modulo4. If q<=25,
 the wild group is abelian, hence has integral upper jumps. The checked
-[integral-jump theorem](../quotient_geometry/local_actions/integral_jump_bound.md)
+[integral-jump theorem](../quotient_geometry/local_actions/wild_jump_atlas_bounds.md)
 then gives q=5 and n<=2240. Henceforth q>=125.
 
 Set S=c-q+2=2g(H) for the auxiliary HKG wild curve. Split into large
@@ -40,7 +40,8 @@ The b bound follows from b(q-1)<=c+1=(qt0+D+m)/m and monotonicity
 in q. These are FINITE ranges for every variable in this display; the
 total exponent in q is not bounded or truncated.
 
-The [complete standard-library certificate](../../routes/global/GENUS9_FIRST_LAYER_SIGNATURE_CERTIFICATE.py)
+The [signature script](../../scripts/orbifolds/wild_inertia_signatures.py),
+run with `first-layer`,
 returns exactly these rows (D,m,t0,b,r,E):
 
     (2,1,3,2,2,5), (8,1,3,1,2,10),

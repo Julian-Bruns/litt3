@@ -201,8 +201,8 @@ they violate BOTH possible sources of field-period primes.
 The geometric datum extracted from the atlas is defined over F25.
 For clarity, the construction is intrinsic: descend the canonical
 normalized bundles on H from `hermitian_atlas_extension_criterion`,
-form V=E/O and its character line tau, and fix theta=O_X(8O), defined
-over F25. Then W_2=V tensor(theta tensor tau^2)^-1 has canonical
+form V=E/O and its character line tau, and fix L=O_X(8O), defined
+over F25. Then W_2=V tensor(L tensor tau^2)^-1 has canonical
 Frobenius connection and unique oper line, as in
 `dormant_rank_two_candidates`. Its projective oper class is therefore
 Galois-equivariant. The scalar oper chart and its cubic deck quotient

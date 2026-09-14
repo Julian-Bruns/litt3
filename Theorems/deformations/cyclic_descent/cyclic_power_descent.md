@@ -2,7 +2,7 @@
 
 Version2, 2026-09-13. Proved by the consolidated comparison and the
 independently audited norm/absorption mechanism. The strengthening has
-bounded independent audit PASS; audited prose is not Lean verification.
+bounded independent audit PASS.
 
 Let k=bar(F5), a>=1, q=5^a, and let h:T→C be an actual connected
 finite etale cyclic-q cover of smooth projective curves, g(C)>=2.

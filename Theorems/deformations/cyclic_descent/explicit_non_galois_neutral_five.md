@@ -1,7 +1,7 @@
 # Actual neutral degree-five covers with source-only first Witt repair
 
 Version1,2026-09-11. Independent geometric and exact-matrix audit PASS
-by /root/audit_backup_cored_completion. Prose/computation, not Lean.
+by /root/audit_backup_cored_completion. Prose/computation.
 
 Let (C,r) be the explicit F625 pair of
 [the nonzero endpoint obstruction](../explicit_genus_two_witt_obstruction.md):

@@ -1,7 +1,7 @@
 # Proof: the first wild ramification layer is genus-bounded
 
 [Statement and audit metadata](../../../Theorems/quotient_geometry/local_actions/wild_first_layer.md).
-Use the [integral-bound proof's atlas notation](integral_jump_bound.md):
+Use the [integral-bound proof's atlas notation](wild_jump_atlas_bounds.md):
 cm−qt0=D|h, gcd(m,t0)=1, t0|m+D, P=I_1 and q=|P|.
 Let b be the first lower break, N=P_(b+1), |P/N|=p^r and
 Q=p^ceil(r/2). No integrality assumption on later upper jumps is made.
@@ -12,15 +12,14 @@ The positive different sum ε=c+1 obeys
 
     b(q−1)≤ε≤(q+1)(1+D/m),   b≤2(h+1).                     (1)
 
-The [first-break Swan lemma](../../../routes/global/13_PROOF_LOCAL_RAMIFICATION.md),
-whose proof is identical with p in place of5, gives
+The [first-break Swan lemma](ramification_constraints.md) gives
 Q|ε−b(q−1). Multiply by m and use the genus equation and Q|q:
 
     Q | D+(b+1)m.                                           (2)
 
 Realize the local P-action by its HKG curve H, with H/P=P¹ and one
 totally ramified point. Hurwitz gives S:=2g(H)=c−q+2.
-If S=0 then P_2=1 and the [numerical single-jump bound](integral_jump_bound.md)
+If S=0 then P_2=1 and the [numerical single-jump bound](wild_jump_atlas_bounds.md)
 applies. For S>0 call the auxiliary action large when
 
     S<(p−1)q/p.                                             (3)
@@ -54,9 +53,9 @@ Upper-numbering quotient compatibility at jump1 gives
 (P/N0)_2=N/N0 of order p, while its first quotient still has rank r.
 
 The [translation-rank theorem](translation_rank_bound.md) forces
-its final lower break B to satisfy B−1≥Q: either p^r|(B−1), or
-B−1=p^s with r≤2s. Consequently2g(H/N0)≥(p−1)Q.
-The Hurwitz subtraction proved in that theorem gives, for any K⊂P,
+its final lower break i0 to satisfy i0−1≥Q: either p^r|(i0−1), or
+i0−1=p^s with r≤2s. Consequently2g(H/N0)≥(p−1)Q.
+The Matignon–Rocher Hurwitz identity cited there gives, for any K⊂P,
 
     2|K|g(H/K)=∑_(i≥2)(|P_i|−|K∩P_i|)
                ≤∑_(i≥2)(|P_i|−1)=S.
@@ -104,7 +103,7 @@ Therefore Q≤9 here as well. This completes the bounds on b and r.
 
 If N contains an abelian subgroup B of index≤J, then
 [P:B]=p^r[N:B] is bounded. The explicitly conditional
-[bounded-denominator corollary](../../../routes/global/BOUNDED_WILD_JUMP_DENOMINATORS_BOUND_ATLAS_DEGREES.md)
+[bounded-denominator corollary](wild_jump_atlas_bounds.md)
 bounds the atlas degree: irreducible dimensions are at most[P:B],
 and each upper-jump denominator divides one of those p-power dimensions.
 This does not supply the missing bound on arbitrary N.
@@ -128,6 +127,21 @@ This odd multiple of Q must equal Q. Section4's exceptional case
 would then require Q≤5 when p=5, again impossible.
 Finally r=1 is excluded for w≥2 by (4): S≥4v contradicts(3), S<4v.
 Thus every large case has r=2, so P/P_2≅C_5².
+
+## 6. Prime-order second ramification group
+
+If |I_2|=p<q, then b=1 and N=I_2 is abelian. The conditional
+degree bound above applies with J=1, proving the general corollary.
+
+For p=5,h=16, integral upper jumps would give q=5 by the
+[jump theorem](wild_jump_atlas_bounds.md), contradicting q>p.
+The translation theorem therefore gives final break i0=1+5^s with
+s<r<=2s. Its HKG action is large, so Section5 gives r=2, hence
+s=1, q=125 and i0=6. Thus c=143 and the tame graded characters give
+t|gcd(25−1,4·6)=24. The final divisibility calculation in
+[the jump proof, §6](wild_jump_atlas_bounds.md#6-denominators-dividing-five)
+uses exactly these inputs and h=16. It gives (D,m,t0)=(1,7,8),
+g0=1 or3, and the two stated signatures without another enumeration.
 
 For HKG realization see
 [Bleher–Chinburg–Poonen–Symonds, §1.B and Proposition4.8](https://math.mit.edu/~poonen/papers/AutK.pdf).

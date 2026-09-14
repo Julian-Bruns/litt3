@@ -54,11 +54,8 @@ Together they give2*5^n automorphisms over Y, equal to the map's degree.
 This proves the stated Galois group, without a normality assumption
 about any unrelated second endpoint. Riemann--Hurwitz gives g=2*5^n+1.
 
-An etale p-group cover of an ordinary curve is ordinary: the
-Deuring--Shafarevich formula gives f(T_n)-1=5^n(f(T_0)-1), and the
-same formula for g follows from etale Riemann--Hurwitz. Here both equal
-2*5^n. A primary statement of the formula is Proposition1.4 of
-[Yang, p-groups, p-rank, and semi-stable reduction](https://www.kurims.kyoto-u.ac.jp/~yuyang/papersandpreprints/PSS.pdf).
+Since T_0 is ordinary, its étale p-group cover T_n is ordinary by
+[Crew, Corollary1.8.3](https://numdam.org/item/CM_1984__52_1_31_0.pdf#page=7).
 
 ## 3. The spin space, not merely a lower bound
 

@@ -27,7 +27,7 @@ are equivalent:
    div(s)=2nP, whose tautological one-form on the normalized canonical
    nth-root cover is Cartier-zero.
 2. There is a PRIME-TO-p torsion point M in J1 with
-   V(M)=i(P) and H^0(C^(1),B_C tensor M)!=0.
+   V(M)=i(P) and H^0(C^(1),B_{1,C} tensor M)!=0.
 
 The root cover in(1) is actually etale, because every zero order is
 divisible by n; no ramified map replaces it. No Weierstrass point can

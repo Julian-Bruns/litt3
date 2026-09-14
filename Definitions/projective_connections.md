@@ -1,6 +1,6 @@
 # Projective connections and their common curvature loci
 
-In characteristic five a rational projective connection is given by
+In odd characteristic a rational projective connection is given by
 potentials u''=r u in separating parameters, transforming by
 r_t=(x')^2 r_x−{x,t}/2. Regular means regular in every local uniformizer.
 Differences are rational quadratic differentials. A theta characteristic
@@ -16,14 +16,25 @@ the stronger ordinary condition in Mochizuki's nilpotent sense (etaleness of the
 map at the given point). The kernel/oper-line collision divisor and the
 zero divisor of p-curvature can overlap in the nonadmissible case.
 
+Following Mochizuki, write S(C) for the affine space of regular projective
+connections, Q(C)=H^0(C,omega²)^F for the Frobenius twist of the quadratic
+differentials, and V_C:S(C)→Q(C) for Verschiebung, the determinant of
+p-curvature. The nilpotent scheme is N(C)=V_C^(-1)(0). These are the
+fixed-curve fibers of his S_(g,0), Q_(g,0), V_(g,0) and N_(g,0); see
+[the scalar model](../Theorems/projective_connections/nilpotent_scalar_model.md).
+
 For actual finite etale f:Z→X and g:Z→Y, their common regular-connection
 space is the intersection of the two affine pullback spaces on the SAME Z.
 The common dormant/nilpotent schemes are their scheme-theoretic curvature
 loci there. Reducedness of this intersection does NOT assert ordinariness
 of an individual oper on Z or justify a simultaneous lift.
 
-For an admissible normalized quartic s with div(s)=2D, its Hasse root
-class is L_s=O(D) tensor omega^(-2), with its square trivialization from s.
+The following tensor formulas are in characteristic five.
+For an admissible normalized quartic s with div(s)=2E, its Hasse root
+class is L_s=O(E) tensor omega^(-2), with its square trivialization from s.
+Here E is Hoshi's supersingular divisor. The
+[Hasse–Cartier criterion](../Theorems/projective_connections/hasse_cartier_criterion.md)
+uses this divisor to test ordinary status in every odd characteristic.
 Its canonical double torsor is Spec(O plus L_s); a trivial class gives
 the split torsor, not a connected degree-two curve. On the torsor the
 tautological quadratic q satisfies q²=s and changes sign under deck action.

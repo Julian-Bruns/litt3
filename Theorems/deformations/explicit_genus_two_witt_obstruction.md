@@ -1,9 +1,7 @@
 # A genuine one-endpoint W3 obstruction on an ordinary-Jacobian curve
 
 Version1,2026-09-10. Pro calculation, locally reproduced and focused
-medium audit PASS /root/audit_explicit_w3_obstruction. Not Lean verified.
-
-Use the explicit genus-two/F625 pair of
+medium audit PASS /root/audit_explicit_w3_obstruction. Use the explicit genus-two/F625 pair of
 [critical quartics, version2](../projective_connections/genus_two_active_critical_quartics.md):
 
     t^4+4t^3+t^2+4t+3=0,

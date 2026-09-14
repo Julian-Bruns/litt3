@@ -1,48 +1,48 @@
-# Both endpoints survive the complete spin quotient after a double-cover refinement
+# Effective spin probes retain both endpoints in the complete-series quotient
 
-Work over k=bar(F_p), p odd. Let
+Version2,2026-09-14. Let k be algebraically closed of odd characteristic
+p, and let X←Z→Y be an actual coreless finite étale spin-Cartier span
+with compatible nonzero reduced sections h_X,h_Y as in
+[the root normal form](spin_cartier_root_normal_form.md). Assume
 
-    X: y^a=F(x),  gcd(a,deg F)=1,  p does not divide a,
+    X: y^a=F(x),  a≥2,  p∤a,  F squarefree,
+    gcd(a,deg F)=1,  g(X)−1≥a,
 
-where F is squarefree, g(X)>=2, and g(X)-1>=a. Let Y be a genus-two
-curve having an effective spin L_0=O(W) such that the square eta of its
-nonzero section and Cartier(eta) are independent. In particular, in
-characteristic five these conditions hold for ANY squarefree degree-ten
-trigonal X and for Y=C_t, t^5-t!=0.
+and Y has genus2 with an effective spin A_Y whose section square η
+and Cartier(η) are independent. The original endpoint spins may be
+ineffective. These hypotheses include the fixed degree-ten trigonal X
+and the characteristic-five family C_t with t^5−t≠0.
 
-Suppose there is an ACTUAL coreless bi-etale spin-Cartier span
+There is an endpoint-preserving refinement whose complete spin quotient
+φ:T→S is finite étale Galois. Both original maps factor through S, and
+S→X,Y remain finite étale and coreless. The original common spin and h
+descend to S and agree with the image spin M. Moreover
 
-    X <- Z -> Y
+    H0(S,M)=H0(T,L_T),
 
-as in spin_cartier_root_normal_form: compatible spin lines L_i and
-compatible h_i in K(C_i,L_i), with nonempty reduced zero divisors.
-No effectiveness of either endpoint spin is assumed.
+so the complete spin series on S is base-point-free and birational.
+These properties persist under subsequent alternating normal closures.
 
-There is a connected finite etale refinement V->Z of degree at most4.
-Starting at T_0=V, alternate Galois closure over X and Y, keeping the
-original embedded fields. For EVERY n>=8, the complete spin-series map
+The constructions have the following bounds.
 
-    phi_n:T_n -> S_n
+- If a is odd, a connected étale refinement V→Z of degree≤8 followed
+  by one Galois closure T→Y suffices, over every such k.
+- For any a, if k=bar(F_p), a refinement V→Z of degree≤4 suffices
+  before alternating normal closures over X and Y. The conclusion
+  holds for every resulting T_n with n≥8.
 
-is finite etale, and BOTH original maps factor through it. The resulting
-maps S_n->X,Y are finite etale and still coreless. Moreover:
+The odd-degree argument uses an effective spin A' such that, for
+A_0=O_X((g(X)−1)O), e_0²=θ=dx/y^(a−1), and 0≠e'∈H0(X,A'),
 
-1. The canonical common spin and h descend to S_n and agree, compatibly,
-   with the image spin M_n supplied by spin_series_etale_reduction.
-2. Pullback H0(S_n,M_n)->H0(T_n,L_n) is an isomorphism. The COMPLETE
-   spin series on S_n is base-point-free and birational onto its image.
+    k(x,e'²/θ)=k(X).
 
-Thus the entire weight-(p+2), reduced-double-zero case can be studied
-on actual common sources with birational, base-point-free complete spin
-series, retaining BOTH legs and the original shared tensor. The bound4
-is on the initial refinement only; eight bounds closure steps, not degree.
+Such A' exists for every odd a, including composite degrees.
 
-This is NOT a nonexistence theorem. It gives no upper bound on g(S_n)
-or the cover degrees, and does not address other weights or no-clump spans.
-It bypasses the need to recover an ineffective endpoint spin at every
-arbitrary unrefined Galois cover.
+The bounds concern the initial refinement and number of closures.
+They do not bound the final degree or exclude a common cover.
 
-Version1,2026-09-08. Fresh medium audit PASS, /root/audit_spin_probe_reduction,
-2026-09-08; no objections or revisions requested. Not Lean verified.
-[Audit record](../../Research/audits/SPIN_PROBE_COMMON_COVER_REDUCTION_AUDIT_2026_09_08.md).
 [Proof](../../Proofs/cartier_and_spin/spin_probe_common_cover_reduction.md).
+The original [eight-closure](../../Research/audits/SPIN_PROBE_COMMON_COVER_REDUCTION_AUDIT_2026_09_08.md)
+and [one-closure](../../Research/audits/PRIME_SPIN_PROBE_REDUCTION_AUDIT_2026_09_08.md)
+audits are retained; the odd-composite extension has a bounded medium
+audit recorded in the proof.

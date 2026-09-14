@@ -133,15 +133,14 @@ checker check_degree2_frobenius_orbits.py verifies irreducibility modulo2
 and order171 by exact binary arithmetic. In particular 171=9*19 gives
 phi(171)=6*18=108.
 
-Independently, a bounded cyclic-cover computation returned P_D in207.155s
+Independently, a bounded cyclic-cover computation returned P_D
 and found no root5*zeta among all cyclotomic possibilities of degree<=44.
 Data: degree2-constantq-sixth-root-20260911/result.json under the external
 computation root. This supports the result but is NOT a dependency of
 the proof above: the proof uses only the already established P_X and
 the all-closed-point Euler-factor congruence (3).
 
-The former small-branch unit certificate remains as an independent
-check. The expensive Q0/P4 and Q0/P6 unit extractions can be retired
-now that the geometric audit has passed. Qdegree1 and Qdegree2 remain open.
-For those twists, new quadratic-ramification points change the primitive
-character dimensions; (3) cannot be reused without their local factors.
+For nonconstant Q, new quadratic branch points change the primitive
+character dimensions, so (3) requires additional local factors. The
+[complete fixed-pair sieve](backup_double_cover_exclusion.md) treats those
+carriers by their actual Prym factors.

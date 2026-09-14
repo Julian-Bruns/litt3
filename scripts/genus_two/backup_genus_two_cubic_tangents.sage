@@ -86,7 +86,7 @@ def run(args):
       assert sum(row['joint_orbit_size'] for row in rows)==400
       result={'status':'PASS exact original Bol minors for all400 nontrivial cubic oper/twist pairs',
               'representatives':rows,'nontrivial_pairs':400,'elapsed_seconds':time.monotonic()-started,
-              'scope':'Endpoint twisted tangent calculation; geometry in Sol_radical_quadratic_atlas_obstruction. No arbitrary common-cover exclusion.'}
+              'scope':'Endpoint twisted tangent calculation; geometry in Proofs/quotient_geometry/tame_covers/radical_quadratic_atlas_obstruction.md. No arbitrary common-cover exclusion.'}
       if args.verify:
           print('PASS no-solver replay of all four unit minors',flush=True)
       else:

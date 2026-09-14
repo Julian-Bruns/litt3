@@ -152,7 +152,7 @@ not depend on that enumeration.
 The Fermat quartic F maps by fourth powers to the line u+v+w=0. Its
 diagonal C4 x C4 quotient is the root stack P1(4,4,4): ramification
 has order4 exactly at the three coordinate-zero points, and nowhere
-else. The [degree3 symmetry quotient](../triangles/orbifold_symmetry_quotients.md)
+else. The [degree3 symmetry quotient](../tame_covers/orbifold_symmetry_quotients.md)
 therefore gives
 
     [F/((C4 x C4) semidirect C3)] = P1(3,3,4).

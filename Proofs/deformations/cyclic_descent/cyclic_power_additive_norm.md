@@ -96,7 +96,7 @@ so the carry vanishes exactly when C=D_1=...=D_(h−1)=0.
 The [bounded general-order audit](../../../Research/audits/GENERAL_CYCLIC_ORDER_AUDIT_2026_09_13.md)
 checks (2), the terminal sign and the nonlinear degree estimates.
 The [new diagnostic](../../../scripts/deformations/cyclic/verify_general_cyclic_order.py) passes
-148 exact additive/nonlinear partial equations in characteristics3,5,7,11,
+252 exact additive/nonlinear partial equations in characteristics3,5,7,11,
 through leading order5, with noncommuting coefficients, free repairs
 and arbitrary terminal representatives. Its
 [receipt](../../../Research/computations/general_cyclic_order_checks.json)
@@ -104,7 +104,6 @@ records the tested ranges. These finite checks do not replace the proof.
 
 The original [preparation audit](../../../Research/audits/CYCLIC_POWER_ADDITIVE_PREPARATION_AUDIT_2026_09_10.md),
 [second-order carry audit](../../../Research/audits/CYCLIC_UNRESTRICTED_NORM_AUDIT_2026_09_13.md)
-and [mixed-coefficient diagnostic](../../../scripts/deformations/cyclic/verify_cyclic_power_additive_carry.py)
-remain independent evidence for p=5,h=2. Nonlinear terms are handled
+retain their independent checks for p=5,h=2. Nonlinear terms are handled
 by the [absorption theorem](cyclic_power_nonlinear_absorption.md);
 an actual Hodge comparison is an additional geometric input.

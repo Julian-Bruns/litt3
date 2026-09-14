@@ -1,7 +1,7 @@
 # Exact first Heisenberg defects for two actual backup bad pairs
 
 Version1,2026-09-11. Complete finite geometric census and independent
-full-rank/coverage audit PASS. Not Lean verification.
+full-rank/coverage audit PASS.
 
 Let alpha³+alpha+1=0 over bar(F5), and
 F=u(u-1)(u-2)(u-3)(u-alpha). For each row below let

@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """Exact small-cover quotient and Hecke checks, Python standard library only.
 
-This replays every row of the retained complete GAP censuses. Completeness
-of those censuses is separately supported by their generator and the
-published 9/39 counts; this script does not replace subgroup enumeration.
-It checks permutation groups, deck groups, elliptic blocks, and INTEGER
-adjacency identities. The geometric use is proved in Solutions, not here.
+The published 9/39 class counts certify completeness after the validity
+and pairwise inequivalence checks here. The script also checks groups,
+deck groups, elliptic blocks and integral adjacency identities.
 """
+import argparse
 import json
 import time
 from collections import Counter
@@ -42,6 +41,23 @@ def cycles(p):
                 j = p[j]
             lengths.append(length)
     return sorted(lengths)
+
+
+def canonical_code(gs):
+    """Least rooted traversal code, with the generator labels fixed."""
+    codes = []
+    n = len(gs[0])
+    for root in range(n):
+        order, labels = [root], {root: 0}
+        for i in order:
+            for g in gs:
+                j = g[i]
+                if j not in labels:
+                    labels[j] = len(order)
+                    order.append(j)
+        assert len(order) == n
+        codes.append(tuple(labels[g[i]] for i in order for g in gs))
+    return min(codes)
 
 
 def centralizer(group):
@@ -119,18 +135,27 @@ def hecke_test(group, deck):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    for profile in ("2233", "2223"):
+        parser.add_argument("--census-" + profile, type=Path,
+                            default=ROOT / "Research/computations" /
+                            ("genus_two_quadrangular_" + profile + ".json"))
+    args = parser.parse_args()
     start = time.monotonic()
     for profile, total, expected in (
         ("2233", 9, {(6, 6): 3, (24, 2): 6}),
         ("2223", 39, {(12, 12): 3, (48, 4): 18, (60, 2): 9, (96, 4): 9}),
     ):
-        data = json.loads((ROOT / "Research/computations" /
-                          ("genus_two_quadrangular_" + profile + ".json")).read_text())
-        assert len(data["rows"]) == total
+        data = json.loads(getattr(args, "census_" + profile).read_text())
+        assert data["signature"] == list(map(int, profile))
+        assert data["genus"] == 2 and data["degree"] == (6 if profile == "2233" else 12)
+        assert len(data["classes"]) == total
         hist, elliptic, hecke = Counter(), 0, 0
-        for row in data["rows"]:
-            gs = [tuple(i - 1 for i in p) for p in row[3]]
+        codes = set()
+        for row in data["classes"]:
+            gs = [tuple(p) for p in row["generators"]]
             assert len(gs) == len(profile)
+            assert all(len(g) == data["degree"] for g in gs)
             unit = tuple(range(len(gs[0])))
             product = unit
             for g in gs:
@@ -142,7 +167,10 @@ def main():
             group = closure(gs)
             assert len({g[0] for g in group}) == len(gs[0])
             deck = centralizer(group)
-            assert (len(group), len(deck)) == (row[0], row[2])
+            code = canonical_code(gs)
+            assert code not in codes, "duplicate simultaneous-conjugacy class"
+            codes.add(code)
+            assert (len(group), len(deck)) == (row["monodromy_order"], row["deck_order"])
             hist[len(group), len(deck)] += 1
             if profile == "2233" and len(deck) == 2:
                 quotients = list(pair_block_quotients(gs))
@@ -153,7 +181,7 @@ def main():
                 hecke_test(group, deck)
                 hecke += 1
         assert hist == expected
-        print(f"{profile}: {total} rows checked; elliptic double quotients={elliptic}; "
+        print(f"{profile}: {total} distinct classes checked; elliptic double quotients={elliptic}; "
               f"icosahedral Hecke identities={hecke}")
     print("PASS exact integer A^2=5I+2A+2B for both five-valent relations in all nine A5 cases")
     print(f"seconds={time.monotonic()-start:.6f}")

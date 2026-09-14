@@ -1,6 +1,6 @@
 # Symplectic defect growth and cyclic refinements of a simple zero
 
-Version5,2026-09-13. Let C be a smooth projective connected curve over
+Version6,2026-09-14. Let C be a smooth projective connected curve over
 an algebraically closed field of odd characteristic p, and let E have
 a perfect alternating pairing E tensor E->omega_C. Put r=h0(C,E).
 
@@ -29,6 +29,10 @@ a perfect alternating pairing E tensor E->omega_C. Put r=h0(C,E).
    deck character. There is a distinguished etale double C_L->C with
    h0(E tensor L)=1, for nonzero L in Pic(C)[2]. The remaining Galois
    cover T->C_L has prime-to-p degree and adds no sections.
+
+For an arbitrary Galois cover preserving r>0 sections, its group has
+a characteristic normal prime-to-p subgroup with cyclic p-power
+quotient. If p divides its order, r is even.
 
 ## Application to actual connection defects in characteristic five
 

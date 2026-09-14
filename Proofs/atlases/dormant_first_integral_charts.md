@@ -1,9 +1,6 @@
-# Proof: first-integral charts and the fixed-X nonvanishing certificate
+# Proof: dormant first integrals and Cartier blocks
 
 Canonical [statement](../../Theorems/atlases/dormant_first_integral_charts.md).
-The differential calculation was derived independently in the bounded
-/root/dormant_elliptic_first_integral task, 2026-09-06; this is not a separate
-audit of the fixed-X computational consequence.
 
 ## Solve the differential equation over its constant field
 
@@ -77,61 +74,60 @@ has D^4 equal to zero exactly when all simple-pole coefficients vanish.
 The double-pole terms are killed, whereas the simple-pole terms survive
 with distinct fifth-order poles.
 
-## A bounded global first-integral numerator
+## The global map is three Cartier blocks
 
-Use r=(n0+n1*y+n2*y^2)/F^2 from the fixed-X chart. Four differentiations
-take the following exact form: start N_j=n_j and, for s=0,1,2,3, replace
+Use Elkin's operator C on differentials, with
+C(P dx)=sum_j P_(5j+4)^(1/5) x^j dx for a polynomial P.
+This is the defining formula in
+[Elkin, Section3, preceding Remark3.1](https://arxiv.org/pdf/0708.0431#page=5).
+Write C_x(P)=C(P dx)/dx. Its product rule gives D^4P=-C_x(P)^5.
 
-    N_j <- F*N_j' + (2j-2-s)*F'*N_j.
+With H=2x^8+B-F'', rewrite the three components as
 
-Then D^4r=sum_j N_j*y^j/F^6. Since D(D^4r)=0, it is a fifth power.
-At a finite branch point r has pole at most6, and D increases pole order
-by at most3. Thus D^4r has pole at most18, hence at most15 because its
-orders are multiples of5. At O, r has order at least6 and D increases
-order by at least3, so D^4r has order at least18, hence at least20.
-There are no other possible poles.
+    r=-2D(F'/F)+H/F+C*y/F+A*y^2/F^2,
+    H/F=(1/F)^5 H F^4,
+    C*y/F=(y^2/F)^5 C F,
+    A*y^2/F^2=(y/F)^5 A F^2.
 
-Its unique fifth root gamma consequently has poles of order at most3 at
-the ten branch points and order at least4 at O. Multiplication by F gives
-an affine function with pole at O at most26. The semigroup basis <3,10>
-of L(26O) is precisely G0+G1*y+G2*y^2 with the stated degree bounds.
+Four derivatives kill the first term and commute with the fifth-power
+factors. Thus the unique fifth root of D^4r is explicitly
 
-In polynomial terms the identities are
+    gamma=-(C_x(H F^4)+C_x(A F^2)y+C_x(C F)y^2)/F.       (1)
 
-    N0=F*G0^5,       N1=F^4*G2^5,       N2=F^2*G1^5.
+The three polynomial degrees before Cartier are at most48,30,14.
+Coefficient extraction immediately gives the bounds8,5,2 for G0,G1,G2.
+This replaces the repeated differential recurrences and separate pole
+bounds by the ordinary Cartier rule. Formula(1) holds for every
+squarefree monic degree-ten F and every potential in the stated chart.
 
-The retained script verifies the divisions exactly and checks that all
-remaining x exponents are multiples of5. It records the affine map
-w=M*v+d, where v is the ordered24-vector (b0,...,b7,c0,...,c4,a0,...,a10),
-and w consists of the coefficients of G0^5,G1^5,G2^5 in that order.
+## Rank on the fixed curve
 
-## Exact nonvanishing, not a sample inference
+Before coefficient fifth roots, the linear map is the direct sum
 
-For our fixed F the matrix M has rank17. The script saves a nonzero17-by17 minor and a
-left-kernel row lambda with lambda*d=1. In the first nine coordinates,
-the only nonzero entries of lambda are
+    B -> (4[x^(5i+4)] B F^4)_(i=0,...,8),
+    A -> (4[x^(5i+4)] A F^2)_(i=0,...,5),
+    C -> (4[x^(5i+4)] C F)_(i=0,...,2).
 
-    lambda_1=2a+3, lambda_2=2a+3, lambda_3=1, lambda_4=4a,
-    lambda_5=3a, lambda_6=4a+3, lambda_7=4a+2, lambda_8=4a;
+The B-block is injective for every squarefree F by the same simple-pole
+argument as above, so it has rank8. Nonvanishing of the affine offset
+is already proved uniformly; it needs no separate matrix witness.
 
-all other entries, including lambda_0, vanish. Exact multiplication checks
-lambda*M=0 and lambda*d=1. Hence lambda*w=1 for EVERY potential in the
-chart, agreeing with the uniform partial-fraction proof. The same witness
-gives rank M<=17, and the saved nonzero minor gives the reverse inequality.
+For the fixed F over F25=F5[a]/(a^2+4a+2), the C-block columns
+0,1,4 have determinant2a+2, and the A-block columns0,1,2,3,4,9 have
+determinant a+1. Rows and columns are numbered from zero, and column j
+means the monomial x^j. Both determinants are nonzero. Thus the total
+linear rank is8+6+3=17 and the augmented rank is18.
 
-Reproduce with `sage scripts/connections/dormant_first_integral.sage`. The compact
-certificate is [dormant_first_integral.json](../../Research/computations/dormant_first_integral.json),
-with the explicit matrix, offset, minor and nonvanishing row. The script
-also checks the rational reconstruction identities on125 exact examples
-over F5(z), and directly tests the two known F25-rational invariant opers.
-These tests support the formulas; they are not the proof of exhaustion.
-They use numerator-based rational-function zero tests: a reproduced Sage10.9
-normalization bug gives D(1/(z^15+4)) as0/(z^15+4), with incorrect nonzero
-truthiness. A fresh audit isolated this issue, reran all125 examples, and
-found no affected earlier polynomial/Laurent-series certificate. See the
-[scoped audit metadata](../../Research/audits/FIRST_INTEGRAL_ZERO_TEST_AUDIT_2026_09_06.md).
+The [short verifier](../../scripts/connections/dormant_first_integral.sage)
+reconstructs these two minors and checks all24 coefficient directions
+and the affine offset independently by four differentiations:
 
-For a dormant potential c4(r)=c, so the nonzero-c chart covers every
-geometric solution on this X. It remains necessary to translate the
-original global regularity and coefficient bounds into that chart before
-claiming any smaller enumeration algorithm.
+```sh
+sage scripts/connections/dormant_first_integral.sage
+```
+
+The block formula reproduces every entry and offset of the former full
+matrix certificate. The first-integral field classification remains an
+author proof; the computation verifies the fixed-curve specialization.
+The c!=0 chart covers every geometric dormant point, while its global
+regularity constraints are still those of the original scalar chart.

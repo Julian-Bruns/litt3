@@ -1,112 +1,90 @@
-# Exact cored ring and marking data, without a Galois assumption on the legs
+# Proof: canonical rings and divisors on a cored quotient
 
-Author: `/root`, 2026-09-06. Status: major independent audit PASS,
-`/root/cored_ring_normality_major_check`, 2026-09-06.
-[Audit record](../../Research/audits/CORED_RING_AND_LOCAL_NORMALITY_MAJOR_AUDIT_2026_09_06.md).
-Canonical statement: [cored_ring_and_marking_spectrum](../../Theorems/quotient_geometry/cored_ring_and_marking_spectrum.md).
+[Statement](../../Theorems/quotient_geometry/cored_ring_and_marking_spectrum.md).
 
-## 1. The common quotient remembers both maps
+## 1. Invariant divisors give the shared ring
 
-Use the [cored-orbifold bridge](cored_orbifold_bridge.md) to obtain
-a connected finite etale W -> Z, Galois over X,Y. Put A=Gal(W/X),
-B_0=Gal(W/Y), G=<A,B_0>, and S=[W/G], with coarse curve B=W/G.
-Every invariant object in this proof is tested on this SAME W.
-No simultaneous Galois refinement was presumed for a coreless span.
+The [cored bridge](cored_orbifold_bridge.md) gives an actual simultaneous
+étale Galois refinement \(W\to Z\). Put \(A=\operatorname{Gal}(W/X)\),
+\(B_0=\operatorname{Gal}(W/Y)\), \(G=\langle A,B_0\rangle\),
+\(\mathcal S=[W/G]\), and \(\pi:W\to B=W/G\).
+Étale descent identifies the endpoint section spaces with the
+\(A\)- and \(B_0\)-invariants. Their intersection is the \(G\)-invariants,
+compatibly with multiplication.
 
-For each d, the endpoint spaces embed in H^0(W,omega_W^d) as the
-A-invariant and B_0-invariant spaces. This is etale descent, valid
-even when group orders are divisible by the characteristic. Their
-intersection is exactly the G-invariant space. Thus the shared
-canonical ring is R(S), respecting multiplication in every degree.
+Use the notation \(n=|G|\), \(R=\sum_P\delta_P[P]\), and
+\(K_W=\pi^*K_B+R\) of
+[Köck–Tait, *Faithfulness of Actions on Riemann–Roch Spaces*,
+Lemma2.1 and Corollary2.4](https://doi.org/10.4153/CJM-2014-015-2)
+(their curves \(X,Y\) are \(W,B\) here). Lemma2.1 states, for every
+\(G\)-invariant divisor \(D\),
+\[
+ \pi_*^G\mathcal O_W(D)
+   =\mathcal O_B\!\left(\left\lfloor\frac{\pi_*D}{n}\right\rfloor\right).
+\]
+Apply it to \(D=mK_W\). The paper identifies
+\(\mathcal O_W(mK_W)\simeq\Omega_W^{\otimes m}\) as \(G\)-sheaves,
+so this gives the stated ring. These are subsheaf equalities in the
+rational function field, hence preserve products. Corollary2.4 gives
+the dimension formula. Neither result requires tame ramification.
 
-Any G-invariant rational weight-d tensor on W descends to a rational
-tensor beta on B. Indeed separability identifies the rational canonical
-line with the pullback of that on B, so invariant coefficients are in
-k(B). At a point over b_i its valuation is
+## 2. Compatible reduced divisors
 
-    e_i ord_(b_i)(beta)+d delta_i.
+A compatible pair pulls back to one reduced divisor on \(W\), invariant
+under both deck groups and hence under \(G\). Its naturally linearized
+ideal descends along \(W\to\mathcal S\) to a reduced effective Cartier
+divisor. Conversely, such a divisor pulls back to a compatible pair;
+faithfully flat descent makes these operations inverse.
 
-Regularity is therefore precisely
-ord_(b_i)(beta)>=-floor(d delta_i/e_i); away from the exceptional locus
-it is the usual regularity condition. This gives the asserted graded
-section ring directly and the dimension formula on P^1.
+A reduced divisor on \(\mathcal S\) consists of \(a\ge0\) ordinary points
+and a subset of its exceptional residual gerbes. Their respective
+degrees are \(1\) and \(1/e_i\); enough ordinary points exist over the
+algebraically closed field. Pullback to \(X\) multiplies degree by
+\(n_X\). This proves the marking spectrum, the canonical-size criterion,
+and the smallest positive degree \(1/\max(1,e_i)\).
 
-The d=1 case was already proved in the retained
-[zero-one-form signature reduction](../../routes/global/CORED_ZERO_ONE_FORM_INTERSECTION_AND_WILD_SIGNATURE_REDUCTION.md).
-The full-weight formula is its direct valuation extension, not a claim
-to originate the canonical-divisor theory of wild stacks. Nothing here
-replaces a wild different contribution with its tame value.
+## 3. Zero shared one-forms
 
-## 2. All compatible reduced divisors descend
+Put \(D_1=\lfloor\pi_*R/n\rfloor\). Since it is effective, vanishing
+of \(H^0(B,\Omega_B(D_1))\) forces \(B=\mathbf P^1\) and
+\(\deg D_1\le1\). In characteristic \(p\ge3\), a wild inertia group has
+\(\delta\ge(e-1)+(|I_1|-1)>e\). Thus there is at most one wild point,
+with \(1<\delta/e<2\).
 
-Suppose f*D_X=g*D_Y. Their further pullbacks to W are the SAME reduced
-divisor D_W, since W -> X,Y are etale. Its finite point set is invariant
-under A and B_0, hence G. Its ideal, with its natural G-action, descends
-along the etale G-torsor W -> S to an effective Cartier divisor D_S.
-It is reduced because that property can be checked after etale base
-change. Conversely every reduced D_S pulls back to compatible reduced
-divisors on the two endpoints. The correspondence is bijective by
-faithfully flat descent of the ideals.
+Set \(h=2g(X)-2\). The atlas Hurwitz formula is
+\[
+ h/n_X=-2+\sum_i\delta_i/e_i.
+\]
+In the tame case its smallest positive value is \(1/42\): order the
+three branch indices to obtain \((2,3,7)\); four points give minimum
+\(1/6\) (four indices2 give zero), and five or more give at least \(1/2\).
 
-A reduced divisor on S consists of m distinct ordinary points and an
-arbitrary subset I of its finitely many exceptional residual gerbes.
-There are enough ordinary points for every m>=0 over an algebraically
-closed field. An ordinary point has degree one; an exceptional gerbe
-has degree 1/e_i. Pullback along X -> S multiplies degree by n_X;
-in particular e_i divides n_X and that fiber has n_X/e_i points.
-This proves the exact marking-degree spectrum.
+With one wild point, put \(c=\delta-e\) and let \(m_1,\ldots,m_t\)
+be the tame orders. Then
+\[
+ h/n_X=t-1+c/e-\sum_j1/m_j.
+\]
+Positivity forces \(t\ge1\). For \(t\ge3\) the right side exceeds
+\(1/2\); for \(t=2\) outside \((2,2)\) it exceeds \(1/6\).
+In the \((2,2)\) case, \(h=(n_X/e)c\), so \(c\mid h\), while
+\(c=\sum_{i\ge1}(|I_i|-1)-1\equiv-1\pmod{p-1}\).
 
-Since deg(omega_S)=(2g(X)-2)/n_X=(2g(Y)-2)/n_Y, its membership in
-the displayed spectrum is exactly the simultaneous canonical-size
-condition. The minimum nonzero stack divisor degree is
-1/max(1,e_1,...,e_r). This gives the immediate nonexistence test.
+For a jointly minimal source, \(Z=W/(A\cap B_0)\), so
+\(\deg(Z/Y)=[B_0:A\cap B_0]\le[G:A]=n_X\).
+This transfers each atlas bound to that source degree.
 
-This divisor statement needs no torsion or finite-field hypothesis.
-Using such a marking to construct a tensor by killing omega(-D) DOES
-need the separate torsion hypothesis; it is automatic over Fbar_p,
-as in the canonical-marked-quotient theorem.
+## 4. The two large genus-nine signatures
 
-## 3. The large fixed-genus signatures as tests
+For \((e_w,\delta_w,e_t)=(1000,1143,7)\) or \((3000,3143,21)\),
+the canonical degrees are \(1/7000\) and \(1/21000\). Each is one
+seventh of the smallest exceptional point degree. The wild fibers on
+\(X\) have112 points, excluding a compatible marking of size16.
 
-The [checked two-branch atlas theorem](../shared_tensors/fixed_x_two_branch_bound.md)
-retains the two tuples in the statement as necessary possibilities,
-not realized examples. The associated canonical degrees are
-
-    -2+1143/1000+6/7=1/7000,
-    -2+3143/3000+20/21=1/21000.
-
-They are respectively one seventh of the smallest exceptional point
-degrees 1/1000 and 1/3000. The wild fibers on X both have 112 points;
-the tame fibers have 16000 points, and an ordinary fiber has n_X points.
-No nonempty compatible marking can have only 16 points.
-
-For the first tuple the dimension in weight d is
-
-    max(0,1+floor(143d/1000)-ceil(d/7)).
-
-It vanishes for 1<=d<7, and at d=7 it equals one. Having dimension
-at least two requires
-floor(143d/1000)-ceil(d/7)>=1. The left side is at most d/7000,
-so d>=7000 is necessary; equality d=7000 attains one and gives two
-sections. This proves the two claimed minimal weights.
-
-For the second tuple replace the floor denominator by 3000 and the
-ceiling denominator by 21. At 1<=d<21 the floor is zero and the
-ceiling one; at d=21 both are one. The difference is at most d/21000,
-and at d=21000 it is exactly one. The minimal weights are thus 21
-and 21000. An exact rational/integer enumeration through weight21000
-independently checks these arithmetic minima, but the inequalities
-just given prove them without a finite-search cutoff.
-
-## What this changes, and what it does not
-
-The missing marking hypothesis is not merely unproved in these large
-cored cases: the specified core signatures would forbid it. Trying
-to manufacture a compatible canonical-size reduced marking in those
-cases cannot close the argument. A useful extension must retain the
-actual allowed marking sizes or higher tensor weights instead.
-
-This does not rule out another route to excluding the signatures, and
-it says nothing about clump existence for coreless spans. It also does
-not claim that an arbitrary common quotient is the full core quotient:
-the G=<A,B_0> condition is what ensures every compatible divisor descends.
+In the first case the weight-\(m\) dimension is
+\[
+ \max(0,1+\lfloor143m/1000\rfloor-\lceil m/7\rceil).
+\]
+It is zero for \(1\le m<7\), and one at \(m=7\). The difference of
+floor and ceiling is at most \(m/7000\), so two sections require
+\(m\ge7000\), with equality attained. Replacing denominators1000,7
+by3000,21 gives the second pair of minima21,21000.

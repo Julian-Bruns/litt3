@@ -2,7 +2,7 @@
 """Exact finite certificate for the genus-two (2,4,6), degree-24 obstruction.
 
 Pure Python 3; no packages, floating point, databases, or external files.
-Run: python3 degree24_certificate.py
+Run: python3 scripts/orbifolds/verify_triangle246_monodromy.py
 
 It enumerates ALL transitive pairs (a,b), up to simultaneous conjugation,
 with cycle types a=2^12, b=4^6, ba=6^4; verifies deck groups; and verifies

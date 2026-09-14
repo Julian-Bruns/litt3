@@ -1,4 +1,4 @@
-# The third-order projection and a uniform 32-dimensional atlas space
+# The Bol projection and the horizontal 32-dimensional atlas space
 
 Fix ANY geometric dormant oper on the genus-nine curve of
 `scalar_hermitian_data`. Put L_r=delta^2-P, and let W be its rank-two
@@ -41,9 +41,10 @@ can be smaller than ker Q_r; their dimension difference is h0(W(8O)).
 Neither (2) nor (3) asserts an atlas exclusion or equality with the entire
 stable sieve space for every oper.
 
-Status: proved; the exact-complex and full-tensor derivations passed a
-bounded independent prose audit. Auditor: cohomological_ode_comparison_audit,
-2026-09-07. Verdict PASS; no remaining objections. Explicit absolute
-Frobenius coefficient conventions are essential.
+Version2. Status: proved. The exact complex is the fixed-curve
+specialization of the [intrinsic Bol complex](../projective_connections/dormant_bol_complex.md),
+whose local exactness passed a bounded medium audit on2026-09-14.
+The full-tensor derivation passed the independent audit by
+cohomological_ode_comparison_audit,2026-09-07.
 [Audit metadata/reference](../../Research/audits/COHOMOLOGICAL_ODE_COMPARISON_2026_09_07.md).
 [Proof](../../Proofs/atlases/dormant_differential_projection.md).

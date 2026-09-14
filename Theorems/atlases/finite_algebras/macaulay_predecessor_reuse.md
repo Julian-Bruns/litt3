@@ -30,5 +30,5 @@ v variables linear. This applies over every one of the18 exact coefficient
 fields. It does not itself implement fast arithmetic in those fields or
 prove a bounded degree B sufficient to exclude an atlas.
 
-Status: author proof,2026-09-07. Implementation validation pending.
+Status: author proof,2026-09-07; F25 implementation checks recorded in the proof.
 [Proof](../../../Proofs/atlases/finite_algebras/macaulay_predecessor_reuse.md).

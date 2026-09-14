@@ -50,7 +50,7 @@ for index,path in work:
             assert code==0 and (toric/'model.json.gz').exists(),'toric chart not certified'
         unit=out/'unitroots'
         if not (unit/'result.json').exists():
-            code=run('toric_prym_unit_roots.py',[toric/'model.json.gz',path,unit,
+            code=run('toric_prym_unit_roots.py',[toric/'model.json.gz',unit,'--cartier-result',path,
                 '--digits','2','--seconds','180'],out/'unitroots.log',200)
             assert code==0 and (unit/'result.json').exists(),'unit roots not certified'
         values=json.loads((unit/'result.json').read_text());test=sieve(values['coefficients'],2)

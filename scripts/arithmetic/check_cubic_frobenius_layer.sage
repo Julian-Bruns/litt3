@@ -4,7 +4,7 @@ Derivation independently audited2026-09-07; a matrix rank is not a cover exclusi
 from pathlib import Path
 import json, re
 root=Path(__file__).resolve().parents[2]
-source=(root/'routes/global/76_EXPLICIT_R3_REDESIGN_CERTIFICATE.sage').read_text()
+source=(root/'scripts/arithmetic/fixed_pair_frobenius.sage').read_text()
 k=GF(25,'a',modulus=PolynomialRing(GF(5),'z')([2,4,1]));a=k.gen()
 R=PolynomialRing(k,'x');x=R.gen()
 match=re.search(r'\bfX = \((.*?)\n\)',source,re.S)

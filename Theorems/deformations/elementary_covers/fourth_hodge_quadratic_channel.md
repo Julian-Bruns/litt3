@@ -1,6 +1,6 @@
 # The quadratic fourth-Hodge obstruction at a compatible reference
 
-Version4,2026-09-13. The general quadratic formula and the additional
+Version5,2026-09-14. The general quadratic formula and the additional
 uniform nodal cancellation below have independent focused audits.
 This concerns one homogeneous channel, not a fifth-lift theorem.
 
@@ -99,11 +99,14 @@ quadratic differential gamma_R in the primary annihilator with
 
 Here s is AFTER coefficient-Frobenius transport; scaling an original
 source by c instead gives c10 dependence. The proof specifies the
-original AS basis, kernel jet and dual test. It also records a nonzero
-jet which passes the COMPLETE fourth-obstruction quotient modulo
-(f)+J5, using the actual additive comparison, marked involution and
-audited degree-four cross map. Its25 kernel completions must still
-kill18 remaining obstruction coordinates. No complete W4 lift,
-W5/W6 lift, rank125 bootstrap or geometric counterexample is asserted.
+original AS basis, kernel jet and dual test. The signed low-quotient
+statement in Version4 requires correction: for the convention
+rho(S+xi)=rho(S)-Psi(xi), it is the REFLECTED jet -H# which passes
+E4 modulo(f)+J5. The positive jet has a nonzero degree-three residual.
+Both entire25-parameter completion families are now excluded by the
+[audited fourth-obstruction functional](rank125_fourth_exclusion.md),
+with values1+2t2 and4+2t2 respectively. This does not invalidate the
+homogeneous Q formula or its nonzero geometric residue. No W5/W6 lift,
+rank125 bootstrap or unmarked common-cover solution is asserted.
 
 [Proof and evidence](../../../Proofs/deformations/elementary_covers/fourth_hodge_quadratic_channel.md).

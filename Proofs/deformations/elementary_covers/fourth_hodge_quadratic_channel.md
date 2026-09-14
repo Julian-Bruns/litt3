@@ -1,6 +1,6 @@
 # Proof of the compatible-reference quadratic formula
 
-Version4,2026-09-13. Independent geometric audits PASS; no outstanding
+Version5,2026-09-14. Independent geometric audits PASS; no outstanding
 objection for the hypotheses in the
 [statement](../../../Theorems/deformations/elementary_covers/fourth_hodge_quadratic_channel.md).
 The new uniform result below concerns the actual genus3 nodal family.
@@ -412,13 +412,17 @@ symbol convolution. A completion change in J8 has function degree<=4,
 so the same loss0/1/2 argument proves independence of the displayed
 component from EVERY such completion.
 
-### The first low quotient really can vanish
+### The first low quotient: corrected actual-source sign
 
 In the principal original weighted relations s_i5=-tau*2^(j_i)*s_i,
-the covector for this dual test gives t*s on the additive first carry.
-Together with the actual quadratic it is t*s+(4+t+3t²)s², with nonzero
-root s*=3+3t+3t². The returned source adjustment also cancels every
-other degree1..3 equation. Under the established integral equivariant
+the covector for this dual test gives t*s on the POSITIVE multiplier
+carry. In actual source coordinates X3=X3^0+n and the convention
+rho(S+xi)=rho(S)-Psi(xi), the additive carry has the NEGATIVE sign.
+The earlier script tested carry+Q rather than -carry+Q. Its root
+s*=3+3t+3t² therefore belongs to the reflected actual jet. The correct
+scalar equation is -t*s+(4+t+3t²)s², with root -s*. Reversing the
+entire adjusted jet also cancels all other degree1..3 equations.
+Under the established integral equivariant
 additive comparison, these are the COMPLETE E4 equations modulo
 (f)+J4: source order>=5 puts ordinary terms and every mixed5D correction
 in J5, while only q2*H5 can carry as low as degree3. All higher scalar
@@ -426,7 +430,8 @@ terms and q2*H6 or higher carry into J4 or above. The extra degree16
 AS trace has base-independent T8=-c_i^-2 and its loss1 term vanishes
 by the same residue identities. This proves a low quotient, not W4.
 
-The exact source jet at that adjusted point is recorded using field
+For clarity retain the historical name H# for the POSITIVE listed jet,
+using field
 codes [m]=m0+m1*t+m2*t², m=m0+5m1+25m2:
 
     H5: (3,1,1):12, (1,0,4):29, (1,1,3):16, (1,2,2):58,
@@ -435,15 +440,17 @@ codes [m]=m0+m1*t+m2*t², m=m0+5m1+25m2:
     H7: (1,2,4):90, (1,3,3):11, (1,4,2):88,
         (3,0,4):43, (3,1,3):107.
 
-Every actual kernel completion of this jet passes that low quotient.
-There are25 free completion coordinates in Ann(f) intersect J8.
+Every actual kernel completion of -H# passes that low quotient. The
+positive H# has residual -2*t*s*=1+4t² in the critical degree-three
+test. There are25 completion coordinates in Ann(f) intersect J8 in
+each family. The homogeneous quadratic is unchanged by reflection.
 
 ### One more quotient: every completion passes modulo J5
 
 The actual marked involution (u,v,kappa,w)->(u,-v,kappa,-w) acts
 on the scalar source and normal modules as MINUS deck inversion.
 The full compatible pulled reference is equivariant. Its scalar primary
-f is even to all orders, and the odd jet H# therefore has an odd
+f is even to all orders, and the odd jet -H# therefore has an odd
 kernel completion. Such a completion is fixed by the actual involution.
 The complete E4 scalar, including the additive carry, is consequently
 odd modulo(f). After killing its already-vanishing low quotient, no
@@ -461,20 +468,32 @@ kernel of q2, of dimension9, paired with the fixed H5#. Its projection
 to degree4 modulo q2 is ZERO on all9 basis vectors. This was computed
 from the actual residue symbol and independently rechecked by generic
 finite-field elimination in
-[the degree-four cross checker](../../../Research/audits/check_rank125_grade4_cross_20260913.py).
+[the degree-four cross checker](../../../scripts/deformations/rank125/verify_quadratic_cross_map.py).
 Higher completion terms contribute only in J5 or above. There is no
 hidden f4 correction: eliminating an odd degree-three term introduces
 f4 times a linear source only in degree5; eliminating a degree-four
 cross term introduces its f4 correction only in degree6.
 
-Thus ALL25 completions satisfy E4=0 modulo(f)+J5. The residual
+Thus ALL25 completions of -H# satisfy E4=0 modulo(f)+J5. The residual
 (J5+(f))/(f) has dimension18 (successive degrees5,6,7 have dimensions8,6,4).
-Its actual value is not computed. This is not an actual W4 witness or
-an exclusion of the completion family. The
+The new
+[full fourth exclusion](rank125_fourth_exclusion.md) evaluates a
+functional on this residual, giving4+2t²!=0 on the entire reflected
+family. The positive family is excluded as well, with value1+2t².
+These replace the former claim that the residual was wholly unknown.
+The
 [independent geometric audit](../../../Research/audits/RANK125_NONZERO_QUADRATIC_AUDIT_2026_09_13.md)
 records both the integral-log calculation and the full equivariance
 argument.
-No complete W4 lift or counterexample to sixth-level descent follows.
+No W4 lift on either family or counterexample to sixth-level descent
+follows. The new independent
+[additive audit](../../../Research/audits/HIGH_KERNEL_ADDITIVE_AUDIT_2026_09_14.md)
+and [residue audit](../../../Research/audits/HIGH_KERNEL_RESIDUE_AUDIT_2026_09_14.md)
+explain both sign corrections. The returned residue implementation
+lost the base Serre sign: the six base pairings are +I, while the
+three-variable AS top trace is -U. Its scalar Q is consequently the
+negative of the correctly normalized old Q. The returned full value
+1+3t² is NOT retained.
 
 ### Provenance and independent verification
 

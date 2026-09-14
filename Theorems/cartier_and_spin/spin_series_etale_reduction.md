@@ -19,14 +19,13 @@ quotients are genuine etale spin quotients of hyperbolic curves, not
 ramified maps to rational or elliptic curves. The integer8 bounds tower
 steps only; it does not bound their cover degrees or computational cost.
 
-IMPORTANT REMAINING GAP: it is not proved that S_n contains either
-endpoint field, that h_n descends to S_n, or that phi_n is an isomorphism.
-One must not replace the original two legs by presumed maps S_n->X,Y.
-The theorem does not exclude the original span or the no-clump case.
+This statement alone does not assert descent of the endpoint fields
+or h_n. Under additional endpoint hypotheses,
+[effective spin probes](spin_probe_common_cover_reduction.md) give both
+after a bounded refinement. Neither result excludes the original span.
 
 Version1,2026-09-08. Fresh medium audit PASS, /root/audit_eight_closure_spin_reduction,
 2026-09-08. No mathematical objection; inverse-isomorphism wording clarified.
 [Audit record](../../Research/audits/EIGHT_CLOSURE_SPIN_REDUCTION_AUDIT_2026_09_08.md).
-Not Lean verified.
 [Definitions](../../Definitions/spin_cartier_roots.md) ·
 [Proof](../../Proofs/cartier_and_spin/spin_series_etale_reduction.md).

@@ -1,10 +1,8 @@
-# Proof: exact local absorption separated from global disjointness
+# Proof: matching local extensions and preserving a trivial intersection
 
 [Statement](../../Theorems/examples/coreless_exact_form_family.md).
-User-supplied Pro construction, generalized by /root,2026-09-08.
-The construction and parameter extension have a medium prose audit PASS;
-the last two corollaries below are author arguments. No simultaneous
-Galois closure of the TWO endpoint maps is assumed.
+The seed construction was supplied by the user via Pro and generalized
+on2026-09-08; its original independent audit is linked in the statement.
 
 ## 1. The seed and its differential
 
@@ -26,7 +24,7 @@ y=2z^-3+.... The projections have degree5, are tame of index3 at
 the finite special zero, wild of index5 at the pole, and unramified
 elsewhere. The different at the pole is12, from ord(dx)=2 and pole5.
 
-## 2. Endpoint geometry for EVERY allowed a
+## 2. Endpoint geometry
 
 E:k(x,u), u^5-u=2x^2 is a separable degree-five Artin--Schreier
 cover of the x-line, since the pole order of 2x^2 is2. Its hyperelliptic
@@ -47,7 +45,7 @@ points have order a-1, and there are no other zeros or poles of dx.
 Its canonical degree is8(a-1), giving genus4a-3. Symmetry proves this
 for Y. Both exact forms are nonzero, and match on the specified L.
 
-## 3. All completed factors give BOTH etale maps
+## 3. Matching completions give both etale maps
 
 At A, y vanishes. Hensel's lemma supplies b in S_A with
 b^5-b=2y^2. Then xy-b satisfies U^5-U=2x^2. That polynomial defines
@@ -113,7 +111,7 @@ orders at most n_c+4<=5n_c, and infinity order at most
 max(n_infinity-4,1)<5n_infinity. Summing yields strictly smaller
 rational-function degree, a contradiction. Hence M=k.
 
-## 5. The ACTUAL endpoint intersection remains k
+## 5. Disjoint extensions preserve the trivial intersection
 
 The seed's degree-five minimal polynomial over k(x) is
 
@@ -133,52 +131,51 @@ Its intersection with the A5 Galois closure of S/k(x) is therefore
 trivial over k(x). Consequently S and K_X are linearly disjoint;
 the analogous statement holds for K_Y over k(y).
 
-For h in K_X intersect K_Y inside L, its monic minimal polynomial
-over S remains the one over k(x), by this linear disjointness; the
-same polynomial is its minimal polynomial over k(y). Its coefficients
-lie in their intersection k. Algebraic closedness gives h in k.
+Use the following field observation. If F1,F2 are subfields of M with
+F1 intersect F2=k, and finite extensions A_i/F_i are each linearly
+disjoint from M, then A1 intersect A2=k in their common compositum.
+Indeed, for h in the intersection its monic minimal polynomial over M
+is also its minimal polynomial over each F_i. Its coefficients lie in k,
+so h lies in the algebraically closed field k. Applying this with
+M=S, F1=k(x), F2=k(y), A1=K_X and A2=K_Y proves the assertion.
 
 Also [SK_X:K_X]=5 and L=SK_X(s), with s^a in SK_X. Since roots of
 unity are present, [L:SK_X] divides a; hence both leg degrees divide5a.
 
-## 6. Author corollaries and what they do NOT repair
+## 6. Sharpness, gonality and coprime refinements
 
-The case a=3 is also a GLOBAL sharpness example for
-[shared_tensor_core](../../Theorems/shared_tensors/shared_tensor_core.md): simple zeros
-force a core, but double zeros already need not, even for exact forms.
-The common one-form generates the shared canonical ring, so its primitive
-weight is1. By [coreless_connection_spectrum](../../Theorems/projective_connections/coreless_connection_spectrum.md),
-the a=3 example has NO common regular projective connection, whereas
-the a=9 example DOES have such connections and a dormant one. Thus the
-same construction works on both sides of that distinction; no universal
-repair based on either exactness or connection existence follows.
+At a=3 the shared form has double zeros, giving sharpness of the
+[shared simple-root criterion](../shared_tensors/shared_tensor_core.md).
+It generates the shared canonical ring and has primitive weight1.
+The [connection spectrum](../projective_connections/coreless_connection_spectrum.md)
+then excludes a common regular projective connection for a=3 and
+supplies a common dormant one for a=9.
 
-For a=3 put h=x/r. Directly x=u h^3, r=u h^2, and
-u^4-2u h^6-1=0. The pole divisor of h consists of the point above
-P_0 and the three points above O, all simple. Thus deg h=4.
-A degree-three pencil would generate the function field together with
-h, since their degrees are coprime. Castelnuovo--Severi would then
-give genus at most(3-1)(4-1)=6, contrary to genus9. These endpoints
-are not the fixed trigonal genus-nine X.
+For a=3 put h=x/r. Then x=u h^3, r=u h^2 and
 
-Now let ell be prime and ell not divide5a. Connected cyclic etale
-degree-ell endpoint covers exist from nonzero ell-torsion line bundles.
-Their fields A'/K_X and B'/K_Y are each linearly disjoint from L,
-because [L:K_X] and [L:K_Y] divide5a. In L'=LA'B', the two maps
-from its smooth curve to the new endpoints are etale by base change.
-If h lies in A' intersect B', its minimal polynomial over L is both
-its polynomial over K_X and over K_Y, by the two disjointness statements.
-Its coefficients lie in K_X intersect K_Y=k, so h in k. This proves
-corelessness, with genus and zero counts multiplied as in the statement.
-It does not presume that [L':L]=ell^2 rather than ell.
+    u^4-2u h^6-1=0.
 
-Therefore even matching genus225 or having a zero count divisible by7
-is not, by itself, a viable repair of the false order-eight lemma.
-The active root endpoints also have a SPECIFIC cyclic7 action ramified
-at all zeros, and a genus29 endpoint; neither is supplied by this family.
-No claim that imposing these extra data forces a core is justified.
+The poles of h are the point above P_0 and the three points above O,
+all simple, so deg h=4. A degree-three pencil, together with h, would
+generate K_X because the degrees are coprime.
+[Castelnuovo–Severi, as stated in Poonen, Proposition2.1](https://math.mit.edu/~poonen/papers/gonality.pdf#page=3),
+would give g(X)<=(3-1)(4-1)=6. A degree-two pencil together with the
+degree-three map X->E would instead give g(X)<=2*0+3*2+2=8.
+Both contradict genus9; all maps here are separable in characteristic5.
+Thus the gonality is4.
 
-[Exact arithmetic check](../../scripts/common_covers/coreless_exact_form_family_certificate.sage)
-replays the field identities, fourth-derivative descent identity,
-discriminant and elementary parameter formulas. The prose above, not
-finite sampling, proves the assertions for all allowed n and all places.
+For arbitrary connected etale endpoint covers of degrees m_X,m_Y
+coprime to5a, their fields A'/K_X and B'/K_Y are each linearly
+disjoint from L. Indeed coprime degrees force the compositum degree
+to be their product. The field observation in Section5 now gives
+A' intersect B'=k for every compatible pair of embeddings. Each
+connected component of the common pullback has such embeddings and
+both projections are finite etale. Hurwitz and etale pullback give
+the genera and zero counts in the statement.
+
+Cyclic covers of any allowed degree m exist from line bundles of
+exact order m in Pic^0. Their connectedness follows from that exact
+order; primality is unnecessary.
+
+The [exact arithmetic check](../../scripts/examples/coreless_exact_form_family_certificate.sage)
+replays the seed identities, fourth-derivative identity and discriminant.

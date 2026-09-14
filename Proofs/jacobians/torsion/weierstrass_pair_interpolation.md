@@ -1,4 +1,4 @@
-# Proof: complete interpolation charts, not a generic-rank shortcut
+# Proof: interpolation at a Weierstrass pair
 
 [Statement](../../../Theorems/jacobians/torsion/weierstrass_pair_interpolation.md).
 Author /root,2026-09-08, incorporating the user's returned Pro argument
@@ -74,16 +74,10 @@ to one. The norm polynomial is monic of degree27 and divisible by
 zero at any finite T would require H=(x-t)^9, hence H7=H8^2 in
 characteristic five. For all135 pairs the certificate proves H7-H8^2!=0.
 The nonzero leading coefficient also excludes a residual point at O.
-Thus a target divisor cannot contain two such points. The additional
-540-triple rank check in the source agrees, but is not needed here.
-
-Root read all197 source lines before execution. The supplied final PASS
-guard only required135 pairs and zero norm candidates, even though its
-printed counts also showed zero unhandled ranks and smaller poles. The
-retained source strengthens that guard to require all those zero counts
-AND135 failures of the first norm condition. No observed result changed.
-Replay with that strengthened guard passed in0.32s on2026-09-08.
-Hashes and limitations are in the [replay record](../../../Research/computations/pro_three_point_replay.json).
+Thus a target divisor cannot contain two such points. The certificate
+requires rank18, exact pole27 and failure of the first norm condition
+for all135 pairs. Its [replay record](../../../Research/computations/pro_three_point_replay.json)
+retains the source hash and complete counts.
 
 ## 4. The nine-by-nine pair chart is complete after relabelling
 

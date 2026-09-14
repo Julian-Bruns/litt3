@@ -17,7 +17,6 @@ their conjunction, is a common-cover exclusion.
 
 Independent audit PASS, `/root/cartier_jet_and_atlas_towers_audit`,
 2026-09-07; no substantive objections.
-[Audit metadata](../../Research/audits/CARTIER_JETS_AND_ACYCLIC_TOWERS_AUDIT_2026_09_07.md)
-is reference-only. This family
-is a robustness test, not a replacement for the fixed Litt3 endpoints.
+[Audit](../../Research/audits/CARTIER_JETS_AND_ACYCLIC_TOWERS_AUDIT_2026_09_07.md).
+This family is a robustness test for the general atlas construction.
 [Proof](../../Proofs/examples/acyclic_atlas_towers.md).

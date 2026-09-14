@@ -2,7 +2,7 @@
 
 [Statement](../../Theorems/cartier_and_spin/fixed_x_cartier_eigenforms.md).
 Write X:y³=F(x) for the fixed curve. The
-[exact certificate](../../routes/global/GENUS9_CARTIER_EIGENFORM_SIMPLE_ZERO_TEST.sage)
+[exact certificate](../../scripts/arithmetic/fixed_x_cartier_eigenforms.sage)
 parametrizes all nonzero Cartier eigenforms and tests their norm divisors.
 
 ## 1. Cartier coordinates and complete chart coverage
@@ -97,9 +97,10 @@ of Ay+B at the points above x0. All those orders are nonnegative.
 A multiple zero of omega would therefore give a multiple root of R,
 contradicting (5) and the gcd test. This proves the theorem.
 
-## 4. Why this removes the entire shared-one-form case
+## 4. Ordinary partners with no common Jacobian factor
 
-Let V=f^*H^0(X,omega_X)∩g^*H^0(Y,omega_Y) for an actual
+Let Y be ordinary with Hom(JX,JY)=0, and let
+V=f^*H^0(X,omega_X)∩g^*H^0(Y,omega_Y) for an actual
 bi-etale span X←Z→Y. It is Cartier-stable by etale functoriality.
 Ordinarity of Y makes Cartier injective on V and hence
 bijective. If V!=0, an invertible semilinear operator over an algebraically
@@ -110,8 +111,9 @@ nonzero Cartier eigenform on X. By the theorem it has only simple zeros.
 The [audited simple-root/core theorem](../shared_tensors/shared_tensor_core.md)
 then forces a core and, by its low-zero logarithmic-form lemma, a
 positive-genus core. That gives a common positive-dimensional isogeny
-factor of JX and JY, contrary to Hom(JX,JY)=0 established for the fixed
-pair. Thus V=0.
+factor of JX and JY, contrary to Hom(JX,JY)=0. Thus V=0.
 
 The [original audit](../../routes/global/audits/GENUS9_ALL_NONZERO_EIGENVALUE_CARTIER_FORMS_SIMPLE_AUDIT_2026_09_06.md)
-passed, including an independent exact Sage replay.
+passed, including an independent exact Sage replay. The general partner
+corollary uses precisely the same argument; no genus or field-degree
+restriction on Y entered it.

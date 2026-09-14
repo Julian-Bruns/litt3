@@ -75,7 +75,7 @@ which cannot contain Q(ζ_3) (ramification at3); the intersection is Q.
 For abelian groups9>2(h−1) and9>h when2≤h≤5, proving the stated range.
 
 There is a useful independent arithmetic certificate, retained at
-[the three-prime checker](../../../routes/global/EXPLICIT_GENUS9_ENDOMORPHISM_FIELD_ABELIAN_PART_CERTIFICATE.sage).
+[the three-prime checker](../../../scripts/arithmetic/fixed_x_endomorphism_field.sage).
 For θ=π+25/π its polynomial has degree9 and squarefree factor degrees
 (9),(8,1),(7,2) at2,107,11. These imply transitivity, primitivity, and a
 transposition, hence Galois group S9. Its root field K^+ has no proper

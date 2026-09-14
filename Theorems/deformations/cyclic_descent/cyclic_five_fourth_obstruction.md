@@ -1,7 +1,7 @@
 # The selected defect-growing cyclic-five cover has no fourth lift
 
 Version1,2026-09-11. Six fresh complete replays and focused independent
-geometric audit PASS. Prose and exact arithmetic, not Lean verification.
+geometric audit PASS. Prose and exact arithmetic.
 
 Use the original marked genus-two/F625 pair of
 [explicit_genus_two_witt_obstruction](../explicit_genus_two_witt_obstruction.md),

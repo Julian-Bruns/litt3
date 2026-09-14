@@ -1,155 +1,106 @@
-# Proof: the horizontal differential retraction eliminates the extension
+# Proof: a differential retraction selects the extension candidate
 
-Canonical [statement](../../Theorems/atlases/semilinear_hermitian_lift.md).
-All extension classes include their specified end terms. F_C is absolute
-Frobenius; additive operations below are 5-semilinear on k-vector spaces.
+[Statement](../../Theorems/atlases/semilinear_hermitian_lift.md).
+Extension classes retain their specified end terms; F_C is absolute
+Frobenius, so its operation on cohomology is5-semilinear.
 
-## The rank-two necessity
+## Rank-two necessity and stability
 
-Given a normalized atlas form beta and V=E/O_C, the adjoint
-phi:E -> (F_C^*E)^vee tensor M induces the identity on the quotient M,
-because beta(-,F_C^*e)=q. Its restriction is therefore an isomorphism
+For a normalized atlas, E/O_C=V. Its adjoint induces the identity on M,
+since beta(-,F_C^*e)=q, and restricts to
+j:K~>(F_C^*V)^vee tensor M.
 
-    j:K -> (F_C^*V)^vee tensor M.
-
-In particular F_C^*V is K^vee tensor M. Its unique HN subline is
-omega tensor M, of degree 3kappa, and its quotient is M, of degree
-2kappa, where kappa=2g-2. If V had a subline R of degree at least
-kappa/2, then F_C^*R could not map nontrivially to M. It would lie
-in the HN subline. Since Frobenius preserves subbundles on a smooth
-curve, F_C^*R is saturated and must EQUAL that subline. This would give
-5 deg R=3kappa, impossible under the stated assumption. Thus V is stable.
-
-## The extension equation
-
-Apply Ext^1(M,-) to 0 -> O_C -> K -> T -> 0. Negative degrees give
-Hom(M,T)=0, and Ext^2 of bundles on a smooth curve vanishes. Hence
-
-    0 -> A --i--> U -> Ext^1(M,T) -> 0.                          (1)
-
-All lifts of eta are xi_lambda=xi_0+i(lambda), with lambda in A.
-Their middle bundles E_lambda contain the prescribed K and O_C.
-The quotient by O_C is V with its prescribed extension structure:
-its identification is unique because Hom(M,T)=0.
-
-Viewed as extensions of V by O_C, their classes satisfy
-
-    alpha_lambda=alpha_0+pi^*(lambda).                          (2)
-
-This follows either from the defining pullback/pushout description of
-Baer sum, or from upper-triangular transition matrices for the two-step
-filtration O_C subset K subset E. In the latter description, adding
-lambda changes only the top-right extension cocycle, which pulls back
-along pi when E is viewed as an extension of V.
-
-The desired adjoint phi is an isomorphism of the two exact sequences
-
-    0 -> K -> E_lambda -> M -> 0,
-    0 -> F_C^*V^vee tensor M -> F_C^*E_lambda^vee tensor M -> M -> 0,
-
-with kernel map j and quotient map the identity. Such a morphism
-exists exactly when their extension classes agree after identifying
-kernels. It is automatically an isomorphism. By (2) that equality is
-
-    xi_0+i(lambda) = j^-1_*D(alpha_0) + j^-1_*D(pi^*lambda),
-
-which is (*). Defining D as the actual dual exact sequence fixes any
-Cech sign convention; dualization must not be silently replaced by
-unsigned transposition of a representative matrix.
-
-The adjoint defines a nonsingular beta with the required column q.
-The audited atlas criterion supplies automatic transversality and an
-actual finite etale atlas. Conversely any such lift gives (*).
-
-Riemann--Roch and the line filtration of K give dim A=5(g-1),
-dim U=12(g-1); their difference is 7(g-1). Replacing xi_0 by
-xi_0+i(mu) replaces b by b+T_j(mu)-i(mu), exactly the translation
-lambda -> lambda-mu, proving independence of this choice.
+Put kappa=2g-2. The HN subline of F_C^*V=K^vee tensor M has degree
+3kappa, with quotient M of degree2kappa. A subline R of V with
+deg R>=kappa/2 pulls back into this HN line: its degree exceeds2kappa,
+so its projection to M is zero. Frobenius preserves saturated lines
+on the smooth curve, hence F_C^*R equals that line. Then5deg R=3kappa,
+contrary to5 not dividing kappa. Thus V is stable.
 
 ## The differential retraction
 
-Tensor j by M^-1 to identify J=K tensor M^-1 with F_C^*(V^vee).
-The latter has the canonical connection nabla with zero p-curvature.
-Transfer that connection to J. The filtration of K gives
+After canceling M, transport the canonical connection to
+J=K tensor M^-1=F_C^*(V^vee). Its filtration is
 
-    0 -> N=M^-1 --i--> J --q--> Q=omega^-1 tensor M^-1 -> 0,
+    0 -> N=M^-1 --i--> J --q--> Q=omega^-1 tensor M^-1 -> 0.
 
-and Q tensor omega=N. Its second fundamental map
+Because Q tensor omega=N, the second fundamental map
+c=(q tensor1)nabla i is an endomorphism of the line N, hence a scalar.
+It is nonzero. Otherwise N is horizontal and descends under Frobenius by
+[Katz, Theorem5.1 (Cartier descent)](https://www.numdam.org/item/PMIHES_1970__39__175_0.pdf#page=17).
+Its degree -2kappa would be divisible by5, contradicting the hypothesis.
 
-    c=(q tensor1)nabla i:N -> N
+The differential operator R=c^-1(q tensor1)nabla:J->N restricts to
+the identity on N. It is a morphism of sheaves of k-vector spaces,
+so P_j=H1(R) retracts i:H1(N)->H1(J). This can be computed on Čech
+cocycles of an affine cover; O_C-linearity is unnecessary.
 
-is O_C-linear: the Leibniz correction vanishes because qi=0. Since C
-is connected and projective, c is multiplication by a scalar in k.
-This scalar is nonzero. Otherwise nabla preserves N; Cartier descent
-would make N a Frobenius pullback, forcing its degree -2(2g-2) to be
-divisible by5, contrary to the hypothesis.
+For alpha in Ext^1(V,O_C)=H1(V^vee), the class D_j(alpha), after the
+same cancellation of M, is its signed Frobenius pullback in H1(J).
+Its cocycle entries in canonical frames are fifth powers, hence horizontal.
+R annihilates them. Therefore
 
-For this particular line-subbundle assertion, descent can also be seen
-locally without a general theorem: in a canonical horizontal frame of
-F_C^*(V^vee), a saturated line has a generator (1,h) after choosing a
-unit coordinate and rescaling. Invariance under the connection forces
-dh=0. Over the perfect field k, h is a fifth power in the function
-field, and its fifth root is regular by its nonnegative valuations.
-The resulting local lines in V^vee glue by uniqueness. This proves
-the divisibility assertion used above.
+    P_j D_j(alpha)=0.                                     (3)
 
-Define the first-order k-linear sheaf differential operator
+## The canonical candidate and its exact criterion
 
-    R=c^-1(q tensor1)nabla:J -> N.
+Applying Ext(M,-) to0->O_C->K->T->0 gives
 
-Its restriction to N is the identity. Thus the induced map
-P_j=H1(R):H1(J)->H1(N) is a retraction of i. Although R is not
-O_C-linear, it is a morphism of sheaves of k-vector spaces. Coherent
-cohomology is the same underlying sheaf cohomology, so this induced map
-is legitimate. It can equivalently be computed on Cech cocycles for an
-affine open cover and its affine intersections.
+    0 -> A --i--> U --h--> Ext^1(M,T) -> 0,
 
-## Why all dual Frobenius extensions are killed
+since Hom(M,T)=0 and Ext^2 vanishes on a smooth curve. The retraction
+splits U=i(A) direct-sum ker P_j; thus h|ker P_j is an isomorphism.
+This proves formula(1) and its independence of the chosen xi_0.
 
-If alpha represents an extension of V by O_C, its Cech class lies in
-H1(V^vee). Frobenius pullback followed by duality and tensoring by M
-gives, after j and cancellation of M, the signed Frobenius pullback
-class in H1(F_C^*(V^vee)). In a local frame its cocycle entries are
-fifth powers. Such sections are horizontal for the canonical connection.
-Consequently R annihilates these cocycles, regardless of the duality sign:
+Every lift xi of eta has a middle bundle E with E/O_C=V. Its extension
+identification is unique because Hom(M,T)=0; let alpha_xi be its class
+in Ext^1(V,O_C). The required adjoint is exactly an isomorphism between
 
-    P_j j^-1_*D(alpha)=0.                                  (3)
+    0 -> K -> E -> M -> 0,
+    0 -> (F_C^*V)^vee tensor M -> (F_C^*E)^vee tensor M -> M -> 0,
 
-In particular P_j T_j(lambda)=0 for every lambda. Applying P_j to
-the extension equation (*) therefore forces
+inducing j on the kernel and the identity on M. Classification of
+extensions makes this equivalent to xi=D_j(alpha_xi). Such a morphism
+is automatically invertible. Its form has the prescribed normalized
+column, and the Hermitian atlas criterion gives global etaleness.
 
-    lambda=P_j b=-P_j xi_0.                                (4)
+By(3), every compatible xi lies in ker P_j, hence must equal xi_*.
+Conversely equality(2) supplies the required adjoint for E_*.
+This proves necessity, sufficiency and uniqueness of the candidate.
+The dual exact sequence defines the sign in D_j intrinsically.
 
-Conversely substituting (4) into (*) leaves exactly the residual (***)
-in ker P_j; its image under P_j is already zero. This proves necessity
-and sufficiency, uniqueness of the extension candidate, and the residual
-dimension dim U-dim A=7(g-1). It applies to every allowed torsion twist
-tau, since the two line bundles satisfy Q tensor omega=N regardless
-of tau. The projection is determined by the fixed j and markings, not
-claimed independent of changing those data.
+## Frobenius injectivity and the exact semilinear rank
 
-Replacing xi_0 by xi_0+i(mu) replaces (4) by lambda-mu, so the actual
-candidate extension class xi_0+i(lambda) does not change. The argument
-is pointwise in fixed geometric data; a relative construction on a
-nonreduced base requires its own justification.
+Riemann–Roch gives dim A=5(g-1) and dim U=12(g-1), hence residual
+dimension7(g-1). In coordinates xi=xi_0+i(lambda), the canonical
+candidate is lambda=-P_j xi_0. Baer sum gives
 
-## A useful rank bound
+    alpha_xi=alpha_0+pi^*lambda,
 
-Dualizing the quotient presentation of V gives
+so the semilinear coefficient map is T_j=D_j pi^*.
 
-    0 -> M^-1 -> V^vee -> omega -> 0.
+Write F=F_C and use B_1 in the notation of
+[Joshi, Theorem1.1](https://www.numdam.org/item/10.1016/j.crma.2004.02.019.pdf#page=2):
 
-Stability of the positive-degree V gives H0(V^vee)=0. Hence H0(omega),
-of dimension g, injects into H1(M^-1) as the exact kernel of pi*.
-The latter map has rank5(g-1)-g=4g-5. Since T_j factors through pi*,
-its rank is at most4g-5. Frobenius twists the kernel coordinates but
-does not change this dimension over the perfect field k.
+    0 -> O_C -> F_* O_C -> B_1 -> 0.
 
-## Exact remaining issue
+The theorem makes B_1 stable of rank4 and slope g-1. V is stable of
+rank2 at the same slope, so Hom(V,B_1)=0. Tensoring this sequence by
+V^vee and using the projection formula proves
 
-For genus nine, the40 extension variables are uniquely determined for
-each fixed V,pi,j; there are56 residual coordinates to test. They cannot
-be dismissed. The finite set of dormant rank-two classes still leaves
-continuous choices of quotient maps and identifications. This theorem
-supplies no atlas exclusion. Its explicit fixed-X implementation is
-`scalar_hermitian_reconstruction`.
+    F^*:H1(V^vee) -> H1(F^*(V^vee)) is injective.
+
+The source uses absolute Frobenius, as here. Thus D_j, which is this
+map up to its sign and the fixed kernel identification, is injective.
+No ordinarity hypothesis is needed.
+
+Dualizing eta yields0->M^-1->V^vee->omega->0.
+Stability gives H0(V^vee)=0; the connecting copy of H0(omega) is
+therefore exactly ker(pi^*), of dimension g. Hence
+
+    ker T_j=ker(pi^*),
+    rank T_j=rank(pi^*)=5(g-1)-g=4g-5.
+
+All twists tau are retained. For genus nine, the40 extension coordinates
+are determined before testing the56 residual coordinates; the scalar
+realization is [scalar_hermitian_reconstruction](scalar_hermitian_reconstruction.md).

@@ -4,8 +4,8 @@
 Author /root,2026-09-08. This is a condition on both maps from the same
 source, not a one-endpoint criterion presumed to exclude all covers.
 
-Tensor 0->O_(C_1)->F_*O_C->B_C->0 by L_1. The projection formula
-identifies its middle term with F_*L^p, and its map to B_C L_1 with the
+Tensor 0->O_(C_1)->F_*O_C->B_{1,C}->0 by L_1. The projection formula
+identifies its middle term with F_*L^p, and its map to B_{1,C} L_1 with the
 canonical connection, viewed in the kernel of twisted Cartier. Taking
 cohomology gives (1), because H1(C,L^p)=0: p(g-1)>2g-2. Serre duality
 and L_1^2=omega_(C_1) give h1(L_1)=h0(L_1)=h0(L). This proves all

@@ -1,8 +1,9 @@
 # Proof: finite-dimensional descent and the fixed divisor
 
 [Statement](../../Theorems/cartier_and_spin/alternating_spin_growth.md).
-Pro strict-growth argument supplied2026-09-08; root generalization and
-base-point-free consequence the same day. No independent audit claimed.
+The strict-growth input came from Pro. The generalization and
+base-point-free consequence are included in the
+[2026-09-08 bounded audit](../../Research/audits/SPIN_GROWTH_BOUNDARY_AUDIT_2026_09_08.md).
 
 ## 1. The actual tower and a finite-dimensional lemma
 
@@ -50,19 +51,9 @@ now proves assertion1. No primitive-existence assumption is added here.
 
 ## 3. The genus-two endpoint removes all base points at stage2
 
-Let q:T->Y be any connected finite etale Galois cover and L a line
-bundle of degree1 on Y. If h0(T,q^*L)>=2, then q^*L is globally
-generated. Its complete section space is Galois-stable, so its fixed
-divisor B is invariant. Since q is etale and k is algebraically closed,
-B=q^*B_0 for an effective integral divisor B_0 on Y.
-
-If B_0 were nonzero, deg B>=deg q=deg(q^*L). Removing B leaves a line
-bundle of degree at most0, with at most one independent section. That
-contradicts h0>=2. Hence B=0, proving the assertion for q.
-
-Apply this to Z_2->Y. Assertion1 gives r_2>r_1>=1, and a spin line on
-genus2 has degree1. Thus L_2 is globally generated. A pulled-back
-globally generated line stays globally generated, completing assertion2.
+Apply the [degree-one lemma](complete_section_quotients.md#2-global-generation-and-separability)
+to Z_2→Y: assertion1 gives r_2>r_1≥1, and a genus-two spin has
+degree1. Thus L_2 is globally generated, as are all its pullbacks.
 
 ## Boundary
 

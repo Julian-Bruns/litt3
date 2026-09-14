@@ -1,9 +1,8 @@
 # Proof: horizontal determinant and the exact active-curvature inverse
 
 [Statement](../../Theorems/projective_connections/nilpotent_scalar_model.md).
-Author /root,2026-09-07. Exact symbolic identities checked; no independent
-audit of this assembled proof. Both actual pullbacks are retained in
-the final application.
+The scalar identities are in characteristic five; Section2 holds in
+every odd characteristic.
 
 ## 1. Scalar curvature and its two intrinsic projections
 
@@ -29,41 +28,31 @@ They can also be read from horizontality of p-curvature and its determinant.
 
 ## 2. N equations, their exact length and infinity
 
-Regular projective connections form a torsor under H^0(omega²).
-It is nonempty: their local Schwarzian transition cocycle has obstruction
-in H^1(omega²)=0 by Serre duality. Choose r_* and a basis
-q_i=a_i(dt)^2, and put r=r_*+sum x_i a_i, where D(x_i)=0.
+Use Mochizuki,
+[*A Theory of Ordinary p-adic Curves*, II, Theorem2.3 and
+Definitions2.2,2.4](https://www.kurims.kyoto-u.ac.jp/~motizuki/A%20Theory%20of%20Ordinary%20p-adic%20Curves.pdf#page=66)
+(pp63,66–67), restricted to an unmarked smooth curve C. In his notation,
+V_C:S(C)→Q(C) is finite flat of degree p^N, its leading term is minus
+Frobenius, and N(C)=V_C^(-1)(0) scheme-theoretically. Choosing an origin
+r_* of S(C) and a quadratic basis q_i therefore gives
 
-Expand Delta as a polynomial in the x_i. Each coefficient is a regular
-10-differential and is horizontal by Section1. Its scalar coefficient
-belongs to k(C)^5. Its unique fifth root is a regular quadratic
-differential: valuations divide by5 and the transition factor
-(dt/du)^10 takes its unique fifth root (dt/du)^2.
-The horizontal regular10-differentials are therefore precisely the
-k-linear span of the independent q_i^5. Consequently
+    V_C(r_*+sum x_i q_i)=sum P_i(x) q_i^F,
+    P_i(x)=−x_i^p + terms of degree at most p−1.     (2)
 
-    Delta(dt)^10=sum P_i(x) q_i^5,
-    P_i(x)=−x_i^5 + terms of degree<=4.              (2)
+The relatively prime leading monomials x_i^p give the asserted Groebner
+basis and standard monomials. At infinity the homogenized equations
+require all x_i^p=0, so there is no projective solution. In characteristic
+five, q_i^F is represented by the horizontal tensor q_i^5 and V_C by
+Delta(dt)^10 from(1). Thus(2) is the required scalar coefficient
+identity over arbitrary parameter algebras, including nonreduced ones.
 
-This is a polynomial coefficient identity, not a claim that parameter
-variables themselves have fifth roots. It remains valid over nonreduced
-parameter algebras. Nilpotence is exactly all P_i=0.
-
-The leading monomials of −P_i are the relatively prime x_i^5. The
-Groebner product criterion makes these N equations a Groebner basis;
-their standard monomials have every exponent<5. The quotient has
-dimension5^N, proving the exact scheme length. Homogenizing to degree5,
-the hyperplane at infinity requires all x_i^5=0 and the homogenizing
-variable0, hence has empty projective support and is empty as a scheme.
-
-The same monic basis works over a polynomial target ring for equations
-P_i(x)=y_i, proving finite flatness of the scalar determinant map.
-The general result is classical: Mochizuki,
-[*A Theory of Ordinary p-adic Curves*](https://www.kurims.kyoto-u.ac.jp/~motizuki/A%20Theory%20of%20Ordinary%20p-adic%20Curves.pdf),
-ChapterII, Theorem2.3, pp63–67. Its proof derives the leading term
-−Frobenius, then finite flatness and the degree. Those pages were read
-completely here; Section1 supplies our direct characteristic-five version.
-No characteristic-zero lifting or ordinary-indigenous hypothesis is used.
+The affine torsor is natural under curve automorphisms:
+[Wakabayashi, Proposition2.8.1 and its preceding construction](https://arxiv.org/pdf/1411.1197v3#page=17).
+An automorphism acting trivially on H0(omega²) therefore acts by a
+translation b. If its order m is prime to p, then mb=0 forces b=0.
+For the genus-two hyperelliptic involution, H0(omega²)=Sym² H0(omega)
+and the action is trivial. Naturality of p-curvature and the Hodge
+projection also makes the square Hasse invariant fixed.
 
 ## 3. Active nilpotence determines its quartic, in both directions
 
@@ -139,22 +128,31 @@ does not assume a clump in advance: its common quartic supplies one.
 Nor does it identify a full deformation tangent space with a common
 tangent intersection or infer ordinariness.
 
-## 5. Source boundary retained while checked
+## 5. Collisions can meet curvature zeros
 
-The older Bouw–Wewers deformation-data source translation is not a proof
-input here. Hoshi explicitly documents the failure of their disjointness
-claim in [AppendixA, RemarkA.3.1(ii)–(iii)](https://www.kurims.kyoto-u.ac.jp/~yuichiro/rims1867revised.pdf);
-his PropositionA.5 independently gives the admissibility criterion used
-above. The relevant statements and source correction were read directly.
-The direct factorization and a characteristic-five example are checked in
-[the exact local and compact test](../../Research/notes/connections/nilpotent_zero_source_check.md).
-In particular, the pointwise statement above permits curvature order7:
-regularity and admissibility must not be conflated. No existing audited
-special case is removed on the basis of this new author proof.
+The overlap in div(s)=2D+5R actually occurs. In F5(t), put
 
-Bounded independent check: PASS, `/root/library_generalization_cleanup_max`,
-2026-09-07, for the divisor factorization including overlap and the
-local/compact source correction; [record](../../Research/audits/NILPOTENT_SPIKE_COLLISION_SOURCE_CHECK_2026_09_07.md).
-It was an existing agent, not a fresh whole-theorem audit; neither the
-genus-two corollary nor the other assembled statements acquire a whole
-audit claim from that check.
+    a=t^7/(1+t^11),
+    r=3a''/a+(a'/a)^2=(t^20+4t^9)/(1+t^11)^2.
+
+Then E(r)=3a and Delta(r)=0. At t=0 the connection is regular,
+the curvature entries have orders(6,7,5,6), and the saturated kernel
+meets the oper line simply. Thus the quartic order is7=2+5, with
+collision order1 and curvature-zero order5.
+
+This has a compact realization: pull back by t=u^5−u and then to
+w^4=(1+t^11)^2 u(u−1). Its smooth normalization has genus55; the
+quartic zero orders are2,40,7,12, all0 or2 modulo5, so Section3 gives
+a regular active nilpotent connection everywhere. The
+[bounded independent check](../../Research/audits/NILPOTENT_SPIKE_COLLISION_SOURCE_CHECK_2026_09_07.md)
+verifies the local matrices and all compact divisor orders.
+
+Hoshi [AppendixA, RemarkA.3.1(ii)–(iii)](https://www.kurims.kyoto-u.ac.jp/~yuichiro/rims1867revised.pdf)
+already records the failure of Bouw–Wewers' disjointness assertion;
+PropositionA.5 retains the admissibility criterion used above. Their
+marked extension can differ from this regular integral oper despite
+rational agreement. The present proof uses the direct factorization,
+not that unrestricted extension correspondence.
+
+Scoped check: PASS, /root/library_generalization_cleanup_max,2026-09-07,
+for the factorization with overlap and the local/compact example.

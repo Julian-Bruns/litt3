@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact interior Hasse--Witt / two-digit unit roots of an actual toric carrier.
+"""Exact interior Hasse--Witt and unit roots of an actual toric carrier.
 
 Lift the FINAL support-preserving toric equation, not its characteristic-five
 birational identities. beta_m[u,v]=[x^(m*v-u)]f^(m-1). The positive Frobenius
@@ -114,14 +114,66 @@ def verify_kummer_twist(data,model_path,cartier_path,k):
     return sign,list(map(int,scalar.polynomial().list()))
 
 
+def higher_precision(args,data,report,start):
+    from scripts.arithmetic.toric_ghost_coefficients import GhostCoefficients
+    d=data['field_degree'];diag=data['diagnostics']
+    digits=args.digits
+    previous=load_json(args.previous)
+    assert previous['status']=='complete' and previous['digits']==digits-1 and previous['field_degree']==d
+    assert previous['model_sha256']==hashlib.sha256(args.model.read_bytes()).hexdigest()
+    O=Zq(5**d,prec=digits,type='fixed-mod',names='b',
+         modulus=PolynomialRing(ZZ,'v')(data['modulus']),implementation='FLINT')
+    phi=WittFrobenius(O,data['modulus'],digits,d);WITT_FROBENIUS[O]=phi
+    f={tuple(e):O(c) for e,c in data['coefficients']};points=[tuple(v) for v in diag['interior_points']]
+    engine=GhostCoefficients(f,O,phi,digits,report)
+    matrices=[]
+    levels=[5**(digits-1),5**digits]
+    for m in levels:
+        rows=[]
+        for u in points:
+            rows.append([engine.coefficient(m-1,(m*v[0]-u[0],m*v[1]-u[1]),digits) for v in points])
+            report('requested_beta_row',power=m,row=len(rows))
+        matrices.append(matrix(O,rows))
+    U=matrices[1]*inverse_unit_matrix(frob_matrix(matrices[0],1))
+    encode=lambda c:list(map(int,c._flint_rep().list()))
+    save_json(args.out/'matrices.json.gz',dict(digits=digits,field_modulus=data['modulus'],dimension=8,
+        beta_levels=levels,beta_previous=[encode(c) for c in matrices[0].list()],
+        beta_current=[encode(c) for c in matrices[1].list()],
+        unit_matrix=[encode(c) for c in U.list()],statistics=engine.statistics()))
+    N=positive_norm(U,d);poly=N.charpoly('T');assert all(phi(c)==c for c in poly)
+    coefficients=[]
+    for c in poly:
+        a=encode(c);assert all(v==0 for v in a[1:]);coefficients.append(a[0] if a else 0)
+    assert [c%(5**(digits-1)) for c in coefficients]==previous['coefficients']
+    result=dict(status='complete',digits=digits,field_degree=d,coefficients=coefficients,
+        model=str(args.model.resolve()),model_sha256=previous['model_sha256'],
+        verified_quadratic_twist=previous['verified_quadratic_twist'],
+        actual_cartier_mod5_match=True,independent_previous_precision_match=True,
+        seconds=time.monotonic()-start,scope='Actual carrier unit-root characteristic polynomial modulo'+str(5**digits))
+    save_json(args.out/'result.json',result);report('higher_digit_unit_root_polynomial',digits=digits,coefficients=coefficients)
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('model',type=Path);p.add_argument('cartier_result',type=Path)
-    p.add_argument('out',type=Path);p.add_argument('--digits',type=int,choices=[1,2],default=1)
+    p.add_argument('model',type=Path)
+    p.add_argument('out',type=Path);p.add_argument('--digits',type=int,choices=range(1,7),default=1)
+    p.add_argument('--cartier-result',type=Path,help='Actual Prym Cartier result; required for one or two digits')
+    p.add_argument('--previous',type=Path,help='Certified result at one fewer digit; required from three digits')
     p.add_argument('--lift-variant',type=int,default=0,
                    help='Independent support-preserving5-adic coefficient-lift audit')
     p.add_argument('--seconds',type=int,default=300)
-    args=p.parse_args();args.out.mkdir(exist_ok=True);start=time.monotonic();events=[]
+    args=p.parse_args()
+    if args.digits>=3 and args.previous is None:
+        p.error('--previous is required for three or more digits')
+    if args.digits<3 and args.previous is not None:
+        p.error('--previous applies only to three or more digits')
+    if args.digits<3 and args.cartier_result is None:
+        p.error('--cartier-result is required for one or two digits')
+    if args.digits>=3 and args.cartier_result is not None:
+        p.error('--cartier-result applies only to one or two digits; higher precision uses --previous')
+    if args.digits!=2 and args.lift_variant:
+        p.error('--lift-variant applies only to the two-digit check')
+    args.out.mkdir(exist_ok=True);start=time.monotonic();events=[]
     def report(stage,**kw):
         event=dict(stage=stage,seconds=time.monotonic()-start,**kw);events.append(event)
         print(json.dumps(event),flush=True);save_json(args.out/'progress.json',events)
@@ -130,6 +182,9 @@ def main():
         data=load_json(args.model);d=data['field_degree'];diag=data['diagnostics']
         assert data['exact_birational_substitution'] and diag['interior_count']==8
         assert diag['all_edges_transverse']
+        if args.digits>=3:
+            higher_precision(args,data,report,start)
+            return
         k=GF(5**d,'b',modulus=PolynomialRing(GF(5),'v')(data['modulus']),impl='pari_ffelt')
         points=[tuple(v) for v in diag['interior_points']]
         f={tuple(e):k(c) for e,c in data['coefficients']}

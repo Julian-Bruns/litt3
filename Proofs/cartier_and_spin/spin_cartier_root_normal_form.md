@@ -1,12 +1,11 @@
 # Proof: spin roots, their linear equation, and functorial Cartier blocks
 
 [Statement](../../Theorems/cartier_and_spin/spin_cartier_root_normal_form.md).
-Author /root,2026-09-08. All roots below are tame, since ell=p+2 is
-prime to p. No simultaneous Galois closure of an etale span is used.
+All roots below are tame, since ell=p+2 is prime to p.
 
 ## 1. The linear map is always onto
 
-Write F:C->C_1 for relative Frobenius and B=B_C. The exact-differential
+Write F:C->C_1 for relative Frobenius and B=B_{1,C}. The exact-differential
 description supplies B as a subbundle of F_*omega_C. Hence
 
     H0(C_1,B L_1^(-1)) -> H0(C,omega_C L^(-p))
@@ -124,35 +123,48 @@ The formulas are intrinsic despite being written in frames; both finite
 duality and twisted Cartier commute with etale base change. In a shared
 root span the blocks therefore commute with BOTH pulled-back sections.
 
-For p=5 the six triples(i,i',n) are obtained by multiplication by3
-modulo7. Their table in the statement follows immediately. Three blocks
-have larger domain than target: i=3,5,6, with excess dimensions
-(g-1),4(g-1),2(g-1). Add the invariant Cartier kernel of dimension a(C)
-to get a(A)>=a(C)+7(g-1).
+Choose the deck generator delta(w)=zeta^(-1)w. The i-th space has
+character chi_i(delta)=zeta^i and dimension (i+1)(g−1). Thus each
+Cartier block has kernel dimension at least max(0,i−i')(g−1).
+Summing, including the invariant kernel, gives
 
-On the Cartier-bijective part, the six nontrivial character spaces have
-equal dimension b because multiplication by3 is one six-cycle modulo7.
-The smallest ambient character space has dimension2(g-1). The invariant
-bijective part has dimension f_5(C). Thus f_5(A)=f_5(C)+6b with the
-stated bounds. This is the elementary eigenspace bound, not a new general
-p-rank theorem: compare Bouw, *Quotients of tame fundamental groups of
-affine curves*, Lemma3.8 and Corollary3.10
-([primary preprint](https://dspace.library.uu.nl/bitstream/handle/1874/2445/961.pdf?isAllowed=y&sequence=1)).
+    a(A)>=a(C)+(g−1) sum_(i=1)^(ell−1) max(0,i−i')
+         =a(C)+floor((p+1)(5p+3)/24)(g−1).
 
-## 6. What this does and does not accomplish
+For the arithmetic identity, a permutation and its inverse have the
+same total positive displacement. Replace i↦i' by i↦−2i modulo ell.
+Writing m=(ell−1)/2, the sum is
 
-For a fixed curve, this replaces the entire weight(p+2)/double-zero
-root search by finitely many spin lines and linear kernels of known
-dimension. The zero divisor must still be reduced. No assertion that
-every such kernel has a reduced section is needed for completeness.
+    sum_(ell/3<i<=m)(3i−ell)
+      +sum_(2ell/3<i<ell)(3i−2ell)
+    =floor((ell−1)(5ell−7)/24).
 
-Under an etale map of degree N, genus-minus-one and all the nontrivial
-character dimensions multiply by N. The three forced kernel dimensions
-do too. For the actual genus9/genus2 pair, degrees d and8d respectively
-give the SAME source genus-minus-one8d and identical ambient bounds.
-Consequently the dimension inequalities alone do not contradict the two
-legs. Nor does either separately constructed endpoint section identify
-their spin lines and sections on an unknown common source. The remaining
-condition is an actual common nonzero vector in the two pulled-back
-Cartier kernels, with the common spin identification retained. No claim
-of a Litt3 counterexample or a proof of the new Pro assertion follows.
+The last equality follows by summing the two arithmetic progressions
+for ell congruent to1,3 or5 modulo6.
+
+For the p-rank use Bouw,
+[*The p-Rank of Ramified Covers of Curves*, Definition2.1 and
+Lemma2.2(i)–(iii), p298](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6D1BEC9200F6849339665AC4371AB7AF/S0010437X01000343a.pdf/div-class-title-the-p-rank-of-ramified-covers-of-curves-div.pdf#page=4).
+Her generalized Hasse–Witt invariant gamma(chi_i) is the dimension of
+the Cartier-bijective part of the i-th space, by Serre duality; her
+sigma denotes p-rank. It is constant on each orbit O of multiplication
+by p modulo ell. The published lemma therefore gives
+
+    sigma(A)=sigma(C)+sum_O |O| gamma_O,
+    0<=gamma_O<=min_(i in O)(i+1)(g−1).
+
+For p=5 there is one orbit of length six, giving
+sigma(A)=sigma(C)+6gamma, 0<=gamma<=2(g−1), and the a-number
+coefficient is seven. These are the stated genus29 bounds.
+
+## 6. The two-leg condition remains
+
+The normal form replaces the weight-(p+2), double-zero tensor problem
+by finitely many spin lines and linear kernels, restricted to sections
+with reduced divisor. It does not assert that every kernel has one.
+
+Under an etale cover of degree N, genus-minus-one and every nontrivial
+character dimension multiply by N. For the genus9/genus2 pair the two
+leg degrees are d and8d, so both give source genus-minus-one8d and
+the same bounds. A common tensor still requires an actual common
+nonzero section in the two pulled-back kernels, with matching spin lines.

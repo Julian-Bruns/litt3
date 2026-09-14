@@ -1,7 +1,7 @@
 # Augmentation width bounds actual indigenous defect
 
 Version1,2026-09-11. Fresh focused mathematical audit PASS; exact
-independent actual-group-algebra checks. Not Lean verification.
+independent actual-group-algebra checks.
 
 Let(C,r) be an active admissible pair over bar(F5), genus at least two,
 with indigenous defect one. Let T->C be an actual connected finite etale

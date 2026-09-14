@@ -1,5 +1,7 @@
 # Tangent bundles and controlled cyclic refinements
 
+Version4.
+
 Let C be a smooth projective connected curve of genus g>=2 over an
 algebraically closed field of characteristic5. Use the
 [connection conventions](../../Definitions/projective_connections.md).
@@ -9,7 +11,7 @@ p-curvature is nowhere zero; it need not be ordinary.
 ## 1. Bundles representing the actual tangent defects
 
 For a regular dormant connection r there is a stable rank2 bundle V_r
-on C^(1), of degree2g−2, with
+on C^(1), with determinant omega_(C^(1)) and
 
     H^0(C^(1),V_r)=T_dorm(C,r).
 
@@ -22,9 +24,13 @@ INCLUDING the split torsor, and q its tautological quadratic. Set
 
     E_r=pi^(1)_* V_(pi^*r+q).
 
-This is a rank4 bundle of degree4(g−1), with
+This is a rank4 bundle with determinant omega_(C^(1))² and
 
     H^0(C^(1),E_r)=T_nil(C,r).
+
+Both bundles carry perfect omega_(C^(1))-valued alternating pairings,
+given by wedge for V_r and wedge followed by étale trace for E_r.
+Their degrees are respectively2g−2 and4(g−1).
 
 Both constructions commute with actual finite etale pullback, also
 when a connected canonical double becomes split. In particular, for
@@ -128,8 +134,4 @@ test a proposed match; they do NOT force any pair of endpoint objects
 to match. In particular they do not remove the empty common-connection
 branch of the common-cover problem.
 
-Version3,2026-09-08 adds exact dormant Hom/active isomorphism tests and
-the stable-versus-split criterion for active bundles. Version2's good-choice
-conclusion preserves exact defects; the rank-two theta theorem removes
-the dormant properness hypothesis. Author proof; no audit claimed.
 [Proof](../../Proofs/projective_connections/tangent_bundle_cyclic_refinements.md).

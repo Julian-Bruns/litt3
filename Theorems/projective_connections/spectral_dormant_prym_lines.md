@@ -1,6 +1,6 @@
 # Dormant secants as spectral five-torsion lines
 
-Version2,2026-09-13; general proof2026-09-08. Author proof with exact identities;
+Version3,2026-09-14; general proof2026-09-08. Author proof with exact identities;
 no independent whole-proof audit.
 
 Let C be a smooth projective connected curve of genus g>=2 over an
@@ -11,9 +11,9 @@ V_s=ker(F_(C*) Bol_s), with F_C^*V_s=J^1(omega_C^2), as in the tangent
 bundle theorem. Superscript (1) below means the Frobenius twist of data.
 
 1. det V_s is canonically omega_(C^(1)). There is a canonical regular
-   Higgs field phi:V_s->V_s tensor omega_(C^(1)) satisfying
+   Higgs field theta:V_s->V_s tensor omega_(C^(1)) satisfying
 
-       trace(phi)=0,  phi^2=2q^(1) id.
+       trace(theta)=0,  theta^2=2q^(1) id.
 
    In coordinates (v,v') on J^1(omega_C^2), its Frobenius pullback is
 
@@ -24,15 +24,18 @@ bundle theorem. Superscript (1) below means the Frobenius twist of data.
 2. Suppose q has only simple zeros. Let pi:Sigma->C be the smooth
    spectral double locally a^2=2q, and let R be its reduced ramification
    divisor. It is connected, of genus 4g-3. On the twisted double
-   pi_1:Sigma^(1)->C^(1), the Higgs field corresponds to a line bundle M
-   satisfying pi_(1*)M=V_s and deg M=4(g-1). The line
+   pi_1:Sigma^(1)->C^(1), the BNR correspondence gives a line bundle L
+   satisfying pi_(1*)L=V_s and deg L=4(g-1). The line
 
-       N=M tensor pi_1^*omega_(C^(1))^(-1)
+       N=L tensor pi_1^*omega_(C^(1))^(-1)
 
    has exact order five and norm O. In particular tau^*N=N^(-1),
    where tau is the deck involution. Moreover
 
        V_s = pi_(1*)N tensor omega_(C^(1)).
+
+   Here theta and L are the Higgs-field and spectral-sheaf notation of
+   [Groechenig, Theorem3.2](https://arxiv.org/pdf/1201.0741#page=9).
 
 3. There is a global trivialization of F_Sigma^*N in which its Cartier
    connection is d+eta, where eta=a dt. This form is nonzero and
@@ -55,12 +58,24 @@ nor the common spectral differential alone forces a core. Multiple-zero
 spectral curves require additional normalization/line-sheaf analysis;
 parts (2)--(4) do not silently include them.
 
-For the small backup B=C_alpha, all ten pairs of its five dormant
-connections have simple differences. Each genus-five spectral double
-has an actual etale double quotient E of genus three, with ordinary
-Jacobian and a Cartier-fixed differential of divisor type(2,2).
-The two coefficient-Frobenius orbits of unordered pairs have size5.
-These explicit endpoint data do not supply a compatible common pair.
+## Genus-two quotients and their a-numbers
+
+When g=2 the difference q automatically has four simple zeros. Choose
+a Weierstrass point as infinity and write C:v²=F(u), deg F=5, and
+q=A(u)(du/v)². Then A is a squarefree quadratic coprime to F. The
+spectral double has an actual etale degree-two quotient
+
+    E: w²=2A(u)F(u),       eta_E=2A(u) du/w,
+
+of genus three. Its Cartier-fixed form has divisor type(2,2), and
+
+    a(E)=dim T_dorm(C,r)+dim T_dorm(C,s).
+
+In particular E is ordinary exactly when both dormant points are reduced.
+For EVERY smooth member v²=u(u−1)(u−2)(u−3)(u−t), all ten quotients
+are ordinary. For the cubic backup, the two coefficient-Frobenius
+orbits of unordered pairs each have size five. These endpoint results
+do not supply a compatible common pair.
 
 Dependencies: [Cartier secants](cartier_dormant_secants.md) and
 [tangent bundles](tangent_bundle_cyclic_refinements.md).

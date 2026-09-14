@@ -84,11 +84,7 @@ coefficient to1: scaling S by c scales P,Q by c^2 and R by c^3.
 These charts cover all nontrivial geometric double covers, including
 the lower-pole-order theta-characteristic cases.
 
-Keeping Q's coefficients as variables may be much sparser than
-substituting their high-degree expressions. The actual construction
-and matrix support costs, not the variable count alone, will decide.
-
-## Executed checks and remaining work
+## Exact checks
 
 scripts/arithmetic/check_degree2_kummer_carrier.py checks the even-sign quartic,
 discriminant, translated resolvent and pole-semigroup basis. It also
@@ -98,11 +94,11 @@ constructs the smooth degree10 playground
  P=x^6+1, R=x^9+4x^3+x, Q=1,
 
 checks F squarefree and gcd(P,F)=1, and independently normalizes its
-quartic function field: genus8, total1.153s. This is not the fixed X
-and is only a test of the uniform construction. The fixed-X norm systems
-are implemented in scripts/arithmetic/prepare_degree2_norm_system.py. Construction
-and bounded solving are not enumeration. Actual torsion/carrier
-enumeration and the geometric JB factor test remain open.
+quartic function field: genus8. This tests the uniform construction.
+The fixed-X norm systems are implemented in
+scripts/arithmetic/prepare_degree2_norm_system.py; the
+[complete sieve](backup_double_cover_exclusion.md) supplies the fixed-pair
+enumeration and geometric Jacobian-factor exclusion.
 
 The general relation to the trigonal construction is also reviewed by
 [Bruin, ICERM2019, slide7](https://app.icerm.brown.edu/materials/Slides/sc19-1-aldav/Prym_varieties_of_genus_four_curves_%5D_Nils_Bruin,_Simon_Fraser_University.pdf).

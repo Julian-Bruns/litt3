@@ -6,11 +6,11 @@ and C=C_t the smooth projective model of
     v^2=u(u-1)(u-2)(u-3)(u-t), O=infinity.
 
 Write J=Pic^0(C), J1=Pic^0(C^(1)), V=F_C^*:J1->J and
-B_C=coker(O_(C^(1))->F_(C*)O_C). Then:
+B_{1,C}=coker(O_(C^(1))->F_(C*)O_C). Then:
 
 1. No non-Weierstrass P and no M in J1(k) satisfy BOTH
 
-       V(M)=[2P-2O], H^0(C^(1),B_C tensor M)!=0.
+       V(M)=[2P-2O], H^0(C^(1),B_{1,C} tensor M)!=0.
 
    Equivalently, there are no such P, effective degree-two D and rational
    h with div(h)=5D-2P-8O and Cartier((du/v)/h)=0.

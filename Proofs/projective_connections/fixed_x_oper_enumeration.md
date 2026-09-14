@@ -162,7 +162,7 @@ excluded by this symmetry argument.
 
 Run `sage scripts/atlases/opers/verify_oper_census.sage --out NEW_DIRECTORY` with the
 three usual BLAS/OpenMP thread variables set to1. The full2026-09-13 replay
-passed in22.438seconds, including all factors and every local model;
+passed, including all factors and every local model;
 receipts are in external `oper-census-quadratic-verification-20260913`.
 The new [independent audit](../../Research/audits/OPER_CENSUS_CONSOLIDATION_AUDIT_2026_09_13.md)
 also replayed the local construction and universal monic reconstruction.

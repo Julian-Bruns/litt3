@@ -21,8 +21,9 @@ H0(S,M)->H0(T,q^*L_C) is onto.
 
 Consequently, in spin_series_etale_reduction, if the genus-two endpoint
 has effective spin, its embedded field lies in k(S_n) for every n>=8.
-The ten ineffective spins and the other endpoint are NOT addressed.
-This does not exclude a common cover or assert descent of the other leg.
+For arbitrary endpoint spins under the additional superelliptic
+hypotheses, [effective spin probes](spin_probe_common_cover_reduction.md)
+give a refinement retaining both endpoints. Neither result is an exclusion.
 
 Version1,2026-09-08. Author proof. No independent audit or Lean claim.
 [Proof](../../Proofs/cartier_and_spin/cartier_endpoint_recovery.md).

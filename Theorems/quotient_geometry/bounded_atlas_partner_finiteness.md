@@ -13,9 +13,9 @@ to any such S. If n=deg(X/S), the degree of Y -> S is necessarily
 Wild inertia and non-Galois atlases are allowed. The theorem neither
 supplies the bound B nor turns a coreless span into an orbifold atlas.
 
-## Explicit count and avoidance in characteristic five
+## Explicit count
 
-In characteristic five, write g=g(X), take B>=2, and set
+In any characteristic, write g=g(X), take B>=2, and set
 
     D=(B-1)!, G=1+(g-1)D, L=B^2,
     M=floor((h-1)B/(g-1)),
@@ -26,7 +26,9 @@ is at most K. If M=0, there are no such partners.
 If ALL effective orbifold atlas degrees of X are bounded by B, the
 same K bounds all its genus-h CORED finite-etale common-cover partners.
 
-In particular suppose X is defined over F_q, with q a power of5, and
+## Avoidance in characteristic five
+
+Suppose X is defined over F_q, with q a power of5, and
 use h=2 and M>=1. For any prime r>K, let t have degree r over
 F_q. Then the ordinary genus-two curve
 
@@ -37,8 +39,10 @@ prime and the first monic irreducible degree-r polynomial in a fixed
 coefficient order is a deterministic finite prescription, not a practical
 computation. No claim about coreless covers or simplicity of J(Y_t) follows.
 
-Version3,2026-09-13. Original finiteness audit PASS,
+Version4,2026-09-14. The explicit count now applies in every characteristic,
+using the published automorphism bound and its Hermitian exception.
+Original finiteness audit PASS,
 `/root/x_elliptic_quotient_maps`,2026-09-05. Effective count and parameter
 selection independently audited PASS, `/root/audit_effective_cored_partner_bound`,
-2026-09-07; [audit metadata](../../Research/audits/EFFECTIVE_CORED_PARTNER_BOUND_AUDIT_2026_09_07.md)
-is reference-only. [Proof](../../Proofs/quotient_geometry/bounded_atlas_partner_finiteness.md).
+2026-09-07; [audit](../../Research/audits/EFFECTIVE_CORED_PARTNER_BOUND_AUDIT_2026_09_07.md).
+[Proof](../../Proofs/quotient_geometry/bounded_atlas_partner_finiteness.md).

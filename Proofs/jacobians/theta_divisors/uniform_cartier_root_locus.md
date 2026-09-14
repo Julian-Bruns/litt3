@@ -1,8 +1,7 @@
-# Proof: weight compression, followed by a precise limit to endpoint sieving
+# Proof: the root dictionary and Cartier kernel bundle
 
 [Statement](../../../Theorems/jacobians/theta_divisors/uniform_cartier_root_locus.md).
-Author /root,2026-09-08, version2. Both actual etale legs are retained
-in applications; the existence assertions below concern endpoint tensors.
+The existence assertions below concern endpoint tensors.
 
 ## 1. Compressing the weight to a residue
 
@@ -51,17 +50,17 @@ weight statement. The same calculation, or the generalized Cartier
 product rule, handles larger p-prime powers.
 
 V is an isomorphism on prime-to5 torsion, so a fixed ell has at most
-one prime-to5 lift. Allowing the other24 lifts is a geometric relaxation,
-not a source of actual root tensors.
+one prime-to5 lift. Other geometric lifts are only a relaxation of
+the tensor criterion.
 
 ## 3. The parameter space and the codimension bound
 
-Ordinarity makes V an etale isogeny of degree25. Thus T_r is smooth
-projective of dimension r over Sym^r(C). It is connected: restricting
-to P -> P+(r-1)O gives the V-torsor along the Abel map. The Abel map
-identifies H1_et(-,F5) of J(C) and C, using H1(O), Frobenius and the
-Artin--Schreier sequence. No nonzero character of ker V becomes
-trivial, so this restricted torsor, and hence T_r, is connected.
+The isogeny V is finite flat of degree25, and etale if C is ordinary.
+Thus T_r is projective and finite flat over Sym^r(C). To see it is
+connected, factor V into a radicial isogeny followed by its etale
+quotient torsor. The Abel map identifies H1_et(-,F5) of J(C) and C,
+so the latter torsor stays connected along P -> P+(r-1)O, hence over
+Sym^r(C). Radicial base change preserves connectedness.
 
 For r>=3 all degree-r line bundles have h0=r-1 and H1=0; the usual
 Poincare family therefore realizes T_r as a P^(r-2)-bundle over J1.
@@ -86,18 +85,12 @@ map is a map of bundles of ranks5k+1 and k+1:
 
     H0(C,omega_C tensor V(M)) -> H0(C^(1),omega_(C^(1)) tensor M).
 
-At theta=0 it is SURJECTIVE. Indeed the Cartier sequence has kernel
-B_C, and Serre duality with B_C^vee tensor omega_(C^(1))=B_C gives
-
-    H1(B_C(kO1))=H0(B_C(-kO1))^*=0.
-
-The last vanishing follows by injection into H0(B_C)=0 (ordinarity).
-The self-duality is the standard perfect Cartier pairing: the local
-pairing of exact forms df,dg is C(f dg). Changing a primitive by a
-local fifth power does not affect it, and pairing complementary
-exponents in a local parameter proves nondegeneracy.
-Thus near theta=0 the Cartier kernel is a rank4k vector bundle.
-Its projectivization is precisely Z_r there, of relative dimension4k-1.
+It is surjective for every theta. By [Joshi, Theorem1.1](https://comptes-rendus.academie-sciences.fr/mathematique/item/10.1016/j.crma.2004.02.019.pdf),
+B_{1,C} is stable of slope1 and rank4. The Serre dual of B_{1,C}⊗M
+is stable of slope1−k≤0; stability excludes sections also at slope0
+because the rank is greater than1. Hence H¹(B_{1,C}⊗M)=0.
+The Cartier kernel is therefore a rank4k vector bundle on all J1,
+and its projectivization is precisely Z_r.
 
 There is a point of its theta=0 fiber whose zero divisor is REDUCED.
 For k=1 use alpha=(u-b)du. Its divisor is D-5O, where D is the five
@@ -141,7 +134,7 @@ Consequently s=(df)^2 eta^5 has divisor2D and weight7. The identity
 
 proves Cartier-zero. As before gcd(7,2)=1 rules out any proper tensor
 power. This needs no ordinarity. It applies to the fixed genus-nine X
-using its subcanonical point, and to the fixed hyperelliptic genus25 Y.
+using its subcanonical point.
 The genus-two construction was supplied separately in Section4.
 
 Suppose two such tensors actually agree through a coreless bi-etale
@@ -154,18 +147,9 @@ regular connection cannot cancel it: its difference q with r_s has
 poles only along the shared support; q s^N would be a shared regular
 tensor of weight2+7N, whose shared space is zero. Thus q=0, a
 contradiction to regularity. This proves the stated conditional claim.
-It emphatically does not assert that an actual matching span exists.
 
-## 6. The strategic boundary
-
-The singleton locus can be finite; its completed backup exclusion is
-unchanged. For r=4 a nonempty relaxed reduced locus has positive
-dimension, but no existence is asserted. For the infinite progression
-r=5k+2 actual prime-to5 root data DO exist, with unbounded minimal
-weights, on every ordinary genus-two curve. Therefore no endpoint-only
-Cartier-root elimination can remove all larger clumps.
-
-Nothing here constructs a common source, either finite etale leg, or
-a realized clump. The missing condition remains the simultaneous
-realization on the SAME curve of the two specified endpoint divisors
-and tensors. Keeping that condition is necessary, not optional.
+The bounded medium audit by /root/audit_extension_fiber_scope,
+2026-09-14, checked the connected–etale factorization, global Cartier
+surjectivity including slope0, and independence of the root dictionary
+from ordinarity. The explicit reduced-section and shared-connection
+arguments retain their original author-proof status.

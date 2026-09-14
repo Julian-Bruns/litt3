@@ -2,7 +2,7 @@
 
 Version1,2026-09-11. Independent bounded audit PASS by
 /root/audit_actual_heisenberg_defect. Mathematical prose and exact
-finite-algebra checks, not Lean verification.
+finite-algebra checks.
 
 Fix any of the FOURTEEN noncanonical quadratic resolvents D→C of
 [explicit_non_galois_neutral_five](explicit_non_galois_neutral_five.md).

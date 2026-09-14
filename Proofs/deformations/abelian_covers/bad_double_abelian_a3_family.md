@@ -181,7 +181,7 @@ Original bundle and regenerated data reside at
 /Users/julian/Documents/litt3-computation-data/quartic-parameter-audit-20260911-T4Ydbg/quartic_certificate.
 Every supplied SHA256 checksum passes. See the focused
 [audit verdict](../../../Research/audits/PARAMETERIZED_BAD_DOUBLE_GERM_AUDIT_2026_09_11.md).
-These are exact computation plus audited prose, not Lean verification.
+These are exact computation plus audited prose.
 
 The earlier t²+2=0 specialization lies in the same domain. Its
 [independent six-column audit](../../../Research/audits/BAD_DOUBLE_ABELIAN_GERM_AUDIT_2026_09_11.md)

@@ -1,9 +1,9 @@
-# Ordinary HN polygons of all symmetric powers of the Cartier bundle
+# Harder–Narasimhan polygons of symmetric powers of the Cartier bundle
 
 Let C be a smooth projective connected curve of genus g≥2 over an
 algebraically closed field of odd characteristic p. Put s=g−1 and
 B=F_*O_C/O_(C^(1)). For every n≥0, the ranks and slopes divided by s
-of the ordinary Harder–Narasimhan filtration of Sym^n(B) depend only
+of the Harder–Narasimhan filtration of Sym^n(B) depend only
 on n and p, including n≥p.
 
 More precisely, put M=(p−1)n and
@@ -27,8 +27,6 @@ are combined. The construction commutes with finite étale base change.
 Universality also holds for divided powers of B and symmetric or
 divided powers of B^∨, with canonical line twists.
 
-This does not compute arbitrary Schur subquotients or extension
-classes, produce a shared differential, or exclude a common cover.
 The symmetric-power statement is independent of the full-tensor
 formula; no direct-summand assertion is made when n≥p.
 

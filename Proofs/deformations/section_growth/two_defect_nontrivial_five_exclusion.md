@@ -59,7 +59,7 @@ suffices for the next step.
 ## One parameter bound for all exponents, not an infinite union bound
 
 The previously audited count in
-[defect-preserving descent, Sections5–6](../defect_preserving_etale_descent.md) gives
+[defect-preserving descent, Section5](../defect_preserving_etale_descent.md) gives
 at most5^24 ordinary r_X, fewer than2^80000000 genus-three
 characteristic-zero common-etale-cover partners per fixed X^can, and
 at most60 family parameters per special-fiber bad double.

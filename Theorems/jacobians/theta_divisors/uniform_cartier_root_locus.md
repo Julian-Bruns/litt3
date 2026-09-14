@@ -1,7 +1,7 @@
-# All uniform Cartier roots, and an infinite family surviving the endpoint test
+# Uniform Cartier roots and their parameter spaces
 
-Let C be an ordinary genus-two curve over k=Fbar_5, choose a Weierstrass
-point O, and write J1=Pic0(C^(1)), O1=F_C(O), V=F_C^*. A uniform
+Let C be a smooth genus-two curve over an algebraically closed field k
+of characteristic5. Choose a Weierstrass point O, and write J1=Pic0(C^(1)), O1=F_C(O), V=F_C^*. A uniform
 Cartier-zero tensor is a nonzero s in H0(C,omega^d), 5 not dividing d,
 with div(s)=eD for a REDUCED divisor D of degree r, er=2d, and zero
 eligible generalized Cartier image.
@@ -11,9 +11,10 @@ and put j=(ar-2)/5. Consider
 
     T_r={(D,theta): D in Sym^r(C), V(theta)=[D-rO]}.
 
-This is connected, smooth and projective of dimension r, finite etale
-of degree25 over Sym^r(C). For r>=3 it is the projective bundle with
-fiber |rO+V(theta)| over J1. Set M=O(jO1) tensor theta^a. Then
+This is connected and projective, finite flat of degree25 over Sym^r(C).
+If C is ordinary this map is etale. For r>=3, T_r is the smooth
+projective bundle with fiber |rO+V(theta)| over J1.
+Set M=O(jO1) tensor theta^a. Then
 
     omega_C tensor V(M)=O(aD).
 
@@ -21,9 +22,9 @@ Define Z_r by requiring that the SPECIFIED section with divisor aD
 have zero twisted Cartier image in H0(C^(1),omega_(C^(1)) tensor M).
 This is not merely the condition that some section be Cartier-zero.
 
-A uniform Cartier-zero tensor with this D exists IFF Z_r contains a
-pair(D,theta) with theta of prime-to5 order. For a fixed D at most ONE
-of the25 lifts has this property. Put h=gcd(r,2), d0=r/h, e0=2/h.
+A uniform Cartier-zero tensor with this D exists iff Z_r contains a
+pair(D,theta) with theta of prime-to5 order. For a fixed D at most one
+geometric lift has this property. Put h=gcd(r,2), d0=r/h, e0=2/h.
 If n is the order of N=O(e0D)omega^(-d0)=V(theta)^e0, the minimal
 tensor has weight d0 n and divisor e0 n D. Larger p-prime weights
 give the same zero/nonzero test. Thus this removes the UNBOUNDED weight
@@ -41,9 +42,9 @@ has dimension at least r-j-1:
 
 ## Actual surviving roots for an entire infinite progression
 
-For EVERY k>=1, r=5k+2, there is a nonempty open U_k in J1 such that
-Z_r over U_k is a projective bundle of relative dimension4k-1, and
-each fiber contains reduced divisors. Every prime-to5 theta in U_k
+For every k>=1, r=5k+2, Z_r is a projective bundle of relative
+dimension4k-1 over all J1. There is a nonempty open U_k in J1 over
+which every fiber contains reduced divisors. Every prime-to5 theta in U_k
 therefore supplies genuine uniform Cartier-zero tensors as above.
 Their MINIMAL weights are unbounded. Prime-to5 torsion is dense in J1,
 and the orders of V(theta)^e0 are unbounded on this open set.
@@ -64,22 +65,21 @@ For a general f in L((5g-6)O), the tensor
     s=(df)^2 eta^5
 
 has weight7, divisor2D with D reduced of degree7(g-1), and the same
-Cartier-zero identity. Ordinarity is unnecessary. Thus the fixed X,
-the genus-two backup, and the fixed hyperelliptic Y ALL have independent
-endpoint tensors of this SAME profile (support sizes56,7,168).
+Cartier-zero identity. Ordinarity is unnecessary. Thus the fixed genus-nine X
+and every genus-two partner C_t have independent endpoint tensors of
+this same profile, with support sizes56 and7 respectively.
 
 If two such tensors ever have equal pullbacks in an actual CORELESS
 span, that span has NO shared regular projective connection. This is
 a conditional structural statement, not an exclusion of those spans.
 
-These are one-ENDPOINT tensors, NOT common covers or realized clumps.
-They prove that excluding all uniform Cartier-zero profiles on an
-ordinary genus-two endpoint is impossible. Any final exclusion must
-retain the other endpoint and both actual maps from the SAME source.
-The four-point nonemptiness question and the no-clump case remain open.
+Thus uniform Cartier-zero profiles cannot all be excluded on a
+genus-two endpoint. Simultaneous realization through both actual etale
+maps remains necessary; the four-point and no-clump cases remain open.
 
-Version2,2026-09-08: adds the projective-bundle normal form, actual
-unbounded-weight surviving families and the shared-connection boundary;
-simplifies the preferred-lift rule.
-AUTHOR proof, not independently audited.
+Version3,2026-09-14. Joshi's stability theorem removes ordinarity and
+makes the Cartier kernel a vector bundle over the whole Jacobian.
+This geometric step and the retained root dictionary passed a bounded
+medium audit; the explicit root construction and conditional
+shared-connection assertion retain author-proof status.
 [Proof](../../../Proofs/jacobians/theta_divisors/uniform_cartier_root_locus.md).

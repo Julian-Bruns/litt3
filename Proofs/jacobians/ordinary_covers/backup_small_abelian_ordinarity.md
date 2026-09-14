@@ -50,34 +50,32 @@ The [original small-packet audit](../../../Research/audits/BACKUP_CORED_COMPLETI
 checked this geometry and its complete finite tests.
 
 For m=4, order-dividing-two points are covered by the same complete
-double-cover argument. The newly executed command
+double-cover argument. The command
 
     sage scripts/genus_two/verify_genus_two_four_torsion.sage \
       --parameter-polynomial 1,1,0,1 \
       --output Research/computations/backup_maximal_four_ordinarity.json
 
 uses the actual backup parameter, not the different cubic specialization
-in the original high-degree proof. In F5[a]/(a^6+a^4+4a^3+a^2+2), it
+in the ordinary-family proof. In F5[a]/(a^6+a^4+4a^3+a^2+2), it
 chooses t=a^3+2a^2+4a+1 and verifies t^3+t+1=0. It constructs all
 256 distinct J[4] classes, checks each actual order, and for all 240
 exact-order-four classes checks BOTH the original Cartier determinant
 and the compressed Raynaud quadric. All are nonzero. It additionally
 replays all 236 coprime additions by independent Cantor and Cramer
-formulas. Runtime after startup is 0.312 seconds.
+formulas.
 
-The torsion completeness, open-chart support, and original matrix
-interpretation are the arguments of
-[the four-torsion proof](genus_two_maximal_four_cover.md), Sections
-1-3, using [the Raynaud determinant](../theta_divisors/raynaud_genus_two_determinant.md).
+Torsion completeness and the original matrix interpretation are given in
+[the ordinary-family proof](genus_two_abelian_cover_families.md#2-one-ordinary-exponent-four-fiber).
+The verifier checks the required degree-two open chart at this backup
+specialization as well.
 No high-parameter avoidance bound is used for the backup. Any root of
 t^3+t+1 gives the same result by coefficient conjugation.
 
-An etale Galois 5-group cover of an ordinary curve remains ordinary:
-apply the invariant-vector argument to the etale-compatible bundle of
-exact differentials. Every nonzero characteristic-five representation
-of a finite 5-group has nonzero invariants. Thus vanishing of sections
-downstairs implies vanishing upstairs. A non-Galois intermediate is
-ordinary by injectivity of pullback of sections.
+An étale Galois p-group cover preserves ordinariness by
+[Crew, Corollary1.8.3](https://numdam.org/item/CM_1984__52_1_31_0.pdf#page=7).
+Ordinariness descends to every separable intermediate by injectivity
+of pullback on Cartier-zero differentials.
 
 Finally, let W be the genuine Galois closure of the actual B-leg of
 a proposed span. W/P is an abelian cover of the allowed exponent,

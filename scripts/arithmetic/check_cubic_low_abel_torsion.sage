@@ -4,7 +4,7 @@ import json
 import re
 
 root = Path(__file__).resolve().parents[2]
-source = root / 'routes/global/76_EXPLICIT_R3_REDESIGN_CERTIFICATE.sage'
+source = root / 'scripts/arithmetic/fixed_pair_frobenius.sage'
 text = source.read_text()
 
 def retained_polynomial(name, variables):

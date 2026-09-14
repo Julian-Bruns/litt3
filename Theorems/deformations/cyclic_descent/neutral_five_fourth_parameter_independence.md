@@ -1,8 +1,7 @@
 # The neutral degree-five first-repair line has constant next obstruction
 
 Version1,2026-09-11. Focused independent audit PASS by
-/root/audit_backup_cored_completion. Prose and exact local arithmetic,
-not Lean verification. No obstruction value is asserted.
+/root/audit_backup_cored_completion. Prose and exact local arithmetic. No obstruction value is asserted.
 
 Use the actual R=u(u-1) cover h:T→C, canonical marked C2 and full
 previous periodic data of

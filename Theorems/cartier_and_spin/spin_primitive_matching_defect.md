@@ -90,9 +90,8 @@ in that weight. This equality includes independence of primitive choices.
 It does not assert that every conceivable higher-weight construction is
 of this form; it covers these repeated powers of the same shared s.
 
-Version3,2026-09-08: adds boundary-independent canonical primitives for
-all odd p and identifies the repeated-power mismatches. This generalizes
-the latest Pro weight20/4 construction and records its exact limitation.
+Version3,2026-09-08. Canonical primitives and repeated-power mismatches
+hold in every odd characteristic.
 Author proof, not independently audited or formalized.
 [Spin definitions](../../Definitions/spin_cartier_roots.md) ·
 [Proof](../../Proofs/cartier_and_spin/spin_primitive_matching_defect.md).

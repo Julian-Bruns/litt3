@@ -23,11 +23,9 @@ has full output rank12(g-1). It has no nonzero constant left annihilator.
 
 This is a structural limitation of the small-test linear reduction, not
 an atlas exclusion. In particular the genus-two constant-annihilator
-mechanism cannot be extended to genus nine. No unperformed basis
-comparison with the old scalar N/R implementation is asserted.
+mechanism cannot be extended to genus nine.
 
 Independent audit PASS, `/root/cartier_jet_and_atlas_towers_audit`,
 2026-09-07; no substantive objections.
-[Audit metadata](../../Research/audits/CARTIER_JETS_AND_ACYCLIC_TOWERS_AUDIT_2026_09_07.md)
-is reference-only.
+[Audit](../../Research/audits/CARTIER_JETS_AND_ACYCLIC_TOWERS_AUDIT_2026_09_07.md).
 [Proof](../../Proofs/cartier_and_spin/cartier_jet_tensor_surjectivity.md).

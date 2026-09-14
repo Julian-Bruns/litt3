@@ -1,7 +1,7 @@
 # A single-jump wild orbifold is the alternating Hermitian quotient
 
 Version1, 2026-09-10. Fresh focused audit PASS by
-`/root/audit_a7_small_wild_reduction`; audited prose, not Lean verification.
+`/root/audit_a7_small_wild_reduction`; audited prose.
 
 Let k be algebraically closed of characteristic five. Let S be a smooth,
 proper, connected effective Deligne--Mumford curve admitting a finite

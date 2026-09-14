@@ -3,7 +3,7 @@
 [Statement](../../Theorems/deformations/explicit_genus_two_witt_obstruction.md).
 User-supplied Pro construction,2026-09-10; root replay and integration.
 Scoped medium audit PASS /root/audit_explicit_w3_obstruction,
-2026-09-10, no blockers. Audit is reference-only at
+2026-09-10:
 Research/audits/EXPLICIT_GENUS_TWO_W3_OBSTRUCTION_AUDIT_2026_09_10.md.
 Finite-field admissibility and tangent inputs are inherited from
 genus_two_active_critical_quartics v2, not re-proved here.

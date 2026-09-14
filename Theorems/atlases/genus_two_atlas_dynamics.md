@@ -28,9 +28,9 @@ on the unfinished general solver certificate.
 Status: independent completion audit PASS,2026-09-07,
 `/root/genus_two_dynamics_completion_audit`; no material objections.
 The underlying intrinsic coefficient implementation also passed a
-separate audit. [Completion audit metadata](../../Research/audits/GENUS_TWO_ATLAS_DYNAMICS_AUDIT_2026_09_07.md)
-is reference-only. These are
-normalized solutions for one fixed oper and j0, not a claim of33
+separate audit.
+[Completion audit](../../Research/audits/GENUS_TWO_ATLAS_DYNAMICS_AUDIT_2026_09_07.md).
+These are normalized solutions for one fixed oper and j0, not a claim of33
 pairwise nonisomorphic unmarked curves or covers. This excludes no
 common cover for the fixed genus-nine/genus-twenty-five pair.
 [Proof](../../Proofs/atlases/genus_two_atlas_dynamics.md).

@@ -5,7 +5,7 @@ Work geometrically over an algebraic closure unless a field is specified.
 
 ## 1. Low-degree divisor rigidity
 
-The [Galois-pencil theorem](reduced_divisor_rigidity.md#2-a-second-difference-cannot-move-a-low-degree-class)
+The [Galois-pencil theorem](reduced_divisor_rigidity.md#2-almost-fixed-classes)
 with n=3 gives uniqueness of nonzero effective representatives and
 (γ−1)²α=0⇒(γ−1)α=0. Its proof covers repeated points and r=3;
 the only moving zero-class divisors are full cubic fibers.
@@ -137,7 +137,7 @@ function with divisor P-Q for distinct points would have degree one.
 
 ## 5. Mixed-prime specialization
 
-Assertion4 is the [finite-prime support theorem](reduced_divisor_rigidity.md#3-congruent-automorphisms-one-power-formula)
+Assertion4 is the [finite-prime support theorem](reduced_divisor_rigidity.md#3-published-torsion-order-law-and-rationality)
 with n=3 and D|N. It fixes the original effective class, without
 assuming that any primary projection belongs to W_r.
 
@@ -150,16 +150,15 @@ Writing C=U_2(I+U_2), one gets
 
     pi^342=I+4C,       pi^684-I=8C(I+2C).
 
-Its two-primary kernel is therefore killed by8. At3 put A=pi^12-I,
-divisible by lambda³ and hence by3. The same power formula with
-m=57 gives pi^684−I=57 A E_57, where E_57 is integral invertible.
-Section4 gives lambda⁴ A^-1 integral; multiplying by3 costs lambda²,
-so lambda⁶(pi^684−I)^-1 is integral. Since lambda⁶=−27, the
-three-primary kernel is killed by27. Frobenius pi^684 fixes J[4],
+Its two-primary kernel is therefore killed by8. At3 put τ=pi^12,
+which fixes J[3]. If τ^57a=a, the published order law gives
+57(τ−1)a=0, hence (τ−1)(3a)=0 on three-primary torsion.
+Section4 kills ker(τ−1) by9, so 27a=0. Frobenius pi^684 fixes J[4],
 J[3] and every branch point;
 the general mixed-prime assertion places all the indicated W3 points
 in its kernel. Their order divides8*27=216, proving (5).
 
-Exact order9 in W₂/W₃ and mixed torsion remain unexcluded.
+The [norm and support theorem](kummer_norm_and_nine_torsion_support.md)
+completes the W₂ case. Exact order9 in W₃ and mixed torsion remain open.
 The [statement's audit records](../../../Theorems/jacobians/torsion/cyclic_cubic_low_abel_torsion.md)
 retain the original arithmetic, Kummer-layer and mixed-prime checks.

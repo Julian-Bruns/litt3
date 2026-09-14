@@ -1,4 +1,4 @@
-# Proof: the only new equation is a critical quartic
+# Proof: active connections from critical quartics
 
 [Statement](../../Theorems/projective_connections/genus_two_active_critical_quartics.md).
 Author proof,2026-09-09–13; verification scopes are in the statement.
@@ -8,10 +8,8 @@ Author proof,2026-09-09–13; verification scopes are in the statement.
 Every active genus-two regular nilpotent connection is admissible by
 [nilpotent_scalar_model](../../Theorems/projective_connections/nilpotent_scalar_model.md).
 Its normalized quartic s has divisor2E with E reduced of degree4.
-The hyperelliptic involution fixes every regular projective connection:
-it acts trivially on its affine translation space H0(omega²), and a
-translation of order2 is zero in characteristic5. The Hasse invariant
-is natural, so s=A(u)eta^4 is invariant, with deg A<=4.
+The scalar model's automorphism corollary makes the Hasse invariant
+hyperelliptic-invariant, so s=A(u)eta^4 with deg A<=4.
 
 At O, ord(s)=8-2deg A. Thus deg A is3 or4. A finite branch root of
 A has multiplicity1, and every finite nonbranch root has multiplicity2.
@@ -221,9 +219,7 @@ Finally the Jacobian Cartier determinant3(t+1)^4 reduces to4. Thus
 ordinary Jacobian and corank-one nonordinary indigenous connection
 coexist in this explicit nonsplit example.
 
-The Sage verifier ran all these exact assertions in0.096seconds,
-apart from startup, on2026-09-10. It computes NO higher Witt class.
-Receipt: Research/computations/nonordinary_active_playground.json.
+Exact replay: Research/computations/nonordinary_active_playground.json.
 
 ## Boundary retained
 

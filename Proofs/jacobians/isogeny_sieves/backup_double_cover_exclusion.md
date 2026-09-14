@@ -1,7 +1,7 @@
 # Complete actual Prym-factor exclusion for the backup
 
 2026-09-11. Author /root. Fresh bounded assembly audit by
-/root/audit_complete_degree2_sieve PASS. Exact computation, not Lean.
+/root/audit_complete_degree2_sieve PASS. Exact computation.
 
 ## 1. The complete actual carrier reduction
 
@@ -97,13 +97,10 @@ projective point counts overF5,F25,F125. The higher ghost recursion has
 exponent624. All192beta25/beta125/unit-matrix entries at actual carrier74
 agree between full-precision and precision-aware product implementations.
 
-The ADDITIONAL independent saved-Cartier replay is now COMPLETE for all
-1533carriers. Both disjoint ranges regenerated every normal space,
-checked all eight anti-Cartier equations and independently iterated the
-342-fold norm. They finished in1706.69and1705.61seconds, respectively,
-with no failed case. All individual hash-linked receipts are retained in
-degree2-prym-cartier-replay-20260911. This strengthens the computational
-evidence without changing the theorem's mathematical scope.
+The independent saved-Cartier replay regenerated every normal space
+for all1533carriers, checked all eight anti-Cartier equations and
+independently iterated the342-fold norm, with no failed case.
+All hash-linked receipts remain in degree2-prym-cartier-replay-20260911.
 
 ## 4. Return to the original two maps
 
@@ -120,5 +117,5 @@ Therefore the degree2 atlas is impossible. No simultaneous Galois
 closure, presumed source ordinariness, or invented second map is used.
 
 The degree84 case is separately excluded by
-[triangle237_backup_exclusion](../../../Theorems/quotient_geometry/triangles/triangle237_backup_exclusion.md).
+[triangle237_backup_exclusion](../../../Theorems/quotient_geometry/tame_covers/triangle237_backup_exclusion.md).
 Coreless common-cover work remains separate.

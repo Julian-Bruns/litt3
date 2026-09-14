@@ -16,6 +16,12 @@ A refinement is a fixed connected finite etale h:W→Z, replacing every
 f_i by f_i h. The induced transformation of deformation functors lifts h
 by invariance of finite etale covers under nilpotent thickenings.
 
+For two legs, write T=Ω^(-1) in the
+[invariant-line notation](canonical_tensors.md). The joint tangent is
+H^1(T), as in Krishnamoorthy, Definition8.1 and the discussion preceding
+Proposition8.2. More generally the shared negative-extension space is
+J_m=H^1(Ω^(-m)).
+
 A tangent class xi in H^1(C,T_C)=Ext^1(omega_C,O_C) is represented by
 the pointed extension 0→O_C→E_xi→omega_C→0. Equal pullback classes
 give an isomorphism preserving BOTH displayed maps; that isomorphism is

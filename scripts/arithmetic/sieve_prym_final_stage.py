@@ -44,8 +44,8 @@ for index,path,record in work:
                 saved=legacy
             elif not saved.exists():
                 with (out/('digits_'+str(digits)+'.log')).open('w') as log:
-                    code=subprocess.run(['sage','-python',str(root/'toric_prym_unit_roots3.py'),
-                        str(model),record['source'],str(previous),str(unit),
+                    code=subprocess.run(['sage','-python',str(root/'toric_prym_unit_roots.py'),
+                        str(model),str(unit),'--previous',str(previous),
                         '--digits',str(digits),'--seconds','600'],
                         stdout=log,stderr=subprocess.STDOUT,timeout=630).returncode
                 assert code==0 and saved.exists(),'no certified result at precision '+str(digits)

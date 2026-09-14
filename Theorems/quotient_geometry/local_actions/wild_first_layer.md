@@ -1,5 +1,7 @@
 # Genus bounds for the first wild ramification layer
 
+Version2,2026-09-14.
+
 Over an algebraically closed field of characteristic \(p\ge3\), let
 \(C\to\mathcal S\) be a representable finite étale atlas of degree
 \(n\), where \(C\) is smooth projective connected,
@@ -27,5 +29,11 @@ writing \(v=|P_2|\), one has
 \(S\ge(p-1)v p^{\lceil r/2\rceil}/p\).
 When also \(p=5,h=16\), necessarily \(P/P_2\simeq C_5^2\).
 The theorem does not bound the unrestricted deeper subgroup \(N\).
+
+If \(|I_2|=p<|I_1|\), the whole atlas degree is bounded in terms
+of \(p,h\), since then \(b=1\) and \(N=I_2\) is abelian.
+For \(p=5,h=16\), this case has \(|I_1|=125\), lower jumps1,6
+and exactly the two necessary signatures
+\((e,d,n)=(1000,7,112000),(3000,21,336000)\).
 
 [Proof](../../../Proofs/quotient_geometry/local_actions/wild_first_layer.md).

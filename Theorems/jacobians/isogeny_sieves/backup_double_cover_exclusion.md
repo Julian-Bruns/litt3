@@ -21,8 +21,8 @@ orbits:1408excluded modulo5,114more modulo25,11more modulo125.
 Every actual model, quadratic twist, multiplicity and possible geometric
 cyclotomic factor is retained. No unsupported chart remains.
 
-This does not exclude the degree84 row, all higher-degree common sources,
-or fully liftable coreless partners. The original problem is UNSOLVED.
+The [complete cored-span exclusion](../../quotient_geometry/endpoint_exclusions/backup_cored_span_exclusion.md)
+treats the other orbifold rows. The unmarked problem remains unsolved.
 
 [Proof and receipts](../../../Proofs/jacobians/isogeny_sieves/backup_double_cover_exclusion.md) ·
 [Final assembly audit](../../../Research/audits/DEGREE2_COMPLETE_PRYM_SIEVE_AUDIT_2026_09_11.md).

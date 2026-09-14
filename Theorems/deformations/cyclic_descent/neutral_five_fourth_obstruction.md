@@ -2,7 +2,7 @@
 
 Version1,2026-09-11. Full source replay by /root and bounded independent
 geometric/local-frame audit PASS by /root/audit_neutral5_returned_w4.
-Exact arithmetic and mathematical prose, not Lean verification.
+Exact arithmetic and mathematical prose.
 
 Use the explicit genus-two pair over F625 in
 [explicit_genus_two_witt_obstruction](../explicit_genus_two_witt_obstruction.md),

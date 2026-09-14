@@ -2,7 +2,7 @@
 
 Version1,2026-09-11. Focused audit PASS /root/audit_n5_returned_partial,
 2026-09-10, for the returned partial result and its canonical-bundle
-identification. Prose and exact local checks, not Lean verification.
+identification. Prose and exact local checks.
 
 Let h:T→C be an ACTUAL connected finite etale map of degree five between
 smooth projective hyperbolic curves over k=bar(F5). Let r_C be regular,

@@ -1,8 +1,6 @@
 # Proof: bounded effective atlases give finitely many partners
 
-Canonical [statement](../../Theorems/quotient_geometry/bounded_atlas_partner_finiteness.md).
-Audited PASS, /root/x_elliptic_quotient_maps, 2026-09-05; metadata is
-in the registry. The equivalent proof was shortened on 2026-09-06.
+[Statement](../../Theorems/quotient_geometry/bounded_atlas_partner_finiteness.md).
 
 The etale fundamental group of a smooth projective curve over an
 algebraically closed field is topologically finitely generated. In
@@ -38,21 +36,21 @@ span, and no bound B is supplied by this lemma.
 
 ## Explicit count
 
-Now assume characteristic five. A genus-g projective curve has at most
+A genus-g projective curve in any characteristic has at most
 2g topological fundamental-group generators by the same full specialization
 surjection above. Thus the possible W->X of degrees at most D number
 at most D*(D!)^(2g), and their genera are between2 and G.
 
-For any such W, Aut(W) embeds into GL_(2g(W))(F3), including wild
-automorphisms. Indeed its action on H^1_et(W,Q3) is faithful: a finite
-cyclic subgroup acting trivially would give a quotient of the same
-genus, by the pullback/norm identities and invariant cohomology. This
-contradicts separable Riemann--Hurwitz for a nontrivial group. Finally
-the principal congruence kernel of GL_n(Z3)->GL_n(F3) is torsion-free.
-For I+3^s A, s>=1 and A nonzero modulo3, a prime-to-three power
-preserves the first nonzero valuation and cubing raises it exactly by
-one. Hence a finite-order element in the kernel is the identity.
-Consequently |Aut(W)|<3^(4G^2).
+For every smooth projective genus-γ curve C, γ≥2,
+
+    |Aut(C)| < 81γ⁴ < 3^(4γ²).
+
+In characteristic zero this follows from the Hurwitz bound. In positive
+characteristic, Stichtenoth's bound is |Aut(C)|≤16γ⁴ except for the
+Hermitian curve H_q; see [Montanucci–Zini, Section1](https://arxiv.org/pdf/1804.03398),
+which also records γ=q(q−1)/2 and Aut(H_q)=PGU(3,q). For q≥3,
+q²≤3γ and |PGU(3,q)|=q³(q³+1)(q²−1)<q⁸≤81γ⁴.
+Thus |Aut(W)|<3^(4G²), including wild automorphisms.
 
 The Galois group H of W->S embeds in S_n, so |H|<=B!. A subgroup of
 that order has at most floor(log_2(B!))<=B^2=L generators. Padding by
@@ -95,5 +93,8 @@ positive degree exist over a finite field; the deterministic prescription
 in the statement terminates.
 
 This proves no restriction on coreless spans and no simplicity assertion
-for J(Y_t). The count and parameter argument were independently audited
-PASS by /root/audit_effective_cored_partner_bound,2026-09-07.
+for J(Y_t). The original characteristic-five count and parameter argument
+were independently audited PASS by /root/audit_effective_cored_partner_bound,
+2026-09-07. The extension of the count to every characteristic passed the
+bounded medium audit /root/audit_finite_rank_condensation,2026-09-14;
+its scope was the published automorphism bound and its use in this count.
