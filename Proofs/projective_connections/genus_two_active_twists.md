@@ -8,8 +8,7 @@ Author proof,2026-09-09–13. Affine and split reductions have a bounded audit.
 For an active normalized quartic s, the induced infinitesimal Verschiebung
 has, up to a nonzero constant, the kernel of t↦C_1(s t) on regular quadratic
 differentials. This follows from the square-Hasse/Cartier formula in
-Mochizuki II2.11–2.13 and Definition3.1, as explained and source-checked in
-[the inverse-character note](../../routes/global/ORDINARY_INDIGENOUS_INVERSE_CHARACTER_CARTIER_CRITERION.md).
+the [Hasse–Cartier criterion](hasse_cartier_criterion.md).
 It commutes with actual etale pullback.
 
 On the connected etale double Y_R with kappa²=R, the anti-invariant

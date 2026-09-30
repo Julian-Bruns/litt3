@@ -1,165 +1,138 @@
-# Proof record: Intrinsic polarization bounds for finite bad fibers
+# Proof: polarization and intersection multiplicity
 
-Canonical statement: [polarization_bad_fiber_bound](../../../Theorems/jacobians/theta_divisors/polarization_bad_fiber_bound.md).
-## 1. Eliminate the auxiliary complement from the bound
+[Statement](../../../Theorems/jacobians/theta_divisors/polarization_bad_fiber_bound.md).
 
-Write i:A→J, L_A=L|A, and choose
+## 1. The orthogonal complement and multiplicity bound
 
-    P=(ker(i^∨ λ_L:J→A^∨))^0_red.
+Write i:A→J, L_A=L|A, and take the polarization-orthogonal complement
 
-Because λ_(L_A)=i^∨λ_Li is an isogeny, P complements A. For addition
-a:A×P→J and ψ=π|P, one has deg(a)=deg(ψ)=e. The cross homomorphism
-P→A^∨ is zero. The seesaw principle, with the restrictions on both
-axes fixed, therefore gives the actual line-bundle identity
+    P=(ker(i^∨λ_L:J→A^∨))^0_red.
 
-    a^*L≅L_A⊠L_P,           L_P=L|P.                         (1)
+For addition a:A×P→J and ρ=π|P, put e=deg a=deg ρ and L_P=L|P.
+The cross homomorphism P→A^∨ vanishes, so seesaw gives
 
-Picard-zero twists are included in these restrictions. This is the
-polarization construction of the complement, not an additional
-assumption on (J,A,L). See [Conrad, Theorem 5.1.10 and its proof](https://math.stanford.edu/~conrad/papers/cmchina.pdf)
-for the algebraic construction in arbitrary characteristic.
+    a^*L≅L_A⊠L_P,       ρ^*(π_*L)≅H^0(A,L_A)⊗L_P.          (1)
 
-Ample bundles on abelian varieties have no higher cohomology. Thus
-E=π_*L is locally free and commutes with base change. Pulling back
-along ψ identifies the family with A×P→P, so (1) gives
+This complement construction works in arbitrary characteristic:
+[Conrad, Theorem5.1.10 and proof](https://math.stanford.edu/~conrad/papers/cmchina.pdf).
+Ample line bundles on abelian varieties have no higher cohomology,
+so π_*L is locally free and (1) holds under base change.
 
-    ψ^*E=H^0(A,L_A)⊗L_P.
+The coordinates of ρ^*σ are sections of L_P with finite base scheme
+B_P=P×_Q B. Choose r general linear combinations whose intersection Z
+is zero-dimensional; successively avoid each positive-dimensional
+component, since none is contained in the finite base locus. Then
 
-The coordinates of ψ^*σ are sections of L_P with finite base scheme
-B_P=P×_Q B. Choose r general linear combinations. They intersect
-properly: at each step avoid the finitely many positive-dimensional
-components of the preceding intersections, none of which lies in
-the full finite base locus. Their intersection contains B_P and
-has length c_1(L_P)^r. Finite flatness of ψ gives
+    length Z=c_1(L_P)^r,       B_P⊂Z.
 
-    e length(B)=length(B_P)≤c_1(L_P)^r.                       (2)
+Let I_z be the ideal of B in the regular local ring R_z=O_(Q,z), and
+write e_(I_z)(R_z) for its Hilbert–Samuel multiplicity, following
+[Stacks, Definition43.15.1 and Theorem43.15.5](https://stacks.math.columbia.edu/tag/0AZU).
+At w over z, the parameter ideal J_w of Z satisfies
+J_w⊂I_z O_(P,w). Comparing lengths of powers gives
 
-Riemann--Roch and the projection formula for the isogeny a give
+    length(O_(Z,w))=e_(J_w)(O_(P,w))
+                   ≥e_(I_z O_(P,w))(O_(P,w)).
+    ∑_(w|z) e_(I_z O_(P,w))(O_(P,w))=e·e_(I_z)(R_z).       (2)
 
-    e χ(J,L)=χ(A,L_A)χ(P,L_P),
-    c_1(L_P)^r=r!χ(P,L_P).
+The equality in the second line follows from finite flatness: before
+taking leading Hilbert–Samuel coefficients, the corresponding sum of
+lengths is e·length(R_z/I_z^m) for every m. Thus inseparable kernels
+retain their full scheme degree. Summing (2) bounds ∑_z e_(I_z)(R_z)
+by c_1(L_P)^r/e. The inclusion B_P⊂Z also bounds length(B) by this ratio.
 
-Substitution in (2) proves length(B)≤r!χ(J,L)/χ(A,L_A).
-These identities use scheme degree, so no separability condition is
-needed. The standard cohomology and intersection identities are
-recorded in [Milne, Abelian Varieties, I, Theorem 11.1](https://www.jmilne.org/math/CourseNotes/AV.pdf).
+Finally Riemann–Roch and the isogeny projection formula give
 
-## 2. Generic determinant corank gives a local length budget
+    eχ(J,L)=χ(A,L_A)χ(P,L_P),       c_1(L_P)^r=r!χ(P,L_P).
 
-At the generic point of A_z=π^(-1)(z), remove an invertible block of
-a local square cohomology matrix. The remaining δ_z-square block
-has every entry in the fiber ideal I, so its determinant is in I^δ_z.
-This generic vanishing order holds along the entire fiber: the
-successive normal coefficients are sections of
+Hence the ratio is V=r!χ(J,L)/χ(A,L_A). These standard abelian-variety
+identities are in
+[Milne, Abelian Varieties, I, Theorem11.1](https://www.jmilne.org/math/CourseNotes/AV.pdf).
 
-    L|A_z ⊗ Sym^j(T_z^*Q).
+## 2. Determinant defects cost their r-th powers
 
-Each is a vector-bundle section on the integral A_z. For j<δ_z it
-vanishes generically, hence identically; induction gives s∈I^δ_z
-along A_z. Base change for π_*L on the infinitesimal neighborhood
-then puts all coordinates of σ in m_z^δ_z. Thus
+At the generic point of A_z=π^(-1)(z), remove an invertible block
+of the cohomology matrix. Its remaining δ_z-square block vanishes
+modulo the fiber ideal I, so the determinant belongs to I^δ_z.
+This holds along the whole fiber: its successive normal coefficients
+are sections of L|A_z⊗Sym^j(T_z^*Q), and generic vanishing for
+j<δ_z implies vanishing everywhere on the integral A_z. Base change
+therefore gives I_z⊂m_z^δ_z.
 
-    O_(Q,z)/I_(B,z) ↠ O_(Q,z)/m_z^δ_z.
+Multiplicity decreases under enlarging a primary ideal. Since R_z
+is regular of dimension r,
 
-The smooth r-dimensional local ring on the right has length
-w_r(δ_z)=binomial(r+δ_z−1,r). Summing these local estimates proves
-the defect budget. The argument only needs the determinant family;
-it does not require ordinarity or a curve automorphism group.
-If a symmetry preserves that family and the quotient, its orbits
-have constant δ and may be grouped in the same sum.
+    e_(I_z)(R_z)≥e_(m_z^δ_z)(R_z)=δ_z^r.
 
-## 3. The polarization ratio for any actual étale cover
+Section1 proves ∑_z δ_z^r≤V. Symmetries preserving the determinant
+family and quotient preserve δ_z, so each orbit costs its size
+times δ_z^r.
 
-Let q:U→Y have degree n≥2 and h=g(Y)≥2. All the following Jacobians
-and maps are on scalar Frobenius twists. Write f=q^*:J(Y)→A for
-the induced isogeny and κ=deg f. Norm is adjoint to pullback under
-the principal Jacobian polarizations, and Nm_q q^*=[n]. Therefore
+## 3. The ratio and norm kernel for an étale cover
 
-    f^*(Θ_U|A)≡nΘ_Y,
-    χ(A,Θ_U|A)=n^h/κ.                                     (3)
+For q:U→Y of degree n and g(Y)=h, work on scalar Frobenius twists.
+Put f=q^*:J(Y)→A and κ=deg f. Jacobian autoduality makes norm
+adjoint to pullback and gives Nm_q q^*=[n]. Consequently
 
-The norm complement P=((ker Nm_q)^0)_red is the principal-polarization
-orthogonal complement of A. Its quotient isogeny ψ:P→J/A has
-kernel A∩P=ker(λ_(Θ_U|A)), hence degree (n^h/κ)^2. Moreover
+    f^*(Θ_U|A)≡nΘ_Y,       χ(A,Θ_U|A)=n^h/κ.                (3)
 
-    (q^* Nm_q)|A=[n]_A.                                   (3a)
+The complement P=((ker Nm_q)^0)_red is orthogonal to A, with
 
-Indeed both sides agree after the faithfully flat isogeny f:J(Y)→A,
-by Nm_q q^*=[n]. Norm vanishes on P, so (3a) kills the full scheme
-A∩P by [n]. Thus [M]ψ(α)=0 implies [nM]α=0. The same argument
-works for any finite curve map: take the reduced identity component
-of its norm kernel so P is an abelian variety even for inseparable maps.
-The [bounded audit](../../../Research/audits/NORM_COMPLEMENT_ANNIHILATOR_AUDIT_2026_09_13.md)
-checks this scheme-theoretic assertion.
+    ker ρ=A∩P=ker λ_(Θ_U|A),       deg ρ=(n^h/κ)^2.
 
-The numerical equivalence in (3) suffices for χ. The pullback/norm
-identity is the functorial form of Jacobian autoduality; see
-[Milne, Jacobian Varieties, Section 6](https://www.jmilne.org/math/xnotes/JVs.pdf).
+Moreover q^*Nm_q=[n] on A, since this equality holds after pullback
+by the faithfully flat isogeny f. Norm vanishes on P, so A∩P⊂J[n]
+as group schemes. Thus [M]ρ(α)=0 implies [nM]α=0.
+See [Milne, Jacobian Varieties, Section6](https://www.jmilne.org/math/xnotes/JVs.pdf)
+for autoduality and the
+[bounded norm audit](../../../Research/audits/NORM_COMPLEMENT_ANNIHILATOR_AUDIT_2026_09_13.md)
+for this kernel argument.
 
-Here κ has an intrinsic covering interpretation even when p|n.
-Take the finite étale Galois closure W→Y of this ONE cover, with
-group G and U=W/H. Descent of a line bundle trivialized on W is a
-character G→G_m: universally H^0(W_T,O)=H^0(T,O), so the descent
-cocycle of the trivial line has constant coefficients on W_T.
-Its descent is trivial on U precisely when the character is trivial
-on H. As an fppf group scheme this gives
+To interpret κ, take the étale Galois closure W→Y of q, with
+group G and U=W/H. Descent of a trivial line on W amounts to a
+character of G, since W is geometrically connected and proper.
+The descended line is trivial on U exactly when the character
+vanishes on H. This holds over every coefficient scheme and yields
 
     ker(q^*)≅D(G^ab/im(H)),                                 (4)
 
-where D denotes Cartier duality for the constant finite abelian
-group. This argument retains infinitesimal characters, so (4)
-includes, for example, μ_p kernels from cyclic étale p-covers.
-The quotient G^ab/im(H) defines the largest abelian intermediate
-étale cover of q. Its order is κ and divides [G:H]=n. This single-leg
-Galois closure asserts nothing about a simultaneous closure for a
-bi-étale span.
+with D Cartier duality. Thus κ is the degree of the maximal abelian
+intermediate étale cover and divides n. Infinitesimal characters are
+retained, including μ_p from étale cyclic p-covers.
 
-Riemann--Hurwitz gives g(U)=n(h−1)+1 and r=(n−1)(h−1). For the
-Raynaud determinant line L, its numerical class is (p−1)Θ_U.
-Thus χ(J,L)=(p−1)^g(U) and
-χ(A,L|A)=(p−1)^h n^h/κ. Sections 1–2 give the exact budget
+Riemann–Hurwitz gives r=(n−1)(h−1). The Raynaud line has class
+(p−1)Θ_U, by
+[Tong, Sections1.2.1–1.2.3](https://arxiv.org/pdf/0712.2046).
+Substituting (3) gives, whenever the bad scheme is finite,
 
-    ∑_z w_r(δ_z)≤floor(r!(p−1)^r κ/n^h).                    (5)
+    ∑_z δ_z^r≤floor(r!(p−1)^r κ/n^h).                       (5)
 
-The Raynaud class, symmetry, and determinant conventions are in
-[Tong, Sections 1.2.1–1.2.3](https://arxiv.org/pdf/0712.2046).
-Finiteness of B remains a hypothesis of (5); it is not inferred
-from these polarization identities.
+## 4. Cyclic triples and character refinements
 
-## 4. The audited cyclic triple and its character refinements
+The [cyclic-triple theorem](ordinary_cyclic_triple_finite_bad_cosets.md)
+supplies finite bad support, with zero excluded, for n=3,h=2,p=5.
+Here κ=3, r=2 and V=32/3, so
 
-Use the actual ordinary triple in
-[ordinary_cyclic_triple_finite_bad_cosets](../../../Theorems/jacobians/theta_divisors/ordinary_cyclic_triple_finite_bad_cosets.md),
-whose bad locus is finite and avoids zero. With n=3,h=2,p=5 and
-κ=3, formula (5) gives V=32/3 and
+    ∑_z δ_z²≤10.                                          (6)
 
-    ∑_z δ_z(δ_z+1)/2≤10.                                   (6)
+The audited [low-genus theorem](low_genus_raynaud_cosets.md),
+applied to the genus-four curve U in characteristic five, gives
+\(\delta_z=1\) for every bad two-dimensional coset. This excludes
+the former defect-two alternatives everywhere, not only on free
+symmetry orbits. On Q=E² the group Γ=⟨R,−1⟩≅C6 preserves the
+bad set; each free orbit has six points. By (6) there can be at
+most one such orbit. The low-genus step itself does not require
+ordinary U. The full-kernel extension of the finiteness theorem now
+removes that assumption as well. Its product-coefficient refinement
+also removes ordinary Y; the numerical budget is unchanged.
 
-This also recovers the old coordinates: P=E^2, ψ=H with
-H=[[2,−1],[−1,2]], deg ψ=9, and (4H)^2/9=96/9=32/3.
+For a finite prime-to-five character subgroup Λ⊂P(k), the associated
+actual abelian cover b_Λ:W_Λ→U has
 
-On Q, Γ=⟨R,−1⟩≅C6. The only point fixed by all of Γ is zero:
-ker(R−1) has order 9 and its intersection with Q[2] is trivial.
-Since zero is good, every bad orbit has size at least 2. A defect
-δ≥3 would cost at least 2·6>10 in (6), so δ≤2. A free orbit with
-δ=2 would cost 6·3>10. Hence every defect-two point is fixed by
-R or −1, and lies in ker(R−1) or Q[2]. Outside that union the
-defect is 1, and at most one free orbit fits into (6).
+    generic_L h^0(W_Λ^(1),B_{1,W_Λ}⊗(qb_Λ)^(1)*L)
+       =∑_(α∈Λ) δ_(ρ(α)),                                 (7)
 
-For a finite prime-to-five character subgroup Λ⊂P(k), the actual
-abelian cover b_Λ:W_Λ→U has, by the projection formula,
-
-    generic_L h^0(W_Λ^(1),B_(W_Λ)⊗(qb_Λ)^(1)*L)
-       =∑_(α∈Λ) δ_(ψ(α)).                                 (7)
-
-Here δ is set to zero off B. Each fiber of ψ has at most 9 elements
-of Λ, and δ≤δ(δ+1)/2, so (6) bounds (7) by 90, independently of |Λ|.
-The character-cover construction and generic finite intersection
-are exactly those in the audited triple proof. Equation (7) measures
-the generic defect along the actual Y-parameter family; it is not
-the a-number of W_Λ. No second map is constructed, and any actual
-second étale map remains on the same source after refinement.
-
-Isolated defect-one points still satisfy every displayed estimate.
-This theorem supplies neither their absence nor a common-cover
-obstruction.
+with δ=0 off B. This is étale base change and character decomposition.
+Each fiber of ρ contains at most9 elements of Λ; since δ≤δ², (6)
+bounds (7) by90. This is generic defect along the Y-parameter family;
+the value may be positive.

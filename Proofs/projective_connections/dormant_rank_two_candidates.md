@@ -1,55 +1,51 @@
-# Proof and sources: rank-two candidate classes
+# Sources: dormant indigenous bundles and rank-two candidates
 
-Canonical [statement](../../Theorems/projective_connections/dormant_rank_two_candidates.md).
+[Statement](../../Theorems/projective_connections/dormant_rank_two_candidates.md).
 
-Choose theta^2=omega and N=theta tensor tau^2. Then N^2=omega tensor tau
-and F_C^*N=theta^5 tensor tau. Thus W=V tensor N^-1 has trivial determinant
-and its Frobenius pullback is K^vee tensor theta^-1, the nonsplit extension
+Wakabayashi, [*An Explicit Formula for the Generic Number of Dormant
+Indigenous Bundles*](https://doi.org/10.4171/PRIMS/138), Publ. RIMS **50**
+(2014), 383–409: Theorem 3.3 gives finite faithful flatness and generic
+etaleness; Proposition 2.4 fixes the spin normalization in the nonsplit
+case; Lemma 4.2 and Proposition 4.3 give the determinant-trivial rank-two
+Quot description in F_*(L^vee). We use his L, mathcal F and
+M^Zzz... notation. His literal Definition2.3 requires a nonsplit
+extension; the all-genus count here concerns indigenous objects.
+[Full text](https://ems.press/content/serial-article-files/41233?nt=1).
 
-    0 -> theta -> G_2(theta) -> theta^-1 -> 0.
+His Corollary 5.4 gives d_g(p) for p>2(g-1). To include every odd prime,
+combine its polynomiality calculation in §6.2(2) with Liu–Osserman,
+[*Mochizuki's indigenous bundles and Ehrhart polynomials*](https://doi.org/10.1007/s10801-006-6920-x),
+J. Algebraic Combin. **23** (2006), 125–136, Theorem 2.1: the moduli
+degree is one polynomial in all odd primes. Agreement at infinitely
+many primes identifies these polynomials. At p=5 this gives S_(g-1);
+its two roots satisfy x²-5x+5=0, giving the recurrence and S_8=29375.
 
-This fixes the actual bundle, not merely its HN polygon. Its canonical
-connection has zero p-curvature. The HN line theta cannot be horizontal
-because its degree is nonzero in k. Its second fundamental map is therefore
-an isomorphism theta -> theta^-1 tensor omega. Conversely Cartier descent
-of a dormant fixed-theta oper gives W. The quotient to theta^-1 is unique
-up to scalar, since Hom(G_2(theta),theta^-1)=k. Hence a W class determines
-the Quot point, without additional gauge parameters.
+The oper connection and its quotient identify the filtered bundle with
+J^1(L^vee): on the filtration line the induced map is the second
+fundamental isomorphism. Its extension class is c1(L^vee), whose trace
+is -(g-1). Thus the bundle splits exactly when p divides g-1.
+Projectivization with the chosen spin line gives the indigenous object;
+scalar automorphisms do not introduce additional classes. The split
+case is described as a theta-oper, not by Definition2.3's terminology.
 
-Wakabayashi, [dormant indigenous bundles](https://arxiv.org/pdf/1411.1191),
-Proposition 2.4 fixes the theta normalization; Theorem 3.3 gives finite
-faithfully flat moduli over M_g for EVERY odd prime. Lemma 4.2 and
-Proposition 4.3 identify the determinant-identity rank-two degree-zero
-subsheaf Quot scheme of F_*(theta^-1) with this moduli scheme. Their proofs
-identify the actual two-step quotient of F^*F_*(theta^-1), not just its
-degrees. Main and source agent read the relevant proofs.
+For any actual dormant theta-oper, projection of horizontal sections
+embeds its degree-zero descent W into F_*(L^vee): a kernel would pull
+back to a horizontal subsheaf of the oper line, contradicting the
+second fundamental isomorphism. If A is a line subbundle of W,
+adjunction gives a nonzero map F^*A->L^vee, so
+p deg A<=-(g-1)<0. This proves stability in both split and nonsplit cases.
 
-Joshi–Pauly, [Hitchin–Mochizuki morphism and opers](https://arxiv.org/pdf/0912.3602),
-Section 3.2, identifies the same nonsplit bundle under p>rank and
-p not dividing g-1. Its connection chart modulo gauge is H^0(omega^2)
-in rank two. Dormancy means ZERO, not merely nilpotent, p-curvature.
+Only the translation to the atlas bundle remains local. With
+N=L tensor tau², N²=omega tensor tau and F_C^*N=L^5 tensor tau, so
 
-## The all-odd-prime degree formula
+    F_C^*(V tensor N^-1)=K_C^vee tensor L^-1 ~= mathcal F.
 
-Wakabayashi Corollary 5.4 assumes p>2(g-1); do not apply it directly at
-p=5,g=9. Liu–Osserman, [indigenous bundles and Ehrhart polynomials](https://doi.org/10.1007/s10801-006-6920-x),
-Theorem 2.1, Corollary 3.6 and Theorem 3.9, instead prove that the degree
-for fixed g is ONE polynomial in every odd prime p, including small primes.
-We checked the argument in Liu's primary thesis, Chapter III, Theorem
-III.2.1, Corollary III.3.7 and Theorem III.3.11, printed pp.57,65,68-70.
-The gluing count at totally degenerate curves applies at every odd prime,
-and all odd Ehrhart arguments belong to a single polynomial.
-
-Wakabayashi Section 6.2(2) proves polynomiality of the expression
-
-    p^(g-1)/2^(2g-1) sum_(j=1)^(p-1) csc(pi*j/p)^(2g-2).
-
-It agrees with Liu–Osserman's polynomial at infinitely many primes by
-Corollary 5.4, hence identically. Evaluating at five gives the two powers
-in the statement. They obey the stated recurrence, whose first values
-are 2,5,15,50,175,625,2250,8125,29375. Finite flatness makes this the
-scheme length on every curve, not the count of distinct special-fiber
-points. This is a deduction combining sources, not extrapolation of
-the restricted theorem.
-
-None of these arguments gives the rank-three Hermitian lift.
+The last identification is the nonsplit extension in the
+[Hermitian criterion](../atlases/hermitian_atlas_extension_criterion.md).
+Because 5 does not divide deg L=g-1, its HN line cannot be horizontal;
+the second fundamental map L -> L^vee tensor omega is an isomorphism.
+Cartier descent and the cited Quot identification now give the required
+bijection. The quotient mathcal F -> L^vee is unique up to scalar
+(Hom(mathcal F,L^vee)=k), so forgetting it introduces no new bundle
+classes. As throughout the atlas records, F_C is absolute Frobenius;
+the source's relative formulation is the corresponding Frobenius base twist.

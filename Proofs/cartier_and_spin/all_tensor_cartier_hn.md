@@ -1,9 +1,11 @@
 # Proof: Cartier operator model and all full tensor HN polygons
 
-[Statement and audit metadata](../../Theorems/cartier_and_spin/all_tensor_cartier_hn.md).
-Use its notation. The [Cartier foundation, Proposition2](../../routes/global/22_CARTIER_BUNDLE_ETALE_FUNCTORIALITY_AND_LIMITS.md)
-supplies stability of B, its perfect alternating Raynaud pairing into
-ω1, and the diagonal-ideal filtration of I=F^*B.
+[Statement](../../Theorems/cartier_and_spin/all_tensor_cartier_hn.md).
+The bundle B=B_{1,C} is stable by
+[Joshi, Theorem1.1](https://www.numdam.org/articles/10.1016/j.crma.2004.02.019/).
+Its perfect alternating pairing into ω1 is
+[Tong, Proposition1.2.1.1](https://arxiv.org/pdf/0712.2046#page=6).
+The diagonal-ideal filtration of F^*B is constructed in Section2.
 
 ## 1. Operators give the actual endomorphism filtration
 

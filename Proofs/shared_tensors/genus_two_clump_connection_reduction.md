@@ -1,26 +1,35 @@
-# Proof: apply the root-contact inequality to the three allowed residues
+# Proof: one root-contact inequality and its small exceptions
 
 [Statement](../../Theorems/shared_tensors/genus_two_clump_connection_reduction.md).
-Author /root,2026-09-08. This is an elementary consequence, not a new
-audit of the earlier canonical/connection-spectrum inputs.
+Version2,2026-09-15. The geometric inputs retain their recorded scopes.
 
 The canonical-intersection theorem gives a primitive generator s of
 weight d with uniform zero multiplicity e. On Y, degree comparison is
-er=2d. The Cartier-generator theorem gives 5 not dividing d and
-e+d not zero modulo5. Consequently 5 divides neither e nor r, and
-r is not3 modulo5. Thus r is1,2 or4 modulo5.
+er=2d. The all-characteristic Cartier-generator theorem gives p not
+dividing d and e+d nonzero modulo p. Since p is odd, neither e nor
+r is divisible by p, and r is not -2 modulo p.
 
-If r=1mod5, then e/d=2mod5 and the least contact q>=2 with
-e+dq=0mod5 is3. The positivity condition in ramified_root_contact_core
-is d(q-2)>e, which here is d>e, or r>2. Therefore every r=6,11,16,...
-would force a core. Only r=1 remains in this residue class.
+Let q be the least integer at least2 with e+dq=0 modulo p.
+The excluded residues imply 2<=q<=p-1 and
 
-If r=2mod5, then e/d=1mod5, q=4, and positivity is 2d>e,
-equivalently r>1. This holds for every r=2,7,12,..., so all are excluded.
-The arbitrary-gcd version is essential: no assumption is made that
-d,e are coprime or that the primitive weight equals r or r/2.
+    q=-2/r modulo p.
 
-Thus a non-singleton clump has r=4mod5. Then e/d=2/r=3=-2mod5.
+The ramified-root theorem would force a core whenever
+d(q-2)>e, equivalently r(q-2)>2. Therefore a coreless span satisfies
+
+                         r(q-2)<=2.
+
+If r>=3 this forces q=2, hence r=-1 modulo p. Only r=1,2
+need separate consideration. For r=2, q=p-1, so the inequality
+holds only at p=3; this already has r=-1 modulo p. For r=1,
+p=3 is excluded by r!=-2 modulo p. At p>=5 one has q=p-2,
+and the inequality is p-4<=2, so only p=5 remains. This proves
+the stated restriction in every odd characteristic. The argument
+uses the arbitrary-gcd root theorem, without assuming d,e coprime
+or fixing their endpoint torsion.
+
+In characteristic five every non-singleton clump therefore has
+r=4 modulo5. Then e/d=2/r=3=-2 modulo5.
 The exact regularity criterion in coreless_connection_spectrum supplies
 the shared regular connection r_s. That theorem proves it nilpotent,
 and dormant exactly in the Cartier-zero branch. If the common spectrum

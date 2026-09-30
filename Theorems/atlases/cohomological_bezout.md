@@ -95,6 +95,11 @@ degree48, every primitive vector above degree46. A single choice
 `S=<y,x^10,x^4 y²>` works for all opers: its products span L64. It uses
 columns(4,21,23) of the pole-ordered L32 basis, hence only3 inverse columns.
 
+For any cubic torsion tau in characteristic five, the same theorem
+applies to V=W L tau^2, L^2=omega, T=omega^-1 and M=omega^2 tau.
+In genus9 the mixed size is24+h0(V), and the acyclic matrix is
+quadratic24-square. Nontrivial tau need not give a symmetric matrix.
+
 For any finite degree-d map pi:C->P1 and acyclic V with det V=omega,
 pi_*V=O(-1)^(2d). The dualizing trace gives a constant nondegenerate
 alternating matrix J in such a frame. If P(z) represents b_u, the
@@ -106,8 +111,4 @@ The first-oper quadratic tensor and its full six-section reconstruction
 remain exactly checked. Other exceptional B tensors are not asserted
 computed. These constructions do not exclude an atlas or common cover.
 
-[Proof](../../Proofs/atlases/cohomological_bezout.md). The original matrix,
-corank and determinant argument has an independent
-[PASS audit](../../Research/audits/COHOMOLOGICAL_BEZOUT_AUDIT_2026_09_07.md).
-The extensions and consolidated inverse arguments have the separate
-[2026-09-13 scope audit](../../Research/audits/INVERSE_CUP_CONSOLIDATION_SCOPE_AUDIT_2026_09_13.md).
+[Proof](../../Proofs/atlases/cohomological_bezout.md).

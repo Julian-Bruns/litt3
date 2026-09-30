@@ -1,7 +1,6 @@
 # Frobenius localization and explicit stabilization of finite theta exceptions
 
-Version 3, 2026-09-13. Author proof, with bounded audits of the
-elliptic kernels and norm-complement annihilator.
+Version6, 2026-09-16.
 
 Let Q/F_q be an abelian variety, F its q-power Frobenius, and Γ a
 finite group of geometric group automorphisms normalized by Frobenius:
@@ -19,18 +18,20 @@ time of Γz under F and F^m z=γz, then the field degree of z is
 When α=1 and Γ acts freely, this is m·ord(γ). The field degree is
 always at most the number of points in the stable stratum.
 
-Suppose B is the support of a finite F_q-defined determinant bad-fiber
-scheme in quotient dimension r, with Frobenius- and Γ-invariant
-generic defect δ and polarization budget ∑_B w_r(δ)≤K, where
-w_r(d)=binomial(r+d−1,r). A stable stratum with δ≥d and all Γ-orbits
-of size at least s has at most
+More generally, give B an F- and Γ-invariant positive integer weight
+w with ∑_B w≤K. A stable stratum with w≥c and all Γ-orbits of size
+at least s has at most
 
-    t=floor(K/(s w_r(d)))
+    t=floor(K/(sc))
 
 orbits; if t=0 it is empty. Its points have field degree at most
-floor(K/w_r(d)). More precisely the closed points satisfy
+floor(K/c). More precisely the closed points satisfy
 
-    ∑_(z closed in B) [k(z):F_q] w_r(δ_z)≤K.
+    ∑_(z closed in B) [k(z):F_q] w(z)≤K.
+
+For a finite determinant bad-fiber scheme in quotient dimension r,
+the polarization bound supplies w(z)=δ_z^r, with δ_z its generic
+defect. Thus the δ≥d stratum uses c=d^r.
 
 For any actual connected étale cover f:U→Y of degree n≥2 in
 characteristic p, with h=g(Y)≥2 and finite bad locus, put
@@ -43,7 +44,7 @@ J=J(U^(1)), A=im(f^(1)*), Q=J/A, r=(n−1)(h−1),
 Here F_q defines the quotient and determinant family. The empty lcm is1.
 Choose the norm complement P=((ker Nm_(f^(1)))^0)_red and put
 
-    e=deg(ψ:P→Q)=(n^h/κ)^2,       N=(n M_K)_(p').
+    e=deg(ρ:P→Q)=(n^h/κ)^2,       N=(n M_K)_(p').
 
 Every exceptional prime-to-p character in P lies in P[N]. Its actual
 character cover, of degree N^(2r), reaches the stabilized generic
@@ -51,13 +52,13 @@ defect along the Y-parameter family, at most e_(p')K. This value is
 unchanged for every finite prime-to-p character subgroup containing
 P[N]. If K=0, the bad locus is empty and level N=1 suffices.
 For any other complement the same conclusion holds with n replaced
-by an integer annihilator of ker ψ(k); e always suffices.
+by an integer annihilator of ker ρ(k); e always suffices.
 No bad-locus finiteness for arbitrary U/Y is asserted.
 
 Apply this to a connected cyclic étale triple U/Y in characteristic
-five, with Y ordinary of genus two and U ordinary. On scalar twists
+five, with Y of genus two and both ordinariness types allowed. On scalar twists
 put J=J(U^(1)), A=im J(Y^(1)), Q=J/A, and let B be the bad cosets for
-the Raynaud divisor. Choose F_q defining the cover, the ordinary
+the Raynaud divisor. Choose F_q defining the cover, the
 elliptic E, and the product identification Q≅E^2 with
 R=[[-1,-1],[1,0]]. Then
 
@@ -81,7 +82,7 @@ as F acts by I,−I,R^(±1), or −R^(±1).
 
 On the norm complement P≅E^2, put N=(3M(q,a))_(5').
 Every exceptional prime-to-five character α∈P(k), meaning
-ψ(α)∈B, lies in P[N]. The actual character refinement with group
+ρ(α)∈B, lies in P[N]. The actual character refinement with group
 of characters P[N] has degree N^4 over U and already reaches the
 stabilized generic defect along the Y-parameter family. That defect
 is at most 90 and is unchanged for every finite prime-to-five
@@ -92,3 +93,6 @@ membership does not imply badness. Finite bad support is essential;
 no generic-moduli torsion assertion or common-cover exclusion follows.
 [Proof](../../../Proofs/jacobians/theta_divisors/frobenius_exception_sieve.md).
 The audits are scoped to those two lemmas, not the full theorem.
+Version6 uses the independently audited extension of cyclic-triple
+finiteness to nonordinary Y and U; the arithmetic formulas work for
+both ordinary and supersingular E.

@@ -9,10 +9,19 @@ of the source; all comparisons use this ACTUAL differential pullback.
 Preserving a tensor means equality of pullbacks. Preserving its line
 means equality up to a nonzero constant, not an arbitrary function.
 
-The canonical ring is R(C)=⊕_(d≥0)H^0(C,omega_C^d). For an actual span,
-its canonical intersection A is the intersection of the two embedded
-graded rings inside R(Z). If it is k[s], d=deg(s) is its primitive
-weight. This polynomial-ring alternative is a theorem for coreless spans.
+Following [Krishnamoorthy, Definitions8.1 and8.6](https://msp.org/ant/2018/12-5/ant-v12-n5-p05-p.pdf#page=31),
+an invariant line bundle is L=(L_X,L_Y,phi), with phi:f^*L_X≅g^*L_Y.
+Its cohomology H^i(L) consists of pairs of endpoint classes whose
+pullbacks agree under phi; H^0(L) is its space of invariant sections.
+Its degree is the common pullback degree on Z. Write Ω for the
+canonical invariant line bundle (omega_X,omega_Y,phi_can), and
+
+    Pic0(X<-Z->Y)=ker(Pic0(X) x Pic0(Y) --f^*-g^*--> Pic0(Z)).
+
+The canonical ring is R(C)=⊕_(d≥0)H^0(C,omega_C^d). Its intersection
+A on the span equals ⊕_(d≥0)H0(Ω^d), embedded in R(Z) by the
+actual pullbacks. If A=k[s], d=deg(s) is the primitive weight.
+This polynomial-ring alternative is a theorem for coreless spans.
 
 For a tensor with uniform zero divisor eD, D reduced, e/d is the
 zero-multiplicity/weight ratio. An *equal-weight-zero tensor* has
@@ -27,7 +36,9 @@ when nabla(s)=0. If s is nonzero, eta=(nabla s)/s is a rational one-form.
 Its regularity requires a separate argument (e.g. zeros divisible by p).
 
 Ordinary Cartier C acts inverse-Frobenius-semilinearly on regular
-one-forms. The twisted operator C_n takes weight pn+1 to weight n+1;
+one-forms. Relative Cartier is Katz's [Theorem7.2](https://web.math.princeton.edu/~nmk/old/nilpconn.pdf#page=27),
+with relative Frobenius F:C→C^(p). The twisted operator C_n takes
+weight pn+1 to weight n+1 by projection formula and inverse scalar twist;
 locally, if a=Σ_(i=0)^(p-1)a_i^p t^i, then
 
     C_n(a(dt)^(pn+1))=a_(p-1)(dt)^(n+1).

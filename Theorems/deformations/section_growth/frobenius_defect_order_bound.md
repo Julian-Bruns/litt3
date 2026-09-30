@@ -1,8 +1,22 @@
-# The opposite endpoint bounds a prime-to-five defect image by short Frobenius strings
+# Short Frobenius strings bound a two-dimensional deck image
 
-Version1,2026-09-10. Focused medium audit PASS,
-/root/audit_frobenius_character_order. New argument combines both
-actual etale maps; no source-degree bound or full lift is assumed.
+## General representation theorem
+
+Let k be algebraically closed of characteristic p>0, let G have order
+prime to p, and let V be a finite-dimensional k[G]-module restricting
+to a multiple of the regular representation on every cyclic subgroup.
+Let Psi be an equivariant Frobenius-semilinear endomorphism of V, with
+self-dual cokernel D of dimension two. If its nilpotent part has a
+Jordan string of length at most d>=1, the faithful image Gamma of G
+on D satisfies
+
+    ord(gamma)<=2 or ord(gamma) divides p^ell-1 or p^ell+1
+        for some 1<=ell<=d,
+    |Gamma|<=max(120,4(p^d+1)).
+
+For p=5, the constant 120 improves to 48.
+
+## Application to actual common covers in characteristic five
 
 Let X←f−Z−g→Y be actual finite etale maps of smooth projective connected
 hyperbolic curves over k=bar(F5). Suppose:
@@ -20,12 +34,9 @@ Gamma has order at most2 or an order dividing
 In particular |Gamma|<=max(48,4(5^d+1)). The kernel of the defect
 action, and therefore deg(Z/Y), is not asserted to be bounded.
 
-The reason is two-leg: normalized f-trace preserves a nonzero short
-nilpotent Psi string from H1(X,T_X). On the actual cyclic deck
-subgroups of g, the negative cohomology is a multiple of the regular
-representation. Serre--Cartier duality and a character-graded string
-give precisely the displayed congruence. Dimension2 alone does not
-bound these character orders.
+Normalized f-trace supplies the short nilpotent string from H1(X,T_X);
+etale character decomposition supplies regularity, and Serre--Cartier
+duality identifies the defect representation with D^dual.
 
 ## Consequence for the unchanged main pair
 
@@ -56,5 +67,6 @@ case is proved: deg f is divisible by5 and normalized trace fails.
 Ordinary-X, higher-defect, non-Galois, dormant and absent-connection
 branches remain. The full common-cover problem is UNSOLVED.
 
-[Proof](../../../Proofs/deformations/section_growth/frobenius_defect_order_bound.md) ·
-[Focused audit](../../../Research/audits/FROBENIUS_DEFECT_ORDER_AUDIT_2026_09_10.md).
+Version 2, 2026-09-14: the representation theorem holds for every p>0;
+the characteristic-five geometric conclusions are unchanged.
+[Proof](../../../Proofs/deformations/section_growth/frobenius_defect_order_bound.md).

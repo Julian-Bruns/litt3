@@ -112,3 +112,7 @@ Nonzero scalars and source automorphisms preserve the determinacy bound.
 Finally equality of J aligns several resulting extensions over their
 SAME target field. No global quotient or atlas is inferred merely from
 the local test.
+
+The [local jet verifier](../../../scripts/orbifolds/verify_local_normality_jets.sage)
+checks the characteristic-five cases t=8,24 and bounded Newton-correction
+examples; the argument above supplies the general statement.

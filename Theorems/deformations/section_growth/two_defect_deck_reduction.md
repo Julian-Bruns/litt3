@@ -71,5 +71,4 @@ the nontrivial-action branch for the selected main pair, including a
 nonordinary X connection. The trivial-action branch retains an unbounded
 cyclic exponent and prime-to5 image; no non-Galois reduction is asserted.
 
-[Proof](../../../Proofs/deformations/section_growth/two_defect_deck_reduction.md) ·
-[Scoped audit](../../../Research/audits/TWO_DEFECT_FIVE_MONODROMY_AUDIT_2026_09_10.md).
+[Proof](../../../Proofs/deformations/section_growth/two_defect_deck_reduction.md).

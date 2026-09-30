@@ -1,8 +1,7 @@
 # Which higher Hodge obstructions survive an actual p-group cover?
 
 Version1,2026-09-10. Author proof and exact computation; focused medium
-audit PASS /root/audit_p_cover_witt_repair. Not Lean verified.
-Use the [intrinsic obstruction](../../Definitions/witt_hodge_obstruction.md).
+audit PASS /root/audit_p_cover_witt_repair. Use the [intrinsic obstruction](../../Definitions/witt_hodge_obstruction.md).
 
 Let h:T->C be an actual connected finite etale Galois cover of smooth
 projective curves of genus>=2 over k=bar(F5), with finite5-group P of

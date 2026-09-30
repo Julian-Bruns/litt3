@@ -62,20 +62,16 @@ For the fixed X, n=11, D=4, a=1, b=2. Consequently
 
 Moreover W_3(X,O) intersect J(X)[3] has exactly276 classes.
 Every three-primary class in W_1(X,O) is one of the eleven branch
-classes, all killed by3. Exact order9 remains open in W_2 and W_3;
-order27 and all higher three-powers are absent. The finite bound is
-useful for checking small uniform branch fibers; it is not an exclusion
-of a common cover, a PGU twist, or a dormant-oper representative.
+classes, all killed by3. Order27 and higher three-powers are absent.
 
 For fixed X the mixed-prime assertion gives
 
     W_3(X,O) intersect J(X)[2^infinity 3^infinity]
        is contained in J(X)(F_(25^684))[216].          (5)
 
-It does NOT imply that the two-primary component of a mixed class
-vanishes, even though pure two-primary W3 torsion is already zero.
+The two-primary component of a mixed class need not vanish merely
+because pure two-primary W_3 torsion is zero.
 
-Version4. Audits of the [cubic arithmetic](../../../Research/audits/CYCLIC_CUBIC_LOW_ABEL_TORSION_AUDIT_2026_09_07.md),
-[Kummer layer](../../../Research/audits/KUMMER_FROBENIUS_LAYER_AUDIT_2026_09_07.md)
-and [mixed-prime bound](../../../Research/audits/MIXED_SMALL_DIVISOR_TORSION_AUDIT_2026_09_07.md).
+Version5. The separate incomplete fixed-\(X\) order-nine support
+scan is retained as local evidence; the bounds here do not depend on it.
 [Proof](../../../Proofs/jacobians/torsion/cyclic_cubic_low_abel_torsion.md).

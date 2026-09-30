@@ -1,46 +1,29 @@
 # Proof: one tangent bundle, two different choices of cyclic cover
 
 [Statement](../../Theorems/projective_connections/tangent_bundle_cyclic_refinements.md).
-Author /root,2026-09-08. This assembles the canonical-double factorization
-with classical theta and finite-field results; it is not a new theta theorem.
-
 ## 1. Dormant tangent bundle and its stability
 
-In a uniformizer t write a quadratic as v(dt)². Linearizing the dormant
-equation E(r)=r''−3r²=0 gives Bol_r(v)=v''−r v. Its kernel on GLOBAL
-regular quadratics is zero exactly at reduced dormant points. It is O_(C^(1))-linear
-after F_* because derivatives kill Frobenius-pulled-back functions.
+Choose a spin line L²=ω_C and let W be the determinant-trivial dormant
+oper descent. The [Bol complex](dormant_bol_complex.md), specialized
+to p=5 and twist N=L, identifies
 
-Here is an explicit coordinate check, which also identifies its jet bundle.
-For x=x(t), u=x', the quadratic and its first derivative change by
+    V_r=W⊗L^(1)=ker(F_*[ω_C² --D²−r--> ω_C^4]).
 
-    (v_t,v_t')^T = [[u²,0],[2uu',u³]] (v_x,v_x')^T.
+Here the right-hand expression uses relative Frobenius; it is the
+coefficient twist of the cited absolute-Frobenius formula. In particular
+V_r is independent of the chosen spin structure, is stable, has
+det V_r=ω_(C^(1)), and commutes with étale pullback. Wedge is its
+perfect canonical-valued alternating pairing. Linearization of
+r''−3r²=0 identifies H0(V_r) with the actual dormant tangent space.
 
-Using r_t=u²r_x−{x,t}/2 and characteristic5 gives
+The oper jet bundle J¹(L^−1), tensored by the horizontal line
+F^*L^(1)=L^5, is J¹(ω_C²). Thus F^*V_r has the regular scalar
+connection (v,v')'=(v',rv), with jet sequence
 
-    v_t''−r_t v_t = u^4(v_x''−r_x v_x).
+    0→ω_C³→J¹(ω_C²)→ω_C²→0.
 
-Thus the differential system (v,v')'=(v',r v) is a regular connection
-on J^1(omega²). Its p-curvature is zero since r is dormant: locally it
-is the same scalar second-order connection defining r. Cartier descent
-therefore gives a rank2 vector bundle V_r; the first-coordinate map
-identifies it with ker(F_*Bol_r). Its global sections are precisely the
-actual dormant tangent vectors, not merely solutions over the function field.
-
-The jet sequence is
-
-    0→omega³→J^1(omega²)→omega²→0.
-
-It has determinant omega^5. Hence 5deg(V_r)=5(2g−2), giving the claimed
-degree and chi(V_r)=0. If A⊂V_r is a line subbundle, F^*A is horizontal.
-It cannot lie in the oper line omega³: the second fundamental map of
-that line to omega² tensor omega is an isomorphism. Therefore its
-projection to omega² is nonzero, so
-
-    5deg A<=deg omega²=4(g−1)<5(g−1).
-
-This proves stability. Cartier descent, jets and the scalar equation
-commute with etale base change, giving V_(h^*r)=h^(1)*V_r.
+This identification uses only the canonical connection on the
+Frobenius-pulled line; it also holds when the jet extension splits.
 
 ## 2. The rank-four bundle, including a split root torsor
 
@@ -50,8 +33,11 @@ Its tautological q changes sign under the involution tau. The connection
 rho=pi^*r+q is dormant on all components, with tau^*rho=pi^*r−q.
 Define E_r=pi^(1)_*V_rho. It is locally free of rank4. For connected C_s,
 its genus is2g−1 and chi(V_rho)=0. For the split torsor, the two summands
-each have Euler characteristic zero. Finite pushforward and Riemann–Roch
-in either case give chi(E_r)=0 and deg(E_r)=4(g−1).
+each have Euler characteristic zero. Wedge upstairs followed by étale
+trace gives E_r a perfect omega_(C^(1))-valued alternating pairing:
+étale-locally the double splits, and this is the direct sum of the two
+wedge forms. Thus det E_r=omega_(C^(1))², chi(E_r)=0 and
+deg(E_r)=4(g−1). These pairings commute with actual étale pullback.
 
 The previously proved tangent factorization identifies H^0(E_r) with
 T_nil(C,r): on a connected double this is the invariant part of two
@@ -76,25 +62,21 @@ acyclicity at one twist forces semistability (a destabilizing subbundle
 has positive Euler characteristic at every twist). The determinant of
 an equal-rank two-term cohomology complex defines the divisor.
 [Raynaud, Section1.8 and Proposition1.8.1](https://www.numdam.org/article/BSMF_1982__110__103_0.pdf)
-give its class in arbitrary characteristic. Sections1.6–1.8, including
-the proof, were read directly. Proposition1.6.2 also gives a proper theta
+give its class in arbitrary characteristic. Proposition1.6.2 also gives a proper theta
 divisor for every semistable rank2 bundle of Euler characteristic zero,
 so it applies to EVERY V_r, even when h^0(V_r)>0. No assertion that every rank4 bundle has
 a proper theta divisor is being used.
 
 [Raynaud, Lemma4.3.5 (Serre)](https://www.numdam.org/article/BSMF_1982__110__103_0.pdf)
 says that a divisor D on a Jacobian admits an order-ell subgroup meeting
-D only possibly at0 when ell!=p and ell+1>D·C_Abel. Its proof counts
-torsion points by intersection and compares with the number of lines
-in J[ell]. The lemma and proof were read directly.
+D only possibly at0 when ell!=p and ell+1>D·C_Abel.
 
 Over a finite-field algebraic closure, for a locally closed irreducible
 subvariety U GENERATING an abelian variety A, and any finite prime set S,
 [Poonen, Lemma6.6](https://math.mit.edu/~poonen/papers/multiples.pdf)
 gives U(k)+A(k){R}=A(k) for some prime set R disjoint from S. Apply to0
 after deleting0 from U: one obtains a nonzero point of U whose order
-avoids S. The proof of Lemmas6.4–6.6 was read. The complementary prime
-set is essential; projecting onto S-torsion would reverse this conclusion.
+avoids S.
 
 ## 4. Good subgroups, with an explicit bound
 
@@ -163,23 +145,7 @@ This constructs actual cyclic refinements above every chosen Z_0, not
 just an abstract direct sum of representations or one-leg Jacobian data.
 Minimality and corelessness of a presentation are NOT preserved or needed.
 
-## 7. What this does and does not repair
-
-The good and bad constructions choose different subgroups. Both are
-available for the backup's finite90-object pool. The negative statement
-therefore cannot be fixed merely by finding a larger finite pool on an
-endpoint with simple Jacobian. It does not rule out a good minimal source.
-The positive statement cannot repair a bad source, since its existing
-tangent vectors pull back injectively.
-
-[Wakabayashi1602.07061, Section5](https://arxiv.org/pdf/1602.07061)
-fixes a degree d BEFORE defining the open (d,n)-dormant-ordinary locus.
-Its generic-cover theorem is not a single open locus controlling every
-cyclic degree on every finite-field-valued curve. Hence the bad towers
-do not contradict it. Neither construction proves that two endpoint
-connections are compatible, supplies a clump, or excludes a common cover.
-
-## 8. Recovering the connection and its canonical double from the bundles
+## 7. Recovering the connection and its canonical double from the bundles
 
 The stable bundles V_r,V_s have equal slopes, so a nonzero morphism is
 an isomorphism. Pull it back by Frobenius. Cartier descent gives a
@@ -234,8 +200,3 @@ Taking the midpoint, which is defined since2 is invertible, gives the
 equality of the pulled-back r and s. The quadratic difference descends
 this equality to C. The converse follows from the definition of E.
 Apply the same argument on Z to obtain the two-leg active criterion.
-
-Thus growth of H^0(V_r) under refinements does not undermine these exact
-matching tests. It concerns maps from O, whose slope is different, not
-the equal-slope Hom spaces used above. Nevertheless no argument here
-forces a nonzero Hom between the two endpoint families.

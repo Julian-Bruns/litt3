@@ -1,0 +1,72 @@
+// Tropical support bounds for the exact infinity-residue circuit.
+// psi is temporarily an independent Laurent variable; substitute
+// psi=a0(q)+H*a1(q), h=H/w, q=w^3 only at the end.
+#include "degree140_infinity_trace_20260929.hpp"
+using namespace infinitytrace;
+namespace bound {
+struct B{bool zero=true;int lo[3]={},hi[3]={};};
+B mon(int h=0,int w=0,int p=0){B z;z.zero=false;z.lo[0]=z.hi[0]=h;z.lo[1]=z.hi[1]=w;z.lo[2]=z.hi[2]=p;return z;}
+B add(B a,const B&b){if(a.zero)return b;if(b.zero)return a;for(int i=0;i<3;i++){a.lo[i]=std::min(a.lo[i],b.lo[i]);a.hi[i]=std::max(a.hi[i],b.hi[i]);}return a;}
+B mul(B a,const B&b){if(a.zero||b.zero)return {};for(int i=0;i<3;i++){a.lo[i]+=b.lo[i];a.hi[i]+=b.hi[i];}return a;}
+B inv(B a){if(a.zero)throw std::runtime_error("zero bound inverse");for(int i=0;i<3;i++){if(a.lo[i]!=a.hi[i])throw std::runtime_error("nonmonomial bound inverse");a.lo[i]=a.hi[i]=-a.lo[i];}return a;}
+struct BS{int lo=0,prec=INF;std::vector<B> c;BS()=default;BS(int l,std::vector<B> v,int p=INF):lo(l),prec(p),c(std::move(v)){trim();}
+void trim(){if(prec!=INF&&lo+(int)c.size()>prec)c.resize(std::max(0,prec-lo));while(!c.empty()&&c.back().zero)c.pop_back();int j=0;while(j<(int)c.size()&&c[j].zero)j++;if(j){c.erase(c.begin(),c.begin()+j);lo+=j;}if(c.empty())lo=prec;}
+int val()const{return c.empty()?prec:lo;}B at(int n)const{if(n>=prec)throw std::runtime_error("bound precision exhausted");return n>=lo&&n<lo+(int)c.size()?c[n-lo]:B{};}};
+BS mono(int e,B b=mon()){return BS(e,{b});}
+BS shift(BS a,int n){if(a.lo!=INF)a.lo+=n;if(a.prec!=INF)a.prec+=n;return a;}
+BS cut(BS a,int n,bool ep=false){a.prec=std::min(a.prec,n);a.trim();if(ep)a.prec=INF;return a;}
+BS plus(const BS&a,const BS&b){int p=std::min(a.prec,b.prec),lo=std::min(a.val(),b.val());if(lo>=p)return BS(0,{},p);int hi=std::min(p,std::max(a.c.empty()?lo:a.lo+(int)a.c.size(),b.c.empty()?lo:b.lo+(int)b.c.size()));std::vector<B> c(hi-lo);for(int i=lo;i<hi;i++)c[i-lo]=add(a.at(i),b.at(i));return BS(lo,std::move(c),p);}
+BS times(const BS&a,const BS&b){int p=std::min({INF,a.prec==INF?INF:a.prec+b.val(),b.prec==INF?INF:b.prec+a.val()});if(a.c.empty()||b.c.empty())return BS(0,{},p);int lo=a.lo+b.lo,hi=std::min(p,a.lo+(int)a.c.size()+b.lo+(int)b.c.size()-1);if(hi>CAP){hi=CAP;p=std::min(p,CAP);}std::vector<B> c(std::max(0,hi-lo));for(int i=0;i<(int)a.c.size();i++)if(!a.c[i].zero)for(int j=0;j<(int)b.c.size()&&i+j<(int)c.size();j++)if(!b.c[j].zero)c[i+j]=add(c[i+j],mul(a.c[i],b.c[j]));return BS(lo,std::move(c),p);}
+BS inverse(const BS&a){if(a.c.empty())throw std::runtime_error("zero bound series");int lo=-a.lo,p=std::min(CAP,a.prec==INF?CAP:a.prec-2*a.lo),n=p-lo;std::vector<B> c(n);c[0]=inv(a.c[0]);for(int i=1;i<n;i++){B t;for(int j=1;j<=i&&j<(int)a.c.size();j++)t=add(t,mul(a.c[j],c[i-j]));c[i]=mul(t,c[0]);}return BS(lo,std::move(c),p);}
+BS quotient(const BS&a,const BS&b){return times(a,inverse(b));}
+BS pow(BS a,int n){BS o=mono(0);while(n){if(n&1)o=times(o,a);n>>=1;if(n)a=times(a,a);}return o;}
+BS fifth(const BS&a){if(a.c.empty())return BS(0,{},a.prec==INF?INF:5*a.prec);int p=a.prec==INF?INF:5*a.prec,lo=5*a.lo,hi=5*(a.lo+(int)a.c.size()-1)+1;if(hi>CAP){hi=CAP;p=std::min(p,CAP);}std::vector<B> c(std::max(0,hi-lo));for(int i=0;5*i<(int)c.size();i++){B b=a.c[i];for(int j=0;j<3;j++){b.lo[j]*=5;b.hi[j]*=5;}c[5*i]=b;}return BS(lo,std::move(c),p);}
+BS deriv(const BS&a){BS o=a;if(o.lo!=INF)o.lo--;if(o.prec!=INF)o.prec--;for(int i=0;i<(int)o.c.size();i++)if((a.lo+i)%5==0)o.c[i]=B{};o.trim();return o;}
+BS constant_series(const S&a){std::vector<B> c;for(auto z:a.c)c.push_back(z?mon():B{});return BS(a.lo,std::move(c),a.prec);}
+BS polynomial(const Poly&p){return constant_series(infinitytrace::polynomial(p));}
+BS force(BS a,int lo,B leading){if(a.lo<lo){a.c.erase(a.c.begin(),a.c.begin()+std::min(int(a.c.size()),lo-a.lo));a.lo=lo;}if(a.lo>lo)throw std::runtime_error("bound omitted prescribed leading term");if(a.c.empty())a.c.resize(1);a.c[0]=leading;a.trim();return a;}
+std::array<std::vector<B>,3> profiles(){
+ S yu0=infinitytrace::yunit();BS yu=constant_series(yu0),y=shift(yu,-10),om=constant_series(scal(infinitytrace::shift(infinitytrace::inverse(infinitytrace::pow(yu0,2)),16),4)),df=inverse(om);
+ std::array<BS,4> gs;
+ for(int i=0;i<4;i++)for(auto&t:family[i]){if(!t.c)continue;BS term=times(mono(-3*t.i,mon(t.h,t.w)),pow(y,t.j));gs[i]=plus(gs[i],term);}
+ // These leading terms are explicit coefficient identities in the supplied family.
+ gs[0]=force(gs[0],-32,mon(1,0));gs[1]=force(gs[1],-46,mon());gs[2]=force(gs[2],-57,mon(0,1));
+ BS a=shift(gs[0],35),b=shift(gs[1],46),c=shift(gs[2],57),rho=mono(0,mon(0,1));
+ for(int n=1;n<CAP;n*=2){int old=CAP;CAP=std::min(old,2*n);BS ax=cut(a,CAP),bx=cut(b,CAP),cx=cut(c,CAP);BS fun=plus(plus(times(ax,pow(rho,2)),times(bx,rho)),cx);rho=plus(rho,quotient(fun,plus(times(ax,rho),bx)));rho=cut(rho,CAP,true);CAP=old;}
+ rho.prec=std::min({CAP,a.prec,b.prec,c.prec});rho.trim();rho=force(rho,0,mon(0,1));
+ BS zs=shift(rho,-11),zl=plus(quotient(gs[1],gs[0]),zs);zl=force(zl,-14,mon(-1,0));
+ BS y5=fifth(y),tt=pow(polynomial(T),3),dt=times(deriv(tt),df),bp=pow(polynomial(A),2);
+ BS aa=quotient(gs[0],pow(y,2)),bb=quotient(plus(gs[1],times(polynomial(B0),gs[0])),pow(y,3));
+ BS da=times(deriv(aa),df),nr=times(quotient(times(pow(bb,2),pow(da,2)),aa),om);
+ std::array<std::vector<B>,3> out;for(auto&o:out)o.resize(17);
+ for(int j=0;j<3;j++)out[j][0]=nr.at(3*j-1);
+ for(int i=0;i<2;i++){
+  BS z=i?zs:zl,phi=quotient(plus(fifth(z),polynomial(Q)),y5);phi=force(phi,i?-7:-20,i?mon():mon(-5,0));
+  BS ss=quotient(plus(plus(times(gs[0],pow(z,3)),times(gs[1],pow(z,2))),plus(times(gs[2],z),gs[3])),y5);
+  BS lam=plus(quotient(ss,phi),quotient(tt,pow(phi,2)));lam=force(lam,i?-7:-4,i?mon(0,-3,1):mon(3,0));
+  BS eta=quotient(plus(gs[1],times(gs[0],z)),pow(y,3));eta=force(eta,-16,mon());
+  BS dl=deriv(lam),base=times(times(eta,phi),times(pow(dl,2),df)),li=inverse(lam),omg=times(base,li);
+  BS N=plus(dt,times(bp,ss)),dS=times(deriv(ss),df);
+  BS psi1=times(quotient(times(eta,pow(bp,2)),phi),om);
+  BS in=plus(plus(quotient(times(tt,pow(bp,2)),pow(phi,3)),quotient(times(dt,bp),pow(phi,2))),quotient(plus(quotient(pow(N,2),tt),times(bp,dS)),phi));
+  BS psi0=times(times(eta,in),om);
+  for(int n=0;n<=15;n++){
+   for(int j=0;j<3;j++){B r=omg.at(3*j-1);if(n==0)r=add(r,psi0.at(3*j-1));if(n==1)r=add(r,psi1.at(3*j-1));out[j][n+1]=add(out[j][n+1],r);}
+   omg=times(omg,li);
+  }
+ }
+ return out;
+}
+}
+int main(int argc,char**argv){try{
+ if(argc!=3)return 2;exact::loadfield(argv[1]);criticaltrace::load(argv[2]);CAP=160;auto p=bound::profiles();
+ std::cout<<"{\"coefficient_bounds\":[";bool comma=false;
+ for(int j=0;j<3;j++)for(size_t n=0;n<p[j].size();n++){
+  auto b=p[j][n];if(b.zero)continue;if(comma)std::cout<<',';comma=true;
+  int ah=std::max(0,-b.lo[0]),ap=std::max(0,-b.lo[2]);
+  int qmin=b.lo[1]-b.hi[0]+int(n),qmax=b.hi[1]-b.lo[0]+int(n),aq=std::max(0,(2-qmin)/3);
+  int dh=ah+b.hi[0]+ap+b.hi[2],dq=(3*aq+qmax)/3+7*(ap+b.hi[2]);
+  std::cout<<"{\"j\":"<<j<<",\"n\":"<<n<<",\"lo\":["<<b.lo[0]<<','<<b.lo[1]<<','<<b.lo[2]<<"],\"hi\":["<<b.hi[0]<<','<<b.hi[1]<<','<<b.hi[2]<<"],\"denominator_H_q_Psi\":["<<ah<<','<<aq<<','<<ap<<"],\"numerator_bidegree\":["<<dh<<','<<dq<<"]}";
+ }
+ std::cout<<"]}\n";
+}catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}

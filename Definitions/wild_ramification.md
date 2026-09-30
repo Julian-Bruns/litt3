@@ -17,8 +17,8 @@ integer Delta dividing kappa, with
     c m - q t_0 = Delta,
     n=(kappa/Delta) q g_0 t_0 m.
 
-Old solution records call this integer `D`; here Delta distinguishes
-it from a marked divisor. The displayed identities are the hypotheses
+The local atlas proofs write D=Delta; Delta distinguishes this integer
+from a marked divisor. The displayed identities are the hypotheses
 supplied by the signature-reduction results, not assumptions about every
 arbitrary curve map. Full tame order t and reduced order t_0 differ.
 

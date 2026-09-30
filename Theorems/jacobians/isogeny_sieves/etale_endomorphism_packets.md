@@ -1,31 +1,33 @@
 # Endomorphism-field obstructions for actual étale cover groups
 
-Version1,2026-09-09. Restored and consolidated earlier results, NOT new
-discoveries. The general group inequality was independently audited in
-the former95/96 chain; the factor/multiplicity and minimal-source versions
-have author proofs. No new whole-statement audit or Lean verification.
+Version2,2026-09-16. The group conclusions consolidate earlier results;
+the local arithmetic input below has a new, shorter proof. The general
+group inequality was independently audited in the former95/96 chain;
+the factor/multiplicity and minimal-source versions retain author proofs.
+The new local arithmetic argument passed its own bounded audit.
 
 Let q:W→C be connected finite étale Galois, G its group, g(C)=h≥2.
 Let A be a geometrically simple abelian variety of dimension d with
 End⁰(A)=K a number field. There is NO prime restriction on |G|.
 For a nontrivial complex irreducible character χ put
-
-    c=χ(1), F=Q(χ), a=[F∩K:Q],
-    e=e_K(χ), the Schur index over FK.
-
+\[
+c=\chi(1),\quad F=\mathbf Q(\chi),\quad a=[F\cap K:\mathbf Q],
+\quad e=e_K(\chi),
+\]
+where e is the Schur index over FK.
 If A occurs in the rational χ-packet of J(W), then
-
-    d ≤ (h−1) a c/e.                                      (1)
-
+\[
+d\le (h-1)ac/e.\tag{1}
+\]
 The packet has dimension (h−1)[F:Q]c². A occurring in the trivial
 packet already occurs in J(C). Thus if (1) fails for every nontrivial
 character, no new A-factor occurs anywhere in J(W).
 
 For abelian G and a packet of character order n, set
 b_n=φ(n)/[K∩Q(ζ_n):Q]. Its A-multiplicity is exactly b_n t, with
-
-    0≤t≤floor((h−1)[K∩Q(ζ_n):Q]/d).
-
+\[
+0\le t\le\left\lfloor (h-1)[K\cap\mathbf Q(\zeta_n):\mathbf Q]/d\right\rfloor.
+\]
 In particular d>(h−1)[K∩Q^ab:Q] prevents any increase of the
 A-multiplicity along ALL abelian Galois covers, of arbitrary exponent.
 For a CM field K whose maximal real subfield is primitive and non-Galois,
@@ -34,16 +36,19 @@ one always has [K∩Q^ab:Q]≤2.
 ## The selected genus-nine curve
 
 For the fixed X of fixed_pair_arithmetic,
-
-    End⁰_k J(X)=K, [K:Q]=18, K∩Q^ab=Q(ζ_3).
-
+\[
+\operatorname{NP}(JX)=0^6,(1/2)^6,1^6,\qquad
+\operatorname{End}^0_kJ(X)=K=\mathbf Q(\pi_{25}),
+\quad [K:\mathbf Q]=18,\quad K\cap\mathbf Q^{\mathrm{ab}}=\mathbf Q(\zeta_3).
+\]
 Consequently no étale abelian cover of ANY genus-two curve can dominate
 X, even by a ramified map. More generally the Galois closure G of the
 Y-leg in an ACTUAL span X←Z→Y, g(Y)=2, must have a character with
-
-    χ(1)/e_K(χ) ≥5;
-    χ(1)/e_K(χ) ≥9 if Q(χ) does not contain Q(ζ_3).        (2)
-
+\[
+\chi(1)/e_K(\chi)\ge5,\qquad
+\chi(1)/e_K(\chi)\ge9\ \text{if }\mathbf Q(\chi)\not\supset\mathbf Q(\zeta_3).
+\tag{2}
+\]
 All groups with an abelian subgroup of index≤4 are excluded, with no
 bound on group order. If 3∤|G|, index≤8 suffices. These include many
 nonabelian/non-Galois spans and do not require Y ordinary or high-degree.
@@ -62,5 +67,16 @@ Large-character groups, including alternating natural-action examples,
 are NOT excluded by these conditions. Do not use one-leg domination in
 place of the second actual étale map when pursuing the remaining problem.
 
-[Proof](../../../Proofs/jacobians/isogeny_sieves/etale_endomorphism_packets.md) ·
-[Earlier group-inequality audit](../../../routes/global/audits/95_96_98_ALL_DEGREE_PACKET_CHAIN_AUDIT.md).
+## Reusable local arithmetic test
+
+An absolutely simple abelian variety of odd dimension d over F_q,
+with positive p-rank and Newton slopes in {0,1/2,1}, has geometric
+endomorphism algebra Q(pi_q), a CM field of degree2d. If its Frobenius
+polynomial has a simple nonzero irreducible factor of degree a modulo p,
+then this field has no cyclic degree-ell subfield for any odd prime ell
+with ell not dividing a and ell*a>d. For X, the small Cartier
+calculation gives a=4,d=9 and excludes ell=3. Together with the cubic
+deck action it proves the stated maximal abelian subfield without
+the large discriminant or the real trace-field Galois computation.
+
+[Proof](../../../Proofs/jacobians/isogeny_sieves/etale_endomorphism_packets.md).

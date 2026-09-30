@@ -182,9 +182,9 @@ The primitive S5 norm example is not covered: its full closure kernel
 is not deck-invariant, even though its endpoint invariant dimensions
 agree. Nothing here proves the original two-leg problem or full N5.
 
-The [exact checker](../../scripts/deformations/cyclic/check_cyclic_neutral_two_digit.py) passes
-625 mixed coefficient/Frobenius tests and3125 shifted-product tests.
+The [unified cyclic checker](../../scripts/deformations/cyclic/verify_general_cyclic_order.py)
+includes p=5,h=1 with arbitrary norms at the first nonlinear weight.
 The [focused audit](../../Research/audits/CYCLIC_NEUTRAL_TWO_DIGIT_AUDIT_2026_09_11.md)
 also checked300 rank-three mixed operators, the incompatible n=2
 reference, left-right Smith blocks and original-map Sylow descent.
-These are prose and finite algebra verification, not Lean verification.
+These are prose and finite algebra verification.

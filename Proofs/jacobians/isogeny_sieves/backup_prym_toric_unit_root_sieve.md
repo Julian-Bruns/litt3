@@ -2,7 +2,7 @@
 
 2026-09-11. Independent bounded audit /root/audit_toric_prym_normalization
 PASS for both the normalization/unit-root bridge and higher-precision
-factor divisibility. No whole degree2 exclusion is asserted here.
+factor divisibility.
 
 ## Actual small equations
 
@@ -35,7 +35,7 @@ not supply that condition.
 
 ## Interior unit roots, not toric boundary factors
 
-Lift the final polynomial coefficientwise, preserving its support.
+Let f be a coefficient lift of the final polynomial, preserving its support.
 The characteristic-five P,Q,R identities are not asserted over the lift.
 [Beukers--Vlasenko, Dwork Crystals I](https://arxiv.org/pdf/1903.11155),
 Theorem5.3, gives U_s modulo5^s. Its Theorem6.1, Corollary5.8 and
@@ -90,6 +90,11 @@ It verifies (P+Qy)*g=scalar*v^2 and uses the scalar's quadratic character
 in that comparison. The true Witt Frobenius is checked on its generator,
 the defining polynomial, its field order and an independent Sage image.
 Native modular composition then computes its arbitrary iterates.
+The command is `sage -python scripts/arithmetic/toric_prym_unit_roots.py
+MODEL OUTPUT --digits N`. For one or two digits, --cartier-result names
+the actual Cartier certificate; from three digits onward, --previous
+names the preceding-precision result, whose model hash and coefficient
+reduction must match.
 
 For the two-digit calculation write Gghost=(f^5-sigma(f)(x^5))/5.
 The identity
@@ -101,19 +106,6 @@ avoids expanding a large full24th power. Only the requested64 coefficients
 are accumulated. scripts/arithmetic/audit_toric_unit_root_computation.py independently
 compares all64 entries with the DIRECT24th power on a small actual genus8
 carrier, and checks the resulting unit traces against direct smooth-toric
-point counts over F5,F25,F125. It passes, with counts12,42,120. A tuple-key
-bug in the audit's first boundary counter was found and corrected before
-acceptance; the production edge checker uses monomial_coefficient and was
-not affected.
-
-At the actual pilot carriers1226,1430, all geometric hypotheses and the
-mod5 comparisons pass, including their respective twists-1,+1. The
-computed modulo25 polynomials, in ascending coefficient order, are
-
- 1226: [17,8,13,18,24,20,15,9,1],
- 1430: [14,22,14,12,2,24,4,17,1].
-
-Both fail all six modulo25 filters; these two actual carriers are excluded.
-Each higher-precision run took about13seconds. The certificates are under
-degree2-prym-unitroots-INDEX-20260911 in the external computation root.
-Other labels and unsupported charts remain open until individually checked.
+point counts over F5,F25,F125, obtaining12,42,120.
+The [complete carrier sieve](backup_double_cover_exclusion.md) records
+the actual model checks and higher-precision exclusions for all labels.

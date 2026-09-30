@@ -37,8 +37,7 @@ At any normalized atlas eta=B/Delta, one also has the quadratic identity
 Equation (2) is NOT proved empty. This result neither excludes an entire
 oper nor settles the other cored/twisted/coreless branches of Litt3.
 
-Status: proved, independently audited. Auditor: resultant_gradient_major_audit,
-2026-09-07. Verdict PASS; no remaining objections. The degree48 scalar
+The degree48 scalar
 resultant is a coefficient Frobenius twist, not its degree240 Frobenius
-pullback. [Audit reference](../../Research/audits/RESULTANT_GRADIENT_AUDIT_2026_09_07.md).
+pullback.
 [Proof](../../Proofs/atlases/resultant_gradient_atlas.md).

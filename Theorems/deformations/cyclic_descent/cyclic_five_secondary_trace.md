@@ -1,7 +1,7 @@
 # Constancy of the secondary trace for minimal defect growth
 
 Version1,2026-09-11. Focused geometric audit PASS by
-/root/audit_cyclic5_returned_w4. Audited prose, not Lean verification.
+/root/audit_cyclic5_returned_w4. Audited prose.
 
 Let h:T→C be an actual connected finite etale cyclic degree-five cover
 of smooth projective curves of genus at least two over bar(F5). Pull
@@ -33,5 +33,4 @@ The result determines constancy, not the constant's value or its
 nonvanishing. In particular it supplies no universal scalar multiplier
 between this secondary trace and epsilon_C(C2).
 
-[Proof](../../../Proofs/deformations/cyclic_descent/cyclic_five_secondary_trace.md) ·
-[Scoped audit](../../../Research/audits/CYCLIC5_FOURTH_LIFT_AUDIT_2026_09_11.md).
+[Proof](../../../Proofs/deformations/cyclic_descent/cyclic_five_secondary_trace.md).

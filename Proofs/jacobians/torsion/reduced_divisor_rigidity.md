@@ -1,4 +1,4 @@
-# Proof: pencil separation, finite differences and Frobenius orbits
+# Proof: pencil separation and almost rational Abel classes
 
 [Statement](../../../Theorems/jacobians/torsion/reduced_divisor_rigidity.md).
 
@@ -29,7 +29,11 @@ every valuation of R is divisible by ℓ. On P¹ this makes R a scalar
 times an ℓ-th power. Cancelling ℓ in the free divisor group shows
 E−D principal. Thus the only possible translation is zero.
 
-## 2. A second difference cannot move a low-degree class
+## 2. Almost fixed classes
+
+We use almost fixed and almost rational in the sense of
+[Baker–Ribet, Definition1 and Remark2.2](https://math.berkeley.edu/~ribet/Articles/ja.pdf#page=4).
+The implication (γ−1)²α=0⇒γα=α is their Lemma2.4(2).
 
 Normalize an effective degree-r divisor by replacing each full scheme
 fiber x^*(b), b≠∞, by nO. This decreases the degree away from O by n,
@@ -42,23 +46,19 @@ When r≤n, a representative containing a full fiber away from O must
 have r=n and be that fiber, representing zero. This recovers ordinary uniqueness for
 nonzero classes in the original small-degree range.
 
-The action γ preserves stabilizers, hence G-orbits with their scheme
-multiplicities. Since it fixes O, it preserves x-reducedness.
-For α=[D−rO] with x-reduced D and (γ−1)²α=0, the divisor (γ−1)²D
-is principal. A defining function has degree at most 2r and lies in
-k(x), so for h∈G
+The Γ-action preserves stabilizers, hence scheme fibers and reducedness.
+For (σ+τ−2)α=0, the principal divisor (σ+τ−2)D has a function of
+degree at most2r, hence in k(x). It is G-invariant. Thus for h∈G,
+the divisor v=(h−1)D satisfies 2v=σv+τv. In the real vector space
+on its finite Γ-stable support, σ and τ are orthogonal permutations:
 
-    (γ−1)²(h−1)D=0
+    ‖σv−v‖²+‖τv−v‖²=0.
 
-in the free abelian divisor group. On the rational span of its finite
-γ-orbit, γ has finite order and is semisimple. Therefore
-(γ−1)(h−1)D=0: the divisor γD−D is G-invariant.
-
-Its coefficients vanish on the ramification locus by the assumed
-invariance of D's ramification part. Every remaining orbit is free of size n, even in the
-wild case or when some inertia is partial. A nonzero positive or
-negative part would contain a full unramified fiber inside γD or D,
-contradicting x-reducedness. Hence γD=D, with no restriction r≤n.
+So σv=τv=v. Consequently σD−D and τD−D are G-invariant and
+vanish on ramification. Every other orbit is a full unramified fiber.
+A positive or negative coefficient would place that fiber inside a
+translate of D or D itself, contradicting reducedness. Thus σD=τD=D.
+This works with wild or partial inertia and with no restriction r≤n.
 
 For the injectivity assertion let D,E have the same ramification part
 and (1−h)([D−rO]−[E−rO])=0. The principal divisor(1−h)(D−E)
@@ -68,42 +68,28 @@ and ord(h) times that divisor. The free divisor group has no torsion,
 so(1−h)(D−E)=0. Applying this to generators makes D−E G-invariant.
 It vanishes on ramification; x-reducedness then forces D=E as above.
 
-## 3. Congruent automorphisms: one power formula
+## 3. Published torsion order law and rationality
 
-Let T be a finite free Z_ℓ-module and γ an automorphism with γ−I
-divisible by ℓ, or by 4 if ℓ=2. For every integer m≥1,
+[Boxall–Grant, Singular torsion points on elliptic curves,
+Proposition2.3(ii)](https://boxall.pages.math.cnrs.fr/pages-web-mathematiques-de-john-boxall/wwwMaths/SingularFinal.pdf#page=9)
+applies to any commutative algebraic group over a field. With their
+δ(ℓ)=1 for odd ℓ and δ(2)=2, a Galois element τ fixing J[ℓ^δ(ℓ)]
+satisfies, for P∈J[ℓ^∞], Q=(τ−1)P and b≥1,
 
-    γ^m−I = m(γ−I)E_m,
-    E_m = I + ∑_(j=2)^m [binom(m,j)/m](γ−I)^(j−1) ≡ I mod ℓ.  (1)
+    ord((τ^b−1)P)=ord([b]Q).                         (1)
 
-Indeed binom(m,j)/m=binom(m−1,j−1)/j has valuation at least
-−v_ℓ(j). Every term after I is divisible by ℓ: use
-j−1−v_ℓ(j)≥1 for odd ℓ and 2(j−1)−v₂(j)≥1 at 2.
-Thus E_m is integral, invertible and commutes with γ.
-
-The γ-orbit of an ℓ-primary point has ℓ-power length. If it moves,
-let Q=(γ−I)a have order ℓ^s. Taking m=ℓ^(s−1) in (1) gives a
-nonzero difference of order ℓ, fixed by γ.
-
-For a mixed-primary class α, select a moving ℓ-component and first
-replace γ by the product of the other primary orbit lengths as a
-power. This fixes all other components and still moves the selected
-one, since that power is prime to ℓ. The preceding construction gives
-a power σ with
-
-    (σ−I)α≠0,    (σ−I)²α=0.
-
-Applied to γ=π^N, Section2 contradicts this for α∈W_r: every power
-still fixes the ramification and commutes with G. Therefore γ fixes
-the whole class, and uniqueness descends its x-reduced representative.
-The finite group J(F_(q^N)) supplies the order bound. An admissible N
-exists because the ramification and indicated torsion are finite.
+Use (1) on each primary component of α∈W_r∩J_Ω. If τ∈Gal(k/K₁)
+moves α, choose b so that 0≠[b](τ−1)α∈J[L]. Equation(1) makes
+0≠(τ^b−1)α∈J[L], which τ^b fixes. This contradicts Section2.
+Thus α∈J(K₁); uniqueness descends its reduced divisor. This is the
+argument in Boxall–Grant's proof of PropositionC, with rationality
+retained before the order bound. Over a finite field J(K₁) is finite.
 
 ## 4. Hyperelliptic two-primary descent
 
 The hyperelliptic pencil has independent-function bound g+1, so
 Section2 applies whenever 2r≤g. Rational Weierstrass points generate
-J[2]; hence σ=I+2U and σ²=I+4(U+U²). Section3 with S={2}
+J[2]; hence σ=I+2U and σ²=I+4(U+U²). Section3 with Ω={2}
 places all two-primary W_r points in J(F_(q²)).
 
 For further descent, b=(σ−I)a satisfies (σ+I)b=0. If b has order

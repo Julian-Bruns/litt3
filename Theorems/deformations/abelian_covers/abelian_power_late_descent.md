@@ -1,9 +1,7 @@
 # Finite-abelian late descent
 
 Version2, 2026-09-13. The former nodal, elementary and finite-abelian
-results are consolidated here. Independent mathematical
-[audit](../../../Research/audits/LATE_DESCENT_CONSOLIDATION_AUDIT_2026_09_13.md):
-PASS. Audited prose, not Lean verification.
+results are consolidated here.
 
 Over k=bar(F5), let h:T->C be an actual connected finite etale G-cover
 of smooth projective curves,

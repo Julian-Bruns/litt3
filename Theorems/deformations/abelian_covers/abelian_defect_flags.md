@@ -1,6 +1,6 @@
 # Exact defect of every abelian five-cover of the selected bad doubles
 
-Version2,2026-09-13. Exact coefficient-span certificates and bounded audits.
+Version3,2026-09-13. Exact coefficient-span certificates and bounded audits.
 Inherited odd-defect growth retains its author-prose evidence status.
 
 Let D->Y be any of the ten branch-support bad active doubles over the
@@ -48,5 +48,4 @@ These are statements about actual covers of the specified bad doubles.
 They do not force an arbitrary common source to factor through a double,
 do not assert a higher-Witt lift, and do not solve the common-cover problem.
 
-[Proof](../../../Proofs/deformations/abelian_covers/abelian_defect_flags.md) ·
-[Audit](../../../Research/audits/ABELIAN_DEFECT_FLAGS_AUDIT_2026_09_11.md).
+[Proof](../../../Proofs/deformations/abelian_covers/abelian_defect_flags.md).

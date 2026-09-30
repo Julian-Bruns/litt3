@@ -1,250 +1,152 @@
-# Short Frobenius strings bound a two-dimensional prime-to-five defect image
+# Proof: short Frobenius strings and the opposite endpoint
 
-2026-09-10. Focused medium audit PASS,
-/root/audit_frobenius_character_order, for the stated element-order
-bound and main-pair stratum exclusion. The requested representation-
-level Serre--Cartier identity is explicit in Section3. Inherited
-inputs were not re-audited. No full-problem or Lean-verification claim.
 [Statement](../../../Theorems/deformations/section_growth/frobenius_defect_order_bound.md).
 
-## 1. Claim and actual setup
+## 1. The representation-theoretic mechanism
 
-Let X←f−Z−g→Y be actual finite etale maps of smooth projective connected
-hyperbolic curves over k=bar(F5), with g Galois of order PRIME TO5.
-Suppose active admissible nilpotent connections match, r_Y is ordinary,
-and the source nilpotent tangent space U has dimension2. Assume
-5 does not divide deg f and r_X is nonordinary. Write d=3g(X)-3.
+Let k be algebraically closed of characteristic p>0, let G have order
+prime to p, and let V be a finite-dimensional k[G]-module whose restriction
+to each cyclic subgroup is a multiple of its regular representation.
+Let Psi:V->V be equivariant and Frobenius-semilinear, with self-dual
+cokernel D of dimension two. Suppose its nilpotent Fitting part has a
+Jordan string of length at most d, where d>=1. Write Gamma for the image
+of G on D.
 
-For every element of the faithful image Gamma of Gal(Z/Y) on U,
-either its order is at most2 or its order divides 5^ell-1 or 5^ell+1
-for some 1<=ell<=d. Consequently
+Take gamma in Gamma and a lift sigma in G; put J=<sigma>. Regularity
+and semisimplicity applied to the linearization sequence give
 
-    |Gamma| <= max(48,4(5^d+1)).                          (1)
+    0 -> Frob(ker Psi) -> Frob(V) -> V -> D -> 0,
+    Frob(ker Psi) = D                         as J-modules.       (1)
 
-For g(X)=9, g(Y)=2 the condition on deg f is automatic from the
-prime-to5 degree of g, since deg g=8 deg f. Put
+The kernel/image filtrations of the nilpotent part are J-stable. Choose
+character-homogeneous complements in their successive quotients to obtain
+homogeneous Jordan strings with the same length multiset. In particular
+there is such a string of length ell<=d. Its head is a character of D;
+its tail, after ell-1 applications of Psi, is a character of ker Psi.
+Each application raises the character to its p-th power.
 
-    N=4(5^24+1), H=N+1<2^59.
+Self-duality makes the two characters of D either both of order at most
+two or a reciprocal pair chi,chi^(-1). In the latter case, if
+m=ord(gamma)>2, then chi has order m. Formula (1) applied to the head
+and tail therefore yields
 
-There is an ACTUAL intermediate T=Z/ker(G→GL(U)) with g(T)<=H,
-T→Y etale Galois of degree<=N, and the span X←Z→T has a core whose
-atlas degree on X is at most64.
+    chi^(p^ell)=chi or chi^(-1),
+    m divides p^ell-1 or p^ell+1.                              (2)
 
-The existing bounded-atlas counting theorem then bounds the number of
-possible genus-two curves Y in this stratum by 2^(2^800). This is
-smaller than the ALREADY selected main parameter bound K. Hence this
-whole prime-to5-Galois-Y/two-defect/nonordinary-X active branch is
-excluded for the SAME Litt3 pair, with no degree bound on the
-original source Z and no new parameter.
+This bounds the image element, independently of the order of its lift.
+Every scalar in Gamma has square one by self-duality. Its projective
+image is cyclic, dihedral, A4, S4 or A5 by
+[Faber, Theorem C](https://arxiv.org/pdf/1112.1999#page=4).
+A lift of a cyclic or dihedral rotation has order at most p^d+1 by (2).
+The scalar kernel has order at most two, so
 
-This does not treat ordinary r_X or a five-part of the actual Galois
-group acting trivially on U. The nontrivial five-action/nonordinary-X
-branch was independently excluded by two_leg_defect_orbit_bound.
+    |Gamma| <= max(120,4(p^d+1)).                             (3)
 
-## 2. The two-leg trace gives a short nilpotent string
+For p=5, A5 is excluded and 120 improves to 48. In characteristic two
+the scalar kernel is trivial, so the same general bound remains valid.
 
-Let V_S=H1(S,T_S), with the actual coefficient-Frobenius-semilinear
-Hodge operator Psi_S. The natural trace projector for f,
+Bounded medium audit: PASS, /root/audit_extension_fiber_scope,
+2026-09-14, for homogeneous strings, lift/image orders and all p.
 
-    V_Z → (deg f)^-1 Tr_f V_Z = f*V_X,
+## 2. The geometric inputs from the two actual legs
 
-commutes with Psi, including its relative twists. This is precisely
-the operator/trace calculation already established in Section1 of
-Proofs/deformations/defect_preserving_etale_descent.md: relative Frobenius
-commutes with etale trace, and the pulled-back Hasse multiplier is
-handled by the projection formula. No Galois hypothesis on f is used.
+Use the characteristic-five hypotheses of the statement and put
+V_S=H1(S,T_S), with its actual Frobenius-semilinear Hodge operator Psi_S.
+The normalized f-trace splits f*V_X from V_Z and commutes with Psi:
+relative Frobenius commutes with etale trace, and the pulled-back Hasse
+multiplier is handled by the projection formula. See
+[defect-preserving descent, Section 1](../defect_preserving_etale_descent.md).
+Since r_X is nonordinary, V_X has a nonzero nilpotent part. A Jordan
+string of length at most d=dim V_X=3g(X)-3 survives as a direct summand
+in V_Z.
 
-Thus V_X is a direct summand as a semilinear Psi-module. Since r_X is
-nonordinary, its nilpotent Fitting part is nonzero. It contains a
-nilpotent Jordan string of some length ell with 1<=ell<=dim V_X=d.
-The same length occurs among the nilpotent strings of V_Z. Equivalently
-the rank differences for the semilinear iterates add under the trace
-decomposition. No kernel vector is merely presumed to have the same
-image-depth after pullback; direct-summand preservation is essential.
+For any cyclic J<=G=Gal(Z/Y), let S=Z/J. The eigensheaves of q_*O_Z
+are degree-zero character lines L_chi. By negative degree and
+Riemann--Roch,
 
-Nilpotent semilinear Jordan strings over the perfect field can be
-constructed as usual from successive kernels; the string matrices
-have0 and1 entries. Their length multiset is determined by ranks of
-Psi^j and is additive for direct sums.
+    (V_Z)_chi=H1(S,T_S tensor L_chi),
+    dim (V_Z)_chi=3g(S)-3
 
-## 3. The actual cyclic deck representation on V_Z is regular
+for every character, including the trivial one. Thus V_Z has the
+regularity required in Section 1.
 
-Take any gamma in Gamma and lift it to sigma in G=Gal(Z/Y). Since
-G has order prime to5, its cyclic subgroup J=<sigma> has prime-to5
-order m0 and acts freely on Z. Put S=Z/J; Z→S is actual etale Galois.
+The actual defect space is
 
-The eigensheaves of q_*O_Z are degree-zero character lines L_chi.
-Since T_Z=q*T_S, the chi-component of V_Z is
+    U=ker[C_1(s_Z -):H0(omega_Z^2)->H0(omega_Z^2)],
 
-    H1(S,T_S tensor L_chi).
+where s_Z is the normalized common quartic. Serre--Cartier duality gives
 
-Every such space has dimension3g(S)-3 by negative degree, H0=0 and
-Riemann--Roch, INCLUDING the trivial character. Therefore V_Z is a
-multiple of the regular k[J]-module. Its Frobenius twist has the
-same character: raising each character to its fifth power permutes
-the characters of J.
+    <Psi_Z(v),phi>=<v,C_1(s_Z phi)>^5,                       (4)
 
-Psi_Z is equivariant and Frobenius-semilinear. Its linearization gives
-the exact sequence of k[J]-modules
+with relative twists transported. Hence (coker Psi_Z)^dual=U
+equivariantly. The [two-defect deck theorem](two_defect_deck_reduction.md)
+gives its self-duality, so the faithful images on U and coker Psi_Z
+have the same kernel and element orders. Section 1 now proves
 
-    0→Frob(ker Psi_Z)→Frob(V_Z)→V_Z→D_Z→0,
-    D_Z=coker Psi_Z.
+    |Gamma| <= max(48,4(5^d+1)).                            (5)
 
-Semisimplicity and regularity consequently give
+The other endpoint supplied the short string; the source defect alone
+does not supply it.
 
-    Frob(ker Psi_Z) ≅ D_Z as J-modules.                   (2)
+## 3. A bounded cored intermediate
 
-Here is the representation-level duality, not just a dimension
-comparison. Use the actual Cartier-kernel realization from Section7
-of Proofs/deformations/section_growth/symplectic_p_cover_section_growth.md:
+Let K=ker(G->GL(U)) and T=Z/K. Then T->Y is an actual etale Galois
+cover with group Gamma. Choose a nonzero X-defect quadratic phi_X.
+Its pullback is K-invariant and descends to phi_T; the common quartic
+also descends. Consequently
 
-    U=ker[C_1(s_Z -):H0(omega_Z²)→H0(omega_Z²)].
+    a_X=phi_X^2/s_X = phi_T^2/s_T=a_T                    in k(Z).
 
-The Hodge operator on V_Z is Frobenius followed by multiplication by
-the pulled-back quartic s_Z. Serre duality and the Cartier trace rule
-give the intrinsic identity
+The [defect-function lemma](two_leg_defect_orbit_bound.md#1-a-nonzero-defect-gives-a-nonconstant-function-of-bounded-degree)
+shows this function is nonconstant and [k(X):k(a_X)]<=8(g(X)-1).
+Thus X<-Z->T is cored, with X-atlas degree at most 8(g(X)-1).
+This is a conclusion about T; the original X,Y span need not be cored.
 
-    <Psi_Z(v),phi>=<v,C_1(s_Z*phi)>^5.                  (2a)
+For the main pair g(X)=9, g(Y)=2, Hurwitz gives deg g=8 deg f,
+so the prime-to-five condition on f follows from that on g. Set
 
-All relative twists are transported in this formula. Its annihilator
-identity identifies D_Z^dual with U equivariantly, since Serre trace,
-s_Z and Cartier are natural for deck transformations. A convention
-changing Psi by a nonzero scalar changes neither this kernel nor its
-characters. The identification with the descended tangent-bundle
-section realization may use one common Frobenius twist; twisting
-both characters together changes neither their orders nor(3).
+    N=4(5^24+1),    H=N+1<2^59.
 
-The known actual self-duality of U restricted to any prime-to5 cyclic
-deck subgroup says the two eigencharacters are either both quadratic
-or a reciprocal pair. If gamma has order>2, the latter case occurs:
-they are chi,chi^-1, and chi has order exactly m=ord(gamma). The
-characters of D_Z are therefore chi,chi^-1 (up to the just mentioned
-common Frobenius relabeling), and by(2) those of ker Psi_Z are
-chi^(1/5),chi^(-1/5).
+Then g(T)<=H and the X-atlas degree is at most 64. The kernel K,
+and hence the original source degree, has no asserted bound.
 
-## 4. Read a graded Jordan string
+## 4. Count the intermediates and apply the fixed parameter
 
-Because J has prime-to5 order, the nilpotent Fitting part and its
-kernel/image filtrations decompose into character spaces. A Jordan
-string of the short length ell from Section2 may be chosen homogeneous
-for this grading: choose an eigenvector in the appropriate head
-quotient, lift it within ker Psi^ell, and apply Psi repeatedly.
+The [bounded-atlas counting theorem](../../quotient_geometry/bounded_atlas_partner_finiteness.md)
+with B=64 bounds the number of genus-h possibilities for T by
 
-More explicitly the heads of strings of length<=j form
+    K_h=D(D!)^18 * 3^(4G0^2 L) * (M_h!)^(2G0+L),
+    D=63!<2^378, G0=1+8D<2^382, L=64^2=2^12,
+    M_h=8(h-1)<2^62.
 
-    (ker Psi^j + im Psi)/im Psi ⊂ coker Psi.
+Using log2(n!)<=n log2 n and log2 3<2 gives
 
-Their successive quotients record strings of length exactly j. All
-these spaces are J-stable, so the short-length head can be an
-eigenvector. Its character is chi or chi^-1. Each application of Psi
-raises the character to its fifth power. Its nonzero tail is in
-ker Psi, whose characters are chi^(1/5),chi^(-1/5). It follows that
+    log2 K_h < 378+2^393+2^779+2^452 < 2^781.
 
-    chi^(5^ell)=chi or chi^-1,
-    m divides 5^ell-1 or 5^ell+1.                        (3)
+There are fewer than 2^59 choices of h. For each T, the same theorem's
+automorphism bound gives |Aut(T)|<81h^4<3^(4H^2). A subgroup defining
+Y has order at most N<2^59 and therefore has at most 59 generators.
+Counting padded generating tuples bounds the number of quotients by
 
-This argument applies separately to every gamma; the chosen short
-length may depend on the homogeneous choice, but always lies in1..d.
-There is no assumed bound on a Frobenius orbit from dimension2 alone.
-The bounded string was supplied by the OTHER endpoint via trace.
+    |Aut(T)|^59 < 2^(2^127).
 
-## 5. Bound Gamma, not the entire deck group
+The total number of genus-two Y is consequently less than
+2^(2^782), and in particular less than 2^(2^800).
 
-The actual two-dimensional module U is self-dual and faithful for
-Gamma, which has prime-to5 order. Every scalar in Gamma is +I or-I:
-on its scalar cyclic subgroup reciprocity gives lambda=lambda^-1.
-Thus the scalar kernel of Gamma→PGL2(k) has order at most2.
+The already selected main constant has
 
-The prime-to5 finite projective image is cyclic, dihedral, A4 or S4;
-A5 has order divisible by5. These are the same established Faber
-classification inputs used in two_leg_defect_orbit_bound. For cyclic
-or dihedral image, choose a lift of a generator of its rotation group.
-The rotation order is no larger than that element's order, bounded
-by5^d+1 from(3). The full image thus has order<=4(5^d+1). Exceptional
-images have order<=24, and Gamma then has order<=48. This proves(1).
+    K >= 3^(4G_big^2 L_big),
+    G_big=1+8D0, D0=(336000-1)!>=2^335998, L_big=336000^2.
 
-The kernel of G→Gamma can still be arbitrarily large; (1) must not
-be misreported as a bound on deg(Z/Y).
-
-## 6. Construct the cored intermediate, retaining actual maps
-
-Put K=ker(G→Gamma) and T=Z/K. This is an actual connected etale
-Galois cover of Y with group Gamma. The original map Z→T is etale.
-Pick any nonzero nilpotent tangent quadratic phi_X and let phi=f*phi_X.
-Since K acts trivially on U, phi descends to a regular quadratic phi_T
-on T. The normalized quartics also match. Therefore
-
-    a_X=phi_X²/s_X, a_T=phi_T²/s_T
-
-give the SAME rational function in k(Z). The nonconstancy proof in
-two_leg_defect_orbit_bound applies: a constant ratio would make a
-multiple of phi_X a square root q of s_X, but the actual curvature
-derivative evaluated at q is -q^5!=0. Thus
-
-    [k(X):k(a_X)] <= 8(g(X)-1)=64.
-
-The ACTUAL span X←Z→T is consequently cored. Its common effective
-orbifold has coarse field k(X)∩k(T), which contains k(a_X). The atlas
-degree of X equals this field-extension degree and is at most64.
-This uses the existing cored-orbifold bridge, where the core hypothesis
-has now actually been proved. We do NOT infer that X,Y have a core.
-
-For genus-two Y, etale Hurwitz gives g(T)=|Gamma|+1<=N+1=H.
-
-## 7. Count these actual intermediates and their quotients
-
-Apply bounded_atlas_partner_finiteness to X with B=64, and for each
-2<=h<=H to the cored intermediate T. Set
-
-    D=63!<2^378, G0=1+8D<2^382, L=64²=2^12,
-    M_h=floor((h-1)64/8)=8(h-1)<2^62.
-
-The existing bound on genus-h possibilities is
-
-    K_h=D(D!)^18 * 3^(4G0² L) * (M_h!)^(2G0+L).
-
-Since log2(M_h!)<2^68, its binary logarithm is less than
-
-    378 + 2^393 + 2^779 + 2^452 < 2^781.
-
-There are fewer than2^59 possible h. For each T, its automorphism
-group embeds into GL_(2h)(F3), by the same existing characteristic-five
-automorphism bound used in the counting theorem; hence |Aut(T)|<3^(4H²).
-The subgroup giving Y has order<=N<2^59 and is generated by at most
-59 elements. Counting padded59-tuples gives at most
-
-    |Aut(T)|^59 < 2^(2^127)
-
-quotients. Thus the TOTAL number of genus-two isomorphism classes
-arising this way is less than2^(2^782), and certainly2^(2^800).
-No assumption that all intermediate curves of genus<=H are enumerated
-or computable in practice is made.
-
-## 8. Compare with the unchanged main parameter
-
-For the main pair B0=336000, D0=(B0-1)!, G_big=1+8D0, L_big=B0²,
-and its already fixed selection constant contains the factor
-
-    K >= 3^(4G_big² L_big).
-
-Since D0>=2^335998, this alone exceeds2^(2^671996), far above
-2^(2^800). The finite set of genus-two quotients counted in Section7
-is Frobenius-stable over F25: X is defined over F25 and the property
-of admitting such cored intermediates and etale quotients is stable.
+Thus log2 K>2^671996, larger than the count above. The finite set of Y
+just counted is F25-Frobenius stable, since X is defined over F25.
 The [affine branch-family theorem](../../curve_arithmetic/prime_field_branch_family.md)
-gives moduli orbit length r for the selected prime parameter degree
-r>K>5. This contradicts Section7.
+gives the selected Y moduli orbit length r>K, a contradiction.
 
-The result excludes the entire stated PRIME-TO5 Galois Y-leg,
-source-defect2, NONordinary-X branch, regardless of the degrees of
-the original witness. It does not handle the branch where the actual
-Galois group has a nontrivial cyclic five-part acting trivially on U:
-then deg f is divisible by5 and the trace projector is unavailable.
-No full common-cover theorem follows.
+This excludes the stated prime-to-five Galois-Y, two-defect,
+nonordinary-X branch. A nontrivial cyclic five-part acting trivially on
+defects remains outside it: then deg f is divisible by five and the
+normalized trace is unavailable.
 
-The small standard-library verifier
-[verify_frobenius_defect_bounds.py](../../../scripts/deformations/verify_frobenius_defect_bounds.py)
-checks15264 head/tail congruences and the exact integer counting
-inequalities without constructing giant factorials. Its conservative
-binary-log count bound has601bits, comfortably below2^800. This is
-bookkeeping evidence only; the geometry is the proof and scoped audit.
+The characteristic-five application retains its
+[focused medium audit, PASS, 2026-09-10](../../../Research/audits/FROBENIUS_DEFECT_ORDER_AUDIT_2026_09_10.md).

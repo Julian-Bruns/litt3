@@ -93,9 +93,8 @@ degree at most(n−1)!. Consequently
 All arrows used are composites or the Galois closure of the single
 Y-leg; there is no presumed simultaneous Galois closure over X and Y.
 
-The existing counting proof establishes the following two facts in
-characteristic five: pi1(X) has at most18 topological generators; and
-Aut(V) embeds in GL_(2g(V))(F3), including wild automorphisms. Hence
+The counting proof gives at most18 topological generators for pi1(X)
+and |Aut(V)|<81g(V)⁴<3^(4G0²), including wild automorphisms. Hence
 there are at most D*(D!)^18 possibilities for the covering object V→X,
 and |Aut(V)|<3^(4G0²).
 

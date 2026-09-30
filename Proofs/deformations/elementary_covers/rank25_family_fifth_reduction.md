@@ -1,10 +1,11 @@
 # Actual fifth comparison, filtered support and calibration
 
-[Statement](../../../Theorems/deformations/elementary_covers/rank25_family_fifth_reduction.md).
-This proof consolidates the accepted relative, fixed-point, curve, surface
+[Final theorem](../../../Theorems/deformations/elementary_covers/rank25_whole_fifth_exclusion.md).
+This proof supplies its full fifth-comparison and calibration input;
+it consolidates the accepted relative, fixed-point, curve, surface
 and universal-trace arguments. The geometric support and finite identities
-have separate independent audits listed in §8. The original evidence is
-retained. This is prose and exact computation, not Lean verification.
+have separate independent audits. This is prose and exact computation,
+not Lean verification.
 
 ## 1. Relative variation and the complete quotient
 
@@ -310,12 +311,12 @@ In the finite étale algebra k0[X]/(G), those actual values are
            +289*X^20+26*X^22+518*X^26.                 (9)
 
 ONLY in(9), integers are base-five FIELD CODES sum a_i*5^i for sum a_i*t^i;
-they are not prime-field integers. The retained
-[CRT certificate](../../../Research/computations/rank25_one_parameter_full_exclusion.json)
-contains both functions and an exact identity A*G_monic+B*R5=1. The
-independent finite audit checks all seven restrictions, evenness and
-that identity. It uses the actual comparisons above as input. The later
-whole-locus proof needs BOTH functions' values, not merely nonvanishing.
+they are not prime-field integers. Euclidean division gives
+gcd(G_monic,R5)=1. The [CRT assembler](../../../scripts/deformations/rank25/assemble_rank25_root_exclusion.py)
+and [finite checker](../../../scripts/deformations/rank25/audit_rank25_root_exclusion_finite.py)
+verify all seven restrictions, evenness and this identity from the
+actual comparison receipts. The later whole-locus proof needs BOTH
+functions' values, not merely nonvanishing.
 
 ## 6. The surface trace from support and three calibrations
 
@@ -409,25 +410,11 @@ in the stated order. The unit derivative partial_U(Theta)=2110*q^2
 gives the trace-zero graph(6). The final theorem uses the remaining
 cotangent components on this graph.
 
-## 8. Evidence and audit access
+## 8. Verification boundary
 
-All original source returns and actual comparison receipts remain under
-../litt3-computation-data. The following links are the compact access
-points; their manifests locate and hash the complete originals.
-
-| Input or argument | Receipt / independent audit |
-| --- | --- |
-| Fixed-reference fifth comparison and gamma=0 | [full replay](../../../Research/computations/rank25_w5_fresh_replays_20260911.json), [audit](../../../Research/audits/RANK25_FIFTH_LIFT_AUDIT_2026_09_11.md) |
-| Relative J, adjoint digit and quotient rows | [exact checks](../../../Research/computations/rank25_two_family_returns_checks.json), [geometric audit](../../../Research/audits/RANK25_FAMILY_RELATIVE_AUDIT_2026_09_12.md) |
-| Actual scalar and its support | [finite checks](../../../Research/computations/rank25_one_parameter_return_checks.json), [audit](../../../Research/audits/RANK25_ONE_PARAMETER_RETURN_AUDIT_2026_09_12.md) |
-| Extension-field values and both CRT residuals | [representatives](../../../Research/computations/rank25_local_root_receipts.json), [finite audit](../../../Research/computations/rank25_one_parameter_exclusion_finite_audit.json), [geometric audit](../../../Research/audits/RANK25_LOCAL_HOUR_2026_09_12.md) |
-| Integral surface support and calibration | [return checks](../../../Research/computations/rank25_surface_return_checks.json), [support audit](../../../Research/audits/RANK25_SURFACE_RETURN_AUDIT_2026_09_12.md) |
-| Universal trace and finite marked action | [return checks](../../../Research/computations/rank25_universal_trace_return_checks.json), [independent audit](../../../Research/audits/RANK25_UNIVERSAL_TRACE_INDEPENDENT_2026_09_13.md) |
-| Full support, ordinary mixed and direct P2 | [finite audit](../../../Research/computations/rank25_ordinary_channel_finite_audit.json), [digit projections](../../../Research/computations/rank25_fourth_digit_projections.json), [support audit](../../../Research/audits/RANK25_FULL_FIFTH_SUPPORT_AUDIT_2026_09_13.md) |
-
-The complete source returns for the surface and universal trace replay
-their finite verifiers byte for byte in separate directories. Their
-geometric scope comes from the arguments above and the independent
-audits, not from the final JSON values alone. The whole original marked
-height4 conclusion is proved in the next pair; the unmarked common-cover
-problem remains unsolved.
+The full comparison receipts, preserved original statements and
+independent audits accompany the local research record. The
+[whole-locus proof](rank25_whole_fifth_exclusion.md) uses the exact
+support, universal trace and both CRT functions established above.
+The original marked height-four conclusion does not imply an upper
+bound after further étale pullback.

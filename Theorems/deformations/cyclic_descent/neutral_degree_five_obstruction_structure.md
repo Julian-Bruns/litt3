@@ -2,7 +2,7 @@
 
 Version1,2026-09-11. Focused audit PASS /root/audit_n5_returned_partial,
 2026-09-10, for the returned partial result and its canonical-bundle
-identification. Prose and exact local checks, not Lean verification.
+identification. Prose and exact local checks.
 
 Let h:T→C be an ACTUAL connected finite etale map of degree five between
 smooth projective hyperbolic curves over k=bar(F5). Let r_C be regular,
@@ -57,5 +57,4 @@ duality. Neither this theorem nor that model decides(N5). The cyclic
 even-defect restriction is already contained in the stronger
 [section-growth theorem](../section_growth/symplectic_p_cover_section_growth.md).
 
-[Proof](../../../Proofs/deformations/cyclic_descent/neutral_degree_five_obstruction_structure.md) ·
-[Scoped audit](../../../Research/audits/N5_RETURNED_PARTIAL_AUDIT_2026_09_10.md).
+[Proof](../../../Proofs/deformations/cyclic_descent/neutral_degree_five_obstruction_structure.md).

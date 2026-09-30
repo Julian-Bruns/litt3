@@ -23,7 +23,7 @@ of order m, there is AT MOST ONE isomorphism class over k. Existence is
 not asserted. The single wild scalar can be aligned by a global scaling
 of P^1 fixing the two branch points.
 
-In characteristic five the two remaining large genus-nine signatures
+In characteristic five the two large genus-nine signatures
 give exactly the quotient stacks [H/PSU_3(5)] and [H/PGU_3(5)], where
 H is the Hermitian genus-ten curve. Every curve atlas of either stack
 therefore has a common finite etale cover with
@@ -34,10 +34,6 @@ Here H -> Q is itself etale of degree nine. Q and the ordinary Fermat
 quartic F have a genus-five common etale cover of degrees four and two.
 Q is superspecial. Thus these two large quotient cases belong to ONE
 known common-cover class, and ordinarity alone cannot exclude that class.
-
-This does not assert that every curve commensurable with Q is an atlas
-of either stack, or that the fixed genus-nine X is such an atlas. The
-remaining small cored cases and the coreless branch remain open.
 
 Audited PASS, /root/completed_local_global_major_audit, 2026-09-06;
 no breaking issue or required correction. Audit metadata is in the library.

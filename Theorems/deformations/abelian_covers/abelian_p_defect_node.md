@@ -1,8 +1,7 @@
 # A finite quadratic certificate controls every abelian 5-group cover
 
 Version1,2026-09-10. Focused medium audit PASS,
-/root/audit_p_cover_witt_repair. Audited prose and finite arithmetic,
-not Lean verification. Use the specified higher-Hodge operator Psi
+/root/audit_p_cover_witt_repair. Audited prose and finite arithmetic. Use the specified higher-Hodge operator Psi
 and obstruction epsilon, with relative-Frobenius twists retained.
 
 ## General quotient mechanism
@@ -57,5 +56,4 @@ indigenous-nonordinary as well.
 No second endpoint or actual common-cover counterexample is supplied.
 No main or backup common-cover case is excluded by this theorem.
 
-[Proof and exact evidence](../../../Proofs/deformations/abelian_covers/abelian_p_defect_node.md) ·
-[Scoped audit](../../../Research/audits/ABELIAN_P_DEFECT_NODE_AUDIT_2026_09_10.md).
+[Proof and exact evidence](../../../Proofs/deformations/abelian_covers/abelian_p_defect_node.md).

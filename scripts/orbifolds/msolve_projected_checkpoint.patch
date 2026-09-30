@@ -1,0 +1,39 @@
+--- a/src/msolve/msolve.c
++++ b/src/msolve/msolve.c
+@@ -1154,6 +1154,36 @@
+             }
+             if(info_level){
+                 fprintf(VERBSTREAM, "[%d]", idx + 1);
++            }
++            /* Research checkpoint: omit only the first, auxiliary coordinate.
++             * These candidates MUST pass independent exact substitution.
++             * Exit 86 distinguishes this from a completed msolve certificate.
++             */
++            const char *projection_path = getenv("MSOLVE_PROJECTED_DUMP");
++            if (projection_path != NULL && is_lifted[0] > 0) {
++                int projected_ready = 1;
++                for (int j = 2; j < mpz_param->nvars; ++j)
++                    if (!is_lifted[j]) projected_ready = 0;
++                if (projected_ready) {
++                    FILE *projection = fopen(projection_path, "w");
++                    if (projection == NULL) exit(87);
++                    fprintf(projection, "[%ld,%d,", (long)mpz_param->nsols,
++                            mpz_param->nvars);
++                    mpz_upoly_out_str(projection, mpz_param->elim);
++                    fprintf(projection, ",[");
++                    for (int j = 1; j < mpz_param->nvars - 1; ++j) {
++                        if (j > 1) fprintf(projection, ",");
++                        fprintf(projection, "[");
++                        mpz_upoly_out_str(projection, mpz_param->coords[j]);
++                        fprintf(projection, ",");
++                        mpz_out_str(projection, 10, mpz_param->cfs[j]);
++                        fprintf(projection, "]");
++                    }
++                    fprintf(projection, "]]\n");
++                    fclose(projection);
++                    fprintf(VERBSTREAM, "\nProjected candidates written; exact verification required.\n");
++                    exit(86);
++                }
+             }
+         }
+       }

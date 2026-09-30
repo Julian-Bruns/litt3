@@ -1,6 +1,6 @@
 # Proof of the compatible-reference quadratic formula
 
-Version4,2026-09-13. Independent geometric audits PASS; no outstanding
+Version5,2026-09-14. Independent geometric audits PASS; no outstanding
 objection for the hypotheses in the
 [statement](../../../Theorems/deformations/elementary_covers/fourth_hodge_quadratic_channel.md).
 The new uniform result below concerns the actual genus3 nodal family.
@@ -66,10 +66,6 @@ D and D_O are regular in the respective local frames. It is therefore
 a genuine normal coboundary. Removing it proves the simpler formula.
 Writing the remaining expression as A^2*F*D(q_U/A)/2 is meromorphic
 shorthand only; regularity at A=0 has not been established by it.
-
-The two focused independent audits are
-[full geometric coefficient](../../../Research/audits/BAD_DOUBLE_INITIAL_QUADRATIC_CHANNEL_AUDIT_2026_09_13.md)
-and [normal-boundary reduction](../../../Research/audits/BAD_DOUBLE_QUADRATIC_COHOMOLOGY_REDUCTION_2026_09_13.md).
 
 ## Uniform residue reduction
 
@@ -259,86 +255,8 @@ normal cochain is still F2 and has whole regular F2 primitives by the
 stipulated equivariant contraction (equivalently negative H0 on the
 associated graded). This improves the location of the quadratic
 repair, without declaring its subsequent integral carry zero.
-The [independent relative/filtered audit, Section6](../../../Research/audits/NODAL_RELATIVE_FIFTH_ADDITIVE_QUOTIENT_AUDIT_2026_09_13.md)
-checks the full dual extension and the degree argument.
 
-## Replay and independent audit of the uniform theorem
-
-The returned complete checker was executed under Sage's Python on
-2026-09-13. Its regenerated4,988,141-byte coefficient certificate is
-BYTE-IDENTICAL to the returned one, SHA256
-ed761f607c3eaa973f4d91b458f2d3d59aa762f158d2588569f27ec4a54fc83a.
-It checks30 whole Cech identities,180 dual-basis pairings, all relevant
-denominators, the cubic identity,78 AS trace monomials and729 ordered
-triples with independent quartic correction coefficients. The earlier
-Cartier/residue reduction checker also passes; its local checks alone
-do not prove the tensor vanishing.
-
-The [root audit and provenance](../../../Research/audits/UNIFORM_NODAL_RETURN_AUDIT_2026_09_13.md)
-records both original archives and replay commands. The independent
-[source/dual/trace audit](../../../Research/audits/UNIFORM_NODAL_SOURCE_DUAL_TRACE_AUDIT_2026_09_13.md)
-checks the geometric symbol identification and exhaustive contraction.
-These give uniformity without finite-parameter interpolation or a new
-specialization exclusion. They do not control a subsequent integral
-division of an absorbed quadratic term.
-
-## Preserved independent fixed-parameter diagnostics
-
-Use the actual bad-double model
-
-    P=u(u-1)(u-2)(u-3), F=P(u-t), A=(t+1)^2*P,
-    C:k(C)=k(u,v,kappa), v^2=F, kappa^2=u(u-3),
-    z=u^2/v, eta=du/v, D=v*d/du.
-
-The selected nodal rank25 cover uses one Frobenius-fixed invariant
-H1(O) class and the anti-invariant class kappa*z. Its exact primary
-module is retained in
-`Research/computations/bad_double_rank25_fitting_nodal_p320.json`.
-Here t^2+2=0 in the recorded F625 field. Its six regular free columns
-reconstruct the actual150-dimensional SAME-coordinate operator M*Phi.
-The ordinary map ker(Psi)->coker(Psi) has rank2; it is not set to zero
-by using independently chosen source and target Schur bases.
-
-The script `scripts/genus_two/probe_bad_double_initial_quadratic.sage` constructs
-all9 actual primary primitives with the original affine/formal reducer.
-Products use w_i^5=w_i+f_i and kappa^2=u(u-3), not group-ring
-multiplication of function ideals. Polarizing Q gives all45 coefficients.
-At Laurent precisions500 and700 EVERY complete150-coordinate normal
-vector agrees, and all45 projections to the9-dimensional cokernel are
-zero. The normal vectors themselves generally are nonzero.
-
-The separate finite audit
-`scripts/genus_two/audit_bad_double_quadratic_receipts.sage` reconstructs M,
-checks the kernel and dual equations, verifies every projection and
-precision equality, and solves every image equation in the AS filtration.
-Its [receipt](../../../Research/computations/bad_double_initial_quadratic_audit.json)
-retains explicit preimages. The9 kernel degrees are4,4,3,3,2,2,1,1,0.
-Each quadratic normal coefficient has a source preimage with no
-increase of its AS degree. Many coefficients are NOT in the bijective
-Fitting image, so that latter shortcut is false even in this test.
-The [independent finite audit](../../../Research/audits/BAD_DOUBLE_QUADRATIC_AND_QUOTIENT_RECEIPTS_AUDIT_2026_09_13.md)
-checks the actual inverse-Frobenius source preimages as well as every
-saved normal vector; its separate receipt is
-`Research/computations/bad_double_quadratic_independent_finite_audit.json`.
-
-These computations independently prove vanishing for this fixed actual
-cover over all extensions of its coefficient field; they are
-coefficientwise, not sampled kernel values. Uniformity now comes from
-the residue proof above, not from extending these numerical conclusions.
-The changed cubic backup parameter alpha^3+alpha+1=0 now has the SAME
-complete two-precision verification: all45 full150-coordinate normal
-vectors agree at500/700, all projections are zero, and each has a
-primary source preimage with no AS-degree increase. The changed-input
-receipts are
-`Research/computations/backup_initial_quadratic_audit.json` and
-`Research/computations/backup_quadratic_independent_finite_audit.json`.
-The latter is a replay of the independently authored finite verifier,
-on this changed input, not a repetition of the first parameter's test.
-This independently verifies the SECOND fixed actual cover over every
-extension of its coefficient field. Neither numerical audit computes
-the later divided carry.
-
-## Rank125 filtered extension and its sharp limitation
+## Rank125 filtered extension
 
 For the original maximal C5^3 cover put s=a+b. Pair Q(F_a K,F_b K)
 against full nil-dual polynomials of degree<=14-s, or the full degree12
@@ -357,137 +275,5 @@ degree>=9 has all exponents positive and is the image of the monomial
 with the u,v exponents decreased by1. Its extra w4 term vanishes.
 Units and formal coordinate changes preserve this ideal assertion.
 The nil source lies in F_(s-1), the ordinary source in F_s, and the
-whole equivariant primitive preserves F_s. The independent
-[weighted/filtered audit](../../../Research/audits/RANK125_WEIGHTED_REDUCTION_AUDIT_2026_09_13.md)
-checks this extension, including the full rather than annihilator dual.
-
-### An actual nonzero component at the cubic parameter
-
-Work in k0=F5[t]/(t3+t+1); choose zeta4=2 in its degree4 extension.
-The original AS characters, in y=v/kappa notation, are
-
-    chi1=zeta3*(1+t+t2)*y/u,
-    chi2=(4+4t)*v/u+(3+3t+4t2)*v/u2,
-    chi3=zeta*((2+2t+4t2)*v/u+(3+3t+t2)*v/u2).
-
-They are Frobenius-fixed cohomology classes and independent. Use
-s_i=zeta^(j_i)*log(sigma_i), W_i=zeta^(-j_i)*w_i, j=(3,0,1).
-This stores coefficients in k0 but does NOT change original rational
-directions: evaluate them at s_i=zeta^(j_i)*a_i. All31 such directions
-have nonzero quadratic symbol. The scalar Schur quadratic is
-
-    q2=(4+2t)s1²+(4+2t+4t²)s2²+(4t+t²)s2*s3+t²*s3².
-
-Its cubic is zero and the actual radical quartic is nonzero. Put
-
-    g3=(4+2t+3t²)s1³+(4t+3t²)s1*s2²
-       +(1+2t+t²)s1*s2*s3+(3+3t²)s1*s3².
-
-One has q2²*g3=0 and q2*g3!=0 in k0[s1,s2,s3]/(s_i5). Let f4 be
-the actual quartic Schur term, and prescribe H_s=s*(q2-f4)*g3 modJ8.
-This jet extends to Ann(f): the degree5,6,7 partial kernel spaces have
-dimensions4,6,8, totaling18; the actual kernel has dimension43 and
-its J8 intersection has dimension25. The injection of actual jets is
-therefore onto the entire partial solution space. Restoring the right
-ordinary Schur column and inverse coefficient Frobenius gives n_s.
-
-The scalar dual polynomial
-
-    R(W)=W1³+(3+t+t²)W1*W2*W3+(4+2t+2t²)W1*W3²
-
-is killed by q2(partial); higher f terms kill it by degree. Restore
-the WHOLE extended dual frame with ell(-s) to obtain gamma_R in the
-primary annihilator. Exact residue evaluation gives
-
-    <Q(n_s),gamma_R>=(4+t+3t²)*s².
-
-The calculation needs symbol jets only through total degree5: source
-function degree<=7 and test degree3 give total<=17, so an omitted
-derivative of order>=6 falls below trace degree12. It DOES retain
-degree16/17 AS reductions. In each original fiber use
-T0=...=T3=0, T4=-c_i^-1 and
-T_n=c_i^-1*T_(n-4)+c_i^-1*f_U,i*T_(n-5), c_i=2^(j_i).
-Direct evaluation at the eight base points agrees with the independent
-symbol convolution. A completion change in J8 has function degree<=4,
-so the same loss0/1/2 argument proves independence of the displayed
-component from EVERY such completion.
-
-### The first low quotient really can vanish
-
-In the principal original weighted relations s_i5=-tau*2^(j_i)*s_i,
-the covector for this dual test gives t*s on the additive first carry.
-Together with the actual quadratic it is t*s+(4+t+3t²)s², with nonzero
-root s*=3+3t+3t². The returned source adjustment also cancels every
-other degree1..3 equation. Under the established integral equivariant
-additive comparison, these are the COMPLETE E4 equations modulo
-(f)+J4: source order>=5 puts ordinary terms and every mixed5D correction
-in J5, while only q2*H5 can carry as low as degree3. All higher scalar
-terms and q2*H6 or higher carry into J4 or above. The extra degree16
-AS trace has base-independent T8=-c_i^-2 and its loss1 term vanishes
-by the same residue identities. This proves a low quotient, not W4.
-
-The exact source jet at that adjusted point is recorded using field
-codes [m]=m0+m1*t+m2*t², m=m0+5m1+25m2:
-
-    H5: (3,1,1):12, (1,0,4):29, (1,1,3):16, (1,2,2):58,
-        (1,3,1):15, (3,0,2):73, (3,2,0):93, (1,4,0):9;
-    H6=0;
-    H7: (1,2,4):90, (1,3,3):11, (1,4,2):88,
-        (3,0,4):43, (3,1,3):107.
-
-Every actual kernel completion of this jet passes that low quotient.
-There are25 free completion coordinates in Ann(f) intersect J8.
-
-### One more quotient: every completion passes modulo J5
-
-The actual marked involution (u,v,kappa,w)->(u,-v,kappa,-w) acts
-on the scalar source and normal modules as MINUS deck inversion.
-The full compatible pulled reference is equivariant. Its scalar primary
-f is even to all orders, and the odd jet H# therefore has an odd
-kernel completion. Such a completion is fixed by the actual involution.
-The complete E4 scalar, including the additive carry, is consequently
-odd modulo(f). After killing its already-vanishing low quotient, no
-degree-four obstruction remains.
-
-This is also visible in the original integral coordinates. If
-ell=(log_4(sigma)-log_4(sigma^-1))/2 over Z/25[C5], its e-coefficients
-are (0,1,2,2,1), and ell^5/5=-ell mod5. Odd integral lifts therefore
-create no degree-four additive carry. All other additive corrections
-of a completion in J8 have first divided order at least J6.
-
-For an arbitrary completion change, the only possible new degree-four
-quadratic class is the polarized cubic-symbol map from the degree8
-kernel of q2, of dimension9, paired with the fixed H5#. Its projection
-to degree4 modulo q2 is ZERO on all9 basis vectors. This was computed
-from the actual residue symbol and independently rechecked by generic
-finite-field elimination in
-[the degree-four cross checker](../../../Research/audits/check_rank125_grade4_cross_20260913.py).
-Higher completion terms contribute only in J5 or above. There is no
-hidden f4 correction: eliminating an odd degree-three term introduces
-f4 times a linear source only in degree5; eliminating a degree-four
-cross term introduces its f4 correction only in degree6.
-
-Thus ALL25 completions satisfy E4=0 modulo(f)+J5. The residual
-(J5+(f))/(f) has dimension18 (successive degrees5,6,7 have dimensions8,6,4).
-Its actual value is not computed. This is not an actual W4 witness or
-an exclusion of the completion family. The
-[independent geometric audit](../../../Research/audits/RANK125_NONZERO_QUADRATIC_AUDIT_2026_09_13.md)
-records both the integral-log calculation and the full equivariance
-argument.
-No complete W4 lift or counterexample to sixth-level descent follows.
-
-### Provenance and independent verification
-
-The original two user archives are preserved. Extracted evidence is in
-`../litt3-computation-data/pro_rank125_return_20260913/`, with the
-continuation under `continuation/rank125_continuation_certificate/`.
-The root replay of run_all.py passed; EVERY regenerated JSON is
-byte-identical, and all20 manifest entries match. The separate partial
-verifier also reproduced its results byte-for-byte. It does not verify
-the missing mixed-characteristic comparison. The
-[independent geometric audit](../../../Research/audits/RANK125_NONZERO_QUADRATIC_AUDIT_2026_09_13.md)
-checks actual kernel completion, normalized AS trace, sufficient symbol
-precision and the complete low-quotient interpretation. Its independent
-field checks use a separate implementation. Numerical coefficient
-agreement is evidence for this fixed actual cover, not a uniform
-vanishing theorem on all43 directions or all parameters.
+whole equivariant primitive preserves F_s. The full dual space,
+rather than only an annihilator subspace, was used throughout.

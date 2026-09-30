@@ -39,6 +39,12 @@ More generally, if a nontrivial P-cover preserves r>0 sections, then
 rd+dim R<=r forces d=1 and R=0. The Burnside basis theorem makes P
 cyclic, and nondegeneracy of B_1 makes r even.
 
+For an arbitrary Galois cover preserving r>0, the symplectic pairing
+gives χ(E)=0. The [general section-preserving theorem](section_preserving_galois_covers.md)
+therefore supplies a characteristic normal p-complement and cyclic
+p-quotient. A nontrivial Sylow p-subgroup acts without adding sections
+over its actual quotient; the preceding parity argument makes r even.
+
 For a non-Galois cover T->C with p-group Galois closure L->C, write
 P=Gal(L/C), H=Gal(L/T). A maximal subgroup M containing H is normal
 of index p. The actual intermediate U=L/M gives T->U->C; the cyclic
@@ -66,6 +72,11 @@ cyclic. These are statements about the original source's deck group.
 The stronger p-group-closure prohibition when m=1 follows from
 Section2: downstairs r is either zero or one, and both are impossible.
 
+More generally, the [cyclic block theorem](cyclic_symplectic_blocks.md)
+applied to the actual quotient by any p-power-order deck element makes
+an odd m at least that element's order. This adds the odd m<p conclusion
+without a section-preserving or Galois-closure assumption.
+
 ## 4. The character must be quadratic
 
 Suppose h is Galois and h0(C,E)=0, h0(T,h*E)=1. Its deck group G acts
@@ -83,31 +94,13 @@ double. Sections cannot decrease on passing upward from it to T,
 so its section dimension is also one. The prime-to-p assertion follows
 from Section3. No classification of general finite groups is used.
 
-## 5. Why the actual tangent bundles have the required pairing
+## 5. The actual tangent bundles
 
-In characteristic five, the dormant tangent bundle V_d is the Cartier
-descent of the scalar jet system for quadratic coefficients. On a
-coordinate change u=u(t), with a=du/dt, its jet transition is
-
-    [[a^2,0],[2aa',a^3]],
-
-with determinant a^5. The scalar connection has zero trace, and these
-determinant transitions are horizontal. Cartier descent therefore gives
-det V_d=omega_(C^(1)), not just equality after Frobenius pullback or of
-degrees. Wedge product supplies its perfect alternating pairing.
-
-For an admissible active connection, E_r=pi_*V_(pi*r+q) on Frobenius
-twists, where pi is its actual canonical etale double, split or not.
-Wedge product upstairs followed by the finite-etale trace gives
-
-    E_r tensor E_r -> pi_*omega_(C_s^(1)) -> omega_(C^(1)).
-
-It is perfect and alternating. This can be checked etale-locally, where
-the double splits and the form is the direct sum of the two rank-two
-wedge forms. Both tangent-bundle constructions commute with the actual
-finite etale maps, as proved in
-[tangent_bundle_cyclic_refinements](../../projective_connections/tangent_bundle_cyclic_refinements.md).
-Their section dimensions are the respective actual connection defects.
+The [tangent-bundle theorem](../../projective_connections/tangent_bundle_cyclic_refinements.md)
+gives perfect canonical-valued alternating pairings on V_d and E_r
+in characteristic five, including split canonical doubles. Both bundles
+and their pairings commute with actual finite étale pullback; their
+section dimensions are the respective connection defects.
 
 ## 6. The whole Galois one-defect branch over the selected genus-two family
 
@@ -246,7 +239,7 @@ theorem, L^2=O, the exact bad-twist table, translation of the proper
 theta divisor, and E_r tensor kappa=E_r. In these cases kappa is
 nontrivial; no genus-three base-point classification is invoked.
 
-The argument in [proper theta, Section6](../../projective_connections/genus_two_active_theta.md)
+The argument in [proper theta, Section4](../../jacobians/theta_divisors/genus_two_rank_four_theta.md)
 applies to THIS F as a bundle: even theta follows from its symplectic
 form, and multiplicity>=5 would be even and hence at least6. Intersect
 with the reduced [2]Theta curve through the origin, whose six branches
@@ -263,11 +256,10 @@ for each corresponding connected cyclic5 cover Y_1->Y,
 
     ell=h0(Y_1,E_(r_1) tensor L_1)<5.
 
-In fact ell is2 or4. In a formal coordinate on mu5 in which inversion
-is e->-e (for example u-u^-1 with u^5=1), an invariant trivialization
-makes the theta equation even. Its nonzero order below5 is positive
-and even. The single-entry minimal cohomology complex gives that order
-as ell, retaining the whole length-five subgroup scheme.
+In fact ell is2 or4, directly by the
+[cyclic block theorem](cyclic_symplectic_blocks.md), applied to the
+canonical-valued symplectic bundle F and this actual cyclic cover.
+This uses the whole group algebra and no scalar-only normalization.
 
 Let C_L->Y be the bad double and C_(L,1)=C_L times_Y Y_1. It is
 connected, since degrees2 and5 are coprime. The character decomposition

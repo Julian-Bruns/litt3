@@ -1,7 +1,8 @@
-# Geometry and Jacobians of the explicit fixed pair
+# Geometry of the fixed genus-nine curve and original genus-25 partner
 
 Let \(k=\overline{\mathbf F}_5\), choose \(a^2+4a+2=0\) in
 \(\mathbf F_{25}\), and let \(X,Y\) be the smooth projective models of
+the original pair
 \[
 \begin{aligned}
 y^3={}&x^{10}+(4a+2)x^9+(a+4)x^8+(3a+1)x^7+3ax^6+4ax^5\\

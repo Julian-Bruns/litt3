@@ -1,7 +1,7 @@
 # Proof: one fixed theta intersection replaces every torsion order
 
 [Statement](../../../Theorems/jacobians/theta_divisors/singleton_cartier_theta_bound.md).
-Author /root,2026-09-08. B_C is on C^(1), with conventions in
+Author /root,2026-09-08. B_{1,C} is on C^(1), with conventions in
 [theta_cartier](../../../Definitions/theta_cartier.md).
 
 ## 1. Connectedness and a point outside theta
@@ -17,7 +17,7 @@ nonzero character of ker V becomes trivial on C. The monodromy of
 the pulled-back (Z/p)^2 torsor is the entire group. T is connected,
 hence irreducible, smooth and proper. Etale Hurwitz gives genus p^2+1.
 
-For an ordinary curve H^0(B_C)=0. Thus (O,0) does not belong to the
+For an ordinary curve H^0(B_{1,C})=0. Thus (O,0) does not belong to the
 inverse image of Theta_B. Since T is irreducible, the theta section
 does not vanish identically on it. Its restriction defines an effective
 divisor, not a whole component.
@@ -43,10 +43,10 @@ Therefore deg b^*Theta_B=8p(p-1).
 Every Weierstrass point P satisfies2P~2O. For nonzero M in ker V,
 tensor the defining Frobenius sequence by M. Projection formula gives
 
-    0->M->F_*(F^*M)->B_C tensor M->0.
+    0->M->F_*(F^*M)->B_{1,C} tensor M->0.
 
 Here F^*M=O_C, while H^0(M)=0 and H^0(O_C)=k. Thus
-H^0(B_C tensor M) contains a nonzero section, and(P,M) is in the
+H^0(B_{1,C} tensor M) contains a nonzero section, and(P,M) is in the
 effective theta pullback. There are six distinct such fibers and p^2-1
 nonzero points in each. Each contributes at least one, with no
 transversality assumption. Subtract them once to obtain R. Its degree is
@@ -71,7 +71,7 @@ Frobenius and inversion of multiplication by p on that torsion. On the
 corresponding actual etale torsor, projection formula and the exact
 Cartier sequence identify the character Cartier kernel with
 
-    H^0(C^(1),B_C tensor M).
+    H^0(C^(1),B_{1,C} tensor M).
 
 Equivalently this is the kernel of the twisted Cartier map on
 H^0(C,omega_C tensor F^*M). The Frobenius twist and character are
@@ -82,7 +82,7 @@ Conversely, for a non-Weierstrass P, omega_C tensor F^*M=O(2P) has
 exactly ONE independent section. Indeed the genus-two degree-two pencil
 is the hyperelliptic pencil, and2P is not a fiber unless P is Weierstrass.
 Its nonzero section has zero divisor exactly2P. Any nonzero section of
-B_C tensor M maps injectively to that one-dimensional twisted canonical
+B_{1,C} tensor M maps injectively to that one-dimensional twisted canonical
 space, so its generator is Cartier-zero on the actual torsor. If n is
 the order of M, its nth power descends to the required s. This proves
 the converse, retaining the actual etale root cover.
@@ -104,7 +104,7 @@ The preceding equivalence applies with n=d. It produces at most16
 points without restricting the prime factors or size of either leg degree.
 
 The involution(P,M)->(iota P,-M) preserves T and its theta divisor:
-iota acts by-1 on J, and Theta_B is symmetric since B_C is self-dual
+iota acts by-1 on J, and Theta_B is symmetric since B_{1,C} is self-dual
 for Serre duality. Away from Weierstrass points it has no fixed point.
 Thus there are at most8 abscissas. Over F125 all constructions and the
 forced divisor descend; a residual closed-point orbit has degree at

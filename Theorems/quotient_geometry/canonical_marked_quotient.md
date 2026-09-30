@@ -43,8 +43,5 @@ omega_C(-D) torsion. No ordinary, Jacobian, Galois, or prime-to-p weight
 hypothesis is used. Reducedness and degree 2g-2 are essential. An
 arbitrary unmarked common cover is NOT known to supply such a marking.
 
-Evidence: major audit PASS, `/root/canonical_marked_quotient_major_stress_test`,
-2026-09-06; nonbreaking clarifications incorporated. The final finite-partner
-corollary is the immediate fixed-index consequence added afterward.
+The finite-partner corollary is the immediate fixed-index consequence.
 [Proof](../../Proofs/quotient_geometry/canonical_marked_quotient.md).
-[Audit metadata and optional record](../../routes/global/audits/CANONICAL_MARKED_QUOTIENT_MAJOR_STRESS_TEST_2026_09_06.md).

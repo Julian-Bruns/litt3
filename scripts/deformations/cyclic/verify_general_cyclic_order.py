@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 """Exact higher-order cyclic preparation and nonlinear-carry diagnostics."""
-import sys
-from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 import argparse
 import json
 from math import comb
@@ -10,7 +7,27 @@ from pathlib import Path
 import random
 import time
 
-from scripts.deformations.cyclic.verify_cyclic_power_additive_carry import apply_operator, add_digit
+def apply_operator(operator, vector, relation, modulus):
+    q = len(vector)
+    out = [[0, 0] for _ in range(2*q-1)]
+    support = [(j, x, y) for j, (x, y) in enumerate(vector) if x or y]
+    for i, (a, b, c, d) in enumerate(operator):
+        if a or b or c or d:
+            for j, x, y in support:
+                out[i+j][0] += a*x+b*y
+                out[i+j][1] += c*x+d*y
+    for i in range(2*q-2, q-1, -1):
+        x, y = (out[i][0] % modulus, out[i][1] % modulus)
+        if x or y:
+            for j, coefficient in enumerate(relation):
+                if coefficient:
+                    out[i-q+j][0] -= coefficient*x
+                    out[i-q+j][1] -= coefficient*y
+    return [(x % modulus, y % modulus) for x, y in out[:q]]
+
+def add_digit(vector, correction, scale, modulus):
+    return [((x+scale*z) % modulus, (y+scale*w) % modulus)
+            for (x, y), (z, w) in zip(vector, correction)]
 
 
 def run_case(p, h, a, rng):
@@ -35,12 +52,13 @@ def run_case(p, h, a, rng):
                 for (x,y),(z,t) in zip(v,w)]
 
     records=[]
-    modes=[0,2]
-    if p>3*h-2:modes.append(1)
-    for m in modes:
+    modes=[(0,False),(2,False)]
+    if p>3*h-2:modes.append((1,True))
+    if p>3*h:modes.append((1,False))
+    for m,divisible_norm in modes:
         for trial in range(4):
             leading=[pair() for _ in range(h+1)]
-            if m==1:leading[0]=(0,0)
+            if divisible_norm:leading[0]=(0,0)
             if trial==0:leading[:h]=[(0,0)]*h
             eta=tuple(x+p*rng.randrange(modulus//p) for x in leading[0])
             operator=[(0,0,0,0)]*q
@@ -88,23 +106,30 @@ def run_case(p, h, a, rng):
                 repair=[(-x%p,-y%p) for x,y in r[h:]]+[(0,0)]*h
                 y=add_digit(y,repair,p**a,modulus)
                 assert residual(y)==[(0,0)]*q,('completion',p,h,a,m)
-            records.append(dict(weight=m,trial=trial,completed=(trial==0)))
+            records.append(dict(weight=m,divisible_norm=divisible_norm,trial=trial,completed=(trial==0)))
     return dict(prime=p,leading_order=h,power=a,group_order=q,checks=len(records),
-                nonlinear_checks=sum(r['weight']!=0 for r in records),status='PASS')
+                nonlinear_checks=sum(r['weight']!=0 for r in records),
+                first_weight_arbitrary_norm_checks=sum(r['weight']==1 and not r['divisible_norm'] for r in records),
+                status='PASS')
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',required=True)
+    parser.add_argument('--case',nargs=3,type=int,action='append',metavar=('P','H','A'),
+                        help='test one prime, leading order and group exponent; repeatable')
     args=parser.parse_args()
     output=Path(args.output)
     if output.exists():raise FileExistsError(output)
     started=time.monotonic();rng=random.Random(20260913)
-    cases=[(3,1,1),(3,1,2),(5,2,1),(5,2,2),(5,2,3),
+    cases=args.case or [(3,1,1),(3,1,2),(5,1,1),(5,1,2),(5,1,3),
+           (5,2,1),(5,2,2),(5,2,3),(7,2,1),(7,2,2),(7,2,3),
            (7,3,1),(7,3,2),(7,3,3),(11,3,1),(11,3,2),
            (11,4,1),(11,4,2),(11,5,1),(11,5,2)]
     records=[]
     for p,h,a in cases:
+        if h<1 or a<1 or p<=2*h or any(p%d==0 for d in range(2,int(p**0.5)+1)):
+            parser.error('each case requires a prime p>2h and h,a>=1')
         records.append(run_case(p,h,a,rng));print(json.dumps(records[-1]),flush=True)
     result=dict(status='PASS',cases=records,total_checks=sum(r['checks'] for r in records),
                 seconds=time.monotonic()-started,

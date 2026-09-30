@@ -1,7 +1,7 @@
 # Complete actual Prym-factor exclusion for the backup
 
 2026-09-11. Author /root. Fresh bounded assembly audit by
-/root/audit_complete_degree2_sieve PASS. Exact computation, not Lean.
+/root/audit_complete_degree2_sieve PASS. Exact computation.
 
 ## 1. The complete actual carrier reduction
 
@@ -97,13 +97,10 @@ projective point counts overF5,F25,F125. The higher ghost recursion has
 exponent624. All192beta25/beta125/unit-matrix entries at actual carrier74
 agree between full-precision and precision-aware product implementations.
 
-The ADDITIONAL independent saved-Cartier replay is now COMPLETE for all
-1533carriers. Both disjoint ranges regenerated every normal space,
-checked all eight anti-Cartier equations and independently iterated the
-342-fold norm. They finished in1706.69and1705.61seconds, respectively,
-with no failed case. All individual hash-linked receipts are retained in
-degree2-prym-cartier-replay-20260911. This strengthens the computational
-evidence without changing the theorem's mathematical scope.
+The independent saved-Cartier replay regenerated every normal space
+for all1533carriers, checked all eight anti-Cartier equations and
+independently iterated the342-fold norm, with no failed case.
+All hash-linked receipts remain in degree2-prym-cartier-replay-20260911.
 
 ## 4. Return to the original two maps
 
@@ -119,6 +116,36 @@ double splits, a component gives X→B, already excluded by Hom=0.
 Therefore the degree2 atlas is impossible. No simultaneous Galois
 closure, presumed source ordinariness, or invented second map is used.
 
-The degree84 case is separately excluded by
-[triangle237_backup_exclusion](../../../Theorems/quotient_geometry/triangles/triangle237_backup_exclusion.md).
-Coreless common-cover work remains separate.
+## 5. The maximal elementary-abelian two-cover
+
+The geometric mod-two abelianization supplies the connected cover
+\(X_{[2]}\to X\) with group \(A=(\mathbf Z/2)^{18}\). The nontrivial
+characters of \(A\) label all \(2^{18}-1\) connected étale doubles
+\(X_\chi\to X\). Rational character idempotents, equivalently the
+pullback and norm maps, give an isogeny
+\[
+J(X_{[2]})\sim J(X)\times
+\prod_{\chi\ne1}\operatorname{Prym}(X_\chi/X).
+\]
+The dimensions agree: \(9+(2^{18}-1)8=1+8\cdot2^{18}\), the genus
+from étale Riemann--Hurwitz. Sections 1--3 exclude a geometric
+\(J(B)\) factor from every Prym, and the established absolute
+simplicity of \(J(X)\) and \(J(B)\), of dimensions nine and two
+([fixed-pair arithmetic](../../curve_arithmetic/fixed_pair_arithmetic.md),
+[backup arithmetic](../../curve_arithmetic/backup_curve_arithmetic.md)),
+excludes \(\operatorname{Hom}(J(B),J(X))\). Thus the displayed
+decomposition proves
+\(\operatorname{Hom}(J(B),J(X_{[2]}))=0\).
+
+Any nonconstant map \(U\to B\) between smooth proper curves gives
+nonzero pullback \(J(B)\to J(U)\), because norm after pullback is
+multiplication by its positive degree. This remains true for an
+inseparable map. Such a map from an intermediate cover of
+\(X_{[2]}\to X\) would compose to a map from \(X_{[2]}\), which is
+impossible. Likewise an actual common span whose \(X\)-leg has
+elementary-abelian two-group Galois closure would pull its \(B\)-map
+back to an intermediate cover of \(X_{[2]}\). Finally every Prym in
+the displayed product is ordinary by the exact Cartier rank test in
+Section 2. The \(J(X)\) factor retains its nonordinary contribution
+by the [fixed-X Cartier theorem](../../cartier_and_spin/cartier_petri_excess_one.md);
+no ordinarity of the entire cover is claimed.

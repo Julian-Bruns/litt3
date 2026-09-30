@@ -1,8 +1,7 @@
 # Proof: the actual corrected Hodge frames give a nonzero fourth obstruction
 
-[Statement](../../../Theorems/deformations/cyclic_descent/neutral_five_fourth_obstruction.md).
-Returned Pro calculation, integrated2026-09-11 by /root. Bounded
-independent audit PASS by /root/audit_neutral5_returned_w4.
+This is the selected-row supporting calculation for the
+[fourteen-family theorem](../../../Theorems/deformations/all_neutral_dihedral_bt_heights.md).
 
 ## 1. Original cover and marking
 
@@ -57,8 +56,8 @@ xi2. The chosen third curve, and a smooth fourth reference, use
 with the cubic exponential term retained. The two eleven-coordinate
 digits are serialized in each fresh run. The chosen third origin need
 not be the old T3ref: it is SOME point of the original complete T3(b)
-line. The independently proved parameter-independence theorem applies
-to that line and is the reason this is sufficient.
+line. The cyclic secondary-trace argument below applies to that
+entire line, so this one computed origin is sufficient.
 
 Let I_U,I_O be the original flat-comparison matrices. The primary
 normal cochain rho2=j*(Gamma2)_12/5 is an actual coboundary, and the
@@ -157,11 +156,26 @@ zero; it is its pairing that vanishes. The quadratic contribution is
 nonzero and cannot be discarded by the degree-one repair argument.
 Individual summands are frame-dependent; their total class is not.
 
-The parameter-independence theorem gives this same obstruction for
-EVERY compatible third lift of the original marked T2. By the actual
-curve-variation formula, changing a smooth fourth digit only changes
-rho4 by a Psi image. Hence its nonzero cokernel class excludes every
-compatible fourth extension, and therefore every full tower.
+For completeness, the later
+[cyclic secondary-trace theorem](cyclic_five_secondary_trace.md)
+gives constancy modulo \(e\) on the COMPLETE third-repair plane of
+the actual cyclic-five closure \(W\to D\): its Smith factors are
+five units and \(e^2\). Here \(\mathcal O_D\) is the pullback of the
+one-dimensional \(\mathcal O_C\), so reflection acts trivially on
+\(\mathcal O_W/e\mathcal O_W\simeq\mathcal O_D\), and by minus one
+on \(e\mathcal O_W\). Thus its invariant line maps isomorphically
+to the cyclic coinvariant. Every lift \(T_3(b)\) pulls back to one
+of those compatible \(W_3\); naturality puts its obstruction in
+that invariant line. Constancy of the coinvariant therefore makes
+the WHOLE pulled-back obstruction constant. Pullback
+\(\mathcal O_T\to\mathcal O_W\) is injective because the degree-two
+trace composed with it is multiplication by two. Hence the same
+nonzero class occurs for EVERY compatible \(T_3(b)\).
+
+By the actual curve-variation formula, changing a smooth fourth
+digit only changes rho4 by a Psi image. The nonzero cokernel class
+therefore excludes every compatible fourth extension and every
+full tower.
 
 ## Reproducibility and independent scope
 

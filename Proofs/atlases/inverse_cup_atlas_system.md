@@ -1,6 +1,6 @@
 # Proof: inverse incidence, Frobenius feedback and exact boundary scope
 
-[Statement](../../Theorems/atlases/inverse_cup_atlas_system.md), Version6.
+[Statement](../../Theorems/atlases/inverse_cup_atlas_system.md), Version7.
 The general inverse-block, selected-column and minor-patch arguments
 are proved once in [cohomological Bézout](cohomological_bezout.md).
 We retain all former fixed-oper conclusions and their concrete evidence.
@@ -81,7 +81,7 @@ gives Gamma=P Z1 P^T. The remaining inverse condition is Bbar Z1=I.
 Differentiating `det D=(-1)^r det(q0)^2 det Bbar` proves (S). This
 retains all exceptional directions and both logarithmic contributions.
 
-## 4. Boundary classes and the invalid jet family
+## 4. Boundary rank
 
 In the stable extension conventions let E>0 be the zero divisor of u.
 Its saturation gives
@@ -95,64 +95,7 @@ sequence then gives its dimension deg E. Cup product with these classes
 factors through restriction to E, since a section vanishing on E kills
 its principal part. This proves the rank bound, including multiplicities
 and infinity. Here ell=24, giving rank<=23. A rank21 cup block cannot
-therefore replace the full exceptional inverse criterion.
+replace the full exceptional inverse criterion.
 
-For the fixed curve identify E=H1(O(-48O)) with L64^vee by residues,
-and J=Ann ker Q, dim J=32. In regular local oper and line frames at
-any P, the scalar Q has order3 with invertible leading coefficient.
-Evaluation of Q's output defines a nonzero functional eta_P on the
-length-four jets of O(64O); these jets are separated by global sections
-because H1(O(64O-4P))=0. It kills ker Q, hence lies in J, and its
-third-jet coefficient makes its support exactly4P rather than3P.
-This intrinsic regular-frame description also applies at O, despite
-the pole of the chosen rational differential frame there.
-
-Distinct P give distinct projective classes: L64 separates the union
-of two length-four jets, by the analogous length-eight vanishing.
-Sections of W(24O) vanishing on4P form a24-dimensional vector space;
-the eight evaluation conditions are independent since the Serre-dual
-obstruction is stable of slope -24+16+4=-4. Every such section pairs
-with eta_P in the boundary kernel. Thus P varies in a curve and [U]
-in P23, giving a24-dimensional family in projective N/J incidence.
-Coefficient Frobenius transports the support construction and preserves
-these dimensions. All its members are invalid quotients and have cup
-rank at most4. Moreover i(eta_P) evaluates Q(L64)=S_U at P, so its
-pairing with such U is zero. This directly contradicts the compact
-radial normalization U.beta=2. Both inverse criteria exclude the family
-as well; N incidence alone does not.
-
-## 5. Exact evidence and limits of the shortcuts
-
-The following retained computations concern their named tensors only.
-The scheme equivalences above do not assume their numerical outcomes
-for other opers.
-
-- `wronskian_trace_linearization.sage` checks every coefficient of
-  `-H(beta^[5])U-R_proj(U,beta^[5])=C N(U,beta^[5])` for the first oper,
-  with a saved constant32 by64 matrix C. H is symmetric because it is
-  the Hessian of the quadratic Tr(Gamma B(U)), holding Gamma fixed.
-- `wronskian_polar_determinant_lines.sage` gives two deterministic
-  projective lines with coprime det H and det Gamma, of degrees32 and24.
-  Both leading matrices are invertible, so infinity is checked. Roots
-  of det H are therefore cup-invertible points where H is singular;
-  no such point is asserted to solve the remaining atlas equations.
-- [The exceptional diagnostic](../../scripts/atlases/exceptional_inverse_cup_diagnostic.sage)
-  and [its exact coefficient receipt](../../Research/computations/exceptional_inverse_cup_invariant0.json)
-  reconstruct H0(V), the section space, Q, and the cup/q tensors, checking
-  every kernel and fifth-power reconstruction. Its invariant_0 cup has
-  rank21, but U->Gamma q(U) has rank29; three kernel basis directions
-  have q ranks3,3,1. This disproves the proposed full-column-rank shortcut
-  on the rank21 cup stratum. It does not produce an atlas.
-- `check_rooted_inverse_cup.sage` replays12 sparse cubic inverse equations
-  against original N/R provenance, including four diagonal units. The
-  associated60-second diagnostic did not finish and did not test the
-  full replacement (R); its raw evidence remains in
-  `atlas-normalized-rooted-cubic-20260908` outside the repository.
-- The nonzero56-square multiplication minor for S, all304,128 entries
-  of the six-section quadratic Bézout reconstruction, and their sources
-  are retained in [the Bézout proof](cohomological_bezout.md).
-
-The full exceptional B/minor-patch tensors have not been exported. None
-of these necessary ranks, chart identities or equivalent formulations
-excludes a whole representative, any additional torsion twist or an
-unmarked common-cover branch. The original problem remains unsolved.
+The first-oper rational-pencil and coefficient evidence for the positive
+inverse criterion is retained in [the Bézout proof](cohomological_bezout.md).

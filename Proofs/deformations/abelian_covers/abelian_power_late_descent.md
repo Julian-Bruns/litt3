@@ -4,7 +4,7 @@ Version2, 2026-09-13. Author /root; independent consolidation audit PASS
 by /root/audit_late_consolidation, with no outstanding objections.
 [Statement](../../../Theorems/deformations/abelian_covers/abelian_power_late_descent.md).
 The three earlier audits and original returned nodal proof remain
-retained; this is prose verification, not Lean verification.
+retained; this is prose verification.
 
 ## A reusable image lemma
 

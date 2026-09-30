@@ -1,0 +1,3 @@
+#include "../src/residual.hpp"
+#include "io_dft.hpp"
+int main(int argc,char**argv){try{input::init();std::string dir=argc>1?argv[1]:"next/r9";for(int n=71;n<=77;n++){std::ifstream f(dir+"/E"+std::to_string(n)+".bin",std::ios::binary);int nr=read32(f),nc=read32(f);f.close();auto R=read_rows(dir+"/E"+std::to_string(n)+".bin",nr,nc);Poly g;for(int l=0;l<nc;l++){Poly a;for(auto row:R)a.c.push_back(row[l]);a.trim();g=gcd(g,a);if(g.deg()==0)break;}std::cout<<"E"<<n<<" mu content H-degree="<<g.deg()<<"\n";write_rows(dir+"/E"+std::to_string(n)+"_content.bin",Rows{g.c});}return 0;}catch(std::exception&e){std::cerr<<e.what()<<"\n";return 1;}}

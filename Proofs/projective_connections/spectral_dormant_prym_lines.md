@@ -2,8 +2,8 @@
 
 [Statement](../../Theorems/projective_connections/spectral_dormant_prym_lines.md).
 Author /root, 2026-09-08; global proof and exact symbolic checks, not an
-independent audit. This is a spectral refinement of the existing Cartier
-secant dictionary, not a claim of a new general spectral correspondence.
+independent audit. The BNR correspondence is cited below; the explicit
+Frobenius-trivial five-torsion line is the additional construction here.
 
 ## 1. A horizontal matrix with no denominators
 
@@ -30,8 +30,8 @@ Substitution in the polynomial matrix gives
 Thus Phi is a regular global morphism J->J tensor omega_C^5. Its
 horizontality in (1) is with respect to the canonical connection on
 omega_C^5, whose coordinate frame (dt)^5 is horizontal. Cartier descent
-of (1)--(2) gives phi:V_s->V_s tensor omega_(C^(1)). Its characteristic
-identity descends to phi^2=2q^(1)I: F_C^*q^(1) has coefficient q^5.
+of (1)--(2) gives theta:V_s->V_s tensor omega_(C^(1)). Its characteristic
+identity descends to theta^2=2q^(1)I: F_C^*q^(1) has coefficient q^5.
 This is a twist identity, not an unlabelled coefficientwise fifth root.
 
 The determinant of J is omega_C^5, and the trace of M_s is zero.
@@ -46,20 +46,17 @@ double cover Sigma of C, branched at div(q). It is connected: a square
 has even valuation, whereas q has simple zeros. There are 4g-4 branch
 points, and Riemann--Hurwitz gives g(Sigma)=4g-3.
 
-Write pi_1 for its twist. The spectral algebra on C^(1) is
-O direct-sum omega^(-1), with multiplication prescribed by 2q^(1).
-The Higgs field makes V_s a module for this algebra. It is generically
-rank one over its quadratic function field and is torsion-free as a
-sheaf on Sigma^(1): a torsion section would also be torsion over the
-base. Since Sigma^(1) is smooth, this sheaf M is a line bundle. By
-construction pi_(1*)M=V_s. Euler characteristics give
+Write pi_1 for its twist. Apply the BNR correspondence in
+[Groechenig, Theorem3.2, pp.9–10](https://arxiv.org/pdf/1201.0741#page=9),
+which is stated in positive characteristic. In that notation take
+X=C^(1), E=V_s, theta as above, and spectral sheaf L on Sigma^(1).
+The smooth integral spectral curve makes L a line bundle, with
+pi_(1*)L=V_s. Riemann–Roch and the determinant–norm identity give
 
-    deg M=g(Sigma)-1=4(g-1),
+    deg L=4(g−1),       Nm(L)=det(V_s) det(pi_(1*)O)^(-1)=omega²,
 
-since chi(V_s)=0. For a finite flat double,
-Nm(M)=det(pi_(1*)M) tensor det(pi_(1*)O)^(-1). Here pi_(1*)O is
-O direct-sum omega^(-1), so Section 1 gives Nm(M)=omega^2.
-Consequently N=M tensor pi_1^*omega^(-1) has degree zero and norm O.
+since chi(V_s)=0 and pi_(1*)O=O direct-sum omega^(-1).
+Consequently N=L tensor pi_1^*omega^(-1) has degree zero and norm O.
 The identity pi_1^*Nm(N)=N tensor tau^*N gives tau^*N=N^(-1).
 
 ## 3. Frobenius pullback, including every branch point
@@ -67,10 +64,10 @@ The identity pi_1^*Nm(N)=N tensor tau^*N gives tau^*N=N^(-1).
 On Sigma the pullback Higgs matrix has eigenvalue a^5, since
 (a^5)^2=2q^5. An eigen-quotient row is
 
-    L=(2a^3-q',q).                                      (3)
+    ell=(2a^3-q',q).                                      (3)
 
-It satisfies L Phi=a^5 L. Under the coordinate change above,
-L_t=u^5 L_x T^(-1). Thus (3) defines a global map
+It satisfies ell Phi=a^5 ell. Under the coordinate change above,
+ell_t=u^5 ell_x T^(-1). Thus (3) defines a global map
 
     pi^*J -> pi^*omega_C^5.                              (4)
 
@@ -78,14 +75,14 @@ At q!=0 its second entry is a unit. At a simple zero of q, a=0 and
 q' is a unit on C, hence also on Sigma, so its first entry is a unit.
 Therefore (4) is surjective everywhere, not merely at the generic point.
 
-The tautological spectral evaluation pi_1^*V_s->M is also surjective.
+The tautological spectral evaluation pi_1^*V_s->L is also surjective.
 Pulling it back by F_Sigma gives an eigen-quotient of pi^*J with the same
 eigenvalue a^5. Generically it agrees with (4) up to scalar. The kernel
 of a surjection from a vector bundle to a line on a smooth curve is
 saturated; saturated kernels with the same generic fiber coincide.
 Their quotient lines are therefore isomorphic globally. It follows that
 
-    F_Sigma^*M = pi^*omega_C^5,
+    F_Sigma^*L = pi^*omega_C^5,
     F_Sigma^*N = O_Sigma.                               (5)
 
 This argument includes the ramification points where the Frobenius
@@ -98,9 +95,9 @@ of that singular base change with Sigma.
 Differentiate (3), using a'=q'/a in the function field and the secant
 equation. One obtains
 
-    L'+L M_s=-a L.                                      (6)
+    ell'+ell M_s=-a ell.                                      (6)
 
-For a horizontal w, the quotient coordinate z=Lw satisfies z'=-az.
+For a horizontal w, the quotient coordinate z=ell w satisfies z'=-az.
 After tensoring by pi^*omega_C^(-5), the trivial line in (5) therefore
 has its Cartier connection d+eta, with eta=a dt. The expression is
 intrinsic. At a simple branch point q=t times a unit, a has order one
@@ -132,7 +129,7 @@ N to N^2. These operations preserve the cyclic subgroup generated by N.
 
 Jets, the polynomial matrix, Cartier descent and the spectral algebra
 all commute with etale base change. The evaluation quotient is unique
-and the simple branch divisor pulls back to a simple divisor. Thus M,
+and the simple branch divisor pulls back to a simple divisor. Thus L,
 N and eta are pulled back as claimed, including covers of degree
 divisible by five and non-Galois covers.
 
@@ -148,17 +145,9 @@ transition formula, are checked by the augmented existing
 [Cartier secant checker](../../scripts/connections/check_cartier_dormant_secants.sage).
 No new point-enumeration algorithm is needed.
 
-The old Cartier-secant theorem already constructs eta from a pair;
-the additional content here is the global Higgs realization, exact
-spectral line, norm condition, and reconstruction
-V_s=pi_(1*)N tensor omega. These do not make a pair exist on a common
-source. The line's mu_5 torsor is not an etale cyclic cover, and the
-known Igusa-type logarithmic counterexamples prevent treating a shared
-Kummer class alone as a core criterion.
-
 ## 6. Two failed universal shortcuts
 
-The existing [genus-seventeen Hecke counterexample](../../routes/global/UNBOUNDED_DOUBLE_ZERO_HECKE_LEAVES_ON_A_FIXED_GENUS17_CURVE.md)
+The existing [genus-seventeen Hecke counterexample](../examples/igusa_hecke_correspondences.md)
 also tests the present, stronger construction. In its notation the
 ramified double P->C has a deck-anti-invariant Cartier-fixed form alpha
 with div(alpha)=2D. Its square descends to a quadratic s on the genus-five
@@ -185,37 +174,55 @@ the same value here as at I. This proves neither equality of actual
 double orbits nor constancy of rational invariants with poles at I.
 All displayed matrix identities are checked in the existing secant script.
 
-## 7. Explicit spectral quotients for the backup
+## 7. Genus-two ordinarity from dormant tangents
 
-For B:v²=F=u(u−1)(u−2)(u−3)(u−alpha), alpha³+alpha+1=0, use the
-[universal dormant quintic](genus_two_dormant_quintic.md).
-Its specialized roots form one orbit z_i=z^(125^i), i=0,...,4.
-With W,V from that theorem, put
+Put a=(r−s)/2 and r0=(r+s)/2. The
+[Cartier-secant dictionary](cartier_dormant_secants.md) gives
+C_1(a³)=a and zero orders congruent to0 or1 modulo5. In genus two
+deg div(a)=4, so all four zeros are simple. Choose a Weierstrass point
+as infinity and write a=P(u)(du/v)², v²=F(u), deg F=5. Its order at
+infinity is4−2deg P, which is even and at most one, hence zero.
+Thus deg P=2; simple zeros also force P squarefree and coprime to F.
 
-    A_ij=(z_i−z_j)u²+(W(z_i)−W(z_j))u+V(z_i)−V(z_j), i<j.
+The [hyperelliptic root quotient](../cartier_and_spin/hyperelliptic_root_quotients.md)
+now gives an etale double onto E0:z²=FP and the descended form P du/z.
+The spectral convention uses q=r−s=2a and b²=2q=4a, so E:w²=2AF,
+A=2P, is E0 under w=2z. Its form is eta_E=2A du/w, of divisor type(2,2).
+This supplies the geometry and marked form without pairwise tests.
 
-Then r_i−r_j=A_ij(du/v)². In the exact degree-five separator field,
-every A has nonzero discriminant and is coprime to F. Its spectral
-curve D and a complementary quotient are
+For a regular quadratic xi, the
+[linearized-curvature factorization](etale_double_dormant_pairs.md) gives
 
-    D: v²=F(u), b²=2A(u);     E_A: w²=2A(u)F(u), w=bv.
+    T_nil(r0)=ker(xi↦D^4(a²xi))=ker(xi↦C_1(a²xi)),
+    T_nil(r0)=T_dorm(r) direct-sum T_dorm(s).
 
-The disjoint nonempty branch sets make D connected and E_A smooth
-of genus3. On E_A the valuations of2A are2 at its two A-branch points,
-−4 at infinity and zero elsewhere. Hence D->E_A is an actual etale
-double and g(D)=5; D->B is ramified at the four points over A=0.
-The logarithmic form from Section4 descends as eta_A=2A du/w, with
-Cartier(eta_A)=eta_A and divisor twice the two A-branch points.
+On the root double, division of the pulled-back xi by the root form
+identifies regular quadratics with the E0-character space of regular
+one-forms. Explicitly, xi=Q(u)(du/v)² maps to Q(u)du/z, deg Q<=2.
+Cartier's projection formula identifies the displayed kernel with
+ker Cartier on E0, as in the root-quotient proof. Hence
 
-For P=2AF and c_m=[u^m]P², its Hasse–Witt matrix in the usual
-three-form basis is H_ij=c_(5i−j), i,j=1,2,3. The
-[exact packet](../../Research/computations/backup_genus_two_secant_curves.json)
-checks det H≠0 and H(2A)=(2A)^[5] for every pair, proving ordinarity
-and independently checking the marked form. The
-[generator](../../scripts/genus_two/backup_genus_two_secant_curves.sage) retains all
-field moduli, polynomials and inverse-Frobenius-semilinear matrices.
+    a(E)=dim T_dorm(r)+dim T_dorm(s).
 
-Under F125-Frobenius the unordered pairs have two orbits, represented
-by(0,1) and(0,2). Reversal sends A to−A; w->2w identifies the curves
-and scales their marked form by2. This is a coefficient symmetry
-description, not a classification under all genus-three isomorphisms.
+The [genus-two dormant scheme](genus_two_dormant_quintic.md) has length
+five, so a point is reduced exactly when its tangent is zero. Its
+family resultant Res(Psi,Psi')=−[t(t−1)(t−2)(t−3)]² is nonzero at every
+smooth parameter. All ten quotients in that family are therefore ordinary.
+The tangent/Cartier identification received a bounded independent check
+by /root/audit_secant_cartier_dimension,2026-09-13; this is not an audit
+of the general spectral-line construction.
+
+For the cubic backup, the quintic roots are z_i=z^(125^i), i modulo5.
+Its explicit models use
+
+    A_ij=(z_i−z_j)u²+(W(z_i)−W(z_j))u+V(z_i)−V(z_j), i<j,
+
+with W,V from the quintic theorem. The
+[original packet](../../Research/computations/backup_genus_two_secant_curves.json)
+and [generator](../../scripts/genus_two/backup_genus_two_secant_curves.sage)
+retain the field moduli, all ten models and marked Cartier matrices.
+They independently verify the forms and ordinarity now proved uniformly.
+F125-Frobenius has two orbits on unordered pairs, represented by(0,1)
+and(0,2). Reversal negates A; w↦2w identifies the curves and scales the
+marked form by2. This describes coefficient symmetry, not all genus-three
+isomorphisms.

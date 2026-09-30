@@ -40,16 +40,16 @@ comparisons reduce to the given identity on the special-fiber pair.
 
 ## Full data and finite-level data
 
-First suppose compatibility holds on Z itself. For full groups take
-the unique endpoint lifts. Their finite etale covers Z lift uniquely
-as covers. Pulling back the endpoint groups gives two lifts of the
-SAME specified everywhere-versal group on Z: etaleness identifies
-the Kodaira--Spencer lines. Xia's uniqueness identifies these two
-marked sources and their group lifts. This is precisely the proof of
-[Krishnamoorthy, Corollary10.8](https://arxiv.org/html/1711.04797v2),
-without the inessential restriction that both endpoints are the same.
-The core hypothesis in that corollary is used for its later arithmetic
-conclusion, not for this lifting construction.
+First suppose compatibility holds on Z itself. For full groups,
+their rank-two Dieudonné crystals and Hodge lines satisfy
+[crystalline oper lifting](crystalline_oper_lifting.md).
+Its direct filtration-obstruction proof supplies and identifies
+both lifted sources. It needs only the fixed integral crystal,
+so no separate full-group deformation argument is required for
+this conclusion. Xia's theorem also lifts the groups, recovering
+[Krishnamoorthy, Corollary10.8](https://arxiv.org/html/1711.04797v2).
+The core hypothesis in that corollary is used for its later
+arithmetic conclusion, not for the lifting construction.
 
 For BT_N data and N>=m+2, choose endpoint lifts carrying the groups
 through W_m. The same etale lifting and pullback procedure gives two

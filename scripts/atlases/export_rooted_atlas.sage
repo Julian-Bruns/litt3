@@ -24,7 +24,7 @@ ap.add_argument('--audit-generic',action='store_true',help='Also run the old gen
 ap.add_argument('--linear-backend',choices=('auto','sage','flint'),default='auto')
 ap.add_argument('--rooting-backend',choices=('auto','sage','native'),default='auto')
 ap.add_argument('--audit-linear-algebra',action='store_true',help='Compare every native RREF and row identity with Sage')
-ap.add_argument('--output',type=Path,default=Path('/Users/julian/Documents/litt3-computation-data/atlas-rooted-first'))
+ap.add_argument('--output',type=Path,default=Path(__file__).resolve().parents[2].parent/'litt3-computation-data/atlas-rooted-first')
 args=ap.parse_args()
 if args.workers<1 or args.memory_gib<=0 or (args.max_charts is not None and args.max_charts<1):
     ap.error('workers, memory budget, and max-charts must be positive')

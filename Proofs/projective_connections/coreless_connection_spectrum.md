@@ -1,176 +1,102 @@
-# Proof: localizing the shared ring leaves only a point or a line
+# Proof: localize the shared ring and use one quadratic identity
 
 [Statement](../../Theorems/projective_connections/coreless_connection_spectrum.md).
-Author /root,2026-09-07; version2,2026-09-08. No independent audit of
-the whole statement; the retained Igusa construction has its own scoped audit.
+Write E(r)=r''-3r^2. The [Cartier secant identities](cartier_dormant_secants.md)
+identify E(r)(dt)^4 as the quartic projection of p-curvature and
+det(psi_r) as a section of omega^10. Both are regular for a regular
+connection and commute with etale pullback; dormancy is E(r)=0.
 
-## 1. The curvature quantities used
+## The rational connection and the entire common space
 
-For a projective connection r in characteristic five put E=r''−3r^2.
-The scalar companion calculation in `cartier_dormant_secants` gives
-the horizontal fifth-iterate matrix
+If A=k, two common connections would differ by A_2=0. Any common
+connection has E(r) in A_4=0, hence is dormant. The common connection
+space is an intersection of affine-linear spaces, so this point is reduced.
 
-    M5=[[E',3E],[E''+3rE,−E']],
-    det(psi)=−(E')^2−3E(E''+3rE),                    (1)
+For s=a(dt)^d,5 not dividing d, put ell=a'/(d a) and
+r_s=-ell'/2+ell^2/4. The chain rule gives the projective-coordinate
+transformation law. Thus r_s is intrinsic and shared, with poles
+supported on S.
 
-where psi=−M5 is p-curvature. In particular dormancy is E=0.
-The expression E(dt)^4 is an intrinsic quartic differential: p-curvature
-followed by projection from the oper line to the oper quotient is a
-section of F^*omega tensor omega^−1=omega^4, with coefficient−3E.
-Equivalently this follows by substituting the projective-coordinate
-rule. Determinant p-curvature is an intrinsic section of omega^10.
-For regular connections these tensors are regular, and both commute
-with the ACTUAL etale pullbacks.
+Choose j with2dj=-1 modulo5 and put v=a^j, b=v^-2. Then v''/v=r_s,
+and y=vz changes y''=r_s y into z'=b w, w'=0.
+In a separating coordinate D^5=0; the p-curvature in this gauge is
 
-If A=k, two common regular connections would differ by A_2=0, so at
-most one exists. It has E in A_4=0 and is therefore dormant. Intersections
-of affine-linear spaces have no scheme multiplicities, proving this case.
+    [0,-D^4 b;0,0].
 
-## 2. A rational connection and a localization argument
+It is nilpotent, and vanishes iff C(b dt)=0. If1<=rho<=4 and
+rho d=1 modulo5, the exponents -2j and rho differ by a multiple of5.
+Cartier's product rule therefore identifies dormancy with the
+Cartier-zero branch of s^rho.
 
-Assume A=k[s], d>=2. Primitivity gives5 not dividing d. Put
-ell=a'/(d a), so r_s=−ell'/2+ell^2/4. The coordinate chain rule makes
-r_s an intrinsic rational projective connection with poles only at S.
-It descends through both endpoints since their tensors actually agree.
-This is the connection already constructed, with explicit solutions,
-in [the all-weight equation theorem](../../routes/global/EXPLICIT_SECOND_ORDER_EQUATION_FOR_CARTIER_ZERO_PLURIFORMS.md).
-No new clump or rational function is assumed to descend.
+Now let A=k[s] and let r be any common regular connection. For large N,
+the shared rational quadratic r-r_s satisfies
 
-If r is any common regular connection, q=r−r_s is a shared rational
-quadratic differential whose poles are supported on S. For sufficiently
-large N, both endpoint sections q s^N are regular. Hence
+    (r-r_s)s^N in A_(2+Nd).
 
-    q s^N ∈ A_(2+Nd).
+This graded piece is zero if d>2, and is k s^(N+2/d) if d=1 or2.
+Hence r=r_s in the first case, while r-r_s is a constant multiple of
+the regular quadratic q=s^(2/d) in the second. Thus a common regular
+connection exists exactly when r_s is regular, with the stated point
+or line as its entire space.
 
-If d>2 this space is zero, so q=0. If d=2 it is k s^(N+1), so q=c s,
-which is already REGULAR. It follows that a common regular connection
-exists iff r_s is regular; its entire space is respectively the point
-r_s or the line r_s+k s. This pole-clearing step is what prevents an
-unrelated regular connection from cancelling r_s's poles.
+## One regularity argument for every weight
 
-## 3. Exact regularity and Cartier type
+At a zero a=t^e u, u a unit, the double-pole coefficient of r_s is
 
-At a zero write a=t^e u, u a unit. The double-pole coefficient of r_s
-is E0(E0+2)/4, where E0=e/d in F5. It vanishes exactly for E0=0 or3.
-Otherwise the double pole cannot disappear. When it vanishes there is
-at most a simple pole.
+    (e/d)(e/d+2)/4.
 
-In the Cartier-zero branch the all-weight equation theorem gives E(r_s)=0.
-In the nonzero branch d is2 or4. Normalize the shared scalar eigenvalue
-to1. For d=2, `cartier_dormant_secants` gives
+It vanishes precisely when e=0 or-2d modulo5, leaving at most a
+simple pole. To rule that out, it suffices to show E(r_s) is regular:
+a genuine simple pole c/t would give the nonzero term2c/t^3 in E(r_s).
 
-    E(r_s)=3s^2.
+In the Cartier-zero branch E(r_s)=0 by the preceding gauge.
+In the nonzero branch the primitive weights are1,2,4. For d=1,2 put
+q=s^(2/d); for d=4 take a rational quadratic root q of s in a
+separable quadratic extension. In characteristic5, r_s=q''/q.
+After normalization C_1(q^3)=q, the secant identity gives
 
-For d=4, take a rational quadratic root b of s in a separable quadratic
-extension. Cartier's product rule gives C_1(b^3)=b. The same secant
-identity yields E(r_s)=3b^2=3s, an identity over the original field.
-Here r_s=b''/b; changing b's sign does not change that connection.
+    E(r_s)=3q^2.
 
-Thus E(r_s) is regular in every case. But a genuine simple pole of r_s
-would give a nonzero pole of order3 in r_s''−3r_s^2. The possible simple
-pole therefore vanishes. This proves the stated regularity iff, including
-infinity and all unit coefficients.
+This is regular and descends in the d=4 case because q^2=s.
+For d=1 the normalization follows from C(s)=s by Cartier's product
+rule. This proves(1), including all unit coefficients and infinity.
+It also proves the asserted dormant or active-nilpotent type when d>2.
 
-For every d the rational connection r_s has a rational horizontal
-solution a^j, where2dj=−1mod5. In the basis y=a^j z,
-w=a^(2j)z', its connection matrix is strictly upper triangular.
-Its p-curvature is therefore nilpotent. It is dormant exactly when the
-eligible Cartier image of s vanishes, by the explicit primitive test in
-the all-weight theorem. This proves the single-point assertions.
+## The line and its scheme multiplicities
 
-## 4. The complete line calculation, including scheme lengths
+For d=1,2 write q=a(dt)^2 and normalize
+C_1(q^3)=epsilon q with epsilon in{0,1}. Then r_s=a''/a and
+E(r_s)=3epsilon a^2. For r_c=r_s+c a, the secant identities and
+the companion p-curvature determinant give
 
-For d=2, write s=a(dt)^2 and r0=a''/a. If C_1(s^3)=epsilon s with
-epsilon0 or1, the secant identities give
+    E(r_c)=3(epsilon-c^2)a^2,
+    det(psi_(r_c))=4c(epsilon-c^2)^2 a^5.
 
-    a''=r0 a,             E(r0)=3epsilon a^2.
+The determinant formula uses only a''=r_s a and is checked by
+[the exact jet checker](../../scripts/connections/check_cartier_dormant_secants.sage).
+The nonzero sections a^2 and a^5 each have a nonzero scalar coordinate,
+so their coefficient equations generate exactly the ideals
+(c^2-epsilon) and(c(c^2-epsilon)^2), over arbitrary parameter algebras.
+These are the asserted schemes and lengths. Primitivity of q is
+unnecessary; the same calculation covers q=s^2 for weight one.
 
-For constant parameter t put r_t=r0+t a. Direct substitution gives
+## Fixed X and an actual empty family
 
-    E(r_t)=3(epsilon−t^2)a^2,
-    det(psi_(r_t))=4t(epsilon−t^2)^2 a^5.             (2)
+For fixed X, let rX=|image_X(S)|. The uniform divisor equation is
+e rX=16d, so neither e nor rX vanishes modulo5. Hence(1) is equivalent
+to rX=2 modulo5. The known nonzero-Cartier profiles then give precisely
+(2,1),(4,2). A regular Cartier-zero shared quadratic would supply a
+nonzero shared dormant tangent, contradicting the fixed-X reduced
+intersection in the Cartier secant theorem.
 
-For the second identity, write E(r_t)=kappa a^2 in(1). The relation
-a''=r0 a makes the bracket
-((a^2)')^2+3a^2((a^2)''+3r_t a^2) equal4t a^5.
-Since kappa^2=4(epsilon−t^2)^2, equation(2) follows.
-The nonzero sections a^2 and a^5 have a nonzero scalar coordinate.
-Consequently all their coefficient equations generate precisely the
-displayed ideals in k[t], even over nonreduced parameter algebras.
-This proves the exact schemes, not just their geometric roots.
+In the [partial Igusa family](../examples/igusa_hecke_correspondences.md),
+the genus-seventeen curve has a Cartier-fixed alpha with
+div(alpha)=2D, D reduced, preserved by both maps of every jointly
+minimal coreless span of degree12*11^(n-1). Its primitive weight is1.
+At each zero r_alpha has double-pole coefficient2 in F5; adding the
+regular multiple c alpha^2 cannot cancel it. Thus P is empty on every
+one of these actual spans.
 
-At epsilon1 the midpoint t=0 is active nilpotent and t=±1 are dormant.
-At epsilon0 the only point is t=0, with the asserted lengths.
-The short [jet checker](../../scripts/connections/check_cartier_dormant_secants.sage)
-checks the determinant identity separately, without endpoint sampling.
-
-## 5. Fixed-X interpretation and boundaries
-
-Write rX=|image_X(S)|. The actual uniform divisor identity is e rX=16d.
-Since5 does not divide d, neither e nor rX is divisible by5. Thus the
-regularity condition reduces to e=−2dmod5, equivalently rX=2mod5.
-`fixed_x_nonzero_cartier_profiles` then gives exactly the two retained
-nonzero profiles in the statement. The zero-Cartier quadratic regular
-case is excluded by `cartier_dormant_secants` (equivalently its dormant
-intersection here would have length2, contradicting that theorem's
-reducedness assertion for fixedX).
-
-No curve has been replaced and no root was asserted to descend through
-the other map. The quadratic extension in Section3 proves only a
-rational identity that then descends. In particular this argument does
-not replace a non-Galois leg by a simultaneous Galois closure.
-It does not prove existence of a common regular connection in the
-no-generator case, nor identify compatible endpoint opers in the other
-cases. Ordinary-indigenous lifting hypotheses concern a larger tangent
-space on the source; they do not follow from these intersection lengths.
-
-## 6. Weight one and a genuine empty-connection family
-
-Let alpha=f*alpha_X=g*alpha_Y be a nonzero common one-form in an actual
-coreless span. In a separating coordinate write alpha=a dt and put
-
-    r_alpha=-a''/(2a)+3(a'/a)^2/4.
-
-The projective coordinate rule makes this an intrinsic rational connection,
-as in Section2. It is shared because its formula commutes with the actual
-etale maps. For ANY shared rational connection r,
-(r-r_alpha)/alpha^2 belongs to both endpoint function fields. Corelessness
-makes it constant. Hence the ENTIRE common rational-connection space is
-
-    r_alpha+k alpha^2.                                      (3)
-
-In particular no other rational connection can cancel a pole of r_alpha
-while being regular at both endpoints: alpha^2 is already regular.
-
-At a zero write a=t^e u, with u a unit, and b=u'/u. Then
-
-    r_alpha=e(e+2)/(4t^2)+e*b/(2t)-b'/2+b^2/4.             (4)
-
-Cartier carries the shared one-dimensional space to itself, so after
-rescaling C(alpha)=epsilon alpha, epsilon=0 or1. If e=0mod5, (4) is
-regular. If e=3mod5, write e=5m+3. The coefficient u_1 of t^(e+1)
-in alpha contributes u_1^(1/5)t^m dt to C(alpha). Since m<e, the
-Cartier eigenrelation forces u_1=0. Thus b(0)=0 and (4) is regular.
-For all other e modulo5 its double-pole coefficient is nonzero.
-This proves the same regularity criterion for d=1, including the possible
-simple pole, rather than merely checking the double-pole coefficient.
-
-Put q=alpha^2. In characteristic5, r_alpha=q''/q. Cartier's product
-rule gives C_1(q^3)=epsilon q. Consequently Section4 applies verbatim
-with q in place of s, proving the exact dormant/nilpotent algebras in
-the statement. No claim that q is primitive is needed for that calculation.
-
-Now use the already constructed
-[genus-seventeen partial Igusa family](../../routes/global/UNBOUNDED_DOUBLE_ZERO_HECKE_LEAVES_ON_A_FIXED_GENUS17_CURVE.md),
-audited relative to its retained quaternionic Igusa input. Its fixed
-curve P has a Cartier-fixed alpha with div(alpha)=2D, D reduced, and
-jointly minimal coreless etale spans of degrees12*11^(n-1), n>=1,
-preserving alpha through BOTH maps. At every zero, (4) has double-pole
-coefficient2 in F5. Equation(3) therefore contains no regular connection.
-
-This is an explicit counterexample to universal existence of a shared
-regular projective connection in positive characteristic, even with a
-nonempty clump, fixed endpoints, and unbounded actual etale degrees.
-It is not a counterexample to Litt, and its endpoints need not have
-the fixed pair's absolute simplicity or Hom-zero condition. Those
-extra endpoint hypotheses would have to enter any proposed repair.
+The argument classifies the common connection space on the given
+span. Its point and line alternatives supply no existence of matching
+endpoint connections and no ordinary-source lifting hypothesis.

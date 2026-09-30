@@ -113,13 +113,6 @@ three, and do not change the nonzero radical quartic. Formal splitting
 then gives UV+W^4, using only inverses of 2 and 4. For rank three,
 the characteristic-not-two formal Morse lemma gives UV+W^2 directly.
 
-## Balanced lengths
-
-Apply the [shared Frobenius truncation formula](frobenius_truncated_hypersurfaces.md)
-with Q=R=q. Type UV+W² gives (3q²−1)/2, and type UV+W⁴ gives
-(7q²−3)/4. Injectivity of pullback on the actual defect-bundle sections
-gives the lower bound for every further dominating etale source.
-
 ## Independent audit
 
 The fresh audit checks the geometric applications, including the
@@ -138,3 +131,5 @@ has SHA256 d78dd02c43487f95a857a7e63ac000ebf29a9a7bd0090538b06902922497896a.
 The complete 1,275-twist replay also matches and is saved separately.
 [Audit scope](../../../Research/audits/BACKUP_ALL_BAD_DOUBLE_GERMS_AUDIT_2026_09_11.md).
 This does not newly audit every upstream classification theorem.
+The [abelian defect classification](abelian_defect_flags.md) contains
+the resulting balanced lengths and all unbalanced cases.

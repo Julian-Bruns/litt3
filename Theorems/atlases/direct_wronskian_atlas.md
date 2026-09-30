@@ -51,11 +51,4 @@ the chosen U. Thus the remaining existence question can be placed on
 an open subset of P(S_U)=P^31, preserving every quotient direction.
 It is not settled by the criterion or by finite samples.
 
-Audit: accepted, fresh `direct_wronskian_atlas_audit`, 2026-09-07,
-conditional on the scalar reconstruction input; no objections. Five
-exact samples on a noninvariant F25 oper check
-both pole charts, all scalar identities, Wronskian rank57/nullity9,
-the bounds, and nonzero rank-two observations. They do not exclude atlases.
 [Proof](../../Proofs/atlases/direct_wronskian_atlas.md).
-[Audit metadata](../../Research/audits/DIRECT_WRONSKIAN_ATLAS_AUDIT_2026_09_07.md);
-reference-only unless there is a concrete mathematical doubt.

@@ -1,7 +1,7 @@
 # Actual neutral degree-five covers with source-only first Witt repair
 
 Version1,2026-09-11. Independent geometric and exact-matrix audit PASS
-by /root/audit_backup_cored_completion. Prose/computation, not Lean.
+by /root/audit_backup_cored_completion. Prose/computation.
 
 Let (C,r) be the explicit F625 pair of
 [the nonzero endpoint obstruction](../explicit_genus_two_witt_obstruction.md):
@@ -58,9 +58,11 @@ In particular defect one means a one-dimensional kernel, not a
 one-dimensional Fitting nilpotent subspace. The cyclic closure's
 obstruction module R5/(e²) is another, different invariant.
 
-No compatible W4 extension or full compatible tower is asserted. These
-are not counterexamples to non-Galois full-tower descent (N5), and no
-second endpoint or common cover of the fixed main/backup pairs is built.
+This finite-level theorem by itself asserts no compatible W4 or full
+tower. Subsequent work proves [finite BT height for all fourteen
+neutral families](../all_neutral_dihedral_bt_heights.md) and a
+[full prolongation on the exceptional fifteenth cover](../explicit_full_bt_existence_descent_failure.md).
+The latter gives an actual failure of potential full-existence descent.
+Neither construction gives a common cover of the fixed candidate pairs.
 
-[Proof and certificates](../../../Proofs/deformations/cyclic_descent/explicit_non_galois_neutral_five.md) ·
-[Focused audit](../../../Research/audits/EXPLICIT_NON_GALOIS_NEUTRAL_FIVE_AUDIT_2026_09_11.md).
+[Proof and certificates](../../../Proofs/deformations/cyclic_descent/explicit_non_galois_neutral_five.md).

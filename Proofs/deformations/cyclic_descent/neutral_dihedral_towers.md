@@ -12,9 +12,6 @@ isogenies E_a→E with cyclic etale geometric kernel C_(5^a). The
 ramified degree-two extension D/E is linearly disjoint from each
 odd-degree cyclic extension. Thus W_a=D x_E E_a is connected, smooth
 and projective, and W_a→D is finite etale cyclic of degree q=5^a.
-This is the same geometric construction as in the proof of
-ordinary_dihedral_spin_growth, using the selected resolvent's E.
-
 The original free double involution of D acts by [-1] on E. Its
 product with [-1] on E_a gives tau on W_a. It remains free, since
 its image on D is free, and it inverts cyclic translations. The
@@ -138,31 +135,9 @@ Injectivity of individual etale pullback on negative tangent H1
 would force rho_C=0, contradicting the audited epsilon_C!=0.
 Thus the finite repairs do not repair that original map to C.
 
-## 5. Full-tower existence remains a first-stage question
-
-A full compatible T_1 tower pulls back along the original finite
-etale map T_a→T_1, giving a full tower on T_a.
-
-Conversely, pull a GIVEN full T_a tower along its original etale
-double W_a→T_a. It has its actual deck involution tau. The cyclic
-map W_a→W_1 is neutral because both defects are2. The audited
-neutral-Galois full-tower theorem descends this GIVEN tower along
-the original map, retaining its cyclic deck action.
-
-The descended involution requires an actual normalization argument.
-At every Witt length and for each lifted cyclic deck element g,
-the automorphisms tau*g*tau^(-1) and g^(-1) have the same special
-fiber. Lifts of a specified automorphism of a hyperbolic curve are
-unique through nilpotent thickenings, since H0(T)=0. They therefore
-agree at every length. The actual cyclic action is normalized by
-tau, which descends to W_1. Its order-two relation and freeness
-persist. Quotienting gives the ORIGINAL marked T_1 tower.
-
-The tuple also descends: the original upper tuple is tau-equivariant
-because it came from T_a; faithful etale descent and the prescribed
-unique Hodge/graded identifications retain that equivariance on W_1.
-The actual flat twist is included. No involution was presumed on an
-arbitrary lower lift, and no unrelated Galois refinement was used.
+The later [height-translation proof](neutral_dihedral_height_translation.md)
+gives the stronger finite-level statement, and the fourteen-family
+calculation evaluates its base height.
 
 ## Independent checks
 

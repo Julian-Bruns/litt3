@@ -86,7 +86,7 @@ def run(args):
       assert sum(row['joint_orbit_size'] for row in rows)==400
       result={'status':'PASS exact original Bol minors for all400 nontrivial cubic oper/twist pairs',
               'representatives':rows,'nontrivial_pairs':400,'elapsed_seconds':time.monotonic()-started,
-              'scope':'Endpoint twisted tangent calculation; geometry in Sol_radical_quadratic_atlas_obstruction. No arbitrary common-cover exclusion.'}
+              'scope':'Endpoint twisted tangent calculation; geometry in Proofs/quotient_geometry/tame_covers/radical_quadratic_atlas_obstruction.md. No arbitrary common-cover exclusion.'}
       if args.verify:
           print('PASS no-solver replay of all four unit minors',flush=True)
       else:
@@ -96,7 +96,7 @@ def run(args):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--data',default='/Users/julian/Documents/litt3-computation-data/backup-genus-two')
+    parser.add_argument('--data',default=Path(__file__).resolve().parents[2].parent/'litt3-computation-data/backup-genus-two')
     parser.add_argument('--output',default='Research/computations/backup_genus_two_cubic_tangents.json')
     parser.add_argument('--seconds',type=int,default=60)
     parser.add_argument('--verify',action='store_true')

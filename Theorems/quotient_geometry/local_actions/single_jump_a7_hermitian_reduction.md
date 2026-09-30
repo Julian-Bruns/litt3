@@ -1,7 +1,7 @@
 # A single-jump wild orbifold is the alternating Hermitian quotient
 
 Version1, 2026-09-10. Fresh focused audit PASS by
-`/root/audit_a7_small_wild_reduction`; audited prose, not Lean verification.
+`/root/audit_a7_small_wild_reduction`; audited prose.
 
 Let k be algebraically closed of characteristic five. Let S be a smooth,
 proper, connected effective Deligne--Mumford curve admitting a finite
@@ -31,6 +31,4 @@ It does NOT assert that numerical ramification and different alone make
 an arbitrary rational map an orbifold atlas. Actual local Galois
 extensions, common to every point in the branch fiber, are essential.
 
-[Proof](../../../Proofs/quotient_geometry/local_actions/single_jump_a7_hermitian_reduction.md) ·
-[finite arithmetic check](../../../scripts/orbifolds/check_a7_wild_profile.py) ·
-[audit](../../../Research/audits/A7_SMALL_WILD_REDUCTION_AUDIT_2026_09_10.md).
+[Proof](../../../Proofs/quotient_geometry/local_actions/single_jump_a7_hermitian_reduction.md) · [finite arithmetic check](../../../scripts/orbifolds/check_a7_wild_profile.py).

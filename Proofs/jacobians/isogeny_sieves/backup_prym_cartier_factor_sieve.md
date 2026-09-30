@@ -47,7 +47,7 @@ This argument does not require A ordinary or an integral isotypic splitting.
 ## 2. Bound every geometric twist, not only defined factors
 
 The established backup arithmetic in
-[quadrangular_genus_two_hecke_obstruction](../../../Theorems/quotient_geometry/triangles/quadrangular_genus_two_hecke_obstruction.md)
+[quadrangular_genus_two_hecke_obstruction](../../../Theorems/quotient_geometry/tame_covers/quadrangular_genus_two_hecke_obstruction.md)
 is
 
     W_B(T)=T^4-8T^3+182T^2-1000T+15625,

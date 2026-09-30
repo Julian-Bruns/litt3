@@ -1,82 +1,65 @@
-# A unique extension candidate and a residual Hermitian obstruction
+# The canonical extension candidate for a Hermitian atlas
 
-Assume the setup of `hermitian_atlas_extension_criterion`, with
-5 not dividing 2g-2. Put T=omega^-1, K=K_C, M=omega^2 tensor tau,
-and tau^3=O_C. Fix a rank-two extension and an isomorphism
+Version3. Use the setup of
+[the Hermitian atlas criterion](hermitian_atlas_extension_criterion.md),
+with 5 not dividing2g-2. Put T=omega^-1, K=K_C and
+M=omega^2 tensor tau, where tau^3=O_C. Fix
 
     eta: 0 -> T -> V --pi--> M -> 0,
     j: K ~> (F_C^*V)^vee tensor M.
 
-Every normalized Hermitian atlas supplies such data, by V=E/O_C.
-For these FIXED data, the existence of a compatible rank-three lift
-is decided by an explicit additive polynomial system.
+These are necessary data for an atlas; they make V stable.
+Write A=Ext^1(M,O_C), U=Ext^1(M,K). The inclusion O_C->K gives
 
-Let U=Ext^1(M,K), A=Ext^1(M,O_C), and let i:A -> U be induced by
-O_C -> K. Choose one lift xi_0 in U of eta, with middle bundle E_0;
-let alpha_0 be its class in Ext^1(V,O_C). Define the additive,
-5-semilinear operation D by Frobenius pullback followed by duality
-and tensoring by M: D(alpha) is the extension
+    0 -> A --i--> U --h--> Ext^1(M,T) -> 0.
 
-    0 -> (F_C^*V)^vee tensor M -> (F_C^*E)^vee tensor M -> M -> 0.
+The canonical connection, transported through j after canceling M,
+induces a distinguished k-linear retraction P_j:U->A. Its kernel maps
+isomorphically under h onto Ext^1(M,T). Consequently eta has one
+canonical lift
 
-Push this extension's kernel through j^-1. Set
+    xi_*=(h|ker P_j)^-1(eta)
+        =xi_0-i(P_j xi_0)                                  (1)
 
-    b = j^-1_*D(alpha_0) - xi_0,
-    T_j(lambda) = j^-1_*D(pi^*lambda).
+for any lift xi_0. Let E_* be its middle bundle, and alpha_* its class
+as an extension of V by O_C.
 
-A lift inducing j exists EXACTLY when
+For an extension alpha of V by O_C, let D_j(alpha) be the class in U
+of its Frobenius-pulled, dualized sequence, tensored by M and with kernel
+identified through j^-1. This is additive and5-semilinear. Then
 
-    i(lambda) - T_j(lambda) = b,          lambda in A.             (*)
+    D_j(alpha) belongs to ker P_j for every alpha.
 
-Here dim A=5(g-1), dim U=12(g-1), and i is injective. Changing xi_0
-translates the parameter; it does not change solvability. A solution
-constructs an actual atlas, with no extra determinant or ramification test.
+A Hermitian atlas inducing eta and j exists exactly when the single
+residual class
 
-There is a distinguished DIFFERENTIAL retraction P_j:U -> A of i,
-constructed from the canonical connection on F_C^*(V^vee), for which
+    D_j(alpha_*)-xi_* = 0 in ker P_j.                       (2)
 
-    P_j T_j=0,       P_j j^-1_*D(alpha)=0 for EVERY alpha.
+Equality constructs the everywhere-etale atlas through the criterion.
+The candidate extension class is unique; its marked form need not be.
+The dimensions are
 
-Consequently (*) has at most ONE candidate:
+    dim A=5(g-1),    dim U=12(g-1),    dim ker P_j=7(g-1).
 
-    lambda_* = P_j b = -P_j xi_0.                            (**)
+For the explicit operator, put J=K tensor M^-1=F_C^*(V^vee), N=M^-1
+and Q=T tensor M^-1. In0->N->J --q-->Q->0 one has Q tensor omega=N.
+The second fundamental map c=(q tensor1)nabla|N is a nonzero scalar,
+and
 
-A compatible lift exists exactly when
+    P_j=H1(c^-1(q tensor1)nabla).
 
-    b-i(lambda_*)+T_j(lambda_*)=0 in ker P_j.                 (***)
+This differential operator acts on sheaves of k-vector spaces; it is
+not O_C-linear. The construction is for fixed geometric marked data,
+including nontrivial tau, without an arbitrary nonreduced-base assertion.
 
-The residual space ker P_j has dimension7(g-1). No Frobenius-root
-search and no rank assumption are needed. The construction includes
-nontrivial tau with tau^3=O_C. It is for fixed marked data; no relative
-claim over an arbitrary nonreduced parameter base is asserted here.
+In affine coordinates xi=xi_0+i(lambda), (1) is lambda=-P_j xi_0.
+The5-semilinear map D_j is injective. Consequently its coefficient map
+T_j=D_j pi^*:A->ker P_j has exact rank4g-5, with ker T_j=ker(pi^*)
+the connecting copy of H0(omega). This follows from Joshi's stability
+of B_1 and is uniform in eta and the torsion twist. For genus nine,
+there are40 determined extension coordinates,56 residual coordinates,
+and rank T_j=31 for every valid quotient.
 
-Explicitly put J=K tensor M^-1 and identify it with F_C^*(V^vee) via j.
-Transport the canonical connection nabla. With N=M^-1 and
-Q=omega^-1 tensor M^-1, its exact sequence is 0 -> N -> J --q--> Q -> 0,
-and Q tensor omega=N. The second fundamental map
-c=(q tensor1)nabla|N is a nonzero scalar. The k-linear sheaf operator
-
-    c^-1(q tensor1)nabla:J -> N
-
-induces P_j on H1. It is NOT O_C-linear; its action on cohomology uses
-the underlying sheaves of k-vector spaces.
-
-The full semilinear map T_j has rank at most4g-5: it factors through
-pi*:H1(M^-1)->H1(V^vee), whose kernel has dimension g.
-For genus nine there are40 extension coordinates, uniquely determined
-by (**), and56 residual coordinates. Their equations need not be
-independent or inconsistent. A solution determines a unique extension
-class, not necessarily a uniquely marked form or atlas.
-
-The necessary V is stable. Neither this theorem nor rank-two dormancy
-asserts existence of a compatible rank-three lift. Choices of pi and j
-are not a finite set merely because the underlying V classes are finite.
-
-Author proof, /root, 2026-09-06. Differential retraction and strengthened
-elimination audit: PASS, /root/horizontal_retraction_audit, 2026-09-06.
-Non-breaking qualifications: fixed markings, k-vector-sheaf cohomology,
-connection transported after canceling M, no arbitrary nonreduced-family
-claim. The new proof supersedes the former finite-Frobenius-fiber step.
+Version3 replaces the rank bound by equality using the published
+stability theorem.
 [Proof](../../Proofs/atlases/semilinear_hermitian_lift.md).
-[Audit](../../Research/audits/HERMITIAN_HORIZONTAL_RETRACTION_AUDIT_2026_09_06.md),
-reference-only; open its body only for a concrete mathematical doubt.

@@ -6,6 +6,12 @@ are eliminated first; every resulting pure-b basis relation retains its exact
 disk provenance. The selected expanded multiplier certificate is independently
 checked against original N/s equations. No Groebner basis is computed.
 
+Optional predecessor reuse is Faugere's F4 Simplify principle (J. Pure Appl.
+Algebra 139 (1999), Lemma 2.3): if t=zq, the stored pivot for q*f_i differs
+from a nonzero multiple of q*f_i by earlier rows. Multiplying by z changes
+only earlier rows, so replacing t*f_i preserves each input-prefix rowspace.
+This is a certificate-preserving optimization, not a degree or speed bound.
+
 Resume by repeating the same command and output directory. Checkpoints contain
 only completed rows, have payload checksums and an atomic previous snapshot.
 Live progress is state.cp.progress.json; --max-rows gives deterministic stops.
@@ -440,7 +446,8 @@ def run(chart, output, seconds=120, memory_gib=2, v_degree=1, b_degree=1,
     source=Path(tensor_path).resolve() if tensor_path else root/'Research/computations/canonical_atlas_system.json'
     if tensor_path and not atlas_input:
         raise ValueError('--tensor requires --atlas-input pointing to its verified rooted export')
-    folder=Path(atlas_input or '/Users/julian/Documents/litt3-computation-data/atlas-rooted-first')/('chart-%02d'%chart)
+    atlas_root=Path(atlas_input) if atlas_input else root.parent/'litt3-computation-data/atlas-rooted-first'
+    folder=atlas_root/('chart-%02d'%chart)
     tensor=json.loads(source.read_text()); meta=json.loads((folder/'metadata.json').read_text())
     assert hashlib.sha256(source.read_bytes()).hexdigest()==meta['source_sha256']
     k=GF(25,name='a',modulus=PolynomialRing(GF(5),'z')([2,4,1]));a=k.gen()

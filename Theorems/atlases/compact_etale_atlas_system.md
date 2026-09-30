@@ -31,11 +31,7 @@ for every U,eta with Ntilde_U eta^[5]=0, without admissibility assumptions.
 It is stronger in this respect than restricting the global gradient
 identity to the primitive kernel line on a dense open set.
 
-The complete coefficients for the first new F25 oper are exported in
-`Research/computations/canonical_atlas_system.json`; this is not a solver
-result or an emptiness certificate. The original Litt3 problem remains open.
+The system has not been shown empty for the first new F25 oper. The
+original common-cover problem remains open.
 
-Status: proved, bounded independent audit PASS. Auditor:
-resultant_gradient_major_audit, 2026-09-07. No remaining objections.
-[Audit reference](../../Research/audits/UNIVERSAL_RADIAL_COMPACT_AUDIT_2026_09_07.md).
 [Proof](../../Proofs/atlases/compact_etale_atlas_system.md).

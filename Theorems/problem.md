@@ -10,5 +10,4 @@ proved. Both maps must be everywhere etale and have the SAME source.
 Bounds on cored spans, marked-curve counterexamples, and conditional
 generic-vanishing claims do not settle this unmarked question.
 
-Current strategy and next action: [Research/STATE.md](../Research/STATE.md).
 No solution is attached. [Original problem](https://www.problemsilike.com/3).

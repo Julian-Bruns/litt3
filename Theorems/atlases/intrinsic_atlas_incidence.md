@@ -36,9 +36,6 @@ coreless common-cover branches. Equality with the separately exported
 untwisted coefficient tensor has not been asserted without a basis
 comparison. No new enumeration of rank-two opers is needed for tau.
 
-Independent major audit PASS, `/root/intrinsic_atlas_major_audit`,2026-09-07.
-No material objections. Qualifications: stability and j0 are hypotheses;
+Stability and j0 are hypotheses;
 no moduli-representability, old-tensor identification or emptiness claim.
-[Audit metadata](../../Research/audits/INTRINSIC_ATLAS_INCIDENCE_AUDIT_2026_09_07.md)
-is reference-only; open the audit body only for a concrete doubt.
 [Proof](../../Proofs/atlases/intrinsic_atlas_incidence.md).

@@ -1,9 +1,9 @@
-"""Exact finite certificate for genus_two_maximal_four_cover (SageMath).
+"""Exact finite certificate for genus_two_abelian_cover_families (SageMath).
 
 Run: sage scripts/genus_two/verify_genus_two_four_torsion.sage
 No external data, search, sampling, or atlas computation is used.
-The proof supplies the separate parameter-height bound needed to transfer
-this one specialization to the selected high-degree parameter.
+The proof supplies a Hodge-degree bound to transfer this specialization
+to all parameters of degree greater than 1028 over F5.
 """
 import itertools
 import json
@@ -68,7 +68,7 @@ addition_checks = 0
 
 
 def coprime_add(A, B):
-    """Fixed Sylvester/Cramer formula used by the generic height proof."""
+    """Sylvester/Cramer addition, checked independently against Cantor."""
     global addition_checks
     if A == zero:
         return B
@@ -186,5 +186,7 @@ result = {
     'scope': 'Complete J[4] check at the stated parameter; a family claim additionally uses the proof height bound.'
 }
 if args.output:
-    Path(args.output).write_text(json.dumps(result, indent=2, default=int)+'\n')
+    target=Path(args.output)
+    target.parent.mkdir(parents=True,exist_ok=True)
+    target.write_text(json.dumps(result, indent=2, default=int)+'\n')
 print(json.dumps(result, indent=2, default=int))

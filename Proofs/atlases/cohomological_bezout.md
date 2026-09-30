@@ -29,7 +29,7 @@ assumption that a spectral sequence degenerates. Put the sheaf complex
 
     T --a_u--> V --b_u--> M
 
-in degrees-2,-1,0. A degree-1 Cech cocycle is represented by
+in degrees-2,-1,0. A degree−1 Čech cocycle is represented by
 (xi_tilde,v) in C1(T)+C0(V), satisfying
 
     d_V v=a_u xi_tilde,       b_u v=0.                   (2)
@@ -209,14 +209,22 @@ Here omega=O(16O), V=W(8O) is stable with determinant omega, and T=O(-16O).
 Then M=O(32O), n=24, and V T^-1=W(24O). Length-two separation follows
 from Serre duality and stability: the dual obstruction bundle has slope
 -24+16+2=-6. The tangent identification in
-`dormant_horizontal_tensor_tower`, with the scheme-theoretic equations
+`dormant_bol_complex`, with the scheme-theoretic equations
 and `fixed_x_oper_enumeration`, gives r=0 at all28935 simple points and
 r=3 at the55 remaining points. The cup map is injective: in this fixed
 monomial model the products of monomials of pole at most32 span L64,
 so the dual of multiplication is injective. This also follows from
 normal generation of the line bundle omega^2 of degree32.
 
-For r=0 there is a fully bounded scalar implementation. For a basis U_i
+For any cubic torsion line tau in characteristic five, the same
+construction applies to V=W L tau^2, T=omega^-1 and M=omega^2 tau,
+where L^2=omega. Stability again gives length-two separation with
+dual slope-6. Thus the mixed matrix has size24+h0(V), and the acyclic
+matrix is quadratic24-square. Its dual factors are H0(omega^2) and
+H0(omega^2 tau), so symmetry is not asserted for nontrivial tau.
+
+For the untwisted case r=0 there is a bounded scalar implementation.
+For a basis U_i
 of the32-dimensional horizontal space and a Cech basis xi of P16=H1(T),
 split U_i xi^5=p+v, with p=aff(U_i xi^5). Its L-image, L=delta^2-P,
 is cancelled by a unique b in L32. Then
@@ -255,8 +263,7 @@ matrix for S=<y,x^10,x^4 y²>. Thus S·L32=L64 for every oper, since this
 calculation uses only the curve and its fixed monomial basis. The source
 is `scripts/atlases/check_pencil_bezout.sage`; the original receipt remains in
 `../litt3-computation-data/pencil-bezout-first-20260908-v2/certificate.json`.
-The two checks took1.56seconds together, which is not an atlas-solver
-timing. The rational-pencil construction is not applied to r=3.
+The rational-pencil construction is not applied to r=3.
 
 ## Literature and limitation
 

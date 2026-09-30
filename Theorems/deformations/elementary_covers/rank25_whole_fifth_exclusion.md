@@ -48,5 +48,4 @@ the uniqueness behind reconstruction from the existing actual curve
 data. The complete support, matched ordinary repairs and finite-deck
 covariance remain prerequisites; no gradient property of C5 is assumed.
 
-[Proof and exact evidence](../../../Proofs/deformations/elementary_covers/rank25_whole_fifth_exclusion.md) ·
-[Transverse reconstruction audit](../../../Research/audits/RANK25_TRANSVERSE_NORMAL_FORM_AUDIT_2026_09_13.md).
+[Proof and exact evidence](../../../Proofs/deformations/elementary_covers/rank25_whole_fifth_exclusion.md).

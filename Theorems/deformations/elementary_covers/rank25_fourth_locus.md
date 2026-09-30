@@ -13,8 +13,8 @@ identification. T has genus26 and defect9. Use
     abcd=a+b*t+c*t^2+d*t^3,
     Xi(x)=xi_*+sum_(i=0)^8 x_i*nu_i
 
-in the actual tangent basis of the
-[primary data](../../../Research/computations/rank25_small_field_fourth_inputs.json).
+in the actual nine-dimensional tangent basis $(\nu_0,\ldots,\nu_8)$
+constructed from the 75-coordinate primary map in the proof.
 Over k=bar(F5), these are ALL compatible third lifts of that T2. Such a
 lift admits W4 exactly when E(x^[5])=0, where E is the complete quadratic
 fourth obstruction in the proof, including its transverse coordinates.
@@ -60,5 +60,4 @@ cover of T inherits this W4 tuple. In particular the lower bound holds
 for every rank-two abelian5-group cover of C, which dominates T.
 It gives no W5 upper bound on those refinements.
 
-[Proof and data conventions](../../../Proofs/deformations/elementary_covers/rank25_fourth_locus.md) ·
-[Critical-locus audit](../../../Research/audits/RANK25_CRITICAL_LOCUS_CONSOLIDATION_AUDIT_2026_09_13.md).
+[Proof and data conventions](../../../Proofs/deformations/elementary_covers/rank25_fourth_locus.md).

@@ -1,6 +1,6 @@
 # The quadratic fourth-Hodge obstruction at a compatible reference
 
-Version4,2026-09-13. The general quadratic formula and the additional
+Version6,24 September2026. The general quadratic formula and the additional
 uniform nodal cancellation below have independent focused audits.
 This concerns one homogeneous channel, not a fifth-lift theorem.
 
@@ -74,7 +74,7 @@ every nonzero n has q_U(P)!=0 at some P in S: q_U/A then has a genuine
 double pole. Uniform cancellation follows from the actual polarized
 residue tensor, not by declaring these meromorphic primitives regular.
 
-## Maximal elementary rank125 cover: filtration, not full cancellation
+## Filtered consequence for the maximal elementary rank125 cover
 
 For the SAME genus3 family and compatible reference, now take its
 original maximal G=C5^3 cover X->C. Put R=k[G], J=augmentation,
@@ -91,19 +91,9 @@ primitive can be chosen in F_(a+b). In particular Q on the16-dimensional
 F3 intersect K admits repairs in F6. This controls one homogeneous
 channel only, not its next integral carry or the fourth-admissible locus.
 
-Full cancellation on K is FALSE for this rank125 cover. At t3+t+1=0
-there exist genuine kernel directions n_s and a genuine holomorphic
-quadratic differential gamma_R in the primary annihilator with
-
-    <Q(n_s),gamma_R>=(4+t+3t2)*s2 !=0 for s!=0.
-
-Here s is AFTER coefficient-Frobenius transport; scaling an original
-source by c instead gives c10 dependence. The proof specifies the
-original AS basis, kernel jet and dual test. It also records a nonzero
-jet which passes the COMPLETE fourth-obstruction quotient modulo
-(f)+J5, using the actual additive comparison, marked involution and
-audited degree-four cross map. Its25 kernel completions must still
-kill18 remaining obstruction coordinates. No complete W4 lift,
-W5/W6 lift, rank125 bootstrap or geometric counterexample is asserted.
+The later [fourth-escape theorem](rank125_fourth_escape.md) determines
+an actual nonzero-leading lift through this channel and its complete
+relative fifth image. The filtered bound here is one input; it does
+not itself determine the fourth-admissible locus.
 
 [Proof and evidence](../../../Proofs/deformations/elementary_covers/fourth_hodge_quadratic_channel.md).

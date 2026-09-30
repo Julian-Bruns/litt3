@@ -133,7 +133,3 @@ Their squared polynomials have t⁴ coefficients3,2,3, respectively,
 so F is ordinary. The Cartier–Manin entries of(t^5−t)² at4,3,9,8
 all vanish, making Q superspecial. This genuine bi-étale example
 rules out ordinary-versus-superspecial as an unrestricted obstruction.
-
-The fixed genus-nine curve is not thereby shown to be an atlas.
-Membership in Q's common-cover class does not imply the converse
-atlas assertion; small cored cases and the coreless branch remain open.

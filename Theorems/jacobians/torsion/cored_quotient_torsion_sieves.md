@@ -6,16 +6,15 @@ are actual representable finite etale maps.
 
 ## 1. Disjoint inertia gives a genus inequality
 
-Suppose T_1->S and T_2->S are finite etale of degrees a,b, with S
-hyperbolic. Write c,d for the genera of the coarse curves of T_1,T_2,
-and kappa=deg(omega_S)>0. If every stabilizer order on T_1 is coprime
-to every stabilizer order on T_2, then
-
-    kappa <= 2 + 2(c-1)/a + 2(d-1)/b.                    (1)
-
-In particular, if both coarse curves are P1, then
-
-    kappa <= 2 - 2/a - 2/b.                            (2)
+Suppose \(T_1\to S\) and \(T_2\to S\) are finite étale of degrees
+\(a,b\), with \(S\) hyperbolic. Write \(c,d\) for the genera of their
+coarse curves and \(\kappa=\deg\omega_S>0\). If every stabilizer
+order on \(T_1\) is coprime to every stabilizer order on \(T_2\), then
+\[
+\kappa\le 2+\frac{2(c-1)}a+\frac{2(d-1)}b. \tag{1}
+\]
+In particular, if both coarse curves are \(\mathbf P^1\), then
+\(\kappa\le 2-2/a-2/b\).
 
 The proof uses the ACTUAL stack fiber product, whose stabilizers are
 trivial, and the arithmetic genus of its full reduced joint image.
@@ -29,18 +28,17 @@ bounds can establish this factorization; it is NOT automatic.
 
 ## 2. Uniform tame fibers carry bounded torsion classes
 
-Let C->S be an atlas of degree N, with coarse S=P1 and tame stabilizer
-orders e_i. Suppose K_C is linearly equivalent to hO, h=2g(C)-2.
-Let H be the pullback of a degree-one divisor on P1, and let D_i be
+Let \(C\to S\) be an atlas of degree \(N\), with coarse
+\(S=\mathbf P^1\) and tame stabilizer orders \(e_i\). Suppose
+\(K_C\sim hO\), where \(h=2g(C)-2\).
+Let \(H\) be the pullback of a degree-one divisor on \(\mathbf P^1\), and let \(D_i\) be
 the reduced fiber at the i-th stacky point, so e_i D_i is linearly
-equivalent to H. Put
-
-    E=lcm(e_i),       A=E*h/N.
-
-Then A is a positive integer and, in Pic^0(C),
-
-    A[H-NO]=0,
-    A e_i [D_i-(N/e_i)O]=0.                            (3)
+equivalent to \(H\). Put \(E=\operatorname{lcm}(e_i)\) and \(A=Eh/N\).
+Then \(A\) is a positive integer and, in \(\operatorname{Pic}^0(C)\),
+\[
+A[H-NO]=0,\qquad
+Ae_i[D_i-(N/e_i)O]=0. \tag{2}
+\]
 
 Thus low-degree torsion-exclusion results for W_r(C,O) apply to the
 actual branch fibers whenever A e_i has the relevant prime support.
@@ -51,27 +49,5 @@ the gonality of C, reducedness makes it impossible.
 
 This is a tame-fiber criterion, not a wild ramification assertion.
 
-## 3. Fixed-pair consequence
-
-For the fixed genus-nine X and genus-twenty-five Y, there is NO common
-effective orbifold S with actual finite etale atlases from both curves
-and deg(X/S)<=8. Consequently its effective common-orbifold atlas,
-if one exists, must have
-
-    deg(X/S) >= 9.                                    (4)
-
-This is NOT a lower bound on deg(Z/Y): a jointly minimal joint image
-can be only one component of X x_S Y, of smaller projection degree.
-
-The proof combines the already audited independent-pencil and
-two-primary W3 statements with (1)-(3). In the final degree-eight
-case, Y's hyperelliptic map forces an actual etale map to a genus-three
-curve, contradicting absolute simplicity of J(Y).
-
-No whole dormant-oper candidate is excluded. This neither treats
-larger cored degrees nor coreless spans, and does not use or prove A18.
-The parametrized mechanisms (1)-(3), not the isolated cutoff8, are the
-reusable content.
-
-Version1, author proof,2026-09-07; no independent audit claimed.
+Version2,2026-09-24.
 [Proof](../../../Proofs/jacobians/torsion/cored_quotient_torsion_sieves.md).

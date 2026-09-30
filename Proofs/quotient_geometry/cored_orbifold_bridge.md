@@ -40,7 +40,3 @@ coset covers. Finally,
     k(W)^G=k(W)^A∩k(W)^B=k(X)∩k(Y),
 
 so the coarse field is exactly the prescribed core.
-The [profinite core-tower criterion](../../routes/global/21_SIMULTANEOUS_ENVELOPE_CORE_TOWER_CRITERION.md)
-records the general termination obstruction and an actual counterexample
-without a core. Neither a separate pair of Galois closures nor a possibly
-ramified closure over the coarse curve substitutes for W.

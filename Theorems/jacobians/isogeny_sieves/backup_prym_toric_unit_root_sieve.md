@@ -18,11 +18,11 @@ interior points (1,1),(2,1),(3,1),(1,2),(2,2),(3,2),(1,3),(2,3).
 Its toric closure is smooth. Actual edge-polynomial squarefreeness
 certifies transverse boundary and Newton nondegeneracy; it must be checked.
 
-Let G be a support-preserving coefficient lift of the final equation to
+Let f be a support-preserving coefficient lift of the final equation to
 W(F_(5^a)), with true Witt Frobenius sigma. If its interior Hasse--Witt
 matrix is invertible, put
 
- beta_(5^s)[u,v]=[x^(5^s v-u)]G^(5^s-1),
+ beta_(5^s)[u,v]=[x^(5^s v-u)]f^(5^s-1),
  U_s=beta_(5^s)*sigma(beta_(5^(s-1)))^(-1) mod5^s.
 
 The projective Jacobian unit-root characteristic polynomial modulo5^s is
@@ -42,12 +42,10 @@ gives six distinct filters: the five integer polynomials in
 backup_prym_cartier_factor_sieve and T^8+T^6+T^4+T^2+1.
 
 Failure of all tests excludes this actual carrier. Passing is inconclusive.
-The theorem does not cover an unchecked Q1/noncoprime chart, certify an
-untested carrier, construct a map to the backup, or exclude the whole row.
+Its model hypotheses are checked for every use in the
+[complete carrier sieve](backup_double_cover_exclusion.md).
 Finite-field comparison with a saved Prym must retain the quadratic
 character of any norm-recovery rescaling; the whole filter family is
 invariant under that twist at every precision.
 
-[Proof](../../../Proofs/jacobians/isogeny_sieves/backup_prym_toric_unit_root_sieve.md) ·
-[Toric audit](../../../Research/audits/TORIC_PRYM_NORMALIZATION_AUDIT_2026_09_11.md) ·
-[Arithmetic audit](../../../Research/audits/PRYM_HIGHER_PRECISION_FACTOR_SIEVE_AUDIT_2026_09_11.md).
+[Proof](../../../Proofs/jacobians/isogeny_sieves/backup_prym_toric_unit_root_sieve.md).

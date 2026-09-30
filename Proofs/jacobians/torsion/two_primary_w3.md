@@ -9,7 +9,8 @@ gives both assertions: the splitting (−a,−b) bounds every independent
 function's degree below by b, and odd local indices with 2r<b make
 W_r disjoint from its nonzero J[2]-translates.
 
-For the curve y^3=F_10(x) in file76 the trace-zero splitting is (-4,-7).
+For the [fixed curve](../../../Definitions/fixed_pair.md) y³=F(x),
+the trace-zero splitting is (−4,−7).
 On the affine x-line it is spanned by y,y²; at infinity its integral
 basis is y/x^4,y²/x^7, with distinct valuation residues2,1 modulo3.
 This proves the splitting. All ramification indices are1 or3. Thus
@@ -26,10 +27,11 @@ power M satisfies
 
 Then W intersect A[2^infinity]={0}.
 
-Use the [power formula](reduced_divisor_rigidity.md#3-congruent-automorphisms-one-power-formula).
+Use [Boxall–Grant's order law](reduced_divisor_rigidity.md#3-published-torsion-order-law-and-rationality).
 If M−I=2^sU with s≥2 and U invertible, a point of order 2^t with
 t>s has a power-conjugate differing by nonzero two-torsion: take
-M^(2^(t−s−1))−I=2^(t−1) times a unit. Thus W-torsion lies in A[2^s].
+b=2^(t−s−1), so ord((M^b−I)a)=ord([b](M−I)a)=2.
+Thus W-torsion lies in A[2^s].
 
 In the first case M²−I=4U(I+U) puts it in A[4]. An order-four point
 has difference (M−I)a=2Ua of order two, again forbidden. An order-two
@@ -57,19 +59,20 @@ of two, and
 
 Since div(theta)=16O for theta=dx/y², the relation implies
 16g0[E-3O]=0. By (1), E is linearly equivalent to3O. The pencil
-L(3O)=span(1,x) shows E=x^*(c) for some finite c with F_10(c)!=0;
+L(3O)=span(1,x) shows E=x^*(c) for some finite c with F(c)!=0;
 the infinity and cubic branch fibers are not reduced of degree3.
 Consequently, up to a nonzero scalar,
 
     s=s0^g0,  s0=(x-c)^16 theta³
-               =(x-c)^16/F_10(x)^2 (dx)³.           (2)
+               =(x-c)^16/F(x)^2 (dx)³.           (2)
 
 For weight3, the eligible generalized-Cartier-zero condition is
 C_1(s0²)=0. The fifth-power rule shows it is equivalent to
 
-    C(F_10(x)(x-c)^32 dx)=0.                          (3)
+    C(F(x)(x-c)^32 dx)=0.                          (3)
 
-Let a in F25 satisfy a²+4a+2=0 as in file76. The coefficients of x^34
+Let a in F25 satisfy a²+4a+2=0 as in the fixed-pair definition.
+The coefficients of x^34
 and x^39 in the polynomial in (3) are respectively
 
     u(c)=(a+3)c7+(2a+3)c6+(2a+4)c5
@@ -87,7 +90,7 @@ the image of s^r with s0^j times the nonzero image of s0².
 Hence its Cartier image is nonzero as well.
 
 Both the Frobenius remainder and coefficient identities are checked by
-the [short exact certificate](../../../routes/global/GENUS9_W3_CARTIER_CERTIFICATE.sage).
+the [short exact certificate](../../../scripts/arithmetic/fixed_x_three_point_cartier.sage).
 
 ## 4. Application and boundary
 

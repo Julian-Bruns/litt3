@@ -1,121 +1,72 @@
-# Proof: arithmetic generic fibers and their finite good-reduction sets
+# Proof: finite arithmetic reductions and nonliftable correspondences
 
 [Statement](../../Theorems/curve_arithmetic/liftable_coreless_target_finiteness.md).
+Use S_h and E_(h,p) from the
+[arithmetic reduction conventions](../../Definitions/arithmetic_curve_reductions.md).
 
-## 1. A finite characteristic-zero list
+## 1. Finiteness of the arithmetic reduction set
 
-By [Borel, Theorem8.2](https://www.numdam.org/article/ASNSP_1981_4_8_1_1_0.pdf),
-there are finitely many conjugacy classes of arithmetic lattices of
-bounded covolume in PGL2(R). A compact arithmetic genus-h curve is a
-torsion-free orientation-preserving quotient of covolume4pi(h−1).
-Passing from PGL2 to its index-two orientation-preserving subgroup
-introduces at most a factor two in the list. Thus there are finitely
-many complex curve classes C_i. This is arithmetic-lattice finiteness,
-NOT Wang's theorem for arbitrary lattices, which excludes this group.
-Borel8.1–8.2, printed pp25–26, explicitly treats the real rank-one case.
-An equivalent surface statement is
-[Belolipetsky–Gelander–Lubotzky–Shalev, Corollary1.4 and Section5.3](https://annals.math.princeton.edu/wp-content/uploads/annals-v172-n3-p17-p.pdf).
+[Borel, Theorem8.2](https://www.numdam.org/article/ASNSP_1981_4_8_1_1_0.pdf)
+gives finitely many conjugacy classes of arithmetic lattices of bounded
+covolume in PGL₂(R). A compact genus-h curve has area4π(h−1), so S_h
+is finite, including noncongruence lattices.
 
-Every C_i is defined over a number field, even for a noncongruence
-lattice Gamma. Choose a torsion-free congruence lattice Lambda in its
-commensurability class and a finite-index subgroup Delta of Gamma∩Lambda
-normal in Gamma. The Delta curve is a finite etale cover of a Shimura
-curve over bar(Q), so descends to bar(Q). Its finite deck group Gamma/Delta
-also descends (the automorphism scheme of a hyperbolic curve is finite).
-Taking its quotient descends C_i. Spreading gives a number-field model.
-These are the arithmetic curves in
-[Krishnamoorthy, Theorem3.10 and Remarks3.11/3.14](https://arxiv.org/html/1704.00335v2).
+Every such curve Γ\H has a number-field model. Choose a torsion-free
+congruence lattice Λ in Γ's commensurability class and a finite-index
+subgroup Δ⊂Γ∩Λ normal in Γ. The Δ-curve is a finite étale cover of a
+Shimura curve over bar(Q), hence is defined over bar(Q). Its finite
+deck group Γ/Δ and quotient descend as well.
 
-## 2. Only finitely many reductions of each curve
+For each C_i∈S_h choose a model over a number field L_i. At each of
+the finitely many places v|p, form its stable model after a finite local
+extension. Retain the geometric special fiber if smooth, together with
+its finitely many residue-field conjugates. This finite list includes
+every potential good reduction of every geometric copy or twist of C_i:
+after a finite extension, a generic isomorphism extends uniquely between
+stable models. This comparison also holds over an arbitrary algebraically
+closed residue field k: the special fiber is the base change of one of
+the retained finite-field models. A singular stable fiber stays singular
+under extension.
+This uses [Stacks, Lemma109.24.2 and Theorem109.24.3](https://stacks.math.columbia.edu/tag/0E8C).
+Taking the union over i proves E_(h,p) finite and Frobenius-stable.
 
-For a fixed model C_i/L_i and each of the finitely many places v|p,
-choose its stable model after a finite local extension. If the geometric
-special fiber is smooth, retain all its base changes to bar(F_p) through
-the finitely many embeddings of its residue field; otherwise retain none.
-This gives a finite set R_p(C_i).
+## 2. A lifted coreless correspondence has arithmetic endpoints
 
-It contains every possible smooth geometric reduction of a twist or
-geometric copy of C_i. After completing a proposed DVR and extending its
-fraction field finitely, a generic isomorphism and an embedding of L_i
-are defined. The embedding selects a place above p. Compare with the
-chosen stable model after another finite extension. Uniqueness of stable
-models identifies the geometric special fibers. A singular stable fiber
-cannot become smooth under further extension. See
-[Stacks, Lemma109.24.2 and Theorem109.24.3](https://stacks.math.columbia.edu/tag/0E8C).
-Including residue embeddings is essential: Frobenius-conjugate k-curves
-need not be k-isomorphic.
+[Krishnamoorthy, Lemma4.13](https://arxiv.org/html/1704.00335v2)
+(published Lemma4.14) says that a core in the generic fiber of a smooth
+proper correspondence over a DVR specializes to a core. After a finite
+base extension this also applies to a geometric generic core. Thus a
+lift of a coreless special fiber stays coreless.
 
-## 3. Apply this to the SAME lifted span
+The characteristic-zero arithmeticity theorem
+[Krishnamoorthy, Theorem3.10 and Remarks3.11/3.14](https://arxiv.org/html/1704.00335v2)
+then places the generic genus-h endpoint in S_h. Consequently its
+special class is a base change from E_(h,p). This is the argument of Corollary4.14
+there (published Corollary4.15), with Lemma4.13 allowing an arbitrary
+mixed-characteristic DVR. The correspondence and both finite étale
+maps are retained throughout.
 
-A core in the geometric generic fiber of a simultaneous lift would
-specialize to a core. This is
-[Krishnamoorthy, Lemma4.13 of arXivv2](https://arxiv.org/html/1704.00335v2)
-(published Lemma4.14). Its proof reduces a common rational function,
-successively subtracting lifted residue constants and dividing by a
-uniformizer until its reduction is nonconstant. After completion this
-procedure must terminate: otherwise the function is a convergent series
-of constants in the complete fraction field and was constant already.
-Algebraic extension of the ground field preserves having a core
-(Proposition3.8), so the geometric version follows as well.
+## 3. The selected pair avoids the finite set
 
-The lifted span is therefore coreless, and Theorem3.10 makes its endpoint
-curves arithmetic in characteristic zero. This is precisely Corollary4.14
-of arXivv2 (published Corollary4.15) for Witt lifts; the same argument
-allows any mixed-characteristic DVR. If necessary descend the finite
-generic diagram to a finitely generated characteristic-zero field before
-embedding it in C. Hence Y's generic geometric class is one of the C_i,
-and its special class belongs to
+The [fixed-X atlas bound](../quotient_geometry/local_actions/fixed_x_orbifold_bound.md)
+and [bounded-atlas partner theorem](../quotient_geometry/bounded_atlas_partner_finiteness.md)
+make every span for the selected X,Y_t coreless. The
+[arithmetic count](low_genus_arithmetic_bounds.md) gives
+|E_(2,5)|<2^2000000. For the prescribed parameter bound K,
+D=335999!≥2^335998 and K>2^(D²)>2^2000000.
 
-    E_(h,p) = union_i R_p(C_i).
+By the [branch-family theorem](prime_field_branch_family.md), the
+Frobenius25 orbit of [Y_t] has length r>K. It cannot meet the
+Frobenius-stable set E_(2,5), proving nonliftability. The same argument
+applies after any common finite étale refinement: enlarging the ambient
+source field does not change the intersection of the two endpoint fields.
 
-## 4. Effective application to the existing parameter (version2)
+An ordinary common nilpotent connection would supply a full canonical
+lift by the [ordinary-source theorem](../projective_connections/ordinary_source_partner_finiteness.md),
+so it is excluded. An admissible active match still supplies a
+[simultaneous W₂ lift](../deformations/admissible_two_leg_w2_lifts.md).
+The deformation consequences are recorded with their sharper bounds in
+[shared negative extensions](../deformations/two_leg_negative_extensions.md).
 
-For our fixed X, [the audited atlas bound](../quotient_geometry/local_actions/fixed_x_orbifold_bound.md)
-and [bounded-atlas finiteness](../quotient_geometry/bounded_atlas_partner_finiteness.md)
-already exclude cored partners for the prescribed Y_t. The new
-[arithmetic count](arithmetic_genus_two_reduction_bound.md) gives
-|E_(2,5)|<2^2000000. This is below the EXISTING parameter bound K:
-D=335999!>=2^335998, so D²>2000000, while
-K>=3^(4G²L)>2^(D²)>2^2000000. Only these symbolic inequalities are
-needed; neither D nor K is computed.
-
-The [affine branch-family theorem](prime_field_branch_family.md)
-gives Y_t a full Frobenius25 moduli orbit of length r>K>5. Since
-E_(2,5) is Frobenius-stable and smaller than r, it cannot contain Y_t.
-Section3 excludes full mixed-characteristic lifts of every actual
-common span for this pair.
-
-[Refinement invariance](../deformations/etale_refinement_deformations.md) shows that
-refining a fixed diagram cannot repair a missing full lift: any full
-refined lift descends through all marked Artinian levels, and the unique
-compatible factorizations algebraize by the proper finite-etale
-equivalence (Stacks0BQC). One may also apply the same target-set theorem
-directly, since corelessness of the specified endpoint intersection is
-unchanged when the ambient source field is enlarged.
-
-Finally the canonical-lift argument in
-[ordinary_source_partner_finiteness](../projective_connections/ordinary_source_partner_finiteness.md)
-rules out ordinary compatible common nilpotent connections for this
-pair. [admissible_two_leg_w2_lifts](../deformations/admissible_two_leg_w2_lifts.md)
-still gives the first lift for an admissible active match. The small
-deformation-ring and p-nilpotence statements of
-[etale_refinement_deformations](../deformations/etale_refinement_deformations.md)
-then give R a quotient of W(k)[[t_1,t_2,t_3]], with finite nilpotence
-exponent e for5. A W2 point forces e>=2. Refinement identifies R, hence
-also e; it cannot remove the obstruction. No bound on e across different
-spans follows, and a W2 point does not itself imply a W3 point.
-
-The count ingredient was independently audited. The current-pair and
-deformation corollaries above are author integration, not a new audit
-of the prior general lifting theorems. Nonliftable common spans and the
-no-common-connection branch remain open.
-
-For clarity about the two ordinariness notions, the scalar nilpotence
-equation is N(r)=-(E')²-3E(E''+3rE), with E=r''-3r². At a dormant point
-E=0 its linearization is zero in EVERY quadratic direction. Thus the
-nilpotent tangent there is all H^0(omega²), whereas the dormant tangent
-is the kernel of phi->phi''-r phi and can be zero. Only for an active
-admissible connection does the canonical-double theorem identify its
-nilpotent tangent with the dormant tangent(s) of its canonical pair.
-The new nonliftability result must not be used to claim that every
-shared dormant connection is a nonreduced dormant point.
+The arithmetic count has its separate scoped audit. The lifting and
+application deductions here retain author-prose status.

@@ -1,0 +1,40 @@
+# Every actual admissible primitive has fifth-power norm
+
+Version 2, 24 September 2026. Use the fixed genus-nine curve, functions
+and reduced thirteen-point divisor of
+[admissible-line reconstruction](admissible_line_reconstruction.md).
+Let S be smooth proper and connected, and h:S->X a finite separable map
+of degree n unramified over R_X. Put H=h*O. This includes every actual
+etale cover.
+Suppose an actual rational function q=f+b^5 satisfies
+\[
+\operatorname{div}q=3E-5G-10H,
+\quad E\le h^*R_X\text{ reduced},\quad\deg E=5n,
+\quad G\ge0,\quad\deg G=n.
+\]
+Then, with no missed-point, degree or monodromy hypothesis,
+\[
+\operatorname{Nm}_h(q)\in k(X)^{\times5},\qquad h_*E=5B
+\]
+for an integral effective divisor B of degree n supported on R_X.
+Its nonzero coefficients are at most floor(n/5).
+
+If additionally T=E-G-4H is killed by five, then
+\[
+\operatorname{Nm}_h\mathcal O_S(T)=\mathcal O_X,
+\quad 2B\sim2nO,\quad h_*G\sim3B-2nO.
+\]
+The proof uses one 7x7 and one 4x4 determinant over F25. Both test
+fixed endpoint identities; no cover or support
+pattern is enumerated. The norm assertion requires neither T to be
+torsion nor etaleness away from R_X. It does not assert that T itself
+is trivial or descends; the original common-cover problem still requires
+both maps to be everywhere etale.
+
+In particular, using every finite marked point requires n>=12.
+For n<5, even the primitive divisor condition without the torsion
+hypothesis is impossible: a nonzero occupancy cannot be both a
+multiple of five and at most n. Higher-degree norm-zero covers
+remain possible under this theorem.
+
+[Proof and reproducible endpoint certificate](../../Proofs/cartier_and_spin/uniform_admissible_norm.md).

@@ -6,7 +6,7 @@ This uses the saved exact affine-elimination trail, with no Groebner solve.
 import hashlib,json
 from pathlib import Path
 root=Path(__file__).resolve().parents[2]
-folder=Path('/Users/julian/Documents/litt3-computation-data/atlas-rooted-first/chart-29')
+folder=root.parent/'litt3-computation-data/atlas-rooted-first/chart-29'
 source=root/'Research/computations/canonical_atlas_system.json'
 d=json.loads(source.read_text()); meta=json.loads((folder/'metadata.json').read_text())
 assert hashlib.sha256(source.read_bytes()).hexdigest()==meta['source_sha256']

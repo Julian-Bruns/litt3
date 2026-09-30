@@ -1,6 +1,6 @@
 # Proof: one Witt digit per actual adjacent map
 
-[Statement](../../../Theorems/deformations/cyclic_descent/neutral_dihedral_height_translation.md).
+[Combined statement](../../../Theorems/deformations/all_neutral_dihedral_bt_heights.md).
 Author /root,2026-09-11. This is a direct finite-level corollary;
 the returned scalar computation is not a dependency.
 
@@ -52,7 +52,6 @@ H(T_a) forces infinite H(T_1). Together with the upward construction
 it proves the formula. No inference from arbitrarily many finite
 objects to a compatible inverse system is made.
 
-The first source is already known to admit W3. If its returned
-nonzero fourth obstruction is independently established, its exact
-height is3 and the formula specializes to H(T_a)=a+2. This use
-remains explicitly conditional until the scalar is certified.
+The [fourteen-family calculation](../all_neutral_dihedral_bt_heights.md)
+supplies the base height three for every neutral resolvent, including
+the separately audited selected row.

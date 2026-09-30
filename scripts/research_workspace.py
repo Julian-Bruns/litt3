@@ -120,8 +120,15 @@ def validate(root):
         statement = check_file(identifier, "statement", record.get("statement"))
         if statement:
             try:
-                if has_proof_heading(statement.read_text(encoding="utf-8")):
+                body = statement.read_text(encoding="utf-8")
+                if has_proof_heading(body):
                     errors.append(f"{identifier}: canonical statement contains a Proof heading")
+                version = re.search(r"\bVersion\s*(\d+)\b", body[:800], re.IGNORECASE)
+                if version and record.get("statement_version") != int(version.group(1)):
+                    errors.append(
+                        f"{identifier}: statement_version {record.get('statement_version')!r}"
+                        f" disagrees with Version{version.group(1)} in the statement"
+                    )
                 if "statement_sha256" in record and record["statement_sha256"] != digest(statement):
                     errors.append(f"{identifier}: statement_sha256 mismatch (statement drift)")
             except (OSError, UnicodeError) as exc:
@@ -130,6 +137,14 @@ def validate(root):
             check_file(identifier, "proof", record["proof"])
         elif record.get("status") == "proved":
             errors.append(f"{identifier}: proved theorem requires a proof")
+        supporting_proofs = record.get("supporting_proofs", [])
+        if not isinstance(supporting_proofs, list) or any(not isinstance(item, str) for item in supporting_proofs):
+            errors.append(f"{identifier}: supporting_proofs must be an array of repository-relative paths")
+        else:
+            for supporting_proof in supporting_proofs:
+                if not supporting_proof.startswith("Proofs/"):
+                    errors.append(f"{identifier}: supporting proof must be in Proofs/: {supporting_proof}")
+                check_file(identifier, "supporting proof", supporting_proof)
         if record.get("source") is not None:
             check_file(identifier, "source", record["source"])
         audits = record.get("audits", [])
@@ -160,6 +175,8 @@ def validate(root):
     registered = {record.get("path") for record in definitions.values()}
     registered.update(record.get("statement") for record in theorems.values())
     registered.update(record.get("proof") for record in theorems.values())
+    for record in theorems.values():
+        registered.update(record.get("supporting_proofs", []))
     for folder in ("Definitions", "Theorems", "Proofs"):
         for path in (root / folder).rglob("*.md"):
             relative = path.relative_to(root).as_posix()
@@ -213,6 +230,8 @@ def display(root, identifier, proof=False):
         return body
     metadata = [f"Status: {record['status']} | Verification: {record['verification']}"]
     metadata.append("Audits: " + (", ".join(record.get("audits", [])) or "none recorded"))
+    if record.get("supporting_proofs"):
+        metadata.append("Supporting proofs: " + ", ".join(record["supporting_proofs"]))
     return "\n".join(metadata) + "\n\n" + body
 
 
