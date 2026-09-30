@@ -1,0 +1,10 @@
+#include "../src/residual.hpp"
+#include "io_dft.hpp"
+#include "theta_all.hpp"
+std::pair<Poly,Poly> sp_divrem(Poly a,const Poly& b){if(!b)throw std::runtime_error("div0");int d=a.deg()-b.deg();if(d<0)return {Poly(),a};std::vector<std::pair<int,F>> sp;for(int i=0;i<=b.deg();i++)if(b[i])sp.push_back({i,b[i]});F iv=b.c.back().inv();Poly q;q.c.resize(d+1);for(int i=d;i>=0;i--){F z=a[i+b.deg()]*iv;q.c[i]=z;if(z)for(auto[j,c]:sp)a.c[i+j]-=z*c;}a.trim();q.trim();return {q,a};}
+int main(int argc,char**argv){try{if(argc<3)throw std::runtime_error("usage: res_strip ROOT DIR [LAST=73]");int root=std::stoi(argv[1]),last=argc>3?std::stoi(argv[3]):73;std::string dir=argv[2];input::init();auto theta=theta_for_root(root,F::code(64426));for(int n=72;n<=last;n++){std::ifstream fi(dir+"/Res71_"+std::to_string(n)+".bin",std::ios::binary);int nr=read32(fi),nc=read32(fi);fi.close();auto v=read_rows(dir+"/Res71_"+std::to_string(n)+".bin",nr,nc);Poly orig(v[0]),a=orig;int vh=0,vt=0;while(a[vh]==F())vh++;a=a.shift(-vh);std::vector<Poly> powers;for(int p=1;theta.deg()*p<=a.deg();p*=5)powers.push_back(frobenius_poly(theta,p));
+ for(int k=(int)powers.size()-1;k>=0;k--){int step=1;for(int j=0;j<k;j++)step*=5;while(a.deg()>=powers[k].deg()){auto [q,r]=sp_divrem(a,powers[k]);if(r)break;a=q;vt+=step;}}
+ std::cout<<n<<" H^"<<vh<<" Theta^"<<vt<<" remaining degree="<<a.deg()<<"\n"<<std::flush;write_rows(dir+"/Res71_"+std::to_string(n)+"_stripped.bin",Rows{a.c});
+ Poly check=a;int e=vt,p=1;while(e){int d=e%5;e/=5;Poly fac=frobenius_poly(theta,p);for(int i=0;i<d;i++){Poly b;b.c.resize(check.deg()+fac.deg()+1);for(int j=0;j<=fac.deg();j++)if(fac[j])for(int l=0;l<=check.deg();l++)b.c[j+l]+=check[l]*fac[j];b.trim();check=b;}p*=5;}check=check.shift(vh);if(check!=orig)throw std::runtime_error("unit reconstruction");
+ std::ofstream f(dir+"/Res71_"+std::to_string(n)+"_stripped.json");f<<"{\"H_valuation\":"<<vh<<",\"Theta_valuation\":"<<vt<<",\"cofactor_degree\":"<<a.deg()<<",\"exact_reconstruction_verified\":true}\n";
+ }return 0;}catch(std::exception&e){std::cerr<<e.what()<<"\n";return 1;}}

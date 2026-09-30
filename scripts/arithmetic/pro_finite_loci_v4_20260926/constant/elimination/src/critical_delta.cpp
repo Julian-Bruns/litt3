@@ -1,0 +1,11 @@
+// Global polynomial diagnostic for the critical quadratic extension.
+#define main retained_global_generator_main
+#include "../../continuation/src/global_residual.cpp"
+#undef main
+using XLP=std::vector<LP>;
+XLP mulx(const XLP&a,const XLP&b){XLP c(a.size()+b.size()-1);for(size_t i=0;i<a.size();i++)for(size_t j=0;j<b.size();j++)c[i+j]=c[i+j]+a[i]*b[j];return c;}
+int main(){init_curve();auto chart=load_chart();std::vector<F>hs{0,1,2},ws(11),qs(11);for(int i=0;i<11;i++){ws[i]=FF::pow(25,i);qs[i]=FF::pow(ws[i],3);}auto LH=lagrange(hs),LQ=lagrange(qs);F val[3][3][11][11]={};for(int ih=0;ih<3;ih++)for(int iq=0;iq<11;iq++){F w=ws[iq],q=qs[iq];auto G=evaluate(chart,FF::div(hs[ih],w),w);auto d=div_y(scale(power(G[1],2),4)+scale(G[0]*G[2],3),6);for(int j=0;j<3;j++){if(d[j].deg()>10-3*j)throw std::runtime_error("Delta x degree");F sc=FF::mul(FF::pow(q,3),j>=2?1:FF::pow(FF::inv(w),2-j));for(int x=0;x<=10;x++)val[j][ih][iq][x]=FF::mul(sc,d[j].coef(x));}}
+std::array<XLP,3>D;for(int j=0;j<3;j++){D[j].resize(11);for(int h=0;h<3;h++)for(int q=0;q<11;q++)for(int x=0;x<11;x++){F c=0;for(int ih=0;ih<3;ih++)for(int iq=0;iq<11;iq++)c=FF::add(c,FF::mul(FF::mul(LH[h][ih],LQ[q][iq]),val[j][ih][iq][x]));if(c)D[j][x]=D[j][x]+lm(h,q,0,0,c);}}
+auto a=mulx(D[1],D[1]),b=mulx(D[0],D[2]);for(int x=0;x<int(a.size());x++)a[x]=a[x]-scale(b[x],4);std::ofstream out("elimination/evidence/critical_delta.json");out<<"{\"variables\":[\"H\",\"q\",\"unused\",\"unused\"],\"Dhat\":[";for(int j=0;j<3;j++){if(j)out<<",";out<<"[";for(int x=0;x<int(D[j].size());x++){if(x)out<<",";json_lp(out,D[j][x]);}out<<"]";}out<<"],\"rank_equations\":[";for(int x=0;x<int(a.size());x++){if(x)out<<",";json_lp(out,a[x]);if(!a[x].empty()){std::cout<<"x="<<x<<" terms="<<a[x].size();if(x>=10){std::cout<<" data=";json_lp(std::cout,a[x]);}std::cout<<"\n";}}out<<"]}\n";
+for(auto[H,w]:std::vector<std::pair<F,F>>{{31,2},{73,3},{0,25},{123456,298723}}){F q=FF::pow(w,3);auto G=evaluate(chart,FF::div(H,w),w);auto d=div_y(scale(power(G[1],2),4)+scale(G[0]*G[2],3),6);for(int j=0;j<3;j++)for(int x=0;x<11;x++){F ex=FF::mul(FF::pow(q,3),FF::mul(j>=2?1:FF::pow(FF::inv(w),2-j),d[j].coef(x)));if(evaluate(D[j][x],H,q)!=ex)throw std::runtime_error("Delta check");}}
+std::cout<<"extra full Delta checks PASS; square scheme decision NOT made\n";}

@@ -31,10 +31,8 @@ Thus a nonzero common rational weight-m tensor exists iff d divides m,
 and it is a scalar multiple of s^(m/d). For arbitrary nonzero rational
 endpoint one-forms theta_X,theta_Y, put delta=g*theta_Y/f*theta_X in the
 actual joint field M=k(X)k(Y). The class of delta in
-
-    M* / (k(X)* k(Y)*)
-
-has exact order d. These assertions do not require gcd(d,e)=1 and do
+\(M^*/(k(X)^*k(Y)^*)\) has exact order d.
+These assertions do not require gcd(d,e)=1 and do
 not assert that the multiplicative quotient vanishes for arbitrary spans.
 
 If \(A=k[s]\), its divisor is \(D=eS\), where \(e>0\) is an integer
@@ -81,6 +79,15 @@ an independent one-leg Jacobian condition.
 In characteristic zero, \(A=k\) and there are no clumps, by the same
 paper's Corollaries8.13 and9.2.
 
-Version5,2026-09-14.
+In characteristic p>0 the primitive weight d is prime to p.
+Every shared rational one-form is regular, and their space has dimension
+at most one. The exact characteristic-power membership and logarithmic
+decomposition criteria belong to
+[saturated divisor relations](saturated_divisor_relations.md), which
+also determines the root height when no clump exists.
+
+Version8,2026-09-24. The later saturated-divisor theorem subsumes the
+former fixed-power test; this statement retains the primitive-ring,
+clump and exact-weight results on which that theorem depends.
 
 [Proof](../../Proofs/shared_tensors/matched_section_rings.md).

@@ -79,7 +79,7 @@ Suppose there is exactly one wild point, of index e and different delta.
   delta-e=-1 mod4 and no divisor of16 has that residue.
 * The final case is exactly two branch points, one wild with
   1<delta/e<2 and one tame. Sections1--4 of the checked
-  [complete two-branch calculation](../../shared_tensors/fixed_x_two_branch_bound.md)
+  [complete two-branch calculation](fixed_x_two_branch_bound.md)
   give n<=2240 or n=112000,336000.
 
 For precision, the last input does not secretly require Y: after its
@@ -112,7 +112,7 @@ degree-one intersection, and has uniform zeros, by the checked
 Cartier preserves this line, so its generator is a Cartier eigenform,
 with eigenvalue possibly zero. Section2 and the retained nonzero-
 eigenvalue theorem both force simple zeros on X. The
-[checked simple-root/core theorem](../../shared_tensors/shared_tensor_core.md)
+[canonical marked quotient theorem](../canonical_marked_quotient.md)
 then contradicts corelessness. This proves assertion3 without assuming
 ordinarity of Y. It does not produce a degree-one invariant when only a
 higher-weight one is given, or produce the first invariant at all.

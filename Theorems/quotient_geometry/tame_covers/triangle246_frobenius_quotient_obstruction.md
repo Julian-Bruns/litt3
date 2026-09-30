@@ -31,5 +31,4 @@ This supplies one profile of the
 [complete backup cored theorem](../endpoint_exclusions/backup_cored_span_exclusion.md).
 It excludes no arbitrary coreless span.
 
-[Proof](../../../Proofs/quotient_geometry/tame_covers/triangle246_frobenius_quotient_obstruction.md) ·
-[Exact receipt](../../../Research/computations/triangle246_verification.txt).
+[Proof](../../../Proofs/quotient_geometry/tame_covers/triangle246_frobenius_quotient_obstruction.md).

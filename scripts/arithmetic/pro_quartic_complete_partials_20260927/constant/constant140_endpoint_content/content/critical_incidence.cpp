@@ -1,0 +1,17 @@
+// Exact polynomial presentation of the common-critical-zero incidence.
+#include "ratio.hpp"
+using HQ=std::map<std::pair<int,int>,Poly>;
+void clean(HQ&a){for(auto it=a.begin();it!=a.end();)if(it->second.zero())it=a.erase(it);else ++it;}
+HQ addHQ(HQ a,const HQ&b){for(auto&[e,p]:b)a[e]=a[e]+p;clean(a);return a;}
+HQ mulHQ(const HQ&a,const HQ&b){HQ c;for(auto&[e,p]:a)for(auto&[f,s]:b){std::pair<int,int>g{e.first+f.first,e.second+f.second};c[g]=c[g]+p*s;}clean(c);return c;}
+HQ monHQ(int q,Poly p){HQ a;if(!p.zero())a[{0,q}]=p;return a;}
+HQ scalarHQ(HQ a,const Poly&p){for(auto&[e,s]:a)s=s*p;clean(a);return a;}
+HQ ZHQ(const RF&a){HQ z;for(int h=0;h<2;h++)for(int q=0;q<6;q++)if(!a.Z[h][q].zero())z[{h,q}]=a.Z[h][q];return z;}
+HQ divHQ(HQ a,const Poly&p){for(auto&[e,s]:a)s=exactdiv(s,p);clean(a);return a;}
+void saveHQ(std::ostream&f,const HQ&a){int count=0;for(auto&[e,p]:a)for(F c:p.v)if(c)count++;f<<count<<"\n";for(auto&[e,p]:a)for(int x=0;x<=p.deg();x++)if(p.at(x))f<<e.first<<" "<<e.second<<" "<<x<<" "<<p.at(x)<<"\n";}
+Poly evalHQ(const HQ&a,F H,F q){Poly r;for(auto&[e,p]:a)r=r+scale(p,ff::mul(ff::pow(H,e.first),ff::pow(q,e.second)));return r;}
+int main(){try{ff::init();init_source();auto src=readRF("regenerated/ratio_source.dat");Poly kp=exactdiv(src[0].U,P);if(kp.deg()!=0||!kp.at(0)||!src[0].V.zero())throw std::runtime_error("critical leading form fails");F k=kp.at(0);Poly A3=exactdiv(src[1].U-scale(B0*src[0].U,3),P),B3=exactdiv(src[1].V,P),A4=exactdiv(src[2].U-scale(B0*src[1].U,2)+scale(B0*B0*src[0].U,3),P*P),B4=exactdiv(src[2].V-scale(B0*src[1].V,2),P);HQ z=ZHQ(src[0]),z3=ZHQ(src[1]),z4=ZHQ(src[2]),C3=divHQ(addHQ(z3,scalarHQ(z,scale(B0,2))),P),C4=divHQ(addHQ(addHQ(z4,scalarHQ(z3,scale(B0,3))),scalarHQ(z,scale(B0*B0,3))),P);HQ z2=mulHQ(z,z);std::array<HQ,3>Fpol{addHQ(mulHQ(z2,z),monHQ(5,scale(P,ff::pow(k,3)))),addHQ(addHQ(monHQ(5,scale(A3,ff::pow(k,2))),mulHQ(monHQ(3,scale(B3,ff::neg(k))),z)),mulHQ(C3,z2)),addHQ(addHQ(monHQ(3,scale(B4,ff::pow(k,2))),scalarHQ(mulHQ(C4,z),Poly(ff::neg(k)))),scalarHQ(z2,A4))};
+std::ofstream out("regenerated/critical_incidence.dat");out<<"COMMON_CRITICAL_INCIDENCE_V1\n"<<k<<"\n";for(auto&a:Fpol)saveHQ(out,a);std::cout<<"critical scalar k "<<k<<"\n";for(int j=0;j<3;j++){int dh=-1,dq=-1,dx=-1,n=0;for(auto&[e,p]:Fpol[j]){dh=std::max(dh,e.first);dq=std::max(dq,e.second);dx=std::max(dx,p.deg());for(auto c:p.v)if(c)n++;}std::cout<<"F"<<j<<" degrees H,q,x "<<dh<<","<<dq<<","<<dx<<" records "<<n<<"\n";}
+// Identity fixtures are additional implementation checks, not the proof scope.
+int checks=0;for(F H:{1,3,5,25})for(F q:{2,3,7,25})for(F x:{0,1,25,145049}){F zz=eval(evalHQ(z,H,q),x),v=ff::neg(ff::div(zz,ff::mul(ff::mul(q,q),k)));F cc3=eval(evalHQ(C3,H,q),x),cc4=eval(evalHQ(C4,H,q),x);F relation=ff::sub(ff::mul(q,ff::pow(v,3)),eval(P,x));F b=ff::add(ff::add(ff::mul(q,eval(A3,x)),ff::mul(ff::mul(q,v),eval(B3,x))),ff::mul(ff::mul(v,v),cc3));F c=ff::add(ff::add(ff::mul(ff::pow(q,2),ff::mul(ff::pow(v,2),eval(A4,x))),ff::mul(q,eval(B4,x))),ff::mul(v,cc4));std::array<F,3>expected{ff::neg(ff::mul(ff::mul(ff::pow(q,5),ff::pow(k,3)),relation)),ff::mul(ff::mul(ff::pow(q,4),ff::pow(k,2)),b),ff::mul(ff::mul(ff::pow(q,2),ff::pow(k,2)),c)};for(int j=0;j<3;j++)if(eval(evalHQ(Fpol[j],H,q),x)!=expected[j])throw std::runtime_error("critical substitution failed");checks++;}std::cout<<"exact symbolic formula assembled; supplemental substitution fixtures "<<checks<<" PASS\n";}
+catch(const std::exception&e){std::cerr<<e.what()<<"\n";return 1;}}

@@ -1,6 +1,6 @@
 # Ramified canonical roots force cores in a parameterized contact range
 
-Version2,2026-09-14. Work over an algebraically closed field of
+Version3,2026-09-24. Work over an algebraically closed field of
 characteristic p>0. Fix smooth projective connected curves X,Y of
 genus at least two and nonzero regular weight-d canonical tensors s_X,s_Y
 with divisors eD_X,eD_Y, where e,d>0 and D_X,D_Y are reduced.
@@ -31,18 +31,18 @@ of X,Y to a common effective proper smooth DM curve. Thus every actual
 tensor-preserving span has a core in its specified source field.
 Neither a Galois leg nor a simultaneous Galois closure is assumed.
 
-In characteristic5, d=7,e=2 gives C=315/2. Thus every compatible
-reduced spin-section match of degree7 forces a core. This conclusion
-does NOT require Cartier vanishing, Jacobian orthogonality, ordinarity,
-or a restriction on the map degrees modulo5. For a genus-two Y the
-total degree toward X is at most157.
+For every odd characteristic \(p\ge5\), taking \(d=p+2,e=2\)
+satisfies the contact inequality. Thus every compatible reduced
+section match of \(L^{p+2}\), where \(L^2=\omega\) is a spin line,
+forces a core, in ANY endpoint genera. No Cartier vanishing,
+Jacobian orthogonality, ordinarity, or restriction on the map degrees
+modulo \(p\) is needed. In characteristic five, \(d=7,e=2\) gives
+\(C=315/2\); for a genus-two \(Y\) the total degree toward \(X\)
+is at most \(157\).
 
 The positivity condition is essential to this argument. For example,
 the genus-independent coreless exact-form examples with d=1,e=8 are
 outside it. The theorem neither supplies a common tensor nor settles
 the unmarked common-cover problem.
 
-The original geometric argument has a medium PASS audit,2026-09-08.
-The full-root-cover intersection budget has a bounded medium PASS,2026-09-14.
-[Audit](../../Research/audits/EQUIVARIANT_ROOT_CONTACT_AUDIT_2026_09_08.md).
 [Proof](../../Proofs/shared_tensors/ramified_root_contact_core.md).

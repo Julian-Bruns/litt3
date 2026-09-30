@@ -40,9 +40,5 @@ on larger clumps, clump-existence theorem, or exclusion of coreless spans
 is asserted. The result applies to high-prime-degree family members in
 bounded_atlas_partner_finiteness, but does not complete that counterexample.
 
-Version1,2026-09-08. AUDITED PROSE, PASS by
-/root/audit_family_singleton_medium,2026-09-08.
-Proof supplied by the user's Pro response; root independently replayed all
-twelve exact polynomial identities and checked the intersection argument.
-[Audit verdict and scope](../../../Research/audits/FAMILY_SINGLETON_ROOT_EXCLUSION_AUDIT_2026_09_08.md).
+Version1,2026-09-08.
 [Proof](../../../Proofs/jacobians/torsion/family_singleton_root_exclusion.md).

@@ -158,7 +158,6 @@ J[3] and every branch point;
 the general mixed-prime assertion places all the indicated W3 points
 in its kernel. Their order divides8*27=216, proving (5).
 
-The [norm and support theorem](kummer_norm_and_nine_torsion_support.md)
-completes the W₂ case. Exact order9 in W₃ and mixed torsion remain open.
+Exact order9 in W₃ and mixed torsion remain open.
 The [statement's audit records](../../../Theorems/jacobians/torsion/cyclic_cubic_low_abel_torsion.md)
 retain the original arithmetic, Kummer-layer and mixed-prime checks.

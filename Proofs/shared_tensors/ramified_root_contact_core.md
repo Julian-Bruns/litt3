@@ -1,6 +1,6 @@
 # Ramified roots amplify contact
 
-Version2,2026-09-14.
+Version3,2026-09-24.
 [Statement](../../Theorems/shared_tensors/ramified_root_contact_core.md).
 Use c,d0,e0,N,q,mu from the statement and put gx=g(X)-1, gy=g(Y)-1.
 
@@ -97,7 +97,12 @@ coefficient; m<=d/L gives the unrestricted coefficient d. This retains
 all components of disconnected root covers and needs no individual
 upper-component degrees.
 
-For d=7,e=2,p=5, the values are d0=7,e0=2,N=9,q=4,mu=21. Both root
+For \(d=p+2,e=2\) and every odd \(p\ge5\), one has
+\(p\nmid d(e+d)\), \(q=p-1\), and
+\(d(q-2)=(p+2)(p-3)>2=e\). A reduced matched section of a spin
+line to power \(p+2\) squares to exactly this shared weight-\(d\)
+tensor, so the core conclusion applies in any genera. For
+d=7,e=2,p=5, the values are d0=7,e0=2,N=9,q=4,mu=21. Both root
 covers are connected, and (7) gives ab<=(315/2)t. For genus-two Y,
 the integral total degree toward X is at most157.
 
@@ -121,7 +126,3 @@ The extra local input is root equivariance, which amplifies contact
 by (3). Merely using the zero order of the upper one-form would lose
 that gain. The argument supplies no shared tensor and gives no degree
 bound when mu<=N.
-
-The [original audit](../../Research/audits/EQUIVARIANT_ROOT_CONTACT_AUDIT_2026_09_08.md)
-checks the local contact and geometric quotient. A bounded medium audit
-on2026-09-14 checks (2),(5)--(7), including disconnected covers.

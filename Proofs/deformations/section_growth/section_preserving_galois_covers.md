@@ -39,8 +39,15 @@ The cyclic quotient therefore has a unique such subgroup, giving the
 unique U. Its sections are still V, so the same trace argument kills
 H^1(C,E) on U.
 
-For the spin corollary, apply this on the scalar Frobenius twist with
-E=A₁. The natural primitive boundary lies in H^1(C^(1),A₁), so it
-vanishes on U. For prime-to-p degree its pullback is injective.
-The spin-series reduction supplies actual Galois covers retaining all
-the inherited sections, exactly the required hypotheses.
+For the spin corollary, tensor the Cartier sequence
+\(0\to\mathcal O_{C^{(1)}}\to F_*\mathcal O_C\to B_C\to0\)
+by \(A_1\). Projection formula identifies the middle term with
+\(F_*A^p\), and its quotient map is the canonical connection into
+the twisted-Cartier kernel \(K(C,A)\). Since
+\(\deg A^p=p(g(C)-1)>2g(C)-2\), \(H^1(C,A^p)=0\), giving the
+displayed exact sequence. Apply the general theorem on the scalar
+Frobenius twist with \(E=A_1\): the primitive boundary lies in
+\(H^1(C^{(1)},A_1)\), so it vanishes on \(U\). For prime-to-\(p\)
+degree its pullback is injective.
+This last corollary applies whenever the stated section-preserving
+Galois cover is independently supplied.

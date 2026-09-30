@@ -1,9 +1,9 @@
 # A structural obstruction to every constant-Q norm chart
 
-2026-09-11. Focused audit PASS /root/audit_constant_q_norm_obstruction.
 Canonical statement: [criterion](../../../Theorems/jacobians/isogeny_sieves/trigonal_constant_norm_obstruction.md).
-This removes
-a boundary of the degree2 carrier computation, not the full atlas row.
+The general Frobenius-order argument removes the constant-\(Q\)
+boundary; the [complete carrier sieve](backup_double_cover_exclusion.md)
+handles the remaining actual backup carriers.
 
 ## General criterion
 
@@ -126,21 +126,37 @@ Reduction cannot increase the order of a root of unity, so N divides n.
 For divisibility of positive integers, phi(N)<=phi(n). This contradicts
 the hypothesis phi(N)>18. This proves the criterion.
 
-## 5. Fixed-X exact checks and independent numerical corroboration
+## 5. Fixed-X exact check
 
 The established polynomial is fixed_pair_arithmetic. The standard-library
 checker check_degree2_frobenius_orbits.py verifies irreducibility modulo2
 and order171 by exact binary arithmetic. In particular 171=9*19 gives
 phi(171)=6*18=108.
 
-Independently, a bounded cyclic-cover computation returned P_D
-and found no root5*zeta among all cyclotomic possibilities of degree<=44.
-Data: degree2-constantq-sixth-root-20260911/result.json under the external
-computation root. This supports the result but is NOT a dependency of
-the proof above: the proof uses only the already established P_X and
-the all-closed-point Euler-factor congruence (3).
-
 For nonconstant Q, new quadratic branch points change the primitive
 character dimensions, so (3) requires additional local factors. The
 [complete fixed-pair sieve](backup_double_cover_exclusion.md) treats those
 carriers by their actual Prym factors.
+
+## 6. The fixed-X two-torsion representative
+
+Use the established fixed-curve data \(g(X)=9\), \(K_X=16O\), and
+pole orders \(3,10\) for \(x,y\). If a nonzero two-torsion line \(L\)
+had a section of \(L(7O)\), its degree-seven divisor would give
+\(\operatorname{div}(f)=2D-14O\). The semigroup basis writes
+\(f=P(x)+Q(x)y\), with \(\deg P\le4\), \(\deg Q\le1\).
+Its cubic norm is a square up to scalar. If \(\deg Q=1\), the norm
+\(P^3+FQ^3\) has odd degree \(13\); if \(Q\) is a nonzero constant,
+the criterion above excludes it. If \(Q=0\), the square norm \(P^3\)
+makes \(P\), hence \(f\), a square in the respective function fields,
+forcing \(L=0\). Thus \(h^0(L(7O))=0\).
+
+Two independent sections of \(L(8O)\) would have a nonzero combination
+vanishing at \(O\), so \(h^0(L(8O))\le1\). Riemann--Roch and
+\(K_X=16O\), \(L^{-1}=L\), give
+\[
+h^0(L(9O))=1+h^0(L(7O))=1.
+\]
+Its unique section gives the unique effective degree-nine divisor
+representing \(L\). Any two functions with divisor \(2D-18O\)
+differ by a scalar.

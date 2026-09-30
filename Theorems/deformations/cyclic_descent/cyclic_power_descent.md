@@ -76,7 +76,9 @@ Phi fixing e:
    tuple algebraize over W(k). No descent of the longest finite lift
    at its top precision is asserted in Part1.
 
-The proof includes the explicit genus3/genus51 cyclic25 family on
+The [supporting example](../../../Proofs/deformations/cyclic_descent/cyclic25_family_support.md)
+verifies the hypotheses on an explicit genus-three/genus-51 cyclic-25
+family with
 Delta(t)=(t^5-t)(t²+2t+3)(t²+2t+4)!=0. The earlier small-power
 common-cover applications are contained in
 [the all-power matched two-defect exclusion](../section_growth/two_defect_nontrivial_five_exclusion.md),
@@ -84,6 +86,4 @@ which retains both actual etale maps from the same source. The unmarked
 common-cover problem remains UNSOLVED: an initial reference and a given
 compatible upper tower are not automatic on an arbitrary common cover.
 
-[Proof](../../../Proofs/deformations/cyclic_descent/cyclic_power_descent.md) ·
-[Consolidation audit](../../../Research/audits/CYCLIC_UNIFICATION_SCOPE_AUDIT_2026_09_13.md) ·
-[Unrestricted-norm audit](../../../Research/audits/CYCLIC_UNRESTRICTED_NORM_AUDIT_2026_09_13.md).
+[Proof](../../../Proofs/deformations/cyclic_descent/cyclic_power_descent.md).

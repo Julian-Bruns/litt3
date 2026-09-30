@@ -40,46 +40,8 @@ has dimension at least r-j-1:
 | 5k+2, k>=1 | 1 | k | 4k+1 |
 | 5k+4, k>=0 | 3 | 3k+2 | 2k+1 |
 
-## Actual surviving roots for an entire infinite progression
+The criterion removes the unbounded primitive weight for a prescribed
+reduced divisor. It does not construct a shared tensor on an actual span.
 
-For every k>=1, r=5k+2, Z_r is a projective bundle of relative
-dimension4k-1 over all J1. There is a nonempty open U_k in J1 over
-which every fiber contains reduced divisors. Every prime-to5 theta in U_k
-therefore supplies genuine uniform Cartier-zero tensors as above.
-Their MINIMAL weights are unbounded. Prime-to5 torsion is dense in J1,
-and the orders of V(theta)^e0 are unbounded on this open set.
-
-The first case has a particularly simple formula. Write
-
-    C:v^2=F(u), deg F=5, eta=du/v, div eta=2O.
-
-For b not a branch value put alpha=(u-b)du and s=alpha^2 eta^5.
-Then s has weight7, div(s)=2D, and D consists of the five finite
-Weierstrass points and the two points over b. Thus D is reduced of
-degree7, and C_(C,4)(s^3)=0. This tensor is NOT a proper tensor power.
-
-Separately, let C be ANY subcanonical curve of genus g>=3 in
-characteristic5: div(eta)=(2g-2)O for a regular differential eta.
-For a general f in L((5g-6)O), the tensor
-
-    s=(df)^2 eta^5
-
-has weight7, divisor2D with D reduced of degree7(g-1), and the same
-Cartier-zero identity. Ordinarity is unnecessary. Thus the fixed genus-nine X
-and every genus-two partner C_t have independent endpoint tensors of
-this same profile, with support sizes56 and7 respectively.
-
-If two such tensors ever have equal pullbacks in an actual CORELESS
-span, that span has NO shared regular projective connection. This is
-a conditional structural statement, not an exclusion of those spans.
-
-Thus uniform Cartier-zero profiles cannot all be excluded on a
-genus-two endpoint. Simultaneous realization through both actual etale
-maps remains necessary; the four-point and no-clump cases remain open.
-
-Version3,2026-09-14. Joshi's stability theorem removes ordinarity and
-makes the Cartier kernel a vector bundle over the whole Jacobian.
-This geometric step and the retained root dictionary passed a bounded
-medium audit; the explicit root construction and conditional
-shared-connection assertion retain author-proof status.
+Version4,2026-09-24.
 [Proof](../../../Proofs/jacobians/theta_divisors/uniform_cartier_root_locus.md).

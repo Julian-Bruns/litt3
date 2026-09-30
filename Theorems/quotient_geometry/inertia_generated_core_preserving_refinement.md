@@ -59,5 +59,4 @@ degrees and clump size. The endpoint genera still grow with the clump,
 and the endpoints have changed. This construction neither supplies a
 clump nor excludes the resulting transverse dormant data.
 
-[Proof and published inputs](../../Proofs/quotient_geometry/inertia_generated_core_preserving_refinement.md) ·
-[Original geometric audit](../../Research/audits/INERTIA_REFINEMENT_AUDIT_2026_09_08.md).
+[Proof and published inputs](../../Proofs/quotient_geometry/inertia_generated_core_preserving_refinement.md).

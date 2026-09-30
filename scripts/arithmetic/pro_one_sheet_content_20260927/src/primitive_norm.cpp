@@ -1,0 +1,5 @@
+#define USE_GMP_PACKING
+#include "fast_univariate.hpp"
+static UP lu(std::istream&i){int n;i>>n;UP p(n);for(U&c:p)i>>c;if(!i)throw std::runtime_error("bad polynomial");return p;}
+static void su(std::ostream&o,const UP&p){o<<p.size();for(U c:p)o<<" "<<c;o<<"\n";}
+int main(int argc,char**argv){try{if(argc!=3){std::cerr<<"usage: primitive_norm certificate output_prefix\n";return 2;}initfield(nullptr);std::ifstream in(argv[1]);UP N=lu(in);QA x=loadq(in);assert(x.d==UP{1});UP g=N;for(auto&a:x.n){if(g.size()<=1)break;if(!a.empty())g=ugfast(g,a);std::cout<<"gcd degree="<<g.size()-1<<std::endl;}UP n=ux(N,g);for(auto&a:x.n)a=ux(a,g);U iv=kinv(n.back());n=uc(n,iv);for(auto&a:x.n)a=uc(a,iv);std::ofstream out(std::string(argv[2])+"_certificate.txt");su(out,n);saveq(out,x);std::ofstream no(std::string(argv[2])+"_norm.txt");su(no,n);std::ofstream go(std::string(argv[2])+"_removed.txt");su(go,g);std::cout<<"PASS original_norm_degree="<<N.size()-1<<" primitive_norm_degree="<<n.size()-1<<" common_factor_degree="<<g.size()-1<<" primitive_adjugate_height="<<height(x)<<"\n";return 0;}catch(std::exception&e){std::cerr<<e.what()<<"\n";return 1;}}

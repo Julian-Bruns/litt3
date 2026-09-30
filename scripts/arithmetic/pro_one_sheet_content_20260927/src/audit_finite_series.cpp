@@ -1,0 +1,4 @@
+#define USE_GMP_PACKING
+#include "finite_series_fast.hpp"
+#include <random>
+int main(){initfield(nullptr);std::mt19937 rng(27092034);int tests=0;for(int d: {1,3,7})for(int m:{1,2,5}){VF=UP(d+1);VF[d]=1;SF=SPoly(m+1);SF[m]={1};if(m>1)SF[0]={0,1};SF[0]=br(SF[0]);ES a(FP),b(FP);for(int n=0;n<FP;n++){for(ES*p:{&a,&b}){(*p)[n].n.resize(m);for(auto&c:(*p)[n].n){c.resize(d);for(U&z:c)z=rng()%QQ;trim(c);}st((*p)[n].n);}}auto direct=esmul(a,b),fast=es_fast(a,b),sq=es_fast_square(a),directsq=essq(a);for(int n=0;n<FP;n++){assert(direct[n].n==fast[n].n);assert(sq[n].n==directsq[n].n);}a[0]=EA(1);auto r=sqrt_fast_power(a),reference=sqrt_rec(a);for(int n=0;n<FP;n++)assert(r[n].n==reference[n].n);tests++;}std::cout<<tests<<" finite series products, squares and all formal-root coefficients match direct arithmetic, including nonreduced coefficient algebras. Bounded implementation audit PASS.\n";}

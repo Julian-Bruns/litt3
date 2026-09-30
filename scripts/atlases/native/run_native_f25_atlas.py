@@ -15,7 +15,7 @@ import signal
 import subprocess
 import time
 
-FIRST = Path('/Users/julian/Documents/litt3-computation-data/atlas-rooted-first')
+FIRST = Path(__file__).resolve().parents[3].parent / 'litt3-computation-data/atlas-rooted-first'
 
 
 def save(path, value):

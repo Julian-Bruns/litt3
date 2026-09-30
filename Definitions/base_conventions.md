@@ -14,8 +14,10 @@ kappa_C=2g(C)-2. Divisors are integral divisors on a curve, unless a
 stack divisor or rational coefficient is explicitly specified.
 
 `C^(1)` means scalar twist by absolute Frobenius of k, not an assumed
-k-isomorphism C≈C^(1). F_C:C→C^(1) is relative Frobenius. Its differential
-is zero; it must not be used as a separating or etale map.
+k-isomorphism C≈C^(1). Unless explicitly overridden, F_C:C→C^(1) is
+relative Frobenius. The Frobenius-form atlas records use F_C for
+absolute Frobenius C→C and say so locally. Neither map is separating
+or etale.
 
 When a finite-field model is specified, Frob_q on an abelian variety
 denotes the q-power Frobenius endomorphism, acting on geometric points

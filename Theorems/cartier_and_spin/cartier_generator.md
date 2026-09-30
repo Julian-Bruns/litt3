@@ -1,6 +1,6 @@
 # Frobenius and Cartier constraints on a primitive invariant
 
-ID: `cartier_generator`. Version3.
+ID: `cartier_generator`. Version4.
 
 Let k be algebraically closed of characteristic p>0, and let
 X←Z→Y be an actual coreless finite étale span of smooth projective
@@ -9,7 +9,8 @@ A=k[s], with primitive weight d>0. Use the
 [twisted Cartier operators](../../Definitions/canonical_tensors.md) C_n,
 from weight pn+1 to weight n+1, with inverse-Frobenius scalar convention.
 
-Then p does not divide d. Choose 1<=r<=p−1 with rd≡1 mod p, and put
+The [canonical-ring theorem](../shared_tensors/matched_section_rings.md)
+gives \(p\nmid d\). Choose 1<=r<=p−1 with rd≡1 mod p, and put
 n=(rd−1)/p. The complete Cartier alternative is
 
     C_n(s^r)=0                  if d does not divide p−1;

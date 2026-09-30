@@ -1,6 +1,6 @@
 # Canonical rings and divisors on a cored quotient
 
-Version2,2026-09-14.
+Version3,2026-09-24.
 
 Over an algebraically closed field of arbitrary characteristic, let
 \(X\xleftarrow f Z\xrightarrow gY\) be an actual finite étale span of
@@ -46,15 +46,5 @@ is tame and \(n_X\le42h\), or it has one wild point with
 points give \(n_X<2h\); two give \(n_X<6h\), except for tame orders
 \((2,2)\), which require a positive divisor of \(h\) congruent to
 \(-1\pmod{p-1}\). For a jointly minimal span, \(\deg(Z/Y)\le n_X\).
-
-For either necessary genus-nine signature
-\[
- (e_w,\delta_w,e_t,n_X)=(1000,1143,7,112000)
-                 \quad\text{or}\quad(3000,3143,21,336000),
-\]
-the smallest compatible nonempty marking on \(X\) has112 points.
-The first nonzero shared weights are7 and21; the first weights with
-two sections are7000 and21000. These are conditional consequences
-for the full core quotient; neither signature is asserted to exist.
 
 [Proof and literature](../../Proofs/quotient_geometry/cored_ring_and_marking_spectrum.md).

@@ -27,7 +27,7 @@ and let sigma:y->rho*y be the actual cubic deck automorphism. Then:
    inverse variable is unnecessary, including scheme-theoretically.
    The original open scheme is recovered by the finite etale degree-three
    extension t^3=lambda. All three cubic branches are distinct.
-4. This normalized quotient is the reduced F25 algebra
+4. This normalized quotient is a reduced F25 algebra of the form
 
        A=F5[z]/(P(z)), deg P=19290, a=h_zeta(z), a9=z,
 
@@ -35,11 +35,10 @@ and let sigma:y->rho*y be the actual cubic deck automorphism. Then:
 
        1,2,13,17,40,124,205,220,403,578,718,7324.
 
-   The [frozen algebra certificate](../../Research/computations/normalized_oper_algebra_certificate.json)
-   specifies P and every coordinate; the [factor data](../../Research/computations/normalized_oper_closed_points.json)
-   specifies the irreducibles. Only roots satisfying the specified F25
-   embedding are counted. The [exact index ranges](../../Research/computations/complete_oper_solutions.json)
-   retain every cubic branch and multiplicity.
+   The proof gives the exact construction and verification of P, the
+   coordinate polynomials and their irreducible factors. Only roots
+   satisfying the specified F25 embedding are counted. Every cubic
+   branch and multiplicity is retained.
 5. The full categorical quotient S/<sigma> has9645 reduced geometric
    points and55 double points, hence9700 points and length9755. At each
    fixed point its local algebra is k[epsilon]/(epsilon^2), the degree0
@@ -54,11 +53,4 @@ For a nontrivial torsion twist, these symmetries also transform the twist;
 they do not reduce all twists to18 scalar tests. No atlas or common-cover
 exclusion follows from the census alone.
 
-The new [small center data](../../Research/computations/invariant_oper_centers.json)
-and [local verifier](../../scripts/atlases/opers/verify_oper_local_quadrics.sage) replace saved
-formal expansions by three homogeneous quadrics per closed point.
-The [full verifier](../../scripts/atlases/opers/verify_oper_census.sage) proves completeness
-by exhausting the independent global length, without a discovery basis.
-Independent mathematical audit and fresh full replay PASS.
-[Proof](../../Proofs/projective_connections/fixed_x_oper_enumeration.md) ·
-[Consolidation audit](../../Research/audits/OPER_CENSUS_CONSOLIDATION_AUDIT_2026_09_13.md).
+[Proof and exact verifiers](../../Proofs/projective_connections/fixed_x_oper_enumeration.md).

@@ -1,5 +1,6 @@
 # Proof: exclusion of the backup (2,3,7) map
 
+[Cored-span theorem](../../../Theorems/quotient_geometry/endpoint_exclusions/backup_cored_span_exclusion.md).
 Write k=bar(F5), C_alpha:v²=F(u), and
 F=u(u-1)(u-2)(u-3)(u-alpha), where alpha³+alpha+1=0.
 The proof combines a finite monodromy sieve with a dormant pullback.

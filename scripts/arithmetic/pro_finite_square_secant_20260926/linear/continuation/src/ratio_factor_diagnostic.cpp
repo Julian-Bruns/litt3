@@ -1,0 +1,3 @@
+#define EXCEPTION_LIBRARY
+#include "exceptional_ratios.cpp"
+int main(){initdata();F zz=1;for(int ix=0;ix<int(ROOTS.size());ix++){auto c=parametrize(ROOTS[ix]);auto f6=fullF6(c,7),f7=fullF6(c,8);Rat ap(c.num[0][2][4],1),be=scale(Rat(scale(term(Ca,1,0)+term(Cd,0,1),inv(eps)))+Rat(shift(ap.n,-1,0),ap.d),3);F cc=divi(mul(2,fpow(24,2)),fpow(eps,2));auto u=f6-scale(Rat(term(1,3,0)),cc),v=f7-scale(Rat(term(1,3,0))*be,cc);auto res=hresultant(hpol(clearunits(toHq(u.n))),hpol(clearunits(toHq(v.n,-1))));std::cout<<ROOTS[ix];for(F q:std::vector<F>{0,QPIVOT[ix],QBOUND[ix]}){int n=0;while(deg(res)>0&&eval(res,q)==0){res=quo(res,Poly{neg(q),1});n++;}std::cout<<" "<<n;}std::cout<<" remaining="<<deg(res)<<" derivative_gcd="<<deg(gcd(res,diff(res)))<<'\n';}}

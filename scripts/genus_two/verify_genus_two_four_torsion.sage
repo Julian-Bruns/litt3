@@ -186,5 +186,7 @@ result = {
     'scope': 'Complete J[4] check at the stated parameter; a family claim additionally uses the proof height bound.'
 }
 if args.output:
-    Path(args.output).write_text(json.dumps(result, indent=2, default=int)+'\n')
+    target=Path(args.output)
+    target.parent.mkdir(parents=True,exist_ok=True)
+    target.write_text(json.dumps(result, indent=2, default=int)+'\n')
 print(json.dumps(result, indent=2, default=int))

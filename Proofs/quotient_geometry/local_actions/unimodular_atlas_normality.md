@@ -29,9 +29,7 @@ with coarse tensors
     U=(dt)^m/t^(m+1),        V=(dt)^E/t^delta.
 
 This is a direct two-dimensional lattice calculation, not an inference
-of stack existence from its section ring. The general literature and
-its precise scope are recorded in
-[the source screen](../../../Research/notes/orbifolds/wild_canonical_ring_source_boundary_2026_09_06.md).
+of stack existence from its section ring.
 
 Pull back along an actual atlas C -> S. At a zero-fiber point, the
 orders of U,V are -E(m+1)+m delta=1 and -E delta+E delta=0.

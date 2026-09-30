@@ -22,12 +22,15 @@ section space.
 
 For a spin line A in odd characteristic, χ(A)=0. On the unique
 degree-p intermediate, every inherited section of K(C,A) therefore
-acquires a global regular spin primitive, by the
-[primitive exact sequence](../../cartier_and_spin/spin_primitive_matching_defect.md).
+acquires a global regular spin primitive. The exact sequence used is
+\[
+0\to H^0(C^{(1)},A_1)\to H^0(C,A^p)
+\xrightarrow{\nabla}K(C,A)\xrightarrow{\partial}
+H^1(C^{(1)},A_1)\to0.
+\]
 For a prime-to-p cover, a primitive exists upstairs only if it exists
-downstairs. This applies to the Galois kernels discarded in the
-[spin-series reduction](../../cartier_and_spin/spin_probe_common_cover_reduction.md),
-without restricting the full endpoint Galois closures.
+downstairs. The spin corollary requires an actual section-preserving
+Galois cover; such a cover is not supplied by an arbitrary span.
 
-Version2,2026-09-14.
+Version4,2026-09-24.
 [Proof](../../../Proofs/deformations/section_growth/section_preserving_galois_covers.md).

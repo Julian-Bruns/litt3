@@ -1,6 +1,6 @@
 # Intrinsic polarization bounds for finite bad fibers and determinant defects
 
-Version4, 2026-09-14.
+Version7, 2026-09-16.
 
 Let k be algebraically closed, J an abelian variety, A⊂J an abelian
 subvariety, π:J→Q=J/A, and r=dim Q≥1. Let L be ample on J with a
@@ -61,16 +61,18 @@ Here δ_z=generic_(N∈π^(-1)(z)) h^0(U^(1),B_{1,U}⊗N). Finiteness of B
 is an additional assumption for arbitrary q; neither ordinarity nor
 the displayed degree budget establishes it.
 
-For the audited ordinary cyclic étale triple U/Y in characteristic
-five, with Y ordinary of genus two and U ordinary, finiteness IS
-known. One has r=2, κ=3, V=32/3, hence
+For any cyclic étale triple U/Y in characteristic five with Y of
+genus two, finiteness IS known without ordinariness hypotheses
+on either curve. One has r=2, κ=3, V=32/3, hence
 
     ∑_(z∈B) δ_z²≤10.
 
-There are at most ten bad geometric cosets and δ_z≤2. With
-Q≅E^2 and R=[[-1,-1],[1,0]], every defect-two point lies in
-Q[2]∪ker(R−1). Outside that union all bad points have defect one
-and form at most one free orbit under ⟨R,−1⟩≅C_6. Every finite
+There are at most ten bad geometric cosets, and every one has
+δ_z=1 by the audited genus-four Wronskian argument. The previous
+defect-two alternatives are excluded, including at two-torsion
+and at fixed points of R. With Q≅E^2 and R=[[-1,-1],[1,0]],
+the bad set contains at most one free orbit under ⟨R,−1⟩≅C_6.
+Every finite
 prime-to-five abelian character refinement from the complementary
 P has generic defect along the actual Y-parameter family at most 90.
 
@@ -78,4 +80,5 @@ These bounds do not eliminate isolated defect-one exceptions,
 produce a second map, or obstruct arbitrary common étale covers.
 [Proof](../../../Proofs/jacobians/theta_divisors/polarization_bad_fiber_bound.md).
 The multiplicity bound and norm kernel have bounded audits; the
-ordinary cyclic-triple finiteness input is separately audited.
+cyclic-triple finiteness input is separately audited, including
+its extension to nonordinary Y and U.

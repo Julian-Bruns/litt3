@@ -33,6 +33,11 @@ calculation in the stated F25 gives
 
     det O=a+4 !=0,       a^2+4a+2=0.
 
+The full kernel, stable Cartier rank and three explicit Petri products
+are now computed in the separate
+[excess-one proof](cartier_petri_excess_one.md), Sections3--4. That small
+calculation does not repeat the finite eigenform algebra below.
+
 If V_2=0, equation (2) gives e3HV=0. Raising this identity to the 25th
 power and using H^[25]=H gives e3H^2V=0 as well. Thus OV=0, forcing
 V=0, a contradiction. Therefore deg A=2 for every nonzero eigenform.
@@ -108,12 +113,43 @@ closed field has a nonzero eigenvector (indeed a Cartier-fixed basis,
 by the usual Frobenius/Lang argument). Such a vector descends to a
 nonzero Cartier eigenform on X. By the theorem it has only simple zeros.
 
-The [audited simple-root/core theorem](../shared_tensors/shared_tensor_core.md)
-then forces a core and, by its low-zero logarithmic-form lemma, a
-positive-genus core. That gives a common positive-dimensional isogeny
+The [canonical marked quotient theorem](../quotient_geometry/canonical_marked_quotient.md)
+forces a core. The
+[low-zero Cartier lemma](../shared_tensors/cartier_fixed_low_zero_core.md)
+makes it positive-genus. That gives a common positive-dimensional isogeny
 factor of JX and JY, contrary to Hom(JX,JY)=0. Thus V=0.
 
 The [original audit](../../routes/global/audits/GENUS9_ALL_NONZERO_EIGENVALUE_CARTIER_FORMS_SIMPLE_AUDIT_2026_09_06.md)
 passed, including an independent exact Sage replay. The general partner
 corollary uses precisely the same argument; no genus or field-degree
 restriction on Y entered it.
+
+## 5. Uniform divisors in the Cartier kernel
+
+The small Cartier calculation gives
+$\ker C_X=\{B(x)\theta:N B=0,\ \deg B\le5\}$, where
+$\theta=dx/y^2$ and $\operatorname{div}\theta=16O$.
+Suppose $0\ne B\theta$ has a uniform positive zero multiplicity $e$.
+If $j=\deg B$, its order at $O$ is $16-3j>0$, so
+$e=16-3j\equiv1\pmod3$.
+
+A root of $B$ at a cubic branch point would have order divisible
+by three on $X$, contradicting uniformity. All polynomial roots
+are therefore unramified and have multiplicity $e$. If $j>0$,
+this forces $e\mid j$. Among $1\le j\le5$, the equation
+$e=16-3j$ permits only $(j,e)=(4,4)$ or $(5,1)$.
+The first is impossible for a Cartier-killed differential: its
+leading term at $O$ would be a nonzero multiple of $z^4dz$,
+whose Cartier image has nonzero constant coefficient.
+For $j=0$, the form is a scalar multiple of $\theta$; it is not
+Cartier-killed, since the first column of $N$ is $(19,22,0)^t$.
+Thus necessarily $j=5,e=1$.
+
+Together with Sections1--3, every Cartier eigenform, including
+eigenvalue zero, that has uniform positive zero multiplicities
+has only simple zeros. The final endpoint-root corollary of
+[the Cartier-generator theorem](cartier_generator.md) now excludes
+every matched weight-$M$ tensor that is an $M$-th power of a
+regular one-form on $X$. This new argument uses only the already
+computed rank-three Cartier blocks, the local Cartier coefficient
+rule, and the recorded root/core theorem.

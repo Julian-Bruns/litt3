@@ -111,8 +111,4 @@ The first-oper quadratic tensor and its full six-section reconstruction
 remain exactly checked. Other exceptional B tensors are not asserted
 computed. These constructions do not exclude an atlas or common cover.
 
-[Proof](../../Proofs/atlases/cohomological_bezout.md). The original matrix,
-corank and determinant argument has an independent
-[PASS audit](../../Research/audits/COHOMOLOGICAL_BEZOUT_AUDIT_2026_09_07.md).
-The extensions and consolidated inverse arguments have the separate
-[2026-09-13 scope audit](../../Research/audits/INVERSE_CUP_CONSOLIDATION_SCOPE_AUDIT_2026_09_13.md).
+[Proof](../../Proofs/atlases/cohomological_bezout.md).

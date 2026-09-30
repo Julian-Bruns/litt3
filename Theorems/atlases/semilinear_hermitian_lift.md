@@ -60,8 +60,6 @@ of B_1 and is uniform in eta and the torsion twist. For genus nine,
 there are40 determined extension coordinates,56 residual coordinates,
 and rank T_j=31 for every valid quotient.
 
-The original [differential-retraction audit](../../Research/audits/HERMITIAN_HORIZONTAL_RETRACTION_AUDIT_2026_09_06.md)
-is retained. Version2 gives the canonical candidate (1); Version3 replaces
-the rank bound by equality using the published stability theorem and
-a bounded medium check on2026-09-14.
+Version3 replaces the rank bound by equality using the published
+stability theorem.
 [Proof](../../Proofs/atlases/semilinear_hermitian_lift.md).

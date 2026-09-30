@@ -32,5 +32,4 @@ moduli Frobenius orbit at least3 cannot occur among only2 possible covers.
 Completeness is independently certified by exact character mass477/16,
 computed in two ways over all147,273 partitions of48.
 
-[Proof](../../../Proofs/quotient_geometry/tame_covers/triangle238_frobenius_factor_obstruction.md) ·
-[Exact replay](../../../Research/computations/triangle238_verification.txt).
+[Proof](../../../Proofs/quotient_geometry/tame_covers/triangle238_frobenius_factor_obstruction.md).

@@ -107,19 +107,24 @@ Substituting (3) gives, whenever the bad scheme is finite,
 
     ∑_z δ_z^r≤floor(r!(p−1)^r κ/n^h).                       (5)
 
-## 4. The ordinary cyclic triple and its character refinements
+## 4. Cyclic triples and character refinements
 
-The [ordinary cyclic-triple theorem](ordinary_cyclic_triple_finite_bad_cosets.md)
+The [cyclic-triple theorem](ordinary_cyclic_triple_finite_bad_cosets.md)
 supplies finite bad support, with zero excluded, for n=3,h=2,p=5.
 Here κ=3, r=2 and V=32/3, so
 
     ∑_z δ_z²≤10.                                          (6)
 
-On Q=E² the group Γ=⟨R,−1⟩≅C6 has zero as its only fixed point.
-Every bad orbit has size at least2; thus δ≥3 would cost at least18,
-and a free orbit with δ=2 would cost24. Therefore δ≤2, every
-defect-two point lies in ker(R−1)∪Q[2], and at most one free
-defect-one orbit remains.
+The audited [low-genus theorem](low_genus_raynaud_cosets.md),
+applied to the genus-four curve U in characteristic five, gives
+\(\delta_z=1\) for every bad two-dimensional coset. This excludes
+the former defect-two alternatives everywhere, not only on free
+symmetry orbits. On Q=E² the group Γ=⟨R,−1⟩≅C6 preserves the
+bad set; each free orbit has six points. By (6) there can be at
+most one such orbit. The low-genus step itself does not require
+ordinary U. The full-kernel extension of the finiteness theorem now
+removes that assumption as well. Its product-coefficient refinement
+also removes ordinary Y; the numerical budget is unchanged.
 
 For a finite prime-to-five character subgroup Λ⊂P(k), the associated
 actual abelian cover b_Λ:W_Λ→U has

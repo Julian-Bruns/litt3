@@ -96,7 +96,7 @@ def run(args):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--data',default='/Users/julian/Documents/litt3-computation-data/backup-genus-two')
+    parser.add_argument('--data',default=Path(__file__).resolve().parents[2].parent/'litt3-computation-data/backup-genus-two')
     parser.add_argument('--output',default='Research/computations/backup_genus_two_cubic_tangents.json')
     parser.add_argument('--seconds',type=int,default=60)
     parser.add_argument('--verify',action='store_true')

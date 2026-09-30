@@ -1,8 +1,11 @@
 # A whole prime-to-five commensurability class with coreless common covers
 
-Let k=bar(F5) and C:v^2=t^6+3. Suppose C1 and C2 are each prime-to-five
-etale commensurable with C, in the explicit
-[common-source sense](../../Definitions/prime_to_p_etale_commensurability.md).
+Let k=bar(F5), let C:v^2=t^6+3, and let C1,C2 be smooth projective
+connected hyperbolic curves. Suppose for i=1,2 there is a
+smooth projective connected curve D_i with actual finite etale maps
+D_i->C and D_i->C_i, both with geometric Galois-closure group of order
+prime to five. This is the prime-to-five etale commensurability
+condition; prime-to-five covering degree alone is insufficient.
 Then there exists a smooth projective connected curve Z and finite etale maps
 
     C1 <- Z -> C2
@@ -26,7 +29,4 @@ source equation or a numerical degree bound for Z.
 
 Version2: strengthened from covers of C to its entire restricted
 commensurability class, by descending endpoints after specialization.
-Status: audited prose, PASS2026-09-07, /root/bolza_coreless_family_audit,
-including Version2. Four nonblocking exposition suggestions were incorporated.
-[Audit metadata](../../Research/audits/BOLZA_CORELESS_FAMILY_AUDIT_2026_09_07.md).
 [Proof](../../Proofs/examples/bolza_prime_to_five_coreless_neighborhood.md).

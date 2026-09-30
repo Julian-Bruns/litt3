@@ -11,7 +11,7 @@ import zipfile
 from sage.all import GF, PolynomialRing, matrix, vector
 
 root=Path(__file__).resolve().parents[3]
-data_root=Path('/Users/julian/Documents/litt3-computation-data')
+data_root=root.parent/'litt3-computation-data'
 octic=Path(sys.argv[1])
 P=PolynomialRing(GF(5),'H');H=P.gen();K0=GF(625,'t',modulus=H**4+4*H**3+H**2+4*H+3);t=K0.gen()
 R=PolynomialRing(K0,'X');X=R.gen()

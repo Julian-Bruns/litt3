@@ -1,0 +1,26 @@
+inline Poly theta9(F q){Poly p; p.c.resize(4);
+p.c[0]+=F::code(338818)*q.pow(0);
+p.c[0]+=F::code(320014)*q.pow(1);
+p.c[0]+=F::code(263740)*q.pow(2);
+p.c[0]+=F::code(152130)*q.pow(3);
+p.c[0]+=F::code(24841)*q.pow(4);
+p.c[0]+=F::code(374677)*q.pow(5);
+p.c[0]+=F::code(101244)*q.pow(6);
+p.c[0]+=F::code(180310)*q.pow(7);
+p.c[0]+=F::code(112251)*q.pow(8);
+p.c[1]+=F::code(165656)*q.pow(0);
+p.c[1]+=F::code(238036)*q.pow(1);
+p.c[1]+=F::code(210916)*q.pow(2);
+p.c[1]+=F::code(223639)*q.pow(3);
+p.c[1]+=F::code(269347)*q.pow(4);
+p.c[1]+=F::code(373688)*q.pow(5);
+p.c[1]+=F::code(26841)*q.pow(6);
+p.c[2]+=F::code(149128)*q.pow(1);
+p.c[2]+=F::code(260029)*q.pow(2);
+p.c[2]+=F::code(333629)*q.pow(3);
+p.c[2]+=F::code(312967)*q.pow(4);
+p.c[2]+=F::code(24107)*q.pow(5);
+p.c[2]+=F::code(120503)*q.pow(6);
+p.c[3]+=F::code(52247)*q.pow(2);
+p.c[3]+=F::code(302834)*q.pow(3);
+p.trim();return p;}

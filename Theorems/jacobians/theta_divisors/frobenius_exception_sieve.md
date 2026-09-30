@@ -1,6 +1,6 @@
 # Frobenius localization and explicit stabilization of finite theta exceptions
 
-Version4, 2026-09-14.
+Version6, 2026-09-16.
 
 Let Q/F_q be an abelian variety, F its q-power Frobenius, and Γ a
 finite group of geometric group automorphisms normalized by Frobenius:
@@ -56,9 +56,9 @@ by an integer annihilator of ker ρ(k); e always suffices.
 No bad-locus finiteness for arbitrary U/Y is asserted.
 
 Apply this to a connected cyclic étale triple U/Y in characteristic
-five, with Y ordinary of genus two and U ordinary. On scalar twists
+five, with Y of genus two and both ordinariness types allowed. On scalar twists
 put J=J(U^(1)), A=im J(Y^(1)), Q=J/A, and let B be the bad cosets for
-the Raynaud divisor. Choose F_q defining the cover, the ordinary
+the Raynaud divisor. Choose F_q defining the cover, the
 elliptic E, and the product identification Q≅E^2 with
 R=[[-1,-1],[1,0]]. Then
 
@@ -93,3 +93,6 @@ membership does not imply badness. Finite bad support is essential;
 no generic-moduli torsion assertion or common-cover exclusion follows.
 [Proof](../../../Proofs/jacobians/theta_divisors/frobenius_exception_sieve.md).
 The audits are scoped to those two lemmas, not the full theorem.
+Version6 uses the independently audited extension of cyclic-triple
+finiteness to nonordinary Y and U; the arithmetic formulas work for
+both ordinary and supersingular E.

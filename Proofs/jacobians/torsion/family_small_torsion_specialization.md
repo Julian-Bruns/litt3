@@ -95,7 +95,7 @@ The one-endpoint power rule of cartier_generator makes that one-form
 a Cartier eigenform, contradicting Section4.
 
 A clump with two-point image has e=d by er=2d, hence forces a core
-by shared_tensor_core. A three-point image would give e+d=5d/3,
+by the canonical marked quotient theorem. A three-point image would give e+d=5d/3,
 an integer divisible by5, forbidden by cartier_generator. Thus the
 remaining image size is at least four.
 

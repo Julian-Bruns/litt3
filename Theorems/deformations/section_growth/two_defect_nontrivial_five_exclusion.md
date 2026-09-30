@@ -31,5 +31,4 @@ This does not exclude trivial five-action, higher source defects,
 non-Galois Y-legs, dormant matches, or the absence of a matching active
 connection. The original unmarked common-cover problem is UNSOLVED.
 
-[Proof](../../../Proofs/deformations/section_growth/two_defect_nontrivial_five_exclusion.md) ·
-[application audit](../../../Research/audits/UNIFORM_CYCLIC_MAIN_APPLICATION_AUDIT_2026_09_10.md).
+[Proof](../../../Proofs/deformations/section_growth/two_defect_nontrivial_five_exclusion.md).

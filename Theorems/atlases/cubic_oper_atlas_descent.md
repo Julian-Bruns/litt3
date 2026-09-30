@@ -51,9 +51,8 @@ in the normalized census algebra R=F5[T]/(P), deg P=19290, certified by
 
     d(T)e(T)+P(T)f(T)=1.
 
-The [retained certificate](../../Research/computations/uniform_q_frame_certificate.json)
-and [single verifier](../../scripts/atlases/verify_cubic_oper_frame.py)
-give the exact identity. The six invariant representatives are outside
+The [verifier](../../scripts/atlases/verify_cubic_oper_frame.py)
+checks this identity. The six invariant representatives are outside
 this frame statement.
 
 Version3. Author proof with exact computational evidence. The uniform

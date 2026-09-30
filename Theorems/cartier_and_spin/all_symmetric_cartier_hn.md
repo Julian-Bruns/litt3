@@ -31,6 +31,3 @@ The symmetric-power statement is independent of the full-tensor
 formula; no direct-summand assertion is made when n≥p.
 
 [Proof](../../Proofs/cartier_and_spin/all_symmetric_cartier_hn.md).
-Audited prose: PASS, `/root/cartier_symmetric_power_hn_major_audit`,
-2026-09-06, no breaking objection;
-[audit record](../../routes/global/audits/ALL_CARTIER_SYMMETRIC_HN_AUDIT_2026_09_06.md).

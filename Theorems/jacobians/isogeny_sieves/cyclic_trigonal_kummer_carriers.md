@@ -35,6 +35,4 @@ finite/injective parametrization of the two-torsion classes.
 For the fixed X, the [complete carrier sieve](backup_double_cover_exclusion.md)
 enumerates the required labels and excludes the backup Jacobian factor.
 
-[Proof](../../../Proofs/jacobians/isogeny_sieves/cyclic_trigonal_kummer_carriers.md) ·
-[Audit](../../../Research/audits/DEGREE2_KUMMER_DICTIONARY_AUDIT_2026_09_11.md) ·
-[Exact checker](../../../scripts/arithmetic/check_degree2_kummer_carrier.py).
+[Proof](../../../Proofs/jacobians/isogeny_sieves/cyclic_trigonal_kummer_carriers.md) · [Exact checker](../../../scripts/arithmetic/check_degree2_kummer_carrier.py).

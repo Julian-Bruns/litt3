@@ -43,8 +43,5 @@ stable sieve space for every oper.
 
 Version2. Status: proved. The exact complex is the fixed-curve
 specialization of the [intrinsic Bol complex](../projective_connections/dormant_bol_complex.md),
-whose local exactness passed a bounded medium audit on2026-09-14.
-The full-tensor derivation passed the independent audit by
-cohomological_ode_comparison_audit,2026-09-07.
-[Audit metadata/reference](../../Research/audits/COHOMOLOGICAL_ODE_COMPARISON_2026_09_07.md).
+whose local exactness is proved there.
 [Proof](../../Proofs/atlases/dormant_differential_projection.md).

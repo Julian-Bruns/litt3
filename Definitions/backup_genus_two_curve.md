@@ -8,7 +8,8 @@ be the smooth projective model of
 Write O for its unique point at infinity, theta=O_C(O), and
 eta=du/v. Then genus(C_alpha)=2 and div(eta)=2O, as established in the
 [arithmetic proof](../Proofs/curve_arithmetic/backup_curve_arithmetic.md).
-This is the small BACKUP partner for the fixed genus-nine X. It is
-distinct both from the original genus-twenty-five Y and from the current
-high-prime-degree genus-two partner. No common-cover exclusion is part
-of this definition; current target selection belongs to Research/STATE.md.
+This is the backup partner for the fixed genus-nine \(X\) in
+[fixed_pair](fixed_pair.md). It differs from both the original
+genus-twenty-five \(Y\) and the
+[selected main genus-two partner](../Theorems/quotient_geometry/bounded_atlas_partner_finiteness.md).
+No common-cover exclusion is part of this definition.

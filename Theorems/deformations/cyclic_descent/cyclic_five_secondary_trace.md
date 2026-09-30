@@ -33,5 +33,4 @@ The result determines constancy, not the constant's value or its
 nonvanishing. In particular it supplies no universal scalar multiplier
 between this secondary trace and epsilon_C(C2).
 
-[Proof](../../../Proofs/deformations/cyclic_descent/cyclic_five_secondary_trace.md) ·
-[Scoped audit](../../../Research/audits/CYCLIC5_FOURTH_LIFT_AUDIT_2026_09_11.md).
+[Proof](../../../Proofs/deformations/cyclic_descent/cyclic_five_secondary_trace.md).

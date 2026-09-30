@@ -198,4 +198,6 @@ result={'field':'F5[a]/(a^2+4a+2)','beta':str(beta),'odd_curve':str(F),
         'B_coboundary_generators_checked':int(B.relations.dimension()),
         'reduction_checks':{key:int(value) for key,value in reduction_stats.items()},
         'precision':int(precision),'status':'exact finite Laurent computation; no solver run'}
-Path('Research/computations/genus_two_intrinsic_tensor.json').write_text(json.dumps(result,indent=2)+'\n')
+output=Path('Research/computations/genus_two_intrinsic_tensor.json')
+output.parent.mkdir(parents=True,exist_ok=True)
+output.write_text(json.dumps(result,indent=2)+'\n')

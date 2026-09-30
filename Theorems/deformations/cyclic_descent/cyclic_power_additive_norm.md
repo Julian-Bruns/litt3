@@ -43,7 +43,4 @@ corrections. No W_(a+1)(k)-semilinearity of L is required.
 This is a module theorem. A geometric application must supply the
 actual additive comparison and account for its nonlinear repair terms.
 
-[Proof](../../../Proofs/deformations/cyclic_descent/cyclic_power_additive_norm.md) ·
-[General-order audit](../../../Research/audits/GENERAL_CYCLIC_ORDER_AUDIT_2026_09_13.md) ·
-[Original preparation audit](../../../Research/audits/CYCLIC_POWER_ADDITIVE_PREPARATION_AUDIT_2026_09_10.md) ·
-[Exact diagnostic](../../../scripts/deformations/cyclic/verify_general_cyclic_order.py).
+[Proof](../../../Proofs/deformations/cyclic_descent/cyclic_power_additive_norm.md) · [Exact diagnostic](../../../scripts/deformations/cyclic/verify_general_cyclic_order.py).

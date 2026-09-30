@@ -81,16 +81,16 @@ elements and gives the asserted degree of a level reaching that
 value. A separate nonempty generic open is used for each Lambda.
 
 
-## 3. Application to ordinary cyclic triples
+## 3. Application to cyclic triples
 
 Let U/Y be a connected cyclic etale triple in characteristic five,
-with Y ordinary of genus two and U ordinary. On scalar Frobenius
+with Y of genus two and no ordinariness hypotheses. On scalar Frobenius
 twists put J=J(U^(1)), A=im J(Y^(1)), Q=J/A. Let B be the set of
 cosets of A entirely contained in the Raynaud divisor Theta_U.
 
 The [finite-fiber theorem](ordinary_cyclic_triple_finite_bad_cosets.md)
 and [polarization budget](polarization_bad_fiber_bound.md)
-give Q=E^2, an ordinary elliptic E, and
+give Q=E^2, an elliptic E of either ordinariness type, and
 
     R=[[-1,-1],[1,0]],       R^2+R+1=0,
     sum_(z in B) delta_z^2 <=10,                    0 not in B. (2)

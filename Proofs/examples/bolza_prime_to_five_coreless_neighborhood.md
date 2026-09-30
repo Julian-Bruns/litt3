@@ -146,7 +146,8 @@ successive wreath products of the prime-to5 leg and endpoint closures.
 
 Only D->C was lifted in Section4. The given maps D->Ci are composed on
 the SPECIAL fiber; this proof makes no simultaneous-lifting assertion
-about them. It covers the entire equivalence class in the definition,
+about them. It covers the entire class specified by actual prime-to-five
+common-source witnesses,
 not just curves admitting a map to C. The same argument, if the Wi->Ci
 monodromy hypothesis is omitted, still constructs a coreless etale span,
 but then makes no prime-to5 assertion for its final leg closures.

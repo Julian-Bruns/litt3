@@ -1,7 +1,8 @@
 # Proof: direct Wronskian atlas reconstruction
 
 [Statement](../../Theorems/atlases/direct_wronskian_atlas.md).
-We use the gluing and normalization theorem `scalar_hermitian_reconstruction`,
+We use the gluing and normalization construction in the
+[scalar-frame proof](scalar_hermitian_reconstruction.md),
 but replace its auxiliary bounded frames by the quotient's own horizontal
 frame. All assertions involving inverse Frobenius are pointwise over k.
 
@@ -88,7 +89,7 @@ whose off-diagonal differs from t^-1 by a regular function. Changing
 from oper to horizontal frame gives H^T, independently of pole bounds
 used to construct a different frame in the older theorem.
 
-Now apply Sections4--6 of `scalar_hermitian_reconstruction` using (5).
+Now apply Sections4--6 of the scalar-frame proof using (5).
 They glue the actual rank-three bundle and nonsingular Frobenius form,
 remove the identification parameters by changing the quotient presentation,
 and give lambda=-rho32(delta eta) and exactly (2). Conversely an atlas

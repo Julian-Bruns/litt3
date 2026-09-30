@@ -1,0 +1,23 @@
+#include "source.hpp"
+using Ex=std::array<int,4>;
+struct MP {std::map<Ex,F> a;MP(){}explicit MP(F v){if(v)a[{0,0,0,0}]=v;}static MP mon(Ex e,F v=1){MP p;if(v)p.a[e]=v;return p;}bool zero()const{return a.empty();}void put(Ex e,F v){if(!v)return;F nv=ff::add(a[e],v);if(nv)a[e]=nv;else a.erase(e);}};
+MP operator+(MP a,const MP&b){for(auto [e,v]:b.a)a.put(e,v);return a;}
+MP operator-(MP a){for(auto &kv:a.a)kv.second=ff::neg(kv.second);return a;}
+MP operator-(const MP&a,const MP&b){return a+(-b);}
+MP operator*(const MP&a,const MP&b){MP c;for(auto [e,v]:a.a)for(auto [f,w]:b.a){Ex g;for(int i=0;i<4;i++)g[i]=e[i]+f[i];c.put(g,ff::mul(v,w));}return c;}
+MP smul(MP a,F v){for(auto &kv:a.a)kv.second=ff::mul(kv.second,v);if(!v)a.a.clear();return a;}
+MP mpow(MP a,int n){MP r(1);while(n){if(n&1)r=r*a;n>>=1;if(n)a=a*a;}return r;}
+MP mshift(MP a,int dw,F c){MP b;for(auto [ee,v]:a.a){Ex e=ee;e[1]+=dw;b.put(e,ff::mul(c,v));}return b;}
+constexpr int SN=7;using Ser=std::array<MP,SN>;
+Ser sadd(Ser a,const Ser&b){for(int i=0;i<SN;i++)a[i]=a[i]+b[i];return a;}
+Ser sscale(Ser a,F c){for(auto &p:a)p=smul(p,c);return a;}
+Ser sshift(const Ser&a,int n){Ser b;for(int i=n;i<SN;i++)b[i]=a[i-n];return b;}
+Ser sprod(const Ser&a,const Ser&b){Ser c;for(int i=0;i<SN;i++)for(int j=0;i+j<SN;j++)c[i+j]=c[i+j]+a[i]*b[j];return c;}
+Ser spow(Ser a,int n){Ser r;r[0]=MP(1);while(n){if(n&1)r=sprod(r,a);n>>=1;if(n)a=sprod(a,a);}return r;}
+Ser liftpoly(const Poly&a){Ser s;for(int j=0;j<SN;j++)s[j]=MP(a.at(j));return s;}
+Ser linf(const std::vector<Source>&bs,const std::array<MP,7>&v,int g,int pole){Ser s;for(int k=0;k<7;k++){auto a=infinity(bs[k][g],pole,SN);for(int j=0;j<SN;j++)s[j]=s[j]+smul(v[k],a.at(j));}return s;}
+Ser symbolicF(const std::vector<Source>&bs,const std::array<MP,7>&v){auto aa=sscale(linf(bs,v,0,35),3),bb=sscale(linf(bs,v,1,46),2),cc=linf(bs,v,2,57);Ser rho;rho[0]=smul(v[2],ff::div(2,epsilon));for(int j=1;j<SN;j++){MP d=sadd(sadd(sprod(aa,spow(rho,2)),sprod(bb,rho)),cc)[j];rho[j]=smul(-d,ff::inv(ff::mul(2,epsilon)));}auto check=sadd(sadd(sprod(aa,spow(rho,2)),sprod(bb,rho)),cc);for(auto p:check)if(!p.zero())throw std::runtime_error("symbolic rho equation");Ser left=sadd(liftpoly(infinity(Curve(Q),57,SN)),sshift(spow(rho,5),2));Ser right=sadd(linf(bs,v,3,70),sshift(sadd(sprod(aa,spow(rho,3)),sscale(sprod(bb,spow(rho,2)),2)),2));return sadd(sprod(left,right),liftpoly(infinity(Curve(ppow(t,3))*Curve::mon(0,10),127,SN)));}
+std::array<MP,3> split_kernel(const MP&p){std::array<MP,3>v;for(auto [ee,c]:p.a){Ex e=ee;if(e[2]<0||e[3]<0||e[2]+e[3]>1)throw std::runtime_error("not affine in kernel coordinates");int j=e[2]?1:e[3]?2:0;e[2]=e[3]=0;v[j].put(e,c);}return v;}
+void jsonpoly(std::ostream&o,const MP&p){o<<"[";bool first=true;for(auto [e,v]:p.a){if(!first)o<<",";first=false;o<<"["<<e[0]<<","<<e[1]<<","<<v<<"]";}o<<"]";}
+int main(int argc,char**argv){try{ff::init();init_source();auto bs=read_affine(argc>1?argv[1]:"inputs/source_affine.dat");MP h=MP::mon({1,0,0,0}),w=MP::mon({0,1,0,0}),winv=MP::mon({0,-1,0,0}),k=MP::mon({0,0,1,0}),l=MP::mon({0,0,0,1});F zc=ff::div(2,epsilon);MP e=smul(w*w,ff::neg(ff::mul(Cd,zc)))+smul(winv,ff::neg(ff::div(eta,ff::mul(24,zc))));MP f=smul(w*w,ff::neg(ff::inv(epsilon)))+smul(mpow(w,5),ff::neg(ff::mul(ff::div(8,24),ff::pow(zc,5))));std::array<MP,7>v{MP(1),h,w,e,f,k,l};auto Fs=symbolicF(bs,v);auto A4=split_kernel(Fs[4]),A5=split_kernel(Fs[5]);MP det=A4[1]*A5[2]-A4[2]*A5[1];if(det.a!=MP::mon({0,2,0,0},299619).a)throw std::runtime_error("symbolic determinant not prescribed");MP K=mshift(A4[2]*A5[0]-A5[2]*A4[0],-2,ff::inv(299619));MP L=mshift(A5[1]*A4[0]-A4[1]*A5[0],-2,ff::inv(299619));v[5]=K;v[6]=L;auto Fsol=symbolicF(bs,v);for(int j=0;j<6;j++)if(!Fsol[j].zero())throw std::runtime_error("symbolic F0..5 nonzero");MP expect;Poly az=a0poly();for(int i=0;i<=az.deg();i++)expect=expect+MP::mon({0,3*i-3,0,0},ff::div(az.at(i),ff::pow(299619,2)));expect=expect+MP::mon({1,1,0,0},ff::div(299833,ff::pow(299619,2)))+MP::mon({1,4,0,0},ff::div(232505,ff::pow(299619,2)));if(!(Fsol[6]-expect).zero())throw std::runtime_error("symbolic F6 formula mismatch");std::cout<<"symbolic_det 299619*w^2\nsymbolic_F0_through_F5 zero\nsymbolic_F6_matches_input yes\nkernel_coordinate_term_counts "<<K.a.size()<<" "<<L.a.size()<<"\n";std::ofstream out(argc>2?argv[2]:"inputs/chart_laurent.json");out<<"{\n\"format\":\"terms [h_exponent,w_exponent,K_code]\",\n\"e\":";jsonpoly(out,e);out<<",\n\"f\":";jsonpoly(out,f);out<<",\n\"kernel0\":";jsonpoly(out,K);out<<",\n\"kernel1\":";jsonpoly(out,L);out<<",\n\"F6\":";jsonpoly(out,Fsol[6]);out<<"\n}\n";std::cout<<"global_symbolic_chart PASS\n";
+}catch(const std::exception&e){std::cerr<<"ERROR "<<e.what()<<"\n";return 1;}return 0;}

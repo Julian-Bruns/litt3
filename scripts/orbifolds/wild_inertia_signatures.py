@@ -5,7 +5,7 @@ The commands verify the single-jump, integral-jump, denominator-five and
 first-layer sieves. A shared scaled carry engine handles integral and
 fractional upper jumps; its parameter bounds are proved in
 Proofs/quotient_geometry/local_actions/wild_jump_atlas_bounds.md.
-The first-layer ranges are proved in Proofs/shared_tensors/fixed_x_two_branch_bound.md.
+The first-layer ranges are proved in Proofs/quotient_geometry/local_actions/fixed_x_two_branch_bound.md.
 All outputs are necessary signatures; they do not construct covers.
 """
 import argparse

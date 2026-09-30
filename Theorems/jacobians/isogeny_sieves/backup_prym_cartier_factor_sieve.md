@@ -40,6 +40,4 @@ Together with the actual carrier reduction, failure of all five divisors
 excludes that carrier from the degree-two backup case. It does not exclude
 an untested carrier, construct a second map, or solve the common-cover problem.
 
-[Proof](../../../Proofs/jacobians/isogeny_sieves/backup_prym_cartier_factor_sieve.md) ·
-[Focused audit](../../../Research/audits/PRYM_CARTIER_FACTOR_SIEVE_AUDIT_2026_09_11.md) ·
-[Exact Cartier implementation](../../../scripts/arithmetic/fixed_x_prym_cartier.py).
+[Proof](../../../Proofs/jacobians/isogeny_sieves/backup_prym_cartier_factor_sieve.md) · [Exact Cartier implementation](../../../scripts/arithmetic/fixed_x_prym_cartier.py).

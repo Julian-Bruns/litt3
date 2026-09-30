@@ -57,5 +57,4 @@ duality. Neither this theorem nor that model decides(N5). The cyclic
 even-defect restriction is already contained in the stronger
 [section-growth theorem](../section_growth/symplectic_p_cover_section_growth.md).
 
-[Proof](../../../Proofs/deformations/cyclic_descent/neutral_degree_five_obstruction_structure.md) ·
-[Scoped audit](../../../Research/audits/N5_RETURNED_PARTIAL_AUDIT_2026_09_10.md).
+[Proof](../../../Proofs/deformations/cyclic_descent/neutral_degree_five_obstruction_structure.md).

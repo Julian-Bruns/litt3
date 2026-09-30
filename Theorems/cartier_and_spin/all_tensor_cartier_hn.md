@@ -55,9 +55,3 @@ arbitrary subquotients or imply the separate all-symmetric-power
 theorem.
 
 [Proof](../../Proofs/cartier_and_spin/all_tensor_cartier_hn.md).
-The full-tensor formula was audited PASS by
-/root/all_cartier_tensor_hn_major_audit, 2026-09-06
-([record](../../routes/global/audits/ALL_CARTIER_TENSOR_HN_AUDIT_2026_09_06.md)).
-The operator model and both characteristic-five filtrations were audited
-PASS by /root/cartier_endomorphism_hn_major_audit, 2026-09-06
-([record](../../routes/global/audits/CARTIER_ENDOMORPHISM_HN_AUDIT_2026_09_06.md)).

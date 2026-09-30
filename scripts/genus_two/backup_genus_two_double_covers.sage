@@ -7,6 +7,7 @@ The sum of quotient pullbacks is an isogeny of power-of-two degree;
 hence this actual genus-three etale double cover is ordinary iff both
 C and the elliptic quotient y^2=B are ordinary. Infinity is included.
 """
+import argparse
 import itertools
 import json
 from pathlib import Path
@@ -34,6 +35,9 @@ out={'status':'all15 connected geometric etale double covers are ordinary; autho
      'branch_points':[None if b is None else encode(b) for b in branches],
      'infinity_index':5,'covers':rows,
      'proof_scope':'Actual genus-three double covers of the backup C only; no arbitrary etale-cover ordinarity claim.'}
-target=Path(__file__).resolve().parents[2]/'Research/computations/backup_genus_two_double_covers.json'
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output',default=str(Path(__file__).resolve().parents[2]/'Research/computations/backup_genus_two_double_covers.json'))
+target=Path(parser.parse_args().output)
+target.parent.mkdir(parents=True,exist_ok=True)
 target.write_text(json.dumps(out,indent=1,default=int)+'\n')
 print(json.dumps({'output':str(target),'ordinary_double_covers':15},indent=1,default=int),flush=True)

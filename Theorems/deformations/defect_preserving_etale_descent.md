@@ -67,7 +67,6 @@ witnesses, higher defects, dormant matches and spans with no matching
 connection are not excluded. The full common-cover problem is open.
 
 Version5,2026-09-14: Part1 holds in every odd characteristic, using
-Mochizuki's Verschiebung and trace elimination; bounded medium audit
-PASS. The Witt and counting applications retain their earlier scope.
-[Proof](../../Proofs/deformations/defect_preserving_etale_descent.md) ·
-[Scoped audit](../../Research/audits/DEFECT_PRESERVING_ETALE_DESCENT_AUDIT_2026_09_10.md).
+Mochizuki's Verschiebung and trace elimination. The Witt and
+counting applications retain their earlier scope.
+[Proof](../../Proofs/deformations/defect_preserving_etale_descent.md).

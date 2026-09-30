@@ -41,20 +41,32 @@ coefficient. The norm and addition identities give
 with deg A6=6 and deg B3≤3. On z^6=h6 the primitive lines are again
 z eta and Unew eta/z. Their Cartier arrows are nonzero exactly when
 [u^14](A6 F²)≠0; the B3 du term has zero Cartier image. The
-[cyclic certificate](../../../Research/computations/backup_genus_two_cyclic_covers.json)
-checks the full coefficient identity and a polynomial inverse in all15
-length40 algebras. Lower characters are the already ordinary quotients.
+[torsion generator](../../../scripts/genus_two/backup_genus_two_torsion.sage),
+[double-cover checker](../../../scripts/genus_two/backup_genus_two_double_covers.sage)
+and [cyclic checker](../../../scripts/genus_two/backup_genus_two_cyclic_covers.sage)
+reconstruct the complete length-40 norm algebra, all fifteen ordinary
+doubles, the full coefficient identity and a polynomial inverse in
+each of the fifteen length-40 algebras. From the repository root,
+run them in this order:
+
+```sh
+sage scripts/genus_two/backup_genus_two_torsion.sage --output ../litt3-computation-data/backup_abelian_ordinarity/torsion.json
+sage scripts/genus_two/backup_genus_two_double_covers.sage --output ../litt3-computation-data/backup_abelian_ordinarity/doubles.json
+sage scripts/genus_two/backup_genus_two_cyclic_covers.sage --include-six --seconds 600 --torsion ../litt3-computation-data/backup_abelian_ordinarity/torsion.json --doubles ../litt3-computation-data/backup_abelian_ordinarity/doubles.json --output ../litt3-computation-data/backup_abelian_ordinarity/cyclic.json
+```
+
+The required final output has completed status, forty connected cubic covers,
+fifteen six-torsion translates, and zero bad primitive-character
+pairs. Lower characters are the already ordinary quotients.
 This proves ordinarity for every degree1,2,3,6 cyclic cover, and hence
 for the maximal exponent-six cover by the displayed character sum.
-The [original small-packet audit](../../../Research/audits/BACKUP_CORED_COMPLETION_AUDIT_2026_09_11.md)
-checked this geometry and its complete finite tests.
 
 For m=4, order-dividing-two points are covered by the same complete
 double-cover argument. The command
 
     sage scripts/genus_two/verify_genus_two_four_torsion.sage \
       --parameter-polynomial 1,1,0,1 \
-      --output Research/computations/backup_maximal_four_ordinarity.json
+      --output ../litt3-computation-data/backup_abelian_ordinarity/four_torsion.json
 
 uses the actual backup parameter, not the different cubic specialization
 in the ordinary-family proof. In F5[a]/(a^6+a^4+4a^3+a^2+2), it
@@ -77,14 +89,9 @@ An étale Galois p-group cover preserves ordinariness by
 Ordinariness descends to every separable intermediate by injectivity
 of pullback on Cartier-zero differentials.
 
-Finally, let W be the genuine Galois closure of the actual B-leg of
-a proposed span. W/P is an abelian cover of the allowed exponent,
-dominated by the corresponding maximal cover, so it is ordinary.
-Then W is ordinary. But W->Z->X is an actual finite etale map and
-pulls a nonzero Cartier-zero differential on nonordinary X back
-injectively. This is a contradiction. Both original legs have been
-retained throughout.
-
-This extends the main pair's exponent-four obstruction to the backup
-and adds exponent six using the separately audited complete cyclic
-tests. It does not finish the coreless problem.
+Every abelian cover of exponent dividing four or six is a quotient
+of the corresponding maximal cover, so ordinariness descends to it.
+The Crew theorem then gives ordinariness after any connected etale
+five-group cover. The stronger actual-span monodromy exclusion is
+proved by the [unit-root theorem](../isogeny_sieves/five_by_abelian_unit_root_exclusion.md),
+which includes the exponent-four and exponent-six quotients.

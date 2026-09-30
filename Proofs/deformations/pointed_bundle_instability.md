@@ -253,11 +253,5 @@ This does NOT identify a curve-deformation tangent with the nonordinary
 oper defect on Z. The latter can be nonzero even when the simultaneous
 curve-deformation tangent is zero. The later
 [negative-extension theorem](two_leg_negative_extensions.md) owns
-the stronger Witt-lifting consequences. The local FL boundary is recorded separately in
-[FL_CONTACT_TWO_BOUNDARY](../../Research/notes/deformations/fl_contact_two_boundary.md).
+the stronger Witt-lifting consequences.
 None of these results excludes the characteristic-five span itself.
-
-The common pointed-oper calculation and its all-odd-characteristic
-applications have bounded medium audit PASS,
-/root/audit_extension_fiber_scope,2026-09-14. Earlier scoped audits
-are linked from the statement.

@@ -24,5 +24,4 @@ This theorem does not exclude coreless common covers, and does not
 assert nonexistence of a full simultaneous lift of a coreless span.
 The original unmarked common-cover problem remains unresolved.
 
-[Proof and exact case map](../../../Proofs/quotient_geometry/endpoint_exclusions/backup_cored_span_exclusion.md) ·
-[assembly audit](../../../Research/audits/BACKUP_CORED_COMPLETION_AUDIT_2026_09_11.md).
+[Proof and exact case map](../../../Proofs/quotient_geometry/endpoint_exclusions/backup_cored_span_exclusion.md).

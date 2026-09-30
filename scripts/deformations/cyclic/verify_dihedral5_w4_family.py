@@ -13,6 +13,26 @@ from pathlib import Path
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 
+def verify_source(root, name, expected):
+    """Retain old evidence across the documented import-only relocation."""
+    path=root/name
+    if path.exists() and sha(path)==expected:
+        return dict(path=name,normalization='none',sha256=expected)
+    allowed={'scripts/compute_dihedral5_w4.py','scripts/neutral5_witt_algebra.py',
+             'scripts/neutral5_gmp_convolution.py'}
+    assert name in allowed,('unrecognized historical source',name)
+    path=root/'scripts/deformations/cyclic'/Path(name).name
+    text=path.read_text()
+    prelude='import sys\nfrom pathlib import Path\nsys.path.insert(0, str(Path(__file__).resolve().parents[3]))\n'
+    restored=text.replace(prelude,'')
+    for module in ['neutral5_witt_algebra','neutral5_gmp_convolution']:
+        restored=restored.replace('from scripts.deformations.cyclic.'+module+' import',
+                                  'from '+module+' import')
+    assert hashlib.sha256(restored.encode()).hexdigest()==expected,('source changed beyond relocation',name)
+    return dict(path=str(path.relative_to(root)),normalization='remove exact import relocation only',
+                current_sha256=sha(path),historical_sha256=expected)
+
+
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('directory')
@@ -22,7 +42,7 @@ def main():
     raw=json.loads((data/'models/summary.json').read_text())
     labels={r['label'] for r in raw['rows'] if r['neutral']}
     assert len(raw['rows'])==15 and len(labels)==14
-    results={};hashes={}
+    results={};hashes={};source_checks={}
     for name in ['census','changed_frobenius']:
         summary=json.loads((data/name/'summary.json').read_text())
         assert summary['status']=='PASS' and summary['expected']==14
@@ -30,7 +50,8 @@ def main():
         results[name]=rows
         for label,row in rows.items():
             fp=row['fingerprint'];assert fp['model_sha256']==sha(data/'models'/f'{label}.json')
-            assert fp['sources']=={n:sha(root/n) for n in fp['sources']}
+            for n,h in fp['sources'].items():
+                source_checks[n]=verify_source(root,n,h)
             case=data/name/label
             assert row['status']=='PASS' and row['returncode']==0 and row['nonzero']
             assert len(row['output_hashes'])==5
@@ -66,7 +87,7 @@ def main():
         if p.exists():audits[str(p.relative_to(root))]=sha(p)
     output=dict(status='PASS 28 full comparisons; all fourteen scalars nonzero and unchanged',
                 directory=str(data),table=table,output_files=len(hashes),output_hashes=hashes,
-                independent_audit_receipts=audits,
+                independent_audit_receipts=audits,source_checks=source_checks,
                 scope='Exact finite family of actual D10 quotients of one obstructed F625 pair; all-b and closure consequences require the separately audited geometric lemmas.')
     Path(args.output).write_text(json.dumps(output,indent=2)+'\n')
     print(json.dumps({k:v for k,v in output.items() if k!='output_hashes'},indent=2))

@@ -65,5 +65,4 @@ bijectivity of Psi_Y. Thus endpoint obstruction and extra source-kernel
 directions are both retained. If Psi_X is also bijective, the residual
 space ker barPsi is isomorphic to ker Psi_Z, not automatically zero.
 
-[Proof and precise induction](../../Proofs/deformations/forced_canonical_witt_endpoint.md) ·
-[Scoped audit](../../Research/audits/FORCED_CANONICAL_WITT_ENDPOINT_AUDIT_2026_09_09.md).
+[Proof and precise induction](../../Proofs/deformations/forced_canonical_witt_endpoint.md).

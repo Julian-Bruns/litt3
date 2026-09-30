@@ -8,13 +8,10 @@ Frobenius operations give all the assertions.
 
 ## 1. Frobenius descent and twisted Cartier
 
-If d=pm, the canonical connection on omega^(pm) sends s to a matched
-section of weight d+1, hence to zero. Its horizontal sections are
-p-th powers of weight-m tensors, by
-[Katz, *Nilpotent connections and the monodromy theorem*, Theorem5.1](https://web.math.princeton.edu/~nmk/old/nilpconn.pdf#page=17).
-Equivalently, in a rational frame, da=0 gives a=b^p; valuations make
-the root regular. The two endpoint roots agree on Z since their
-p-th powers agree. This contradicts primitive weight d, so p∤d.
+The prime-to-p assertion is now included in Section4 of the
+[canonical-intersection proof](../shared_tensors/matched_section_rings.md):
+the canonical Frobenius connection and primitive weight rule force
+any weight divisible by p to have an actual shared pth root.
 
 In Katz's notation let F:C→C^(p) be relative Frobenius.
 [His Theorem7.2](https://web.math.princeton.edu/~nmk/old/nilpconn.pdf#page=27)
@@ -63,6 +60,6 @@ also when p divides q. Rescaling reduces to the previous paragraph.
 
 If beta has simple zeros, then s_X has uniform zero multiplicity d.
 Equality through both étale maps gives the same multiplicity for s_Y.
-For p>=5 the [shared simple-root theorem](../shared_tensors/shared_tensor_core.md)
+For p>=5 the [canonical marked quotient theorem](../quotient_geometry/canonical_marked_quotient.md)
 then forces a core, a contradiction. This last use explains the p>=5
 qualification; the preceding Cartier constraints hold for every prime.

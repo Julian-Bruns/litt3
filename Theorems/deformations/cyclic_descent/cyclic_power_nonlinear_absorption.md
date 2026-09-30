@@ -40,7 +40,4 @@ The proof uses binomial interpolation and integral degree estimates.
 It is an algebraic result for (*); identifying such an equation with
 an actual geometric comparison is a separate obligation.
 
-[Proof](../../../Proofs/deformations/cyclic_descent/cyclic_power_nonlinear_absorption.md) ·
-[General-order audit](../../../Research/audits/GENERAL_CYCLIC_ORDER_AUDIT_2026_09_13.md) ·
-[Original audit](../../../Research/audits/CYCLIC_POWER_NONLINEAR_ABSORPTION_AUDIT_2026_09_10.md) ·
-[Second-order carry audit](../../../Research/audits/CYCLIC_UNRESTRICTED_NORM_AUDIT_2026_09_13.md).
+[Proof](../../../Proofs/deformations/cyclic_descent/cyclic_power_nonlinear_absorption.md).

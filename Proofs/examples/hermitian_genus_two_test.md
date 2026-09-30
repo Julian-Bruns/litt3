@@ -68,19 +68,40 @@ or that ordinary Jacobians control common covers, is used.
 
 ## Complete small oper calculation
 
-The local regularity argument at every finite branch point and both
-infinities, the complete three-variable curvature ideal, and the exact
-Schwarzian identification are in
-[the computation proof](../../Research/notes/genus_two/genus_two_hermitian_opers.md).
+Put \(F=t^6+3\) and \(\eta=dt/v\). The half-density potential of
+\(a\,dt\) is \(r_a=-(a'/a)'/2+(a'/a)^2/4\). At finite branch points
+use \(v\) as parameter: \(\eta\) is a unit multiple of \(dv\), so its
+potential is regular. At either infinity, \(u=1/t\) gives
+\(\eta=\pm u(1+3u^6)^{-1/2}du\) up to a constant. Its potential
+has pole \(2u^{-2}\), canceled by \(3t^4\eta^2\). The three
+quadratics \(\eta^2,t\eta^2,t^2\eta^2\) form a basis of
+\(H^0(C,\omega_C^2)\), so a regular base connection and all its
+regular translates are
+\[
+r=\frac{4t^4}{F^2}+\frac{b_0+b_1t+b_2t^2}{F}.
+\]
+With \(n=4t^4+(b_0+b_1t+b_2t^2)F\), dormancy is the vanishing of
+\[
+F^2n''-4FF'n'+(6(F')^2-2FF'')n-3n^2.
+\]
 Its short [Sage script](../../scripts/atlases/opers/genus_two_hermitian_opers.sage) checks
-the five points in the original curvature equation and rank3 Jacobians,
+the full coefficient ideal, its five points and rank3 Jacobians,
 and checks the quotient potential in k(H), not just at sample points.
 The lexicographic ideal is
 
     (b0+b2^2, b1^2-2b2^3-1, b1 b2, b2^4-2b2).
 
-It has length5 and the five points stated in the theorem. The actual
-quotient gives (0,1,0). To check its full automorphism orbit without a
+It has length5 and the five points stated in the theorem. To identify
+the actual quotient oper, work on \(H:x^6+y^6+1=0\) with \(D=d/dx\).
+The natural horizontal plane \(x^5A+y^5B+C=0\) has potential
+\(r_x=0\); here \(Dy=-x^5/y^5\) and \(D^2y=0\). Under \(t=t(x)\)
+the potential is
+\[
+r_t=\frac{D^3t/Dt-(3/2)(D^2t/Dt)^2}{2(Dt)^2}.
+\]
+The script verifies this identity in \(k(H)\) against the five
+candidate potentials, with unique match \((b_0,b_1,b_2)=(0,1,0)\).
+To check its full automorphism orbit without a
 classification theorem, let B={b in F25:b^6=2}. Fix three distinct
 members of B, and send them to each of the120 ordered triples of
 distinct members of B. These determine every possible branch-preserving

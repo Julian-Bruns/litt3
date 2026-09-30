@@ -72,6 +72,11 @@ cyclic. These are statements about the original source's deck group.
 The stronger p-group-closure prohibition when m=1 follows from
 Section2: downstairs r is either zero or one, and both are impossible.
 
+More generally, the [cyclic block theorem](cyclic_symplectic_blocks.md)
+applied to the actual quotient by any p-power-order deck element makes
+an odd m at least that element's order. This adds the odd m<p conclusion
+without a section-preserving or Galois-closure assumption.
+
 ## 4. The character must be quadratic
 
 Suppose h is Galois and h0(C,E)=0, h0(T,h*E)=1. Its deck group G acts
@@ -251,11 +256,10 @@ for each corresponding connected cyclic5 cover Y_1->Y,
 
     ell=h0(Y_1,E_(r_1) tensor L_1)<5.
 
-In fact ell is2 or4. In a formal coordinate on mu5 in which inversion
-is e->-e (for example u-u^-1 with u^5=1), an invariant trivialization
-makes the theta equation even. Its nonzero order below5 is positive
-and even. The single-entry minimal cohomology complex gives that order
-as ell, retaining the whole length-five subgroup scheme.
+In fact ell is2 or4, directly by the
+[cyclic block theorem](cyclic_symplectic_blocks.md), applied to the
+canonical-valued symplectic bundle F and this actual cyclic cover.
+This uses the whole group algebra and no scalar-only normalization.
 
 Let C_L->Y be the bad double and C_(L,1)=C_L times_Y Y_1. It is
 connected, since degrees2 and5 are coprime. The character decomposition

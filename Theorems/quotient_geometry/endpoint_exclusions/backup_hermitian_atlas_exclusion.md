@@ -20,11 +20,5 @@ X,C_alpha using the existing orbifold classification. It does NOT exclude
 all smaller cored spans, or any arbitrary coreless span. It does not say
 that C_alpha and H cannot have some common etale cover.
 
-Audit: PASS, fresh Astra-medium auditor
-`/root/audit_backup_atlas_bridge_medium`,2026-09-08; no material objections.
-Scope includes geometric candidate exhaustion, twisted bundle/section/
-cohomology completeness, finite precision, all original charts, and
-certificate composition. Prose/code audit.
-[Audit](../../../Research/audits/BACKUP_ATLAS_BRIDGE_AUDIT_2026_09_08.md).
 
 [Proof and exact certificates](../../../Proofs/quotient_geometry/endpoint_exclusions/backup_hermitian_atlas_exclusion.md).

@@ -96,6 +96,41 @@ assert a.pa(a.pm(A, D), a.scale(a.pm(B, C), 4)) == a.pc(58)
 assert a.mul(a.mul(57, 58), 107) == 44
 assert all(not p for j in (39, 40, 41, 42) for p in L[j])
 
+# Explicit odd translation basis, independently using the previously
+# reconstructed actual-AS coefficient table (not the new return's engine).
+delta_image = [a.pa(a.scale(x, 117), y) for x, y in zip(L[32], L[33])]
+assert not any(delta_image)
+assert [p for p, e in zip(L[32], qe) if sum(e) == 7] == [{}, {}, {}, a.pc(107)]
+assert [p for p, e in zip(L[33], qe) if sum(e) == 7] == [{}, {}, {}, a.pc(72)]
+assert a.add(a.mul(117, 107), 72) == 0
+kernel = d["kernel_basis"]
+delta = [a.add(a.mul(117, x), y) for x, y in zip(kernel[32], kernel[33])]
+translations = [delta, kernel[39], kernel[40], kernel[41]]
+exps = [tuple(e) for e in d["exponents"]]
+expected_translations = [
+    {(4, 1, 4): 117, (4, 2, 3): 1, (4, 3, 2): 41, (4, 4, 1): 35},
+    {(3, 4, 4): 1}, {(4, 3, 4): 1}, {(4, 4, 3): 1},
+]
+for v, expected in zip(translations, expected_translations):
+    assert {e: c for e, c in zip(exps, v) if c} == expected
+assert len(rref(translations)[1]) == 4
+assert a.mul(a.mul(37, 65), 44) == 91
+
+# This verifies only the scalar algebra of the second tame involution.
+# Its actual marked geometric action is audited separately.
+for j, v in enumerate(kernel):
+    parity = tuple(d["kernel_pivots"][j])[0] % 2
+    assert all(not c or e[0] % 2 == parity for e, c in zip(exps, v))
+for j in (1, 2, 11, 12, 15, 16, 27, 30, 31, 39):
+    assert all(not c or e[0] % 2 for e, c in zip(exps, kernel[j]))
+for v, sign in zip(translations, (-1, 1, -1, -1)):
+    assert all(not c or (-1 if e[0] % 2 == 0 else 1) == sign for e, c in zip(exps, v))
+terminal_signs = [-1 if e[0] % 2 == 0 else 1 for e in qe if sum(e) == 7]
+assert terminal_signs == [-1, 1, 1, -1]
+fifth_projection_signs = [-1 if e[0] % 2 == 0 else 1
+                          for e in ((0, 0, 1), (0, 1, 0), (1, 0, 0), (0, 3, 0))]
+assert fifth_projection_signs == [-1, -1, 1, -1]
+
 report = {
     "result": "PASS",
     "parameter_ring": "F125[alpha,beta], with both variables unrestricted",
@@ -111,6 +146,16 @@ report = {
     "all_K11_relative_images_zero": True,
     "odd_low_rows": low,
     "even_rows": even_values,
+    "odd_translation_basis": [
+        [{"exponents": list(e), "coefficient": c} for e, c in sorted(v.items())]
+        for v in expected_translations
+    ],
+    "odd_translation_basis_dimension": 4,
+    "constant_odd_rank_six_minor": 91,
+    "second_involution_translation_signs": [-1, 1, -1, -1],
+    "second_involution_terminal_signs": terminal_signs,
+    "second_involution_fifth_projection_signs": fifth_projection_signs,
+    "second_involution_geometric_interpretation": "Separate actual-marking/reference audit required; this script verifies scalar identities only.",
     "conclusion": "For the actual constructed H*, Z4 intersect (H*+K9) = H*+ker L_H*, an eight-dimensional affine scalar family. No fifth-lift assertion.",
 }
 print(json.dumps(report, indent=2))

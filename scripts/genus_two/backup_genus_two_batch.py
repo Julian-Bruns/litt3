@@ -22,7 +22,7 @@ import time
 from scripts.atlases.native.atlas_native_batch import live_group_members,stop as stop_owned_group
 
 ROOT=Path(__file__).resolve().parents[2]
-OUT=Path('/Users/julian/Documents/litt3-computation-data/backup-genus-two')
+OUT=ROOT.parent/'litt3-computation-data/backup-genus-two'
 LOCK=threading.Lock()
 GROUPS=set()
 PROCESSES={}

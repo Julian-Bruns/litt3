@@ -1,6 +1,8 @@
 # Intrinsic extension-incidence data
 
-ID: `intrinsic_atlas_incidence_data`. Work over an algebraically closed
+ID: `intrinsic_atlas_incidence_data`. Use the
+[Frobenius-form atlas convention](frobenius_form_atlases.md):
+F_C:C→C is absolute Frobenius. Work over an algebraically closed
 field of characteristic5. Let C be smooth projective, g>=2, with
 5 not dividing2g-2. Put T=omega^-1 and choose the nonsplit extension
 

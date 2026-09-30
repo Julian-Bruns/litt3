@@ -1,6 +1,6 @@
 # Symplectic defect growth and cyclic refinements of a simple zero
 
-Version6,2026-09-14. Let C be a smooth projective connected curve over
+Version7,2026-09-16. Let C be a smooth projective connected curve over
 an algebraically closed field of odd characteristic p, and let E have
 a perfect alternating pairing E tensor E->omega_C. Put r=h0(C,E).
 
@@ -24,6 +24,10 @@ a perfect alternating pairing E tensor E->omega_C. Put r=h0(C,E).
    nontrivial p-subgroup P of Deck(T/C) satisfies d(P)<=m-1. Thus
    m=1 makes the deck group prime to p; m=2 makes all its p-subgroups
    cyclic. This bounds actual deck groups, not Galois-closure monodromy.
+   The stronger [cyclic block theorem](cyclic_symplectic_blocks.md)
+   gives: if m is odd, every p-power-order deck element has order at
+   most m. Thus EVERY odd m<p makes the actual deck group prime to p,
+   including m=3 in characteristic five.
 
 4. If h is Galois, r=0 and m=1, its section has a nontrivial quadratic
    deck character. There is a distinguished etale double C_L->C with
@@ -104,6 +108,4 @@ arbitrarily deep in finite Psi images after refinement without entering
 the stable image or repairing the original diagram's nonliftability.
 This supplies no example realizing a nonzero mixed difference.
 
-[Proof](../../../Proofs/deformations/section_growth/symplectic_p_cover_section_growth.md) ·
-[First-socle audit](../../../Research/audits/FIRST_SOCLE_SECTION_FORMULA_AUDIT_2026_09_13.md) ·
-[Cyclic-tower audit](../../../Research/audits/SIMPLE_ZERO_CYCLIC_TOWERS_AUDIT_2026_09_10.md).
+[Proof](../../../Proofs/deformations/section_growth/symplectic_p_cover_section_growth.md).

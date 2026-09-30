@@ -69,5 +69,4 @@ branches remain. The full common-cover problem is UNSOLVED.
 
 Version 2, 2026-09-14: the representation theorem holds for every p>0;
 the characteristic-five geometric conclusions are unchanged.
-[Proof](../../../Proofs/deformations/section_growth/frobenius_defect_order_bound.md) ·
-[Focused audit](../../../Research/audits/FROBENIUS_DEFECT_ORDER_AUDIT_2026_09_10.md).
+[Proof](../../../Proofs/deformations/section_growth/frobenius_defect_order_bound.md).

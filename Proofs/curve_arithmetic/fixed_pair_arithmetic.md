@@ -1,4 +1,4 @@
-# Proof: geometry and Jacobians of the fixed pair
+# Proof: geometry of the fixed curve and original genus-25 partner
 
 [Statement](../../Theorems/curve_arithmetic/fixed_pair_arithmetic.md).
 Use the defining models X:y³=F(x) and Y:z²=L(t)(L(t)−1)(t−4),

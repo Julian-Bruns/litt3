@@ -1,9 +1,12 @@
-# Proof: finite bad cosets for ordinary cyclic triples
+# Proof: finite bad cosets and the full Frobenius kernel
 
 [Canonical statement](../../../Theorems/jacobians/theta_divisors/ordinary_cyclic_triple_finite_bad_cosets.md).
 Finiteness audited PASS by /root/ordinary_triple_finite_bad_fibers_check,
 2026-09-05; grid bound checked by /root/elliptic_grid_divisor_bound.
 [Audit scope](../../../routes/global/audits/ORDINARY_CYCLIC_TRIPLE_FINITE_BAD_FIBERS_AUDIT.md).
+The [Version4 audit and Version5 addendum](../../../Research/audits/CYCLIC_TRIPLE_FULL_KERNEL_AUDIT_2026_09_16.md)
+pass the extensions to nonordinary U and Y, the full-kernel coefficient
+extraction, the supersingular case, and the characteristic-five Prym data.
 Section 1 cites the Prym product theorem; its characteristic-five
 applicability and explicit polarization matrix are explained there.
 
@@ -61,66 +64,192 @@ hence a union of horizontal fibers, impossible with off-diagonal b≠0.
 Thus its grid support has size≤n+2(n−1)=3n−2, or≤2n if it has
 no vertical grid fiber.
 
-## 3. Ordinary U forces the bad-fiber locus finite
+## 3. Extracting a Dirac section from a prime-to-p product isogeny
 
-NOW assume U ordinary. For π:J→Q define
-B={z:π^(-1)(z)⊂Θ_U}. Its complement π(J∖Θ_U) is open since π
-is smooth. Also0∉B: the C3 character decomposition restricts Θ_U
-to a union of three proper translated theta divisors on J(Y).
-Ordinary U gives0∉Θ_U, so Θ_U|P is effective of class4H by
-[Tong, Corollary1.2.3.2](https://arxiv.org/pdf/0712.2046).
+Here is the general coefficient argument. Suppose addition is a
+prime-to-p isogeny nu:A times P->J, and nu^*L is the external
+product L_A boxtimes L_P. Let sigma be a section of L whose
+divisor has the full Dirac property. Then there is a section tau
+of L_P whose divisor has the Dirac property on P.
 
-Suppose B has curve components. Their inverse images under π are
-irreducible divisor components of Θ_U. Sum the curves with their
-ACTUAL multiplicities to obtain D_Q≠0, invariant under R and
-inversion and avoiding0. The residual
+Indeed nu identifies the entire Verschiebung kernel of A times P
+with K_J, since its kernel has order prime to p. Trivialize the
+lines on the finite kernel schemes. The restriction of nu^*sigma
+is then a nonzero scalar times the tensor of the two Dirac
+functions:
+\[
+(\nu^*\sigma)|_{K_A\times K_P}=t_A\otimes t_P.
+\tag{3}
+\]
+Each t is zero on nonidentity local factors and spans the socle
+at the identity. The tensor has exactly this property on the
+product, whose identity local ring is the tensor of the two
+Artinian complete-intersection rings. Thus (3) retains the
+infinitesimal scheme structure, even when neither factor is ordinary.
 
-    D_P=Θ_U|P−ρ^*D_Q
+Choose a linear functional ell on H^0(K_A,L_A|K_A) with ell(t_A)=1.
+By the external-product description and the Kunneth isomorphism,
+\[
+\tau=(\ell\circ\operatorname{res}_{K_A}\otimes1)(\nu^*\sigma)
+\in H^0(P,L_P),\qquad \tau|_{K_P}=t_P.
+\tag{3a}
+\]
+It is nonzero and has the required property. Moreover, if nu^*sigma
+is divisible by a section pulled back from P, then tau is divisible
+by that same section: coefficient extraction commutes with this
+multiplication. No surjectivity of a restriction map on global
+sections is being asserted.
 
-is effective. Write D_Q's Hermitian class M. The equation R^†MR=M
-and nefness of effective divisors give
+In our situation A and P are orthogonal for the Jacobian
+polarization, their restricted polarization types are(1,3), and
+addition nu has degree9. Thus its degree is prime to5, and the
+Raynaud line pulls back to an external product, with the P-factor
+of class4H. Orthogonality removes the mixed line-bundle class;
+any degree-zero factor also splits as an external product. Apply
+(3a) to obtain an effective Dirac divisor D_* on P of class4H.
 
-    M=[[a,b],[b^†,a]], b+b^†=[a],
-    N=4H−HMH=[[8−3a,3a−4−3b],[3a−4−3b^†,8−3a]]≥0.
+If the base Y is ordinary, t_A can be evaluated at the identity
+of its etale kernel. This recovers the former argument by actual
+restriction to P. Coefficient extraction is what removes this
+last ordinariness hypothesis. In general D_* need not equal
+Theta_U|P, and that actual restriction is allowed to vanish
+identically.
 
-Here a is a positive integer, so a=1 or2. Arbitrary End(E), including
-quaternionic endomorphisms, is allowed.
+For pi:J->Q, let B be the locus of fibers entirely contained in
+Theta_U. It is closed because pi is smooth and hence open.
+Moreover0 is not in B: the C3 character decomposition restricts
+the cohomology to a sum of three proper translated theta families
+on J(Y). A finite union of proper closed sets is still proper.
+No ordinariness is needed for this last observation.
 
-If a=1, nefness of M gives0<deg b≤1 and b²−b+1=0. Hence E has
-an order-three automorphism. In characteristic5 its short Weierstrass
-model is y²=x³+c, with Hasse invariant0, contradicting ordinarity.
-If a=2, put u=b−1, so u+u^†=0 and
+## 4. The only possible numerical class of a curve of bad fibers
 
-    N=[[2,−1−3u],[−1−3u^†,2]],   1+9deg(u)≤4.
+Suppose B contains a curve. Sum all its curve components with
+their ACTUAL multiplicities as pullback components of Theta_U,
+to obtain D_Q nonzero. This divisor is invariant under R and
+inversion, and avoids0. The residual
+\[
+D_P=D_*-\rho^*D_Q
+\tag{4}
+\]
+is effective by the divisibility clause of Section3: pi nu equals
+rho composed with projection to P. Thus every coefficient retains
+all the pulled-back bad components with their actual multiplicities.
+This avoids any assumption that the original theta restricts
+properly to P.
 
-Integrality of endomorphism degree forces u=0. Consequently
+Write M for the Hermitian class of D_Q in the product principal
+identification of Q with E squared. Invariance and effectivity
+of D_Q and D_P give
+\[
+M=\begin{pmatrix}a&b\\b^\dagger&a\end{pmatrix},\qquad
+b+b^\dagger=[a],\qquad
+N=4H-HMH=
+\begin{pmatrix}8-3a&3a-4-3b\\3a-4-3b^\dagger&8-3a\end{pmatrix}
+\succeq0.
+\tag{5}
+\]
+Here a is a positive integer, hence a=1 or2. These are numerical
+polarization identities; arbitrary End(E), including a
+quaternion order, is allowed.
 
-    D_Q≡L_Q,   D_P≡L_P.                                   (3)
+If a=1, nefness forces b to be a unit of degree1, so M has rank
+one. An effective divisor of this class on an abelian surface
+is a sum of translates of its elliptic connected stabilizer.
+Pulling one of these components back along pi would give a
+translated abelian divisor component of Theta_U. This is excluded
+by the [abelian-component theorem](raynaud_abelian_components.md).
+Thus the a=1 possibility is impossible even when E is supersingular.
 
-If D_Q contains a vertical V_a, R-invariance forces
-V_a+{y=a}+{x+y=−a}≤D_Q. The left side already has class L_Q;
-the effective numerically trivial difference is zero. Inversion
-preserves the unique vertical component, so a=−a. Avoidance of0
-makes a NONZERO two-torsion. This three-component divisor misses
-every odd-primary torsion grid. If there is no vertical component,
-Section2 bounds its n×n grid support by2n.
-No classification of other components is required.
+If a=2, write u=b-1. Then u+u^dagger=0 and nefness gives
+\[
+N=\begin{pmatrix}2&-1-3u\\-1-3u^\dagger&2\end{pmatrix},
+\qquad 1+9\deg(u)\le4.
+\tag{6}
+\]
+Integrality of endomorphism degree forces u=0. We conclude
+\[
+D_Q\equiv L_Q,\qquad D_P\equiv L_P,
+\tag{7}
+\]
+with the two classes from (2).
 
-Take `S=E[5](k)`, of size5 since E ordinary, on the scalar-twisted E.
-These are precisely its Verschiebung-kernel points; the same grid
-G=S² is used in P and Q and ρ=H permutes it, since det H=3.
-For every0≠α∈G, F_U^*α=O_U and the twisted Frobenius sequence
-injects k into H⁰(B_{1,U}⊗α). Thus Θ_U|P contains all24 nonzero points.
-But D_Q meets G in≤10 points (or zero in the vertical case), while
-D_P meets it in≤13 by(3) and Section2. The residual equation would
-cover24 mandatory points with≤23, contradiction.
+## 5. The ordinary elliptic case
 
-Thus B has no curve component. Being a proper closed subset of the
-projective surface Q, it is finite. Every other coset has a nonempty
-open good locus, including geometric points of arbitrary torsion order.
-Neither emptiness of B nor the theorem without ordinary U follows.
+If E is ordinary, take
+S=E[5](k), of size5. These are the relative Verschiebung-kernel
+points on the scalar-twisted elliptic curve. The same grid S
+squared is used in P and Q; rho=H permutes it since det(H)=3.
+The Dirac property makes D_* contain its24 nonzero points.
 
-## 4. Generic defects stabilize in unbounded abelian degree
+The divisor D_Q has no vertical component: otherwise its pullback
+would again be an abelian component of Theta_U. Its class has
+vertical and horizontal degrees2, so the grid count of Section2
+gives at most10 points on D_Q. The class of D_P also has these
+two degrees and nonzero off-diagonal term; that same section gives
+at most13 grid points, even if it has a vertical component.
+Equation (4) would cover24 points with at most23, a contradiction.
+This is the earlier audited grid argument, with the a=1 case
+excluded by the more general component theorem.
+
+## 6. The supersingular elliptic case
+
+If E is supersingular, K_E is a local group scheme of length5.
+In a formal parameter its ideal is (t^5). Thus, at the origin,
+\[
+\mathcal O_{K_P}=k[[u,v]]/(u^5,v^5),\qquad
+\operatorname{Soc}(\mathcal O_{K_P})=k\,u^4v^4.
+\tag{8}
+\]
+The support of K_Q is just0. Since D_Q avoids0, its pullback
+equation is a unit on all of K_P. Dividing the Dirac equation
+of D_* by this unit makes D_P a Dirac divisor on P.
+In particular its equation restricts to a nonzero multiple of
+the socle in (8), not just a function vanishing at the origin.
+
+Restrict this equation to each of the coordinate elliptic curves
+E times{0} and{0}times E. It vanishes on their full length-five
+Verschiebung kernels: u^4v^4 restricts to zero on either axis.
+But D_P has degree2 on each axis. A nonzero section of a
+degree-two line on an elliptic curve cannot vanish on a
+length-five subscheme. Both axes must therefore be components
+of D_P.
+
+After removing the two axes, the remaining effective divisor
+has class
+\[
+\begin{pmatrix}1&-1\\-1&1\end{pmatrix}.
+\tag{9}
+\]
+This is the pullback of a degree-one class by subtraction
+E squared->E. Its effective representatives are single translates
+of the diagonal. For example, quotient by the connected
+stabilizer shows they are sums of fibers; intersection degree
+one with an axis makes the sum a single fiber with multiplicity one.
+Thus D_P is the two axes plus one translated diagonal.
+
+If that diagonal misses0, a local equation has leading term a
+nonzero multiple of uv. If it contains0, its leading term is a
+nonzero multiple of uv(u-v). In either case this term survives
+modulo (u^5,v^5) and has degree2 or3. It cannot equal the nonzero
+socle term of degree8 required in (8). This is the contradiction
+that the geometric point count could not supply.
+
+There are no curve components of B in either case. It is a proper
+closed subset of the projective surface Q and is therefore finite.
+The proof permits every ordinariness type of both Y and U.
+Only the characteristic-five numerical bound and the degree-three
+etale cyclic covering structure enter.
+
+## 7. Generic defects stabilize in unbounded abelian degree
+
+The [low-genus theorem](low_genus_raynaud_cosets.md) strengthens
+the possible generic defects: every bad translate of the
+two-dimensional inherited Jacobian in this genus-four curve has
+defect exactly one. This uses characteristic five but does not
+use ordinariness, and neither does the finiteness argument above.
+Thus the sums below count exceptional characters, each with
+multiplicity one.
 
 For α∈P(k), put δ_α=generic_L h⁰(B_{1,U}⊗α⊗q^(1)*L).
 It is positive exactly when ρ(α)∈B, hence for finitely many α.
@@ -131,7 +260,7 @@ For any finite prime-to-five character subgroup Λ⊂P(k), construct
 its connected abelian etale character cover on U^(1), then untwist
 to b_Λ:W_Λ→U. Character decomposition gives
 
-    generic_L h⁰(B_{1,W_Λ}⊗(q b_Λ)^(1)*L)=∑_(α∈Λ) δ_α.          (4)
+    generic_L h⁰(B_{1,W_Λ}⊗(q b_Λ)^(1)*L)=∑_(α∈Λ) δ_α.          (10)
 
 The generic open is a finite intersection for EACH Λ; no one point
 is assumed good for infinitely many covers. The right side is uniformly

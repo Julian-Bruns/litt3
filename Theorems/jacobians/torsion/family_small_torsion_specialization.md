@@ -34,7 +34,5 @@ collection of allowed prime-to-characteristic torsion components.
 If the relative Abel curve misses the remaining torsion in one fiber,
 its intersection is supported over finitely many base points.
 
-Version3,2026-09-13. The Hasse test and resultant bound have a
-[bounded audit](../../../Research/audits/HASSE_TORSION_BOUND_AUDIT_2026_09_13.md).
-The inherited Cartier/clump arguments remain author prose.
+Version3,2026-09-13.
 [Proof](../../../Proofs/jacobians/torsion/family_small_torsion_specialization.md).

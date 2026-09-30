@@ -16,5 +16,4 @@ of equally labeled points. Thus any actual curve atlas of a source
 orbifold composes to an actual atlas of the target, with degree
 multiplied by2,3 or6. No Galois hypothesis on that curve atlas is needed.
 
-[Proof](../../../Proofs/quotient_geometry/tame_covers/orbifold_symmetry_quotients.md) ·
-[bounded audit](../../../Research/audits/TRIANGLE_SYMMETRY_QUOTIENT_AUDIT_2026_09_13.md).
+[Proof](../../../Proofs/quotient_geometry/tame_covers/orbifold_symmetry_quotients.md).

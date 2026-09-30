@@ -15,7 +15,7 @@ specified q=p^r. This is semilinear over a perfect field K, and linear
 over K=F_q. A closed point P has residue degree d_P=[kappa(P):K] and
 local length ell_P=length(A_P); it contributes d_P*ell_P to D.
 Over a perfect field it gives d_P geometric points, each of multiplicity
-ell_P. The p-power map over F_q need not be F_q-linear.
+ell_P. The absolute pth-power map over F_q need not be F_q-linear.
 
 Standard monomials of a monomial ideal are the monomials outside it;
 their number is its colength, possibly infinite. These conventions

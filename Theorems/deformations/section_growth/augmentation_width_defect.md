@@ -41,5 +41,4 @@ the alternating defect-bundle pairing, not from an arbitrary matrix
 model. It gives a lower bound, not an exact Heisenberg defect or a
 common-cover exclusion.
 
-[Proof](../../../Proofs/deformations/section_growth/augmentation_width_defect.md) ·
-[Audit](../../../Research/audits/AUGMENTATION_WIDTH_DEFECT_AUDIT_2026_09_11.md).
+[Proof](../../../Proofs/deformations/section_growth/augmentation_width_defect.md).

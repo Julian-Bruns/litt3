@@ -1,10 +1,28 @@
-# Proof and evidence for the selected cyclic-five fourth obstruction
+# Supporting calculation: the rational cyclic-five orbit
 
-[Statement](../../../Theorems/deformations/cyclic_descent/cyclic_five_fourth_obstruction.md).
+This is the selected-cover input to the
+[all-six theorem](../../../Theorems/deformations/cyclic_descent/all_cyclic_five_fourth_obstructions.md).
+Use the original marked genus-two datum of
+[the base obstruction](../explicit_genus_two_witt_obstruction.md)
+over \(\mathbf F_{625}\), with
+\(t^4+4t^3+t^2+4t+3=0\), \(\mu=4+4t\),
+\(z=u^2/v\), and \(\eta=du/v\).
+The actual cyclic cover \(T\to C\) is
+\[
+w_U^5-Hw_U=vQ(u),\qquad w_O=w_U-(z^{-3}+tz^{-1}),
+\quad H=3t^2+t+3,
+\]
+\[
+Q=u^5+(3t+3)u^4+(t^2+4t+3)u^3
+ +(3t^2+4t+1)u^2+(3t^2+3t+3)u+t^2+4t+2.
+\]
+Retain the original pulled-back marked second tuple and full
+periodic datum. The compatible third repairs form the affine plane
+\(\Xi=\xi_*+d\nu_d+b\nu_b\) described in the primary input.
 
 ## 1. Original cover, marking, and complete first plane
 
-The AS equation and shift in the statement have a regular infinity
+The AS equation and shift above have a regular infinity
 remainder. Its exact rational numerator/denominator, the full15x15
 Hodge matrix, and all first-lift vectors are in
 [the primary inputs](../../../Research/computations/cyclic5_small_field_fourth_inputs.json).

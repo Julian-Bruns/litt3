@@ -100,7 +100,4 @@ For the stronger Witt-lifting consequences, see
 [two_leg_negative_extensions](two_leg_negative_extensions.md).
 These deformation restrictions do not exclude a span.
 
-[Proof](../../Proofs/deformations/pointed_bundle_instability.md) ·
-[Pointed-bundle audit](../../Research/audits/POSITIVE_POINTED_BUNDLE_AUDIT_2026_09_13.md) ·
-[Main-proof audit](../../Research/audits/JOINT_TANGENT_CLUMP_DORMANCY_AUDIT_2026_09_09.md) ·
-[Intrinsic-identification audit](../../Research/audits/JOINT_INTRINSIC_OPER_AUDIT_2026_09_09.md).
+[Proof](../../Proofs/deformations/pointed_bundle_instability.md).

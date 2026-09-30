@@ -101,7 +101,7 @@ counts=[sum(bool(c) for c in row) for row in H.rows()]
 log('all72 cubic coefficient rows ready',sum(counts),'terms')
 factor_data=None
 if args.factor:
-    receipt=Path('/Users/julian/Documents/litt3-computation-data/pencil-bezout-first-20260908-v2/certificate.json')
+    receipt=Path(__file__).resolve().parents[2].parent/'litt3-computation-data/pencil-bezout-first-20260908-v2/certificate.json'
     pd=json.loads(receipt.read_text())
     assert pd['source_sha256']['wronskian_quadratic_bezout']==hashlib.sha256(raw[1]).hexdigest()
     assert pd['all528_quadratic_matrices_replayed'] and pd['constant_cech_scale']=='4'

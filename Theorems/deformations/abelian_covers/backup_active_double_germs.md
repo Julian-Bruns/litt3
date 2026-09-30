@@ -1,6 +1,6 @@
 # All active two-torsion defects and abelian germs at the backup
 
-Version 1, 2026-09-11. Complete exact calculation and fresh bounded
+Version 2, 2026-09-23. Complete exact calculation and fresh bounded
 mathematical audit PASS.
 
 Let B=C_alpha, alpha^3+alpha+1=0 over characteristic five. All 85
@@ -23,15 +23,10 @@ maximal-abelian pro-five defect module has scalar formal relation
     UV+W^4   for the ten branch-support pairs;
     UV+W^2   for the two additional mixed-support pairs.
 
-For q=5^n, n>=0, the actual maximal balanced (Z/q)^3 cover of D
-therefore has indigenous defect respectively
+The [abelian defect classification](abelian_defect_flags.md) gives
+the defect of every abelian five-cover of these twelve doubles,
+including the balanced covers. The germ calculation alone does not
+force an arbitrary common source to dominate one of them or supply
+a higher-Witt obstruction.
 
-    (7q^2-3)/4,          (3q^2-1)/2.
-
-Every further actual etale cover dominating it has at least this
-defect. These are one-leg statements: they do not force an arbitrary
-common source to dominate these covers, treat arbitrary unbalanced
-subcovers, or supply a higher-Witt obstruction.
-
-[Proof and exact table](../../../Proofs/deformations/abelian_covers/backup_active_double_germs.md) ·
-[Audit](../../../Research/audits/BACKUP_ALL_BAD_DOUBLE_GERMS_AUDIT_2026_09_11.md).
+[Proof and exact table](../../../Proofs/deformations/abelian_covers/backup_active_double_germs.md).

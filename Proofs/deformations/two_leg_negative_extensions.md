@@ -1,4 +1,4 @@
-# Proof: positive pointed bundles attached to a first Witt lift
+# Proof: shared pointed extensions, clump support and first Witt lifts
 
 [Statement](../../Theorems/deformations/two_leg_negative_extensions.md).
 
@@ -70,6 +70,33 @@ where e>=1 or e=infinity. Section2 rules out a W2 point, so e=1.
 Every fixed etale refinement has the same deformation ring. This is a
 first-obstruction statement, not a nonexistence theorem for its special
 fiber.
+
+### The converse is a normalization test on the actual shared class
+
+For each curve put T=omega^-p with its canonical connection. Since
+H0(T)=H0(T tensor omega)=0, the degree-one de Rham group embeds in
+H1(T) with image ker(nabla:H1(T)->H1(T tensor omega)). The Cartier
+sequence(2) is functorial for the two actual etale maps, with its
+final term identified with H0(O)=k. A shared underlying class in
+J_p^nabla therefore has unique horizontal extension lifts on the
+two endpoints, and these lifts match on Z. Their final scalar is
+the same, giving chi:J_p^nabla->k.
+
+If chi vanishes on such a class, sequence(2) gives unique endpoint
+preimages under Frobenius in H1(T_(C^(1))). Their pullbacks agree:
+Frobenius is injective on negative H1 also on Z. Thus ker chi is
+exactly F*J_1^(1), and the displayed sequence is exact.
+
+Normalize the nonzero FL scalar in Section2 to1. The torsor
+isomorphism there identifies each endpoint class with a marked W2
+lift of its Frobenius twist. Pull the two lifts back by the original
+etale maps. Their FL classes on Z agree, so the torsor isomorphism
+on Z identifies the two source lifts. This identification preserves
+the marking and is unique since H0(Z,T_Z)=0. Hence BOTH maps exist
+on that same source lift. Witt-Frobenius base change gives the stated
+convention for the original span. Conversely any simultaneous lift
+has scalar1 by Section2. This proves the exact fiber description
+and the claimed iff, without assuming a common indigenous structure.
 
 ## 3. Genus two: one pointed-oper calculation at every index
 
@@ -167,27 +194,206 @@ nilpotent. A ring such as W(k)[[z]]/(5^e) shows why neither this nor
 the parameter bound implies finite length or removes a vertical
 component; no realization of this example by a span is asserted.
 
-### A W2 lift and a joint tangent cannot coexist
+## 5. The complete instability alternatives and support at the clump
 
-Assume both exist. The pointed tangent theorem gives a unique reduced
-endpoint clump of size r=p^a-1, a>=1, and says its intrinsic r_s is
-DORMANT. Section3 applied to the W2 lift therefore cannot have n=0,
-which would make that SAME intrinsic r_s active. Thus n>=1, and
-uniqueness plus the two reduced divisor formulas give a=n+1 and r>=p²−1.
+Let D_X,D_Y be the reduced images of the unique positive clump,
+r=deg D_Y, and take a nonzero class in J_m. Its pointed extensions
+and all their Frobenius pullbacks are nonsplit by Section1. Initial
+strict semistability is impossible: a rank-two extension of lines of
+the same degree is strongly semistable, contradicting the positive
+pointed-bundle principle. Thus the initial bundles are either unstable
+or stable, with their common status detected after actual etale pullback.
 
-Apply the weighted bound with m=p: dim J_p<=1. On the other hand, a
-nonzero joint tangent on the Frobenius-twisted span pulls back to a
-nonzero element of J_p. Its image in(2)'s final k is zero. The actual
-W2 lift supplies the FL class in J_p whose image is the fixed NONZERO
-normalization. These classes are linearly independent, using(2) on Z
-and its injective forgetful map. Therefore dim J_p>=2, a contradiction.
+In the unstable case, let N_i be the maximal line. Its projection
+to omega_i^m has a nonempty divisor Delta_i and is preserved by both
+maps. Its multiplicities are constant on fibers of either map. Every
+nonempty multiplicity level set on Z is therefore a clump. Uniqueness
+of the positive clump forces
 
-So every W2-liftable coreless genus-two span has zero joint tangent.
-The marked deformation-ring theorem then gives W(k)/(p^e), with e>=2
-or infinity. This proof does not confuse source indigenous deformations
-with joint curve deformations, and never assumes source ordinariness.
+    Delta_i=a D_i,  a>=1,   N_i=omega_i^m(-a D_i).
 
-## 5. Scope
+On genus-two Y, instability says 2m-ar>m, hence ar<m. This proves
+the first alternative and bounds a by q=floor((m-1)/r).
+
+In the stable case let n>=1 be the first Frobenius-instability index
+given by the same pointed-bundle principle, and put P=m*p^n. The
+canonical connection on F^(n)*E_i has horizontal distinguished section
+and canonical determinant. Its maximal line cannot be horizontal,
+since Cartier descent would destabilize the preceding iterate. Apply
+the general pointed-oper calculation of
+[pointed_bundle_instability, Sections4--4a](pointed_bundle_instability.md#4-a-common-pointed-oper-calculation)
+with this P. The second fundamental map is an isomorphism and the
+projection divisor is REDUCED of degree P-1 on Y. It is the unique
+clump, so
+
+                         r=m*p^n-1.
+
+That calculation also identifies the induced regular dormant oper
+with the intrinsic r_s. Its distinguished section squared is the
+shared tensor of weight P-1 and divisor twice the reduced clump;
+the exponent of its primitive generator divides2. This gives exactly
+the stated primitive weights and multiplicities. No W2 lift was
+used in this argument.
+
+When 1<=m<=r, the unstable alternative is impossible. The exact
+equation is consequently necessary, and the dimension bound already
+proved in Section4 applies. An active or nonregular intrinsic r_s
+also excludes the stable alternative, proving its stated vanishing.
+
+Finally suppose the stable alternative is excluded and fix q as
+above. Lifting omega_i^m(-aD_i)->omega_i^m to E_i is precisely the
+vanishing of the extension after pullback along that inclusion.
+Thus its class lies in the kernel for twist aD_i, hence in the kernel
+for qD_i. The exact principal-parts sequence is
+
+    0->omega_i^-m->omega_i^-m(qD_i)->P_i->0.
+
+Both line bundles have negative degree: deg D_i=r*(g(C_i)-1),
+and qr<m. Consequently its boundary H0(P_i)->H1(omega_i^-m)
+is injective and has exactly that kernel as image. It supplies a
+unique principal part. Pulling both sequences to Z gives the SAME
+line bundle and divisor. The corresponding boundary on Z is still
+injective by the same negative-degree calculation. Equality of the
+two extension classes therefore forces equality of the actual
+principal parts there. This proves support and uniqueness on both
+legs, including the case q=0.
+
+The graph on the finite clump obtained by joining points in the same
+f-fiber or g-fiber is connected. Otherwise each connected component
+would itself be a nonempty clump. A common principal part vanishing
+at one point vanishes along every such edge: the completed local
+maps are isomorphisms, and its values come from a single endpoint
+principal part. It therefore vanishes everywhere. Restriction to
+one point embeds the common space into the q-dimensional local
+principal-parts space there. This proves the final dimension bound.
+
+## 6. Cartier descent of the exceptional string
+
+Write r+1=u*p^a with p not dividing u. Section5 gives exactly the
+listed possible weights in1,...,r. Let j=u*p^i<=r with i>=1.
+The preceding weight j-1 is not on this list: for u>1 it is not
+divisible by u, and for u=1 an odd-prime power minus1 is not a
+power of p. Consequently J_(j-1)=0. The canonical connection on
+omega^-j therefore kills every class in J_j.
+
+Put v=j/p. For any endpoint the Cartier de Rham sequence for
+F*omega^-v has the two terms
+
+    H1(omega^-v) and H0(omega^(1-v)).
+
+If v>=2 the second is zero. The forgetful map to H1(omega^-j)
+is injective, since H0(omega^(1-j))=0, with image the kernel of
+the canonical derivative. Every class of J_j therefore has unique
+endpoint preimages under Frobenius. Their pullbacks agree by the
+same injectivity on Z. Thus F*:J_v^(1)->J_j is an isomorphism.
+This proves every asserted arrow except v=1, where the extra
+Cartier term is k and is exactly the normalization in Section2.
+
+When u=1 and a>=2, Section5 gives J_(p-1)=0 and dim J_p<=1.
+When a=1, r=p-1: the low-weight spectrum still gives J_(p-1)=0,
+and the one-point principal-parts bound gives
+dim J_p<=floor((p-1)/r)=1. Hence in both cases J_p^nabla=J_p,
+and Section2 supplies the stated exact normalization sequence.
+The dimensions and the isomorphisms above prove the string description.
+
+### A shorter proof of first-Witt rigidity
+
+If a joint tangent is nonzero, Section5 with m=1 gives r=p^a-1
+for some a>=1. The preceding paragraph bounds dim J_p by1. Its
+subspace F*J_1^(1) is already a nonzero line in ker chi, so chi=0.
+The iff criterion of Section2 rules out a simultaneous W2 lift.
+
+Thus every W2-liftable coreless genus-two span has J_1=0 and marked
+deformation ring W(k)/(p^e), with e>=2 or infinity. This proof uses
+only the shared extension spaces and their normalization; it does not
+identify them with source indigenous tangent defects. Section3 retains
+the finer active/dormant description of the lifted pointed oper.
+
+## 7. A leading jet constructs the boundary class
+
+Here is the elementary construction in its general form. On a
+smooth projective hyperbolic curve C let s be a nonzero tensor of weight d with divisor
+eD, where D is reduced and e>=1. The conormal isomorphism
+
+    O(-D)|D = I_D/I_D^2 --d--> omega_C|D
+
+identifies the leading jet of s with a nowhere-zero section
+
+    lead_D(s) in H0(D,omega_C^(d+e)|D).
+
+For any integer l>=1, its inverse l-th power is a section of
+omega_C^(-l(d+e))|D. Put m=l(d+e)-1. The dual conormal
+isomorphism identifies this section with a SIMPLE principal part
+of omega_C^-m on D, since
+
+    omega_C^-m(D)/omega_C^-m = omega_C^(-(m+1))|D.
+
+In a uniformizer z with s=z^e A(z)(dz)^d, the principal part is
+A(0)^(-l) z^-1 (dz)^(-m). The conormal construction, rather than a
+choice of coordinate, proves that this expression is intrinsic.
+All these operations commute with actual etale differential pullback.
+Thus a shared tensor produces matching principal parts on BOTH
+endpoints. If m>d/e, then
+
+    deg omega_C^-m(D) = (2g(C)-2)(-m+d/e)<0.
+
+The principal-parts boundary is injective. Its nonzero section
+therefore gives a nonzero common class in J_m. This construction
+does not require genus two, corelessness or an ordinary curve;
+these hypotheses are only needed for the later dimension and
+instability conclusions. The case e=l=1 is deliberately excluded
+by m>d/e: its principal part can be the global rational tensor1/s
+and its boundary need not be nonzero.
+
+Now take a coreless span with genus-two endpoint and primitive
+multiplicity e=1 or2. The tensor tau=s^(2/e) has weight r and
+divisor2D. Apply the construction to tau with l=1 and m=r+1.
+The degree condition holds, giving a nonzero class in J_(r+1).
+Part5's one-point bound at this weight is1, so it spans that space.
+Scaling s changes the generator by a nonzero scalar and preserves
+the line.
+
+For every r>=1, the low-weight spectrum gives J_r=0: the equation
+r*p^n=r+1 is impossible for an odd prime and n>=1. If p divides
+r+1, the canonical derivative therefore kills the entire boundary
+line J_(r+1). The Cartier argument in Section6 applies at this
+boundary too. Whenever v=(r+1)/p>=2, it gives the isomorphism
+
+    F*:J_v^(1) -> J_(r+1).
+
+Continue down the already established string. For u>1 all spaces,
+including J_u, are nonzero lines. For u=1, the descent stops at
+J_p, which is a line also when a=1 and it is itself the boundary
+space. Section2's exact normalization sequence then gives exactly
+the tangent or first-Witt alternative. If chi is nonzero, its
+normalization-one fiber is a single point, so the entire marked
+span has a unique simultaneous W2 lift.
+
+## 8. Which actual spans have a nontrivial deformation ring
+
+If R!=k, either its relative tangent J_1 is nonzero, or J_1=0
+and the marked deformation theorem gives R=W(k)/(p^b), with
+b>=2 or infinity. The second case has a W2 point. In the first
+case Section5 applied to J_1 forces r=p^a-1 and primitive
+multiplicity1 or2. In the second case the first-instability
+calculation for a W2 lift in Section3 forces precisely the same
+clump profile. Thus every nontrivial R has that profile.
+
+Conversely, for that profile Section7 gives a nonzero J_p line.
+Its exact normalization sequence forces either a nonzero tangent
+or a simultaneous W2 lift. Each makes R!=k. This proves the iff
+without assuming either a first lift or a tangent in advance.
+In particular, the previously known no-clump result extends to
+every positive-clump profile outside this exceptional list.
+
+Under the stated semistability-through-h hypothesis, a nonzero
+joint tangent has first instability a by Section5 at m=1. Thus
+a>h. If an exceptional clump instead has a<=h, the exact dichotomy
+of Section7 forces its unique simultaneous W2 lift. This uses only
+the endpoint semistability hypothesis, not any supposed lift of
+its matching extension beyond the first Witt level.
+
+## 9. Scope
 
 A no-clump span can still exist only in characteristic p; the obstruction
 does not exclude its special fiber. Positive-clump W2 lifts may have
@@ -200,3 +406,7 @@ The common pointed-oper calculation and the all-odd-characteristic
 W2-rigidity argument have bounded medium audit PASS,
 /root/audit_extension_fiber_scope,2026-09-14. The inherited secant and
 lifting inputs retain the scoped audits linked from the statement.
+The normalization converse, extension spectrum, support bound,
+Cartier strings and leading-jet deformation criterion have independent
+bounded medium audit PASS in the
+[extension-spectrum audit](../../Research/audits/TWO_LEG_EXTENSION_SPECTRUM_AUDIT_2026_09_15.md).

@@ -16,9 +16,9 @@ from pathlib import Path
 from cysignals.alarm import alarm,cancel_alarm
 
 
-def run(include_six,seconds,output):
-    started=time.monotonic();root=Path(__file__).resolve().parents[2]
-    data=json.loads((root/'Research/computations/backup_genus_two_torsion.json').read_text())
+def run(include_six,seconds,output,torsion,doubles):
+    started=time.monotonic()
+    data=json.loads(Path(torsion).read_text())
     k=GF(125,name='a',modulus=PolynomialRing(GF(5),'x')([1,1,0,1]));a=k.gen()
     R=PolynomialRing(k,'l');l=R.gen()
     decode=lambda cs:sum((k(v)*a**j for j,v in enumerate(cs)),k.zero())
@@ -90,8 +90,8 @@ def run(include_six,seconds,output):
                 print('six-torsion translate',len(out['cyclic6_translates']),
                       'bad degree',row['bad_norm_locus_degree'],'seconds',time.monotonic()-started,flush=True)
             assert len(out['cyclic6_translates'])==15
-            doubles=json.loads((root/'Research/computations/backup_genus_two_double_covers.json').read_text())
-            assert len(doubles['covers'])==15 and all(row['etale_double_cover_ordinary'] for row in doubles['covers'])
+            double_data=json.loads(Path(doubles).read_text())
+            assert len(double_data['covers'])==15 and all(row['etale_double_cover_ordinary'] for row in double_data['covers'])
             out['cyclic6_total_exact_order6_connected_covers']=600
             out['cyclic6_bad_primitive_character_pairs']=sum(row['bad_norm_locus_degree'] for row in out['cyclic6_translates'])
             out['all_cyclic6_covers_ordinary']=(out['cyclic3']['all_ordinary'] and out['cyclic6_bad_primitive_character_pairs']==0)
@@ -111,4 +111,7 @@ if __name__=='__main__':
     parser.add_argument('--include-six',action='store_true')
     parser.add_argument('--seconds',type=int,default=60)
     parser.add_argument('--output',required=True)
-    args=parser.parse_args();run(args.include_six,args.seconds,args.output)
+    root=Path(__file__).resolve().parents[2]
+    parser.add_argument('--torsion',default=str(root/'Research/computations/backup_genus_two_torsion.json'))
+    parser.add_argument('--doubles',default=str(root/'Research/computations/backup_genus_two_double_covers.json'))
+    args=parser.parse_args();run(args.include_six,args.seconds,args.output,args.torsion,args.doubles)

@@ -47,5 +47,4 @@ an unbalanced-cover formula, an assertion of domination by an arbitrary
 common source, or an exclusion of all common covers. The original t²+2=0 actual-cover
 computation remains an independent check of this general theorem.
 
-[Proof](../../../Proofs/deformations/abelian_covers/bad_double_abelian_a3_family.md) ·
-[Audit](../../../Research/audits/PARAMETERIZED_BAD_DOUBLE_GERM_AUDIT_2026_09_11.md).
+[Proof](../../../Proofs/deformations/abelian_covers/bad_double_abelian_a3_family.md).

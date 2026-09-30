@@ -21,8 +21,9 @@ import subprocess
 import time
 from scripts.atlases.native import atlas_telemetry as operation_log
 
-DEFAULT = Path('/Users/julian/Documents/litt3-computation-data/atlas-rooted-first')
-ENGINE = Path('/Users/julian/Documents/litt3-computation-data/atlas-f4-telemetry/msolve/msolve')
+DATA_ROOT = Path(__file__).resolve().parents[2].parent / 'litt3-computation-data'
+DEFAULT = DATA_ROOT / 'atlas-rooted-first'
+ENGINE = DATA_ROOT / 'atlas-f4-telemetry/msolve/msolve'
 COMPLETED = {'basis_needs_verification', 'linear_certificate_verified',
              'verified_polynomial_certificate'}
 

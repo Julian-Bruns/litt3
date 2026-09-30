@@ -1,7 +1,7 @@
 # Three inverse columns give the complete atlas scheme
 
-Version6, 2026-09-13. All18 representative types, exceptional cohomology
-and former inverse/minor formulations are retained. The underlying
+Version7, 2026-09-23. All18 representative types, exceptional cohomology
+and inverse/minor formulations are retained. The underlying
 characteristic-free inverse mechanism is now in
 [cohomological Bézout](cohomological_bezout.md).
 
@@ -78,7 +78,7 @@ two-minor version, with independent a0 and q0 and both logarithmic
 terms, is supplied by the Bézout theorem. Clearing denominators while
 forgetting the named open changes the criterion.
 
-## Boundary and failed-shortcut conclusions retained
+## Boundary rank
 
 In the characteristic-free stable extension setup, a nonzero section u
 with zero divisor E>0 satisfies
@@ -87,28 +87,11 @@ with zero divisor E>0 satisfies
 
 Its cup matrices have rank at most deg E, including multiplicities and
 zeros at infinity. On the fixed curve deg E<=23, so invertible cup removes
-all invalid quotients only on the acyclic branch. The augmented D removes
-them for both cohomology profiles.
-
-For every fixed oper, unnormalized N incidence in P31×P(J) contains a
-24-dimensional invalid family: sections vanishing on4P paired with the
-order-three jet functional defined by Q at P. Its cup rank is at most4.
-Thus N incidence alone is not a finite candidate list.
-
-Two exact diagnostics retain further limits. On invariant_0 a rank21
-cup matrix gives rank29, not32, for U->Gamma q(U); its kernel contains
-q-rank3 directions. For the first acyclic oper, two projective lines
-have coprime degree32 det H and degree24 det Gamma, where
-`H(beta^[5])U=(Tr(Gamma partial_i B))_i`. Thus invertible cup does not
-make H invertible. These are counterexamples to the named shortcuts,
-not atlas solutions.
+invalid quotients on the acyclic branch. The augmented D handles both
+cohomology profiles.
 
 The acyclic rational-pencil construction and all304,128 first-oper
 coefficient comparisons are retained in the Bézout proof. No full
-exceptional B tensor, speed improvement, whole-oper exclusion or
-unmarked common-cover conclusion is asserted.
+exceptional B tensor or whole-oper exclusion is asserted.
 
-[Proof](../../Proofs/atlases/inverse_cup_atlas_system.md). Independent audits:
-[selected columns, 2026-09-08](../../Research/audits/INVERSE_COLUMN_COMPRESSION_AUDIT_2026_09_08.md),
-[inverse formulations, 2026-09-13](../../Research/audits/INVERSE_CUP_CONSOLIDATION_SCOPE_AUDIT_2026_09_13.md),
-and [feedback rooting](../../Research/audits/FROBENIUS_FEEDBACK_ROOTING_AUDIT_2026_09_13.md).
+[Proof](../../Proofs/atlases/inverse_cup_atlas_system.md).

@@ -1,0 +1,11 @@
+#include "fast_exact.cpp"
+#include "additive_fft.hpp"
+#include <chrono>
+// Exact interpolation-identity verification, not a search for square points.
+int ev(const Poly&p,int h){int v=0;for(int i=int(p.size())-1;i>=0;i--)v=ff::add(ff::mul(v,h),p[i]);return v;}
+int main(int argc,char**argv){if(argc<4)return 2;ff::init(argv[1]);ifstream bin(argv[2],ios::binary),in(argv[3]);int nh;bin.read((char*)&nh,4);vector<int>coeff(nh*7*141);bin.read((char*)coeff.data(),coeff.size()*4);if(!bin)throw runtime_error("residual tensor read failed");int mode,degree,shift,powerpsi,np;in>>mode>>degree>>shift>>powerpsi>>np;Poly psi(np);for(int&c:psi)in>>c;int count;in>>count;
+ struct Item{int index,removed,dm;vector<Poly>c;vector<vector<int>>vals;};vector<Item>items;for(int k=0;k<count;k++){Item z;int terms,dh;in>>z.index>>z.removed>>terms>>dh>>z.dm;z.c.resize(z.dm+1,Poly(dh+1));for(int a=0;a<terms;a++){int h,m,c;in>>h>>m>>c;z.c[m][h]=c;}for(auto&p:z.c)trim(p);items.push_back(move(z));}
+ if(!in)throw runtime_error("formal input read failed");vector<int>points;for(int h=1;points.size()<size_t(degree+1);h++)if(ev(psi,h))points.push_back(h);AddFFT fft;int level=0;while(fft.p5[level]<=points.back())level++;for(auto&z:items)for(auto&p:z.c)z.vals.push_back(fft.evaluate(p,level));auto start=chrono::steady_clock::now();
+ for(int h:points){vector<int>rr(7*141);for(int i=nh-1;i>=0;i--)for(int j=0;j<7*141;j++)rr[j]=ff::add(ff::mul(rr[j],h),coeff[i*7*141+j]);vector<int>computed(mode?4*105:70*105);int ok=mode?fast_formal74(rr.data(),computed.data()):fast_errors(rr.data(),computed.data());if(ok)throw runtime_error("coefficient construction failed");for(auto&z:items){int fac=ff::mul(ff::pow(h,shift-z.removed),ff::pow(ev(psi,h),powerpsi));for(int j=0;j<105;j++){int got=j<=z.dm?z.vals[j][h]:0;int want=ff::mul(computed[(z.index-71)*105+j],fac);if(got!=want)throw runtime_error("coefficient polynomial identity failed");}}}
+ cerr<<"Verified "<<count<<" coefficient identities at "<<points.size()<<" distinct valid H-values; clearing-degree bound "<<degree<<". These are polynomial identities over every extension field.\n";cerr<<"Elapsed seconds "<<chrono::duration<double>(chrono::steady_clock::now()-start).count()<<"\n";
+}

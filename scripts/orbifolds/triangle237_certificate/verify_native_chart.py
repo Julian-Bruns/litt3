@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 from sage.all import GF, PolynomialRing, prod
 
-base = Path('/Users/julian/Documents/litt3-computation-data')
+base = Path(__file__).resolve().parents[3].parent/'litt3-computation-data'
 load = lambda name: json.loads((base / name / 'source.json').read_text())
 rec = load('degree84-recursive-linear-20260911')
 aff = load('degree84-all63-quadratic-subideal-20260911')

@@ -1,0 +1,4 @@
+#define USE_GMP_PACKING
+#include "function_algebra.hpp"
+#include <random>
+int main(){initfield(nullptr);std::mt19937 gen(27092027);for(int j=0;j<100;j++){UP a={1},rad={1};std::vector<U> roots;for(int i=0;i<1+j%7;i++){U r=1+gen()%(QQ-1);while(std::find(roots.begin(),roots.end(),r)!=roots.end())r=1+gen()%(QQ-1);roots.push_back(r);UP f={kneg(r),1};a=um(a,up(f,1+gen()%32));rad=um(rad,f);}assert(uradical(a)==rad);denominator_support={};QA x; x.d=a;for(int i=0;i<6;i++){x.n[i].resize(1+gen()%120);for(U&c:x.n[i])c=gen()%QQ;}if(j%2){UP g=up(UP{kneg(roots[0]),1},1+gen()%6);x.d=um(x.d,g);for(auto&p:x.n)p=um(p,g);}QA y=x;y.normal();denominator_support=rad;x.normal();assert(x.d==y.d&&x.n==y.n);denominator_support={};}std::cout<<"100 deterministic radical and denominator-support normalization audits PASS; multiplicities 1..32 in characteristic 5. Bounded implementation audit.\n";}

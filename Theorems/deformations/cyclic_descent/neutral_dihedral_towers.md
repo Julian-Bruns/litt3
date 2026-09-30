@@ -1,6 +1,6 @@
 # Actual neutral dihedral towers with unbounded finite Witt repair
 
-Version1,2026-09-11. Independent bounded audit PASS by
+Version2,24 September2026. Independent bounded audit PASS by
 /root/audit_actual_heisenberg_defect. Mathematical prose and exact
 finite-algebra checks.
 
@@ -35,15 +35,13 @@ compatible extension through W_(a+2)(k). The source curve varies with a.
 For a>=1 no compatible third truncation extends the ORIGINAL map
 T_(a,2)→C2 to any compatible C3: the base obstruction is nonzero.
 
-For every fixed a>=1, existence of a full compatible marked tower on
-T_a is equivalent to existence on T_1 in the SAME resolvent tower.
-The downward implication preserves the original quotient marking.
-Neither existence nor nonexistence of such a full tower is asserted here.
+The later [fourteen-family theorem](../all_neutral_dihedral_bt_heights.md)
+computes exact finite height on every tower, so none of these fixed
+$T_a$ has a full compatible tower.
 
 This theorem does not equate the fourteen different T_1 cases, include
 the excluded canonical resolvent, or construct a two-leg common source
 for the fixed main/backup endpoints. It shows that fixed defect alone
 does not bound finite source-only repair length across varying covers.
 
-[Proof](../../../Proofs/deformations/cyclic_descent/neutral_dihedral_towers.md) ·
-[Audit](../../../Research/audits/NEUTRAL_DIHEDRAL_TOWERS_AUDIT_2026_09_11.md).
+[Proof](../../../Proofs/deformations/cyclic_descent/neutral_dihedral_towers.md).

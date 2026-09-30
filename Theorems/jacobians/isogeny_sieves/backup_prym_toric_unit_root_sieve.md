@@ -48,6 +48,4 @@ Finite-field comparison with a saved Prym must retain the quadratic
 character of any norm-recovery rescaling; the whole filter family is
 invariant under that twist at every precision.
 
-[Proof](../../../Proofs/jacobians/isogeny_sieves/backup_prym_toric_unit_root_sieve.md) ·
-[Toric audit](../../../Research/audits/TORIC_PRYM_NORMALIZATION_AUDIT_2026_09_11.md) ·
-[Arithmetic audit](../../../Research/audits/PRYM_HIGHER_PRECISION_FACTOR_SIEVE_AUDIT_2026_09_11.md).
+[Proof](../../../Proofs/jacobians/isogeny_sieves/backup_prym_toric_unit_root_sieve.md).

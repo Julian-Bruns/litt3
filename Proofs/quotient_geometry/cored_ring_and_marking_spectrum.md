@@ -72,19 +72,3 @@ In the \((2,2)\) case, \(h=(n_X/e)c\), so \(c\mid h\), while
 For a jointly minimal source, \(Z=W/(A\cap B_0)\), so
 \(\deg(Z/Y)=[B_0:A\cap B_0]\le[G:A]=n_X\).
 This transfers each atlas bound to that source degree.
-
-## 4. The two large genus-nine signatures
-
-For \((e_w,\delta_w,e_t)=(1000,1143,7)\) or \((3000,3143,21)\),
-the canonical degrees are \(1/7000\) and \(1/21000\). Each is one
-seventh of the smallest exceptional point degree. The wild fibers on
-\(X\) have112 points, excluding a compatible marking of size16.
-
-In the first case the weight-\(m\) dimension is
-\[
- \max(0,1+\lfloor143m/1000\rfloor-\lceil m/7\rceil).
-\]
-It is zero for \(1\le m<7\), and one at \(m=7\). The difference of
-floor and ceiling is at most \(m/7000\), so two sections require
-\(m\ge7000\), with equality attained. Replacing denominators1000,7
-by3000,21 gives the second pair of minima21,21000.

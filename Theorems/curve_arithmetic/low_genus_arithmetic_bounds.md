@@ -25,8 +25,4 @@ curves admit a common finite etale cover with A. If A is nonarithmetic,
 the sharper bound2^17000 holds. No corelessness assumption is needed.
 
 Version2,2026-09-10; exposition consolidated2026-09-14.
-The numerical conclusions retain their original scoped audits:
-[genus two and characteristic-five reductions](../../Research/audits/ARITHMETIC_REDUCTION_BOUND_AUDIT_2026_09_09.md),
-[genus three and the fixed-partner bound](../../Research/audits/DEFECT_PRESERVING_ETALE_DESCENT_AUDIT_2026_09_10.md).
-The identical reduction argument for arbitrary p is an author corollary.
 [Proof](../../Proofs/curve_arithmetic/low_genus_arithmetic_bounds.md).

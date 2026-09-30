@@ -1,6 +1,7 @@
 # Proof: bounded scalar Hermitian reconstruction
 
-[Statement](../../Theorems/atlases/scalar_hermitian_reconstruction.md).
+This is the scalar-frame supporting proof for the
+[direct Wronskian atlas criterion](../../Theorems/atlases/direct_wronskian_atlas.md).
 All frames use the convention in `scalar_hermitian_data`. This proof is
 pointwise in a fixed geometric dormant oper; it does not discard the
 local multiplicities in the separate oper enumeration.

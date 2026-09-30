@@ -1,6 +1,8 @@
-# A binary Frobenius criterion excludes constant-Q trigonal norms
+# Constant-norm obstruction and unique two-torsion representatives
 
-Version1,2026-09-11. Focused independent mathematical audit PASS.
+Version2,23September2026. The constant-norm criterion passed a focused
+independent mathematical audit. The fixed-X uniqueness corollary below
+is a direct Riemann--Roch consequence.
 
 Let F in F25[x] be squarefree of degree10 and let X be the smooth
 projective model of y^3=F. Suppose the Frobenius25 polynomial of J(X)
@@ -21,6 +23,16 @@ The exclusion is over the full algebraic closure and does not depend
 on a multiplier ansatz, coefficient-field search or newly computed
 sixth-root zeta polynomial.
 
+For this fixed \(X\), let \(O\) be its unique point at infinity.
+Every nonzero \(L\in J(X)[2]\) satisfies
+\[
+h^0(L(7O))=0,\qquad h^0(L(8O))\le1,\qquad h^0(L(9O))=1.
+\]
+Hence \(L\) has a unique effective degree-nine representative \(D\).
+The Kummer function with divisor \(2D-18O\) is unique up to scalar.
+This concerns actual geometric representatives; it does not assert
+reducedness of a polynomial norm scheme.
+
 The mechanism uses the actual curve D:z^6=F. Its primitive-sixth
 Jacobian factor has the same Frobenius polynomial modulo2 as J(X),
 by equality of all unramified Euler factors and of the omitted local
@@ -31,6 +43,4 @@ contradicts the degree of its required root-of-unity Weil eigenvalue.
 For nonconstant Q, the fixed-X carriers and their backup-factor tests
 are handled by the [complete sieve](backup_double_cover_exclusion.md).
 
-[Proof](../../../Proofs/jacobians/isogeny_sieves/trigonal_constant_norm_obstruction.md) ·
-[Audit](../../../Research/audits/TRIGONAL_CONSTANT_NORM_AUDIT_2026_09_11.md) ·
-[Binary check](../../../scripts/arithmetic/check_degree2_frobenius_orbits.py).
+[Proof](../../../Proofs/jacobians/isogeny_sieves/trigonal_constant_norm_obstruction.md) · [Binary check](../../../scripts/arithmetic/check_degree2_frobenius_orbits.py).

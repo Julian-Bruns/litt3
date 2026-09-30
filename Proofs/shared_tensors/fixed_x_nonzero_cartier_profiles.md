@@ -15,7 +15,8 @@ e>=1 and d<=4, and deg(D_X)>=1, one has -2<=j<=4. The local Cartier
 condition is 2^j+1!=0 modulo5; it eliminates j=-2 and j=2.
 
 For j=0 both tensors have zero multiplicity exactly d. The
-`shared_tensor_core` theorem forces a core, contrary to hypothesis.
+[canonical marked quotient theorem](../quotient_geometry/canonical_marked_quotient.md)
+forces a core, contrary to hypothesis.
 
 For j=3, D_X is reduced of degree2. Put alpha=[D_X-2O], using the
 fixed canonical divisor16O. Since div(s_X)=8dD_X,

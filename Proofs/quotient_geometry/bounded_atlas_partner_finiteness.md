@@ -93,8 +93,40 @@ positive degree exist over a finite field; the deterministic prescription
 in the statement terminates.
 
 This proves no restriction on coreless spans and no simplicity assertion
-for J(Y_t). The original characteristic-five count and parameter argument
-were independently audited PASS by /root/audit_effective_cored_partner_bound,
-2026-09-07. The extension of the count to every characteristic passed the
-bounded medium audit /root/audit_finite_rank_condensation,2026-09-14;
-its scope was the published automorphism bound and its use in this count.
+for J(Y_t).
+
+## Fixed quotients and the selected Hermitian avoidance
+
+For \(\mathcal S=[D/G]\), the actual torsor \(D\to\mathcal S\)
+is finite étale of degree \(|G|\), even if the action has fixed
+points or \(p\mid|G|\). Hence
+\(\deg\omega_\mathcal S=(2d-2)/|G|\), and a genus-\(h\)
+étale atlas has degree \(n=(h-1)|G|/(d-1)\). The fundamental-group
+sequence for this GIVEN quotient is
+\(1\to\pi_1(D)\to\pi_1(\mathcal S)\to G\to1\).
+As above, \(\pi_1(D)\) has at most \(2d\) generators. The
+subgroup-doubling argument gives \(G\) at most
+\(\lfloor\log_2|G|\rfloor\) generators; lifts together with the
+curve generators generate the extension, whether or not it splits.
+Every connected degree-\(n\) cover is counted by a transitive
+homomorphism to \(S_n\), so \((n!)^a\) bounds the number of
+isomorphism classes of its source curves. Frobenius permutes the
+finite set because the quotient is defined over \(\mathbf F_q\).
+The prime-degree parameter argument above, with the additional
+fiber bound \(c\), proves avoidance for a finite list of targets.
+
+For the Hermitian sextic, the standard genus and group-order
+formulas give \(d=10\) and
+\(|\operatorname{PGU}_3(5)|=5^3(5^3+1)(5^2-1)=378000\)
+([Montanucci--Zini, Sections 1--2](https://arxiv.org/pdf/1804.03398)).
+Thus \(n=42000\) and \(a=20+18=38\), also with wild unitary
+stabilizers. The established [branch-family theorem](../curve_arithmetic/prime_field_branch_family.md)
+makes the moduli orbit of a prime-degree parameter \(t\) have full
+length once that degree exceeds five. In the displayed \(K\), the
+exponent \(2G+L\) on \(42000!\) exceeds 38; hence the already
+selected \(r>K\) excludes every atlas to \([H/G]\). For a subgroup
+\(G'\le G\), the quotient map \([H/G']\to[H/G]\) is representable
+finite étale by pulling it back to \(H\), where it is the constant
+coset cover. Composing gives the same exclusion for all \(G'\).
+This uses an atlas on \(Y_t\) itself; an atlas upstairs on a
+further cover need not descend.

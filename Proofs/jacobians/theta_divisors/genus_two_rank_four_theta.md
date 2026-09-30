@@ -141,17 +141,12 @@ a curve, and a lifted acyclic twist keeps its theta section nonzero.
 Formal GAGA algebraizes. The normalized involution eigenvalue
 specializes unchanged because2 is invertible.
 
-Let B=[2](Theta) be the reduced image of a symmetric Abel theta curve.
-Its normalization is C: otherwise a nonzero two-torsion translation
-would stabilize Theta and act freely on a genus-two curve, contrary
-to étale Hurwitz. Numerically B=4Theta. Its six Weierstrass preimages
-give at least six branches at zero.
-
-If mult_0(D_F)>=5, parity gives at least6. Without containment, the
-intersection D_F·B is then at least36, but its total degree is32.
-Containment and equal ample numerical classes force D_F=B.
-Translation by tau would again act freely on its genus-two
-normalization, impossible. Therefore m=mult_0(D_F)<=4.
+The [sharp theta-jet bound and equality case](genus_two_theta_jet_bound.md)
+with r=4 give mult_0(D_F)<=6. If this multiplicity is at least5,
+parity makes it6, and the equality case forces D_F=B_0, the doubled
+Abel curve. Translation by tau would stabilize B_0 and act freely
+on its genus-two normalization, impossible by etale Hurwitz.
+Therefore mult_0(D_F)<=4.
 Since h⁰(F)=1, m is positive and even, hence2 or4.
 
 Assume J(C) ordinary and p>=5. The p+1 subgroups mu_p⊂ker(F_J)=mu_p²

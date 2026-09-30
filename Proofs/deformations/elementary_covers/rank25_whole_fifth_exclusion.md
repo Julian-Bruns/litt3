@@ -1,14 +1,12 @@
 # Two transverse components exclude the entire marked fifth locus
 
 [Statement](../../../Theorems/deformations/elementary_covers/rank25_whole_fifth_exclusion.md).
-The original whole-theorem and full-support audits are PASS. The new
-[transverse normal-form audit](../../../Research/audits/RANK25_TRANSVERSE_NORMAL_FORM_AUDIT_2026_09_13.md)
-checks the smaller reconstruction independently. Original geometric
-comparisons and finite completeness certificates remain retained.
+The finite steps below use exact polynomial and finite-algebra
+identities. Their generating checkers are cited at the point of use.
 
 ## 1. The problem is a cotangent section on the trace-zero graph
 
-The [actual fifth comparison](rank25_family_fifth_reduction.md)
+The [supporting fifth comparison](rank25_family_fifth_reduction.md)
 accounts for every third and fourth choice of the original marked T2:
 C5 varies by J(x^[5])*beta^[5]. Its universal trace excludes all four
 boundary families and the complement of Theta=0. It remains to exclude
@@ -113,7 +111,7 @@ space.
 ## 3. The actual finite values determine both components
 
 Use the independently established curve in
-[the calibration proof, §5](rank25_family_fifth_reduction.md#5-independent-actual-calibration-values):
+[the supporting calibration proof, §5](rank25_family_fifth_reduction.md#5-independent-actual-calibration-values):
 A=B=0, U=2130+q^-2, q=lambda^5, with G(lambda)=0. Its polynomial G has
 30 simple nonzero roots, hence30 distinct nonzero q-values. The first
 two relative quotient coordinates vanish there; the other two are the
@@ -174,26 +172,3 @@ exists for that fixed tuple. Its marking need not occur on a hypothetical
 unmarked common source, and obstruction pullback can vanish after further
 étale covers. No upper bound for such refinements or unmarked common-cover
 conclusion follows.
-
-## 5. Verification access
-
-The geometric support and calibration inputs are linked in the comparison
-proof. The remaining finite evidence is:
-
-| Step | Retained evidence |
-| --- | --- |
-| Twisted cotangent covariance | [pairing](../../../Research/computations/rank25_cotangent_pairing.json) |
-| Complete generators, covariance and basis | [space](../../../Research/computations/rank25_fifth_covariant_reconstruction_space.json), [matrices](../../../Research/computations/rank25_fifth_covariant_reconstruction_space.npz) |
-| Exact eleven-dimensional normal form | [receipt](../../../Research/computations/rank25_transverse_normal_form.json) |
-| Direct curve reconstruction and unit | [receipt](../../../Research/computations/rank25_transverse_curve_reconstruction.json), [independent audit](../../../Research/audits/RANK25_TRANSVERSE_NORMAL_FORM_AUDIT_2026_09_13.md) |
-| Original complete reconstruction | [finite audit](../../../Research/computations/rank25_full_fifth_reconstruction_finite_audit.json), [whole-theorem audit](../../../Research/audits/RANK25_WHOLE_MARKED_FIFTH_EXCLUSION_AUDIT_2026_09_13.md) |
-
-Additional actual off-curve comparisons at(A,B,q)=(1,0,1),(0,1,1) agree
-with both functions. A third point(t,t^2,1+t), independent of the curve
-reconstruction, was replayed at4200/4800 with changed regular affine
-Frobenius. All75 normal and all9 obstruction coordinates agree, including
-an independent original-frame Riccati comparison; the transverse pair
-is4022,0001, with certified precision873/1451. The
-[off-curve receipt](../../../Research/computations/rank25_covariant_offcurve_replays.json)
-locates the full curves, Hodge primitives and whole formal tails.
-These checks supplement the universal proof by support and covariance.

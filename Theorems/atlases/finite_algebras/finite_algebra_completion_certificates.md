@@ -36,8 +36,6 @@ These certificates retain roots and multiplicities. They require the
 stated independent lengths or exact identities; a solver's progress or
 an approximate plateau does not supply those hypotheses.
 
-The finite-field certificates retain their audited scope; the perfect-field
-formulation is a direct application of formal étaleness, with the
-Frobenius rank criterion checked in the proof.
+The perfect-field formulation is a direct application of formal
+étaleness; the Frobenius rank criterion is checked in the proof.
 [Proof and exact references](../../../Proofs/atlases/finite_algebras/finite_algebra_completion_certificates.md).
-[Audit metadata](../../../Research/audits/FINITE_ALGEBRA_CERTIFICATES_AUDIT_2026_09_06.md).

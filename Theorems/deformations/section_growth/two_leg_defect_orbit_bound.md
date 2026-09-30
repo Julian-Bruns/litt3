@@ -63,5 +63,4 @@ settles the ordinary-X/nontrivial-five branch as well. Higher defects,
 non-Galois sources outside the stated hypotheses, dormant matches and
 absent connection matches remain outside these conclusions.
 
-[Proof](../../../Proofs/deformations/section_growth/two_leg_defect_orbit_bound.md) ·
-[Audit metadata](../../../Research/audits/TWO_LEG_DEFECT_ORBIT_BOUND_AUDIT_2026_09_10.md).
+[Proof](../../../Proofs/deformations/section_growth/two_leg_defect_orbit_bound.md).

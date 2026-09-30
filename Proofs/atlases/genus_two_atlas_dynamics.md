@@ -6,6 +6,16 @@ All coefficients below use a^2+4a+2=0. The finite script
 independently checks every saved certificate against the13 ORIGINAL
 intrinsic equations, not against a candidate Groebner basis.
 
+For the fixed oper, put $z=(t-a)^{-1}$, $w=vz^3$,
+$q=z^2/w$, $\eta=dz/w$ and $\delta=w\,d/dz$.
+The scalar equation in the $\theta=O(O)$ frame is
+$\delta^2f=Pf$, where
+$P=(3a+2)z^3+(2a+1)z^2+(3a+2)z+3a+4$.
+The script constructs the horizontal determinant-one frame $H$
+and the resulting nonsplit extension with transition
+$G_K=\left(\begin{smallmatrix}1&4a/q\\0&q^2\end{smallmatrix}\right)$;
+the fixed identification is $j_0=H^T$.
+
 ## Exact necessary linear restrictions
 
 In the audited tensor's coordinates p0,...,p3,b0,...,b3 the following
