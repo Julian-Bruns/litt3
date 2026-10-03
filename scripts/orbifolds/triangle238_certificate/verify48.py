@@ -159,10 +159,10 @@ def main():
     if not __debug__:
         raise RuntimeError('Assertions must be enabled; do not use python -O.')
     start = perf_counter()
-    here = Path(__file__).resolve().parent
+    root = Path(__file__).resolve().parents[3]
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('tables', nargs='?', type=Path,
-                        default=here.parent.parent/'Research/computations/triangle238_tables.jsonl')
+                        default=root/'../litt3-computation-data/legacy_workspace_computations/triangle238_tables.jsonl')
     parser.add_argument('--export-witnesses', type=Path)
     args = parser.parse_args()
     filename = args.tables

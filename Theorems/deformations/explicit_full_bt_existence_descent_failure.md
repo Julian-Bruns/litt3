@@ -15,7 +15,7 @@ through a cyclic-five etale cover. The conclusion concerns existence
 of ANY full group downstairs, not merely descent of a prescribed one.
 
 More precisely, use the F625 genus-two example $H_C/C$ of
-[the finite-level counterexample](explicit_bt2_descent_failure.md),
+[the finite-level counterexample](etale_p_witt_obstruction.md),
 with $\tau^4+4\tau^3+\tau^2+4\tau+3=0$ and
 $v^2=u(u-1)(u-2)(u-3)(u-\tau)$. Take the exceptional quadratic
 resolvent $D\to C$, given by adjoining $\sqrt{u-\tau}$, in the

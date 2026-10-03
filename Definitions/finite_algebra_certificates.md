@@ -11,7 +11,7 @@ A certified kernel basis satisfies the original matrix equation and has
 independent columns numbering the original matrix's nullity.
 
 Write N for the nilradical. In characteristic p, F_A(a)=a^q for a
-specified q=p^r. This is semilinear over a perfect field K, and linear
+specified q=p^r with r>=1, so q>1. This is semilinear over a perfect field K, and linear
 over K=F_q. A closed point P has residue degree d_P=[kappa(P):K] and
 local length ell_P=length(A_P); it contributes d_P*ell_P to D.
 Over a perfect field it gives d_P geometric points, each of multiplicity

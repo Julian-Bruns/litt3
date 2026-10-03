@@ -6,7 +6,8 @@ For z^3=v-A and eta=du/v the two extra holomorphic forms are z*eta
 and U*eta/z. Cartier of A*du vanishes because deg(A)<=3. Thus both
 Cartier arrows are nonzero iff [u^14]((F+A^2)*F^2) is nonzero.
 Optional six-torsion translates reuse each of the15 branch-pair classes.
-The script reports a bad locus if found; it never assumes ordinarity.
+The script tests the primitive order3/6 characters. Lower order2 vanishing
+is the maximal-two theorem at this degree-three backup, not a data input.
 """
 import argparse
 import itertools
@@ -16,7 +17,7 @@ from pathlib import Path
 from cysignals.alarm import alarm,cancel_alarm
 
 
-def run(include_six,seconds,output,torsion,doubles):
+def run(include_six,seconds,output,torsion):
     started=time.monotonic()
     data=json.loads(Path(torsion).read_text())
     k=GF(125,name='a',modulus=PolynomialRing(GF(5),'x')([1,1,0,1]));a=k.gen()
@@ -90,8 +91,9 @@ def run(include_six,seconds,output,torsion,doubles):
                 print('six-torsion translate',len(out['cyclic6_translates']),
                       'bad degree',row['bad_norm_locus_degree'],'seconds',time.monotonic()-started,flush=True)
             assert len(out['cyclic6_translates'])==15
-            double_data=json.loads(Path(doubles).read_text())
-            assert len(double_data['covers'])==15 and all(row['etale_double_cover_ordinary'] for row in double_data['covers'])
+            # The maximal-two theorem supplies all lower order2 characters:
+            # the fixed parameter a has degree3, hence is outside F25.
+            assert a.minpoly().degree()==3
             out['cyclic6_total_exact_order6_connected_covers']=600
             out['cyclic6_bad_primitive_character_pairs']=sum(row['bad_norm_locus_degree'] for row in out['cyclic6_translates'])
             out['all_cyclic6_covers_ordinary']=(out['cyclic3']['all_ordinary'] and out['cyclic6_bad_primitive_character_pairs']==0)
@@ -112,6 +114,5 @@ if __name__=='__main__':
     parser.add_argument('--seconds',type=int,default=60)
     parser.add_argument('--output',required=True)
     root=Path(__file__).resolve().parents[2]
-    parser.add_argument('--torsion',default=str(root/'Research/computations/backup_genus_two_torsion.json'))
-    parser.add_argument('--doubles',default=str(root/'Research/computations/backup_genus_two_double_covers.json'))
-    args=parser.parse_args();run(args.include_six,args.seconds,args.output,args.torsion,args.doubles)
+    parser.add_argument('--torsion',default=str(root/'../litt3-computation-data/legacy_workspace_computations/backup_genus_two_torsion.json'))
+    args=parser.parse_args();run(args.include_six,args.seconds,args.output,args.torsion)

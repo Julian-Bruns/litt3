@@ -1,10 +1,25 @@
 # Exact two-torsion tangent table and unbounded ordinary-source covers
 
-Version2,2026-09-13. Author proof; affine reduction has a bounded audit.
-Let k=bar(F5), Y=Y_t: v²=F(u)=u(u-1)(u-2)(u-3)(u-t), and suppose
-[F5(t):F5]>9. Set eta=du/v.
-The preceding critical-quartic theorem supplies exactly85 active
-nilpotent connections, all ordinary on Y. For such a connection r let
+Version3,3 October2026. The affine invariant gives the exact generic
+locus, replacing the parameter-degree cutoff as the main hypothesis.
+Let k=bar(F5), Y=Y_t: v²=F(u)=u(u-1)(u-2)(u-3)(u-t), t outside F5.
+Set eta=du/v, a=1/(t+1), I=(a^5-a)^4, and
+\[
+C(I)=(I-2)(I^6+I^4+I^2+4).
+\]
+Assume C(I)!=0. The critical-quartic theorem supplies exactly85 active
+nilpotent connections, all ordinary on Y. Define
+\[
+\begin{aligned}
+G(I)&=I^3+2I^2+4I+4,\\
+P_5(I)&=I^5+3I^4+3I^3+3I^2+3I+4,\\
+P_6(I)&=I^6+I^4+3I^3+3I^2+1,\\
+P_9(I)&=I^9+2I^7+4I^6+I^5+4I^4+I^3+4,\\
+S(I)&=(I+1)(I^2+2I+4)G(I)P_5(I)P_6(I)P_9(I).
+\end{aligned}
+\]
+The following exact80/5 table holds if and only if S(I)!=0.
+In particular [F5(t):F5]>9 still suffices. For such a connection r let
 B(r) be the nonzero two-torsion classes for which its twisted nilpotent
 tangent space is nonzero.
 

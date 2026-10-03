@@ -42,7 +42,7 @@ coefs=list(dict.fromkeys(c for e in [e0,e1,e2] for c in e.list() if c))
 # see fixed_x_oper_enumeration and verify_oper_local_quadrics.sage.
 print('quotient_vars',Q.ngens(),'equations',len(coefs),'max_degree',max(c.total_degree() for c in coefs),flush=True)
 print('total_terms',sum(len(c.dict()) for c in coefs),flush=True)
-save((Q,coefs,As,Cs,Bs,lam),'Research/computations/'+stem+'_quotient.sobj')
+save((Q,coefs,As,Cs,Bs,lam),'../litt3-computation-data/legacy_workspace_computations/'+stem+'_quotient.sobj')
 if '--msolve-input' in requested:
     generators=list(Q.ideal(coefs).interreduced_basis())
     Prime=PolynomialRing(GF(5),names=list(Q.variable_names())+['zeta'],order='degrevlex')
@@ -55,7 +55,7 @@ if '--msolve-input' in requested:
         output.append(Prime(data))
     zz=Prime.gens()[-1]
     output.append(zz**2+4*zz+2)
-    destination=Path('Research/computations')/(stem+'_msolve.in')
+    destination=Path('../litt3-computation-data/legacy_workspace_computations')/(stem+'_msolve.in')
     destination.write_text(','.join(Prime.variable_names())+'\n5\n'+
         ',\n'.join(str(f).replace('**','^') for f in output)+'\n')
     print('Saved normalized msolve input',len(output),'equations',flush=True)

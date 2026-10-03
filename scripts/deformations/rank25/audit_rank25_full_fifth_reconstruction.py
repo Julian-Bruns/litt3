@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 from sage.all import GF,PolynomialRing,matrix,vector
 ap=argparse.ArgumentParser();ap.add_argument('--output',type=Path,required=True);args=ap.parse_args()
-root=Path(__file__).resolve().parents[3];base=root/'Research/computations'
+root=Path(__file__).resolve().parents[3];base=root/'../litt3-computation-data/legacy_workspace_computations'
 pt=PolynomialRing(GF(5),'t');tt=pt.gen();k=GF(625,'t',modulus=tt**4+4*tt**3+tt**2+4*tt+3);t=k.gen()
 vals=[sum(k(c//5**i%5)*t**i for i in range(4)) for c in range(625)]
 def fmt(a):return ''.join(str(int(a.polynomial()[i])) for i in range(4))

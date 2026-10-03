@@ -49,10 +49,10 @@ For Y_t the usual two-by-two Cartier coefficient matrix is
     determinant=3(t+1)^4.
 
 Its rank is2 except at t=4, where it is0. Together with the elliptic
-contribution this proves the stated a-number formula. The
-[polynomial verifier](../../../scripts/genus_two/verify_genus_two_maximal_two_cover.py)
-checks this matrix and independently checks the elliptic exception set
-by its product (t^25−t)/(t^5−t).
+contribution this proves the stated a-number formula. The affine-orbit
+argument proves the complete elliptic exception set directly; no
+fifteen-row coefficient enumeration or exception-product computation
+is needed.
 
 ## 3. The general unbounded p-group step
 

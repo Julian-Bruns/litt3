@@ -106,7 +106,7 @@ leave a6-square matrix H, with
 These are polynomial matrix operations, independent of oper equations.
 
 Specialize the same operations to the independently certified
-[normalized oper algebra](../../Research/computations/normalized_oper_algebra_certificate.json),
+[normalized oper algebra](../../../litt3-computation-data/legacy_workspace_computations/normalized_oper_algebra_certificate.json),
 R=F5[T]/(P), deg P=19290. Its twelve field factors encode the complete
 noninvariant census. The F25 embedding, Ahat,B,Chat and lambda are
 recorded in that certificate. Constant pivots remain units in R.

@@ -1,11 +1,82 @@
 # Proof: complementary dormant operators and horizontal sections
 
 [Statement](../../Theorems/projective_connections/dormant_bol_complex.md).
-Write L^2=omega, n=g-1, and use a.f=a^p f on scalar F_* modules.
-Projection embeds the dormant descent W in F_*(L^-1); adjunction gives
-p deg A<=-deg L<0 for every line subbundle A of W. Thus W is stable.
+[Independent bounded review](../../Research/audits/CARTIER_SYMMETRIC_POWER_RECONSTRUCTION_AUDIT_2026_10_03.md).
+## Canonical roots from scalar products
+
+The underlying rank-$(p-1)$ projective-oper uniqueness is
+[Wakabayashi, Theorem6.2.2](https://www.ms.u-tokyo.ac.jp/journal/jms240301.pdf#page=44).
+The explicit product map below fixes the determinant and actual comparisons.
+
+Put $h=(p-1)/2$, $j=(p-3)/2$, $r=p-2$, and use relative
+$F:C\to C^{(1)}$ in this section. First suppose the normalized dormant oper $V$ is given.
+Its scalar quotient is $\omega_C^h$. Multiplication and
+$-pj+hr=1$ give an actual adjoint map
+\[
+F^*(\omega_{C^{(1)}}^{-j}\operatorname{Sym}^rV)
+\longrightarrow\omega_C.
+\]
+Generically choose horizontal scalar solutions $a,b$.
+Their Wronskian $w$ lies in $K(C)^p$ by the canonical
+determinant connection. Replace $b$ by the horizontal multiple
+$w^{-1}b$. Then $f=b/a$ satisfies $df=a^{-2}dz$. The products map to
+\[
+a^rf^i dz=a^p\,d(f^{i+1})/(i+1),\qquad 0\le i\le p-2.
+\]
+All denominators are invertible. These locally exact differentials
+lie in $B_C$ and are independent over $K(C)^p$, since $df\ne0$.
+Source and target have rank $p-1$ and degree $(p-1)(g-1)$:
+use $\det\operatorname{Sym}^rV=(\det V)^{r(r+1)/2}$.
+A generically injective map of equal degree is an isomorphism.
+
+Now take the reconstruction data $M,a,\lambda$. The local
+Cartier condition implies $C(a^{-2}dz)=0$, hence
+$df=a^{-2}dz$ rationally. The two solutions $a,af$ of
+$b''=qb$, $q=a''/a$, have Wronskian one. Thus the resulting
+regular connection, once extended, is dormant.
+
+At a simple zero write $a=zu$, $u(0)\ne0$. The residue of
+$a^{-2}dz$ is $-2u'(0)/u(0)^3$. Cartier vanishing kills that
+residue, so $u'(0)=0$ and $q$ is regular. Away from the zeros
+regularity is immediate. Under $z=z(w)$ and a $\lambda$-frame
+change $\ell$, put $J=dz/dw$ and $t=J^h\ell^p$.
+The scalar coefficient becomes $ta$; since $2h+1=p=0$,
+the second-order operator transforms by $tJ^2$ with no
+remaining first-derivative term. The Cartier condition also
+transforms by a $p$th-power factor, because $hr-1=pj$.
+Hence both conditions glue.
+
+Let $H=J^1M$ with this trace-zero oper connection. Its jet
+transition has determinant
+\[
+Jt^2=(J\ell^2)^p.
+\]
+Thus its determinant is the CANONICAL flat pullback of
+$\omega_{C^{(1)}}\lambda^2$. Cartier descent gives the stated
+actual determinant of $E$, without a no-$p$-torsion assumption.
+The horizontal jet $(a,a')$ is nowhere zero, so it descends to
+the saturated section $s$. Its oper sequence is
+$0\to M\omega_C\to H\to M\to0$.
+
+For a line $N\subset E$, horizontality prohibits its pullback
+from lying in the oper line, so $p\deg N\le\deg M$.
+Consequently $\deg N<\mu(E)$ and $E$ is stable. The line
+$M\omega_C$ has degree above $\mu(H)$, proving first
+Frobenius instability. Twisting by $F^*\lambda^{-1}$
+normalizes the oper quotient to $\omega_C^h$ and determinant
+to the specified canonical line. The preceding product
+isomorphism gives $B_C=A\operatorname{Sym}^rE$.
+Its flag comes from successive powers of the specified $s$.
+Stability of $B_C$ leaves only scalar automorphisms, killed
+by fixing the first line. Jets, multiplication and Cartier
+descent commute with actual finite etale maps.
 
 ## The intrinsic complex
+
+Now fix the spin line L and theta-oper descent W from the statement.
+Write n=g-1 and use a.f=a^p f on scalar F_* modules.
+Projection embeds W in F_*(L^-1); adjunction gives
+p deg A<=-deg L<0 for every line subbundle A of W. Thus W is stable.
 
 The rank-two oper gives D2:L^-1->L^3, locally D^2-r.
 Its(p-3)rd symmetric power has scalar quotient L^(3-p) and normalized

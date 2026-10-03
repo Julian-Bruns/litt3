@@ -204,9 +204,9 @@ def verify(census_path, certificate_path, output=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--census',type=Path,
-        default=ROOT/'Research/computations/normalized_oper_algebra_certificate.json')
+        default=ROOT/'../litt3-computation-data/legacy_workspace_computations/normalized_oper_algebra_certificate.json')
     parser.add_argument('--certificate',type=Path,
-        default=ROOT/'Research/computations/uniform_q_frame_certificate.json')
+        default=ROOT/'../litt3-computation-data/legacy_workspace_computations/uniform_q_frame_certificate.json')
     parser.add_argument('--output',type=Path)
     args = parser.parse_args()
     verify(args.census,args.certificate,args.output)

@@ -102,5 +102,5 @@ def main(output):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output',default='Research/computations/backup_genus_two_torsion.json')
+    parser.add_argument('--output',default='../litt3-computation-data/legacy_workspace_computations/backup_genus_two_torsion.json')
     main(parser.parse_args().output)

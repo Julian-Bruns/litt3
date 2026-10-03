@@ -1,9 +1,9 @@
-"""Exact finite certificate for genus_two_abelian_cover_families (SageMath).
+"""Complete order-four character certificate at the backup seed (SageMath).
 
 Run: sage scripts/genus_two/verify_genus_two_four_torsion.sage
 No external data, search, sampling, or atlas computation is used.
-The proof supplies a Hodge-degree bound to transfer this specialization
-to all parameters of degree greater than 1028 over F5.
+The backup theorem transports this seed to its complete good cubic orbit.
+The separate exact Hodge-degree theorem gives the general family bound.
 """
 import itertools
 import json
@@ -12,8 +12,6 @@ import argparse
 from pathlib import Path
 
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--parameter-polynomial', default=None,
-                    help='F5 coefficients constant first; choose a root in the fixed F5^6 field')
 parser.add_argument('--output', help='Write the executed certificate summary as JSON')
 args = parser.parse_args()
 
@@ -22,14 +20,8 @@ base = PolynomialRing(GF(5), 'z')
 z = base.gen()
 k = GF(5**6, name='a', modulus=z**6+z**4+4*z**3+z**2+2)
 a = k.gen()
-assert a.multiplicative_order() == 5**6-1
-t = a**126
-if args.parameter_polynomial is not None:
-    parameter_equation = PolynomialRing(k, 't0')(
-        [int(c) for c in args.parameter_polynomial.split(',')])
-    roots = parameter_equation.roots(multiplicities=False)
-    assert roots, 'Parameter has no root in the fixed six-dimensional field'
-    t = roots[0]
+t = a**3+2*a**2+4*a+1
+assert t**3+t+1 == 0
 assert t.minpoly().degree() == 3
 R = PolynomialRing(k, 'u')
 u = R.gen()
@@ -183,7 +175,7 @@ result = {
     'coprime_Cramer_additions_replayed': addition_checks,
     'nonzero_quadric_and_original_determinants': tested,
     'seconds': float(time.monotonic()-started),
-    'scope': 'Complete J[4] check at the stated parameter; a family claim additionally uses the proof height bound.'
+    'scope': 'Complete J[4] check at the stated parameter; a family claim additionally uses the separate Hodge-degree bound.'
 }
 if args.output:
     target=Path(args.output)

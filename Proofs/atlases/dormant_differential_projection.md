@@ -73,6 +73,9 @@ In absolute Frobenius coordinates the cup-product matrix is first
 raised entrywise to the fifth power; the Wronskian/residue definition
 of Ntilde incorporates exactly this power. Hence the comparison holds
 for arbitrary sums and every restriction used by the coupled sieve.
+The fixed k-linear injection splits and remains injective after every
+coefficient-algebra extension, so this replacement preserves the whole
+linear incidence scheme, including its boundary and nilpotents.
 
 For such a tensor in the common kernel put H=sum U_i eta_i^5 and
 
@@ -95,6 +98,10 @@ above passed the bounded audit recorded with the Bol theorem.
 The retained `wronskian_differential_projection.sage` and its JSON verify
 the scalar matrix for the first noninvariant F25 oper; that matrix is
 also input to the saved line-gradient calculation.
+
+The exact complex and tensor identity are independent of the extension
+pencil's rank, primitive degree and atlas equivalence. They may therefore
+be used upstream in its complete64-row formulation.
 
 The fixed32-space is a necessary atlas restriction. The full residual
 and Wronskian normalization remain part of the atlas criterion.

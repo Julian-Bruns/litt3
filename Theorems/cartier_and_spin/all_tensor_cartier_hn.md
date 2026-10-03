@@ -1,5 +1,6 @@
 # Harder–Narasimhan polygons of tensor powers of the Cartier bundle
 
+Version3,3 October2026.
 Let C be a smooth projective connected curve of genus g≥2 over an
 algebraically closed field of odd characteristic p. Put s=g−1,
 F:C→C1=C^(1), B=F_*O_C/O_C1, ω1=ω_C1 and T=T_C.
@@ -46,7 +47,8 @@ and the primitive summand for the Raynaud alternating pairing satisfies
 
     Λ²(B)⊗ω1^(-1) = O_C1⊕P,   P≅F_*T².
 
-In particular P is stable of slope0; Sym²(B) has rank-five factors
+The isomorphism for P is the intrinsic Wronskian on exact one-forms,
+followed by the canonical twist. In particular P is stable of slope0; Sym²(B) has rank-five factors
 of slopes12s/5 and8s/5, and B⊗B has ranks5,6,5 at slopes12s/5,2s,8s/5.
 
 All constructions commute with finite étale base change, without any

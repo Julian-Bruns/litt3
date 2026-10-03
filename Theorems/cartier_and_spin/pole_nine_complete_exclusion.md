@@ -17,7 +17,7 @@ contradiction in the sole linearly consistent case. The unknown
 scalar and curve coefficients are not assumed to lie in a bounded
 finite field; the proof first eliminates them geometrically.
 
-Together with [the small supported-norm result](small_supported_norm_functions.md),
+Together with [the small supported-norm result](marked_divisor_relation_lattice.md),
 distinct actual tensor comparisons have delta>=12. This is
 conditional recognition, not extraction of a tensor from an
 arbitrary unmarked common cover.

@@ -1,10 +1,7 @@
 #!/usr/bin/env sage
 """Exact scalar third-order projection and kernel computation."""
 from pathlib import Path
-source=Path('scripts/atlases/wronskian_matrix_pencil.sage').read_text()
-marker="for sample in saved['samples']:"
-assert source.count(marker)==1
-exec(preparse(source.split(marker)[0]))
+load('scripts/atlases/wronskian_section_context.sage')
 def add(v,w): return tuple(f+g for f,g in zip(v,w))
 def scale(c,v): return tuple(c*f for f in v)
 def dpow(v,n):
@@ -37,4 +34,4 @@ print('Q rank',QM.rank(),'kernel dimension',QM.right_nullity(),'kernel=image L',
 assert QM.rank()==32 and same
 assert QM.column_space()==KU.row_space()
 data={'scope':'Exact operator and bounded-space certificate for the fixed noninvariant oper','Q_definition':'delta^3+P*delta+3*(delta P)','a_delta_definition':'3*delta^2(P)+P^2','a_delta_polynomial_y_components':[enc(f.list()) for f in ad],'delta_a_zero_verified':True,'delta5_equals_a_delta_on_x_and_y_verified':True,'Q_domain_monomials_L64':mons64,'Q_target_monomials_L112':monsU,'Q_matrix_rows':[enc(row) for row in QM.rows()],'Q_output_pole_orders':poles,'all56_LQ_and_QL_polynomial_zero_verified':True,'Q_rank':QM.rank(),'Q_kernel_dimension':QM.right_nullity(),'Q_kernel_equals_L32_image':bool(same),'Q_image_equals_SU32':True,'elapsed_seconds':time.monotonic()-started}
-Path('Research/computations/wronskian_differential_projection.json').write_text(json.dumps(data,indent=2,default=int)+'\n')
+Path('../litt3-computation-data/legacy_workspace_computations/wronskian_differential_projection.json').write_text(json.dumps(data,indent=2,default=int)+'\n')

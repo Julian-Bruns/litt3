@@ -1,4 +1,4 @@
-# A structural obstruction to every constant-Q norm chart
+# Constant and mixed trigonal norm obstructions
 
 Canonical statement: [criterion](../../../Theorems/jacobians/isogeny_sieves/trigonal_constant_norm_obstruction.md).
 The general Frobenius-order argument removes the constant-\(Q\)
@@ -160,3 +160,29 @@ h^0(L(9O))=1+h^0(L(7O))=1.
 Its unique section gives the unique effective degree-nine divisor
 representing \(L\). Any two functions with divisor \(2D-18O\)
 differ by a scalar.
+
+## 7. The unconditional fixed-X mixed norm
+
+Here \(F\) is the fixed polynomial of the [curve definition](../../../Definitions/fixed_pair.md),
+called \(P\) in the degree-ten certificates. Its ascending coefficients
+are \([11,22,18,5,19,20,15,16,9,22,1]\), where code \(a+5b\)
+means \(a+b\beta\), \(\beta^2=\beta+3\); thus the certificate and
+curve use exactly the same polynomial and field embedding.
+
+Write \(g=\sum_{i=0}^3g_ix^i\), \(H=x^2+h_1x+h_0\), and
+\(J=x^2+j_1x+j_0\). The leading coefficient of \(F+g^3-H^2J^3\)
+cancels, leaving ten coefficient equations in eight variables over
+\(\mathbf F_{25}\). Their full ideal contains1. The retained
+[report and exact certificate](../../../../litt3-computation-data/quartic_quotient_trace_replies_20260925/extracted/trace_zero_quadratic_degree10/REPORT.md)
+express this identity as explicit monomial multiples of earlier nodes,
+starting with those ten coefficients and ending at node1528, equal to1.
+The [independent verifier](../../../scripts/arithmetic/pro_quartic_quotient_trace_20260925/degree10/src/verify_dag.py)
+checks every identity; its driver reconstructs all ten input coefficients.
+Both checks passed on25September2026, as recorded in the
+[focused integration](../../../Research/audits/QUARTIC_QUOTIENT_TRACE_REPLIES_2026_09_25.md).
+
+There are no field equations, saturations or root restrictions in this
+ideal. Evaluating its identity at any alleged geometric solution gives
+\(1=0\), proving the assertion, including lower-degree \(g\), repeated
+roots and common roots. This argument depends only on the fixed curve,
+so both degree-ten reductions can use it without a logical cycle.

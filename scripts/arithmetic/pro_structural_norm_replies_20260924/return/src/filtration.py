@@ -1,4 +1,4 @@
-"""Check an invariant line inside the fixed bundle F^2 K."""
+"""Construct the established positive line and its section embedding in F^2 K."""
 from algebra import *
 from pathlib import Path
 import json,numpy as np
@@ -22,10 +22,12 @@ def row(p,j):
  lo=min([i for i,jj in p if jj==j],default=0);hi=max([i for i,jj in p if jj==j],default=-1)
  assert lo>=0
  return [p.get((i,j),0) for i in range(hi+1)]
-E=powp(e,25);bs=L(142);bad=forbidden(-133)
-A=np.stack([vec(mul(E,{ij:1}),bad) for ij in bs],axis=1);N=kernel(A)
-print('H0(F2K(-8O))',N.shape[1]); assert N.shape[1]==1
-b=matpol(N[:,0],bs);a=plus(mul(E,b));p=sub(a,mul(E,b))
+# The fixed row from the positive presentation replaces the kernel census.
+B=[13,12,9,11,19,18,1,17,23,12,8,10,9,13,8,
+   0,9,10,4,23,24,24,2,2,12,0,19,14,1,24,
+   8,5,6,7,17,18,18,21,8,11,13,5,20,14,1]
+E=powp(e,25);b={(i,1):v for i,v in enumerate(B) if v}
+a=plus(mul(E,b));p=sub(a,mul(E,b))
 print('b characters',set(j for i,j in b),'a characters',set(j for i,j in a))
 B=row(b,1);AA=row(a,0)
 print('degrees',len(AA)-1,len(B)-1)

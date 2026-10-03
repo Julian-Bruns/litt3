@@ -83,7 +83,7 @@ def main():
     assert results['census']['pair_0_1']['c4']==[1,0,0,3]
     audits={}
     for n in ['dihedral5_family_model_independent_audit.json','dihedral5_family_frame_independent_audit.json']:
-        p=root/'Research/computations'/n
+        p=root/'../litt3-computation-data/legacy_workspace_computations'/n
         if p.exists():audits[str(p.relative_to(root))]=sha(p)
     output=dict(status='PASS 28 full comparisons; all fourteen scalars nonzero and unchanged',
                 directory=str(data),table=table,output_files=len(hashes),output_hashes=hashes,

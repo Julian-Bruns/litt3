@@ -89,7 +89,7 @@ tangents = ROOT/'scripts/genus_two/backup_genus_two_twisted_tangents.sage'
 fresh = OUT/'backup_genus_two_twisted_tangents_replay.json'
 sys.argv = [str(tangents),'--output',str(fresh)]
 runpy.run_path(str(tangents),run_name='__main__',init_globals=dict(globals()))
-oldpath = ROOT/'Research/computations/backup_genus_two_twisted_tangents.json'
+oldpath = ROOT/'../litt3-computation-data/legacy_workspace_computations/backup_genus_two_twisted_tangents.json'
 old, new = [json.loads(p.read_text()) for p in (oldpath,fresh)]
 assert old['twists'] == new['twists']
 k = GF(125,'a',modulus=PolynomialRing(GF(5),'x')([1,1,0,1]))

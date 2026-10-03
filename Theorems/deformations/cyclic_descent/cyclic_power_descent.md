@@ -1,8 +1,11 @@
 # Uniform descent and exact obstructions for cyclic powers of five
 
-Version2, 2026-09-13. Proved by the consolidated comparison and the
-independently audited norm/absorption mechanism. The strengthening has
-bounded independent audit PASS.
+Version3,3 October2026. The uniform local comparison is now supplied
+by the later integral oper calculus, with its ordered mixed-term
+presentation retained below. The geometric chart, every reference
+and precision requirement, and all exact obstruction scopes are unchanged.
+Version2's norm/absorption mechanism has independent audit PASS;
+the present local proof replacement has focused author review.
 
 Let k=bar(F5), a>=1, q=5^a, and let h:T→C be an actual connected
 finite etale cyclic-q cover of smooth projective curves, g(C)>=2.

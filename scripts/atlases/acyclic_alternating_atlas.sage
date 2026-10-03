@@ -14,9 +14,9 @@ from pathlib import Path
 def inspect_first(output):
     started = time.monotonic()
     root = Path(__file__).resolve().parents[2]
-    source = root / 'Research/computations/canonical_atlas_system.json'
+    source = root / '../litt3-computation-data/legacy_workspace_computations/canonical_atlas_system.json'
     saved = json.loads(source.read_text())
-    dual_source = root / 'Research/computations/wronskian_serre_dual.json'
+    dual_source = root / '../litt3-computation-data/legacy_workspace_computations/wronskian_serre_dual.json'
     dual = json.loads(dual_source.read_text())
     prime = GF(5)
     k = GF(25, name='a', modulus=PolynomialRing(prime, 'z')([2, 4, 1]))

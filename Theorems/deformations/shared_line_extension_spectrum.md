@@ -1,6 +1,6 @@
 # Common line extensions: Frobenius roots and finite clump jets
 
-Version4,20September2026. Let $k=\overline{\mathbf F}_p$, with $p$
+Version5,3 October2026. Let $k=\overline{\mathbf F}_p$, with $p$
 odd, and let $X\xleftarrow fZ\xrightarrow gY$ be an actual coreless
 finite étale span with $g(Y)=2$. Assume singleton clumps are excluded
 and there is no shared regular one-form. All line bundles below are
@@ -118,53 +118,54 @@ Thus the new string exists even when $e>2$. In that case its
 nontrivial twist is essential; it does not produce an untwisted
 joint tangent or a simultaneous Witt lift.
 
-## Identification with the characteristic-five Cartier flag
+## The actual Cartier line reconstructs the whole bundle at every odd prime
 
-For either selected pair, in the line branch of the
-[common Cartier flag](../cartier_and_spin/common_cartier_subbundles.md),
-put $Q=U_2/A$ and $D=Q A^{-1}$. Then
+Suppose a clump exists and put $h=(p-1)/2$, $j=(p-3)/2$,
+$r=p-2$. There are unique common roots $A,\lambda$ with
 \[
-D^5=\Omega(2S),\qquad
-0\longrightarrow\mathcal O
-\longrightarrow U_2\otimes A^{-1}
-\longrightarrow D\longrightarrow0
+F^*A=\Omega(-rS),\qquad
+F^*\lambda=\tau=\mathcal O(S)\Omega^{-h}.
 \]
-represents the nonzero line $J(M_{a-1})$. Its first Frobenius
-pullback is unstable. This identifies the flag's actual extension
-with the canonical boundary string, rather than merely comparing
-their degrees.
+Adjunction gives a common map $A\to F_*\Omega$. If its
+Cartier image is zero, it is a saturated common line in $B$,
+and any common saturated line in $B$ is this one.
+This condition is automatic when $R>p-1$ or
+$\tau^2\ne\mathcal O$ as a COMMON line. At
+$R=p-1,\tau^2=\mathcal O$, retain the actual Cartier-zero
+condition; no general converse is asserted.
 
-This pointed extension determines the WHOLE Cartier bundle. With
-$E=U_2\otimes A^{-1}$ there is an isomorphism of actual common
-filtered bundles
+In this line branch there is an actual stable pointed bundle
+$0\to\mathcal O\xrightarrow{s}E\to D\to0$ with
 \[
-B\simeq A\otimes\operatorname{Sym}^3E,
-\qquad A^2D^3\simeq\Omega.
+D=\Omega\lambda^2,\qquad D^p=\Omega(2S),\qquad
+A^2D^r=\Omega,\qquad
+B=A\operatorname{Sym}^{p-2}E
+ =\Omega^{-j}\operatorname{Sym}^{p-2}V,\quad V=E\lambda^{-1}.
 \]
-The flag corresponds to the subbundles generated successively by
-$s^3,s^2E,s\operatorname{Sym}^2E,\operatorname{Sym}^3E$, where
-$s:\mathcal O\hookrightarrow E$ is its specified section.
-Once the identification of the first line is fixed, this filtered
-isomorphism is unique. This conditional root is singled out by
-the common flag; arbitrary symmetric-cube roots of $B$ need not
-be unique. It supplies no integral Frobenius crystal or Witt lift.
+Its class represents the nonzero line $J(M_{a-1})$, and its
+first Frobenius pullback is unstable. The dormant bundle $V$
+has the specified determinant $\Omega$ and Frobenius oper
+quotient $\Omega^h$. Its specified pointing gives
+$\lambda^{-1}\hookrightarrow V$, and
+$\deg\lambda_Y=(R-(p-1))/p$.
 
-For EVERY $R$ in this line branch, let $\lambda$ be the unique
-common Frobenius root of $\mathcal O(S)\Omega^{-2}$. There is
-an actual common canonical-determinant dormant Bol bundle $\mathcal V$
-such that
-\[
-E=\mathcal V\otimes\lambda,\qquad
-B=\Omega^{-1}\operatorname{Sym}^3\mathcal V,\qquad
-\deg\lambda_Y=\frac{R-4}{5}.
-\]
-The pointed section is a common saturated inclusion
-$\lambda^{-1}\hookrightarrow\mathcal V$. On the genus-two
-endpoint $\mathcal V$ is one of the five actual $\mathcal V_i$;
-its Frobenius oper quotient is precisely $\omega_Y^2$, with
-no unrecorded two-torsion normalization.
+The powers of $s$ construct an actual common full flag in $B$.
+Its rank-$i$ member, $1\le i\le p-1$, has Frobenius oper
+grades $\Omega^t(-(p-1-i)S)$, $1\le t\le i$.
+Fixing the first-line map makes the filtered isomorphism unique.
+This does not classify all common subobjects when $p\ge7$.
 
-If $R=4$, $\tau=\mathcal O(S)\Omega^{-2}$ and $\lambda$ are
+For $p=5$ and either selected pair, this flag is exactly
+$A\subset U_2\subset A^\perp\subset B$. Hence
+$E=U_2A^{-1}$, $D=(U_2/A)A^{-1}$ and
+$B=\Omega^{-1}\operatorname{Sym}^3V$. The genus-two endpoint
+$V_Y$ is one of the five actual Bol bundles with precisely
+$\omega_Y^2$ as oper quotient. This recovers the older
+symmetric-cube statement without a filtered-Ext reconstruction.
+The selected two-torsion vanishing further makes the line
+condition equivalent to $R>4$ or $\tau^2\ne\mathcal O$.
+
+Finally specialize to $p=5$. If $R=4$, $\tau=\mathcal O(S)\Omega^{-2}$ and $\lambda$ are
 torsion. In particular $H^0(\mathcal V_i\otimes\lambda)\ne0$.
 For the cubic backup, its established torsion vanishing implies
 that $\tau_Y$ has a prime factor $\ell\ne5$ on which the order of

@@ -13,7 +13,7 @@ from scripts.atlases.native.atlas_native_rref import NativeRref
 
 ap=argparse.ArgumentParser();ap.add_argument('--orbits',type=int,nargs='+',default=list(range(4,11)))
 ap.add_argument('--workers',type=int,default=1);args=ap.parse_args()
-root=Path(__file__).resolve().parents[3];folder=root/'Research/computations'
+root=Path(__file__).resolve().parents[3];folder=root/'../litt3-computation-data/legacy_workspace_computations'
 prime=GF(5);Z=PolynomialRing(prime,'z')
 rows=json.loads((folder/'normalized_oper_closed_points.json').read_text())['factors']
 certificate=json.loads((folder/'normalized_oper_algebra_certificate.json').read_text())

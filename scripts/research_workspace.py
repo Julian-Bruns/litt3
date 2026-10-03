@@ -38,6 +38,17 @@ def local_path(root, value):
     return path
 
 
+def evidence_path(root, value):
+    """Evidence may live only in the repository's named sibling data store."""
+    if not isinstance(value, str) or not value or Path(value).is_absolute():
+        raise ValueError("expected a nonempty repository-relative evidence path")
+    store = (root.parent / "litt3-computation-data").resolve()
+    path = (root / value).resolve()
+    if not path.is_relative_to(store):
+        raise ValueError("evidence path escapes litt3-computation-data")
+    return path
+
+
 def load_library(root):
     library = read_json(root / "Research/library.json")
     if not isinstance(library, dict):
@@ -159,6 +170,16 @@ def validate(root):
         else:
             for legacy_dependency in legacy_dependencies:
                 check_file(identifier, "legacy dependency", legacy_dependency)
+        evidence = record.get("evidence_files", [])
+        if not isinstance(evidence, list) or any(not isinstance(item, str) for item in evidence):
+            errors.append(f"{identifier}: evidence_files must be an array of sibling-data paths")
+        else:
+            for value in evidence:
+                try:
+                    if not evidence_path(root, value).is_file():
+                        raise ValueError("file does not exist")
+                except (OSError, ValueError) as exc:
+                    errors.append(f"{identifier}: evidence {value!r}: {exc}")
         for field, registry in (("definitions", definitions), ("dependencies", theorems)):
             values = record.get(field)
             if not isinstance(values, list) or any(not isinstance(item, str) for item in values):
@@ -249,6 +270,8 @@ def dependencies(root, identifier):
         seen.add(current)
         for legacy_path in record.get("legacy_dependencies", []):
             lines.append(f"{'  ' * (depth + 1)}{legacy_path} [legacy proof input; unpromoted]")
+        for value in record.get("evidence_files", []):
+            lines.append(f"{'  ' * (depth + 1)}{value} [external evidence; unpromoted]")
         edges = record.get("definitions", []) + record.get("dependencies", [])
         stack.extend((child, depth + 1) for child in reversed(edges))
     return "\n".join(lines)
@@ -259,7 +282,7 @@ def search(root, words):
     library = load_library(root)
     results = []
     for record in library["definitions"] + library["theorems"]:
-        metadata = " ".join(str(record.get(key, "")) for key in ("id", "title", "scope", "source"))
+        metadata = " ".join(str(record.get(key, "")) for key in ("id", "title", "scope", "source", "evidence_files"))
         if all(term in metadata.casefold() for term in terms):
             results.append(f"canonical\t{record['id']}\t{record['title']}")
     inventory_path = root / "Research/legacy_inventory.json"

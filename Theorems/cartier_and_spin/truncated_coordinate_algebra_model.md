@@ -1,6 +1,9 @@
 # The full coordinate group realizes the entire Cartier filtration
 
-Version1,21September2026. This is a representation-theoretic model,
+Version2,3 October2026. The later all-height Cartier duality
+identifies the broader structure of this older model: EVERY simple
+factor has the same primitive-character alternating pairing.
+ This is a representation-theoretic model,
 NOT a construction of a curve or of a common cover.
 
 Let k be an algebraically closed field of ODD characteristic p,
@@ -41,15 +44,17 @@ The character group of their inverse limit is still Z, with this
 primitive generator. Retaining EVERY Frobenius height therefore
 does not force that generator to become p-divisible in this model.
 
-At r=1 the alternating form
+For EVERY 1<=j<=r, put u=t^(p^(r-j)). On P_j/P_(j-1),
 \[
-\langle\bar f,\bar g\rangle=[t^{p-1}](f g')
+\langle\bar f,\bar g\rangle_j
+=[u^{p^j-1}]\bigl(f\,dg/du\bigr)
 \]
-on B_1 is perfect, with similitude character chi_1. Thus the model
-retains the actual algebra multiplication, the infinitesimal
-translations, the canonical ranks, nonsplit adjacent extensions,
-and the first Cartier pairing. It does not replace these with an
-arbitrary semisimple representation.
+is a perfect alternating pairing with similitude character chi_r.
+The pairings commute with the restriction tower. Thus the model
+retains ALL Cartier-layer pairings, as well as multiplication,
+infinitesimal translations, ranks and nonsplit adjacent extensions.
+A single universal coefficient identity proves the full covariance;
+no bounded coaction or symbolic-matrix computation is needed.
 
 The nonreduced directions are essential. The reduced group fixes
 the t-adic flag. At height one the FULL group acts irreducibly on
@@ -57,13 +62,10 @@ the rank-(p-1) quotient even though its reduced subgroup is solvable.
 One cannot infer a common subline from the reduced group alone.
 
 This result identifies a limitation of the abstract algebra route:
-the complete filtration and pairing, or a Frobenius tower of them,
+the complete filtration and all its pairings, or their Frobenius tower,
 are not by themselves an abstract contradiction or a source of the
 missing canonical pth root. A proof for the selected curves must
 also use their actual global sections and the two field embeddings.
 No no-clump bi-etale span is produced here.
 
 [Proof](../../Proofs/cartier_and_spin/truncated_coordinate_algebra_model.md).
-The direct all-height proof is supplemented by exact characteristic-five
-coaction checks through height4 and a full symbolic pairing check,
-using [the source script](../../scripts/arithmetic/truncated_coordinate_algebra.py).

@@ -1,12 +1,12 @@
-# The BT2 extension quotient and its ordinary pole invariant
+# The BT2 Ext quotient is the coherent Cartier kernel
 
-Version2,20 September2026. Let $C/\overline{\mathbf F}_5$ be smooth,
-projective and connected, of genus at least two. Let $H/C$ be an
-actual everywhere-versal height-two, dimension-one BT1, generically
-ordinary, with reduced nonordinary divisor $S$. Assume a global
-marked BT2 extension exists. Determinants are normalized to the
-Teichmuller lift of the possibly nontrivial determinant character
-of $H$; its level-one marking is retained.
+Version3,3 October2026. Let $C/\overline{\mathbf F}_5$ be smooth,
+projective and connected, $g(C)\ge2$. Let $H/C$ be an actual
+everywhere-versal height-two, dimension-one BT1, generically ordinary,
+with reduced supersingular divisor $S$. ASSUME a global marked BT2
+extension exists. Normalize determinants to the Teichmuller lift of
+the possibly nontrivial determinant character of $H$, retaining the
+entire BT1 marking.
 
 Put
 \[
@@ -14,67 +14,56 @@ E_C=\operatorname{Ext}^1_{\mathbf F_5,C_{\rm fppf}}(H,H),\qquad
 Q_C=E_C/jH^1_{\rm et}(C,\mathbf F_5).
 \]
 Here $j$ tensors a constant-sheaf self-extension with $H$.
-After fixing a reference, normalized marked BT2 isomorphism classes
-are a torsor identified with $Q_C$. This is the returned reduction;
-vanishing of $Q_C$ is not a consequence of this reduction alone.
-The later [Cartier rigidity theorem](versal_bt_cartier_rigidity.md)
-proves it when the induced indigenous connection is ordinary.
+Let $\mathscr E_C$ be the etale sheafification of the corresponding
+local Ext presheaf, and let $\mathcal B_H$ be the absolute
+Frobenius Cartier kernel from
+[the affine-torsor theorem](versal_bt_extension_torsor.md).
 
-There are three further conclusions.
-
-1. Let $\mathscr E_C$ be the etale sheafification of
-$U\mapsto\operatorname{Ext}^1_{\mathbf F_5,U_{\rm fppf}}(H_U,H_U)$.
-Then $j$ is injective and
+Then $j$ is injective and there are canonical additive identifications
 \[
-Q_C\simeq H^0(C_{\rm et},\mathscr E_C).
+\mathscr E_C\simeq\mathcal B_H,\qquad
+Q_C\simeq H^0(C_{\rm et},\mathscr E_C)
+\simeq H^0(C,\mathcal B_H)=K_H.
 \tag{1}
 \]
-Thus quotienting scalar twists removes the entire ordinary etale
-gluing ambiguity. The remaining group consists of local extension
-classes compatible across the curve.
+The scalar convention on $\mathcal B_H$ uses ABSOLUTE Frobenius.
+No natural untwisted $k$-action on the Ext presheaf is asserted.
+After choosing a reference, normalized marked BT2 classes form
+the torsor under (1).
 
-2. Set $U=C-S$. There is a natural additive ordinary comparison
-invariant
+Writing $\pi:P\to C$ for the logarithmic character cover and
+$\Omega$ for its Cartier-fixed differential,
 \[
-\Delta_C:Q_C\longrightarrow\Gamma(U,\mathcal O_U)\subset k(C).
+K_H=\{h\in H^0(C,\mathcal O_C(S)):
+C_P(\pi^*h\,\Omega)=0\}.
 \tag{2}
 \]
-For a difference class $[B]-[A]$, it is computed etale-locally on
-$U$ using Kummer parameters $q_A,q_B$ and $r$ with $q_B=q_A r^5$:
+The identification is the actual difference
 \[
-c=\frac{d\log r}{d\log q_A},\qquad \Delta_C([B]-[A])=c^5-c.
+\Delta_C([B]-[A])=c^5-c,\qquad
+c=\frac{d\log r}{d\log q_A},\qquad q_B=q_A r^5.
 \tag{3}
 \]
-The denominator is nowhere zero by versality. Allowed basis changes
-alter $c$ by an element of $\mathbf F_5$; (3) is intrinsic.
-The invariant vanishes precisely when the normalized marked groups
-are isomorphic over $U$. If it extends regularly to all of $C$,
-it is zero. Consequently every nonzero generic object difference
-has a pole at a nonordinary point. The reduction by itself leaves
-a possible kernel supported at $S$; the subsequent
-[valuative theorem](versal_bt_valuative_comparison.md) eliminates it.
+There is no punctual kernel or missing part of the image.
+Every nonzero difference has an actual simple pole at $S$.
+The quotient has dimension the indigenous defect, with the
+Frobenius scalar convention in (1); it is zero when the induced
+connection is indigenous-ordinary.
 
-3. For actual finite etale maps $X\xleftarrow fZ\xrightarrow gY$
-and compatible versal BT1 groups, choose normalized endpoint BT2
-extensions separately. Their difference gives a choice-independent
-class
+For actual finite etale maps $X\xleftarrow fZ\xrightarrow gY$
+with specified compatible versal BT1 groups, ASSUME separate
+normalized endpoint BT2 extensions exist. Their difference has
+a choice-independent exact obstruction
 \[
-o_{f,g}\in Q_Z/(f^*Q_X+g^*Q_Y).
+o_{f,g}\in K_{H_Z}/(f^*K_{H_X}+g^*K_{H_Y}).
 \tag{4}
 \]
-Compatible choices exist on the ORIGINAL $Z$ if and only if (4)
-is zero. The invariants (2) commute with etale pullback, giving a
-necessary rational-function obstruction modulo the two endpoint
-images. The subsequent valuative theorem makes it sufficient as
-well, retaining the ACTUAL endpoint images.
+Compatible endpoint choices exist on the ORIGINAL $Z$ if and only
+if (4) is zero. Every denominator vector is an ACTUAL permitted
+endpoint correction. Neither a reference nor compatibility is
+produced by writing this quotient.
 
-These conclusions do not construct a compatible next level. Both
-local questions have now been resolved: a supplied generic comparison
-extends, while actual simple poles occur. The
-[sharp simple-pole theorem](versal_bt_unitroot_ramification.md) and
-[Cartier criterion](versal_bt_cartier_rigidity.md) control the global
-image. The subsequent
-[realization theorem](versal_bt_cartier_realization.md) identifies
-that image with the ENTIRE Cartier kernel. Compatibility on a
-nonordinary common source remains a separate possible obstruction.
+The Baer-extension construction remains the initial input.
+Later exact Cartier realization identifies its entire quotient
+and sheaf, replacing the former partial-image discussion.
 [Proof](../../Proofs/deformations/versal_bt2_extension_quotient.md).

@@ -50,23 +50,30 @@ descends to T, so phi_X²/s_X supplies an ACTUAL core for X←Z→T.
 The atlas degree of X to its common orbifold is at most64. This does
 not infer that the original X,Y_t span is cored.
 
-The established bounded-atlas count, applied with B=64 and these
-bounded-genus T, followed by bounded automorphism-quotient counts,
-gives fewer than2^(2^800) possible genus-two curves Y. This is LESS
-than the existing selection bound K. Frobenius avoidance therefore
-excludes the ENTIRE stated prime-to5-Galois-Y/source-defect2/
+Let R be the smooth joint normalization of the two original endpoint
+fields. More directly, its defect orbit and
+[the joint-degree bound](two_leg_defect_orbit_bound.md) give
+\[
+\deg(R/X)\le8|\Gamma|\le32(5^{24}+1)<2^{62}.
+\]
+The later [quotient-descent theorem](../../curve_arithmetic/genus_two_quotient_descent.md)
+requires $\deg(R/X)>(335999!)^2$. These bounds contradict each
+other, excluding the ENTIRE stated prime-to5-Galois-Y/source-defect2/
 nonordinary-X branch for the SAME main pair.
 
 Combined with [the orbit bound](two_leg_defect_orbit_bound.md),
 any remaining Galois-Y, source-defect2 match with nonordinary X must
 have a NONTRIVIAL cyclic five-part acting TRIVIALLY on the defects.
 Its prime-to5 projective image must still be a large cyclic or
-dihedral group of order at least5250. No bound for that residual
-case is proved: deg f is divisible by5 and normalized trace fails.
+dihedral group of order greater than $(335999!)^2/8$. No upper bound
+for that residual case is proved: deg f is divisible by5 and normalized
+trace fails.
 
 Ordinary-X, higher-defect, non-Galois, dormant and absent-connection
 branches remain. The full common-cover problem is UNSOLVED.
 
-Version 2, 2026-09-14: the representation theorem holds for every p>0;
-the characteristic-five geometric conclusions are unchanged.
+Version3,3 October2026. The all-characteristic representation theorem
+and actual cored intermediate are unchanged. Later quotient descent
+replaces the large partner count and sharpens the residual lower bound.
+The original audits retain their scopes; the replacement has author review.
 [Proof](../../../Proofs/deformations/section_growth/frobenius_defect_order_bound.md).

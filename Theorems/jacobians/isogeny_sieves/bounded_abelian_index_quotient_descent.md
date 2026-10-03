@@ -1,7 +1,7 @@
 # Ordinary quotients above an abelian subgroup of bounded index
 
-Version2,24 September2026. The sharper abelian case retains its
-separate character calculation. Author proof with focused local checks.
+Version3,3 October2026. One determinant-normalization lemma replaces
+the two eigenvalue-pair calculations. Author proof with focused checks.
 
 Let X/F25 be the fixed genus-nine curve, and let
 \[
@@ -10,14 +10,14 @@ X\xleftarrow f Z\xrightarrow gY
 be ACTUAL finite etale maps from the SAME smooth proper connected
 curve, where Y is ordinary of genus two. Let W->X be the Galois
 closure of f, with group G of order N. Suppose G has an abelian
-subgroup A of index at most D. Neither A nor either original leg
+subgroup A of index at most an integer D>=1. Neither A nor either original leg
 is required to be normal or Galois, respectively. J(Y) need not
 be simple, and |A| is unrestricted.
 
 Put
 \[
-M_D=16D+2,\qquad
-L_D=\max\{D(D!)^{18},\ 5^{M_D},\ 4M_D^2+1,\ 13\}.
+G_D=8D+1,\qquad M_D=2G_D,\qquad
+L_D=\max\{D(D!)^{17},\ 5^{G_D}\}.
 \tag{1}
 \]
 Let m_Y be the F25-Frobenius orbit length of the geometric
@@ -32,7 +32,7 @@ In particular ell>r^(1/M_D).
 
 When $D=1$, so the ORIGINAL $X$-leg is Galois abelian of order
 $N=|G|$, the sharper character calculation gives the same alternative
-for EVERY prime $r>1025$ dividing $m_Y$, with exponent $18$:
+for EVERY prime $r>65$ dividing $m_Y$, with exponent $18$:
 \[
 \ell\mid N,\quad\ell\ne5,\qquad
 \ell=r\quad\text{or}\quad\operatorname{ord}_r(\ell)\le18.
@@ -59,8 +59,9 @@ unbounded. This extends the abelian-cover exclusion to nonabelian
 mixed-prime groups with bounded abelian index. It does not supply
 such an index bound for every possible common-cover group.
 
-The proof needs only the genus and finite-field model of X with
-its rational point, not the geometric simplicity of its Jacobian.
+The bounded-index argument uses only the genus and finite-field
+model of X with its rational point. The sharper D=1 case also uses
+the established Jacobian simplicity and unit-root data.
 The backup's moduli degree three does not meet the large-prime
 condition, and both unrestricted common-cover problems remain open.
 

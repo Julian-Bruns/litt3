@@ -1,6 +1,6 @@
 # Proof of the projective bound for actual second returns
 
-Use the accepted [actual quotient atlas](second_return_actual_quotient_atlas.md)
+Use the accepted [actual quotient atlas](second_return_global_transversality.md)
 and [extension geometry](rank_three_extension_return_geometry.md).
 The returned [report](../../../litt3-computation-data/actual_frontier_trial_replies_20260925/extracted/stable_second_return/REPORT.md)
 and exact certificates are retained. The new projective estimate is

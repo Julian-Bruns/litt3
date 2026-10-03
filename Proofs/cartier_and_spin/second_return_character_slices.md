@@ -1,7 +1,7 @@
 # Proof and evidence for the character-slice exclusions
 
 Use the exact eighty-by-thirty-five pencil T(z) in the
-[actual quotient atlas](../../Theorems/cartier_and_spin/second_return_actual_quotient_atlas.md),
+[actual quotient atlas](../../Theorems/cartier_and_spin/second_return_global_transversality.md),
 with z_i=xi_i^25. The complete column span of the twelve alpha columns
 over all nineteen source coordinates has rank51. Its annihilator
 gives a29-row necessary pencil involving f only. The construction

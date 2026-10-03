@@ -17,7 +17,7 @@ from cysignals.alarm import alarm,cancel_alarm
 
 def run(seconds,output):
     started=time.monotonic();root=Path(__file__).resolve().parents[2]
-    data=json.loads((root/'Research/computations/backup_genus_two_preparation.json').read_text())['opers']
+    data=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/backup_genus_two_preparation.json').read_text())['opers']
     prime=GF(5);X=PolynomialRing(prime,'x');x=X.gen()
     # The exact Tate-module bounds put ALL J[4] over F125^2.
     small=GF(5**6,name='rho');rho=small.gen()
@@ -125,5 +125,5 @@ def run(seconds,output):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--seconds',type=int,default=45)
-    parser.add_argument('--output',default='Research/computations/backup_genus_two_four_torsion.json')
+    parser.add_argument('--output',default='../litt3-computation-data/legacy_workspace_computations/backup_genus_two_four_torsion.json')
     args=parser.parse_args();run(args.seconds,args.output)

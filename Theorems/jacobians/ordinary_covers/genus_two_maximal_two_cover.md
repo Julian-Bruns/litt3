@@ -39,5 +39,4 @@ such an X has Cartier kernel dimension at least3.
 The monodromy restriction is essential; arbitrary solvable groups,
 two-groups and cyclic cubic covers are not excluded.
 
-[Proof](../../../Proofs/jacobians/ordinary_covers/genus_two_maximal_two_cover.md) ·
-[Small polynomial certificate](../../../scripts/genus_two/verify_genus_two_maximal_two_cover.py).
+[Proof](../../../Proofs/jacobians/ordinary_covers/genus_two_maximal_two_cover.md).

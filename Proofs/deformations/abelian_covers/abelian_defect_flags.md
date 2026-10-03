@@ -85,7 +85,7 @@ in both mixed cases. Hence the only degenerate branch plane is z=0,
 the original base plane; all mixed planes are nondegenerate. The
 branch restriction has rank1, since anisotropy rules out rank0.
 
-The [compact certificate](../../../Research/computations/abelian_defect_flag_foundations.json)
+The [compact certificate](../../../../litt3-computation-data/legacy_workspace_computations/abelian_defect_flag_foundations.json)
 records these spans and input hashes for all twelve cases. A
 [bounded audit](../../../Research/audits/QUADRATIC_COEFFICIENT_SPAN_AUDIT_2026_09_13.md)
 checks the span criterion and adjugate-plane identity.
@@ -171,14 +171,11 @@ R=1 and the trivial balanced cover.
 
 ## 4. Low-defect nonabelian consequences
 
-Every noncyclic finite five-group P has a quotient (Z/5)^2. Pull back
-the actual connection to that intermediate curve. The formula gives
-defect nine or ten, so every actual P-cover has defect at least nine.
-If P is nonabelian, the cover above this abelian intermediate is
-nontrivial with five-group Galois group. When the intermediate defect
-is nine, the existing symplectic odd-defect growth theorem makes it
-at least ten upstairs; when it is ten, monotonicity suffices. Thus
-every nonabelian P-cover has defect at least ten.
+The general [augmentation-width and Frattini bound](../section_growth/augmentation_width_defect.md)
+gives defect at least nine for every noncyclic five-group cover of
+a defect-one active pair, and at least ten unless its group is
+$(\mathbf Z/5)^2$. It applies to all these bad doubles. In particular
+every nonabelian cover has defect at least ten.
 
 For each bad double, the only defects below nine in a nontrivial
 five-group Galois cover are consequently the value two, on cyclic
@@ -191,13 +188,13 @@ The coefficient-span verifier passes all twelve cases and the symbolic
 factorization in0.312s. It uses the independently audited Picard jets;
 it does not reconstruct their full cohomology presentation.
 The original [audit](../../../Research/audits/ABELIAN_DEFECT_FLAGS_AUDIT_2026_09_11.md),
-[receipt](../../../Research/computations/abelian_defect_flags_audit.json) and
+[receipt](../../../../litt3-computation-data/legacy_workspace_computations/abelian_defect_flags_audit.json) and
 [replay](../../../scripts/deformations/audit_abelian_defect_flags.py) retain the independent
 372-direction/372-plane checks and twenty semigroup counts. Their
 original fixed-basis and plane data also fix the actual Heisenberg
 cover inputs. These remain verification evidence; the current proof
 uses the coefficient spans and the shared length lemma.
 
-The all-exponent proof is the shared length lemma, not extrapolation
-from the finite tests. The nonabelian lower bound uses the inherited
-symplectic odd-defect growth result with its author-prose scope.
+The all-exponent proof is the shared length lemma. The nonabelian
+bound is the general Frattini consequence of augmentation width and
+inherited symplectic odd-defect growth.

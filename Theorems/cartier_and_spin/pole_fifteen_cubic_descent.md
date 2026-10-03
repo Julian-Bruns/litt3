@@ -1,6 +1,6 @@
 # Every actual pole-fifteen comparison has a simultaneous cubic quotient
 
-Version2, 27 September2026. Use the fixed X, lambda,tau and
+Version3,3October2026. Use the fixed X, lambda,tau and
 [comparison normal form](new_line_comparison_normal_form.md).
 Let h1,h2:T->X be actual finite etale maps from the SAME smooth
 proper connected curve, with distinct embedded endpoint fields
@@ -14,7 +14,9 @@ If the comparison function z has pole degree fifteen, then
 Both character polynomials H_i0+X H_i1 in the two actual minimal
 polynomials vanish. This includes concentrated multiplicity-five
 norms, repeated phases, arbitrary geometric scalars, and every
-covering degree. The automatic bound is15<=deg h_i<=218;
+covering degree. The later integer phase theorem replaces the
+phase-multiset search, including fivefold concentration.
+The automatic bound is15<=deg h_i<=218;
 the proof does not use the upper bound.
 
 The simultaneous quotient S has

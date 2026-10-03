@@ -9,8 +9,9 @@ Then v has NO nonzero y-component. The entire geometric norm system
 \[
 P+g^3=H^2J^3,\qquad \deg g\le3,\quad H,J\text{ monic quadratics}
 \]
-is empty, including repeated-root and common-root boundaries. Combined
-with the older square-norm obstruction this excludes that entire sector.
+is empty, including repeated-root and common-root boundaries, by the
+unconditional [fixed-X norm theorem](../jacobians/isogeny_sieves/trigonal_constant_norm_obstruction.md).
+Combined with its square-norm obstruction this excludes that entire sector.
 
 For the surviving polynomial v, let d=deg v and D_2=v a_2. Then
 D_2 belongs to L_X(14O), with possible pole orders0,3,6,9,10,12,13.
@@ -38,6 +39,8 @@ geometric coefficients. These are the initial necessary conditions. The
 [two-profile reduction](admissible_degree_ten_two_profiles.md) now excludes
 every quadratic v and seven of the nine listed infinity profiles. Only
 constant v with (4,4,2) and linear v with (3,3,1) remain in this sector.
-Their actual covers, and the separate cubic-derivative sector, are not decided.
+The later [trace-dual theorem](admissible_degree_ten_trace_zero_exclusion.md)
+excludes both actual profiles with the order-five requirement. The relaxed
+non-torsion loci and the separate cubic-derivative sector are not decided.
 
 [Proof and exact evidence](../../Proofs/cartier_and_spin/admissible_degree_ten_trace_zero.md).

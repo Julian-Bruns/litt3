@@ -1,6 +1,6 @@
 # An exact polynomial model for the remaining triangle covers
 
-Version1,21September2026. Work over an algebraically closed field of
+Version2,3October2026. Work over an algebraically closed field of
 characteristic zero. Let $B,C$ be monic quartics, with $C(0)=1$, and
 let $s\ne0$. Put
 \[
@@ -26,6 +26,12 @@ They represent21 cover classes with deck group of order two,
 eight, with respectively8,4,2 normalizations per class.
 The168 points in the first part are the remaining candidates from
 the backup arithmetic reduction. The other68 have extra automorphisms.
+The twelve normalized models with \(C_3=[x^3]C=0\) all have
+\(B_1=B_3=C_1=0\):
+their source quartics are even, so each source has an order-four
+automorphism. Exact characteristic-zero point verification and the
+independent permutation count establish completeness without a
+finite-field or rational-ideal dimension calculation.
 
 For computation, allow arbitrary nonzero $c_0=C(0)$ and retain
 monic $B,C$. The square identity is equivalent to

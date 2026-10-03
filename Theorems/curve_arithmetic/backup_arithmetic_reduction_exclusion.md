@@ -1,6 +1,6 @@
 # The backup is not a good reduction of an arithmetic genus-two curve
 
-Version1,21September2026. Let
+Version2,3 October2026. Let
 \[
 Y/\overline{\mathbf F}_5:\quad
 v^2=u(u-1)(u-2)(u-3)(u-\alpha),\qquad \alpha^3+\alpha+1=0.
@@ -29,8 +29,19 @@ good reduction of an arbitrary quotient map, a prime-to-five
 auxiliary deck group, or an unramified trace field at five.
 
 Consequently the backup admits no fully liftable coreless finite
-etale correspondence. This still leaves intrinsically
-characteristic-five coreless spans. Neither original unmarked
-common-cover problem is settled by this theorem.
+etale correspondence, with BOTH original maps retained.
+
+For any actual coreless span with this Y, no compatible rank-two
+K-coefficient F-isocrystals can have nonconstant Y-Newton polygon
+with normalized generic slopes (0,delta), 0<delta<=1.
+No initial integral lattice or restriction on K/Q5 is needed.
+If singleton clumps are also excluded, the same nonexistence holds
+for oriented orthogonal rank-three/projective coefficients with
+generic slopes (-delta,0,delta). These follow from the actual linear
+and projective lifting theorems, including their source descent.
+
+This still leaves intrinsically characteristic-five coreless spans
+without such supplied coefficients. Neither original unmarked
+common-cover problem is settled.
 
 [Proof](../../Proofs/curve_arithmetic/backup_arithmetic_reduction_exclusion.md).

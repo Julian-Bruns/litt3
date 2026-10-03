@@ -105,7 +105,7 @@ out={'status':'executed geometric coefficient pieces; full family theorem not as
 # Reconstruct the moving fourth normal cohomology in THIS regular gauge.
 # A different earlier smooth-reference convention can change these vectors
 # by M-images and hence change the direct fourth-digit polynomial.
-adj=json.loads((root/'Research/computations/rank25_fourth_digit_projections.json').read_text())
+adj=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/rank25_fourth_digit_projections.json').read_text())
 ell=np.array([[ff.pack(list(map(int,c))) for c in row] for row in adj['adjoint_rows']],np.int16)
 def adjroot(no):return [int(ff.T['FINV'][dot(row,no)]) for row in ell]
 def graphq(left,right):

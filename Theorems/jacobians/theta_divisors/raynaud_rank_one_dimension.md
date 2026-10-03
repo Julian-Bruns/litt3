@@ -1,80 +1,73 @@
 # Dimension bounds for Raynaud families
 
-Version2. Independently audited, including the Wronskian extension.
+Version3, 3 October2026. The fixed-evaluation extension passed two
+independent focused reviews; the earlier Fourier and Wronskian inputs
+retain their audits.
 
 Let \(C\) be a smooth projective connected curve of genus \(G\ge2\)
-over an algebraically closed field of characteristic \(p>0\). Write
+over an algebraically closed field of characteristic \(p>0\). Put
 \(J=J(C^{(1)})\), \(B_C=F_{C/k*}\mathcal O_C/\mathcal O_{C^{(1)}}\),
-and let \(i:A\hookrightarrow J\) be a positive-dimensional abelian
-subvariety. Fix any \(L_0\in J(k)\), and put
+and let \(i:A\hookrightarrow J\) be an abelian subvariety of
+dimension \(d>0\). For any \(L_0\in J(k)\), write
 \[
-\delta(A,L_0)=
-\operatorname{generic}_{L\in A}h^0(C^{(1)},B_C\otimes L_0\otimes i(L)).
+s=\operatorname{generic}_{L\in A}
+h^0(C^{(1)},B_C\otimes L_0\otimes i(L)).
 \]
-If \(\delta(A,L_0)=1\), then
+If \(s>0\), then
 \[
-\boxed{\dim A\le\frac{p-1}{p}(G-1).}
+\boxed{d\le\frac{p-1}{p}(G-1).}
 \tag{1}
 \]
-The translate need not be invariant under inversion. There is no
-ordinariness, separability of a polarization, principal induced
-polarization, or Néron--Severi rank hypothesis.
+This holds at every positive defect, including sections dependent
+over the curve's function field. There is no ordinariness,
+inversion-invariance, quotient a-number, principal induced
+polarization, or separable-isogeny hypothesis.
 
-More precisely, use normalized Poincaré families on \(C^{(1)}\times A\)
-and let \(\mathscr K_\pm\) be their degree-zero cohomology sheaves
-for twists by \(L_0^{\pm1}\). They are line bundles, with ample duals
-\(\mathscr M_\pm\). Let \(D\) be the effective divisorial torsion
-cycle in degree-one cohomology for the plus family. If \(D\ne0\),
-then inequality (1) is strict.
-
-Two consequences are immediate.
-
-1. No translate of an abelian subvariety of codimension one in \(J\)
-   has generic Raynaud defect exactly one. A translate which is a
-   component of \(\Theta_{B_C}\) therefore has generic defect at
-   least two and appears with multiplicity at least two.
-2. Every abelian subvariety of codimension one through the origin
-   has generic defect zero. More generally, this vanishing holds
-   whenever \(a(J/A)\le1\) and
-   \(\dim A>(p-1)(G-1)/p\). Here the quotient is understood before
-   Frobenius twist when applying the
-   [quotient a-number bound](restricted_raynaud_complement_rank.md).
-
-The second assertion does not extend to arbitrary translates by
-that a-number argument: the bound is based at the trivial line.
-The first assertion does apply to every translate.
-
-There is a stronger bound at higher generic defect when the
-sections are independent at the generic point of the curve.
-Suppose \(\delta(A,L_0)=s\), and for both opposite translates
-\(L_0^{\pm1}A\), the \(s\) generic global sections are linearly
-independent over the function field of \(C^{(1)}\). Then
-\(1\le s\le p-1\) and
+Let \(\mathscr K_\pm\) be degree-zero cohomology of the normalized
+Poincaré families twisted by \(L_0^{\pm1}\). Both are reflexive of
+rank \(s\), with ample determinant duals
+\(\mathscr M_\pm=(\det\mathscr K_\pm)^\vee\). If \(D\) is the
+effective divisorial torsion cycle of plus-family degree-one
+cohomology, then
 \[
-\boxed{\dim A\le
-\frac{(p-1)(s+1)}{2ps}(G-1).}
+c_1(\mathscr M_+)+c_1(\mathscr M_-)+[D]=(p-1)i^*[\Theta_J].
 \tag{2}
 \]
-Again the inequality is strict if degree-one cohomology has a
-nonzero divisorial torsion cycle. The section-independence hypothesis
-is automatic for \(s=1\), and is an actual extra hypothesis for
-\(s>1\). The proof uses the ordinary Wronskian of the corresponding
-exact differentials, not differentiation on parameter space.
+Every dimension inequality here is strict when \(D\ne0\).
 
-Consequently, on every translated abelian divisor contained in
-\(\Theta_{B_C}\), at least one of the two opposite translated
-families has generically dependent sections over the curve's function
-field. If the translate is invariant under inversion, its own
-generic sections are dependent. For \(p=5\), the coefficients of
-\(G-1\) in (2) for \(s=1,2,3,4\) are respectively
-\(4/5,3/5,8/15,1/2\).
+Consequently, every translate of \(A\) has generic defect zero
+whenever \(d>(p-1)(G-1)/p\). In particular, **Raynaud theta has no
+translated abelian divisor component in any characteristic**.
+In genus two its restriction to every positive-dimensional abelian
+coset is proper.
 
-For an actual span \(X\leftarrow Z\rightarrow Y\), take the image
-of the two pullback Jacobians as \(A\). Both maps are retained.
-In the current characteristic-five mixed family, \(\dim A=11\) and
-\(g(Z)-1=8n\). The necessary inequality is \(11\le32n/5\);
-the nonzero jump divisor makes it strict. This still allows every
-\(n\ge2\), so it does not decide the mixed vanishing question or
-the common-cover problem.
+There are sharper bounds if the \(s\) generic global sections are
+independent over the function field of \(C^{(1)}_{k(A)}\) on one or
+both opposite families. Such independence implies \(s\le p-1\).
+Set \(c_\pm=(s+1)/s\) on each independent family and \(c_\pm=2\)
+otherwise. Then
+\[
+\boxed{d\le
+\frac{p-1}{p}\frac{c_+c_-}{c_++c_-}(G-1).}
+\tag{3}
+\]
+With independence on one sign this is
+\(2(p-1)(s+1)(G-1)/(p(3s+1))\); on both signs it is the earlier
+Wronskian bound
+\[
+d\le\frac{(p-1)(s+1)}{2ps}(G-1).
+\tag{4}
+\]
+Independence is automatic for \(s=1\). The two signs need not have
+the same evaluation rank when \(s>1\). For \(p=5\), the coefficients
+in (4) for \(s=1,2,3,4\) remain \(4/5,3/5,8/15,1/2\).
+
+For an actual span \(X\leftarrow Z\rightarrow Y\), apply the result
+to the image of both pullback Jacobians. Both actual étale maps
+remain. In the characteristic-five mixed family, \(d=11\) and
+\(g(Z)-1=8n\); positive generic defect of ANY size requires
+\(11\le32n/5\), strictly with a nonzero jump divisor. Every
+\(n\ge2\) still satisfies this necessary bound, so the mixed
+vanishing question and common-cover problem remain unresolved.
 
 [Proof](../../../Proofs/jacobians/theta_divisors/raynaud_rank_one_dimension.md).

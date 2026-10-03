@@ -1,8 +1,9 @@
 #!/usr/bin/env sage-python
 """Exact affine ideal of the actual simultaneous rank-two locus.
 
-Exploratory until its output and projective-chart coverage are audited.
-The five equations come from the calibrated actual triquadratic.
+The five equations come from the actual triquadratic. Its executed
+finite-length result and projective-chart coverage are inputs to the
+family theorem; the uniform octic identity is proved separately.
 """
 import argparse
 import hashlib
@@ -16,13 +17,11 @@ from verify import tensor_from_entries, simultaneous_equations
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--data-dir',type=Path,required=True)
-    ap.add_argument('--map-data',type=Path,required=True)
     ap.add_argument('--output',type=Path,required=True)
     args=ap.parse_args()
     assert not args.output.resolve().is_relative_to(Path(__file__).resolve().parents[3])
     start=time.monotonic()
     data=json.loads((args.data_dir/'certificate.json').read_text())
-    mapdata=json.loads(args.map_data.read_text())
     k=GF(125,'alpha',modulus=[1,1,0,1]);alpha=k.gen()
     decode=lambda a:k(a%5)+k((a//5)%5)*alpha+k(a//25)*alpha**2
     R=PolynomialRing(k,names=['b0','b1','b2','c0','c1','c2'],order='degrevlex')
@@ -44,19 +43,18 @@ def main():
     gb=I.groebner_basis(algorithm='singular:slimgb')
     print('Groebner basis complete',len(gb),'seconds',time.monotonic()-start,flush=True)
     dim=I.dimension()
-    residual=sum(decode(t)*b[0]**e[0]*b[1]**e[1]*b[2]**e[2]
-                 for e,t in mapdata['stable_to_boundary_octic'])
-    rem=I.reduce(residual)
-    print('dimension',dim,'octic remainder zero',not bool(rem),flush=True)
-    out=dict(status='exploratory',dimension=int(dim),basis_size=len(gb),
-             first_boundary_octic_in_ideal=not bool(rem),
-             affine_length=int(I.vector_space_dimension()) if dim==0 else None,
+    assert dim==0
+    length=int(I.vector_space_dimension())
+    assert length==1280
+    print('dimension',dim,'length',length,flush=True)
+    out=dict(status='exact_affine_dimension_and_length_computed',dimension=int(dim),basis_size=len(gb),
+             affine_length=length,
              equations=[str(f) for f in equations],groebner_basis=[str(f) for f in gb],
-             octic_remainder=str(rem),seconds=time.monotonic()-start,
+             seconds=time.monotonic()-start,
              script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(out,indent=2)+'\n')
-    print({k:v for k,v in out.items() if k not in ['equations','groebner_basis','octic_remainder']},flush=True)
+    print({k:v for k,v in out.items() if k not in ['equations','groebner_basis']},flush=True)
 
 
 if __name__=='__main__':main()

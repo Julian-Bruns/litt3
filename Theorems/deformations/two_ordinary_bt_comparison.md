@@ -1,11 +1,13 @@
 # Two ordinary endpoints isolate the full-group comparison obstruction
 
-Version1,21September2026. Work over $k=\overline{\mathbf F}_5$.
+Version2,3 October2026. Work over $k=\overline{\mathbf F}_5$.
 Let $X\xleftarrow f Z\xrightarrow gY$ be two actual finite etale
-maps of smooth proper hyperbolic curves. Supply normalized full
-height-two, dimension-one groups $G_X,G_Y$, whose generically ordinary,
-everywhere-versal BT1s have an actual specified comparison on Z.
-All subsequent comparisons retain this marking and determinant.
+maps of smooth proper hyperbolic curves. Supply actual generically
+ordinary, everywhere-versal height-two,
+dimension-one BT1s $H_X,H_Y$ with an actual specified comparison on Z
+and reduced supersingular divisors. Normalize higher determinants to
+the Teichmuller lifts of their finite characters. All subsequent
+comparisons retain the supplied first marking and determinant.
 Put $S_Z=f^*S_X=g^*S_Y$, where each reduced supersingular divisor
 has degree $4g(C)-4$, and put $V_C=H^0(C,\mathcal O_C(S_C))$.
 
@@ -18,8 +20,11 @@ Weighted Cartier defines a $5^{-1}$-semilinear endomorphism
 \qquad\ker\mathcal T_C=K_{H_C},\quad\mathcal T_C(1)=1.
 \]
 Assume BOTH endpoints are indigenous-ordinary:
-$K_{H_X}=K_{H_Y}=0$. No source ordinariness is assumed.
-Then, for $U=f^*V_X+g^*V_Y$ and $Q=V_Z/U$,
+$K_{H_X}=K_{H_Y}=0$. No source ordinariness is assumed. The later
+[absolute torsor](versal_bt_extension_torsor.md) supplies UNIQUE
+normalized full extensions $G_X,G_Y$ on the ORIGINAL endpoints;
+these need not be provided as additional data. For
+$U=f^*V_X+g^*V_Y$ and $Q=V_Z/U$,
 \[
 K_{H_Z}\cap U=0,\qquad
 \boxed{K_{H_Z}\simeq\ker(\overline{\mathcal T}_Z:Q\to Q).}
@@ -40,7 +45,7 @@ $K_{H_Z}$ and therefore impose no further condition on $h_N$.
 There is an affirmative case with no restriction on the other leg:
 if either leg has a Galois closure with a five-group Galois group,
 then $K_{H_Z}=0$ and the specified BT1 comparison extends uniquely
-to the two supplied full groups. This uses a Galois closure of ONE
+to these unique full groups. This uses a Galois closure of ONE
 leg, never a simultaneous closure.
 
 For general covering groups, neither $h_N\in U$ nor the vanishing

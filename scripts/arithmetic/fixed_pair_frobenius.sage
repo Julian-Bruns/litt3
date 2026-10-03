@@ -76,18 +76,21 @@ assert cyclic_q_frobenius_polynomial(CX, 25) == PX
 assert PX.is_weil_polynomial()
 assert PX.change_ring(GF(2)).is_irreducible()
 
-# Root ratios replace the maximal-order and cyclotomic-subfield calculation.
-Rratio.<zratio> = PolynomialRing(QQ)
-Rroot.<Uroot> = PolynomialRing(Rratio)
-P_root = Rroot(PX.list())
-ratio = Rratio(P_root.resultant(P_root(zratio*Uroot)))
-ratio_factors = ratio.factor()
-assert ratio_factors.unit()*prod(f^e for f,e in ratio_factors) == ratio
-assert all(f.is_irreducible() for f,e in ratio_factors)
-assert sorted((f.degree(),e,f.monic().denominator()) for f,e in ratio_factors) == [
-    (1,18,1),(18,1,5^12),(72,2,5^30),(72,2,5^36)]
-assert all(f == zratio-1 or f.monic().denominator() > 1
-           for f,e in ratio_factors)
+# The real-field criterion uses one residue pattern and the p-rank.
+# No root-ratio resultant or general Galois-group computation is needed.
+QX = (
+    T^9 - 2*T^8 - 254*T^7 + 457*T^6 + 21826*T^5 - 29834*T^4
+    - 703917*T^3 + 354810*T^2 + 6210225*T + 6613875
+)
+LX.<zX> = LaurentPolynomialRing(ZZ)
+assert zX^9 * LX(QX)(zX + 25/zX) == LX(PX)
+P5.<t5> = PolynomialRing(GF(5))
+assert P5(PX.list()) == t5^12*(t5+1)^2*(t5^4+t5^3+3*t5^2+3)
+QX107 = QX.change_ring(GF(107))
+assert gcd(QX107, QX107.derivative()) == 1
+factors107 = list(QX107.factor())
+assert sorted(f.degree() for f,e in factors107) == [1,8]
+assert all(e == 1 for f,e in factors107)
 
 # The branch-rational genus-25 curve.
 Rt.<t> = PolynomialRing(F5)

@@ -1,14 +1,11 @@
 #!/usr/bin/env sage
 """Construct the24x24 quadratic inverse-cup tensor by acyclic splitting."""
 from pathlib import Path
-source=Path('scripts/atlases/wronskian_matrix_pencil.sage').read_text()
-marker="for sample in saved['samples']:"
-assert source.count(marker)==1
-exec(preparse(source.split(marker)[0]))
-ident=json.loads(Path('Research/computations/wronskian_stable_identification.json').read_text())
-prior=json.loads(Path('Research/computations/wronskian_matrix_pencil.json').read_text())
-dual=json.loads(Path('Research/computations/wronskian_serre_dual.json').read_text())
-linegrad=json.loads(Path('Research/computations/wronskian_line_gradient.json').read_text())
+load('scripts/atlases/wronskian_section_context.sage')
+ident=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_stable_identification.json').read_text())
+prior=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_matrix_pencil.json').read_text())
+dual=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_serre_dual.json').read_text())
+linegrad=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_line_gradient.json').read_text())
 mons32=basis(32); mons64=basis(64); mons160=basis(160)
 xi_exps=[-g for g in gaps]+list(range(1,16)); assert len(xi_exps)==24
 LM=matrix(k,[parse(row) for row in ident['image_rows']]).transpose()
@@ -86,4 +83,4 @@ ratio=detline.leading_coefficient()/Delta.leading_coefficient()
 print('det degree',detline.degree(),'Delta degree',Delta.degree(),'ratio',ratio,'proportional',detline==ratio*Delta,flush=True)
 assert detline==ratio*Delta
 out={'scope':'Exact quadratic Bezout tensor for this noninvariant oper; no atlas exclusion','field':'F5[a]/(a^2+4*a+2)','SU_basis_convention':'wronskian_universal_image.json:S_U_basis','xi_P16_exponents':xi_exps,'L32_monomials':mons32,'S16':[enc(row) for row in S16.rows()],'quadratic_convention':'B(U)=sum_(i<=j) u_i*u_j tensor[i,j], with cross coefficients already polarized','tensor':[{'pair':list(ij),'matrix':[enc(row) for row in M.rows()]} for ij,M in tensor],'Cech_raw_inverse_cup_scalar':str(sign),'normalization':'All raw tensor coefficients divided by displayed scalar so B*M_eta^[5]=I','all_splitting_ODE_identities_verified':True,'all_12672_Wronskians_verified_as_fifth_powers_L32':True,'all_quadratic_coefficients_symmetric_verified':True,'sample_inverse_cup_checks':checks,'line_determinant':enc(detline.list()),'line_determinant_over_Delta':str(ratio),'line_determinant_proportional_verified':True,'elapsed_seconds':time.monotonic()-started}
-Path('Research/computations/wronskian_quadratic_bezout.json').write_text(json.dumps(out,indent=2,default=int)+'\n')
+Path('../litt3-computation-data/legacy_workspace_computations/wronskian_quadratic_bezout.json').write_text(json.dumps(out,indent=2,default=int)+'\n')

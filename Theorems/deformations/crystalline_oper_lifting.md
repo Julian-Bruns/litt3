@@ -44,6 +44,15 @@ does not supply this hypothesis. In particular a Frobenius cycle may
 permute rank-two summands of a larger crystal: a single compatible
 summand with the displayed isomorphism already suffices.
 
+## Rigidity of the integral lattice
+
+If two integral rank-two crystal lattices on $C$ have oper reductions
+of equal degree, every supplied rational crystalline isomorphism
+between them becomes an integral isomorphism after multiplication by
+a power of $p$. Thus two such lattices in one isocrystal differ by
+homothety. This statement needs no Frobenius structure and remains
+valid after finite etale pullback.
+
 ## Ramified coefficients with an oper modulo p
 
 Let $A/W(k)$ be a finite totally ramified complete DVR extension and
@@ -95,7 +104,7 @@ the needed integral transport and proves this extension. This extra
 conclusion does require the specified Frobenius bound; the preceding
 crystal-only criteria remain valid without it.
 
-Version5,20 September2026. Author proof. The stable-lattice argument
+Version6,3 October2026. Author proof. The stable-lattice argument
 removes the need to supply integral compatibility on both ends;
 the ramified argument retains an oper on a sufficiently thick
 characteristic-$p$ coefficient base, including the full modulo-$p$ case.

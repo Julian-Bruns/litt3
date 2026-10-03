@@ -78,7 +78,7 @@ def main():
         # Preserve the exact already audited origin for the regression row.
         baseline = (i,j)==(0,1)
         if baseline:
-            old = json.loads(Path('Research/computations/neutral5_hyperelliptic_model.json').read_text())
+            old = json.loads(Path('../litt3-computation-data/legacy_workspace_computations/neutral5_hyperelliptic_model.json').read_text())
             dp = lambda key: ring([k(c) for c in old[key]])
             assert q==dp('numerator')/dp('denominator')
             N,Den=dp('numerator'),dp('denominator')

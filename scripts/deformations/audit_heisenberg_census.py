@@ -29,7 +29,7 @@ def main():
     args=ap.parse_args()
     start=time.monotonic()
     root=Path(__file__).resolve().parents[2]
-    data=root/'Research/computations'
+    data=root/'../litt3-computation-data/legacy_workspace_computations'
     folder=root.parent/'litt3-computation-data/heisenberg125-census-20260911'/('case%d'%args.case)
     result={'status':'running','case':args.case,'inputs':{},'rows':[]}
     def read(path):

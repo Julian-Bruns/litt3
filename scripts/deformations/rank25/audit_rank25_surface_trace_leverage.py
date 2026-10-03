@@ -56,5 +56,5 @@ result={'status':'PASS finite leverage; proposed trace support remains unproved'
         'evaluation_matrix_invertible':True,
         'conditional_result':'C=(3+4t^2)*(lambda^2*s-1)^25',
         'warning':'This does not prove the support bound, which must control divided integral carries.'}
-(root/'Research/computations/rank25_surface_trace_leverage.json').write_text(json.dumps(result,indent=2)+'\n')
+(root/'../litt3-computation-data/legacy_workspace_computations/rank25_surface_trace_leverage.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps(result,indent=2))

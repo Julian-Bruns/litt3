@@ -1,13 +1,34 @@
 # Proof: the Witt Lie subbundle and its extra Cartier descent
 
 [Statement](../../Theorems/cartier_and_spin/common_projective_atiyah_detection.md).
-The returned Pro reply supplies Sections1--3 and the arithmetic
-subcase. Sections4--6 strengthen the reduction locally. We use the
+Version2,3 October2026. The later intrinsic Witt criterion now
+supplies the rank, bracket and oper arguments independently of the
+Atiyah hypothesis. The original second-descent criterion remains. We use the
 actual no-clump common category: every image is saturated, so kernels,
 quotients and intersections are vector bundles. Common positive
 canonical sections vanish.
 
-## 1. A Lagrangian Lie subbundle in the actual orthogonal bundle
+## 1. Centering and the actual orthogonal model
+
+The [intrinsic Wronskian identification](all_tensor_cartier_hn.md#3-the-two-distinct-characteristic-five-bundle-models)
+gives $T\simeq P=\Lambda^2_0B\otimes\omega^{-1}$.
+The exterior-square action has differential
+$d\rho:\mathfrak{sp}(B)\xrightarrow{\sim}\mathfrak{so}(P)$:
+if it vanishes on $P$, it also vanishes on the scalar symplectic line,
+hence on all of $\Lambda^2B$; the exterior-square differential in
+dimension four is injective when2 is invertible. Both Lie bundles
+have rank ten. Atiyah functoriality gives
+\[
+a(T)=d\rho(\kappa_B).
+\]
+Indeed the centered scalar $\tfrac12a(\omega)$ contributes
+$a(\omega)$ on the exterior square, canceled by the $\omega^{-1}$
+twist. The skew-adjoint summands split from the full endomorphism
+bundles, so the identity proves $\kappa_B=0$ if and only if $T$ has
+a common connection. The centered-bundle theorem then supplies its
+uniqueness, orthogonality and dormancy.
+
+### The Lagrangian Lie subbundle
 
 Use a local parameter $z$ on the untwisted curve and write $D=\partial_z$.
 A vector field $hD$ acts on inverse-square differentials by
@@ -42,28 +63,29 @@ W=W^\perp,\qquad
 \]
 All constructions commute with the original etale pullbacks.
 
-## 2. The unique possible proper subbundle of W
+## 2. The intrinsic Witt criterion
 
-The canonical filtration of $F^*W$ has line grades
-$\omega^{-1},\mathcal O,\omega,\omega^2,\omega^3$.
-For a common rank-$a$ subbundle $N\subset W$, every nonzero induced
-line grade is full, by saturation. Canonical transversality makes
-the occupied grades the first $a$. On the genus-two endpoint,
+The later [Witt-subbundle theorem](cartier_witt_oper_subbundle.md)
+establishes the following without any connection hypothesis:
+a proper nonzero common subbundle of $W$ is unique, has rank
+three and degree zero, and is common-simple. Its rank-two
+quotient $Q$ is common-simple and is the actual canonical-determinant
+Bol bundle of a common regular dormant oper, with
+$K\simeq\operatorname{End}^0(Q)$ and $\Lambda^2K\simeq K$.
+Its canonical oper filtration is
 \[
-5\deg N=a(a-3).
+0\longrightarrow\omega^3\longrightarrow F^*Q
+\longrightarrow\omega^2\longrightarrow0.
+\tag{5}
 \]
-For $1\le a\le5$, integrality permits only $a=3,5$.
-A proper subbundle therefore has rank three and degree zero. Two
-different such subbundles would intersect in rank one or two, which
-is impossible. Thus it is unique and common-simple. Its quotient
-$Q$ is also common-simple: a common line in $Q$ would lift to a
-rank-four subbundle of $W$.
+That theorem also proves injectivity of Frobenius on common
+Picard classes. These arguments are not repeated here.
 
 ## 3. The alternating second fundamental form
 
-Suppose $\kappa_B=0$. By the
-[centered-bundle theorem](centered_frobenius_common_bundle.md), $T$ has
-its unique common orthogonal connection, with zero $p$-curvature.
+Suppose $\kappa_B=0$. Section1 gives a common connection on $T$; the
+[centered-bundle theorem](centered_frobenius_common_bundle.md)
+makes it unique, orthogonal and dormant.
 The induced connection on $\mathfrak{so}(T)$ gives the alternating
 second fundamental map
 \[
@@ -80,59 +102,10 @@ map $K\to Q\omega$ vanishes: a nonzero common map from the simple
 rank-three $K$ cannot have image inside a rank-two bundle. Hence
 $K$ is horizontal and dormant.
 
-The induced connection is a derivation of the Lie bracket. Since
-$W$ is a Lie subbundle, for local $a,b\in K$ one has
-$\nabla[a,b]\in W\omega$, which says $\beta([a,b])=0$. Thus
-$K$ is a Lie subalgebra. Its bracket is nonzero: over the generic
-Frobenius-constant field, commuting nonzero vector fields have
-constant ratio, so an abelian vector-field subspace has dimension
-at most one. The nonzero common map $\Lambda^2K\to K$ is onto by
-simplicity, and the equal ranks make it an isomorphism.
+## 4. The second projective Cartier descent
 
-The occupied grades of $F^*K$ are $\omega^{-1},\mathcal O,\omega$.
-The last two-step term $V_3$ in the filtration of $F^*W$ consequently
-maps isomorphically onto $F^*Q$. Indeed it has zero intersection
-with $F^*K$ and the same rank, and its common image is saturated.
-It gives
-\[
-0\longrightarrow\omega^3\longrightarrow F^*Q
-\longrightarrow\omega^2\longrightarrow0,
-\tag{5}
-\]
-with the canonical oper second fundamental isomorphism. The quotient
-connection is the actual Cartier connection. This is a common
-regular dormant projective oper.
-
-We will use injectivity of Frobenius on the COMMON Picard group.
-If $F^*L\simeq\mathcal O$ commonly, the transported canonical
-connection is $d+\alpha$ for a common regular one-form $\alpha$.
-There are no such nonzero forms. Cartier descent therefore identifies
-$L$ with the trivial common line. Applying this to determinants in
-(5) gives $\det Q\simeq\omega$ on the first twist.
-
-## 4. The new adjoint identification
-
-The bracket of $K$ with $W$ induces a representation on $Q=W/K$:
-\[
-\rho:K\longrightarrow\operatorname{End}(Q).
-\]
-It has trace zero, since $K=[K,K]$. It cannot be the zero map.
-Otherwise $K$ would be an ideal in the generic Witt algebra $W$.
-That algebra is geometrically simple. For an elementary check over
-an algebraic closure of the generic field, write it as derivations
-of $k[z]/(z^5)$. The distinct weights of $zD$ isolate a monomial
-$z^iD$ in any nonzero ideal. Repeated bracketing with $D$ gives
-$D$; bracketing with the remaining monomials gives all five basis
-vectors (the last follows from $[z^3D,z^2D]=-z^4D$). All factorials
-used have order less than five and are nonzero.
-
-Thus $\rho$ is a nonzero common map from simple $K$ to rank-three
-$\operatorname{End}^0(Q)$. It is injective, and saturation makes
-it an isomorphism:
-\[
-K\simeq\operatorname{End}^0(Q).
-\tag{6}
-\]
+By Section2, the kernel already has its bracket and adjoint
+identification $K\simeq\operatorname{End}^0(Q)$.
 The connection on $K$ preserves its bracket. The bundle of Lie-algebra
 frames of $\operatorname{End}^0(Q)$ is the projective frame bundle
 of $Q$, because $\operatorname{Aut}(\mathfrak{sl}_2)=\mathrm{PGL}_2$
@@ -215,23 +188,25 @@ The unique common oper is Galois invariant. Each successive common
 connection is unique and therefore defined over that SAME field;
 Cartier descent retains this field, on the appropriate relative twist.
 For the point count it suffices that the resulting stable moduli
-classes are $\mathbf F_q$-rational. There are only $s$ coefficient
+classes are $\mathbf F_q$-rational. There are at most $s$ coefficient
 twists of the genus-two curve. On each twist the fixed-canonical-
 determinant rank-two moduli space is a form of $\mathbf P^3$; over
 a finite field that form is split. Thus it has $q^3+q^2+q+1$ rational
 points, an upper bound for its stable points.
 
-No pair consisting of a twist phase and a stable moduli class can
-repeat along the chain. If $i<j$ repeated, $j-i$ would be divisible
-by $s$, and composing the intervening normalized Frobenius maps
-would make $Q_i$ periodic. After a geometric theta normalization,
-this is an actual degree-zero Frobenius-periodic rank-two bundle.
-It is strongly semistable: an unstable pullback stays unstable under
-all further pullbacks, contradicting the stable periodic returns.
-Forward propagation would make $Q_0$ strongly semistable as well,
-contrary to its unstable oper pullback (5).
+There is a sharper label for every member: its first unstable
+Frobenius pullback has index EXACTLY $i+1$. Indeed for $0\le h\le i$
+the normalized pullback of $Q_i$ is $Q_{i-h}$, hence stable,
+whereas its $(i+1)$st pullback is a line twist of the unstable
+$F^*Q_0$ in (5). This excludes repetition under ANY isomorphism
+of endpoint twists, without a separate periodicity argument.
 
-Pigeonhole now proves the stated bound $s(q^3+q^2+q+1)$. A chain
+Let $d$ be any positive period of the endpoint's coefficient
+Frobenius twists up to $\mathbf F_q$-isomorphism. One may always
+take $d=s$; a model over $\mathbf F_{5^d}$ gives that period when
+$d\mid s$. There are at most $d$ phase moduli spaces, each with
+$q^3+q^2+q+1$ rational points. The distinct instability indices
+therefore give the bound $d(q^3+q^2+q+1)$. A chain
 cannot continue forever, so its final projective Atiyah class is
 nonzero. This argument uses the finite field of the WHOLE span;
 independent antecedents over growing fields would not be bounded.

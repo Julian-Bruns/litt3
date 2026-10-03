@@ -1,12 +1,17 @@
 # Cartier kernels classify every nonempty next-level BT extension space
 
-Version1,20 September2026. Let $C/k$ be smooth proper connected,
+Version2,3 October2026. Let $C/k$ be smooth proper connected,
 $k=\overline{\mathbf F}_5$, $g(C)\ge2$. Let $H/C$ be an actual
 everywhere-versal height-two, dimension-one BT1, generically ordinary
 with reduced supersingular divisor $S$. Retain its finite determinant
-character. Let $\pi:P\to C$ and $\Omega$ be its tame logarithmic
-character cover and Cartier-fixed form, as in
-[Cartier rigidity](versal_bt_cartier_rigidity.md). Put
+character. On the ordinary open, write the constituent characters as $\chi$ and
+$\delta\chi^{-1}$. Let $\pi:P\to C$ be the smooth normalization of
+the connected cover killing $\chi^2\delta^{-1}$, of degree two or four.
+Its logarithmic differential $\Omega=d\log q_H$ is regular and
+Cartier-fixed, with $\operatorname{div}_P\Omega=2R$, where $R$ is
+the reduced ramification divisor. All inertia indices along $S$ are
+two. The induced connection is an active admissible projective oper,
+with square Hasse divisor $2S$. Put
 \[
 K_H=\{h\in H^0(C,\mathcal O_C(S)):
  C_P(\pi^*h\,\Omega)=0\}.
@@ -28,6 +33,12 @@ BT$_N$ marking and normalized determinant. The additive space is
 independent of $N$. Its dimension is the indigenous defect of $H$.
 No assertion about a representing moduli scheme, existence of a
 reference, or automatic prolongation of every lower level is included.
+If the induced connection is indigenous-ordinary, every nonempty
+extension space above is a singleton. For either selected genus-two
+endpoint, all actual $H$ have this property: in the quintic family
+it holds when the parameter degree exceeds six or $a^3+a+1=0$.
+This reuses the entire geometric active-connection classification,
+including every determinant/root class.
 
 There is an exact local statement. After choosing a universal
 supersingular parameter $t$ for the local reference over $k[[t]]$,

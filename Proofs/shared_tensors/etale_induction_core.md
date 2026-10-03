@@ -51,9 +51,8 @@ permutation group, so every path cover splits over $X_0$. This proves
 
 ## A bounded path-splitting tower supplies a simultaneous Galois refinement
 
-Choose a basepoint $z\in Z(k)$, with images $x,y$. Identify
-$H=\pi_1(Z,z)$ with its open images in
-$G_X=\pi_1(X,x)$ and $G_Y=\pi_1(Y,y)$.
+Use the pointed endpoint groups and the actual source subgroup $H$
+from the statement.
 Let $N_X$ be the intersection of the kernels of the permutation
 actions of $G_X$ on ALL finite rooted path sets starting at $x$.
 Define $N_Y$ in the same way.
@@ -83,16 +82,10 @@ there is the same intersection as inside $k(Z)$. Thus(3) implies(4).
 
 ## A core bounds the induction closure
 
-Conversely suppose the endpoint intersection contains a function
-field $K$. Put $E=k(Z)$, $F=k(X)$ and $G=k(Y)$ with the actual
-embeddings. Take a finite Galois closure of $E/K$. Inside this fixed
-finite extension, alternately form the normal closures over $F$ and
-over $G$, starting with $E$, and take their composita.
-Every step is étale over both endpoint curves: normal closure of a
-finite étale cover is finite étale, and subsequent base changes and
-compositions preserve that property. The fields increase inside a
-fixed finite extension, so they stabilize. The resulting smooth curve
-$W$ is a finite étale source refinement Galois over BOTH endpoints.
+The established [cored orbifold bridge](../../Theorems/quotient_geometry/cored_orbifold_bridge.md)
+supplies an actual finite étale refinement $W\to Z$ Galois over both
+endpoints. Its finite-envelope input is justified by the core hypothesis;
+it is not available for an arbitrary span.
 
 Let $A_X,A_Y\subset\operatorname{Aut}(W)$ be its two deck groups and
 let $A=\langle A_X,A_Y\rangle$, a finite group. Put $L_W=h_X^*L$.
@@ -117,7 +110,33 @@ It consequently occurs in one of the finitely many systems
 \tag{4}
 \]
 Each has finite rank and finitely many irreducible constituents.
-This proves(4) implies(1) and completes all the equivalences.
+This proves(4) implies(1) and completes the path equivalences.
+
+## Faithful profinite gluing is the same core condition
+
+By [Cusinato, Lemma3.4](https://arxiv.org/html/2609.01234v2), properness
+of $G_X\amalg_HG_Y$ supplies one common open subgroup $N\subset H$
+normal in both vertices. The connected finite étale cover of $Z$
+belonging to $N$ is therefore Galois over both original endpoints.
+This proves(5) implies(3).
+
+Conversely the cored orbifold bridge gives $S=[W/D]$, with
+$D=\langle\operatorname{Gal}(W/X),\operatorname{Gal}(W/Y)\rangle$,
+and representable finite étale maps $X,Y\to S$.
+Put $A_Z=\operatorname{Gal}(W/Z)$; it is the same subgroup of both
+endpoint deck groups. Since $Z=[W/A_Z]$, both composites $Z\to S$
+are canonically $2$-isomorphic via the inclusion $A_Z\subset D$.
+The resulting compatible basepoints embed $G_X$ and $G_Y$ as open
+subgroups of $\pi_1(S)$ whose restrictions agree on the actual $H$.
+Their intersection need not equal $H$; no joint minimality is required.
+The pushout universal property gives $G\to\pi_1(S)$ whose two
+vertex composites are injective. Hence the vertex maps to $G$
+are injective, proving(4) implies(5).
+
+Condition(5) plainly implies(6), while [Cusinato, Lemma3.16](https://arxiv.org/html/2609.01234v2)
+gives the reverse implication for the full profinite pushout.
+Thus all six conditions are equivalent. No faithful compatible
+coefficient family or simultaneous closure has been assumed.
 
 ## Modular coefficients require control of extension depth
 
@@ -179,3 +198,58 @@ of a selected common coefficient. A common object need not contain
 every summand of its pull-push images. The theorem therefore rules
 out an exhaustive-induction construction in the coreless case, not
 the companion or clump criteria themselves.
+
+## Coefficient Frobenius gives an exact three-way growth criterion
+
+Use $\Lambda=\mathbf F_q$ and extend coefficients to
+$\overline{\mathbf F}_q$. Every finite path object still has finite
+monodromy. Its absolute simple types are permuted by coefficient
+Frobenius $\sigma_q$, because the whole object is defined over
+$\Lambda$. This asserts invariance of the whole multiset, not of
+each chosen subobject or quotient.
+
+Assume the three bounds $D,L,h$ in the statement. With
+$b=\operatorname{lcm}(1,\ldots,L)$, every absolute simple type
+is fixed up to isomorphism by $\sigma_q^b$. For a representation
+$\rho:\pi_1(X)\to\mathrm{GL}_d(\overline{\mathbf F}_q)$,
+this supplies a matrix intertwining $\rho$ with its coefficient
+twist. Lang's elementary semilinear descent for $\mathrm{GL}_d$
+changes the basis so that all its matrices lie in
+$\mathrm{GL}_d(\mathbf F_{q^b})$. One may see this by choosing
+a basis of fixed vectors for the corresponding invertible
+$q^b$-semilinear operator; its fixed space has dimension $d$
+over $\mathbf F_{q^b}$ and spans the original vector space.
+There is no ground-field descent of the curves in this step.
+
+Since $\pi_1(X)$ has $2g(X)$ topological generators, the total
+number of homomorphisms to $\mathrm{GL}_d(\mathbf F_{q^b})$
+is at most $|\mathrm{GL}_d(\mathbf F_{q^b})|^{2g(X)}$.
+Summing for $d\le D$ proves finiteness of the simple type set.
+All involved group images are finite. Extension of perfect finite
+coefficient fields preserves Loewy length: the radical of a finite
+group algebra commutes with such scalar extension, since its
+semisimple quotient is separable. Thus the same bound $h$ applies
+over $\Lambda'=\mathbf F_{q^b}$. The preceding modular proof gives
+an open path-splitting kernel and the stated actual core, with its
+existing splitting-cover degree bound.
+
+Conversely a core supplies the fixed simultaneous refinement
+constructed above, and the seed and all its translates factor
+through fixed finite endpoint groups. Their finite group algebras
+have only finitely many absolute simple types, finite coefficient
+Frobenius orbits, and bounded radical nilpotence. They therefore
+give all three bounds. This proves both the criterion and its
+coreless growth trichotomy.
+
+The orbit and depth hypotheses cannot be replaced by period of
+the whole objects. For example cyclic étale $3^m$ covers of a
+positive-genus curve in characteristic five have period-one
+$\mathbf F_5$ permutation systems, but primitive absolute
+rank-one character types have coefficient orbit length
+$\operatorname{ord}_{3^m}(5)=2\cdot3^{m-1}$. Conversely cyclic
+étale $5^m$ covers of an ordinary curve have only the trivial
+simple type and period one, but their regular modules are
+$\mathbf F_5[t]/(t^{5^m})$ and have Loewy length $5^m$.
+These are tests of the proposed replacement conditions, not
+claims that these particular cover families occur as paths in
+either selected common-cover candidate.

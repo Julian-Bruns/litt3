@@ -1,6 +1,6 @@
 # Exact reconstruction and fixed-divisor obstructions for one admissible line
 
-Version1,24 September2026. Work over k=bar(F5) on the fixed
+Version2,1 October2026. Work over k=bar(F5) on the fixed
 X:y^3=P(x), O at infinity. Use A=(1,21,14,22,13), f=Q/y^5,
 Q'=PA^2, theta=dx/y^2, R_X=O+x^*div_0A, and the saturated
 lambda_X=[f] and P_X=<[f],[f^2]> in B_X. The plane has degree7,
@@ -38,6 +38,28 @@ Both z,u belong to H^0(S,O(5H)). One can use
 g=z/u^2, Sat[g]=O_C((H-G)^(1)), adjunction differential
 zeta=2df/z^2 and nonzero regular connection form nu=du/u.
 Also w=z/u is separable of degree5n and zeta=dw-w nu.
+
+There is an exact test which needs no quadratic refinement. Fix the
+actual source divisor identity for q above, and let a be ANY nonzero
+element of H^0(S,O(10H)). Then
+\[
+\operatorname{div}a=2E-10H
+\quad\Longleftrightarrow\quad
+\nu_a=4\,da/a-dq/q=-d\log(aq)
+\text{ is regular on }S.
+\]
+When these equivalent conditions hold,5T is automatically principal,
+and
+\[
+T\not\sim0\quad\Longleftrightarrow\quad\nu_a\ne0.
+\]
+Indeed div(aq)=5T. Thus nu_a retains the canonical character of the
+admissible line, without an auxiliary divisor-class comparison.
+After taking z^2=a in
+the preceding quadratic construction it is exactly dlog(z^3/q).
+The pole bound and affine integrality of a are essential: regularity
+alone permits extra fifth-power zeros and poles. This test does not
+construct an actual source or remove its critical denominator.
 
 For a fixed reduced D=Delta^(1) of degree8n define
 Q_D=lambda+P(-D), of degree -n. It has at most one degree-zero

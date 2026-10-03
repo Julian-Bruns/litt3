@@ -1,6 +1,7 @@
 # Pole twelve is excluded for every actual tensor comparison
 
-Version1, 27 September2026. Let X be the fixed genus-nine curve and
+Version2,3 October2026. The later exact marked lattice supplies
+all nonmultiple-of-three small-pole exclusions directly. Let X be the fixed genus-nine curve and
 lambda,tau the specified second Cartier line and tensor of
 [the comparison normal form](new_line_comparison_normal_form.md).
 Let h1,h2:T->X be actual finite etale maps from the SAME smooth

@@ -1,6 +1,6 @@
 # Proof: reference-relative W4 escape and an affine fifth obstruction
 
-Version7, 2026-09-15. This proof retains the uniform reference-relative
+Version8, 3 October2026. This proof retains the uniform reference-relative
 construction, complete relative image and actual affine support theorem.
 Numerical fifth and later comparisons have their own canonical proofs.
 The polynomial Witt argument is stated once in Section9; Section11
@@ -624,13 +624,24 @@ nil-coordinate bounds for the genuine quadratic cochain give
 
 The mixed scalar class vanishes because L_Hstar(nu39)=0 and nu39 has
 no degree-nine part. Its full scalar representative therefore belongs
-to (f) intersect J7. In nodal coordinates q2 is a unit times uv; its
-homogeneous multiplication is injective in degrees0..3. Hence any
-preimage of a J7 target lies in J4, giving an F8 preimage. There IS a
-degree-four q2-kernel, so no J5 preimage is asserted.
+to (f) intersect J7. In linear nodal coordinates q2 is a nonzero
+multiple of uv. Multiplication takes every degree<=3 monomial to a
+distinct reduced monomial, so is injective there. Hence any preimage
+of a J7 target lies in J4, giving an F8 preimage. In degree4 the kernel
+is exactly the span of u4,v4, so no J5 preimage is asserted.
 
-The complete first product carry of f*nu39 lies in J9. The known
-inclusion J9 subset f*J7 gives its source in F5. Regular additive terms
+The complete first product carry of f*nu39 lies in J9 without a
+coefficient calculation: f has degree at least2 and nu39 has degree11;
+one integral carry lowers degree by4, while two overflowing variables
+give zero after the first whole division. The later
+[nodal ideal argument](fourth_hodge_quadratic_channel.md#rank125-filtered-extension)
+gives J^j subset f*J^(j-2) for every j>=9. Indeed in uv+w4 coordinates
+every such monomial has all exponents positive; dividing by uv gives
+its exact preimage because the extra w4 term vanishes. Units and
+formal coordinate changes preserve the augmentation filtration.
+These linear image inclusions descend to the coefficient field even
+if splitting the quadratic requires an extension. Thus J9 subset
+f*J7 gives the carry's source in F5. Regular additive terms
 on this direction lie in J11. For the ordinary coefficient mu retain
 the sharper bound: its cochain is F1, its nil target lies in J11, and
 J11 subset f*J9 gives a source in F3. The pure quadratic coefficient
@@ -667,19 +678,6 @@ solve and all the exclusions for the ordinary row apply. This harmless
 overestimate avoids assuming that particular term occurs.
 The fourth source itself uses inverse-Frobenius coefficients. Its
 direct ordinary contribution at final weight has the same AS bounds.
-
-The [finite certificate](../../../../litt3-computation-data/rank125_reference_20260914/certificates/rank125_fixed_line_affinity_support.json),
-produced by the
-[independent support verifier](../../../scripts/deformations/rank125/certify_fixed_line_affinity_support.py),
-checks q2 ranks(1,3,6,10,13), the actual filtered preimages for every
-monomial in J9 and J11, the COMPLETE first product carry of nu39,
-and all121 reduced F10 monomials under the two traces. The geometric
-nil bounds and whole regularity follow from the preceding arguments,
-not from a fifth-engine replay.
-
-The certificate was moved without changing its bytes; its original path
-and generating source are retained in the
-[storage relocation record](../../../../litt3-computation-data/rank125_reference_20260914/provenance/relocation.json).
 
 ### The complete fifth-weight ledger
 
@@ -753,8 +751,7 @@ The coefficient claims used above have independent exact verifiers:
 [whole quadratic and carry replay](../../../scripts/deformations/rank125/replay_w4_existence_geometry.py),
 [uniform polynomial inverse](../../../scripts/deformations/rank125/audit_w4_existence_polynomial.py),
 [fourth-fiber ranks](../../../scripts/deformations/rank125/certify_w4_escape_family.py),
-[two-trace projection](../../../scripts/deformations/rank125/audit_reference_increment_return.py),
-and [affinity support](../../../scripts/deformations/rank125/certify_fixed_line_affinity_support.py).
+[two-trace projection](../../../scripts/deformations/rank125/audit_reference_increment_return.py).
 The replay checks all 566 quadratic coefficient vectors and 43 carries;
 the full primary rank is 707. The
 [actual fourth-reference proof](rank125_actual_fourth_reference.md)

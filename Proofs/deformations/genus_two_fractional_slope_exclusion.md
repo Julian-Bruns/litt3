@@ -1,110 +1,9 @@
-# Proof: the Frobenius image supplies a forbidden dormant section
+# Proof: every active source is an oper, and a full oper cycle is ordinary
 
 [Statement](../../Theorems/deformations/genus_two_fractional_slope_exclusion.md).
-Use absolute Frobenius in the intrinsic argument. Equivalently one
-may use relative Frobenius and carry the indicated bundles to its
-twisted target throughout. In particular no $k$-linear identification
-of $C$ with $C^{(1)}$ is assumed. The vanishing hypothesis is preserved
-by the coefficient Frobenius twists that implement this convention.
-
-## The actual lattice and its reduced Frobenius map
-
-Suppose an isocrystal as in (2) exists. The residue-degree1 construction
-in [the ramified coefficient proof](ramified_rapoport_oper.md)
-gives a coefficient lattice $\mathcal H$, an actual oper line over
-$A/\pi^a$, and Frobenius elementary divisors $(1,\pi^a)$ everywhere.
-Let $H=\mathcal H/\pi$ and let $L\subset H$ be its reduced line.
-Then
-\[
-\deg H=0,\quad \deg L=1,\quad
-L\xrightarrow{\sim}(H/L)\otimes\omega_C.
-\tag{4}
-\]
-Since $a<e$, the same construction proves that $H$ is dormant.
-Locally, a basis adapted to the actual line modulo $\pi^a$ gives
-the basis $F(e_0)/\pi^a,F(b_0)$ of $\mathcal H$. The connection
-coefficients in this basis have factors $p/\pi^a$ or $p$, hence
-vanish modulo $\pi$. This proves dormancy, rather than assuming
-it from the Newton polygon.
-
-The reduced Frobenius is a nonzero horizontal rank-one map
-\[
-\overline F:F_C^*H\longrightarrow H,
-\qquad \ker\overline F=F_C^*L.
-\tag{5}
-\]
-It has no torsion defect in its image. In fact the argument below
-only needs its nonzero factor through $F_C^*(H/L)$.
-Writing $D=\det H$, the integral determinant divided by $\pi^a$
-is a unit isomorphism of rank-one crystals. Its reduction gives
-\[
-F_C^*D\simeq D,
-\qquad D^4\simeq\mathcal O_C.
-\tag{6}
-\]
-This also identifies the Cartier descent of the determinant connection
-with the bundle $D$ itself. It is stronger than its degree being zero.
-
-## Normalize the determinant without losing its twist
-
-Choose a theta characteristic $\vartheta$ on $C$ and put
-$N=L\vartheta^{-1}$. Equation(4) implies
-\[
-N^2=D,\qquad N^8=\mathcal O_C.
-\tag{7}
-\]
-Since this torsion is prime to five, give $N$ its canonical dormant
-connection. Its Cartier descent is $N^5$: indeed $(N^5)^5=N$ and
-$(N^5)^2=D$. By (6), the square of this connection is exactly the
-determinant connection of $H$.
-
-Thus $H\otimes N^{-1}$ is a normalized determinant-trivial dormant
-oper with Hodge line $\vartheta$. Let $B$ be its Cartier descent.
-By the definition of the associated canonical-determinant bundle,
-\[
-B=\mathcal V\otimes\vartheta^{-1},
-\qquad \det\mathcal V=\omega_C.
-\tag{8}
-\]
-Here (8) is read on the Cartier target, with the absolute-Frobenius
-convention specified above. The Cartier descent of $H$ is therefore
-$\mathcal V\vartheta^{-1}N^5$.
-
-Apply Cartier descent to the nonzero horizontal map in (5), after
-factoring through $F_C^*(H/L)$. Its source descends to
-$H/L=\vartheta^{-1}N$. It gives an actual nonzero morphism
-\[
-\vartheta^{-1}N\longrightarrow
-\mathcal V\vartheta^{-1}N^5.
-\tag{9}
-\]
-Equivalently,
-\[
-H^0(C,\mathcal V\otimes N^4)\ne0.
-\tag{10}
-\]
-But $N^4=D^2$ is two-torsion. This contradicts (1).
-The argument permits nontrivial determinant throughout; replacing
-it by a trivial line prematurely would lose this essential twist.
-
-## Applying the established endpoint calculation
-
-The [active critical-quartic theorem](../projective_connections/genus_two_active_critical_quartics.md)
-proves, for the parameter-degree-greater-than-six family and the
-cubic backup, that every dormant connection remains reduced on
-every connected étale double. Splitting its tangent space into
-the two character summands gives precisely (1), including the
-trivial character. The identification with the rank-two Bol
-Cartier-descent bundles is the fixed dormant convention used in
-those proofs. Hence both selected endpoints satisfy the hypothesis.
-
-This argument does not handle a cycle of distinct coefficient
-components by pretending it has residue degree one. In a longer
-cycle, a Frobenius step may start from a different bundle, and
-zero-Hodge steps may carry higher Frobenius pullbacks of an oper.
-The source line in (9) is then not automatically the degree-minus-one
-line used here. No exclusion for all higher-residue-degree gaps,
-or existence of any common coefficient, follows from this proof.
+Use absolute Frobenius notation; the relative formulation carries all
+coefficient twists. The dormant two-torsion vanishing is invariant
+under those twists.
 
 ## Two different opers and a complete oper cycle
 
@@ -149,8 +48,9 @@ For the stated cyclic conclusion use the additional Dieudonné
 hypothesis. Dividing an integral Frobenius matrix by its common
 uniformizer factor preserves integrality of both $F$ and
 $pF^{-1}$, so its primitive normalization still has $b\le e$.
-The actual Hodge filtration then supplies the source line modulo
-$\pi^b$, as in the partial Hodge construction above. A source
+The actual Hodge filtration supplies the source line modulo $\pi^b$,
+by the [whole-kernel construction](ramified_rapoport_oper.md#the-whole-outgoing-kernel-at-every-positive-height).
+A source
 basis adapted to that line gives the target basis
 $F(e)/\pi^b,F(v)$. If $b<e$, its connection coefficients have
 factors $p/\pi^b$ or $p$ and vanish modulo $\pi$. This would make
@@ -165,22 +65,62 @@ unit-root direction and determinant slope one per step, proving
 the ordinary conclusion. No assertion that the required complete
 oper cycle exists has entered the argument.
 
-## The ordered normal form for two components
+## Every residue degree has an endpoint gap bound
 
-The [arbitrary-cycle construction](ramified_rapoport_oper.md) first
-produces an oper component, say $i$, without changing the rational
-object. For $b<2e$ the other component cannot be an oper, by the
-two-oper step result just proved. Whenever $d_i>0$ and $d_{i-1}<e$,
-its positive kernel line is therefore horizontal. Enlarge that
-component by the actual operation(G7) of that proof. Both $F,V$
-remain integral, the oper component is fixed, and the heights
-change by $(d_i,d_{i-1})\mapsto(d_i-1,d_{i-1}+1)$.
-Iteration gives
+The [general lattice theorem](ramified_rapoport_oper.md) supplies a
+primitive Dieudonné cycle whose EVERY positive-height source is an
+oper. Write m for its number of positive edges, d_i for the heights,
+and b=\(\sum d_i\). If m=f, the complete-cycle criterion above forces
+every d_i=e, so the normalized generic gap is one.
+
+For a fractional gap, therefore,
 \[
-(d_i,d_{i-1})=(\max(b-e,0),\min(b,e)).
+m\le f-1,\qquad b\le em\le e(f-1),\qquad
+\delta=\frac b{ef}\le1-\frac1f.
 \]
-Its outgoing edge is now the maximum. The zero-defect and actual
-Hodge-kernel construction in the cited proof gives the full line
-to precision $n=\min(b,e)$. For $b=2e$ the ordinary construction
-gives $(e,e)$ and $n=e$. The returned Pro half-slope theorem is
-the case $b=e$.
+No determinant triviality entered this argument. For f=1 it recovers
+the original exclusion of every gap strictly between zero and one.
+
+## The residue-one determinant witness remains explicit
+
+In a would-be fractional f=1 lattice, the general residue-one
+construction makes H dormant. The normalized determinant map gives
+\(F_C^*D\cong D\),
+so D^4 is trivial. In the two-oper argument take H_-=H_+=H and
+write its Hodge line as \(\vartheta N\), N²=D. Thus N^8 is trivial.
+Its canonical dormant connection descends to N^5, since25=1 mod8.
+The exact forbidden twist there is \(N^5N^{-1}=N^4=D^2\).
+Hence the original witness \(H^0(\mathcal V\otimes D^2)\ne0\)
+and its two-torsion determinant remain useful special data.
+
+## The actual two-component normal form
+
+For f=2 and a fractional gap, the endpoint bound gives b<=e.
+The terminal lattice has one positive edge: zero is impossible,
+while two would be a full oper cycle and ordinary. Up to cyclic
+labeling its heights are (0,b). The unique active source is an
+oper over the WHOLE precision pi^b. The ordinary case b=2e instead
+has heights (e,e) and whole precision pi^e. The formerly unexcluded
+rows e<b<2e are now impossible; these are conditional lattice
+normal forms, not existence assertions.
+
+## An actual coreless comparison gives a uniform half-gap bound
+
+If the coefficient is common across an ACTUAL coreless span with
+every Frobenius arrow compatible on the SAME source, the general
+common-divisor theorem additionally gives m divides f.
+A fractional gap forces m<f, so m<=f/2 and
+\[
+\delta\le m/f\le1/2.
+\]
+This uses both original finite étale maps. It is stronger than the
+endpoint bound for large f and gives no endpoint-only half-gap claim.
+
+## Applying the established family vanishing
+
+The [active critical-quartic theorem](../projective_connections/genus_two_active_critical_quartics.md)
+proves the stated two-torsion dormant Bol vanishing on the
+parameter-degree-greater-than-six family and the cubic backup,
+including the trivial character. Both selected endpoints therefore
+satisfy the hypothesis. The ordinary gap-one case remains allowed.
+No common coefficient is constructed by these exclusions.

@@ -1,0 +1,9 @@
+# Proof: positive genus and both rational pole placements are exhausted
+
+Version1,3 October2026. Whole scoped review PASS; see the [statement](../../Theorems/cartier_and_spin/actual_q0_tensor_degree_six_one_triple_exclusion.md). [Independent audit](../../Research/audits/ACTUAL_Q0_TENSOR_ONE_TRIPLE_INFINITY_AUDIT_2026_10_03.md).
+
+The [one-triple degree restriction](actual_q0_tensor_one_triple_infinity_degree_bound.md) gives exactly THREE shared simple infinity poles, all ordinary, and proves B=Bx in this degree. The [whole positive-genus exclusion](actual_q0_tensor_degree_six_one_triple_positive_genus_exclusion.md) leaves only rational B. That antecedent covers higher genus, genus-two and all elliptic odd common-factor boundaries, including singular auxiliary quintics.
+
+On rational B take z=t². The THREE ordinary shared poles have either THREE distinct z-coordinates or TWO coordinates with one conjugate t-pair. A third point at an already paired coordinate is impossible for the degree-TWO z-map; a Weierstrass pole was already excluded. The [distinct-pole exclusion](actual_q0_tensor_degree_six_rational_distinct_pole_exclusion.md) deletes the first placement, including pure transversals by actual joint-field equality and all mixed patterns by their THIRTY exact first-jet cases. The [conjugate-pole exclusion](actual_q0_tensor_degree_six_rational_conjugate_pole_exclusion.md) deletes the second placement, covering both orientations and all SIXTY necessary cases.
+
+Thus every model in the degree-SIX ONE-triple profile fails. No further source or target cover replaces an original leg: all quotient functions, pole residues and fixed tensor jets come from the actual original jointly minimal span. The other degree-SIX infinity profile and cubic root index ONE have not been excluded by this proof.

@@ -14,7 +14,7 @@ def parse(c):
     if c not in cache: cache[c]=k(sage_eval(c,locals={'a':a}))
     return cache[c]
 def mat(rows): return matrix(k,[[parse(c) for c in row] for row in rows])
-source=Path('Research/computations/canonical_atlas_system.json')
+source=Path('../litt3-computation-data/legacy_workspace_computations/canonical_atlas_system.json')
 d=json.loads(source.read_text())
 Nc=[mat(M) for M in d['N_tensor']]; Rc=[mat(M) for M in d['R_tensor']]
 pairs=[(i,j) for i in range(32) for j in range(i,32)]
@@ -59,5 +59,5 @@ out={'scope':'Exact complete coefficient calculation for first saved genus-nine 
  'left_kernel_basis':[encode(v) for v in K.rows()],
  'quadratic_basis':[encode(v) for v in Q.row_space().basis()],
  'elapsed_seconds':time.monotonic()-t0,'maxrss_bytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}
-Path('Research/computations/combined_degree7_syzygies.json').write_text(json.dumps(out,indent=2,default=int)+'\n')
+Path('../litt3-computation-data/legacy_workspace_computations/combined_degree7_syzygies.json').write_text(json.dumps(out,indent=2,default=int)+'\n')
 log('saved','maxrss',out['maxrss_bytes'])

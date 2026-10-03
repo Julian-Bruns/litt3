@@ -7,101 +7,92 @@ and [normalized finite-group rigidity](versal_bt_display_descent.md).
 The new step is to bound fields for the actual descent relation, so
 that no full group on the other endpoint is required.
 
-## Count marked self-correspondences of Y
+## Count actual pointed self-correspondences
 
-Fix a rational base point $y_0\in Y(\mathbf F_q)$. Its geometric
-fundamental group has at most four topological generators. Indeed,
-lift the smooth proper curve to characteristic zero; the
-[proper smooth specialization epimorphism](https://stacks.math.columbia.edu/tag/0BUQ)
-and the characteristic-zero surface presentation give this assertion.
-This applies to ALL finite etale covers, not just covers of order
-prime to five.
+Fix $y_0\in Y(\mathbf F_q)$ and write $g_e=1+e(h-1)$.
+The full geometric fundamental group of $Y$ has at most $2h$
+generators, by lifting this ONE curve to characteristic zero and
+using the [proper smooth specialization epimorphism](https://stacks.math.columbia.edu/tag/0BUQ).
+The later [pointed-cover count](../curve_arithmetic/genus_two_quotient_descent.md#descent-of-the-original-first-leg)
+can be used with its automorphisms retained.
 
-For a positive integer $e$, label the $e$ geometric points over
-$y_0$ of a connected degree-e etale cover. Its isomorphism class is
-specified by a transitive homomorphism to $S_e$. Hence the number
-of such labeled covers is at most
+Let $\mathcal T_e$ be the transitive homomorphisms $\pi_1(Y_k)\to S_e$.
+Then $|\mathcal T_e|\le(e!)^{2h}$. Conjugation by the stabilizer
+$S_{e-1}$ of one letter is free: a centralizer of a transitive group
+fixing one letter is trivial. Thus the number of pointed connected
+degree-$e$ covers is at most
 \[
-C_e=(e!)^4.
-\tag{4}
-\]
-The labeling kills every automorphism of the cover. Write $g_e=e+1$
-for its genus.
-
-Consider geometric tuples
-\[
-(T,c_1,c_2,\lambda,\theta_1),
-\qquad c_i:T\to Y_k\text{ finite etale of degree }e,
+P_e=\frac{|\mathcal T_e|}{(e-1)!}\le e(e!)^{2h-1}.
 \tag{5}
 \]
-where $\lambda$ labels $c_1^{-1}(y_0)$ and
-$\theta_1:c_1^*G[5]\simeq c_2^*G[5]$ is an actual isomorphism.
-There are at most $C_e$ choices for the first labeled cover, and
-at most $C_e$ isomorphism classes for the second cover $T'\to Y$.
-To realize the second one on T with $\theta_1$, one must choose
-an isomorphism of the ACTUAL pairs
+For UNPOINTED cover classes $c:T'\to Y$, retain the weighted count
 \[
-(T,c_1^*G[5])\simeq(T',c_2^*G[5]).
+\sum_{[c]}\frac1{|\operatorname{Deck}(c)|}
+=\frac{|\mathcal T_e|}{e!}\le(e!)^{2h-1}.
 \tag{6}
 \]
-If nonempty, this set is a torsor under the automorphism group of
-$(T,c_1^*G[5])$. Its underlying curve automorphism group has order
-at most $24(g_e-1)=24e$ by
-[the proper versal-BT1 tame-stabilizer theorem](versal_bt_tame_automorphisms.md).
-Each underlying automorphism has at most four lifts to the pair.
-Indeed, generic ordinary nonsplitting and the nonzero Kodaira--Spencer
-map give scalar endomorphisms $\mathbf F_5$ over the function field,
-so the actual automorphisms over the identity of this reduced curve
-are $\mathbf F_5^\times$.
 
-Thus the isomorphism set (6) has at most $96e$ elements. Different presentations of a
-second cover may give the same tuple, which only decreases the count.
-
-It follows that the finite set of tuples (5) has cardinality at most
+Fix one pointed cover $(T,c_1,t_0)$, where $c_1(t_0)=y_0$. For a
+second cover $c_2':T'\to Y$, pairs $(c_2,\theta_1)$ on $T$, with
 \[
-96eC_e^2=96e(e!)^8=M_e.
+\theta_1:c_1^*G[5]\xrightarrow{\sim}c_2^*G[5],
+\]
+are represented by isomorphisms of the actual pairs
+$(T,c_1^*G[5])$ and $(T',c_2'^*G[5])$. If nonempty, that isomorphism
+set is a torsor under the automorphism group of the first pair.
+The [versal-BT1 tame-stabilizer theorem](versal_bt_tame_automorphisms.md)
+bounds its underlying curve group by $24(g_e-1)$. Its kernel is
+the four actual scalar automorphisms $\mathbf F_5^\times$.
+Its size is therefore at most $96e(h-1)$.
+
+The canonical lifts of $\operatorname{Deck}(c_2')$ act FREELY on this
+isomorphism set. Two representatives yield the same $(c_2,\theta_1)$
+exactly when they differ by such a deck transformation, retaining its
+canonical action on the pulled-back group. Combining (5) and (6)
+bounds the number of entire pointed tuples
+$(T,c_1,c_2,t_0,\theta_1)$ by
+\[
+96e(h-1)P_e\sum_{[c_2']}\frac1{|\operatorname{Deck}(c_2')|}
+\le96(h-1)e^2(e!)^{4h-2}=M_{h,e}.
 \tag{7}
 \]
-No simultaneous Galois closure has been used.
+One marked point kills every automorphism of the first cover; a
+complete labeling is unnecessary. No simultaneous Galois closure
+is used.
 
-## A field bound retaining the actual BT1 comparison
+## Descend the entire tuple over its orbit field
 
-The q-Frobenius permutes the set (5). Each tuple has orbit length
-$s\le M_e$. Because its automorphism group is trivial, the
-isomorphism from its $q^s$-twist is unique and satisfies all descent
-identities. All data are of finite presentation, so effective finite
-field descent gives a model of the ENTIRE tuple over
-$\mathbf F_{q^s}$. In particular both maps and the supplied
-comparison $\theta_1$ descend, not just the abstract curve T.
+The $q$-Frobenius permutes these tuples. A tuple's orbit length
+$s$ is at most $M_{h,e}$. Its automorphism group is trivial, so its
+comparison with its $q^s$-twist is unique and satisfies descent.
+All data have finite presentation: spread them and this comparison
+to a finite extension. The composite around that extension is an
+automorphism of the pointed tuple, hence the identity. Effective
+finite-field descent gives the ENTIRE tuple over $\mathbf F_{q^s}$,
+including both maps and the supplied $\theta_1$.
 
-For clarity, continuity causes no extra field factor. Initially put
-the tuple and the unique Frobenius comparison over one finite
-extension. A power fixing that initial model is an automorphism of
-the labeled tuple and hence the identity. Thus the resulting finite
-cyclic descent datum is effective.
+The full groups $c_1^*G,c_2^*G$ now live on this same finite-field
+curve. Their determinant comparison is the Teichmuller lift of
+$\det\theta_1$. Any geometric normalized higher comparison also
+descends over that field by uniqueness.
 
-The two full groups $c_1^*G,c_2^*G$ now live on this same finite-field
-curve. Their common BT1 marking is $\theta_1$. Its determinant gives
-the prescribed identification of their Teichmuller determinant
-characters. A normalized comparison at any higher level is unique,
-so a geometric such comparison also descends to $\mathbf F_{q^s}$.
-
-For $e\le d$ we have $g_e\le g_d$ and $s\le M_e\le M_d$. In the
-arithmetic cutoff, the quantity $A$ on this finite-field curve obeys
+For $e\le d$, write $g=g_e$ and let $l$ be the least integer with
+$(q^s)^l\ge8(2g+1)$. Then
 \[
-4g_e16^{g_e}(q^s)^{5g_e}\le A_d.
+g\le g_{h,d},\quad s\le M_{h,d},\quad l\le l_{h,d},\quad
+4g16^g(q^s)^{5g}\le A_{q,h,d}.
 \]
-Its least l with $(q^s)^l\ge8(2g_e+1)$ is at most $l_d$. Hence its
-cutoff is at most
+The sharper [full-group cutoff](finite_field_full_bt_cutoff.md),
+with finite-field exponent $fs$ and test degree $16l$, is consequently
+at most
 \[
-1+4A_d^2(1+16fs l_d)\le N_q(d).
+A_{q,h,d}(A_{q,h,d}-1)(16fs\,l_{h,d}+2)
+\le N_{q,h}(d).
 \tag{8}
 \]
-The established cutoff therefore upgrades every normalized
-level-$N_q(d)$ comparison on ANY such actual degree-at-most-d
-self-correspondence to a unique full comparison. The supplied
-finite-level comparison is retained by normalized finite-level
-uniqueness. Source ordinariness is never used.
+Thus a comparison at level $N_{q,h}(d)$ on ANY such degree-at-most-$d$
+self-correspondence extends uniquely to the full groups, retaining
+its supplied finite-level marking. No source ordinariness is used.
 
 ## Apply the bound to the original f-descent relation
 

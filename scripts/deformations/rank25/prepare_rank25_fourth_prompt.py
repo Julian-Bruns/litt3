@@ -18,7 +18,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--precision", type=int, default=220)
     ap.add_argument("--output", type=Path)
-    ap.add_argument("--cyclic-input", type=Path, default=Path(__file__).resolve().parents[3]/"Research/computations/cyclic5_small_field_fourth_inputs.json")
+    ap.add_argument("--cyclic-input", type=Path, default=Path(__file__).resolve().parents[3]/"../litt3-computation-data/legacy_workspace_computations/cyclic5_small_field_fourth_inputs.json")
     args = ap.parse_args()
     started = time.monotonic()
     helper = (Path(__file__).resolve().parents[3] / 'scripts/deformations/cyclic/cyclic5_witt_obstruction.sage')

@@ -1,6 +1,6 @@
 # Rank-three extension geometry and a family of false Frobenius-return tests
 
-Version 7, 26 September 2026. Let K be the fixed actual extension
+Version 8, 3 October 2026. Let K be the fixed actual extension
 0->O_X(-5O)->K->O_X(6O)->0 on the genus-nine X. For every
 T in Pic^0(X), put N=T(-O) and W_T=Ext^1(K,N), of dimension19.
 The following statements concern actual bundles and extension classes.
@@ -11,7 +11,11 @@ The following statements concern actual bundles and extension classes.
    Every other line subbundle has degree at most-4, by the
    [sharp line-degree theorem](small_shift_line_twist_vanishing.md).
    The strictly semistable locus is a smooth embedded ruled
-   surface Sigma_T=P_X(K) of degree35 in P18.
+   surface Sigma_T=P_X(K) of degree35 in P18. Its defining rank-two
+   linear system \(A_T=K(17O)\otimes T^{-1}\) has surjective
+   restriction \(H^0(A_T)\to H^0(A_T|_D)\), of rank2deg D,
+   for every effective base divisor D of degree at most five,
+   including repeated points.
 2. Any stable rank-three degree-zero E with Hom(E,K)!=0 surjects
    onto K and has one-dimensional Hom(E,K). For every M in Pic^0,
    Hom(E^vee tensor M,K)=0.

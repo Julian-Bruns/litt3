@@ -1,6 +1,6 @@
-# Proof: finite projective monodromy and transverse pointed extensions
+# Proof: Grassmannian quotient rigidity and transverse pointed extensions
 
-[Statement](../../Theorems/deformations/pointed_bundle_instability.md).
+[Statement](../../Theorems/deformations/pointed_bundle_instability.md) · [Independent structural review](../../Research/audits/COMMON_GRASSMANNIAN_QUOTIENT_RIGIDITY_AUDIT_2026_10_03.md).
 
 ## 1. Two elementary bundle facts
 
@@ -28,60 +28,76 @@ Iteration shows that a nonzero extension of omega_C by O_C never becomes
 split under Frobenius. All twists may equivalently be handled by descent
 to one finite field and absolute Frobenius there.
 
-## 2. Positive pointed bundles and finite projective monodromy
+## 2. Common strongly semistable quotients preserve slope
 
-The argument works over k=bar(F_p), in any rank. Suppose bundles E_X,E_Y
-of positive degree have nowhere-zero sections e_X,e_Y and an isomorphism
-of their actual pullbacks carrying one section to the other. If one
-bundle were strongly semistable, so would the other by Section1.
-Rank one is impossible already: its section would trivialize it.
+Work over $k=\overline{\mathbf F}_p$ in any characteristic.
+Let $E_X,E_Y$ be strongly semistable of rank $N$, with their
+ACTUAL comparison, and let $E_C\twoheadrightarrow I_C$ be
+compatible locally free quotients of rank $0<r\le N$.
 
-First, a strongly semistable rank-r bundle becomes projectively trivial
-after Frobenius and a finite etale cover. Write r=p^a m, with p not
+A strongly semistable rank-N bundle becomes projectively trivial
+after Frobenius and a finite etale cover. Write N=p^a m, with p not
 dividing m. An exact-order m Jacobian torsion point supplies a connected
 cyclic etale cover of degree m (the identity when m=1). The pullback of
-F^(a)*E has degree r deg E, hence integral slope. Twist by a line
+F^(a)*E has degree N deg E, hence integral slope. Twist by a line
 bundle of that slope to obtain strongly
 semistable degree zero. Such a bundle over bar(F_p) is trivialized after
 some Frobenius power and finite etale cover, by
 [Deninger--Werner, Theorem18(c), pp.573–574](https://www.numdam.org/item/ASENS_2005_4_38_4_553_0.pdf).
 This is the finite-field Frobenius-periodicity/Lange–Stuhler theorem.
 Consequently, on an actual etale cover, a Frobenius pullback of E is
-M^(direct-sum r), with deg M>0. Increase both endpoint exponents to one
+M^(direct-sum N), with arbitrary deg M. Increase both endpoint exponents to one
 common n and take Galois etale trivializing covers.
 
-Let K^ur be the maximal unramified extension of k(Z) in a fixed separable
-closure. It is also the maximal unramified extension of each original
-endpoint field: etale covers base change and compose, and their etale
-Galois closures remain etale. Thus G_i=Gal(K^ur/k(C_i)) are actual
-field-automorphism groups. Projective frames of P(F^(n)*E_i) compare on
-a connected common finite etale refinement of Z by a morphism to the
-affine group PGL_r. Properness makes that comparison constant, so choose
-one compatible frame over K^ur.
+Let $X'\to X$ and $Y'\to Y$ be these individual finite etale
+Galois trivializing covers. Choose one connected component $T$
+of $X'\times_X Z\times_Y Y'$ over the ACTUAL source $Z$.
+Its maps to $X',Y'$ are finite etale and surjective.
+The two projective frames compare on $T$ by a morphism to the
+affine group $\operatorname{PGL}_N$. Properness makes it constant;
+adjust the $Y'$ frame by this constant.
 
-The distinguished section now defines x in P^(r-1)(K^ur). Each G_i acts
-on x by constant projective matrices. These form a finite group for
-each endpoint: the subgroup fixing its Galois trivializing cover fixes
-the frame. The two matrix groups have entries in one finite subfield
-of k and therefore generate a finite H subset PGL_r(k). This construction
-uses the original endpoint embeddings, with no finite simultaneous
-Galois closure assumed.
+The quotient maps $X',Y'\to\operatorname{Gr}_r(k^N)$ now agree
+on $T$. Each individual deck group acts by constant projective
+matrices, again by properness and affineness, and has finite image.
+Both matrix groups and the frame comparison lie in one finite
+subfield of $k$. Thus they generate a finite
+$H\subset\operatorname{PGL}_N(k)$.
+The Grassmannian has a finite geometric quotient by $H$,
+including when $p\mid|H|$: take invariant affine neighborhoods
+of finite orbits and their integral invariant-ring quotients.
 
-On an endpoint trivializing cover, the coordinates of e are sections
-of the positive line M with no common zero. They define a nonconstant
-map to P^(r-1): a constant image would make them constant multiples of
-one nowhere-zero section, contradicting deg M>0. The finite quotient
-P^(r-1)->P^(r-1)/H therefore still has a curve as image. A rational
-function on the quotient, defined at this image's generic point and
-nonconstant along it, evaluates at x to a nonconstant element of K^ur.
-It is fixed by both G_X and G_Y, contradicting
+Composing with this quotient gives deck-invariant maps, which
+descend to the ORIGINAL $X$ and $Y$. Their pullbacks agree on
+$T$, hence on $Z$ by faithful flatness. A curve as common image
+would put its function field in $k(X)\cap k(Y)$ inside $k(Z)$,
+contradicting corelessness. The common image is therefore a point.
+Finiteness makes the Grassmannian map constant on each connected
+trivializing cover. No Galois closure of the two-leg span was used.
 
-    (K^ur)^(G_X) intersect (K^ur)^(G_Y)=k(X) intersect k(Y)=k.
+There the quotient is a fixed vector-space quotient of
+$M^{\oplus N}$, hence is $M^{\oplus r}$. Equality of slopes
+descends through the actual cover and the Frobenius power:
+$\mu(I_C)=\mu(E_C)$.
+Apply the same argument to every Frobenius pullback of the
+quotient. A quotient of a semistable bundle with the same
+slope is semistable, so $I_C$ is strongly semistable.
+Duality proves the saturated-subbundle assertion.
+Every actual morphism image is locally free on a smooth curve
+and is a compatible quotient of its source; the assertion
+therefore applies to images before any saturation.
 
-The quotient step also holds when p divides |H|: a finite morphism
-preserves the image dimension. One can lift any nonconstant function
-of the image curve from the quotient's local ring at its generic point.
-This proves the pointed-bundle principle without compatible theta roots.
+This stronger statement immediately proves the positive
+pointed-bundle principle: the matching nowhere-zero section
+gives a compatible saturated subline $\mathcal O\subset E$,
+whose slope zero would equal the positive slope of $E$.
+If only a nonzero matching section is supplied, its saturation
+$J\subset E$ instead has slope $\mu(E)$ and rank one.
+Its zero divisors are ACTUAL common divisors of degree
+$\deg J_C=\mu(E_C)$. Thus the slopes are integers and, when
+positive, those divisors give a clump. This latter consequence
+uses the section's saturation; it does not pretend that a
+section with zeros trivializes a positive line.
 
 ## 3. A nonzero shared tangent creates a clump
 

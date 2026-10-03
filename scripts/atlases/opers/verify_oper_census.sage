@@ -12,11 +12,11 @@ parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--out',required=True,type=Path)
 args=parser.parse_args()
 out=args.out.resolve();out.mkdir(parents=True,exist_ok=False)
-root=Path(__file__).resolve().parents[3];base=root/'Research/computations'
+root=Path(__file__).resolve().parents[3];base=root/'../litt3-computation-data/legacy_workspace_computations'
 started=time.monotonic()
 env=dict(os.environ,OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',MKL_NUM_THREADS='1')
 def run(name,arguments):
-    subprocess.run(['sage',str(root/'scripts'/name)]+arguments,check=True,env=env)
+    subprocess.run(['sage',str(Path(__file__).resolve().parent/name)]+arguments,check=True,env=env)
 
 run('certify_oper_parametrization.sage',
     [str(base/'normalized_oper_a9_parametrization.json'),'--output',str(out/'normalized.json')])

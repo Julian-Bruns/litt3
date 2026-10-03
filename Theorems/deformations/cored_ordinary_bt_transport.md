@@ -1,6 +1,6 @@
-# An ordinary endpoint transports its specified full group across a cored span
+# An ordinary BT1 transports its unique full tower across a cored span
 
-Version1,21September2026. Let $k=\overline{\mathbf F}_5$ and let
+Version2,3 October2026. Let $k=\overline{\mathbf F}_5$ and let
 $X\xleftarrow f Z\xrightarrow gY$ be two actual finite etale maps
 of smooth proper hyperbolic curves. Assume the span HAS A CORE.
 Supply actual generically ordinary, everywhere-versal height-two,
@@ -8,9 +8,11 @@ dimension-one BT1s $H_X,H_Y$ and a specified comparison on Z.
 Retain their finite determinant characters and their Teichmuller
 normalizations at every higher level.
 
-Assume $5\nmid g(Y)-1$, $K_{H_Y}=0$, and supply an actual normalized
-full group $G_Y$ extending $H_Y$. Then there is an actual normalized
-full group $G_X$ on the ORIGINAL X and an isomorphism
+Assume $5\nmid g(Y)-1$ and $K_{H_Y}=0$. The
+[absolute torsor](versal_bt_extension_torsor.md) supplies the UNIQUE
+normalized full group $G_Y$ extending the actual $H_Y$, without any
+separate full-group or next-level reference hypothesis.
+There is an actual normalized full group $G_X$ on the ORIGINAL X and an isomorphism
 \[
 f^*G_X\simeq g^*G_Y
 \]
@@ -19,8 +21,8 @@ unique up to the specified comparison. No indigenous ordinariness
 or separate higher-level effectivity assumption on X is required.
 
 In particular this applies when $g(Y)=2$. If X is also
-indigenous-ordinary and a full extension on X is already supplied,
-it is the one constructed here, so the two supplied full groups agree.
+indigenous-ordinary, its unique normalized full extension is the one
+constructed here. Any supplied normalized endpoint towers therefore agree.
 
 The finite mechanism is explicit. A core supplies an actual finite
 etale refinement W which is Galois over BOTH endpoints. Put

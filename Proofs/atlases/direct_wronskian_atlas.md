@@ -149,10 +149,14 @@ all quotient directions and preserves the affine nonzero-scale condition.
 
 ## Exact tests and limitation
 
-`scripts/atlases/direct_wronskian_test.sage` checks the original scalar polynomial
-identities, Wronskian1, dimensions32/66, rank57/nullity9, and Laurent
+The original direct sample algorithm checked the scalar polynomial
+identities, Wronskian1, dimensions32/66, rank57/nullity9 and Laurent
 bounds for five deterministic directions of a noninvariant F25 oper.
+The later intrinsic whole-tensor identity replaces that sampled
+comparison in the canonical extension-pencil criterion, so its source
+is deleted. Shared constructors needed by remaining tensor certificates
+are in [the section context](../../scripts/atlases/wronskian_section_context.sage).
 Four use pole112 and one pole111. All five observation pairs have rank2.
-Saved output is `Research/computations/direct_wronskian_samples.json`.
+Saved output is `../litt3-computation-data/legacy_workspace_computations/direct_wronskian_samples.json`.
 This demonstrates and checks the implementation; it is NOT a proof of
 global nonexistence on P31, for this oper or for the other17 representatives.

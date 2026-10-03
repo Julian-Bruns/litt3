@@ -12,7 +12,7 @@ from scripts.atlases.native import atlas_telemetry as T
 
 class TelemetryTests(unittest.TestCase):
     def test_all_representative_contexts(self):
-        manifest=json.loads((T.ROOT/'Research/computations/oper_representatives_manifest.json').read_text())
+        manifest=json.loads((T.ROOT/'../litt3-computation-data/legacy_workspace_computations/oper_representatives_manifest.json').read_text())
         for rep in manifest['representatives']:
             # Schema test at both permitted degree bounds. No field computation claimed.
             bounds=rep.get('coefficient_field_degree_F5_bounds',[2])

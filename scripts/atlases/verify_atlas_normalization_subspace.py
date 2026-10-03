@@ -13,7 +13,7 @@ from scripts.atlases.verify_atlas_weak_points import add, mul, parse
 ROOT = Path(__file__).resolve().parents[2]
 
 def verify():
-    record = json.loads((ROOT / 'Research/computations/atlas_normalization_subspace.json').read_text())
+    record = json.loads((ROOT / '../litt3-computation-data/legacy_workspace_computations/atlas_normalization_subspace.json').read_text())
     source = ROOT / record['source']
     assert hashlib.sha256(source.read_bytes()).hexdigest() == record['source_sha256']
     tensor = json.loads(source.read_text())

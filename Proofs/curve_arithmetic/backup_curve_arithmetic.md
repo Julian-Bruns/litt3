@@ -7,32 +7,27 @@
 The squarefree degree-five model has unique infinity O, pole semigroup
 ⟨2,5⟩ and div(du/v)=2O. Its Hasse–Witt determinant is3(alpha+1)^4≠0.
 The six double-zero differential lines are precisely the Weierstrass
-lines. The [family eigenline identities](../jacobians/torsion/family_small_torsion_specialization.md)
+lines. The [earlier Cartier matrix](../jacobians/torsion/family_singleton_root_exclusion.md)
 exclude all six from Cartier eigenlines. They hold at every smooth
 parameter and require no degree-avoidance bound here.
 
-The [preparation certificate](../../Research/computations/backup_genus_two_preparation.json)
+The [preparation certificate](../../../litt3-computation-data/legacy_workspace_computations/backup_genus_two_preparation.json)
 counts118 and15926 points over F125 and F15625. Newton identities give
-the displayed P. Its exact factorization is irreducible. The root-ratio
-resultant Res_U(P(U),P(zU)), apart from a nonzero scalar, factors as
-
-    (z−1)^4
-    ·(z^4+(12/5)z³+(48374/15625)z²+(12/5)z+1)
-    ·(z^4+(68/125)z³−(2/5)z²+(68/125)z+1)^2.
-
-The two quartics are irreducible over Q and nonintegral monic, hence
-not cyclotomic. No distinct Frobenius eigenvalues have root-of-unity
-ratio. Consequently P's eigenvalue powers remain distinct and conjugate
-over every finite extension: the Jacobian stays simple. Tate's theorem
-identifies its geometric rational endomorphisms with the unchanged
-centralizer Q(pi), since every geometric endomorphism is defined over
-some finite extension. Rosati sends pi to125/pi. For theta=pi+125/pi,
-
-    theta²−8theta−68=0,
-
-so the fixed field is Q(sqrt21), which contains no square root of5.
+the displayed irreducible P. Apply
+[Howe–Zhu, Theorem6](https://arxiv.org/html/math/0002205v1#S4)
+with q=125, a=−8, b=182. The four nonsimple cases require a=0
+or a² in{q+b,2b,3b−3q}; here a²=64 and the latter values are
+307,364,171. Thus the ordinary Jacobian is absolutely simple.
+The ordinary converse in their
+[Proposition3(2)](https://arxiv.org/html/math/0002205v1#S3)
+gives Q(pi^n)=Q(pi) for every n. Tate's theorem therefore gives
+geometric End⁰=Q(pi). Rosati sends pi to125/pi, and
+theta=pi+125/pi satisfies theta²−8theta−68=0. Its fixed field
+is Q(sqrt21), which contains no square root of5.
 The original [generator](../../scripts/genus_two/backup_genus_two_prepare.sage)
-checks the counts and factorization; these are retained exact inputs.
+retains the point counts and irreducibility check. Its obsolete
+root-ratio routine is removed; the original receipt keeps its evidence.
+The new proof needs only the cited theorem and four integer comparisons.
 
 ## 2. Automorphisms and moduli orbit
 

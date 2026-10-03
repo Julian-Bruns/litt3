@@ -102,7 +102,13 @@ F^2(r_T''-3r_T^2)=\Psi(T)(u+T+3a_4).
 \]
 For our family, a4=-(alpha+1), a3=alpha+1, a2=-(alpha+1),
 a1=alpha and a0=0. Multiplying Psi by its leading coefficient's
-inverse gives precisely P in the statement.
+inverse gives the backup's monic polynomial
+\[
+\begin{split}
+P(T)={}&T^5+(\alpha+1)T^4+(2\alpha^2+3)T^3+3\alpha^2T^2\\
+ &+(3\alpha^2+\alpha+1)T+(2\alpha^2+2\alpha+3).
+\end{split}
+\]
 
 The [small exact checker](../../scripts/genus_two/check_backup_dormant_residue.py)
 verifies P and the three polynomial identities
@@ -135,6 +141,33 @@ exist. The separate pointed first-height theorem places all eighty
 outside the theta-normalized pointed hyperplanes. Thus this sharpness statement
 neither contradicts nor settles the remaining all-height pointed
 problem.
+
+### One residue certificate gives all sixty good cubic curves
+
+The later [good-cubic classification](pointed_extensions_frobenius.md#5-exact-first-height-classification-and-cubic-transfer)
+and [affine branch theorem](../curve_arithmetic/prime_field_branch_family.md)
+give three coefficient-conjugate twenty-point orbits, all in F125.
+For x=1/(u+1), a=1/(t+1), w=v x³, the actual curve equation is
+\[
+w^2=(t+1)(x^5-x)(x-a).
+\]
+An affine map a'=l a+b, with l∈F5* and b∈F5, lifts by
+x'=l x+b, w'=l sqrt((t'+1)/(t+1)) w. Its scalar is in F125,
+so the isomorphism exists over F_(125²). Every good cubic C_t is
+therefore isomorphic over that field to a coefficient twist of the backup.
+
+Dormant schemes commute with these actual isomorphisms and coefficient
+twists. Their five-dimensional F125 algebras become fields after the
+quadratic extension, by the backup's irreducible degree-five certificate.
+An algebra whose scalar extension is a field was already a field;
+etaleness also descends. Hence every whole dormant scheme is Spec F_(125^5).
+No sixty specialized quintic calculations are needed.
+
+All six branch points are F125-rational, so all sixteen theta
+characteristics are rational there. The Galois-equivariant correspondence
+in Section1a gives exactly eighty classes with the same sharp field
+condition. Geometric isomorphism transports the pointed vanishing;
+thus all eighty remain outside its theta-normalized pointed loci.
 
 ## 3. Both actual maps and the clump dichotomy
 
@@ -201,6 +234,17 @@ then makes the active connection unique. The
 with r=4 and e=2 and with tangent zero, supplies exactly the unique
 simultaneous W2 lift. Its already proved zero-tangent normal form
 gives W(k)/(5^e), 2<=e<=infinity, without bounding e.
+
+For any good cubic endpoint, K=F_(5^(6r)) contains the quadratic
+isomorphism field above. Use coefficient Frobenius25, which fixes the
+F25-model of X and cycles all three good cubic orbits. Apply its
+inverse, when needed, to the ENTIRE span: source and both morphisms.
+Then compose its C_t-leg with the K-isomorphism to the backup. This
+gives the actual backup span on the same twisted source. Transport
+Section3 back along these invertible operations. Joint tangents,
+clumps, intrinsic connections and the marked Witt lifting torsor all
+transport, so every stated conclusion holds for the original span.
+No endpoint-only field substitution or new source map is inferred.
 
 ## 4. The finite-moduli version, retained as a separate tool
 

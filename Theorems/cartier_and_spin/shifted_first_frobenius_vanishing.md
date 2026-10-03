@@ -1,15 +1,16 @@
 # Shifted first-Frobenius vanishing and absence of first projective returns
 
-Version1,26September2026. Let K be the fixed actual degree-one rank-two
-extension on X:y^3=P(x), with the conventions in
-[the fifth symmetric theorem](fifth_symmetric_twist_vanishing.md).
+Version2,3October2026. Let K be the fixed actual degree-one rank-two
+extension on X:y^3=P(x), with its actual transition specified in the proof.
 For EVERY geometric degree-zero line bundle L,
 \[
 H^0\bigl(X,F_{\mathrm{abs}}^*K(O)\otimes L\bigr)=0.
 \]
 Equivalently, F_abs^*K has no line subbundle of degree at least minus one.
 The proof uses the actual extension class, all invariant twists, and
-two exhaustive cubic-norm ideals. It does not assume that L is torsion
+two exhaustive cubic-norm ideals. The general norm criterion excludes
+all nonnegative lines directly, independently of weaker first-Frobenius
+vanishing or stability. It does not assume that L is torsion
 of a specified order or defined over the ground field.
 
 Consequently, no rank-three degree-zero vector bundle R admitting a

@@ -15,7 +15,7 @@ from scripts.deformations.rank25.audit_rank25_one_parameter_return import (
 )
 
 root = Path(__file__).resolve().parents[3]
-source = root/'Research/computations/rank25_one_parameter_full_exclusion.json'
+source = root/'../litt3-computation-data/legacy_workspace_computations/rank25_one_parameter_full_exclusion.json'
 data = json.loads(source.read_text())
 decode = lambda p: [f.digits(c) for c in p]
 G = decode(data['G_monic'])
@@ -44,6 +44,6 @@ result = {'status': 'PASS independent finite-etale unit-ideal audit',
           'both_remainder_polynomials_even': True,
           'joint_Bezout_identity': 'a*G+b*(R5+c*R6)=1',
           'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest()}
-(root/'Research/computations/rank25_one_parameter_exclusion_finite_audit.json').write_text(
+(root/'../litt3-computation-data/legacy_workspace_computations/rank25_one_parameter_exclusion_finite_audit.json').write_text(
     json.dumps(result,indent=2)+'\n')
 print(json.dumps(result,indent=2))

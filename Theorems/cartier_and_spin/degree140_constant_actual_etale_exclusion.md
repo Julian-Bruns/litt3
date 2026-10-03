@@ -1,6 +1,6 @@
 # The constant degree140 branch has no actual etale source
 
-Version1,30 September2026. Retain the fixed genus-nine curve and the
+Version2,30 September2026. Retain the fixed genus-nine curve and the
 actual trace-zero, quadratic-derivative admissible degree-ten problem
 of [the two-profile reduction](admissible_degree_ten_two_profiles.md).
 In its constant-v profile, no point of the normalized residual-degree140

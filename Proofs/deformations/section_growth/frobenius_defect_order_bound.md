@@ -110,38 +110,23 @@ so the prime-to-five condition on f follows from that on g. Set
 Then g(T)<=H and the X-atlas degree is at most 64. The kernel K,
 and hence the original source degree, has no asserted bound.
 
-## 4. Count the intermediates and apply the fixed parameter
+## 4. The actual joint degree gives the contradiction
 
-The [bounded-atlas counting theorem](../../quotient_geometry/bounded_atlas_partner_finiteness.md)
-with B=64 bounds the number of genus-h possibilities for T by
+Let $R$ be the smooth joint normalization of the original endpoint
+fields in $k(Z)$. Its two induced maps are finite etale. The
+[orbit theorem](two_leg_defect_orbit_bound.md) applies to the
+nonzero X-defect and gives
+\[
+\deg(R/X)\le8b\le8|\Gamma|\le32(5^{24}+1)<2^{62}.
+\]
+Here $5^{24}<2^{56}$, since $5^3<2^7$, so the last bound is elementary.
 
-    K_h=D(D!)^18 * 3^(4G0^2 L) * (M_h!)^(2G0+L),
-    D=63!<2^378, G0=1+8D<2^382, L=64^2=2^12,
-    M_h=8(h-1)<2^62.
-
-Using log2(n!)<=n log2 n and log2 3<2 gives
-
-    log2 K_h < 378+2^393+2^779+2^452 < 2^781.
-
-There are fewer than 2^59 choices of h. For each T, the same theorem's
-automorphism bound gives |Aut(T)|<81h^4<3^(4H^2). A subgroup defining
-Y has order at most N<2^59 and therefore has at most 59 generators.
-Counting padded generating tuples bounds the number of quotients by
-
-    |Aut(T)|^59 < 2^(2^127).
-
-The total number of genus-two Y is consequently less than
-2^(2^782), and in particular less than 2^(2^800).
-
-The already selected main constant has
-
-    K >= 3^(4G_big^2 L_big),
-    G_big=1+8D0, D0=(336000-1)!>=2^335998, L_big=336000^2.
-
-Thus log2 K>2^671996, larger than the count above. The finite set of Y
-just counted is F25-Frobenius stable, since X is defined over F25.
-The [affine branch-family theorem](../../curve_arithmetic/prime_field_branch_family.md)
-gives the selected Y moduli orbit length r>K, a contradiction.
+The later [quotient-descent theorem](../../curve_arithmetic/genus_two_quotient_descent.md)
+requires $\deg(R/X)>D^2$ for this SAME selected pair, with
+$D=335999!$. But $D\ge2^{335998}$, hence $D^2>2^{62}$.
+This contradiction replaces the entire bounded-atlas and quotient
+census. The actual intermediate $T$ from Section3 still gives its
+useful cored reduction, but no count of it is needed.
 
 This excludes the stated prime-to-five Galois-Y, two-defect,
 nonordinary-X branch. A nontrivial cyclic five-part acting trivially on

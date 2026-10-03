@@ -10,7 +10,7 @@ from pathlib import Path
 
 t0=time.monotonic()
 k=GF(25,name='a',modulus=PolynomialRing(GF(5),'z')([2,4,1])); a=k.gen()
-source=Path('Research/computations/canonical_atlas_system.json')
+source=Path('../litt3-computation-data/legacy_workspace_computations/canonical_atlas_system.json')
 d=json.loads(source.read_text())
 cache={}
 def parse(c):
@@ -58,5 +58,5 @@ out={
  'original_ideal_consequence_formula':'-sum_(i,j) lambda_(i,64+j)b_i*b_j - 2 sum_j h_j*b_j^5',
  'elapsed_seconds':time.monotonic()-t0,
  'maxrss_bytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}
-Path('Research/computations/atlas_normalization_cancellation.json').write_text(json.dumps(out,indent=2,default=int)+'\n')
+Path('../litt3-computation-data/legacy_workspace_computations/atlas_normalization_cancellation.json').write_text(json.dumps(out,indent=2,default=int)+'\n')
 print(json.dumps({q:out[q] for q in ['tensor_rank','constraint_rank','h_kernel_dimension','full_lambda_h_identity_kernel_dimension','constraint_determinant','elapsed_seconds','maxrss_bytes']},default=int),flush=True)

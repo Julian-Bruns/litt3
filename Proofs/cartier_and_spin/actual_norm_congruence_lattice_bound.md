@@ -59,3 +59,35 @@ This closes an actual-map gap at the old minimum and raises the uniform
 norm-invariance range. It does not exclude polynomial norms, construct a
 shared Cartier line on an arbitrary common cover, or imply a common-cover
 decision.
+
+The consolidated phase corollary uses only this invariance and the
+already audited [unbounded modular phase theorem](unbounded_modular_phase_balance.md).
+An invariant norm of pole delta has total root mass delta/3, so
+delta<=57 forces every individual root mass<=19. In larger degree the
+per-root condition remains explicit. No phase computation is needed
+for this deduction. The sharpness below is independent of any actual realization.
+
+## Phase constraints do not enlarge the necessary minimum
+
+One retained minimizing divisor has rootwise zero triples
+\[
+(0,1954554,1698),\quad(468696,155910,0),\quad
+(68601,0,109359),\quad(0,16638,18603).
+\]
+Its class is zero by the exact lattice, its pole is2,794,059,
+and its sheet differences are divisible by three. Every positive
+entry n is at least1698. Put r=(4n mod5) in{0,...,4} and define
+\[
+m_0=n-28r,\qquad m_j=r\quad(1\le j<29).
+\]
+All entries are nonnegative, including n=0. They sum to n and,
+for every nontrivial29th root character,
+sum_j m_j xi^j=n-29r=0 in characteristic five.
+Their residues are constant across the phases on each sheet,
+so every required sheet-difference constraint holds. The supported
+function automatically satisfies the
+[logarithmic identity](marked_supported_logarithmic_connections.md).
+Thus the exact necessary minimum survives these extra constraints.
+Neither this array nor its function supplies either actual map.
+The methodological failure is recorded in
+[the single failed-route index](../../Research/FAILED_ROUTES.md#supported-norm-relaxations).

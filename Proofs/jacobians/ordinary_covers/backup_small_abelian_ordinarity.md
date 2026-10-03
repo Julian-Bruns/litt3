@@ -1,7 +1,19 @@
-# Proof: complete character tests at the actual backup
+# Proof: higher characters at one seed, then arithmetic transport
 
-Version 1, 2026-09-11. A short specialization and cover-theoretic
-corollary, with inherited evidence qualifications retained.
+Original character evidence,2026-09-11; hindsight,3 October2026.
+
+The [first-height cubic classification](../../deformations/pointed_extensions_frobenius.md)
+and [affine branch symmetry](../../curve_arithmetic/prime_field_branch_family.md)
+give three Frobenius-conjugate roots of I³+2I²+4I+4, each with twenty
+affine parameters. The backup has I=alpha+1. Thus every stated Y_t is
+an actual affine isomorphism or coefficient Frobenius twist of B.
+Jacobian ordinarity and the maximal abelian [m]-pullback commute with
+both operations. A moved Abel base point changes the map by a Jacobian
+translation; lifting that translation through [m] gives an isomorphism
+of the actual covers over the transported curve. Coefficient Frobenius
+transports coefficients and actual morphisms by the field automorphism.
+It suffices to prove the seed, with all original
+higher-character computational qualifications retained.
 
 For the maximal abelian exponent-m cover of B, m prime to 5, the
 character lines on B^(1) are precisely J(B^(1))[m]. The projection
@@ -11,11 +23,12 @@ formula and etale compatibility of the exact-differential bundle give
 
 This proves ordinarity exactly when every character summand vanishes.
 
-For m=6 the following complete character tests give the vanishing.
-The base curve is ordinary. Its fifteen etale doubles are the
-biquadratic curves obtained by splitting the six hyperelliptic branch
-points into a pair and its complement. Their complementary elliptic
-quotients y²=S are ordinary: every coefficient[u^4]S² is nonzero.
+For m=6 the lower-order character vanishing needs no new table.
+Since alpha has degree three, it is outside F25. The
+[maximal-two theorem](../../../Theorems/jacobians/ordinary_covers/genus_two_maximal_two_cover.md)
+makes B and its actual maximal elementary-two cover ordinary. Every
+connected cyclic double is an intermediate quotient and is ordinary.
+This replaces the former fifteen elliptic-Hasse calculations.
 
 For each of the40 cyclic cubic subgroups, the
 [complete norm algebra](../../quotient_geometry/endpoint_exclusions/backup_hermitian_atlas_exclusion.md#1-complete-finite-candidate-list)
@@ -41,18 +54,16 @@ coefficient. The norm and addition identities give
 with deg A6=6 and deg B3≤3. On z^6=h6 the primitive lines are again
 z eta and Unew eta/z. Their Cartier arrows are nonzero exactly when
 [u^14](A6 F²)≠0; the B3 du term has zero Cartier image. The
-[torsion generator](../../../scripts/genus_two/backup_genus_two_torsion.sage),
-[double-cover checker](../../../scripts/genus_two/backup_genus_two_double_covers.sage)
+[torsion generator](../../../scripts/genus_two/backup_genus_two_torsion.sage)
 and [cyclic checker](../../../scripts/genus_two/backup_genus_two_cyclic_covers.sage)
-reconstruct the complete length-40 norm algebra, all fifteen ordinary
-doubles, the full coefficient identity and a polynomial inverse in
+reconstruct the complete length-40 norm algebra, the full higher-character
+coefficient identity and a polynomial inverse in
 each of the fifteen length-40 algebras. From the repository root,
 run them in this order:
 
 ```sh
 sage scripts/genus_two/backup_genus_two_torsion.sage --output ../litt3-computation-data/backup_abelian_ordinarity/torsion.json
-sage scripts/genus_two/backup_genus_two_double_covers.sage --output ../litt3-computation-data/backup_abelian_ordinarity/doubles.json
-sage scripts/genus_two/backup_genus_two_cyclic_covers.sage --include-six --seconds 600 --torsion ../litt3-computation-data/backup_abelian_ordinarity/torsion.json --doubles ../litt3-computation-data/backup_abelian_ordinarity/doubles.json --output ../litt3-computation-data/backup_abelian_ordinarity/cyclic.json
+sage scripts/genus_two/backup_genus_two_cyclic_covers.sage --include-six --seconds 600 --torsion ../litt3-computation-data/backup_abelian_ordinarity/torsion.json --output ../litt3-computation-data/backup_abelian_ordinarity/cyclic.json
 ```
 
 The required final output has completed status, forty connected cubic covers,
@@ -61,15 +72,12 @@ pairs. Lower characters are the already ordinary quotients.
 This proves ordinarity for every degree1,2,3,6 cyclic cover, and hence
 for the maximal exponent-six cover by the displayed character sum.
 
-For m=4, order-dividing-two points are covered by the same complete
-double-cover argument. The command
+For m=4, order-dividing-two points vanish by the same maximal-two theorem. The command
 
     sage scripts/genus_two/verify_genus_two_four_torsion.sage \
-      --parameter-polynomial 1,1,0,1 \
       --output ../litt3-computation-data/backup_abelian_ordinarity/four_torsion.json
 
-uses the actual backup parameter, not the different cubic specialization
-in the ordinary-family proof. In F5[a]/(a^6+a^4+4a^3+a^2+2), it
+uses the single actual backup seed. In F5[a]/(a^6+a^4+4a^3+a^2+2), it
 chooses t=a^3+2a^2+4a+1 and verifies t^3+t+1=0. It constructs all
 256 distinct J[4] classes, checks each actual order, and for all 240
 exact-order-four classes checks BOTH the original Cartier determinant
@@ -77,12 +85,26 @@ and the compressed Raynaud quadric. All are nonzero. It additionally
 replays all 236 coprime additions by independent Cantor and Cramer
 formulas.
 
-Torsion completeness and the original matrix interpretation are given in
-[the ordinary-family proof](genus_two_abelian_cover_families.md#2-one-ordinary-exponent-four-fiber).
-The verifier checks the required degree-two open chart at this backup
-specialization as well.
-No high-parameter avoidance bound is used for the backup. Any root of
-t^3+t+1 gives the same result by coefficient conjugation.
+For completeness, put tau=t^5, alpha=(0,1,2,3,tau) and
+F1(u)=prod_j(u−alpha_j). For i=0,1,2,3 choose r_j²=alpha_i−alpha_j,
+r_i=0, and let s_j be their elementary symmetric functions. The pairs
+\[
+U_i=(alpha_i-u)^2+s_2(alpha_i-u)+s_4,\qquad
+V_i=(s_3-s_1s_2)(alpha_i-u)-s_1s_4
+\]
+represent halves H_i of [(alpha_i,0)−O] by
+[Zarhin, Theorem3.2 and Example3.7](https://arxiv.org/html/1809.03061v2).
+The verifier also checks F1−(s_1U_i+V_i)²=(u−alpha_i)U_i².
+The four two-classes are independent, so their halves generate all
+J[4]≅(Z/4)^4. On every exact-order-four class the degree-two open
+chart is verified, and the [Raynaud determinant theorem](../theta_divisors/raynaud_genus_two_determinant.md)
+identifies both determinant tests with the actual character section.
+Thus this seed proof is independent of the family Hodge bound.
+No high-parameter avoidance bound is used for the backup. Coefficient
+conjugation and the affine transport above extend both maximal-cover
+conclusions to the entire sixty-parameter locus. Original double tables
+remain evidence for the historical independent assembly audit; their
+producer is no longer a proof input and is deleted.
 
 An étale Galois p-group cover preserves ordinariness by
 [Crew, Corollary1.8.3](https://numdam.org/item/CM_1984__52_1_31_0.pdf#page=7).

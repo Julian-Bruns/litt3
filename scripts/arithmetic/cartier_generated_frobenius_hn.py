@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Exact bounded certificate for the first Frobenius HN calculation.
+"""Identify the actual Cartier Frobenius kernel with K(24O).
 
 Run with Sage's Python. JSON goes to stdout; store generated receipts outside
-the repository. The accompanying note proves geometric stability from these
-extension coefficients; the script does not enumerate etale covers.
+the repository. Stability and the exact line bound follow from the later
+sharp K theorem. This producer retains only the necessary extension data.
 """
 import json
 
-from sage.all import GF, PolynomialRing, matrix, vector
+from sage.all import GF, PolynomialRing
 
 
 def main():
@@ -73,20 +73,6 @@ def main():
     expected = [2, 16, 16, 7, 1, 2, 7, 1, 24, 11]
     assert [encode(c) for c in coeff] == expected
 
-    hankel4 = matrix(field, [[coeff[i+j] for j in range(4)]
-                             for i in range(4)])
-    hankel5 = matrix(field, [[coeff[i+j] for j in range(5)]
-                             for i in range(5)])
-    assert hankel4.det() == code(12)
-    assert hankel5.det() == 0 and hankel5.rank() == 4
-    recurrence = hankel4.solve_right(-vector(field, coeff[4:8]))
-    g = ring(list(recurrence) + [field(1)])
-    assert g == poly([5, 2, 6, 7, 1])
-    assert g.gcd(P) == 1
-    residual = [sum(g[j] * coeff[i+j] for j in range(5))
-                for i in range(6)]
-    assert residual == [field(0)]*5 + [code(16)]
-
     print(json.dumps({
         "coefficient_field": "F25, a^2=a+3",
         "frobenius_convention": "absolute; relative transport changes all coefficients",
@@ -99,13 +85,7 @@ def main():
         "S3_ascending_codes": codes(S3),
         "A_ascending_codes": codes(A),
         "extension_y2_coefficients": expected,
-        "Hankel4_determinant": encode(hankel4.det()),
-        "Hankel5_determinant": encode(hankel5.det()),
-        "Hankel5_rank": int(hankel5.rank()),
-        "four_atom_recurrence_ascending_codes": codes(g),
-        "recurrence_coprime_to_P": "PASS",
-        "six_recurrence_residuals": [encode(c) for c in residual],
-        "scope": "Exact extension certificate; stability is proved in the note."
+        "scope": "Exact H=K(24O) extension data; sharp line degrees follow from the later K theorem."
     }, indent=2))
 
 

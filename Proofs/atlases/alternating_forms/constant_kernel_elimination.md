@@ -54,7 +54,7 @@ equations gives degrees16 and17 in b over the perfect coefficient field.
 The R equations retain their displayed mixed Frobenius form; they cannot
 be replaced by a singular-pencil condition or an untested proportionality.
 
-## 2. A direct bound on all possible normal-corank strata
+## 2. The kernel degree bounds every rank-drop parameter
 
 Let the homogeneous alternating pencil define
 
@@ -65,26 +65,37 @@ vector bundle: the image of a map of bundles on a smooth curve is
 torsion free. Its rank is r=m-c. Global sections of K are EXACTLY
 the constant vectors killed by both A0 and A1, so h0(K)=a.
 
-Write e=deg E=-deg K. Riemann--Roch on P1 gives
+Write \(e=\deg E=-\deg K\). Riemann--Roch on \(\mathbf P^1\)
+gives \(c-e=\chi(K)\le h^0(K)=a\), hence \(e\ge c-a\).
+The alternating pencil factors through a generically nondegenerate
+form \(q:E\otimes E\to\mathcal O(1)\). Its Pfaffian is a nonzero
+section of
+\[
+(\det E)^{-1}\otimes\mathcal O(r/2),
+\qquad b=r/2-e\le(m-3c+2a)/2.
+\]
+The integral Pfaffian polynomial defines this section in every
+characteristic different from two; no factorial is inverted.
+Its zero divisor is exactly the rank-drop locus: the quotient
+\(\mathcal O^m\to E\) is fiberwise surjective, so the original pencil
+and \(q\) have the same rank at every member. In particular \(b\ge0\),
+and there are at most \(b\) distinct exceptional members, including
+infinity. Also \(c\) is even and \(a\le c\). These facts prove the
+normal-corank inequality and the stronger sampling bound at once.
+For \(a=1,m=32\), the five possible coranks give \(b\le14,11,8,5,2\).
 
-    c−e=chi(K)<=h0(K)=a,     hence e>=c−a.                (8)
-
-Because A is alternating and kills K, it induces a generically
-nondegenerate alternating map E->E^vee(1). Its determinant is a nonzero
-section of a line bundle of degree r-2e. Therefore
-
-    r>=2e>=2c−2a,     hence m=r+c>=3c−2a.
-
-Alternating rank is even, so c is even, and constant kernel vectors
-remain independent at the generic point, giving c>=a. For a=1,m=32
-this proves c in{2,4,6,8,10}.
-
-When a=1, a maximum-rank member has a nonzero principal Pfaffian of degree r/2
-in the two pencil coordinates. After setting the first coordinate to1,
-this is a nonzero polynomial of degree at most(m-2)/2. Thus any m/2
-distinct finite parameters include a point where it is nonzero, and
-where the rank is the normal rank. The field F25 supplies16 distinct
-parameters for m=32.
+Sharpness follows from one block construction. Take \(a\) zero
+one-square blocks, \(c-a\) copies of
+\[
+\begin{pmatrix}0&t&s\\-t&0&0\\-s&0&0\end{pmatrix},
+\]
+and \((m-3c+2a)/2\) two-square blocks
+\(\ell_j(s,t)\begin{pmatrix}0&1\\-1&0\end{pmatrix}\),
+with distinct linear zeros. The three-square blocks have constant
+rank two and no constant kernel; their kernel lines are
+\(\mathcal O(-1)\). Hence the whole pencil has exactly the stated
+\(a,c,e=c-a\), and its rank drops at every one of the \(b\) distinct
+zeros. Thus \(b+1\) parameters are necessary in general.
 
 ## 3. Pfaffian Schur reduction on every allowed stratum
 
@@ -123,7 +134,7 @@ These reconstructions are inverse morphisms over coefficient rings.
 Indeed localizing at h makes u unimodular; a nonzero maximal minor of
 the selected F rows gives a split kernel line, and Fw=0 tests the
 remaining rows. Thus the charts cover the actual finite reduced atlas
-projection, as in `rooted_atlas_projection`. Their number may be large.
+projection, as in `theta_open_atlas_projection`. Their number may be large.
 
 ## 4. Two necessary safeguards
 

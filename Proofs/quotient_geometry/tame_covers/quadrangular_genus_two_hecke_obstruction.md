@@ -28,8 +28,8 @@ genus-two subgroups in
 p3](https://www.math.colostate.edu/~hulpke/paper/revista.pdf#page=3).
 In their notation these are index6 subgroups of (2,2,3,3) and index12
 subgroups of (2,2,2,3), including nonnormal subgroups. Representatives:
-[2233](../../../Research/computations/genus_two_quadrangular_2233.json) and
-[2223](../../../Research/computations/genus_two_quadrangular_2223.json).
+[2233](../../../../litt3-computation-data/legacy_workspace_computations/genus_two_quadrangular_2233.json) and
+[2223](../../../../litt3-computation-data/legacy_workspace_computations/genus_two_quadrangular_2223.json).
 
 The deck group is N_G(H)/H, equivalently the permutation centralizer.
 Aut(C)=C2 leaves only S4/C4 and A5/C5. The

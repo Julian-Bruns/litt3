@@ -1,11 +1,52 @@
 # The dormant Bol complex and horizontal tensors
 
-Let C be a smooth projective curve of genus g>=2 over a perfect field
-of odd characteristic p. Fix a spin line L^2=omega and a dormant rank-two
-theta-oper with Cartier descent W and det W=O. Its descent is stable.
-Write F for absolute Frobenius and n=g-1; on F_* modules a.f=a^p f.
+Let C be a smooth projective geometrically connected curve of genus
+g>=2 over a perfect field of odd characteristic p. The first section
+uses relative Frobenius F:C→C^(1) and needs no chosen spin line.
+
+## Canonical-determinant roots and reduced scalar reconstruction
+
+Put $h=(p-1)/2$, $j=(p-3)/2$ and $r=p-2$. Let $V$ be an
+ACTUAL rank-two bundle on $C^{(1)}$ with specified
+$\det V=\omega_{C^{(1)}}$, whose canonical pullback $F^*V$
+carries an oper filtration with quotient $\omega_C^h$. Scalar multiplication gives an isomorphism
+\[
+B_C=F_*\mathcal O_C/\mathcal O_{C^{(1)}}
+\simeq\omega_{C^{(1)}}^{-j}\operatorname{Sym}^rV.
+\]
+This holds in every hyperbolic genus; no independent endpoint
+root or unrecorded two-torsion normalization is inserted.
+
+Such a normalized oper can be reconstructed from the following
+data. Let $\lambda$ be a line on $C^{(1)}$ and
+$a\in H^0(C,M)$, $M=\omega_C^hF^*\lambda$, a nonzero section
+with reduced zero divisor. In a coordinate $z$ and flat
+$F^*\lambda$ frame, suppose $\operatorname{Cartier}(a^r dz)=0$.
+This condition is coordinate independent. Then $q=a''/a$
+defines a regular dormant second-order operator, whose descent
+$E$ has
+\[
+\det E=\omega_{C^{(1)}}\lambda^2,\qquad
+s:\mathcal O\hookrightarrow E,\qquad V=E\lambda^{-1}.
+\]
+Here $s$ is the actual saturated horizontal section represented
+by the jet of $a$. The bundle $E$ is stable and its first
+Frobenius pullback is unstable. Its determinant identification
+is obtained by Cartier descent of the trace-zero jet connection,
+even when the endpoint has $p$-torsion lines.
+
+Put $A=\omega_{C^{(1)}}^{-j}\lambda^{-r}$ and $D=\det E$.
+Then $A^2D^r=\omega_{C^{(1)}}$ and
+$B_C=A\operatorname{Sym}^rE$, with its first line given by $s^r$.
+Fixing that first-line map makes the filtered isomorphism unique.
+Everything commutes with the actual finite etale pullbacks.
 
 ## The intrinsic complex and every line twist
+
+For this section and the following specializations, fix a spin line
+L^2=omega and a dormant rank-two theta-oper with stable Cartier
+descent W and det W=O. Write F for absolute Frobenius and n=g-1;
+on F_* modules a.f=a^p f.
 
 There is an exact complex
 
@@ -72,7 +113,7 @@ All constructions commute with etale pullback of the specified data.
 They do not supply a normalized twisted atlas criterion or a match
 between independently chosen endpoint opers.
 
-Version1. Status: proved. Bounded medium audit by
+Version2,3 October2026. Status: proved. Bounded medium audit by
 audit_finite_rank_condensation,2026-09-14, passed the all-prime complex,
 symmetric-power twists, global dimensions and dual inclusion, including
 p=3. Global generation and the horizontal-tensor specialization are

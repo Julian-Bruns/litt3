@@ -7,12 +7,12 @@ k=GF(25,name='a',modulus=PolynomialRing(GF(5),'z')([2,4,1])); a=k.gen()
 parse=lambda row:vector(k,[sage_eval(c,locals={'a':a}) for c in row])
 enc=lambda row:[str(c) for c in row]
 mat=lambda rows:matrix(k,[parse(row) for row in rows])
-canon=json.loads(Path('Research/computations/canonical_atlas_system.json').read_text())
-bez=json.loads(Path('Research/computations/wronskian_quadratic_bezout.json').read_text())
-dual=json.loads(Path('Research/computations/wronskian_serre_dual.json').read_text())
-rt=json.loads(Path('Research/computations/wronskian_universal_image.json').read_text())
-prior=json.loads(Path('Research/computations/wronskian_matrix_pencil.json').read_text())
-saved=json.loads(Path('Research/computations/direct_wronskian_samples.json').read_text())
+canon=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/canonical_atlas_system.json').read_text())
+bez=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_quadratic_bezout.json').read_text())
+dual=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_serre_dual.json').read_text())
+rt=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_universal_image.json').read_text())
+prior=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_matrix_pencil.json').read_text())
+saved=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/direct_wronskian_samples.json').read_text())
 Bc=mat(canon['Bc']); Iproj=mat(canon['Iproj']); KU=mat(canon['SU_basis']); S=mat(dual['S_matrix'])
 Nc=[mat(M) for M in canon['N_tensor']]; Rc=[mat(M) for M in canon['R_tensor']]
 Rs=[mat(M) for M in rt['R_tensor']]
@@ -75,4 +75,4 @@ for seed in range(202609101,202609106):
     out['generic_beta_samples'].append({'seed':seed,'beta':enc(beta),'H_rank':H.rank(),'determinant':str(H.det())})
 out['quadratic_inverse_cup_syzygy_status']='Not attempted:576 matrix entries would require separate quadratic-U syzygies; existing five inverse-cup checks retained.'
 out['elapsed_seconds']=time.monotonic()-started
-Path('Research/computations/wronskian_trace_linearization.json').write_text(json.dumps(out,indent=2,default=int)+'\n')
+Path('../litt3-computation-data/legacy_workspace_computations/wronskian_trace_linearization.json').write_text(json.dumps(out,indent=2,default=int)+'\n')

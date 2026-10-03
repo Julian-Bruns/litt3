@@ -1,6 +1,6 @@
 # A polynomial test and three-state recurrence for pointed Frobenius
 
-Version1,2026-09-15; independently audited. Let k be algebraically closed of odd
+Version2,3 October2026; the audited polynomial criterion is retained. Let k be algebraically closed of odd
 characteristic p, let C:v²=F(u) with F monic squarefree of degree5,
 and let O be infinity. Put P=p^h>=5 and A_h=F^((P−1)/2).
 No ordinariness or finite-field assumption is needed.
@@ -34,8 +34,7 @@ conditions are equivalent:
 3. In each nonempty block its maximal minors form a basis of the
    homogeneous degree-n polynomials in lambda0,lambda1,lambda2.
 
-Thus the exact evaluation criterion in the
-[finite-height proof](../../Proofs/deformations/pointed_extensions_frobenius.md#5-replace-the-projective-charts-by-a-published-resultant)
+Thus the [whole-row-module criterion](../../Proofs/deformations/pointed_extensions_frobenius.md#3-one-fourth-height-certificate-replaces-the-earlier-computations)
 applies directly to these polynomial coefficients. No Laurent precision,
 chosen square roots of series, or numerical parameter search is needed.
 
@@ -56,9 +55,4 @@ the coefficient-Frobenius phases repeat with period dividing f.
 This is a bounded recurrence for ENTRIES; it does not by itself
 prove constant rank of the growing blocks at every h.
 
-At the cubic characteristic-five backup, every complete block at
-h2 and h3 agrees with the earlier Laurent construction after the
-specified invertible parameter and target basis changes. The
-existing certified semistability results are unchanged.
-
-[Proof and matrix comparisons](../../Proofs/deformations/genus_two_pointed_polynomial_test.md).
+[Proof and exact implementation](../../Proofs/deformations/genus_two_pointed_polynomial_test.md).

@@ -1,7 +1,8 @@
 # Finite-abelian late descent
 
-Version2, 2026-09-13. The former nodal, elementary and finite-abelian
-results are consolidated here.
+Version3,3 October2026. The later weighted norm argument replaces
+both binary Bockstein cases and gives the elementary homogeneous bound
+in every rank. All geometric ranges and tuple hypotheses are retained.
 
 Over k=bar(F5), let h:T->C be an actual connected finite etale G-cover
 of smooth projective curves,
@@ -51,7 +52,8 @@ with arbitrary higher corrections, the whole combined repair satisfies
     Lx=Neta mod5^A     => xbar inF2 and Tr(x) in5^A O;
     Lx=Neta mod5^(A+1) => xbar in kN and etabar=0.
 
-For G=C5^2, Lx=Neta mod25 with etabar=0 further forces xbar inF1.
+For EVERY elementary G=C5^r, r>=2, Lx=Neta mod5^r with etabar=0
+further forces xbar inF1; in particular this retains the binary mod25 case.
 Every binary multiplicity-two f has F2=J6 subset(f); a nonsingular
 binary quadratic has the stronger F3=J5 subset(f). Pointwise torsor
 products satisfy F_i F_j subset F_(i+j); these are not group-algebra

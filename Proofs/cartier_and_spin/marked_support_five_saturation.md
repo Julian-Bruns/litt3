@@ -1,52 +1,46 @@
-# Proof: Frobenius on the twelve marked points
+# Proof: the exact marked divisor quotient is the root obstruction
 
 [Statement](../../Theorems/cartier_and_spin/marked_support_five_saturation.md).
-Write pi for25-Frobenius and gamma(x,y)=(x,[11]y). Let alpha be a
-root of A in E=F_(5^8), and rho3=P(alpha). The fixed exact arithmetic gives
-P(alpha)^((5^8-1)/3)=[11]. Thus pi4 fixes alpha and sends rho to[11]rho.
-The same identity holds on all twelve marked points, and both pi and
-gamma fix O. Therefore pi4=gamma on Gamma.
+Let L be the free group of degree-zero divisors on Z union{O}.
+The class map has image Gamma and kernel the principal supported
+divisors, identified with U by the divisor map. Constants are
+removed; over the algebraically closed field all constants have
+every required root.
 
-The quotient x:X->P1 gives1+gamma+gamma2=0 on J(X): the endomorphism
-is pullback after the norm to J(P1)=0. Hence
-Q(pi)=0 on Gamma, where Q(T)=T8+T4+1. The established Weil polynomial
-Pi_X also annihilates pi on J(X). The integral resultant identity
-therefore annihilates Gamma by
+For g in U_(d), write div(g)=dD. Sending g to [D] gives
+a map U_(d)->Gamma[d]. It is onto: every class in Gamma[d]
+has a supported representative D, and dD is principal.
+Its kernel is exactly U^d. Indeed [D]=0 gives h with div(h)=D;
+then g/h^d is constant, and the converse is immediate.
+The displayed cyclic factors follow from the exact invariant
+factors of Gamma. In particular this obstruction vanishes
+for every g exactly when gcd(d,m)=1. This uses divisors,
+so does not assume an etale Kummer sequence when p divides d.
 
-45095046841912830021622485696625833846862308638737180792041321268886159213510179436939976808107828897.
+For the effective residue problem, divide g by
+prod_i(x-alpha_i)^(e_i). Every remaining finite valuation
+is nonnegative and divisible by d; degree zero gives the same
+divisibility at O. If gcd(d,m)=1, the preceding root criterion
+gives h with effective finite support and the asserted pole.
+An invariant h makes g invariant. Thus a noninvariant g
+requires pole_O(h)>=B and gives the lower bound
+dB+3sum e_i.
 
-Its residue modulo five is2. The group Gamma is finitely generated
-and killed by this nonzero integer, so it is finite and has no
-five-primary torsion. In particular5[D]=0 for a degree-zero divisor
-supported on Z union{O} forces[D]=0.
+Conversely choose an effective minimizing function h of pole B
+from the exact marked lattice and multiply h^d by that complete-
+fibre product. Its residues are the chosen e_i and its pole is
+exactly dB+3sum e_i. It remains noninvariant: if h^d were
+gamma-invariant, gamma(h)/h would be a constant lambda with
+lambda^d=lambda^3=1. Since gcd(d,m)=1 implies gcd(d,3)=1,
+lambda=1, contradicting noninvariance of h. Multiplication by
+the invariant product does not change this. It proves sharpness
+for every residue choice and the uniform zero-residue threshold.
 
-If div(g)=5D, D has degree zero and its class belongs to Gamma.
-Thus D is principal, say D=div(h). Properness gives g/h5 in k*,
-and the algebraically closed constant field contains a fifth root
-of that constant. This proves1.
-
-For2, divide g by product_i(x-alpha_i)^(e_i). The exponents at all
-finite points are nonnegative and divisible by five. The exponent
-at O is divisible by five by the degree-zero identity. Part1 gives
-the claimed fifth root h. The finite valuations of h remain
-nonnegative, giving the precise pole degree. If pole_O(g)<=144,
-that degree is at most28. The
-[complete bounded supported-norm theorem](bounded_supported_norms.md)
-then makes h a polynomial in x. So is g.
-
-## Evidence and limitations
-
-The [small exact script](../../scripts/arithmetic/marked_support_frobenius_module_20260929.py)
-checks the cubic phase, the integral resultant, and a polynomial Bezout
-identity modulo five. It reuses the established Weil polynomial;
-it does not recompute curve point counts or the bounded support search.
-Its [receipt](../../../litt3-computation-data/conceptual_continuation_20260929/marked_support_frobenius_module.json)
-records all inputs and checks. The focused independent
-[logarithmic-method audit](../../Research/audits/LOGARITHMIC_PHASE_COST_2026_09_29.md)
-checks this marked-subgroup deduction and its use in five-saturation.
-It applies to the marked subgroup, although the full Jacobian has
-positive five-rank.
-
-This reduction cannot remove a nonzero constant phase discrepancy
-across all29 phases: its total sheet discrepancy need not be zero
-modulo five. That remaining branch must be retained.
+The complete relation lattice independently supplies Gamma,
+its invariant factors and B. It replaces the older Weil-resultant
+annihilator calculation entirely; no function-space search or
+resultant replay is needed. Original resultant evidence and its
+independent audits remain external provenance. The actual
+modular phase condition and total valuation congruence are
+distinct hypotheses, so this argument does not improve an
+arbitrary actual-norm range without the latter condition.

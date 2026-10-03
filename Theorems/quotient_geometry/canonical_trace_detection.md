@@ -1,10 +1,13 @@
 # Canonical multipliers detect every coefficient section of an actual span
 
-Version1. Independently audited, 16 September 2026.
+Version2,3 October2026. The original odd-characteristic conclusions
+retain their independent audit. Interpolation works in every
+characteristic; very ample canonical powers supply primitive
+multipliers even in characteristic two.
 
 Let \(X\xleftarrow f Z\xrightarrow gY\) be an actual jointly minimal
 finite bi-étale span of smooth projective connected curves of genus
-at least two, over an algebraically closed field of odd characteristic.
+at least two, over an algebraically closed field of arbitrary characteristic.
 Write \(n=\deg f\), \(h=g(Y)\), and \(\mathcal A=f_*\mathcal O_Z\).
 Neither Galoisness nor a restriction on the covering degrees is needed.
 
@@ -58,8 +61,8 @@ Q\simeq
 The exact c_r test also gives lower detecting degrees for larger
 \(\rho\); it is not restricted to this rank-one boundary.
 
-A second general statement explains the primitive multipliers.
-Choose a nonzero rational differential \(\theta\) on X. A general
+In characteristic different from two, the weight-one primitive
+multipliers have a sharper description. Choose a nonzero rational differential \(\theta\) on X. A general
 \(\nu\in H^0(Y,\omega_Y)\) makes
 \(\alpha=g^*\nu/f^*\theta\) a primitive element of
 \(k(Z)/k(X)\). This assertion only needs both maps to be finite
@@ -73,6 +76,15 @@ is the coefficient span of \(\xi\), of dimension \(\rho\), then:
   \(\operatorname{Tr}_f(\xi(g^*\nu)^j)\) is nonzero with
   \(1\le j\le n-\rho\). This includes degrees divisible by p:
   separability, not \(\operatorname{Tr}(1)\ne0\), is the needed fact.
+
+In EVERY characteristic, for any $c\ge3$, a general
+$q\in H^0(Y,\omega_Y^c)$ makes
+$\alpha_q=g^*q/(f^*\theta)^c$ primitive. The same coefficient-rank
+escape bound holds with $\alpha_q$; if the initial trace vanishes,
+some $\operatorname{Tr}_f(\xi(g^*q)^j)$ is nonzero for
+$1\le j\le n-\rho$. This uses only finite separability and joint
+minimality. Thus characteristic two requires no field-generation
+assumption if canonical powers are used.
 
 These statements apply on Frobenius twists with \(V=B_X\), so they
 detect the particular exceptional section in the current excess-one

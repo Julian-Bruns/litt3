@@ -145,7 +145,7 @@ def main():
     cert = json.loads(cert_path.read_text())
     trace_path = a.returns/'first/trace_all_charts.json'
     trace = json.loads(trace_path.read_text())
-    checked = json.loads((root/'Research/computations/rank25_two_family_returns_checks.json').read_text())
+    checked = json.loads((root/'../litt3-computation-data/legacy_workspace_computations/rank25_two_family_returns_checks.json').read_text())
     point = checked['actual_fifth_value_at_test']
     assert isinstance(point, dict) and point['C5'][0] == [0]*4
     family = {
@@ -196,7 +196,7 @@ def main():
         'omitted': 'Historical prompts, duplicate certificates, proofs, audit logs, receipts, full higher-Witt replay machinery, and data outside the required candidate cochain family. Original evidence retained locally.',
         'scope': 'Reconstruction inputs for the complete fourth locus. The retained theta candidate alone is not the fifth obstruction; the whole fifth-locus exclusion is proved separately.',
     }
-    (root/'Research/computations/rank25_all_fifth_prompt_packet.json').write_text(json.dumps(result, indent=2)+'\n')
+    (root/'../litt3-computation-data/legacy_workspace_computations/rank25_all_fifth_prompt_packet.json').write_text(json.dumps(result, indent=2)+'\n')
     print(json.dumps(result, indent=2))
 
 

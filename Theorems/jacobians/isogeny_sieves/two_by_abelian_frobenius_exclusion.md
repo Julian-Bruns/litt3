@@ -1,6 +1,6 @@
 # Unbounded odd abelian quotients above a two-group are excluded
 
-Version1,21September2026. Let $X/\mathbf F_{25}$ be the fixed
+Version2,3 October2026. Let $X/\mathbf F_{25}$ be the fixed
 genus-nine curve and let $Y/\mathbf F_{25^b}$ be any genus-two
 curve with $19\nmid b$. Let $n$ be odd and assume
 \[
@@ -63,6 +63,26 @@ products with elementary abelian three-groups, whenever those
 groups occur as actual covers. Its absolute character degrees
 are one and three, its nontrivial residue character fields have
 degree two, and $9>6$.
+
+## Even normal closures
+
+Let D->Y be an actual finite etale Galois cover, with its full
+deck group Q constant over F_(25^c), where 19 does not divide c.
+Suppose its rational group algebra has decomposition
+\[
+\mathbf Q_2[Q]\simeq\mathbf Q_2\times
+\prod_i M_{e_i}(E_i),
+\]
+where the nontrivial factors are split matrix algebras over
+finite extensions E_i/Q2. Let f_i be their residue degrees.
+If every pair (e_i,f_i) satisfies (4), then no cover of ANY
+quotient D/H with two-group Galois closure has J(X) as a factor.
+
+This permits even Q: no semisimplicity modulo two or integral
+H-projector is assumed. The split-algebra and constant-deck
+hypotheses are explicit inputs. In particular Q=C11 and Q=D22
+(the dihedral group of order22) satisfy the criterion; their
+nontrivial blocks have (e,f)=(1,10), or (1,1) and (2,5).
 
 All conclusions exclude specified monodromy classes only.
 General mixed-prime groups, and both unrestricted common-cover

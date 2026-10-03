@@ -1,0 +1,31 @@
+diff --git a/tmp/litt3-msolve.5ALnf3/msolve-0.10.1/src/neogb/la_ff_8.c b/tmp/litt3-msolve-lowmem.bQGL6w/msolve-0.10.1/src/neogb/la_ff_8.c
+index ef38c4c..5460ef6 100644
+--- a/tmp/litt3-msolve.5ALnf3/msolve-0.10.1/src/neogb/la_ff_8.c
++++ b/tmp/litt3-msolve-lowmem.bQGL6w/msolve-0.10.1/src/neogb/la_ff_8.c
+@@ -2396,13 +2396,20 @@ static void interreduce_matrix_rows_ff_8(
+         fprintf(VERBSTREAM, "                          ");
+     }
+ 
+-    /* for interreduction steps like the final basis reduction we
+-    need to allocate memory for rba here, even so we do not use
+-    it at all */
+-    mat->rba  = (rba_t **)malloc((uint64_t)ncols * sizeof(rba_t *));
++    /* The reduction below passes tracing=0.  For the audited F5 exact
++     * sparse path, retain only null pointers for the existing cleanup. */
++    mat->rba  = (rba_t **)calloc((uint64_t)ncols, sizeof(rba_t *));
+     const uint64_t len = ncols / 32 + ((ncols % 32) != 0);
+-    for (i = 0; i < ncols; ++i) {
+-        mat->rba[i] = (rba_t *)calloc(len, sizeof(rba_t));
++    if (st->fc == 5 && st->laopt == 2 && st->trace_level == NO_TRACER) {
++        if (getenv("LITT3_MEMORY_REPORT") != NULL) {
++            fprintf(stderr, "LITT3 final bitmap skip: ncols=%llu bytes=%llu\n",
++                    (unsigned long long)ncols,
++                    (unsigned long long)((uint64_t)ncols * len * sizeof(rba_t)));
++        }
++    } else {
++        for (i = 0; i < ncols; ++i) {
++            mat->rba[i] = (rba_t *)calloc(len, sizeof(rba_t));
++        }
+     }
+ 
+     mat->tr = realloc(mat->tr, (uint64_t)ncols * sizeof(hm_t *));

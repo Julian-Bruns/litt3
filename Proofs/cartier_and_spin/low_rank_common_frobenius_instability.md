@@ -1,185 +1,240 @@
-# Proof: first instability in ranks two and three
+# Proof: the projective coefficient isolates the Cartier exception
 
 [Statement](../../Theorems/cartier_and_spin/low_rank_common_frobenius_instability.md).
-We use the actual common category, whose morphism images are
-saturated when no clump exists. In particular, any nonzero common
-map of line bundles is an isomorphism. Harder--Narasimhan
-filtrations commute with finite etale pullback; hence the relevant
-filtrations and their second fundamental forms are common.
+Version3,3 October2026. All HN filtrations, image saturations
+and connections are common for the two ACTUAL maps. Without a
+clump, every common morphism has saturated image, so a nonzero
+common map between lines is an isomorphism.
+
+## 1. One projective coefficient for full and two-block opers
+
+The standard oper/scalar dictionary is
+[Ben-Zvi--Biswas, Proposition2.4.1 and Section2.5](https://arxiv.org/pdf/math/0204301#page=8).
+Its leading-coefficient calculation is algebraic. A full
+rank-$n$ oper with lowest quotient $N$ gives a regular operator
+\[
+D^n+a_1D^{n-1}+a_2D^{n-2}+\cdots:N\longrightarrow N\omega^n.
+\]
+When $n$ is invertible, put
+\[
+K=a_2-\frac{n-1}{2}a_1'-\frac{n-1}{2n}a_1^2.
+\]
+Changing the frame of $N$ leaves $K$ unchanged. The chain rule
+under $t=h(s)$ gives
+\[
+K_s=(h')^2K_t+\frac{n(n^2-1)}{12}\{h,s\}.
+\]
+These identities use only denominators invertible for the
+ranks and characteristics here; no characteristic-zero result
+is imported without this check. Thus
+$-6K/[n(n^2-1)]$ is an actual common projective potential
+when that denominator is invertible. The coefficients are
+$1/2,2,5$ for $n=2,3,4$: exactly rank four at $p=5$ is exceptional.
+
+For a two-block oper of rank $2m$, eliminate the first block
+to obtain the matrix operator $D^2+UD+V$. Its matrix
+$K=V-U'/2-U^2/4$ conjugates under block-frame changes and
+has coordinate shift $\{h,s\}I/2$. Hence $-\operatorname{tr}K/m$
+is a common projective potential when $2m$ is invertible.
+This is the same calculation with a matrix quotient, requiring
+no common determinant or spin choice.
+
+Every resulting regular common projective connection is dormant:
+the [no-clump p-curvature argument](first_cartier_full_monodromy.md#3-frobenius-cannot-hide-a-common-affine-section)
+contracts its trace-free p-curvature to a positive common
+canonical tensor, which vanishes. Horizontality and the oper
+second fundamental isomorphism then kill the remaining entries.
+This part of that argument requires no endpoint degree condition.
+
+## 2. Generate a smaller oper or the full flag
 
 Take the FIRST unstable Frobenius pullback and rename its
-semistable antecedent $E$. Write $D=\deg E_Y$ at this step and
-$H=F^*E$, with its actual canonical Cartier connection. Thus
-$\deg H_Y=5D$. Work on the appropriate twisted span throughout.
-Existence of a common projective oper transfers back to the
-original span by inverse coefficient twist, not by identifying
-relative Frobenius twists as $k$-curves.
+semistable antecedent $E$; put $H=F^*E$. Except for rank four
+with HN grades of ranks two and two, either $H$ or its dual
+has a maximal HN piece of rank one. Call it $L$.
+It is not horizontal, since Cartier descent would destabilize $E$.
 
-## 1. Rank two
-
-The destabilizing line $L\subset H$ is common. Put
-$a=\deg L_Y>5D/2$. It cannot be horizontal, since Cartier descent
-would contradict semistability of $E$. Its nonzero second
-fundamental map is therefore an isomorphism
+Generate $V_1=L,V_2,\ldots$ successively under the connection.
+The second fundamental map for $V_i$ factors through
+$V_i/V_{i-1}$; a nonzero map has saturated line image and gives
 \[
-L\xrightarrow{\sim}(H/L)\otimes\omega.
+V_i/V_{i-1}\simeq(V_{i+1}/V_i)\omega.
 \]
-On $Y$, where $\deg\omega=2$, this says
+Thus ranks increase one at a time. If generation stops before
+the whole bundle, its last $V_i$ is an ACTUAL horizontal
+subbundle with a full dormant oper flag. Rank two or three
+at a stop is detected by Section1; no semistability of its
+Cartier antecedent is required. Otherwise the full oper has
+rank $2,3$ or $4$, with the same detector except at $p=5,n=4$.
+Inverse coefficient twisting transfers the connection to the
+original span, keeping relative twists distinct.
+
+In the remaining two-by-two HN case write
+$0\to A\to H\to B'\to0$. Its nonzero second fundamental map
+$A\to B'\omega$ has either full rank or rank one.
+Full rank is an isomorphism and Section1's two-block detector applies.
+At rank one put $K=\ker s$, $\operatorname{im}s=M\omega$.
+The further map $K\to(A/K)\omega$ vanishes: semistability
+of $A$ contradicts the degree equality a nonzero common
+line map would impose. Thus $K$ is horizontal.
+The dual argument makes $(B'/M)^*$ horizontal.
+Its annihilator $V\subset H$ is horizontal, contains $A$,
+and has $V/A=M$. The actual horizontal quotient $V/K$
+is a rank-two oper with oper line $A/K\simeq M\omega$.
+It too is detected by Section1. This handles partial rank,
+rather than replacing the HN blocks by their semisimplifications.
+
+At $p=5$, preserve also the concrete full-rank-three complement.
+Adjunction of its lowest quotient gives $E\hookrightarrow F_*N$;
+the same horizontal-kernel argument as Section5 makes this an
+ACTUAL saturated injection. The first three cyclic jets, with
+unit coefficients $1,2$, identify $F^*E$ with
+$F^*F_*N/\mathcal H_3$. Its rank-two quotient $Q$ therefore
+has $F^*Q\simeq\mathcal H_3$, with line grades
+$N\omega^4,N\omega^3$. The canonical connection's index-four
+map is an isomorphism, giving the complementary dormant
+projective oper with its specified source comparison.
+
+## 3. Keep the degree claims in their actual scope
+
+On an endpoint put $s=g(C)-1$, $D=\deg E_C$ at the first
+unstable step and $a=\deg L_C$.
+A rank-two oper gives $2a=pD+2s$, hence $2\mid D$.
+A full rank-three flag gives $3a=pD+6s$, hence $3\mid D$.
+
+For a rank-three horizontal stop at $V_2$, its degree
+$2a-2s$ is divisible by $p$, so $a=pm+s$.
+Semistability of $E$ and destabilization by $L$ give precisely
 \[
-2a=5D+2.
-\tag{1}
+0\le D-3m<3s/p.
 \]
-In particular $D$ is even. The canonical connection, this line
-and the displayed isomorphism are an actual dormant rank-two
-oper, and hence a projective oper. No determinant trivialization
-or common square root was used.
+Thus $3s\le p$ forces $D=3m$. The original degree differs
+from $D$ by a sign and a power of $p$, preserving these
+divisibilities. Without the small-genus hypothesis this
+horizontal case supplies an oper, but not rank-three divisibility.
+A rank-four two-block case supplies only parity; no general
+rank-four degree assertion is used.
 
-## 2. Rank three: generating the next line
+## 4. The actual theta refinement supplies the boundary example
 
-After replacing $E$ by its dual if necessary, the maximal
-Harder--Narasimhan piece of $H$ has rank one. Indeed, the only
-case without such a first piece is a two-step filtration of ranks
-two and one; duality reverses those ranks. Denote that common
-line by $L$ and write $a=\deg L_Y>5D/3$.
+Choose endpoint theta characteristics on the first twists.
+Their pulled-back ratio on the source twist is two-torsion,
+with square trivialization from the actual canonical comparison.
+Its torsor, or a connected component when trivial, gives an
+ACTUAL source refinement of degree at most two.
+Inverse coefficient twisting realizes it on the original span.
 
-Again $L$ is not horizontal. Its second fundamental map into
-$(H/L)\omega$ has saturated image $M\omega$, with $M$ a common
-line in $H/L$, and gives an isomorphism
+A clump on this refinement maps to a clump below, by full-fiber
+saturation. Equality of endpoint projective connections descends
+through the faithfully flat source cover. Thus no clump and
+no oper persist. The common $B\vartheta^{-1}$ is stable on
+each endpoint, as is $B$ after every finite etale pullback.
+This uses the [Joshi stability input](../jacobians/theta_divisors/etale_induction_stability.md),
+since actual etale pullback identifies $B$ with the Cartier
+bundle upstairs. It has rank $p-1$ and degree zero. The top
+line of its first Frobenius pullback has degree
 \[
-L\simeq M\omega.
+\deg(\omega^{p-1}\otimes F^*\vartheta^{-1})
+=(p-2)(g(C)-1)>0.
 \]
-Let $V\subset H$ be the inverse image of $M$ and let $N=H/V$.
-On $Y$ their degrees are
+This proves the stated conditional example.
+
+## 5. Characteristic five: the complementary line fixes the comparison
+
+For the rest retain $k=\overline{\mathbf F}_5$ and $g(Y)=2$.
+In the no-oper branch Section2 leaves only the full four-step
+dormant flag. Let $N$ be its lowest quotient.
+Adjunction gives an actual common injection
 \[
-\deg M=a-2,\qquad \deg V=2a-2,\qquad
-\deg N=5D-2a+2.
-\tag{2}
+E\hookrightarrow F_*N.
 \]
-The second fundamental form of $V$ vanishes on $L$, and is thus
-a common line map
+Its generic kernel would pull back to a horizontal subspace
+inside the penultimate oper piece. Successive oper isomorphisms
+force that subspace down the whole flag and hence to zero.
+Common saturation gives a line quotient $Q$.
+
+Write $\mathcal H_i$ for the canonical filtration of $F^*F_*N$,
+with $\mathcal H_i/\mathcal H_{i+1}=N\omega^i$.
+The cyclic-jet projection
+$F^*E\to F^*F_*N/\mathcal H_4$ is an isomorphism:
+its four grade maps have unit coefficients $1,2,3$.
+Thus $\mathcal H_4\simeq F^*Q=N\omega^4$.
+Finite Frobenius duality turns the quotient into a nonzero
+common line map $N\to F^!Q=F^*Q\,\omega^{-4}$.
+It is an isomorphism. Therefore the quotient is the
+dualizing counit up to one common scalar, and its kernel is
 \[
-M\longrightarrow N\omega.
-\tag{3}
+E=Q B^*=B\otimes Q\omega_{C^{(1)}}^{-1}.
 \]
+Dualizing $E$ if needed gives another actual line twist of $B$.
+This is the common-map version of the
+[published rank-$p-1$ uniqueness theorem](https://www.ms.u-tokyo.ac.jp/journal/jms240301.pdf#page=44);
+endpoint uniqueness alone would not fix the source comparison.
 
-If (3) vanishes, $V$ is Cartier-horizontal. It descends to a
-common rank-two subbundle $V_0\subset E$. Semistability gives
+Conversely $B\otimes L$ is stable and common-simple here.
+For $\ell=\deg L_Y$, the top line of its Frobenius pullback
+has degree $8+5\ell$, above its slope $5+5\ell$.
+Hence it is unstable.
+
+## 6. No delayed instability and the exact minimum rank
+
+No line twist of $B$ has a common connection in this scope.
+Indeed its Atiyah class is $a(B)+\operatorname{id}_B a(L)$,
+while the actual Cartier pairing gives
+$a(B)+a(B)^\dagger=\operatorname{id}_B a(\omega)$.
+Vanishing of the former class would force
 \[
-\frac{2a-2}{10}\le\frac D3,
-\qquad 3a>5D,
-\qquad 5\mid(2a-2).
+\kappa_B=a(B)-\tfrac12\operatorname{id}_B a(\omega)=0.
 \]
-Write $a=5m+1$. The first two inequalities give
-$0\le D-3m<3/5$. Since $D-3m$ is integral, $D=3m$.
-Consequently $V_0$ has degree $2m$ and the same slope as $E$,
-so it is semistable. Its Frobenius pullback contains $L$ of
-degree $5m+1$, which destabilizes it. Section1 constructs the
-required common rank-two oper.
+The [intrinsic skew-class detector](common_projective_atiyah_detection.md)
+then gives a common dormant projective oper, a contradiction.
 
-If (3) is nonzero, it is an isomorphism. Equating the two line
-degrees yields
+At the first instability, Section5 identifies the last
+semistable antecedent as $B\otimes L$. A positive Frobenius
+antecedent would have its canonical common connection.
+Therefore the FIRST pullback was already unstable.
+Also $\deg E_Y=4+4\deg L_Y$.
+Degree zero occurs exactly when a common degree-minus-one
+line exists. Coefficient twisting transfers that existence
+to the original span, and duality gives the degree-one
+criterion $e=1$.
+
+If an oper exists, its actual common canonical-determinant
+Bol bundle $Q$ gives the common-simple degree-zero adjoint
+$K=\operatorname{End}^0(Q)$ by the
+[proper-subbundle criterion](cartier_witt_oper_subbundle.md).
+Common HN filtrations make $K$ endpoint semistable.
+The oper line in $F^*Q$ gives a positive
+$\operatorname{Hom}(F^*Q/L,L)=\omega$ inside $F^*K$,
+so $K$ is not strongly semistable. Together with Section2,
+this proves the exact rank-three converse.
+
+A rank-two degree-zero unstable antecedent has oper line
+of degree one on $Y$, so it requires both an oper and $e=1$.
+Conversely those conditions give the degree-zero example
+$Q\otimes L$ for a common degree-minus-one line $L$.
+If an oper exists with $e=2$, the adjoint is the least-rank
+example. With no oper, Section2 excludes ranks two and three;
+the preceding degree-one criterion decides rank four.
+
+Finally $T=F_*\omega^{-2}$ is the degree-zero rank-five
+example, even when $e=2$. For a common saturated subbundle
+$U$ of rank $s$, its canonical pullback grades are the first
+$s$ grades $\omega^{i-2}$, $0\le i\le4$:
+common saturation and the invertible Cartier indices force this.
+Consequently
 \[
-3a=5D+6.
-\tag{4}
+5\deg U_Y=s(s-5).
 \]
-Thus $D=3m$, $a=5m+2$, and the degrees of $L,M,N$ are
-$5m+2,5m,5m-2$. Both adjacent second fundamental forms are
-isomorphisms. The filtration $0\subset L\subset V\subset H$
-is a full dormant rank-three oper. The next section constructs
-the complementary rank-two oper directly.
+Integrality forces $s=5$, so $T$ is common-simple and
+endpoint semistable. Its first pullback contains the
+positive line $\omega^2$. This completes the table,
+with the ORIGINAL source comparison before theta refinement.
 
-## 3. The actual complementary Frobenius quotient
+The theorem detects an oper from supplied small coefficients.
+It constructs no such coefficient from a bare common span
+and resolves neither unmarked common-cover candidate.
 
-Adjunction of the quotient $F^*E\twoheadrightarrow N$ gives a
-common map
-\[
-\iota:E\longrightarrow F_*N.
-\tag{5}
-\]
-This is injective generically. Otherwise its pulled-back generic
-kernel would be a nonzero horizontal subspace of $H$ inside $V$.
-The isomorphism (3) forces such a subspace into $L$, and the
-preceding second fundamental isomorphism then forces it to be
-zero. Since the actual common image of (5) is saturated, (5)
-is a subbundle injection. Let $Q$ be its rank-two quotient.
-
-Use the canonical filtration
-\[
-0=\mathcal H_5\subset\mathcal H_4\subset\cdots
-\subset\mathcal H_0=F^*F_*N,\qquad
-\mathcal H_i/\mathcal H_{i+1}=N\omega^i.
-\]
-The first three jet maps of the cyclic projection $H\to N$
-identify $H$ with $\mathcal H_0/\mathcal H_3$.
-Explicitly, its induced grades are $N,M,L$, and the two
-second fundamental isomorphisms identify them with
-$N,N\omega,N\omega^2$; the factors $1$ and $2$ in the jet
-maps are units in characteristic five. This is an isomorphism
-everywhere, not just at the generic point. Thus
-\[
-\mathcal H_3\xrightarrow{\sim}F^*Q.
-\]
-Under this identification the line $\mathcal H_4$ gives
-\[
-0\longrightarrow N\omega^4\longrightarrow F^*Q
-\longrightarrow N\omega^3\longrightarrow0.
-\tag{6}
-\]
-The canonical connection on $F^*Q$ has zero p-curvature. Its
-second fundamental map for (6) is an isomorphism: it is the
-ambient canonical-filtration map of index four, whose coefficient
-$4$ is a unit. Hence (6) is the required dormant projective oper.
-This proves the rank-three implication without assuming an
-abstract oper-duality theorem.
-
-At the first unstable step, $D$ differs from the original degree
-$d$ by a power of five and possibly a sign. Equations (1) and
-(4), including the horizontal case of Section2, therefore imply
-$r\mid d$. Rank-one bundles are automatically strongly semistable.
-The asserted no-oper and nondivisible-degree consequences follow.
-
-## 4. Converse in rank three
-
-The [proper-subbundle theorem](cartier_witt_oper_subbundle.md)
-constructs from the common dormant oper its common-simple adjoint
-bundle $K=\operatorname{End}^0(Q)$, of rank three and degree zero.
-Its Harder--Narasimhan filtration is common, so common simplicity
-forces semistability on the endpoints. If
-$L\subset F^*Q$ is the oper line, then
-\[
-\operatorname{Hom}(F^*Q/L,L)\simeq\omega
-\]
-is a line subbundle of $F^*K$ of positive degree. Thus $K$ is
-not strongly semistable. This construction needs no common spin
-lift and retains the original source comparison.
-
-## 5. The conditional rank-four boundary
-
-On the first twists, choose endpoint theta characteristics
-$\vartheta_C^2\simeq\omega_C$. Their pulled-back ratio on the
-original source is a two-torsion line, with the indicated square
-trivialization supplied by the actual canonical comparison.
-Its torsor trivializes it on a finite etale source cover of degree
-at most two; use a connected component if the torsor is trivial.
-Thus the same endpoint lines form an actual common theta
-characteristic on this refined span. No endpoint curve is changed.
-
-A clump on the refinement would map to a clump on the original
-source, by full-fiber saturation. Likewise equality of pulled-back
-endpoint projective connections descends through the faithfully
-flat source cover. Thus the no-clump and no-oper assumptions persist.
-
-The [common Cartier bundle](common_cartier_subbundles.md) is
-common-simple in this situation. Its common HN filtration therefore
-forces endpoint semistability. Hence $B\vartheta^{-1}$ is a common
-semistable rank-four degree-zero bundle. In the canonical filtration
-of its Frobenius pullback the top line is
-$\omega^4\otimes F^*\vartheta^{-1}$. Its degree on the genus-two
-endpoint is $8-5=3>0$, so it destabilizes that pullback. This proves
-the stated conditional sharpness; it constructs no original span.
-
-This is a direct author proof. Its checks are the two degree
-identities, Cartier descent of the actual horizontal subbundle,
-and the complementary canonical filtration. No numerical test or
-independent proof audit is claimed. The theorem does not supply
-the small common coefficient from a hypothetical bare span.
+The [independent bounded consolidation review](../../Research/audits/LOW_RANK_FROBENIUS_CONSOLIDATION_AUDIT_2026_10_03.md)
+passed after restoring the concrete complementary quotient and
+clarifying the theta coefficient twist. No numerical replay was needed.

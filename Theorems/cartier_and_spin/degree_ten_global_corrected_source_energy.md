@@ -1,6 +1,6 @@
 # A uniform finite-dimensional energy condition for actual degree ten
 
-Version2,30 September2026. Retain the fixed curve X and both remaining
+Version3,30 September2026. Retain the fixed curve X and both remaining
 trace-zero quadratic-derivative degree-ten profiles. In the regular
 finite source coordinate write
 \[
@@ -21,6 +21,15 @@ t\left[
 \]
 Equivalently, with omega0=dx/(3y^2), the scalar coefficient of this
 quadratic differential relative to omega0^2 belongs to L_X(36O).
+The second, generally different necessary condition is
+\[
+t\mathcal Q^\sharp\in H^0(X,\omega_X^2(4O)),\qquad
+\mathcal Q^\sharp=\operatorname{Tr}\frac{dw^2}{\phi(w)}
++dq\,d(\gamma/\tau)
+=\operatorname{Tr}\frac{d(w\phi(w)^3)^2}{\phi(w)^7}.
+\]
+Its scalar coefficient relative to omega0^2 also belongs to L_X(36O).
+The two corrections differ by 2dq dgamma/tau; neither is discarded.
 This is the explicitly known twenty-eight-dimensional space with basis
 \[
 x^i\ (0\le i\le12),\qquad

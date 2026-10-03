@@ -7,7 +7,7 @@ import json,time
 from pathlib import Path
 from scripts.atlases.native.atlas_native_rref import NativeRref
 
-root=Path(__file__).resolve().parents[3]; folder=root/'Research/computations'
+root=Path(__file__).resolve().parents[3]; folder=root/'../litt3-computation-data/legacy_workspace_computations'
 prime=GF(5); Z=PolynomialRing(prime,'z')
 base=GF(25,'a',modulus=Z([2,4,1])); descbase=dict(kind='finite_field',degree=2)
 fields=[]; cert=json.loads((folder/'normalized_oper_algebra_certificate.json').read_text())

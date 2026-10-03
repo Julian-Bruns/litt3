@@ -22,7 +22,7 @@ def main():
     model=json.loads(Path(args.model).read_text())
     first=json.loads((run/'genus6_first_stage.json').read_text())
     localpath=run/'genus6_local_comparison.json'; local=json.loads(localpath.read_text())
-    previous=next(a for a in json.loads(Path('Research/computations/dihedral5_family_model_independent_audit.json').read_text())['rows'] if a['label']==model['label'])
+    previous=next(a for a in json.loads(Path('../litt3-computation-data/legacy_workspace_computations/dihedral5_family_model_independent_audit.json').read_text())['rows'] if a['label']==model['label'])
     assert previous['entire_first_marking_and_flat_comparison']
     fp=PolynomialRing(GF(5),'t'); k=GF(625,'t',modulus=fp(model['field_modulus'])); t=k.gen()
     pol=PolynomialRing(k,'s'); s=pol.gen(); fpoly=lambda name:pol([k(a) for a in model[name]])

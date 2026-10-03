@@ -1,10 +1,11 @@
-# Proof: Frobenius eigenspaces, linear moments and endpoint deficits
+# Proof: Frobenius eigenspaces and linear coefficient moments
 
 [Statement](../../Theorems/cartier_and_spin/klein_four_structural_moments.md).
 Part II of the
 [incoming report](../../../litt3-computation-data/finite_loci_v4_replies_20260926/extracted/v4/klein_four_structural_v5/REPORT.md)
-gives the complete direct proofs. The reductions below retain their
-normalizations and the full geometric scope.
+gives the complete direct proofs and exact coefficient evidence. The
+reductions below use the explicit labels and coefficient equations in
+the statement; no geometric degree or character-minor bound is used.
 
 ## Subfield scales
 
@@ -45,32 +46,14 @@ x0^2+x0x1+2x1^2. All other terms are affine linear. Since F_(5^56)
 has dimension8 over K+, the seven nonconstant coordinates form
 the asserted linear system; the scalar coordinate is one quadric.
 After solving, recover epsilon from two nonzero proportional vectors.
-One zero and one nonzero vector is rejected; two zero vectors must
-initially be retained, even though the actual-input trace theorem
-separately excludes that case.
+One zero and one nonzero vector is rejected; two zero vectors are
+retained and admit every nonzero scale. No input is divided away.
 
 The two Frobenius orbits of exponents2 and6 cover all28 nonzero
 residues modulo29. Thus x,y supply all nonconstant Fourier coordinates.
 Adding the prescribed M0=m modulo5 and inverting the29-term Fourier
 matrix gives every weight residue. Only a residue1 has two allowed
 integer lifts,1 and6. This proves assertion3 without a profile search.
-
-## Actual character deficits
-
-Suppose the known endpoint jets give bounds A_i,B_i at0 on u_i,t^3v_i,
-and C_i,D_i at infinity on t^-3u_i,v_i. For each pair put
-z_ij=min(A_i+B_j,A_j+B_i),
-p_ij=min(C_i+D_j,C_j+D_i). The nonzero polynomial minor
-U_iV_j-U_jV_i is divisible by t^z_ij E J_k^(1), and its degree is at
-most6+2e+c_i+c_j-h_i-h_j-p_ij. Summing gives
-\[
-2g+j_1\le12+3e+4j-\sum_{i<j}(z_{ij}+p_{ij}).
-\]
-At a fully collided0 endpoint the actual supplied jets give A_i=3,
-B_i=2; at a fully collided infinity endpoint C_i=2,D_i=3.
-Both together subtract30, giving assertion4. Since the pole mass
-m=n-12 is at least e+2j, the right side is negative for m<=5.
-No unspecified later jets are inferred; their resonance is retained.
 
 ## Specified repeated-label sector
 
@@ -84,7 +67,7 @@ Their seven-by-four matrices have rank3. The remaining scalar
 quadratics have either no K+-root or two, with six moment points
 in total. Inverse Fourier transform for each of five mass residues
 gives30 exact weight vectors; the minimum of their integer masses
-is37. This proves assertion5, including arbitrary geometric epsilon.
+is37. This proves assertion4 for arbitrary nonzero coefficient scale.
 
 The incoming six-point datum at mass37 meets the moments and has
 epsilon outside K, so the subfield premise in assertion1 cannot
@@ -93,6 +76,6 @@ branch curve, no nontrivial character functions and no etale maps.
 
 The independent local replay of all five matrices, row operations,
 quadratics, six points and30 Fourier inversions passed using the older
-polynomial field model. Pure short-relation and jet arguments require
+polynomial field model. Pure short-relation arguments require
 no finite-search certificate. See
 [the integration audit](../../Research/audits/FINITE_LOCI_V4_REPLIES_2026_09_26.md).

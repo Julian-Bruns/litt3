@@ -1,102 +1,79 @@
-# Proof: a ramification bound makes a finite character test exhaustive
+# Proof: a three-value map and the exact marked-divisor kernel
 
-27 September2026. Encode [a+5b]=a+b beta, beta^2=beta+3, and use
-ascending coefficient rows
+[Statement](../../Theorems/cartier_and_spin/supported_units_require_three_characters.md).
+We first prove the general reduction, then apply the later lattice.
+
+## A least counterexample has disjoint conjugates
+
+Let gamma have order three with quotient P1, O be totally ramified,
+and Z consist of s unramified fibres. Choose a missing-character
+noninvariant supported function g of least pole degree delta.
+There is a fixed point other than O: a cyclic cubic quotient of
+genus at least two cannot have only one tame branch point, by
+Riemann--Hurwitz. At such a point g is regular and nonzero, while
+a nontrivial-character regular function vanishes. Thus the invariant
+component of g is nonzero. Exactly two characters are present:
 \[
-P=(11,22,18,5,19,20,15,16,9,22,1),\qquad
-A=(1,21,14,22,13).
+g=g_0+g_j,\qquad \gamma^*g_j=\zeta^j g_j,\quad j=1\text{ or }2.
 \]
-The polynomial P is squarefree of degree10, A is squarefree of degree4,
-and gcd(P,A)=1. The smooth curve y^3=P has genus9, unique infinity O,
-and pole orders3 and10 for x and y. Its marked finite set Z consists
-of the twelve unramified points over A=0.
+At an unramified orbit, vanishing on two sheets forces both
+components to vanish, hence vanishing on all three. Dividing by
+the corresponding base linear factor removes one complete zero
+fibre and lowers the pole by three. It preserves support,
+noninvariance and the two characters, contrary to minimality.
+Therefore g occupies at most one sheet per fibre, and the zero
+divisors of its three conjugates are pairwise disjoint.
 
-## The infinite-degree reduction
+In positive characteristic p, a pth root of g would preserve
+regularity, support and noninvariance and permute its characters
+since p is prime to three. Its smaller pole contradicts minimality.
+Thus this least witness is not a pth power.
 
-If a nonpolynomial supported function omits a cubic character, choose
-one with least pole degree, allowing either nonconstant character.
-It cannot omit the constant character, since it would then vanish
-at every cubic branch point. Dividing common polynomial content and
-extracting a fifth root both preserve the relevant class, so the
-minimal witness is primitive and not a fifth power.
+## The ratio is separating and has three short fibres
 
-The [three-conjugate ramification proof](two_character_supported_unit_bound.md)
-shows that its pole is at most28. The ratio of two conjugates is
-separating; its complete fibres over0,1,infinity are disjoint and each
-has at most four points. Riemann--Hurwitz bounds the total degree.
-The same proof counts the ten additional cubic branch contributions
-for the character y^2 and excludes that possibility without computation.
-Thus the witness has the form U+Vy, gcd(U,V)=1, and pole degree in
+In characteristic zero every nonconstant ratio is separating.
+In characteristic p, suppose g/gamma^*g were a pth power.
+Disjointness forces every zero multiplicity of g to be divisible
+by p, hence also its pole degree. Consequently dlog(g) is regular.
+The pth-power ratio makes it gamma-invariant. Tame descent gives
+an invariant regular differential on P1, so dlog(g)=0.
+The kernel of d on the function field over this perfect field is
+its pth powers. This contradicts the preceding minimality argument.
+
+The two present characters give a constant relation
+Ag+B gamma^*g+C gamma^(2*)g=0 with A,B,C all nonzero.
+Set phi=-Ag/(B gamma^*g). Its degree is delta, because the
+conjugate zeros are disjoint and the poles at O cancel.
+Moreover 1-phi=-C gamma^(2*)g/(B gamma^*g).
+Its complete fibres over0,1,infinity are precisely the three
+conjugate zero divisors. If their occupied multiplicities are
+m_1,...,m_t, with t<=s and sum m_i=delta, their different
+contribution is at least3(delta-t). Hence
 \[
-10,12,13,15,16,18,19,21,22,24,25,27,28.
+2G-2+2\delta\ge3(\delta-t),\qquad
+\delta\le2G-2+3t\le2G-2+3s.
 \]
-At each occupied root of A it vanishes on exactly one cubic sheet.
+At a multiplicity divisible by p, each of its three ramified
+points contributes at least m_i rather than m_i-1. Retaining
+those three extra exponents gives the stated improvement by3w.
+This argument is on the endpoint and uses no common-cover map.
 
-## Exhaustive finite certificate
+## The later lattice closes the reduction in every degree
 
-For each displayed degree n, enumerate compositions of n into four
-nonnegative zero multiplicities and choose one sheet at each occupied
-fibre. Rotation by arithmetic25th-power conjugation and a common cubic
-phase reduce to the same complete representatives used in the
-[pole16 proof](pole_sixteen_norm_exclusion.md). On every representative
-impose the indicated vanishing jets on
-\[
-\{x^i:3i\le n\}\ \cup\ \{x^i y:3i+10\le n\}.
-\]
-Every resulting matrix has full column rank. These are exact geometric
-linear systems: no restriction is placed on the unknown coefficients.
-The counts, one nonzero square minor per system, are:
+For X, G=9 and s=4, any missing-character function would therefore
+give a noninvariant effective supported function of pole at most28.
+The [exact marked-divisor lattice](marked_divisor_relation_lattice.md)
+proves that every such function below pole1,617,894 lies in k[x].
+This contradiction excludes missing characters in ALL degrees,
+including functions with common polynomial factors or arbitrary
+fifth powers. It is not extrapolation from a bounded classification.
 
-| Pole n | Systems |
-| ---: | ---: |
-| 10 | 961 |
-| 12 | 1708 |
-| 13 | 2134 |
-| 15 | 3340 |
-| 16 | 4147 |
-| 18 | 5947 |
-| 19 | 6967 |
-| 21 | 9496 |
-| 22 | 11032 |
-| 24 | 14425 |
-| 25 | 16255 |
-| 27 | 20593 |
-| 28 | 23128 |
-
-The [generator](../../scripts/arithmetic/supported_one_sheet_jets.py)
-constructs jets by the cubic coefficient recurrence. The
-[independent verifier](../../scripts/arithmetic/verify_supported_one_sheet_jets.py)
-uses exponentiation of truncated power series, checks all representative
-indices and reconstructs exactly the certified minors, without pivot
-selection. Both verify the field and marked-point data. All listed
-systems and independent checks passed.
-
-There is a field-size simplification, not a change of the geometry.
-Choose alpha_0 among the four roots, alpha_i=alpha_0^(25^i), and
-y_0^3=P(alpha_0). Then
-\[
-y_i/y_0=P(\alpha_0)^{(25^i-1)/3}\in\mathbf F_{5^8}.
-\]
-Dividing each character-y column by y_0 puts every matrix over F_(5^8).
-The actual points may require F_(5^24); column scaling by a nonzero
-scalar preserves rank over the full algebraic closure.
-
-The [exact data directory](../../../litt3-computation-data/small_supported_jets_20260927/)
-contains pole12,15,18,19 certificates and independent results at its root.
-The remaining cases are in its
-[two_character subdirectory](../../../litt3-computation-data/small_supported_jets_20260927/two_character/),
-named poleN_char01.json and poleN_char01_verified.json. The executed
-command lists are small_executed.json and executed.json there; they
-also retain supplementary character02 checks, which are not needed
-in this proof. Sage10.9 with Python3.14.3 was used.
-
-For a listed n, generate with
-`sage -python scripts/arithmetic/supported_one_sheet_jets.py n certificate.json --characters 01`,
-then verify with
-`sage -python scripts/arithmetic/verify_supported_one_sheet_jets.py certificate.json verification.json`.
-For n<20 the default characters012 have exactly the same columns.
-
-The full ranks exclude the least-degree witness. This proves the
-unrestricted statement, including arbitrary polynomial content and
-fifth powers of the original function. The argument does not exclude
-the genuine three-character case, which is a separate problem.
+The original
+[ramification audit](../../Research/audits/DOUBLE_ROOT_AND_HERMITE_2026_09_27.md)
+retains the fixed-curve argument. The present general reduction
+has focused author review; the independently checked lattice is
+the arithmetic input. Its proof does not use this theorem, so the
+replacement has no cycle. All former finite Hermite sources were
+already unnecessary. Three-character functions at the exact high
+threshold remain; realization as a norm of both actual maps is
+a separate question.

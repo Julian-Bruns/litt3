@@ -31,7 +31,7 @@ def main():
         assert digest(path) == record['sha256'], name
     root = Path(__file__).resolve().parents[3]
     assert (source/'inputs/cyclic5_small_field_fourth_inputs.json').read_bytes() == (
-        root/'Research/computations/cyclic5_small_field_fourth_inputs.json').read_bytes()
+        root/'../litt3-computation-data/legacy_workspace_computations/cyclic5_small_field_fourth_inputs.json').read_bytes()
     assert not out.exists(), 'Choose a new output directory; original evidence is retained.'
     out.mkdir(parents=True)
     env = dict(os.environ, OPENBLAS_NUM_THREADS='1', OMP_NUM_THREADS='1',

@@ -93,31 +93,54 @@ limit factors through a finite stage, since G_m is of finite
 presentation. Thus the inverse limit also has character group Z,
 with the same non-p-divisible generator.
 
-## The first Cartier pairing
+## Every simple factor has the same primitive-character pairing
 
-For r=1, the coefficient functional [t^{p-1}] on differentials
-vanishes on exact differentials in A_1. Consequently
+For q=p^r the form
 \[
-\langle\bar f,\bar g\rangle=[t^{p-1}](f g')
+b_q(\bar f,\bar g)=[t^{q-1}](f g')
 \]
-is well defined modulo constants, alternating, and has antidiagonal
-entries j for i+j=p in the basis t,...,t^{p-1}. It is perfect.
+on A_r/k is well defined, since [t^(q-1)] of an exact derivative
+is zero. It is alternating for odd p. In the monomial basis its
+only nonzero entries have i+j=q and value j modulo p.
+Its radical is exactly k[t^p]/k, so it is perfect on the top
+simple factor P_r/P_(r-1).
 
-Under t->phi(t), the class of t^{p-1}dt in H^1 of the de Rham
-complex of A_1 is multiplied by a_1^p. To check the coefficient
-directly, compute [t^{p-1}](phi^{p-1}phi') as the coefficient of
-t^p in phi^p using the corresponding universal integer polynomials,
-then reduce modulo p. It is a_1^p. Every exact differential remains
-exact. This proves the similitude identity over the full coordinate
-ring, including a_0^p=0.
+This pairing has the required FULL group-scheme covariance.
+Let phi=sum a_i t^i be the universal coordinate change. For
+1<=i,j<q put n=i+j, and work first over the p-torsion-free
+universal ring Z_(p)[a_0,...,a_(q-1),a_1^-1].
+Differentiation gives the integral identity
+\[
+n[t^{q-1}]\bigl(\phi^{n-1}\phi'\bigr)
+=q[t^q]\phi^n.
+\]
+If n!=q, then2<=n<=2q-2 implies v_p(n)<r. Cancel that
+p-power in this universal ring; the left coefficient is
+divisible by p and vanishes in characteristic p.
+For n=q, cancelling q gives
+[t^(q-1)]phi^(q-1)phi'=[t^q]phi^q=a_1^q modulo p.
+Multiplication by j proves, for all monomial pairs and hence
+all f,g,
+\[
+b_q(\phi^*f,\phi^*g)=a_1^q b_q(f,g).
+\]
+The identity survives a_0^q=0 and arbitrary base change. In
+particular no infinitesimal translation has been discarded.
 
-For clarity, at p=5 the Lie operators d/dt and t^2 d/dt connect
-the four distinct weights of B_1, while t d/dt separates them.
-They give an alternative direct check of irreducibility. In contrast,
-the reduced subgroup fixes t^4, and in fact the entire descending
-t-adic flag. The nonreduced group cannot be replaced by that subgroup.
+For P_j set u=t^(p^(r-j)). Its algebra is k[u]/(u^(p^j)),
+and P_(j-1)=k[u^p]/k. The induced coefficient change has
+b_i=a_i^(p^(r-j)). Applying the top-factor argument gives a
+perfect alternating form on P_j/P_(j-1) with character
+b_1^(p^j)=a_1^(p^r)=chi_r. Restriction to the Frobenius
+subalgebra preserves this u and the coefficient formula, so
+the pairings commute with the tower maps.
 
-## Relation to the geometric problem and exact checks
+At p=5 and r=1, the Lie operators d/dt and t²d/dt connect
+the four weights, giving the familiar alternative irreducibility
+check. The reduced group instead fixes the entire t-adic flag.
+The full covariance calculation keeps the nonreduced directions.
+
+## Relation to the geometric problem
 
 The geometric fiber of F_*^{[r]}O_C at a smooth point is precisely
 A_r. Its Frobenius subalgebras give the displayed P_j. Thus this is
@@ -129,17 +152,10 @@ Cartier-kernel forms on the selected X, their lattice, or the actual
 two-leg traces. Those additional geometric restrictions remain the
 possible source of a contradiction.
 
-The standard-library-only script
-[truncated_coordinate_algebra.py](../../scripts/arithmetic/truncated_coordinate_algebra.py)
-checks the coefficient maps of all translations and all shears
-t+a t^m for p=5 and r=1,2,3,4. Their directed monomial graph has
-strong components exactly the p-adic valuation classes, with dimensions
-respectively (4), (20,4), (100,20,4), and (500,100,20,4).
-The forward closures are exactly the displayed submodule chain.
-It also verifies every entry of the full symbolic height-one pairing
-identity in F5[a_0,...,a_4]/(a_0^5); its determinant is4.
-
-The executed receipt, including the source hash, is
-[truncated_coordinate_algebra.json](../../../litt3-computation-data/bt_obstruction_transport_20260921/truncated_coordinate_algebra.json).
-These finite checks supplement the all-height proof; they are not
-used to extrapolate it and make no common-cover claim.
+The later [general seed theorem](common_atiyah_jet_obstruction.md)
+explains the same all-layer duality on actual common Cartier bundles.
+The present algebra proof is independent of that geometric result.
+It replaces the earlier bounded coaction and pairing checks; their
+original receipt remains external provenance. The primitive character
+is still not p-divisible, even after every pairing and every height
+is retained. Actual global geometry remains additional input.

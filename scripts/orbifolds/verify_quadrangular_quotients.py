@@ -138,7 +138,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for profile in ("2233", "2223"):
         parser.add_argument("--census-" + profile, type=Path,
-                            default=ROOT / "Research/computations" /
+                            default=ROOT / "../litt3-computation-data/legacy_workspace_computations" /
                             ("genus_two_quadrangular_" + profile + ".json"))
     args = parser.parse_args()
     start = time.monotonic()

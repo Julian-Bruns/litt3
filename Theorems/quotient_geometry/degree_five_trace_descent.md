@@ -1,6 +1,8 @@
 # Low-degree norms and degree-five trace constrain actual endpoint maps
 
-Version2,21September2026. Let $k$ be algebraically closed of
+Version3,3October2026. A single separated-pencil criterion now gives
+the norm and trace statements, including the degree-six structure.
+Let $k$ be algebraically closed of
 characteristic five. Let $X:y^3=P(x)$ be a smooth cyclic trigonal
 curve with $P$ squarefree of degree ten. In particular this includes
 the fixed genus-nine endpoint of both candidate pairs.
@@ -33,18 +35,56 @@ $\operatorname{Hom}(J(C),J(X))=0$, then no nonconstant separable
 map $T\to X$ exists. This uses the vanishing of the actual norm
 homomorphism; for $m=2,4$ no zero-trace descent equivalence is asserted.
 
-The omitted degree THREE has an exact geometric description. If
-$\deg\pi=3$ and $\operatorname{Hom}(J(C),J(X))=0$, an actual
-separable $h:T\to X$ forces a map $a:C\to\mathbf P^1$ with
+The degrees THREE and SIX have an exact geometric description. More
+generally assume $\deg\pi=m\le6$ and the ACTUAL norm
+$h_*\pi^*$ is zero. Let $T'$ be the joint normalization of the two
+embedded endpoint fields, with $e=\deg(T'/C)$. Then $e=3$ or $6$,
+and there is an actual intermediate etale cover $C'\to C$ of degree
+$e/3$ and a separable map $a:C'\to\mathbf P^1$ with
 \[
-x\circ h=a\circ\pi.
+x\circ h'=a\circ\pi',\qquad
+T'=\operatorname{Norm}(C'\times_{\mathbf P^1}X).
 \]
-Moreover $T$ is the normalization of the ACTUAL fiber product
-$C\times_{\mathbf P^1}X$, and $\pi$ is necessarily cyclic Galois.
-Its generator acts under $h$ by one of the two generators of
-$y\mapsto\zeta_3y$. If $h$ is etale, $a$ is unramified away from
+Here $h':T'\to X$ is the descended actual map and
+$\pi':T'\to C'$ is cyclic etale of degree three. Its generator
+acts under $h'$ by a generator of $y\mapsto\zeta_3y$. For $m=3$,
+one has $T'=T$ and $C'=C$, recovering the original assertion.
+If $h$ is etale, $a$ is unramified away from
 the eleven branch points of $x$, and EVERY point above each of them
 has ramification index exactly three.
+
+## The general separated-pencil criterion
+
+For this criterion k may have any characteristic. Let X be any smooth
+proper connected curve of genus at least two, and let
+$x:X\to\mathbf P^1$ be separable of degree $d>1$. Fix an integer B>=1.
+Assume, also after algebraically closed extension of constants, that
+every rational function on X of degree at most B belongs to $k(x)$.
+For actual finite separable maps $C\xleftarrow{\pi}T
+\xrightarrow{h}X$, write $e=[k(C)h^*k(X):k(C)]$.
+
+- If $e\le B$ and $h_*\pi^*=0$, then $d\mid e$. The joint
+  normalization is the ACTUAL fiber product normalization
+  $C'\times_{\mathbf P^1}X$, where
+  $k(C')=k(C)(x\circ h)$ and $[C':C]=e/d$. When both original
+  maps are etale, both maps from this same joint source to C' and X
+  are etale. A cyclic x gives a cyclic degree-d map onto C'.
+- In characteristic p>0, if $\deg\pi=p\le B$ and $d\nmid p$,
+  then zero trace of the full canonical space is equivalent to
+  actual descent of h through pi. The actual norm is always nonzero.
+
+There is an unrestricted pencil form of the norm criterion. If the
+actual norm vanishes and the moving incidence divisor's constant line
+class L has $h^0(X,L)=2$, then its complete system is base-point-free
+and gives a separable degree-e pencil $u:X\to\mathbf P^1$.
+The joint source is the FULL fiber product normalization for u and
+an actual map $C\to\mathbf P^1$. If both original legs are etale,
+every fiber of u is uniform. No bound on e or separated-pencil input
+is needed for this paragraph.
+
+The trigonal statements above use $d=3,B=6$. Etaleness is not needed
+for the general norm and prime-degree trace criteria; the common-cover
+applications below retain both actual etale maps.
 
 ## An unbounded family of actual cover groups is excluded
 

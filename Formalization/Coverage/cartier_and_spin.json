@@ -1,0 +1,1412 @@
+{
+  "family": "cartier_and_spin",
+  "coverage_is_exhaustive": false,
+  "unlisted_sources": "pending; the root inventory lists the complete source snapshot",
+  "last_source_proof_sync_utc": "2026-10-03 10:32:01 UTC",
+  "source_proof_sync_review": "Coverage/cartier_and_spin_source_proof_sync_2026_10_03.md",
+  "records": [
+    {
+      "theorem_id": "source_quadratic_calculus",
+      "reviewed_proof_path": "Proofs/cartier_and_spin/source_quadratic_calculus.md",
+      "reviewed_definition_ids": [],
+      "reviewed_dependencies": [],
+      "source_path": "Theorems/cartier_and_spin/source_quadratic_calculus.md",
+      "source_sha256": "1820c10b668b9524c6ab252c460bb8053f1df37e5f2365b10513b0bd0c498147",
+      "canonical_statement_version": 1,
+      "status": "complete",
+      "precise_hypotheses": "Abstract moment translations hold over any commutative ring. Actual source coefficient moments require any field K with CharP K p, p>=2, separable actual F=(X^p+C(q))*H+C(tau), tau nonzero, and p<=natDegree F. No splitting, irreducibility, connectedness or degree-2p hypothesis is used. Actual source differential moments and both trace-square presentations require p>=3 and an actual Derivation R K K over any commutative base ring R; its unique extension to the quotient is constructed. Split-root translation and nonzero-trace center components additionally use a complete finite injective root family. The center uses the explicitly nonzero coefficient s_(p-1). New affine foundations use actual compatible derivations on arbitrary commutative field algebras, actual linear functionals and algebra equivalences. The original source supplies centered vanishing moments in characteristic p>=3 with its remainder coefficient s nonzero. Actual inverse affine substitutions require only a nonzero; the remainder center additionally needs nonzero equation scale and s. Polynomial top/next coefficient formulas hold over every commutative ring and every degree. Local Laurent bounds require a field k in odd characteristic p=2r+1, r>=1, the actual separable full split source over k((u)), integral actual roots and exact order(q)=r+1. Generic Qsharp needs no tau-order condition. Char5 Qtilde additionally needs order(tau)=3 and integral H coefficients; no H-leading-unit hypothesis is needed. Combined actual source-frame centered covariance requires s nonzero; cleared R requires no s inverse and includes s=0. Exact degree-2p Qaff covariance assumes kappa,tau nonzero, degree S<=p-2 and separable F; degree/remainder and moment vanishing are derived, already for p>=3. Exact degree-ten Qtilde covariance is in characteristic five, with degree S<=3. Equation-normalization Qsharp invariance permits every nonzero meromorphic scale t. Meromorphic source-translation Qsharp invariance uses exactly s=0. Endpoint jets use the actual full split source over k[[u]], q/tau of exact order three and unit leading H; the original source derives e0 nonzero and exactly five small roots. Generic jet identities need only 2 nonzero, while the literal remainder specialization is characteristic five. No distinct residue or leading jet hypothesis is imposed. Constant source translation uses algebraically closed k and any positive exponent. Universal differential trace foundations use the actual rank-one Kahler coordinate e, actual formally-etale base change and actual original separable polynomial quotient; this quotient is proved finite and etale, including nonmonic/disconnected F. Actual local regularity is proved over every actual Subring K preserved by D: roots, H coefficients and q lie in the subring and tau is an actual subring unit; no s unit is used. For all derivative moments and the characteristic-five boundary invariants, only root integrality and inverse source-factor values in the subring are needed. Boundary translation invariance uses precisely s=0 and permits arbitrary meromorphic b. The actual Laurent endpoint specialization requires exactly nonnegative H/root orders, H leading order zero and exact q/tau orders three, with no additional residual H(0) or root count input. Literal source tensor frame/normalization laws require an actual rank-one universal differential coordinate on K; transformed polynomial separability is derived for all nonzero affine changes, in every characteristic/degree, by explicit Bezout transport. The tensor expressions and both square presentations are proved independent of that coordinate. The actual coordinate is constructed for perfect base k, IntermediateField.FG top and Algebra.trdeg k K=1 using a proved actual separating element and polynomial/fraction-field presentation; no coordinate or separating-existence premise remains.",
+      "accepted_literature": [],
+      "computation_reliance": "None: symbolic binomial expansion, Lagrange interpolation, coprime polynomial factors, the actual quotient/product algebra equivalence, trace matrices, polynomial division/degree arguments and Leibniz identities checked by the Lean kernel. New frame covariance components use symbolic polynomial composition/monic division/Hasse coefficient identities and actual quotient, derivation and trace transport; no computation certificate. Local endpoint foundations use infinite Laurent coefficient identities, actual power-series derivatives and valuations, monic polynomial descent, and actual separable evaluation/trace compatibility; no expansion certificate. Endpoint jets are derived from actual residue multiplicities, uniform nodal coefficient orders, triangular polynomial coefficient arguments and Newton identity two. The only finite coefficient expansions are fixed degree-one/degree-three convolution identities proved by the kernel; no certificate or numerical roots.",
+      "components": [
+        {
+          "declaration": "Litt3.CartierAndSpin.weightedMoment_translate",
+          "module": "Solutions.CartierAndSpin.WeightedMoments",
+          "claim": "The complete binomial translation law in every moment order.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.traceZeroMomentTranslationInvariant",
+          "module": "Solutions.CartierAndSpin.WeightedMoments",
+          "claim": "E2 and 3E2E4-2E3^2 are invariant under translations whenever E0=E1=0, over any commutative ring.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.split_source_weighted_moment_zero",
+          "module": "Solutions.CartierAndSpin.SplitResidues",
+          "claim": "For an actual split simple-root polynomial F=phi*H+tau with phi'=0, every root sum of w^j/phi vanishes when the actual polynomial numerator X^j*H' has degree below the number of roots minus one. The general derivative-weighted interpolation identity is proved from Lagrange interpolation.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.split_polynomial_quotient_trace_eq_sum",
+          "module": "Solutions.CartierAndSpin.SplitSourceAlgebra",
+          "claim": "The actual quotient by the full simple-root polynomial is explicitly algebra-isomorphic to the product of root fields, and its actual Algebra.trace is the root sum. The quotient denominator phi is constructed as an actual unit from the source equation and tau nonzero, without connectedness.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.splitSourceCoefficientMoments",
+          "module": "Solutions.CartierAndSpin.SourceCoefficientMoments",
+          "claim": "Both entire coefficient-moment families hold in the actual split source algebra: Tr(w^j/phi)=0 and Tr(w^j/phi^2)=j*s_(p-j)/tau for every j<p, including j=0. All required degree inequalities are derived from the actual source presentation.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_coefficient_moments",
+          "module": "Solutions.CartierAndSpin.SourceTraceDescent",
+          "claim": "Both complete coefficient-moment families hold in the original actual K[W]/F for every separable source F=(W^p+q)H+tau with tau nonzero and degree at least p. Phi is an actual quotient unit. Trace scalar extension is proved using the actual quotient power bases and the entire separable root decomposition is constructed in an algebraic closure before injective descent.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.split_source_differential_moment",
+          "module": "Solutions.CartierAndSpin.DifferentialEnergy",
+          "claim": "For every actual base derivation and 0<j<p, the complete split source has sum(w^(j-1)*D(w)/phi)=s_(p-j)*D(q)/tau, derived by differentiating the proved moment family and dividing only by the provably nonzero j.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.split_source_twisted_power_square",
+          "module": "Solutions.CartierAndSpin.DifferentialEnergy",
+          "claim": "For the actual arbitrary-degree odd-characteristic split source, E-4*D(q)*D(c/tau) equals both the sum of (D(w)-2*w*D(q)/phi)^2/phi and the sum of D(w*phi^(p-2))^2/phi^(2p-3), with source denominators certified internally.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.separable_polynomial_quotient_derivation_exists",
+          "module": "Solutions.CartierAndSpin.SourceDerivation",
+          "claim": "Every base derivation extends uniquely to the actual quotient by a separable polynomial, over arbitrary commutative coefficient rings. The extension is constructed from a polynomial Bezout inverse of F' and a genuine derivation lift through the actual ideal; no irreducibility or characteristic-zero assumption enters.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.algebra_trace_derivation",
+          "module": "Solutions.CartierAndSpin.DerivationTrace",
+          "claim": "Actual trace commutes with every compatible extension of a base derivation on every finite free commutative algebra. A concrete basis-coordinate proof cancels the connection terms by swapping finite indices.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.sourceQuotientDifferentialCalculus",
+          "module": "Solutions.CartierAndSpin.UnsplitSourceEnergy",
+          "claim": "For the original arbitrary-degree odd-characteristic separable source quotient, all first differential coefficient moments and BOTH twisted-square identities hold as actual Algebra.trace identities. The denominator unit, unique quotient derivation extension, coefficient moments and trace compatibility are all constructed, with no splitting or connectedness assumption.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.split_source_traceZero_translation_invariant",
+          "module": "Solutions.CartierAndSpin.DifferentialEnergy",
+          "claim": "On the actual source coefficient boundary s_(p-1)=0, the source proves derivative E0=E1=0, all E_m obey the full binomial law under w'=w+b and q'=q-b^p, and E2 plus 3*E2*E4-2*E3^2 are invariant under every base translation.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.sourceTraceZeroMomentTranslations",
+          "module": "Solutions.CartierAndSpin.UnsplitMomentTranslation",
+          "claim": "The original actual nonsplit separable source quotient on s_(p-1)=0 supplies E0=E1=0, proves phi unchanged under w'=w+b and q'=q-b^p, and has the full quotient-trace E_m binomial law plus E2/discriminant invariance. The result holds already for p>=2. Its LinearMoments foundation works for every actual linear functional on every commutative algebra, without dimension or characteristic restrictions.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.split_source_centered_energy_ratio",
+          "module": "Solutions.CartierAndSpin.CenteredEnergy",
+          "claim": "For nonzero s_(p-1), the actual source supplies the vanishing zeroth and first derivative moments and proves the canonical affine center energy E_c=E-2*D(q)/tau*(D(c)-(c/s)*D(s)). The cleared energy is defined on all coefficients and vanishes identically when s=0.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.functional_affine_derivative_square",
+          "module": "Solutions.CartierAndSpin.AffineDifferentialEnergy",
+          "claim": "The entire affine derivative-square expansion for every actual linear functional on a commutative algebra and actual compatible derivations; no finite degree or characteristic assumption.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_quotient_centered_affine_scaling",
+          "module": "Solutions.CartierAndSpin.AffineDifferentialEnergy",
+          "claim": "The original actual unsplit separable source supplies both centered second/cross vanishing moments and the exact centered energy scaling a^2/a^p for arbitrary meromorphic affine coefficients.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.affineSourceQuotientEquiv",
+          "module": "Solutions.CartierAndSpin.AffineSourceQuotient",
+          "claim": "An actual explicit algebra equivalence from the exact transformed polynomial quotient to the original quotient, mapping the new root to aW+b. Any equation exponent is permitted; no separability/degree/irreducibility input.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.affine_source_remainder_center",
+          "module": "Solutions.CartierAndSpin.AffineSourceRemainder",
+          "claim": "The actual transformed monic source remainder has the precise affine center a*(c/s)+b, with q/tau/H transformations proved from the actual polynomial presentation; top/next characteristic-p coefficient laws retain degree drops.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.trace_centered_energy_equiv_scaling",
+          "module": "Solutions.CartierAndSpin.AffineTraceTransport",
+          "claim": "Actual centered trace energy is transported through every actual algebra equivalence with the new derivation and scaled denominator unit both constructed.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.transportedDerivation_symm",
+          "module": "Solutions.CartierAndSpin.DerivationTransport",
+          "claim": "Actual derivations transport through arbitrary commutative algebra equivalences with a proved Leibniz rule, equivariance and exact round trip.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.laurent_derivative_leibniz",
+          "module": "Solutions.CartierAndSpin.LaurentDerivation",
+          "claim": "Actual formal Laurent differentiation satisfies Leibniz on all infinite Laurent series; its actual field derivation is constructed.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.laurent_derivative_orderTop_bound_of_characteristic_dvd",
+          "module": "Solutions.CartierAndSpin.LaurentEndpointBounds",
+          "claim": "Any lower Laurent-order bound divisible by the characteristic is preserved by differentiation, including zero series and derivatives.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.laurent_twisted_square_endpoint_bound",
+          "module": "Solutions.CartierAndSpin.LaurentTwistedEndpoint",
+          "claim": "Every integral Laurent root and q of order (p+1)/2 give twisted-square summand pole at most (p-3)/2 in odd characteristic p.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.separable_quotient_derivation_evaluation",
+          "module": "Solutions.CartierAndSpin.SplitDerivationEvaluation",
+          "claim": "Every actual K-valued evaluation of the separable quotient commutes with its compatible extended derivation, using the nonzero actual root derivative.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.split_actual_source_differential_trace",
+          "module": "Solutions.CartierAndSpin.SplitSourceDifferentialTrace",
+          "claim": "The literal actual quotient trace of the derivative square against its actual denominator unit equals its complete root sum.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.actual_source_laurent_endpoint_objects_exist",
+          "module": "Solutions.CartierAndSpin.LaurentQuotientEndpoint",
+          "claim": "The actual arbitrary-degree split separable source constructs its unit and extended Laurent derivation and proves corrected literal quotient-trace pole at most (p-3)/2, without tau order or small-root counts.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.laurent_characteristic_remainder_integral",
+          "module": "Solutions.CartierAndSpin.LaurentIntegralPolynomials",
+          "claim": "Integral Laurent coefficients descend to an actual power-series polynomial; actual monic characteristic remainders and quotients retain integrality without a leading-unit hypothesis.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.actual_source_laurent_corrected_endpoint_bound",
+          "module": "Solutions.CartierAndSpin.LaurentQuotientEndpoint",
+          "claim": "Characteristic-five Qtilde from the literal quotient trace and actual remainder coefficient has at most a simple pole when q,tau have order three, roots split integrally and H is integral.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.actual_source_laurent_coefficient_corrected_endpoint_bound",
+          "module": "Solutions.CartierAndSpin.LaurentQuotientEndpoint",
+          "claim": "Reading c as H.coeff 3 gives the same literal quotient-trace simple-pole bound in arbitrary degree, with the coefficient difference proved divisible by q through actual monic division.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_frame_centered_energy",
+          "module": "Solutions.CartierAndSpin.AffineSourceCenteredEnergy",
+          "claim": "The exact transformed polynomial quotient, transported derivation and denominator unit give literal centered trace-energy weight a^2/a^p; the actual new monic remainder supplies the transformed center.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_frame_cleared_energy",
+          "module": "Solutions.CartierAndSpin.AffineSourceClearedEnergy",
+          "claim": "Literal actual cleared R has weight a^(N-3p+3) under meromorphic source frame changes, retaining the s=0 boundary with no inverse of s.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.affine_source_remainder_coefficient_weights",
+          "module": "Solutions.CartierAndSpin.AffineSourceCoefficientWeights",
+          "claim": "The actual transformed monic remainder has s prime=lambda*s and c prime=lambda*(a*c+b*s), lambda=a^N*a/a^(2p); exact integer-exponent weights are proved.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.degree_two_p_source_affine_energy",
+          "module": "Solutions.CartierAndSpin.DegreeTwoPAffineEnergy",
+          "claim": "The original degree-2p presentation itself derives degree/remainder and all needed moments, then proves literal Qaff covariance a^(2-p), including c=0 and meromorphic a,b.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.degree_ten_source_corrected_affine_energy",
+          "module": "Solutions.CartierAndSpin.DegreeTenCorrectedAffineEnergy",
+          "claim": "The exact characteristic-five degree-ten transformed source and literal corrected Qtilde trace expression have affine weight a^-3.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_normalization_twisted_energy",
+          "module": "Solutions.CartierAndSpin.SourceNormalizationEnergy",
+          "claim": "Multiplying the actual source equation by any nonzero meromorphic base function preserves literal Qsharp, through the actual unchanged quotient ideal and transformed actual remainder coefficient.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_translation_twisted_energy",
+          "module": "Solutions.CartierAndSpin.SourceTranslationTwistedEnergy",
+          "claim": "On s=0, every meromorphic translation preserves literal Qsharp in the actual translated quotient, with its transported derivation/unit and actual monic remainder.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.power_series_endpoint_root_count",
+          "module": "Solutions.CartierAndSpin.PowerSeriesEndpointRootCount",
+          "claim": "The actual complete split power-series source derives nonzero H(0), exactly p small-root indices and e0*q_m+tau_m=0 whenever 0<m<p, q vanishes below m and tau_m is nonzero.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.power_series_endpoint_jets",
+          "module": "Solutions.CartierAndSpin.PowerSeriesEndpointJets",
+          "claim": "The actual complete source with exponent five derives all three canonical endpoint jet identities and exactly five small roots. Zero roots and repeated leading coefficients are retained; only 2 nonzero is needed.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.characteristic_five_endpoint_jets",
+          "module": "Solutions.CartierAndSpin.CharacteristicFiveEndpointJets",
+          "claim": "The literal characteristic-five endpoint clause uses actual q,tau order three, unit leading coefficient of H and the actual monic-remainder coefficient c. Its residue agrees with H.coeff3 through proved monic division.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.laurent_constant_translation",
+          "module": "Solutions.CartierAndSpin.ConstantSourceTranslation",
+          "claim": "An actual constant b over algebraically closed k removes q(0) by b^p=q(0), gives exact translated q-q(0), and its actual Laurent derivation is zero.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.SharedTensors.laurent_nodal_coeff_orderTop_bound",
+          "module": "Solutions.SharedTensors.UniformRootValuationBounds",
+          "claim": "The exact actual full nodal coefficient order bound for uniformly bounded roots, including small positive-order roots, zero roots and repeated residues.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.SharedTensors.actual_source_derivation_is_universal_coordinate",
+          "module": "Solutions.SharedTensors.SourceUniversalDifferentials",
+          "claim": "The constructed actual source derivation is exactly the coordinate of the actual universal derivation on the original separable polynomial quotient; actual finiteness and etaleness are proved.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.SharedTensors.actual_source_weighted_symmetric_trace",
+          "module": "Solutions.SharedTensors.SourceUniversalDifferentials",
+          "claim": "The literal universal symmetric-tensor weighted trace product on the actual original separable source quotient has exactly the scalar source-energy coordinate.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.SharedTensors.etaleSymmetricTrace_independent",
+          "module": "Solutions.SharedTensors.EtaleSymmetricTrace",
+          "claim": "The actual symmetric trace is independent of the rank-one differential frame over commutative rings, with no inverse of two and disconnected source algebras retained.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.SharedTensors.etale_weighted_universal_differential_trace",
+          "module": "Solutions.SharedTensors.EtaleDifferentialTrace",
+          "claim": "The actual linear universal-differential trace has the exact derivative coordinate, with genuine formally-etale base change and proved frame independence.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_universal_tensor_calculus",
+          "module": "Solutions.CartierAndSpin.SourceTensorConsequences",
+          "claim": "The original actual separable source constructs its denominator unit and proves the full universal differential moment family plus BOTH corrected-energy square identities as literal \u03a9 and genuine Sym\u00b2 trace equalities. Nonmonic/disconnected source algebras are retained.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_remainder_coefficient_mem_subring",
+          "module": "Solutions.CartierAndSpin.SubringMonicRemainder",
+          "claim": "Every actual monic source-remainder coefficient belongs to the actual subring when H coefficients and q do, with no leading-coefficient or s unit condition.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.actual_source_subring_integrality",
+          "module": "Solutions.CartierAndSpin.ActualSourceSubringIntegrality",
+          "claim": "The actual original separable quotient constructs its compatible derivation and denominator unit, and its literal energy trace, cleared R and Qaff belong to the actual subring from integral roots/H/q and unit tau. No s inverse is used.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.actual_source_unit_derivative_moment_mem_subring",
+          "module": "Solutions.CartierAndSpin.ActualSourceUnitMomentIntegrality",
+          "claim": "Every literal actual-quotient derivative moment is integral when the roots belong to an actual derivation-stable subring and the actual source factor values have inverses there; no H, q or tau integrality is needed.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_boundary_subring_integrality",
+          "module": "Solutions.CartierAndSpin.SourceBoundarySubringIntegrality",
+          "claim": "For the actual source with s=0 in characteristic five, E2 and I=E2*E4+E3^2 remain in the actual subring after arbitrary meromorphic translations, even when the translated roots leave that subring.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.laurent_characteristic_five_endpoint_jets",
+          "module": "Solutions.CartierAndSpin.LaurentEndpointJets",
+          "claim": "Starting directly from the actual full split Laurent source, integral H/roots, unit leading H and exact orders q=tau=3, derives e0 nonzero, precisely five small roots and both endpoint jet sums, using the actual monic remainder c; repeated leading jets are allowed.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_boundary_quotient_integrality",
+          "module": "Solutions.CartierAndSpin.SourceBoundaryQuotientIntegrality",
+          "claim": "The actual source presentation and translated polynomial quotient, denominator unit and compatible derivation are constructed; E2 and I stay in the actual local subring after every meromorphic translation.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_universal_centered_affine_weight",
+          "module": "Solutions.CartierAndSpin.SourceTensorAffineWeights",
+          "claim": "The actual universal centered tensor has the literal source-frame weight a^(2-p), with transformed monic remainder center and denominator unit.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_universal_cleared_affine_weight",
+          "module": "Solutions.CartierAndSpin.SourceTensorAffineWeights",
+          "claim": "The actual universal cleared tensor has exact weight a^(N-3p+3) on every coefficient boundary, including s=0.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_universal_affine_correction_weight",
+          "module": "Solutions.CartierAndSpin.SourceTensorAffineCorrections",
+          "claim": "The literal degree-2p universal Qaff tensor has exact affine weight a^(2-p), including c=0 and meromorphic a,b.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_universal_degree_ten_corrected_weight",
+          "module": "Solutions.CartierAndSpin.SourceTensorAffineCorrections",
+          "claim": "In characteristic five the literal actual degree-ten corrected universal tensor has exact affine weight a^-3.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_universal_twisted_normalization_invariant",
+          "module": "Solutions.CartierAndSpin.SourceTensorInvariance",
+          "claim": "The literal universal Qsharp tensor remains identical after every nonzero meromorphic equation scaling in the actual scaled quotient.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_universal_twisted_translation_invariant",
+          "module": "Solutions.CartierAndSpin.SourceTensorInvariance",
+          "claim": "On s=0 the literal universal Qsharp tensor remains identical after any meromorphic source translation in the actual new quotient.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_universal_energy_frame_independent",
+          "module": "Solutions.CartierAndSpin.SourceTensorFrameIndependence",
+          "claim": "Every actual source symmetric energy, centered/cleared/affine/corrected/twisted expression and both square presentations is independent of the actual meromorphic differential coordinate.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_universal_centered_formula",
+          "module": "Solutions.CartierAndSpin.SourceTensorCenteredFormula",
+          "claim": "The actual original source proves the full canonical center correction and cleared tensor equals s times centered tensor, as literal universal Sym\u00b2 identities without splitting. The cleared tensor vanishes on s=0 separately.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_quotient_moment_translation",
+          "module": "Solutions.CartierAndSpin.SourceQuotientMomentTranslation",
+          "claim": "The whole boundary binomial moment translation family and E2/discriminant invariance are equalities in the literal new source-polynomial quotient, with actual new unit and compatible derivation. No splitting is assumed.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_quotient_five_invariant_translation",
+          "module": "Solutions.CartierAndSpin.SourceQuotientFiveInvariant",
+          "claim": "The actual characteristic-five invariant I remains exactly equal in the literal translated source quotient; the discriminant=3I identity and cancellation of actual nonzero three are checked.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_universal_characteristic_five_corrected_identity",
+          "module": "Solutions.CartierAndSpin.CharacteristicFiveTensorCorrections",
+          "claim": "In characteristic five the literal Qsharp tensor is E+dq*d(c/tau), and Qtilde is exactly Qsharp\u22122*dq*dc/tau in genuine universal Sym\u00b2.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.separating_function_source_universal_calculus",
+          "module": "Solutions.CartierAndSpin.SourceSeparatingFunctionTensors",
+          "claim": "An actual separating rational-function subfield constructs the genuine differential coordinate and original source universal tensor calculus; a given derivation normalized at that actual parameter equals this universal coordinate. The coordinate is not an input.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.source_quadratic_calculus",
+          "module": "Solutions.CartierAndSpin.SourceQuadraticCalculus",
+          "claim": "Aggregate proof of thirty-one explicit universally quantified source clauses: actual quotient coefficient and differential moments, genuine symmetric tensor identities and meromorphic frame laws, full-root Laurent endpoint orders/jets, actual subring regularity, and construction for any perfect-base finitely generated transcendence-degree-one field.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.one_variable_source_universal_calculus",
+          "module": "Solutions.CartierAndSpin.OneVariableSourceTensors",
+          "claim": "Every actual finitely generated field of transcendence degree one over a perfect base constructs a genuine universal differential coordinate and the original-source universal tensor calculus, via Mathlib separating transcendence basis and actual polynomial/fraction fields.",
+          "gap": "None in the reviewed exact Version1 scope; included in the complete actual-source aggregate."
+        }
+      ],
+      "full_statement_review": "Coverage/source_quadratic_calculus_scope_review.md",
+      "verification_report": "../litt3-computation-data/formalization-20261003/verification/20261003T034758Z/report.json",
+      "review_status": "COMPLETE Version1 after parent readback of canonical statement/proof, eighteen-clause mapping and all thirty-one literal clauses. Focused aggregate audit passed 904 transitive declarations, standard three axioms only, zero forbidden dependencies and zero source changes; no literature premise.",
+      "reviewed_proof_sha256": "ac687f1cfb9989e3cceb23beee3bad08e7899bd3e75d83644dac70e17f9c3319"
+    },
+    {
+      "theorem_id": "section_span_clearing_degree_bound",
+      "reviewed_proof_path": "Proofs/cartier_and_spin/section_span_clearing_degree_bound.md",
+      "reviewed_proof_sha256": "a43e02bab5c0e458926caaf9f83c2b25676545b65418ecb7bc532c862aab5be0",
+      "reviewed_definition_ids": ["base_conventions"],
+      "reviewed_dependencies": [],
+      "source_path": "Theorems/cartier_and_spin/section_span_clearing_degree_bound.md",
+      "source_sha256": "9c28aff3e0a62cbaaa4112acff62439c9be2df4bc56da6b20e141d84e4e596ee",
+      "canonical_statement_version": 1,
+      "status": "partial_component",
+      "precise_hypotheses": "A finite-dimensional module V over a division ring K, a submodule S, and a surjective K-linear map f from V into W; the fiber bound additionally assumes dimension of f(S) at most one.",
+      "accepted_literature": [],
+      "computation_reliance": "None: two rank-nullity equalities and injectivity of the restricted-kernel inclusion.",
+      "components": [
+        {
+          "declaration": "Litt3.CartierAndSpin.finrank_image_codimension_bound",
+          "module": "Solutions.CartierAndSpin.SectionSpan",
+          "claim": "dim W is at most codim S plus dim f(S).",
+          "gap": "A formal smooth projective curve restriction map, Riemann--Roch surjectivity, and actual scheme-theoretic fiber factorization have not been connected."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.finrank_le_codimension_add_one",
+          "module": "Solutions.CartierAndSpin.SectionSpan",
+          "claim": "A surjective restriction map whose section subspace image is at most a line has target dimension at most the section deficit plus one.",
+          "gap": "The denominator application also requires DVR content and projective-kernel incidence identification; its m9 certificates are not formalized."
+        }
+      ]
+    },
+    {
+      "theorem_id": "annihilator_critical_translation_invariance",
+      "reviewed_proof_path": "Proofs/cartier_and_spin/annihilator_critical_translation_invariance.md",
+      "reviewed_definition_ids": ["fixed_pair"],
+      "reviewed_dependencies": ["admissible_degree_ten_torsion_numerator", "admissible_critical_quadratic_incidence"],
+      "source_path": "Theorems/cartier_and_spin/annihilator_critical_translation_invariance.md",
+      "source_sha256": "225526c5fb65ecedcb67f1bce1aeafa6a66274610a22306cb7e73260e3f3042c",
+      "canonical_statement_version": 2,
+      "status": "complete",
+      "precise_hypotheses": "Actual integral smooth Scheme over algebraically closed k, actual structure morphism of relative dimension one, literal function field extension of characteristic-five K generated by w, F(w)=0, actual finrank and polynomial degree ten, separable F, F′=phi*D, deg D≤3, deg U≤5, U(w)=uD(w), u≠0. Actual quotient/basis/units and every algebraic clause over RatFunc K are constructed. Local selected order-zero/nonadmissibility uses constants k× and a nonempty old-double-zero set. Smooth structure constructs DVRs, scalar maps and tower. Original critical-square identity is explicit prior input.",
+      "accepted_literature": [],
+      "computation_reliance": "None: actual separable quotient units, algebraic-closure trace descent, Lagrange interpolation, power-basis equivalence, symbolic polynomial degrees, trace linearity, fixed-formal-degree resultant row operations and actual DVR membership/order arguments. No numerical roots, external certificates or native evaluation.",
+      "components": [
+        {
+          "declaration": "Litt3.CartierAndSpin.criticalResultantTranslationInvariant",
+          "module": "Solutions.CartierAndSpin.CriticalTranslation",
+          "claim": "Res_{m,n}(D,U-zD) equals Res_{m,n}(D,U), retaining formal degrees, repeated roots and degree drops.",
+          "gap": "Actual trace interpolation, explicit Q invariance and local normalized-order obstruction are now proved in the later components. Global actual-curve/selected-divisor scope review remains."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.criticalSquareTranslation",
+          "module": "Solutions.CartierAndSpin.CriticalTranslation",
+          "claim": "U^2-FQ=DV implies (U-zD)^2-FQ=D(V-2zU+z^2D).",
+          "gap": "The transformation is exact from the original identity; the separate source derivation of that original critical identity is not supplied by these translation modules."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.separable_quotient_low_residue_trace",
+          "module": "Solutions.CartierAndSpin.SeparableResidueTrace",
+          "claim": "Actual Tr(J/F′)=0 below the top trace-dual degree in the original unsplit/disconnected separable quotient, arbitrary degree/characteristic/leading coefficient.",
+          "gap": "None for this general foundation."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.critical_trace_translation_degree_ten",
+          "module": "Solutions.CartierAndSpin.CriticalTraceTranslation",
+          "claim": "All five canonical actual quotient trace invariants; constructs phi,D units and proves required lower moment vanishing from degree bounds. Companion theorem works after every actual coefficient-field extension.",
+          "gap": "Actual primitive-source trace is transported in the following component."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.critical_trace_translation_power_basis",
+          "module": "Solutions.CartierAndSpin.PowerBasisSourceQuotient",
+          "claim": "Constructed raw-minpoly quotient equivalence transports all five identities to the actual primitive source algebra with its actual numerator equation.",
+          "gap": "Later actual primitive-field theorem constructs former basis/raw-polynomial inputs."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.critical_quadratic_resultants_translation_of_trace_outcome",
+          "module": "Solutions.CartierAndSpin.CriticalQuadraticTranslation",
+          "claim": "Actual numerator translation equation, explicit canonical Q trace formula invariance, and formal-degree 3/5 and 3/2 resultant invariance. Repeated D roots and numerator degree drops retained.",
+          "gap": "None for the explicit algebraic translation package."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.dvr_nonzero_scalar_translation_zero_order",
+          "module": "Solutions.CartierAndSpin.SelectedTranslationBoundary",
+          "claim": "Actual local DVR order-two u minus any nonzero constant-field scalar is an actual R-unit of normalized order zero, proven nonzero in the same fraction field.",
+          "gap": "Smooth-curve DVR/order bridge now proved in the whole-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.actual_critical_translation_package",
+          "module": "Solutions.CartierAndSpin.ActualCriticalTranslationPackage",
+          "claim": "Literal actual primitive-field package: five traces; numerator/Q/formal-resultant/square transformations; actual rational-extension traces and Q coefficient extension. Basis/raw polynomial are constructed from generation/root/degree.",
+          "gap": "Whole-source readback accepted; original square identity is the source's explicit prior input solely for its transformation."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.scheme_selected_double_zero_translation",
+          "module": "Solutions.CartierAndSpin.SchemeSelectedTranslation",
+          "claim": "Actual closed-point stalk unit germ for scalar translation, exact order zero in actual scheme function field.",
+          "gap": "Smooth-curve DVR/order bridge now proved in the whole-source aggregate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.annihilator_critical_translation_source",
+          "module": "Solutions.CartierAndSpin.AnnihilatorCriticalTranslationSource",
+          "claim": "Full literal actual smooth-source aggregate: original and independent-rational five traces, Q/numerator/resultant/square transformations, actual closedpoint unit germ/order zero and nonpreservation of nonempty selected-double-zero set.",
+          "gap": "None for exact Version2 whole source. No reciprocal equation, admissible family, source existence or exclusion is asserted."
+        }
+      ],
+      "review_status": "Independent root whole-source readback accepts exact canonical Version2 constant-scalar scope and actual-source aggregate. Focused audit20261003T055358Z:345 declarations, standard3 only, zero forbidden/source changes. Research/audits/CRITICAL_TRANSLATION_SCALAR_SCOPE_2026_10_03.md records the preserved algebraic scope and clarified local scope.",
+      "reviewed_proof_sha256": "3558fd88a1583b2cb297ea6098c4dafbb1caf0eafbec626382ebda5a5bbb6f9e",
+      "verification_report": "../litt3-computation-data/formalization-20261003/verification/20261003T055358Z/report.json",
+      "full_statement_review": "Coverage/annihilator_critical_translation_invariance.md"
+    },
+    {
+      "theorem_id": "pure_power_pair_finite_algebra",
+      "reviewed_proof_path": "Proofs/cartier_and_spin/pure_power_pair_finite_algebra.md",
+      "reviewed_definition_ids": [],
+      "reviewed_dependencies": [],
+      "source_path": "Theorems/cartier_and_spin/pure_power_pair_finite_algebra.md",
+      "source_sha256": "371a3019d7c142eb00e8571f31ea8d62880a7b8a7bafc604d0a8b4109c4e5801",
+      "canonical_statement_version": 1,
+      "reviewed_proof_sha256": "20dd3c1eb6223b0c0e41398dcca2955c4585a5e8b512431729648b891993ccd8",
+      "status": "complete",
+      "precise_hypotheses": "A field K, two bivariate polynomials with top part a*x^m+b*y^m and c*x^m+d*y^m, lower remainders of actual total degree less than m, and a*d-b*c nonzero. The induction is proved more generally over commutative semiring algebras with concrete lower-degree reductions.",
+      "accepted_literature": [],
+      "computation_reliance": "None: total-degree induction, symbolic elimination, Dedekind linear independence of actual quotient algebra homomorphisms, and the kernel-checked finite-field automorphism/coefficient descent infrastructure.",
+      "components": [
+        {
+          "declaration": "Litt3.CartierAndSpin.purePowerPairFiniteQuotient",
+          "module": "Solutions.CartierAndSpin.PurePowerQuotient",
+          "claim": "The actual ideal quotient by both equations is a finite K-module of dimension at most m^2, without assuming a nonempty or reduced quotient.",
+          "gap": ""
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.purePowerPairSolutionSetBound",
+          "module": "Solutions.CartierAndSpin.PurePowerPoints",
+          "claim": "The complete actual simultaneous solution set in any extension field is finite and has cardinality at most m^2; no existence or reducedness hypothesis is introduced.",
+          "gap": ""
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.purePowerRationalDescent",
+          "module": "Solutions.CartierAndSpin.PurePowerConstantDegree",
+          "claim": "Any actual rational solution pair over an algebraic constant extension of a finite field descends through the explicit rational-function map of an embedded finite intermediate constant field of degree at most m^2. The field is constructed from canonical numerator and monic denominator coefficients.",
+          "gap": ""
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.purePowerPairQuotientBounds",
+          "module": "Solutions.CartierAndSpin.PurePowerQuotient",
+          "claim": "In the actual ideal quotient, the images of the rectangular monomials x^i*y^j with 0<=i,j<m span the whole quotient, simultaneously with finite-dimensionality and dimension at most m^2.",
+          "gap": ""
+        }
+      ],
+      "full_statement_review": "Coverage/pure_power_pair_finite_algebra.md",
+      "verification_evidence": "../../litt3-computation-data/formalization-20261003/verification/20261002T225244Z/report.json",
+      "scope_review": "Accepted by root after exact canonical clause readback: explicit remainders of total degree <m and nonzero 2x2 determinant express precisely the independent pure-power homogeneous forms. Every source clause, including full geometric-set finiteness, actual monomial spanning and embedded finite constant descent, is present.",
+      "verification_summary": {
+        "build_returncode": 0,
+        "audit_returncode": 0,
+        "checked_transitive_declaration_count": 137,
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "forbidden_dependencies": [],
+        "changed_during_check": []
+      }
+    },
+    {
+      "theorem_id": "hermite_endpoint_interpolation",
+      "reviewed_proof_path": "Proofs/cartier_and_spin/hermite_endpoint_interpolation.md",
+      "reviewed_proof_sha256": "a3af350482c50c3578a81b41856f01fce27d3e3926eede996a40ecdeadf14fa6",
+      "reviewed_definition_ids": [],
+      "reviewed_dependencies": [],
+      "source_path": "Theorems/cartier_and_spin/hermite_endpoint_interpolation.md",
+      "source_sha256": "cf959e87496faea3f576957ce233f977c09000c267368a635d39086cdd089250",
+      "canonical_statement_version": 1,
+      "status": "partial_component",
+      "precise_hypotheses": "Polynomial cross-differences over any integral domain, disjoint finite sets of nonzero nodes, actual node equalities without denominator inversion, actual X-power divisibility at zero, and coefficient vanishing in the fixed O(N) frame at infinity; the strict combined contact count exceeds N. Quotient equality uses an actual fraction field and nonzero denominators.",
+      "accepted_literature": [],
+      "computation_reliance": "None: polynomial divisibility, degree bounds, root counts, cancellation and fraction-field injectivity.",
+      "components": [
+        {
+          "declaration": "Litt3.CartierAndSpin.polynomialCrossDifference_zero_of_endpoint_conditions",
+          "module": "Solutions.CartierAndSpin.PolynomialContact",
+          "claim": "The cross-difference vanishes whenever the finite-node and two endpoint contact count exceeds the section degree. Common P terms cancel and denominators at finite nodes need not be nonzero.",
+          "gap": "Complementary Fourier-code duality, the exact mu29 maximal-minor certificate and normalized common-factor absolute-jet lifting have not been formalized."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.polynomial_ratio_eq_of_crossDifference_zero",
+          "module": "Solutions.CartierAndSpin.PolynomialContact",
+          "claim": "Vanishing actual polynomial cross-difference implies equality of actual fractions with nonzero denominators.",
+          "gap": "The complementary Fourier-code and normalized absolute-lift clauses remain open."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.coupledDifferencesLieInAffineLine",
+          "module": "Solutions.CartierAndSpin.IsotropicDifferences",
+          "claim": "For every field with 2 nonzero, any arbitrary set in K^3 whose pairwise differences satisfy x0*x1+x0*x2+x1*x2=0 lies in an affine line, including empty and singleton cases. No finite-set or function-height cutoff is used.",
+          "gap": "No gap in this canonical clause; the source record additionally asserts Fourier-code duality/certified mu29 bounds and absolute common-factor lifting."
+        }
+      ]
+    },
+    {
+      "theorem_id": "quartic_scalar_graph_skew_recovery",
+      "reviewed_proof_path": "Proofs/cartier_and_spin/quartic_scalar_graph_skew_recovery.md",
+      "reviewed_definition_ids": [],
+      "reviewed_dependencies": [],
+      "source_path": "Theorems/cartier_and_spin/quartic_scalar_graph_skew_recovery.md",
+      "source_sha256": "1361a0cb477a963a6552376b6716893f2e153c997c56ad5e26d968728466a573",
+      "canonical_statement_version": 1,
+      "reviewed_proof_sha256": "b7d4728a2217bbb2d1de3c2b123ed222fc93e1ac52262c2841367b9f94006100",
+      "status": "complete",
+      "precise_hypotheses": "Actual trace-zero projection and pairing use any finite-dimensional field extension L/K of degree n with n nonzero in K; pairing nondegeneracy uses separability. Compressed multiplication is self-adjoint without separability. Adjoint graph identities and automatic rank-two/kernel conclusions hold over any finite-dimensional vector space with a symmetric nondegenerate pairing. Every nonzero skew difference in dimension three has rank two and a kernel line without a graph hypothesis. Actual quartic specialization uses precisely separable degree four and characteristic different from two. The actual field ratio and denominator-free basis tests use a nonzero kernel element and the actual candidate outside the embedded base field.",
+      "accepted_literature": [],
+      "computation_reliance": "None beyond kernel-checked symbolic ring identities and fixed three/four-dimensional basis-coordinate expansions. Actual field generation, traces, pairing nondegeneracy, constructed adjoints, rank-nullity and exact graph reconstruction are proved; no numerical certificates or native evaluation.",
+      "components": [
+        {
+          "declaration": "Litt3.CartierAndSpin.rankTwoSkewKernelCriterion",
+          "module": "Solutions.CartierAndSpin.SkewKernel",
+          "claim": "The kernel of a(x)e-b(x)u is exactly the simultaneous kernel of a and b when e,u are linearly independent.",
+          "gap": "None for this component; the full canonical record passed independent review and focused audit."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.rankTwoSkew_finrank_kernel_three",
+          "module": "Solutions.CartierAndSpin.SkewKernel",
+          "claim": "In dimension three, actual surjectivity of the functional pair and independence of the two vectors imply the skew kernel is one-dimensional.",
+          "gap": "Pair surjectivity is now derived from the actual nondegenerate pairing; arbitrary nonzero skew in dimension three is also handled below."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.alternatingThreeKernelVector_mem_kernel",
+          "module": "Solutions.CartierAndSpin.SkewKernel",
+          "claim": "The explicit symbolic kernel vector (c,-b,a) lies in the kernel of every alternating 3-by-3 matrix, in every characteristic.",
+          "gap": "None for this component; the full canonical record passed independent review and focused audit."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.scalarGraphBasisCriterion",
+          "module": "Solutions.CartierAndSpin.ScalarGraph",
+          "claim": "Membership of M(v_i)-A(v_i) in one prescribed nonzero line on any basis is equivalent to an actual scalar linear-form graph M=A+e tensor a; infinite bases are permitted.",
+          "gap": "None for this component; the full canonical record passed independent review and focused audit."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.scalarGraph_denominatorFree_iff",
+          "module": "Solutions.CartierAndSpin.ScalarGraph",
+          "claim": "For actual nonzero k in an extension field, k*w-z*v in the two-dimensional span of k,z is equivalent to the two scalar shifts for the actual ratio z/k. Rescaling the ratio by a nonzero base scalar is invariant.",
+          "gap": "Actual trace orthogonality recovers the ratio and the actual compression basis test is connected below. No source claim deciding actual endpoint incidence is made."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.normalizedTraceZeroPairing_nondegenerate",
+          "module": "Solutions.CartierAndSpin.TraceZeroProjection",
+          "claim": "The actual trace-zero subspace has dimension n\u22121 and the actual restricted normalized trace pairing is symmetric and nondegenerate for separable degree n with n nonzero in K.",
+          "gap": "None for this component; the full canonical record passed independent review and focused audit."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.traceZeroCompression_self_adjoint",
+          "module": "Solutions.CartierAndSpin.TraceCompression",
+          "claim": "Actual compression of multiplication by any epsilon is self-adjoint for the actual trace-zero pairing; projection epsilon is nonzero exactly when epsilon lies outside the embedded base field.",
+          "gap": "None for this clause."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.self_adjoint_scalar_graph_adjoint",
+          "module": "Solutions.CartierAndSpin.ScalarGraphAdjoint",
+          "claim": "The actual constructed adjoint of a self-adjoint operator plus a rank-one graph has the expected pairing-dual rank-one term. Nonzero skew automatically gives independence, pair surjectivity and codimension-two kernel; zero skew with nonzero direction is equivalent to a=\u03ba B(e,\u2212).",
+          "gap": "None for this component; the full canonical record passed independent review and focused audit."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.quartic_nonzero_skew_finrank_kernel",
+          "module": "Solutions.CartierAndSpin.SkewThreeDimension",
+          "claim": "For arbitrary M on the actual trace-zero subspace of any separable quartic field extension in characteristic different from two, every nonzero M\u2212M* has a one-dimensional kernel, without assuming a graph exists.",
+          "gap": "None for this component; the full canonical record passed independent review and focused audit."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.trace_scalar_graph_skew_kernel_recovers_ratio",
+          "module": "Solutions.CartierAndSpin.TraceScalarGraph",
+          "claim": "Every actual scalar graph with nonzero skew recovers epsilon=(M k)/k for every nonzero actual skew-kernel element; actual compression basis membership is equivalent to existence of a linear graph form, in any degree.",
+          "gap": "None for this component; the full canonical record passed independent review and focused audit."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.trace_scalar_graph_denominator_free_iff",
+          "module": "Solutions.CartierAndSpin.TraceScalarGraphTests",
+          "claim": "For the actual candidate z/k outside the base field, actual compression graph existence on any basis is equivalent to the denominator-free tests k*M(v_i)\u2212z*v_i in span{k,z}; the pointwise equations are exactly the two scalar shifts.",
+          "gap": "No endpoint incidence feasibility or shared-moment claim is asserted; the canonical theorem likewise leaves these unresolved."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.alternatingThreeMatrix_kernel_eq_span",
+          "module": "Solutions.CartierAndSpin.AlternatingThreeRank",
+          "claim": "Every nonzero symbolic alternating 3-by-3 matrix has exactly the span of (c,\u2212b,a) as kernel and rank two, over any field including characteristic two; transported to arbitrary alternating forms in dimension three.",
+          "gap": "None for this component; the full canonical record passed independent review and focused audit."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.quarticScalarGraphRecovery_of_char_ne_two",
+          "module": "Solutions.CartierAndSpin.QuarticScalarGraph",
+          "claim": "Complete explicit canonical specification: arbitrary skew kernel line; actual graph scalar recovery and rescaling; exact basis tests including the outside-base graph condition; denominator-free tests with independent k,z; actual field-generated Kummer power/trace-zero bases and Gram matrix, explicit k coordinates and self-adjoint boundary criterion, and entire boundary matrix with nonzero direction. Kummer scope is widened from characteristic five to every characteristic different from two.",
+          "gap": "None. Independent full-source scope review and focused transitive axiom audit passed."
+        }
+      ],
+      "full_statement_review": "Coverage/quartic_scalar_graph_scope_review.md",
+      "clause_mapping": "Coverage/quartic_scalar_graph_skew_recovery.md",
+      "verification_evidence": "../../litt3-computation-data/formalization-20261003/verification/20261003T000813Z/report.json",
+      "verification_summary": {
+        "build_returncode": 0,
+        "audit_returncode": 0,
+        "checked_transitive_declaration_count": 136,
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "forbidden_dependencies": [],
+        "changed_during_check": []
+      }
+    },
+    {
+      "theorem_id": "trace_power_integrality_detection",
+      "reviewed_proof_path": "Proofs/cartier_and_spin/trace_power_integrality_detection.md",
+      "reviewed_definition_ids": ["finite_algebra_certificates"],
+      "reviewed_dependencies": [],
+      "source_path": "Theorems/cartier_and_spin/trace_power_integrality_detection.md",
+      "source_sha256": "4e6b332700408f644b684e87d20759783b78893c4f1af25cbb9a6e9acf2d72cf",
+      "canonical_statement_version": 3,
+      "reviewed_proof_sha256": "e0f0506c68f7855d2b5c6961975735d76855b6f76649f13cd3a88a48ad24fff9",
+      "status": "complete",
+      "full_statement_review": "Coverage/trace_power_integrality_detection_scope_review.md",
+      "verification_report": "../litt3-computation-data/formalization-20261003/verification/20261003T011428Z/report.json",
+      "precise_hypotheses": "Actual field K, arbitrary ordered value group with zero, actual valuation v and local ring R with v.Integers R; finite tuple indexed by arbitrary finite type; residue characteristic p and r<p. Only maximal valued entries of actual pole tuples are counted, with at most d distinct actual residue weights and at most r entries per residue. Inputs and conclusion of the valuation-ring specialization are actual algebraMap membership in R. No discreticity, noetherianity, completeness, residue perfection or total-degree bound is assumed. Newton identity itself works over arbitrary commutative rings. Reciprocal conclusions use residue characteristic p>0, unit norm in the actual valuation sense, and regular first p\u22121 forward/reciprocal traces; the degree bound is at most 2p. Arbitrary-degree carry criterion uses n\u2265p, actual carries at positive multiples of p through n\u2212p and nonmultiple extra traces from p through n\u2212p. It uses no characteristic-p assumption on the fraction field. The actual integral cubic model now supplies factor units, the monic derivative, first-trace regularity and critical residue counts. It permits arbitrary finite split degree and arbitrary integral numerator degree; characteristic five is assumed only on R and derived for its residue field. For the conductor foundation only an injective map R\u2192K and separability of the actual split root polynomial are used. Individual sharpness constructions are instantiated in the actual power-series DVR and actual Laurent fraction field; primitive-root existence is obtained from Mathlib for an algebraically closed coefficient field. The split-order conductor uses Mathlib's actual conductor ideal and the actual monic quotient embedding. The literal DVR specialization uses the actual maximal-ideal height-one valuation, proves the actual integer-ring bridge and uniformizer order one, and identifies integer orders with the actual valuationOrder hom on field units; no supplied normalized-order function is assumed.",
+      "accepted_literature": [],
+      "computation_reliance": "None. All Newton, Vandermonde, interpolation, monic quotient/conductor, primitive-root orbit and symbolic block-coefficient proofs are kernel checked. Only symbolic arithmetic of indices is used; no external certificate, source-root enumeration, native evaluation or numerical computation.",
+      "components": [
+        {
+          "declaration": "Litt3.CartierAndSpin.finite_newton_identity",
+          "module": "Solutions.CartierAndSpin.CohortPowerSums",
+          "claim": "Actual finite-family Newton identity over arbitrary commutative rings; first m zero power sums contradict nonzero entries if the actual cardinal m is nonzero in the domain.",
+          "gap": "None for the general Newton foundation; the actual local carry induction and reciprocal identity are proved in the later listed components."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.finiteWeightedPowerSums_force_zero_of_support_counts",
+          "module": "Solutions.CartierAndSpin.SupportWeightedCohorts",
+          "claim": "Actual support-count formulation of the Vandermonde/Newton residue-cohort obstruction, preserving repetitions and counting only nonzero entries.",
+          "gap": "None for this residue algebra component."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.regular_moment_scaled_residue_zero",
+          "module": "Solutions.CartierAndSpin.ValuationLeadingMoments",
+          "claim": "For an actual ring of valuation integers, a regular moment scaled by any actual pole has zero residue; actual scaled residue is nonzero exactly on maximal-valued branches.",
+          "gap": "None for this valuation/residue bridge."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.valuationRing_weightedPowerTraceIntegrality",
+          "module": "Solutions.CartierAndSpin.ValuationRingIntegrality",
+          "claim": "Weighted trace integrality clause proved for every actual valuation ring and its fraction field using actual residue cohort counts; constructs actual R representatives of every tuple member.",
+          "gap": "None for this component. Exact Version3 full-source readback and focused transitive audit passed; see the record review and evidence fields."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.equal_pole_cohort_integrality_counterexample",
+          "module": "Solutions.CartierAndSpin.EqualPoleCounterexample",
+          "claim": "Every equal-characteristic-p integer valuation ring with an actual pole admits a nonempty p-entry equal-pole tuple whose every weighted moment descends to zero, while an entry fails to descend to R.",
+          "gap": "None for this component. Exact Version3 full-source readback and focused transitive audit passed; see the record review and evidence fields."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.reciprocalTraceBoundaryOutcome",
+          "module": "Solutions.CartierAndSpin.ReciprocalBoundaryConclusion",
+          "claim": "Complete reciprocal source clause: actual units or exactly p/p pole-zero branches at degree2p, reciprocal valuation values, actual constructed normalized leading residues equal one in each cohort, and exact elementary carry valuation v(e_p)=v(max)^p>1. A regular carry excludes the boundary.",
+          "gap": "None for this reciprocal source clause."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.maximal_cohort_elementarySymmetric_value",
+          "module": "Solutions.CartierAndSpin.MaximalSymmetricValue",
+          "claim": "For any finite nonzero tuple and actual valuation, the elementary symmetric coefficient at the actual maximal cohort size has value equal to that maximal value raised to the cohort size; unique-dominance no-cancellation proof, no degree/characteristic restriction.",
+          "gap": "None for this general foundation."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.local_newton_carry_membership",
+          "module": "Solutions.CartierAndSpin.LocalNewtonCarries",
+          "claim": "Actual local-ring membership induction constructs every elementary symmetric function and power trace through an arbitrary bound from the carries and nonmultiple power traces; natural integers prime to residue characteristic are proved units. Includes mixed characteristic.",
+          "gap": "None for this induction foundation."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.newtonCarry_unit_iff_conditions",
+          "module": "Solutions.CartierAndSpin.NewtonCarryCriterion",
+          "claim": "Exact necessary and sufficient arbitrary-degree carry criterion, with actual unit descent, actual reciprocal elementary identity and actual membership in R. No integral-closure axiom is assumed.",
+          "gap": "None for this component. Exact Version3 full-source readback and focused transitive audit passed; see the record review and evidence fields."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.newtonCarry_unit_iff_short_conditions",
+          "module": "Solutions.CartierAndSpin.NewtonCarryCriterion",
+          "claim": "For actual degree2p+r with r<p, the exact extra list is e_p and every P_(p+i),1\u2264i\u2264r. The index conversion is proved symbolically; degree11/characteristic5 follows by specialization.",
+          "gap": "None for this component. Exact Version3 full-source readback and focused transitive audit passed; see the record review and evidence fields."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.integral_critical_maximal_cohorts_bounded",
+          "module": "Solutions.CartierAndSpin.IntegralCriticalCohorts",
+          "claim": "Actual nonzero residue derivative controls actual maximal pole classes by its degree and each actual residue cohort by degree plus one. Retains repeated critical roots and nonunit leading derivative coefficient.",
+          "gap": "None for this critical multiplicity component."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.integral_first_power_trace_formula",
+          "module": "Solutions.CartierAndSpin.IntegralFirstTraces",
+          "claim": "Genuine monic-division first-power trace formula in the actual integral split ring, every finite degree and arbitrary integral numerator degree. First moments are therefore automatically regular.",
+          "gap": "None for this integral interpolation component."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.integral_characteristic_five_cubic_criterion",
+          "module": "Solutions.CartierAndSpin.IntegralCriticalModel",
+          "claim": "Exact nine higher weighted tests j<3,2\u2264k\u22644 iff actual quotient-value descent. Derives factor units and monic derivative from the actual quadratic critical presentation; residue characteristic five is derived from R.",
+          "gap": "None for the cubic moment/integrality clause."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.integralSplitQuotientMap_injective",
+          "module": "Solutions.CartierAndSpin.IntegralSplitOrder",
+          "claim": "The genuine monic polynomial quotient embeds faithfully into the actual integral product algebra; its image is exactly the actual singly generated order.",
+          "gap": "None for the actual quotient-order embedding."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.integral_split_conductor_iff",
+          "module": "Solutions.CartierAndSpin.IntegralSplitConductor",
+          "claim": "Actual Mathlib conductor ideal of the actual singly generated split integral order is detected exactly by the actual derivative-denominator coordinate lattice. Proved by integral monic remainders and genuine interpolation.",
+          "gap": "None for the general conductor formula; the actual cubic denominator conversion is proved in IntegralCriticalConductor."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.integral_characteristic_five_cubic_tests_iff_conductor",
+          "module": "Solutions.CartierAndSpin.IntegralCriticalConductor",
+          "claim": "The exact nine canonical higher weighted tests iff the actual class U modulo the actual monic split polynomial maps into the actual conductor ideal. Converts derivative denominators to D using only unit factors derived from the actual model.",
+          "gap": "None for this component. Exact Version3 full-source readback and focused transitive audit passed; see the record review and evidence fields."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.carry_omission_integrality_counterexample",
+          "module": "Solutions.CartierAndSpin.CarryOmissionCounterexample",
+          "claim": "Actual p equal poles and p equal reciprocal zeros with arbitrary extra units have norm one and all forward/reciprocal traces regular, while the actual e_p carry is nonregular. Counts the actual maximal cohort and proves exact dominant valuation.",
+          "gap": "None for the carry indispensability construction."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.higher_trace_omission_integrality_counterexample",
+          "module": "Solutions.CartierAndSpin.TraceOmissionCounterexample",
+          "claim": "For each 1\u2264i\u2264r<p, an actual primitive-root orbit tuple retains the actual unit norm, all low forward/reciprocal traces, e_p and every other listed high trace, but P_(p+i) is nonregular. Exact symbolic power sums, root polynomial and coefficient identities are proved.",
+          "gap": "None for individual higher-trace indispensability."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.powerSeries_higher_trace_omission_counterexample",
+          "module": "Solutions.CartierAndSpin.PowerSeriesSharpness",
+          "claim": "Realizes every individual higher-trace counterexample over actual k[[X]] and actual k((X)) for every algebraically closed field of characteristic p>0. Proves actual pole and primitive-root existence. Companion declarations realize equal-pole and carry omission examples over the same actual DVR.",
+          "gap": "None for sharpness existence. Literal normalized integer orders are now proved in NormalizedDVRBoundary."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.dvr_normalized_reciprocal_boundary",
+          "module": "Solutions.CartierAndSpin.NormalizedDVRBoundary",
+          "claim": "Actual DVR maximal-ideal height-one valuation is proved to have R as its integer ring, and an actual uniformizer has order one. The complete boundary has exactly p entries of order -M and p of order M, M>0, equal actual leading residues, nonzero carry and exact order(e_p)=-p*M. Integer orders agree with the actual valuationOrder additive homomorphism on field units.",
+          "gap": "None for this component. Exact Version3 full-source readback and focused transitive audit passed; see the record review and evidence fields."
+        }
+      ],
+      "review_status": "Exact Version3 whole-source readback accepted, including actual normalized DVR integer orders. Focused verification/20261003T011428Z audits 226 transitive project declarations with standard logical axioms only and zero source changes or forbidden escapes. Source and proof hashes must remain unchanged for complete status."
+    },
+    {
+      "theorem_id": "weighted_affine_square_plane_odd_degree_finiteness",
+      "reviewed_proof_path": "Proofs/cartier_and_spin/weighted_affine_square_plane_odd_degree_finiteness.md",
+      "reviewed_proof_sha256": "a954affad713ee06d167f4d57272e3a285728a95be35d32f16e463e5a880bfc9",
+      "reviewed_definition_ids": ["base_conventions", "fixed_pair", "theta_cartier"],
+      "reviewed_dependencies": ["admissible_degree_ten_m9_critical_square_pencil_finite_support", "admissible_degree_ten_m9_critical_irreducibility", "admissible_degree_ten_m9_low_trace_quadratic_moments", "admissible_degree_ten_m9_homogeneous_B0_nonzero_quadratic_trace"],
+      "source_path": "Theorems/cartier_and_spin/weighted_affine_square_plane_odd_degree_finiteness.md",
+      "source_sha256": "0ecd0aac2c52c1f26ad02289467ed7b76a787122ce9ab081402a0000b18d10ae",
+      "canonical_statement_version": 2,
+      "status": "partial_component",
+      "precise_hypotheses": "Basic Gauss-field calculation uses any fields k,L with actual Derivation k L L, D(u)=1, D(D(v)) nonzero, and actual intercept separable over actual slope field. The strengthened one-variable version assumes only perfect k, actual FG top/trdeg1 and prime characteristic p; finite/separable degree over the actual slope field is derived. Field equality additionally requires adjoin k {u,v}=top. Square-pencil components use actual algebraically closed constants, FG/trdeg1, x outside actual constants, H outside actual k(x), arbitrary nonzero g, and 2!=0. Exact second-derivative normal form needs only a literal full p-basis and normalized D; affine Frobenius termination uses actual one-variable FG/trdeg1 and algebraically closed constants. No curve genus, plane nonsingularity or odd x-degree premise is needed for these algebraic components. Actual higher Taylor coefficients require only a literal full p-basis in prime characteristic, with no perfectness of L. First tangent-contact classification uses algebraically closed k, actual FG/trdeg1, a normalized p-basis coordinate, v outside constant affine lines and odd p; all higher coefficient maps and termination are constructed.",
+      "accepted_literature": [],
+      "computation_reliance": "None: actual derivation/minimal-polynomial identities, constructed quadratic field towers, squarefree integrality and exact prime factorization divisibility; no numerical square testing or arithmetic certificate.",
+      "components": [
+        {
+          "declaration": "Litt3.CartierAndSpin.separable_element_derivation_mem",
+          "module": "Solutions.CartierAndSpin.SeparableSubfieldDerivations",
+          "claim": "An actual compatible derivation sends every separable element in an actual intermediate extension into the same intermediate field. Actual generator restriction and compatibility are constructed.",
+          "gap": "No gap in this general algebraic foundation; actual Gauss geometry remains separate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.gauss_field_recovers_coordinates",
+          "module": "Solutions.CartierAndSpin.GaussFieldRecovery",
+          "claim": "The actual classical slope/intercept field contains both original coordinates under explicit first/second derivative and intercept-separability hypotheses; if the original coordinates generate, it equals the full field.",
+          "gap": "Actual separating coordinates and generic-contact-two hypotheses must still be derived from the actual plane curve. The full constructibility/parity/Gauss/Hasse geometry and quantitative support/cardinality bounds are not formalized."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.square_class_tower_exists",
+          "module": "Solutions.CartierAndSpin.SquareClassTowers",
+          "claim": "Actual independent square classes and actual roots construct an embedded multiquadratic field with exact degree 2^card and full base square-class kernel.",
+          "gap": "Build passes. These exact algebraic pencil foundations still require actual geometric parameter-line, constructibility and plane-contact bridges for the whole canonical square-plane theorem."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.independent_square_roots_degree_divisibility",
+          "module": "Solutions.CartierAndSpin.SquareClassTowers",
+          "claim": "The exact power of two divides the actual finite ambient extension degree; no simultaneous Galois closure or extension degree is presumed.",
+          "gap": "Build passes. These exact algebraic pencil foundations still require actual geometric parameter-line, constructibility and plane-contact bridges for the whole canonical square-plane theorem."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.paired_linear_square_classes_independent",
+          "module": "Solutions.CartierAndSpin.RationalSquareClassIndependence",
+          "claim": "Distinct paired linear factors are genuinely independent square classes in any actual fraction field of k[X], by squarefree integrality and parity.",
+          "gap": "Build passes. These exact algebraic pencil foundations still require actual geometric parameter-line, constructibility and plane-contact bridges for the whole canonical square-plane theorem."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.weighted_square_pencil_support_finite",
+          "module": "Solutions.CartierAndSpin.WeightedSquarePencils",
+          "claim": "The full weighted constant-parameter pencil support is finite with exact ncard at most 1+factorization_2(actual field degree), even for nonsquare weights and inseparable extensions.",
+          "gap": "Build passes. These exact algebraic pencil foundations still require actual geometric parameter-line, constructibility and plane-contact bridges for the whole canonical square-plane theorem."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.weighted_odd_power_pencil_support_finite",
+          "module": "Solutions.CartierAndSpin.OddPowerSquarePencils",
+          "claim": "Odd powers preserve the weighted square-class support and its exact finite degree bound.",
+          "gap": "Build passes. These exact algebraic pencil foundations still require actual geometric parameter-line, constructibility and plane-contact bridges for the whole canonical square-plane theorem."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.one_variable_finite_function_degree",
+          "module": "Solutions.CartierAndSpin.FiniteFunctionDegree",
+          "claim": "Actual FG top and transcendence degree one imply finite degree over the actual field generated by every transcendental r, without perfectness or separability.",
+          "gap": "Exact algebraic component passed build and focused 211-declaration audit. The canonical actual curve/geometric/divisor and specialized source applications remain partial."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.one_variable_weighted_square_pencil_finite",
+          "module": "Solutions.CartierAndSpin.OneVariableSquarePencils",
+          "claim": "Literal weighted nonconstant-function square support is finite and ncard≤1+v2 of the actual generated function-field degree, derived from actual FG/trdeg1 over algebraically closed constants.",
+          "gap": "Exact algebraic component passed build and focused 211-declaration audit. The canonical actual curve/geometric/divisor and specialized source applications remain partial."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.one_variable_frobenius_weighted_square_pencil_finite",
+          "module": "Solutions.CartierAndSpin.OneVariableSquarePencils",
+          "claim": "The same exact bound for an inseparable ratio r^(p^e), by an actual perfect-field Frobenius parameter equivalence, with arbitrary nonsquare fixed weight.",
+          "gap": "Exact algebraic component passed build and focused 211-declaration audit. The canonical actual curve/geometric/divisor and specialized source applications remain partial."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.constant_weighted_square_support",
+          "module": "Solutions.CartierAndSpin.ConstantSquarePencils",
+          "claim": "Exact constant-ratio nonzero square support: constants theta≠c satisfying precisely IsSquare g, hence empty or cofinite.",
+          "gap": "Exact algebraic component passed build and focused 211-declaration audit. The canonical actual curve/geometric/divisor and specialized source applications remain partial."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.weighted_square_pencil_support_log_bound",
+          "module": "Solutions.CartierAndSpin.SquarePencilLogarithmicBounds",
+          "claim": "Actual function degree≤d implies literal full weighted pencil support ncard≤1+Nat.log 2 d, by exact power divisibility.",
+          "gap": "Build and focused 293-declaration audit passed. Geometric degree≤d source bridge remains."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.affine_line_weighted_square_support_bound",
+          "module": "Solutions.CartierAndSpin.AffineLineSquareSupport",
+          "claim": "Every literal nonzero affine parameter direction has finite weighted square support with exact 1+v2(actual ratio degree) bound; ratio nonconstancy follows from H outside actual k(x), and actual finite degree from FG/trdeg1. No odd coordinate degree or plane geometry is needed.",
+          "gap": "Build and focused 293-declaration audit passed. Actual parameter-plane constructibility, dual/Gauss/Hasse support and geometric quantitative bounds remain."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.finite_separable_of_frobenius_span_top",
+          "module": "Solutions.CartierAndSpin.FiniteFrobeniusSeparability",
+          "claim": "For any actual finite field extension in prime characteristic, actual p-th-power F-linear spanning implies actual separability, without perfectness of F.",
+          "gap": "Build and focused 360-declaration audit passed; no gap in the finite converse foundation."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.one_variable_separable_of_derivation_ne_zero",
+          "module": "Solutions.CartierAndSpin.SeparatingDerivationParameters",
+          "claim": "Actual perfect-base FG/trdeg1 plus D(M)!=0 constructs finite separable L/k(M), full p-basis at M and actual Frobenius spanning, with no supplied separating-parameter premise.",
+          "gap": "Build and focused 360-declaration audit passed; the actual plane geometric interpretation remains separate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.one_variable_gauss_field_eq_top",
+          "module": "Solutions.CartierAndSpin.OneVariableGaussFieldRecovery",
+          "claim": "Actual generating u,v, normalized D(u)=1 and D^2(v)!=0 give equality of the literal slope/intercept field with the original one-variable function field, without intercept-separability input.",
+          "gap": "Build and focused 360-declaration audit passed; generic tangent contact and plane-image geometry remain."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.normalized_second_derivation_zero_iff",
+          "module": "Solutions.CartierAndSpin.PBasisAffineNormalForm",
+          "claim": "For the literal full p-basis and actual normalized D, D^2(v)=0 iff v=a^p+t*b^p, with no perfectness premise.",
+          "gap": "Build and focused audits passed. The genuine higher Taylor and contact raising rules are now proved; their actual plane/curve interpretation remains."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.unbounded_affine_frobenius_forms_force_line",
+          "module": "Solutions.CartierAndSpin.AffineFrobeniusTermination",
+          "claim": "Actual affine p-power normal forms at every depth force v=n+t*m for actual constants; membership in every Frobenius image is proved equivalent to constancy through exact bounded root depths.",
+          "gap": "Build and focused audits passed. Genuine higher Taylor/contact raising and finite first-contact classification are now proved; actual plane moving-intersection and quantitative geometry remain."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.iterated_p_basis_power_basis_exists",
+          "module": "Solutions.CartierAndSpin.IteratedPBasisDegree",
+          "claim": "The actual p^e-th-power image subfield admits a full actual power basis of exact dimension p^e at every depth; the precise minpoly is constructed, with no degree, basis or perfectness premise.",
+          "gap": "Build and focused 339-declaration audit passed. Interpretation on the actual plane normalization, divisor intersections, parameter constructibility and quantitative dual/Wronskian bounds remain separate geometric bridges."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.truncated_field_taylor_map_unique",
+          "module": "Solutions.CartierAndSpin.TruncatedTaylorMap",
+          "claim": "Actual unique Taylor ring homomorphisms into literal L[z]/z^(p^e), retaining nilpotents, fix the true p^e-power subfield and shift the true parameter.",
+          "gap": "Build and focused 339-declaration audit passed. Interpretation on the actual plane normalization, divisor intersections, parameter constructibility and quantitative dual/Wronskian bounds remain separate geometric bridges."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.truncated_hasse_product",
+          "module": "Solutions.CartierAndSpin.TruncatedHasseDerivatives",
+          "claim": "The genuine reduced Taylor coefficients obey the full higher product rule; coefficient zero is the actual original function.",
+          "gap": "Build and focused 339-declaration audit passed. Interpretation on the actual plane normalization, divisor intersections, parameter constructibility and quantitative dual/Wronskian bounds remain separate geometric bridges."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.truncated_hasse_first_eq_normalized_derivation",
+          "module": "Solutions.CartierAndSpin.TruncatedHasseFirstDerivation",
+          "claim": "Coefficient one equals every actual derivation normalized at the same parameter, with arbitrary constant ring.",
+          "gap": "Build and focused 339-declaration audit passed. Interpretation on the actual plane normalization, divisor intersections, parameter constructibility and quantitative dual/Wronskian bounds remain separate geometric bridges."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.truncated_hasse_frobenius_power",
+          "module": "Solutions.CartierAndSpin.TruncatedHasseFrobenius",
+          "claim": "Every true Frobenius power has zero Taylor coefficients off the corresponding characteristic-power indices, and exact Frobenius powers at the remaining indices.",
+          "gap": "Build and focused 339-declaration audit passed. Interpretation on the actual plane normalization, divisor intersections, parameter constructibility and quantitative dual/Wronskian bounds remain separate geometric bridges."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.truncated_hasse_second_derivative",
+          "module": "Solutions.CartierAndSpin.TruncatedHasseSecondDerivative",
+          "claim": "The cleared exact identity 2*H_2(v)=D(D(v)), with actual field Taylor coefficients and no division by two.",
+          "gap": "Build and focused 339-declaration audit passed. Interpretation on the actual plane normalization, divisor intersections, parameter constructibility and quantitative dual/Wronskian bounds remain separate geometric bridges."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.affine_frobenius_form_raises_of_hasse_zero",
+          "module": "Solutions.CartierAndSpin.AffineHasseContactRaising",
+          "claim": "Vanishing of the first possible H_(p^r) in an actual affine Frobenius normal form constructs real additional p-th roots of both coefficients.",
+          "gap": "Build and focused 339-declaration audit passed. Interpretation on the actual plane normalization, divisor intersections, parameter constructibility and quantitative dual/Wronskian bounds remain separate geometric bridges."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.first_hasse_contact_type",
+          "module": "Solutions.CartierAndSpin.FirstHasseContactType",
+          "claim": "Every actual nonline coordinate pair has a first true tangent coefficient, of order two or a positive characteristic power; all earlier tangent coefficients vanish, and termination is derived.",
+          "gap": "Build and focused 339-declaration audit passed. Interpretation on the actual plane normalization, divisor intersections, parameter constructibility and quantitative dual/Wronskian bounds remain separate geometric bridges."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.generating_plane_pair_first_contact_exists",
+          "module": "Solutions.CartierAndSpin.OneVariablePlaneContact",
+          "claim": "Actual generating pair u,v with trdeg1 and independent1,u,v constructs a finite/separable rational coordinate chosen from the pair, literal full p-basis and normalized Derivation, and the full true first Taylor contact classification; no FG, coordinate, derivative or separability premise remains.",
+          "gap": "Build and focused396-declaration audit passed. The actual smooth projective plane normalization/intersection interpretation and global constructibility/quantitative geometric bounds remain."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.smooth_curve_affine_line_weighted_square_support_bound",
+          "module": "Solutions.CartierAndSpin.SmoothCurveSquarePencils",
+          "claim": "Every actual affine parameter line has finite weighted square support on the same actual integral smooth curve, with actual field-degree factorization bound. Smooth structure constructs field finite generation and trdeg1; no supplied field model, derivative, Gauss field or odd degree.",
+          "gap": "Full two-dimensional parameter support constructibility/finiteness and dual-curve quantitative bounds remain; finite support on every affine line alone does not establish finite plane support."
+        }
+      ],
+      "square_pencil_verification_report": "../litt3-computation-data/formalization-20261003/verification/20261003T041041Z/report.json",
+      "gauss_parity_verification_report": "../litt3-computation-data/formalization-20261003/verification/20261003T042250Z/report.json",
+      "hasse_contact_verification_report": "../litt3-computation-data/formalization-20261003/verification/20261003T044209Z/report.json",
+      "plane_pair_verification_report": "../litt3-computation-data/formalization-20261003/verification/20261003T044925Z/report.json",
+      "related_verification_reports": [
+        "../litt3-computation-data/formalization-20261003/verification/20261003T061607Z/report.json"
+      ]
+    },
+    {
+      "theorem_id": "admissible_degree_ten_m9_critical_square_pencil_finite_support",
+      "reviewed_proof_path": "Proofs/cartier_and_spin/admissible_degree_ten_m9_critical_square_pencil_finite_support.md",
+      "reviewed_proof_sha256": "5ba87b00ded84e67699db4d0446c534a1acd43fb8358885b393c07e1ccf79c72",
+      "reviewed_definition_ids": ["fixed_pair", "theta_cartier"],
+      "reviewed_dependencies": ["admissible_degree_ten_m9_critical_irreducibility", "admissible_critical_quadratic_incidence", "fixed_pair_arithmetic", "hom_disjoint_correspondence_gonality"],
+      "source_path": "Theorems/cartier_and_spin/admissible_degree_ten_m9_critical_square_pencil_finite_support.md",
+      "source_sha256": "03d0babf4ec945f6d5e883efc82a6c3611e4038be0a714f10857adc6f062c8c6",
+      "canonical_statement_version": 3,
+      "status": "partial_component",
+      "precise_hypotheses": "Local integrality uses any nontrivial commutative ring R embedded as the actual integers of a valuation on a field K, actual D in R[T], actual moments in R, every degree/characteristic and actual critical root c; no leading-coefficient unit or distinct-root hypothesis. General weighted support uses actual algebraically closed constants k in odd prime characteristic p, IntermediateField.FG top and Algebra.trdeg k L=1, actual nonzero g and q outside the actual constant-field image. Actual maximal Frobenius root, nonzero universal differential, finite function degree and bound are constructed, not assumed. Derivation kernel and second-derivative components require only a literal full PowerPBasis and actual normalized D, with no perfectness premise. Residue parity uses a genuine integer-valued field valuation and its actual integer ring/residue field; constant integrality and function integrality at the displayed odd point are explicit. The actual smooth-curve-to-field/stalk and specialized m9 bridges remain separate.",
+      "accepted_literature": [],
+      "computation_reliance": "None in the checked component: actual monic polynomial division/reversal, coefficient identities and valuation-ring regularity. Source rank witnesses and geometric bounds remain unformalized.",
+      "components": [
+        {
+          "declaration": "Litt3.CartierAndSpin.critical_trace_contraction_root_integral",
+          "module": "Solutions.CartierAndSpin.CriticalContraction",
+          "claim": "The actual polynomial trace contraction, in every degree, lies in the actual integer ring at every root of the actual critical polynomial, including zero and repeated roots.",
+          "gap": "The source affine-curve coefficients and moments must still be instantiated in all actual normalization stalks; square-support and quantitative geometric clauses remain."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.critical_quadratic_root_integral",
+          "module": "Solutions.CartierAndSpin.CriticalContraction",
+          "claim": "The canonical explicit cubic-critical quadratic equals a regular constant minus the actual contraction and is regular at every actual critical root, without a leading-coefficient unit.",
+          "gap": "The actual primitive degree-ten source/moment and normalization-stalk bridge remains. Genus, degree, correspondence, branch-support, endpoint rows and necessary-model ranks are not formalized."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.one_variable_finite_function_degree",
+          "module": "Solutions.CartierAndSpin.FiniteFunctionDegree",
+          "claim": "Actual FG top and transcendence degree one imply finite degree over the actual field generated by every transcendental r, without perfectness or separability.",
+          "gap": "Exact algebraic component passed build and focused 211-declaration audit. The canonical actual curve/geometric/divisor and specialized source applications remain partial."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.one_variable_weighted_square_pencil_finite",
+          "module": "Solutions.CartierAndSpin.OneVariableSquarePencils",
+          "claim": "Literal weighted nonconstant-function square support is finite and ncard\u22641+v2 of the actual generated function-field degree, derived from actual FG/trdeg1 over algebraically closed constants.",
+          "gap": "Exact algebraic component passed build and focused 211-declaration audit. The canonical actual curve/geometric/divisor and specialized source applications remain partial."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.one_variable_frobenius_weighted_square_pencil_finite",
+          "module": "Solutions.CartierAndSpin.OneVariableSquarePencils",
+          "claim": "The same exact bound for an inseparable ratio r^(p^e), by an actual perfect-field Frobenius parameter equivalence, with arbitrary nonsquare fixed weight.",
+          "gap": "Exact algebraic component passed build and focused 211-declaration audit. The canonical actual curve/geometric/divisor and specialized source applications remain partial."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.constant_weighted_square_support",
+          "module": "Solutions.CartierAndSpin.ConstantSquarePencils",
+          "claim": "Exact constant-ratio nonzero square support: constants theta\u2260c satisfying precisely IsSquare g, hence empty or cofinite.",
+          "gap": "Exact algebraic component passed build and focused 211-declaration audit. The canonical actual curve/geometric/divisor and specialized source applications remain partial."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.rational_monomial_function_degree",
+          "module": "Solutions.CartierAndSpin.RationalMonomialDegree",
+          "claim": "The literal rational function field k(r) has exact degree n over k(r^n), every positive n and characteristic, from actual Eisenstein irreducibility; n divides every finite ambient degree over k(r^n).",
+          "gap": "Build and focused 293-declaration audit passed. No gap in this actual field-degree foundation; geometric degree interpretation remains separate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.normalized_p_basis_derivation_zero_iff_pth_power",
+          "module": "Solutions.CartierAndSpin.PBasisDerivationKernel",
+          "claim": "An actual normalized derivation on a literal full p-basis has kernel exactly the actual p-th powers, with no perfectness assumption.",
+          "gap": "Build and focused 293-declaration audit passed; no gap in this exact derivative criterion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.primitive_function_root_exists",
+          "module": "Solutions.CartierAndSpin.PrimitiveFunctionRoots",
+          "claim": "Actual perfect-base FG/trdeg1 constructs q=r^(p^e) with no further actual p-th root, literal universal dr nonzero and bounded e; no supplied Frobenius decomposition or separating parameter.",
+          "gap": "Build and focused 293-declaration audit passed; actual smooth proper curve field identification remains separate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.canonical_weighted_square_support",
+          "module": "Solutions.CartierAndSpin.CanonicalWeightedSquareSupport",
+          "claim": "The literal NONZERO g*(theta-q) square support, with arbitrary nonsquare weight and nonconstant q, is finite with bound 1+v2([L:k(r)]) for an actually constructed maximal root r whose universal differential is nonzero.",
+          "gap": "The full general algebraic clause passes build and focused 293-declaration audit. Actual curve/divisor parity recipe and all specialized m9 degree/genus/four-value/rank clauses remain partial."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.nonzero_weighted_square_support_constant",
+          "module": "Solutions.CartierAndSpin.CanonicalWeightedSquareSupport",
+          "claim": "The literal NONZERO constant-ratio boundary is exactly {theta!=c and IsSquare g}, retaining the empty/cofinite alternative.",
+          "gap": "Build and focused 293-declaration audit passed; no gap in the exact constant-ratio boundary."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.weighted_odd_power_square_pole_parity",
+          "module": "Solutions.CartierAndSpin.WeightedSquareValuationParity",
+          "claim": "Actual square identities at poles impose exactly Even(ord(g)+ord(r)) for every odd function exponent, while actual residue differences and finite-point weight parity are proved separately. Even divisor order is never treated as sufficient for being square.",
+          "gap": "Build and focused 360-declaration audit passed. Actual global pole/fiber divisors and different bounds remain."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.odd_point_residue_candidate_support",
+          "module": "Solutions.CartierAndSpin.WeightedSquareResidues",
+          "claim": "A genuine odd-order point with integral q constructs an actual residue fiber containing all square parameters, finite of cardinal at most one. Incompatible actual residue values at two such points give empty support.",
+          "gap": "Build and focused 360-declaration audit passed. Closed-point stalk/residue specialization and global parity/different recipe remain."
+        }
+      ],
+      "square_pencil_verification_report": "../litt3-computation-data/formalization-20261003/verification/20261003T041041Z/report.json",
+      "gauss_parity_verification_report": "../litt3-computation-data/formalization-20261003/verification/20261003T042250Z/report.json"
+    },
+    {
+      "theorem_id": "middle_finite_commutator_criterion",
+      "reviewed_proof_path": "Proofs/cartier_and_spin/middle_finite_commutator_criterion.md",
+      "reviewed_definition_ids": ["fixed_pair", "rank_two_extension_space"],
+      "reviewed_dependencies": ["middle_common_eigenvector_boundary"],
+      "source_path": "Theorems/cartier_and_spin/middle_finite_commutator_criterion.md",
+      "source_sha256": "0078e4090659de7682c3edadb3b6276f0f5a58de545ef150c1b712ecc9f67fe5",
+      "canonical_statement_version": 1,
+      "status": "complete",
+      "precise_hypotheses": "Every algebraically closed field of arbitrary characteristic and every positive matrix dimension. The literal bounded power-kernel intersection, actual ordered/power rectangular stacks, and actual eigenvectors are used. Row compression holds over every commutative coefficient ring, widened through left ideals over arbitrary noncommutative rings. The displayed middle application uses arbitrary genuine homogeneous linear coefficient matrices in eight variables, fifteen columns and both shifted blocks; every geometric fiber is retained. Zero-fiber and degree clauses require only a field; no separability, Hermitian positivity, discriminant, generic fiber or numerical coefficient premise appears.",
+      "accepted_literature": [],
+      "computation_reliance": "None: symbolic left-ideal and actual row-module operations, finite-dimensional rank-nullity and kernel stabilization, actual commuting restrictions/eigenspaces, Cayley–Hamilton polynomial division and bilinear spans, literal polynomial sum/product degree bounds and symbolic triangular counts. No matrix enumeration, numerical rank, certificates or native evaluation.",
+      "components": [
+        {
+          "declaration": "Litt3.CartierAndSpin.commutator_word_ideal_eq_ordered",
+          "module": "Solutions.CartierAndSpin.CommutatorWordCompression",
+          "claim": "Actual left ideal of all literal commutator words of length<=d equals the actual ordered C*U^a*V^b left ideal with a+b<=d, over every ring.",
+          "gap": "None for this exact full canonical Version1 finite criterion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.commutator_word_rows_eq_ordered",
+          "module": "Solutions.CartierAndSpin.CommutatorRows",
+          "claim": "The exact original coefficient-ring row modules agree, with true matrix multiplication and every row retained. No fraction-field or generic-specialization argument is used.",
+          "gap": "None for this exact full canonical Version1 finite criterion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.matrix_ordered_commutator_rank_criterion",
+          "module": "Solutions.CartierAndSpin.MatrixCommutatorCriterion",
+          "claim": "Actual ordered rectangular stack rank<n iff actual common eigenvector, every positive dimension and algebraically closed characteristic.",
+          "gap": "None for this exact full canonical Version1 finite criterion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.matrix_bounded_power_kernel_criterion",
+          "module": "Solutions.CartierAndSpin.PowerCommutatorStacks",
+          "claim": "Literal intersection of kernels of all bounded positive power commutators is nonzero iff actual common eigenvector; actual dimension-one intersection is top and actual power-stack rank criterion is proved.",
+          "gap": "None for this exact full canonical Version1 finite criterion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.shifted_pencil_exists_iff_ordered_rank",
+          "module": "Solutions.CartierAndSpin.ShiftedMatrixPencils",
+          "claim": "Literal two shifted blocks retain unrestricted scalar eigenvalues and every actual fiber; exact zero-fiber exception proved.",
+          "gap": "None for this exact full canonical Version1 finite criterion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.ordered_commutator_pairs_card_twice",
+          "module": "Solutions.CartierAndSpin.CommutatorStackCounts",
+          "claim": "Symbolic general triangular count and exact canonical120/1800 ordered and196/2940 power block/row counts.",
+          "gap": "None for this exact full canonical Version1 finite criterion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.linear_polynomial_ordered_stack_degree_bound",
+          "module": "Solutions.CartierAndSpin.LinearMatrixFamilies",
+          "claim": "Actual homogeneous polynomial matrices, their evaluated fibers/scaling law, and literal ordered degree16/power degree28 bounds; zero entries and cancellation retained.",
+          "gap": "None for this exact full canonical Version1 finite criterion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.ordered_commutator_stack_map",
+          "module": "Solutions.CartierAndSpin.CommutatorStackSpecialization",
+          "claim": "Both full literal stacks commute with every coefficient-ring specialization, retaining every geometric fiber.",
+          "gap": "None for this exact full canonical Version1 finite criterion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.middle_finite_commutator_criterion",
+          "module": "Solutions.CartierAndSpin.MiddleFiniteCommutatorCriterion",
+          "claim": "Full ten-clause quantified canonical criterion, including every generality, intersection, row compression, original displayed H fiber, counts, degrees, zero-fiber, specialization and normalization clause.",
+          "gap": "None for this exact full canonical Version1 finite criterion."
+        }
+      ],
+      "verification_report": "../litt3-computation-data/formalization-20261003/verification/20261003T051048Z/report.json",
+      "reviewed_proof_sha256": "ec485c940637115c621b689dcacf9f5e9386daa17c0902738076f83e5f692545",
+      "full_statement_review": "Coverage/middle_finite_commutator_criterion.md",
+      "review_status": "Independent root whole-source readback ACCEPTED exact Version1 statement/proof, literal ten-clause proposition and all actual rank/kernel/word compression/count/degree/fiber implementations. The exact displayed block form is the explicit source input, universally covered without importing the separate middle-support conclusion. Focused aggregate PASS156 transitive declarations, standard three axioms only, zero forbidden dependencies/source changes. Completion invalidates if the canonical source hash changes."
+    },
+    {
+      "theorem_id": "fifth_power_norm_remainder",
+      "reviewed_proof_path": "Proofs/cartier_and_spin/fifth_power_norm_remainder.md",
+      "reviewed_definition_ids": [],
+      "reviewed_dependencies": ["uniform_admissible_norm"],
+      "source_path": "Theorems/cartier_and_spin/fifth_power_norm_remainder.md",
+      "source_sha256": "2bd7ec71cf848bc06eb09af672ba4b864a98c5bb446e6fdd47b933510f75942f",
+      "canonical_statement_version": 2,
+      "reviewed_proof_sha256": "6a0615b6b470261bda3ec2b2748f4bc10685e74e07211b224dca8b39de183004",
+      "status": "complete",
+      "precise_hypotheses": "Arbitrary field K of prime characteristic p; actual f∉K^p. Primitive field L/K is literally generated by b with actual separability; original norm and monic minimal polynomial are retained, power basis/source equivalence constructed. Finite source algebra uses literal AdjoinRoot F for arbitrary positive-degree separable F, allowing nonmonic/reducible/disconnected sources. Constant-source equivalence/uniqueness also proved for F≠0; positive degree is necessary only for N≥p.",
+      "accepted_literature": [],
+      "computation_reliance": "None: determinant norm base change, actual simple-root quotient decomposition, Frobenius injectivity, irreducible inseparable factor/minpoly, polynomial divisibility and cancellation, actual degree inequalities, norm-preserving leading-coefficient normalization. Tiny proof of primality5 only identifies the concrete scope counterexample; no bounded arithmetic or native evaluation.",
+      "full_statement_review": "Coverage/fifth_power_norm_remainder_scope_review.md",
+      "verification_report": "../litt3-computation-data/formalization-20261003/verification/20261003T053824Z/report.json",
+      "components": [
+        {
+          "declaration": "Litt3.CartierAndSpin.primitive_norm_frobenius_remainder_package",
+          "module": "Solutions.CartierAndSpin.NormFrobeniusPackage",
+          "claim": "Actual primitive-field norm iff unique nonzero constant Frobenius remainder, and N≥p, no supplied power basis or quotient equivalence.",
+          "gap": "None for full Version2 primitive-field scope."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.nonmonic_source_norm_frobenius_remainder_package",
+          "module": "Solutions.CartierAndSpin.NonmonicNormFrobeniusPackage",
+          "claim": "Full actual positive-degree finite source-algebra norm iff unique pair (H,tau) and N≥p for arbitrary separable nonmonic/reducible F.",
+          "gap": "None for full Version2 positive-degree source-algebra scope."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.nonmonic_source_norm_frobenius_remainder",
+          "module": "Solutions.CartierAndSpin.NormSourceNormalization",
+          "claim": "Forward and converse remain valid for every nonzero separable F including constants; separate presentation uniqueness proves the full constant-source clause.",
+          "gap": "None; degree bound intentionally requires positive degree."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.rational_fifth_power_zero_source_counterexample",
+          "module": "Solutions.CartierAndSpin.RationalZeroSourceCounterexample",
+          "claim": "Literal K=RatFunc(ZMod5), f=X∉K^5, F=1 monic/separable zero source algebra, actual norm1=1^5 and degree0<5.",
+          "gap": "None; establishes exact original-scope correction."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.arbitrary_source_norm_frobenius_remainder_package",
+          "module": "Solutions.CartierAndSpin.ArbitraryNormFrobeniusRemainder",
+          "claim": "Widening: full actual norm iff unique nonzero inseparable remainder and degree≥p for every positive-degree F, including nonreduced and inseparable finite algebras. Determinant/characteristic polynomial proves the norm without a splitting or separability assumption.",
+          "gap": "None for the broader algebraic foundation. Canonical Version2 remains the accepted separable specialization."
+        }
+      ],
+      "review_status": "Independent root whole-source readback accepted canonical Version2 and exact literal packages. Focused audit20261003T053824Z:279 declarations, standard3 only, zero forbidden/source changes. Canonical Version2 correction/library audit preserves original provenance and nonprimitive-index caveat.",
+      "widening_verification_report": "../litt3-computation-data/formalization-20261003/verification/20261003T054859Z/report.json"
+    },
+    {
+      "theorem_id": "admissible_critical_quadratic_incidence",
+      "reviewed_proof_path": "Proofs/cartier_and_spin/admissible_critical_quadratic_incidence.md",
+      "reviewed_definition_ids": ["fixed_pair"],
+      "reviewed_dependencies": ["admissible_annihilator_trace_vanishing", "uniform_admissible_norm"],
+      "source_path": "Theorems/cartier_and_spin/admissible_critical_quadratic_incidence.md",
+      "source_sha256": "4dc368fad2f65e3a4aa52b1b914168fd7c0ebdc4fdb78774c795202e26b7a2d1",
+      "canonical_statement_version": 7,
+      "reviewed_proof_sha256": "b4a0792bc960b760d8a1500e1f72f4611e9c1513f5ae1caea7cd1dc9e92e6157",
+      "status": "partial_component",
+      "precise_hypotheses": "General source interpolation over any field K: literal AdjoinRoot F, F≠0, actual numerator equation mk(U)=u*mk(D). Full quotient degree bound also needs positive degree. Actual moment/top-remainder formula needs separable F and F′=phi*D; denominator units are constructed. Literal degree-ten canonical quadratic needs degree F=10, deg U≤5, deg D≤3 and actual numerator equation, over every characteristic, nonmonic/unsplit/disconnected sources retained. No critical discriminant, critical leading unit, artificial source coefficient gaps, interpolation conclusion or trace moment input. Local contact widening uses actual Laurent source F=B*nodal(selected,node), regular B with ord B0=0, selected root contact k>=1, actual φ=(T^5+q) with ordφ(selected)=3 (giving ordq=3), the literal F'=φD and U²−FQ=DV identities, selected χ/ξ orders derived from ord u>=2 and ordφ=3, and regular complementary interpolation cofactors. The second-order corner needs actual U,D,V integrality and >=3 selected nodes; Q integrality and every D/Q weighted order are derived. Five-sheet jets use card(selected)=5. Generic primitive-unselected cofactor regularity/unit constant follows actual v(content)*product max(1,v(node))=1 and every unselected node valuation>=1. Actual finite-map trace regularity uses ANY finite surjective map of integral schemes, nonempty actual affine base open and literal source rational all-stalk regularity on its full inverse image. Actual smooth integral base over algebraically closed k supplies chart normality; source smoothness/etaleness/separability/finite field-degree input are absent.",
+      "accepted_literature": [],
+      "computation_reliance": "None: polynomial division and unique reduced source representatives, actual trace base change/split equivalence/Lagrange interpolation, universal reflected coefficient convolution, actual high-coefficient recurrence and symbolic ring identities. No numerical ranks, root certificates or native evaluation. New local weights, Gauss quotient and corner are direct Laurent coefficient/valuation and true power-series polynomial descent proofs, with no numerical enumeration or rank certificate.",
+      "components": [
+        {
+          "declaration": "Litt3.CartierAndSpin.actual_source_quadratic_interpolator",
+          "module": "Solutions.CartierAndSpin.CriticalInterpolationIdentity",
+          "claim": "In every actual nonzero polynomial quotient, numerator equation derives reduced V2 and exact U²−FQ=DV2; Q degree≤max(2degU−degF,degD−1).",
+          "gap": "Does not yet identify all coefficients with original affine curve sections or prove their integrality at every finite place."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.separable_quotient_residue_trace_remainder",
+          "module": "Solutions.CartierAndSpin.SeparableTraceDualRemainder",
+          "claim": "Complete actual residue trace equals actual reduced top coefficient divided by true source leading coefficient for every polynomial numerator.",
+          "gap": "None for arbitrary-field algebraic foundation."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.actual_quadratic_interpolation_with_moments",
+          "module": "Solutions.CartierAndSpin.QuadraticInterpolationTrace",
+          "claim": "Exact actual interpolator/degree bound plus every actual quadratic moment as reduced top remainder; constructs source denominator units.",
+          "gap": "Full global Laurent expansion/polynomial-part and affine moment regularity remain."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.actual_degree_ten_critical_incidence",
+          "module": "Solutions.CartierAndSpin.ActualDegreeTenCriticalIncidence",
+          "claim": "Literal canonical critical Q built from actual rho and quadratic traces satisfies exact U²−FQ=DV2 with reduced V2, derived without assuming that identity or trace formulas; rho=U5/v and all F9,F8 remainder corrections retained.",
+          "gap": "Canonical affine integrality/pole/contact jets, 45/15/33 dimension counts, fixed endpoint five-jet certificates, higher-degree profiles and boundary exclusions remain unformalized in this record."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.primitive_field_degree_ten_critical_incidence",
+          "module": "Solutions.CartierAndSpin.CriticalIncidenceTransport",
+          "claim": "Literal critical Q and exact reduced V2 in an actual primitive extension L/K, with power basis/raw quotient constructed from true generation, root and extension degree; traces transported exactly.",
+          "gap": "Actual source affine integrality/pole/contact inputs remain separate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.smooth_curve_critical_quotient_is_integral",
+          "module": "Solutions.CartierAndSpin.SmoothCriticalIntegrality",
+          "claim": "Actual original closed-point stalk coefficients of Q from true integral numerator/cofactors and one unit source coefficient; derives DVR/GCD from actual smooth structure, with no leading-unit hypothesis.",
+          "gap": "Needs original U,D,V2 integral germs and primitive content; deriving those from the entire actual cover remains."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.regular_weighted_interpolation_coefficient",
+          "module": "Solutions.CartierAndSpin.WeightedInterpolationIntegrality",
+          "claim": "Every actual weighted Lagrange interpolation coefficient is regular from true root-content normalization and regular weights; no node or residue distinctness.",
+          "gap": "Original cover sheet/root normalization and weight divisors remain a geometric input bridge."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.full_interpolation_contact_bound",
+          "module": "Solutions.CartierAndSpin.SelectedInterpolationContact",
+          "claim": "Exact original-style selected/nonsel interpolation coefficient jets from actual Laurent polynomial cofactors, small-root contact≥1 and selected simple-zero weights, all j and coinciding roots retained.",
+          "gap": "Actual source-to-completed-sheet identification and contact hypotheses remain; no full endpoint/parameter incidence completion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.reduced_polynomial_residue_moments_eq_iff",
+          "module": "Solutions.CartierAndSpin.PolynomialResiduePairing",
+          "claim": "All first N actual top-remainder residue moments uniquely recover a reduced polynomial, including inseparable/nonreduced quotients, with an explicit nonzero test moment.",
+          "gap": "None for the arbitrary-field algebraic foundation; focused audit88 passes. Does not supply the original curve/trace geometric bridge."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.cubic_residue_reconstruction",
+          "module": "Solutions.CartierAndSpin.CubicResidueReconstruction",
+          "claim": "Literal inverse cubic residue formula using three genuine reduced moments, with every critical coefficient retained and no distinct-root premise.",
+          "gap": "None for the literal inverse cubic residue foundation; focused audit88 passes. Original finite/infinity curve geometry remains separate."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.universal_quotient_residue_duality_apply",
+          "module": "Solutions.CartierAndSpin.UniversalQuotientResidueDuality",
+          "claim": "The LITERAL monic quotient residue map x↦(y↦top-remainder(xy)) is a linear equivalence over EVERY commutative ring, by a true determinant-one reversed Gram matrix; nilpotents and zero divisors allowed, no inverses or separability.",
+          "gap": "None for the universal algebraic foundation. Nonmonic original critical coefficients are handled over the actual coefficient field by the separate denominator-free congruence, not normalized pointwise at degenerate fibers."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.critical_cubic_residue_representative_exists",
+          "module": "Solutions.CartierAndSpin.CriticalCubicResidueIncidence",
+          "claim": "True coprimality constructs actual F-unit and reduced U²/F value in K[T]/D; literal canonical critical congruence iff all three genuine residue moment equations with infinity contribution, including repeated/inseparable D.",
+          "gap": "None for exact arbitrary-field critical cubic algebra. Actual trace specialization is a separate next wrapper; full original curve/pole/contact/dimension clauses remain."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.actual_degree_ten_critical_cubic_residues",
+          "module": "Solutions.CartierAndSpin.ActualCriticalCubicResidues",
+          "claim": "Actual degree-ten source and numerator equation construct reduced critical U²/F representative and derive every one of the three genuine residue equations, including the nonzero infinity contribution.",
+          "gap": "Whole-source curve/divisor, section and profile clauses remain outside this algebraic equivalence."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.actual_interpolation_critical_contact_bounds",
+          "module": "Solutions.CartierAndSpin.SelectedCriticalContactCalculus",
+          "claim": "Actual nodal source, derivative factorization and selected/nonselected interpolation expressions derive V_j>=1+(s−1)k−kj and Q_j>=(s−2)k−2−kj; no Q/D weights or source primitive-content conclusion assumed.",
+          "gap": "Actual cover-to-completed-sheet, root-content and original divisor-order constructions remain pending; this is an exact algebraic component, not whole geometric source completion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.five_sheet_second_order_critical_jets",
+          "module": "Solutions.CartierAndSpin.FiveSheetCriticalJets",
+          "claim": "True integral second-order five-sheet data derive all seven literal necessary jets: four constant, two linear and one quadratic. Q integrality and the sharper corner are proved from the actual equation.",
+          "gap": "Actual cover-to-completed-sheet, root-content and original divisor-order constructions remain pending; this is an exact algebraic component, not whole geometric source completion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.primitive_unselected_cofactor_valuation_unit",
+          "module": "Solutions.CartierAndSpin.PrimitiveUnselectedCofactor",
+          "claim": "True primitive root-content normalization and actual unselected pole/residue valuations make every actual cofactor coefficient regular and its constant a valuation unit.",
+          "gap": "Actual cover-to-completed-sheet, root-content and original divisor-order constructions remain pending; this is an exact algebraic component, not whole geometric source completion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.selected_annihilator_and_square_orders",
+          "module": "Solutions.CartierAndSpin.SelectedAnnihilatorOrders",
+          "claim": "Order-two actual numerator/order-three factor derive selected χ order>=−1 and ξ order>=1; actual selected factor value derives q order three.",
+          "gap": "Actual cover-to-completed-sheet, root-content and original divisor-order constructions remain pending; this is an exact algebraic component, not whole geometric source completion."
+        },
+        {
+          "declaration": "Litt3.CartierAndSpin.actual_finite_smooth_curve_trace_regular_on_affine",
+          "module": "Solutions.CartierAndSpin.FiniteSchemeTraceRegularity",
+          "claim": "ANY actual finite surjective map of integral schemes to a true smooth integral curve derives chart/field finiteness and proves literal original field trace is an actual base affine section from actual all-original-stalk regularity on the full inverse open.",
+          "gap": "Application to canonical ξw^j still needs original divisor orders⇒actual original source stalk representatives. No trace-regularity conclusion is assumed."
+        }
+      ],
+      "verification_report": "../litt3-computation-data/formalization-20261003/verification/20261003T060705Z/report.json",
+      "full_statement_review": "Coverage/admissible_critical_quadratic_incidence.md",
+      "review_status": "Focused audit20261003T060705Z passes two interpolation roots/202 transitive declarations, standard3 only, zero forbidden/source changes. This is a genuine partial algebraic component, not full geometric Version7 scope.",
+      "related_verification_reports": [
+        "../litt3-computation-data/formalization-20261003/verification/20261003T061217Z/report.json",
+        "../litt3-computation-data/formalization-20261003/verification/20261003T061607Z/report.json",
+        "../litt3-computation-data/formalization-20261003/verification/20261003T063247Z/report.json",
+        "../litt3-computation-data/formalization-20261003/verification/20261003T065715Z/report.json",
+        "../litt3-computation-data/formalization-20261003/verification/20261003T070507Z/report.json"
+      ]
+    }
+  ]
+}

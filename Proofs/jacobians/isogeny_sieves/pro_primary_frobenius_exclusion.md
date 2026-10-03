@@ -12,16 +12,11 @@ Let $P$ be a finitely generated pro-$\ell$ group. The kernel of
 \operatorname{Aut}(P/\Phi(P))
 \]
 is pro-$\ell$, where $\Phi(P)=\overline{P^\ell[P,P]}$.
-For completeness, in a finite $\ell$-group the kernel acts freely
-on the set of lifts of a fixed basis of the Frattini quotient.
-Every such tuple generates, by the Burnside basis theorem, so its
-stabilizer is trivial. That set has $\ell$-power cardinality, and
-the kernel therefore has $\ell$-power order. Apply this to a cofinal
-system of characteristic finite quotients of $P$. The image of
-$\Phi(P)$ is the Frattini subgroup of each quotient, so the inverse
-limit proves the claim. This is also the standard pro-primary
-automorphism theorem recorded in
-[Reid, Theorem1.3.11(ii)](https://maths.qmul.ac.uk/~raw/cdr_thesis.pdf).
+This is the standard Frattini automorphism theorem:
+[Reid, Theorem1.3.11(ii)](https://maths.qmul.ac.uk/~raw/cdr_thesis.pdf#page=17).
+It applies to the closed kernel in the natural profinite topology on
+$\operatorname{Aut}(P)$. In particular any closed Frobenius subgroup
+acting trivially on $P/\Phi(P)$ is pro-$\ell$.
 
 ## 2. Models of covers and rational torsion
 
@@ -32,13 +27,18 @@ Section2. The pointed argument here also controls the full torsion
 of the covering Jacobian, which is needed for the geometric-factor
 test below; the cover-model bound alone is not claimed as new.
 
-First suppose $C/\mathbf F_q$ has a rational point and $J(C)[\ell]$
-is rational. The point splits the arithmetic fundamental-group
+First suppose $C/\mathbf F_q$ has a rational point and its geometric étale
+$\ell$-torsion is rational. The point splits the arithmetic fundamental-group
 sequence. Let $P$ be the geometric maximal pro-$\ell$ fundamental
 group, and let $\varphi$ be the automorphism supplied by Frobenius
 and this splitting. The group $P$ is finitely generated. Its
 Frattini quotient is dual to $H^1(C,\mathbf F_\ell)$, so $\varphi$
-is the identity there. Section1 makes the closure of
+is the identity there. When $\ell$ is the characteristic, use the
+étale torsion: the [Artin–Schreier sequence](https://stacks.math.columbia.edu/tag/0A3J)
+identifies $H^1(C,\mathbf F_\ell)$ with the Frobenius-fixed vectors
+in $H^1(C,\mathcal O_C)$, so it is finite-dimensional and its dimension
+is the $\ell$-rank. Thus the same finite-generation and Frattini argument
+applies. Section1 makes the closure of
 $\langle\varphi\rangle$ a pro-$\ell$ group.
 
 A chosen geometric point of a connected cover with $\ell$-group
@@ -62,7 +62,9 @@ quotients of the geometric fundamental group of $T$ are missing.
 The stabilizer of $H$ in $\overline{\langle\varphi\rangle}$ is
 still pro-$\ell$. Its action on the finite group $H/\Phi(H)$ has
 $\ell$-power image. A further $\ell$-power field extension kills
-that action. Frobenius then acts trivially on $J(T)[\ell]$.
+that action. Frobenius then acts trivially on $J(T)[\ell](\overline{\mathbf F}_q)$.
+These are all the torsion points, without asserting rationality of a
+connected torsion group scheme at the characteristic prime.
 
 For general $C$, first make $J(C)[\ell]$ rational by an extension
 of degree $m$, its Frobenius order. A rational point exists after
@@ -74,7 +76,7 @@ original field of definition for $T$.
 
 ## 3. A geometric factor cannot conceal the residual eigenvalue
 
-Let $B/\mathbf F_Q$ have rational full $\ell$-torsion, and suppose
+Let $B/\mathbf F_Q$ have rational étale $\ell$-torsion, and suppose
 $A_0/\mathbf F_Q$ is a geometric isogeny factor of $B$. Fix a
 Frobenius eigenvalue $\pi$ of $A_0$. All required factor maps are
 defined over a finite extension of degree $s$. The eigenvalues
@@ -86,12 +88,14 @@ so some Frobenius eigenvalue $\alpha$ of $B$ satisfies
 for a root of unity $\zeta$. This argument does not require the
 factor itself to descend over $\mathbf F_Q$.
 
-Fix an embedding into $\overline{\mathbf Q}_\ell$. Since
-$B[\ell]$ is rational, the characteristic polynomial of its
-Frobenius reduces to $(T-1)^{2\dim B}$. Therefore EVERY algebraic
-conjugate of $\alpha$ reduces to one. For
-$\sigma\in\operatorname{Gal}(\overline{\mathbf Q}/K)$, with
-$\pi\in K$, it follows that
+Fix an embedding into $\overline{\mathbf Q}_\ell$ at which $\pi$ is a
+unit. Every unit eigenvalue of $B$ reduces to one: when $\ell$ is not
+the characteristic this follows from the full Tate module; otherwise
+these are exactly the eigenvalues on its étale $\ell$-adic Tate module.
+For every $\sigma\in\operatorname{Gal}(\overline{\mathbf Q}/K)$, with
+$\pi\in K$, the conjugate $\sigma\alpha=\pi\,\sigma\zeta$ is still a
+UNIT eigenvalue of $B$, even if other conjugates have positive slope.
+It follows that
 \[
 \overline{\sigma\zeta/\zeta}
 =\overline{\sigma\alpha/\alpha}=1.
@@ -105,9 +109,10 @@ to one, giving
 \in\overline{\mu(K)}.
 \tag{4}
 \]
-This use of ALL conjugates is essential. The reduction of one
-eigenvalue alone would allow an arbitrary cyclotomic twist and
-would not prove the result.
+The conjugates FIXING $K$ are the necessary ones. Their unit property
+is automatic because they fix $\pi$. The reduction of one eigenvalue
+alone would allow an arbitrary cyclotomic twist and would not prove
+the result.
 
 Apply (4) over the field constructed in Section2, where the
 eigenvalue of the original $A_0/\mathbf F_q$ is
@@ -180,46 +185,48 @@ only plus or minus one. Indeed a root of unity of order greater
 than two would either supply an imaginary quadratic subfield or
 make K0 itself a quartic cyclotomic, hence Galois, field.
 
-Use the common base F_(5^6). The relevant eigenvalues are the
-cube of Frobenius25 on X and the square of Frobenius125 on Y0.
-Let m0 be the SEMISIMPLE order on JX[ell]. The actual torsion
-order is m0 times a power of ell. Since every nonzero residual
-eigenvalue has order prime to ell, this extra power cannot affect
-the divisibility test. Section3 would require every residual
-target order o to divide 2m0.
+Use the common base $\mathbf F_{5^6}$, with Frobenius powers THREE
+on $X$ and TWO on $Y_0$. Let $P_X,P_0$ be their original Weil
+polynomials over $\mathbf F_{25},\mathbf F_{125}$, and let
+$\overline P^{\rm red}$ denote the squarefree polynomial with the
+same residual roots. For any integer $M$ prime to $\ell$, the two
+checks
+\[
+\overline P_X^{\rm red}\mid T^{3M}-1,\qquad
+\overline P_0^{\rm red}\nmid T^{4M}-1
+\tag{7}
+\]
+already exclude the geometric factor. Indeed the semisimple order
+$m_0$ of $X$ over the common base divides $M$. Its full torsion
+order is $m_0$ times an $\ell$-power, which disappears from the
+residual test. Formula(2) and $\mu(K_0)=\mu_2$ would force every
+target root $\beta$ to satisfy $\beta^{4m_0}=1$, hence
+$\beta^{4M}=1$, contradicting(7). No exact order is required.
 
-Exact factorization of the two stated polynomials gives:
+The following SEVEN upper bounds satisfy(7):
+\[
+\begin{array}{c|rrrrrrr}
+\ell&7&11&13&17&19&23&31\\\hline
+M&274514&32478620&1608936&1094236464&
+5227320&12484359976&295834560.
+\end{array}
+\]
+They are the inputs of the
+[polynomial-power checker](../../../scripts/arithmetic/verify_reverse_pro_primary.py);
+its [executed witnesses](../../../../litt3-computation-data/pro_primary_frobenius_20260921/reverse_independent_check.txt)
+prove base annihilation and target NONannihilation by modular
+polynomial multiplication. The checker additionally verifies that the
+base reductions are squarefree; the target has degree four less than
+every tested prime, so dividing by its derivative gcd retains every
+root. Thus this verification needs neither factorization nor a finite
+extension-field or multiplicative-order algorithm.
 
-| ell | m0 on X over F_(5^6) | residual target orders | missing divisor of 2m0 |
-|---|---:|---|---:|
-| 7 | 274514 | 8 | 8 |
-| 11 | 32478620 | 305 | 61 |
-| 13 | 1608936 | 340 | 5 |
-| 17 | 1094236464 | 16,144 | 9 |
-| 19 | 5227320 | 543 | 181 |
-| 23 | 12484359976 | 264 | 3 |
-| 31 | 295834560 | 481 | 13 |
-
-For example, at ell=7 the target order is8, whereas v2(2m0)=2.
-All rows therefore contradict the necessary condition. Geometric
-simplicity of JY0 proves(4) of the statement. Any actual second map
-from T to Y0 would induce the forbidden geometric isogeny factor.
-The field of that map is not assumed, and no model of both maps
-over the torsion field is used.
-
-The [bounded exact probe](../../../scripts/arithmetic/probe_pro_primary_residues.py)
-computes irreducible factor degrees and multiplicative root orders
-in their finite residue fields, retaining repeated factors for
-the unipotent-order distinction. The
-[executed data](../../../../litt3-computation-data/pro_primary_frobenius_20260921/residue_probe.json)
-also contain the non-excluding reverse rows2,3,29. Only the displayed
-seven positive rows are asserted as reverse exclusions here.
-An [independent standard-library checker](../../../scripts/arithmetic/verify_reverse_pro_primary.py)
-avoids factorization entirely: it verifies that the squarefree X
-polynomial divides T^(3m0)-1, while the squarefree target polynomial
-does NOT divide T^(4m0)-1. Its seven
-[executed witnesses](../../../../litt3-computation-data/pro_primary_frobenius_20260921/reverse_independent_check.txt)
-all pass. These divisibility tests alone suffice for the exclusion.
+Geometric simplicity of $J(Y_0)$ now proves(4). An actual map
+$T\to Y_0$ would induce the forbidden geometric factor, even if that
+map is defined over a later field. The original
+[factorization receipt](../../../../litt3-computation-data/pro_primary_frobenius_20260921/residue_probe.json)
+remains discovery evidence for these $M$ and for the nonexcluding
+tested rows2,3,29; its now-unused source probe is deleted.
 
 ## Boundary of the argument
 

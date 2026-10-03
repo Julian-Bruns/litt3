@@ -14,7 +14,7 @@ ROOT=Path(__file__).resolve().parents[3]
 def context(folder, backend, representative=None):
     folder=Path(folder)
     m=json.loads((folder/'metadata.json').read_text())
-    manifest=json.loads((ROOT/'Research/computations/oper_representatives_manifest.json').read_text())
+    manifest=json.loads((ROOT/'../litt3-computation-data/legacy_workspace_computations/oper_representatives_manifest.json').read_text())
     known={r['id']:r for r in manifest['representatives']}
     rep=representative or m.get('oper_representative')
     if rep is None and m.get('source_sha256')=='bcc027f5e4c283d35f71bc0cdd58a404ee880a5f65b6df1685a62fa670339a06':

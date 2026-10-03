@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parent
 CERT = ROOT / 'certificates'
 LOG = ROOT / 'verification'
 LOG.mkdir(exist_ok=True)
-STEPS = ['verify_rank3_first_return.py', 'all_twists_shift_one.py', 'period_two.py',
+STEPS = ['verify_rank3_first_return.py', 'period_two.py',
          'new_progress.py', 'hom_test.py', 'export_portable.py']
 
 def main() -> None:

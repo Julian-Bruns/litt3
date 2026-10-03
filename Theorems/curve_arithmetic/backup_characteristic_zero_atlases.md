@@ -1,6 +1,6 @@
 # Characteristic-zero atlas reduction for the explicit backup
 
-Version3,24 September2026. Put $k=\overline{\mathbf F}_5$ and
+Version5,3 October2026. Put $k=\overline{\mathbf F}_5$ and
 \[
 Y:\quad v^2=u(u-1)(u-2)(u-3)(u-\alpha),\qquad
 \alpha^3+\alpha+1=0.
@@ -38,14 +38,6 @@ Every complete uniform map $C\to\mathbf P^1$ is its degree-two
 hyperelliptic quotient. In particular, $C$ admits no uniform triangle
 atlas, including atlases with inertia divisible by five.
 
-The final $(3,3,5)$ classes have source models over a quintic field
-totally ramified at five, forcing moduli residue degree one; $Y$ has
-moduli orbit length three. The remaining $(2,4,5)$ passport has
-236 exact normalized models, all failing the absolute-invariant
-reduction test. Neither exclusion assumes good reduction of its
-quotient map. Their exact field and model arguments are retained
-as supporting proofs.
-
 ## The remaining arithmetic family
 
 Suppose also that $C$ is uniformized by a compact arithmetic
@@ -59,4 +51,4 @@ is recorded separately in [the complete arithmetic theorem](backup_arithmetic_re
 This atlas reduction alone does not settle either original
 common-cover problem.
 
-[Proof and finite certificates](../../Proofs/curve_arithmetic/backup_characteristic_zero_atlases.md).
+[Proof](../../Proofs/curve_arithmetic/backup_characteristic_zero_atlases.md).

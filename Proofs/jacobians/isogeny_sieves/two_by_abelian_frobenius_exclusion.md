@@ -50,73 +50,90 @@ Chinese remaindering now proves that the full character action
 has order prime to nineteen. Thus $C/Y$ with its specified deck
 group descends over $\mathbf F_{25^c}$ with $19\nmid c$.
 
-## 2. The centralizer, independent of the odd covering degree
+## 2. One centralizer test, also for even normal closures
 
-Because $A$ has odd order, its action on two-adic cohomology has
-the free-cover character
+Let D->Y be an actual finite etale Galois cover with group Q,
+all deck transformations defined over the current field. For any
+ell!=5 the [free-action character](etale_endomorphism_packets.md#1-free-action-and-one-rational-packet)
+gives
 \[
-H^1_{\rm et}(C,\mathbf F_2)
-\simeq \mathbf F_2^{\,2}\oplus\mathbf F_2[A]^{\,2}.
+H^1_{\rm et}(D,\mathbf Q_\ell)
+\simeq\mathbf Q_\ell^{\,2}\oplus\mathbf Q_\ell[Q]^{\,2}.
 \tag{6}
 \]
-As in the small-odd-part proof, obtain this first from the
-two-adic free-action Lefschetz character and then reduce an
-integral lattice. Maschke applies at two, even if $5\mid|A|$.
-The original covering maps are etale, so every nonidentity deck
-element has empty fixed locus.
+This uses characteristic-zero cohomology, even when ell or five
+divides |Q|. It depends on the genus-two BASE, not on g(D).
 
-For abelian $A$, its group algebra is a product of finite fields.
-A character of order $d$ has residue orbit degree
-$f=\operatorname{ord}_d(2)$. On a nontrivial field factor
-$\mathbf F_{2^f}$, the module (6) has multiplicity TWO.
-Since all deck transformations are defined over the current
-field, Frobenius commutes with this action. It therefore acts
-through $\operatorname{GL}_2(\mathbf F_{2^f})$ on that factor
-and through $\operatorname{GL}_4(\mathbf F_2)$ on the trivial
-factor.
-
-If $d\mid n$, then $f\mid\operatorname{ord}_n(2)$.
-The condition $9\nmid\operatorname{ord}_n(2)$ gives
+Suppose the nontrivial simple factors of Q_ell[Q] are split matrix
+algebras M_e(E), with E a finite extension of Q_ell of residue
+degree f. A simple module has E-dimension e and occurs e times in
+the regular module. Thus its isotypic cohomology is V tensor_E E^(2e).
+Frobenius commutes with Q and acts on the multiplicity space through
+GL_(2e)(E); on the trivial part it acts through GL4(Q_ell).
+For ell!=19, the sufficient tests
 \[
-\operatorname{ord}_{19}(2^f)
-=18/\gcd(18,f)>2.
+\operatorname{ord}_{19}(\ell)>4,\qquad
+\operatorname{ord}_{19}(\ell^f)>2e
+\tag{7}
 \]
-Thus neither $2^f-1$ nor $2^{2f}-1$ is divisible by nineteen.
-Every indicated centralizer group has order prime to nineteen,
-and so does the actual Frobenius on $J(C)[2]$.
+make the corresponding residue groups prime to nineteen.
 
-The pro-two test applies to $W\to C$. It rules out the fixed
-$J(X)$ factor in $J(W)$, whereas the original $X$-leg still
-gives an actual map $W\to X$. This proves the contradiction.
-Both covering degrees can grow arbitrarily; the multiplicity
-two in (6) depends on the genus-two BASE, not on the genus of $C$.
+The integral passage is essential when ell divides |Q|. Every
+eigenvalue of these Frobenius blocks is an ell-adic unit, because
+D is a curve over a field of characteristic five. Each block's
+characteristic polynomial is consequently in O_E[T], with unit
+constant term. Cayley--Hamilton constructs a Frobenius-stable
+O_E-lattice: from a basis take the span of its first 2e iterates.
+The unit constant term also makes that lattice invariant under
+inverse Frobenius. Its reduction lies in GL_(2e)(F_(ell^f)).
+Thus (7) excludes nineteen from every residual eigenvalue order.
+This conclusion is independent of the chosen lattice. The
+unipotent part of the actual Frobenius on J(D)[ell] adds only
+ell-power order.
+
+For any H<=Q, rational pullback identifies H1(D/H,Q_ell) with the
+H-invariants. Its Frobenius eigenvalues are therefore among those
+just controlled. Their residual orders, and hence Frobenius on
+J(D/H)[ell], remain prime to nineteen. We do not reduce an
+H-projector modulo ell or assume integral semisimplicity when
+ell divides |H|. At ell=2, (7) proves the even-normal-closure
+criterion in the statement, followed by the pro-two test.
+
+When ell does not divide |Q|, Maschke also permits integral
+reduction of (6). Its Brauer character gives
+H1(D,F_ell)=F_ell^2 plus two regular modules. A nontrivial residue
+block M_e(F_(ell^f)) therefore has multiplicity 2e and centralizer
+GL_(2e)(F_(ell^f)). Test (7) applies directly. At ell=2 and Q odd
+this proves the original nonabelian criterion (4), without a
+Schur-index assumption in characteristic zero.
+
+Apply this first to the actual abelian A-cover C/Y from Section1.
+Its nontrivial character of order d has e=1 and
+f=ord_d(2), so the centralizer is GL2(F_(2^f)). For d|n,
+f divides ord_n(2). The condition 9 not dividing ord_n(2) gives
+ord_19(2^f)=18/gcd(18,f)>2. The trivial GL4(F2) part is also
+prime to nineteen. Hence Frobenius on J(C)[2] has order prime
+to nineteen.
+
+The pro-two test for W->C excludes the fixed J(X) factor in J(W),
+whereas W still has the ACTUAL original map to X. This proves
+the contradiction with both covering degrees unrestricted.
 
 For the exponents in (3), use
 \[
-\operatorname{ord}_3(2)=2,\ 
-\operatorname{ord}_5(2)=4,\ 
-\operatorname{ord}_7(2)=3,\ 
-\operatorname{ord}_{11}(2)=10,\ 
-\operatorname{ord}_{13}(2)=12,\ 
+\operatorname{ord}_3(2)=2,\quad
+\operatorname{ord}_5(2)=4,\quad
+\operatorname{ord}_7(2)=3,\quad
+\operatorname{ord}_{11}(2)=10,\quad
+\operatorname{ord}_{13}(2)=12,\quad
 \operatorname{ord}_{17}(2)=8.
 \]
 Increasing a prime-power exponent only multiplies these orders
 by powers of that prime. The three-primary exponent is at most
-two, so the order at that factor divides six. The least common
-multiple of all resulting orders is not divisible by nine.
-All six primes avoid $0,\pm1$ modulo nineteen.
+two, so its order divides six. Their lcm is not divisible by nine,
+and all six primes avoid 0,+1,-1 modulo nineteen.
 
-## 3. Nonabelian odd deck groups
-
-Formula(6) holds for any finite odd group $A$. For a simple
-factor $M_e(\mathbf F_{2^f})$ in its group algebra, the regular
-module contains its simple module with multiplicity $e$.
-Thus the nontrivial part in (6) has multiplicity $2e$ and its
-centralizer is $\operatorname{GL}_{2e}(\mathbf F_{2^f})$.
-The prime nineteen divides this order exactly when
-$\operatorname{ord}_{19}(2^f)\le2e$. This proves criterion(4)
-once the constant-deck model over a prime-to-nineteen field
-has been obtained.
+## 3. Obtaining the constant-deck model
 
 For a $\lambda$-group, $\lambda\ne2,5$, with
 $\lambda\not\equiv0,\pm1\pmod {19}$, the base torsion argument

@@ -1,36 +1,34 @@
-# Proof: full Cartesian endpoint covers and invariant degree
+# Proof: one component theorem for geometry, descent and root height
 
 [Statement](../../Theorems/shared_tensors/cartesian_endpoint_refinement.md).
-The inputs are the one-clump theorem and the invariant Picard
-and root-height statements in
-[saturated divisor relations](saturated_divisor_relations.md).
+The inputs are the one-clump theorem and the invariant Picard and exact
+canonical-root theorem in [saturated divisor relations](saturated_divisor_relations.md).
+All endpoint fields, line comparisons and component maps are the actual ones.
 
-## 1. Corelessness and clump descent
+## 1. Component geometry
 
-Since the full product Z' is connected, it is a G_X times G_Y
-Galois cover of Z. Write F',G',E' for the actual new endpoint and
-source fields. G_X acts on F' with fixed field F=k(X) and fixes G'
-pointwise; G_Y acts conversely. An element of F' intersect G' is
-therefore fixed by both groups, hence belongs to F intersect G=k.
-This proves corelessness of the new span.
+Let W be a connected component and H its stabilizer in G_X times G_Y. Then W->Z is a connected
+H-torsor. Each projection H->G_X,G_Y is surjective, because the
+corresponding individual pullback torsor on Z is connected.
 
-Pullback of an old clump is plainly a clump in the full product.
-Conversely, let S' be a clump upstairs. Each deck transformation
-acts on the span, with its corresponding automorphism of one
-endpoint. It carries S' to another clump. Corelessness and the
-one-clump theorem make S' invariant under both deck groups.
-Thus S' is the full inverse image of a nonempty finite set S in Z.
+Put K=k(X') intersect k(Y') inside k(W). It is preserved by H,
+and K^H is contained in both k(X')^H=k(X) and k(Y')^H=k(Y).
+Thus K^H=k. A field is finite over the fixed field of a finite
+group of automorphisms, so K is algebraic over k and equals k.
+The component span is therefore coreless.
 
-To check saturation of S, choose z in S and z_2 with f(z_2)=f(z).
-Choose any lift x' of this common point and lifts y'_1,y'_2 of
-g(z),g(z_2). Both (x',z,y'_1) and (x',z_2,y'_2) are points of Z'.
-The first lies in S', so its saturation under the X'-leg puts the
-second in S'. Hence z_2 lies in S. The same argument on the other
-side proves that S is a clump. Use of the FULL connected product
-is essential at this step.
+Its unique clump, if present, is H-invariant and descends as a
+finite set S in Z. To descend saturation, fix x' above f(z).
+For any z_2 with f(z_2)=f(z), the map from the H-torsor W_(z_2)
+to the G_X-torsor X'_(f(z)) is surjective, since H->G_X is onto.
+Thus W contains a point above z_2 with precisely that x'
+coordinate. Saturation upstairs puts it in the clump. The other
+leg is identical. Pulling back an old clump proves the converse.
 
 ## 2. Descent of the invariant triple, including its gluing
 
+Suppose the full product is connected. Write Z'=W, P'=P_W and
+G=H=G_X times G_Y.
 Pullback gives a map P->(P')^G. Consider a fixed isomorphism class
 represented by (L_X',L_Y',phi). For sigma in G_X, invariance gives
 an isomorphism of triples from its sigma-translate to itself.
@@ -57,35 +55,84 @@ a group order nor assumes vanishing of a Schur multiplier.
 The specified gluing, and normalization on the opposite endpoint,
 supply the linearizations.
 
-## 3. The degree lattice under p-group covers
+## 3. Scalar obstructions and the $p$-group descent special case
 
-Assume there is no clump. By Section1 this also holds upstairs.
-The saturated-divisor theorem gives
+Automorphisms of an invariant triple are simultaneous multiplication by
+one scalar in $k^*$: proper connectedness makes the endpoint automorphisms
+scalars, and the source comparison identifies them. Thus an $H$-invariant
+triple has its linearization obstruction in $H^2(H,k^*)$, with trivial
+scalar action. Positive group cohomology is killed by $|H|$.
+In characteristic $p$, raising scalars to their $p$th power is an
+automorphism of the cochain complex. Therefore $m=|H|_{p'}$ already
+kills $H^i(H,k^*)$ for $i>0$.
+
+Taking an $m$th tensor power kills the obstruction and gives an actual
+$H$-linearization of the triple, including its source comparison.
+The kernels $K_X=\ker(H\to G_X)$ and $K_Y=\ker(H\to G_Y)$ act on
+their respective endpoint lines by characters. Each character has
+order dividing $m$, since a finite subgroup of $k^*$ has order prime
+to $p$. Another $m$th power kills both characters. The endpoint actions
+then factor through $G_X,G_Y$, so the endpoint lines and the equivariant
+comparison descend to an ORIGINAL triple along $W\to Z$.
+Thus every invariant triple has its $m^2$th power in the pullback image.
+
+If $H$ is a $p$-group, $m=1$. Both $H^2(H,k^*)$ and $H^1(H,k^*)$
+vanish, and the kernel characters are trivial. Linearization therefore
+exists uniquely up to isomorphism; the same uniqueness descends
+isomorphisms of triples. This proves $P\simeq P_W^H$ for $p$-group
+components, even in the clump case. For a full connected product,
+Section2 already proves integral descent in every characteristic.
+
+## 4. The degree index is prime to $p$ and divides $m$
+
+Suppose there is no clump. The invariant Picard theorem gives
 \[
-0\longrightarrow T'\longrightarrow P'\xrightarrow{\deg_{Y'}}
-e'\mathbf Z\longrightarrow0,
+0\longrightarrow T_W\longrightarrow P_W
+\xrightarrow{\deg_{Y'}}e_W\mathbf Z\longrightarrow0
 \]
-where T' is finite of order prime to p. Let G be the product of
-the two p-groups, let N=|G|, and choose x in P' of degree e'.
-Use additive notation. For gamma in G put t_gamma=gamma x-x in T'
-and put S=sum_gamma t_gamma. Then
+with $T_W$ finite of order prime to $p$. Pullback multiplies degree by
+$d_Y$, so $e_W\mid d_Ye$. Choose $x\in P_W$ of degree $e_W$.
+Since $hx-x\in T_W$, its $N$th power is $H$-invariant.
+Section3 descends the $Nm^2$th power of $x$. Hence
+$D=d_Ye/e_W$ divides $Nm^2$, and $p\nmid D$.
+In the full connected-product case Section2 descends the $N$th power
+already, giving $D\mid N$.
+
+Norm the ACTUAL comparison of $x$ along $W\to Z$.
+The kernel quotients $W/K_X$ and $W/K_Y$ are respectively
+$Z\times_X X'$ and $Z\times_Y Y'$: both are the connected torsors
+with the same equivariant quotient map. Transitivity and base change
+of finite étale line-bundle norms give
 \[
-\delta S=S-Nt_\delta.
+\operatorname{Nm}_{W/Z}(f_W^*L_{X'})
+\simeq f^*\operatorname{Nm}_{X'/X}(L_{X'})^{\otimes |K_X|},
+\qquad
+\operatorname{Nm}_{W/Z}(g_W^*L_{Y'})
+\simeq g^*\operatorname{Nm}_{Y'/Y}(L_{Y'})^{\otimes |K_Y|}.
 \]
-Multiplication by N is an automorphism on T'. Put b=N^(-1)S.
-The equation gives delta(x+b)=x+b for every delta. Thus P'^G
-contains an element of the minimal positive degree e'.
+This supplies an original invariant triple without choosing a
+linearization. Norm of a line bundle preserves divisor degree on
+curves, so its $Y$-degree is $|K_Y|e_W$.
+Since $d_Y|K_Y|=|H|$, we get $d_Ye\mid |H|e_W$.
+Thus $D\mid |H|$, and the already proved $p\nmid D$ sharpens this
+to $D\mid m$. With a full connected product, $D\mid\gcd(N,m)$.
+For $p$-groups $m=1$, giving the entire older degree-equality assertion.
 
-Section2 identifies P'^G with P. Pullback multiplies Y-degree
-by d_Y, so its degree image is d_Y e Z. It is also e' Z by the
-preceding correction. Consequently e'=d_Y e. Étale
-Riemann--Hurwitz multiplies the Y canonical degree by the same
-factor, proving equality of the normalized canonical degrees.
-Their p-adic valuation is the exact root height by the cited theorem.
-The rational canonical class itself pulls back compatibly, using
-the pulled-back rational endpoint frames.
+## 5. Every canonical root height is preserved
 
-## 4. Independence detected by Artin--Schreier characters
+Étale Hurwitz and the index calculation give
+\[
+\frac{2g(Y')-2}{e_W}=D\frac{2g(Y)-2}{e},\qquad p\nmid D.
+\]
+The exact canonical-root theorem identifies a $p^a$-root in a no-clump
+span with $p^a\mid(2g(Y)-2)/e$. Apply it to both spans.
+Their root conditions agree for every $a$, and for $p$-groups their
+normalized degrees agree exactly. Using the pulled-back rational
+frames makes $\xi_W$ precisely the pullback of $\xi$, including the
+specified endpoint embeddings. In the clump case Section1 gives
+clumps on both spans, and the same root theorem gives all heights.
+
+## 6. Independence detected by Artin--Schreier characters
 
 The Galois torsor Z'->Z has group G_X times G_Y. Its connectedness
 is equivalent to surjectivity of the monodromy image H inside that
@@ -121,50 +168,5 @@ H^1(C,O_C); the constants contribute no cokernel because t^p-t
 is surjective on k. This identification is functorial. Injectivity
 on H^1(O) therefore implies the required character injectivity.
 
-These results retain both original maps and the actual Cartesian
-cover. They do not replace a disconnected product by a chosen
-component, infer an invariant section, or make a missing root
-exist by enlarging the endpoint p-towers.
-
-## 5. Components when both individual base changes are connected
-
-Under the stated weaker hypothesis let W be a connected component
-and H its stabilizer in G_X times G_Y. Then W->Z is a connected
-H-torsor. Each projection H->G_X,G_Y is surjective, because the
-corresponding individual pullback torsor on Z is connected.
-
-Put K=k(X') intersect k(Y') inside k(W). It is preserved by H,
-and K^H is contained in both k(X')^H=k(X) and k(Y')^H=k(Y).
-Thus K^H=k. A field is finite over the fixed field of a finite
-group of automorphisms, so K is algebraic over k and equals k.
-The component span is therefore coreless.
-
-Its unique clump, if present, is H-invariant and descends as a
-finite set S in Z. To descend saturation, fix x' above f(z).
-For any z_2 with f(z_2)=f(z), the map from the H-torsor W_(z_2)
-to the G_X-torsor X'_(f(z)) is surjective, since H->G_X is onto.
-Thus W contains a point above z_2 with precisely that x'
-coordinate. Saturation upstairs puts it in the clump. The other
-leg is identical. Pulling back an old clump proves the converse.
-
-For the additional p-group assertion, the automorphism group of an
-invariant line-bundle triple on W is k*, acting diagonally. An
-H-fixed isomorphism class has its usual linearization obstruction
-in H^2(H,k*). This group is zero: multiplication by |H| is an
-automorphism of k*, while positive group cohomology is killed by
-|H|. The same observation gives H^1(H,k*)=0, so a linearization
-exists and is unique up to isomorphism.
-
-On the X'-line, the kernel of H->G_X acts trivially on the curve
-and hence by scalar automorphisms of the line. This is a character
-of a p-group into k*, and is trivial. Its linearization therefore
-factors through G_X. Similarly the other line's action factors
-through G_Y. Descend both lines and the H-equivariant gluing along
-W->Z. Uniqueness of the H-linearization also descends isomorphisms,
-proving P=P_W^H.
-
-With no clump, T_W is finite of order prime to p. Apply the same
-explicit correction from Section3 to the p-group H acting on P_W.
-Its invariant subgroup has the full degree image e_W Z. Descent
-identifies this image with d_Y e Z, proving the claimed degree
-and root-height formulas for every such component.
+Both individual connectedness hypotheses remain essential.
+No arbitrary selected component, missing root or common cover is supplied.

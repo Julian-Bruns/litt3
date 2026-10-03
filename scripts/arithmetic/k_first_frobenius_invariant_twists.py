@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact first-Frobenius cup maps for all19683 cubic-invariant Pic0 twists.
+"""Exact F_abs^*K(O) cup maps for all19683 cubic-invariant Pic0 twists.
 
 Run using Sage Python. This does not cover noninvariant twists.
 """
@@ -13,7 +13,6 @@ from sage.all import GF, PolynomialRing, matrix
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True)
-    p.add_argument('--shift',type=int,default=0,choices=(0,1))
     args=p.parse_args();start=time.time()
     k=GF(5**8,'b');r=PolynomialRing(k,'x');x=r.gen()
     alpha=(x**2-x-3).roots(multiplicities=False)[0]
@@ -34,15 +33,15 @@ def main():
         factors=[B,A,P//AB];source=kernel=0;blocks=[]
         for j in range(3):
             target=(j+1)%3
-            upper=(30+args.shift-weight-10*j+3*int(denoms[j].degree()))//3
-            target_upper=(-25+args.shift-weight-10*target+3*int(denoms[target].degree()))//3
+            upper=(31-weight-10*j+3*int(denoms[j].degree()))//3
+            target_upper=(-24-weight-10*target+3*int(denoms[target].degree()))//3
             ncols=max(0,upper+1)
             polynomial=base*factors[j];rows=range(target_upper+1,0)
             mm=matrix(k,len(rows),ncols,[polynomial[n-i+50] if n-i+50>=0 else k.zero()
                                       for n in rows for i in range(ncols)])
             rank=int(mm.rank());source+=ncols;kernel+=ncols-rank
             blocks.append([len(rows),ncols,rank])
-        assert source==22+args.shift
+        assert source==23
         histogram[kernel]+=1;tested+=1
         if kernel:bad.append({'digits':ss,'kernel':kernel,'blocks':blocks})
         if tested%4096==0:print('tested',tested,'nonzero kernels',len(bad),flush=True)
@@ -52,7 +51,7 @@ def main():
         'field_modulus':[int(a) for a in k.modulus().list()],
         'F25_generator':[int(a) for a in alpha.polynomial().list()],
         'ordered_roots':[[int(a) for a in v.polynomial().list()] for v in roots],
-        'source_line_degree':30+args.shift,'target_line_degree':-25+args.shift,'character_shift':1,'O_shift':args.shift,
+        'source_line_degree':31,'target_line_degree':-24,'character_shift':1,'O_shift':1,
         'tested':tested,'kernel_histogram':dict(histogram),'nonzero_cases':bad,'seconds':time.time()-start}
     args.output.write_text(json.dumps(result,indent=2)+'\n')
     print('COMPLETE:',tested,'twists; kernel histogram',dict(histogram),flush=True)

@@ -19,14 +19,14 @@ def main():
     ap.add_argument('--archive',required=True)
     ap.add_argument('--run',default='runs/base')
     ap.add_argument('--precision',type=int,default=600)
-    ap.add_argument('--output',default='Research/computations/neutral5_corrected_frames_independent_audit.json')
+    ap.add_argument('--output',default='../litt3-computation-data/legacy_workspace_computations/neutral5_corrected_frames_independent_audit.json')
     args=ap.parse_args(); start=time.monotonic()
     root=Path(args.archive)
-    model=json.loads((root/'Research/computations/neutral5_hyperelliptic_model.json').read_text())
+    model=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/neutral5_hyperelliptic_model.json').read_text())
     local_path=root/args.run/'genus6_local_comparison.json'
     local=json.loads(local_path.read_text())
     first=json.loads((root/args.run/'genus6_first_stage.json').read_text())
-    previous=json.loads(Path('Research/computations/returned_neutral5_w4_local_audit.json').read_text())
+    previous=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/returned_neutral5_w4_local_audit.json').read_text())
     assert first['xi_coefficients']==[[0,2,2,2],[4,4,0,2],[4,4,3,2],[1,1,2,3],
         [2,1,2,3],[3,1,1,3],[4,3,1,2],[3,3,2,4],[3,4,4,1],[1,1,2,2],[1,4,3,2]]
     fp=PolynomialRing(GF(5),'t'); k=GF(625,'t',modulus=fp(model['field_modulus'])); t=k.gen()

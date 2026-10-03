@@ -1,7 +1,7 @@
 # Genus-two active connections from fifteen critical quartics
 
-Version5,2026-09-24. Author proof with exact certificates and a bounded
-audit of the affine-orbit reduction. Work over an algebraically closed field k
+Version6,3 October2026. The critical degeneration now has an intrinsic
+dormant-incidence interpretation, giving one exact invariant family locus. Work over an algebraically closed field k
 of characteristic5. Let Y: v²=F(u), F monic squarefree of degree5,
 eta=du/v, with Weierstrass point O at infinity.
 
@@ -25,11 +25,26 @@ root is restricted to the coefficient field. Repeated quartic roots
 count only once here; no local multiplicity claim is implicit.
 There are at most five such active connections in each nonzero class.
 
-## Two explicit loci in the genus-two family
+## The exact eighty-five-point family locus
 
-For F=u(u-1)(u-2)(u-3)(u-t), suppose either [F5(t):F5]>6 or
-t³+t+1=0. This includes the high-degree partner and the small backup.
-Then:
+For $F=u(u-1)(u-2)(u-3)(u-t)$, take an ordinary smooth parameter
+$t\notin\mathbf F_5$ and put
+\[
+z=(t+1)^{-1},\qquad A=(z^5-z)^4.
+\]
+There are exactly85 active connections if and only if
+\[
+\boxed{(A-2)(A^6+A^4+A^2+4)\ne0.}
+\]
+Equivalently, every $J$ is squarefree, every $\gcd(J,K)=1$ and
+every $c\ne0$. The factor $A^3+3A^2+4$ is exactly the first-height
+dormant pointed-incidence locus; its complementary cubic factor
+$A^3+2A^2+1$ and $A-2$ detect critical-root collisions.
+This is a geometric condition over the algebraic closure.
+
+Both the older degree condition $[\mathbf F_5(t):\mathbf F_5]>6$
+and the actual backup $t^3+t+1=0$ satisfy this condition. On the
+whole displayed locus, including those two original cases:
 
 - every one of the fifteen J is squarefree and coprime to its K,
   and all fifteen c are nonzero;
@@ -43,15 +58,15 @@ Then:
   all reduced. For every dormant r on Y and every L in Pic(Y)[2],
   its L-twisted dormant tangent kernel is zero.
 
-Two affine branch-pair orbits reduce the family certificate to two
-critical quartics, with parameter-degree bounds at most6. The backup
-checks all fifteen directly at its cubic parameter. Nilpotent scheme
-length125 determines the local multiplicities; canonical-double counting
-proves reducedness and twisted-tangent vanishing on every double.
+Two affine branch-pair orbits determine the collision locus. Unnormalized
+Cartier roots identify vanishing normalization factors with dormant
+pointed incidence, replacing the separate critical resultants.
+Nilpotent length125 determines all local multiplicities; canonical-double
+counting proves reducedness and twisted-tangent vanishing on every double.
 No identification of Jacobian and indigenous ordinarity is used.
 
 These are endpoint results. They neither make an arbitrary common-source
 connection ordinary nor supply a common connection or common-cover exclusion.
 
 [Proof](../../Proofs/projective_connections/genus_two_active_critical_quartics.md) ·
-[Exact verifier](../../scripts/genus_two/check_genus_two_active_twists.py).
+[Independent review](../../Research/audits/CRITICAL_FAMILY_DORMANT_HINDSIGHT_AUDIT_2026_10_03.md).

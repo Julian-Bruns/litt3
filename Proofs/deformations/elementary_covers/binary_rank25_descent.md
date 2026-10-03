@@ -1,6 +1,9 @@
 # Proof of the initial binary rank25 loci
 
-Version4,2026-09-13. Independent audits PASS with no outstanding
+Version5,3 October2026. Later integral oper calculus supplies the
+whole local comparison; the absolute quadratic carry and original
+rational-deck residues are retained. Independent earlier audits PASS
+with no outstanding
 objection for the hypotheses of the
 [statement](../../../Theorems/deformations/elementary_covers/binary_rank25_descent.md).
 
@@ -36,9 +39,9 @@ an unrelated Schur projection to an already computed quadratic class.
 
 ## Necessity when the whole quadratic channel is zero
 
-By the two-digit homogeneous Fourier--Bockstein lemma in
-[abelian_power_late_descent](../abelian_covers/abelian_power_late_descent.md),
-Lx=0 mod25 forces xbar in J7=F1 on the scalar block. Every source
+By the later [weighted kernel theorem](elementary_weighted_carry.md),
+with p=5,r=2,a=2, Lx=0 mod25 forces x in weight7 and hence
+xbar in J7=F1 on the scalar block. Every source
 change of basis and the leading ordinary elimination commute with the
 deck action, so the FULL leading tangent vector lies in F1(V_T).
 The first primary equation also puts it in K. This proves necessity.
@@ -120,9 +123,10 @@ P2 lies in I6 Fun+5P6; pointwise multiplication gives P2+5P6, with
 5P6=5I2 Fun. These are intrinsic inclusions on the actual torsor
 after etale trivialization, including pulled-back bundle coefficients.
 They are not products of function augmentation ideals in the abstract
-group algebra. The [small exact verifier](../../../scripts/deformations/rank25/check_nodal_initial_fifth_filtration.sage)
-checks625 lattice-generator pairs, all three colons and a second
-residue independently over an unramified quadratic coefficient order.
+group algebra. The product and colon inclusions above and the second-residue
+identities below are symbolic. The [archived original verifier](../../../../litt3-computation-data/archive_cleanup_20260930/binary_integral_before_hindsight/scripts/deformations/rank25/check_nodal_initial_fifth_filtration.sage)
+records the former625-product and unramified quadratic-order check;
+the entire redundant checker is removed from the workspace.
 
 ## Actual three-digit comparison through W5
 
@@ -153,37 +157,28 @@ Hence Z/5 mod5 and Qprime both lie in J2. This retains the ABSOLUTE
 integral carry of Q. No claim that the reduced normal class is zero
 in H1, or that division preserves J6, is used.
 
-All other nonlinear terms are already at final flat weight125. In
-the exact Riccati numerator
-z*(M12+lambda_U*M11-lambda_O*M22-lambda_O*lambda_U*M21), the new
-terms are first/second products F1*F5 subset F6=J2 and cubic first
-products F3. Both orders of the first/second product are retained.
-The quadratic curve-overlap term starts at625 BEFORE Frobenius division
-and125 afterward; its reduced two first factors lie in F2. Source
-pullback of the first graph and new-graded/first-response products
-have the same bound. An already divided first mismatch lies in J3,
-so multiplying it by a first frame variation also gives F1*F5.
+The later [integral oper calculus](../integral_oper_calculus.md),
+on the SAME fixed charts, coefficient Frobenius and full reference,
+gives one WHOLE normal-numerator expansion at5h0+25h1+125h2:
+\[
+N-N_{\rm ref}\equiv L(5h_0+25h_1+125h_2)+25B(h_0,h_0)
++125\{B(h_0,h_1)+B(h_1,h_0)+C(h_0,h_0,h_0)\}\pmod {625}.
+\]
+L is additive and commutes with5; the ordered product terms retain
+coefficient Frobenius. Integrality kills input degree at least four,
+including all original Taylor orders and factorial jumps. Fixed
+reference terms such as K5/5! remain in these coefficients; graph
+normalization uses the actual CURRENT connection.
 
-For Taylor order j with l changed displacement factors the full bound is
-j-1-v5(l!)-v5((j-l)!). For l=2 this is at least1. Every surviving
-nonlinear Taylor term therefore has final weight125 and two first
-factors; higher variations vanish. Fixed K5/5! is retained in the
-compatible reference. Source exponential orders4 and5 are also retained:
-any surviving such term involving only the fixed first source digit is
-part of that reference; variable nonlinear terms satisfy the stated
-final-weight bounds. No factorial divisible by5 is treated as a unit.
-
-The actual preceding scalar changes first at5 and enters the correctly
-filtered/graded tilde connection with an additional25. Its SAME-graph
-first variation is additive in the first source/repair and thus in J7;
-retain it in L. The next scalar digit and nonlinear scalar normalization
-start at625. Genuine input opers and the actual flat twist are used;
-a nongluing output graph is not substituted as an input object.
-
-Thus, after all permitted eliminations, the fifth obstruction modulo
-J2 is exactly the signed SECOND LINEAR residue. The independent
-[filtered comparison audit](../../../Research/audits/NODAL_INITIAL_FIFTH_FILTERED_COMPARISON_AUDIT_2026_09_13.md)
-gives the full entrywise expansion and checks every precision class.
+The source/graph reductions satisfy h0 in F1, h1 in F5=J3.
+Both mixed orders lie in F6=J2, and pure cubic terms in F3 subset J2.
+The weight25 first quadratic retains the ABSOLUTE Qsharp/Qprime
+carry above. The genuine preceding scalar's weight5 change gains25
+in the tilde connection: its additive F1 part stays in L; its next
+digit and nonlinear interactions vanish modulo625.
+Thus whole division and ordered elimination leave precisely the
+signed SECOND LINEAR residue modulo J2. The [original filtered audit](../../../Research/audits/NODAL_INITIAL_FIFTH_FILTERED_COMPARISON_AUDIT_2026_09_13.md)
+retains independent entrywise evidence.
 
 ## The second residue separates two directions
 
@@ -221,22 +216,15 @@ Thus the residual class vanishes precisely on k*u4*v4=kN.
 
 ## All fourth choices and existence on the invariant line
 
-There is also an exact relative comparison. Write the entire fourth
-response E4(n)=D4(n)+[Q(n)], where D4 retains the ordinary and coefficient
-Frobenius terms. For a fixed n in S, changing the fourth digit by beta
-in K shifts the primary response and its Hodge repair from weight5 to
-weight25. Its surviving fifth mixed terms are exactly
-
-    Q(n+beta)-Q(n)-Q(beta).
-
-The relative source/Taylor/scalar terms not in D4 have weight625 and
-vanish. Since Q vanishes in the primary cokernel on ALL K,
-
-    E5(n,beta)=C5(n)+E4(beta).
-
-This is a relative Witt calculation, not differentiation of an
-inseparable map. The [independent audit](../../../Research/audits/NODAL_RELATIVE_FIFTH_ADDITIVE_QUOTIENT_AUDIT_2026_09_13.md)
-retains the ordinary beta term and both mixed graph products.
+Write E4(beta)=D4(beta)+[Q(beta)], with ALL ordinary and
+coefficient-Frobenius additive terms. The later whole polarization
+identity gives the relative fifth response D4(beta) plus
+Q(n+beta)-Q(n)-Q(beta). The mixed term vanishes because Q is zero
+on ALL K, so E5(n,beta)=C5(n)+E4(beta).
+This uses complete primary preimages and regular graphs for every
+fourth choice, without differentiating a residue fifth-power map
+or dividing a reduced zero class. The [relative audit](../../../Research/audits/NODAL_RELATIVE_FIFTH_ADDITIVE_QUOTIENT_AUDIT_2026_09_13.md)
+retains the independent calculation.
 
 In the actual nil Schur coordinates E4(K) lies in J2/(f). Indeed
 Ann(f) subset J4, so an I4 lift has UV numerator in I6; its first

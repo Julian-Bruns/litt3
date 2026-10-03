@@ -113,7 +113,7 @@ The compact tensors are N_i Bc^[5] and Iproj R_i Bc^[5]. The exporter
 `scripts/atlases/export_canonical_atlas_system.sage` saves all coefficients and
 checks Bc spans J, Iproj Bc=1, the full-tensor R-image implication, and
 the all-coefficient radial syzygy for the first new F25 oper. Output:
-`Research/computations/canonical_atlas_system.json`.
+`../litt3-computation-data/legacy_workspace_computations/canonical_atlas_system.json`.
 
 No solver has established that this finite reduced scheme is empty, even
 for that first oper. Finite, reduced and explicitly computable is a useful

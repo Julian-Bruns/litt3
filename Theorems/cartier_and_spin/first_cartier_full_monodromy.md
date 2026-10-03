@@ -1,6 +1,6 @@
 # Full Cartier monodromy and its projective alternative
 
-Version4,23 September2026. Let $k$ be algebraically closed of
+Version5,3 October2026. Let $k$ be algebraically closed of
 characteristic $p\ge5$, and let $X\leftarrow Z\to Y$ be an ACTUAL
 finite bi-etale span of smooth proper hyperbolic curves with no
 clump. Assume $p\nmid g(C)-1$ for at least one endpoint $C$.
@@ -11,8 +11,9 @@ For comparisons across heights use absolute Frobenius with its
 scalar action retained, rather than identifying relative twists
 as $k$-curves.
 
-The entire group, including its reduced and infinitesimal parts,
-is determined by the two branches:
+Every common regular projective connection is dormant. The entire
+group, including its reduced and infinitesimal parts, is determined
+by the two branches:
 
 1. If there is no common regular projective connection, then
 \[
@@ -25,7 +26,11 @@ H_r=\operatorname{Aut}(k[t]/t^{p^r}).
 \]
 These identifications retain the actual intermediate Frobenius
 subalgebras and their restriction maps, after compatible fiber
-coordinates. Thus the entire coordinate-group tower is forced,
+coordinates. Explicitly, for \(1\le s\le r\), the subalgebra coordinate
+\(u=t^{p^{r-s}}\) transforms by
+\(u\mapsto\sum_{i<p^s}a_i^{p^{r-s}}u^i\) for
+\(t\mapsto\sum_{i<p^r}a_it^i\), with the target coefficient twist
+retained. Thus the entire coordinate-group tower is forced,
 not only its infinitesimal-height lower bound.
 
 2. If there is a common dormant projective oper, choose a fiber

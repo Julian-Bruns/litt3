@@ -1,13 +1,10 @@
 #!/usr/bin/env sage
 """Exact line test of a proposed gradient identity; no global assertion."""
 from pathlib import Path
-source=Path('scripts/atlases/wronskian_matrix_pencil.sage').read_text()
-marker="for sample in saved['samples']:"
-assert source.count(marker)==1
-exec(preparse(source.split(marker)[0]))
-line=json.loads(Path('Research/computations/wronskian_projective_line.json').read_text())
-projection=json.loads(Path('Research/computations/wronskian_differential_projection.json').read_text())
-dual=json.loads(Path('Research/computations/wronskian_serre_dual.json').read_text())
+load('scripts/atlases/wronskian_section_context.sage')
+line=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_projective_line.json').read_text())
+projection=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_differential_projection.json').read_text())
+dual=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_serre_dual.json').read_text())
 QM=matrix(k,[parse(row) for row in projection['Q_matrix_rows']])
 Qc=KU.transpose().solve_right(QM)
 assert KU.transpose()*Qc==QM and Qc.rank()==32
@@ -52,4 +49,4 @@ rr=ratio(radial,Delta); tr=ratio(tangent,derivative)
 same=radial*derivative==tangent*Delta
 print('Delta degree',Delta.degree(),'Y degree',max(p.degree() for p in Y),'radial ratio',rr['constant_value'],'tangent ratio',tr['constant_value'],'same rational ratio',same,flush=True)
 data={'scope':'Exact proposed gradient identity on one line only; not a global identity','coefficient_convention':'Undo A(s)=Y(s^5) by dividing parameter exponents5, keeping field coefficients; Qc and residue S used without added Frobenius twists','Delta':enc(Delta.list()),'radial_pairing':enc(radial.list()),'tangent_pairing':enc(tangent.list()),'Delta_derivative_div48':enc(derivative.list()),'radial_over_Delta':rr,'tangent_over_derivative_div48':tr,'ratios_equal_as_rational_functions':bool(same),'functional_coordinates':[enc(p.list()) for p in af],'Qc_matrix':[enc(row) for row in Qc.rows()],'functional_composition_Qc_equals_Y_pairing_S_verified':True,'elapsed_seconds':time.monotonic()-started}
-Path('Research/computations/wronskian_line_gradient.json').write_text(json.dumps(data,indent=2,default=int)+'\n')
+Path('../litt3-computation-data/legacy_workspace_computations/wronskian_line_gradient.json').write_text(json.dumps(data,indent=2,default=int)+'\n')

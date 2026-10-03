@@ -2,7 +2,7 @@
 import sys,json,time,itertools
 from pathlib import Path
 root=Path(sys.argv[1]);start=time.time()
-d=load(str(root/'inverse_eta_rank_geometry_inputs.sobj'));R=d['ring'];H,q=R.gens();M=d['matrix']
+d=load(str(root/'inverse_eta_quadratic_matrix.sobj'));R=d['ring'];H,q=R.gens();M=d['matrix']
 polys=[[M[i,0],M[i,1],H^4*M[i,2]] for i in range(3)]
 dd=load(str(root/'inverse_eta_seven_rational_coefficients.sobj'));Psi=dd['Psi']
 cc=[(int(n),R(N),(int(dh)-5*int(n),int(dq)+13*int(n),int(dp)+6*int(n)))

@@ -25,8 +25,9 @@ projective connection on $Y$.
 
 In particular, excluding singleton clumps forces the full lift of
 both ORIGINAL maps. Both selected candidate pairs exclude singleton
-clumps. Hence the main pair has NO such common projective coefficient;
-for the backup such a coefficient forces the still-open liftable branch.
+clumps. The completed selected-pair applications are recorded in
+[the later arithmetic coefficient exclusion](../curve_arithmetic/backup_arithmetic_reduction_exclusion.md)
+and [the common arithmetic coefficient theorem](../shared_tensors/common_companion_jump.md).
 
 The central obstruction is retained. There is a common integral
 projective crystalline connection model with positive nonhorizontal

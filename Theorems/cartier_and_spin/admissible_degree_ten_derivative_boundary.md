@@ -21,10 +21,9 @@ then P+g^3 has no simple root and is necessarily
 \[
 P+g^3=H_5(x)^2\quad\text{or}\quad P+g^3=H_2(x)^2J_2(x)^3.
 \]
-The first alternative is excluded by the already proved
-[constant-norm obstruction](../jacobians/isogeny_sieves/trigonal_constant_norm_obstruction.md).
-The second alternative is now excluded by
-[the exact trace-zero norm theorem](admissible_degree_ten_trace_zero.md).
+Both alternatives are excluded by the existing
+[constant and mixed norm theorem](../jacobians/isogeny_sieves/trigonal_constant_norm_obstruction.md),
+whose mixed assertion has no trace or support assumptions.
 Thus the entire nonzero-y sector is closed. If c_y=0, v cannot have degree three.
 More precisely v is constant, a linear polynomial rooted at a root
 of P, a product of two distinct linear factors rooted at roots of P,
@@ -36,5 +35,10 @@ For an actual primitive the remaining torsion condition is exactly
 is a degree50 separating function with divisor E-E^c, where E^c
 is the five-sheet complement over the ten selected base points.
 Its norm is constant. This does not construct that function or a cover.
+
+Subsequent status: the [trace-dual exclusion](admissible_degree_ten_trace_zero_exclusion.md)
+now excludes every actual trace-zero source with this order-five requirement.
+The original boundary and cluster statements above also apply without
+that requirement; their relaxed loci are not excluded by the sequel.
 
 [Proof, local extension and evidence](../../Proofs/cartier_and_spin/admissible_degree_ten_derivative_boundary.md).

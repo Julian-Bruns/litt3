@@ -140,5 +140,5 @@ result=dict(status='PASS',source_genus=int(26),source_defect=int(source_defect),
     relation=[dict(exponent=[int(x) for x in ab],coefficient=encode(c)) for ab,c in poly.dict().items()],
     seconds=float(time.monotonic()-started),precision=int(ns['args'].precision),
     field=ns['receipt']['field_modulus'],parameter=ns['receipt']['parameter'])
-Path('Research/computations/cyclic25_witt_module.json').write_text(json.dumps(result,separators=(',',':'))+'\n')
+Path('../litt3-computation-data/legacy_workspace_computations/cyclic25_witt_module.json').write_text(json.dumps(result,separators=(',',':'))+'\n')
 print(json.dumps({k:v for k,v in result.items() if k not in ['relation','field','parameter']}),flush=True)

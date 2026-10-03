@@ -381,7 +381,7 @@ def build_oper_atlas(rep, output, verify_full=False, workers=1, memory_gib=8,dir
                   'coupled_R_image_verified':bool(verify_full)},
         'builder_sha256':fingerprint,'elapsed_seconds':elapsed()}
     if rep == 'orbit_0000':
-        old = json.loads((ROOT/'Research/computations/canonical_atlas_system.json').read_text())
+        old = json.loads((ROOT/'../litt3-computation-data/legacy_workspace_computations/canonical_atlas_system.json').read_text())
         for key in ['SU_basis','N_tensor','R_tensor','Bc','Iproj']:
             assert result[key] == old[key], 'First cached tensor mismatch: '+key
         result['checks']['first_cached_tensors_exactly_equal_same_bases'] = True

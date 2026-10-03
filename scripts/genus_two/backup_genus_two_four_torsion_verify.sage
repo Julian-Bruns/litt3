@@ -20,7 +20,7 @@ def run(path,output):
     embedding=small.hom([dec_large(data['small_generator_image_in_large_field'])],large);aa=embedding(a)
     b0,b1,b2=[dec_large(cs) for cs in data['oper_parameters_in_large_field']]
     assert b2**(15625**5)==b2 and b2**15625!=b2
-    opers=json.loads((Path(__file__).resolve().parents[2]/'Research/computations/backup_genus_two_preparation.json').read_text())['opers']
+    opers=json.loads((Path(__file__).resolve().parents[2]/'../litt3-computation-data/legacy_workspace_computations/backup_genus_two_preparation.json').read_text())['opers']
     base_decode=lambda cs:sum((large(co)*aa**i for i,co in enumerate(cs)),large.zero())
     assert sum((base_decode(cs)*b2**i for i,cs in enumerate(opers['separator_coefficients'])),large.zero())==0
     assert b0==sum((base_decode(cs)*b2**i for i,cs in enumerate(opers['b0_coefficients'])),large.zero())
@@ -90,6 +90,6 @@ def run(path,output):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('certificate',nargs='?',default='Research/computations/backup_genus_two_four_torsion.json')
-    parser.add_argument('--output',default='Research/computations/backup_genus_two_four_torsion_verification.json')
+    parser.add_argument('certificate',nargs='?',default='../litt3-computation-data/legacy_workspace_computations/backup_genus_two_four_torsion.json')
+    parser.add_argument('--output',default='../litt3-computation-data/legacy_workspace_computations/backup_genus_two_four_torsion_verification.json')
     args=parser.parse_args();run(args.certificate,args.output)

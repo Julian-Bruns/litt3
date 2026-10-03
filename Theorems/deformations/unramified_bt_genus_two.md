@@ -1,123 +1,102 @@
 # Unramified rank-two coefficients force a common lift
 
-Let $k$ be algebraically closed of characteristic $p>2$, and let
-$K/\mathbf Q_p$ be unramified of degree $f$, with ring of integers
-$\mathcal O_K$. A rank-two $\mathcal O_K$-BT group means a full
-$p$-divisible group whose rational Dieudonné module has rank two
-over $K$ (and whose underlying height is $2f$).
+Version5,3 October2026. Later binary height transfer makes every active
+component an oper and extends the former ordinary and smallest-gap
+profiles to all compatible unramified coefficients.
 
-Suppose $C$ has genus two and such a group $G/C$ has nonconstant
-Newton polygon and generic slopes $(0,r/f)$, with $1\le r\le f$.
-Then intrinsic Frobenius untwisting within its isogeny class produces
-an integral rank-two crystalline summand with a Hodge line of degree
-one and Kodaira--Spencer isomorphism. No abelian-scheme realization
-or polarization is required. The summand need not be Frobenius-stable.
+Let k be algebraically closed of characteristic p>2, and let
+\(K/\mathbf Q_p\) be unramified of degree f, with integers
+\(\mathcal O_K\). A rank-two \(\mathcal O_K\)-BT group is a full
+p-divisible group of rational coefficient rank two and underlying
+height2f.
 
-Consequently, let $X\xleftarrow f Z\xrightarrow g Y$ be an actual
-finite bi-étale span with $g(Y)=2$. Suppose rank-two $K$-isocrystals
-on the endpoints have isomorphic actual source pullbacks, and the
-one on $Y$ has such a BT realization. Then the ORIGINAL span lifts
-simultaneously over $W(k)$. Only rational compatibility is needed:
-the oper lattice on $Y$ descends through the other map by
-[crystalline oper rigidity](crystalline_oper_lifting.md).
-Compatibility on a connected finite étale refinement also suffices.
+Suppose C has genus two and such a group has nonconstant Newton
+polygon, with generic slopes \((0,r/f)\), \(1\le r\le f\).
+Its isogeny class contains a coefficient-linear model whose r active
+Hodge eigenspaces are ALL lines of degree one with Kodaira--Spencer
+isomorphisms. The active indices may change during the isogenies.
+Every active crystalline component is an integral rank-two oper;
+a component need not be Frobenius-stable.
+
+Consequently, if an ACTUAL finite bi-étale span \(X\leftarrow Z\to Y\),
+\(g(Y)=2\), carries rationally compatible rank-two K-isocrystals and
+the one on Y has such a BT realization, the ORIGINAL span lifts
+simultaneously over W(k). Compatibility on a connected finite étale
+refinement also suffices. The given Y-oper lattice descends through
+the other actual map by [oper rigidity](crystalline_oper_lifting.md).
 
 ## Common arithmetic local systems
 
-Suppose the actual span is defined over a finite field and its
-endpoints carry absolutely irreducible rank-two
-$\overline{\mathbf Q}_\ell$-local systems, $\ell\ne p$, with trivial
-determinant, infinite image, and isomorphic ARITHMETIC pullbacks.
-Let $E$ contain their Frobenius traces. Assume that at one place $v$
-of $E$, the completion $E_v/\mathbf Q_p$ is unramified and the
-corresponding crystalline companion is not everywhere isoclinic.
+Suppose the actual span is defined over a finite field and its endpoints
+carry absolutely irreducible rank-two
+\(\overline{\mathbf Q}_\ell\)-local systems, \(\ell\ne p\), with
+trivial determinant, infinite image and isomorphic ARITHMETIC
+pullbacks. Let E contain their Frobenius traces. If a completion
+\(E_v/\mathbf Q_p\) is unramified and its crystalline companion is
+not everywhere isoclinic, the original geometric span lifts over W(k).
+Neither slope gap one nor an initial integral lattice is required.
 
-Then the original geometric span lifts over $W(k)$.
-In particular it suffices that $E$ be unramified at every place above
-$p$: infinite image supplies a nonisoclinic companion somewhere.
-Neither slope difference one nor a prior integral lattice is required.
+It suffices that E be unramified at every place above p: infinite
+image supplies a nonisoclinic companion somewhere. The
+[ramified extension](ramified_rapoport_oper.md) covers every coefficient
+place for the general lifting consequence. The completed selected-pair
+application is in [the common coefficient theorem](../shared_tensors/common_companion_jump.md).
+These criteria require a supplied common coefficient.
 
-The main candidate therefore excludes this class of common systems.
-For the backup the conclusion is the still-open fully liftable branch.
-Every ramified coefficient place and residue degree is now covered
-by [the ramified extension](ramified_rapoport_oper.md); its
-arbitrary-cycle argument removes the trace-place restriction from
-the general common rank-two lifting consequence.
-Construction of a common system from a bare span remains open.
+## Every coreless compatible coefficient has a reciprocal gap
 
-## The smallest slope gap fixes the entire exceptional profile
-
-In the arithmetic assertion, suppose the generic slope difference
-is $1/f$. For a coreless span its unique clump has exactly
+Under the actual-span hypotheses above, suppose also that the rational
+source comparison respects EVERY Frobenius arrow and the span is coreless.
+Then
 \[
-|g(S)|=p^f-1
+r\mid f,\qquad a=f/r,\qquad
+\delta=1/a,\qquad |S_Y|=p^a-1.
+\tag{1}
 \]
-points on the genus-two endpoint. The normalized companion has
-exceptional slopes $(1/(2f),1/(2f))$. Its shared canonical ring has
-primitive weight $(p^f-1)/2$ and primitive zero multiplicity one.
-For $f>1$ the compatible oper reduction is dormant; for $f=1$ it
-has nonzero nilpotent $p$-curvature. These are statements about the
-actual span and its common coefficient, not constructions of either.
+Here delta=r/f is the generic slope gap, and S is the unique clump.
+Every exceptional Newton slope of the
+normalized BT realization is \(1/(2a)\). All active oper reductions
+are dormant if a>1 and have nonzero nilpotent p-curvature if a=1.
+In the latter case every exceptional fiber is superspecial.
 
-More generally the cardinality and exceptional-slope assertions hold
-for rationally compatible rank-two $F$-isocrystals with a mixed BT
-realization of generic slopes $(0,1/f)$ on the genus-two endpoint.
-The canonical-weight assertion additionally uses geometrically
-trivial determinant, as supplied by the arithmetic normalization.
-
-## The ordinary subcase gives more precise geometry
-
-Let $G/C$ be such a group on a smooth projective curve, generically
-ordinary, with at least one nonordinary fiber. Its dimension is $f$.
-The $f$ Hodge eigenspaces are lines of positive degrees $d_i$.
-Intrinsic Frobenius untwisting eventually gives a group $G_0$ in its
-isogeny class with nonzero Kodaira--Spencer map.
-
-If $g(C)=2$, then ALL the Hodge eigenlines of $G_0$ have degree one,
-and each partial Kodaira--Spencer map is an isomorphism. Hence
+If the rational determinant is geometrically constant on BOTH
+endpoints, as supplied by the arithmetic normalization, put
 \[
-G\simeq F_C^{a*}G_0,\qquad d_i=p^a\quad\text{for every }i
+\tau_C=\mathcal O_C(S_C)\otimes\omega_C^{-(p^a-1)/2},
+\qquad C=X,Y.
+\tag{2}
 \]
-for some $a\ge0$. Each partial Hasse divisor of $G_0$ is reduced of
-degree $p-1$. No abelian-scheme realization or polarization is assumed.
+These are two-torsion lines, satisfy \(\tau_C^r=\mathcal O_C\),
+and have matching pullbacks on the actual source. If d is the primitive
+common canonical weight and e its zero multiplicity, their profile is
+\[
+(d,e)=((p^a-1)/2,1)
+ \quad\text{if }\tau_X=\tau_Y=\mathcal O;
+\qquad (d,e)=(p^a-1,2)\quad\text{otherwise}.
+\tag{3}
+\]
+In particular odd r forces the first profile. At r=1 this recovers the
+smallest-gap profile; at r=f the clump has p-1 points. The cardinality,
+exceptional slopes and curvature assertions require no determinant
+triviality.
 
-## Uniqueness and the ordinary clump
+## The ordinary group has an intrinsic unique model
 
-Let $X\xleftarrow f Z\xrightarrow g Y$ be an actual finite bi-étale
-span of smooth projective hyperbolic curves, with $g(Y)=2$.
-Suppose rank-two $\mathcal O_K$-BT groups on its endpoints have
-$\mathcal O_K$-linearly isogenous pullbacks on the source, and the
-group on $Y$ is generically ordinary with a nonordinary fiber.
-Compatibility may instead hold after a connected finite étale
-refinement of the source.
+For a generically ordinary group G on a smooth proper curve, with at
+least one nonordinary fiber, all f Hodge eigenlines have positive
+degree. Intrinsic Frobenius untwisting gives nonzero Kodaira--Spencer.
+In genus two its terminal model G0 has ALL Hodge degrees one and
+ALL partial Kodaira--Spencer maps isomorphisms. Thus
+\[
+G\cong F_C^{b*}G_0,\qquad \deg L_i=p^b\quad\text{for every }i.
+\tag{4}
+\]
+Every partial Hasse divisor of G0 is reduced of degree p-1.
 
-Then the ORIGINAL span lifts simultaneously over $W(k)$, with both
-maps finite étale. The residue degree $f$ is unrestricted.
+Two generically ordinary rank-two \(\mathcal O_K\)-BT groups with
+nonzero Kodaira--Spencer in the same coefficient-linear isogeny class
+are isomorphic. The isomorphism identifies their FULL Dieudonné
+crystals, including every Frobenius arrow and the integer action.
+No abelian-scheme realization or polarization is assumed.
 
-The integral step is stronger than choosing unrelated lattices:
-two generically ordinary rank-two $\mathcal O_K$-BT groups with
-nonzero Kodaira--Spencer maps in the same $\mathcal O_K$-linear
-isogeny class are isomorphic. After endpoint untwisting this identifies
-the actual source lattices. A compatible rank-two crystalline summand
-then gives the lift; that summand need not be Frobenius-stable.
-
-If the span is coreless, all partial Hasse divisors have the same
-reduced support, its unique clump. Its image on $Y$ has size $p-1$.
-Every nonordinary fiber is superspecial; all its Newton slopes are
-$1/2$.
-In particular this class of common group data is impossible for the
-selected main pair, whose full-lift branch is excluded. For the backup
-the conclusion is the still-open fully liftable branch.
-
-Thus, when the companion in the arithmetic assertion has generic
-slope difference one, its half-Tate normalization has only the
-exceptional polygon $(1/2,1/2)$, at exactly $p-1$ points on $Y$.
-This more precise ordinary profile is not asserted for smaller gaps.
-
-Version4,20 September2026. The unramified construction contracts the
-zero-Hodge components and uses one-endpoint stable-lattice descent;
-the one-active-component case determines the exact clump profile.
-Those sharper geometric profiles remain useful after the general
-ramified lifting extension. Author proof with local curvature,
-partial-Hasse and isogeny checks.
 [Proof](../../Proofs/deformations/unramified_bt_genus_two.md).

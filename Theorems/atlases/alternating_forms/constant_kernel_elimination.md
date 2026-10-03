@@ -1,6 +1,6 @@
 # Pfaffian charts for normalized common-kernel equations
 
-Version2,2026-09-14.
+Version3,2026-10-03.
 
 Let k have characteristic different from2. Let A0,A1 be alternating m-square
 matrices, with m even, let C be another m-square matrix, beta a column,
@@ -39,14 +39,20 @@ beta=G^T b, and C is the actual projected R matrix; it is not omitted.
    at most32 constant-kernel equations and32 ACTUAL R equations.
    The open condition h!=0 must be retained.
 
-2. NORMAL CORANK. For any even alternating pencil with constant-kernel
-   dimension a and normal corank c,
+2. NORMAL CORANK AND RANK-DROP DIVISOR. For any even alternating
+   pencil with constant-kernel dimension \(a\) and normal corank \(c\),
+   \(c\) is even, \(c\ge a\), and \(m\ge3c-2a\).
+   Let \(K\subset\mathcal O_{\mathbf P^1}^{m}\) be its kernel
+   bundle and \(e=-\deg K\). The members of rank below \(m-c\),
+   including infinity, form an effective Pfaffian divisor of exact degree
+   \(b=(m-c)/2-e\), where
+   \(0\le b\le(m-3c+2a)/2\). Thus any
+   \(1+(m-3c+2a)/2\) distinct parameters contain a maximum-rank
+   member. The bound is sharp over an algebraically closed field.
 
-       c is even,           c>=a,           m>=3c−2a.      (4)
-
-   In(1), a=1. For m=32 this gives c in{2,4,6,8,10}. Any16 distinct
-   t in F25 contain a maximum-rank member at every actual genus-nine
-   atlas point.
+   In (1), \(a=1\), \(m=32\), and \(c\in\{2,4,6,8,10\}\).
+   The respective sampling bounds are \(15,12,9,6,3\); any fifteen
+   distinct \(t\in\mathbf F_{25}\) therefore work uniformly.
 
 3. EXACT HIGHER-CORANK CHARTS. For such a member, choose an invertible
    principal block M of size m-2d, where 1<=d<=5 in genus9, and write

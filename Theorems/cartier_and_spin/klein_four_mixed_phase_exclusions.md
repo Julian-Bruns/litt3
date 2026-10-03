@@ -1,7 +1,7 @@
 # Mixed-phase exclusions for Klein-four endpoints
 
 Version1, 26 September2026. Retain the actual same-source hypotheses
-of [trace descent](klein_four_trace_branch_finiteness.md). A canonical
+of [trace descent](quartic_trace_obstruction.md). A canonical
 label has type i in Z/4 and phase xi in mu29. Root-type rotation
 acts on this finite label set; no such action on the actual curve
 is assumed.

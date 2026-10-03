@@ -88,7 +88,7 @@ def main():
     result={'status':'PASS exact finite tests','cases':cases,
         'scope':'Tests the critical C5^2 norm filtration for40 F5 coefficient models with varying higher augmentation terms and arbitrary5*convolution corrections. Not a proof for arbitrary k coefficients, mixed Frobenius, or actual geometry.',
         'leverage':'Modulo25 norm compatibility restricts the leading digit to F2 and the homogeneous case to F1. Combined integral trace is25-divisible; this is the proposed mechanism for removing a terminal25*quadratic term.'}
-    out=Path(__file__).resolve().parents[3]/'Research/computations/rank25_critical_norm_probe.json'
+    out=Path(__file__).resolve().parents[3]/'../litt3-computation-data/legacy_workspace_computations/rank25_critical_norm_probe.json'
     out.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({k:v for k,v in result.items() if k!='cases'},indent=2));print('Cases:',len(cases))
 

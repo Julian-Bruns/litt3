@@ -1,15 +1,18 @@
-# Proof: small logarithmic zero orders exclude wild stabilizers
+# Proof: the canonical quartic root excludes wild stabilizers
 
 [Statement](../../Theorems/deformations/versal_bt_tame_automorphisms.md).
-21 September2026. This is an author proof. The finite-group restriction
-uses only the already established logarithmic character cover of an
-actual BT1; it does not use effectivity at a higher level.
+Version2,3 October2026. The canonical root construction replaces the
+chosen-BT1 action and its scalar-extension argument. Later finite-level
+effectivity makes the same restriction intrinsic to every supplied
+admissible active oper.
 
 ## 1. A local Cartier and different calculation
 
 Let $P$ be a smooth curve in characteristic $p$, with perfect algebraically
 closed constant field, and let $0\ne\Omega$ be a Cartier-fixed regular
-differential. Suppose an automorphism $\gamma$ of order $p$ fixes a point
+differential. A nonzero constant Cartier eigenvalue gives the same
+case after constant rescaling over the algebraically closed field.
+Suppose an automorphism $\gamma$ of order $p$ fixes a point
 $z$ and satisfies $\gamma^*\Omega=\Omega$. The invariant differential
 descends through the separable function-field extension to a rational
 differential $\eta$ on $P/\langle\gamma\rangle$. Cartier commutes with
@@ -40,67 +43,98 @@ The valuation formula is the local different formula underlying
 on the different also follows directly from $G_0=G_1=C_p$ in Hilbert's
 different sum. This proves the local fact stated in the theorem.
 
-## 2. The actual character cover retains finite group actions
+## 2. The canonical fourth root retains the entire line stabilizer
 
-The [logarithmic character construction](versal_bt_cartier_rigidity.md)
-uses the two ordinary constituents of $H$. Their ratio character takes
-values in $\mathbf F_5^\times$. On a connected component $P$ of its
-framing cover the tautological logarithmic differential is nonzero,
-Cartier-fixed and regular, with
+Choose a nonzero rational differential $\nu$ on $C$, and write
+$s=f\nu^4$. Normalize the full reduced Kummer algebra
 \[
-\operatorname{div}_P\Omega=2R.
+z^4=-f,\qquad \Omega=z\pi^*\nu.
 \tag{2}
 \]
-Here $R$ is the reduced ramification divisor; the index over each
-supersingular point is two. Outside that divisor the differential has
-no zero. This part of the construction depends on $H$ itself, not on
-the existence of a next-level reference used elsewhere for differences.
+This defines $D$ independently of the frame $\nu$. There are at most
+four components and at most four geometric points in each fiber.
+For $m=\operatorname{ord}_x(s)$ its local ramification index is
+$e=4/\gcd(4,m)$, and the tame different formula gives
+\[
+\operatorname{ord}_y\Omega=em/4+e-1.
+\tag{3}
+\]
+Thus $\Omega$ is regular: its zero order is two over $S$ and zero
+elsewhere. The convention $\gcd(4,0)=4$ is used.
 
-For clarity, actions can be retained without choosing arbitrary
-isomorphisms and assuming that their cocycle vanishes. Form the group
-of pairs $(\alpha,u)$ with $\alpha\in G$ and $u:\alpha^*H\simeq H$.
-Its kernel over $G$ is $\operatorname{Aut}_C(H)=\mathbf F_5^\times$:
-on the ordinary generic field versality makes the Kummer extension
-nontrivial even after separable constituent splitting, so the only
-endomorphisms are scalars. Equality of group morphisms extends from
-the generic point because their finite Hopf algebras are torsion-free.
-Thus this group of pairs is finite, with prime-to-five kernel.
+Let $\alpha^*s=\lambda s$, write $\alpha^*\nu=j\nu$, and choose
+$\rho^4=\lambda$. The scalar-tautological lift
+$z\mapsto\rho z/j$ extends to an automorphism of $D$ above $\alpha$,
+with $\widetilde\alpha^*\Omega=\rho\Omega$. Cartier commutes with
+this pullback. The common nonzero eigenvalue gives
+\[
+c\rho^{1/5}\Omega
+=C_D(\rho\Omega)
+=\widetilde\alpha^*C_D(\Omega)
+=c\rho\Omega.
+\]
+Hence $\rho^{1/5}=\rho$, so $\rho\in\mathbf F_5^\times$ and
+$\lambda=\rho^4=1$. Every element of the line stabilizer fixes $s$
+exactly.
 
-If a point stabilizer in $G$ had five-divisible order, it would contain
-an order-five subgroup. Its inverse image in the group of pairs has a
-Sylow-five subgroup of order five projecting isomorphically to it.
-This is an ACTUAL action on $H$, hence on the full ordinary framing
-cover, and it preserves the tautological differential exactly. There
-are at most four connected components, so each is preserved. After
-normalization each fiber of $P\to C$ has at most four geometric
-points, so a fixed base point gives a fixed point of this order-five
-action on $P$. The action on $P$ still has order five, since its base
-action is nontrivial. Formula (2) gives zero order zero or two there,
-contradicting (1), whose lower bound is three.
+Now choose the canonical lift $\rho=1$. These lifts compose
+functorially and give an ACTUAL action of the whole $G$ on $D$
+preserving $\Omega$. This refers to scalar-tautological lifts:
+a disconnected $D$ can have additional automorphisms, which are
+not needed.
 
-Every point stabilizer in $G$ therefore has order prime to five.
-Tame inertia on a smooth curve is cyclic and acts faithfully on the
-tangent line. This proves tameness, including when five divides the
-total order of $G$. Such five-subgroups can only act freely.
+If a point stabilizer in $G$ had five-divisible order, Cauchy's
+theorem would give an order-five subgroup. Its canonical action
+preserves every component of $D$, since there are at most four,
+and fixes every point of the fiber over the fixed base point,
+since that fiber has at most four points. Its action on each
+component still has order five, as its base action is nontrivial.
+At any such fixed point, (3) gives zero order zero or two.
+The local bound (1) gives at least three, a contradiction.
+
+All point stabilizers are therefore tame. Tame inertia on a smooth
+curve is cyclic and acts faithfully on the tangent line. This
+also shows that every five-subgroup of $G$ acts freely.
+
+### Why actual BT1 and admissible active opers satisfy the hypothesis
+
+The established [logarithmic character construction](versal_bt_cartier_realization.md)
+of an actual everywhere-versal BT1 gives a nonzero regular
+Cartier-fixed differential $\Omega_H$ on a tame character cover,
+with $\Omega_H^4=-\pi^*s_H$ and $\operatorname{div}(s_H)=2S$.
+It maps to a component of the normalization (2) for $s_H$.
+Cartier commutes with separable pullback, which is injective on
+rational differentials, so $\Omega$ is Cartier-fixed on that
+component. All other fourth roots differ by
+$\mu_4=\mathbf F_5^\times$; consequently the same property holds
+on every component.
+
+The normalized oper curvature quartic is a fixed nonzero constant
+multiple of $s_H$, as in the
+[Cartier normalization comparison](bt_cartier_tangent_identification.md).
+For $s=a s_H$, choose $b^4=a$: the new tautological differential
+is $b\Omega_H$ and has the common nonzero Cartier eigenvalue
+$b^{1/5}/b$. No assumption that this normalization constant is in
+$\mathbf F_5^\times$ is needed.
+
+For a supplied admissible active determinant-trivial oper, retain
+its canonical first periodic datum, its flat two-torsion discrepancy
+$\kappa$ and a fixed compatible correction $N^4=\kappa$,
+$N^8=\mathcal O$. The later
+[finite-level effectivity theorem](admissible_periodic_bt_effectivity.md)
+realizes the corrected oper by an actual everywhere-versal BT1,
+without ordinariness. A flat scalar twist preserves the projective
+oper and its intrinsic quartic, so the preceding argument applies.
+No higher realization or invariant choice of BT1 is required.
 
 ## 3. The quartic tensor bounds each tame inertia order
 
-The same intrinsic construction gives a regular quartic tensor
-\[
-s_H=-\Omega^4\in H^0(C,\omega_C^4),
-\qquad \operatorname{div}(s_H)=2S.
-\tag{3}
-\]
-In this notation equality means the descended tensor under the
-differential pullback, so the ramification correction is included.
-The formula and divisor are established in the cited character-cover
-proof. Its scale is intrinsic: changing an ordinary constituent basis
-multiplies $\Omega$ by an element of $\mathbf F_5^\times$, whose fourth
-power is one. Every automorphism in $G$ therefore preserves $s_H$.
+We have $\operatorname{div}(s)=2S$ and every element of $G$ fixes
+$s$ exactly, by Section2.
 
 For a tame stabilizer of order $e$, choose a parameter in which a
 generator acts by $t\mapsto\zeta t$, with $\zeta$ of order $e$.
-If the leading term of (3) is $a t^m(dt)^4$, invariance gives
+If the leading term of $s$ is $a t^m(dt)^4$, invariance gives
 $\zeta^{m+4}=1$. At an ordinary point $m=0$, and at a supersingular
 point $m=2$. Hence
 \[
@@ -140,8 +174,7 @@ For $(2,4,6)$ the latter two points are respectively ordinary and
 supersingular, with orders $-3,-3$. The inertia-two point must be
 ordinary, of order $-2$, to obtain total $-8$. No additional zero is
 possible. Thus the entire supersingular locus is the inertia-six
-orbit, as asserted. This calculation does not assert that such a pair
-$(C,H)$ exists.
+orbit, as asserted. This calculation does not assert that such a quartic or BT1 exists.
 
 The proof only constrains FINITE automorphism groups. It cannot be
 applied as a bound on the infinitely many actual formal path returns

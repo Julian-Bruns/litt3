@@ -12,7 +12,7 @@ import time
 from sage.all import GF, PolynomialRing, lcm, gcd
 
 ap=argparse.ArgumentParser();ap.add_argument('--tensor',type=Path,required=True)
-ap.add_argument('--kernel',type=Path,required=True);ap.add_argument('--map',type=Path)
+ap.add_argument('--kernel',type=Path,required=True)
 ap.add_argument('--output',type=Path,required=True);args=ap.parse_args()
 assert not args.output.resolve().is_relative_to(Path(__file__).resolve().parents[2])
 start=time.monotonic();data=json.loads(args.tensor.read_text());kd=json.loads(args.kernel.read_text())
@@ -106,11 +106,5 @@ out={'status':'exact_Cech_primitives_and_global_transgression_verified','special
 if generic:
     out.update(source_clearing_denominator=str(source_den),form_clearing_denominator=str(form_den),
                transgression_content=str(content),coefficient_degree=max(int(v.degree()) for v in by_b.values()))
-if args.map:
-    assert kd['specialization']=='cubic';md=json.loads(args.map.read_text())
-    dec=lambda n:k(n%5)+k(n//5%5)*alpha+k(n//25)*alpha**2
-    h=sum(dec(n)*B.monomial(*e) for e,n in md['stable_to_boundary_octic'])
-    h/=h.leading_coefficient();out['equals_actual_first_boundary']=bool(p==h);assert p==h
-    print('MATCHES ACTUAL FIRST-BOUNDARY OCTIC',flush=True)
 args.output.write_text(json.dumps(out,indent=2)+'\n')
 print('complete',len(p.dict()),'terms',time.monotonic()-start,flush=True)

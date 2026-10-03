@@ -1,7 +1,7 @@
 # No actual balanced Klein-four comparison in any degree
 
 Version1, 26 September2026. Retain every actual same-source hypothesis
-of [trace descent](klein_four_trace_branch_finiteness.md). An endpoint
+of [trace descent](quartic_trace_obstruction.md). An endpoint
 is balanced if its four labels have the four root types once each
 and one common mu29 phase.
 

@@ -77,88 +77,21 @@ extends over the whole curve, proving
 H0(Sym5 K tensor L)=H0(F^*K tensor L) for every degree-zero L.
 No fifth root of a function-field coefficient has been taken.
 
-## All cubic-invariant degree-zero twists of F^*K vanish
+## The later shifted theorem supplies first-Frobenius vanishing
 
-Write P=(11,22,18,5,19,20,15,16,9,22,1) in ascending F25 codes,
-and c=(2,16,16,7,1,2,7,1,24,11). The field is
-F25=F5[a]/(a^2-a-3), with code n0+5n1 for n0+n1*a.
-The actual first Frobenius extension has lines O(-25O), O(30O)
-and class
-\[
-e^5=yP^3x^{-50}C_5(x),\qquad
-C_5(x)=\sum_{m=1}^{10}[c_m]^5x^{5(10-m)}.
-\]
-Let R_1,...,R_10 be the cubic branch points. Every C3-invariant
-degree-zero line is represented by
-\[
-D_s=\sum_i s_i(R_i-O),\qquad s_i\in\{0,1,2\},\quad s_{10}=0.
-\]
-Indeed an invariant line can be linearized, and an invariant rational
-section gives an invariant divisor. Nonfixed orbits are fibers of x.
-The relations 3(R_i-O)=0 and sum(R_i-O)=0 reduce to these19683
-representatives. This is the same exhaustive invariant-twist reduction
-used for the accepted K calculation.
-
-Put A_s=product_{s_i=1}(x-r_i), B_s=product_{s_i=2}(x-r_i),
-w=deg A_s+2deg B_s, and D_0=1,D_1=B_s,D_2=A_s B_s.
-The character-j source basis for O(30O+D_s) is y^j*x^i/D_j,
-where 0<=i<=floor((30-w-10j+3deg D_j)/3). The target H1
-character is j+1 mod3. In its analogous basis for O(-25O+D_s),
-the exponents are strictly between
-floor((-25-w-10(j+1 mod3)+3deg D_(j+1 mod3))/3) and zero.
-Multiplication by the actual class uses C_5*x^-50 and the factors
-\[
-P^3B_s,\qquad P^3A_s,\qquad P^4/(A_sB_s)
-\]
-in source characters0,1,2. Thus all connecting maps are exact finite
-linear systems, not a generic-extension or splitting-type test.
-
-The [complete verifier](../../scripts/arithmetic/k_first_frobenius_invariant_twists.py)
-constructs all19683 maps over the splitting field F_(5^8).
-Each has source dimension22, target dimension33 and rank22.
-Every kernel is zero. A
-[separate checker](../../scripts/arithmetic/check_k_frobenius_invariant_twists.py)
-reconstructs16 specified full maps using the literal fifth power of
-the Laurent class and restricts scalars to F5; all have rank176.
-That second run checks the implementation; full coverage comes from
-the first exhaustive run. The negative source line has no sections,
-so H0(F^*K tensor L)=0 for every invariant degree-zero L.
-
-## A small isotypic section space excludes every other line
-
-Apply the
-[cyclic determinant-section lemma](../../Theorems/cartier_and_spin/cyclic_determinant_section_reduction.md)
-to E=F^*K, with det E=O(5O). Its only additional input is the full
-space H0(F^*K(5O)). The original Laurent reconstruction gives a
-28-by27 coefficient matrix of rank24, independently of rank48 after
-restriction of scalars to F5. Its three free columns are
-\[
-(5,0,9),\qquad(5,0,10),\qquad(5,0,11).
-\]
-Every reconstructed section has affine coordinates(y*C(x),B(x)).
-The linearization of K is diag(zeta,1), because
-T(e)*diag(zeta,1)=diag(zeta,1)*T(zeta^2 e). Its first Frobenius
-pullback is diag(zeta^2,1). Therefore every one of these sections
-has character0, and the full section space is isotypic.
-
-The determinant-section lemma proves that any saturated line of
-nonnegative degree in F^*K has invariant isomorphism class. Subtracting
-its degree times O then gives an invariant degree-zero line mapping
-into F^*K, contrary to the preceding exhaustive calculation. Thus
-H0(F^*K tensor L)=0 for every geometric degree-zero line. The already
-proved Frobenius-support equality gives the same conclusion for Sym5 K.
-
-Source:
-[the section reconstruction](../../scripts/arithmetic/k_shifted_seven_zero_sections.py)
-with `--twist 5`. Its three complete sections, both charts, exact
-matrix, independent F5 rank and character check are in
-`k_frobenius_five_zero_sections.json` in the external evidence directory.
-This replaces the need for a geometric square-locus calculation in
-the all-twist argument; it does not change the verified result below.
+The [shifted first-Frobenius theorem](shifted_first_frobenius_vanishing.md)
+is proved directly from its own invariant twists and full norm ideals,
+using the general nonnegative-line criterion. It does not use this
+fifth-symmetric theorem. Multiplication into \(F^*K(O)\otimes L\)
+therefore gives \(H^0(F^*K\otimes L)=0\) for every geometric Pic0 L.
+The Frobenius-support equality above proves the same vanishing
+for Sym5 K. The separate unshifted invariant census and isotypic
+section calculation are unnecessary.
 
 ## Retained stronger fact: the cubic net has no geometric square
 
-The three basis vectors above give every section of Sym3(F^*K).
+The complete Sym15 basis at the start lies in F^*(Sym3 K),
+so it gives exactly the three sections of Sym3(F^*K).
 In its affine binary frame every such section has the form
 \[
 a(x)U^3+y^2b(x)U^2V+yc(x)UV^2+d(x)V^3,
@@ -192,12 +125,10 @@ independently multiplies these identities using only F5 polynomial
 arithmetic; all three give exactly1. Consequently no nonzero member
 of the cubic net has square discriminant in k[x], including Delta=0.
 
-The exact matrix and sections, net coefficients, three Bezout witnesses,
-exhaustive invariant-twist outcomes and independent replays are retained
+The exact Sym15 matrix and sections, net coefficients, three Bezout
+witnesses and independent replays are retained
 in [the evidence directory](../../../litt3-computation-data/overnight_three_replies_20260926/).
 The files are `k_fifth_twist_probe.json`,
-`k_first_frobenius_invariant_twists.json`,
-`k_frobenius_invariant_twists_independent.json`,
 `k_frobenius_cubic_discriminant.json`,
 `k_frobenius_discriminant_square_locus.json`,
 `k_frobenius_square_bezout.json`, and
@@ -206,9 +137,9 @@ alongside them. The focused audit records the run commands and scopes.
 
 This stronger net exclusion also gave the original proof: a noninvariant
 line would have three conjugate generic factors, hence a cyclic cubic
-with square discriminant. The new isotypic argument establishes the
-needed vanishing without that elimination. The full geometric-net
-certificate is retained for its separate, stronger assertion.
+with square discriminant. The later shifted theorem establishes the needed
+vanishing without that elimination. The full geometric-net certificate
+is retained for its separate, stronger assertion.
 
 ## Consequences for finite coefficients
 
@@ -222,7 +153,7 @@ twisted by a finite character, again impossible.
 
 The following geometric argument is retained separately: it explains
 why the Frobenius-support reduction alone already excludes degree-p
-semi-invariants in rank three, without the square-locus computation.
+semi-invariants in rank three, without first-Frobenius vanishing or the square-locus computation.
 
 ## A moving-line lemma for constant degree-p forms
 

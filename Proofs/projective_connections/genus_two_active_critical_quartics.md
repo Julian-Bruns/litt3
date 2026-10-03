@@ -74,51 +74,91 @@ of the stated list. The scalar nilpotent dictionary reconstructs the
 actual regular connection. There is no assertion that root maps to Y
 are etale: they are auxiliary ramified maps used for the coefficient check.
 
-## 3. Two affine orbits give the family count
+## 3. A zero normalization factor is dormant pointed incidence
 
-In z=1/(u−4), the branch set is F5∪{a}, a=1/(t−4). The
-[affine-family theorem](../../Theorems/curve_arithmetic/prime_field_branch_family.md)
-gives actual curve isomorphisms under z↦sz+b, s∈F5×, b∈F5.
-They preserve the parameter degree and act on nonzero two-classes
-with two orbits: pairs of constant branch points, and pairs containing
-a. In the u coordinate take representatives R=u and R=u−t.
+Set $a=1$ in the root constructions of Section2, BEFORE imposing
+the normalized Cartier condition. For $J(h)=0$ the calculation gives
+$C(\alpha)=K(h)^{1/5}\alpha$; the constant case gives
+$C(\alpha)=c^{1/5}\alpha$. Put
+\[
+q_h=\sqrt R(u-h)/F,\quad q_b=\sqrt S/F,\quad
+r_h=q_h''/q_h,\quad r_b=q_b''/q_b.
+\]
+The scalar identity $E(r)=2D^4v/v$, with $\alpha=v\,du$, therefore gives
+\[
+E(r_h)=3K(h)R(u)(u-h)^2/F^2,\qquad
+E(r_b)=3cS/F^2.
+\]
+These identities remain valid at $K(h)=0$ or $c=0$; no vanishing
+factor was divided out. The same scalar regularity argument applies,
+since the nonzero unnormalized quartic has four double zeros even
+when its curvature vanishes. These zero orders cancel possible double
+poles in the scalar inverse formula. A remaining simple pole of $r$
+would give a third-order pole in $r''-3r^2$, contradicting the displayed
+regular curvature. Thus a zero factor gives a REGULAR DORMANT connection and a horizontal
+quadratic coefficient in the indicated nonzero two-torsion class.
 
-The [symbolic verifier](../../scripts/genus_two/check_genus_two_active_twists.py)
-computes their discriminants, resultants and branch scalars over F5[t].
-Up to nonzero constants the only factors are:
+Conversely the [Bol kernel](dormant_bol_complex.md) and complete
+quadratic basis give every such twisted section in one of these
+linear/constant components. A constant numerator in the $R$-component,
+or a linear numerator vanishing at a branch value, would have a multiple
+zero and give a double pole at infinity or that branch point. Regularity
+excludes both. At a nonbranch simple zero $u=h$, the remaining polar
+coefficient vanishes exactly when $J(h)=0$. The curvature identity then
+makes dormancy equivalent to $K(h)=0$; the complementary constant
+component similarly gives $c=0$. On this family the trivial twist never contributes, by the
+[complete elliptic incidence theorem](genus_two_dormant_parameter_curve.md).
+Consequently, over ordinary parameters, all fifteen $J,K$ are
+coprime and all $c$ are nonzero exactly when
+\[
+Q(A)=A^3+3A^2+4\ne0.
+\]
+This replaces the former fifteen-class normalization-factor tests.
 
-| R | disc(J) | Res(J,K) | c |
-|---|---|---|---|
-| u | t⁶+t⁵+2t⁴+2t²+t+1 | (t³+t²+3t+1)(t³+3t²+t+1) | t+1 |
-| u−t | t⁴+4t³+t²+4t+3 | 1 | (t+1)² |
+## 4. Two collision orbits give one invariant census locus
 
-All have degree at most6. Thus every parameter of degree>6 has five
-active data in both representative classes. Transport these actual
-connections by affine isomorphisms: the transformed parameter still has
-degree>6. Every root class therefore has five active data. Sections1–2
-bound each class by one branch datum and four distinct fiber data, so
-equality forces every J squarefree, every gcd(J,K)=1 and every c≠0.
-This argument transports points and their intrinsic root classes; it
-requires no coordinate transformation formula for J.
+In $z=1/(u+1)$ the fixed branch set is $\mathbf F_5$.
+The [affine-family symmetry](../../Theorems/curve_arithmetic/prime_field_branch_family.md)
+preserves $A$, the intrinsic root classes and critical-root collisions.
+Its two pair orbits have representatives $R=u$ and $R=u-t$.
+Up to nonzero constants their discriminants and induced $A$-polynomials are:
 
-The [certificate](../../Research/computations/genus_two_affine_twist_certificate.json)
-also checks the original quartic Cartier identities for both representative
-branch data and in both entire critical algebras F5(t)[h]/(J):
+| $R$ | $\operatorname{Disc}(J)$ | Minimal polynomial of $A$ at its roots |
+| --- | --- | --- |
+| $u$ | $t^6+t^5+2t^4+2t^2+t+1$ | $H(A)=A^3+2A^2+1$ |
+| $u-t$ | $t^4+4t^3+t^2+4t+3$ | $A-2$ |
 
-    [u^(5i+4)] F² A⁴ = A_i⁵,        i=0,...,4.
+Both displayed parameter polynomials are irreducible. These small
+identities follow by reducing $A=((t+1)^{-5}-(t+1)^{-1})^4$
+in the respective degree-six and degree-four quotient algebras.
+The first has all three roots of $H$ among its $A$-values.
+Every ordinary $A$-fiber is one twenty-point affine orbit.
+Transporting these representative collisions therefore proves
+that some $J$ is non-squarefree exactly when $(A-2)H(A)=0$.
 
-These use actual fifth powers of all coefficients, including t and h.
-There are75 distinct nonsplit active connections, five in each class.
+Each nonzero root class has at most one branch datum and four fiber
+data. The family has five reduced dormant connections and hence ten
+split active connections by the canonical-double theorem. It therefore
+has85 active points exactly when each of the fifteen nonzero classes
+attains its five-point maximum: every $J$ squarefree, $\gcd(J,K)=1$
+and $c\ne0$. Combining this with Section3 gives
+\[
+(A-2)H(A)Q(A)=(A-2)(A^6+A^4+A^2+4)\ne0.
+\]
+No separate resultant or backup solution list enters this criterion.
 
-For the backup t³+t+1=0, the same verifier with --backup checks all
-fifteen conditions and all75 original identities directly over F125.
-Its [receipt](../../Research/computations/backup_nonsplit_twists.json)
-uses the complete critical algebras. The additional twist tests are
-unneeded for the count. The original
-[85-point table](../../Research/computations/backup_active_twist_table.json)
-remains independent evidence for the backup.
+An excluded parameter transforms by an affine symmetry to a root of
+one of the two displayed polynomials, or is a cubic first-height bad
+parameter. Affine transformations preserve parameter degree, so
+degree greater than six still suffices. For the actual backup
+$\alpha^3+\alpha+1=0$, one has $A=\alpha+1$ and
+\[
+H(A)=\alpha+3,\qquad Q(A)=(\alpha+1)(\alpha+2),\qquad A-2=\alpha-1,
+\]
+all nonzero. Thus every original endpoint choice is retained, and
+the same count holds on the entire invariant open locus.
 
-## 4. Counts and local lengths
+## 5. Counts and local lengths
 
 The [universal dormant quintic](../../Theorems/projective_connections/genus_two_dormant_quintic.md)
 has resultant with its derivative -[t(t-1)(t-2)(t-3)]². Thus this family
@@ -136,7 +176,7 @@ so its three local equations lie in the square of the maximal ideal.
 Its local length is at least2³=8. The85 distinct active points each
 contribute at least1. Equality5·8+85=125 forces all these bounds to
 be equalities: dormant multiplicity8 and85 reduced, hence ordinary,
-active points. This works for both parameter loci and replaces the
+active points. This works on the entire invariant open locus and replaces the
 older backup solution-list census.
 
 The dormant scheme on the genus-three Y_L has length15. Its fifteen
@@ -145,5 +185,17 @@ geometric points therefore all have length1.
 Finally a dormant tangent space on Y_L at the pullback of a base dormant
 connection splits into the untwisted and L-twisted base tangent spaces.
 Both vanish, giving the stated uniform Pic[2] test. This is the previously
-proved counting implication, now applicable to the CURRENT selected
-high-degree Y, not only to the small backup curve.
+proved counting implication, now applicable to every parameter in
+the invariant open locus, including the selected high-degree and backup curves.
+
+The [focused independent review](../../Research/audits/CRITICAL_FAMILY_DORMANT_HINDSIGHT_AUDIT_2026_10_03.md)
+checks the unnormalized Cartier bridge, exact invariant criterion and
+all earlier scopes. The [small symbolic identities](../../../litt3-computation-data/archive_cleanup_20260930/critical_family_invariant_hindsight/verification_receipt.json)
+verify only the two discriminants and invariant residues. Original
+[generic critical and twist evidence](../../../litt3-computation-data/legacy_workspace_computations/genus_two_affine_twist_certificate.json),
+[backup nonsplit table](../../../litt3-computation-data/legacy_workspace_computations/backup_nonsplit_twists.json)
+and [full backup table](../../../litt3-computation-data/legacy_workspace_computations/backup_active_twist_table.json)
+remain provenance. The obsolete critical-resultant and normalized-root
+replay block is removed from the shared source. Its full generic
+twist calculation and actual backup bad-twist calculation remain needed
+and unchanged.

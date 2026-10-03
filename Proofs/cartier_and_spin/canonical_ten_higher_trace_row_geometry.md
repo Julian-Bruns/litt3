@@ -1,0 +1,32 @@
+# Proof: the free source action and injective Picard pullback
+
+Version2,3 October2026. Root focused review **PASS**; see [audit](../../Research/audits/CANONICAL_TEN_HIGHER_TRACE_ROW_GEOMETRY_AUDIT_2026_10_03.md).
+
+The COMPLETE adjoint row is stable under the actual projective G-action. Its common zero divisor E is therefore G-invariant. G acts freely on T because T→Y is the original finite étale Galois leg. Every nonempty invariant effective divisor has degree at least |G|=EIGHT d. On the other hand E is bounded by the zero divisor of any nonzero section of L⁶, whose degree is SIX d. Thus E is EMPTY. The normalized projective row consequently defines a morphism ρ with ρ*O_D(ONE)=L⁶, not merely a rational map with an unrecorded base divisor.
+
+We first note that φ*:Pic(Γ)→Pic(T) is injective. If a line S pulls back trivially, its norm shows S^TEN=O. Split this torsion line into its TWO-primary and FIVE-primary factors. A nontrivial TWO-torsion factor would define a connected étale double torsor over Γ with a T-point, hence a degree-TWO intermediate subfield of the primitive degree-TEN extension. This contradicts primitivity. For a FIVE-torsion factor choose a rational divisor representative A and f∈k(Γ) with div(f)=FIVE A. Triviality after pullback supplies u∈k(T)× with div(u)=φ*A, and hence u^FIVE=φ*f up to a constant, which has a FIFTH root in k. Since k(T)/k(Γ) is separable, it cannot contain a nontrivial purely inseparable FIFTH root of f. Therefore f is already a FIFTH power in k(Γ), so A is principal and the factor is trivial. This proves the claimed injectivity; it uses the actual primitive source field and does not presume any simultaneous closure.
+
+Suppose k(D)⊂k(Γ). The morphism ρ then factors as T→Γ→D; the rational intermediate map extends because these are smooth projective curves. Let A on Γ be the pullback of the row O_D(ONE). The basepoint-free identity gives φ*A=L⁶=φ*M⁶, so Picard injectivity gives A=M⁶. Under this identification, the row sections on T are the pullbacks of sections on Γ, up to their common constant scalar. In particular every original b_i would descend in a rational M⁶ frame.
+
+But u_i descends as an original section of M. Thus b_i/u_i⁶=q0(x_i) would belong to k(Γ). The fixed function q0(x_i) has degreeSIX on X_i: degreeTWO on its x-line and degreeTHREE from X_i to that line. Since Γ·k(X_i)=k(T), containment of q0(x_i) in Γ would force [k(T):k(Γ)]≤SIX, contradicting its actual degreeTEN. Thus D is not contained in Γ. Full S10 monodromy makes the degree-TEN carrier primitive, so there is no intermediate field between k(Γ) and k(T). Its compositum with k(D) must therefore be k(T).
+
+The same primitive-extension argument proves the individual-component assertion. In a rational M⁶ frame, if an original b_i were in k(Γ), its quotient by u_i⁶ would give the just-excluded containment of q0(x_i). Since it is outside k(Γ), it generates k(T) over k(Γ).
+
+## The complete row kernel supplies actual étale quotients
+
+Let H be the kernel of the projective action of G on the COMPLETE adjoint row. It fixes D pointwise. Conversely, an element fixing D pointwise is projectively scalar on the whole row space: its eigenline locus is a finite union of projective eigenspaces, and the irreducible nondegenerate row image must lie in one such eigenspace; its span is the whole row space. Thus the effective row group is exactly R=G/H.
+
+The projective row multiplier is the coefficient-Frobenius twist of that of V and hence still has orderFOUR orEIGHT, by the reviewed higher-trace module theorem. It inflates from R. A finite group of order at mostFIVE cannot carry a multiplier of order divisibleFOUR here: quotients of orders TWO,THREE orFOUR are forbidden by the actual no-prime-to-FIVE quotient theorem, and for orders ONE orFIVE the multiplier is trivial because k× is uniquely FIVE-divisible. Thus |R|>FIVE. The [accepted general quotient theorem](../../Theorems/cartier_and_spin/canonical_degree_ten_no_a5_quotient.md) applies to this ACTUAL quotient of G and gives that H acts freely on Γ.
+
+It already acts freely on T. Set C=T/H and Γ_R=Γ/H. Both horizontal maps are étale H-torsors. The natural square with φ is cartesian: T=CΓ because H acts faithfully on Γ, and the relative degrees are |H|. Thus C→Γ_R has degreeTEN and pulls back to T→Γ. Its different and local index descend without alteration through the étale horizontal maps. Its geometric monodromy contains the full S10 monodromy of that base change and is itself a subgroup of S10, so is exactly S10. The genuine canonical different and its primitive coefficient descend as in the accepted kernel-target argument. C→Y is the actual quotient of the original G-torsor, of degree |R|, and therefore remains étale.
+
+The row factors through C because H fixes it pointwise. Its pulled line P_C on C has pullback L⁶ on T, with the GENUINE H-linearization supplied by that row pullback. Compare this action with the projective isomorphisms of M⁶ on Γ. For each h∈H their pullback to T differs from the specified action on L⁶ by ONE global scalar. Rescale the Γ-isomorphism to match. The cocycle identity then holds on Γ because it holds after pullback to T. Thus M⁶ acquires the required genuine H-linearization and descends to a line B on Γ_R. Descent of the equality on T gives P_C=φ_C*B. Degrees yield
+\[
+\deg B=\frac{6d}{10|H|}=\frac{3|R|}{40},\qquad
+\deg P_C=\frac{6d}{|H|}=\frac{3|R|}{4}.
+\]
+The first integer degree implies FORTY divides |R|.
+
+Finally D⊂C and Γ∩C=Γ_R because H acts faithfully on Γ. Put Z=Γ_R D⊂C. From the first part ΓD=T, hence ΓZ=T. Base change of the Galois extension Γ/Γ_R gives T/Z a Galois group which is a subgroup of H. But H acts on T fixing C and hence Z, so this group contains H as well. Thus [T:Z]=|H|=[T:C], giving Z=C. This proves the actual primitive joint-field identity without first assuming that C→D is étale.
+
+Although M48=ωΓ⁶ as underlying lines, the chosen H-linearization on M⁶ came from the ROW, not from a prescribed determinant identity. Its eighth power can differ from the canonical action by an H character. Accordingly B⁸ωΓ_R⁻⁶ may be a character line killed by Γ→Γ_R; it is not silently set equal to O. No step shows that C→D is separable or étale, that D has an original Y-atlas, or that the constant dimension equals a generic bundle rank. Those remain separate obligations in any proposed bridge. The two original endpoint maps remain on T, and no X descent through H is asserted.

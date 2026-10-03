@@ -1,6 +1,6 @@
 # Proof: residues and the conductor lattice
 
-This proves Version2 of the [statement](../../Theorems/quotient_geometry/canonical_trace_conductor.md).
+This proves Version3 of the [statement](../../Theorems/quotient_geometry/canonical_trace_conductor.md).
 The starting point is the exact evaluation annihilator in
 [canonical trace detection](../../Theorems/quotient_geometry/canonical_trace_detection.md).
 Here it is extended across every special fiber, using the actual
@@ -169,6 +169,23 @@ and Frobenius adjunction send it to a nonzero section
 Hence \(2G-2+p\deg\mathcal K_r\ge0\). Together with (14)
 this proves (4).
 
+The SAME degree bound holds for $B_{a,X}$ at every finite height.
+Indeed, if $\deg K<-(2G-2)/p$, the one-step adjunction above gives
+$H^0(B_{1,X}\otimes K)=0$. Every successive pullback of K has
+degree $p^i\deg K$, so the same one-step vanishing holds at each
+stage. The one-step Frobenius maps on $H^1$ of these negative
+lines are therefore injective. Their composite is injective too.
+Since both K and its $p^a$-pullback have no sections, the a-step
+Frobenius sequence identifies
+\[
+H^0(B_{a,X}\otimes K)
+=\ker\bigl(H^1(K)\longrightarrow H^1(F^{a*}K)\bigr)=0.
+\]
+Thus any nonzero section of $B_{a,X}\otimes K$, also after a
+degree-zero twist, requires
+$\deg K\ge-\lfloor(2G-2)/p\rfloor$. All scalar twists in these
+successive relative Frobenius maps are retained.
+
 If the coefficients belong to a stable degree-zero summand
 \(\mathcal E\subset\mathcal A\) of rank greater than one,
 the nonzero generic coefficient line is the generic fiber of
@@ -268,7 +285,8 @@ not been replaced by abstract bundles with the same ranks.
 
 ## 7. The apparent Abel-curve exception is finite for Raynaud sections
 
-Work on the first Frobenius twists. The argument of Sections2--3
+Fix any finite height a and work on the a-fold Frobenius twists.
+The argument of Sections2--3
 also describes the line kernel when the source coefficient is
 \(g^*N\) and the multiplier is twisted by \(N^{-1}\). In that
 case the residue numerator belongs to
@@ -284,15 +302,17 @@ pole calculation gives
 The inclusion \(f^*\mathcal K_r(N)\to g^*N\) has effective zero
 divisor \(f^*D_E+g^*E-\Delta\). Since N has degree zero,
 \(\deg\mathcal K_r(N)\le0\) still follows. A nonzero section
-in its coefficient-B_X kernel, even after any degree-zero first
+in its coefficient-B_(a,X) kernel, even after any degree-zero first
 twist L, requires
 \[
 \deg\mathcal K_r(N)\ge-b,
 \qquad b=\lfloor2s/p\rfloor,
 \tag{18}
 \]
-by the same Frobenius adjunction as Section4. This bound is uniform
-in L; it is a degree bound, not a generic-vanishing assertion.
+by the uniform negative-line vanishing in Section4. This bound is
+uniform in L AND a; it is a degree bound, not a generic-vanishing
+assertion. Relative coefficient Frobenius twists preserve the conductor
+multiplicities and every numerical degree in the formulas below.
 
 Adjunction for the Cartier curve \(\Gamma\), or the divisor
 identity (9), gives

@@ -1,7 +1,8 @@
 # Proof: properness turns constant Newton polygons into finite monodromy
 
 [Statement](../../Theorems/shared_tensors/common_companion_jump.md).
-Only the last uniqueness assertion requires corelessness.
+The general Newton-jump conclusion does not require corelessness;
+clump uniqueness and the selected-pair consequences use it.
 
 ## 1. Infinite irreducible coefficients have a Newton jump somewhere
 
@@ -125,14 +126,33 @@ with that fiber. Companion uniqueness therefore identifies the
 actual source pullbacks. After a finite coefficient extension
 the isomorphism is defined over that same coefficient field.
 
-The coefficient-preserving Dieudonné lattice exists on the whole
-smooth genus-two curve. The arbitrary-cycle theorem in
-[the ramified proof](../deformations/ramified_rapoport_oper.md)
-supplies an oper modulo $\pi^s$ with all incoming heights at most
-$s$. Its Taylor transport is integral to the required precision.
-One-endpoint oper rigidity descends this lattice through the
-other ORIGINAL leg and supplies the simultaneous lift.
+The [ramified rank-two lifting theorem](../deformations/ramified_rapoport_oper.md)
+applies directly to these supplied compatible rational coefficients.
+Its coefficient-preserving lattice, maximum-height oper and
+one-endpoint descent supply the full lift of BOTH original maps.
+An integral model on the other endpoint need not be supplied.
+No trace-field residue degree or ramification condition is used.
 
-This proof does not choose a trace-field place with special
-residue degree or ramification. It does not construct an infinite
-common system, or reduce arbitrary-rank systems to rank two.
+## 5. The selected pairs have only finite common coefficients in rank at most two
+
+For the main pair, the established
+[mixed-characteristic exclusion](../curve_arithmetic/liftable_coreless_target_finiteness.md)
+rules out the lift in Section4. For the backup, its
+[cored-span exclusion](../quotient_geometry/endpoint_exclusions/backup_cored_span_exclusion.md)
+first makes every hypothetical selected span coreless. The later
+[complete arithmetic exclusion](../curve_arithmetic/backup_arithmetic_reduction_exclusion.md)
+then rules out that SAME full lift. Thus neither selected pair
+admits the infinite-image absolutely irreducible rank-two case.
+
+It remains to handle reducible semisimple geometric systems of rank
+at most two. After the constant extension in
+[normalized arithmetic descent](geometric_common_coefficients.md),
+their arithmetic and geometric monodromy identity components coincide
+and are semisimple. A semisimple representation with only
+one-dimensional constituents has diagonal, hence abelian, geometric
+monodromy. Its connected semisimple identity component is therefore
+trivial. The geometric monodromy is finite, as claimed.
+
+These are restrictions on SUPPLIED compatible arithmetic-origin
+coefficients. Finite-image systems and higher-rank infinite systems
+are not excluded, and no coefficient is constructed from a bare span.

@@ -1,8 +1,9 @@
-# Proof: formal characters cannot remain in a proper theta divisor
+# Proof: formal-subgroup avoidance and uniform finite intersection
 
 [Statement](../../../Theorems/jacobians/ordinary_covers/cyclic_primary_section_stabilization.md).
 Write A=Pic0(C) and f for the p-rank of C. If f=0 there are no
 nontrivial connected cyclic p-power covers and the assertion is vacuous.
+The identity cover is bounded by h0(C,E); enlarge R so p^R exceeds it.
 Assume f>0. All theta divisors below are actual determinant-of-cohomology
 divisors, not just sets of rational torsion points.
 
@@ -57,7 +58,7 @@ H1_et(C,F_p)->H1(C,O_C) is injective. Thus (3) even has nonzero
 tangent map. No identification with an arbitrary formal curve in A
 has been made: (3) is a formal SUBGROUP morphism.
 
-## 2. A formal subgroup is Zariski dense in a simple abelian variety
+## 2. The algebraic closure of a formal subgroup
 
 Let H be the reduced Zariski closure of the image of (3). One may
 define it by contracting the kernel of the map from algebraic local
@@ -80,11 +81,10 @@ therefore implies that addition carries H times H into H and
 inversion carries H into H. More explicitly this is first checked
 on a dense neighborhood of (0,0); the inverse image of H under the
 global addition map is closed, so the assertion holds on all H times H.
-Thus H is a positive-dimensional connected reduced algebraic subgroup
-of A, hence an abelian subvariety. Simplicity gives H=A.
-
-It follows that (3) cannot be contained in ANY proper closed divisor
-of A. In particular it is not contained in the theta divisor of E.
+Thus H is a positive-dimensional abelian subvariety. The theta
+hypothesis excludes containment of H, so the formal character is
+not contained in the theta divisor of E. When A is simple, H=A
+and any proper closed divisor satisfies this hypothesis.
 This step concerns schematic formal containment; the fact that all
 mu_Q have just one geometric point is irrelevant.
 
@@ -159,7 +159,7 @@ no Smith exponent on ANY extension tower can reach p^r.
 
 ## 5. The exact linear term without a proper theta divisor
 
-Now retain chi(E)=0 but allow delta_E>0. Near zero in A the
+Here assume A simple. Retain chi(E)=0 but allow delta_E>0. Near zero in A the
 Poincare cohomology is still represented by an equal-rank matrix.
 Its generic corank is delta_E. Density of every formal character
 implies that its pullback has exactly this corank over k((t)).
@@ -197,9 +197,17 @@ determinant construction, is Madore, *Theta divisors and the Frobenius
 morphism*, Theorem3.1
 ([paper](https://alexjbest.github.io/buntes/courbes-semi-stables.pdf)).
 It has chi(B_C)=0, and etale base change identifies its pullback
-with B_D. Geometric simplicity of J(C) is unchanged by the relative
-twist. Applying the theorem on C^(1) proves uniform stabilization
+with B_D. If J(C) is simple, so is its relative twist. Applying
+the theorem on C^(1) then proves uniform stabilization
 of the actual Cartier kernels of cyclic covers of C.
+
+The later [all-defect Raynaud bound](../theta_divisors/raynaud_rank_one_dimension.md)
+also supplies the theta hypothesis for EVERY genus-two curve.
+A positive-dimensional abelian coset of generic defect>0 would
+have dimension at most(p−1)/p<1, impossible. Thus Section2 applies
+without Jacobian simplicity in genus two, in every characteristic.
+The arbitrary-pushforward formula in Section5 still requires the
+simple-Jacobian density input; no hypothesis is removed from it.
 
 For odd p, B_C has its canonical alternating omega-valued pairing.
 At a stabilized level with Q larger than every exponent, there are
@@ -233,7 +241,7 @@ p-group tower nor a second endpoint of different genus.
 
 ## 7. Mixed abelian covers with fixed finite prime support
 
-Now let k=bar(F_p) and fix a finite prime set S. Write S'=S minus
+Here retain A simple. Let k=bar(F_p) and fix a finite prime set S. Write S'=S minus
 the characteristic prime. The previously established
 [finite-support Boxall theorem](../../../routes/global/BOXALL_PRUFER_TORSION_AND_EVERY_CYCLIC_TOWER.md)
 implies that the proper generalized theta divisor of E meets

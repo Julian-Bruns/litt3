@@ -27,12 +27,12 @@ def build(twist,precision,output,linear_projection=False,positive_control=False)
             finish(state_path,output)
             return
     root=Path(__file__).resolve().parents[2]
-    prepared=json.loads((root/'Research/computations/backup_genus_two_preparation.json').read_text())
-    torsion=json.loads((root/'Research/computations/backup_genus_two_torsion.json').read_text())
+    prepared=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/backup_genus_two_preparation.json').read_text())
+    torsion=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/backup_genus_two_torsion.json').read_text())
     assert precision>=500 and twist in [-1,0,1,2,3]
     td=1 if twist==-1 else torsion['closed_points'][twist]['class_orbit_degree']
     field_degree=4 if positive_control else int(3*lcm(5,td))
-    models=json.loads((root/'Research/computations/backup_genus_two_field_models.json').read_text())
+    models=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/backup_genus_two_field_models.json').read_text())
     prime_poly=PolynomialRing(GF(5),'x')
     k=(GF(625,name='c',modulus='conway') if positive_control else
        GF(5**field_degree,name='c',modulus=prime_poly(models[str(field_degree)])))

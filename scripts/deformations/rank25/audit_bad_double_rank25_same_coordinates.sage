@@ -9,7 +9,7 @@ import argparse
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[3]
-receipts = root / 'Research/computations'
+receipts = root / '../litt3-computation-data/legacy_workspace_computations'
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--backup',action='store_true',help='Audit only the changed cubic backup input.')
 options = parser.parse_args()

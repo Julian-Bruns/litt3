@@ -122,17 +122,12 @@ periodic dictionary. Distinct paths differ at a finite truncation.
 There are $2^{\aleph_0}$ paths in this nonempty regular
 $25$-branching tree.
 
-The primitive-horizontal-map argument of
-[full-group nonuniqueness](explicit_full_bt_nonuniqueness.md), Section 6,
-applies to every pair in this tree: they have the same first
-connection, whose positive Hodge line has nonzero second fundamental
-form. A rational isogeny scales to an integral horizontal map with
-nonzero reduction. A rank-one reduction would have a positive-degree
-horizontal image and a negative-degree horizontal kernel, contrary
-to the horizontal-line degree bound. A rank-two reduction is an
-isomorphism. Correcting its scalar first marking and determinant
-would identify the full marked objects. Distinct paths are therefore
-pairwise non-isogenous.
+The groups have the same degree-zero rank-two oper reduction.
+[Crystalline lattice rigidity](crystalline_oper_lifting.md#rigidity-of-the-integral-lattice)
+therefore rescales a rational isogeny to an integral crystal
+isomorphism, preserving $F,V$. The [marked scalar correction](explicit_full_bt_nonuniqueness.md#6-the-groups-are-already-distinct-up-to-isogeny)
+then gives a normalized marked group isomorphism. Distinct paths
+cannot admit one, so they are pairwise non-isogenous.
 
 For each fixed finite field, the
 [full comparison cutoff](finite_field_full_bt_cutoff.md) detects a

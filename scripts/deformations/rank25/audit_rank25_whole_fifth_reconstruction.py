@@ -15,7 +15,7 @@ import numpy as np
 from sage.all import GF, PolynomialRing, matrix, vector
 
 ROOT = Path(__file__).resolve().parents[3]
-OUT = ROOT / "Research/computations"
+OUT = ROOT / "../litt3-computation-data/legacy_workspace_computations"
 pt = PolynomialRing(GF(5), "t")
 tt = pt.gen()
 modulus = tt**4 + 4*tt**3 + tt**2 + 4*tt + 3

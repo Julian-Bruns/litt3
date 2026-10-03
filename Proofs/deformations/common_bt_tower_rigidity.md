@@ -1,44 +1,37 @@
-# Proof: affine Frobenius and the intersection of the endpoint fields
+# Proof: the coherent torsor and the intersection of the endpoint fields
 
 [Statement](../../Theorems/deformations/common_bt_tower_rigidity.md).
-This is local continuation of exact realization; no independent
-audit is claimed.
+Use the actual Cartier classification and the later absolute torsor.
+Both retain the determinant and complete lower-level marking.
 
-## Arithmetic descent of a nonempty single-curve fiber
+## Arithmetic counts from the absolute coherent torsor
 
-Let $\sigma$ be arithmetic $q$-Frobenius. The Cartier kernel $K_H$
-is a finite-dimensional $k$-linear space, with its natural semilinear
-$\sigma$ action and descent to $\mathbf F_q$. One can see the descent
-by writing the Cartier equation in bases defined over $\mathbf F_q$
-and taking fifth powers to linearize it. A change of logarithmic
-character trivialization multiplies its form by a nonzero constant
-and leaves the zero condition unchanged.
+The [absolute extension torsor](versal_bt_extension_torsor.md)
+and its bundle $\mathcal B_H$ descend with the supplied actual
+data to the fixed curve $C_0/\mathbf F_q$. Use the scalar twist
+of absolute Frobenius in that construction; its sections are the
+Cartier difference space with the corresponding twisted scalar
+convention, of dimension $d$.
 
-Choose one geometric next extension $A$. The exact realization
-theorem identifies the fiber with a torsor under $K_H$. Under this
-identification Frobenius is an affine semilinear map
+Coherent field base change gives
 \[
-a\longmapsto \tau+\sigma(a),
-\qquad \tau=\Delta_N(A,\sigma A).
+H^1(C_0,\mathcal B_H)\otimes_{\mathbf F_q}k
+\simeq H^1(C_0\times_{\mathbf F_q}k,\mathcal B_{H,k}).
 \tag{2}
 \]
-Choose an $\mathbf F_q$ basis of $K_H$. A fixed point of (2) is
-obtained by solving, separately in each coordinate,
-$a_i^q-a_i=-\tau_i$. These equations have solutions in the
-algebraic closure and each has exactly $q$ roots. Hence there are
-exactly $q^d$ Frobenius-fixed geometric classes.
+A geometrically nonempty next-level fiber therefore has zero
+absolute class already over $\mathbf F_q$. Its actual torsor has
+a rational section, so actual normalized marked extensions exist
+there. Their classes form a torsor under the $d$-dimensional
+$\mathbf F_q$ space $H^0(C_0,\mathcal B_H)$, and have no marked
+automorphisms. Hence their number is $q^d$, and after any degree-$m$
+constant extension it is $q^{md}$.
 
-Each fixed class descends as an actual marked normalized group.
-The group and the unique comparison with its Frobenius conjugate
-are defined over a finite extension. Iterate that comparison around
-the finite Galois cycle: the composite is a marked normalized
-automorphism and hence is the identity by the established scalar
-theorem. Effective descent of finite locally free Hopf algebras
-therefore applies. Conversely a rational group has a fixed class.
-There are no further rational forms because the marked normalized
-automorphism group has no nonidentity geometric sections. This
-proves(1) without asserting a fine moduli scheme or global
-nonemptiness.
+If $d=0$, zeroth and first coherent cohomology both vanish.
+The same argument gives the unique next extension at every level,
+starting with any supplied actual normalized finite level.
+The resulting unique marked normalized full tower stays over
+$\mathbf F_q$. No reference on a proper cover is needed.
 
 ## Uniqueness on the actual two-leg span
 
@@ -60,9 +53,9 @@ both actual embeddings, not an isogeny-category replacement.
 
 If the fixed data are defined over $\mathbf F_q$, every arithmetic
 conjugate of a compatible pair is another extension of the same
-data. Uniqueness supplies its descent comparison. As in the first
-part, work over a finite field of definition and use triviality of
-marked automorphisms to check the cocycle, then descend actual groups,
+data. Uniqueness supplies its descent comparison. Work over a finite field
+of definition and use triviality of marked
+automorphisms to check the cocycle, then descend actual groups,
 markings and the original source comparison.
 
 Finally, suppose compatible levels are unbounded. Truncation gives

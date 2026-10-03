@@ -183,7 +183,7 @@ def main():
                                     'rho5_certified_laurent_precision':r['rho5_certified_laurent_precision'],
                                     'rank_J':5,'rank_augmented':6,'regular_Riccati_agreement':True,
                                     'two_base_field_roots_excluded':True}
-    (root/'Research/computations/rank25_one_parameter_return_checks.json').write_text(json.dumps(result,indent=2)+'\n')
+    (root/'../litt3-computation-data/legacy_workspace_computations/rank25_one_parameter_return_checks.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result,indent=2))
 
 

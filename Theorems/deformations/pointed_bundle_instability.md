@@ -1,14 +1,27 @@
-# Pointed-bundle instability and intrinsic genus-two opers
+# Common slope rigidity and pointed Frobenius instability
 
-Version7,2026-09-14. The pointed-oper and curve-deformation
+Version8,3 October2026. The stronger common slope-rigidity foundation
+replaces the separate finite-projective pointed proof. The pointed-oper and curve-deformation
 assertions hold in every odd characteristic; the active-spectrum
 application in Part4 remains in characteristic five.
 
-## General pointed-bundle principle
+## Common slope rigidity and pointed bundles
 
 Over k=bar(F_p), let X<-Z->Y be a coreless finite etale span of smooth
-projective connected curves of genus at least two. Let E_X,E_Y be
-positive-degree vector bundles with nowhere-zero sections, and let an
+projective connected curves of genus at least two.
+Every nonzero compatible locally free quotient or saturated subbundle of
+an ACTUAL common strongly semistable bundle has the same endpoint
+slopes and is strongly semistable. The same holds for actual
+morphism images as quotients, before saturation in their target.
+This works in every rank and at every slope.
+
+For matching nonzero sections of a positive strongly semistable
+common bundle, their saturated image is a common line of that
+slope. Its common zero divisors have degree $\mu(E_C)$;
+in particular the slopes are integers and a clump is forced.
+A nowhere-zero matching section is therefore impossible.
+
+Let E_X,E_Y be positive-degree vector bundles with nowhere-zero sections, and let an
 isomorphism of their actual pullbacks identify those sections. Then
 neither bundle is strongly semistable. This holds in every rank; the
 rank-one case is vacuous. It does not assert a clump in arbitrary rank.

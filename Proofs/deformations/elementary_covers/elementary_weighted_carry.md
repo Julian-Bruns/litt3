@@ -1,110 +1,160 @@
-# Proof: elementary weighted carries
+# Proof: the norm component and its projective character spaces
 
-Version1, 2026-09-13. The rank-three reduction came from the returned
-rank125 partial certificate. The arbitrary-rank extension, signed
-detector and finite lifting argument were proved locally and checked
-in the [bounded independent audit, Section5](../../../Research/audits/RANK125_WEIGHTED_REDUCTION_AUDIT_2026_09_13.md).
-The statement concerns additive operators only.
+[Statement](../../../Theorems/deformations/elementary_covers/elementary_weighted_carry.md).
+The older rank-three calculation is a specialization of this one graded
+argument. Keep the original rational generators and coefficient Frobenius;
+neither a geometric coordinate change nor commuting higher operators is used.
 
-## Original normal basis and principal operator
+## 1. The graded norm kernel
 
-The monic relation
+The original relation
+\[
+e_i^p=-p e_i-\sum_{j=2}^{p-1}\binom pj e_i^j
+\]
+never lowers weight. Its only weight-$p$ terms give
+$E_i^p+\tau E_i$. The normal monomials are free over $W_m(k)$,
+so there are no further graded relations.
+Before truncating $\tau$, use
+\[
+A=k[\tau,E_1,\ldots,E_r]/(E_i^p+\tau E_i).
+\]
+An additive deck-equivariant map commutes with $e_i$ and multiplication
+by $p$. Thus a correction divisible by $p$ raises weight at least
+$p-1>a$, while the higher terms of $f$ raise it at least $a+1$.
+The principal operator is exactly $q\Phi$ of weight $a$.
 
-    e_i^5=-5(e_i+2e_i^2+2e_i^3+e_i^4)
+Invert $\tau$ and adjoin $c$ with $c^{p-1}=-\tau$. The algebra becomes
+the function algebra on $E=cv$, $v\in\mathbf F_p^r$.
+Homogeneity and the stated nonvanishing of $q$ make its multiplication
+kernel exactly the origin component. Its integral generator is
+\[
+\nu=\prod_i(E_i^{p-1}+\tau),\qquad\deg\nu=D.
+\]
+The algebra is free over $k[\tau]$, and the coefficient of
+$\prod_iE_i^{p-1}$ in $\nu$ is one. Hence an integral localized
+multiple of $\nu$ cannot have a denominator in that coefficient.
+Consequently $\ker(q:A\to A)=k[\tau]\nu$.
 
-does not lower weight when wt(5)=4 and wt(e_i)=1. Its two weight5
-terms give E_i^5+tau*E_i. The normal monomials, free over W_m(k),
-prove there are no further graded relations. Work first without the
-truncation tau^m, in
+## 2. Homogeneous solutions and high-weight absorption
 
-    A=k[tau,E_1,...,E_r]/(E_i^5+tau*E_i).
+Let $d$ be the lowest weight of a nonzero $x$.
+If $d+a<(p-1)m$, the equation $Lx=0$ places its principal term
+in the untruncated norm kernel. The same is true if
+$d+a=(p-1)m$: the only possible discarded term is a constant
+multiple of $\tau^m$, but $q\Phi(x_d)$ is augmented and cannot
+equal such a term, as evaluation at all $E_i=0$ shows.
+For $m\le r$, every $d\le(p-1)m-a$ is below $D$, so is impossible.
+For $m=r+1$, every $d<D$ has $d+a<(p-1)(r+1)$ and is likewise
+impossible. These are the claimed kernel thresholds.
 
-An additive deck-equivariant map commutes with every e_i and with
-multiplication by5. Its correction divisible by5 therefore raises
-weight at least4; the higher terms of f raise weight at least3.
-The principal weighted operator of L is exactly q*Phi of order2.
-This proof does not commute its higher coefficient operators.
+Let $T$ be the augmented part of $A/(q)$. The multiplication sequence
+and norm kernel give its Hilbert series
+\[
+H_T(z)=
+\frac{(1-z^a)(1+z+\cdots+z^{p-1})^r+z^{D+a}-1}
+     {1-z^{p-1}}.
+\]
+It is a polynomial, since the augmented quotient vanishes after
+inverting $\tau$ and is a finite $\tau$-torsion module.
+The numerator has degree $D+a-1$ with leading coefficient $-r$;
+thus $T$ vanishes in weights above $D+a-p$.
+In particular $q$ surjects onto every augmented target of weight
+at least $D+a-p+1$. Surjectivity passes to the $\tau^{r+1}$ quotient.
 
-Invert tau and adjoin c with c^4=-tau. The algebra is then the function
-algebra on E=c*a, a in F5^r. Nonvanishing of q at every nonzero ORIGINAL
-direction shows that its kernel is the origin component. Before
-localization its generator is
+A coefficient-ring constant in $\Lambda_{r+1}$ has weight at most
+$D$. Hence every target in $\mathcal W^{D+a}$ is augmented.
+Cancel its lowest weight with $q\Phi$, using a source $a$ weights
+lower, and apply the ACTUAL $L$. The residual has strictly greater
+weight. Repetition terminates at the maximal normal weight $2D$,
+and all sources stay in $\mathcal W^D$. This proves absorption.
 
-    nu=product_i(E_i^4+tau),   deg(nu)=4r.
+## 3. Norm targets have a known first weight
 
-Indeed A is free over k[tau], and the top E-monomial of nu has
-coefficient1. An element of the localized kernel with integral normal
-coefficients cannot have a denominator in its coefficient of nu.
-Thus ker(q:A->A)=k[tau]*nu.
+The exact norm factor is
+\[
+N_G=\prod_i\bigl(e_i^{p-1}+p+\sum_{j=1}^{p-2}\binom p{j+1}e_i^j\bigr).
+\]
+Its first weight is $D$, with symbol $\nu$. At precision $p^r$
+the constant term $\tau^r$ is discarded. If $Lx=N_G\eta$ and
+the first source weight $d<D-a$, its image lies below $D$ and has
+zero principal term. Section1's norm kernel, whose first degree is
+$D$, excludes this. Hence $x\in\mathcal W^{D-a}$.
+Since $a<p-1$, a constant normal monomial of this weight would be
+divisible by $p^r$. All other normal monomials have zero augmentation,
+so $\operatorname{aug}(x)=0$ in $W_r(k)$.
 
-## Homogeneous solution bounds
+If $\eta$ is divisible by $p$, the target has weight at least $D+p-1$.
+The same argument excludes $d\le D-a$. At the boundary $d+a=D$,
+the only term discarded by $\tau^r=0$ is a constant multiple of
+$\tau^r$. The augmented principal image $q\Phi(x_d)$ cannot equal
+such a term, by evaluation at all $E_i=0$. Thus
+$x\in\mathcal W^{D-a+1}$, including every degenerate quadratic symbol
+permitted by the original-rational-direction hypothesis.
 
-Let d be the lowest nonzero weight of x. If d+2<4m, the equation
-Lx=0 forces its principal term into the untruncated kernel above.
-If d+2=4m, the only possibly discarded term is a scalar multiple of
-tau^m. But q*Phi(x_d) is augmented, and the augmented ideal has zero
-intersection with k[tau], as seen by setting all E_i=0. That discarded
-term cannot occur. Since the kernel starts at4r, source weights
-d<=4m-2 are impossible when m<=r. This gives Wcal^(4m-1).
-At m=r+1, all d<4r have output weight<4(r+1), giving Wcal^(4r).
+At precision $p^{r+1}$, $\tau^r$ survives. If $\eta\bmod p\ne0$,
+the first target is $\nu\bar\eta$ of weight $D$, so the first source
+would have weight $D-a$. Its principal equation
+$q\Phi(x_{D-a})=\nu\bar\eta$ is impossible at $E_i=0$, where its two
+sides are zero and $\tau^r\bar\eta$. Therefore $\eta\bmod p=0$.
+The target now starts in weight $D+p-1$; for every $d<D$ one has
+$d+a<D+p-1$, below the truncation weight. The norm kernel again
+excludes such $d$. This gives $x\in\mathcal W^D$.
 
-## High-weight absorption
+Conversely let $\eta$ be divisible by $p$, and prescribe any $c\in k$.
+Take $x_0=N_G[c]$. Deck equivariance gives $Lx_0=N_G\beta$;
+its reduction $f\Phi(\bar x_0)=0$ gives $\beta\bmod p=0$.
+The residual $N_G(\eta-\beta)$ starts in weight $D+p-1$.
+The constructive absorption in Section2 cancels it with a source
+starting in weight $D+p-1-a>D$: each next cancellation has strictly
+higher weight. Adding that correction to $x_0$ solves the equation
+and preserves its leading coefficient $cN_G$. This proves sufficiency
+and exhausts the reduction set without any coefficient commutation.
 
-Let T be the augmented part of A/(q). The exact multiplication sequence
-and the computed kernel give
+## 4. The critical projective coefficient extraction
 
-    H_T(z)=((1-z^2)(1+z+z^2+z^3+z^4)^r+z^(4r+2)-1)/(1-z^4).
+Multiplication $q\Phi$ from weight $D-1$ to weight $D+a-1$ is
+injective below the norm kernel and surjective above the augmented
+cokernel. The target weight is $a-1$ modulo $p-1$, hence has no
+constant term. Both critical weights are below the truncation weight
+$(p-1)(r+1)$, so use their unique homogeneous lifts to $A$ before
+setting $\tau=-1$. This identifies the two spaces with the
+scaling-character $-1$ and $a-1$ functions on nonzero
+$\mathbf F_p^r$ vectors; each has dimension $(p^r-1)/(p-1)$.
 
-This is a polynomial: after inverting tau the augmented cokernel is
-zero, so the finitely generated k[tau]-module T is tau-torsion. The
-numerator has degree4r+1 and leading coefficient -r over the integers;
-therefore H_T has degree4r-3. In particular q is onto the augmented
-part at every output weight>=4r-2. This surjectivity passes to the
-tau^(r+1) truncation.
+For the preimage $H$, specialization at $\tau=-1$ leaves normal
+monomials of degrees $D-1,D-p,\ldots$, all congruent to $-1$.
+In the sum over all $v\in\mathbf F_p^r$, multiplying by $v_i$
+selects only $E_i^{p-2}\prod_{j\ne i}E_j^{p-1}$:
+each exponent must be positive and divisible by $p-1$, and the
+total degree is at most $D$. Its vector sum is $(-1)^r$.
+Dividing into projective orbits divides by $p-1=-1$ in $k$,
+so the factor $(-1)^{r+1}$ restores coefficient one.
+For the graded preimage under $q\Phi$, substitute
+$(\Phi H)(-1,v)=Z(-1,v)/q(v)$, then undo coefficient Frobenius.
+This is precisely the stated detector, including its sign and order
+of operations.
 
-In Lambda_(r+1), a nonzero coefficient-ring constant has weight<=4r.
-Every target of weight>=4r+2 is therefore augmented. Cancel its lowest
-weight by q*Phi using a source two weights lower, then apply the actual
-L. The residual has strictly larger weight. Iteration terminates at
-the maximal normal weight8r. The entire source stays in Wcal^(4r),
-proving the stated absorption without dividing reduced classes.
+All detectors vanish exactly when the critical source has no
+$\tau^0$ coefficient, hence is divisible by $p$.
+Lift it, subtract its actual $L$-image and absorb the remaining
+higher-weight tail by Section2. Conversely a source in
+$p\Lambda+\mathcal W^D$ whose image has weight at least $D+a-1$
+cannot start below $D-1$, because its principal image would be
+nonzero there. Its critical preimage has no $\tau^0$ part, giving
+the reverse implication. This proves the exact image criterion.
 
-## Critical coefficient extraction
+## 5. Scope and original evidence
 
-Multiplication q*Phi from degree4r-1 to degree4r+1 is injective below
-the norm kernel and surjective above the augmented cokernel. There is
-no constant in the target degree, which is1 modulo4. Both spaces have
-dimension (5^r-1)/4: after tau=-1 they are the scaling-character3 and
-scaling-character1 functions on the nonzero F5^r vectors.
+At $p=5,a=2$ the formulas recover all old rank-three thresholds
+and signed detectors, together with the entire arbitrary-rank extension.
+The original returned93 checks,19 weighted degrees and636 rank-two/four
+extractions remain in the
+[original audit](../../../Research/audits/RANK125_WEIGHTED_REDUCTION_AUDIT_2026_09_13.md);
+they are provenance, not the proof of the larger scope.
+The [new focused review](../../../Research/audits/WEIGHTED_CARRY_GENERAL_PRINCIPAL_SYMBOL_AUDIT_2026_10_03.md)
+checks the general grading and exact image statement without numerical replay.
 
-For a preimage H, specialization at tau=-1 leaves monomials of degrees
-4r-1,4r-5,...,3. The sum over all a in F5^r of a_i*H(a) selects only
-the coefficient of E_i^3 product_(j!=i)E_j^4. The top vector sum is
-(-1)^r, while conversion to projective orbits divides by4=-1.
-Multiplication by (-1)^(r+1) restores coefficient1. Substituting
-H(a)=Z(-1,a)/q(a) with coefficient Frobenius still applied proves the
-displayed detector. The Frobenius inverse belongs after the sum.
-
-For R in Wcal^(4r+1), all detectors vanish exactly when the degree4r-1
-preimage has no coefficient with tau-power0. The leading source is
-then divisible by5. Subtract its actual L-image and absorb the tail
-by the preceding argument. Conversely a source in 5*Lambda+Wcal^(4r)
-with image in Wcal^(4r+1) cannot start below degree4r-1: its principal
-image there would be nonzero. Its critical preimage has no tau-power0
-part, so every detector vanishes. This proves the equivalence.
-
-## Checks and limitation
-
-The rank-three returned verifier passed its93 coefficient tests and
-Hilbert calculations. A separate implementation tested the norm-kernel
-formula in19 weighted degrees for a quadratic over F125. The local
-generalization received independent checks at ranks2 and4: critical
-dimensions6 and156, Hilbert endpoints5 and13, and636 signed coefficient
-extractions. The proof, not these examples, gives arbitrary rank.
-
-Applied to an actual geometric equation Lx+R=0, this theorem would be
-useful only AFTER proving the stated weight bound and evaluating the
-detectors of the WHOLE nonlinear R. The current rank125 comparison
-does not supply either assertion. Its genuinely nonzero quadratic
-channel is recorded in
-[compatible_reference_quadratic_channel](fourth_hodge_quadratic_channel.md).
+For a geometric equation $Lx+R=0$, the theorem applies only after
+bounding and testing the WHOLE nonlinear residual.
+The [compatible quadratic channel](fourth_hodge_quadratic_channel.md)
+does not by itself supply these inputs.

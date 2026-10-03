@@ -1,9 +1,13 @@
-# Proof: finite affine averaging transports the given tower
+# Proof: finite affine averaging transports the unique ordinary tower
 
 [Statement](../../Theorems/deformations/cored_ordinary_bt_transport.md).
-This is a local continuation of the two-ordinary-endpoint reply. The
-new input to its application is the tame point-stabilizer theorem for
-the actual BT1; no source Cartier-kernel vanishing is asserted.
+## The ordinary endpoint already has its unique full group
+
+The [absolute extension torsor](versal_bt_extension_torsor.md) has
+zero zeroth and first cohomology for the supplied ordinary $H_Y$.
+It therefore constructs its unique normalized full group $G_Y$ on
+the ORIGINAL Y without a global reference. The finite argument below
+transports this definite tower, retaining the specified BT1 comparison.
 
 ## The core supplies a finite group, and its relevant index is prime to five
 

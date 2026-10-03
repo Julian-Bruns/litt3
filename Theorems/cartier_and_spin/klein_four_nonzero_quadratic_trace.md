@@ -2,7 +2,7 @@
 
 Version1, 26 September2026. Retain the actual V4 comparison hypotheses
 and canonical labels of
-[trace descent](klein_four_trace_branch_finiteness.md). Put
+[trace descent](quartic_trace_obstruction.md). Put
 K=F_(5^14), F=F_(5^56), L=F_(5^28), and let sigma generate Gal(F/K)
 by cycling the root types.
 

@@ -1,11 +1,24 @@
 # A clumpless span forces unbounded infinitesimal monodromy height
 
-Version2,21September2026. Let k be algebraically closed of positive
+Version3,3October2026. Let k be algebraically closed of positive
 characteristic p. Retain two actual finite etale maps
 X<-Z->Y of smooth proper connected hyperbolic curves, and suppose
 there is NO clump. The category of common vector bundles with the
 specified pullback comparisons is a neutral Tannakian category,
 using evaluation at any chosen point of Z.
+
+More generally, let E be a finite commutative algebra object in this
+common category, whose algebra at ONE endpoint's generic point is
+a field. Write A for its fiber algebra and H for its algebraic
+monodromy group. For every point \(\epsilon:A\to k\), the orbit
+coaction is injective:
+\[
+(\epsilon\otimes1)\rho:A\lhook\joinrel\longrightarrow k[H].
+\]
+Thus the orbit has the WHOLE fiber as its scheme-theoretic image,
+including all nonreduced structure. Any characteristic-primary
+nilpotence visible in A is also visible in k[H]. No Frobenius or
+genus divisibility assumption is needed for this general orbit lemma.
 
 Use ABSOLUTE Frobenius to regard
 \[
@@ -50,6 +63,7 @@ a clump nor solves either candidate common-cover problem.
 
 [Proof](../../Proofs/cartier_and_spin/common_cartier_monodromy_height.md).
 Author proof using the actual Frobenius FIELD extension on an endpoint
-and an exact orbit-coaction calculation. Version1's weaker determinant
-argument is retained in the proof. No sampled height extrapolation or
-new numerical certificate is used.
+and an exact orbit-coaction calculation. The general orbit lemma
+subsumes the earlier genus-dependent determinant bound. Its useful
+character-lifting lemma is retained in a short independent form.
+No sampled height extrapolation or new numerical certificate is used.

@@ -281,33 +281,24 @@ linear forms. Their ideal has height3. Consequently V3 has
 codimension at least3 in P at o. This concerns actual determinantal
 jumps, and is not a claim that all higher obstructions vanish.
 
-## 7. Ampleness of the dual universal kernel
+## 7. The global constraint follows at every positive defect
 
-Here let P be any abelian parameter variety with finite kernel in
-J(Z^(1)), and suppose the actual generic h0 is1. The preceding
-reflexivity argument again makes L=R0 pi_*(B_Z tensor N) a line.
-Write M=L^dual. Universal evaluation, at a general z in Z^(1), is
-nonzero and implies H0(P,M tensor N_z)!=0. The closed locus V0(M)
-therefore contains the entire parameterized Abel curve a(Z^(1))
-in P^dual, including its chosen origin. In particular M is effective.
-This Abel curve generates P^dual: its dual map is the given
-homomorphism P->J(Z^(1)), with finite kernel.
+Let α:P→J(Z^(1)) be an abelian parameter map with finite kernel.
+Factor it as an isogeny λ:P→A onto its abelian
+image. The [all-defect dimension theorem](raynaud_rank_one_dimension.md)
+gives an ample dual determinant of the universal kernel on A
+at every positive generic rank. Isogenies are finite flat, so
+cohomology base change identifies the kernel on P with its pullback.
+A Poincare normalization changes it only by a Picard-zero parameter
+line; thus its dual determinant remains ample.
 
-If an effective M were not ample, the connected positive-dimensional
-kernel K of its polarization would force V0(M) into a coset of the
-proper annihilator K^perp in P^dual. To see this, restrict any
-nonzero section of M tensor alpha to a general K-coset. Its
-degree-zero restriction can have a section only when it is trivial;
-thus alpha|K is a fixed character. A generating Abel curve through
-the origin cannot lie in that proper coset. Hence M is ample.
-
-Under Hom-zero, line bundles on the product split as external
-products, so both factor duals are ample. Duality(1) also gives
-
-    det(C)^-1=(L tensor iota^*L)^-1 tensor O(D_tors),
-
-with D_tors the effective divisorial torsion cycle. This gives a
-polarization bound but no contradiction. Neither this bound nor
-the unique flat jump divisor is presently excluded by joint
-minimality or corelessness. Generic vanishing and the common-cover
-problem both remain open.
+This includes the old rank-one assertion. Under Hom(JX,JY)=0,
+the ample determinant dual on their product splits into ample
+factor lines. Writing M_± for the two opposite universal-kernel
+determinant duals, duality gives the pulled-back determinant budget
+\[
+c_1(M_+)+c_1(M_-)+[D_{\rm tors}]
+=(p-1)\alpha^*[\Theta_{J(Z^{(1)})}].
+\]
+The local jump divisor, its quartic cone and the actual two-map
+existence question remain unexcluded.

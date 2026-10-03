@@ -24,29 +24,21 @@ commutativity give
 \]
 All traces here are on the full 2g-dimensional rational H1 of J(X).
 
-Suppose none of the equalities h sigma=gamma^j h holds. The reduced
-joint image Gamma of (h,h sigma) in X times X is then distinct from
-all three graphs. If c is the degree from T to its normalization,
-the product-surface correspondence intersection formula gives, after
-reindexing j if necessary,
-\[
-0\le\Gamma\cdot\operatorname{Graph}(\gamma^j)
-=\frac{2M-\operatorname{Tr}(\zeta^j u)}{c}.
-\tag{6}
-\]
-The inequality holds even for a singular joint image and ramified h:
-these are distinct effective integral divisors on a smooth surface.
-The formula is the bilinear version of the
-[joint-image intersection calculation](../jacobians/isogeny_sieves/etale_rosati_factorization.md).
-In particular no curve-map saturation is being inferred just from
-the character decomposition.
+Suppose none of the equalities h sigma=gamma^j h holds.
+The reduced joint image of (h,h sigma) is distinct from all
+three graphs. Apply the general
+[three-graph intersection identity](../jacobians/isogeny_sieves/fixed_x_short_map_relations.md#1-the-general-graph-and-independence-bound)
+to these ACTUAL equal-degree separable maps. It gives
+Tr(zeta^j u)<=2M for each j. The normalization cycle factor
+and singular-image case are already included there; no
+etaleness, freeness or character-based map saturation is used.
 
 Let s_i=Tr(a_i)/(2M). Equations(4)--(5) give
 \[
 \sum_i s_i=g,\qquad
 \operatorname{Tr}(\zeta^{-i}u)=M(3s_i-g).
 \]
-Equation(6) bounds every s_i above by (g+2)/3; summing the other
+The three-graph inequality bounds every s_i above by (g+2)/3; summing the other
 two bounds gives s_i>=(g-4)/3. In genus g>4 a missing component
 would have s_i=0, a contradiction. This proves(1)--(2). Rosati
 positivity also gives s_i>=0 independently.

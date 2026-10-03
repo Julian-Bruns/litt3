@@ -1,6 +1,6 @@
 # Fifth symmetric twists and first-Frobenius twists all vanish
 
-Version2,26September2026. Let K be the actual rank-two degree-one
+Version3,3October2026. Let K be the actual rank-two degree-one
 bundle of [the finite-coefficient problem](finite_coefficient_generation.md),
 and let F denote absolute Frobenius. Under the natural subbundle map
 F^*K -> Sym^5 K,
@@ -18,12 +18,13 @@ h^0(X,\operatorname{Sym}^{15}K)=3,
 and every section belongs to F^*(Sym^3 K), the subbundle with binary
 indices0,5,10,15 in an affine frame.
 
-The first-Frobenius all-twist exclusion now also has a shorter proof:
-h0(F^*K(5O))=3, and C3 acts by one character on this entire space.
-The cyclic determinant-section argument therefore forces every
-nonnegative-degree line class in F^*K to be invariant; the established
-invariant-twist calculation excludes it. The independent cubic-net
-square exclusion remains valid but is no longer needed for this step.
+The first-Frobenius vanishing follows from the later
+[shifted theorem](shifted_first_frobenius_vanishing.md),
+which is proved independently by the general nonnegative-line norm
+criterion. The separate unshifted invariant census is unnecessary.
+The stronger geometric fact remains: no nonzero section in the
+three-dimensional Sym3(F^*K) net has square discriminant in k[x],
+including zero or a lower-degree square.
 
 No irreducible rank-three finite étale coefficient possessing a nonzero
 degree-five semi-invariant maps to K. Together with

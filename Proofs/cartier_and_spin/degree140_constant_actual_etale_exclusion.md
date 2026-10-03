@@ -7,13 +7,36 @@ not a freely chosen critical curve or an abstract square norm.
 
 ## The small necessary system
 
-The [divided endpoint trace theorem](degree140_divided_endpoint_traces.md)
-and [seven-trace reduction](degree140_chartwise_monic_quadratic_actual_trace.md)
-give three quadratic equations and the original cubic. The uniform
-[leading-cubic line exclusion](degree140_uniform_monic_cubic_actual_trace.md)
-justifies every pivot used here. Their actual vanishing follows either
-from the proved collision analysis or from the new
-[source-root residue argument](actual_split_critical_residue_integrality.md).
+The [actual-source trace calculus](degree140_actual_source_traces.md)
+gives seven necessary divided traces, with multipliers
+t,tx,tx^2,tx^3,ty,tx^4,txy and degrees3,4,5,5,6,6,6.
+The tx,tx^2,ty leading coefficients are original-chart units.
+The t leading cubic coefficient vanishes only on
+H=-<156117>/<363030>. On that line the first three trace degrees are
+2,4,5. Their two scale resultants, after removal of original q-chart
+factors only, have degrees680 and850 and gcd one. The retained
+`inverse_eta_cubic_exception_resultants.sobj` contains the equations,
+removed factors and Bezout identity, reproduced by
+[the exception source](../../scripts/arithmetic/degree140_inverse_eta_exception_resultants_20260930.sage).
+Thus this line contains no actual scale and the t pivot is available
+on the remaining chart.
+
+Four exact row operations with these pivots leave three quadratics
+and the original cubic. The
+[row-reduction source](../../scripts/arithmetic/degree140_inverse_eta_quadratic_reduction_20260930.sage)
+retains every operation in `inverse_eta_quadratic_reduction.sobj`.
+Its input is the42 coefficients constructed in a proved79-by497
+interpolation box by
+[the seven-trace grid](../../scripts/arithmetic/degree140_inverse_eta_seven_grid_20260930.cpp),
+using the
+[Laurent-support circuit](../../scripts/arithmetic/degree140_inverse_eta_seven_bounds_20260930.cpp).
+After removing common column units the resulting matrix M annihilates
+(H^6,H*q^13*Psi^6*mu,q^26*Psi^12*mu^2)^t.
+The [matrix normalizer](../../scripts/arithmetic/degree140_inverse_eta_quadratic_matrix_20260930.sage)
+retains those unit removals in `inverse_eta_quadratic_matrix.sobj`.
+Actual necessity at collisions uses the paired source-root residue
+argument in the trace calculus. No leading-quadratic nondegeneration
+search is needed: the following fixed-size resultants retain all drops.
 
 In the coefficient matrix M of the seven-trace reduction, use the unit
 coordinate v=q^13*Psi^6*H^-5*mu. The three quadratics are exactly
@@ -107,7 +130,10 @@ give the stated whole constant-degree140 conclusion.
 
 Exact data are under
 `../../../litt3-computation-data/seventeen_hour_continuation_20260929/traces/`.
-The principal records are `inverse_eta_scale_resultant_inputs.sobj`,
+The principal records are `inverse_eta_seven_rational_coefficients.sobj`,
+`inverse_eta_quadratic_reduction.sobj`,
+`inverse_eta_cubic_exception_resultants.sobj`,
+`inverse_eta_scale_resultant_inputs.sobj`,
 `inverse_eta_scale_resultants.sobj`,
 `inverse_eta_scale_projection_resultant_0.bin` and `_1.bin`, the
 `inverse_eta_scale_projection_gcd_*` Bezout and squarefree records,

@@ -76,9 +76,21 @@ Lambda in any fiber of rho: their pairwise differences belong to
 the prime-to-p subgroup of ker(rho)(k). Since delta≤delta^r,
 the sum in (1c) is at most e_(p')K. All exceptional prime-to-p
 characters are already in P[N], so this bound has its stabilized
-value for every Lambda containing P[N]. That group has N^(2r)
-elements and gives the asserted degree of a level reaching that
-value. A separate nonempty generic open is used for each Lambda.
+value for every Lambda containing P[N]. In fact this value is exact.
+All points of the finite F_q-defined bad set are torsion. Every
+lift of a torsion point is torsion: a multiple lies in finite ker rho.
+For a prime-to-p target, discard that lift's p-primary component:
+its image is zero, so the remaining prime-to-p component still lifts
+the target. Differences are exactly the prime-to-p part of ker rho,
+which has e_(p') points even for an inseparable p-primary kernel.
+Every prime-to-p bad point therefore has exactly e_(p') exceptional
+prime-to-p lifts, all already in P[N]. A bad point with nonzero
+p-primary part has none. Thus (1c) gives
+\[
+d_\infty=e_{(p')}\sum_{z\in B_{(p')}}\delta_z.
+\]
+That group P[N] has N^(2r) elements and gives the asserted degree.
+A separate nonempty generic open is used for each Lambda.
 
 
 ## 3. Application to cyclic triples
@@ -88,16 +100,17 @@ with Y of genus two and no ordinariness hypotheses. On scalar Frobenius
 twists put J=J(U^(1)), A=im J(Y^(1)), Q=J/A. Let B be the set of
 cosets of A entirely contained in the Raynaud divisor Theta_U.
 
-The [finite-fiber theorem](ordinary_cyclic_triple_finite_bad_cosets.md)
-and [polarization budget](polarization_bad_fiber_bound.md)
+The [finite-fiber theorem](ordinary_cyclic_triple_finite_bad_cosets.md),
+the later [all-defect theorem](low_genus_raynaud_cosets.md), and
+the [polarization budget](polarization_bad_fiber_bound.md)
 give Q=E^2, an elliptic E of either ordinariness type, and
-
-    R=[[-1,-1],[1,0]],       R^2+R+1=0,
-    sum_(z in B) delta_z^2 <=10,                    0 not in B. (2)
-
+\[
+R=\begin{pmatrix}-1&-1\\1&0\end{pmatrix},\quad R^2+R+1=0,\qquad
+\delta_z=1\ (z\in B),\quad |B|\le10,\quad0\notin B.\tag{2}
+\]
 Here delta_z is the generic dimension of sections along the coset.
-Outside Q[2] and ker(R-1), every bad point has delta_z=1, its orbit
-under Gamma=<R,-1>=C6 is free, and there is at most one such orbit.
+Outside Q[2] and ker(R-1), every orbit under Gamma=<R,-1>=C6
+is free; (2) permits at most one such bad orbit.
 
 Choose a finite field F_q over which the cover, E, and this product
 identification are defined. Frobenius preserves B and delta. Hence
@@ -166,8 +179,12 @@ negating a exchanges the plus and minus columns.
 For the norm complement P≅E², e=9 and n=3. Apply Section2 with
 the sharper annihilator M(q,a) from (5): all exceptional prime-to-five
 characters lie in P[N], N=(3M(q,a))_(5'). The degree-N^4 refinement
-therefore reaches the stabilized generic defect, bounded by9·10=90.
-This replaces a separate calculation with the matrix of ρ.
+therefore reaches the exact defect9|B_(5')|≤90 by Section2 and
+delta_z=1. No nonzero point is fixed by both R and−1: such a point
+would be killed by both3 and2. Thus every orbit in B_(5') has at
+least two points; a nonzero defect is at least18. Vanishing is
+equivalent to B_(5') being empty. This uses the norm kernel directly,
+without a separate matrix calculation of rho.
 
 The argument requires a finite bad locus over an actual finite field.
 Candidate membership does not establish badness, and the result is

@@ -19,9 +19,9 @@ from sage.all import (GF, LaurentSeriesRing, PolynomialRing, QQ, ZZ,
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--model', default='Research/computations/neutral5_hyperelliptic_model.json')
-    ap.add_argument('--hodge', default='Research/computations/neutral5_hyperelliptic_hodge.json')
-    ap.add_argument('--output', default='Research/computations/returned_neutral5_w4_local_audit.json')
+    ap.add_argument('--model', default='../litt3-computation-data/legacy_workspace_computations/neutral5_hyperelliptic_model.json')
+    ap.add_argument('--hodge', default='../litt3-computation-data/legacy_workspace_computations/neutral5_hyperelliptic_hodge.json')
+    ap.add_argument('--output', default='../litt3-computation-data/legacy_workspace_computations/returned_neutral5_w4_local_audit.json')
     args = ap.parse_args()
     start = time.monotonic()
     data = json.loads(Path(args.model).read_text())

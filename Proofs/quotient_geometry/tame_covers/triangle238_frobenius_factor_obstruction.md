@@ -13,7 +13,7 @@ injects characteristic-p cover classes into these complex permutation
 classes for every p>=5, preserving the action, centralizer and block
 systems. The monodromy order itself may be divisible by p.
 
-The [list](../../../Research/computations/triangle238_tables.jsonl) has77 pairs.
+The [list](../../../../litt3-computation-data/legacy_workspace_computations/triangle238_tables.jsonl) has77 pairs.
 [The verifier](../../../scripts/orbifolds/triangle238_certificate/verify48.py) checks every
 cycle, transitivity and inequivalence: the canonical code is the least
 of48 rooted breadth-first codes, with generator labels fixed. It also
@@ -118,13 +118,13 @@ python3 scripts/orbifolds/triangle238_certificate/verify48.py
 ```
 
 This checks the saved list, all exclusions, and both independent
-completeness counts. The [receipt](../../../Research/computations/triangle238_verification.txt)
+completeness counts. The [receipt](../../../../litt3-computation-data/legacy_workspace_computations/triangle238_verification.txt)
 is from the local replay, not just Pro's transcript. Regeneration:
 
 ```sh
 c++ -O3 -std=c++17 scripts/orbifolds/enumerate_23m_monodromy.cpp -o /tmp/triangle238
 /tmp/triangle238 48 8 /tmp/triangle238_tables.jsonl
-cmp Research/computations/triangle238_tables.jsonl /tmp/triangle238_tables.jsonl
+cmp ../litt3-computation-data/legacy_workspace_computations/triangle238_tables.jsonl /tmp/triangle238_tables.jsonl
 python3 scripts/orbifolds/triangle238_certificate/verify48.py /tmp/triangle238_tables.jsonl
 ```
 

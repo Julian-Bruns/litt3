@@ -8,32 +8,28 @@ reconstruct the matrices from the actual e, not just graded lines.
 Their internal finite-field elimination is exact; no independent-agent
 audit is claimed.
 
-## Stronger all-twist vanishing and the unique line
+## The sharp line gap and the unique quotient
 
-The section reconstruction for Sym^3K(3O) uses the transition
-g_i=sum_{j>=i} binomial(j,i)(-e)^{j-i} f_j and pole bound
-3-15+11i at infinity. Its32x18 matrix has three character blocks
-of sizes9x8,13x8,10x2 with full-column minors[6],[12],[12].
-Thus the section space is zero. Multiply a putative section of
-K(O) tensor L by its two cubic conjugates. The twisting lines
-have trivial product, and the symmetric product is generically
-nonzero. This gives the all-geometric-twist vanishing recorded in
-[low_degree_twist_vanishing](low_degree_twist_vanishing.md).
+The later
+[sharp line-degree theorem](small_shift_line_twist_vanishing.md)
+gives maximum line degree minus four in K and
+\(H^0(K(3O)\otimes L)=0\) for every geometric Pic0 line L.
 
-For any extension0->T(-O)->R->K->0, this proves
-h^0(R tensor M(O))=1 if M=T^-1 and0 otherwise. Every degree-1
-line has this form and must be the specified kernel. No line of
-nonnegative degree can map to K, by its stability and degree-zero
-twist vanishing, or lie in the negative kernel. Thus N=T(-O) is
-the unique maximal line. In fact applying Hom(-,K) directly to
-the extension and using Hom(N,K)=0 gives Hom(R,K)=End(K)=k.
-This simplifies the separate pencil/Chern-class argument in the report.
-
-The later [sharp line-degree theorem](../../Theorems/cartier_and_spin/small_shift_line_twist_vanishing.md)
-improves the gap: a line in R different from N maps nontrivially
-into K, whose every line has degree at most-4. Thus every such line
-has degree at most-4. This does not change the rank-two stability
-analysis below and does not by itself imply a Frobenius-return result.
+In an extension \(0\to N=T(-O)\to R\to K\to0\), any saturated
+line other than N maps nontrivially to K. Its saturation there
+has degree at least that of the original line, hence every other
+line has degree at most minus four. Thus N is the unique maximal
+line. The sharp vanishing also gives
+\[
+h^0(R\otimes M(O))=
+\begin{cases}1&M=T^{-1},\\0&\text{otherwise},\end{cases}
+\qquad
+\operatorname{Hom}(R,K)=\operatorname{End}(K)=k.
+\]
+The first identity follows from the extension sequence and vanishing
+of \(K(O)\otimes M\); the second uses \(\operatorname{Hom}(N,K)=0\)
+and stability of K. No shifted symmetric-power calculation is
+needed for these extension conclusions.
 
 For a general stable degree-zero rank-three E, every nonzero image
 in K is a quotient of positive degree. A rank-one image is
@@ -59,12 +55,24 @@ positive-degree destabilization occurs and these are precisely the
 strictly semistable bundles.
 
 Serre duality identifies W_T with the dual of H^0(K(17O) tensor T^-1).
-The latter bundle has degree35 and h^0=19. For every degree-two
-effective divisor D, its H^1 after twisting by -D is dual to
-H^0(K tensor T(D-2O)), which vanishes by all-twist vanishing.
-Its ruled-surface map separates length-two schemes and is a closed
-embedding of P_X(K), with tautological degree35. This proves the
-stated description of Sigma_T, including tangent and repeated-point cases.
+Put \(A_T=K(17O)\otimes T^{-1}\). Its degree is35. For every
+effective divisor D of degree d<=5, Serre duality gives
+\[
+H^1(A_T(-D))^\vee
+=H^0(K\otimes T(D-2O))=0.
+\]
+Indeed \(T(D-dO)\) has degree zero and d-2<=3, so the sharp
+all-twist theorem applies after multiplication by an effective
+multiple of O. Thus h0(A_T)=19 and
+\[
+H^0(A_T)\longrightarrow H^0(A_T|_D)
+\quad\text{is onto, of rank }2d.
+\]
+This includes fat base points. The d=2 case separates length-two
+schemes on the ruled surface, proving the closed embedding and
+tautological degree35. At d distinct base points, their fiber lines
+span a projective (2d-1)-space. This is interpolation on the base;
+it does not assert that O(1) separates three points in one fiber.
 
 ## Strict returns have an extra quotient condition
 

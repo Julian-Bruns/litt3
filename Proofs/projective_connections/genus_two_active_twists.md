@@ -1,7 +1,8 @@
 # Proof: tiny Cartier blocks, including the unavoidable bad doubles
 
 [Statement](../../Theorems/projective_connections/genus_two_active_twists.md).
-Author proof,2026-09-09–13. Affine and split reductions have a bounded audit.
+Original proof,2026-09-09–13; invariant hindsight,3 October2026.
+The settled affine/twist certificate remains an input.
 
 ## 1. The twist block is the actual nilpotent tangent operator
 
@@ -37,7 +38,7 @@ test from the actual double, not from an unrelated bundle.
 
 ## 2. Split data need no twist enumeration
 
-The [critical-quartic theorem](../../Theorems/projective_connections/genus_two_active_critical_quartics.md)
+On C(I)!=0 the [critical-quartic theorem](../../Theorems/projective_connections/genus_two_active_critical_quartics.md)
 gives fifteen four-branch data, sixty fiber data and ten split active
 data. Each split tangent bundle is V_d1⊕V_d2 for two distinct dormant
 connections, by [tangent-bundle splitting](../../Theorems/projective_connections/tangent_bundle_cyclic_refinements.md).
@@ -72,35 +73,72 @@ A=K(h)R0(u)(u−h)². For each representative the
 where M2 and M1 are the two Cartier blocks from Section1. All fourteen
 resultants are nonzero polynomials in F5[t]; their irreducible factors
 have degree at most9. Their exact coefficients, factors and orbit sizes
-are in the [certificate](../../Research/computations/genus_two_affine_twist_certificate.json).
+are in the [certificate](../../../litt3-computation-data/legacy_workspace_computations/genus_two_affine_twist_certificate.json).
 Thus no geometric root of J gives a bad twist when the parameter degree
 is>9. There is no specialization-to-generic inference here.
 
-For the branch datum A=c0 S0 the2x2 determinant is nonzero in every
-representative, with irreducible factors of degree at most2. The product
+For the branch datum A=c0 S0 the2x2 determinant is a nonzero polynomial
+in every representative, with irreducible factors of degree at most2. The product
 with the scalar has the same bound, except for the representative
 ({a,0},{1,−1}), whose scalar is identically zero. In u coordinates this
 is R0=u−t, R=u(u−3). With G=u(u−1)(u−2)(u−3),
 
     A=(t+1)²G,       [u⁴] A R²=0.
 
-Its2x2 block is invertible, so its twisted tangent dimension is exactly1.
+On S(I)!=0 its2x2 block is invertible, so its twisted tangent dimension
+is exactly1.
 The affine orbit consists precisely of
 
     ({a,b}, {b+c,b−c}),       b∈F5, c∈F5×/{±1}.
 
 Actual curve isomorphisms transport connections, root classes and their
-twisted tangent spaces. They also preserve the distinction between
-four-Weierstrass support and a nonbranch hyperelliptic pair. Since the
-transformed parameter has the same degree, the fourteen representative
-tests apply to every pair on every curve in the stated locus. This gives
-five exceptional branch data with two bad twists each and no other bad
-data. The two twist pairs are disjoint and their union complements
-{a,b}, so their classes sum to the Hasse root class.
+twisted tangent spaces. They preserve branch support and nonbranch fiber
+support, as well as the complete invariant I.
 
-The [bounded audit](../../Research/audits/GENUS_TWO_AFFINE_TWISTS_AUDIT_2026_09_13.md)
-checks the symmetry and split-bundle reductions; the exact factorization
-is supplied by the executable certificate.
+The old factor list becomes concise after passing to I. For each
+irreducible parameter factor f, reduce I in F5[t]/(f). Its minimal
+polynomial records the entire affine/Frobenius-saturated vanishing locus:
+
+| Parameter-factor degrees | Minimal polynomial of I |
+| --- | --- |
+| 3,3 | Q(I)=I^3+3I^2+4 |
+| 6 | H(I)=I^3+2I^2+1 |
+| 4 | I-2 |
+| 2,2,2,2,2 | I+1 |
+| 4,4 | I^2+2I+4 |
+| 3,3 | G(I) |
+| 5 | P_5(I) |
+| 6,6 | P_6(I) |
+| 9,9 | P_9(I) |
+
+The first three rows are exactly the factors excluded by C(I)!=0.
+All linear parameter factors are singular or nonordinary. The remaining
+rows give exactly S(I), with the polynomials in the statement. These
+are small quotient-algebra reductions of the EXISTING factor certificate,
+not new twist resultants. Their [exact receipt](../../../litt3-computation-data/archive_cleanup_20260930/active_twist_invariant_hindsight/factor_invariants_receipt.json)
+records every factor and its use in a fiber resultant, branch determinant
+or nonidentically-zero branch product.
+
+Each ordinary I-fiber is a free twenty-point affine orbit. An irreducible
+factor supplies every Frobenius conjugate of its I-value. Therefore an
+I-root in the table occurs on some representative and, by transport,
+on every parameter with that invariant. Conversely each representative
+zero has an I-value in the table. On C(I)!=0 the critical algebras are
+reduced, all normalization factors are units, and their four roots
+represent four distinct actual active data. A fiber resultant vanishes
+exactly when one of these data acquires a bad twist. A branch product
+zero similarly adds a bad pair; a determinant zero in the identically
+bad orbit raises its defect above one. Thus S(I)!=0 is both necessary
+and sufficient for the full stated80/5 table.
+
+When S(I)!=0 there are five exceptional branch data, each with its two
+midpoint twists, and no others. Their twist pairs are disjoint and their
+union complements {a,b}, so the classes sum to the Hasse root class.
+Every excluded parameter is an affine transform of a root of an old
+factor of degree at most9; affine transformations preserve its field.
+The older degree>9 theorem is recovered without weakening its scope.
+The original [bounded audit](../../Research/audits/GENUS_TWO_AFFINE_TWISTS_AUDIT_2026_09_13.md)
+and exact fourteen-orbit source remain necessary for the factor inputs.
 
 ## 4. From the table to actual unbounded covers
 

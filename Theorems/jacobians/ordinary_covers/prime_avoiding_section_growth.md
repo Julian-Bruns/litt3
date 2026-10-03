@@ -1,7 +1,8 @@
 # Simultaneous section and Cartier-kernel growth on cyclic étale refinements
 
-Version2, 24 September2026. The finite-family argument and actual
-two-map pullback passed their bounded review.
+Version3, 3 October2026. The finite-family argument and actual
+two-map pullback retain their bounded review. The Raynaud
+specialization now holds in every characteristic and genus.
 
 Work over \(k=\overline{\mathbf F}_p\). Let C be a smooth projective
 connected curve and \(E_1,\ldots,E_s\) any finite collection of
@@ -51,20 +52,16 @@ For a curve \(C\) of genus at least two put
 \(a(C)=h^0(C^{(1)},B_C)\), and
 \(\Delta(C)=g(C)-f_p(C)\). Apply the preceding theorem to
 \(B_C\) on \(C^{(1)}\), then pull its cyclic covers back by relative
-Frobenius. Suppose the Raynaud divisor \(\Theta_C\) contains a
-positive-dimensional irreducible \(T\subseteq A_0\), where \(A_0\)
-is an abelian subvariety of \(J(C^{(1)})\), and \(T\) lies in no
-translate of a proper abelian subvariety of \(A_0\). The resulting
-covers can avoid any finite prime set and
-satisfy
+Frobenius. Every irreducible component of \(\Theta_C\) is
+positive-dimensional and generates the whole Jacobian up to
+translation: the [dimension theorem](../theta_divisors/raynaud_rank_one_dimension.md)
+excludes abelian divisor translates, and a component has dimension
+\(g(C)-1\). Thus the geometric hypothesis holds for EVERY hyperbolic
+curve over \(\overline{\mathbf F}_p\), for every prime p.
+The resulting prime-avoiding cyclic covers satisfy
 \[
 a(C_j)\ge a(C)+j,\qquad \Delta(C_j)\ge a(C)+j.
 \]
-This hypothesis holds if \(C\) is nonordinary, if \(J(C)\) is
-geometrically simple, if \(p\in\{2,3,5\}\), if \(g(C)=2\), if
-\(g(C)=3\) and \(p\) is odd, or if \(g(C)=4\) and \(p\ge5\).
-In particular it holds for EVERY hyperbolic curve over
-\(\overline{\mathbf F}_5\).
 
 For an actual finite étale leg \(g:Z\to C\), choose the new degrees
 coprime to \(\deg g\). Then \(Z_j=Z\times_C C_j\) is connected and

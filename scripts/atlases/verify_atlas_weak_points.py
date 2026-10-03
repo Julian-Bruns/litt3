@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RECORD = ROOT / "Research/computations/atlas_weak_points.json"
+RECORD = ROOT / "../litt3-computation-data/legacy_workspace_computations/atlas_weak_points.json"
 
 
 def add(x, y):

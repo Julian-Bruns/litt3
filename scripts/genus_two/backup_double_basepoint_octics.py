@@ -8,10 +8,10 @@ import time
 from sage.all import GF, PolynomialRing, matrix
 
 ap=argparse.ArgumentParser();ap.add_argument('--theta',type=Path,required=True)
-ap.add_argument('--quadrics',type=Path,required=True);ap.add_argument('--map',type=Path,required=True)
+ap.add_argument('--quadrics',type=Path,required=True)
 ap.add_argument('--output',type=Path,required=True);args=ap.parse_args()
 assert not args.output.resolve().is_relative_to(Path(__file__).resolve().parents[2])
-start=time.monotonic();td=json.loads(args.theta.read_text());qd=json.loads(args.quadrics.read_text());md=json.loads(args.map.read_text())
+start=time.monotonic();td=json.loads(args.theta.read_text());qd=json.loads(args.quadrics.read_text())
 k=GF(125,'alpha',modulus=[1,1,0,1]);alpha=k.gen();Ra=PolynomialRing(GF(5),'a');F=Ra.fraction_field()
 def spec(s):
     v=F(s.replace('^','**'));return v.numerator()(alpha)/v.denominator()(alpha)
@@ -43,12 +43,9 @@ for index,v in enumerate(rows):
     support=[i for i,c in enumerate(row) if c]
     if support:
         pivot=support[0];scale=row[pivot];echelon[pivot]=[c/scale for c in row];selected.append(index)
+assert len(echelon)==164
 print('scalar rank',len(echelon),'seconds',time.monotonic()-start,flush=True)
-dec=lambda n:k(n%5)+k(n//5%5)*alpha+k(n//25)*alpha**2
-coeff={tuple(e):dec(n) for e,n in md['stable_to_boundary_octic']}
-h=[coeff.get(e,k.zero()) for e in mon]
-assert all(not sum(c*v for c,v in zip(row,h)) for row in rows)
 out={'status':'scalar_elimination_verified','rank':len(echelon),'kernel_dimension':165-len(echelon),
      'selected_rows':selected,'pivot_columns':sorted(echelon),'monomials':[list(e) for e in mon],
-     'actual_boundary_in_kernel':True,'seconds':time.monotonic()-start}
+     'seconds':time.monotonic()-start}
 args.output.write_text(json.dumps(out,indent=2)+'\n')

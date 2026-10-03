@@ -1,15 +1,13 @@
-# Proof: detect ramified variation before lifting in p-adic steps
+# Proof: normalize every positive-height source before lifting
 
 [Statement](../../Theorems/deformations/ramified_rapoport_oper.md).
-Write $\mathcal H_i$ for the rank-two crystalline components indexed
-by the unramified embeddings. Their coefficient DVRs $A_i/W(k)$
-have ramification index $e$ and residue field $k$; put $R_i=A_i/p$.
-The Frobenius maps cycle these components. All coefficient actions
-are retained, including the uniformizer action.
+Write \(\mathcal H_i\) for the rank-two crystalline components at the
+unramified embeddings, with coefficient DVRs \(A_i/W(k)\) of
+ramification index e. Put \(E_i=\mathcal H_i/\pi\) and \(R_i=A_i/p\).
+All integer actions, coefficient twists and actual F,V maps are retained.
 
-## Ordinary groups: the coefficient lattice is free before its Hodge module is
+## Coefficient freeness and the degree lemma
 
-First treat the ordinary assertion, without assuming Hodge freeness.
 The coefficient crystal itself is locally free over its coefficient
 ring on a smooth curve. Indeed, at a closed point of a formal smooth
 lift the completed base ring is $B=W(k)[[t]]$, and a coefficient
@@ -19,176 +17,29 @@ regular sequence on it, so its depth over $A_i[[t]]$ is two.
 Auslander--Buchsbaum makes it free; its rank is two by the rational
 coefficient rank. This local calculation descends from completion.
 
-Write $\overline H_i=\mathcal H_i/\pi$ and denote the Hodge
-subbundle of $\mathcal H_i/p$ by $\mathrm{Fil}_i$. The latter is
-an $\mathcal O_C$-subbundle even when it is not free over $R_i$.
-Define the reduced Hodge line $L_i\subset\overline H_i$ by
-\[
-\pi^{e-1}L_i=
-\mathrm{Fil}_i\cap\ker(\pi:\mathcal H_i/p\to\mathcal H_i/p).
-\tag{O1}
-\]
-Here multiplication by $\pi^{e-1}$ identifies $\overline H_i$
-with that ambient kernel, up to a constant unit. The intersection
-is a saturated rank-one subsheaf: it has rank one at the ordinary
-generic point, and both the Hodge quotient and the quotient by
-this kernel in $\mathrm{Fil}_i$ are torsion-free. Thus (O1) is
-an actual line subbundle, including at nonordinary points.
+For the isocrystal formulation, Newton specialization puts all normalized
+slopes in [0,1]. The coefficient-preserving construction of
+[Krishnamoorthy--Pál, Lemma5.8](https://arxiv.org/pdf/1809.02106)
+supplies a Dieudonné lattice on the whole smooth curve; its excluded set
+has codimension at least two. First sum a lattice under an integral basis
+of \(\mathcal O_K\), then perform F,V saturation and reflexive hull.
+These operations preserve the integer action. The depth argument above
+gives coefficient freeness, without a Hodge-freeness hypothesis.
 
-At the ordinary generic point the determinant of each crystalline
-Frobenius step has valuation $e$ in $A_i$, namely that of $p$.
-It has no horizontal zero or pole, since $FV=p$. Therefore its
-determinant is locally $p$ times a unit everywhere. Reducing its
-determinant after division by $p$ gives
-$\deg\overline H_i=p\deg\overline H_{i-1}$, and hence all these
-degrees are zero.
+A positive line of degree d in a degree-zero reduced connection with
+nilpotent p-curvature is horizontal, in which case p divides d by Cartier
+descent, or has nonzero second fundamental form and d<=g(C)-1.
+In genus two the latter is a degree-one oper. The same degree argument
+over a constant coefficient thickening is proved in the special-case
+section below.
 
-Reduction of the actual $F,V$ maps gives
-\[
-\overline F_i(F_C^*L_{i-1})=0,\qquad
-\overline V_i(L_i)\subset F_C^*L_{i-1}.
-\tag{O2}
-\]
-The first assertion follows from the defining Hodge kernel; the
-second follows because Verschiebung maps into the Frobenius Hodge
-filtration and commutes with $\pi$. The restrictions
-$h_i:L_i\to F_C^*L_{i-1}$ are nonzero at the ordinary generic
-point. If all were units at a geometric point, their cycle would
-give a coefficient-rank-one unit-root part for $V$, hence slopes
-$(0,1)$ for $F$. Thus some $h_i$ has a zero. Their degree
-inequalities, as in (2) below, imply
-\[
-d_i:=\deg L_i>0\quad\text{for every }i.
-\tag{O3}
-\]
-Each $L_i$ is consequently the unique positive maximal line of
-the degree-zero rank-two bundle $\overline H_i$.
-
-## A simultaneous modification stays inside the actual isogeny class
-
-Suppose all the reduced lines $L_i$ are horizontal. Replace each
-coefficient lattice by the inverse image
-\[
-\mathcal H'_i=
-\ker(\mathcal H_i\longrightarrow\overline H_i/L_i).
-\tag{O4}
-\]
-It is locally free, with basis $(e,\pi a)$ in a basis adapted to
-$L_i$. Horizontality makes it a subcrystal. This can be checked
-on any local formal lift: its connection preserves the inverse
-image, and topological quasi-nilpotence is inherited by a lattice
-of finite index. The construction is intrinsic and glues.
-
-Equations (O2) prove BOTH integral inclusions
-\[
-F_i(F_C^*\mathcal H'_{i-1})\subset\mathcal H'_i,
-\qquad V_i(\mathcal H'_i)\subset F_C^*\mathcal H'_{i-1}.
-\tag{O5}
-\]
-For the first, the reduction of $F_i$ kills $L_{i-1}$, so its
-image lies in $\pi\mathcal H_i\subset\mathcal H'_i$. For the
-second, use the second inclusion in (O2). The restricted maps
-still satisfy $FV=VF=p$. Thus the new lattice is a Dieudonné
-crystal, and gives an $\mathcal O$-linear group in the SAME
-isogeny class. We use the equivalence on smooth characteristic-$p$
-bases in [Krishnamoorthy--Pál, Theorem5.7 and Definition5.1](https://arxiv.org/pdf/1809.02106).
-No quotient supported only at a bad point is being postulated.
-
-These simultaneous modifications cannot continue indefinitely.
-Choose any smooth proper lift of $C/W(k)$ and evaluate each fixed
-rational coefficient crystal on its extension to $A_i$. This gives
-an algebraic vector bundle with connection on a smooth proper
-$A_i$-curve. Its characteristic-zero generic connection is slope
-semistable: every horizontal subbundle has degree zero.
-While all $L_i$ remain horizontal, (O4) is exactly the usual
-Langton modification by the maximal destabilizing subconnection
-in EVERY component. The connection version of Langton's algorithm
-terminates; see [Langer, Theorem5.1 and its proof](https://arxiv.org/pdf/1311.2794).
-If all lines stayed horizontal forever, any one component would
-contradict this termination, since (O3) supplies a positive
-destabilizing line at every stage. Hence eventually some reduced
-second fundamental form is nonzero.
-
-The arbitrary lift used to invoke termination is not a proposed
-common lift. Every modification is the intrinsic operation (O4)
-on the original characteristic-$p$ Dieudonné crystal.
-
-## One nonhorizontal line forces all components to be free opers
-
-Let $I_i$ be the saturation of the generic image of
-$\overline F_i$ in $\overline H_i$. It is a horizontal line with
-zero $p$-curvature. It differs generically from $L_i$, since
-$\overline V_i(L_i)\ne0$ and $VF=0$ modulo $\pi$. Consequently
-\[
-\deg I_i\le-d_i<0.
-\tag{O6}
-\]
-On the ordinary open set the Hodge module is free, so the ordinary
-local curvature calculation in the
-[unramified proof](unramified_bt_genus_two.md) applies integrally
-before reducing modulo $\pi$: in a Hodge basis it uses
-$F(e)/p,F(a)$ and gives $\psi_i(u)=-c^pv$, $\psi_i(v)=0$.
-Here $c$ is the preceding reduced second fundamental form.
-Thus a nonzero preceding form gives nonzero reduced $p$-curvature
-whose generic kernel is $I_i$.
-
-If $L_i$ were horizontal, nilpotence would make its rank-one
-$p$-curvature zero, so it would lie in $I_i$, contradicting (O6).
-Nonzero second fundamental form therefore propagates around all
-embedding components. The degree bound on a genus-two curve
-makes every $d_i=1$ and every reduced form an isomorphism.
-
-It remains to justify Hodge freeness over the WHOLE ring $R_i$.
-The reduced Frobenius factors through a nonzero horizontal line map
-\[
-F_C^*(\overline H_{i-1}/L_{i-1})\longrightarrow I_i.
-\tag{O7}
-\]
-Both lines have zero $p$-curvature; the source has its canonical
-connection, and the target inherits zero curvature from the
-image of Frobenius. By Cartier descent, the zero divisor of (O7)
-is $p$ times an effective divisor. On the other hand its degree is
-\[
-\deg I_i+p d_{i-1}=\deg I_i+p\le p-1
-\tag{O8}
-\]
-by (O6). It must be zero. Therefore $\overline F_i$ has rank one
-at EVERY point.
-
-Locally its integral matrix has a unit entry, and its determinant
-is $p$ times a unit. Elementary row and column operations give
-diagonal entries $1,p$. The kernel modulo $p$ is accordingly a
-free rank-one $R_i$-module, precisely the Frobenius pullback of
-the Hodge filtration. Faithfully flat Frobenius descent proves
-the required Hodge freeness. The full modulo-$p$ second fundamental
-form is an isomorphism by Nakayama, since its reduction is one.
-
-This proves the ordinary assertion without any initial Rapoport
-condition. The final section below then lifts the original span.
-
-For the $F$-isocrystal formulation, Newton specialization puts all
-slopes in $[0,1]$. The coefficient-preserving lattice construction
-of [Krishnamoorthy--Pál, Lemma5.8](https://arxiv.org/pdf/1809.02106)
-therefore supplies a Dieudonné lattice on the whole smooth curve:
-its exceptional set has codimension at least two. To retain
-$\mathcal O_K$, first sum a lattice under a finite integral basis
-of $\mathcal O_K$, then perform the $F,V$ saturation and reflexive
-hull operations. They commute with the integer action. The local
-depth argument above gives coefficient freeness, and no Hodge
-freeness is required at this stage. This proves the stronger
-formulation and, with arithmetic companion compatibility, its
-stated local-system consequence.
-
-## Arbitrary component cycles: positive kernels without Hodge freeness
-
-We remove the freeness restriction for every positive generic gap.
-This extends the returned two-component height transfer and uses
-neither ordinariness of the curve nor dormant-section vanishing.
+## Positive source kernels across arbitrary component cycles
 
 Start with the coefficient-free Dieudonné lattices $\mathcal H_j$
-and put $E_j=\mathcal H_j/\pi$. Their degrees are zero. Let $d_j$
-be the valuation of $\det F_j$. The relation $FV=p$ prevents
-horizontal determinant zeros. The generic unit-root direction
+and put $E_j=\mathcal H_j/\pi$. Let $d_j$ be the valuation of
+$\det F_j$. The relation $FV=p$ prevents horizontal determinant
+zeros. The normalized determinant gives
+$\deg E_j=p\deg E_{j-1}$; cycling makes every degree zero. The generic unit-root direction
 makes every step primitive at the coefficient generic point:
 otherwise the integral circuit would have positive smallest slope.
 Consequently
@@ -234,7 +85,7 @@ This would make the Newton polygon constant. Therefore
 \]
 No equality of the heights or absence of zero-height runs was used.
 
-## Produce an oper while preserving both maps
+## Produce one oper in the actual isogeny class
 
 If a positive line in some $E_j$ is nonhorizontal, the genus-two
 degree lemma makes it an oper. Suppose this has not happened.
@@ -246,8 +97,12 @@ $L_j$. Uniqueness of a positive saturated line gives
 $L_{j-1}=N_{j-1}$ at a positive-height step and
 $F_j(F^*L_{j-1})=L_j$ at a zero-height step.
 
-Make the simultaneous inverse-image modifications (O4). At a
-positive-height step the reduced $F_j$ kills its source line, so
+Make the simultaneous inverse-image modifications
+\(\mathcal H'_j=\ker(\mathcal H_j\to E_j/L_j)\).
+In a basis adapted to L_j this has basis (u,pi v). Horizontality
+preserves the connection; topological quasi-nilpotence is inherited
+by a lattice of finite index. Thus these are intrinsic subcrystals.
+At a positive-height step the reduced $F_j$ kills its source line, so
 it preserves these lattices. For Verschiebung use
 \[
 \operatorname{im}\overline V_j\subset
@@ -259,13 +114,20 @@ already lies in the modified source. This works even when $d_j=e$;
 divisibility of $V_j$ by $\pi$ is not needed. At a zero-height
 step, both compatibilities follow from the isomorphism and the
 equality of the lines. Both determinants change by one factor
-of $\pi$, so the heights are unchanged.
+of $\pi$, so the heights are unchanged. These integral F,V-crystals
+realize full groups by
+[Krishnamoorthy--Pál, Theorem5.7 and Definition5.1](https://arxiv.org/pdf/1809.02106).
 
-These are exactly the connection Langton modifications used in
-(O4). If no oper appeared, they would continue indefinitely with
-positive horizontal maximal lines at every stage, by (G4) and
-zero-run descent. Termination rules this out. Thus at least one
-component becomes an oper.
+Evaluate the fixed rational crystals on an arbitrary smooth proper Witt
+lift, extended to the coefficient DVRs. Their characteristic-zero
+connections are slope semistable as connections: every horizontal
+subbundle has degree zero. These simultaneous inverse-image modifications
+are Langton modifications by their positive maximal subconnections.
+[Langer, Theorem5.1 and its proof](https://arxiv.org/pdf/1311.2794)
+give termination. If no oper appeared, (G4) and zero-run descent would
+supply a positive horizontal line in every component forever, a
+contradiction. The resulting Dieudonné lattice therefore has an oper.
+The auxiliary lift serves only to prove termination.
 
 ## Transfer height through nonoper components
 
@@ -307,131 +169,98 @@ decreases the nonnegative integer $\sum_{a=1}^f a d_a$ by one.
 The process terminates with no permitted move at a nonoper
 component. For $f=1$ no move is needed.
 
-Put $s=\max_jd_j>0$. An edge of height $s$ leaves an oper.
-Otherwise its nonoper source, unable to make a move, forces
-the preceding edge to have height $e$. If $s<e$ this is impossible.
-If $s=e$, continue backwards through height-$e$ edges until reaching
-a protected oper, within one circuit. This terminal-state argument
-is independent of the number of coefficient components.
+## Every positive edge leaves an oper
 
-## The outgoing maximum gives the whole partial Hodge line
-
-Let the chosen height-$s$ edge leave oper component $i$. Its source
-kernel is the oper line $L_i$, of degree one. At the next
-positive-height step, (G3) gives
+First, an outgoing edge of ANY positive height t from an oper has
+zero defect. Its positive kernel is the unique oper line, of degree
+one. At the next positive edge, (G3) gives
 \[
-0<\ell_k\le p^a-p^{a-1}\delta_{i+1}.
+0<\ell_k\le p^a-p^{a-1}\delta.
+\tag{G9}
 \]
-Thus $\delta_{i+1}<p$. It is $p$-divisible and therefore zero.
-The outgoing reduction has rank one at every point. Its determinant
-is $\pi^s$ times a unit, so its elementary divisors are
-$(1,\pi^s)$ everywhere.
+Thus the p-divisible defect satisfies \(\delta<p\) and vanishes. The actual
+elementary divisors are \((1,\pi^t)\) everywhere.
 
-The kernel of this actual outgoing map modulo $\pi^s$ is a line
-subbundle of $F^*(\mathcal H_i/\pi^s)$. It is horizontal for the
-canonical relative-Frobenius connection, since $p=0$ on the
-constant coefficient thickening $A_i/\pi^s$. Relative Cartier
-descent gives $L_s\subset\mathcal H_i/\pi^s$. Relative Frobenius
-acts on the curve factor and fixes the constant nilpotent
-coefficients; it is not absolute Frobenius on that coefficient ring.
-
-Equivalently, the same elementary divisors identify $L_s$ with
-the inverse image of the ACTUAL Hodge filtration under
-$\mathcal H_i/\pi^s\simeq\pi^{e-s}\mathcal H_i/p$.
-Its Frobenius pullback is the true Hodge kernel modulo $p$.
-Reduction of $L_s$ is $L_i$, so Nakayama makes its second
-fundamental form an isomorphism over the whole thickening.
-
-All steps have height at most $s$. The uniform
-[Frobenius Taylor estimate](frobenius_taylor_thickness.md) makes
-$n=s$ sufficient, since $(p-1)s>s$ for $p>2$. No divided powers
-on $(\pi^s)$ are assumed. A common coefficient homothety places
-the final lattices inside the initial ones if desired, without
-changing heights or oper data.
-
-## A totally ramified coefficient and the thickness supplied by its slope gap
-
-Now let $f=1$ and let the generic slopes be $(0,a/e)$, with
-$1\le a\le e$. Write $\pi$ for a coefficient uniformizer.
-In the rational crystal set
+Now consider a terminal nonoper j with positive outgoing height.
+No permitted move means its incoming height is e. Continue backwards:
+every nonoper encountered has incoming height e until an oper is reached.
+That oper's outgoing height-e edge has zero defect by (G9).
+Its actual Hodge line exists modulo p. Here is the local curvature
+calculation, valid in any genus. In an étale coordinate z with Frobenius
+lift z^p, lift a source Hodge basis (u0,v0) with second fundamental
+coefficient c dz. The target basis u=F(u0)/p, v=F(v0) satisfies
 \[
-V_a=\pi^a F^{-1}.
-\tag{T1}
+\nabla u=c^p z^{p-1}v\,dz,\quad\nabla v=0\pmod\pi,
+\qquad \psi(\partial_z)(u)=-c^pv,\quad\psi(\partial_z)(v)=0.
+\tag{G9a}
 \]
-Newton specialization puts the slopes of $F$ in $[0,a/e]$,
-so both $F$ and the inverse-Frobenius operator $V_a$ have
-nonnegative slopes. The integral lattice construction used above
-works with $V_a$ in place of $V$: its saturation is coherent, and
-$FV_a=V_aF=\pi^a$ preserves $F$-stability. After reflexive hull,
-it gives a coefficient-free lattice stable under both operators
-on the whole smooth curve. Since $a\le e$, it is also stable
-under the usual $V=pF^{-1}$ and thus realizes a full BT group.
+The first identity is horizontality divided by p; the other coefficients
+have a factor p. The curvature identity uses (p-1)!=-1 and
+\(\partial_z^p=0\). Since c is a unit for the source oper, the target
+has nonzero nilpotent p-curvature with negative Frobenius-image kernel. Its positive outgoing kernel cannot
+be horizontal; hence that target is an oper. Propagation along the
+height-e chain contradicts the supposed terminal nonoper j.
+EVERY positive-height edge therefore leaves an oper.
 
-Its determinant Frobenius is $\pi^a$ times a unit. The reduced
-Hodge kernel $L$ defined as in (O1) is a positive line. To check
-positivity here, use the generically nonzero map
-$V_a|L:L\to F_C^*L$. At the generic point the two slope pieces
-each have coefficient rank one, and $V_a$ is a unit on the
-slope-$a/e$ piece. If this map were a unit everywhere, every
-fiber would retain that slope and the complementary slope zero.
-Nonconstancy supplies a zero; hence $(p-1)\deg L>0$.
-The reduction of $F$ kills $F_C^*L$, and that of $V_a$ maps $L$
-into $F_C^*L$. These inclusions can be checked at the generic
-point and extended because the lines are saturated.
+Conversely an oper cannot have zero outgoing height at termination.
+Transport its degree-one line through the zero-height isomorphisms
+to the next positive edge. It gives a positive line of degree p^a>1
+inside that edge's oper source, whose maximal line degree is one.
+This is impossible. Thus the operative components are exactly the
+sources of positive edges.
 
-When $L$ is horizontal, its Langton modification is therefore
-stable under $F,V_a$. Repeating this actual lattice construction
-must terminate as before. The resulting line has nonzero second
-fundamental form, and genus two forces its degree to be one.
-The saturated reduced Frobenius image is a different negative
-Cartier line. The defect calculation (O7)--(O8) applies unchanged:
-the divisor is $p$-divisible with degree at most $p-1$, and vanishes.
-Consequently the integral Frobenius has elementary divisors
-\[
-(1,\pi^a)\quad\text{at every point}.
-\tag{T2}
-\]
+## The whole outgoing kernel at every positive height
 
-Here (T2) does not give a free Hodge line modulo $p$ when $a<e$.
-It gives exactly the smaller initial thickening that is needed.
-Identify $\mathcal H/\pi^a$ with
-$\pi^{e-a}\mathcal H/p\mathcal H$ by multiplication by
-$\pi^{e-a}$, and let $L_a$ be the inverse image of the ACTUAL
-Hodge filtration under this identification. This makes sense
-because the Hodge filtration is annihilated by $\pi^a$.
-Indeed its Frobenius pullback is the kernel of $F$ modulo $p$;
-(T2) identifies that kernel with a free line over $A/\pi^a$,
-multiplied by $\pi^{e-a}$. Faithful flatness of $F_C$ then proves
-that $L_a$ is a line subbundle of $\mathcal H/\pi^a$.
+Let a positive edge of height t leave component i. Its elementary
+divisors \((1,\pi^t)\) give a line kernel over the WHOLE ring
+\(A_i/\pi^t\). It is horizontal for the canonical relative
+Frobenius connection, since p=0 there. Relative Cartier descent
+gives \(L_{i,t}\subset\mathcal H_i/\pi^t\). Frobenius acts on
+the curve factor and fixes the constant nilpotent coefficients.
 
-Its reduction is $L$, so its second fundamental form is an
-isomorphism over the entire ring $A/\pi^a$, by Nakayama.
-Equation(T2) supplies a SINGLE Frobenius of height $a\le e$ on
-this component. The
-[Frobenius Taylor theorem](frobenius_taylor_thickness.md) bounds
-its $j$th Taylor coefficient below by $-a\lfloor\log_pj\rfloor$.
-At a curve displacement of valuation $n\ge a$, every nonlinear
-term therefore has valuation strictly greater than $n$.
-The integral gluing and oper obstruction argument apply to the
-full line $L_a$ just constructed. They give the simultaneous
-lift for EVERY $a/e>0$ in this statement, without a divided-power
-condition on $(\pi^a)$ or a hypothetical extension of its residue
-line.
+Equivalently, this is the inverse image of the ACTUAL Hodge filtration
+under \(\mathcal H_i/\pi^t\cong\pi^{e-t}\mathcal H_i/p\).
+Its reduction is the oper line. Nakayama makes its whole second
+fundamental form an isomorphism.
 
-One further property of the construction is useful independently. If
-$a<e$, take an integral basis $(e_0,b_0)$ adapted to $L_a$.
-Then $u=F(e_0)/\pi^a$ and $v=F(b_0)$ are a basis by (T2).
-For a local Frobenius lift $t\mapsto t^p$, horizontality shows
-that the off-diagonal term of $\nabla u$ has factor $p/\pi^a$,
-and all remaining terms have a factor $p$. Both are divisible
-by $\pi$ when $a<e$. Thus $u,v$ are horizontal modulo $\pi$
-and the reduced connection is dormant. This explains the earlier
-boundary case of the crystal-only divided-power argument; the
-Frobenius estimate now removes that threshold entirely.
+For lifting choose an edge of maximum height s. Every constituent
+Frobenius has height at most s, and its oper is supplied to precision
+\(\pi^s\). The [Taylor estimate](frobenius_taylor_thickness.md) applies
+because \((p-1)s>s\). The own-height oper at another edge need not meet
+the global-cycle Taylor threshold. No divided powers on (pi^s)
+are required.
 
-## A nonzero form over a thickened coefficient field
+## Ordinary, residue-degree-one and whole-modulo-p cases
 
-First prove the degree lemma. Write $M_R=H_R/L_R$ and let
+In the ordinary case b=ef, every d_j=e. Once one component is an oper,
+the height-e curvature propagation gives ALL of them. By (G9) every
+step has elementary divisors (1,p), so every actual Hodge module is free
+over A_i/p and every whole-modulo-p second fundamental form is an
+isomorphism. This proves the ordinary conclusion without initially
+free Hodge modules.
+
+For f=1 the unique height is b. The same construction gives elementary
+divisors (1,pi^b) and the whole line to precision pi^b.
+If b<e, a basis adapted to that line gives u=F(u0)/pi^b, v=F(v0).
+Horizontality makes the off-diagonal coefficient of nabla u divisible
+by p/pi^b, and all other coefficients divisible by p. Both vanish
+modulo pi, so the oper reduction is dormant.
+
+The stronger whole-modulo-p conclusion from an initially FREE Hodge
+module is also retained. Active Frobenius steps then have elementary
+divisors (1,p); inactive steps are isomorphisms. Their reduced positive
+kernel degrees follow from (G4). Intrinsic Frobenius untwisting of the
+WHOLE horizontal Hodge filtration, by
+[Lam, Lemma4.2](https://arxiv.org/pdf/2210.13563), preserves its freeness
+and divides the positive total Hodge degree by p. The intrinsic
+construction glues because it is the inverse image of the specified
+Hodge filtration in the fixed crystal, agrees under crystalline transition
+maps, and preserves F,V and the integer action. Lam's intrinsic identity
+\(F(\mathcal H'^{(p)})=p\mathcal H\) gives the actual pullback relation.
+It terminates with a nonzero whole second fundamental form.
+
+To see that this form is an oper over the entire coefficient ring,
+write $M_R=H_R/L_R$ and let
 $\kappa:L_R\to M_R\otimes\omega_C$ be the second fundamental form.
 For nonzero $\kappa$, choose the largest $s<e$ such that it lies in
 $\pi^s\mathcal Hom(L_R,M_R\omega_C)$. Its leading coefficient is
@@ -454,85 +283,68 @@ degree, so it is an isomorphism. Nakayama makes $\kappa$ itself
 an isomorphism over $R_i$. This argument does not assume that a
 nonzero map over a nonreduced ring has nonzero reduction.
 
-## Reduced partial Hasse maps have positive Hodge degrees
+It follows that this free-Hodge construction supplies an oper over ALL
+of A_i/p, retaining its intrinsic Frobenius-pullback relation.
 
-The freeness hypothesis permits a Hodge basis in each component.
-At a rank-one component, strong divisibility gives an integral
-basis of the next component of the form
+## A coreless actual comparison synchronizes every active interval
+
+Assume the given source comparison respects every Frobenius arrow.
+Call a component active when its outgoing height is positive, and let
+m be their number. Between consecutive active sources j,i at cyclic
+distance a_i, contract the intervening zero-height isomorphisms.
+The actual map has elementary divisors (1,pi^t_j), where t_j is the
+outgoing height of j. Its integral horizontal complement
+\(\pi^{t_j}\mathcal F_i^{-1}\) gives modulo pi
 \[
-F(e)/p,\quad F(a),
+0\to F_C^{a_i*}(E_j/L_j)\to E_i
+ \xrightarrow{\mathcal V_i}F_C^{a_i*}L_j\to0.
+\tag{G10}
 \]
-where $e$ lifts its Hodge generator. In particular the local
-elementary divisors of this Frobenius step over $A_i$ are $(p,1)$,
-not $(\pi,1)$. At a zero-Hodge component the step is an integral
-isomorphism. These assertions also follow from the exact Hodge
-and conjugate sequences of the Dieudonné crystal: both Hodge
-modules are free over $R_i$, so the elementary Hodge bases lift.
+Restrict to L_i. The resulting Hasse map has divisor of degree
+p^(a_i)-1. Its zeros are simple: at a zero L_i is the kernel of the
+complement, whose derivative on L_i is its oper second fundamental
+form followed by the quotient isomorphism in(G10).
 
-Reduce modulo $\pi$. Write $H_i$ for the resulting rank-two bundle,
-and $L_i,M_i$ for its Hodge subbundle and quotient. The conjugate
-sequence gives $\deg H_i=p\deg H_{i-1}$, including the zero-Hodge
-indices. Cycling implies $\deg H_i=0$ for all $i$.
-
-Call a Hodge-rank-one index active. For consecutive active indices
-$j,i$, let $a_i$ be their cyclic distance. Composing the intervening
-zero-Hodge isomorphisms gives a Frobenius map with elementary
-divisors $(p,1)$. Its complementary map $pF^{-1}$ yields the
-reduced exact sequence
+Descend EVERY active oper lattice through the other actual leg.
+Faithful flatness descends the contracted maps and sequences. Their
+nonempty reduced Hasse divisors are common on the ORIGINAL source.
+For a coreless span, clump uniqueness forces equal supports, hence
+equal a_i. Therefore
 \[
-0\longrightarrow F_C^{a_i*}M_j\longrightarrow H_i
-\longrightarrow F_C^{a_i*}L_j\longrightarrow0.
-\tag{1}
+m\mid f,\quad a=f/m,\quad |S_Y|=p^a-1,\quad
+\frac1{ea}\le\delta=\frac b{ef}\le\frac1a,
+\tag{G11}
 \]
-The end terms have their Cartier connections, and the maps are
-horizontal. In particular the reduced $p$-curvature is nilpotent.
-Restrict the right arrow to $L_i$ to obtain
-$h_i:L_i\to F_C^{a_i*}L_j$.
+using \(m\le b\le em\). Unequal heights give no exceptional-isoclinicity
+conclusion from the unramified two-step pairing argument.
 
-At the geometric generic point the slope-zero part has coefficient
-rank one. After passing to its perfection, it splits from the
-connected part. The latter supplies the Hodge line at every active
-index, and the complementary map in (1) is invertible on it.
-Thus every $h_i$ is generically nonzero.
+## Determinant torsion gives the exact canonical profile
 
-If all $h_i$ were everywhere nonvanishing, the rank-one reductions
-of the active Frobenius steps would compose nontrivially around
-every cycle. Their iterates would retain a coefficient-rank-one
-étale part in every fiber. The remaining coefficient-rank-one
-part has slope $r/f$, by its dimension. Every fiber would then
-have the generic Newton polygon, contrary to hypothesis.
-Therefore some $h_i$ has a zero.
-
-Put $d_i=\deg L_i$. The inequalities $d_i\le p^{a_i}d_j$ around
-the active cycle, whose total distance is $f$, imply $d_i\ge0$.
-If one degree were zero, all would be zero and every nonzero
-$h_i$ would be nowhere vanishing. Consequently
+Suppose the rational determinant is geometrically constant on BOTH
+endpoints. An active determinant lattice is constant up to a scalar
+uniformizer power: on a smooth proper lift, its divisor inside the
+rational trivial line is supported on the irreducible special fiber.
+Its horizontal trivialization gives \(L_i^2\cong\omega_C\) for C=X,Y.
+Put q=p^a and \(\tau_C=\mathcal O(S_C)\otimes\omega_C^{-(q-1)/2}\).
+The common reduced Hasse divisor and(G10) give
 \[
-d_i>0\qquad\text{at every active index}.
-\tag{2}
+\mathcal O(S_C)=F_C^{a*}L_j\otimes L_i^{-1}
+=\omega_C^{(q-1)/2}\otimes(L_j\otimes L_i^{-1}).
+\tag{G12}
 \]
+Thus tau_C is two-torsion, independent of i, and its m-th power is
+trivial on EACH endpoint. The squared Hasse sections are canonical
+of weight q-1 with divisor 2S_C. Their source pullbacks differ by
+a nonzero scalar on the proper connected source; normalize it to
+make them an actual common section.
 
-## Untwist the whole Hodge filtration, then use the degree lemma
-
-If the WHOLE Kodaira--Spencer map over the rings $R_i$ is zero,
-apply intrinsic Frobenius untwisting. The construction in
-[Lam, Lemma4.2](https://arxiv.org/pdf/2210.13563) takes the inverse
-image of the Hodge filtration in the integral Dieudonné crystal.
-It preserves the integer action and gives $G\simeq F_C^*G_1$
-within its isogeny class. As explained in the
-[unramified proof](unramified_bt_genus_two.md), this intrinsic
-construction glues on a proper curve.
-
-The freeness assumptions descend along the faithfully flat map
-$F_C$, so they still hold for $G_1$. The active indices are permuted
-and their reduced degrees divided by $p$. By (2), their positive
-integer sum strictly decreases. Thus after finitely many steps
-there is a nonzero component of the whole second fundamental form.
-
-Apply the first section to that component. Its reduced Hodge
-degree is positive, and (1) supplies nilpotent $p$-curvature.
-The degree is one and the Hodge line is an oper over ALL of $R_i$.
-This is stronger than obtaining an oper only modulo $\pi$.
+In the shared ring k[s], the primitive zero multiplicity divides two.
+It is one exactly when BOTH tau_X and tau_Y vanish: then the unsquared
+Hasse sections are canonical and can be matched by the same scalar
+argument; conversely a primitive weight-(q-1)/2 section with divisor
+S_C trivializes both tau_C. Otherwise the multiplicity is two.
+The respective primitive weights are (q-1)/2 and q-1. Odd m kills
+both torsion classes and forces the first profile.
 
 ## Preserve the actual span and lift over the ramified DVR
 
@@ -548,7 +360,7 @@ the oper lattice and its actual partial Hodge line through the other
 leg. It uses a Galois closure of that leg only and then descends
 back to the ORIGINAL source and maps.
 
-The outgoing-maximum construction supplies the whole line over
+The maximum-height construction supplies the whole line over
 $A_i/\pi^s$ and bounds every integral Frobenius height by $s$.
 The Frobenius Taylor criterion therefore lifts the original maps
 together over $A_i$, without a ramification or residue-degree

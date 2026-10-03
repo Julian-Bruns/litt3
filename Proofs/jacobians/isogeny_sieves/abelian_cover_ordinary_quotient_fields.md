@@ -29,14 +29,20 @@ Here ell runs through primes of N; a may be its exponent in N,
 which suffices even if it exceeds the exponent of P.
 The prime support of a general-linear group over Z/ell^a is the
 support of ell times the factors ell^i-1 at the indicated ranks.
-At five and rank six the only primes are
+At five, use the ACTUAL Frobenius order on the unit-root module
+modulo five instead of the whole GL6 order. The established order
+has prime support
 \[
-2,3,5,7,11,13,31,71.
+\operatorname{Supp}(m_5)\subseteq\{2,3,5,13\}.
 \tag{4}
 \]
-In particular these are all below1025. This construction chooses
-a form of the given geometric cover; it does not assert that the
-second map or its target is already defined over this field.
+The congruence kernel at each higher five-power level is a five-group,
+so the same support suffices at every exponent. This is the fixed-X
+input in [torsion descent, Section3](ordinary_quotient_torsion_descent.md):
+the unit-root polynomial is (T+1)^2(T^4+T^3+3T^2+3), its quartic
+roots have order624, and nonsemisimplicity adds only five.
+The model is the actual cover; the second map and its target are
+not yet asserted defined over this field.
 
 Put Q=25^e and write pi for the Q-Frobenius endomorphism of J(T).
 It commutes with P because all deck transformations are rational.
@@ -94,37 +100,16 @@ of Hom^0(A,J(T)). Commutation with that field's Frobenius gives
 pi^b u=u pi_A, and pi_A lies in K. The integer b is not yet
 bounded and is not assumed to avoid any prime.
 
-It follows from(7) that pi is semisimple and every ratio of two
-of its eigenvalues, at the fixed embedding of K, is a root of unity.
-Let lambda and mu be two such eigenvalues, possibly from different
-P-characters. By(6),
-\[
-[F(\lambda,\mu):F]\le16^2=256.
-\tag{8}
-\]
-If their ratio has order divisible by a prime r not dividing n,
-this field contains a primitive r-th root of unity. Cyclotomic
-disjointness at coprime conductors therefore gives
-\[
-r-1=[\mathbf Q(\zeta_n,\zeta_r):\mathbf Q(\zeta_n)]
-\le [F(\lambda,\mu):\mathbf Q(\zeta_n)]
-\le4\cdot256=1024.
-\tag{9}
-\]
-Thus every prime in the order of every ratio is at most1025 or
-already divides N.
+Apply the [projective block lemma](bounded_abelian_index_quotient_descent.md#3-the-trivial-character-also-has-bounded-size)
+with M=16 and [K:Q]<=4. Some exponent E_A, whose prime divisors
+are at most65 or divide n, makes pi scalar over K on the entire
+Hom space. It is consequently CENTRAL on the whole geometric
+A-isotypic factor. This removes the unknown b without constructing
+pairwise eigenvalue fields.
 
-Take E_A to be the least common multiple of these finite orders.
-Then pi^(E_A) is a scalar on W_F. Since this operator was defined
-over K, the scalar lies in K. In particular it is CENTRAL on the
-entire geometric A-isotypic abelian factor of J(T). This step
-removes the unknown b in(7) without requiring pi_A to have a
-prescribed field of definition or to lack roots in a CM field.
-
-Do this for every geometrically simple ordinary factor of dimension
-at most two, and take the least common multiple E. There are only
-finitely many for a fixed T. Every prime divisor of E is at most1025
-or divides N, and pi^E is central on all those isotypic factors.
+Take the lcm E for all geometrically simple ordinary factors of
+dimension at most two. Its prime support is still at most65 or
+divides N. Arbitrarily many factors and character blocks are allowed.
 
 ## 3. Descending the actual image and the integral norm isogeny
 
@@ -164,12 +149,16 @@ in B[d_g]. In particular its prime support is contained in the
 support of2N. Rational isogeny occurrence alone would not give this.
 
 We next descend this finite subgroup, retaining its integral type.
-For ell!=5, B[ell^a](k) has rank four over Z/ell^a. Killing the
-arithmetic action uses an extension with degree supported on
+For ell!=5, B[ell^a](k) has rank four over Z/ell^a. The reciprocal
+Frobenius-root argument in
+[torsion descent, Section4](ordinary_quotient_torsion_descent.md#4-descending-the-actual-image-norm-kernel-and-polarization)
+makes its actual arithmetic action constant over an extension
+with degree supported on
 \[
-\ell\prod_{i=1}^4(\ell^i-1).
+\ell(\ell-1)(\ell^2-1)(\ell^4-1).
 \tag{12}
 \]
+It does not require the induced polarization on B to be principal.
 At five, ordinariness gives over k the finite group scheme
 \[
 B[5^a]\simeq\mu_{5^a}^{\,2}\times(\mathbf Z/5^a)^2.
@@ -201,10 +190,12 @@ field is needed.
 
 ## 4. Prime support and the main endpoint
 
-Combine(3),(4),(9),(12),(13). A prime r>1025 in m_Y cannot come
+Combine(3),(4), the block lemma, (12) and(13). A prime r>65 in m_Y
+cannot come
 from the five-primary deck or ordinary torsion actions. Nor can
-it arise from the extra factor eight in d_g: GL4(Z/8) only adds
-2,3,5,7. Thus some ell dividing N, ell!=5, has
+it arise from the extra factor eight in d_g: the actual surface
+Frobenius action at two only adds2,3,5. Thus some ell dividing N,
+ell!=5, has
 \[
 r\mid\ell\prod_{i=1}^{18}(\ell^i-1).
 \]

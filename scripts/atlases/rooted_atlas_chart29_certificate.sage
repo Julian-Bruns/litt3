@@ -7,7 +7,7 @@ import hashlib,json
 from pathlib import Path
 root=Path(__file__).resolve().parents[2]
 folder=root.parent/'litt3-computation-data/atlas-rooted-first/chart-29'
-source=root/'Research/computations/canonical_atlas_system.json'
+source=root/'../litt3-computation-data/legacy_workspace_computations/canonical_atlas_system.json'
 d=json.loads(source.read_text()); meta=json.loads((folder/'metadata.json').read_text())
 assert hashlib.sha256(source.read_bytes()).hexdigest()==meta['source_sha256']
 k=GF(25,name='a',modulus=PolynomialRing(GF(5),'z')([2,4,1])); a=k.gen()

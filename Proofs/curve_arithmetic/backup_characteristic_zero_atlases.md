@@ -1,9 +1,9 @@
 # Proof: specialization filters and complete atlas reduction
 
 [Statement](../../Theorems/curve_arithmetic/backup_characteristic_zero_atlases.md).
-The first specialization lemma and degree-six certificate are from the
-returned manual Pro answer. The larger finite checks and the arithmetic
-family reduction are local continuation. This proof uses the existing
+The specialization filters are from the returned manual Pro answer.
+Later geometric inputs replace its degree-six census. The larger
+finite checks and arithmetic family reduction are local continuation. This proof uses the existing
 arithmetic and cover certificates in their stated scopes; it does not
 assume that a characteristic-zero quotient map has good reduction.
 
@@ -89,22 +89,50 @@ no assertion about extension of the three-branch map. Intrinsic
 monodromy order, deck group, fixed-point counts and existence of
 specified intermediate maps define Galois-stable subsets.
 
-## 4. Finite low-degree permutation certificates
+## 4. A structural degree-six reduction and the remaining finite inputs
 
-The returned [degree-six script](../../scripts/orbifolds/degree_six_profile_certificate.py)
-was copied byte-for-byte from the supplied attachment and executed.
-For the fixed first inertia cycle it gives:
+For the degree-six quadrangle $(2,2,3,3)$, let $a,b$ be its two
+fixed-point-free involutions and $c,d$ its two permutations of type
+$3^2$, with $abcd=1$. Put $r=ab=(cd)^{-1}$ and $K=\langle c,d\rangle$.
+The union of the matchings $a,b$ shows that $r$ has order1,2or3.
+In every case the generated group has order prime to five:
 
-| Profile | Monodromy order: tuple count |
-|---|---|
-|$(2,2,3,3)$|$6:24,\ 24:144$|
-|$(2,2,2,6)$|$12:72$|
-|$(3,6,6)$|$6:3,\ 18:6,\ 24:9,\ 120:18$|
+* If $r=1$, then $a=b$, $d=c^{-1}$. The matching $a$ has either
+  three or one edges between the two $c$-orbits. In the first case
+  $aca=c^{\pm1}$, giving a group of order6. In the second, rotating
+  the two orbits gives $(c,a)=((123)(456),(14)(23)(56))$.
+  Its product has order4, so its group is a quotient of the
+  octahedral rotation group $\Delta(2,3,4)\simeq S_4$.
+* If $r$ has order2, the presentation
+  $c^3=d^3=(cd)^2=1$ gives $K\simeq A_4$:
+  the three $c$-conjugates of $cd$ are involutions whose product is1,
+  hence generate the normal Klein four group. $K$ is transitive,
+  since its action on two three-point orbits would give $r$ order
+  dividing3. Identify this unique degree-six action with the edges
+  of a tetrahedron. For $r=(12)(34)$ on its vertices, let $\delta$
+  interchange complementary edges. The only matchings $a$ with
+  $a^2=(ar)^2=1$ and both $a,ar$ fixed-point-free are
+  $\delta(12)$ and $\delta(34)$. They normalize $K$, so $|G|=24$.
+* If $r$ has order3, the presentation $c^3=d^3=(cd)^3=1$ has
+  a normal abelian subgroup $L$ of index dividing3. Indeed put
+  $t=dc^{-1}$, $u=ctc^{-1}$ and $v=c^2tc^{-2}$; the last two
+  relations give $tuv=utv=1$. If $K$ has two orbits of size3,
+  $c,d\in C_3^2$ and $cd$ has no fixed points, forcing $d=c$;
+  then $G\simeq S_3$. Otherwise $K$ is transitive. $L$ cannot be
+  transitive: it would be regular of order6, and the cyclic quotient
+  acts trivially on $C_6$, making $K$ abelian of exponent3, a
+  contradiction. Thus $L$ has three two-point orbits. It is the
+  full even subgroup $C_2^2\subset C_2^3$ (the cyclic block action
+  has no nonzero proper invariant subgroup there), giving again
+  the tetrahedral edge action $K\simeq A_4$. Since $ara=r^{-1}$,
+  $a$ is one of its three inverting matchings:
+  for vertex $r=(123)$ they are $\delta(12),\delta(13),\delta(23)$.
+  They normalize $K$, again giving $|G|=24$.
 
-The eighteen tuples of order120 form one simultaneous-conjugacy
-class. Section3 excludes this class; Section2 excludes the others.
-The degree-three and degree-four monodromy groups are subgroups of
-$S_3$ and $S_4$, so Section2 already applies.
+Section2 therefore excludes this quadrangle. Degree-three and
+degree-four monodromy groups lie in $S_3,S_4$ and are excluded there
+as well. The other degree-six profiles are excluded geometrically
+in Section5; no degree-six enumeration is an input.
 
 The two [degree-eight triangle enumerations](../../scripts/orbifolds/degree_eight_uniform_profiles.py)
 and the [quadrangle/degree-nine completion](../../scripts/orbifolds/small_uniform_atlas_completion.py)
@@ -143,12 +171,26 @@ Section3. No reduction of either wild-inertia map has been assumed.
 For reproducibility, all generated permutations, outputs and receipts
 are external to the source repository:
 
-* [Degree six](../../../litt3-computation-data/degree_six_profiles_20260921/output.txt).
 * [Degree-eight triangles](../../../litt3-computation-data/degree_eight_profiles_20260921/classes.json).
 * [Degree-eight quadrangle and degree nine](../../../litt3-computation-data/small_uniform_atlas_completion_20260921/classes.json).
 * [Degrees five and ten](../../../litt3-computation-data/low_degree_wild_triangles_20260921/classes.json).
 
 ## 5. Geometric exclusions that survive bad reduction of the map
+
+For the degree-six quadrangle $(2,2,2,6)$, send its fully ramified
+value to infinity, write its pole as $6P$, and denote the other
+values by $a,b,c$ and their reduced fibers by $D_a,D_b,D_c$.
+Then
+\[
+\operatorname{div}(df)=D_a+D_b+D_c-7P,\qquad
+\operatorname{div}\frac{(df)^2}{(f-a)(f-b)(f-c)}=4P.
+\]
+Hence $4[P-O]=0$, so Section1 makes $P$ Weierstrass. Choose
+$\eta$ with divisor $2P$. The actual function $h=df/\eta$ satisfies
+$h^2=\lambda(f-a)(f-b)(f-c)$ for $\lambda\ne0$. It therefore gives
+a degree-three map from $C$ to a smooth elliptic curve, contradicting
+the simplicity of $J(C)$. This is the same canonical-tensor extraction
+as the degree-twelve case below.
 
 The uniform degree-twelve quadrangle $(2,2,2,3)$ is excluded directly
 in characteristic zero by the [integral Hecke theorem](../../Theorems/quotient_geometry/tame_covers/quadrangular_genus_two_hecke_obstruction.md):
@@ -217,25 +259,35 @@ is
 \[
 \sum_i(1-1/e_i)=2+2/n,\qquad e_i\mid n.
 \]
-The minimum positive hyperbolic genus-zero orbifold degree is $1/42$,
-attained at $(2,3,7)$, so $n\le84$. Also $3\le r\le6$.
-Enumerating the divisors of each $2\le n\le84$ in this exact equation
-gives thirty numerical profiles: twenty-two triangles and eight
-longer profiles. The latter are
+Since every summand is at least $1/2$, $3\le r\le6$.
+For $r=6$ the equation forces $n=2$ and all indices2; for $r=5$ it
+forces $n=4$ and all indices2. For $r=4$, sort the indices. If the
+smallest is at least3, $n\le3$, giving $(3;3^4)$. Otherwise the first
+two must be2: if the second were at least3, $n\le4$ and divisibility
+would make the remaining indices4, contradicting the equation.
+Now
+\[
+1/e_3+1/e_4=1-2/n.
+\]
+For $e_3\ge4$ this gives $(n;e_3,e_4)=(4;4,4)$; for $e_3=3$ it
+gives $(6;3,3)$. For $e_3=2$, $n=4+8/(e_4-2)$ and $e_4\mid n$
+give $(n;e_4)=(6;6),(8;4),(12;3)$. Thus the eight longer profiles are
 \[
 (2;2^6),\ (3;3^4),\ (4;2^5),\ (4;2,2,4,4),\
 (6;2,2,3,3),\ (6;2,2,2,6),\ (8;2,2,2,4),\ (12;2,2,2,3).
 \]
-All but the hyperelliptic row have just been excluded. Applying
-Sections4--5 to the twenty-two triangles leaves eight profiles:
+All but the hyperelliptic row have been excluded.
+
+For $r=3$, the complete twenty-two types and their degrees are the
+published classification in
+[Singerman--Syddall, *The Riemann Surface of a Uniform Dessin*,
+Section6.2,p420](https://ftp.gwdg.de/pub/misc/EMIS/journals/BAG/vol.44/no.2/9.html).
+Their uniform dessins are precisely the torsion-free triangle
+subgroups defining these complete uniform maps. Applying Sections4--5
+leaves the eight types
 $(3,3,5),(2,4,8),(2,5,5),(3,3,4),(2,3,10),(2,3,9),(2,4,5),(2,3,7)$,
 using the actual $(2,3,8)$ factorization for that extra row.
-The [exact rational profile enumerator](../../scripts/orbifolds/genus_two_uniform_profiles.py)
-checks all degrees at most84 and all branch counts from three to six,
-using the displayed Hurwitz equality and divisibility of every index.
-The triangle counts also agree with
-[Singerman--Syddall, Table1](https://ftp.gwdg.de/pub/misc/EMIS/journals/BAG/vol.44/no.2/b44h2sin.pdf),
-but the numerical-profile completeness is the Hurwitz calculation.
+No bounded numerical-profile enumerator is needed.
 
 ## 7. Excluding the last triangle profiles
 
@@ -292,10 +344,12 @@ orbit of length three. Thus $(2,4,5)$ is the sole remaining triangle
 profile at that stage, with at most twenty-one normalized cover classes.
 
 The [complete exact triangle245 calculation](triangle245_reduction_exclusion.md)
-now excludes all twenty-one. Its two charts exhibit every normalized
-geometric model, and the reduction of $I_4^5/I_{10}^2$ differs from
-the backup in every algebraic family. Only a necessary invariant is
-used, without an assumption of good reduction of the triangle map.
+now excludes all twenty-one. Its twelve boundary models have an
+extra order-four automorphism. All open models have smooth reductions
+at every place; reduced coefficient-field degrees exclude all but
+two residue factors, where the direct $I_4^5/I_{10}^2$ test differs
+from the backup. Characteristic-zero invariant minimal polynomials
+are unnecessary. No good reduction of the triangle map is assumed.
 There are therefore no uniform triangle atlases for such a $C$.
 
 The exact generated tables and witness records are in

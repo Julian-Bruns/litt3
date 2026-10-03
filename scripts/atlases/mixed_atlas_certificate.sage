@@ -443,7 +443,7 @@ def run(chart, output, seconds=120, memory_gib=2, v_degree=1, b_degree=1,
     assert not predecessor_reuse or v_degree==0, 'Predecessor reuse currently requires A=0 and a total b-degree bound'
     began=time.monotonic(); out=Path(output).resolve();out.mkdir(parents=True,exist_ok=True)
     root=Path(__file__).resolve().parents[2]
-    source=Path(tensor_path).resolve() if tensor_path else root/'Research/computations/canonical_atlas_system.json'
+    source=Path(tensor_path).resolve() if tensor_path else root/'../litt3-computation-data/legacy_workspace_computations/canonical_atlas_system.json'
     if tensor_path and not atlas_input:
         raise ValueError('--tensor requires --atlas-input pointing to its verified rooted export')
     atlas_root=Path(atlas_input) if atlas_input else root.parent/'litt3-computation-data/atlas-rooted-first'

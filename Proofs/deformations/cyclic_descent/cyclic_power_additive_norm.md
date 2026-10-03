@@ -99,7 +99,7 @@ The [new diagnostic](../../../scripts/deformations/cyclic/verify_general_cyclic_
 252 exact additive/nonlinear partial equations in characteristics3,5,7,11,
 through leading order5, with noncommuting coefficients, free repairs
 and arbitrary terminal representatives. Its
-[receipt](../../../Research/computations/general_cyclic_order_checks.json)
+[receipt](../../../../litt3-computation-data/legacy_workspace_computations/general_cyclic_order_checks.json)
 records the tested ranges. These finite checks do not replace the proof.
 
 The original [preparation audit](../../../Research/audits/CYCLIC_POWER_ADDITIVE_PREPARATION_AUDIT_2026_09_10.md),

@@ -5,7 +5,7 @@ from pathlib import Path
 
 def inspect(rep, output):
     root=Path(__file__).resolve().parents[3]
-    folder=root/'Research/computations';start=time.monotonic()
+    folder=root/'../litt3-computation-data/legacy_workspace_computations';start=time.monotonic()
     census=json.loads((folder/'normalized_oper_closed_points.json').read_text())
     factor=next(row for row in census['factors'] if row['id']==rep)
     certpath=folder/'normalized_oper_algebra_certificate.json'

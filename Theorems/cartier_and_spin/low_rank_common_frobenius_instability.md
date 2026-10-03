@@ -1,68 +1,98 @@
-# Small common bundles detect a dormant projective oper
+# Low-rank Frobenius instability and the characteristic-five Cartier exception
 
-Version2,21September2026. Let $k=\overline{\mathbf F}_5$ and let
-$X\xleftarrow fZ\xrightarrow gY$ be an ACTUAL finite etale span
-of smooth proper hyperbolic curves, with $g(Y)=2$ and no clump.
-All common bundles, morphisms and connections retain the specified
-identification on this same source.
+Version3,3 October2026. Let $k$ be algebraically closed of
+characteristic $p\ge5$ and let $X\xleftarrow fZ\xrightarrow gY$
+be an ACTUAL finite etale span of smooth proper connected
+hyperbolic curves with no clump. All common bundles and
+connections retain their specified comparison on this SAME source
+and on every relative or coefficient twist.
 
-Let $E$ be a common bundle, semistable on the endpoints, of rank
-$r\in\{2,3\}$. Write $d=\deg E_Y$. If some Frobenius pullback
-of $E$ is unstable, then
+## The projective detector in arbitrary genus
 
-1. $r$ divides $d$;
-2. the original span admits a common regular dormant projective oper.
-
-Consequently, in the no-common-oper branch EVERY common semistable
-bundle of rank at most three is strongly semistable. Even when a
-common oper exists, rank-two bundles of odd genus-two degree and
-rank-three bundles of genus-two degree not divisible by three are
-strongly semistable.
-
-There is an exact converse in rank three and degree zero:
+Let $E$ be common and semistable on both endpoints.
+If it is not strongly semistable, the original span has a
+common regular dormant projective connection whenever
 \[
-\begin{split}
-&\text{a common dormant projective oper exists}\\
-&\quad\Longleftrightarrow\quad
-\text{some common semistable rank-three degree-zero bundle is not
-strongly semistable}.
-\end{split}
+\operatorname{rk}E\in\{2,3\},\quad p\ge5,
+\qquad\text{or}\qquad
+\operatorname{rk}E=4,\quad p\ge7.
 \]
-For the converse one can take the actual adjoint bundle
-$K=\operatorname{End}^0(Q)$ of the common rank-two Bol bundle.
-No common theta characteristic is required.
+Thus in the no-common-oper branch all common semistable bundles
+of ranks at most three are strongly semistable for every
+$p\ge5$, and those of ranks at most four are so for $p\ge7$.
 
-The rank-three threshold is sharp as a conditional statement
-about a no-oper span. After a finite etale refinement of the
-SOURCE of degree at most two, endpoint theta characteristics
-can be given an actual common identification. On the first
-Frobenius twist of that refined span,
+Rank-two instability always forces $2\mid\deg E_C$ on each
+endpoint. Rank-three instability forces $3\mid\deg E_C$
+whenever $3(g(C)-1)\le p$, in particular on a genus-two endpoint.
+No unrestricted arbitrary-genus degree divisibility is claimed
+for ranks three or four.
+
+The mechanism is intrinsic. A full rank-$n$ oper gives a scalar
+projective connection when $n(n^2-1)$ is invertible. Its
+Schwarzian coefficient is $1/2,2,5$ in ranks two, three, four.
+Horizontal stops give smaller actual opers; the rank-four
+two-by-two HN case gives either a two-block oper or a genuine
+horizontal rank-two subquotient.
+
+In the full rank-three oper case at $p=5$, adjunction also gives
+an ACTUAL injection $E\hookrightarrow F_*N$, with rank-two
+locally free quotient whose canonical Frobenius connection is
+a complementary dormant projective oper.
+
+## The conditional Cartier boundary at every prime
+
+After an ACTUAL source refinement of degree at most two,
+endpoint theta characteristics can have a common identification.
+On its first twist,
 \[
-B\otimes\vartheta^{-1}
+B\vartheta^{-1},\qquad B=F_*\mathcal O/\mathcal O,
 \]
-is a common semistable rank-four degree-zero bundle with unstable
-first Frobenius pullback. No clump and no common projective
-connection are preserved by this refinement. Thus one cannot
-extend the preceding implication to rank four, even after
-allowing this bounded source refinement. This does not assert
-existence of a no-oper span for the two fixed pairs.
+is a common stable bundle of rank $p-1$ and degree zero,
+whose first Frobenius pullback is unstable.
+No clump and no common projective connection persist under
+this refinement. This is a conditional example, not existence
+of a no-oper span or a complete rank threshold for every prime.
 
-The rank-three implication is constructive. At the first unstable
-step, a positive-slope line and its successive second fundamental
-forms either give a rank-two common antecedent of the same slope,
-or a full dormant rank-three oper. In the latter case, for its
-lowest quotient line $N$, the actual map
+## Exact characteristic-five/genus-two classification
+
+For the remaining assertions retain $k=\overline{\mathbf F}_5$
+and $g(Y)=2$. If there is no common regular projective connection,
+a common semistable rank-four bundle satisfies
 \[
-E\hookrightarrow F_*N
+E\text{ not strongly semistable}
+\quad\Longleftrightarrow\quad F^*E\text{ unstable}
+\quad\Longleftrightarrow\quad E=B\otimes L
 \]
-has a rank-two locally free quotient whose canonical Frobenius
-connection is a dormant projective oper. This uses the original
-Frobenius lattice, rather than arbitrary modification data.
+for an ACTUAL common line $L$. Such bundles are common-simple.
+No twist $B\otimes L$ has a common connection; hence there is
+no delayed instability in ranks at most four.
+In this branch $4\nmid\deg E_Y$ forces strong semistability.
 
-These are conditional restrictions on small common coefficients.
-They do not construct such a coefficient from the three global
-Cartier forms on $X$, force a common oper, or exclude the full
-coordinate-monodromy branch. Both original common-cover candidates
-remain open.
+A common semistable rank-three degree-zero bundle fails strong
+semistability if and only if a common dormant projective oper
+exists. Its actual adjoint bundle $\operatorname{End}^0(Q)$
+is such an example; no common spin line is required.
 
+Write $e=1$ or $2$ for the generator of degrees in the
+[actual common Picard group](../shared_tensors/saturated_divisor_relations.md).
+A non-strongly-semistable degree-zero rank-four bundle in the
+no-oper branch exists exactly when $e=1$, equivalently when
+there is a common degree-one line on $Y$.
+Allowing either oper branch, the least possible rank $m$ of
+a common semistable degree-zero bundle which is not strongly
+semistable is exactly:
+
+| Common regular projective oper | $e=1$ | $e=2$ |
+| --- | --- | --- |
+| Exists | $m=2$ | $m=3$ |
+| Does not exist | $m=4$ | $m=5$ |
+
+The rank-five example is the ACTUAL common $F_*\omega^{-2}$.
+The table uses the original comparison before a theta refinement.
+It does not decide which row or column occurs for an unknown span.
+
+The detector does not supply a small common coefficient from
+an arbitrary span. The Cartier exception and minimum-rank table
+retain their characteristic-five/genus-two scope; they are not
+automatically extended by the general detector.
 [Proof](../../Proofs/cartier_and_spin/low_rank_common_frobenius_instability.md).

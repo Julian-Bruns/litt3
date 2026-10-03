@@ -1,380 +1,282 @@
-# Proof: paired kernel polarizations and Frobenius slope
+# Proof: determinant kernels, fixed evaluations and Frobenius slope
 
 [Statement](../../../Theorems/jacobians/theta_divisors/raynaud_rank_one_dimension.md).
-The [bounded audit and follow-up](../../../Research/audits/RAYNAUD_RANK_ONE_DIMENSION_AUDIT_2026_09_15.md)
-pass both versions.
-The user-supplied Pro reply of 15 September 2026 introduced the
-inverse-Fourier-transform slope argument for the fixed mixed family.
-The argument here pairs opposite translates and compares their
-polarizations. This gives the dimension bound and the codimension-one
-vanishing consequence. The proof uses no characteristic-zero lift.
+The [earlier audit](../../../Research/audits/RAYNAUD_RANK_ONE_DIMENSION_AUDIT_2026_09_15.md)
+checks the Fourier, slope, trace and Wronskian inputs.
+The [Version3 review](../../../Research/audits/RAYNAUD_ALL_DEFECT_DIMENSION_2026_10_03.md)
+checks the fixed-evaluation extension and its consequences.
+The inverse-Fourier slope method originated in the user-supplied
+Pro reply of 15 September2026. Fixed evaluations now remove its
+rank-one hypothesis; the sharper Wronskian construction is optional.
 
-## 1. Opposite translates have two ample kernel duals
+## 1. Fixed evaluations reduce every positive defect to a line map
 
-Write \(d=\dim A\), \(\theta=i^*[\Theta_J]\), and let \(\mathscr P\)
-be the Poincaré family on \(C^{(1)}\times A\), trivial on
-\(\{c_0\}\times A\). Put
+Write \(\theta=i^*[\Theta_J]\), and normalize the Poincaré family
+\(\mathscr P\) on \(C^{(1)}\times A\) at \(c_0\). Put
 \[
-\mathcal C_\pm=
-R\pi_*(B_C\otimes L_0^{\pm1}\otimes\mathscr P),
+\mathcal C_\pm=R\pi_*(B_C\otimes L_0^{\pm1}\otimes\mathscr P),
 \qquad
 \mathscr K_\pm=\mathcal H^0(\mathcal C_\pm),\quad
 Q_\pm=\mathcal H^1(\mathcal C_\pm).
-\tag{2}
+\tag{5}
 \]
-The bundles in the fibers have Euler characteristic zero. These
-are perfect complexes of amplitude \([0,1]\), locally represented
-by square matrices, with derived base change.
+These are square perfect complexes of amplitude \([0,1]\), with
+derived base change. The self-duality
+\(B_C^\vee\otimes\omega_{C^{(1)}}\simeq B_C\) and Serre duality
+give equal generic ranks \(s>0\) on the opposite families.
+This includes \(p=2\), when \(B_C\) is a theta characteristic.
 
-The self-duality \(B_C^\vee\otimes\omega_{C^{(1)}}\simeq B_C\)
-and Serre duality show that opposite twists have the same \(h^0\).
-This self-duality is valid also for \(p=2\), when \(B_C\) is a theta
-characteristic; alternation of the pairing is not needed. Thus both
-complexes in (2) have generic kernel and cokernel rank one.
+A kernel between locally free sheaves is reflexive: its image is
+torsion-free, and the depth lemma gives Serre's second condition.
+Thus each \(\mathscr K=\mathscr K_\pm\) is reflexive of rank \(s\);
+\(\det\mathscr K=(\bigwedge^s\mathscr K)^{**}\) is a line bundle.
 
-A kernel of a map between vector bundles is reflexive: its image
-is torsion-free, and the depth lemma gives the second Serre condition.
-On the smooth variety \(A\), a rank-one reflexive sheaf is invertible.
-Hence \(\mathscr K_\pm\) are line bundles.
-
-Set \(\mathscr M_\pm=\mathscr K_\pm^\vee\). These are ample.
-Here is the general argument, which also works with any fixed
-vector bundle in place of \(B_C\otimes L_0^{\pm1}\). Evaluation
-of a nonzero generic kernel section at a general \(c\in C^{(1)}\)
-implies
+Over \(k(A)\), evaluations of the generic global sections at fixed
+\(k\)-points of the curve, followed by fixed fiber covectors,
+span their dual vector space. Indeed, a nonzero section cannot
+vanish at the infinitely many such points of the generic curve.
+Choose \(s-1\) independent evaluation covectors. They give a global
+map
 \[
-H^0(A,\mathscr M_\pm\otimes\mathscr P_c)\ne0.
-\tag{3}
+e:\mathscr K\longrightarrow
+\bigoplus_{j=1}^{s-1}\mathscr P_{c_j}
 \]
-The closed support locus \(V^0(\mathscr M_\pm)\) therefore contains
-the entire Abel image \(j(C^{(1)})\subset\widehat A\), where
-\(j=\widehat i\circ a_C\) and \(j(c_0)=0\). That image generates
-\(\widehat A\), since the dual map \(i\) has finite kernel.
-In particular \(\mathscr M_\pm\) are effective.
+of generic rank \(s-1\). Points may repeat if their fiber covectors
+differ. Put \(Q=\bigotimes_j\mathscr P_{c_j}\in\operatorname{Pic}^0(A)\).
+Alternating cofactor contraction gives
+\[
+\det\mathscr K\longrightarrow\mathscr K\otimes Q.
+\tag{6}
+\]
+On the locally free locus this is the usual vector of maximal minors:
+if \(e=[I_{s-1}\;0]\), its last component is one. In particular it
+is nonzero in every characteristic. Reflexivity of the target
+extends it across the complement of codimension at least two.
+For \(s=1\), take \(Q=\mathcal O_A\) and the identity map.
 
-For an effective nonample line bundle on an abelian variety,
-the connected kernel of its polarization is positive-dimensional,
-and its \(V^0\) is contained in one coset of the annihilator of
-that kernel. Indeed, restrict a nonzero section to a general coset
-of the kernel: a degree-zero line has a section only if it is
-trivial. Such a proper coset cannot contain a generating curve
-through the origin. This proves ampleness.
+We have therefore obtained an actual nonzero morphism
+\[
+N:=\det\mathscr K\otimes Q^{-1}
+\longrightarrow\mathscr K\longrightarrow\mathcal C.
+\tag{7}
+\]
+It remains nonzero on degree-zero cohomology. No independence
+over the curve's function field has been used.
 
-This generalizes the kernel argument in
-[the jump-divisor proof, Section 7](raynaud_jump_divisor.md).
-It does not assert that kernel base change is nonzero at every
-parameter.
+Write \(M=(\det\mathscr K)^\vee\). Universal evaluation of (7)
+at a general \(c\) implies
+\(H^0(A,M\otimes Q\otimes\mathscr P_c)\ne0\).
+Closedness of the section-support locus shows that
+\(V^0(M\otimes Q)\) contains the entire Abel image
+\[
+j(C^{(1)})\subset\widehat A,\qquad
+j=\widehat i\circ a_C,\quad j(c_0)=0.
+\]
+This curve generates \(\widehat A\): its dual map is the inclusion
+\(i\). Thus \(M\otimes Q\) is effective and ample. For completeness,
+if an effective line were nonample, the positive-dimensional
+connected reduced kernel of its polarization would force \(V^0\)
+into one proper coset of its annihilator. Restriction to a general
+kernel coset proves this: a degree-zero line with a section is
+trivial. Such a coset cannot contain a generating curve through zero.
+Since \(Q\) is algebraically trivial, \(M\) is ample too.
 
-## 2. The sum of the two kernel polarizations is bounded
+This determinant version subsumes the rank-one kernel argument in
+[the jump-divisor proof, Section7](raynaud_jump_divisor.md).
+It makes no assertion about kernel base change at every parameter.
+
+## 2. The two determinant polarizations share one budget
 
 Let \(\iota=[-1]_A\). Relative duality gives
 \[
 R\mathcal Hom(\mathcal C_+,\mathcal O_A)
-\simeq \iota^*\mathcal C_-[1],
+\simeq\iota^*\mathcal C_-[1],
 \qquad Q_+^\vee\simeq\iota^*\mathscr K_-.
-\tag{4}
+\tag{8}
 \]
-If \(U_+=\operatorname{tors}Q_+\), the reflexive hull of
-\(Q_+/U_+\) is consequently \(\iota^*\mathscr M_-\).
-Let \(D\) be the divisorial cycle of \(U_+\), whose coefficients
-are its lengths over the height-one discrete valuation rings.
-Taking determinants in (2) gives
+This identity holds in every generic rank, as is also clear by
+dualizing a two-term locally free presentation. If \(D\) is the
+divisorial torsion cycle of \(Q_+\), determinants yield
 \[
 \det(\mathcal C_+)^{-1}
 \simeq\mathscr M_+\otimes\iota^*\mathscr M_-\otimes\mathcal O_A(D).
-\tag{5}
-\]
-Grothendieck--Riemann--Roch for the Poincaré family gives
-\(c_1(\det(\mathcal C_+)^{-1})=(p-1)\theta\). The fixed
-degree-zero twist \(L_0\) does not alter this class. Since inversion
-is the identity on numerical divisor classes, (5) yields
-\[
-c_1(\mathscr M_+)+c_1(\mathscr M_-)+[D]=(p-1)\theta.
-\tag{6}
-\]
-An effective divisor on an abelian variety is nef. If it is nonzero,
-its intersection with \(\theta^{d-1}\) is strictly positive.
-No assertion about the higher Chern character or the codimension-two
-reflexive-hull defect is required.
-
-## 3. The kernel produces a strongly semistable bundle on the curve
-
-Use the normalized Fourier--Mukai equivalence from \(\widehat A\)
-to \(A\). The actual complex \(\mathcal C_\pm\) is the transform
-of \(j_*(B_C\otimes L_0^{\pm1})\). The inverse transform of the
-antiample line \(\mathscr K_\pm=\mathscr M_\pm^{-1}\) is a vector
-bundle \(\mathscr R_\pm\) in degree zero: antiample lines have
-cohomology only in degree \(d\), which cancels the shift in the
-inverse equivalence. Its rank is \(h^0(\mathscr M_\pm)\).
-
-The needed isogeny formula is
-\[
-\phi_{\mathscr M_\pm}^*\mathscr R_\pm
-\simeq \mathscr M_\pm^{\oplus h^0(\mathscr M_\pm)}
-\tag{7}
-\]
-up to inversion of the line and a constant vector-space factor
-according to the Poincaré sign convention; inversion has the same
-numerical divisor class. In (7), “inversion” means pullback by
-\([-1]\), not the dual line. In particular, if
-\(\beta_\pm=c_1(\mathscr R_\pm)/\operatorname{rk}\mathscr R_\pm\),
-then
-\[
-\phi_{\beta_\pm}=\phi_{\mathscr M_\pm}^{-1}.
-\tag{8}
-\]
-Both are rational homomorphisms from \(\widehat A\) to \(A\).
-
-For completeness, the isogeny formula uses no assumption about
-the characteristic or degree of the isogeny. Pull the Poincaré
-kernel back along \(\phi_{\mathscr M_\pm}\), apply the theorem
-of the square, and change variables by addition on \(A\times A\).
-The resulting direct image is the constant cohomology vector
-space of \(\mathscr M_\pm^{-1}\) tensored with
-\(\mathscr M_\pm\), up to the indicated inversion. Ample-line
-vanishing and duality give rank \(h^0(\mathscr M_\pm)\).
-Taking first Chern classes gives (8): pullback transforms a
-polarization by \(\widehat\phi_{\mathscr M_\pm}\phi_\beta
-\phi_{\mathscr M_\pm}\), while
-\(\widehat\phi_{\mathscr M_\pm}=\phi_{\mathscr M_\pm}\).
-
-The canonical nonzero truncation map
-\(\mathscr K_\pm\to\mathcal C_\pm\) therefore gives, by the
-equivalence and ordinary adjunction, an actual nonzero map
-\[
-\mathcal V_\pm:=j^*\mathscr R_\pm
-\longrightarrow B_C\otimes L_0^{\pm1}.
 \tag{9}
 \]
-This step keeps the actual cohomology family, rather than merely
-its determinant class.
+The torsion-free cokernel's reflexive hull supplies the second
+factor; codimension-two defects do not alter the determinant.
 
-The bundles \(\mathcal V_\pm\) are strongly semistable. Pull (7)
-back to \(C^{(1)}\), and normalize a reduced component of the
-resulting finite cover which dominates \(C^{(1)}\). On this smooth
-curve the pullback of \(\mathcal V_\pm\) is a direct sum of copies
-of one line. The same is true after every Frobenius pullback.
-A destabilizing subbundle would stay destabilizing on this finite
-cover, because degrees and slopes multiply by its degree. This
-contradicts semistability of a direct sum of equal-degree lines.
-The finite cover can be inseparable; no étale trivialization is
-being assumed.
+GRR for the Poincaré family gives
+\(c_1(\det(\mathcal C_+)^{-1})=(p-1)\theta\).
+The fixed degree-zero twist changes no numerical class, and
+inversion acts trivially on divisor classes. This proves (2).
+An effective divisor on an abelian variety is nef; if nonzero,
+its intersection with \(\theta^{d-1}\) is positive.
 
-The canonical inclusion \(B_C\hookrightarrow F_{C/k*}\omega_C\),
-projection formula, and Frobenius adjunction turn (9) into
+## 3. Inverse Fourier transform gives the Frobenius slope bound
+
+The complex \(\mathcal C_\pm\) is the Fourier transform of
+\(j_*(B_C\otimes L_0^{\pm1})\). Since \(N^{-1}=M\otimes Q\)
+is ample, its antiample dual \(N\) has cohomology only in degree
+\(d\). The shift in the inverse equivalence cancels that degree,
+giving a vector bundle \(R\) on \(\widehat A\).
+
+Use [Mukai, Theorem2.2 and Proposition3.11(1)](https://doi.org/10.1017/S002776300001922X)
+for the equivalence and isogeny formula, over an algebraically
+closed field of any characteristic. In the normalized convention,
+the inverse functor is \((-1)^*\Phi[d]\), and
 \[
-0\ne F_{C/k}^*\mathcal V_\pm
-\longrightarrow \omega_C\otimes F_{C/k}^*L_0^{\pm1}.
+\phi_{M\otimes Q}^*R
+\simeq H^d(A,N)\otimes(M\otimes Q).
 \tag{10}
 \]
-The saturated image is a line of degree at most \(2G-2\).
-Strong semistability and \(\deg L_0=0\) give
+The positive line on the right is essential: applying the formula
+to \(N\) gives \(\phi_N=-\phi_M\), and the inverse functor supplies
+the extra inversion. No separability of this isogeny is required.
+Consequently, with \(\beta=c_1(R)/\operatorname{rk}R\),
 \[
-\lambda_\pm:=\deg(j^*\beta_\pm)
-=\mu(\mathcal V_\pm)\le\frac{2(G-1)}p.
+\phi_\beta=\phi_M^{-1}\quad\text{in }\operatorname{Hom}^0(\widehat A,A).
 \tag{11}
 \]
+The Picard-zero correction \(Q\) has changed neither polarization.
 
-## 4. Trace normalization and a scalar inequality
+The nonzero map (7) becomes an actual nonzero sheaf morphism
+\(R\to j_*(B_C\otimes L_0^{\pm1})\), hence
+\(V=j^*R\to B_C\otimes L_0^{\pm1}\) by adjunction.
+Here \(j\) is finite onto its image, so its pushforward is exact.
+This preserves the actual cohomology map, rather than just its
+determinant class.
 
-Write \(\phi_\theta:A\to\widehat A\) for the induced polarization,
-and put
+Pull (10) back to the curve and normalize a reduced component of
+the resulting finite cover dominating it. There \(V\) is a sum of
+copies of one line bundle, as is every Frobenius pullback.
+A destabilizing subbundle would remain destabilizing on this cover,
+since slopes multiply by its degree. Thus \(V\) is strongly
+semistable, also when the cover is inseparable.
+
+The inclusion \(B_C\hookrightarrow F_{C/k*}\omega_C\), projection
+formula and Frobenius adjunction give a nonzero map
 \[
-a_\pm=\phi_\theta^{-1}\phi_{\mathscr M_\pm}
-\in\operatorname{End}^0(A),\qquad
-\operatorname{tr}(u)=\tfrac12\operatorname{Tr}
-(u\mid H^1_{\mathrm{et}}(A,\mathbf Q_\ell)),\quad \ell\ne p.
+F_{C/k}^*V\longrightarrow
+\omega_C\otimes F_{C/k}^*L_0^{\pm1}.
+\]
+Its image has degree at most \(2G-2\). Therefore
+\[
+\deg j^*\beta=\mu(V)\le\frac{2(G-1)}p.
 \tag{12}
 \]
-Then \(\operatorname{tr}(1)=d\), and
+
+## 4. One trace calculation proves all dimension bounds
+
+Put
 \[
-\lambda_\pm=\operatorname{tr}(a_\pm^{-1}).
+a_\pm=\phi_\theta^{-1}\phi_{\mathscr M_\pm},\qquad
+\operatorname{tr}(u)=\tfrac12\operatorname{Tr}
+(u\mid H^1_{\rm et}(A,\mathbf Q_\ell)),\quad\ell\ne p.
+\]
+The Abel-curve class
+\([a_C(C^{(1)})]=[\Theta_{\widehat J}]^{G-1}/(G-1)!\)
+and cyclicity of trace give
+\[
+\deg j^*\beta_\pm
+=\tfrac12\operatorname{Tr}(\phi_{\beta_\pm}\phi_\theta)
+=\operatorname{tr}(a_\pm^{-1}).
 \tag{13}
 \]
-To check the normalization, factor \(j\) through the Abel map
-to \(\widehat J\). The Poincaré formula
-\([a_C(C^{(1)})]=[\Theta_{\widehat J}]^{G-1}/(G-1)!\)
-identifies the degree of a pulled-back divisor with half the
-trace of its polarization relative to the principal one.
-Pullback of \(\beta\) along \(\widehat i\) has polarization
-\(i\phi_\beta\widehat i\). Cyclicity of trace then gives
-\[
-\deg j^*\beta
-=\tfrac12\operatorname{Tr}(\phi_\beta\phi_\theta)
-=\operatorname{tr}(\phi_{\mathscr M}^{-1}\phi_\theta),
-\tag{14}
-\]
-which is (13). For example, if \(A=J\) and
-\(\mathscr M\) has class \(t\Theta_J\), the value is \(G/t\).
-The formula does not make the induced polarization on \(A\)
-principal.
+Indeed, pullback along \(\widehat i\) has polarization
+\(i\phi_\beta\widehat i\), and
+\(\widehat i\phi_{\Theta_J}i=\phi_\theta\).
+This uses the actual induced polarization, which need not be
+principal. When \(A=J\) and \(M\equiv t\Theta_J\), (13) is \(G/t\).
 
-The Rosati involution for \(\theta\) makes each \(a_\pm\)
-positive and self-adjoint. For any such \(a\),
+The \(a_\pm\) are positive and self-adjoint for Rosati. Its positive
+trace form gives, by Cauchy--Schwarz on \(a^{1/2},a^{-1/2}\),
 \[
 \operatorname{tr}(a)\operatorname{tr}(a^{-1})\ge d^2.
+\tag{14}
+\]
+See [Milne, Abelian Varieties, I.14](https://www.jmilne.org/math/CourseNotes/AV.pdf)
+for Rosati positivity. This is a real semisimple-algebra argument;
+no complex uniformization or characteristic-zero lift is involved.
+
+Set \(x_\pm=\operatorname{tr}(a_\pm)\),
+\(\lambda_\pm=\operatorname{tr}(a_\pm^{-1})\), and \(b=(G-1)/p\).
+Taking trace in (2) gives \(x_++x_-\le(p-1)d\), strictly if \(D\ne0\).
+If \(\lambda_\pm\le b c_\pm\), then (14) gives
+\[
+(p-1)d\ \ge\ x_++x_-
+\ \ge\ \frac{d^2}{b}
+\left(\frac1{c_+}+\frac1{c_-}\right).
 \tag{15}
 \]
-One algebraic proof uses the positive trace form on
-\(\operatorname{End}^0(A)\otimes\mathbf R\).
-Positive self-adjoint \(a\) has a positive square root in this
-real semisimple algebra. Cauchy--Schwarz applied to
-\(a^{1/2}\) and \(a^{-1/2}\) gives (15). Thus no complex
-uniformization or lift of \(A\) is used. Positivity of the
-Rosati trace form is the usual polarization theorem; see
-[Milne, Abelian Varieties, I.14](https://www.jmilne.org/math/CourseNotes/AV.pdf).
-Alternatively (15) is the weighted arithmetic--harmonic mean
-inequality for the positive eigenvalues.
+This is exactly (3), including strictness. Equation (12) supplies
+\(c_+=c_-=2\) without any section-independence hypothesis, proving (1).
 
-Let \(x_\pm=\operatorname{tr}(a_\pm)>0\). Taking trace in (6)
-and using the intersection interpretation of this trace gives
+## 5. Optional Wronskians improve either sign independently
+
+Suppose the \(s\) generic global sections on one opposite family
+are independent over the generic curve's function field. Then
+\(s\le p-1\), and there is a canonical morphism
 \[
-x_++x_-\le(p-1)d.
+W_s:\bigwedge^s B_C\longrightarrow F_{C/k*}\omega_C^q,
+\qquad q=s(s+1)/2.
 \tag{16}
 \]
-The inequality is strict if \(D\ne0\). Combining (11),
-(13), (15), and the scalar harmonic-mean inequality gives
+Locally, for exact differentials \(a_i(t)\,dt\), it is
 \[
-\frac{4(G-1)}p
-\ \ge\ \lambda_++\lambda_-
-\ \ge\ d^2\left(\frac1{x_+}+\frac1{x_-}\right)
-\ \ge\ \frac{4d^2}{x_++x_-}
-\ \ge\ \frac{4d}{p-1}.
-\tag{17}
+\det(\partial_t^{\,j-1}a_i(t))_{1\le j,i\le s}\,(dt)^q.
 \]
-This proves the dimension bound, including its strict form.
-Pairing the opposite translates is essential: an arbitrary coset
-does not have one inversion-invariant kernel polarization.
+Derivatives kill scalars from \(C^{(1)}\). Coordinate changes act
+triangularly on the rows with diagonal weights \(1,\ldots,s\),
+so this formula is regular and global.
 
-## 5. Codimension-one consequences
+The Wronskian is nonzero precisely for independence over the
+derivation's constant field. To see this, divide the columns by
+a nonzero first function, leaving first column \(1\); reduce to
+the derivatives of the remaining ratios and induct. A constant
+linear combination of those derivatives equal to zero gives a
+constant linear relation among the original functions.
+Over \(k(A)\), the constant field is the relative Frobenius
+subfield \(k(A)(C^{(1)})\subset k(A)(C)\), not necessarily all
+\(p\)-th powers of the latter. No factorial division is needed.
 
-If \(d=G-1\), inequality (1) in the statement is impossible.
-Hence no translated abelian divisor has generic defect one.
-Raynaud's full theta is a proper divisor. At a generic point
-of one of its divisorial components, a square cohomology matrix
-over the local discrete valuation ring has determinant valuation
-at least its residue corank, by Smith normal form. A component
-with generic defect at least two therefore has multiplicity
-at least two.
-
-For an abelian divisor through the origin, the
-[quotient a-number theorem](restricted_raynaud_complement_rank.md)
-gives \(\delta\le a(J/A)\le1\), since the quotient has dimension
-one. Excluding \(\delta=1\) leaves \(\delta=0\). The same
-argument proves the stated larger-dimensional vanishing criterion
-whenever \(a(J/A)\le1\). Frobenius twisting causes no restriction:
-over the perfect ground field the abelian subvariety and its
-quotient descend through that scalar twist.
-
-The argument neither proves generic defect at most one on an
-arbitrary translated abelian divisor nor excludes higher generic
-defects there. For the current mixed family, the source genus
-grows with the unknown degree; its dimension is below the bound.
-The actual two-map nonannihilation problem remains open.
-
-## 6. Wronskians give a bound at higher generic defect
-
-Here suppose the two families have generic \(h^0=s\), and their
-generic global sections are independent over the function field
-of the curve. Their kernels \(\mathscr K_\pm\) are reflexive of
-rank \(s\), and necessarily \(s\le p-1\). Put
-\(\mathscr M_\pm=(\det\mathscr K_\pm)^\vee\).
-
-There is a canonical morphism
-\[
-W_s:\bigwedge^s B_C\longrightarrow F_{C/k*}\omega_C^{\,q},
-\qquad q=\frac{s(s+1)}2.
-\tag{18}
-\]
-In a local parameter \(t\), send exact differentials
-\(a_1(t)\,dt,\ldots,a_s(t)\,dt\) to
-\[
-\det\bigl(\partial_t^{\,j-1}a_i(t)\bigr)_{1\le j,i\le s}
-\,(dt)^q.
-\tag{19}
-\]
-Derivatives kill functions pulled back from \(C^{(1)}\), so (19)
-is alternating and \(\mathcal O_{C^{(1)}}\)-multilinear. Under
-change of parameter, its rows change triangularly, with diagonal
-factors \((dt/du)^1,\ldots,(dt/du)^s\). Their product is exactly
-the change of \((dt)^q\). This proves that (18) is global and
-regular.
-
-Over the function field, (19) is nonzero precisely when the
-\(a_i\) are independent over the constants of \(\partial_t\),
-which are \(k(C)^p\) over the original perfect ground field.
-Over the generic parameter field, use instead the relative
-Frobenius subfield \(k(A)(C^{(1)})\subset k(A)(C)\);
-the parameter field itself need not be perfect.
-A short proof works over this constant field:
-divide all columns by a nonzero first entry to replace the first
-function by \(1\). The Wronskian reduces to that of the derivatives
-of the other ratios. Induction says that its vanishing gives a
-constant linear combination of those derivatives equal to zero;
-integration here only means that an element with zero derivative
-belongs to that constant field. This yields a constant linear relation among
-the original functions. The converse is immediate. No division
-by a factorial or formal exponential is used.
-
-Taking the determinant of universal evaluation and then (18) gives
-a nonzero morphism
+Determinant evaluation followed by (16) yields an actual nonzero map
 \[
 \det\mathscr K_\pm\longrightarrow
-R\pi_*\!\left(
-F_*\omega_C^{\,q}\otimes L_0^{\pm s}\otimes\mathscr P^{\,s}
-\right).
-\tag{20}
+R\pi_*(F_*\omega_C^q\otimes L_0^{\pm s}\otimes\mathscr P^s).
+\tag{17}
 \]
-Initially take determinants where \(\mathscr K_\pm\) are locally
-free. The complement has codimension at least two, and the
-resulting map from a line to a vector bundle on
-\(C^{(1)}\times A\) extends across it. This justifies (20)
-for reflexive kernels as well. Its nonvanishing uses exactly
-the function-field independence hypothesis.
-
-Evaluation of (20) at a general point of the curve shows that
-\(V^0(\mathscr M_\pm)\) contains \([s]j(C^{(1)})\). This curve
-generates \(\widehat A\) and contains the origin. The argument
-in Section 1 again makes \(\mathscr M_\pm\) ample. Relative
-duality and determinants give exactly (6), with the same
-coefficient \(p-1\); the kernel rank does not multiply that
-coefficient.
-
-Apply the inverse Fourier transform to (20). Its curve map is
-now \([s]j\), because the Poincaré line is raised to its \(s\)-th
-power. The resulting strongly semistable bundle has slope
+It extends from the locally free locus across codimension two,
+as a map from a line into a vector bundle on the smooth product.
+Its Fourier curve map is now \([s]j\). The same inverse-transform
+and semistability argument gives slope
+\(s^2\operatorname{tr}(a_\pm^{-1})\); adjunction bounds it by
+\(2q(G-1)/p\). Thus
 \[
-\deg([s]j)^*\beta_\pm
-=s^2\operatorname{tr}(a_\pm^{-1}).
-\tag{21}
+\lambda_\pm\le \frac{s+1}{s}\frac{G-1}{p}.
+\tag{18}
 \]
-Frobenius adjunction sends its nonzero map to a map into
-\(\omega_C^q\otimes F_C^*L_0^{\pm s}\). Hence
-\[
-\operatorname{tr}(a_\pm^{-1})
-\le\frac{2q(G-1)}{p s^2}
-=\frac{(s+1)(G-1)}{p s}.
-\tag{22}
-\]
-The identical trace argument (15)--(17) now gives
-\[
-\frac{4d}{p-1}\le
-\operatorname{tr}(a_+^{-1})+\operatorname{tr}(a_-^{-1})
-\le\frac{2(s+1)(G-1)}{p s},
-\tag{23}
-\]
-proving (2) and strictness when \(D\ne0\).
+Use this improved value on whichever signs satisfy independence
+in (15). Both signs give (4); one gives the stated intermediate
+bound. Equal generic section counts do not imply equal evaluation
+ranks. Dependent sections use the fixed-evaluation argument instead.
 
-The largest coefficient in (2) occurs at \(s=1\) and is already
-strictly less than one. If an abelian divisor translate is
-contained in theta, both opposite generic defects agree. If its
-defect exceeds \(p-1\), function-field dependence is automatic
-by the rank of \(B_C\). Otherwise independence in both families
-would contradict (23). If inversion preserves the translate,
-the two generic evaluation ranks agree, giving the final assertion.
+## 6. Consequences and exact scope
 
-For clarity, a positive-dimensional parameter family with more
-global sections than their function-field rank has not been
-excluded by this argument. Taking its determinant would give
-the zero Wronskian. Treating that determinant as nonzero would
-lose the essential extra hypothesis.
+Since \(G-1>(p-1)(G-1)/p\), no translated abelian divisor can be
+contained in \(\Theta_{B_C}\). More generally every coset above
+the dimension threshold has generic defect zero, with no quotient
+a-number restriction. In genus two this covers every proper
+positive-dimensional abelian subvariety; the full Jacobian is
+already covered by the same inequality.
+
+Tong [Remark5.10(C1)](https://arxiv.org/pdf/0712.2046) posed the
+all-characteristic absence of abelian components. The argument here
+supplies that conclusion; no claim about its current literature
+novelty is made. The earlier genus-limited and small-characteristic
+codimension-one arguments are therefore unnecessary.
+
+For the actual mixed family \(d=11\), \(G-1=8n\), (1) requires
+\(11\le32n/5\), strictly with its nonzero jump divisor, at every
+positive generic defect. It still permits every \(n\ge2\).
+Neither the actual two-map nonannihilation problem nor the unmarked
+common-cover problem is resolved.

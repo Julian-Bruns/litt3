@@ -4,17 +4,15 @@
 The next-level torsor and comparison criteria are those of
 [Cartier realization](versal_bt_cartier_realization.md).
 
-## Weighted Cartier preserves the pole-bound space
+## The intrinsic Cartier map and the endpoint towers
 
-The product $\pi_C^*a\Omega_C$ is regular for $a\in V_C$:
-the double poles over S are canceled by the order-two zeros of
-$\Omega_C$. Cartier preserves regularity. It preserves the character
-of $\Omega_C$, since the character takes values in $\mathbf F_5^*$.
-Dividing its image by $\Omega_C$ therefore gives an invariant rational
-function with pole order at most two on R, hence at most one on S
-downstairs. This proves that $\mathcal T_C$ has the asserted target.
+The [absolute torsor](versal_bt_extension_torsor.md) defines the
+coherent Cartier map on $L_C=\mathcal O_C(S_C)$. On functions this is
+the inverse-Frobenius-semilinear $\mathcal T_C$, commuting with actual
+etale pullback and trace and fixing $1$. The same theorem constructs
+unique normalized full groups at both ordinary endpoints, starting
+with the supplied ACTUAL BT1s, without a global reference.
 
-These operators commute with the actual etale pullbacks and traces.
 Since the endpoint kernels vanish, the two finite-dimensional
 semilinear endpoint operators are bijective. Their pulled-back images
 are stable and bijective, and so is their sum U: it is mapped onto
@@ -34,21 +32,14 @@ gives $g(Z)-1=n(g(X)-1)$, proving the dimensions in the statement.
 
 ## A five-group normal closure
 
-Suppose for example that the normal closure $T\to X$ of f has
-five-group deck group P. Pull back the original H to T. Descent of
-invariant functions with the specified poles, and Cartier functoriality,
-give
-\[
-K_{H_T}^{P}=q^*K_{H_X}=0.
-\]
-Every nonzero finite-dimensional representation of a finite p-group in
-characteristic p has a nonzero invariant vector: its group algebra is
-local, or equivalently every simple module is trivial. Hence
-$K_{H_T}=0$. Pullback along the actual refinement $T\to Z$ is
-injective on rational functions and maps $K_{H_Z}$ into this zero
-space. Thus $K_{H_Z}=0$.
+Take the ACTUAL Galois closure $T\to X$ of one leg when its
+group $P$ is a five-group. Invariant functions give
+$K_{H_T}^P=q^*K_{H_X}=0$. The
+[finite-module lemma](versal_bt_extension_torsor.md#five-group-coefficient-modules)
+with invariant dimension zero gives $K_{H_T}=0$. Actual pullback
+along $T\to Z$ injects $K_{H_Z}$ into this zero space.
 
-At every reached level the two supplied next groups have a difference
+At every reached level the two endpoint next groups have a difference
 in this zero space. Their unique marked normalized comparison extends
 the preceding comparison. Induction gives compatible comparisons at
 all levels, which identify the full groups. The argument is symmetric

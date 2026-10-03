@@ -59,7 +59,7 @@ def main():
         return total(mul(c, total_product(power(a, i) for a, i in zip(point, mon)))
                      for mon, c in p.items())
 
-    boundary_points = json.loads((root/'Research/computations/rank25_w5_return_and_global_w4_locus_checks.json').read_text())['boundary_four_roots']
+    boundary_points = json.loads((root/'../litt3-computation-data/legacy_workspace_computations/rank25_w5_return_and_global_w4_locus_checks.json').read_text())['boundary_four_roots']
     star = [ZERO]*9
     star[3], star[4] = (3, 0, 0, 3), (0, 3, 1, 4)
     for row, branch in zip(trace['boundaries'], boundary_points):
@@ -131,7 +131,7 @@ def main():
             'sha256': hashlib.sha256(regular.read_bytes()).hexdigest(),
             'scope': 'One actual open branch, normalized/original-frame agreement; not the universal trace identity.',
         }
-    out = root/'Research/computations/rank25_two_family_returns_checks.json'
+    out = root/'../litt3-computation-data/legacy_workspace_computations/rank25_two_family_returns_checks.json'
     out.write_text(json.dumps(receipt, indent=2)+'\n')
     print(json.dumps(receipt, indent=2))
 

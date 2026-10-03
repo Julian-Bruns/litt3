@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact bounded checks for the September21 BT/Hodge and jet returns.
+"""Exact bounded checks for the retained September21 BT jet and scalar returns.
 
 This checks new scalar/Taylor formulas, not geometric effectivity,
 infinite-window existence, or a common-cover assertion.
@@ -76,33 +76,6 @@ def check():
         divided = tuple(x//5 for x in numerator)
         assert divided == mul((3, 0), power(g, 5)), (g, divided)
 
-    # First-order projective-potential change over F5[eps]/eps^2.
-    def dmul(a, b):
-        return (a[0]*b[0] % 5, (a[0]*b[1]+a[1]*b[0]) % 5)
-
-    def dinv(a):
-        iv = pow(a[0], -1, 5)
-        return (iv, -iv*iv*a[1] % 5)
-
-    count = 0
-    for w0 in range(1, 5):
-        for w1, w2, c0, c1, c2 in itertools.product(range(5), repeat=5):
-            W = (w0, w0*c0 % 5)
-            W1 = (w1, (w1*c0+w0*c1) % 5)
-            W2 = (w2, (w2*c0+2*w1*c1+w0*c2) % 5)
-            ratio = dmul(W1, dinv(W))
-            square = dmul(ratio, ratio)
-            second = dmul(W2, dinv(W))
-            # 3/4=2 and -1/2=2 in F5.
-            variation = 2*(square[1]+second[1]) % 5
-            expected = 2*(c2-w1*pow(w0, -1, 5)*c1) % 5
-            assert variation == expected
-            count += 1
-
-    for i in range(5):
-        assert pow(i, 6, 5) == pow(i, 2, 5)
-        assert (-3*pow(i, 3, 5)*(-2*pow(i, 3, 5))) % 5 == pow(i, 2, 5)
-
     # The explicit sharpness value over F125.
     add3, neg3, mul3, pow3 = field(3, [1, 1, 0])
     z = (0, 1, 0)
@@ -124,10 +97,8 @@ def check():
     # Horizontal second columns require fifth roots, not constants.
     # K12=t removes X22=t^5 and X12=t^6 in the reduced gauge equation.
     gauge_regression = {'X22': 't^5', 'K12': 't', 'constant_required': False}
-    return {'projective_variation_cases': count,
-            'divided_Taylor_F25_cases': 25,
+    return {'divided_Taylor_F25_cases': 25,
             'Taylor_degree10': '-2*gamma^5',
-            'operator_identity': 'D^6=D^2',
             'F125_sharpness_value': list(value),
             'F625_actual_obstruction_value': [1, 3, 3, 1],
             'gauge_regression': gauge_regression,

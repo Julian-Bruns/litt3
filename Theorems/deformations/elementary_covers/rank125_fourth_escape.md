@@ -1,6 +1,6 @@
 # A uniform rank125 fourth escape and its affine fifth obstruction
 
-Version7, 2026-09-15. This theorem gives the fourth escape, complete
+Version8,3 October2026. This theorem gives the fourth escape, complete
 relative fifth image and affine support.
 The
 [actual fifth](rank125_fixed_line_fifth.md),

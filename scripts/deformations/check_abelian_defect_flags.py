@@ -22,7 +22,7 @@ def main():
     if output.exists():
         raise FileExistsError(output)
     started=time.monotonic()
-    data=Path(__file__).resolve().parents[2]/'Research/computations'
+    data=Path(__file__).resolve().parents[2]/'../litt3-computation-data/legacy_workspace_computations'
     prime=GF(5); zz=PolynomialRing(prime,'z')
     small=GF(125,name='a',modulus=zz([1,1,0,1]))
     ext,embed=small.extension(4,'b',map=True); beta=ext.gen()

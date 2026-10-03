@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Exact checks for pole18_descent. Python >=3.10, standard library only.
 
-This is not an enumeration of covers or scalars. The complete phase-multiset
-check is separately executed by phase_sums.cpp. The theoretical implications
-are proved in REPORT.md; these arithmetic checks corroborate their inputs.
+This is not an enumeration of covers or scalars. Integer phase balance and
+composition/phase-partition restrictions are proved in the canonical prose;
+these checks retain curve, resonance and independent auxiliary-pair inputs.
 """
 from pathlib import Path
 import json, math, sys
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=(Path(__file__).resolve().parents[5]/'litt3-computation-data'/'pole18_descent_reply_20260927'/'extracted'/'pole18_descent')
 DATA=json.loads((ROOT/'inputs/exact_data.json').read_text())
 
 def trim(a):
@@ -162,32 +162,6 @@ for i in range(3):
         coefficient=F.sub(coefficient,F.mul(denominator[a],j_series[i-a]))
     j_series.append(F.mul(coefficient,F.inv(denominator[0])))
 assert j_series==[0,2,2]
-# Discrete composition/phase-partition classification; there are no unknown field coefficients here.
-def partitions(n,least=1):
-    if n==0:
-        yield ()
-    else:
-        for a in range(least,n+1):
-            for rest in partitions(n-a,a):yield (a,)+rest
-import itertools
-admissible=[];types=set()
-for comp in compositions:
-    positive=[m for m in comp if m]
-    if len({m%5 for m in positive})!=1:continue
-    for parts in itertools.product(*(list(partitions(m)) for m in positive)):
-        rs=[r for part in parts for r in part]
-        if len({r%5 for r in rs})!=1:continue
-        assert len(set(positive))==1 and len(set(rs))==1
-        m=positive[0];r=rs[0];d=m//r
-        types.add((m,r,d));admissible.append((comp,parts))
-        assert r%5!=0 and d in (1,2,3,6)
-        assert (d*(d+1))%5!=0
-        assert ((2*r)-2*(r-1))%5==2
-assert len(admissible)==36
-assert types=={(6,1,6),(6,2,3),(6,3,2),(6,6,1),(3,1,3),(3,3,1),(2,1,2),(2,2,1)}
-assert [d*(d+1)%5 for d in (1,2,3,6)]==[2,1,2,2]
-print('PASS endpoint character lemma: J=2h+2h^2/a+...; all 36 labelled integer patterns give d(d+1)!=0')
-
 # Auxiliary rational pair U=N/(t-1)^4=V^5+t^2 W^5.
 C=[4,1]; denom=F.ppow(C,4)
 num=DATA['resonant_auxiliary_pair']['N_ascending_F5']

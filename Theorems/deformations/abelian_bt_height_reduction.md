@@ -3,7 +3,7 @@
 Version1,21 September2026. Focused independent audit PASS.
 
 Let $H/C$ be an actual genus-two BT1 from the
-[F625 existence-descent counterexample](explicit_bt2_descent_failure.md),
+[F625 existence-descent counterexample](etale_p_witt_obstruction.md),
 with its original first periodic datum. For EVERY actual connected
 finite etale cover with Galois group $C_{5^a}\times C_5$, $a\ge1$,
 \[

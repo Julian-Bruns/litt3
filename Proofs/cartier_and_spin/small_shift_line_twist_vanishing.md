@@ -16,110 +16,47 @@ All section and connecting-map calculations below use this actual
 transition, not just its graded lines. The cubic action is
 gamma(x,y)=(x,zeta*y), with bundle linearization diag(zeta,1).
 
-## The invariant twists
+## Invariant classes at the final shift
 
-The invariant-class classification in the
-[first-Frobenius proof](fifth_symmetric_twist_vanishing.md) applies to
-K(sO) as well: all geometric gamma-invariant Pic0 classes are
-represented by D=sum s_i(R_i-O), s_i in{0,1,2}, s_10=0. Here the R_i
-are the ten cubic branch points. Thus19683 representatives suffice;
-there is no bounded finite-field assumption on an arbitrary Pic0 line.
+Set E=K(3O), so det E=O(7O). The
+[invariant-Picard lemma](cyclic_determinant_section_reduction.md)
+represents every gamma-invariant Pic0 class by
+\(D=\sum s_i(R_i-O)\), \(s_i\in\{0,1,2\}\), \(s_{10}=0\).
+Thus19683 divisors exhaust all geometric invariant classes.
 
-For clarity, set A(x)=product_(s_i=1)(x-r_i),
-B(x)=product_(s_i=2)(x-r_i), w=deg A+2deg B, and
-(D_0,D_1,D_2)=(1,B,AB). A character-j basis of O(dO+D) is
+Put \(A=\prod_{s_i=1}(x-r_i)\), \(B=\prod_{s_i=2}(x-r_i)\),
+\(w=\deg A+2\deg B\), and \((D_0,D_1,D_2)=(1,B,AB)\).
+A character-j basis of O(dO+D) is
 \[
-y^jx^i/D_j,\qquad0\le i\le
-\left\lfloor(d-w-10j+3\deg D_j)/3\right\rfloor.
+y^jx^i/D_j,\qquad
+0\le i\le\left\lfloor(d-w-10j+3\deg D_j)/3\right\rfloor.
 \]
-The H1 basis uses the integers strictly between that upper bound
-and zero. Multiplication by e shifts j to j+2 modulo three and has
-polynomial factors AB,P/B,P/A respectively. This is a finite exact
-connecting matrix from the d=6+s sections to the d=-5+s cohomology.
-The latter extension line has no sections for s=1,2.
+H1 uses the exponents strictly between this upper bound and zero.
+The actual class e shifts j to j+2 modulo three, with polynomial
+factors AB,P/B,P/A. It gives the connecting map from d=9 sections
+to d=-2 cohomology; the negative extension line has no sections.
 
-For s=1 and s=2 every one of these connecting maps is injective.
-The source-dimension histograms and the complete zero-kernel results
-are retained in `k_original_shift1_invariant_twists.json` and
-`k_original_shift2_invariant_twists.json`. A separate routine forms
-the actual rational multiplication, checks its polynomial divisions,
-and expands the maps over F5. It checks24 complete maps for each
-shift, covering every nonzero source dimension. These independent
-checks audit the arithmetic; exhaustive coverage is supplied by the
-separate full19683 enumerations.
+Every one of the19683 maps is injective. Source dimensions4,3,2,1
+occur11,1000,8802,9870 times respectively. A separate32-map literal
+rational multiplication and F5-rank check covers all four dimensions
+and passes. This is exhaustive class coverage, not a bounded-field
+assumption on arbitrary Pic0 lines.
 
-## A short alternative for K(O)
+If a nonnegative-degree saturated line M in E has invariant class,
+M(-deg(M)O) is an invariant Pic0 line mapping nontrivially into E,
+contrary to these maps.
 
-Put E=K(O), so det E=O(3O). The complete section space
-H0(E tensor det E)=H0(K(4O)) is one-dimensional, of cubic character1.
-The exact12-by5 Laurent matrix has rank4, independently rank8 over
-F5. The [cyclic determinant-section lemma](../../Theorems/cartier_and_spin/cyclic_determinant_section_reduction.md)
-and the invariant-twist computation therefore give all-Pic0-twist
-vanishing for E. This reproves the earlier
-[K(O) theorem](../../Theorems/cartier_and_spin/low_degree_twist_vanishing.md)
-without repeating its shifted symmetric-power argument.
+## The final cubic norm excludes all other nonnegative lines
 
-## The actual norm for K(2O)
-
-Now E=K(2O), det E=O(5O). There is no positive-degree line M in E:
-if deg M=m>=1, then M(-mO) is a degree-zero line mapping into
-K((2-m)O), hence into K(O), which was excluded above. A nonzero
-degree-zero-line map into E would consequently be saturated.
-If its class is invariant it was already excluded by the enumeration.
-
-Otherwise the cyclic determinant lemma produces a nonzero
-s in H0(E tensor det E)=H0(K(7O)) and
+For a noninvariant class, the three embedded conjugates are distinct.
+The [general norm criterion](cyclic_determinant_section_reduction.md)
+gives a nonzero \(s\in H^0(E\otimes\det E)\) and nonzero wedge with
 \[
-s\,\gamma(s)\,\gamma^2(s)=(s\wedge\gamma(s))G,
-\qquad G\in H^0(X,\operatorname{Sym}^3K(6O)).
+s\,\gamma(s)\,\gamma^2(s)=(s\wedge\gamma(s))G,\qquad
+G\in H^0(\operatorname{Sym}^3E).
 \]
-This identity holds globally and retains all finite zeros, repeated
-zeros, and infinity. The section-space calculation gives dimension4
-for H0(K(7O)): its9-by8 matrix has rank4, independently rank8 over
-F5. Its characters are0,1,1,1. Write s=p+q with p in the
-one-dimensional character-zero part and q in the three-dimensional
-character-one part. An eigenvector would give an invariant line,
-so p and q are both nonzero. Normalize the coefficient of p to one;
-scaling G by the same scalar preserves the norm identity.
-
-In rational coordinates p=(y^2 C,B), q=(A,yD). Thus the orbit
-product is p^3+q^3 and the wedge is a nonzero constant times
-H=PCD-AB. Its degree is at most five. The rational wedge is
-gamma-invariant, so only the invariant part of the cubic section
-space contributes. The complete26-by24 matrix has rank21,
-independently rank42 over F5; all three basis sections have character0.
-
-Let d0,d1,d2 be the three coefficients of q and g0,g1,g2 those of G.
-There are20 parameter monomials in the norm equation: the constant
-p^3, ten cubic d-monomials, and nine d_i*g_j products. Expanding in
-the actual algebra F25[x,y]/(y^3-P) gives an80-by20 coefficient
-matrix of rank18, independently rank36 over F5. Constant row
-reduction gives18 equations in the six variables. No value, torsion
-condition or finite-field equation is imposed on these variables.
-
-The ideal of these18 equations is the unit ideal. Its exact certificate
-is particularly small:37 terms in the polynomial multipliers express
-one as their combination. The coefficient field is represented over
-F5 by adjoining a with a^2-a+2=0. The independent elementary verifier
-reconstructs the entire80-by20 matrix, checks every resulting equation,
-and multiplies the saved identity literally. It returns exactly one,
-without calling any Groebner-basis procedure. This excludes all
-geometric solutions of the necessary norm identity.
-
-Together with the invariant cases this proves the claimed vanishing.
-For any line M in K of degree m>=-2, the degree-zero line
-M(-mO) maps into K(-mO), hence into K(2O), a contradiction. Thus
-deg M<=-3. Taking determinants gives deg Q>=4 for every line-bundle
-quotient Q of K.
-
-## The next shift and the exact maximum line degree
-
-Set E=K(3O), so det E=O(7O). The established K(2O) result excludes
-positive-degree lines in E. The same invariant-twist enumeration
-with s=3 gives zero sections for all19683 representatives. The
-source dimensions4,3,2,1 occur11,1000,8802,9870 times respectively.
-A separate32-map rational multiplication and F5-rank check covers
-all four nonzero source dimensions and passes.
+This necessity holds for every nonnegative degree; no earlier shift,
+stability assumption or degree-zero saturation is required.
 
 The complete H0(E tensor det E)=H0(K(10O)) calculation has a6-by11
 matrix of rank4, and hence dimension7. Its character multiplicities
@@ -129,12 +66,17 @@ of its sections have character0 and three have character1. Each
 matrix rank is independently checked after restriction of scalars
 to F5.
 
-A noninvariant line must again satisfy the exact norm identity, with
-p in the two-dimensional character-zero part, q in the five-dimensional
-character-one part, and G in the seven-dimensional invariant cubic
-space. Write their coordinates(b0,b1),(d0,...,d4),(g0,...,g6).
-The rational wedge is still PCD-AB, now of degree at most seven.
-Its equations have109 parameter monomials: four cubic b-monomials,
+Write s=p+q with p in the two-dimensional character-zero part and
+q in the five-dimensional character-one part. In rational coordinates
+p=(y^2C,B), q=(A,yD), where A,B,C,D are polynomials in x.
+The orbit product is p^3+q^3 and the wedge is a nonzero constant
+times H=PCD-AB, of degree at most seven. Passing from the natural
+K(10O) linearization to E tensor det E multiplies the action by a
+constant cubic character; it leaves the orbit product unchanged and
+only changes the wedge constant. Since H is invariant, G belongs
+to the seven-dimensional invariant cubic space.
+Write the coordinates of p,q,G as(b0,b1),(d0,...,d4),(g0,...,g6).
+The equations have109 parameter monomials: four cubic b-monomials,
 35 cubic d-monomials, and70 b_i*d_j*g_k products. Their coefficient
 matrix has92 rows and rank35, independently rank70 over F5.
 
@@ -155,11 +97,13 @@ columns, each chart equation, and the exact polynomial identities.
 Both replays passed. In particular this is an all-geometric exclusion,
 not a computation at F25-valued parameter points.
 
-This proves H0(K(3O) tensor L)=0 for every geometric Pic0 L. A line
+Every nonnegative-degree line in E is therefore excluded. This proves
+H0(K(3O) tensor L)=0 for every geometric Pic0 L, and all smaller shifts
+follow by inclusion. A line
 in K of degree at least minus three would contradict this after
 twisting to degree zero, so every line has degree at most minus four.
 
-The previously computed unique section of K(4O) has affine coordinates
+The explicit section of K(4O) has affine coordinates
 (A(x),y), where the ascending coded coefficients of A are
 \[
 A=(22,2,2,22,5,8,0,12,5,2).
@@ -184,29 +128,15 @@ destabilizing subbundles of R.
 
 The evidence directory is
 [the external overnight record](../../../litt3-computation-data/overnight_three_replies_20260926/).
-The relevant source files are:
+The invariant census uses
+[the exact enumeration](../../scripts/arithmetic/k_small_shift_invariant_twists.py)
+for the final shift3, and
+[its independent checker](../../scripts/arithmetic/check_k_small_shift_invariant_twists.py).
+The complete bases are reconstructed by
+[the section source](../../scripts/arithmetic/k_symmetric_section_space.py)
+at (degree,twist)=(1,10),(3,9),(1,4).
 
-- [Invariant enumeration](../../scripts/arithmetic/k_small_shift_invariant_twists.py),
-  run with Sage Python and `--shift 1` or `--shift 2`.
-- [Independent invariant checker](../../scripts/arithmetic/check_k_small_shift_invariant_twists.py).
-- [Complete section reconstruction](../../scripts/arithmetic/k_symmetric_section_space.py),
-  with `(degree,twist)=(1,4),(1,7),(3,6)`.
-- [Norm construction](../../scripts/arithmetic/k_small_shift_norm_separation.py),
-  taking the K(7O) and Sym3 K(6O) section receipts.
-- [Prime-field ideal certificate](../../scripts/arithmetic/check_k_prepared_prime_ideal.py),
-  with `--certificate` on the prepared norm equations.
-- [Independent elementary identity replay](../../scripts/arithmetic/verify_k_small_shift_norm_identity.py),
-  taking the two section receipts, norm matrix and ideal certificate.
-
-The final replay receipt is `k_original_shift2_norm_elementary_check.json`;
-the identity is `k_original_shift2_norm_ideal.json`. The matrix and
-prepared equations have prefix `k_original_shift2_norm_relaxation`.
-The section receipts are `k_original_determinant_shift2_sections.json`
-and `k_original_shift2_cubic_sections.json`. Independent twist receipts
-have names `k_original_shift1_independent.json` and
-`k_original_shift2_independent.json`.
-
-For shift3, the analogous receipts have prefix `k_original_shift3`;
+The final-shift receipts have prefix `k_original_shift3`;
 the determinant-twisted source is `k_original_determinant_shift3_sections.json`.
 The [general norm constructor](../../scripts/arithmetic/k_small_shift_general_norm.py)
 takes that source and `k_original_shift3_cubic_sections.json`, with
@@ -223,7 +153,12 @@ after the extension-field identity passed the independent replay.
 The final saturated-line check is
 `k_original_maximal_line_presentation.json`.
 
-The rank18 linear relaxation alone has solutions: the other19 columns
-also have rank18. The nonlinear cubic norm compatibility is essential.
-No claim is made about arbitrary finite pullbacks, etale generation,
-higher Frobenius returns, or either original common-cover problem.
+The lower-shift K(O) and K(2O) calculations are subsumed by this
+direct final-shift argument; their two specialized norm algorithms
+have been deleted completely. Original evidence and source hashes
+remain in
+[the external provenance](../../../litt3-computation-data/nonnegative_norm_before_hindsight/).
+The final cubic norm certificates, complete section bases and
+saturated-line check remain necessary. No claim is made about arbitrary
+finite pullbacks, etale generation, higher returns or either original
+common-cover problem.

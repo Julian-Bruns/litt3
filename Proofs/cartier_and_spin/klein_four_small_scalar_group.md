@@ -33,8 +33,9 @@ residues uniquely. Every choice of M0 is retained. This gives75690
 residue vectors, each with entries in{0,1,2,3,4}. The exact minimum
 of their ordinary integer sums is28, with14 minimizers. Since the
 only allowed integer lift beyond the residue representative is
-1 to6, actual pole mass is the residue mass plus5j2. This proves
-n>=40+5j2, including arbitrary higher-degree lifts.
+1 to6, total integer mass is the residue mass plus5k, where k is
+the number of upgraded entries. This proves the asserted coefficient
+mass bound and retains all allowed lifts.
 
 ## Exact small computation and independent replay
 
@@ -71,13 +72,6 @@ epsilon=[23]zeta^2. Its coefficient25-Frobenius orbit has seven members;
 endpoint interchange sends epsilon to its inverse and node exponents
 to their negatives, giving the other seven. The independent verifier
 checks this exact orbit equality.
-
-In an actual curve, a weight-two fibre consists of two simple common
-poles. Each weight-three fibre consists of either three simple poles
-or one triple pole. Thus e=11,0<=j=j1<=6,j2=0. The actual minor
-inequality2g+j1<=12+3e+4j gives
-g<=floor((45+3j)/2)<=31. This uses the actual-curve input, whereas
-the moment configuration itself proves no existence.
 
 Restricting the table to scalar_phase0 gives2610 residue vectors.
 Their minimum is29 with two reciprocal balanced profiles, exchanged

@@ -91,15 +91,15 @@ Frobenius periods8,24,24,24. The oper period is5 and coprime to these,
 so their joint sizes40,120,120,120 exhaust400 pairs. Each matrix has a
 saved invertible3x3 minor, including an explicit inverse determinant.
 
-[Certificate](../../../Research/computations/backup_genus_two_cubic_tangents.json).
+[Certificate](../../../../litt3-computation-data/legacy_workspace_computations/backup_genus_two_cubic_tangents.json).
 The --verify mode reconstructs
 all coefficients and checks the saved minors WITHOUT rank, roots,
 kernel or Groebner calculations. The trivial character's five kernels
 already vanish by the complete reduced dormant census.
 
 The J[4] assertion uses the complete
-[two-torsion](../../../Research/computations/backup_genus_two_twisted_tangents.json)
-and [four-torsion](../../../Research/computations/backup_genus_two_four_torsion.json)
+[two-torsion](../../../../litt3-computation-data/legacy_workspace_computations/backup_genus_two_twisted_tangents.json)
+and [four-torsion](../../../../litt3-computation-data/legacy_workspace_computations/backup_genus_two_four_torsion.json)
 certificates. For a two-class represented by a degree-j branch product E,
 j=1 or2, its character basis is z·(1,u,v/E)eta² on z²=E. To construct
 its halves, solve

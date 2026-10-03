@@ -24,7 +24,6 @@ receipts=[
  'marked_relation_ideal_generators.json',
  'marked_relation_generator_check/receipt.json',
  'marked_principal_lattice_certificate.json',
- 'marked_minimum_phase_packet.json',
 ]
 audits=[
  'MARKED_RELATION_LATTICE_2026_09_29.md',
@@ -66,7 +65,6 @@ def md(name,path):
  files[name]=text.encode()
 md('STATEMENT.md',ROOT/'Theorems/cartier_and_spin/marked_divisor_relation_lattice.md')
 md('PROOF.md',ROOT/'Proofs/cartier_and_spin/marked_divisor_relation_lattice.md')
-md('PHASE_RELAXATION.md',ROOT/'Proofs/cartier_and_spin/modular_norm_relaxation_nonempty.md')
 for f in sources:add('scripts/'+f,ROOT/'scripts/arithmetic'/f)
 for f in receipts:add('data/'+f,BASE/f)
 for f in audits:md('audits/'+f,ROOT/'Research/audits'/f)
@@ -133,7 +131,6 @@ claims={
  'principal_ideal':['PROOF.md','scripts/marked_relation_generator_check_20260929.py','data/marked_relation_generator_check/receipt.json','scripts/marked_principal_lattice_certificate_20260929.py','data/marked_principal_lattice_certificate.json'],
  'exact_minima':['scripts/marked_lattice_shortest_effective_20260929.py','data/marked_exact_effective_minimum.json','data/marked_exact_signed_minimum.json'],
  'direct_effective_minimizer':['scripts/marked_minimal_divisor_check_20260929.py','data/marked_minimal_divisor_check/receipt.json'],
- 'phase_relaxation':['PHASE_RELAXATION.md','data/marked_minimum_phase_packet.json'],
  'not_proved':['unrestricted actual norm invariance','invariant actual comparison exclusion','shared-object extraction','unmarked common-cover decision'],
 }
 files['claims.json']=(json.dumps(claims,indent=2)+'\n').encode()

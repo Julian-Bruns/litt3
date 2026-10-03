@@ -1,7 +1,7 @@
 """Factor the certified normalized univariate algebra; retain all powers."""
 import json,time
 from pathlib import Path
-source=Path('Research/computations/normalized_oper_algebra_certificate.json')
+source=Path('../litt3-computation-data/legacy_workspace_computations/normalized_oper_algebra_certificate.json')
 data=json.loads(source.read_text())
 R=PolynomialRing(GF(5),'z',implementation='FLINT');z=R.gen();P=R(data['P'])
 assert P.degree()==19290 and P.gcd(P.derivative())==1
@@ -23,7 +23,7 @@ result={'status':'certified_factorization_with_F25_embedding_given_by_zeta_coord
     'source_certificate':str(source),'elapsed_seconds':time.monotonic()-started,
     'normalized_distinct_geometric_points':9645,'normalized_length':9645,
     'factors':out}
-destination=Path('Research/computations/normalized_oper_closed_points.json')
+destination=Path('../litt3-computation-data/legacy_workspace_computations/normalized_oper_closed_points.json')
 destination.write_text(json.dumps(result,separators=(',',':'),default=int)+'\n')
 print('factor degrees overF25:',[(row['degree_F25'],row['multiplicity']) for row in out],flush=True)
 print('Saved',destination,flush=True)

@@ -1,72 +1,74 @@
 # A degree bound makes sufficiently deep truncated descent effective
 
-Version1,21September2026. Let $Y/\mathbf F_q$ be a smooth proper
-geometrically connected genus-two curve with an $\mathbf F_q$-point,
+Version2,3 October2026. Let $Y/\mathbf F_q$ be smooth, proper and
+geometrically connected of genus $h\ge2$, with an $\mathbf F_q$-point,
 where $q=5^f$. Fix a normalized full height-two, dimension-one
 Barsotti--Tate group $G/Y$, everywhere versal and generically ordinary,
 with nonempty reduced supersingular divisor. Its determinant is the
 Teichmuller normalization of its BT1 determinant character.
 
-For a positive integer $d$, define the following explicit integers:
+For a positive integer $d$, put
 \[
-g_d=d+1,\qquad
-M_d=96d(d!)^8,\qquad
-l_d=\min\{l\ge0:5^l\ge8(2g_d+1)\},
+g_{h,d}=1+d(h-1),\qquad
+M_{h,d}=96(h-1)d^2(d!)^{4h-2},\qquad
+l_{h,d}=\min\{l\ge0:5^l\ge8(2g_{h,d}+1)\},
 \]
 \[
-A_d=4g_d16^{g_d}q^{5M_dg_d},\qquad
-\boxed{N_q(d)=1+4A_d^2(1+16fM_dl_d).}
+A_{q,h,d}=4g_{h,d}16^{g_{h,d}}q^{5M_{h,d}g_{h,d}},\qquad
+\boxed{N_{q,h}(d)=A_{q,h,d}(A_{q,h,d}-1)
+(16fM_{h,d}l_{h,d}+2).}
 \tag{1}
 \]
-These deliberately large bounds require no enumeration of covers.
+For genus two write $N_q(d)=N_{q,2}(d)$. Thus its field exponent is
+$M_{2,d}=96d^2(d!)^6$, replacing $96d(d!)^8$; its arithmetic cutoff
+also uses the sharper common-Hecke-operator bound. No cover enumeration
+is required.
 
 Let $X\xleftarrow a Z\xrightarrow bY_k$ be TWO ACTUAL finite etale
 maps of smooth proper connected hyperbolic curves over
-$k=\overline{\mathbf F}_5$, with degrees $n,m$. The span need not
-have a model over $\mathbf F_q$. Suppose there is a normalized,
-everywhere-versal BT$_N$ group $A/X$ and a specified normalized
-comparison
+$k=\overline{\mathbf F}_5$, with degrees $n,m$. Suppose there is a
+normalized, everywhere-versal BT$_N$ group $A/X$ and a specified
+normalized comparison
 \[
-\eta_N:a^*A\xrightarrow{\sim}b^*G[5^N],\qquad N\ge N_q(nm).
+\eta_N:a^*A\xrightarrow{\sim}b^*G[5^N],
+\qquad N\ge N_{q,h}(nm).
 \tag{2}
 \]
-Then there is an ACTUAL full BT group $G_X/X$, with $G_X[5^N]\simeq A$,
-and a full comparison $a^*G_X\simeq b^*G$ retaining (2). The descent
-datum and the extension of the supplied comparison are unique.
+Then there is an actual normalized full group $G_X/X$ extending $A$,
+equipped with a full comparison $a^*G_X\simeq b^*G$ retaining (2).
+This comparison-equipped extension and its actual descent datum
+are unique.
 
-In particular a full group on X is NOT an input. Neither is a
-field-of-definition bound on X, Z, their maps, or the comparison.
-The proof bounds that field only for the actual components of
-$Z\times_XZ$, considered as self-correspondences of the fixed Y.
+A full group on $X$ is not an input. Neither $X$, $Z$, their maps nor
+the comparison need have a model over $\mathbf F_q$. Only components
+of the actual descent relation $Z\times_X Z$, viewed as
+self-correspondences of the fixed $Y$, require bounded fields.
 
-For either selected candidate, compatible full versal groups would
-force a simultaneous mixed-characteristic lift, already excluded.
-Thus for this fixed $G/\mathbf F_q$, every compatible normalized
-finite-level group on the genus-nine endpoint satisfies
+For either selected genus-nine/genus-two pair, compatible full groups
+force an already excluded simultaneous mixed-characteristic lift.
+Consequently every supplied comparison to this fixed $G/\mathbf F_q$
+satisfies
 \[
 \boxed{N<N_q(8n^2),\qquad n=\deg(Z\to X).}
 \tag{3}
 \]
-The genus-two ordinary-indigenous uniqueness theorem lets one apply
-this to its specified canonical full extension whenever the chosen
-common BT1 is given. No source ordinariness is assumed.
+For an indigenous-ordinary genus-two BT1, its unique canonical full
+extension supplies $G$. No source ordinariness is assumed.
 
-For the explicit backup Y there is a further rigidity conclusion.
-If an actual self-correspondence $Y\xleftarrow{c_1}T\xrightarrow{c_2}Y$
-has degree at most d on each leg and admits a normalized comparison
-of the two pulled-back $G[5^{N_q(d)}]$, then
+For the explicit backup $Y$, an actual self-correspondence
+$Y\xleftarrow{c_1}T\xrightarrow{c_2}Y$ of degree at most $d$ on each
+leg, with a normalized comparison of the two pulled-back
+$G[5^{N_q(d)}]$, satisfies
 \[
 c_2=\sigma\circ c_1\quad\text{for some }\sigma\in\operatorname{Aut}(Y).
 \tag{4}
 \]
-In particular its joint-minimal source is just Y. The same conclusion
-holds at any height for a supplied FULL comparison. This uses both
-the backup arithmetic exclusion and its complete tame-atlas exclusion;
-it is not a classification of arbitrary self-correspondences of Y.
+Its joint-minimal source is therefore $Y$. The same conclusion holds
+for a supplied FULL comparison. This corollary uses the backup's
+arithmetic and tame-atlas exclusions.
 
-This is a degree-dependent ceiling on EXTRA compatible BT data. It
-does not construct the first common BT1, force compatibility at the
-displayed height, bound the covering degrees, or bound arbitrary Witt
-deformation lengths. Both unmarked common-cover problems remain open.
+This bounds EXTRA compatible truncated data. It does not construct
+such data, bound covering degrees or bound arbitrary Witt deformation
+lengths. The unmarked common-cover problem remains open.
 
 [Proof](../../Proofs/deformations/bounded_degree_bt_descent.md).

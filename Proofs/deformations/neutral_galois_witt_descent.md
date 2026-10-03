@@ -113,42 +113,34 @@ polarization is an equivariant bi-additive map. Nonzero reference
 constants are retained in eta; linear terms after translation belong
 to L. The actual flat periodicity line is kept in the preceding object.
 
-## 3. Augmentation detects the lower norm after one division
+## 3. Reuse the uniform cyclic norm carry
 
-Transport once by Phi and write y=Phi(x), A=L Phi^-1=eI+5M. Here M
-can be chosen additive and deck-equivariant, because the coefficient
-module is free over Z/25 and A-eI is divisible by5. Write Q again for
-the transported reduced quadratic map. Reducing (2) gives
+Transport once by Phi and put $y=\Phi(x)$,
+$A=L\Phi^{-1}$, so $A\bmod5=eI$. Write Q for the transported
+reduced quadratic. Reduction of (2) gives
+\[
+e\overline y=e^4\overline\eta,\qquad
+\overline y=e^3\overline\eta+e^4b.
+\]
+In the regular-function model this is an affine binomial polynomial.
+An equivariant bi-additive operation on affine inputs is quadratic
+in the translating parameter. Hence
+$Q(\overline y)\in\ker(e^3)=e^2R^d$.
 
-              e bar y = e^4 bar eta,
-              bar y = e^3 bar eta + e^4 b.              (3)
-
-In particular bar y belongs to e^3 R^d. Under the regular-function
-model Fun(C5,k), e^3R is the space P1 of affine binomial polynomials.
-Every equivariant bi-additive operation takes P1×P1 to P2=e^2R:
-the identity
-
- e B(u,v)=B(eu,v)+B(u,ev)+B(eu,ev)
-
-implies e^3B(u,v)=0 when e²u=e²v=0. Hence
-
-                        Q(bar y)∈e²R^d.                (4)
-
-Let aug:O[C5]^d→O^d be the augmentation map. Since M commutes with e,
-it induces an additive map M_aug on coinvariants, and
-aug M=M_aug aug. Apply aug to (2), using aug(e y)=0 and aug N=5:
-
-            5 M_aug(aug y)=5 eta+1_(n=2)5 aug Q.        (5)
-
-By(3), aug y is divisible by5; by(4), aug Q=0 modulo5.
-The left side of(5) is therefore zero modulo25. It follows that
-
-                          eta mod5=0.                  (6)
-
-Then(3) becomes bar y=e^4 b. There is no asserted division of an
-augmentation ideal by5. The single division in(5) is in the free
-COEFFICIENT module after applying augmentation. No quadratic repair
-is discarded before this projection.
+The whole nonlinear error $5Q(\overline y)$ is therefore in the
+image of $A$: choose a reduced preimage under $e$, lift it,
+and multiply by five. Subtracting that terminal correction preserves
+the GIVEN leading curve digit and gives an exact additive equation
+$Ay'=N\eta$ modulo25. The later
+[cyclic norm theorem](cyclic_descent/cyclic_power_additive_norm.md),
+with $p=5,h=1,a=1$ and coefficient module $W_2(k)^d$, now gives
+\[
+\overline\eta=0,\qquad\overline y'=\overline y\in e^4k^d.
+\tag{6}
+\]
+Its normal form is precisely the one-dimensional norm obstruction
+per coefficient block. This replaces a separate divided-augmentation
+calculation; no nonlinear term is discarded before it is absorbed.
 
 ## 4. Recover the given truncation
 
@@ -172,12 +164,25 @@ chain to Z/P, then along the original prime-to-five map Z/P→C using
 defect_preserving_etale_descent. No normality of P in G is required,
 and no new simultaneous Galois closure is introduced.
 
+The same chain proves the finite range. Set $a=v_5(|G|)$ and
+fix the marked intermediate covers through $W_n$, using the
+unique finite-etale lifting of the original subgroups. From a given
+top tower through $W_{n+a+1}$, repeated cyclic steps recover the
+first intermediate through $W_{n+a}$: at each next level its
+previous tuple is already the descended one. Each of the $a$
+cyclic arrows loses one last level. The final prime-to-five arrow
+loses none, leaving the original $C_{n+1}$. Every recovered source
+is the GIVEN corresponding truncation, and uniqueness retains all
+markings, maps and periodic data. For $a=0$, apply prime-to-five
+descent directly.
+
 ## Verification and boundary
 
-The finite algebra(3)--(6) is simpler than the e²-source-growth carry.
+The norm carry in Section3 is the length-one case of the later
+uniform cyclic theorem.
 The substantial audited issue is the two-digit GLOBAL-INPUT comparison
 (2) with an incompatible n=2 lower reference and multiple left-right
-Smith blocks. Equations(3)--(6) alone do not certify Hodge geometry.
+Smith blocks. The norm algebra alone does not certify Hodge geometry.
 The primitive S5 norm example is not covered: its full closure kernel
 is not deck-invariant, even though its endpoint invariant dimensions
 agree. Nothing here proves the original two-leg problem or full N5.

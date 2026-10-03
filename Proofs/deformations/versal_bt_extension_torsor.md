@@ -9,7 +9,7 @@ in force throughout.
 ## The coherent Cartier kernel
 
 Use the tame logarithmic character cover and the Cartier-fixed
-form $\Omega$ from [the Cartier bridge](versal_bt_cartier_rigidity.md).
+form $\Omega$ from [the Cartier bridge](versal_bt_cartier_realization.md).
 The rule in (1) is defined as a rational map of sheaves. Its
 output lies in $L$ by the same character and pole calculation
 that identifies $H^0(L)$ with a regular differential eigenspace.
@@ -51,6 +51,58 @@ Finite etale maps give Cartesian squares with absolute Frobenius.
 Cartier and the tame character construction commute with their
 base change. Therefore $\mathcal B_H$ commutes with every actual
 etale pullback, not just Galois covers.
+
+## Five-group coefficient modules
+
+Let $q:D\to C$ be an actual connected Galois torsor with five-group
+$P$, of order $d$, and put $V_C=H^0(C,L)$, $V_D=H^0(D,q^*L)$.
+Write $\mathcal E=q_*\mathcal O_D$ and $L=\mathcal O_C(S)$.
+The torsor identifies $\mathcal E$ with the bundle associated to
+the regular representation. Every simple representation of a
+finite five-group in characteristic five is trivial. Therefore
+the trace kernel $\mathcal E_0$ has a filtration with $d-1$
+quotients $\mathcal O_C$.
+
+Here $\deg L=4(g(C)-1)>2g(C)-2$, so $H^1(C,L)=0$.
+The filtration gives $H^1(C,L\otimes\mathcal E_0)=0$.
+Consequently trace is onto:
+\[
+\operatorname{Tr}:V_D\twoheadrightarrow V_C.
+\]
+The group norm $\mathsf N=\sum_{\gamma\in P}\gamma$ acts on
+$V_D$ as $q^*\operatorname{Tr}$. It follows that
+$\mathsf N V_D=V_D^P$.
+
+
+Use the following finite-module lemma.
+For any finite $R=k[P]$-module $M$, put $r=\dim M^P$.
+Its dual needs exactly $r$ generators over the local algebra $R$.
+Dualizing a minimal surjection $R^r\twoheadrightarrow M^*$ and using
+$R^*\simeq R$ gives
+\[
+M\hookrightarrow R^r,\qquad Q=R^r/M.
+\]
+The embedding is an isomorphism on invariant spaces. Since the regular
+module has zero positive group cohomology, its chosen exact sequence gives
+\[
+H^1(P,M)\simeq Q^P.
+\]
+Every nonzero $R$-module has nonzero socle, which is its invariant
+space. Therefore
+\[
+H^1(P,M)=0\quad\Longleftrightarrow\quad
+M\simeq R^r\quad\Longleftrightarrow\quad \dim M=|P|r.
+\tag{9}
+\]
+Finally $\mathsf NM=M^P$ also forces freeness: on $R^r$ the norm
+identifies coinvariants with invariants, so $M$ spans $R^r/JR^r$;
+Nakayama makes the embedding onto. This proves the needed norm
+criterion without a separate splitting argument.
+
+Apply this to $M=V_D$. Each free summand has one invariant
+dimension, and Riemann--Roch gives $\dim V_C=3g(C)-3$.
+This proves(3a).
+
 
 ## Actual extensions are locally available and have no automorphisms
 
@@ -144,14 +196,16 @@ does not give a universal group over a higher-dimensional
 parameter space, a claim not needed for the result.
 
 Everything was built from actual group pullback and its invariant.
-Hence the extension class and the affine torsor commute with etale
-base change. If $q:D\to C$ trivializes the torsor by an actual
-next extension $B$, its deck differences are the usual cocycle of
-that trivialization. Under the cohomology sequence of (2), this
-is exactly the primitive/Carter-image representative described in
-[the five-group theorem](bt_p_cover_cartier_obstruction.md), with
-the same cocycle sign. This proves the asserted identification of
-ACTUAL classes, without identifying them with higher-Witt classes.
+Hence the extension class and affine torsor commute with etale base
+change. If $q:D\to C$ trivializes the torsor by a next extension $B$,
+its deck differences $d_\gamma$ are its actual descent cocycle.
+For a five-group cover, ambient freeness above gives $b\in V_D$ with
+$d_\gamma=\gamma b-b$. Its Cartier image is invariant, say
+$\mathscr C_D(b)=q^*a$. The connecting map of(2) sends $[a]$ to
+$e_N(A_N)$, up to the cocycle sign: the Cartier primitives give
+exactly the cocycle $d_\gamma$. This derives the primitive
+description directly from the absolute torsor, without using the
+later five-group criterion or substituting a higher-Witt class.
 
 Finally, if marked BT$_N$ data agree on the two actual maps of a
 span, all the sheaves and their pullback torsors agree there.
@@ -162,3 +216,15 @@ does have a section. On the original proper curve its possible
 obstruction space has dimension $\dim\mathcal K_H$, which need
 not be zero. No vanishing of the class itself is inferred from
 the torsor construction.
+
+If the induced connection is indigenous-ordinary, the actual
+[Cartier classification](versal_bt_cartier_realization.md) gives
+$H^0(\mathcal B_H)=0$ independently of any global next reference.
+Since $\chi(\mathcal B_H)=0$, its first cohomology vanishes too.
+The locally nonempty torsor thus has exactly one global section,
+so every supplied $A_N$ has a unique next extension. The proved
+absence of normalized marked automorphisms makes these choices
+uniquely compatible with truncation. Induction produces a full
+marked tower with the prescribed determinant on the original curve.
+Its $5$-divisible group is the usual direct limit of those actual
+compatible finite groups. No common-source comparison is supplied.

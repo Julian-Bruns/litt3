@@ -25,7 +25,7 @@ periodic datum. The compatible third repairs form the affine plane
 The AS equation and shift above have a regular infinity
 remainder. Its exact rational numerator/denominator, the full15x15
 Hodge matrix, and all first-lift vectors are in
-[the primary inputs](../../../Research/computations/cyclic5_small_field_fourth_inputs.json).
+[the primary inputs](../../../../litt3-computation-data/legacy_workspace_computations/cyclic5_small_field_fourth_inputs.json).
 Their two independent Laurent precisions220/300 agree. The coefficient
 field is F625; geometric deck translations split over F_(5^8). The
 five formal branches are represented without choosing roots by the
@@ -164,7 +164,7 @@ the first is asserted constant. Original source and receipts remained
 unchanged. Root independently checked the field contraction, inverse,
 and decomposition sum using standard-library arithmetic.
 
-[Fresh replay receipt](../../../Research/computations/cyclic5_w4_fresh_replays_20260911.json),
+[Fresh replay receipt](../../../../litt3-computation-data/legacy_workspace_computations/cyclic5_w4_fresh_replays_20260911.json),
 produced by scripts/deformations/cyclic/record_cyclic5_w4_replays.py, separates computational
 scope from the [independent geometric audit](../../../Research/audits/CYCLIC5_FOURTH_LIFT_AUDIT_2026_09_11.md).
 The latter covers the actual AS model/marking/twist, all-parameter

@@ -183,19 +183,17 @@ cardinality is $4^{2g}$.
 
 ## Exhaustion of higher groups and endpoint count
 
-Lift every rank-one $\mathbf F_5$-character by its Teichmuller
-$\mathbf Z_5$-character. Twisting the full group constructed above
-realizes every BT1 in the torsor. Each such group therefore has a
-normalized reference at every finite level. Apply
-[Cartier rigidity](versal_bt_cartier_rigidity.md) successively: any
-other normalized extension of the fixed preceding level is marked
-isomorphic to the reference. The marked determinant-preserving
-isomorphisms are unique by
-[generic scalar rigidity](versal_bt_display_descent.md), so the
-isomorphisms agree under truncation and give a unique full tower.
+Each BT1 in the proved torsor is an actual realization of the same
+ordinary projective oper. The later
+[absolute extension torsor](versal_bt_extension_torsor.md) has
+$H^0(\mathcal B_H)=H^1(\mathcal B_H)=0$, so EVERY supplied
+normalized finite level has a unique next extension without a
+global-reference hypothesis. Iteration gives its unique full marked
+tower. This proves exhaustion directly, retaining the integral
+canonical construction above for the prescribed crystal and root.
 
 Every actual everywhere-versal group induces an admissible active
-projective oper, as proved in the Cartier-rigidity theorem. On the
+projective oper, by the [Cartier classification](versal_bt_cartier_realization.md). On the
 two selected genus-two curves all85 such opers are ordinary. Each
 has256 realizations by the torsor just proved. Different opers cannot
 yield isomorphic groups over the fixed base curve. Multiplication

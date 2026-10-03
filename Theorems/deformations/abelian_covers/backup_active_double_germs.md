@@ -1,32 +1,48 @@
-# All active two-torsion defects and abelian germs at the backup
+# Active two-torsion defects on the complete good cubic orbit
 
-Version 2, 2026-09-23. Complete exact calculation and fresh bounded
-mathematical audit PASS.
+Version3,3 October2026. The later affine/Frobenius classification
+transports the backup theorem to its entire sixty-parameter locus.
 
-Let B=C_alpha, alpha^3+alpha+1=0 over characteristic five. All 85
-admissible active nilpotent connections on B are ordinary. Exactly
-79 have no bad nontrivial two-torsion twist; the other six each have
-two bad twists, every one of defect one.
+Let Y_t:v²=u(u-1)(u-2)(u-3)(u-t) over bar(F5), t outside F5.
+Put z=(t+1)^-1, I=(z^5-z)^4 and G(I)=I^3+2I^2+4I+4.
+Assume G(I)=0. These are exactly sixty parameters in F125 outside F5.
+They are affine isomorphic or coefficient Frobenius twists of the backup
+B=C_alpha, alpha^3+alpha+1=0. Every one has85 ordinary active
+nilpotent connections:79 have no bad nontrivial two-torsion twist;
+the other six each have two, every twisted tangent defect being one.
 
-Ten bad pairs are the five branch-support data in the high-degree
-table. The additional datum has R0=u-alpha and h=3alpha in the
-critical-quartic construction; its bad cover polynomials are
+Five exceptional data are branch supported. In the branch coordinate
+x=1/(u+1), with fixed branch set F5, each root class {z,b}, b in F5,
+has bad twists {b+d,b-d}, d in F5*/{±1}.
 
-    R=u(u-2),          R=(u-1)(u-3).
+The sixth datum is explicit and intrinsic to the arithmetic orbit.
+Use trace and norm from F125 to F5, and put
+\[
+n=\operatorname{Nm}(z^5-z),\qquad
+b=2\operatorname{Tr}(z)-n^{-1},\qquad
+c=\operatorname{Nm}(z-b)^{-1}.
+\]
+Its Hasse root class is {z,b}; its nonbranch fiber has abscissa
+\[
+h_x=b+\frac{2c(z-b)}{z-b+c}.
+\]
+Its two bad twists are {b+c,b+2c} and {b-c,b-2c}.
+At the backup b=0,c=1, and this becomes R0=u-alpha,h=3alpha,
+with bad cover polynomials R=u(u-2) and R=(u-1)(u-3).
 
-For every bad pair let D->B be its actual connected etale double.
-Then D is Jacobian-ordinary and its indigenous operator has a simple
-zero block: both the operator and its second semilinear iterate have
-rank five on the six-dimensional tangent space. Its completed actual
-maximal-abelian pro-five defect module has scalar formal relation
+For every one of the twelve bad pairs take its ACTUAL connected
+finite etale double D->Y_t. Then D is Jacobian-ordinary. Its indigenous
+operator and second semilinear iterate both have rank five on the
+six-dimensional tangent space. Its completed actual maximal-abelian
+pro-five defect module has scalar formal relation, up to coordinate
+change and a unit,
+\[
+UV+W^4\quad\text{for the ten branch pairs},\qquad
+UV+W^2\quad\text{for the two nonbranch fiber pairs}.
+\]
+The [abelian defect classification](abelian_defect_flags.md) gives all
+abelian five-cover defects, including balanced covers. Neither these
+germs nor the orbit transport forces an arbitrary common source to
+dominate a named double or supplies a higher-Witt obstruction.
 
-    UV+W^4   for the ten branch-support pairs;
-    UV+W^2   for the two additional mixed-support pairs.
-
-The [abelian defect classification](abelian_defect_flags.md) gives
-the defect of every abelian five-cover of these twelve doubles,
-including the balanced covers. The germ calculation alone does not
-force an arbitrary common source to dominate one of them or supply
-a higher-Witt obstruction.
-
-[Proof and exact table](../../../Proofs/deformations/abelian_covers/backup_active_double_germs.md).
+[Proof and seed evidence](../../../Proofs/deformations/abelian_covers/backup_active_double_germs.md).

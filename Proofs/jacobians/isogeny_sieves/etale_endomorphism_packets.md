@@ -154,11 +154,11 @@ inequality in Section1 or remove its large-character cases. The
 checks the local proof, the semilinear orientation and an independent
 small replay.
 
-The earlier independent [three-prime certificate](../../../scripts/arithmetic/fixed_x_endomorphism_field.sage)
-is retained. Its real trace polynomial has cycle types(9),(8,1),(7,2)
-at2,107,11 and hence Galois group S9, providing the stronger real-field
-information when needed. The local proof above does not depend on
-that computation or on the previously computed field discriminant.
+The foundational [fixed-pair proof](../../curve_arithmetic/fixed_pair_arithmetic.md)
+now proves simplicity from the real-field residue pattern(1,8)
+and positive nonordinary p-rank six. The unused three-prime S9
+algorithm has been removed. The endomorphism-field argument here
+continues to use only its audited local Cartier input.
 
 ## 3. The actual source gives a faithful multiplicity module
 

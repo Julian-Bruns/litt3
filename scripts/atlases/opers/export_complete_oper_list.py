@@ -1,10 +1,11 @@
 """Write the exact oper census as orbit ranges; expand individual indices on demand."""
 import argparse
 import json
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-FOLDER = ROOT / 'Research/computations'
+FOLDER = ROOT / '../litt3-computation-data/legacy_workspace_computations'
 
 
 def description(folder=FOLDER):
@@ -22,7 +23,8 @@ def description(folder=FOLDER):
         'normalized_closed_points': 'normalized_oper_closed_points.json',
         'coordinate_polynomials': 'normalized_oper_algebra_certificate.json',
         'invariant_points': 'invariant_oper_solutions.json',
-        'formula_conventions': 'complete_oper_solutions_README.md',
+        'formula_conventions': os.path.relpath(
+            ROOT / 'Research/notes/oper_census/complete_oper_census.md', folder),
         'invariant_count': 55, 'invariant_multiplicity': 8, 'cubic_branches': 3,
         'normalized_orbits': orbits,
     }

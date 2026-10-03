@@ -1,6 +1,8 @@
 # Proof: the Cartier filtration records common zero divisors
 
 [Statement](../../Theorems/cartier_and_spin/common_cartier_subbundles.md).
+[Independent bounded review](../../Research/audits/CARTIER_SYMMETRIC_POWER_RECONSTRUCTION_AUDIT_2026_10_03.md).
+Version5,3 October2026.
 All Frobenius morphisms below are relative, and all inclusions are
 the actual compatible ones on the stated span.
 
@@ -194,95 +196,55 @@ calculation as above gives coefficient orders $(3,2,1,0)$ in
 $F^*B$, so one coefficient is a unit. Faithful flatness of
 relative Frobenius proves saturation already on $C^{(1)}$.
 
-Any other common saturated line $A'\subset B$ has adjoint zero
-divisor $\lambda S$. The degree equation gives
-$\lambda\equiv3\pmod5$, so $\lambda=3+5j$ with $j\ge0$.
-Uniqueness of the common Picard root then gives
-$A'=A(-jS^{(1)})$. The adjoint maps agree, up to a scalar, with
-the inclusion multiplied by the canonical section at $jS^{(1)}$;
-on each proper curve the ratio of maps with the same divisor
-is constant. If $j>0$ the resulting map to $B$ is not saturated.
-If $Ca\ne0$, none of these multiples can have zero Cartier
-image. This proves uniqueness and the nonexistence alternative.
+Any common saturated line in $B$ has adjoint divisor $cS$.
+The local jet bound gives $0\le c\le3$, while the degree
+equation and $R\equiv4\pmod5$ give $c\equiv3\pmod5$.
+Thus $c=3$. Unique common roots and the specified zero
+divisor identify the line and map with $A$, up to scalar.
+If $Ca\ne0$, no such line can lie in $B$.
 
 ## The four-point two-torsion alternative has nonzero Cartier image
 
-It remains to exclude $Ca=0$ when $R=4$ and $\tau^2=\mathcal O$.
-Work on the selected genus-two endpoint. The common divisor
-supplies a section $s$ of $\omega^2\tau$ with simple zero divisor
-$S$. Trivialize the two-torsion line in étale flat frames and write
-$s=a(z)(dz)^2$. Uniqueness of the Frobenius root identifies the
-adjoint scalar above with a nonzero constant multiple of $a^3dz$.
-Thus $Ca=0$ would give
+Suppose $R=4$, $\tau^2=\mathcal O$ and $Ca=0$.
+Take the unique common root $F^*\lambda=\tau$; then
+$\lambda^2=\mathcal O$ in the common Picard group.
+The canonical reduced-zero section of
+$\omega^2F^*\lambda=\mathcal O(S)$ satisfies $C(a^3dz)=0$.
+The [intrinsic scalar reconstruction](../projective_connections/dormant_bol_complex.md#canonical-roots-from-scalar-products)
+gives an actual normalized dormant Bol bundle $V$ and a
+nonzero section of $V\lambda$. On the selected genus-two
+endpoint this contradicts the established
+[all-two-torsion vanishing](../../Theorems/projective_connections/family_dormant_theta_exclusions.md)
+for all five actual normalized Bol bundles.
+Hence $Ca\ne0$, completing the line dichotomy.
+
+## Horizontal products construct the middle plane
+
+Assume the common line $A$ exists. The unique common root
+$F^*\lambda=\mathcal O(S)\omega^{-2}$ and the reduced
+canonical section $a$ of $\omega^2F^*\lambda=\mathcal O(S)$
+satisfy $C(a^3dz)=0$ by the first-line condition.
+The [intrinsic dormant scalar reconstruction](../projective_connections/dormant_bol_complex.md#canonical-roots-from-scalar-products)
+therefore gives an actual common pointed bundle $E$ and
 \[
-\operatorname{Cartier}(a^3dz)=0.
+B=A\operatorname{Sym}^3E,\qquad
+\det E=\omega^{(1)}\lambda^2.
 \]
-This implies that the projective oper with local potential
-$r=a''/a$ is dormant. Indeed
-$\operatorname{Cartier}(a^3dz)=a\operatorname{Cartier}(a^{-2}dz)$,
-so locally $a^{-2}dz$ has a rational primitive $t$. The two
-functions $a,at$ solve $b''=rb$ and have nonzero constant
-Wronskian. They are independent over fifth powers. At a simple
-zero write $a=zu$ with $u$ a unit. Cartier vanishing forces the
-coefficient of $z^4$ in $a^3$ to vanish, hence $u'(0)=0$.
-Therefore $a''/a$ is regular there. These are the ordinary
-coordinate-change rules for the Bol operator on quadratic
-differentials; the étale two-torsion frames introduce no derivative
-terms. Thus it is a regular dormant oper globally.
+The subbundle $U_2=A\,s^2E$ is common and has Frobenius oper
+grades $\omega(-2S),\omega^2(-2S)$. Its primitive determinant
+line $K=\det U_2\,\omega^{(1),-1}$ consequently satisfies
+$F^*K=\omega^{-2}(-4S)$.
 
-The original $s$ is then a nonzero global horizontal quadratic
-for this actual dormant Bol operator, twisted by $\tau$. By
-Cartier descent it gives a section of one of the five Bol kernels
-twisted by a two-torsion line on the relative Frobenius target.
-This contradicts the [all-two-torsion vanishing](../../Theorems/projective_connections/family_dormant_theta_exclusions.md)
-already proved for both selected endpoints. Hence $Ca$ is nonzero
-in this case. Together with the previous section this proves the
-complete line dichotomy.
+## Plucker lines prove uniqueness of the common plane
 
-## The primitive exterior square constructs the middle plane
-
-Assume now that the common line $A$ exists, so either $R>4$
-or $R=4$ with $\tau^2\ne\mathcal O$ as a common line.
 The functorial [Cartier exterior-square identification](all_tensor_cartier_hn.md)
 is
 \[
-\Lambda^2 B_C\otimes\omega_{C^{(1)}}^{-1}
- =\mathcal O_{C^{(1)}}\oplus P_C,\qquad
-P_C\simeq F_{C*}\omega_C^{-2}.
+\Lambda^2B_C\otimes\omega_{C^{(1)}}^{-1}
+ =\mathcal O_{C^{(1)}}\oplus P_C,\qquad P_C=F_{C*}\omega_C^{-2}.
 \]
-The first summand splits off by contraction with the symplectic
-form. On the primitive summand $P$, the wedge square is a
-nondegenerate quadratic form $q:P\otimes P\to\mathcal O$.
-A nonzero primitive bivector with zero wedge square determines
-an isotropic two-plane in $B$.
-
-The common line $\omega^{-2}(-4S)$ has degree $-4-4R$
-on $Y$, divisible by five. The invariant Picard argument
-therefore constructs its unique common Frobenius root $K$.
-Adjunction of the canonical inclusion gives
-\[
-K\hookrightarrow F_*\omega^{-2}=P,\qquad
-F^*K=\omega^{-2}(-4S).
-\]
-This is a saturated inclusion: at a point of $S$ the adjoint
-coefficient has order exactly four, so its expansion in the
-local Frobenius basis $1,z,\ldots,z^4$ has a unit coefficient.
-Off $S$ its constant coefficient is a unit.
-
-If $q|_K$ were nonzero, its common zero divisor would have
-degree $8(R+1)/5$ on $Y^{(1)}$. This is a multiple of $R$,
-so $R\mid8$, hence $R=4$. The divisor would then be $2S^{(1)}$.
-Pulling the corresponding isomorphism $K^2=\mathcal O(-2S^{(1)})$
-back by Frobenius gives
-\[
-\omega^{-4}(-8S)=\mathcal O(-10S),
-\quad\text{hence}\quad
-\mathcal O(2S)=\omega^4.
-\]
-That is the excluded common-two-torsion condition. Therefore
-$q|_K=0$. The nowhere-zero Plücker line $K\otimes\omega^{(1)}$
-constructs a Lagrangian rank-two subbundle $U_2$ on each
-endpoint, with exactly equal pullback inside $B_Z$.
+Contraction splits off the first summand; wedge square is
+a nondegenerate quadratic form $q$ on $P$.
 
 Here uniqueness retains the actual maps. If a common rank-two
 subbundle $U$ were not Lagrangian, its restricted alternating
@@ -303,23 +265,21 @@ Thus its Plücker line, and consequently $U$, is the constructed
 $U_2$.
 
 Every common rank-three subbundle has a common symplectic
-annihilator line, and must therefore be $A^\perp$. If $A$
-were not contained in $U_2$, the saturation of $A+U_2$ would
-be this unique rank-three subbundle. It would follow that
-$U_2\subset A^\perp$, and hence
-$A\subset U_2^\perp=U_2$, a contradiction. Therefore
-$A\subset U_2\subset A^\perp$. The degree table gives the four
-successive quotient degrees in the statement. This proves
-existence and uniqueness of the full common flag in precisely
-the stated clump branch.
+annihilator line and must be $A^\perp$. The constructed $U_2$
+contains $A$ and is Lagrangian, hence lies in $A^\perp$.
+The degree table gives all four quotient degrees, completing
+the full flag classification in this branch.
 
 ## The remaining primitive quadratic is nonzero
 
-Suppose $R=4$ and $\tau^2=\mathcal O$. The earlier Cartier-image
-calculation gives a nonzero map $Ca$. The common line $K$ in
-$P=F_*\omega^{-2}$ is now $\omega^{(1),-2}$: indeed
-$\omega^{-2}(-4S)=\omega^{-10}$, and the common fifth root
-is unique. We claim that its primitive wedge quadratic is NONZERO.
+Suppose $R=4$ and $\tau^2=\mathcal O$, so $Ca\ne0$.
+Construct $K$ independently of the line branch: it is the
+unique common root $F^*K=\omega^{-2}(-4S)$. Adjunction of
+the canonical inclusion gives $K\hookrightarrow P=F_*\omega^{-2}$.
+This map is saturated: off $S$ its scalar coefficient is a unit;
+at $S$ it has order four and a unit $z^4$ coefficient in the
+Frobenius basis. Here $\omega^{-2}(-4S)=\omega^{-10}$,
+so $K=\omega^{(1),-2}$. Its primitive wedge quadratic is NONZERO.
 
 There is a second natural perfect symmetric pairing on $P$.
 Finite Frobenius duality gives

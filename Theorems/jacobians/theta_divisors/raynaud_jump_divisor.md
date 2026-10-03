@@ -1,6 +1,8 @@
 # A squarefree inherited theta cone forces a genuine jump divisor
 
-Version1. Independently audited.
+Version2,3 October2026. The independently audited local and quartic
+arguments are unchanged; the later all-defect theorem supplies and
+strengthens the global determinant constraint.
 
 Let k be algebraically closed of odd characteristic. For a smooth
 projective connected curve C put B_C=F_(C/k)*O_C/O_(C^(1)),
@@ -53,11 +55,12 @@ the jump divisor's tangent cone at o to be geometrically
 irreducible of degree4. The locus V3={h0>=3} has codimension at
 least3 in P at o.
 
-For an arbitrary rank-one universal kernel whose parameter map
-P->J(Z^(1)) has finite kernel, its dual line bundle is ample. Thus,
-under Hom-zero, this dual splits as a product of ample line bundles
-on the two endpoint Jacobians. This global constraint does not
-exclude the local jump divisor.
+For a universal kernel of ANY positive generic rank whose abelian
+parameter map P->J(Z^(1)) has finite kernel, its dual determinant
+line bundle is ample, by the later all-defect dimension theorem.
+Under Hom-zero, that determinant dual splits as a product of ample
+lines on the two endpoint Jacobians. This global constraint does
+not exclude the local jump divisor.
 
 [Proof and compact arithmetic](../../../Proofs/jacobians/theta_divisors/raynaud_jump_divisor.md).
 Both unmarked common-cover problems remain unresolved.

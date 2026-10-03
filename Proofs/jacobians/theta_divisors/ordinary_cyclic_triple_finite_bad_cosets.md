@@ -158,7 +158,7 @@ one. An effective divisor of this class on an abelian surface
 is a sum of translates of its elliptic connected stabilizer.
 Pulling one of these components back along pi would give a
 translated abelian divisor component of Theta_U. This is excluded
-by the [abelian-component theorem](raynaud_abelian_components.md).
+by the [dimension theorem](raynaud_rank_one_dimension.md).
 Thus the a=1 possibility is impossible even when E is supersingular.
 
 If a=2, write u=b-1. Then u+u^dagger=0 and nefness gives

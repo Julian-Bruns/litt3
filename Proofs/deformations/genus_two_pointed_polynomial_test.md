@@ -109,30 +109,12 @@ finite-field shortcut. The constant state size describes scalar
 coefficient production. Nothing in this argument condenses the
 projective rank or resultant calculation to a finite list of states.
 
-## 4. Exact comparison with existing evidence
+## 4. Direct implementation
 
 The [polynomial builder](../../scripts/deformations/pointed_frobenius_polynomial.py)
-implements(1) by scalar polynomial coefficients and explicitly generic
-matrices. The [comparison script](../../scripts/deformations/check_pointed_polynomial_comparison.py)
-checks the actual basis changes against the earlier certified Laurent
-builder at the cubic backup, without computing another resultant.
-
-Let L be the3-by3 matrix whose j-th column is the coefficients of
-v/u^j at z^-3,z^-1,z in the old H1(omega^-1) basis. It is lower
-unitriangular. For each target component let T have columns the
-coefficients of beta/u^j at the old retained Laurent exponents.
-It too is lower unitriangular, because beta/u^j has leading term
-z^(2j−pole(beta)) with coefficient one. No discarded affine pole
-occurs: the smallest exponent is already one of the retained gaps.
-For each block and all three parameter columns the script checks
-
-    T*M_new,j = sum_(a=0)^2 L[a,j]^P*M_old,a.              (5)
-
-All entries are checked in generic original-field arithmetic. Both
-full sets of32 block identities pass, at h2 in3 seconds and at h3
-in154 seconds. The receipts retain source hashes and the actual L:
-[height2](../../../litt3-computation-data/unmarked_extension_spectrum_20260915/height2_polynomial_comparison.json),
-[height3](../../../litt3-computation-data/unmarked_extension_spectrum_20260915/height3_polynomial_comparison.json).
-This preserves all original numerical evidence while giving a shorter
-general construction of its matrices. It asserts no fourth-height or
-all-height semistability result.
+implements(1) directly from scalar coefficients with generic matrices.
+The later [fourth-height test](pointed_extensions_frobenius.md#3-one-fourth-height-certificate-replaces-the-earlier-computations)
+uses these matrices, independently of any Laurent calculation.
+Its semistability conclusion supplies all earlier-height nonvanishing.
+The original height-two/three basis-comparison receipts remain external
+historical evidence; their algorithms are superseded.

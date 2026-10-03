@@ -1,75 +1,76 @@
-# Twisted dormant rigidity excludes fractional rank-two slopes
+# Twisted dormant rigidity bounds every fractional rank-two slope
 
-Let $C/\overline{\mathbf F}_5$ be a smooth projective genus-two curve.
-For every normalized dormant rank-two oper on $C$, let $\mathcal V$
-be its canonical-determinant Cartier-descent bundle, so that
-$\det\mathcal V=\omega$ on the Frobenius-twisted curve. Assume
+Version3,3 October2026. The later all-positive-edge normalization
+replaces the separate residue-one construction and gives endpoint
+bounds at EVERY coefficient residue degree.
+
+Let \(C/\overline{\mathbf F}_5\) be a smooth projective genus-two
+curve. For every normalized dormant rank-two oper let \(\mathcal V\)
+be its canonical-determinant Cartier-descent bundle, with
+\(\det\mathcal V=\omega\) on the Frobenius-twisted curve. Assume
 \[
 H^0(\mathcal V\otimes\kappa)=0
 \quad\text{for every such }\mathcal V
-\text{ and every two-torsion line }\kappa.
+\text{ and every }\kappa\in J[2].
 \tag{1}
 \]
-Keep the actual Frobenius twists in this formulation.
+All actual Frobenius twists remain part of this hypothesis.
 
-There is NO rank-two coefficient $F$-isocrystal on $C$ with
-coefficient residue degree one, nonconstant Newton polygon, and
-normalized generic slopes
+## The endpoint bound in every residue degree
+
+Let \(K/\mathbf Q_5\) have ramification index e and residue degree f.
+Any rank-two K-coefficient F-isocrystal on C with nonconstant Newton
+polygon and normalized generic slopes \((0,\delta)\),
+\(0<\delta<1\), satisfies
 \[
-(0,a/e),\qquad 0<a<e,
+\delta\le1-1/f.
 \tag{2}
 \]
-where $e$ is the coefficient ramification index. No determinant
-triviality, chosen theta characteristic, or common-cover hypothesis
-is required. The exclusion is a statement on this endpoint alone.
+No determinant triviality, prior integral lattice or common-cover
+hypothesis is required. Thus residue degree one excludes EVERY
+fractional gap, and residue degree two excludes every gap in (1/2,1).
+The ordinary gap-one case is allowed by this endpoint criterion.
 
-Hypothesis(1) holds on BOTH selected genus-two endpoints, by
+Hypothesis(1) holds on BOTH selected endpoints, on every member of
+the five-fixed-branch family whose parameter degree exceeds six,
+and at the cubic backup, by
 [the twisted dormant vanishing theorem](../projective_connections/genus_two_active_critical_quartics.md).
-It holds on every member of the five-fixed-branch family whose
-parameter degree exceeds six, and at the cubic backup.
-Consequently a nonconstant residue-degree1 rank-two companion on
-either endpoint cannot have a generic gap strictly between zero
-and one. The ordinary gap-one case is not excluded on an endpoint
-alone; if it is compatible with the other actual map, it forces
-the simultaneous lift already proved.
 
-The proof gives a precise obstruction. A fractional-slope lattice
-would have a dormant oper reduction $H$, determinant $D$ with
-$D^4=\mathcal O$, and an actual nonzero section
+## The actual common coefficient has a stronger bound
+
+Suppose such a coefficient has rationally compatible endpoint data
+on an ACTUAL coreless finite étale span \(X\leftarrow Z\to C\),
+with EVERY Frobenius arrow respected on the SAME source.
+Every fractional generic gap then satisfies
 \[
-H^0(\mathcal V\otimes D^2)\ne0.
+\delta\le1/2.
 \tag{3}
 \]
-Thus the determinant contributes a two-torsion twist, not an
-uncontrolled degree-zero line. This is why the existing uniform
-two-torsion test suffices.
+Only the genus-two endpoint needs(1). This is a restriction on a
+supplied common coefficient, not an endpoint-only half-gap exclusion
+or a construction from a bare span.
 
-There is also a cyclic version with explicit extra input. Suppose
-a finite Dieudonné cycle of rank-two coefficient crystals has an
-oper reduction of degree zero in EVERY component. Here BOTH $F$
-and $pF^{-1}$ are integral at every step. Normalize each
-Frobenius matrix by a constant uniformizer power so that it is
-integral and nonzero modulo the uniformizer. Every such step then
-has elementary divisors $(1,p)$ everywhere, and every target oper
-is active. The normalized cycle is generically ordinary. This
-does not assert that arbitrary coefficient cycles admit oper
-lattices in all their components; nonoper components remain a
-possible essential feature of smaller gaps.
+## Useful lattice and determinant data
 
-There is a sharper two-component normal form under the same
-vanishing hypothesis. For an actual coefficient-rank-two Dieudonné
-cycle of residue degree two, ramification $e$, nonconstant Newton
-polygon and generic gap $b/(2e)$, $1\le b\le2e$, an isogenous
-lattice has an oper in component $i$ with
-\[
-d_i=\max(b-e,0),\qquad d_{i-1}=\min(b,e),\qquad n=\min(b,e).
-\]
-The $d$'s are the ordered incoming determinant heights, and the
-oper exists over the whole ring $A_i/\pi^n$. In particular the
-half-slope case has $(d_i,d_{i-1},n)=(0,e,e)$. This sharpens the
-general arbitrary-cycle lifting construction; it is not an
-endpoint exclusion for residue degree two.
+The proof's two-oper criterion is general: under(1), a primitive
+Dieudonné Frobenius step between oper reductions has elementary
+divisors (1,p), and its target is active. Hence a full oper cycle
+is generically ordinary. The supplied integral maps include BOTH
+F and pF^-1.
 
-Version2,20 September2026. Author proof using the constructed
-partial Hodge lattice and the previously checked dormant test.
-[Proof](../../Proofs/deformations/genus_two_fractional_slope_exclusion.md).
+At residue degree one the would-be fractional oper has determinant
+D with D^4 trivial and the exact forbidden witness
+\(H^0(\mathcal V\otimes D^2)\ne0\). Its twist is two-torsion;
+the determinant need not be trivial.
+
+For residue degree two and generic gap b/(2e), a fractional
+coefficient, if it exists, has an isogenous terminal lattice with
+ordered heights (0,b), up to cyclic labeling, where 1<=b<=e.
+The active source is an oper over the WHOLE ring \(A_i/\pi^b\).
+The ordinary case b=2e has heights (e,e) and whole precision pi^e.
+The former intermediate rows e<b<2e are excluded.
+
+The general lifting theorem still applies to supplied ordinary
+common data. No coefficient or common cover is produced here.
+Independent bounded review passes the new endpoint and common
+bounds. [Proof](../../Proofs/deformations/genus_two_fractional_slope_exclusion.md).

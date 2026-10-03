@@ -72,7 +72,7 @@ must remain an explicit exceptional case.
 
 ## Pole eighteen, without assuming descent
 
-The [supported-norm theorem](small_supported_norm_functions.md) says that
+The [supported-norm theorem](marked_divisor_relation_lattice.md) says that
 Nm_(T/X1)(t) is a degree6 polynomial in u with A-supported roots. Write
 their multiplicities m_i, with sum m_i=6. Its norm through the cubic
 extension k(X1)/k(u) is its cube, proving M_i=3m_i in the full norm above.

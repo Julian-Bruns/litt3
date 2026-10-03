@@ -1,6 +1,6 @@
 # A common infinite arithmetic coefficient forces a clump
 
-Version3,20 September2026.
+Version4,3 October2026.
 
 Let $k=\overline{\mathbf F}_p$ and let
 $X\xleftarrow f Z\xrightarrow g Y$ be an actual finite bi-etale
@@ -46,9 +46,13 @@ most one. Constant normalization and the
 give an actual oper with enough thickness; one-endpoint lattice
 descent supplies compatibility with the other map.
 One arithmetic endpoint still suffices, as above.
-The selected main pair therefore admits no such common infinite
-rank-two system at all. For the backup this forces its still-open
-fully liftable branch.
+For EITHER selected pair, every common semisimple geometric system
+of rank at most two with the stated one-sided normalized arithmetic
+origin has FINITE geometric image. In rank two the infinite-image
+irreducible case would give the excluded full lift; in the reducible
+case normalized monodromy already has finite geometric image.
+The later [complete backup arithmetic exclusion](../curve_arithmetic/backup_arithmetic_reduction_exclusion.md)
+closes the formerly conditional backup branch.
 
 An arbitrary span does not supply such a common local system.
 One-leg systems without geometric matching and finite-image systems

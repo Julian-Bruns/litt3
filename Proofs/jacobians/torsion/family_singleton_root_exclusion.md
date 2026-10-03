@@ -92,6 +92,18 @@ Let c_i=[u^i](G(u)(u-t))^2. Exact multiplication gives
     [[c4,c3],[c9,c8]]=(t+1)[[1-2t,-2t],[-2,t-2]],
     c4 c8-c3 c9=3(t+1)^4.
 
+The same matrix also excludes every double-zero Cartier eigenform.
+Such forms are eta (at O) and (u-b)eta for b=0,1,2,3,t.
+Taking fifth powers in the absolute Cartier eigenline condition gives
+c3-b c4+b^5 c8-b^6 c9=0. At the five finite branches its values are
+\[
+-2t(t+1),\quad(t-1)(t+1),\quad-(t-2)(t+1),\quad
+2(t-3)(t+1),\quad-2(t+1)^2(t^5-t).
+\]
+All are nonzero on the smooth parameter locus. At infinity the
+condition is c9=-2(t+1)=0, equally impossible. This includes
+eigenvalue zero and is independent of every torsion calculation.
+
 Thus C is ordinary, V is etale of degree25. With eta=du/v and
 eta1=dz/v1, the RELATIVE Cartier formulas are
 

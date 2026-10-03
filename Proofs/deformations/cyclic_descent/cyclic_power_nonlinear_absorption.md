@@ -112,7 +112,7 @@ the new m=1 arbitrary-norm case p>3h. The
 [unified checker](../../../scripts/deformations/cyclic/verify_general_cyclic_order.py)
 passes252 exact additive/nonlinear cases in characteristics3,5,7,11,
 with noncommuting coefficients, free repairs and arbitrary terminal
-digits; [receipt](../../../Research/computations/general_cyclic_order_checks.json).
+digits; [receipt](../../../../litt3-computation-data/legacy_workspace_computations/general_cyclic_order_checks.json).
 The original [absorption](../../../Research/audits/CYCLIC_POWER_NONLINEAR_ABSORPTION_AUDIT_2026_09_10.md)
 and [carry](../../../Research/audits/CYCLIC_UNRESTRICTED_NORM_AUDIT_2026_09_13.md)
 audits retain their stated scopes. These algebraic results require a

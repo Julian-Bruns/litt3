@@ -23,7 +23,7 @@ import finite_field as F
 from locus import P,U,A,B,q,qi,s1,s2,v1,v2,Ap,Bp,exps,reduce_s
 
 root=Path(__file__).resolve().parents[3]
-pair=json.loads((root/'Research/computations/rank25_generalization_leverage.json').read_text())['constant_gradient_test']['exact_pairing']
+pair=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/rank25_generalization_leverage.json').read_text())['constant_gradient_test']['exact_pairing']
 pair=np.array([[F.IFP[F.ff(c)] for c in row] for row in pair],dtype=np.uint16)
 xs=[U,v1+q*F.ff('4331'),v2+q*F.ff('2234'),A+'3003',B+'0314',q*F.ff('3112'),q,P(),P()]
 

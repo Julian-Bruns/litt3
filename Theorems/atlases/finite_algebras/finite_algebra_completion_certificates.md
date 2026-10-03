@@ -1,6 +1,6 @@
 # Exact stopping, reduced-root extraction, and completeness certificates
 
-Version3. Use [finite-algebra conventions](../../../Definitions/finite_algebra_certificates.md).
+Version4. Use [finite-algebra conventions](../../../Definitions/finite_algebra_certificates.md).
 Suppose dim_K(R/I)=D is independently known.
 
 1. If G is a finite set of derived polynomials in I and the ideal generated
@@ -13,7 +13,8 @@ Suppose dim_K(R/I)=D is independently known.
 
 2. Over any perfect field K, the quotient A->A/N has a unique K-algebra
    section, with image the canonical reduced subalgebra B.
-   In characteristic p let F_A(a)=a^q for any specified power q of p.
+   In characteristic p let F_A(a)=a^q for any specified power q=p^r
+   with r>=1, equivalently q>1.
    Then N^D=0. If q^e>=D, then
 
        ker(F_A^e)=N,    B=im(F_A^e) -> A/N is an isomorphism

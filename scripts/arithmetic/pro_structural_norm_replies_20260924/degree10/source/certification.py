@@ -118,43 +118,6 @@ def solveE(A,b):
  assert np.array_equal(matmulE(A,x)[:,:,0],b)
  return x
 
-def osculation(S2):
- M=epscale(S2,einv(S2[-1]))
- def rr(a):return epmod(a,M)
- def aa(a,b):return rr(epadd(a,b))
- def ss(a,b):return rr(epsub(a,b))
- def mm(a,b):return rr(epmul(a,b))
- def sc(a,c):return rr(epscale(a,c))
- def pw(a,n):
-  o=[1]
-  while n:
-   if n&1:o=mm(o,a)
-   a=mm(a,a);n//=2
-  return o
- def iv(a):
-  g,s,t=egcd_poly(a,M);assert g==[1]
-  return rr(s)
- def pm(a,b):
-  o=[[] for _ in range(len(a)+len(b)-1)]
-  for i,x in enumerate(a):
-   for j,y in enumerate(b):o[i+j]=aa(o[i+j],mm(x,y))
-  return o
- jets=[]
- for j in range(11):
-  c=[]
-  for i in range(j,11):c=aa(c,sc(pw([0,1],i-j),emul(P[i],math.comb(i,j)%5)))
-  jets.append(c)
- normalized=[mm(c,iv(jets[0])) for c in jets]
- k1=sc(normalized[1],2);k2=ss(sc(normalized[2],2),pw(k1,2));k3=sc(ss(ss(normalized[3],mm(k1,k2)),pw(k1,3)),2)
- K=[[1],k1,k2,k3];K3=pm(pm(K,K),K)
- W=[ss(jets[i],mm(jets[0],K3[i] if i<len(K3) else [])) for i in range(11)]
- assert not any(W[:4]);D6=W[4:];assert D6[-1]==[1]
- u=sc(D6[5],2);v=ss(sc(D6[4],2),pw(u,2));V=[v,u,[1]];V3=pm(pm(V,V),V)
- residuals=[ss(D6[i],V3[i]) for i in range(7)]
- assert residuals[4:]==[[],[],[]]
- bz=bezout(residuals[0],M);assert bz['gcd']==[1]
- return {'modulus':M,'P_Taylor_coefficients':jets,'P_normalized_Taylor_coefficients':normalized,'K':K,'K_cubed':K3,'W':W,'D6':D6,'quadratic_forced_by_top_coefficients':V,'cube_residuals':residuals,'constant_residual_bezout':bz}
-
 def build_certificates(log=print, direct=True):
  started=time.monotonic();out={}
  def say(s):log('PASS: '+s)
@@ -198,9 +161,6 @@ def build_certificates(log=print, direct=True):
  out['linear_boundary.json']={'tB':tB,'S2':S2,'S5':S5,'R10':R10,'homogeneous_dimension':7,'normalized_affine_dimension':6,'formula_basis_columns':np.array(coded(V)).T.tolist(),'Dbar':Dbar,'finite_branch_constant_numerator':Kpoly,'finite_branch_constant_quotient_by_P':Kquot,'gcd_certificates':gcds}
  say('linear-derivative locus classified exactly: five parameters in v and one lambda')
  say('Newton-lemma hypotheses certified: deg(S2,S5,R10)=(2,5,10), S2 squarefree, all required coprimalities')
- OC=osculation(S2);out['osculation.json']=OC
- assert OC['modulus']==[349600,188551,1] and OC['cube_residuals'][0]==[72690,324180]
- say('osculating cubic/cube identity excluded: constant residual is a unit modulo S2')
  # Universal first two infinity jets and explicit necessary-system point.
  J=infinity_matrix(tB);JK=matmulE(J,K)
  assert np.array_equal(JK,extract_infinity_jets(K,tB))
@@ -228,11 +188,10 @@ def build_certificates(log=print, direct=True):
   MM,tt=extra_matrix(rho)
   assert not np.any(matmulE(MM,curK))
   assert all(not np.any(matmul25(M4,curK[d,:195,:])) for d in range(4))
-  OO=osculation(curS2)
-  support.append({'index':j,'omitted_root_rho_code':rho,'tB':tt,'S2':curS2,'S5':curS5,'R10':curR,'osculation_modulus':OO['modulus'],'constant_residual':OO['cube_residuals'][0],'constant_residual_bezout':OO['constant_residual_bezout']})
+  support.append({'index':j,'omitted_root_rho_code':rho,'tB':tt,'S2':curS2,'S5':curS5,'R10':curR})
   rho=epow(rho,25);curK=sig(curK);curS2=sigp(curS2);curS5=sigp(curS5);curR=sigp(curR)
  assert rho==25 and np.array_equal(curK,K) and len({z['omitted_root_rho_code'] for z in support})==4
  out['four_supports.json']={'Frobenius_matrix_over_F25':Frob.tolist(),'supports':support}
- say('all four supports: conjugate kernel equations and unit osculation obstructions verified')
+ say('all four supports: conjugate kernel equations verified')
  log('REBUILD COMPLETE in %.3f seconds' % (time.monotonic()-started))
  return out

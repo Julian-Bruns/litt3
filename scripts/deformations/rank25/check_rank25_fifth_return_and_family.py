@@ -176,7 +176,7 @@ def run(w4,w5,germ):
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('w4',type=Path);p.add_argument('w5',type=Path)
-    p.add_argument('--germ',type=Path,default=Path('Research/computations/rank25_w4_germ_and_next_checks.json'))
+    p.add_argument('--germ',type=Path,default=Path('../litt3-computation-data/legacy_workspace_computations/rank25_w4_germ_and_next_checks.json'))
     p.add_argument('--output',type=Path,required=True)
     a=p.parse_args();out=run(a.w4,a.w5,a.germ)
     a.output.write_text(json.dumps(out,indent=2)+'\n')

@@ -1,79 +1,95 @@
-# Connected endpoint covers preserve the clump and canonical root obstruction
+# Endpoint refinement preserves clumps and characteristic-primary root height
 
-Version1,16 September2026. Let k be algebraically closed and let
-X<-f-Z-g->Y be an actual coreless finite étale span of smooth
-projective connected hyperbolic curves. Let X'->X and Y'->Y be
-connected finite étale Galois covers with groups G_X,G_Y and degrees
-d_X,d_Y. Assume the FULL fiber product
+Version2,3 October2026. Let $k$ be algebraically closed and retain an
+actual coreless finite étale span $X\xleftarrow f Z\xrightarrow gY$
+of smooth projective connected curves of genus at least two.
+Let $X'\to X$ and $Y'\to Y$ be connected finite étale Galois covers
+with groups $G_X,G_Y$ and degrees $d_X,d_Y$. Assume BOTH individual
+pullbacks $Z\times_X X'$ and $Z\times_Y Y'$ are connected.
+
+Let $W$ be ANY connected component of $X'\times_X Z\times_Y Y'$.
+Keep its actual maps to $X',Y',Z$. Its stabilizer
+$H\subset G_X\times G_Y$ projects onto both factors, and $W\to Z$
+is an $H$-torsor.
+
+## Geometry and integral Picard descent
+
+The refined span is coreless. It has a clump exactly when the original
+span does; in that case its clump is the full inverse image on $W$
+of the original clump.
+
+Let $P,P_W$ be the groups of invariant line-bundle triples, INCLUDING
+their specified comparisons on the source. Pullback gives
 \[
-Z'=X'\times_X Z\times_Y Y'
+P\xrightarrow{\sim}P_W^H
 \]
-is connected; selecting a connected component is not a substitute.
+in either of the following cases:
 
-The new span X'<-Z'->Y' is coreless. It has a clump if and only if
-the original span does. In the positive case the new clump is the
-full inverse image of the old one.
+- the FULL product is connected, with arbitrary finite endpoint groups
+  and in any characteristic;
+- $\operatorname{char}k=p>0$ and the endpoint groups are $p$-groups,
+  even if the full product is disconnected.
 
-Let P,P' be the groups of invariant line-bundle triples on the two
-spans, including their actual pullback identifications. The group
-G=G_X times G_Y acts on P', and pullback gives
+The comparison removes the projective linearization obstruction in the
+first case. In the second case scalar group cohomology and endpoint-kernel
+characters vanish. No integral isomorphism is asserted for an arbitrary
+component with arbitrary finite groups.
+
+## Exact characteristic-primary height and a sharp degree index
+
+Suppose $\operatorname{char}k=p>0$ and there is no clump.
+Let $e,e_W$ be the positive generators of the $Y$- and $Y'$-degree
+images of $P,P_W$. Put $m=|H|_{p'}$ and
+$N=\exp(T_W)$, with $N=1$ when the degree-zero subgroup $T_W$ is zero.
+Then $T_W$ is finite of order prime to $p$, and
 \[
-P\xrightarrow{\sim}(P')^G.
+e_W\mid d_Ye,\qquad D:=\frac{d_Ye}{e_W}\mid m.
 \]
-This integral descent statement holds in any characteristic and for
-arbitrary finite Galois groups. The gluing identification removes
-the possible projective obstruction to linearizing an endpoint line.
-
-Suppose now char(k)=p, both covering groups are p-groups, and there
-is no clump. Let e,e' be the positive generators of the Y- and
-Y'-degree images of P,P'. Then
+If the full product is connected, $D\mid\gcd(N,m)$.
+In particular, for $p$-group endpoint covers,
 \[
-e'=d_Y e,\qquad
-\frac{2g(Y')-2}{e'}=\frac{2g(Y)-2}{e}.
+e_W=d_Ye,\qquad
+\frac{2g(Y')-2}{e_W}=\frac{2g(Y)-2}{e}.
 \]
-Consequently the exact p-root height of the canonical class in the
-actual multiplicative quotient is unchanged. Independent p-group
-endpoint covers cannot create a missing p-power root in this case.
+For arbitrary finite endpoint groups the two normalized canonical
+degrees have the same $p$-adic valuation.
 
-There is a stronger component version. For arbitrary finite Galois
-endpoint covers, suppose only that each of Z times_X X' and
-Z times_Y Y' is connected. Every connected component W of the
-full product is then coreless and has a clump exactly when Z does.
-Write H for its stabilizer in G_X times G_Y; H projects onto both
-factors. If the two groups are p-groups, pullback identifies
+For rational endpoint differentials form the actual canonical class
+$\xi=[f^*\theta_X/g^*\theta_Y]$ in
+$k(Z)^*/(f^*k(X)^*g^*k(Y)^*)$, and form $\xi_W$ using their pulled-back
+differentials on $W$. For EVERY $a\ge1$,
 \[
-P\xrightarrow{\sim}P_W^H.
+\xi\text{ has a }p^a\text{-root}
+\quad\Longleftrightarrow\quad
+\xi_W\text{ has a }p^a\text{-root}
 \]
-In the no-clump case the same formula e_W=d_Y e holds, and the
-canonical p-root height is again unchanged. The one-leg connectedness
-hypotheses cannot be dropped; this is not an assertion about arbitrary
-endpoint refinements.
+in their respective actual multiplicative quotients.
+If a clump exists, both classes have roots of every height.
+The connectedness hypotheses cannot be dropped: this does not create
+a root or make an opposite monodromy torsor connected.
 
-## When the full product is connected
+## When all full $p$-group products are connected
 
-For any actual bi-etale span in characteristic p, not necessarily
-coreless, the following are equivalent:
+For any actual finite bi-étale span in characteristic $p$, without a
+corelessness hypothesis, the following are equivalent:
 
-- every pair of connected finite étale Galois p-group endpoint covers
-  has connected full product;
-- the combined pullback
+1. Every pair of connected finite étale Galois $p$-group endpoint covers
+   has connected full product.
+2. The combined pullback
 \[
-H^1_{\mathrm{et}}(X,\mathbf F_p)\oplus
-H^1_{\mathrm{et}}(Y,\mathbf F_p)
+H^1_{\mathrm{et}}(X,\mathbf F_p)\oplus H^1_{\mathrm{et}}(Y,\mathbf F_p)
 \longrightarrow H^1_{\mathrm{et}}(Z,\mathbf F_p)
 \]
-is injective;
-- with compatible geometric base points the map from pi_1(Z) to
-  the product of the two maximal pro-p endpoint quotients is surjective.
+   is injective.
+3. With compatible basepoints, $\pi_1(Z)$ surjects onto the product
+   of the two maximal pro-$p$ endpoint quotients.
 
-A sufficient condition is Hom(J(X),J(Y))=0 and both original covering
-degrees prime to p. No ordinariness, simplicity, Galois condition on
-the original legs or joint minimality is needed.
-
-For either selected pair, this condition holds on the branch
-5 not dividing deg(f). Thus all simultaneous Galois five-group
-endpoint towers are available there, but the no-clump degree
-obstruction survives unchanged. No arbitrary-degree span is
-excluded, and no clump or common cover is constructed.
+A sufficient condition is $\operatorname{Hom}(J(X),J(Y))=0$ and both
+original covering degrees prime to $p$. No ordinariness, simplicity,
+original Galois property or joint minimality is needed.
+For either selected pair this holds on the branch $5\nmid\deg(f)$.
+All simultaneous Galois five-group endpoint towers are available
+there, while the no-clump degree and root obstructions remain.
+No arbitrary-degree span is excluded and no common cover is constructed.
 
 [Proof](../../Proofs/shared_tensors/cartesian_endpoint_refinement.md).

@@ -35,7 +35,7 @@ def main():
         'geometric_audit':'Research/audits/RANK25_UNIVERSAL_TRACE_INDEPENDENT_2026_09_13.md',
         'clarification':'Fixed-splitting residual receives two factors of5; separate coefficientwise lift discrepancies remain in the cubic support. No new hypothesis or coefficient correction.',
         'scope':'Universal trace on the entire reduced fourth locus, all fourth choices. Other three fifth residuals remain unknown. This is not a fresh full W5 replay or Lean verification.'}
-    (root/'Research/computations/rank25_universal_trace_return_checks.json').write_text(json.dumps(receipt,indent=2)+'\n')
+    (root/'../litt3-computation-data/legacy_workspace_computations/rank25_universal_trace_return_checks.json').write_text(json.dumps(receipt,indent=2)+'\n')
     print(json.dumps(receipt,indent=2))
 
 

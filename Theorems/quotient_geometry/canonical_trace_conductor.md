@@ -1,7 +1,9 @@
 # The conductor determines the canonical trace annihilator
 
-Version2, 16 September 2026. Independently audited, including the
-finite-exception statement and moving-multiplier extension.
+Version3,3 October2026. The original first-height and moving-multiplier
+claims retain their independent audit. The finite second-parameter
+exception bound now holds at EVERY finite Frobenius height, using
+one-step vanishing for negative lines; this extension has author review.
 
 Let \(X\xleftarrow f Z\xrightarrow gY\) be an actual jointly minimal
 finite bi-étale span of smooth projective connected curves of genus
@@ -54,9 +56,10 @@ assertions impose no Galois or degree-prime-to-p condition.
 
 ## Raynaud consequences
 
-In characteristic \(p>0\), apply the preceding construction to
-the Frobenius-twisted actual span. Let \(G=g(X)\).
-If a nonzero \(\eta\in H^0(Z^{(1)},B_Z)\) is annihilated by
+In characteristic \(p>0\), fix ANY finite height \(a\ge1\) and
+apply the preceding construction to the a-fold Frobenius-twisted
+actual span. Let \(G=g(X)\).
+If a nonzero \(\eta\in H^0(Z^{(a)},B_{a,Z})\) is annihilated by
 all the degree-r canonical traces and \(h^0(T)=1\), then
 \[
 -\left\lfloor\frac{2G-2}{p}\right\rfloor
@@ -69,7 +72,7 @@ If the coefficients of \(\eta\) belong to a stable degree-zero
 summand of \(\mathcal A\) of rank greater than one, the upper
 bound on \(\deg\mathcal K_r\) is strictly negative.
 
-More precisely, write \(\deg\mathcal K_r=-j\). The ordinary
+At FIRST height, write \(\deg\mathcal K_r=-j\). The ordinary
 Cartier-exact differential represented by \(\eta\) has divisor
 \[
 \operatorname{div}(\eta)=f^*E_X+F_Z^*R,
@@ -154,7 +157,7 @@ actual normalization inclusion and its singularity quotient.
 ## Only finitely many second parameters can hide a Raynaud section
 
 Suppose p is odd and \(g(Y)=2\). Apply all the geometric notation
-to the first Frobenius-twisted span, and let
+to ANY fixed a-fold Frobenius-twisted span, with a at least one, and let
 \[
 s=g(X)-1,\quad b=\left\lfloor2s/p\right\rfloor,
 \quad D_0=\sum_x\max_{f(z)=x}(c_z)\,x,
@@ -162,10 +165,10 @@ s=g(X)-1,\quad b=\left\lfloor2s/p\right\rfloor,
 \tag{11}
 \]
 Assume n at least two and use \(r=\lfloor n/2\rfloor+1\).
-There is a finite set \(\mathcal E\subset J(Y^{(1)})\) such
+There is a finite set \(\mathcal E\subset J(Y^{(a)})\) such
 that for every N outside \(\mathcal E\), and EVERY
-\(L\in J(X^{(1)})\), the degree-r moving traces detect all of
-\(H^0(B_Z\otimes f^{(1)*}L\otimes g^{(1)*}N)\).
+\(L\in J(X^{(a)})\), the degree-r moving traces detect all of
+\(H^0(B_{a,Z}\otimes f^{(a)*}L\otimes g^{(a)*}N)\).
 
 If n is even, \(\mathcal E\) is empty when \(\kappa>b\).
 Otherwise it can be taken to be the single parameter
@@ -197,8 +200,10 @@ For the fixed genus-nine curve in characteristic five this gives
 \(|\mathcal E|\le\lfloor16(n+1)/5\rfloor\) in odd first degree,
 uniformly for all first parameters. The listed exceptional set is
 a necessary locus for failure, not an assertion that failure occurs
-at every listed point. The statement is at first Frobenius height;
-no such finite-exception assertion is made at higher height.
+at every listed point. The divisor formula (5) remains a first-height
+assertion;
+the same geometric construction and cardinality bound hold at every
+finite height a, independently of a.
 
 These results detect actual canonical traces and constrain a
 possible failure at the origin. They do not identify a trace with

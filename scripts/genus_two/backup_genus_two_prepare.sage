@@ -53,12 +53,11 @@ def main(output):
     assert P.is_irreducible()
     assert P(1)==14800 and P(-1)==16816
     assert ZZ(P(1)).valuation(2)==4 and ZZ(P(-1)).valuation(2)==4
-    Z = PolynomialRing(QQ, 'z'); z = Z.gen()
-    U = PolynomialRing(Z, 'U'); Ugen = U.gen(); PP = U(P.list())
-    ratio = Z(PP.resultant(PP(z*Ugen)))
-    ratio_factors = list(ratio.factor())
-    assert ratio.valuation(z-1) == 4
-    assert all(f == z-1 or not f.is_cyclotomic() for f,e in ratio_factors)
+    # Howe--Zhu Theorem6: the ordinary simple surface is absolutely simple.
+    surface_a, surface_b, surface_q = -8, 182, 125
+    assert surface_a != 0
+    assert surface_a**2 not in [surface_q+surface_b, 2*surface_b,
+                               3*surface_b-3*surface_q]
     F3 = PolynomialRing(GF(3), 'T'); T3 = F3.gen(); P3 = F3(P.list())
     assert P3 == (T3**2+2*T3+2)**2
     assert (T3**24-1) % P3 == 0
@@ -165,8 +164,10 @@ def main(output):
         'arithmetic':{'Hasse_Witt':[[encode(c) for c in row] for row in H.rows()],
             'ordinary':True,'point_count_q':125,'point_counts':counts,
             'Weil_polynomial_coefficients':[int(c) for c in P.list()],
-            'ratio_factors':[{'polynomial':str(f),'degree':int(f.degree()),
-                'multiplicity':int(e),'cyclotomic':bool(f.is_cyclotomic())} for f,e in ratio_factors],
+            'absolute_simplicity_criterion':'Howe--Zhu Theorem6',
+            'exceptional_surface_values':{'a':surface_a,'a_squared':surface_a**2,
+                'q_plus_b':surface_q+surface_b,'twice_b':2*surface_b,
+                'three_b_minus_three_q':3*surface_b-3*surface_q},
             'geometrically_absolutely_simple':True,'Hom_with_fixed_X':'zero, by dimensions and simplicity',
             'Cartier_Weierstrass_tests':cartier_weierstrass,
             'Cartier_infinity_eigen_determinant':encode(H[1,0]),
@@ -201,5 +202,5 @@ def main(output):
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output',default='Research/computations/backup_genus_two_preparation.json')
+    parser.add_argument('--output',default='../litt3-computation-data/legacy_workspace_computations/backup_genus_two_preparation.json')
     main(parser.parse_args().output)

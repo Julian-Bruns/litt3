@@ -17,7 +17,7 @@ from pathlib import Path
 
 def run(output):
     started=time.monotonic();root=Path(__file__).resolve().parents[2]
-    data=json.loads((root/'Research/computations/backup_genus_two_preparation.json').read_text())['opers']
+    data=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/backup_genus_two_preparation.json').read_text())['opers']
     k=GF(125,name='a',modulus=PolynomialRing(GF(5),'x')([1,1,0,1]));a=k.gen()
     Z=PolynomialRing(k,'z');z=Z.gen()
     decode=lambda cs:sum((k(c)*a**i for i,c in enumerate(cs)),k.zero())
@@ -79,5 +79,5 @@ def run(output):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output',default='Research/computations/backup_genus_two_twisted_tangents.json')
+    parser.add_argument('--output',default='../litt3-computation-data/legacy_workspace_computations/backup_genus_two_twisted_tangents.json')
     args=parser.parse_args();run(args.output)

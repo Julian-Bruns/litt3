@@ -118,7 +118,7 @@ c++ -std=c++17 -O2 scripts/orbifolds/verify_triangle246_unpruned.cpp -o /tmp/tri
 python3 scripts/orbifolds/verify_triangle246_monodromy.py --native /tmp/triangle246
 ```
 
-The [saved verification](../../../Research/computations/triangle246_verification.txt)
+The [saved verification](../../../../litt3-computation-data/legacy_workspace_computations/triangle246_verification.txt)
 checks both enumerations and all quotient witnesses.
 
 This supplies the degree24 row of the

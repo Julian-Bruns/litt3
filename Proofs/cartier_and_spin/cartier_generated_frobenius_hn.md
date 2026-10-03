@@ -1,9 +1,9 @@
-# Proof: the generated Cartier hyperplane has a stable Frobenius top factor
+# Proof: identify the Frobenius kernel with the sharp degree-one bundle
 
-Version1,22September2026. Independently audited. This bounded calculation concerns the actual fixed
-genus-nine curve. Both original common-cover problems remain open.
-It closes the suggested high-line HN shortcut: the relevant upper piece
-is stable of rank two, not a line of degree at least twenty-five.
+Version2,3October2026. The later exact line-degree theorem replaces
+the invariant-principal-parts stability calculation. The actual
+Cartier kernel is H=K(24O), so its maximum line degree is20.
+Both original common-cover problems remain open.
 
 The input bundles and their actual embeddings are those in
 [the generated-hyperplane proof](cartier_kernel_generated_subbundle.md),
@@ -24,14 +24,16 @@ has degree \(49\) and is geometrically stable. Consequently
 0\subset H\subset F^*U
 \]
 is the HN filtration, with slopes \(49/2\) and \(16\). In particular,
-\(F^*U\) has no line subbundle of degree at least \(25\).
+the maximum line-subbundle degree of both \(H\) and \(F^*U\)
+is exactly \(20\).
 
 The exact certificate is reconstructed by
 [cartier_generated_frobenius_hn.py](../../scripts/arithmetic/cartier_generated_frobenius_hn.py);
 its executed
 [receipt](../../../litt3-computation-data/cartier_generated_frobenius_hn_20260922/certificate.json)
-is stored outside the repository. The all-geometric stability argument
-below is separate from that finite-field arithmetic.
+is stored outside the repository. Only its quotient lifts, divisor
+units and extension coefficients are used. The obsolete Hankel and
+recurrence algorithm has been removed from the source.
 
 ## 1. Canonical Cartier grades and an elementary modification
 
@@ -186,115 +188,35 @@ c=(c_1,\ldots,c_{10})=(2,16,16,7,1,2,7,1,24,11).
 \tag{13}
 \]
 
-Only three small identities are needed for stability. Define
-\(K_r=(c_{i+j+1})_{0\le i,j<r}\). Then
+## 3. The later sharp line bound gives stability and the HN filtration
+
+Twist (9) by \(\mathcal O_X(-24O)\). Its graded lines become
+\(\mathcal O_X(-5O)\) and \(\mathcal O_X(6O)\), and (13) is
+exactly the transition class of K in
+[the sharp line-degree theorem](small_shift_line_twist_vanishing.md).
+A change of Cech sign only rescales one extension frame. Thus
 \[
-\det K_4=[12]\ne0,\qquad \det K_5=0,\qquad
-\operatorname{rank}K_5=4.
-\tag{14}
+H\simeq K(24O).
 \]
-The unique monic four-atom recurrence determined by \(c_1,\ldots,c_8\)
-is
+That theorem is proved from the explicit extension and cyclic
+determinant reduction alone; it does not depend on this HN result.
+It gives maximum line degree minus four in K and a saturated
+\(\mathcal O_X(-4O)\) subline. Consequently
 \[
-g(T)=T^4+[7]T^3+[6]T^2+2T+[5],\qquad \gcd(g,P)=1.
-\tag{15}
+\max_{M\subset H}\deg M=20,\qquad
+0\longrightarrow\mathcal O_X(20O)\longrightarrow H
+\longrightarrow\mathcal O_X(29O)\longrightarrow0.
 \]
-Specifically, if \(g=\sum_{j=0}^4g_jT^j\), then
-\(\sum_jg_jc_{i+j+1}=0\) for \(i=0,\ldots,4\), whereas its value
-for \(i=5\) is \([16]\ne0\). The first four equations determine
-\(g_0,\ldots,g_3\) using the invertible matrix \(K_4\).
+In particular \(20<49/2\), so H is geometrically stable. Since
+\(F^*U/H=\omega_X\) has slope16, the two-step filtration
+\(0\subset H\subset F^*U\) is the HN filtration.
 
-## 3. All-geometric stability from invariant principal parts
+A line in \(F^*U\) either maps nontrivially to \(\omega_X\), giving
+degree at most16, or lies in H, giving degree at most20. The displayed
+subline attains20, proving the exact bound for \(F^*U\) too.
 
-Suppose \(H\) is not stable. Since its degree is odd, its unique
-destabilizing line \(S\) has degree at least \(25\). The action of
-\(\gamma\) preserves \(U\), evaluation and \(H\), hence preserves \(S\).
-The elementary-modification presentation (9) is also invariant:
-its kernel is the intersection of \(H\) with the intrinsic
-degree-fifty summand of \(F^*N\).
-
-The composite \(S\to\mathcal O_X(30O)\) is nonzero, since a line
-contained in \(\mathcal O_X(19O)\) has degree at most \(19\).
-Its zero divisor identifies
-\[
-S=\mathcal O_X(30O-E),\qquad
-E\ge0,\quad \gamma E=E,\quad \deg E\le5.
-\tag{16}
-\]
-The lifting criterion for (9) says that \(e\) lies in the kernel of
-\[
-H^1(\mathcal O_X(-11O))
-\longrightarrow H^1(\mathcal O_X(-11O+E)).
-\tag{17}
-\]
-This is precisely the image of principal parts supported on \(E\).
-Both line bundles have negative degree, so no quotient by global
-sections is needed in this kernel description. The kernel is
-\(\gamma\)-invariant, and the order three is prime to five. Since
-\(e\) has character \(\zeta^2\), project the principal parts onto
-that character.
-
-Here is the full list of possible contributing directions when
-\(\deg E\le5\). Coordinates are those of (12). Put
-\[
-V(u)=(1,u,u^2,\ldots,u^9).
-\]
-
-* At a finite fixed point \(P_u\), where \(P(u)=0\), use \(y\) as
-  uniformizer. The \(\zeta^2\) polar directions first occur at pole
-  orders \(1\) and \(4\). They give \(V(u)\) and \(V'(u)\), with
-  minimal divisor costs \(1\) and \(4\), respectively. Indeed expand
-  \(y^2/(x-u)\) and \(y^2/(x-u)^2\) at infinity. At order four the
-  span also includes the earlier direction \(V(u)\).
-* A free orbit consists of three points above a nonbranch value
-  \(u\). A reduced orbit has one \(\zeta^2\) direction, again \(V(u)\),
-  and costs degree \(3\). Multiplicity two would already cost \(6\).
-* At \(O\), the parameter \(z=x^3/y\) has character \(\zeta^2\).
-  For \(\mathcal O(-11O)\), the contributing orders are \(z^{10}\)
-  and \(z^7\), first allowed by multiplicities \(1\) and \(4\).
-  Their spans are respectively the last coordinate vector and the
-  last two coordinate vectors of (12).
-
-For the finite branch directions, a change of local uniformizer can
-add an earlier direction to the displayed derivative; it leaves the
-stated span unchanged. All assertions concern geometric branch points,
-not only \(\mathbf F_{25}\)-rational points.
-
-The first seven coordinates, and hence \(K_4\), ignore both infinity
-directions. A simple moment \(bV(u)\) contributes a matrix of rank at
-most one. A confluent pair \(bV(u)+dV'(u)\) contributes rank at most
-two. This follows either by differentiating the rank-one factorization
-or by writing its entries as
-\[
-b\,u^{i+j}+d(i+j)u^{i+j-1}.
-\]
-Consequently any degree-at-most-five support using a free orbit has
-finite moment rank at most three: the orbit costs three and leaves
-at most two further simple directions. A fourth-order direction
-at a finite branch point likewise costs four and leaves rank at
-most three. A fourth-order infinity direction leaves rank at most
-one. Each contradicts \(\det K_4\ne0\).
-
-After discarding multiplicities that introduce no new character
-direction, the only remaining cases are therefore at most five
-distinct simple finite branch moments, with possibly the last
-coordinate direction at \(O\). At least four finite moments are
-required by \(\operatorname{rank}K_4=4\).
-
-If there are four finite moments, their nonzero weights and distinct
-support values \(u_1,\ldots,u_4\) make their recurrence
-\(\prod_j(T-u_j)\) the unique monic polynomial determined by the first
-eight coordinates. An infinity direction changes only \(c_{10}\),
-so it cannot affect this determination. Thus (15) would have four
-roots among those of \(P\), contradicting \(\gcd(g,P)=1\).
-
-If there are five finite moments, there is no remaining budget for
-an infinity direction. Zero weights reduce to the preceding case.
-Otherwise their \(5\)-by-\(5\) moment matrix factors as a Vandermonde
-matrix, the diagonal matrix of their five nonzero weights, and the
-transpose Vandermonde matrix. Its determinant is nonzero, contradicting
-\(\det K_5=0\).
-
-This exhausts (16), proving that \(H\) is geometrically stable.
-Its slope \(49/2\) exceeds the slope \(16\) of \(F^*U/H=\omega_X\);
-therefore the asserted two-step HN filtration follows.
+These are bounds on X. On an arbitrary finite cover, the pulled-back
+sharp line-degree bound need not persist. In particular the
+Y-descended degree24d line of the degree-one radical orbit is still
+compatible with the rank-two factor of slope49d/2; no common-cover
+exclusion follows.

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Exact certificate verification for the rank-two theta counterexample.
 
-Run with Python 3 and NumPy: python verify.py
+Run with Python 3 and NumPy: python verify.py --data-dir DIR
 No floating point, external CAS, network access, or random sampling is used.
 All supplied numerical data are in certificate.json.
 """
 from pathlib import Path
 import argparse
-from itertools import combinations, combinations_with_replacement, product
+from itertools import combinations, product
 import json
 import numpy as np
 from geometry import *
@@ -16,8 +16,6 @@ HERE = Path(__file__).resolve().parent
 H = np.array([[0,0,0,1],[0,0,4,0],[0,1,0,0],[4,0,0,0]], dtype=np.int16)
 PSI = [63,81,75,53,6,1]
 AP = [[55,82,104,115,87],[67,74,82,45,60],[19,60,68,13,18],[1]]
-TRIPLES = list(combinations_with_replacement(range(10),3))
-TRIPLE_INDEX = {t:i for i,t in enumerate(TRIPLES)}
 
 
 def determinant(A):
@@ -68,21 +66,6 @@ def square_bilinear(B):
         ans[x,y]=add(ans[x,y],mul(B[i,j],B[k,l]))
     assert np.array_equal(ans,ans.T)
     return ans
-
-
-def calibration_matrix(Ls,nodes):
-    """880 equations, 220 symmetric tensor entries and 16 node scalars."""
-    equations=[]
-    for n,(L,p) in enumerate(zip(Ls,nodes)):
-        sq=square_bilinear(matmul(H,L))
-        vp=v2(p)
-        for i,j in combinations_with_replacement(range(10),2):
-            row=[0]*236
-            for l in range(10):
-                row[TRIPLE_INDEX[tuple(sorted((i,j,l)))]]=vp[l]
-            row[220+n]=neg(int(sq[i,j]))
-            equations.append(row)
-    return np.array(equations,dtype=np.int16)
 
 
 def tensor_from_entries(entries):
@@ -181,38 +164,104 @@ def simultaneous_equations(T):
     return AZ,F
 
 
-def monomial_exponents(degree):
-    ans=[]
-    for word in combinations_with_replacement(range(4),degree):
-        ex=[0]*4
-        for j in word:ex[j]+=1
-        ans.append(tuple(ex))
-    return ans
+def ten_node_calibration(T,Ls,nodes):
+    """Identify the actual tensor by ten independent node evaluations."""
+    evaluation=np.array([v2(p) for p in nodes],dtype=np.int16)
+    _,columns=rref(evaluation)
+    _,rows=rref(evaluation.T)
+    assert len(columns)==len(rows)==10
+    assert determinant(evaluation[rows,:])!=0
+    chart_rows=np.array([L[3,:] for L in Ls],dtype=np.int16)
+    chart_ranks=[len(rref(np.delete(chart_rows,i,axis=0))[1]) for i in range(16)]
+    assert chart_ranks==[4]*16
+    scalars=[]
+    for L,p in zip(Ls,nodes):
+        left=matmul(np.array(p,dtype=np.int16)[None,:],H)[0]
+        right=matmul(matmul(np.array(nodes[0],dtype=np.int16)[None,:],H),L)[0]
+        j=next(j for j,x in enumerate(right) if x)
+        ratio=div(int(left[j]),int(right[j]))
+        assert np.array_equal(left,MUL[right,ratio])
+        scalar=mul(ratio,ratio)
+        vp=v2(p)
+        value=np.zeros((10,10),dtype=np.int16)
+        for l in range(10):
+            value=ADD[value,MUL[T[:,:,l],vp[l]]]
+        assert np.array_equal(value,MUL[square_bilinear(matmul(H,L)),scalar])
+        scalars.append(int(scalar))
+    return dict(node_evaluation_rank=10,independent_node_rows=list(map(int,rows)),
+                node_minor_determinant=int(determinant(evaluation[rows,:])),
+                intrinsic_node_scalars=scalars,chart_cover_ranks=chart_ranks)
 
 
-def multiplication_matrix(v):
-    out=np.zeros((5,5),dtype=np.int16)
-    for j in range(5):
-        w=pmod([0]*j+list(v),PSI)
-        out[:len(w),j]=w
-    return out
+def determinant2(A):
+    """Exact determinant over k1, in packed field codes."""
+    A=[list(map(int,row)) for row in A]
+    n=len(A)
+    assert all(len(row)==n for row in A)
+    value=1
+    for i in range(n):
+        j=next((j for j in range(i,n) if A[j][i]),None)
+        if j is None:
+            return 0
+        if j!=i:
+            A[i],A[j]=A[j],A[i]
+            value=n2(value)
+        pivot=A[i][i]
+        value=m2(value,pivot)
+        A[i]=[m2(x,i2(pivot)) for x in A[i]]
+        for j in range(i+1,n):
+            factor=A[j][i]
+            A[j]=[s2(x,m2(factor,y)) for x,y in zip(A[j],A[i])]
+    return value
 
 
-def unstable_macaulay(T):
-    """Restriction-of-scalars of the 20 by 20 cubic Macaulay matrix."""
-    AZ,F=simultaneous_equations(T)
-    qs=np.zeros((5,10,5),dtype=np.int16)
-    for r,j,k in product(range(5),range(10),range(10)):
-        qs[r,k]=ADD[qs[r,k],MUL[F[r,j,k],AZ[:,j]]]
-    m2ex,m3ex=monomial_exponents(2),monomial_exponents(3)
-    out=np.zeros((100,100),dtype=np.int16)
+def quadratic_gradient2(z):
+    return [[a2(z[j] if i==axis else 0,z[i] if j==axis else 0)
+             for i,j in MON2] for axis in range(3)]
+
+
+def reduced_point_jacobian(T,b,c):
+    """Six affine equations and their literal six-variable Jacobian."""
+    assert b[3]==c[3]==1
+    _,F=simultaneous_equations(T)
+    vb,vc=v22(b),v22(c)
+    db,dc=quadratic_gradient2(b),quadratic_gradient2(c)
+    rows=[]
     for r in range(5):
-        for x in range(4):
-            for j,ex in enumerate(m2ex):
-                new=list(ex);new[x]+=1
-                row=m3ex.index(tuple(new));col=4*r+x
-                out[5*row:5*row+5,5*col:5*col+5]=multiplication_matrix(qs[r,j])
-    return out
+        value=0
+        for j,k in product(range(10),repeat=2):
+            value=a2(value,m2(int(F[r,j,k]),m2(vb[j],vc[k])))
+        assert value==0
+        row=[]
+        for axis in range(3):
+            value=0
+            for j,k in product(range(10),repeat=2):
+                value=a2(value,m2(int(F[r,j,k]),m2(db[axis][j],vc[k])))
+            row.append(value)
+        for axis in range(3):
+            value=0
+            for j,k in product(range(10),repeat=2):
+                value=a2(value,m2(int(F[r,j,k]),m2(vb[j],dc[axis][k])))
+            row.append(value)
+        rows.append(row)
+    assert G2(c)==0
+    last=[]
+    for axis in range(3):
+        value=0
+        for ex,coefficient in Gterms.items():
+            if not ex[axis]%5:
+                continue
+            term=m2(coefficient,ex[axis]%5)
+            for j,x in enumerate(c):
+                term=m2(term,pow2(x,ex[j]-(j==axis)))
+            value=a2(value,term)
+        last.append(value)
+    rows.append([0,0,0]+last)
+    value=determinant2(rows)
+    assert value!=0
+    return dict(jacobian=rows,determinant=value,
+                determinant_base_code=value%125,
+                determinant_beta_code=value//125)
 
 
 def main():
@@ -255,18 +304,10 @@ def main():
         assert not np.any(matmul(eq,L.ravel()[:,None]))
     print('16 projective two-torsion translations: uniquely verified (rank 15 each).')
 
-    # Certify that the symmetric triquadratic is the unique geometrically
-    # calibrated tensor, up to its one overall scalar.
+    # The later interpolation lemma replaces the 880-by-236 calibration.
     T=tensor_from_entries(data['tensor_nonzero_unordered'])
-    eq=calibration_matrix(Ls,nodes)
-    assert eq.shape==(880,236)
-    sol=np.array([T[v] for v in TRIPLES]+[1]*16,dtype=np.int16)
-    assert not np.any(matmul(eq,sol[:,None]))
-    rr=data['calibration_minor_rows'];cc=data['calibration_minor_columns']
-    assert len(rr)==len(cc)==235 and len(set(rr))==len(set(cc))==235
-    minor_det=determinant(eq[np.ix_(rr,cc)])
-    assert minor_det==data['calibration_minor_determinant'] and minor_det!=0
-    print(f'Triquadratic calibration: rank 235/236, nonzero minor [{minor_det}].')
+    calibration=ten_node_calibration(T,Ls,nodes)
+    print(f"Actual triquadratic: node evaluation rank 10; minor [{calibration['node_minor_determinant']}].")
     print(f'Nonzero unordered tensor entries: {len(data["tensor_nonzero_unordered"])}.')
 
     # The actual bundle and its actual line twist.
@@ -307,14 +348,9 @@ def main():
     assert determinant(QM)==119
     print('Q is smooth: determinant of its symmetric matrix is [119].')
 
-    # Additional result: no common theta exception on any first-unstable
-    # twist family. This computation is not needed for the concrete example.
-    B=unstable_macaulay(T)
-    assert determinant(B)==78
-    Binv=np.array(data['unstable_macaulay_inverse'],dtype=np.int16)
-    assert np.array_equal(matmul(B,Binv),np.eye(100,dtype=np.int16))
-    print('First-unstable cubic Macaulay matrix: norm determinant [78], inverse verified.')
-    print('All certificates verified. The geometric implications are proved in PROOF.md.')
+    reduced=reduced_point_jacobian(T,b,c)
+    print(f"Explicit point is reduced: Jacobian determinant [{reduced['determinant_base_code']}]+[{reduced['determinant_beta_code']}]*beta.")
+    print('All point certificates verified. Uniform Frobenius assertions use the family theorem.')
 
 
 if __name__=='__main__':

@@ -2,7 +2,7 @@
 
 Version1, 25 September2026. Use the actual family R_xi, L=O_X(-O),
 bundle K and complete lower map (f,alpha) from the
-[quotient atlas](second_return_actual_quotient_atlas.md). Work over the
+[quotient atlas](second_return_global_transversality.md). Work over the
 entire algebraic closure; alpha is arbitrary in L_X(20O), and neither
 R_xi nor alpha is assumed equivariant.
 

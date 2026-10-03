@@ -64,7 +64,7 @@ def main():
     # Independent coefficient arithmetic was performed by the bounded auditor;
     # here only compare the fresh producer result to its separately saved scalar.
     workspace = Path(__file__).resolve().parents[3]
-    local_audit = workspace / "Research/computations/returned_neutral5_w4_local_audit.json"
+    local_audit = workspace / "../litt3-computation-data/legacy_workspace_computations/returned_neutral5_w4_local_audit.json"
     output = dict(status="PASS four fresh complete replays and output comparison",
                   certificate_root=str(cert), original_manifest_files=len(files),
                   original_manifest_sha256=sha(cert / "SHA256SUMS"),

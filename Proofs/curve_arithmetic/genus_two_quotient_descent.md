@@ -1,6 +1,10 @@
 # Proof: isolated canonical pencils and descent of the original span
 
-This proves [Version1](../../Theorems/curve_arithmetic/genus_two_quotient_descent.md).
+This proves [Version2](../../Theorems/curve_arithmetic/genus_two_quotient_descent.md).
+The original audits cover Version1. Version2 uses linear branch
+coefficients and multihomogeneous intersection degree, extends norm
+recovery to every hyperbolic target, and applies the later integral
+period argument on the Rosati-symmetric lattice.
 All curves are smooth, projective and geometrically connected. We first
 work over an algebraically closed field k of characteristic different
 from two. The bracket convention is
@@ -36,18 +40,18 @@ source fixed is trivial, up to the unique marked target identification.
 
 ## All genus-two targets in one finite polynomial system
 
-Every genus-two curve in odd characteristic admits a Rosenhain model
+Every genus-two curve in odd characteristic admits a model
 \[
-Y_{\mathbf t}:v^2=u(u-1)(u-t_1)(u-t_2)(u-t_3),
+Y_{\boldsymbol\sigma}:v^2=u(u-1)(u^3-\sigma_1u^2+\sigma_2u-\sigma_3),
 \]
-where 0,1,t1,t2,t3,infinity are distinct. Choose a basis of H0(C,omega_C).
-The coordinates of a,b and the three parameters give 2G+3 affine
+where the cubic has distinct roots avoiding 0 and1. Choose a basis
+of H0(C,omega_C). The coordinates of a,b and sigma give 2G+3 affine
 variables. Impose, coefficient by coefficient in H0(C,omega_C^6),
 \[
-\{a,b\}^2=ab(b-a)(b-t_1a)(b-t_2a)(b-t_3a).
+\{a,b\}^2=ab(b-a)(b^3-\sigma_1ab^2+\sigma_2a^2b-\sigma_3a^3).
 \]
-Every equation has total degree at most nine: the right side has
-degree six in a,b and degree at most three in the parameters. Take
+Every equation has degree at most six in a,b and at most one in
+the three parameters COLLECTIVELY. Take
 the open locus U where the branch parameters are distinct and a,b
 have no common zero. The latter is open because the incidence of a
 common zero is closed over the proper curve C. Its k-points are
@@ -67,58 +71,51 @@ relative Jacobian criterion for smooth curves makes the morphism
 Thus a tangent vector to U gives a deformation of the actual
 quotient considered above.
 
-The three labelled branch parameters have injective Kodaira--Spencer
-map. Indeed, the genus-two canonical double cover and its six branch
-sections are intrinsic and deform with the curve. The involution has
-order two, invertible in k. In a trivial first-order deformation of
-the curve, its quotient P1 and labelled branch sections are trivial.
-A marked identification cannot permute the six distinct reductions.
-A projective automorphism fixing the three labelled points 0,1,infinity
-is the identity, so each ti has zero first-order variation. Equivalently,
-the usual ordered-branch presentation of the genus-two stack is étale
-locally a three-dimensional parameter space with only the finite
-étale hyperelliptic stabilizer.
+These three parameters have injective Kodaira--Spencer map. For
+ordered roots t1,t2,t3, the six branch sections are intrinsic in
+the canonical double cover. A trivial curve deformation gives a
+trivial labelled branch deformation; a projective automorphism fixing
+0,1,infinity is the identity. Passing to elementary symmetric
+coefficients is etale, with Vandermonde Jacobian a unit on this open
+locus. Thus the same injectivity holds for sigma.
 
-Fixed-source rigidity now forces dti=0. The map to this fixed target
+Fixed-source rigidity now forces dsigma=0. The map to this fixed target
 has no infinitesimal deformation, so da=db=0 as well. Consequently
 every point of U has zero Zariski tangent space. U is a finite-type
 scheme over k, hence it is a finite reduced zero-dimensional scheme.
 Each of its points is an isolated reduced point of the full affine
 polynomial system, because U is open in that system.
 
-## An elementary degree bound for these reduced isolated points
+## The multihomogeneous degree bound
 
-We use the following form of Bézout: reduced isolated solutions of
-polynomials of degree at most d in N variables, whose Jacobian has
-rank N there, number at most d^N. Here is a way to avoid any assumption
-on other components. There are finitely many isolated solutions.
-Choose N generic constant linear combinations F1,...,FN of the
-equations whose Jacobian is invertible at every one of the specified
-points. This is possible because each imposes a nonempty open
-condition on the choices and k is infinite.
+Compactify the two variable blocks in
+\(\mathbf P^{2G}\times\mathbf P^3\). Every equation homogenizes to
+bidegree (6,1). Let H and K be the two hyperplane classes. The
+[projective bundle formula](https://stacks.math.columbia.edu/tag/02TV)
+gives the intersection number
+\[
+(6H+K)^{2G+3}
+=\binom{2G+3}{3}6^{2G}
+\quad\text{in top degree}.
+\]
+This counts the reduced isolated points even if the original equations
+have unwanted components. Choose \(2G+3\) constant linear combinations
+with invertible Jacobian at every point of U, and perturb them by
+\(s\) times general sections of \(\mathcal O(6,1)\). Over k((s))
+their projective intersection is zero-dimensional with the displayed
+length. Each original point lifts uniquely by its invertible Jacobian,
+so distinct points of U give distinct generic points. Thus
+\[
+\#U(k)\le N_G=\binom{2G+3}{3}6^{2G}.
+\]
+Every actual quotient field admits one of these presentations; the
+reconstruction distinguishes the actual maps. No division by varying
+target automorphism counts is needed.
 
-Perturb these N equations to Fi+s xi^d. Over k((s)), their degree-d
-leading forms have no common projective zero: their resultant as a
-polynomial in s has nonzero leading coefficient, the resultant of
-x1^d,...,xN^d. Thus the affine generic intersection is finite of
-length d^N by the complete-intersection Bézout theorem (or its graded
-Hilbert-series proof). Every original point lifts uniquely over
-k[[s]] by its invertible Jacobian. Distinct specializations give
-distinct generic points. Their number is therefore at most d^N.
-Positive-dimensional unwanted components of the original system
-do not enter this argument.
-
-Taking N=2G+3 and d=9 gives #U(k)<=9^(2G+3). Each actual genus-two
-étale quotient subfield admits at least one Rosenhain presentation
-over k, so this bounds the number of actual quotient subfields too.
-We do not divide by automorphism counts or assume they are constant.
-
-In characteristic five, restrict instead to the family with four
-fixed finite branch points 0,1,2,3. There are 2G+1 variables and the
-sextic equations have degree at most seven. The same rigidity and
-degree argument yields at most 7^(2G+1) triples (a,b,t). Restricting
-the labelled-branch Kodaira--Spencer map to this parameter line
-remains injective.
+For the selected one-parameter family the parameter block is instead
+\(\mathbf P^1\), while the equations still have bidegree (6,1).
+The same argument gives \((2G+1)6^{2G}\) triples (a,b,t). Its branch
+Kodaira--Spencer map is the restriction of the preceding etale chart.
 
 ## Descent of the original first leg
 
@@ -154,7 +151,7 @@ Fix that model of Z over F_(q^a); its genus is G=1+n(h-1). Frobenius
 acts on its finite set of actual genus-two étale quotient subfields.
 The orbit of the subfield g*k(Y) has length
 \[
-e\le9^{2G+3}=9^{2n(h-1)+5}.
+e\le N_G=\binom{2G+3}{3}6^{2G}.
 \]
 It is therefore stable under Gal(k/F_(q^(ae))). The restrictions of
 the existing action on k(Z) give an actual continuous descent datum
@@ -165,33 +162,35 @@ and can be checked after scalar extension. Both original maps now
 exist on the same original source over F_(q^(ae)). This proves the
 stated arithmetic bound, without requiring any Jacobian hypothesis.
 
-For the one-parameter family and a prime parameter orbit ell, one
-also has the sharper alternative
+The norm-recovery and symmetric-lattice argument below also give
+\(e\mid\mathcal M(G(2G-1))\). If the target's moduli orbit has
+PRIME length ell, it divides ae. If ell divides a, use the cover
+bound; otherwise it divides e and therefore satisfies
+\(\ell-1\le G(2G-1)\) by the cyclotomic degree bound. Consequently
 \[
-\ell\le\max\{n(n!)^{17},7^{16n+3}\}
+\ell\le\max\{n(n!)^{2h-1},G(2G-1)+1\}.
 \]
-when X has genus nine over F25. If ell divides a, use ell<=a.
-Otherwise its ell coefficient conjugates under Frobenius^(a) are
-distinct and give ell target parameters from this fixed source;
-apply the one-parameter count.
+This does not need the one-parameter family or ordinariness.
 
 ## Consequence for the selected main pair
 
-Use the constants B,D,G_star,L_star,K in the statement. The established
-branch-set calculation gives the selected Y moduli orbit ell>K.
-Suppose n<=D^2. Since D=B!<=B^B<=3^(B^2), the general bound gives
+For h=9, \(G(2G-1)+1=128n^2+24n+2\le154n^2\).
+For n>=2 this is at most \(n(n!)^{17}\): use
+\(n!\ge2^{n-1}\) and the n=2 case, with the ratio increasing.
+The n=1 case would give ell<=154, impossible for the selected partner.
+Thus every witness satisfies \(\ell\le n(n!)^{17}\).
+
+Now use B,D,G_star,L_star,K from the statement and the established
+ell>K. If n<=D^2, then D=B!<=B^B<=3^(B^2) gives
 \[
-r_{25}(Y)\le n(n!)^{17}9^{16n+5}
-\le3^{B^2(34D^2+2)+32D^2+10}.
+n(n!)^{17}\le n^{17n+1}\le D^{34D^2+2}
+\le3^{B^2(34D^2+2)}
+<3^{4(8D+1)^2(B+1)^2}<K<\ell.
 \]
-Here n(n!)^17<=n^(17n+1)<=D^(34D^2+2). The difference between
-4(B+1)^2(8D+1)^2 and the exponent on the right is
-\[
-(222B^2+512B+224)D^2+64(B+1)^2D+2B^2+8B-6>0.
-\]
-Thus r25(Y)<3^(4G_star^2 L_star)<K, a contradiction. Every witness
-has n>D^2. This comparison is a symbolic inequality; computing the
-astronomical factorials is unnecessary.
+The strict exponent inequality follows already from
+\(4(8D+1)^2(B+1)^2\ge256D^2(B+1)^2\) and D>=1.
+This contradicts the sharper degree criterion, proving n>D^2
+without evaluating any astronomical factorial.
 
 The general bound grows with n. It gives no reduction of an arbitrary
 span to bounded degree and no exclusion of an isolated nonliftable
@@ -199,25 +198,30 @@ span with sufficiently large n.
 
 ## Intrinsic recovery from the actual norm endomorphism
 
-Here retain an actual finite étale u:C->Y with g(Y)=2 and d=deg u=G-1.
-The following independent lemma from returned report08 is useful even
-without the counting argument. Define the base-point-free canonical map
+Here k may have ANY characteristic. Retain an actual finite etale
+u:C->Y with h=g(Y)>=2 and d=deg u=(G-1)/(h-1).
+The returned norm-recovery argument extends using the absence of
+translation stabilizers for every hyperbolic Abel curve. Define the
+canonical map, without choosing a base point,
 \[
 b_C(z)=[O_C((2G-2)z)\otimes\omega_C^{-1}]\in J(C).
 \]
 The norm formula and étaleness give
 \[
 T_u b_C=u^*[d]b_Y\circ u,\qquad
-b_Y(y)=[O_Y(2y)\otimes\omega_Y^{-1}].
+b_Y(y)=[O_Y((2h-2)y)\otimes\omega_Y^{-1}].
 \]
 Let D be the normalization of the reduced image of T_u b_C. The
 resulting C->D factors through Y. After choosing an Abel--Jacobi
 embedding j:Y->J(Y), the map Y->D is, up to translation, the
-restriction of u*[2d], an isogeny onto its image with finite kernel.
+restriction of u*[d(2h-2)], an isogeny onto its image with finite kernel.
 
-No nonzero torsion translation preserves j(Y). Otherwise its finite
-cyclic group would act freely on Y, giving a finite étale quotient
-of degree N>1. Riemann--Hurwitz would give 1=N(g(Y/H)-1), impossible.
+No nonzero torsion translation preserves j(Y). Such a translation
+would induce a free cyclic action on Y and the IDENTITY action on
+J(Y): differences of translated points are unchanged. All canonical
+forms would therefore descend to its actual etale quotient Y/H,
+giving g(Y/H)=h even in characteristic dividing |H|. Riemann--Hurwitz
+would then give h-1=|H|(h-1), impossible for h>=2 and |H|>1.
 If the restriction of u*[2d] to j(Y) had separable degree greater
 than one, its generic fiber would contain two points differing by
 one of the finitely many nonzero geometric kernel points. The
@@ -225,7 +229,8 @@ finitely many intersections j(Y) intersect (j(Y)+t) would then cover
 a dense open of j(Y); one translation would preserve j(Y), contrary
 to the preceding argument. Thus Y->D is purely inseparable.
 
-Write M for the subfield pulled back from D under T_u b_C. Then
+Write M for the subfield pulled back from D under T_u b_C. In positive
+characteristic p,
 \[
 u^*k(Y)=\{z\in k(C):z^{p^s}\in M\text{ for some }s\ge0\}.
 \]
@@ -233,6 +238,7 @@ One inclusion is pure inseparability of Y->D. For the other, an
 element of the right side is purely inseparable over u*k(Y), whereas
 k(C)/u*k(Y) is separable. This proves equality and recovers the
 actual embedded quotient field from T_u.
+In characteristic zero the same argument gives u*k(Y)=M directly.
 
 If C is defined over a finite field E and T_u is E-rational, then
 b_C, its image subfield, and this purely inseparable closure are
@@ -242,6 +248,36 @@ Conversely a descended morphism has a descended pullback and norm,
 hence a descended T_u. This is a statement about the quotient map,
 not merely an isogeny class of its Jacobian. It permits nonreduced
 kernels and p-divisible d.
+
+## The Rosati-symmetric lattice gives the full descent period
+
+Fix a model of C over a finite field E. The norm endomorphism
+\(T_u=u^*u_*\) is self-adjoint for the canonical principal
+polarization of J(C). Its Frobenius action therefore lies on the
+integral lattice
+\[
+\Lambda^+=\{T\in\operatorname{End}(J(C)_k):T^\dagger=T\}.
+\]
+This lattice is free of finite rank. By
+[Milne, Abelian Varieties, Theorem12.5 and Section17](https://www.jmilne.org/math/xnotes/AVs.pdf#page=21),
+it injects on an auxiliary Tate module into the self-adjoint matrices
+for the alternating polarization pairing. If J is that pairing matrix,
+self-adjointness is \(JT=T^{\mathsf t}J\), so JT is skew-symmetric.
+Thus
+\[
+\operatorname{rank}\Lambda^+\le\binom{2G}{2}=G(2G-1)=R_G.
+\]
+The polarization is E-rational, so Frobenius preserves the lattice.
+Its generators are defined over a common finite extension, hence
+Frobenius acts through a finite-order integral matrix. The
+[integral period argument](../jacobians/isogeny_sieves/solvable_atlas_frobenius_periods.md#3-the-second-map-a-small-integral-hom-lattice)
+gives order dividing \(\mathcal M(R_G)\): every eigenvalue order j
+has cyclotomic degree \(\varphi(j)\le R_G\), and the full order
+is their lcm. Recovery from T_u identifies its Frobenius stabilizer
+with that of the ACTUAL quotient field. Therefore every such field's
+orbit length divides \(\mathcal M(R_G)\), and all quotient maps
+descend simultaneously over that extension of E. This argument
+uses neither ordinariness nor simplicity.
 
 The fundamental-group inputs are SGA1, proper specialization and the
 arithmetic exact sequence; the deformation step is the nilpotent

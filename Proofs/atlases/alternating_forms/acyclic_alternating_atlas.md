@@ -188,7 +188,7 @@ Since A_s is linear in b^[5], these coefficients have b-degree80 and
 are fifth powers over the perfect coefficient field. Taking coefficient
 fifth roots gives necessary degree16 polynomials in b. The full atlas
 ideal is radical, so these roots also belong to that ideal, as explained
-in `rooted_atlas_projection`.
+in `theta_open_atlas_projection`.
 
 The resulting17 equations need not characterize a common kernel: a
 singular alternating matrix pencil can have a kernel that varies with

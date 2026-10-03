@@ -1,23 +1,17 @@
-# Scalars of order dividing696 force degree at least40
+# Exact residue masses for the finite scalar group of order696
 
-Version2, 26 September2026. The necessary moment classification below
-is retained. The later [fourth-trace theorem](klein_four_balanced_endpoint_exclusion.md)
-excludes this entire scalar group in every actual degree. Retain both actual endpoint maps and all
-Klein-four comparison hypotheses of
-[the trace theorem](klein_four_trace_branch_finiteness.md). If
+Version3, 30 September2026. Use the explicit labels, allowed integer
+weights, and two coefficient identities of
+[structural moments](klein_four_structural_moments.md). If
 \[
 \epsilon\in\mathbf F_{25}^{\times}\mu_{29}
 \quad\text{equivalently }\epsilon^{696}=1,
 \]
-then the integer pole weights have residue mass at least28. Thus
-\[
-n\ge40+5j_2,
-\]
-where j2 counts weight-six common-pole values. This applies in every
-degree. In particular every remaining degree17..39 comparison has
-epsilon^696!=1. It does not exclude those degrees with arbitrary scalar.
+then the weights have residue mass at least28. If k weights are6,
+their total integer mass is the residue mass plus5k. No geometric
+degree or genus is a hypothesis or conclusion here.
 
-At degree40 there is exactly one necessary moment configuration in
+At residue mass28 there is exactly one coefficient moment configuration in
 this scalar group up to coefficient25-Frobenius, allowed mu29 change
 of parameter and endpoint interchange. Normalize the first balanced
 endpoint phase to1 and choose zeta satisfying
@@ -26,14 +20,17 @@ f7=(4,22,7,20,21,7,24,1) over F25. A representative has
 \epsilon=[23]\zeta^2,
 \]
 both endpoint multisets consisting of the four canonical labels once
-each, with phase1. Its common-pole weights are3 at exponents
+each, with phase1. Its integer weights are3 at exponents
 {1,5,6,8,10,26},2 at{3,11,16,19,20}, and zero elsewhere.
-It has e=11,j2=0, and0<=j1<=6. Any actual curve in this configuration
-has genus at most31. No such curve or pair of maps is constructed.
+It has eleven nonzero weights and no residue1, so none can be upgraded
+to6. This is a coefficient datum, not a curve or pair of maps.
 
 For the smaller normalized sector epsilon in F25*, the residue mass
-is at least29, giving n>=41+5j2. Its two minimal profiles are exchanged
+is at least29. Its two minimal residue vectors are exchanged
 by endpoint interchange. This extra premise is made after the first
 endpoint phase has been normalized; it is not assumed automatically.
+
+The exact mass28 datum remains an input to the
+[fourth endpoint trace](klein_four_fourth_endpoint_trace.md).
 
 [Proof and independent arithmetic](../../Proofs/cartier_and_spin/klein_four_small_scalar_group.md).
