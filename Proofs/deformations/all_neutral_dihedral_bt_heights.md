@@ -47,7 +47,7 @@ The [retained census](../../../litt3-computation-data/dihedral5-family-w4-202609
 and [changed-Frobenius replay](../../../litt3-computation-data/dihedral5-family-w4-20260911/changed_frobenius/summary.json)
 contain all28 successful comparisons, at Laurent precisions3500 and
 3800. All fourteen complete values agree between the two runs. The
-[model audit](../../Research/computations/dihedral5_family_model_independent_audit.json)
+[model audit](../../../litt3-computation-data/legacy_workspace_computations/dihedral5_family_model_independent_audit.json)
 checks the original first marking and flat comparison. The selected
 row additionally has the old independent
 [fourth-obstruction calculation](cyclic_descent/neutral_five_fourth_obstruction.md)

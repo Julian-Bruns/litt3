@@ -32,31 +32,34 @@ scalar action is twisted, but perfection of k gives the stated
 truncated coordinate algebra. No scalar Frobenius is replaced by
 a k-linear operation on a relative twist.
 
-## No proper common ideal and the full scheme-theoretic orbit
+## A generic field algebra has the full scheme-theoretic orbit
 
-There is no nonzero proper common IDEAL subobject I of A_r. Indeed
-on either endpoint C it would be a vector subbundle of A_r, hence
-have positive rank strictly smaller than p^r. At the generic point,
-however, A_r is the FIELD k(C), regarded as an algebra over k(C)
-by its p^r-power embedding. A nonzero ideal in this field is the
-whole field. Such a subbundle ideal is therefore impossible.
+Let E be the finite common algebra in the general statement. There
+is no nonzero proper common ideal subobject: at the endpoint with
+generic algebra a field, its positive rank would be smaller than
+the rank of E, whereas a field has no such ideal.
 
-Let A=k[t]/t^q, R=k[H_r], and write the action coaction as
-rho:A->A tensor R. The unique geometric point has augmentation
-epsilon:A->k, t->0. The orbit morphism has coordinate map
+Let A be its fiber algebra, R=k[H], and write the action coaction as
+rho:A->A tensor R. Choose any geometric point with augmentation
+epsilon:A->k. The orbit morphism has coordinate map
 \[
 phi=(epsilon\otimes1)rho:A\longrightarrow R.
 \]
-Set J=ker(phi). It is a proper ideal, and is an H_r-subrepresentation:
+Set J=ker(phi). It is a proper ideal, and is an H-subrepresentation:
 coassociativity gives
 \[
 (phi\otimes1)rho=\Delta phi.
 \]
 Hence rho(J) is contained in J tensor R, since tensoring vector
 spaces over k is exact. Tannakian reconstruction carries this
-subrepresentation to a common subbundle ideal of A_r. The preceding
+subrepresentation to a common subbundle ideal of E. The preceding
 generic-field argument forces J=0. Thus phi is injective. Its value
-on t is the constant coordinate coefficient a_0, so
+on every nilpotent of A retains that nilpotent's exact power order.
+
+For E=A_r the generic algebra is the FIELD k(C), with scalar
+embedding the p^r-power map. Its fiber is k[t]/t^q and has unique
+augmentation t->0. Here phi(t) is the constant coordinate coefficient
+a_0, so
 \[
 a_0^q=0,\qquad a_0^{q-1}\ne0.
 \]
@@ -74,69 +77,22 @@ No subgroup is claimed to be normal, and the argument does not assert
 that an alpha_(p^r) subgroup embeds in H_r. A faithful coordinate-ring
 map from the orbit is precisely what is needed for the bound.
 
-## The independent determinant argument from Version1
+## Character lifting across nilpotents
 
-For comparison, the following calculation gives the weaker bound
-h_r>=r-v_p(g(Y)-1) when p is odd. It can apply to other tensor
-objects where the generic-field ideal argument is unavailable.
-
-### A character-lifting lemma through the nilpotent structure
-
-Let H be ANY affine algebraic group over k, put R=k[H] and
-I=sqrt(0), and suppose I is killed by p^h-th powers. The reduced
-subscheme H_red is a subgroup because k is perfect. Let chi be a
-character of H whose restriction to H_red is lambda^{p^r} for a
-character lambda of H_red. Then there is a character psi of H with
+The independent character lemma used in Version1 remains useful.
+Let H be any affine algebraic group over k whose nilradical is killed
+by \(p^h\)-th powers. If a character chi restricts to \(\lambda^{p^r}\)
+on \(H_{\rm red}\), then
 \[
-\chi^{p^h}=\psi^{p^r}.
-\tag{1}
+\chi^{p^h}=\psi^{p^r}
 \]
+for a character psi of H. Lift lambda to a unit u in k[H].
+The defects of its group-like equation and of
+\(\chi=u^{p^r}\) lie in nilpotent ideals killed by \(p^h\).
+Thus \(\psi=u^{p^h}\) is group-like and has the asserted power.
+No quotient by the reduced subgroup is assumed.
 
-Indeed choose a unit u in R lifting lambda. Units lift across a
-nilpotent ideal. The group-like equation for lambda says
-\[
-\Delta(u)-u\otimes u\in I\otimes R+R\otimes I.
-\]
-The ideal on the right is killed by p^h-th powers, by the
-characteristic-p power identity. Thus psi=u^{p^h} is group-like,
-and its counit is one. It is a character. Also
-chi-u^{p^r} belongs to I, which proves (1). This calculation does
-not require H_red to be normal and does not posit a group quotient
-H/H_red.
-
-### Applying the determinant on the actual endpoint
-
-The reduced subgroup of G_r consists of zero-constant coordinate
-changes. Its linear coefficient a_1 is a character. On the fiber
-A_r, such a change has triangular matrix with diagonal entries
-1,a_1,...,a_1^{q-1}. Therefore
-\[
-\det(A_r)|_{(H_r)_{\mathrm{red}}}
-=a_1^{q(q-1)/2}
-=\left(a_1^{(q-1)/2}\right)^{p^r}.
-\tag{2}
-\]
-The exponent (q-1)/2 is integral because p is odd. The morphism
-(H_r)_red->G_r factors through its reduced subgroup; no replacement
-of H_r itself by that subgroup is made.
-
-Apply (1) to (2). Characters of H_r correspond to actual common
-line objects in the tensor subcategory. Taking their integral
-degrees on Y gives
-\[
-p^{h_r}\deg\det(\mathcal A_{r,Y})
-=p^r\deg\mathcal L_Y
-\tag{3}
-\]
-for such a common line L. Riemann--Roch for finite Frobenius gives
-\[
-\deg\det(\mathcal A_{r,Y})=(p^r-1)(g(Y)-1).
-\tag{4}
-\]
-The integer p^r-1 is prime to p. Taking p-adic valuations in
-(3)-(4) proves h_r>=r-v_p(g(Y)-1), including the case where the
-right side is nonpositive.
-
-Both arguments use the actual Frobenius algebra, not mere rank
-growth. They nevertheless supply only an unbounded-height condition,
-not a reason why such a proalgebraic monodromy group cannot occur.
+For the Frobenius algebra the full-orbit argument already gives
+the stronger genus-independent bound, so the old determinant
+application is unnecessary. Unbounded height remains a necessary
+condition, not a contradiction to proalgebraic monodromy.

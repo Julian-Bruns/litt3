@@ -79,7 +79,7 @@ def main():
                 source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                 seconds=time.monotonic()-start,
                 scope='Finite identities only; actual geometric comparison and coinvariant/trace bridge are proved in separate audit')
-    out=Path('Research/computations/neutral5_closure_coinvariant_independent_audit.json')
+    out=Path('../litt3-computation-data/legacy_workspace_computations/neutral5_closure_coinvariant_independent_audit.json')
     out.write_text(json.dumps(result,indent=2)+'\n'); print(json.dumps(result),flush=True)
 
 

@@ -6,9 +6,9 @@ marker='# Precompute every equation (at most128 nonzeros). Unknown order ell[i,r
 assert source.count(marker)==1
 head,tail=source.split(marker)
 exec(preparse(head))
-grad=json.loads(Path('Research/computations/wronskian_line_gradient.json').read_text())
-dual=json.loads(Path('Research/computations/wronskian_serre_dual.json').read_text())
-rtensor=json.loads(Path('Research/computations/wronskian_universal_image.json').read_text())
+grad=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_line_gradient.json').read_text())
+dual=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_serre_dual.json').read_text())
+rtensor=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_universal_image.json').read_text())
 Qc=matrix(k,[parse(row) for row in grad['Qc_matrix']])
 S=matrix(k,[parse(row) for row in dual['S_matrix']])
 piv=list(Qc.pivots()); inv=Qc.matrix_from_columns(piv).inverse()
@@ -22,8 +22,8 @@ identical=all(v==0 for v in wquad.values())
 print('radial difference identically zero:',identical,flush=True)
 # Reuse the exact streamed elimination implementation and its explicit
 # coefficient verification, with a distinct destination and statement.
-assert tail.count('Research/computations/wronskian_linear_syzygy.json')==1
-tail=tail.replace('Research/computations/wronskian_linear_syzygy.json','Research/computations/wronskian_radial_syzygy.json')
+assert tail.count('../litt3-computation-data/legacy_workspace_computations/wronskian_linear_syzygy.json')==1
+tail=tail.replace('../litt3-computation-data/legacy_workspace_computations/wronskian_linear_syzygy.json','../litt3-computation-data/legacy_workspace_computations/wronskian_radial_syzygy.json')
 tail=tail.replace('Degree-one polynomial row-syzygy sufficient-certificate search only; failure does not imply an atlas','Projected radial difference modulo restricted N; no atlas exclusion')
 tail=tail.replace('W(U), unknown','i_proj(R_U e)(U)-2W(U,e), unknown')
 tail=tail.replace("data['W_quadratic_coefficients']","data['radial_difference_quadratic_coefficients']")
@@ -39,5 +39,5 @@ tail=tail.replace(progress,progress+'''
             print('Candidate verified against ALL equations; stopping elimination early',flush=True)
             break
 ''')
-tail=tail.replace("Path('Research/computations/wronskian_radial_syzygy.json').write_text", "data['radial_difference_identically_zero']=identical\ndata['projection_matrix']=[enc(row) for row in proj.rows()]\ndata['all16896_coefficient_equations_verified']=bool(witness is None)\nPath('Research/computations/wronskian_radial_syzygy.json').write_text")
+tail=tail.replace("Path('../litt3-computation-data/legacy_workspace_computations/wronskian_radial_syzygy.json').write_text", "data['radial_difference_identically_zero']=identical\ndata['projection_matrix']=[enc(row) for row in proj.rows()]\ndata['all16896_coefficient_equations_verified']=bool(witness is None)\nPath('../litt3-computation-data/legacy_workspace_computations/wronskian_radial_syzygy.json').write_text")
 exec(preparse(tail))

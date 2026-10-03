@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 
 root=Path(__file__).resolve().parents[2]
-data=root/'Research/computations'
+data=root/'../litt3-computation-data/legacy_workspace_computations'
 k=GF(25,name='a',modulus=PolynomialRing(GF(5),'z')([2,4,1])); a=k.gen()
 get=lambda s:k(sage_eval(s,locals={'a':a}))
 d=json.loads((data/'genus_two_intrinsic_tensor.json').read_text())

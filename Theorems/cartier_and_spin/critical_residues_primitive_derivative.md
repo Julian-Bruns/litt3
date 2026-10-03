@@ -1,6 +1,6 @@
 # Split-source critical residues need no tame cluster-size assumption
 
-Version1,30 September2026. Let R=k[[r]], with a k-derivation delta
+Version2,30 September2026. Let R=k[[r]], with a k-derivation delta
 preserving R. In R[[W]] let
 \[
 F=\lambda\phi^2+\phi S+\tau,\qquad
@@ -27,8 +27,21 @@ are used in that case. If they are generically simple, the sum is
 \Lambda=-(\phi S+\tau)/\phi^2.
 \]
 No condition that the characteristic is prime to m is needed.
-When that condition does hold, n=m-1, recovering the earlier
-[split-source lemma](actual_split_critical_residue_integrality.md).
+When that condition does hold, n=m-1. The sum includes every
+critical root in the disc, equivalently its base-field residue trace.
+Coefficient differentiation of Lambda agrees with differentiation
+of its critical value because partial_W Lambda=0 there.
+
+Multiplying the integral sum by any regular base one-form gives
+zero residue. For an actual finite etale source over an algebraically
+closed residue field, its completed local algebra supplies the split
+integral source roots; no simultaneous
+Galois closure of two maps is presumed. In the degree140 family
+S''=-2 eta. At its finite nonzero actual critical fibres the source
+clusters have size two or three, phi is a unit and the critical
+quadratic is generically separable. The displayed formula gives
+actual-scale vanishing of the inverse-eta trace, including critical
+collisions, for every multiplier integral in the source chart.
 
 The nonzero reduction of F' is substantive. The statement does not
 remove vertical derivative-content loci where every coefficient of

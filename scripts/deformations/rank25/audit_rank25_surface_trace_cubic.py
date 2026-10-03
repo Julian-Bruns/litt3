@@ -47,6 +47,6 @@ result = {
     'scope_limit': 'Does not bound the full surface trace support or evaluate its other sectors; integral carries remain.',
     'receipts': receipts,
 }
-target = root/'Research/computations/rank25_surface_trace_cubic.json'
+target = root/'../litt3-computation-data/legacy_workspace_computations/rank25_surface_trace_cubic.json'
 target.write_text(json.dumps(result, indent=2)+'\n')
 print(json.dumps(result, indent=2))

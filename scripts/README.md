@@ -26,6 +26,10 @@ proof, or audit bodies. `dependencies` includes definitions and theorem
 dependencies; shared nodes are expanded once. Optional `legacy_dependencies`
 paths appear as unpromoted proof inputs, and validation checks that each exists
 inside the repository. These paths do not imply reviewed theorem status.
+Raw certificates in the sibling `litt3-computation-data` store are listed
+under `evidence_files`; validation checks existence and confines these paths to
+that store, including resolved symlinks. Dependency display and search use
+their metadata without loading payloads. Evidence is not a promoted theorem.
 `frontier` prints `Research/STATE.md`.
 
 `links` explicitly reads canonical definitions, statements and proofs to

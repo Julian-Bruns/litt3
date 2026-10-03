@@ -1,6 +1,6 @@
 # The next scalar gap is the uniform pole24 profile
 
-Version1,27 September2026. In an actual same-source shared-line/tensor
+Version2,3October2026. In an actual same-source shared-line/tensor
 comparison with invariant endpoint norms:
 
 - At pole24, if at least one four-root multiplicity profile differs
@@ -11,8 +11,9 @@ comparison with invariant endpoint norms:
 
 The permitted normalization is t->r t,epsilon->r^-4 epsilon with
 r^29=1. Integer endpoint phase balance and all four direct-source
-trace identities are available in both cases. The needed norm
-invariance at pole27 has passed both complete local algorithms.
+trace identities are available in both cases. Norm invariance follows
+from the exact marked-divisor lattice; integer phase balance follows
+from the independent two-regular-form theorem.
 
 This is a finite scalar reduction, not a decision of either remaining
 trace system. No assertion about fields of definition of actual curves

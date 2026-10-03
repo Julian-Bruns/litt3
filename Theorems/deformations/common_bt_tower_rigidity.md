@@ -1,22 +1,28 @@
 # Arithmetic extension counts and uniqueness of a coreless common tower
 
-Version1,20 September2026. Use actual everywhere-versal height-two,
+Version2,3 October2026. Use actual everywhere-versal height-two,
 dimension-one BT groups, normalized determinants and specified lower
 level markings as in
 [exact Cartier realization](versal_bt_cartier_realization.md).
 
-Let $C,H_N$ and these markings be defined over a finite field
+Let $C$ be smooth proper connected of genus at least two, and let
+$C,H_N$ and these markings be defined over a finite field
 $\mathbf F_q\subset\overline{\mathbf F}_5$. Put
 $d=\dim K_{H_N[5]}$. If a normalized marked next extension exists
 geometrically, it exists over $\mathbf F_q$. The exact number of
 normalized marked isomorphism classes over $\mathbf F_q$ is
 \[
-q^d.
+q^d;\qquad
+\#\{\text{classes over }\mathbf F_{q^m}\}=q^{md}\quad(m\ge1).
 \tag{1}
 \]
 The existence hypothesis is essential. This is a count of classes
 over the fixed curve and marking, not a count modulo curve automorphisms
-or a claim about a representing moduli scheme.
+or a claim about a representing moduli scheme. If $H_N[5]$ is
+indigenous-ordinary, existence is automatic: the later
+[absolute torsor](versal_bt_extension_torsor.md) gives its unique next
+extension and full marked normalized tower on the ORIGINAL curve,
+over the same $\mathbf F_q$.
 
 Now let $X\xleftarrow fZ\xrightarrow gY$ be an actual CORELESS
 finite bi-etale span over $\overline{\mathbf F}_5$, and fix compatible
@@ -33,7 +39,7 @@ levels need not initially have been chosen coherently. Thus the
 remaining alternatives for the fixed datum are a uniquely determined
 finite truncation height or a uniquely determined full tower.
 
-This result gives uniqueness and arithmetic descent, not existence
-of the next level. In particular it does not make the two-leg Cartier
-obstruction vanish.
+Existence of the next COMPATIBLE level remains conditional;
+ordinary single-endpoint existence does not make the actual
+source Cartier difference vanish.
 [Proof](../../Proofs/deformations/common_bt_tower_rigidity.md).

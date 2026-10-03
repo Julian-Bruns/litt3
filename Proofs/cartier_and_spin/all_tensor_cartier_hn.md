@@ -1,6 +1,7 @@
 # Proof: Cartier operator model and all full tensor HN polygons
 
 [Statement](../../Theorems/cartier_and_spin/all_tensor_cartier_hn.md).
+Version3,3 October2026.
 The bundle B=B_{1,C} is stable by
 [Joshi, Theorem1.1](https://www.numdam.org/articles/10.1016/j.crma.2004.02.019/).
 Its perfect alternating pairing into ω1 is
@@ -110,12 +111,25 @@ sequence, giving the two asserted symmetric-square slopes.
 
 Contraction with the inverse alternating form splits
 Λ²(B)⊗ω1^(-1)=O_C1⊕P; its contraction factor2 is invertible.
-The adjoint decomposition then gives End_0(B)=sp(B)⊕P.
-Section1 gives ranks5,5,5 and slopes2s/5,0,−2s/5 for End_0(B);
-(4) accounts for the nonzero slopes. Consequently P is semistable of
-slope0, and its projection to the unique middle HN quotient identifies
-it with F_*T². Sun's theorem makes it stable. Adding the scalar line
-and twisting by ω1 gives the asserted B⊗B polygon.
+Its identification is intrinsic and needs no HN projection.
+Identify $B$ with exact one-forms via $d$. For local exact forms
+$u\,dz,v\,dz$ their Wronskian $(uv'-vu')(dz)^3$ is coordinate-covariant:
+the second coordinate derivatives cancel. Frobenius-target scalars
+have zero derivative. Thus it defines
+\[
+\Lambda^2B\otimes\omega_1^{-1}\longrightarrow
+F_*\omega_C^3\otimes\omega_1^{-1}=F_*T_C^2.
+\]
+In the exact-form basis $b_i=z^i dz$, $0\le i\le3$, the six images
+are $1,2z,3z^2,z^2,2z^3,z^4$, times the common frame. Its kernel is
+the scalar symplectic line, spanned by $b_0\wedge b_3+2b_1\wedge b_2$:
+the Raynaud pair values are1 and3, so its contraction is2, whereas
+its Wronskian is0. Restriction to the primitive summand $P$ is therefore
+an isomorphism, naturally under every original etale comparison.
+Sun's theorem makes $P$ stable of slope0. The adjoint decomposition
+$\operatorname{End}_0(B)=\mathfrak{sp}(B)\oplus P$, together with(4),
+gives the rank5,6,5 tensor-square
+polygon after adding the scalar line and twisting by ω1.
 
 ## 4. Functoriality, evidence, and limits
 

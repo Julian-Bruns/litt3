@@ -1,31 +1,39 @@
-# Logarithmic phase costs force actual norm invariance through pole114
+# Integer phase costs and logarithmic kernels give geometric norm tests
 
-The later [exact marked-divisor theorem](marked_divisor_relation_lattice.md)
-proves norm invariance through1,617,893 without the phase-cost hypothesis.
-The logarithmic method and complete profile certificates here remain useful
-for other supports and additional phase constraints.
+Version4,30 September2026. Retain the fixed curve and actual same-source
+line/tensor comparison normal form. For either endpoint norm, the
+unbounded regular-form trace makes sheet multiplicity differences
+modulo five constant across all29 phases at each marked root.
 
-Version3,29 September2026 (scope unchanged; later theorem linked).
-The general method has passed a focused
-independent audit; the extension to114 uses the same method on new inputs.
-In the actual same-source specified-line/tensor comparison normal form,
-suppose the comparison function t is nonconstant of degree delta<=114.
-Both endpoint norms are polynomials in the respective x-coordinate.
-In particular delta is divisible by three and the three sheet counts
-at each A-root agree. Arbitrary geometric coefficients and covering
-degrees are retained.
+For any finite pole budget N, enumerating the25 residue triples modulo
+the diagonal, and the compositions of29 into their five diagonal
+shifts, gives a complete finite list of reduced supported base divisors
+R with integer minimum costs c. Every noninvariant actual norm of
+pole at most N, after removing complete cubic fibres, occurs in one
+of the geometric spaces
+\[
+L((deg R+5\lfloor(N-c)/5\rfloor)O)
+\]
+with prescribed base jets and logarithmic equation
+dh=(sum_S(mult_S(R) mod5)omega_S)h. Full kernels are computed by
+linear algebra over a field containing the marked points. A further
+marked subdivisor test decides the remaining small horizontal spaces;
+the logarithmic equation alone does not guarantee supported zeros.
+The zero residue class is included whenever root extraction does not
+already exclude it within the chosen budget.
 
-The new method has an all-degree formulation: every supported function
-satisfies one of the explicit logarithmic equations determined by its
-residues. The29-phase trace imposes a finite integer cost on each
-residue profile. Through114, all995 non-invariant profiles have been
-excluded, using966 zero horizontal spaces and29 support tests of
-dimension at most nine. The earlier complete pole100 result is retained.
+This algorithm retains extra phase conditions that a divisor-lattice
+test alone does not encode, and applies when no complete relation
+lattice is available. For the present fixed marking, the old fixed-budget
+searches through100 and114 are superseded by the two exact lattices;
+their independent method audit remains as provenance. Their bounds follow
+from the stronger [actual congruence lattice](actual_norm_congruence_lattice_bound.md)
+and are not independent threshold nodes.
 
-Exact integer phase balance follows whenever the common root mass is
-at most19 at EACH root. This holds automatically for delta<=57, but
-is an additional condition beyond57. No excluded pole multiple of
-three, unconditional field recognition beyond23, or original common-cover
-decision is asserted by this theorem alone.
+Integer phase equality retains the separate per-root mass bound19 in
+the [unbounded phase theorem](unbounded_modular_phase_balance.md).
+Neither the profile algorithm nor the stronger necessary lattice
+asserts realization of a norm divisor by actual maps, recognition in
+higher covering degree, or a solution of the unmarked common-cover problem.
 
-[Proof and reproducible profile construction](../../Proofs/cartier_and_spin/actual_comparison_norm_phase_cost.md).
+[Proof and reusable profile construction](../../Proofs/cartier_and_spin/actual_comparison_norm_phase_cost.md).

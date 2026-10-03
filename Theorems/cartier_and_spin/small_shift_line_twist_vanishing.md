@@ -1,6 +1,6 @@
 # The maximum line-subbundle degree of K is minus four
 
-Version2,26September2026. For the fixed genus-nine curve X and actual
+Version3,3October2026. For the fixed genus-nine curve X and actual
 degree-one rank-two bundle K of the fixed extension data,
 \[
 H^0(X,K(3O)\otimes L)=0\qquad(L\in\operatorname{Pic}^0(X)(k)).
@@ -21,10 +21,10 @@ N is the unique saturated line of degree greater than minus four.
 Every other line in R has degree at most minus four. This does not
 assert stability of R against rank-two subbundles.
 
-The proof retains the stronger-than-linear cubic norm conditions.
-The K(2O) intermediate case has a37-term identity for one; both
-K(3O) charts have independently replayed identities. A small
-isotypic argument also simplifies the known K(O) result. No assertion
+The proof uses the final K(3O) invariant twists and cubic norm
+certificates directly. The norm criterion covers all nonnegative lines
+without a prior stability assumption; both charts have independently
+replayed identities. All smaller shifts follow by inclusion. No assertion
 is made after arbitrary finite covers, and no finite coefficient or
 common-cover decision follows by itself.
 

@@ -11,7 +11,7 @@ ry=(a+1)*u*x**5+2*a*v*x**5+2*u*y**5-(2*a-2)*v*y**5
 ell=(-a-1)*u*x+(2*a-1)*v*x+(-2*a-1)*u*y-a*v*y
 # Independently match these equations to all thirteen actual tensor equations
 # after the four already-certified linear restrictions.
-d=json.loads((root/'Research/computations/genus_two_intrinsic_tensor.json').read_text())
+d=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/genus_two_intrinsic_tensor.json').read_text())
 get=lambda z:k(sage_eval(z,locals={'a':a}))
 pp=[-(2*a+1)*v,a*u-v,u,v]
 bb=[-(2*a+1)*x+(2*a+2)*y,-(2*a+1)*x+(2*a+1)*y,x,y]
@@ -66,5 +66,5 @@ out={'actual_tensor_restriction_verified':True,
      'disjoint_chart_lengths':lengths,'projective_length':int(11),
      'all_nonempty_charts_reduced':True,
      'scope':'Actual genus-two untwisted test only; no genus-nine exclusion or all-torsion claim.'}
-(root/'Research/computations/rooted_atlas_charts.json').write_text(json.dumps(out,indent=2)+'\n')
+(root/'../litt3-computation-data/legacy_workspace_computations/rooted_atlas_charts.json').write_text(json.dumps(out,indent=2)+'\n')
 print(json.dumps(out,indent=2))

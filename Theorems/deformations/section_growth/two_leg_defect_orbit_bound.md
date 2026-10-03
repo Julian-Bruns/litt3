@@ -1,8 +1,10 @@
 # A defect section bounds the actual joint degree by its deck orbit
 
-Version1,2026-09-10. Focused medium audit PASS. The bound uses
-both ORIGINAL etale legs. It does not bound the degree of a redundant
-common source over its joint normalization.
+Version2,3 October2026. The original orbit argument retains its
+focused independent audit. Later quotient descent replaces the
+partner count and strengthens the residual image bound. Both
+ORIGINAL etale legs are retained; no degree of a redundant source
+is bounded.
 
 Let X←f−Z−g→Y be actual finite etale maps of smooth projective connected
 curves of genus at least two over k=bar(F5). Suppose g is Galois, and
@@ -39,9 +41,11 @@ NOT Galois. It does not infer r_X ordinary from source defect two alone.
 
 ## Exclusion for the already selected main pair
 
-The original large-parameter choice also excludes EVERY common cover
-whose joint Y-leg has degree at most335999. This follows from the
-existing effective counting ingredients, without a cored hypothesis.
+Put $D=335999!$. The later
+[quotient-descent theorem](../../curve_arithmetic/genus_two_quotient_descent.md)
+forces the X-degree of EVERY actual witness for the unchanged main
+pair to exceed $D^2$. This applies to its joint normalization as well,
+without a Galois or cored hypothesis.
 
 Consequently the main genus-nine/high-degree-genus-two pair admits no
 matched active span satisfying all three conditions:
@@ -51,7 +55,10 @@ matched active span satisfying all three conditions:
 3. the X connection is nonordinary.
 
 More generally, in a source-defect-two Galois Y-leg span with nonordinary
-r_X, the faithful PROJECTIVE defect image must have order at least5250.
+r_X, the faithful PROJECTIVE defect image satisfies
+\[
+|\overline\Gamma|>D^2/8.
+\]
 In the remaining prime-to-five-action branch it can therefore only be
 cyclic or dihedral; the exceptional projective A4,S4 images are excluded.
 The cyclic/dihedral orders remain unbounded. This last classification

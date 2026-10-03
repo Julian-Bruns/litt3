@@ -3,10 +3,9 @@
 [Statement](../../../Theorems/jacobians/isogeny_sieves/bounded_abelian_index_quotient_descent.md).
 We extend the established
 [abelian ordinary quotient argument](abelian_cover_ordinary_quotient_fields.md).
-The new points are the field of the intermediate curve, the trivial
-character block, and retaining the norm degree after that change of base.
-The cited supporting proof also establishes the sharper $D=1$
-threshold $1025$ and exponent $18$ in the combined statement.
+The determinant-normalization lemma in Section3 controls all character
+blocks at once. The supporting proof reuses it for the sharper D=1
+threshold65 and exponent18. Both retain the actual norm kernel.
 
 ## 1. A bounded intermediate curve with a rational point
 
@@ -23,18 +22,18 @@ of A in G is unnecessary: C->X need not be Galois. Riemann--Hurwitz
 gives g(C)=1+8d and deg(v)=8N.
 
 Choose a geometric point c of C above the F25-rational point at
-infinity of X. The pointed geometric covers (C,c)->(X,infinity)
-of degree at most D form a finite set of size at most
+infinity of X. For this FIXED degree d, pointed geometric covers
+(C,c)->(X,infinity) correspond to index-d subgroups of pi_1(X).
+Their number is at most
 \[
-B_D=D(D!)^{18}.
+(d!)^{18}/(d-1)!=d(d!)^{17}\le B_D:=D(D!)^{17}.
 \tag{5}
 \]
-Indeed, pi_1(X) has at most eighteen topological generators, and
-an index-d subgroup is obtained as the stabilizer of1 under a
-transitive homomorphism to S_d. The number of such subgroups is
-at most (d!)^18; summing over d gives(5). Keeping the distinguished
-point corresponds to the subgroup itself rather than its conjugacy
-class, so no extra factor for a fiber point is needed.
+Count transitive homomorphisms to S_d and divide by the relabelings
+fixing1. This S_(d-1)-action is free: an element centralizing a
+transitive action and fixing1 fixes every letter. Its orbits are
+exactly the pointed subgroups. Frobenius preserves the degree, so
+no sum over smaller degrees is needed.
 
 Arithmetic F25-Frobenius permutes this finite set. Some power e0,
 with e0<=B_D, fixes the given pointed cover. A connected pointed
@@ -52,7 +51,7 @@ Let n be the exponent of A. For every ell dividing n, the maximal
 geometric abelian pro-ell quotient of pi_1(C) has rank
 \[
 2g(C)=16d+2\le M_D\quad(\ell\ne5),
-\qquad f(C)\le g(C)\le M_D\quad(\ell=5).
+\qquad f(C)\le g(C)\le G_D\quad(\ell=5).
 \tag{6}
 \]
 Kill arithmetic Frobenius on these abelian quotients modulo the
@@ -64,9 +63,9 @@ Every prime divisor of e1 divides
 \quad\text{for some prime }\ell\mid |A|.
 \tag{7}
 \]
-This only overbounds the actual smaller ranks in(6). The primes
-contributed at ell=5 are all less than5^M_D. Cover exponents can
-increase their powers but cannot introduce further primes.
+At ell=5 use the smaller rank G_D from(6), so all contributed
+primes are less than5^G_D. Cover exponents can increase their powers
+but cannot introduce further primes.
 
 This construction is a model of W as a cover of C. It need not
 make all of G constant, nor make v or Y rational over that field.
@@ -88,6 +87,37 @@ multiplicity at most M_D. Unlike the abelian cover of X itself,
 the invariant part J(C) may contain small ordinary factors. They
 are retained here, not discarded using simplicity of J(X).
 
+### A projective block lemma
+
+Let F=K Q(zeta_n), with [K:Q]=kappa. Suppose a nonempty finite
+collection of matrices P_j in GL_(m_j)(F), 1<=m_j<=M, has a COMMON scalar power:
+P_j^b=a I for the same b>0 and a in K^times.
+Then some power makes all blocks the SAME scalar, and its
+prime support consists only of primes dividing n or at most
+kappa M+1.
+
+Indeed,
+\[
+T_j=(\det P_j)^{-1}P_j^{m_j},\qquad T_j^b=I.
+\]
+Every eigenvalue of T_j is a root of unity of degree at most m_j
+over F. If a prime r not dividing n divides its order, cyclotomic
+disjointness gives r-1<=[F(eigenvalue):Q(zeta_n)]<=kappa m_j.
+Thus the lcm v of the orders of all T_j has only the asserted primes.
+
+Put u=lcm_j(m_j). Its prime divisors are at most M, and every
+P_j^(uv) is a scalar delta_j in F. Their b-th powers all equal
+a^(uv), so delta_j/delta_1 is a root of unity IN F. A new prime r
+in such a ratio satisfies r-1<=kappa. Kill these ratios by their
+order lcm w. Then the exponent uvw has the asserted prime support
+and makes every block the same scalar. If the direct-sum operator
+is defined over K, that common scalar belongs to K.
+
+The common scalar-power hypothesis is essential; separate scalar
+powers with unrelated values do not give the last comparison.
+
+### Apply the lemma to the small ordinary factors
+
 Let B be any geometrically simple ordinary factor of J(W) of
 dimension at most two. Its geometric endomorphism algebra K is
 a CM field of degree at most four. On the right K-space
@@ -100,27 +130,13 @@ of K. There is a positive b, not assumed bounded, with
 \tag{9}
 \]
 For example, define B, its endomorphisms and a basis of U over a
-finite extension and use Frobenius compatibility there. It follows
-that pi is semisimple on U and ratios of its eigenvalues are roots
-of unity. For any two eigenvalues lambda,mu,
-\[
-[F(\lambda,\mu):F]\le M_D^2.
-\tag{10}
-\]
-If their ratio has order divisible by a prime r not dividing n,
-cyclotomic disjointness at coprime conductors gives
-\[
-r-1\le[F(\lambda,\mu):\mathbf Q(\zeta_n)]
-\le4M_D^2.
-\tag{11}
-\]
-Take the least common multiple E_B of all eigenvalue-ratio orders.
-Then pi^E_B is scalar on U_F, hence scalar over K, and central
-on the entire geometric B-isotypic factor. The prime divisors
-of E_B are at most4M_D^2+1 or divide |A|. Taking the least common
-multiple E over the finitely many small ordinary isotypic factors
-has the same prime-support bound. This permits arbitrarily many
-such factors and arbitrarily large total multiplicities.
+finite extension and use Frobenius compatibility there. Apply the block
+lemma to the nonzero blocks, with kappa<=4 and M=M_D. It gives
+an exponent E_B whose prime divisors are at most4M_D+1 or divide
+|A|, and pi^E_B is scalar over K on U. Hence it is CENTRAL on
+the entire geometric B-isotypic factor. Take the lcm E over the
+finitely many small ordinary isotypic factors. Its prime-support
+bound is unchanged, despite unbounded numbers of blocks or factors.
 
 ## 4. The actual genus-two quotient, not just its isogeny class
 
@@ -172,9 +188,10 @@ map v over this smaller field is required.
 
 ## 5. The numerical conclusion and the selected partner
 
-For r>L_D, the factor e0 in(14) cannot contribute r by(5).
+Since 5^G_D>4M_D+1 and13 for G_D>=9, the two terms in L_D
+cover every fixed bound. For r>L_D, the factor e0 in(14) cannot contribute r by(5).
 The characteristic-primary part of e1 cannot contribute r by(7).
-Equation(11) excludes a new r from E; if r already divides |A|,
+The block lemma excludes a new r from E; if r already divides |A|,
 take ell=r in the conclusion. Equation(13) adds no unaccounted
 prime except one dividing ell or ell^i-1 for ell|N, ell!=5, i<=4.
 Since M_D>=18, all remaining possibilities have
@@ -196,7 +213,7 @@ K>\max\{L_{D0},\ D0^{M_{D0}}\}.
 \tag{16}
 \]
 For clarity, the first factor handles D0(D0!)^18. The middle
-factor alone exceeds5^M_D0 and4M_D0^2+1, since M_D0>=18 and
+factor alone exceeds5^G_D0 and4M_D0+1, since M_D0>=18 and
 its exponent is M_D0^2L*. It also exceeds D0^M_D0: indeed
 3^(M_D0 L*)>D0, already because M_D0 L*>=D0 and3^D0>D0.
 All factorial factors in(15) are positive integers.

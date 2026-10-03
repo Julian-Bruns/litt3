@@ -1,4 +1,4 @@
-# Proof: affine full completions and descent of only their first level
+# Proof: local completions and global effectivity of a supplied full tower
 
 [Statement](../../Theorems/deformations/admissible_periodic_bt_effectivity.md).
 Local continuation of the returned integral comparison proof,
@@ -23,7 +23,7 @@ The determinant fixes the residual graded scalar after a square
 root with prescribed reduction. All predecessor maps are retained.
 
 This is the local construction in
-[the returned comparison proof](bt_hodge_obstruction_comparison.md).
+[the returned comparison proof](all_height_bt_hodge_dictionary.md).
 It uses only the initial periodic datum; an already effective BT1
 is needed there to NAME the marking, not to construct these local
 completions. The general filtered-flow construction and local
@@ -50,10 +50,39 @@ See [de Jong, Theorem4.1.1 and Remark2.4.10](https://www.numdam.org/item/PMIHES_
 for the integral effectivity and the comparison between existing
 finite flat groups used here.
 
-Only first truncations were descended. Their full local completions
-need not agree on overlaps, so no global prolongation has been
-smuggled into this proof. The proof of the finite-character ambiguity
+The affine construction above descends only first truncations. Its
+full local completions need not agree on overlaps. The proof of the finite-character ambiguity
 in [ordinary effectivity](ordinary_oper_bt_effectivity.md), under
 its heading comparing two BT1 realizations, explicitly requires
 only the existence of one actual realization. It applies unchanged
 and gives the final torsor statement.
+
+## A supplied global full tower realizes every level
+
+A compatible global projective tower gives, in its limit, a projective
+filtered crystal $\mathcal P$ with an actual horizontal comparison
+$\operatorname{RF}(\mathcal P)\simeq\mathcal P$. Each finite
+comparison uses the next curve digit and preceding filtered tuple;
+the supplied full tower provides both and their truncation compatibility.
+
+Apply the [ordinary effectivity proof's integral construction](ordinary_oper_bt_effectivity.md#integral-effectivity),
+formulas (2)--(9). Indigenous ordinariness there supplies the canonical
+projective object in formula (1); here the GIVEN tower supplies it.
+The remaining construction has no ordinary hypothesis: the specified
+spin lift extends through the etale central kernel $\mu_2$, and
+the renormalized elementary lattice differs from it by a flat line
+$\mathcal Q$ with $\mathcal Q^2=\mathcal O$ and reduction $\kappa$.
+The unique lift $\mathcal N$ of the chosen prime-to-five line satisfies
+$\mathcal N^4=\mathcal Q$, $\mathcal N^8=\mathcal O$. Thus
+$\operatorname{RF}(\mathcal E\otimes\mathcal N)
+\simeq\mathcal E\otimes\mathcal Q\otimes\mathcal N^5
+\simeq\mathcal E\otimes\mathcal N$.
+
+This supplies strongly divisible windows at every precision. Unlike
+the unrelated affine completions used above, their crystalline overlap
+maps agree at EVERY level, since they come from the supplied global
+tower. Full faithfulness and finite-Hopf descent glue their truncations,
+inclusions and multiplication into an actual full group on $C$.
+The retained comparison preserves the first periodic marking. The
+same determinant normalization as in the integral construction,
+by an etale character twist trivial modulo five, preserves that marking.

@@ -1,6 +1,6 @@
 # Proof: finite-abelian late descent
 
-Version2, 2026-09-13. Author /root; independent consolidation audit PASS
+Version3,3 October2026. Author /root; independent consolidation audit PASS
 by /root/audit_late_consolidation, with no outstanding objections.
 [Statement](../../../Theorems/deformations/abelian_covers/abelian_power_late_descent.md).
 The three earlier audits and original returned nodal proof remain
@@ -68,41 +68,23 @@ the first factor or more than j on the second. Hence F_i F_j subset
 F_(i+j). This proof works for every group here and separates pointwise
 torsor multiplication from multiplication in the group algebra.
 
-## The binary homogeneous improvement
+## One graded argument replaces both binary Bocksteins
 
-For G=C5^2, Lx=Neta mod25 and etabar=0 force xbar inF1. Both Bockstein
-calculations below use the original rational-direction coefficients; an
-arbitrary formal coordinate change does not preserve rationality.
+For $G=C_5^r$, $r\ge2$, the later
+[weighted norm theorem](../elementary_covers/elementary_weighted_carry.md)
+applies in the ORIGINAL group coordinates with $a=2,D=4r$.
+The coefficient-divisible target $N\eta$ starts in weight $D+4$.
+At precision $5^r$ it forces $x\in\mathcal W^{D-1}$, hence
+$\bar x\in J^{D-1}=\mathcal F_1$. This includes the binary mod25
+assertion for every permitted quadratic symbol, with all higher
+additive corrections retained. No formal square completion, tangent
+branch calculation or discriminant case split is needed.
 
-Preparation and square completion are performed inside the ORIGINAL
-group ring. If f=v0*f_prepared for a unit v0, multiply the integral
-target operator by a lifted v0^(-1). Since aN=aug(a)N, its norm right
-side becomes N*aug(v0^(-1))*eta. This rescales eta by a unit and preserves
-etabar=0. It preserves additivity and deck equivariance, and all higher
-corrections remain allowed. A formal coordinate substitution is an
-expression in the original ring, not a new rational deck action.
-
-If Q is nonsingular, take f=uv in formal coordinates. The possible
-leading terms in J6 intersect Ann(f) are u4v2,u2v4,u4v3,u3v4,u4v4.
-For u=alpha e1+beta e2+O(J2), v=gamma e1+delta e2+O(J2), Delta!=0,
-the transverse coefficients of U5/5 and V5/5 are
-b*=(alpha5 beta-alpha beta5)/Delta and
-c*=(gamma delta5-gamma5 delta)/Delta. Both are nonzero by irrationality
-of the two tangent branches. Divide the genuine equation by5 and
-project modulo uv. Free first repairs and arbitrary additive corrections
-vanish there. The first two coefficients give independent v4,u4 terms,
-forcing them to zero. Also R/(uv) has J5=0, retaining nodal F3 subset(f).
-
-If Q has rank one, square completion gives f=u2+g(v), ord(g)>=3.
-The possible leading terms are Au3v3+Bu4v2+Cu3v4+Du4v3+Eu4v4.
-Write U5/5=a u+b v+O(J2) modulo5. Here the same original-deck
-formula gives b=(alpha5 beta-alpha beta5)/Delta!=0. Projection of the
-divided equation has degree-four part bA v4+(aA+bB)uv3. These two
-classes are independent in gr4(R/(u2+g(v))), so A=B=0. Terms of g
-start in degree9 before division; a single carry drops degree by at
-most4, hence they enter only in degree>=5. Free repairs, divided higher
-norm and additive corrections lie in J6 subset(f), by (I). This proves
-the same F1 conclusion without a discriminant assumption.
+The retained nonsingular-binary image improvement is separate:
+formal Morse coordinates give $f=uv$ up to a unit. The equal fifth-power
+ideal is preserved by that coordinate change, and $R/(uv)$ has $J^5=0$.
+Thus $\mathcal F_3=J^5\subset(f)$. The general multiplicity-two
+$\mathcal F_2=J^6\subset(f)$ remains the image lemma(I).
 
 ## The common geometric mechanism
 
@@ -137,7 +119,7 @@ full (N) applies.
 
 For the exceptional binary boundary A=m=2, first get F2 and integral
 trace25. F4 has zero pointwise trace, so tracing (G) gives etabar=0.
-The homogeneous Bockstein then gives F1, whose quadratic is F2 subset(f)
+The weighted norm implication then gives F1, whose quadratic is F2 subset(f)
 by (I). Absorb it at the terminal digit and use the full norm again.
 
 All leading coordinates are invariant and thus are pullbacks of a
@@ -179,11 +161,16 @@ Independent audits:
 
 The original nodal return is unchanged in
 `../litt3-computation-data/nodal25-descent-return-20260913-8elkxl/nodal25_output`.
-Its [return receipt](../../../Research/computations/nodal25_return_replays_20260913.json)
+Its [return receipt](../../../../litt3-computation-data/legacy_workspace_computations/nodal25_return_replays_20260913.json)
 records the attachment hash, all9 manifest checks and both exact replays:
 24 mixed-additive models, symbolic identities,380 branch tests and Taylor
-inequalities. The [elementary checks](../../../Research/computations/elementary_abelian_late_extension_checks.json)
-and [48 doubled-tangent checks](../../../Research/computations/degenerate_quadratic_late_checks.json)
+inequalities. The original [elementary checks](../../../../litt3-computation-data/legacy_workspace_computations/elementary_abelian_late_extension_checks.json)
+and [48 doubled-tangent checks](../../../../litt3-computation-data/legacy_workspace_computations/degenerate_quadratic_late_checks.json)
 remain original evidence. The new audit independently checks s=3 and
 the s=5 boundary. Finite models support the arguments; they do not
 replace the uniform proof or the genuine geometric comparison.
+
+The obsolete nodal, doubled-tangent and elementary model generators are
+deleted. Their exact original sources, receipts and independent audits
+remain external provenance. The general graded norm and image arguments,
+not those finite samples, now supply the algebraic inputs.

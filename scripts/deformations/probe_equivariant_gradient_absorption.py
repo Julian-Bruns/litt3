@@ -94,7 +94,7 @@ def main():
     out={'status':'exact finite algebra test; not geometry','cubic_orbits':len(orbits),
         'gradient_rank_mod5':int(r),'smith_diagonal_5_adic_valuations':[int(ZZ(D[i,i]).valuation(5)) if D[i,i] else None for i in range(25)],
         'x_noninvariant_mod5':len(set(int(v%5) for v in x))>1,'results':results}
-    path=Path(__file__).resolve().parents[2]/'Research/computations/equivariant_gradient_absorption_probe.json'
+    path=Path(__file__).resolve().parents[2]/'../litt3-computation-data/legacy_workspace_computations/equivariant_gradient_absorption_probe.json'
     path.write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))
 
 

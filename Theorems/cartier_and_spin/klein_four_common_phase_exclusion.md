@@ -1,7 +1,7 @@
 # At least one Klein-four endpoint has different label phases
 
 Version1, 26 September2026. Retain the actual same-source hypotheses
-of [trace descent](klein_four_trace_branch_finiteness.md). Write every
+of [trace descent](quartic_trace_obstruction.md). Write every
 endpoint B-label as B_i xi with canonical B_i in F_(5^8) and xi in mu29.
 
 There is no actual comparison for which the four zero-endpoint

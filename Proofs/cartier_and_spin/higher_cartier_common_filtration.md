@@ -19,33 +19,19 @@ subobject. The first-height
 [Cartier theorem](common_cartier_subbundles.md) proves that $B^{[1]}$
 is common-simple under the stated condition on $g(Y)-1$.
 
-## One more direct image
+## Simplicity from the later seed theorem
 
-Let $E$ be common-simple, of rank $d$ and degree $d(g(Y)-1)$ on $Y$.
-For a nonzero common $V\subset F_*E$, intersect $F^*V$ with the
-canonical filtration $\mathcal H_i$ of $F^*F_*E$, whose graded terms
-are $E\omega^i$, $0\le i<p$. Its induced graded images are zero
-or the whole $E\omega^i$: tensoring preserves common simplicity,
-and the preceding lemma removes every image defect.
-
-The Cartier connection restricts to $F^*V$. The transversality
-isomorphisms on the ambient filtration induce injections from its
-$i$th image into its $(i-1)$st image tensored with $\omega$.
-Thus the nonzero images are exactly those indexed by
-$0,\ldots,\ell-1$, for some $1\le\ell\le p$. Consequently
-\[
-\operatorname{rk}V=d\ell,\qquad
-p\deg V_Y=d\ell^2(g(Y)-1).
-\tag{1}
-\]
-For $E=B^{[1]}$, $d=p-1$ and degree integrality forces $p\mid\ell$.
-Thus $\ell=p$ and saturation gives $V=F_*B^{[1]}$.
+The first-height Cartier theorem makes B common-simple, of
+rank p-1 with its perfect common omega-valued alternating pairing.
+The [general seed theorem](common_atiyah_jet_obstruction.md)
+therefore proves that EVERY H_s=F_*^[s]B is common-simple and that
+J^(ell-1)H_s has a common connection exactly when p divides ell.
+This single application supplies all factor simplicity required
+below. It retains actual relative twists and common subobjects.
 
 The canonical filtration and preservation of semistability under
 Frobenius direct image are the curve case of
 [Sun's direct-image theorem](https://arxiv.org/pdf/math/0611360).
-Only those established properties, not a claim that direct image
-preserves common simplicity in general, are used here.
 
 ## Nonsplitting on each individual curve
 
@@ -110,48 +96,11 @@ Conversely a proper common subbundle of $E_j$ has a saturated
 inverse image strictly between $P_{j-1}$ and $P_j$. This proves
 both directions, without replacing the filtration by a direct sum.
 
-## Common simplicity at all heights
+## The interval category
 
-Let $H_s=F_*^{[s]}B^{[1]}$ on its specified twist. The first-height
-Cartier theorem supplies the induction base $H_0=B^{[1]}$.
-Suppose $H_s$ is common-simple and let $0\ne V\subset F_*H_s$
-be a common saturated subbundle.
-
-The one-step argument above applies without requiring its rank
-prime to $p$. The induced grades of $F^*V$ are exactly
-$H_s\omega^i$, $0\le i<\ell$, for some $1\le\ell\le p$.
-Projection from $F^*F_*H_s$ to its first $\ell$ diagonal-ideal
-grades is the canonical map to the ACTUAL principal-parts bundle
-$J^{\ell-1}H_s$. Restricted to $F^*V$, it is an isomorphism:
-its kernel is the vanishing intersection with the $\ell$th
-filtration term, and each of its induced graded maps is an
-isomorphism. Hence
-\[
-F^*V\simeq J^{\ell-1}H_s
-\tag{5}
-\]
-is a common identification, carrying the canonical Cartier
-connection on its left side.
-
-The [scalar Atiyah theorem](common_atiyah_jet_obstruction.md) gives
-$\gamma_s=\operatorname{id}_{H_s}\otimes a(\omega)\ne0$ at EVERY
-height. This assertion uses only first-height common simplicity,
-not the present induction conclusion. Finite Frobenius duality
-also gives $H_s\simeq H_s^\vee\otimes\omega$.
-
-For a connection on the right side of (5), the general block-sum
-calculation in that theorem gives
-\[
-\ell a(H_s)+\frac{\ell(\ell-1)}2\gamma_s=0.
-\]
-Adding the adjoint and using $a(H_s)+a(H_s)^\dagger=\gamma_s$
-yields $\ell^2\gamma_s=0$. Thus $p\mid\ell$. Since
-$1\le\ell\le p$, necessarily $\ell=p$, and $V$ has the full
-rank of $F_*H_s$. Its saturated inclusion is an equality.
-This proves common simplicity of $H_{s+1}$ and closes induction.
-
-The earlier nonsplitting argument now classifies every common
-subbundle of $B^{[r]}$ as one of the displayed $P_j^{[r]}$.
+All factors are common-simple by the seed theorem. The preceding
+nonsplitting argument therefore identifies every common subbundle
+of B^[r] with exactly one displayed P_j^[r].
 
 The factors $E_i$ have distinct ranks and hence are pairwise
 nonisomorphic common-simple objects. Every interval $P_b/P_a$

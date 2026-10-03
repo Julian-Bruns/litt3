@@ -52,7 +52,7 @@ def main():
          'self_adjoint_convolution':[str(c) for c in fs],
          'number_of_cubic_orbits':len(orbits),'certificates':results,
          'rank_two_extension':'On Fun(C5^2), sum H over second-coordinate slices; L=L_s,1+2L_s,2 and x(s,t)=x(s). The identity is exact with eta=1 and rationally anisotropic quadratic symbol.'}
-    path=Path(__file__).resolve().parents[2]/'Research/computations/inhomogeneous_early_gradient_probe.json'
+    path=Path(__file__).resolve().parents[2]/'../litt3-computation-data/legacy_workspace_computations/inhomogeneous_early_gradient_probe.json'
     path.write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))
 
 

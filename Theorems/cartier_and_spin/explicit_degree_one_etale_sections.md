@@ -1,6 +1,6 @@
 # Positivity, all-twist vanishing and étale sections of the explicit degree-one bundle
 
-Version2,23September2026. Let X be the fixed genus-nine cubic curve,
+Version3,3October2026. Let X be the fixed genus-nine cubic curve,
 O its point at infinity, and K=H_X(-24O), with the actual extension
 class specified in the proof. Then
 \[
@@ -19,9 +19,9 @@ For EVERY geometric degree-zero line bundle L,
 \[
 H^0(X,K\otimes L)=0.
 \]
-In fact H^0(X,K(O))=0. The all-twist assertion uses cubic symmetry
-and an exhaustive exact check of all19683 invariant twist classes,
-not only rational points of Pic^0.
+This follows directly from the later all-geometric vanishing for
+K(3O), which also gives exact maximum line degree minus four.
+The separate degree-zero twist census is no longer needed.
 
 K has a nonzero section on some finite étale cover if and only if
 it has a nowhere-zero section on some such cover. No connected

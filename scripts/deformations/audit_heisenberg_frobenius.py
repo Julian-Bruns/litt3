@@ -22,7 +22,7 @@ from scripts.deformations.audit_actual_heisenberg_defect import IndependentBase,
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DATA = ROOT/'Research/computations'
+DATA = ROOT/'../litt3-computation-data/legacy_workspace_computations'
 EXTERNAL = ROOT.parent/'litt3-computation-data/heisenberg125-census-20260911'
 
 

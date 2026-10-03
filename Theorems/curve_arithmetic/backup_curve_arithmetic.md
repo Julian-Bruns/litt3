@@ -1,7 +1,8 @@
 # Arithmetic and Abel torsion of the small backup
 
-Version2,2026-09-13. Consolidation of established exact arithmetic and
-the audited pencil and jet inputs; no new whole-theorem audit.
+Version3,3 October2026. The published surface criterion replaces the
+root-ratio computation; arithmetic and torsion scopes are unchanged.
+Established pencil and jet audits remain; no new whole-theorem audit.
 
 Let B:v²=u(u−1)(u−2)(u−3)(u−alpha), alpha³+alpha+1=0 over F125,
 with infinity O, and put W1={ [P−O]:P∈B }⊂J(B).
@@ -10,7 +11,9 @@ B has genus2, is ordinary, and every nonzero Cartier eigenform has
 simple zeros. Its geometric automorphism group is C2; its moduli orbit
 has length3 under either F5- or F25-Frobenius. Its Weil polynomial is
 
-    P(T)=T^4−8T^3+182T²−1000T+15625.
+\[
+P(T)=T^4−8T^3+182T²−1000T+15625.
+\]
 
 Its Jacobian is geometrically simple. Its geometric endomorphism
 algebra is the quartic CM field Q(pi), with Rosati-fixed field

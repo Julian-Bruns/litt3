@@ -1,74 +1,90 @@
-# Two-section etale covers have cyclic five-part and controlled defect carriers
+# Two-section Galois covers and their exact finite images
 
-Version1,2026-09-10.
+Version2,2026-10-03. Let \(k\) be algebraically closed of characteristic
+\(p\ge5\), \(q:Z\to Y\) a connected finite étale Galois cover of smooth
+projective connected curves, and \(E\) a bundle with a perfect alternating
+pairing \(E\otimes E\to\omega_Y\). No genus, stability or ordinariness
+hypothesis is needed. Assume
+\[
+H^0(Y,E)=0,\qquad U=H^0(Z,q^*E),\qquad\dim_kU=2.
+\]
+Put \(G=\operatorname{Gal}(Z/Y)\), \(\rho:G\to GL(U)\) and
+\(\Gamma=\rho(G)\). Every Sylow \(p\)-subgroup \(P\) of the ACTUAL
+group \(G\) is cyclic. There is a normal prime-to-\(p\) subgroup
+\(K\subset\ker\rho\) with the following descriptions.
 
-Let k=bar(F5), and let q:Z→Y be a connected finite etale Galois cover
-of smooth projective connected curves of genus at least two, with
-ACTUAL group G. Let E be a vector bundle on Y with a perfect
-omega_Y-valued alternating pairing. Assume
+## Nontrivial p-action
 
-    H0(Y,E)=0,  U=H0(Z,q*E),  dim_k U=2.
+If \(p\mid|\Gamma|\), put \(|P|=p^a\), \(a\ge1\). Then
+\[
+\Gamma\in\{C_{2p},D_{2p},C_2\times D_{2p}\},\qquad
+G/K\in\{C_{2p^a},D_{2p^a},C_2\times D_{2p^a}\},
+\]
+in corresponding order. Throughout, \(D_m\) means dihedral of ORDER \(m\).
 
-Set rho:G→GL(U) and Gamma=rho(G). Every Sylow5 subgroup of G is
-cyclic. There is a normal subgroup K of G, of order prime to five,
-contained in ker rho, with the following two descriptions.
+The actual intermediate \(T_a=Z/K\) has two sections.
+Its quotient \(Y'=T_a/(PK/K)\) has one section and is an elementary
+abelian two-cover of \(Y\) of degree \(d=2\) or4. There is a distinguished
+double \(C\to Y\) with one section; \(Y'\to C\) has degree1 or2
+and adds none. For \(h=g(Y)\), all these actual étale quotients have
+\[
+g(C)=2h-1,\qquad g(Y')=d(h-1)+1,\qquad
+g(T_a)=dp^a(h-1)+1.
+\]
+In particular \(h=2\) gives \(g(C)=3\), \(g(Y')=3\) or5 and
+\(g(T_a)=2p^a+1\) or \(4p^a+1\).
+The faithful image has order at most \(4p\); the exponent \(a\) is
+unbounded. For EVERY \(a\), the cyclic \(C_{2p^a}\) case is the
+fiber product of \(C\to Y\) with an actual cyclic-\(p^a\) cover of \(Y\).
+The dihedral cases need not be such products.
 
-## Nontrivial five-action
+## Trivial p-action: the residual groups are explicit
 
-If 5 divides |Gamma|, write |P|=5^a for an actual Sylow subgroup
-P of G. Then a>=1, and Gamma is one of
+If \(p\nmid|\Gamma|\), put \(|P|=p^a\), allowing \(a=0\).
+Take \(K\) to be the normal prime-to-\(p\) complement in \(\ker\rho\).
+Then
+\[
+G/K=C_{p^a}\rtimes\Gamma,
+\]
+with the action given by \(\det\rho\): \(+1\) is trivial and \(-1\)
+is inversion. The faithful residual representation is semisimple,
+self-dual and has no invariant vectors. Its possible groups are:
 
-    C10, D10, C2×D10.
+| Faithful image \(\Gamma\) | Order | Determinant |
+| --- | --- | --- |
+| Cyclic \(C_n\), \(n\ge2\) | \(n\) | \(1\) |
+| Orthogonal dihedral \(D_{2n}\), \(n\ge2\) | \(2n\) | Reflection sign |
+| Binary dihedral \(\widetilde D_{2n}\), \(n\ge2\) | \(4n\) | \(1\) |
+| Binary tetrahedral \(\widetilde A_4\) | \(24\) | \(1\) |
+| Binary octahedral \(\widetilde S_4\) | \(48\) | \(1\) |
+| Binary icosahedral \(\widetilde A_5\) | \(120\) | \(1\) |
 
-Here Dn denotes the dihedral group of ORDER n. The corresponding
-quotients G/K are
+The order must be prime to \(p\); in particular \(\widetilde A_5\)
+is absent when \(p=5\). A binary group denotes the FULL inverse image
+of its indicated projective subgroup under \(SL_2(k)\to PGL_2(k)\).
+Thus only the orthogonal dihedral case can invert the cyclic \(p\)-part;
+all other cases give \(G/K=C_{p^a}\times\Gamma\).
+These are necessary representation types, without asserted geometric
+realizations. The cyclic and dihedral orders and \(a\) remain unbounded.
 
-    C_(2*5^a), D_(2*5^a), C2×D_(2*5^a).
+## Characteristic-five indigenous application
 
-The actual intermediate T_a=Z/K has two sections. Its quotient
-Y'=T_a/(PK/K) has one section and is an elementary abelian2 cover
-of Y of degree2 or4. There is a distinguished degree-two intermediate
-C→Y with one section; Y'→C has degree1 or2 and adds no sections.
+For the actual tangent bundle \(E_r\) on \(Y^{(1)}\) of an admissible
+active connection, apply the theorem to \(q^{(1)}\): sections are
+indigenous defects. The prime-to-five map \(Z\to Z/K\)
+preserves both defect directions. The
+[descent theorem](../defect_preserving_etale_descent.md) descends every
+EXISTING compatible Witt tower along this ORIGINAL map.
 
-In particular, for g(Y)=2 the genera are
-
-    g(C)=3,  g(Y')=3 or5,
-    g(T_a)=2*5^a+1 or4*5^a+1.
-
-The faithful image has order at most20, but the CYCLIC exponent a
-is not bounded. At a=1, the C10 case is the fiber product of the
-double C→Y and an actual cyclic5 cover of Y. The dihedral cases
-need not be such a fiber product.
-
-## Trivial five-action
-
-If 5 does not divide |Gamma|, write |P|=5^a, allowing a=0. One may
-take K to be the normal prime-to5 complement in ker rho. Then
-
-    G/K ≅ C_(5^a) ⋊ Gamma,
-
-where Gamma acts on C_(5^a) by its determinant character: +1 acts
-trivially and -1 by inversion. The faithful two-dimensional
-Gamma-representation is semisimple and self-dual, and has no invariant
-vectors. Its determinant is quadratic. Its order need not be bounded:
-reciprocal characters and dihedral representations allow unbounded
-prime-to-five orders.
-
-## Actual indigenous application
-
-For E=E_r, the actual tangent bundle of an admissible active connection,
-the section dimensions are the indigenous defects. The map Z→T=Z/K
-has prime-to5 degree and preserves the TWO defects. The audited
-[descent theorem](../defect_preserving_etale_descent.md) therefore
-descends every EXISTING compatible Witt tower along this ORIGINAL map.
-
-Over the selected ordinary genus-two family, the C in the nontrivial
-case is one of its ten known bad doubles. If a common span X←Z→Y
-has r_X ordinary, its canonical X-source descends to T. Its further
-map T→Y is not thereby lifted. The later
-[two-defect exclusion](two_defect_nontrivial_five_exclusion.md) excludes
-the nontrivial-action branch for the selected main pair, including a
-nonordinary X connection. The trivial-action branch retains an unbounded
-cyclic exponent and prime-to5 image; no non-Galois reduction is asserted.
+Over the selected ordinary genus-two family, \(C\) in the nontrivial
+case is one of its ten known bad doubles. For a common span
+\(X\leftarrow Z\to Y\) with ordinary \(r_X\), its canonical X-source
+descends to \(Z/K\); the further map \(Z/K\to Y\) is not thereby lifted.
+The [two-defect exclusion](two_defect_nontrivial_five_exclusion.md)
+excludes the nontrivial-action branch for the selected main pair,
+including a nonordinary X-connection. The trivial-action branch and
+arbitrary non-Galois legs are not excluded. A second endpoint map stays
+on the original \(Z\); it descends to \(Z/K\) only if \(K\) fixes
+its embedded endpoint field.
 
 [Proof](../../../Proofs/deformations/section_growth/two_defect_deck_reduction.md).

@@ -101,5 +101,5 @@ result={'status':'PASS complete one-parameter fifth-lift exclusion',
     'separating_combination_coefficient':c,'separating_polynomial':serialize(combination),
     'bezout_G':serialize(a),'bezout_separator':serialize(b),
     'pieces':[{'factor':serialize(f),'residuals':[serialize(p) for p in ps],'evidence':label} for f,ps,label in pieces]}
-(root/'Research/computations/rank25_one_parameter_full_exclusion.json').write_text(json.dumps(result,indent=2)+'\n')
+(root/'../litt3-computation-data/legacy_workspace_computations/rank25_one_parameter_full_exclusion.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps({k:result[k] for k in ['status','root_count','separating_combination_coefficient','residual_polynomials_mod_G']},indent=2))

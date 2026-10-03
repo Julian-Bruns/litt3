@@ -187,14 +187,10 @@ Every such projection center would have to lie on their joining
 line, which cannot contain the nondegenerate plane curve. This
 contradiction proves the assertion.
 
-Thus $|L|$ is a pencil, giving actual maps $u:X\to\mathbf P^1$
-and $a:C\to\mathbf P^1$ with $uh=a\pi$. The source $T$ is the
-normalization of the FULL fiber product: its generic degree over
-$C$ is already the full degree seven. For any pair of points of
-$X,C$ over the same target point, the normalization has a point
-over that pair. At this point, etaleness of both legs gives
-$e_u(x)=e_a(c)$. Fixing $c$ proves that each fiber of $u$ is
-uniform. This contradicts the preceding exclusion.
+The [unrestricted norm-pencil criterion](degree_five_trace_descent.md#3-the-norm-criterion-and-the-actual-fiber-product)
+now gives the actual full fiber product and uniformity of every
+fiber of the resulting degree-seven pencil. This contradicts the
+preceding exclusion. Both original etale maps are retained.
 
 Finally take the actual Galois closure $W\to Y$ of a genus-two
 leg and a normal subgroup $N$ of order seven. The original other

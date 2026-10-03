@@ -1,53 +1,19 @@
 # Proof: the unit-root centralizer has multiplicity one
 
-## 1. The pro-p cover model retains only etale p-torsion
+## 1. One prime-primary test, specialized to unit roots
 
-The pointed pro-primary argument in
-[the Frobenius theorem](pro_primary_frobenius_exclusion.md), Sections1-2,
-also applies to the geometric maximal pro-p fundamental group in
-characteristic p. It is finitely generated; its Frattini quotient is
-dual to H1_et(C,Fp), of dimension equal to the p-rank. The kernel of
-its automorphism action on this quotient is pro-p by the same finite
-Burnside-basis argument. This statement concerns the etale fundamental
-group and does not require a connected p-torsion trivialization.
-
-After making J(C)[p](bar Fq) rational over degree m and obtaining a
-rational base point over a further p-power field, Frobenius acts
-through this pro-p kernel. An actual open subgroup and then its
-Frattini quotient are fixed over a p-power extension. As in that
-proof, its full pro-p fundamental group is the subgroup: a p-group
-cover above a p-group-monodromy cover still has p-group Galois closure.
-This constructs T and makes J(T)[p](bar Fq) rational over exactly
-the required type of field F_(q^(m*p^s)).
-
-The [Artin--Schreier sequence](https://stacks.math.columbia.edu/tag/0A3J)
-identifies H1_et(C,Fp) with the F=1 vectors in H1(C,O_C).
-The standard semilinear Fitting decomposition shows that tensoring
-those vectors with the algebraic closure gives its stable-F part.
-In particular the dimension is finite. The pro-p fundamental group
-is in fact free of that rank; only finite generation was needed above.
-
-## 2. The geometric-factor argument works for unit roots
-
-Let B/FQ have rational etale p-torsion. Every UNIT p-adic Frobenius
-eigenvalue of B then reduces to1, since these are exactly the
-eigenvalues of Frobenius on the etale p-adic Tate module. No such
-claim is made about its positive-slope eigenvalues, which reduce to0.
-
-Suppose A0/FQ is a geometric factor and choose a unit eigenvalue pi.
-After a finite field extension on which the factor maps are defined,
-some eigenvalue alpha of B satisfies alpha^s=pi^s. Thus alpha=pi*zeta
-for a root of unity. Fix the p-adic embedding, and a number field
-K containing pi. For EVERY automorphism sigma fixing K,
-sigma(alpha)=pi*sigma(zeta) is still a UNIT eigenvalue of B. Therefore
-\[
-\overline{\sigma(\zeta)/\zeta}=1.
-\]
-Reduction is injective on roots of unity of order prime to p. The
-prime-to-p part of zeta is consequently fixed by all such sigma and
-belongs to K. This proves pi_bar in mu(K)_bar. Applied over the
-field of Section1, and removing its p-power exponent by the bijective
-p-power map on residual units, it proves(2) of the statement.
+The [general prime-primary theorem](pro_primary_frobenius_exclusion.md),
+Sections1–3, applies at the characteristic prime with ÉTALE torsion.
+It constructs an actual model of every five-group-monodromy cover
+over $\mathbf F_{q^{m5^s}}$ with rational étale five-torsion, where
+$m$ is the base torsion order. If a geometric Jacobian factor has a
+unit eigenvalue $\pi$ at a selected five-adic place, it forces
+$\overline\pi^{\,m}\in\overline{\mu(K)}$.
+The proof retains the root-of-unity twist using only conjugates fixing
+$K$: those conjugates remain units because they fix $\pi$.
+This single criterion replaces the separate cover and twist arguments.
+No rationality of connected five-torsion or test on positive slopes
+is used.
 
 For X the Weil polynomial modulo5 is
 \[
@@ -58,7 +24,7 @@ The established fixed-X endomorphism field has roots of unity mu6.
 Thus (2) for Frobenius25 raised to c gives624 dividing6cm, or
 104 dividing cm. In particular13 must divide c or m.
 
-## 3. The actual abelian quotient has a controlled field
+## 2. The actual abelian quotient has a controlled field
 
 Let W be the ORIGINAL Y-leg Galois closure and C=W/P. Its map to
 Y is the actual abelian A-cover. A rational point of Y exists over
@@ -79,7 +45,7 @@ prime to13. Chinese remaindering therefore gives a field
 F_(25^c),13 not dividing c, over which C/Y and its deck action are
 defined. No unspecified field of definition of W or its X-map is used.
 
-## 4. At most one etale five-character per coherent character
+## 3. At most one etale five-character per coherent character
 
 Over the algebraic closure, the prime-to-five abelian etale cover has
 \[
@@ -88,8 +54,9 @@ q_*\mathcal O_C=\bigoplus_{\chi\in\widehat A}L_\chi,
 where nontrivial characters give nontrivial degree-zero torsion lines.
 Since g(Y)=2, Riemann--Roch gives h1(Y,L_chi)=1 for chi nontrivial,
 and h1(Y,O_Y)=2. Thus each nontrivial character has multiplicity ONE
-in H1(C,O_C). Artin--Schreier and the stable-part inclusion from
-Section1 imply multiplicity AT MOST ONE in
+in H1(C,O_C). Artin–Schreier identifies étale five-cohomology with the Frobenius-fixed
+vectors; their scalar extension is the stable Frobenius part of
+$H^1(C,\mathcal O_C)$. Its inclusion implies multiplicity AT MOST ONE in
 H1_et(C,F5) tensor k. This does not assert that C is ordinary.
 
 A simple F5[A]-module of character order d has endomorphism field
@@ -105,7 +72,7 @@ Since ord_13(5)=4, condition4 not dividing ord_n(5) excludes13
 from every one of these groups. Thus the actual torsion order m
 is prime to13, independently of the genus of C or the order of A.
 
-Now W/C has five-group monodromy. Sections1-2 exclude JX as a
+Now W/C has five-group monodromy. The criterion in Section1 excludes JX as a
 geometric factor of JW. But the composed original map W->Z->X
 is etale and supplies exactly that factor. This contradiction
 proves the theorem with both original maps retained.
@@ -116,11 +83,11 @@ only by powers of its odd prime. None gains a factor4. Also
 ord_8(5)=2, while ord_16(5)=4; this is the stated two-primary limit.
 All six allowed primes avoid the five forbidden residues modulo13.
 
-## 5. The actual hyperelliptic lift halves certain character fields
+## 4. The actual hyperelliptic lift halves certain character fields
 
 Make one Weierstrass point of Y rational over a field extension of
 degree at most6, hence prime to13. Choose it as the base point for
-the ACTUAL quotient construction in Section3, so that a point of C
+the ACTUAL quotient construction in Section2, so that a point of C
 above it is rational. The hyperelliptic involution iota fixes the
 base point and acts by minus one on the abelian fundamental group,
 as it does on the Jacobian with this Weierstrass origin.
@@ -154,13 +121,13 @@ All three primes also satisfy the model-field residue condition.
 
 An elementary two-quotient of rank3 or4 exists on either genus-two
 endpoint. Combining it with arbitrary cyclic37,41,89 quotients and
-the five-group P of Section7 gives genuine additional cover families.
+the five-group P of Section6 gives genuine additional cover families.
 An order8 character cannot be substituted here: minus one modulo8
 does not lie in the subgroup generated by5. This is why the refined
 condition is stated for every character order, not just the total
 odd exponent.
 
-## 6. A conditional nonabelian quotient test
+## 5. A conditional nonabelian quotient test
 
 For any prime-to-five free deck group A, the coherent free-cover
 character gives H1(O_C)=k plus k[A] when the base has genus two.
@@ -188,7 +155,7 @@ Each factor satisfies4/gcd(4,f)>e. The criterion therefore excludes
 every such closure group, with no bound on a and no assumption
 on the original leg's Galois property.
 
-## 7. Actual new groups, and the limit of the argument
+## 6. Actual new groups, and the limit of the argument
 
 Let P=C5 wreath C25=(C5)^25 semidirect C25, with cyclic permutation
 of the25 coordinates. A shift and one coordinate generator generate

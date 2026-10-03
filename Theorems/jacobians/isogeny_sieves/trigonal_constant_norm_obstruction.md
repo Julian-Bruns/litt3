@@ -1,8 +1,9 @@
-# Constant-norm obstruction and unique two-torsion representatives
+# Constant and mixed trigonal norm obstructions
 
-Version2,23September2026. The constant-norm criterion passed a focused
-independent mathematical audit. The fixed-X uniqueness corollary below
-is a direct Riemann--Roch consequence.
+Version3,3October2026. The constant-norm criterion retains its focused
+independent audit; the fixed-X mixed-norm exclusion reuses the exact
+geometric unit-ideal certificate checked on25September2026. The
+two-torsion uniqueness assertion is a Riemann--Roch consequence.
 
 Let F in F25[x] be squarefree of degree10 and let X be the smooth
 projective model of y^3=F. Suppose the Frobenius25 polynomial of J(X)
@@ -39,6 +40,17 @@ by equality of all unramified Euler factors and of the omitted local
 factors. A norm solution gives an actual nonconstant primitive-sixth
 map D->E:v^2=u^3+1. Since Frobenius25 on E is -5, the binary order
 contradicts the degree of its required root-of-unity Weil eigenvalue.
+
+For the same fixed polynomial \(F\), there are also no polynomials
+\(g,H,J\in\overline{\mathbf F}_5[x]\) satisfying
+\[
+F+g^3=H^2J^3,\qquad \deg g\le3,\quad H,J\text{ monic of degree two}.
+\]
+This is an unconditional geometric assertion: repeated roots and common
+roots of \(H,J\) are included. It uses the full coefficient ideal, with
+no support, trace, cover, squarefreeness or nonvanishing assumptions.
+In particular \(F+g^3=(x-r)^4C_2^3\) is impossible for every geometric
+\(r\) and every monic quadratic \(C_2\), by taking \(H=(x-r)^2\).
 
 For nonconstant Q, the fixed-X carriers and their backup-factor tests
 are handled by the [complete sieve](backup_double_cover_exclusion.md).

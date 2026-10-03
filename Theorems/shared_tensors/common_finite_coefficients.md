@@ -1,6 +1,6 @@
 # Quotient rigidity for common strongly semistable bundles
 
-Version3,20September2026. Let $k=\overline{\mathbf F}_p$ and let
+Version4,1October2026. Let $k=\overline{\mathbf F}_p$ and let
 $X\xleftarrow f Z\xrightarrow g Y$ be an actual coreless finite
 étale span of smooth projective connected curves.
 
@@ -111,5 +111,19 @@ bundles is strongly semistable.
 No existence of a common coefficient is asserted. One-endpoint
 finite-coefficient presentations of $B$ may exist on both endpoints
 without any compatible common presentation.
+
+## All slopes vanish in the no-clump branch
+
+Assume $p$ is odd, there is no clump, and
+$p\nmid g(C)-1$ at least at one endpoint. For every COMMON strongly
+semistable coefficient $E$ of ANY slope and rank,
+\[
+\operatorname{Hom}_{\rm common}(E,B)=0.
+\]
+The same vanishing holds for every higher Frobenius quotient
+$B^{[e]}$, $e\ge1$, with the appropriate scalar and relative twists.
+This stronger no-clump conclusion does not replace the retained
+clump-case slope restriction above. It does not concern separate
+one-leg coefficient presentations and constructs no common coefficient.
 
 [Proof](../../Proofs/shared_tensors/common_finite_coefficients.md).

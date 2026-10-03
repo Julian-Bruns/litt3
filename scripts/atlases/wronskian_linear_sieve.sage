@@ -1,11 +1,8 @@
 #!/usr/bin/env sage
 """Iterated exact linear necessary condition, retaining coupled N/R tensors."""
 from pathlib import Path
-source=Path('scripts/atlases/wronskian_serre_dual.sage').read_text()
-marker="for sample,old in zip(saved['samples'],prior['samples']):"
-assert source.count(marker)==1
-exec(preparse(source.split(marker)[0]))
-rtensor=json.loads(Path('Research/computations/wronskian_universal_image.json').read_text())
+load('scripts/atlases/wronskian_dual_context.sage')
+rtensor=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_universal_image.json').read_text())
 Rs=[matrix(k,[parse(row) for row in M]) for M in rtensor['R_tensor']]
 assert matrix(k,[parse(row) for row in rtensor['S_U_basis']])==KU
 # One fixed coordinate left inverse for all Wronskians.
@@ -48,5 +45,5 @@ for iteration in range(57):
     B=newB
 else: raise AssertionError('Sieve failed to stabilize in56 strict dimension drops')
 data['elapsed_seconds']=time.monotonic()-started
-Path('Research/computations/wronskian_linear_sieve.json').write_text(json.dumps(data,indent=2,default=int)+'\n')
+Path('../litt3-computation-data/legacy_workspace_computations/wronskian_linear_sieve.json').write_text(json.dumps(data,indent=2,default=int)+'\n')
 print('DONE',data['elapsed_seconds'],flush=True)

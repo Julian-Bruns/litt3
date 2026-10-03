@@ -45,6 +45,13 @@ Frobenius on A/N is bijective. Uniqueness of the étale section identifies
 it with B. This includes e=0. Over F_q these are ordinary linear ranks;
 over a larger perfect field they are semilinear ranks.
 
+The power q must satisfy q>1. If q=1, the Frobenius map here is the
+identity, so every algebra has a rank plateau. The dual-number algebra
+K[z]/(z^2) has the nonzero nilpotent z, its identity kernel is zero,
+and its identity image is nonreduced. Thus the adaptive conclusion
+would be false without this hypothesis. Version4 makes the positive
+power convention explicit; e=0 remains permitted.
+
 ## Multiplicities and completeness
 
 The [Artinian decomposition, Stacks Lemma10.53.5](https://stacks.math.columbia.edu/tag/00JA)

@@ -38,7 +38,7 @@ and obstruction rows Lambda satisfy
 
 The nine independent columns therefore give every compatible third
 choice Xi(x)=xi_*+N*x. The full matrices and original marking are in the
-[primary input](../../../Research/computations/rank25_small_field_fourth_inputs.json).
+[primary input](../../../../litt3-computation-data/legacy_workspace_computations/rank25_small_field_fourth_inputs.json).
 The [complete fourth data](../../../Research/pro_inputs/rank25_all_fifth_lifts_inputs.zip)
 retain the full nine-variable E and all75 coordinates of normal4 on
 the candidate plane x7=x8=0, including ordinary-x terms. Section2 proves
@@ -79,7 +79,7 @@ W4 data root identified in §5.
 Use the auxiliary coordinates of the statement, writing the top pair
 as z=(z1,z2) only in §§2–3; this is distinct from the curve parameter
 z=u^2/v in the geometric construction. The exact
-[potential certificate](../../../Research/computations/rank25_critical_potential.json)
+[potential certificate](../../../../litt3-computation-data/legacy_workspace_computations/rank25_critical_potential.json)
 checks ∇V=P*E in all nine original coordinates, with det(P)=1401, and
 
     V=1011*h^2+z^T*K*f_s
@@ -224,7 +224,7 @@ It retains the original source, universal2100.json, point_and_fourth_digit.json,
 and all69 manifest files. The separate full replay rebuilt branch caches,
 the witness, both full fourth comparisons, changed-Frobenius coefficients
 and all nine-variable equations; all38 final field checks agree. Its
-[receipt](../../../Research/computations/rank25_w4_fresh_replays_20260911.json)
+[receipt](../../../../litt3-computation-data/legacy_workspace_computations/rank25_w4_fresh_replays_20260911.json)
 distinguishes added diagnostics from unchanged mathematical values.
 The [original geometric audit](../../../Research/audits/RANK25_FOURTH_LIFT_AUDIT_2026_09_11.md)
 covers marking, twist, full frames, precision and universal degree bounds.
@@ -233,7 +233,7 @@ The [critical-potential checker](../../../scripts/deformations/rank25/check_rank
 verifies ∇V=P*E, the factorization, both top-slope contradictions and the
 complete étale center by coefficient identities. Its small receipt binds
 all three inputs. The older independent
-[locus receipt](../../../Research/computations/rank25_w5_return_and_global_w4_locus_checks.json)
+[locus receipt](../../../../litt3-computation-data/legacy_workspace_computations/rank25_w5_return_and_global_w4_locus_checks.json)
 retains explicit open and boundary transverse minors, and the new
 critical-locus audit checks the scheme and Frobenius reasoning. These
 finite checks support the stated constructions; none supplies an

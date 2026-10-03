@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-"""Reconstruct the inline September 23 Pro checks; Sage Python required.
+"""Reconstruct the retained positive and quadratic September 23 checks.
 
 The referenced bundle_certificate.zip was not attached to the conversation.
 This is a separate reconstruction from the printed coefficients and formulas,
-not an execution of that unavailable package. Generated receipts stay outside
-the research workspace.
+not an execution of that unavailable package. The later sharp K line theorem
+replaces the degree-zero twist census and cup-minor argument. Generated
+receipts stay outside the research workspace and preserve the original receipt.
 """
-import itertools
 import json
 import time
-from collections import Counter
 from pathlib import Path
 from sage.all import GF, PolynomialRing, matrix
 
@@ -31,67 +30,12 @@ C25 = sum(decode(c)*x**(25*(9-i)) for i,c in enumerate(cs))
 a0, rem = (P**17*C25*b0).quo_rem(x**250)
 assert [a0.degree(),rem.degree(),b0.degree()] == [189,205,44]
 assert a0.gcd(b0) == 1 and a0.gcd(P) == 1
-cup = matrix(K, [[decode(cs[i+j]) for j in range(3)] for i in range(7)])
-assert cup[:3,:].det() == decode(19)
 positive = {
     "a0_degree": int(a0.degree()), "remainder_degree": int(rem.degree()),
     "b0_degree": int(b0.degree()), "gcd_a0_b0": str(a0.gcd(b0)),
     "gcd_a0_P": str(a0.gcd(P)), "infinity_orders": [135,-142],
-    "cup_rank": int(cup.rank()), "cup_first_minor_code": 19,
 }
-print("Positive Frobenius presentation and K(O) cup minor: PASS", flush=True)
-
-# An absolute finite field makes Sage's matrix arithmetic fast. Verify the
-# displayed relative quartic independently, and embed the same GF25.
-L = GF(5**8, "b")
-SL = PolynomialRing(L, "x")
-xx = SL.gen()
-al = (xx**2-xx-3).roots(multiplicities=False)[0]
-embed = K.hom([al], L)
-PL = SL([embed(c) for c in P.list()])
-quartic = SL([embed(decode(n)) for n in [18,15,10,4,1]])
-assert R([decode(n) for n in [18,15,10,4,1]]).is_irreducible()
-assert len(quartic.roots(multiplicities=False)) == 4
-roots = sorted(PL.roots(multiplicities=False), key=lambda t: tuple(t.polynomial()))
-assert len(roots) == 10 and PL.is_squarefree()
-C = SL([embed(c) for c in poly(list(reversed(cs))).list()])
-hist = Counter()
-bad = []
-for digits in itertools.product(range(3), repeat=9):
-    ss = digits+(0,)
-    AA = SL.one()
-    BB = SL.one()
-    for root,s in zip(roots,ss):
-        if s == 1:
-            AA *= xx-root
-        elif s == 2:
-            BB *= xx-root
-    AB = AA*BB
-    denoms = [SL.one(),BB,AB]
-    factors = [AB,PL//BB,PL//AA]
-    weight = int(AA.degree()+2*BB.degree())
-    source = 0
-    kernel = 0
-    for j in range(3):
-        target = (j+2)%3
-        upper = (6-weight-10*j+3*int(denoms[j].degree()))//3
-        target_upper = (-5-weight-10*target+3*int(denoms[target].degree()))//3
-        ncols = max(0,upper+1)
-        if not ncols:
-            continue
-        polynomial = C*factors[j]
-        rows = range(target_upper+1,0)
-        mm = matrix(L, len(rows), ncols,
-                    [polynomial[n-i+10] if n-i+10 >= 0 else L.zero()
-                     for n in rows for i in range(ncols)])
-        source += ncols
-        kernel += ncols-int(mm.rank())
-    hist[source] += 1
-    if kernel:
-        bad.append({"digits":ss,"kernel":kernel})
-assert dict(hist) == {3:1,2:275,1:4917,0:14490}, dict(hist)
-assert not bad
-print("All 19683 invariant degree-zero twists: PASS", flush=True)
+print("Positive Frobenius presentation: PASS", flush=True)
 
 # Universal polynomial identities, independent of any specific curve.
 Q = PolynomialRing(GF(5), ["a1","a2","a3","b1","b2","b3","s","t","c"])
@@ -131,12 +75,11 @@ report = {
     "status":"PASS",
     "provenance":"Independent reconstruction from inline response; original ZIP unavailable",
     "positive_presentation":positive,
-    "invariant_twists":{"count":3**9,"source_dimension_histogram":dict(hist),"nonzero_kernels":bad},
     "quadratic_multiplication_determinant":True,
     "primitive_shift_invariance_mod_constants":True,
     "local_quadratic_defects":{"simple":[0,0,1],"double":[0,1,1]},
     "new_line_square_saturation_order":3,
     "seconds":time.time()-started,
 }
-(out/"inline_reconstruction.json").write_text(json.dumps(report,indent=2)+"\n")
+(out/"positive_and_quadratic_reconstruction.json").write_text(json.dumps(report,indent=2)+"\n")
 print(json.dumps(report,indent=2), flush=True)

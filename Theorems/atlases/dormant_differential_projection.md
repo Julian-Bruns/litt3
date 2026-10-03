@@ -35,13 +35,16 @@ where the last term is multiplication, not composition. Then:
    32-dimensional eta-space. The old136-row and new64-row N tensors
    differ by a FIXED injective linear comparison, so (3) applies to
    either implementation and to every stage of the coupled linear sieve.
+   The fixed injection splits, so their kernels agree over EVERY
+   coefficient algebra. The64-row tensor replaces the136-row tensor
+   on all incidence strata, with no generic-rank assumption.
 
 No assumption h0(W(8O))=0 is needed. In general im(L_r:L32->L64)
 can be smaller than ker Q_r; their dimension difference is h0(W(8O)).
 Neither (2) nor (3) asserts an atlas exclusion or equality with the entire
 stable sieve space for every oper.
 
-Version2. Status: proved. The exact complex is the fixed-curve
+Version3,3October2026. Status: proved. The exact complex is the fixed-curve
 specialization of the [intrinsic Bol complex](../projective_connections/dormant_bol_complex.md),
 whose local exactness is proved there.
 [Proof](../../Proofs/atlases/dormant_differential_projection.md).

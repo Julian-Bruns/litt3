@@ -94,6 +94,33 @@ three-dimensional space $V$. Taking its $25$th power makes it an
 ordinary nonzero alternating bilinear form with the same radical.
 Its rank is two and its radical $R_\eta$ is a line.
 
+For the finite projective geometry, put
+$H=H^1_{\rm et}(X,\mathbf F_5)=H^1(X,\mathcal O_X)^{F=1}$.
+The cubic automorphism $\gamma$ has no invariants because its
+quotient is the projective line. Thus $\mathbf F_5[\gamma]\simeq
+\mathbf F_{25}$ and $H$ has dimension three over this field.
+Restriction $H\to W^\vee$ is injective by the argument above.
+It intertwines $\gamma$ with a primitive cube-root scalar,
+hence is F25-linear with the corresponding embedding into k.
+
+The Frobenius-fixed vectors span the entire bijective part
+$H^1(X,\mathcal O_X)_{\rm bij}=\operatorname{Ann}(V)$ over k:
+$\ker C_X^2=\ker C_X$ gives
+$\operatorname{im}F^2=\operatorname{im}F=\operatorname{Ann}(V)$,
+so this image is already the bijective part
+([Artin--Schreier descent](https://stacks.math.columbia.edu/tag/0A3J),
+Lemma59.63.2). Its restriction to $W^\vee$ is surjective by (4).
+Consequently the image of H is an F25 form of $W^\vee$:
+its three F25 basis vectors are also k-linearly independent.
+The semilinear isomorphism $\tau_X$ followed by the alternating
+radical identification sends this form to an F25 form of V;
+the scalar exponent25 fixes F25. Therefore the radical lines
+are exactly its651 projective points. The six F5 lines in each
+F25 line are the six unmarked degree-five covers with that
+radical. The unique F25 line itself defines the corresponding
+cubic-stable degree25 cover.
+
+
 ## 3. Only one Jordan block of the exact forms can be nontrivial
 
 Return to $q:T\to X$ and $E=\ker C_T$. Etale descent and Cartier
@@ -130,6 +157,17 @@ three, a contradiction. If $1<L<Q$ is odd, that length has
 multiplicity one, again a contradiction. Thus
 $L\in\{2,4,\ldots,Q-1,Q\}$. In particular a nontrivial block always
 occurs, and its invariant bottom is exactly $q^*R_\eta$.
+
+Finally the later
+[deck-module theorem](../jacobians/etale_frobenius_degree_gap.md)
+identifies the actual Frobenius-nilpotent part with $R^3$.
+Serre duality identifies $E$ with the contragredient dual of
+$\operatorname{coker}F_T$, with its scalar twist. Duality and
+inversion of the deck generator preserve cyclic block lengths.
+Thus its invariant factors are $t,t,t^L$, including a zero
+factor when $L=Q$. This is Smith form of the linearized map,
+not a common basis conjugating all its semilinear powers.
+
 
 The general estimate $a(T)\le3Q$ follows just from three invariant
 blocks; the improvement uses the specific nondegenerate double
@@ -199,19 +237,23 @@ and using (8)--(9), the connecting map on sections is
 V_B^2\longrightarrow V_B^\vee,
 \qquad(u_1,u_2)\longmapsto D_1(u_1+\lambda u_2).
 \]
-Its rank is two. Consequently
-\[
-\dim H^0(C,B_X\otimes\mathcal U)=3+(6-2)=7.
-\tag{11}
-\]
-The inclusion of $\mathcal U$ into the actual pushforward embeds
-these seven sections into $E_A$ (with its retained scalar twist).
+Its rank is two. The inclusion of $\mathcal U$ into the actual pushforward embeds
+its global sections into $E_A$, retaining the scalar twist.
 
 For every $v\in V_B$, the pair $(-\lambda v,v)$ belongs to the
-kernel of the connecting map, so it has a global lift in (11).
+kernel of the connecting map, so it has a global lift.
 Subtracting its translate by the second standard deck generator
 gives $v$ in the invariant copy of $V_B$. Thus $V_B\subset JE_A$.
 Etale descent gives $E_A^A=q_A^*V_B$, so
 $JE_A\cap E_A^A=E_A^A$. This proves the actual geometric boundary.
 It explains why testing only the cyclic quotient characters cannot
 carry the one-line argument over to an arbitrary five-group.
+
+For the stronger numerical statement, apply the later augmentation
+bound to the ACTUAL A-cover. The radical-layer dimensions of k[A]
+are the coefficients of $(1+x+\cdots+x^4)^2$, whose maximum is5.
+The base nilpotent Frobenius part has dimension3 and is killed by F;
+hence $a(T_A)\ge3\cdot5=15$. This applies to every actual degree25
+elementary abelian cover, independently of the cubic-stable
+construction used to make all invariant directions augmentation
+images. The651 count is already proved by the F25 geometry above.

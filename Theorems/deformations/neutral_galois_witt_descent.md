@@ -1,6 +1,8 @@
 # Defect-neutral Galois covers descend every given compatible Witt tower
 
-Version1,2026-09-11.
+Version2,3 October2026. The original cyclic two-digit argument
+retains its independent audit. The finite general-Galois range below
+follows by iterating that accepted step.
 
 Let k=bar(F5). Let h:T→C be an actual connected finite etale Galois
 cover of smooth projective curves of genus at least two. Let r_C be
@@ -28,9 +30,16 @@ its GIVEN T_(n+1) to descend compatibly to C_(n+1) extending C_n.
 Only one extra upper digit is needed. There is no assertion that this
 particular T_(n+2) already descends at its top digit.
 
-For a general neutral Galois cover, a subnormal chain in an actual
-Sylow-five subgroup supplies the cyclic steps; the original remaining
-map has degree prime to five and uses the established neutral theorem.
+For a general neutral Galois cover put $a=v_5(|G|)$. For every
+$n\ge2$, over a given compatible original map $h_n:T_n\to C_n$,
+a GIVEN compatible $T_{n+a+1}$ forces its GIVEN $T_{n+1}$ to
+descend compatibly over $C_{n+1}$. Thus exactly $a$ extra upper
+digits suffice; when $a=0$, none is needed. This is a sufficient
+range, not a sharpness assertion.
+
+A subnormal chain in an actual Sylow-five subgroup supplies its
+$a$ cyclic steps. The remaining original intermediate-to-C map
+has degree prime to five and uses defect-preserving descent.
 All intermediates remain neutral by injective pullback of defect
 sections. No simultaneous Galois closure is presumed in a two-leg use.
 

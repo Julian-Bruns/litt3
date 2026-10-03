@@ -7,7 +7,7 @@ identities are used. No candidate Groebner basis or Macaulay search.
 import json
 from pathlib import Path
 root=Path(__file__).resolve().parents[2]
-data=root/'Research/computations'
+data=root/'../litt3-computation-data/legacy_workspace_computations'
 d=json.loads((data/'genus_two_intrinsic_tensor.json').read_text())
 k=GF(25,name='a',modulus=PolynomialRing(GF(5),'r')([2,4,1])); a=k.gen()
 get=lambda s:k(sage_eval(s,locals={'a':a}))

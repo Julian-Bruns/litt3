@@ -2,17 +2,14 @@
 """Exact quadratic normal-symbol/coefficient-transport witness; no solver."""
 from pathlib import Path
 import hashlib
-source=Path('scripts/atlases/direct_wronskian_test.sage').read_text()
-marker='monsU=basis(112); monsT=basis(197)'
-assert source.count(marker)==1
-exec(preparse(source.split(marker)[0]))
+load('scripts/atlases/wronskian_section_context.sage')
 cache={}
 def parse(s):
     if s not in cache: cache[s]=k(sage_eval(s,locals={'a':a}))
     return cache[s]
 def mat(M):return matrix(k,[[parse(c) for c in row] for row in M])
 enc=lambda v:[str(c) for c in v]
-read=lambda stem:json.loads(Path('Research/computations/'+stem+'.json').read_text())
+read=lambda stem:json.loads(Path('../litt3-computation-data/legacy_workspace_computations/'+stem+'.json').read_text())
 full=read('wronskian_universal_image'); dual=read('wronskian_serre_dual')
 grad=read('wronskian_line_gradient'); compact=read('canonical_atlas_system')
 jdata=read('extension_projection_differential')['samples'][0]
@@ -59,7 +56,7 @@ out={'scope':'One exact transported quadratic-normal-map identification, not an 
  'all24_outputs_fifth_powers_verified':True,'normal_rank':Normal.rank(),'projected_rank':Project.rank(),'normal_annihilates_exact_extension_derivative':True,
  'U':enc(u),'normal_matrix':[enc(v) for v in Normal.rows()],'elapsed_seconds':time.monotonic()-started}
 stems=['wronskian_universal_image','wronskian_serre_dual','wronskian_line_gradient','canonical_atlas_system','extension_projection_differential','wronskian_linear_sieve','normalized_oper_algebra_certificate']
-out['source_sha256']={s:hashlib.sha256(Path('Research/computations/'+s+'.json').read_bytes()).hexdigest() for s in stems}
-out['polynomial_setup_sha256']=hashlib.sha256(Path('scripts/atlases/direct_wronskian_test.sage').read_bytes()).hexdigest()
-Path('Research/computations/extension_normal_symbol.json').write_text(json.dumps(out,indent=2,default=int)+'\n')
+out['source_sha256']={s:hashlib.sha256(Path('../litt3-computation-data/legacy_workspace_computations/'+s+'.json').read_bytes()).hexdigest() for s in stems}
+out['polynomial_setup_sha256']=hashlib.sha256(Path('scripts/atlases/wronskian_section_context.sage').read_bytes()).hexdigest()
+Path('../litt3-computation-data/legacy_workspace_computations/extension_normal_symbol.json').write_text(json.dumps(out,indent=2,default=int)+'\n')
 print('elapsed',out['elapsed_seconds'],flush=True)

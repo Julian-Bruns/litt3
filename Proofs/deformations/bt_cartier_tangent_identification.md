@@ -47,7 +47,7 @@ from equality of global dimensions.
 The logarithmic character cover has Cartier-fixed form $\Omega$,
 and its fourth power is a nonzero constant multiple of the pulled
 back normalized quartic. This is the actual crystalline calculation
-in [the Cartier bridge](versal_bt_cartier_rigidity.md).
+in [the Cartier bridge](versal_bt_cartier_realization.md).
 On a common tame refinement write $\Omega=o\,du$. The ratio
 $a/o^2$ is constant: its square is a nonzero constant, and the
 refinement is reduced. Thus $a=\zeta o^2$ for a nonzero constant
@@ -128,6 +128,13 @@ This proves (4). If a next-level object exists on $D$, functoriality
 of the absolute extension torsor gives $q^*e_N(A_N)=0$, so (4)
 annihilates the trace image. A surjective trace therefore forces
 $e_N(A_N)=0$ and produces some actual next-level object on $C$.
+
+For any five-group Galois cover, pullback identifies the tangent trace
+with the group norm on its ACTUAL section module. Its invariant space
+is the base section space. The [coefficient-module lemma](versal_bt_extension_torsor.md#five-group-coefficient-modules)
+makes norm surjectivity equivalent to freeness, hence to maximal
+dimension. Serre duality makes it equivalent to injectivity on first
+cohomology. This proves(5) independently of the later descent criterion.
 
 For a cyclic group of order $d=5^a$, pullback identifies this trace
 with the norm $N=(\gamma-1)^{d-1}$ on global tangent sections.

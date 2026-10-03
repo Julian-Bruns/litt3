@@ -1,6 +1,6 @@
 # Ramified rank-two coefficients on genus-two curves
 
-Version5,20 September2026. Let $k$ be algebraically closed of
+Version6,3 October2026. Let $k$ be algebraically closed of
 characteristic $p>2$, let $C/k$ have genus two, and let
 $K/\mathbf Q_p$ have ramification index $e$ and residue degree $f$.
 Let $G/C$ be a full $\mathcal O_K$-linear $p$-divisible group of
@@ -23,6 +23,13 @@ isogeny class, an index $i$, and an integer $1\le s\le e$ such that:
 - Every Frobenius step of this SAME lattice has height at most $s$.
 - The actual outgoing kernel gives an oper line $L_s$ on the WHOLE
   constant thickening $C\times\operatorname{Spec}(A_i/\pi^s)$.
+
+More precisely, EVERY positive-height edge in this SAME final lattice
+leaves a degree-one oper. If its height is t, its elementary divisors
+are \((1,\pi^t)\) everywhere and its actual kernel gives an oper
+over the WHOLE ring \(A_i/\pi^t\). The operative components are
+exactly the sources of positive-height edges. For the simultaneous
+lifting criterion, choose the maximum-height edge as above.
 
 Here $A_i$ is the coefficient DVR for the indicated unramified
 embedding; relative Frobenius twists and the coefficient action
@@ -54,10 +61,36 @@ Only the genus-two endpoint lattice is needed; oper rigidity
 descends it through the other actual map. Compatibility on a
 connected finite étale refinement of the source also suffices.
 
-For the selected main pair such common coefficient data is therefore
-impossible at EVERY coefficient place. For the backup it forces
-the still-open fully liftable branch. A common coefficient is not
-constructed from a bare span.
+The completed selected-pair applications are recorded in
+[the arithmetic coefficient exclusion](../curve_arithmetic/backup_arithmetic_reduction_exclusion.md)
+and [the common coefficient theorem](../shared_tensors/common_companion_jump.md).
+A common coefficient is not constructed from a bare span.
+
+## Every coreless comparison has equally spaced active components
+
+Suppose the actual compatible span is coreless. Let m be the number
+of positive-height edges in the constructed lattice. Then
+\[
+m\mid f,\qquad a=f/m,\qquad |S_Y|=p^a-1,qquad
+\frac1{ea}\le\delta=\frac b{ef}\le\frac1a.
+\]
+The common clump is the reduced Hasse support of EVERY active
+component. Thus m divides f and the active intervals all have length a.
+This conclusion retains every Frobenius arrow in the specified
+source comparison. Unequal heights give no exceptional-slope formula
+here.
+
+With geometrically constant determinant on BOTH endpoints,
+\(\tau_C=\mathcal O_C(S_C)\otimes\omega_C^{-(p^a-1)/2}\),
+C=X,Y, is two-torsion and \(\tau_C^m=\mathcal O_C\).
+The primitive common canonical weight w and zero multiplicity nu are
+\[
+(w,\nu)=((p^a-1)/2,1)
+\quad\text{if both }\tau_X,\tau_Y\text{ are trivial};
+\qquad (w,\nu)=(p^a-1,2)\quad\text{otherwise}.
+\]
+Odd m therefore gives simple primitive zeros. The cardinality and
+gap bounds require no determinant triviality.
 
 ## Useful sharper cases
 
@@ -66,8 +99,8 @@ whose Hodge modules are free rank one over every $A_i/p$, ALL reduced
 Hodge lines have degree one, and ALL whole modulo-$p$ second
 fundamental forms are isomorphisms.
 
-At residue degree one, for gap $a/e$, one can take $s=a$ and
-elementary divisors $(1,\pi^a)$ everywhere. If $a<e$, the resulting
+At residue degree one, for gap $b/e$, one can take $s=b$ and
+elementary divisors $(1,\pi^b)$ everywhere. If $b<e$, the resulting
 oper reduction is dormant. This additional endpoint fact is used
 by the separate fractional-slope exclusion.
 
@@ -84,9 +117,9 @@ In genus two the latter is an oper of degree one. A nonzero form
 over a constant coefficient thickening cannot be supported only
 in its nilpotent directions when $0<g(C)-1<p$.
 
-The two-component height transfer was returned by Pro. The
-finite transfer argument for arbitrary component cycles, including
-zero-height steps, is an author extension. It removes all remaining
-residue-degree and ramification restrictions on the stated lifting
-criterion. It does not settle the common-cover problem.
+The two-component transfer was returned by Pro. Its arbitrary-cycle
+extension and the new all-positive-edge and common-divisor refinements
+are consolidated in one proof. Independent bounded review passes the
+new refinements. The ordinary, free-Hodge and residue-one conclusions
+are retained. The common-cover problem remains unsolved.
 [Proof](../../Proofs/deformations/ramified_rapoport_oper.md).

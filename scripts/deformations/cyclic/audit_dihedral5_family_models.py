@@ -18,7 +18,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--models', required=True)
     ap.add_argument('--census', help='Optional completed actual W4 first-stage outputs to audit independently')
-    ap.add_argument('--output', default='Research/computations/dihedral5_family_model_independent_audit.json')
+    ap.add_argument('--output', default='../litt3-computation-data/legacy_workspace_computations/dihedral5_family_model_independent_audit.json')
     args = ap.parse_args(); start = time.monotonic()
     directory = Path(args.models)
     primepoly = PolynomialRing(GF(5), 'T'); tt = primepoly.gen()

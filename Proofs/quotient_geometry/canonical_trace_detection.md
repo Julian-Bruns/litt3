@@ -6,7 +6,9 @@ Raynaud-section case and its exceptional lower cutoff. The argument
 below identifies the entire generic kernel for any coefficient
 bundle and any hyperbolic target. It separates interpolation from
 Frobenius cohomology and removes ordinariness, the a-number and
-representation hypotheses from the detection statements.
+representation hypotheses from the detection statements. The later
+conductor theorem uses its interpolation part in every characteristic;
+only the weight-one hyperelliptic primitive argument needs two invertible.
 
 ## 1. The actual evaluation map and its trace dual
 
@@ -122,6 +124,18 @@ The odd-characteristic qualification in the hyperelliptic case
 is real: in characteristic two the canonical differential
 coefficients need not recover its Artin--Schreier generator.
 
+For every characteristic and $c\ge3$, $\omega_Y^c$ is very ample:
+its degree is at least $2h+1$, and Serre duality gives vanishing after
+subtracting any length-two subscheme. Suppose two F-embeddings of E
+agree on all coefficients $g^*q/(f^*\theta)^c$. Their vectors of
+values differ from the canonical-power evaluation vectors only by
+nonzero common factors, because both maps are separable. Very
+ampleness therefore makes their Y-points equal. Joint minimality
+then makes the two embeddings equal. Avoid the finitely many proper
+linear equality subspaces to obtain a primitive general coefficient
+$\alpha_q$. This restores the earlier tricanonical alternative
+precisely in the characteristic-two case where weight one can fail.
+
 ## 4. Strict Krylov growth detects the actual section
 
 For the nonzero coefficient span W define
@@ -142,8 +156,9 @@ If all traces of \(\alpha^j\xi_F\) vanished through
 nonzero trace functional, regardless of the value of
 \(\operatorname{Tr}(1)=n\). This contradiction proves the
 moment bound, with j positive when the initial trace is zero.
-Multiplication by \((g^*\nu)^j\) restores the rational frame
-and gives the asserted global regular weighted trace.
+Multiplication by \((g^*\nu)^j\), or \((g^*q)^j\) in the
+canonical-power case, restores the rational frame and gives the
+asserted global regular weighted trace in the etale setting.
 
 For an orthogonal summand with self-adjoint projector e, the two
 off-diagonal blocks of multiplication by \(\alpha\) are adjoint
@@ -166,7 +181,7 @@ Those reconstruction conclusions and their degree dependence remain
 valid; they are not new common-cover obstructions.
 
 On the Frobenius-twisted span take \(V=B_X\) and use étale base
-change \(f^*B_X=B_Z\). In genus two, the canonical ring has
+change \(f^*B_X=B_Z\). In odd-characteristic genus two, the canonical ring has
 generators s,t in degree one and their bracket w in degree three,
 with \(w^2=R(s,t)\). Thus for \(r\ge3\) the finite detecting
 list consists of \(s^{r-i}t^i\), \(0\le i\le r\), and

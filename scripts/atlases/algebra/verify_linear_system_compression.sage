@@ -5,8 +5,8 @@ from pathlib import Path
 
 ap=argparse.ArgumentParser(); ap.add_argument('--output',required=True,type=Path)
 args=ap.parse_args(); started=time.monotonic()
-source=Path('Research/computations/genus_two_intrinsic_tensor.json')
-saved_source=Path('Research/computations/genus_two_intrinsic_solutions.json')
+source=Path('../litt3-computation-data/legacy_workspace_computations/genus_two_intrinsic_tensor.json')
+saved_source=Path('../litt3-computation-data/legacy_workspace_computations/genus_two_intrinsic_solutions.json')
 d=json.loads(source.read_text()); saved=json.loads(saved_source.read_text())
 k=GF(5**6,name='q'); zring=PolynomialRing(k,'z'); z=zring.gen()
 a=zring([2,4,1]).roots(multiplicities=False)[0]

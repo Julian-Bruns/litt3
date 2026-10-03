@@ -30,7 +30,7 @@ if args.workers<1 or args.memory_gib<=0 or (args.max_charts is not None and args
     ap.error('workers, memory budget, and max-charts must be positive')
 load_started=time.monotonic()
 root=Path(__file__).resolve().parents[2]
-source=args.tensor or root/'Research/computations/canonical_atlas_system.json'
+source=args.tensor or root/'../litt3-computation-data/legacy_workspace_computations/canonical_atlas_system.json'
 def file_sha256(path):
     digest=hashlib.sha256()
     with path.open('rb') as stream:

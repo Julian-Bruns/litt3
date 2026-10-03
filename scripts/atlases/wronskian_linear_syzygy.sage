@@ -1,11 +1,8 @@
 #!/usr/bin/env sage
 """Bounded exact search for W(U)=ell(U)N_U on the stable32 space."""
 from pathlib import Path
-source=Path('scripts/atlases/wronskian_matrix_pencil.sage').read_text()
-marker="for sample in saved['samples']:"
-assert source.count(marker)==1
-exec(preparse(source.split(marker)[0]))
-sieve=json.loads(Path('Research/computations/wronskian_linear_sieve.json').read_text())
+load('scripts/atlases/wronskian_section_context.sage')
+sieve=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_linear_sieve.json').read_text())
 Ns=[matrix(k,[parse(row) for row in M]) for M in sieve['N_tensor']]
 BJ=matrix(k,[parse(row) for row in sieve['iterations'][-1]['image_basis_columns_as_rows']]).transpose()
 BJ5=matrix(k,[[c**5 for c in row] for row in BJ.rows()])
@@ -95,4 +92,4 @@ else:
     data['status']='degree_one_syzygy_exists'
     data['solution']=enc(solution)
 data['W_quadratic_coefficients']=[{'pair':[i,j],'coefficients':enc(v)} for (i,j),v in wquad.items()]
-Path('Research/computations/wronskian_linear_syzygy.json').write_text(json.dumps(data,indent=2,default=int)+'\n')
+Path('../litt3-computation-data/legacy_workspace_computations/wronskian_linear_syzygy.json').write_text(json.dumps(data,indent=2,default=int)+'\n')

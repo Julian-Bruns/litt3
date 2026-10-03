@@ -1,188 +1,180 @@
-# Proof: one orbit product and the quadratic, cubic and quartic certificates
+# Proof: sharp line bounds, cubic symmetry and the required higher powers
 
 [Statement](../../Theorems/cartier_and_spin/low_degree_twist_vanishing.md).
-
-The [returned exact verifier](../../scripts/arithmetic/pro_sym2_k_vanishing.py)
-reconstructs the matrices from the specified P and extension class.
-Put e=y^2 E(x), E=sum[c_m]x^-m, with
-c=(2,16,16,7,1,2,7,1,24,11). On the affine chart a section of
-Sym^2 K(O) has polynomial coordinates f_0,f_1,f_2, with transition
+All lines and section spaces below are geometric. Write
+$\mathbf F_{25}=\mathbf F_5[a]/(a^2-a-3)$ and $[i+5j]=i+ja$.
+The actual extension and its rational transition are
 \[
-g_0=f_0-ef_1+e^2f_2,\quad g_1=f_1-2ef_2,\quad g_2=f_2.
+0\longrightarrow O_X(-5O)\longrightarrow K\longrightarrow O_X(6O)
+\longrightarrow0,\qquad (u,v)\longmapsto(u-ev,v),
 \]
-Its infinity bounds are ord g_0>=9, ord g_1>=-2, ord g_2>=-13.
-Distinct monomials x^i y^j, j=0,1,2, have distinct pole orders
-3i+10j. Thus f_2=p+yh with deg p<=4 and deg h<=1. The polynomial
-part of the middle bound necessarily gives
+where $X:y^3=P(x)$, $\operatorname{ord}_O(x)=-3$,
+$\operatorname{ord}_O(y)=-10$ and
 \[
-f_1=b+2y^2(Ep)_++2(PEh)_+,\qquad b\in k.
+P=(11,22,18,5,19,20,15,16,9,22,1),\quad
+e=y^2E,\quad E=\sum_{m=1}^{10}[c_m]x^{-m},\quad
+c=(2,16,16,7,1,2,7,1,24,11).
 \]
-Other middle-bound conditions may be present; omitting them is
-legitimate because the following necessary conditions already force
-zero. Write
+Coefficients of P are in ascending order. The later
+[sharp line theorem](small_shift_line_twist_vanishing.md) gives
+maximum line degree $-4$, and $H^0(K(3O)\otimes L)=0$ for every
+$L\in\operatorname{Pic}^0(X)$. All smaller shifts follow by inclusion.
+
+## Cubic linearization and orbit products
+
+Let $\gamma(x,y)=(x,\zeta y)$, with $\zeta^3=1$, $\zeta\ne1$.
+Since $\gamma^*e=\zeta^2e$, the transition satisfies
+$T(e)H=HT(\zeta^2e)$ for $H=\operatorname{diag}(\zeta,1)$.
+These maps respect both divisor frames and $H^3=1$, so they
+linearize K. Divisor twists at O have their natural linearization.
+
+For any degree-zero line L, the orbit sum of a representative
+divisor is the pullback of its pushforward to $\mathbf P^1$.
+Hence $L\otimes\gamma^*L\otimes\gamma^{2*}L\simeq O_X$.
+A nonzero section of $\operatorname{Sym}^mK\otimes L$ therefore has
+a nonzero orbit product in $H^0(\operatorname{Sym}^{3m}K)$.
+The generic symmetric algebra $k(X)[u,v]$ is an integral domain;
+no factorial or representation semisimplicity enters this argument.
+
+## The quadratic calculation has only one character
+
+A nonzero section of $\operatorname{Sym}^2K(O)$ is a symmetric
+map $K^\vee\to K(O)$. It cannot have generic rank one: its image
+would be a line quotient of $K^\vee$, of degree at least four,
+whose saturation in $K(O)$ has degree at most minus three.
+Thus its determinant is nonzero.
+
+The determinant lies in $H^0((\det K)^2(2O))=H^0(O_X(4O))$.
+The affine determinant frame has character $\zeta^2$, and
+$H^0(O_X(4O))=\langle1,x\rangle$ has invariant coefficients.
+A section of character $\zeta^j$ has determinant character
+$\zeta^{2j}$; consequently $2j=2$ modulo three. Since C3 has
+order prime to five, every section splits into eigensections.
+Every nonzero eigensection has a nonzero determinant, so only
+$j=1$ can occur.
+
+Write an affine section as $(f_0,f_1,f_2)$. Its infinity
+coordinates and bounds are
 \[
-U=P(2E(Ep)_+-E^2p),\quad V=bE+2E(PEh)_+-PE^2h.
+g_0=f_0-ef_1+e^2f_2,\quad g_1=f_1-2ef_2,\quad g_2=f_2,\qquad
+\operatorname{ord}_O(g_i)\ge(9,-2,-13)_i.
 \]
-The first coordinate f_0 must cancel their polynomial parts, leaving
-g_0=-yU_--y^2V_-. The two characters have different valuation
-residues modulo three, so cannot cancel each other. In particular
-five coefficients of -U and three of -V must vanish. Their matrices
-on p_0,...,p_4 and b,h_0,h_1 respectively are
+Character one and the last bound force $f_2=yh$, $\deg h\le1$;
+the polynomial $p(x)$ part of the older calculation is absent.
+The middle bound gives $f_1=b+2(PEh)_+$, $b\in k$.
+The first bound cancels the polynomial part of
+$y^2V$, where $V=bE+2E(PEh)_+-PE^2h$, leaving $g_0=-y^2V_-$.
+The coefficients of $-V$ at $x^{-1},x^{-2},x^{-3}$ must vanish.
+On $(b,h_0,h_1)$ they are
 \[
-M_U=\begin{pmatrix}
-6&16&21&3&5\\0&22&4&7&1\\15&1&9&0&9\\
-16&10&6&16&14\\16&11&21&24&24
-\end{pmatrix},\qquad
-M_V=\begin{pmatrix}3&24&0\\14&14&8\\14&9&1\end{pmatrix}.
+\begin{pmatrix}[3]&[24]&0\\[14]&[14]&[8]\\[14]&[9]&1\end{pmatrix},
+\qquad \det=[18]\ne0.
 \]
-Entries are F25 codes, not integer coefficients. Their determinants
-are [16] and [18], both nonzero. Hence p=h=b=0, and the first
-bound forces f_0=0. This proves geometric vanishing, not merely
-vanishing of F25-rational sections.
+This is a three-coefficient identity in the displayed P and E,
+not an exhaustive matrix construction. It forces $b=h=0$,
+and then the first bound forces $f_0=0$.
 
-Let R be a self-dual irreducible finite coefficient of rank three.
-Schur's lemma makes its nondegenerate invariant bilinear form
-symmetric or alternating; odd rank excludes the alternating case.
-Any nonzero q:R->K is surjective by finite_coefficient_generation.
-The composite K^vee->R^vee->R->K is symmetric and nonzero: its
-middle image has dimension two whereas ker q has dimension one.
-It therefore supplies a nonzero section of Sym^2 K, contradicting
-the vanishing just proved. We next remove the character restriction.
+## The higher symmetric powers needed for all twists
 
-## Cubic orbit product
-
-Let gamma(x,y)=(x,zeta y), with zeta of order three. The actual
-extension has gamma^*e=zeta^2 e. Its transition matrix T(e), with
-upper-right entry -e, satisfies T(e)H=H T(zeta^2e) for
-H=diag(zeta,1). These constant maps respect the two divisor
-frames and H^3=1, giving a C3-linearization of K.
-
-For every degree-zero line L one has
-L tensor gamma^*L tensor gamma^{2*}L=O: the orbit sum of a
-degree-zero divisor is the pullback of its pushforward to P1,
-where every degree-zero divisor is principal. Hence a nonzero
-section of Sym^m K tensor L has a nonzero cubic orbit product
-in H0(Sym^{3m}K). Nonvanishing is checked in the generic
-symmetric algebra k(X)[u,v], an integral domain. No division
-by a factorial or semisimplicity is used.
-
-## Exact sixth symmetric power
-
-For Sym^6 K use polynomial affine coordinates f_0,...,f_6.
-The infinity coordinates and their bounds are
+For power n, polynomial affine coordinates satisfy
 \[
-g_i=\sum_{j=i}^6\binom ji(-e)^{j-i}f_j,\qquad
-\operatorname{ord}_O(g_i)\ge30-11i.
+g_i=\sum_{j=i}^n\binom ji(-e)^{j-i}f_j,\qquad
+\operatorname{ord}_O(g_i)\ge5n-11i.
 \]
-Put d_i=-30+11i and R_i=sum_{j>i} binom(j,i)(-e)^{j-i}f_j.
-Descending in i, write f_i=h_i-(R_i)_+, where h_i is a linear
-combination of x^m y^r with m>=0, 0<=r<=2 and 3m+10r<=d_i.
-Every remaining condition is a vanishing coefficient of R_i
-with m<0 and 3m+10r>d_i. Distinct pairs (r,m) have distinct
-valuations, so these conditions are exact, without hidden cancellation.
+Set $d_i=-5n+11i$ and
+$R_i=\sum_{j>i}\binom ji(-e)^{j-i}f_j$.
+Descending in i, write $f_i=h_i-(R_i)_+$; the free monomials
+of $h_i$ are $x^my^r$ with $m\ge0$, $0\le r\le2$,
+$3m+10r\le d_i$. The remaining equations are the coefficients
+of $R_i$ with $m<0$ and $3m+10r>d_i$. Distinct pairs $(r,m)$
+have distinct valuations, so this reconstructs EVERY section.
+The characters $r-i\bmod3$ split each exact system.
 
-The free dimensions are (0,0,0,2,7,17,28). The full system has
-89 rows and54 columns. The character w=r-i mod3 splits it into
-blocks of sizes27x19,30x18,32x17. In increasing x-degree within
-each polynomial, the selected minors have determinants [5],[21],[24].
-Their full row labels, entries and construction are generated by the
-[exact verifier](../../scripts/arithmetic/pro_quadratic_twist_vanishing.py).
-It independently checks rank108 after restricting scalars to F5.
-Thus the rank over F25
-is54 and H0(Sym^6K)=0 over the algebraic closure as well.
+| n | Full matrix | Character blocks | Full-column determinant codes |
+| --- | --- | --- | --- |
+| 6 | 89 by54 | 27 by19;30 by18;32 by17 | [5],[21],[24] |
+| 9 | 158 by123 | 51 by43;55 by43;52 by37 | [2],[10],[13] |
+| 12 | 248 by222 | 81 by76;82 by73;85 by73 | [12],[5],[21] |
 
-The orbit product with m=2 proves all-twist quadratic vanishing.
-For a nondegenerate symmetric pairing R tensor R -> T, the
-composite K^vee->R^vee->R tensor T^-1->K tensor T^-1 is
-nonzero by the same two-dimensional-image/one-dimensional-kernel
-argument. It gives a section of Sym^2K tensor T^-1, impossible.
-In rank at least four this dimension argument need not apply.
+The [sixth-power source](../../scripts/arithmetic/pro_quadratic_twist_vanishing.py),
+[ninth-power source](../../scripts/arithmetic/k_cubic_twist_vanishing.py)
+and [twelfth-power source](../../scripts/arithmetic/k_quartic_twist_vanishing.py)
+construct the entries, labels and selected rows. Restricted-scalar
+elimination independently gives total F5 ranks108,246,444;
+the twelfth-power block ranks are152,146,146.
+Their required certificates remain in
+[the external evidence](../../../litt3-computation-data/overnight_three_replies_20260926/).
+Thus all three section spaces vanish after EVERY field extension.
+The orbit product proves all geometric degree-zero-twist vanishing
+for $\operatorname{Sym}^mK$, $m=2,3,4$.
 
-## Exact ninth symmetric power
+## The shifted cubic is a restriction of the later required space
 
-Apply the same descending-coordinate recursion with power \(9\).
-The [cubic verifier](../../scripts/arithmetic/k_cubic_twist_vanishing.py)
-builds \(158\) equations in \(123\) affine polynomial coefficients,
-with infinity bounds \(\operatorname{ord}_O(g_i)\ge45-11i\).
-Splitting by \(r-i\bmod3\) gives blocks \(51\times43\),
-\(55\times43\), \(52\times37\). Row-pivot minors have nonzero
-determinant codes \([2],[10],[13]\). The verifier constructs all
-entries, labels and selected rows and checks rank \(123\) over
-\(\mathbf F_{25}\). The exact recursion
-parametrizes every section, so \(H^0(\operatorname{Sym}^9K)=0\)
-geometrically. The orbit product above, now with \(m=3\), proves
-vanishing for every degree-zero twist of \(\operatorname{Sym}^3K\).
+Retain also the useful assertion $H^0(\operatorname{Sym}^3K(3O))=0$.
+The later sharp-line proof already requires the COMPLETE ten-section
+basis of $H^0(\operatorname{Sym}^3K(9O))$, with seven character-zero
+sections $s_0,\ldots,s_6$ and three character-one sections
+$t_0,t_1,t_2$. It is stored in
+[k_original_shift3_cubic_sections.json](../../../litt3-computation-data/overnight_three_replies_20260926/k_original_shift3_cubic_sections.json)
+and reconstructed by
+[the section source](../../scripts/arithmetic/k_symmetric_section_space.py).
+Its established full-space rank is reused.
 
-If an irreducible imprimitive rank-three finite coefficient \(R\)
-mapped nontrivially to \(K\), the map would be surjective by
-[finite-coefficient generation](finite_coefficient_generation.md).
-On a connected Galois étale cover trivializing \(R\), choose the
-three lines permuted by monodromy. Each of their constant basis
-vectors has nonzero generic image: otherwise it gives a section of
-the negative-degree kernel line of \(\mathcal O^3\to h^*K\).
-Their product is nonzero in the generic symmetric algebra of \(h^*K\)
-and spans a finite character line \(T\subset\operatorname{Sym}^3R\).
-Descent gives a nonzero map \(T\to\operatorname{Sym}^3K\), contrary
-to the all-twist cubic vanishing. No semisimplicity of an arbitrary
-finite representation is assumed.
+The smaller space is the kernel of restriction to 6O. In the SAME
+rational frames its bounds are
+$\operatorname{ord}_O(g_i)\ge(12,1,-10,-21)_i$.
+For character zero, the $x^8,x^9$ coefficients of $g_3$ first
+kill $s_5,s_6$. On $s_0,\ldots,s_4$, the forbidden coefficients
+$(g_0,x^{-2}),(g_0,x^{-3}),(g_1,yx^{-2}),
+(g_1,yx^{-3}),(g_2,y^2x^{-2})$ have matrix
+\[
+\begin{pmatrix}
+[17]&[7]&[5]&[14]&[2]\\
+[18]&[11]&[16]&[23]&[13]\\
+[12]&[6]&[10]&[11]&[22]\\
+[13]&[22]&[21]&[23]&[20]\\
+[20]&[6]&[12]&[8]&[19]
+\end{pmatrix},\qquad\det=[10]\ne0.
+\]
+For character one, the forbidden coefficients
+$(g_2,x^5),(g_2,x^4),(g_3,yx^5)$ on $(t_0,t_1,t_2)$ give
+\[
+\begin{pmatrix}0&0&1\\0&1&0\\[20]&[12]&[23]\end{pmatrix},
+\qquad\det=[5]\ne0.
+\]
+Their valuations violate the smaller bounds individually, and
+distinct monomials cannot cancel. Hence restriction is injective,
+proving the shifted cubic claim without its old32-by18 reconstruction.
+The weaker K(O) twist consequence already follows directly from
+the sharp K(3O) theorem.
 
-## The stronger line-twist vanishing after adding O
+## One semi-invariant argument covers all rank-three cases
 
-The returned [shifted symmetric-power verifier](../../scripts/arithmetic/pro_coreless_20260923/rank3/certificates/all_twists_shift_one.py)
-uses the same actual extension and reconstruction, now for Sym^3K(3O).
-Its32x18 matrix splits into blocks9x8,13x8,10x2, with full-column
-minors[6],[12],[12]. The script reconstructs the matrix and these
-minors, proving H^0(Sym^3K(3O))=0 geometrically.
-A nonzero section of K(O) tensor L would have a nonzero cubic
-orbit product in that space, since O is fixed by the cubic action
-and the product of the three translates of L is trivial. Therefore
-H^0(K(O) tensor L)=0 for every geometric degree-zero L.
-Every degree-minus-one line is L^-1(-O), so K has no such subline;
-stability and the older all-twist result exclude higher degrees.
+Let a finite rank-three coefficient R surject onto K and let
+$T\to\operatorname{Sym}^mR$ be a nonzero finite character line.
+On a connected finite Galois étale cover $h:D\to X$ trivializing
+R and T, it is a fixed nonzero homogeneous plane polynomial Q.
+If its image vanished, every projective line
+$\mathbf P((h^*K)^\vee_t)$ would lie in V(Q).
+A nonzero plane polynomial has finitely many line components.
+Connectedness therefore makes this Grassmannian morphism constant,
+which would make the actual subbundle $(h^*K)^\vee\subset O_D^3$
+trivial. Its degree is $-\deg h$, a contradiction.
+Thus the semi-invariant has nonzero image in
+$\operatorname{Sym}^mK\otimes T^{-1}$.
 
-## Exact twelfth symmetric power and finite monodromy consequences
+This works for every positive m, even for nonreduced Q and
+five-divisible finite monodromy. For irreducible R every nonzero
+map is surjective by [finite-coefficient generation](finite_coefficient_generation.md).
+The twist vanishings exclude m=1,2,3,4. A projectively orthogonal
+pairing supplies the degree-two semi-invariant, and three permuted
+lines supply the degree-three monomial. A self-dual odd-rank form
+is symmetric by Schur's lemma. These are applications of the SAME
+restriction argument, so their separate dimension proofs are unnecessary.
 
-The same complete coordinate reconstruction, now for Sym^12 K, has
-248 equations in222 affine coefficients. The infinity bounds are
-ord(g_i)>=60-11i. Its three character blocks have sizes81x76,82x73,
-85x73. The selected full-column minors have determinant codes
-[12],[5],[21]. Independent elimination after restriction of scalars
-gives F5 ranks152,146,146. Thus the total F25 rank is222, the total
-F5 rank is444, and the geometric section space is zero.
-The [quartic verifier](../../scripts/arithmetic/k_quartic_twist_vanishing.py)
-reconstructs the full matrix and those minors. Exact data and executed
-output are retained as `k_quartic_twist.json` and `k_quartic_twist.log`
-in [the evidence directory](../../../litt3-computation-data/overnight_three_replies_20260926/).
-The cubic orbit product with m=4 proves all-twist quartic vanishing.
-
-Here is a useful general restriction argument in rank three. Let R be
-a finite coefficient of rank three, q:R->K a surjection, and let
-T->Sym^m R be a nonzero finite character line. On a connected finite
-Galois etale cover h:D->X trivializing R and T, this line is a fixed
-nonzero homogeneous polynomial P on the dual constant vector space.
-If its image in Sym^m h^*K vanished, every projective line
-P((h^*K)^vee_t) would be contained in the fixed plane curve V(P).
-A nonzero plane polynomial has only finitely many line components.
-Since D is connected, the morphism from D to the Grassmannian of
-these planes must be constant. The actual dual inclusion
-(h^*K)^vee->O_D^3 is a subbundle; a constant Grassmannian morphism
-would identify it with a trivial rank-two subbundle. Its degree is
--deg(h), not zero, a contradiction. Therefore every such
-semi-invariant has nonzero image in Sym^m K tensor T^-1.
-
-This argument needs neither an irreducible polynomial nor a reduced
-zero scheme, and works for any positive m. The vanishing already
-proved excludes m=1,2,3,4. For an irreducible finite rank-three R,
-every nonzero map is surjective by finite-coefficient generation,
-so all those semi-invariant cases are excluded.
-
-Finally let an irreducible finite rank-four R have four lines permuted
-by monodromy. They are permuted transitively, by irreducibility. A
-nonzero map R->K is surjective. On a Galois trivializing cover, none
-of the four constant lines can have identically zero image: the
-equivariance of the map would then kill their whole orbit, hence R.
-Their four nonzero images have nonzero product in the generic
-symmetric algebra. The product of the four coefficient lines spans
-a finite character T in Sym^4 R. It gives a nonzero section of
-Sym^4 K tensor T^-1, contrary to quartic vanishing. Representations
-with two permuted rank-two blocks are not covered by this argument.
+Finally, if an irreducible rank-four coefficient permutes four
+lines, a nonzero map to K is surjective and no line has identically
+zero image: equivariance would kill its transitive orbit.
+Their product is a nonzero degree-four finite semi-invariant,
+contrary to quartic twist vanishing. Two permuted rank-two blocks
+are not covered, and no original common-cover decision follows.

@@ -7,8 +7,8 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[2]
 parser=argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--audit',type=Path,default=root/'Research/computations/bad_double_initial_quadratic_audit.json')
-parser.add_argument('--output',type=Path,default=root/'Research/computations/bad_double_quadratic_independent_finite_audit.json')
+parser.add_argument('--audit',type=Path,default=root/'../litt3-computation-data/legacy_workspace_computations/bad_double_initial_quadratic_audit.json')
+parser.add_argument('--output',type=Path,default=root/'../litt3-computation-data/legacy_workspace_computations/bad_double_quadratic_independent_finite_audit.json')
 args=parser.parse_args()
 audit = json.loads(args.audit.read_text())
 receipt = Path(audit['receipt'])

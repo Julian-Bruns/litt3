@@ -74,7 +74,7 @@ base3x3, of rank2. An invertible2x2 pivot gives by Schur complement
 
     D_(T_1) = R_1/(f_1).
 
-The [receipt](../../../Research/computations/cyclic25_witt_module.json) records
+The [receipt](../../../../litt3-computation-data/legacy_workspace_computations/cyclic25_witt_module.json) records
 the full relation. It has order2 and its quadratic part Q is NONDEGENERATE.
 Its discriminant is nonzero, with minimal polynomial
 

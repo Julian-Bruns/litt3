@@ -15,13 +15,13 @@ At zero the norm is a degree-six polynomial supported on the four
 A-roots. The leading coefficient B_i=B_i6 has precisely the common
 infinity factors, with integer multiplicities.
 
-Trace of the nine regular forms through t gives two Fourier relations
-among the three sheetwise endpoint phase sums. If every A-root is used,
-some root has multiplicity one, since the total is six; otherwise a
-root is absent. In either case both relations vanish root by root.
-The exact phase certificate makes the integer multisets equal except
-possibly for a fivefold block. The missing fifth pole coefficient of
-the opposite actual minimal equation closes that exception.
+The later [integer phase theorem](unbounded_modular_phase_balance.md)
+applies because each root has equal sheet cardinalities m_alpha
+and sum m_alpha=6. Every phase therefore agrees as an INTEGER
+multiplicity across the three sheets on both legs. Each root has
+at most one fivefold block, removed by the index-five norm
+coefficient. Neither the old length-six sum enumeration nor a
+separate absent-root/singleton argument is needed.
 
 The endpoint differential equation has linearization eigenvalue two.
 Equal phases therefore have the same two-jet on all three sheets,
@@ -42,12 +42,16 @@ orders on the two legs give
 j_i=m+2r+5K,\qquad 8-e_{3-i}=2r+5L,
 \]
 where j_i=ord_0(H_i0/B_i), e_i is its growth degree, and K,L>=0.
-Hence the positive m at an endpoint are equal, and the possible
-(m,r,d=m/r) are
+The positive m have the same residue modulo five and sum six
+over at most four occupied roots. Distinct such values would be
+1 and6, whose sum already exceeds six; hence all m are equal.
+Thus m divides six and m is2,3 or6. At each root the positive
+phase multiplicities r likewise have one residue and sum m<=6,
+so they are equal and divide m. Consequently
 \[
-(6,1,6),(6,2,3),(6,3,2),(6,6,1),
-(3,1,3),(3,3,1),(2,1,2),(2,2,1).
+d=m/r\in\{1,2,3,6\},\qquad r\not\equiv0\pmod5.
 \]
+This replaces the finite composition/partition list.
 
 At a root alpha put x1=alpha+t z. The common sheet-independent
 endpoint derivation is t partial_t+J(z,t) partial_z, with
@@ -82,9 +86,8 @@ proved full-fibre identity therefore gives epsilon^2 in
 F_(5^8)^* mu29. A29th-root change of t removes the phase part, yielding
 the stated sharper scalar bound. This is a scalar bound only.
 
-The pole18 manifest, exact curve arithmetic and exhaustive1,623,159
-phase multisets of lengths1..6 passed locally. The independent
-substantial-proof audit also passed, including the r=1 second-character
-term and actual reciprocal contacts. The supplemental pole-support
-enumeration is not a dependency and was not replayed.
-See [the integration audit](../../Research/audits/POLE18_ONE_SHEET_2026_09_27.md).
+The [original audit](../../Research/audits/POLE18_ONE_SHEET_2026_09_27.md)
+checks actual reciprocal contacts and the r=1 second-character term.
+The later phase theorem and divisibility argument replace the two
+finite inputs. Original evidence remains in
+[external provenance](../../../litt3-computation-data/archive_cleanup_20260930/older_phase_before_hindsight/).

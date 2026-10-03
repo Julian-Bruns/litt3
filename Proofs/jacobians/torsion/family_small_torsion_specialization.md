@@ -40,46 +40,45 @@ Only f5 f0^4 contributes the b^20 term of A5, whose coefficient is
 1/2. Hence H1 has b-degree40 with constant leading coefficient1/4;
 H2 has b-degree at most43. Their t-degrees are at most10 and11.
 
-## 3. One Euclidean identity bounds every exceptional parameter
+## 3. Later torsion information supplies the good fiber
 
-Let α³+α+1=0 in F125. The
-[short exact certificate](../../../scripts/arithmetic/family_torsion_specialization_certificate.sage)
-computes a Euclidean identity
+Let α³+α+1=0. The later
+[backup arithmetic](../../curve_arithmetic/backup_curve_arithmetic.md)
+excludes non-Weierstrass eight-torsion and six-torsion Abel points.
+It makes H1(α,b) and H2(α,b) coprime without a Euclidean computation.
 
-    U(b)H1(α,b)+V(b)H2(α,b)=1.
+At a nonbranch common zero, if A4 is nonzero, the identity
+\[
+A4(A6^2-A5 A7)=A5 H2-A6 H1
+\]
+makes the third maximal minor vanish. The exact matrix criterion
+would give eight-torsion. If A4=0, H1=0 gives A5=0. The Taylor
+expansion of v at either point over b then agrees with its cubic
+truncation B3 through degree five. The nonzero function v-B3 lies
+in L(6O) and vanishes to order at least six at that point, forcing
+div(v-B3)=6P-6O. This gives the excluded six-torsion instead.
 
-Thus R(t)=Res_b(H1,H2) is nonzero. The constant leading coefficient
-of H1 prevents loss of this conclusion under specialization, even
-if H2 drops degree. The Sylvester determinant gives
+At a branch point write f1=F′(b), nonzero. The recursion gives
+A4=0, A5=2f1^5, hence H1=4f1^10≠0. There are therefore no
+common roots at all. The constant leading coefficient1/4 of H1
+also prevents loss at infinity, and
+R(t)=Res_b(H1,H2) is nonzero. Its degree satisfies
+\[
+\deg R\le40\cdot11+43\cdot10=870.
+\]
+Every admissible parameter with a nonbranch point killed by eight
+is a root of R. The exceptional set is Frobenius-stable, so a
+parameter of degree greater than870 avoids it. The old Euclidean
+search is unnecessary.
 
-    deg R≤40·11+43·10=870.
+## 4. The earlier Cartier input is independent of torsion
 
-Every admissible parameter with a nonbranch point killed by8 satisfies
-(1), hence is a root of R. This proves the bound870 without computing
-R or enumerating any Jacobian. The exceptional set is Frobenius-stable,
-so no parameter of degree>870 over F5 belongs to it.
-
-The exceptional set is not empty: at α²+4α+2=0 the same certificate
-finds a degree-three gcd of all three minors, coprime to F_α(b).
-The matrix test supplies nonbranch points killed by8 at that parameter.
-
-## 4. All double-zero Cartier eigenforms are excluded throughout the family
-
-With eta=du/v, regular forms having a double zero are eta (zero at O)
-and (u-b)eta, for b=0,1,2,3,t (zero at W_b). Relative Cartier has
-matrix [[c4,c3],[c9,c8]] from family_singleton_root_exclusion. The
-eigenline condition for (u-b)eta, allowing eigenvalue zero, is
-
-    c3-b c4+b^5 c8-b^6 c9=0.
-
-For b=0,1,2,3,t the left sides respectively factor as
-
-    -2t(t+1), (t-1)(t+1), -(t-2)(t+1),
-    2(t-3)(t+1), -2(t+1)^2(t^5-t).
-
-They are all nonzero on S. For eta the condition is c9=-2(t+1)=0,
-also impossible. This is an actual semilinear Cartier eigenline test;
-the fifth powers of b are essential when b=t.
+The [singleton-root theorem](family_singleton_root_exclusion.md)
+now states the all-parameter double-zero eigenline exclusion
+directly from its explicit Cartier matrix. Its five finite
+Weierstrass tests and infinity test use only polynomial identities.
+That earlier input is independent of the backup torsion theorem;
+in particular the good-fiber replacement above is not circular.
 
 ## 5. The same-source consequence
 
@@ -113,9 +112,9 @@ closed; a missed fiber makes it a proper closed subset of a connected
 smooth curve, hence finite. Removing whole torsion components keeps
 the excluded boundary from reappearing in specialization.
 
-The certificate checks the recursion, degree bounds, Euclidean identity,
-degree-two exceptional example and six Cartier eigenline identities.
-The [bounded audit](../../../Research/audits/HASSE_TORSION_BOUND_AUDIT_2026_09_13.md)
-checks the matrix criterion and resultant argument. Original point-count
-and norm-presentation evidence is preserved in the cleanup archive;
-the Cartier/clump consequences above retain their original proof status.
+The recurrence and degree bounds retain their original
+[bounded audit](../../../Research/audits/HASSE_TORSION_BOUND_AUDIT_2026_09_13.md)
+checks of the matrix criterion and resultant argument. The new good-fiber
+step is reviewed locally from the later backup torsion theorem; no
+numerical search is used. Original proof evidence and its provenance
+are retained externally. The clump consequences keep their scope.

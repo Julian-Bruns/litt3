@@ -7,7 +7,7 @@ subspaces; no enumeration of possible extra zero divisors is performed.
 import argparse,json,time
 from pathlib import Path
 from sage.all import GF,PolynomialRing,matrix,vector
-from supported_one_sheet_jets import field_and_jets
+from supported_marked_jets import field_and_jets
 p=argparse.ArgumentParser();p.add_argument('output',type=Path);args=p.parse_args()
 args.output.mkdir(parents=True,exist_ok=True)
 K,_,_,field,code=field_and_jets(1)

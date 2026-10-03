@@ -111,31 +111,25 @@ uses exactly these divisions and verifies the resulting degree bound.
 
 ## Exact arithmetic completion
 
-The [finite-field check](../../scripts/orbifolds/analyze_triangle245_finite_algebra.py)
-at the auxiliary prime1073741827 gives a reduced triangular algebra
-of length236. It separates168 candidate normalizations from68
-extra-automorphism normalizations. On the remaining open chart,
-normalizing $C_3=1$ gives56 points, including42 ordered candidate
-models. The inversion-invariant ratio
-\[
-\frac{B(0)}{C(0)}+\frac{C(0)}{B(0)}
-\]
-has a degree-twenty-one minimal polynomial in that finite algebra.
-The [outputs](../../../litt3-computation-data/triangle245_models_20260921/f4sat_p1073741827/analysis_output.txt)
-are a finite-field discovery probe. The
-[subsequent exact reconstruction and invariant calculation](triangle245_reduction_exclusion.md)
-now give the characteristic-zero and reduction-at-five certificates.
-
-The boundary chart $C_3=0$, with $C(0)=1$, has meanwhile supplied
-twelve exact characteristic-zero solutions. The parametrization
-factors over $\mathbf Q$ in degrees $2,4,6$. The
+The exact characteristic-zero parametrizations supply56 open models
+and twelve boundary models. The
 [number-field verifier](../../scripts/orbifolds/verify_triangle245_parametrization.py)
-checks every original equation, the square identity, and the open
-condition separately in each field; its
-[summary](../../../litt3-computation-data/triangle245_models_20260921/rational_c3_zero/verification_summary.json)
-records all passes. All these models satisfy $B_1=B_3=C_1=0$, so
-the rational map is even and the source has an extra automorphism.
-The open chart now has56 exactly verified characteristic-zero models.
-Their four scalings each, together with these twelve boundary models,
-exhaust the independent count236. The finite-field count alone is not
-used to assert completeness in characteristic zero.
+checks the original equations, full square identity, nonzero open
+condition and separating coordinate in every field. Four distinct
+scalings of each open model plus the boundary models give236 distinct
+normalized geometric points, exhausting the independent count above.
+Thus neither modular algebra dimension nor a rational Gröbner quotient
+length is needed for completeness.
+
+The boundary fields have degrees2,4,6. Their
+[exact summary](../../../litt3-computation-data/triangle245_models_20260921/rational_c3_zero/verification_summary.json)
+also verifies \(B_1=B_3=C_1=0\). B,C and A are then even, so the
+square identity makes F even. On \(y^2=xF\), the transformation
+\((x,y)\mapsto(-x,\iota y)\), \(\iota^2=-1\), has order4.
+
+The [open summary](../../../litt3-computation-data/triangle245_models_20260921/rational_c0_long/verification_summary.json)
+records the other56 models. The
+[direct reduction argument](triangle245_reduction_exclusion.md)
+uses these same verified sources. Original modular discovery and
+boundary ideal receipts remain external, but their algorithms are
+superseded by the permutation count and exact point verification.

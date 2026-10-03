@@ -9,7 +9,7 @@ def parse(s):
     if s not in cache: cache[s]=k(sage_eval(s,locals={'a':a}))
     return cache[s]
 def mat(M):return matrix(k,[[parse(c) for c in row] for row in M])
-paths=[Path('Research/computations/'+s+'.json') for s in ['wronskian_linear_sieve','wronskian_universal_image','canonical_atlas_system']]
+paths=[Path('../litt3-computation-data/legacy_workspace_computations/'+s+'.json') for s in ['wronskian_linear_sieve','wronskian_universal_image','canonical_atlas_system']]
 d,dr,dc=[json.loads(p.read_text()) for p in paths]
 Ns=[mat(M) for M in d['N_tensor']]; Rs=[mat(M) for M in dr['R_tensor']]
 Bc=mat(dc['Bc']); Iproj=mat(dc['Iproj'])
@@ -51,5 +51,5 @@ for sample in range(1):
     out['samples'].append(record)
     print('sample',sample,'full differential',record['extension_projective_differential_rank'],'projected',record['projection_projective_differential_rank'],flush=True)
 out['elapsed_seconds']=time.monotonic()-t0
-Path('Research/computations/extension_projection_differential.json').write_text(json.dumps(out,indent=2,default=int)+'\n')
+Path('../litt3-computation-data/legacy_workspace_computations/extension_projection_differential.json').write_text(json.dumps(out,indent=2,default=int)+'\n')
 print('elapsed',out['elapsed_seconds'],flush=True)

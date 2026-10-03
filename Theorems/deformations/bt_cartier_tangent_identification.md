@@ -1,6 +1,6 @@
 # The BT difference bundle is the actual indigenous tangent bundle
 
-Version1,20 September2026. Let $H/C$ be an actual everywhere-versal
+Version2,3 October2026. Let $H/C$ be an actual everywhere-versal
 height-two, dimension-one BT1 on a smooth proper hyperbolic curve
 over $\overline{\mathbf F}_5$, generically ordinary with reduced
 supersingular divisor $S$. Let $r$ be its admissible active projective
@@ -60,6 +60,18 @@ class annihilates the image of the tangent trace. In particular,
 surjectivity of that trace implies next-level EXISTENCE downstairs,
 without a Galois or degree restriction. It does not descend the
 specified upper object.
+
+For EVERY five-group Galois cover, of order $d$, the tangent trace
+is surjective exactly when the defect has maximal growth:
+\[
+\operatorname{Tr}_q\text{ is onto}
+\quad\Longleftrightarrow\quad
+h^0(D,q^*\mathcal B_H)=d\,h^0(C,\mathcal B_H).
+\tag{5}
+\]
+This is equivalent to injectivity of pullback on $H^1(\mathcal B_H)$.
+A particular absolute class can vanish under pullback even when the
+trace is not onto.
 
 On a cyclic five-power cover, the trace image is exactly the span
 of the full-length blocks in the actual tangent module. This

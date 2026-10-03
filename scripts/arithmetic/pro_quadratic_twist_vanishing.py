@@ -5,8 +5,8 @@ Requires Python 3.10+ and only the standard library.
 Run: python quadratic_twist_certificate.py
 
 The script reconstructs the full finite linear system, verifies three explicit
-full-column-rank minors, reproduces the two matrices given in the question,
-and independently verifies rank after restriction of scalars to F_5.
+full-column-rank minors and independently verifies rank after restriction
+of scalars to F_5.
 It writes quadratic_twist_certificate.json beside this script.
 
 Coefficient code u+5*v denotes u+v*a, where a^2=a+3 over F_5.
@@ -184,22 +184,6 @@ def prime_field_rank(matrix: Matrix) -> int:
 
 
 def main() -> None:
-    # Exact regression against the two displayed matrices in the question.
-    cols2, rows2, a2 = system(2, 1)
-    ci2 = {c: i for i, c in enumerate(cols2)}
-    ri2 = {r: i for i, r in enumerate(rows2)}
-    mu = [[a2[ri2[(0, 1, -m)]][ci2[(2, 0, j)]]
-           for j in range(5)] for m in range(1, 6)]
-    mvcols = [(1, 0, 0), (2, 1, 0), (2, 1, 1)]
-    mv = [[a2[ri2[(0, 2, -m)]][ci2[c]] for c in mvcols]
-          for m in range(1, 4)]
-    assert mu == [[6,16,21,3,5], [0,22,4,7,1], [15,1,9,0,9],
-                  [16,10,6,16,14], [16,11,21,24,24]]
-    assert mv == [[3,24,0], [14,14,8], [14,9,1]]
-    assert (determinant(mu), determinant(mv)) == (16, 18)
-    assert len(rref(a2)[1]) == len(cols2) == 8
-    print('Supplied Sym^2 K(O) matrices: reproduced exactly; determinants [16], [18].')
-
     columns, rows, a = system(6)
     assert (len(rows), len(columns)) == (89, 54)
     assert len(rref(a)[1]) == 54

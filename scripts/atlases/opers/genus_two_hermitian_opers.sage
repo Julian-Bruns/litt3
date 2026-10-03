@@ -109,6 +109,6 @@ result = {
     'all_five_opers_realized_by_actual_atlases': True,
     'limitations': 'One actual genus-two atlas example; no common-cover exclusion or intrinsic incidence tensor computed.'
 }
-Path('Research/computations/genus_two_hermitian_opers.json').write_text(
+Path('../litt3-computation-data/legacy_workspace_computations/genus_two_hermitian_opers.json').write_text(
     json.dumps(result, indent=2)+'\n')
 print(json.dumps(result, indent=2))

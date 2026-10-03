@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independent polynomial-power witnesses for the seven reverse exclusions.
+"""Polynomial-power witnesses for the seven reverse exclusions.
 
 Standard library only; no factorization or extension-field package.
 It suffices that base semisimple order divides m and some target root
@@ -75,7 +75,11 @@ def xpower(n, mod, p):
 
 if __name__ == '__main__':
     for p, m in witnesses.items():
-        xr, yr = radical(trim(xc, p), p), radical(trim(yc, p), p)
+        xr = trim(xc, p)
+        assert gcdp(xr, derivative(xr, p), p) == [1]
+        # The target degree is below p: derivative division retains all roots.
+        assert len(yc)-1 < p
+        yr = radical(trim(yc, p), p)
         assert xpower(3*m, xr, p) == [1]
         remainder = xpower(4*m, yr, p)
         assert remainder != [1]

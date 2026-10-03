@@ -1,0 +1,1371 @@
+{
+  "schema_version": 1,
+  "owner": "root",
+  "inventory_count": 62,
+  "entries": [
+    {
+      "theorem_id": "acyclic_alternating_atlas",
+      "source_path": "Theorems/atlases/alternating_forms/acyclic_alternating_atlas.md",
+      "source_sha256": "40d86e08814368f75b36ed7d2286879e09d85966cc74fa8102f4a31cb57b7b70",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "alternating_constant_kernel_elimination",
+      "source_path": "Theorems/atlases/alternating_forms/constant_kernel_elimination.md",
+      "source_sha256": "3b710aa02d0f43dfbb14cda47d1031a915f5cf17a8405e195681110ed0d5c23f",
+      "source_version": 3,
+      "status": "partial_component",
+      "components": [
+        {
+          "module": "Solutions.Atlases.NormalizedCommonKernelCharts",
+          "declaration": "Litt3.Atlases.normalized_common_kernel_chart_equations_iff",
+          "claim": "Exact normalized vector reconstruction/elimination on ANY genuine linear chart over ANYfield preserves BOTH original kernel equations, ACTUAL C residual and normalization; nonzero kappa/chartvalue retained.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T101119Z/report.json"
+        },
+        {
+          "module": "Solutions.Atlases.UnitNormalizedCommonKernelCharts",
+          "declaration": "Litt3.Atlases.unit_normalized_common_kernel_chart_equations_iff",
+          "claim": "Over ANY commutative ring and genuine modules, actual unit normalization and an actual unit chart value give the exact inverse reconstruction formula, preserving BOTH original kernel equations and actual C residual, including torsion and zero rings.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T102344Z/report.json"
+        }
+      ],
+      "gap": "Current Version3 statement and full proof reviewed. Field and unit-ring normalized reconstruction scalar steps are formalized. Actual Pfaffian adjugate/column/bordered charts, exact normal-corank/rank-drop degree/sharp sampling, principal alternating Schur blocks/all higher-corank maximal-minor charts, full coefficient-ring inverse morphisms and actual atlas projection remain; no rank, Pfaffian, chart-coverage or emptiness conclusion follows from the scalar lemmas.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations.",
+      "independent_scope_review": "Coverage/normalized_common_kernel_chart_independent_scope_review.md",
+      "reviewed_proof_path": "Proofs/atlases/alternating_forms/constant_kernel_elimination.md",
+      "reviewed_proof_sha256": "85c58a241f6ef13a2db538664080c701b5367f0b5f18bc7a09c5892654582fa9",
+      "reviewed_statement_version": 3,
+      "reviewed_dependencies": [
+        "acyclic_alternating_atlas",
+        "compact_etale_atlas_system",
+        "theta_open_atlas_projection",
+        "genus_two_atlas_dynamics"
+      ],
+      "reviewed_definition_ids": [
+        "base_conventions",
+        "scalar_hermitian_data"
+      ],
+      "reviewed_library_record_sha256": "77990a782f65123d7f074b1940ab4971623f4ee07d3da2f2932e34b2ccc9ef1d",
+      "source_proof_sync_review": "Coverage/root_archive_sync_review_2026_10_03.md",
+      "source_proof_review_mode": "full_current_statement_and_proof_readback",
+      "unit_ring_independent_scope_review": "Coverage/unit_normalized_common_kernel_chart_independent_scope_review.md"
+    },
+    {
+      "theorem_id": "cohomological_bezout",
+      "source_path": "Theorems/atlases/cohomological_bezout.md",
+      "source_sha256": "0f864db5c4f3897b1925f16bb6027be2ef3f070c0ed199671fe3474037c38b08",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "compact_etale_atlas_system",
+      "source_path": "Theorems/atlases/compact_etale_atlas_system.md",
+      "source_sha256": "adee6902edee6f36f733418b1695ff9847601b7f26590ea9e4d480601589e099",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "cubic_oper_atlas_descent",
+      "source_path": "Theorems/atlases/cubic_oper_atlas_descent.md",
+      "source_sha256": "456bbfead1f2bf695fbb4f5de8bf3a1103e8f67efd6b55e2da035d8186c2621f",
+      "source_version": 3,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "direct_wronskian_atlas",
+      "source_path": "Theorems/atlases/direct_wronskian_atlas.md",
+      "source_sha256": "fc812ea1193ff641c9717364ca5ea3acb5db351a2feb28c73d4fe57d56e52733",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "dormant_differential_projection",
+      "source_path": "Theorems/atlases/dormant_differential_projection.md",
+      "source_sha256": "53f60c09ffa7799c199fd94b3bfd6447803d8c18573c936f4b45ebe2d1dd4a7b",
+      "source_version": 3,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "finite_algebra_completion_certificates",
+      "source_path": "Theorems/atlases/finite_algebras/finite_algebra_completion_certificates.md",
+      "source_sha256": "ac4bcf6d209dd82508539dfd38ba8e7f834d30782828b83379888c034e130ddc",
+      "source_version": 4,
+      "status": "complete",
+      "components": [
+        {
+          "module": "Solutions.Atlases.GroebnerStopping",
+          "declaration": "Litt3.Atlases.groebner_stopping_from_known_colength",
+          "claim": "Exact known colength proves the actual derived equations form a Groebner basis of the original ideal, with exact standard count, zero remainders, ideal generation and leading ideal equality."
+        },
+        {
+          "module": "Solutions.Atlases.MonomialIdealStandards",
+          "declaration": "Litt3.Atlases.standardMonomial_iff_not_mem_leadingIdeal",
+          "claim": "Actual standard exponents are exactly monomials outside the actual leading monomial ideal."
+        },
+        {
+          "module": "Solutions.Atlases.PolynomialBorderCertificates",
+          "declaration": "Litt3.Atlases.polynomial_quotient_border_basis_certificate",
+          "claim": "Actual quotient variables generate the original algebra, so exact one-containing stable spans at the independent dimension are actual bases."
+        },
+        {
+          "module": "Solutions.Atlases.PerfectReducedAlgebras",
+          "declaration": "Litt3.Atlases.finite_perfect_algebra_unique_reduced_section",
+          "claim": "The actual nilradical quotient has a unique algebra section over every perfect field, proved from actual formal etaleness."
+        },
+        {
+          "module": "Solutions.Atlases.NilpotentIdealBounds",
+          "declaration": "Litt3.Atlases.nilradical_pow_finrank",
+          "claim": "The actual nilradical power at the actual algebra dimension is zero, in every characteristic."
+        },
+        {
+          "module": "Solutions.Atlases.PerfectFrobenius",
+          "declaration": "Litt3.Atlases.perfectFrobenius_plateau_image_eq_canonical",
+          "claim": "Any specified nontrivial p-power Frobenius at an exact consecutive semilinear rank plateau has the actual nilradical kernel and canonical reduced image, including adaptive stage zero."
+        },
+        {
+          "module": "Solutions.Atlases.PerfectFrobenius",
+          "declaration": "Litt3.Atlases.perfectFrobenius_dimension_image_eq_canonical",
+          "claim": "The independent dimension bound recovers the actual reduced image whenever the specified power is large enough."
+        },
+        {
+          "module": "Solutions.Atlases.FrobeniusCertificates",
+          "declaration": "Litt3.Atlases.stable_qFrobenius_image_reduced",
+          "claim": "The actual cardinality-power Frobenius is linear over a finite coefficient field and its exact plateau image is reduced."
+        },
+        {
+          "module": "Solutions.Atlases.FiniteAlgebraLocalizations",
+          "declaration": "Litt3.Atlases.finiteAlgebraLocalFactorIsLocalization",
+          "claim": "Full actual CRT factors retaining nilpotents are actual localizations at their original maximal ideals."
+        },
+        {
+          "module": "Solutions.Atlases.ReducedFactorIdempotents",
+          "declaration": "Litt3.Atlases.every_canonical_primitive_full_part_multiplicity",
+          "claim": "Every primitive idempotent of the actual reduced subalgebra splits the same full algebra factor; its dimension is its actual residue degree times actual local length."
+        },
+        {
+          "module": "Solutions.Atlases.NonmonogenicProducts",
+          "declaration": "Litt3.Atlases.finite_field_product_not_monogenic",
+          "claim": "A product of more than the finite field cardinality copies of that field has no single algebra generator."
+        },
+        {
+          "module": "Solutions.Atlases.ClosedPointCompleteness",
+          "declaration": "Litt3.Atlases.finite_algebra_closed_points_complete_of_lower_lengths",
+          "claim": "Distinct actual closed points with lower local lengths whose weighted sum equals the actual total dimension exhaust the actual spectrum and make every bound exact."
+        },
+        {
+          "module": "Solutions.Atlases.WeightedCompleteness",
+          "declaration": "Litt3.Atlases.weighted_exact_lengths_complete_iff",
+          "claim": "For exact positive local weights, equality with their actual total is equivalent to exhaustiveness."
+        },
+        {
+          "module": "Solutions.Atlases.LocalLengthCertificates",
+          "declaration": "Litt3.Atlases.maximalIdeal_pow_eq_bot_of_truncation_length_plateau",
+          "claim": "An exact consecutive finite truncation-length plateau in a Noetherian local ring proves the actual maximal-ideal power is zero by Nakayama."
+        },
+        {
+          "module": "Solutions.Atlases.FrobeniusIdentityCounterexample",
+          "declaration": "Litt3.Atlases.dual_numbers_identity_kernel_not_nilradical",
+          "claim": "Actual dual numbers verify that admitting q=1 invalidates the old adaptive certificate; Version4 requires q>1."
+        }
+      ],
+      "gap": "",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations.",
+      "reviewed_proof_sha256": "9380a5fbcfd4fef683f434d1b9c7b5b8e2ef6e79fa07f8db896ea317b22b31d7",
+      "full_statement_review": "Coverage/finite_algebra_completion_certificates_scope_review.md",
+      "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T015422Z/report.json",
+      "reviewed_proof_path": "Proofs/atlases/finite_algebras/finite_algebra_completion_certificates.md",
+      "reviewed_statement_version": 4,
+      "reviewed_dependencies": [],
+      "reviewed_definition_ids": [
+        "finite_algebra_certificates"
+      ],
+      "reviewed_library_record_sha256": "5234f316187817082444c5a44329472378bf3f8a1f970c44cb8bce09ce52b57b",
+      "source_proof_sync_review": "Coverage/root_archive_sync_review_2026_10_03.md",
+      "source_proof_review_mode": "full_current_statement_and_proof_readback"
+    },
+    {
+      "theorem_id": "genus_two_atlas_dynamics",
+      "source_path": "Theorems/atlases/genus_two_atlas_dynamics.md",
+      "source_sha256": "e0aebae3eb2b04ab1dfc2eb23ab27784d2a5934011892ae4a3f7d931e8175f06",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "hermitian_atlas_extension_criterion",
+      "source_path": "Theorems/atlases/hermitian_atlas_extension_criterion.md",
+      "source_sha256": "a0bfd8d6b788dceaadc2ba89e2bbccfbbe96fc7b9fe007a64f13b07881a9ee82",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "intrinsic_atlas_incidence",
+      "source_path": "Theorems/atlases/intrinsic_atlas_incidence.md",
+      "source_sha256": "f2a49670c248d9eba74bc56555787bedd98dbfce7f617872abe21e44017d8fad",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "inverse_cup_atlas_system",
+      "source_path": "Theorems/atlases/inverse_cup_atlas_system.md",
+      "source_sha256": "d28f3c9c7969b08a2cef13a27904583c5659318a7d2ada4c767803422021c3f6",
+      "source_version": 7,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "rank_two_extension_pencil",
+      "source_path": "Theorems/atlases/rank_two_extension_pencil.md",
+      "source_sha256": "aa8079c510425d5bc38f2ccb3561afb74bc0146f7cea06dddbc7886fcc503117",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "resultant_gradient_atlas",
+      "source_path": "Theorems/atlases/resultant_gradient_atlas.md",
+      "source_sha256": "b9806d8ae1ad843c8ca497a79d9424b998e21db6123d7be6e3993d10a16b50f4",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "rooted_atlas_charts",
+      "source_path": "Theorems/atlases/rooted_atlas_charts.md",
+      "source_sha256": "51b6c7a49068216d71f21d9dca87129297681d26d86ea8393e809a2ff4f0f38d",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "semilinear_hermitian_lift",
+      "source_path": "Theorems/atlases/semilinear_hermitian_lift.md",
+      "source_sha256": "7cfd5f346d2857fc0d037fdfd3b47b9d45f358bb88f1ded979c4d74b24b6850d",
+      "source_version": 3,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "theta_open_atlas_projection",
+      "source_path": "Theorems/atlases/theta_open_atlas_projection.md",
+      "source_sha256": "9a2a380bb445e279fb94eb9895eec508db54d78f72f9711efea4daf9b4437bab",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "common_cover_problem",
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations.",
+      "source_path": "Theorems/problem.md",
+      "source_sha256": "7abd75f53440c8c93236863c02fca7956f1b8eabc2badcfba8e252cd26ec2211",
+      "source_version": 1
+    },
+    {
+      "theorem_id": "backup_dormant_theta_divisors",
+      "source_path": "Theorems/projective_connections/backup_dormant_theta_divisors.md",
+      "source_sha256": "b57d8ea11a921f74452a89255493acc04ef98464fa7c43282dddce7d7b0589da",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "backup_double_tower_dormant",
+      "source_path": "Theorems/projective_connections/backup_double_tower_dormant.md",
+      "source_sha256": "693711f636336a9b495fe912cc95efd3b35e2b9c2161c8b43968d08a7a91c23c",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "cartier_dormant_secants",
+      "source_path": "Theorems/projective_connections/cartier_dormant_secants.md",
+      "source_sha256": "edc96f1eb63d70ff3399455ee0d26a0f1fd8dbf6b57299a9eb25ace543101ff9",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "coreless_connection_spectrum",
+      "source_path": "Theorems/projective_connections/coreless_connection_spectrum.md",
+      "source_sha256": "1ec3a2fa82544cdaeb2f00c877ce1c2f833d0a16c70646f7063b962e80e885d7",
+      "source_version": 3,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "dormant_bol_complex",
+      "source_path": "Theorems/projective_connections/dormant_bol_complex.md",
+      "source_sha256": "6e9fbc4032f0ba845077158e5194c97faa2fd7501949dd1093310e0bb1d8740a",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations.",
+      "scope_review_note": "Version2 reread through research_workspace.py show on 2026-10-03: new canonical-determinant symmetric-power reconstruction and reduced-zero scalar reconstruction, all-prime Bol complexes/twists, horizontal sections and global/cohomological dimensions remain pending. No independent endpoint normalization is assumed."
+    },
+    {
+      "theorem_id": "dormant_pushforward_resolution",
+      "source_path": "Theorems/projective_connections/dormant_pushforward_resolution.md",
+      "source_sha256": "78aac5af2e761ccaa6858a6abdb77dba7b29ff22f964d9726092c042fe79a5ca",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "dormant_rank_two_candidates",
+      "source_path": "Theorems/projective_connections/dormant_rank_two_candidates.md",
+      "source_sha256": "a6869b242f2a8928bafb2f271bf4fae05ef526c60c9160655ab496e1c31cbe84",
+      "source_version": 3,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "etale_double_dormant_pairs",
+      "source_path": "Theorems/projective_connections/etale_double_dormant_pairs.md",
+      "source_sha256": "36ceab0c9c02e878db270acee09c31a570497aee989a096b3b29cccaac1d856c",
+      "source_version": 4,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "family_dormant_theta_exclusions",
+      "source_path": "Theorems/projective_connections/family_dormant_theta_exclusions.md",
+      "source_sha256": "9c9e6979f55596bd1621e226ea4afce325c2460d977d59fe01d4bebbb887d58d",
+      "source_version": 4,
+      "status": "pending",
+      "components": [],
+      "gap": "Entire Version4 scope remains to formalize: all-smooth nonempty five-test scheme and uniform first-Frobenius semistability; ordinary strong semistability with strictly semistable positive-height pullbacks; actual Cech-Koszul family identity and scheme-theoretic octic containment; exact length/stability/rank/determinant and elliptic-double clauses at the stated parameter thresholds; cubic witness and original endpoint applications.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "fixed_x_dormant_equations",
+      "source_path": "Theorems/projective_connections/fixed_x_dormant_equations.md",
+      "source_sha256": "96492a1dadecef75dc8ae1c185ae43b1b9e4b069b3641b65e8baa478247c08e4",
+      "source_version": 4,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "fixed_x_oper_enumeration",
+      "source_path": "Theorems/projective_connections/fixed_x_oper_enumeration.md",
+      "source_sha256": "798779b7e67e03290f1920c6bce78709aed5143d1bffcb96cd4b09c1ab83a942",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "genus_two_active_critical_quartics",
+      "source_path": "Theorems/projective_connections/genus_two_active_critical_quartics.md",
+      "source_sha256": "59f6ee62f7c50a6fc669715f8198ad8ee00ac7e5f28790edc00cf843d7d2874d",
+      "source_version": 6,
+      "status": "pending",
+      "components": [],
+      "gap": "Version6 full active regular connection reconstruction, fifteen geometric root classes, unnormalized Cartier dormant-incidence bridge, exact invariant85-point locus, original etale-double dormant counts, scheme local multiplicities and twisted tangent conclusions remain to be formalized. Full changed source+proof read. The symbolic two-orbit replacement is not a Lean geometric proof; no Jacobian/indigenous ordinarity identification or common-source ordinary connection asserted.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "genus_two_active_twists",
+      "source_path": "Theorems/projective_connections/genus_two_active_twists.md",
+      "source_sha256": "b343e3046d0e14d1ad05bd683a3cd44bece170b423c7439560a4af0e06e15867",
+      "source_version": 3,
+      "status": "pending",
+      "components": [],
+      "gap": "Current Version3 statement and full proof read: exact invariant C(I)85-active locus and S(I) iff80/5 tangent table, actual hyperelliptic Cartier blocks including infinity, fourteen original twist orbit/resultant certificates, affine/Frobenius invariant reductions, genuine5-group-by-elementary2 cover criterion, nongalois sufficient criterion and actual two-leg partner finiteness all remain to be formalized. The explicit bad doubles are one-leg examples and do not solve the common-cover problem.",
+      "definitions": [
+        "projective_connections",
+        "correspondences"
+      ],
+      "dependencies": [
+        "genus_two_active_critical_quartics",
+        "ordinary_source_partner_finiteness",
+        "tangent_bundle_cyclic_refinements",
+        "prime_field_branch_family",
+        "hasse_cartier_criterion"
+      ],
+      "accepted_literature": [],
+      "computation_reliance": "The canonical exact twist-orbit/resultant and invariant-reduction certificates are still required inputs; they have not been kernel-checked by this pending formalization. No numerical replay was used to refresh metadata."
+    },
+    {
+      "theorem_id": "genus_two_determinant_cuts",
+      "source_path": "Theorems/projective_connections/genus_two_determinant_cuts.md",
+      "source_sha256": "a7e1a7db69fcaeb1564d074d5f20cdc3823ccc5ad98725d935ba79810a76c567",
+      "source_version": 3,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "genus_two_dormant_parameter_curve",
+      "source_path": "Theorems/projective_connections/genus_two_dormant_parameter_curve.md",
+      "source_sha256": "4e9328ad9a887c7463ca381f975cb608351bb2be782251120b4e125ff364931b",
+      "source_version": 4,
+      "status": "pending",
+      "components": [],
+      "gap": "Version4 full dormant-parameter Scheme identification, tame ramification/A5 monodromy/Galois-closure genus, actual elliptic isogeny and complete FIRST-height pointed incidence require formal proof. The source and full human proof have been read; symbolic seeds and two torsion orbits are not yet integrated in Lean. No higher-height torsion criterion asserted.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "genus_two_dormant_quintic",
+      "source_path": "Theorems/projective_connections/genus_two_dormant_quintic.md",
+      "source_sha256": "aef2d6886a387b67918ce3528ea1f6c3bde4387014cb9e79d2ecdf23f1c8af8f",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "hasse_cartier_criterion",
+      "source_path": "Theorems/projective_connections/hasse_cartier_criterion.md",
+      "source_sha256": "75b36f70f5851523bcdf6c32f42c62bdbdf6356ec686215678dfabf5bd86ca1b",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "nilpotent_scalar_model",
+      "source_path": "Theorems/projective_connections/nilpotent_scalar_model.md",
+      "source_sha256": "d598c3faec51f8c96255bd69608c27bb0eafa9b884c52bfcbb95d9f81ae67865",
+      "source_version": 5,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "ordinary_source_partner_finiteness",
+      "source_path": "Theorems/projective_connections/ordinary_source_partner_finiteness.md",
+      "source_sha256": "43f5cd51ada370e99daa0132a86ac99cb55f5966abccfc71491fcfbc3ec484e2",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "spectral_dormant_prym_lines",
+      "source_path": "Theorems/projective_connections/spectral_dormant_prym_lines.md",
+      "source_sha256": "7c77034b56577e81b551fb9482a7d75580090967cb8224b6338efa4cc0d30731",
+      "source_version": 4,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "tangent_bundle_cyclic_refinements",
+      "source_path": "Theorems/projective_connections/tangent_bundle_cyclic_refinements.md",
+      "source_sha256": "fbfb15c417e345c91d3750b01b57520bd780d35cb644bf15b7e1bb52964d210d",
+      "source_version": 5,
+      "status": "pending",
+      "components": [],
+      "gap": "Current Version5 statement and full proof read: actual rank2/rank4 tangent bundles, original Frobenius twists/jet scalar connections, determinant lines/canonical-valued alternating pairings, all actual finite-etale pullbacks including split doubles, Raynaud theta/properness and explicitly bounded good cyclic subgroups, arbitrary prime-avoiding defect towers, ONE simultaneous tower on the prescribed actual common source for BOTH endpoint families, and exact dormant Hom/active-isomorphism/stability connection tests remain to be formalized. These criteria neither produce compatible endpoint connections nor solve the common-cover problem.",
+      "definitions": [
+        "base_conventions",
+        "projective_connections",
+        "correspondences",
+        "theta_cartier"
+      ],
+      "dependencies": [
+        "etale_double_dormant_pairs",
+        "dormant_bol_complex",
+        "prime_avoiding_section_growth"
+      ],
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "cartesian_endpoint_refinement",
+      "source_path": "Theorems/shared_tensors/cartesian_endpoint_refinement.md",
+      "source_sha256": "0bd7d2bfebb3ad7c44121fb53435082865501733a32c0988ebd2eac0f13265c0",
+      "source_version": 2,
+      "status": "partial_component",
+      "components": [
+        {
+          "module": "Solutions.SharedTensors.EtaleSpans",
+          "declaration": "Litt3.SharedTensors.baseChangeLeft_commutes",
+          "claim": "Genuine finite etale scheme spans admit full Cartesian endpoint changes retaining actual morphisms and the commuting square.",
+          "gap": "Actual corelessness/clump descent, genuine Picard triple descent and degree-kernel finiteness, geometric degree scaling/canonical pullback, and etale cohomology/fundamental-group connectedness equivalences remain unformalized. The integral finite-group degree-image correction is proved in full generality."
+        },
+        {
+          "module": "Solutions.SharedTensors.InvariantDegree",
+          "declaration": "Litt3.SharedTensors.finite_group_fixed_degree_image",
+          "claim": "Every actual degree fiber of an additive finite-group action has a fixed point when group order is bijective on its actual degree kernel; in particular a coprime finite kernel gives equality of actual fixed and full degree images, without splitting or coefficient field.",
+          "gap": "Actual corelessness/clump descent, genuine Picard triple descent and degree-kernel finiteness, geometric degree scaling/canonical pullback, and etale cohomology/fundamental-group connectedness equivalences remain unformalized. The integral finite-group degree-image correction is proved in full generality."
+        }
+      ],
+      "gap": "Actual corelessness/clump descent, genuine Picard triple descent and degree-kernel finiteness, geometric degree scaling/canonical pullback, and etale cohomology/fundamental-group connectedness equivalences remain unformalized. The integral finite-group degree-image correction is proved in full generality.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations.",
+      "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T022256Z/report.json",
+      "full_statement_review": "Coverage/cartesian_endpoint_refinement_scope_review.md",
+      "reviewed_proof_path": "Proofs/shared_tensors/cartesian_endpoint_refinement.md",
+      "reviewed_proof_sha256": "f69f26210e598e9537fb0f99a32bb4fa8a71c82cef0f9fc33606bf6bd50f178f",
+      "reviewed_statement_version": 2,
+      "reviewed_dependencies": [
+        "saturated_divisor_relations",
+        "canonical_intersection"
+      ],
+      "reviewed_definition_ids": [
+        "correspondences",
+        "canonical_tensors"
+      ],
+      "reviewed_library_record_sha256": "0a6d4c9c02513976495b31febdf85df9ecd2bf8e45d80c3af4fb1441536a73cd",
+      "source_proof_sync_review": "Coverage/root_archive_sync_review_2026_10_03.md",
+      "source_proof_review_mode": "full_current_statement_and_proof_readback"
+    },
+    {
+      "theorem_id": "cartier_fixed_low_zero_core",
+      "source_path": "Theorems/shared_tensors/cartier_fixed_low_zero_core.md",
+      "source_sha256": "94bdc8c174247bbc6478e786d9d0d1e8be8e50584701102059080302bd81c46c",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "character_homogeneous_polynomial_factorization",
+      "source_path": "Theorems/shared_tensors/character_homogeneous_polynomial_factorization.md",
+      "source_sha256": "739e3698a130a54b28b4edd7ae9721b4d7cc1e9d1d0cfaba1b4aa81ee146236c",
+      "source_version": 1,
+      "status": "partial_component",
+      "components": [
+        {
+          "module": "Solutions.SharedTensors.CharacterBlocks",
+          "declaration": "Litt3.SharedTensors.character_block_proportionality",
+          "claim": "Every actual polynomial block is a constant multiple of the normalized resonant block under explicit homogeneous-character and differential-constant hypotheses.",
+          "gap": "Existence of complete local sheet maps/factorization for the actual cover and their full pushed pole-divisor compatibility remains. Actual smooth closed-point DVR stalks, finite rational pole support, smooth differential rank, actual generic finite separability, constant-field compatibility and actual generic-degree application are proved. Selected endpoint vanishing remains a separate input."
+        },
+        {
+          "module": "Solutions.SharedTensors.DifferentialPolynomials",
+          "declaration": "Litt3.SharedTensors.affine_differential_characteristic_power_factorization",
+          "claim": "The literal affine differential polynomial identity, with the original homogeneous-character and differential-constant vanishings, gives the full monic characteristic-power factorization and exact factor degrees.",
+          "gap": "Existence of complete local sheet maps/factorization for the actual cover and their full pushed pole-divisor compatibility remains. Actual smooth closed-point DVR stalks, finite rational pole support, smooth differential rank, actual generic finite separability, constant-field compatibility and actual generic-degree application are proved. Selected endpoint vanishing remains a separate input."
+        },
+        {
+          "module": "Solutions.SharedTensors.AffineMinimalPolynomials",
+          "declaration": "Litt3.SharedTensors.affine_source_field_degree_bound",
+          "claim": "The actual affine derivation of an algebraic generator forces its actual minimal-polynomial identity and bounds its actual source field degree below the characteristic, under explicit complete coefficient-space vanishings.",
+          "gap": "Existence of complete local sheet maps/factorization for the actual cover and their full pushed pole-divisor compatibility remains. Actual smooth closed-point DVR stalks, finite rational pole support, smooth differential rank, actual generic finite separability, constant-field compatibility and actual generic-degree application are proved. Selected endpoint vanishing remains a separate input."
+        },
+        {
+          "module": "Solutions.SharedTensors.KaehlerCharacters",
+          "declaration": "Litt3.SharedTensors.kaehler_characteristic_power_factorization",
+          "claim": "The literal coefficient equation in the actual Kahler differential module gives the exact characteristic-power factorization and separable degree bound; the actual rank-one module supplies its coordinate. No scalar project derivation is substituted for those forms.",
+          "gap": "Existence of complete local sheet maps/factorization for the actual cover and their full pushed pole-divisor compatibility remains. Actual smooth closed-point DVR stalks, finite rational pole support, smooth differential rank, actual generic finite separability, constant-field compatibility and actual generic-degree application are proved. Selected endpoint vanishing remains a separate input."
+        },
+        {
+          "module": "Solutions.SharedTensors.SeparableKaehlerCoordinates",
+          "declaration": "Litt3.SharedTensors.actual_kaehler_affine_source_field_degree_bound",
+          "claim": "Actual separable-field Kahler base change constructs compatible differential coordinates; the literal source universal-differential equation forces its actual minimal-polynomial equations and bounds the actual generated source field.",
+          "gap": "Existence of complete local sheet maps/factorization for the actual cover and their full pushed pole-divisor compatibility remains. Actual smooth closed-point DVR stalks, finite rational pole support, smooth differential rank, actual generic finite separability, constant-field compatibility and actual generic-degree application are proved. Selected endpoint vanishing remains a separate input."
+        },
+        {
+          "module": "Solutions.SharedTensors.SchemeCoefficientPoleBounds",
+          "declaration": "Litt3.SharedTensors.actual_scheme_polynomial_coefficients_in_pushed_pole_space",
+          "claim": "Literal complete local sheet maps over the actual finite map and actual valuation compatibility give every actual coefficient membership in the pushed pole-divisor space, retaining all sheets, repeated roots and effective multiplicities.",
+          "gap": "Existence of complete local sheet maps/factorization for the actual cover and their full pushed pole-divisor compatibility remains. Actual smooth closed-point DVR stalks, finite rational pole support, smooth differential rank, actual generic finite separability, constant-field compatibility and actual generic-degree application are proved. Selected endpoint vanishing remains a separate input."
+        },
+        {
+          "module": "Solutions.SharedTensors.SplitPolynomialPoleBounds",
+          "declaration": "Litt3.SharedTensors.minimal_polynomial_coeff_valuation_le_total_root_poles",
+          "claim": "The actual minimal polynomial over its actual single-polynomial splitting field has every coefficient bounded by the full root-multiset pole product, in arbitrary valuations and characteristics.",
+          "gap": "Existence of complete local sheet maps/factorization for the actual cover and their full pushed pole-divisor compatibility remains. Actual smooth closed-point DVR stalks, finite rational pole support, smooth differential rank, actual generic finite separability, constant-field compatibility and actual generic-degree application are proved. Selected endpoint vanishing remains a separate input."
+        },
+        {
+          "module": "Solutions.SharedTensors.SchemeGenericExtensions",
+          "declaration": "Litt3.SharedTensors.actual_span_both_generic_extensions_finite_separable",
+          "claim": "Both actual generic field embeddings of the original same-source span are finite separable, derived from actual scheme-map properties.",
+          "gap": "Existence of complete local sheet maps/factorization for the actual cover and their full pushed pole-divisor compatibility remains. Actual smooth closed-point DVR stalks, finite rational pole support, smooth differential rank, actual generic finite separability, constant-field compatibility and actual generic-degree application are proved. Selected endpoint vanishing remains a separate input."
+        },
+        {
+          "module": "Solutions.SharedTensors.SmoothSchemeDifferentials",
+          "declaration": "Litt3.SharedTensors.actualSmoothCurveKaehlerCoordinate",
+          "claim": "An actual smooth relative-dimension-one curve has a genuine rank-one universal differential coordinate, by an actual affine chart and localization.",
+          "gap": "Existence of complete local sheet maps/factorization for the actual cover and their full pushed pole-divisor compatibility remains. Actual smooth closed-point DVR stalks, finite rational pole support, smooth differential rank, actual generic finite separability, constant-field compatibility and actual generic-degree application are proved. Selected endpoint vanishing remains a separate input."
+        },
+        {
+          "module": "Solutions.SharedTensors.ActualCoverCharacters",
+          "declaration": "Litt3.SharedTensors.actual_etale_cover_character_degree_bound",
+          "claim": "For an actual finite etale map, the literal affine universal-differential equation, actual pushed pole space, actual complete local sheet data and full coefficient-space vanishings imply actual generic degree below p.",
+          "gap": "Existence of complete local sheet maps/factorization for the actual cover and their full pushed pole-divisor compatibility remains. Actual smooth closed-point DVR stalks, finite rational pole support, smooth differential rank, actual generic finite separability, constant-field compatibility and actual generic-degree application are proved. Selected endpoint vanishing remains a separate input."
+        }
+      ],
+      "gap": "Existence of complete local sheet maps/factorization for the actual cover and their full pushed pole-divisor compatibility remains. Actual smooth closed-point DVR stalks, finite rational pole support, smooth differential rank, actual generic finite separability, constant-field compatibility and actual generic-degree application are proved. Selected endpoint vanishing remains a separate input.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations.",
+      "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T021705Z/report.json",
+      "full_statement_review": "Coverage/character_homogeneous_polynomial_factorization_scope_review.md",
+      "reviewed_proof_path": "Proofs/shared_tensors/character_homogeneous_polynomial_factorization.md",
+      "reviewed_proof_sha256": "cb030926aa1c4d30aa6b33297078e945ca0ed1eb25efd6db6e0524d903637835",
+      "reviewed_statement_version": 1,
+      "reviewed_dependencies": [],
+      "reviewed_definition_ids": [
+        "base_conventions"
+      ],
+      "reviewed_library_record_sha256": "7ff20f040a1ff51a1e02f340f44f89dc51ed9708c0ed1f1b4981f283f4164d84",
+      "source_proof_sync_review": "Coverage/root_archive_sync_review_2026_10_03.md",
+      "source_proof_review_mode": "full_current_statement_and_proof_readback"
+    },
+    {
+      "theorem_id": "clump_fiber_picard",
+      "source_path": "Theorems/shared_tensors/clump_fiber_picard.md",
+      "source_sha256": "737b9da93af274b01ad61d32b162947fbdd3d996f2ddfe3e633c80009dc970ee",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "clump_finite_descent",
+      "source_path": "Theorems/shared_tensors/clump_finite_descent.md",
+      "source_sha256": "10c670694f58993897cd1cfeb80e58f3e607d23681f558361a21353b8f79009f",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "clump_formal_transport",
+      "source_path": "Theorems/shared_tensors/clump_formal_transport.md",
+      "source_sha256": "e96e3495279c8b4e96bea963ad6cb01d84dc9855fc80bf451d9cffadb2cec195",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "common_companion_jump",
+      "source_path": "Theorems/shared_tensors/common_companion_jump.md",
+      "source_sha256": "69b5b5e0b88c48e5d0f370ccbe1e231813682c4ebf044456981a9ddbe444daf5",
+      "source_version": 4,
+      "status": "pending",
+      "components": [],
+      "gap": "Actual semisimple geometric local systems of arbitrary rank, one-sided constituentwise finite-determinant arithmetic descent, crystalline companion/Newton clump, rank-two original simultaneous mixed-characteristic lift and both selected finite-monodromy conclusions remain unformalized. BOTH original etale maps and geometric matching must be retained.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "common_finite_coefficients",
+      "source_path": "Theorems/shared_tensors/common_finite_coefficients.md",
+      "source_sha256": "949f37effc6e8bdb3bc2f2ce9f2acb1e70dad6fe7fe37d89f50f862ddc2fb8ed",
+      "source_version": 4,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "common_ind_finite_cartier_coefficient",
+      "source_path": "Theorems/shared_tensors/common_ind_finite_cartier_coefficient.md",
+      "source_sha256": "60fad8a19ab56bf2fac628dd7b0d5d154907801187787c07c3a5ba68e4725730",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "contact_degree_bound",
+      "source_path": "Theorems/shared_tensors/contact_degree_bound.md",
+      "source_sha256": "cfc350f71c6ed5599e19b012f71abf859d25f5e6ec619c2c1f881f7596b4b8c9",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations.",
+      "scope_review_note": "Version2 was reread on 2026-10-03: whole stratified contact, reduced-union, exact/line quotient and all-power/refinement assertions remain pending."
+    },
+    {
+      "theorem_id": "differential_ratio_joint_field",
+      "source_path": "Theorems/shared_tensors/differential_ratio_joint_field.md",
+      "source_sha256": "9bdf2ebdf5f8f09e8ab1d38184ebcc44b8cbb40d2169ba4376789fd3e730b3f9",
+      "source_version": 2,
+      "status": "partial_component",
+      "components": [
+        {
+          "module": "Solutions.CurveArithmetic.EmbeddedFields",
+          "declaration": "Litt3.CurveArithmetic.coprime_embedded_fields_generate",
+          "claim": "Actual intermediate fields with coprime ambient indices generate the entire ambient field, with no erroneous finiteness over constant field.",
+          "gap": "Actual endpoint function degrees/nonvanishing, Kummer restrictions and joint curve/divisor/spin applications remain."
+        },
+        {
+          "module": "Solutions.SharedTensors.CyclicFieldAmbiguities",
+          "declaration": "Litt3.SharedTensors.actual_fixed_function_coprime_ambiguity_trivial",
+          "claim": "Actual automorphisms fixing an actual function become automorphisms over its full actual generated subfield. A coprime cyclic power relation and the actual finite function degree force identity, without finiteness over constants, separability or an imposed Galois closure.",
+          "gap": "Actual Kummer automorphisms and endpoint restrictions, original both-leg curve normalization/descent remain."
+        },
+        {
+          "module": "Solutions.SharedTensors.CartierFieldRecovery",
+          "declaration": "Litt3.SharedTensors.actual_cartier_differential_field_recovery",
+          "claim": "Actual intrinsic-Cartier and derivative ratios descend through the genuine universal differential maps. Coprime actual function degrees force the actual field inclusion to be surjective; descent and generation are derived. The operator standard properties and compatible literal p-bases are explicit inputs.",
+          "gap": "Actual trigonal/hyperelliptic function degrees and nonvanishing, Kummer endpoint restrictions, original both-leg normalization, divisor/genus/spin applications remain."
+        },
+        {
+          "module": "Solutions.SharedTensors.OneVariableCartierRecovery",
+          "declaration": "Litt3.SharedTensors.one_variable_cartier_differential_field_recovery",
+          "claim": "Intrinsic Cartier, literal p-bases and their transport through arbitrary separable extensions are constructed. Actual ratio and derivative descent plus coprime actual function degrees force actual field inclusion surjectivity. Only downstairs FG/trdeg1 and perfect constants are needed; no supplied compatible bases, normalized parameter or operator existence assumption.",
+          "gap": "Endpoint function-degree/nonvanishing, Kummer restrictions, both-leg curve normalization and divisor/genus/spin clauses remain."
+        },
+        {
+          "module": "Solutions.SharedTensors.LaurentCartierRegularity",
+          "declaration": "Litt3.SharedTensors.intrinsic_cartier_power_series_coordinate",
+          "claim": "The literal full Laurent p-basis and actual algebraic differential coordinate are constructed over perfect positive-characteristic coefficients. Intrinsic Cartier has its exact coefficient formula at every integer exponent, takes pth roots of residues and preserves the entire regular differential lattice. Full infinite and negative support are retained.",
+          "gap": "Actual endpoint presentations and function degrees, both-leg global normalization and divisor/genus/spin applications remain."
+        },
+        {
+          "module": "Solutions.SharedTensors.DVRCartierRegularity",
+          "declaration": "Litt3.SharedTensors.actual_dvr_intrinsic_cartier_preserves_regular_lattice",
+          "claim": "Actual original DVR Cartier coefficients and regular-lattice preservation follow through its constructed full Laurent completion and exact valuation compatibility, with no completion algebraicity, supplied chart or differential realization.",
+          "gap": "Actual endpoint and global source geometry remain separate obligations; original universal differential images and smooth stalk DVRs are now derived in the new components."
+        },
+        {
+          "module": "Solutions.SharedTensors.DVRCartierDifferentials",
+          "declaration": "Litt3.SharedTensors.actual_dvr_cartier_preserves_universal_differential_image",
+          "claim": "Intrinsic Cartier preserves the genuine image of original DVR universal differentials; that image equals the original parameter lattice, with derivative regularity derived by full completion transport.",
+          "gap": "Original generic field characterization, actual endpoint presentations and global sheaf/Picard applications remain."
+        },
+        {
+          "module": "Solutions.SharedTensors.SmoothCurveDVRStalks",
+          "declaration": "Litt3.SharedTensors.actual_smooth_curve_closed_point_dvr_stalks",
+          "claim": "Every actual closed-point stalk of an integral smooth relative-dimension-one Scheme over algebraically closed constants is a genuine DVR. All conormal, differential-fiber, true chart and rational residue data are derived; characteristic is unrestricted.",
+          "gap": "Global divisor support, Picard and both-leg normalization consequences remain."
+        },
+        {
+          "module": "Solutions.SharedTensors.SchemeFunctionFieldGeneration",
+          "declaration": "Litt3.SharedTensors.actual_smooth_function_field_transcendence_degree",
+          "claim": "Actual locally finite-type scheme structure yields original generic field FG; actual smooth relative dimension n over perfect coefficients yields original trdeg n through true universal differential rank. No supplied generic field presentation or dimension premise.",
+          "gap": "Actual endpoint function-degree and nonvanishing data remain."
+        },
+        {
+          "module": "Solutions.SharedTensors.SmoothCurveCartier",
+          "declaration": "Litt3.SharedTensors.actual_smooth_curve_intrinsic_cartier_preserves_global_regularity",
+          "claim": "On the actual smooth integral curve intrinsic rational Cartier is constructed, unique and preserves the literal intersection of original closed-stalk universal differential images. The genuine additive global restriction is constant pth-inverse semilinear, with kernel exactly rational exact forms. No fieldFG/trdeg, DVR, coordinate or stable-lattice hypotheses supplied.",
+          "gap": "Identification with genuine original H0 is proved in SchemeDifferentialGlobalCartier. Actual endpoint function degrees/nonvanishing, Kummer restrictions and both-leg normalization/divisor/genus/spin clauses remain."
+        },
+        {
+          "module": "Solutions.SharedTensors.SchemeDifferentialGlobalCartier",
+          "declaration": "Litt3.SharedTensors.actualSmoothCurveSheafGlobalCartier_intertwines",
+          "claim": "Intrinsic rational Cartier is realized by the genuine original differential-sheaf H0 operator; its original scalar action and exactness kernel are derived, without an H0 model or supplied regularity hypothesis.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T085410Z/report.json"
+        }
+      ],
+      "gap": "Actual endpoint function degrees/nonvanishing, Kummer endpoint restrictions, both-leg etale joint normalization, genus/divisor identities, spin descent and selected-family consequences remain.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations.",
+      "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T041926Z/report.json",
+      "full_statement_review": "Coverage/differential_ratio_joint_field_scope_review.md",
+      "independent_scope_review": "Coverage/cartier_operator_independent_scope_review.md",
+      "laurent_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T045038Z/report.json",
+      "laurent_independent_scope_review": "Coverage/laurent_cartier_independent_scope_review.md",
+      "dvr_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T051617Z/report.json",
+      "smooth_dvr_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T054411Z/report.json",
+      "smooth_dvr_independent_scope_review": "Coverage/smooth_dvr_regular_cartier_independent_scope_review.md",
+      "global_cartier_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T060427Z/report.json",
+      "global_cartier_independent_scope_review": "Coverage/scheme_function_field_global_cartier_independent_scope_review.md",
+      "reviewed_proof_path": "Proofs/shared_tensors/differential_ratio_joint_field.md",
+      "reviewed_proof_sha256": "d0b2e2a8bebfb0946bf1c3316725e3c2ff4253f74b458c468629193b600f8505",
+      "reviewed_statement_version": 2,
+      "reviewed_dependencies": [],
+      "reviewed_definition_ids": [
+        "base_conventions",
+        "correspondences",
+        "spin_cartier_roots"
+      ],
+      "reviewed_library_record_sha256": "df51e90ac0a095976197932a85d487cf5cff0e8c6a0829a5e6b6a14dfd3e543d",
+      "source_proof_sync_review": "Coverage/root_archive_sync_review_2026_10_03.md",
+      "source_proof_review_mode": "full_current_statement_and_proof_readback",
+      "original_H0_independent_scope_review": "Coverage/original_differential_H0_cartier_independent_scope_review.md"
+    },
+    {
+      "theorem_id": "etale_induction_core",
+      "source_path": "Theorems/shared_tensors/etale_induction_core.md",
+      "source_sha256": "7ab46d399e7b2b94a9097ea6d9329da3da67109c3fd4eb9709b7a21ab5b72b22",
+      "source_version": 4,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "finite_local_relation_kernel_counterexample",
+      "source_path": "Theorems/shared_tensors/finite_local_relation_kernel_counterexample.md",
+      "source_sha256": "5a74cd0fa5d48eaf4c523ace4bb3cfeaccabf05950da4e2667e5be1b1f654b5c",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "finite_tensor_transport",
+      "source_path": "Theorems/shared_tensors/finite_tensor_transport.md",
+      "source_sha256": "8ed769af3e12a3d78f89edf41f44b5b155dfe0b894f35a57976f4323246e2056",
+      "source_version": 3,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "finite_trace_zero_degree_growth",
+      "source_path": "Theorems/shared_tensors/finite_trace_zero_degree_growth.md",
+      "source_sha256": "f628fed1520b32c8c5867af0b67e901d58c9a9dcb1cdb1124b3306cc3f68de21",
+      "source_version": 3,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "fixed_x_nonzero_cartier_profiles",
+      "source_path": "Theorems/shared_tensors/fixed_x_nonzero_cartier_profiles.md",
+      "source_sha256": "b251dccdfa3e198ba0ca936e7790f39eb9cedc825a6ea1b73e16b6086044e7dc",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "genus_two_clump_connection_reduction",
+      "source_path": "Theorems/shared_tensors/genus_two_clump_connection_reduction.md",
+      "source_sha256": "e8a664427521a970a2029b4290e82006e493b597bb243615481443e4280c3cef",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "geometric_common_coefficients",
+      "source_path": "Theorems/shared_tensors/geometric_common_coefficients.md",
+      "source_sha256": "23fbb476dbfd379996b44e4e31b0c65a3c252e90f6ca4f5ae7e5498844e14e8c",
+      "source_version": 1,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "canonical_intersection",
+      "source_path": "Theorems/shared_tensors/matched_section_rings.md",
+      "source_sha256": "1bbe66a350d857f36a95fc9d3eaeb343a1fa6f08e35375c75be10f4fb0ae02f7",
+      "source_version": 8,
+      "status": "partial_component",
+      "components": [
+        {
+          "module": "Solutions.SharedTensors.DivisorSections",
+          "declaration": "Litt3.SharedTensors.divisorSectionSpace_mul",
+          "claim": "Actual rational functions bounded by genuine integral valuation divisors form constant-field submodules and multiply with the actual sum of divisors, giving the underlying bounded-function graded multiplication.",
+          "gap": "Whole original canonical sheaf and each true tensor-power divisor presentation are proved. Full graded multiplication/coherence, general invariant-line section-ring classification, global clump count, primitive weight/exact endpoint torsion, actual finite Picard-scheme kernel, canonical degree/genus and common-tensor or clump existence remain. The unmarked same-source common-cover problem remains unsolved."
+        },
+        {
+          "module": "Solutions.SharedTensors.SchemeDivisorSections",
+          "declaration": "Litt3.SharedTensors.actual_scheme_divisor_sections_multiply",
+          "claim": "The actual scheme constant-field map makes bounded rational functions genuine vector subspaces, with actual divisor multiplication and powers.",
+          "gap": "Whole original canonical sheaf and each true tensor-power divisor presentation are proved. Full graded multiplication/coherence, general invariant-line section-ring classification, global clump count, primitive weight/exact endpoint torsion, actual finite Picard-scheme kernel, canonical degree/genus and common-tensor or clump existence remain. The unmarked same-source common-cover problem remains unsolved."
+        },
+        {
+          "module": "Solutions.SharedTensors.DivisorSectionOrders",
+          "declaration": "Litt3.SharedTensors.unit_mem_divisorSectionSpace_iff_effective",
+          "claim": "For every genuine nonzero rational function the valuation bound is equivalent to effectiveness of its actual principal divisor plus D, with the normalized-order sign proved.",
+          "gap": "Whole original canonical sheaf and each true tensor-power divisor presentation are proved. Full graded multiplication/coherence, general invariant-line section-ring classification, global clump count, primitive weight/exact endpoint torsion, actual finite Picard-scheme kernel, canonical degree/genus and common-tensor or clump existence remain. The unmarked same-source common-cover problem remains unsolved."
+        },
+        {
+          "module": "Solutions.SharedTensors.FiniteFiberDivisorPushforward",
+          "declaration": "Litt3.SharedTensors.actual_scheme_divisor_pushforward_fiber_formula",
+          "claim": "Unweighted integral divisor pushforward on an actual finite map is the full sum over its actual closed-point fiber, without dropping multiplicities.",
+          "gap": "Whole original canonical sheaf and each true tensor-power divisor presentation are proved. Full graded multiplication/coherence, general invariant-line section-ring classification, global clump count, primitive weight/exact endpoint torsion, actual finite Picard-scheme kernel, canonical degree/genus and common-tensor or clump existence remain. The unmarked same-source common-cover problem remains unsolved."
+        },
+        {
+          "module": "Solutions.SharedTensors.DifferentialDivisorSheafIsomorphisms",
+          "declaration": "Litt3.SharedTensors.actualDifferentialDivisorSheafIso",
+          "claim": "The actual original whole differential module SHEAF is O(div omega), via the original normalized coefficient map on EVERY original open, any characteristic, compact smooth integral curve, no properness or H0 model assumption.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T121339Z/report.json"
+        },
+        {
+          "module": "Solutions.SharedTensors.OriginalCanonicalLineSheaf",
+          "declaration": "Litt3.SharedTensors.actual_smooth_curve_differential_sheaf_is_original_line",
+          "claim": "Genuine rank-one local freeness of the ORIGINAL differential SHEAF is derived from actual divisor frames; the canonical class is its literal class among ALL original line sheaves.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T121339Z/report.json"
+        },
+        {
+          "module": "Solutions.SharedTensors.DifferentialTensorDivisorSheaves",
+          "declaration": "Litt3.SharedTensors.actualDifferentialTensorDivisorSheafIso",
+          "claim": "Every true original sheafified canonical tensor power is the whole O(n div omega), including n=0 with the ORIGINAL structure-sheaf unit; no degree, genus or tensor existence is supplied.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T121339Z/report.json"
+        },
+        {
+          "module": "Solutions.SharedTensors.OriginalCanonicalSheafRoots",
+          "declaration": "Litt3.SharedTensors.actual_original_canonical_sheaf_root_exists_iff_divisor_class_divisible",
+          "claim": "Existence of ANY original line-sheaf canonical nth root is equivalent to the exact ORIGINAL principal-divisor-class divisibility equation, using the proved classification of ALL line sheaves. The class equation remains unresolved, for every n including zero.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T121339Z/report.json"
+        },
+        {
+          "module": "Solutions.CartierAndSpin.SmoothEtaleSpanDifferentialDivisors",
+          "declaration": "Litt3.CartierAndSpin.same_source_actual_rational_differential_divisor_pullbacks",
+          "claim": "BOTH literal finite etale maps from SAME original integral smooth source preserve original rational differential orders and pull back actual differential divisors; source smoothness and all field/valuation facts are derived. Arbitrary characteristic, compact integral endpoints/source, original common-base equality.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T120858Z/report.json"
+        },
+        {
+          "module": "Solutions.CartierAndSpin.SmoothEtaleSpanDifferentialSheaves",
+          "declaration": "Litt3.CartierAndSpin.same_source_actual_differential_categorical_pullback_isomorphisms",
+          "claim": "BOTH ORIGINAL canonical categorical adjoints f*Omega_X->Omega_Z and g*Omega_Y->Omega_Z are whole-sheaf isomorphisms from SAME source. Actual universal-presheaf/sheaf agreement and entire normalized coefficient square identify the canonical maps themselves. Source smoothness and original differential-divisor transport derived, compact smooth integral curves over algebraically closed constants, any characteristic, original common-base equality.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T122904Z/report.json"
+        },
+        {
+          "module": "Solutions.SharedTensors.OriginalCanonicalTensorSections",
+          "declaration": "Litt3.SharedTensors.actualOriginalCanonicalTensorGlobalSectionsEquiv",
+          "claim": "Genuine H0 of EVERY original whole sheafified canonical tensor power is k-linearly equivalent to the literal valuation-bounded original rational-function space for n div omega. Original coefficient action is compared via actual generic germs; n=0 uses original structure sheaf. DVR/support data internally derived, no finite H0, genus, degree, properness or common-tensor existence supplied.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T123013Z/report.json"
+        }
+      ],
+      "gap": "Whole original canonical sheaf and each true tensor-power divisor presentation are proved. Full graded multiplication/coherence, general invariant-line section-ring classification, global clump count, primitive weight/exact endpoint torsion, actual finite Picard-scheme kernel, canonical degree/genus and common-tensor or clump existence remain. The unmarked same-source common-cover problem remains unsolved.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations.",
+      "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T015422Z/report.json",
+      "reviewed_proof_path": "Proofs/shared_tensors/matched_section_rings.md",
+      "reviewed_proof_sha256": "762ab5716168ba82b61a9f9167c71a099e9307cf9005f03e7d6676b7764e357a",
+      "reviewed_statement_version": 8,
+      "reviewed_dependencies": [],
+      "reviewed_definition_ids": [
+        "correspondences",
+        "canonical_tensors"
+      ],
+      "reviewed_library_record_sha256": "c6ce832b8d40063198fe883aefe9c508e5943b89d07980ade8c846c2c5e2757d",
+      "source_proof_sync_review": "Coverage/root_archive_sync_review_2026_10_03.md",
+      "source_proof_review_mode": "full_current_statement_and_proof_readback",
+      "original_differential_sheaf_independent_review": "Coverage/original_differential_divisor_sheaf_independent_review.md",
+      "original_canonical_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T121339Z/report.json",
+      "original_differential_divisor_pullback_independent_review": "Coverage/original_differential_pullback_divisor_independent_review.md",
+      "original_differential_categorical_pullback_independent_review": "Coverage/original_differential_categorical_pullback_independent_review.md",
+      "original_canonical_tensor_H0_independent_review": "Coverage/original_canonical_tensor_sections_independent_review.md",
+      "original_canonical_tensor_H0_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T123013Z/report.json"
+    },
+    {
+      "theorem_id": "minimal_finite_coefficient_relation_kernel",
+      "source_path": "Theorems/shared_tensors/minimal_finite_coefficient_relation_kernel.md",
+      "source_sha256": "54d52e99c7919bcaae4e21c2a2a47d311ef2315f04776a588f13f6e57e3a9033",
+      "source_version": 5,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "new_line_uniform_quotients",
+      "source_path": "Theorems/shared_tensors/new_line_uniform_quotients.md",
+      "source_sha256": "3ad47af88a43b7b3007ee4bb87ef434c372e6b101bade7eccab0293d3d4a9af5",
+      "source_version": 2,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "ramified_root_contact_core",
+      "source_path": "Theorems/shared_tensors/ramified_root_contact_core.md",
+      "source_sha256": "4857fa5aa8fd052e9caa9eaedc09033be93a3c5f2b08a4350ccbe8d4e74df94c",
+      "source_version": 3,
+      "status": "pending",
+      "components": [],
+      "gap": "The full canonical source scope remains to be formalized.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations."
+    },
+    {
+      "theorem_id": "saturated_divisor_relations",
+      "source_path": "Theorems/shared_tensors/saturated_divisor_relations.md",
+      "source_sha256": "1cdf26307c6dbd58ba2e37af4dba03074bb3b4f3874a279852ece059c2b3bf41",
+      "source_version": 3,
+      "status": "partial_component",
+      "components": [
+        {
+          "module": "Solutions.SharedTensors.SchemeDivisors",
+          "declaration": "Litt3.SharedTensors.finiteEtaleSpan_divisorRelations_torsionFree",
+          "claim": "The genuine integral closed-point divisor relation quotient for both actual scheme maps is torsion-free, by coefficientwise division."
+        },
+        {
+          "module": "Solutions.SharedTensors.SaturatedKernels",
+          "declaration": "Litt3.SharedTensors.kernel_integral_roots_saturated",
+          "claim": "The kernel of an additive homomorphism into any torsion-free group has saturated integral roots."
+        },
+        {
+          "module": "Solutions.SharedTensors.SchemeUnitQuotients",
+          "declaration": "Litt3.SharedTensors.actual_same_source_unit_quotient_kernel_saturated",
+          "claim": "Both actual finite etale maps induce the original quotient of rational-function units; actual unramified DVR valuations make the principal-divisor map descend to the integral two-leg divisor quotient, and its actual kernel has saturated integral roots."
+        },
+        {
+          "module": "Solutions.SharedTensors.SchemeDivisorGluing",
+          "declaration": "Litt3.SharedTensors.actual_same_source_divisor_gluing_kernel",
+          "claim": "For the actual scheme span, actual divisor pairs with actual rational trivializations modulo endpoint rational gauges map onto the actual relation kernel, with exactly invariant divisor classes as kernel. The literal actual field intersection and actual zero constant principal divisors prove injection."
+        },
+        {
+          "module": "Solutions.SharedTensors.ConstantPrincipalDivisors",
+          "declaration": "Litt3.SharedTensors.scheme_constant_principal_divisor_zero",
+          "claim": "Nonzero constants from an actual structure morphism have zero actual normalized principal divisor because they are units in every actual closed-point DVR stalk."
+        },
+        {
+          "module": "Solutions.SharedTensors.RootDegreeCriterion",
+          "declaration": "Litt3.SharedTensors.saturated_prime_power_roots_iff_degree_divisibility",
+          "claim": "For the actual saturated kernel of a map into a torsion-free group, every prime-power root exists in the original ambient group exactly when its actual normalized degree is divisible, provided the degree map is surjective and its actual kernel has prime-to-p order. No splitting or enumeration is used."
+        },
+        {
+          "module": "Solutions.SharedTensors.SchemeClumps",
+          "declaration": "Litt3.SharedTensors.actual_same_source_no_clump_iff_invariant_divisors_zero",
+          "claim": "On the actual Jacobson scheme source, no actual finite fiber clump is equivalent to vanishing of the actual integral invariant-divisor group. A unique actual clump yields its actual infinite cyclic generator via the reduced endpoint divisors."
+        },
+        {
+          "module": "Solutions.SharedTensors.SchemeClumpGluing",
+          "declaration": "Litt3.SharedTensors.actual_same_source_no_clump_gluing_equiv_relations",
+          "claim": "No clump makes the actual full divisor-gluing quotient isomorphic to the actual relation subgroup of the original same-source unit quotient."
+        },
+        {
+          "module": "Solutions.SharedTensors.SchemeDivisorClassKernel",
+          "declaration": "Litt3.SharedTensors.actual_joint_divisor_class_map_representative",
+          "claim": "The actual endpoint quotient is the product of actual divisor-class groups, with actual two-leg difference pullback. Actual source constant absorption identifies the full gluing group with its actual kernel; that constant-global-function hypothesis remains explicit."
+        },
+        {
+          "module": "Solutions.SharedTensors.SmoothCurveFiniteSupport",
+          "declaration": "Litt3.SharedTensors.actual_quasiCompact_smooth_curve_finite_principal_support",
+          "claim": "Actual integral smooth relative-dimension-one geometry and quasi-compactness derive every original closed-stalk DVR and genuine finite principal support, via a constructed finite Dedekind affine cover."
+        },
+        {
+          "module": "Solutions.SharedTensors.IntegralSchemeGlobalFunctions",
+          "declaration": "Litt3.SharedTensors.actual_function_field_regular_everywhere_iff_global_section",
+          "claim": "On ANY integral Scheme, membership in every original stalk is equivalent to the literal generic image of an actual global structure-sheaf section, proved by actual sheaf gluing."
+        },
+        {
+          "module": "Solutions.SharedTensors.ProperSchemeGlobalConstants",
+          "declaration": "Litt3.SharedTensors.actual_universally_closed_regular_rational_function_constant",
+          "claim": "Genuine universal closedness over algebraically closed coefficients forces every everywhere-regular original rational function to be an actual pulled-back constant; no smoothness or finite-type hypothesis needed."
+        },
+        {
+          "module": "Solutions.SharedTensors.SmoothCurvePrincipalConstants",
+          "declaration": "Litt3.SharedTensors.actual_proper_smooth_curve_principal_kernel_eq_constant_range",
+          "claim": "The genuine original principal divisor kernel is exactly the image of constant units on an actual integral proper smooth curve. DVRs, support and stalk-to-global constants are derived."
+        },
+        {
+          "module": "Solutions.SharedTensors.SmoothProperSpans",
+          "declaration": "Litt3.SharedTensors.actual_smooth_proper_span_gluing_equiv_joint_class_kernel",
+          "claim": "On the actual integral same-source finite etale span of smooth curves, with proper left endpoint and quasi-compact right endpoint, the full original divisor gluing group equals the actual joint divisor-class kernel. Every DVR/support/Jacobson/constant-unit bridge is derived. No line-bundle identification asserted."
+        },
+        {
+          "module": "Solutions.SharedTensors.SmoothProperSpans",
+          "declaration": "Litt3.SharedTensors.actual_smooth_proper_span_no_clump_relations_equiv_joint_class_kernel",
+          "claim": "With the actual no-clump hypothesis, the original unit relation subgroup equals the actual joint divisor-class kernel, retaining BOTH actual finite etale maps from SAME source and deriving all local/global constant data."
+        },
+        {
+          "module": "Solutions.SharedTensors.TaylorPBasisConnection",
+          "declaration": "Litt3.SharedTensors.descended_connection_kernel",
+          "claim": "The genuine Taylor scalar-extension isomorphism and field flatness descend an actual truncated unit solution to an actual nonzero original-field logarithmic primitive. ANY true single p-basis in prime characteristic; no perfectness, matrix singularity or p-curvature premise."
+        },
+        {
+          "module": "Solutions.CartierAndSpin.RationalCartierLogarithmicConverse",
+          "declaration": "Litt3.CartierAndSpin.one_variable_cartier_fixed_iff_logarithmic",
+          "claim": "On the true one-variable universal differential module over perfect constants, intrinsic Cartier fixedness is equivalent to an actual original-field dlog primitive; full p-basis and normalized coordinate are constructed."
+        },
+        {
+          "module": "Solutions.SharedTensors.SharedCartierCorrection",
+          "declaration": "Litt3.SharedTensors.actual_shared_rank_le_one_fixed_difference_correction",
+          "claim": "For compatible additive inverse-power semilinear operators on BOTH actual endpoint images, a fixed difference admits fixed endpoint representatives, by a constructed shared correction. True shared finite/rank<=1 hypothesis explicit; exponent ANY n>1."
+        },
+        {
+          "module": "Solutions.SharedTensors.PrimeCartierFixedLine",
+          "declaration": "Litt3.SharedTensors.actual_rank_le_one_cartier_fixed_card",
+          "claim": "A true finite rank-at-most-one inverse-Frobenius semilinear space has actual fixed cardinal1 if C=0 and p otherwise; true fixed line is the literal additive prime subfield. The geometric shared rank is a separate bridge."
+        },
+        {
+          "module": "Solutions.CartierAndSpin.SmoothEtaleSpanUnitTorsion",
+          "declaration": "Litt3.CartierAndSpin.actual_smooth_etale_span_unit_torsion_cartier_equiv",
+          "claim": "The actual SAME-source finite etale smooth Scheme span has a canonical F_p-linear isomorphism from its literal Q[p] to the Cartier-fixed intersection of BOTH original universal differential images. All FG/trdeg/separability/tower facts derived; original constant intersection retained. No endpoint scalar extension, Picard or regularity conclusion presumed."
+        },
+        {
+          "module": "Solutions.CartierAndSpin.ActualSharedDifferentialRank",
+          "declaration": "Litt3.CartierAndSpin.actual_one_variable_shared_space_finite_and_small",
+          "claim": "Literal shared rational differential space has finite dimension at most one under actual constant intersection; one-variable coordinates are derived from perfect finitely generated function fields."
+        },
+        {
+          "module": "Solutions.CartierAndSpin.SmoothEtaleSpanPowerCriterion",
+          "declaration": "Litt3.CartierAndSpin.actual_smooth_etale_span_power_iff_additive_decomposition",
+          "claim": "For BOTH original finite etale maps from SAME integral smooth curve, actual quotient pth-power existence is equivalent to literal additive endpoint dlog decomposition. All function-field hypotheses and shared rank are derived; constant intersection remains explicit."
+        },
+        {
+          "module": "Solutions.SharedTensors.SchemeDifferentialGlobalLinearEquivalence",
+          "declaration": "Litt3.SharedTensors.schemeDifferentialGlobalSectionsToFunctionField_range",
+          "claim": "The genuine ORIGINAL differential SHEAF H0 rational realization has range exactly the original closed-stalk image intersection, ANY field and ANY smooth relative dimension; original scalar action and actual sheaf gluing are proved."
+        },
+        {
+          "module": "Solutions.CartierAndSpin.SharedRationalDifferentialRegularity",
+          "declaration": "Litt3.CartierAndSpin.actual_no_clump_shared_rational_differentials_regular",
+          "claim": "Literal no-clump forces all shared rational forms regular on the SAME source using true finite original poles and BOTH actual finite etale maps."
+        },
+        {
+          "module": "Solutions.CartierAndSpin.SharedGlobalDifferentialSections",
+          "declaration": "Litt3.CartierAndSpin.actual_no_clump_shared_rational_iff_global_endpoint_sections",
+          "claim": "Under genuine no-clump, actual shared rational differentials are exactly those realized by genuine H0 sections on BOTH endpoints; a genuine source H0 representative is also proved."
+        },
+        {
+          "module": "Solutions.SharedTensors.SchemeDifferentialGlobalCartier",
+          "declaration": "Litt3.SharedTensors.actualSmoothCurveSheafGlobalCartier_zero_iff_rational_exact",
+          "claim": "Constructed intrinsic Cartier on genuine ORIGINAL H0 is inverse-p semilinear for the original coefficient action; its kernel consists exactly of forms with an ACTUAL rational differential primitive, which may have poles. No properness/genus or H0 model premise."
+        },
+        {
+          "module": "Solutions.CartierAndSpin.ActualHigherUnitTorsion",
+          "declaration": "Litt3.CartierAndSpin.actual_unit_quotient_all_primary_heights_finite_cyclic",
+          "claim": "Every literal Q[p^n] is finite cyclic with cardinal at most p^n under true one-variable separable two-field constant intersection; ambient quotient and full primary component may be infinite."
+        },
+        {
+          "module": "Solutions.CartierAndSpin.ActualPrimaryUnitTorsionProfile",
+          "declaration": "Litt3.CartierAndSpin.actual_unit_quotient_primary_vanishes_iff_shared_cartier_zero",
+          "claim": "The ENTIRE actual primary component vanishes iff the actual restricted shared Cartier operator is zero, without full-primary finiteness. Exact all-height profile is also proved when actual full-primary finiteness is separately assumed."
+        },
+        {
+          "module": "Solutions.CartierAndSpin.NoClumpConstantIntersection",
+          "declaration": "Litt3.CartierAndSpin.actual_no_clump_endpoint_function_field_intersection_constants",
+          "claim": "Actual no-clump derives the literal original endpoint field intersection equals original constants, with first endpoint proper and second quasi-compact; genuine divisor pullbacks and proper principal kernel are used."
+        },
+        {
+          "module": "Solutions.CartierAndSpin.NoClumpSharedDifferentialVanishing",
+          "declaration": "Litt3.CartierAndSpin.actual_no_clump_shared_rational_differentials_eq_bot",
+          "claim": "In ANY characteristic, no actual finite clump plus rank>=2 of ONE endpoint genuine ORIGINAL H0 kills the ENTIRE literal shared rational space. Original zero supports, endpoint regularity and clump production are proved; no genus conversion is supplied."
+        },
+        {
+          "module": "Solutions.CartierAndSpin.NoClumpPrimaryTorsionVanishing",
+          "declaration": "Litt3.CartierAndSpin.actual_no_clump_entire_unit_quotient_primary_zero",
+          "claim": "In prime characteristic, actual no-clump plus ONE genuine H0 rank>=2 eliminates ENTIRE actual characteristic-primary unit quotient; constant intersection, shared vanishing, original logarithmic converse and both separable fields are derived."
+        },
+        {
+          "module": "Solutions.SharedTensors.SchemeDifferentialGlobalCartierKernels",
+          "declaration": "Litt3.SharedTensors.actualSmoothEtaleSheafGlobalCartierKernel_comap",
+          "claim": "All genuine original H0 Cartier kernels are true k-submodules and actual finite-etale pullback preserves AND REFLECTS every height, without finite H0 or nilheight.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T095556Z/report.json"
+        },
+        {
+          "module": "Solutions.CartierAndSpin.SmoothEtaleSpanH0UnitTorsion",
+          "declaration": "Litt3.CartierAndSpin.actual_at_most_one_clump_unit_torsion_shared_H0_equiv",
+          "claim": "Actual Q[p] is prime-linearly equivalent to literal true sharedH0 C=1 under original constant intersection, at-most-one clump and ONE trueH0 rank>=2, retaining BOTH actual maps.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T093716Z/report.json"
+        },
+        {
+          "module": "Solutions.CartierAndSpin.SharedH0PrimaryTorsionCriterion",
+          "declaration": "Litt3.CartierAndSpin.actual_entire_unit_primary_zero_iff_shared_H0_cartier_zero",
+          "claim": "ENTIRE actual primary unit quotient vanishes iff Cartier is zero on true sharedH0, without primary finiteness or height.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T093616Z/report.json"
+        },
+        {
+          "module": "Solutions.CartierAndSpin.RestrictedPBasisConnection",
+          "declaration": "Litt3.CartierAndSpin.actual_p_basis_restricted_connection_identity",
+          "claim": "Whole original restricted connection pth-iterate formula for ANY prime-characteristic field/full actualpBasis, no perfectness/FG/curvature/solution premise.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T100348Z/report.json"
+        },
+        {
+          "module": "Solutions.CartierAndSpin.OneVariableConnectionAlternatives",
+          "declaration": "Litt3.CartierAndSpin.actual_one_variable_connection_alternatives",
+          "claim": "True FG/trdeg1 over perfect constants constructs fullpBasis at ANY normalized parameter, derives D^p0/curvaturepth/kernel/bijection with no literature input.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T100348Z/report.json"
+        },
+        {
+          "module": "Solutions.Jacobians.SmoothCurveDivisorSheafPrincipalKernel",
+          "declaration": "Litt3.Jacobians.actual_smooth_curve_divisor_sheaf_trivial_iff_principal",
+          "claim": "Actual global O(D) is genuinely trivial iff D is the original principal divisor of ONE original function, ANYchar smoothQC integral curve.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T093903Z/report.json"
+        },
+        {
+          "module": "Solutions.Jacobians.SmoothCurveDivisorSheafClassDetection",
+          "declaration": "Litt3.Jacobians.actual_smooth_curve_divisor_class_eq_iff_sheaves_iso",
+          "claim": "Original divisor-class equality iff TRUE actual O(D),O(E) SHEAF iso, via ONE derived rational scalar and exact original orders, ANYchar.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T095645Z/report.json"
+        },
+        {
+          "module": "Solutions.SharedTensors.OriginalJointPicardKernels",
+          "declaration": "Litt3.SharedTensors.actualOriginalJointDivisorPicardKernelEquiv",
+          "claim": "ENTIRE actual two-leg joint divisor-class kernel is additively equivalent to the kernel of BOTH actual categorical ALL-line Picard pullbacks from SAME source. These are honest arbitrary-line class groups with actual tensor addition; no representing scheme or finiteness premise.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T122346Z/report.json"
+        },
+        {
+          "module": "Solutions.SharedTensors.OriginalProperSpanPicardGluing",
+          "declaration": "Litt3.SharedTensors.actual_original_proper_span_gluing_equiv_joint_picard_kernel",
+          "claim": "The ORIGINAL rational/divisor gluing quotient is the ENTIRE honest two-leg Picard-group kernel, actual finite etale SAME source, left endpoint proper/right quasi-compact; source smooth/proper/constants and all DVR/support data derived. An actual-triples-with-phi quotient remains separate.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T122346Z/report.json"
+        },
+        {
+          "module": "Solutions.SharedTensors.OriginalProperSpanPicardGluing",
+          "declaration": "Litt3.SharedTensors.actual_original_proper_span_no_clump_relations_equiv_joint_picard_kernel",
+          "claim": "With genuine no-clump, the ORIGINAL unit relation subgroup is the ENTIRE honest two-leg ALL-line Picard kernel. BOTH literal categorical pullbacks and SAME source retained, no degree-zero, finite scheme kernel or common-cover existence inferred.",
+          "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T122346Z/report.json"
+        }
+      ],
+      "gap": "Full canonical Version3 remains partial: global clump count, true genus/cohomology/Serre-Cartier-Frobenius duality, full whole-sheaf monoidal coherence, actual Picard/Jacobian representing schemes and finite original scheme kernel, ENTIRE nonzero primary finiteness, invariant degree/root height and BT remain. ALL genuine original line-sheaf divisor classification, global tensor/inverse/Picard GROUP, original Omega/divisor and all tensor powers are proved; those actual-object results do not replace the missing scheme, cohomology, degree or existence bridges.",
+      "accepted_literature": [],
+      "computation_reliance": "No enumerative computation in the checked algebraic foundations.",
+      "verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T015422Z/report.json",
+      "smooth_principal_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T063631Z/report.json",
+      "smooth_principal_independent_scope_review": "Coverage/scheme_principal_kernel_independent_scope_review.md",
+      "full_statement_review": "Coverage/saturated_divisor_relations_scope_review.md",
+      "logarithmic_cartier_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T073749Z/report.json",
+      "taylor_descent_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T072958Z/report.json",
+      "taylor_independent_scope_review": "Coverage/taylor_connection_independent_scope_review.md",
+      "logarithmic_cartier_scope_review": "Coverage/logarithmic_cartier_and_torsion_scope_review.md",
+      "shared_power_choices_independent_review": "Coverage/shared_power_choices_independent_review.md",
+      "original_H0_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T084850Z/report.json",
+      "original_H0_independent_reviews": [
+        "Coverage/original_differential_global_recovery_independent_scope_review.md",
+        "Coverage/original_differential_global_linearity_independent_scope_review.md"
+      ],
+      "no_clump_regularity_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T083933Z/report.json",
+      "no_clump_regularity_independent_review": "Coverage/shared_rational_regularity_independent_review.md",
+      "H0_cartier_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T085410Z/report.json",
+      "H0_cartier_independent_review": "Coverage/original_differential_H0_cartier_independent_scope_review.md",
+      "no_clump_zero_primary_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T085639Z/report.json",
+      "no_clump_zero_primary_independent_review": "Coverage/original_differential_zero_and_no_clump_independent_review.md",
+      "higher_primary_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T081710Z/report.json",
+      "new_independent_reviews": [
+        "Coverage/original_shared_H0_independent_scope_review.md",
+        "Coverage/shared_H0_primary_and_iterations_independent_review.md",
+        "Coverage/original_H0_cartier_kernels_independent_scope_review.md",
+        "Coverage/restricted_connection_independent_scope_review.md",
+        "Coverage/actual_global_divisor_principal_kernel_independent_review.md",
+        "Coverage/actual_global_divisor_class_detection_independent_review.md"
+      ],
+      "latest_stable_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T093716Z/report.json",
+      "reviewed_proof_path": "Proofs/shared_tensors/saturated_divisor_relations.md",
+      "reviewed_proof_sha256": "0172c7f7d390fb166aca7ab33ede3e3f3bdae06e172ba0dae096bc9915b6999b",
+      "reviewed_statement_version": 3,
+      "reviewed_dependencies": [
+        "canonical_intersection"
+      ],
+      "reviewed_definition_ids": [
+        "correspondences",
+        "canonical_tensors"
+      ],
+      "reviewed_library_record_sha256": "475b18f92514f3c3685bbbbcdb463efe374eaab3dcfd18209dbee1b2e619c657",
+      "source_proof_sync_review": "Coverage/root_archive_sync_review_2026_10_03.md",
+      "source_proof_review_mode": "full_current_statement_and_proof_readback",
+      "original_joint_picard_kernel_independent_review": "Coverage/original_joint_picard_kernel_independent_review.md",
+      "original_joint_picard_kernel_verification_evidence": "../../../litt3-computation-data/formalization-20261003/verification/20261003T122346Z/report.json"
+    }
+  ],
+  "last_source_proof_sync_utc": "2026-10-03 10:43:13 UTC"
+}

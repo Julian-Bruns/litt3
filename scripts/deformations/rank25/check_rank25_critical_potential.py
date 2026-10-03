@@ -11,10 +11,10 @@ from sage.all import GF, PolynomialRing, matrix, vector
 
 root=Path(__file__).resolve().parents[3];data=root.parent/'litt3-computation-data'
 ap=argparse.ArgumentParser(description='Check the rank25 fourth potential and its complete critical locus inputs.')
-ap.add_argument('--output',type=Path,default=root/'Research/computations/rank25_critical_potential.json')
+ap.add_argument('--output',type=Path,default=root/'../litt3-computation-data/legacy_workspace_computations/rank25_critical_potential.json')
 args=ap.parse_args()
 primary=data/'rank25-w4-returned-20260911-bpG6EM/rank25_fourth_lift_certificate/work/receipts/universal2100.json'
-sym=root/'Research/computations/rank25_generalization_leverage.json'
+sym=root/'../litt3-computation-data/legacy_workspace_computations/rank25_generalization_leverage.json'
 field_poly=PolynomialRing(GF(5),'t');tt=field_poly.gen()
 k=GF(625,'t',modulus=tt**4+4*tt**3+tt**2+4*tt+3);t=k.gen()
 def val(x):
@@ -39,7 +39,7 @@ r=val('0224');change=Y.hom([U,m1,m2,a,b,h+r*s,s,z1,z2],R)
 W=change(V)
 restrict=Y.hom([R(0),R(0),R(0),a,b,R(0),R(0),R(0),R(0)],R)
 fg=vector(R,[restrict(E[1]),restrict(E[2])])
-prior_path=root/'Research/computations/rank25_w5_return_and_global_w4_locus_checks.json'
+prior_path=root/'../litt3-computation-data/legacy_workspace_computations/rank25_w5_return_and_global_w4_locus_checks.json'
 prior=json.loads(prior_path.read_text())
 D=matrix(k,[[val(c) for c in row] for row in prior['mixed_matrix_y1y2']])
 c=vector(k,[val(x) for x in prior['quadratic_s_coefficients']])

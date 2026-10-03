@@ -28,7 +28,7 @@ from scripts.atlases import atlas_eta
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT = ROOT.parent/'litt3-computation-data/atlas-all18'
 FIRST = ROOT.parent/'litt3-computation-data/atlas-rooted-first'
-CENSUS = ROOT/'Research/computations/oper_representatives_manifest.json'
+CENSUS = ROOT/'../litt3-computation-data/legacy_workspace_computations/oper_representatives_manifest.json'
 FILES = ['scripts/atlases/run_all_atlases.py', 'scripts/atlases/atlas_f4.py',
          'scripts/atlases/opers/build_oper_atlas.sage', 'scripts/atlases/opers/oper_representatives.sage',
          'scripts/atlases/export_rooted_atlas.sage','scripts/atlases/mixed_atlas_certificate.sage',
@@ -102,7 +102,7 @@ def initialize(folder):
         rid = rep['id']
         first = rid == 'orbit_0000'
         state['jobs'][rid] = dict(rep, stage='pending', visits=0,
-            tensor=str(ROOT/'Research/computations/canonical_atlas_system.json') if first
+            tensor=str(ROOT/'../litt3-computation-data/legacy_workspace_computations/canonical_atlas_system.json') if first
                    else str(folder/rid/'tensor/canonical_atlas_system.json'),
             charts=str(FIRST) if first else str(folder/rid/'charts'),
             adopted_first_cache=first)

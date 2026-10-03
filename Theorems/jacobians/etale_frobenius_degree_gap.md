@@ -1,7 +1,7 @@
 # Frobenius kernels and finite curve maps
 
-Version2,16 September2026. Independently audited, including the
-separable extension and the coefficient-filtration statements.
+Version3,3 October2026. The later exact coefficient functor also
+identifies the actual nilpotent deck module.
 Let h:D->C be a finite separable
 map of smooth projective connected curves over an algebraically closed field
 k of characteristic p>0. Put
@@ -89,6 +89,37 @@ filtration with graded local systems M_j this implies
 The lower bound is a finite optimization of the actual graded
 Frobenius kernel functions; no associated-graded equality is asserted.
 
+### The actual nilpotent deck module
+
+For an actual connected finite étale Galois cover q:T->C with
+group G, write N_T=H^1(T,O_T)_nil. Pullback identifies, compatibly
+with Frobenius,
+\[
+\mathcal N_{T/H}(\mathbf F_p)\simeq N_T^H
+\qquad(H\le G).
+\]
+The module N_T is projective over k[G]. In particular, if G=P
+is a p-group and b=g(C)-f_p(C), then
+\[
+\boxed{N_T\simeq k[P]^b.}
+\]
+This is an isomorphism of deck modules, not a splitting of
+Frobenius. For every H, the actual trace followed by pullback is
+the group norm; it induces an isomorphism from (N_T)_H to N_T^H.
+
+For P a p-group, choose a free basis and let A be the matrix of
+semilinear Frobenius, which fixes the abstract group elements.
+Via the norm identification N_T^P~=N_C, the augmentation of A
+is exactly the base Frobenius matrix. If F_C^e kills N_C, then
+\[
+F_T^e(N_T)\subseteq JN_T,\qquad
+F_T^e(J^jN_T)\subseteq J^{j+1}N_T.
+\]
+The p-group dimension and filtration bounds below therefore
+describe an actual free deck module with a Frobenius operator.
+For mixed G, projectivity gives no free rank b or arbitrary-source
+upper bound.
+
 Suppose now h:D->C is finite étale and its Galois closure is a
 p-group P. Let M be the
 F_p permutation module of the cover, n=dim M=deg(h), J the
@@ -127,11 +158,12 @@ same bounds pass to any actual étale source dominating such a
 cover. They do not pass merely from a quotient of a closure group
 which the source does not dominate.
 
-For context, cyclic-p local-local group schemes are studied much
-more finely by Cais--Ulmer, Theorems1.2 and1.10. Their polarized
-restrictions need not follow from the unpolarized Frobenius bounds
-here. Our elementary proof works with arbitrary finite local systems
-and does not reconstruct the whole p-torsion group scheme.
+The free p-group deck module is Nakajima's equivariant
+Deuring--Shafarevich theorem, used by reference. The exact
+coefficient bounds retain finite Frobenius height and arbitrary
+finite local systems. Cais--Ulmer give additional polarized
+cyclic-p restrictions; the bounds here do not reconstruct the
+whole p-torsion group scheme.
 
 ## The permutation heart in arbitrary étale monodromy
 

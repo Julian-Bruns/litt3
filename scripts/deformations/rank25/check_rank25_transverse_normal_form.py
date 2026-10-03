@@ -9,13 +9,13 @@ from pathlib import Path
 import numpy as np
 root=Path(__file__).resolve().parents[3]
 ap=argparse.ArgumentParser(description='Check the eleven-dimensional transverse normal form of the accepted rank25 covariant space.')
-ap.add_argument('--output',type=Path,default=root/'Research/computations/rank25_transverse_normal_form.json')
+ap.add_argument('--output',type=Path,default=root/'../litt3-computation-data/legacy_workspace_computations/rank25_transverse_normal_form.json')
 args=ap.parse_args()
 source=root.parent/'litt3-computation-data/rank25-universal-trace-return-20260913-9D6dTa/replay/lib'
 sys.path.insert(0,str(source))
 import finite_field as F
 from locus import P,A,B,q,qi,Ap,Bp,reduce_s
-space_path=root/'Research/computations/rank25_fifth_covariant_reconstruction_space.json'
+space_path=root/'../litt3-computation-data/legacy_workspace_computations/rank25_fifth_covariant_reconstruction_space.json'
 s=json.loads(space_path.read_text())
 assert s['invariant_section_dimension']==19 and s['finite_deck_difference_rank']==274
 assert len(s['homogeneous_cotangent_root_sections'])==19

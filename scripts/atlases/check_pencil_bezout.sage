@@ -9,7 +9,7 @@ ap=argparse.ArgumentParser();ap.add_argument('--out',required=True);args=ap.pars
 out=Path(args.out).resolve();out.mkdir(parents=True,exist_ok=False)
 started=time.monotonic()
 def log(*s):print(round(time.monotonic()-started,2),*s,flush=True)
-base=Path(__file__).resolve().parents[2]/'Research/computations'
+base=Path(__file__).resolve().parents[2]/'../litt3-computation-data/legacy_workspace_computations'
 paths=['wronskian_universal_image','wronskian_quadratic_bezout']
 raw=[(base/(p+'.json')).read_bytes() for p in paths]
 data,old=map(json.loads,raw)

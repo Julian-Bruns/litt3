@@ -8,10 +8,11 @@ of t over F5 exceeds N, then
 
     C_t embedded in J(C_t) meets J[8] only in its six Weierstrass classes.
 
-For EVERY t^5-t!=0, independently of its degree, no regular one-form
-with a double zero is a Cartier eigenform (eigenvalue zero included).
+The [singleton-root theorem](family_singleton_root_exclusion.md)
+excludes double-zero Cartier eigenforms for EVERY smooth parameter,
+independently of its degree. Together with that earlier input:
 
-Consequently, for the fixed genus-nine X and such a high-degree t, any
+For the fixed genus-nine X and such a high-degree t, any
 ACTUAL coreless bi-etale span X<-Z->C_t having a clump has image size
 at least four on C_t. This excludes BOTH zero and nonzero Cartier cases,
 without any bound on either cover degree or the primitive tensor weight.
@@ -34,5 +35,6 @@ collection of allowed prime-to-characteristic torsion components.
 If the relative Abel curve misses the remaining torsion in one fiber,
 its intersection is supported over finitely many base points.
 
-Version3,2026-09-13.
+Version4,3 October2026. Later backup torsion excludes both branches
+of the two-minor test, replacing the old Euclidean computation.
 [Proof](../../../Proofs/jacobians/torsion/family_small_torsion_specialization.md).

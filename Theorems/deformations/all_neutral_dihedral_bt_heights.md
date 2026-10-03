@@ -6,7 +6,7 @@ secondary-trace and height-translation results. No new independent
 audit of the whole family engine is claimed.
 
 Use the actual F625 genus-two BT1 $H/C$ of
-[the existence-descent counterexample](explicit_bt2_descent_failure.md).
+[the existence-descent counterexample](etale_p_witt_obstruction.md).
 For each branch pair OTHER THAN $\{\tau,\infty\}$, use the actual
 dihedral tower $W_a,T_a$ of
 [neutral dihedral towers](cyclic_descent/neutral_dihedral_towers.md),

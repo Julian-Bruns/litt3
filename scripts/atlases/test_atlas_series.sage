@@ -9,13 +9,13 @@ from scripts.atlases.atlas_series import coefficient,coefficients,transport,from
 
 root=Path(__file__).resolve().parents[2]
 prime=GF(5); Z=PolynomialRing(prime,'z')
-data=json.loads((root/'Research/computations/normalized_oper_closed_points.json').read_text())
+data=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/normalized_oper_closed_points.json').read_text())
 fields=[]
 for factor in data['factors']:
     fields.append((factor['id'],GF(5**int(factor['degree_F5']),name='alpha',
         modulus=Z(factor['polynomial']),check_irreducible=False)))
 base=GF(25,'a',modulus=Z([2,4,1])); T=PolynomialRing(base,'u')
-invariants=json.loads((root/'Research/computations/invariant_oper_solutions.json').read_text())
+invariants=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/invariant_oper_solutions.json').read_text())
 for row in invariants['orbits']:
     h=T(sage_eval(row['factor'],locals={'a':base.gen(),'b7':T.gen()}))
     field=base if h.degree()==1 else T.quotient(h,names='u')

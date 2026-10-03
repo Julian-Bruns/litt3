@@ -166,7 +166,7 @@ def main():
     if args.case != 'double-support':
         result['shared_fiber'] = shared_fiber()
     if args.case != 'shared-fiber':
-        path = Path(__file__).resolve().parents[2]/'Research/computations/fixed_x_double_support_torsion.json'
+        path = Path(__file__).resolve().parents[2]/'../litt3-computation-data/legacy_workspace_computations/fixed_x_double_support_torsion.json'
         saved = json.loads(path.read_text()) if args.replay else None
         result['double_support'] = double_support(saved)
     if args.output:

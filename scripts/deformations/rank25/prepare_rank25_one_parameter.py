@@ -249,7 +249,7 @@ def main():
         'sha256':hashlib.sha256(raw).hexdigest(),'isolated_check':run.stdout.strip(),
         'scope':'One scalar function on Gm only. Its vanishing is necessary, not sufficient for W5.',
     }
-    (root/'Research/computations/rank25_one_parameter_checks.json').write_text(json.dumps(receipt,indent=2)+'\n')
+    (root/'../litt3-computation-data/legacy_workspace_computations/rank25_one_parameter_checks.json').write_text(json.dumps(receipt,indent=2)+'\n')
     print(json.dumps({k:v for k,v in receipt.items() if k not in ['xi_origin','direction','dual_rows','matrix_pivots']},indent=2))
 
 

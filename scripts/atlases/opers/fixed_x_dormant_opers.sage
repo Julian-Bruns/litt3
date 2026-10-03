@@ -88,7 +88,7 @@ if '--msolve-input' in sys.argv:
     filename = 'invariant_oper_msolve.in' if invariant else 'c4_zero_oper_msolve.in'
     if '--reduced' in sys.argv:
         filename=filename.replace('_msolve.in','_reduced_msolve.in')
-    destination = Path('Research/computations')/filename
+    destination = Path('../litt3-computation-data/legacy_workspace_computations')/filename
     destination.write_text(','.join(Q.variable_names())+'\n5\n'+
                            ',\n'.join(str(f).replace('**','^') for f in transformed)+'\n')
     print(f'msolve input saved: {destination}; {len(transformed)} equations', flush=True)
@@ -101,8 +101,8 @@ elif '--build-only' not in sys.argv:
         raise SystemExit('Full unnormalized solver retired; use normalized_oper_quotient.sage --msolve-input.')
     G = I.groebner_basis(algorithm='singular:slimgb')
     # Persist the expensive result before any further algebra or printing.
-    destination = ('Research/computations/invariant_oper_groebner.sobj' if invariant
-                   else 'Research/computations/c4_zero_oper_groebner.sobj')
+    destination = ('../litt3-computation-data/legacy_workspace_computations/invariant_oper_groebner.sobj' if invariant
+                   else '../litt3-computation-data/legacy_workspace_computations/c4_zero_oper_groebner.sobj')
     save((P,list(G)), destination)
     print(f'Groebner basis size={len(G)}; elapsed={time.monotonic()-started:.1f}s', flush=True)
     print(f'dimension={I.dimension()}', flush=True)

@@ -112,24 +112,27 @@ preserves $\mathcal L$, since it is a finite sum and degree normalization
 multiplies values only by fourth roots of unity. As $\mathbf Z[i]$ is a
 PID, $\mathcal L$ is free of rank at most $A$.
 
-Every $a_{i,x}$ is therefore an eigenvalue of an integral matrix of
-size at most $A$ over $\mathbf Z[i]$. In particular it is an algebraic
-integer of degree at most $2A$ over $\mathbf Q$. This degree bound is
-pointwise and uniform in $x$; no uniform choice of a trace field has
-been presumed.
+Let $r\le A$ be the rank of this ONE integral Hecke lattice and
+let $T_x$ act on it. Both $a_{1,x}$ and $a_{2,x}$ are eigenvalues
+of the same $T_x$. On $\mathcal L\otimes_{\mathbf Z[i]}\mathcal L$,
+the integral operator $T_x\otimes1-1\otimes T_x$ has eigenvalues
+$\lambda_u-\lambda_v$, $1\le u,v\le r$. Its characteristic polynomial
+is divisible by $t^r$. The quotient is monic over $\mathbf Z[i]$
+of degree $r(r-1)$ and kills every NONZERO trace difference.
+Thus any $b_x=a_{1,x}-a_{2,x}\ne0$ is an algebraic integer with
+\[
+[\mathbf Q(b_x):\mathbf Q]\le2r(r-1)\le
+D:=2A(A-1).
+\tag{7}
+\]
+This uses the common integral operator instead of taking a
+compositum of two separately bounded trace fields.
 
 ## 3. A congruence sufficiently deep forces exact trace equality
 
-At a closed point of degree $e$, put $b_x=a_{1,x}-a_{2,x}$. Its number
-field $\mathbf Q(b_x)$ has degree at most
-\[
-D=4A^2,
-\tag{7}
-\]
-by taking the compositum of the two fields of degree at most $2A$.
-Every complex conjugate of $b_x$ has absolute value at most
-$4q^{e/2}$, since an embedding of the compositum restricts to
-embeddings of both trace fields and purity applies to each.
+At a degree-$e$ point, each embedding of $\mathbf Q(b_x)$ extends
+to a field containing both traces. Purity therefore bounds every
+complex conjugate of $b_x$ by $4q^{e/2}$.
 
 Suppose $G_1[5^n]\simeq G_2[5^n]$ over $\mathbf F_q$. The actual
 crystalline comparison at $x$ conjugates the $q^e$-Frobenius matrices
@@ -148,8 +151,8 @@ contributions are nonnegative. Therefore
 \le(4q^{e/2})^D.
 \tag{9}
 \]
-For $e\le d$ and $n=B=1+D(1+fd)$, this is impossible, because
-$\log_5 4<1$ and $(fe)/2\le fd$. We conclude $b_x=0$ at every
+For $e\le d$ and $n=B=D(1+fd/2)$, this is impossible:
+$\log_5 4<1$, so $D\log_5(4q^{e/2})<B$. We conclude $b_x=0$ at every
 closed point of degree at most $d$.
 
 ## 4. Finite Frobenius determination gives a rational isomorphism
@@ -190,24 +193,15 @@ two full groups.
 
 ## 5. The stable first connection makes the isogeny integral
 
-The common BT1 has degree-zero crystalline bundle, a positive Hodge
-line $L$ and a nonzero second fundamental form. A horizontal line
-cannot equal $L$, and its map to the negative-degree quotient is
-nonzero. Every horizontal line therefore has negative degree. Thus
-the common reduced connection is stable. This persists under finite
-etale pullback.
+Over $\overline{\mathbf F}_q$, the common first crystalline
+bundle is a degree-zero rank-two oper. By
+[crystalline lattice rigidity](crystalline_oper_lifting.md#rigidity-of-the-integral-lattice),
+the supplied rational comparison rescales by a power of five to
+an integral isomorphism. Its $F,V$ identities are preserved, so full
+faithfulness gives $G_1\simeq G_2$ geometrically.
 
-Multiply the rational crystalline isomorphism by a power of five so
-that it is integral and primitive on the entire proper curve. Its
-reduction is a nonzero horizontal map. A rank-one image would be a
-positive-degree quotient of the source and a negative-degree subline
-of the target, a contradiction. A rank-two map has a nonzero determinant
-between degree-zero lines, so has no zero. Its reduction is therefore
-an isomorphism. Nakayama gives an integral crystal isomorphism at
-every precision, and full faithfulness gives $G_1\simeq G_2$.
-
-As in the [full nonuniqueness proof](explicit_full_bt_nonuniqueness.md),
-the induced automorphism of the common BT1 is a scalar in
+[Normalized comparison rigidity](versal_bt_display_descent.md)
+makes the induced automorphism of the common BT1 a scalar in
 $\mathbf F_5^\times$. Its Teichmuller correction retains a full group
 isomorphism and makes it respect the specified marking. The remaining
 determinant scalar in $1+5\mathbf Z_5$ has an inverse square root,
@@ -223,8 +217,31 @@ $\mathbf F_q$, as needed for (8). Likewise the final normalized full
 comparison descends. The isomorphism at level $B$ is the one originally
 specified, again by uniqueness.
 
-Nothing here constructs a full extension from BT$_B$. In particular,
-the theorem cannot be combined with a finite truncation on an endpoint
-unless a full extension of that particular object is supplied
-independently. Nor does it bound the genus of a hypothetical common
-source. Those are the boundaries of this finite arithmetic reduction.
+## 6. Ordinary existence and fixed-field counts
+
+The later [absolute torsor](versal_bt_extension_torsor.md) gives
+$H^0(\mathcal B_H)=H^1(\mathcal B_H)=0$ when $\delta_H=0$.
+It supplies the unique full marked normalized extension of the
+actual $H$, without a next reference. Its field descent follows
+from [the exact arithmetic counts](common_bt_tower_rigidity.md).
+Thus the ordinary cutoff is $1$, independently of $q$ and $g$.
+
+At every reached normalized level, that counting theorem gives
+either no next extension or exactly $q^{\delta_H}$ classes.
+Starting from the single marked $H$ therefore gives at most
+$q^{\delta_H(N-1)}$ level-$N$ classes. The proved cutoff injects
+full classes into level-$B_H$ classes, giving the stated finite bound.
+
+If these finite sets are nonempty at arbitrarily high levels,
+their truncation tree has finite branching and unbounded depth.
+König's lemma gives an infinite path. Choose its actual marked
+groups and the unique normalized truncation comparisons; these
+form a full group over the SAME field. The converse is truncation.
+This does not infer unbounded depth from any single BT$_N$.
+
+In the actual source application, $K_{H_Z}=0$ also forces both
+endpoint kernels to vanish by injective function pullback. Their
+unique full towers then compare from the specified BT1, since
+every successive actual source difference lies in this zero space.
+The general cutoff retains its supplied full groups, source genus
+and common finite field; it creates no missing source comparison.

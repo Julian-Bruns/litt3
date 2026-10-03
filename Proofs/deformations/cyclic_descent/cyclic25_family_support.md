@@ -57,7 +57,7 @@ normal lattices are z² and z4; their Cech representatives are respectively
 (z^-1,z) and (z^-1,z,z²,z³). Five AS powers give the actual30-dimensional
 upper cohomology. Its Psi multipliers are A and A R². The original
 gluing retains w_O=w_U-z^-1 and the displayed equation for w_U5.
-The [generic matrices](../../../Research/computations/bad_double_dihedral5_defect_generic.json)
+The [generic matrices](../../../../litt3-computation-data/legacy_workspace_computations/bad_double_dihedral5_defect_generic.json)
 and [their construction](../../../scripts/deformations/cyclic/bad_double_dihedral5_defect.sage)
 have block ranks10 and18, with all larger minors identically zero and
 the following nonzero minors:
@@ -67,7 +67,7 @@ the following nonzero minors:
               *(t²+2t+4) H^32.
 
 They prove defect2 on the stated open set. The
-[cyclic-tower section-growth theorem, Section8](../section_growth/symplectic_p_cover_section_growth.md)
+[cyclic-tower theorem, Section3](../section_growth/symplectic_p_cover_section_growth.md)
 propagates the first defect2<5 to the full cyclic25 source: the
 nil module length below5 is unchanged by higher cyclic base change.
 Thus this family satisfies every hypothesis, with no new exceptional

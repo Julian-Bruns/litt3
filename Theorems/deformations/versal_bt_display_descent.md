@@ -1,6 +1,6 @@
 # Descent and display rigidity for versal truncated BT groups
 
-Version1,20 September2026. Let $k$ be algebraically closed of odd
+Version2,3 October2026. Let $k$ be algebraically closed of odd
 characteristic $p$, and let $C/k$ be a smooth proper hyperbolic curve.
 Let $H/C$ be an everywhere-versal height-two, dimension-one BT1,
 generically ordinary. Fix two BT$_N$ extensions $A,B$ of this SAME
@@ -24,6 +24,20 @@ trivial modulo $p$. After this normalization:
 \]
 This includes every purely inseparable cover. The bound is independent
 of the truncation level and the inseparable degree.
+
+For two normalized marked BT$_{N+1}$ extensions of the SAME
+BT$_N$, the intrinsic ordinary difference is
+\[
+\Delta_N=c^p-c,\qquad c=\frac{d\log r}{d\log q_A},
+\qquad q_B=q_A r^{p^N}.
+\tag{1}
+\]
+It is additive and commutes with etale pullback. It vanishes exactly
+when the supplied marking extends to an actual normalized isomorphism
+on the ordinary open. If it extends regularly to the entire proper
+curve, it is zero. This is a generic comparison statement; integral
+extension and the exact global Cartier image are supplied by the
+later valuative and realization theorems.
 
 The actual truncated-display functor is fully faithful on ISOMORPHISMS
 between everywhere-versal height-two, dimension-one BT$_N$ groups

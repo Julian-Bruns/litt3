@@ -1,24 +1,25 @@
 # Proof: norm detects precisely the free defect summands
 
 [Statement](../../Theorems/deformations/etale_p_witt_obstruction.md).
-Author /root,2026-09-10. Focused medium audit PASS
-/root/audit_p_cover_witt_repair; no blockers. Audit record:
-Research/audits/CYCLIC_P_WITT_REPAIR_AUDIT_2026_09_10.md.
-The explicit base higher-Witt obstruction is an inherited audited theorem.
+The original [Witt repair audit](../../Research/audits/CYCLIC_P_WITT_REPAIR_AUDIT_2026_09_10.md)
+and [actual BT implication audit](../../Research/audits/BT_FIRST_PERIODIC_EFFECTIVITY_AUDIT_2026_09_21.md)
+are retained. Version2 combines their scopes using the later actual
+torsor dictionary. The new all-height and fixed-field implications
+were reviewed locally; no numerical certificate is replayed.
 
 ## 1. The tangent cohomology is free over the deck group algebra
 
-Let V_T=H1(T,T_T), V_C=H1(C,T_C), R=k[P], J=rad(R). Etaleness
+Put $V_T=H^1(T,T_T)$, $V_C=H^1(C,T_C)$, $R=k[P]$ and
+$J=\operatorname{rad}R$. Etaleness
 identifies T_T=h*T_C. The Cartan--Leray spectral sequence for this
 actual Galois cover has only its coherent-degree-one row: H0(T,T_T)=0
 by negative degree, and coherent cohomology above degree1 is zero.
 Hence V_T^P=V_C via pullback and H^i(P,V_T)=0 for i>0.
 
-The only simple R-module is k. From Ext1_R(k,V_T)=0, induction on
-composition series gives Ext1_R(M,V_T)=0 for every finite R-module M.
-The finite group algebra is self-injective, so V_T is projective; the
-algebra is local, so it is free. Riemann--Roch and etale Hurwitz give
-rank_R(V_T)=3(g(C)-1).
+The [coefficient-module lemma](versal_bt_extension_torsor.md#five-group-coefficient-modules)
+makes $V_T$ free over $R$, of rank $3(g(C)-1)$: its positive group
+cohomology vanishes, and the finite-module criterion applies.
+This is independent of any higher BT existence.
 
 Linearize the Frobenius-semilinear Psi_T. Frobenius fixes the group
 basis, so the linearized source and target are free R-modules of this
@@ -32,9 +33,9 @@ is Psi_C under these identifications.
 Let D=D_T. Right exactness gives D/JD=coker(Psi_C), after the above
 identifications. The original inclusion of invariant vectors descends
 on cokernels to
-
-    D/JD -> D, d mod J -> Nd.
-
+\[
+D/JD\longrightarrow D,\qquad d\bmod J\longmapsto Nd.
+\]
 Consequently its rank is dim_k ND. The socle of the left regular
 R-module is the single line kN. Every nonzero left ideal contains this
 line: apply powers of the nilpotent radical to obtain a nonzero simple
@@ -54,16 +55,33 @@ cyclic, R/I. When I!=0 it contains N and pullback is zero; when I=0
 pullback is nonzero and dim D=q. The base cokernel is a line, so its
 nonzero epsilon survives precisely in the latter case. Naturality
 epsilon(T)=h*epsilon(C) is the inherited higher-Witt transfer theorem.
+For general d_C, the norm rank is d_C exactly when all d_C minimal
+generators contribute free summands, equivalently D is free. The same
+condition is dim D=q d_C, since a minimal surjection R^(d_C)->D then
+has equal dimensions. This proves(2).
+
+The [forced higher construction](forced_canonical_witt_endpoint.md)
+uses the SAME mod-five variation map at every reached level, with
+the entire predecessor fixed. Thus the module calculation applies
+at every such level. For a paired actual BT_N, the
+[all-height dictionary](all_height_bt_hodge_dictionary.md) identifies
+its existence class with the higher-Hodge class by an etale-functorial
+isomorphism. Its scalar factor is invertible. The Hessian identifies
+the cokernel dimension with the actual Cartier defect; no arbitrary
+chosen next groups are identified.
 
 ## 3. All six geometric Artin--Schreier covers
 
-For the explicit pair, use u,v,t,h,mu from the base theorem and
-z=u^2/v. The affine ring is k[u,v], and its pole semigroup at O is
+For the explicit pair, use $u,v,t,\mu$ from the base theorem,
+put $h_0=4t+3$ and $z=u^2/v$. The affine ring is k[u,v], and its pole semigroup at O is
 <2,5>, with gaps1,3. Hence H1(O_C) has representatives z^-3,z^-1.
 Frobenius in this basis is the semilinear matrix
-
-    [[4t^2+t+2,3t+3],[t^3+3t^2+3,4t^2+1]].
-
+\[
+\begin{pmatrix}
+4t^2+t+2&3t+3\\
+t^3+3t^2+3&4t^2+1
+\end{pmatrix}.
+\]
 Its fourfold semilinear product has characteristic polynomial(x+1)^2
 and order10. Every Frobenius-fixed vector therefore has coefficients
 in F_(5^40). The ordinary genus-two Artin--Schreier sequence gives a
@@ -73,28 +91,28 @@ are every geometric connected cyclic5 cover, not a field-point sample.
 For each class c=c_-3 z^-3+c_-1 z^-1, subtract affine nongaps from
 c^5-c to write c^5-c=fU+rem, where fU is an ACTUAL affine polynomial
 and rem is regular at O. Then
-
-    wU^5-wU=fU, wO=wU-c, wO^5-wO=-rem
-
+\[
+w_U^5-w_U=f_U,\qquad w_O=w_U-c,\qquad w_O^5-w_O=-\mathrm{rem}
+\]
 glues an actual unramified cover. The affine AS algebra is etale and
 the displayed completed O algebra is etale. The rational function c
 and the nonzero Artin--Schreier class identify its smooth projective
 connected model. Thus infinity and connectedness are included.
 
-## 4. The actual Psi map, not a guessed genus-six operator
+## 4. The actual variation map on the six covers
 
 The audited higher matrix uses comparison frames IU,IO with
-(IO^-1)11=z^4 a and (IU)22=a/mu, where a^2=(u-t)(u-h)^2.
+$(I_O^{-1})_{11}=z^4a$ and $(I_U)_{22}=a/\mu$, where
+$a^2=(u-t)(u-h_0)^2$.
 Changing the next curve lift by chi changes the Frobenius/Taylor
 matrix by 5 z^-5 chi^5 E12. Its Hodge projection is therefore
-
-    z z^-5 (IO^-1)11 (IU)22 chi^5
-      = a^2 chi^5/mu.
-
+\[
+z\,z^{-5}(I_O^{-1})_{11}(I_U)_{22}\chi^5=a^2\chi^5/\mu.
+\]
 Up to the overall variation sign, which does not change its image,
-
-    Psi([f])=[(u-t)(u-h)^2 f^5/(4+4t)].
-
+\[
+\Psi([f])=[(u-t)(u-h_0)^2f^5/(4+4t)].
+\]
 This equality holds BEFORE taking cohomology. It hence remains true
 under every actual etale base change; it is not inferred from equality
 of a few base cohomology vectors. The multiplier is affine with pole
@@ -107,9 +125,9 @@ Push tangent cohomology along h and use affine basis1,wU,...,wU^4.
 The local basis wO^j=(wU-c)^j gives the triangular transition
 binomial(j,i)(-c)^(j-i), with the additional tangent factor z^2.
 Descending triangular reduction gives the15 basis classes
-
-    z^e wU^j, e=-3,-1,1, j=0,...,4.
-
+\[
+z^e w_U^j,\qquad e=-3,-1,1,\quad j=0,\ldots,4.
+\]
 Completeness follows from the five-step polynomial filtration with
 trivial line quotients: tensoring with T_C kills H0 at each step, so
 each quotient contributes exactly the three-dimensional H1(T_C).
@@ -126,7 +144,7 @@ precision >3j+2, which certifies every coefficient through exponent1.
 
 [cyclic5_witt_obstruction.sage](../../scripts/deformations/cyclic/cyclic5_witt_obstruction.sage)
 regenerates all six covers and15x15 matrices. The finite data are in
-[cyclic5_witt_obstruction.json](../../Research/computations/cyclic5_witt_obstruction.json).
+[cyclic5_witt_obstruction.json](../../../litt3-computation-data/legacy_workspace_computations/cyclic5_witt_obstruction.json).
 
     OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 sage scripts/deformations/cyclic/cyclic5_witt_obstruction.sage --precision 160
 
@@ -153,3 +171,34 @@ some C3. Naturality in H1(T_T), BEFORE passing to cokernels, would give
 for every degree. Hence rho(C3)=0, contradicting the nonzero base
 epsilon. Repair of the source necessarily abandons descent of that
 one map. It supplies no repair of an existing two-leg diagram.
+
+## 6. The actual BT2 conclusions follow from these SAME classes
+
+The [first-periodic effectivity theorem](admissible_periodic_bt_effectivity.md)
+realizes the certified first datum by an actual H/C. Its chosen flat
+fourth-root correction lifts uniquely over nilpotent thickenings.
+The [actual class comparison](all_height_bt_hodge_dictionary.md) gives
+J(e(H))=2 epsilon(C,r), hence the displayed nonzero value. Thus H
+has no normalized BT2. Any unnormalized BT2 can be normalized by a
+rank-one etale character trivial on BT1, so it cannot exist either.
+
+For each of the six actual covers, the certified epsilon_T=0 gives
+e(h*H)=0 by the SAME functorial comparison, retaining the pulled-back
+first datum. Actual finite-flat effectivity therefore gives BT2.
+The [absolute torsor](versal_bt_extension_torsor.md) and exact Cartier
+classification make its normalized extension fibre a torsor of
+dimension d_T=2. The later [finite-field count](common_bt_tower_rigidity.md)
+descends this nonempty geometric fibre over ANY field of definition
+of h*H and counts Q^2 classes there; no additional field is needed.
+
+Prime-to-five existence descent forbids a repair of coprime degree;
+the six degree-five covers prove minimality. The finite-character
+torsor has 4^4=256 classes. Their Teichmuller lifts twist and untwist
+actual BT2 objects while preserving all projective predecessor data,
+so all256 have these same properties.
+
+The original exact AS and higher-Witt algorithms remain necessary:
+they certify the nonzero base class and all six defects2. The later
+dictionary changes what those certificates PROVE; it does not replace
+their computation. Their original provenance and independent audits
+are preserved.

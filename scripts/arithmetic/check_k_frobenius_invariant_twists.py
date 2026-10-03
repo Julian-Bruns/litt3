@@ -3,7 +3,7 @@
 
 The complete19683-class coverage is the separate Sage enumeration.
 Here literal fifth-power multiplication and restriction of scalars
-check16 specified cases, with their full33-by22 maps.
+check16 specified cases for F_abs^*K(O), with their full32-by23 maps.
 """
 import argparse
 import json
@@ -15,6 +15,8 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('receipt',type=Path)
     p.add_argument('--output',type=Path,required=True);args=p.parse_args()
     data=json.loads(args.receipt.read_text());assert data['tested']==19683 and not data['nonzero_cases']
+    assert data['O_shift']==1
+    assert data['source_line_degree']==31 and data['target_line_degree']==-24
     f5=GF(5);base=PolynomialRing(f5,'b')
     k=GF(5**8,'b',modulus=base(data['field_modulus']));b=k.gen()
     def lift(v):return sum(k(a)*b**i for i,a in enumerate(v))
@@ -53,11 +55,10 @@ def main():
                         for digit in range(8):expanded[8*ri+digit,8*ci+col]=value[digit]
             rank=int(expanded.rank());assert rank==8*ncols
             blocks.append([len(rows),ncols,rank])
-        shift=data.get('O_shift',0)
-        assert sum(t[0] for t in blocks)==33-shift and sum(t[1] for t in blocks)==22+shift
+        assert sum(t[0] for t in blocks)==32 and sum(t[1] for t in blocks)==23
         checks.append({'digits':s,'prime_field_blocks':blocks})
     args.output.write_text(json.dumps({'status':'PASS','scope':'16 independent implementation checks by literal polynomial powers and F5 elimination; the separate complete enumeration supplies all19683-class coverage.',
                                       'checks':checks},indent=2)+'\n')
-    print('PASS:',len(checks),'full invariant-twist maps, literal fifth powers and F5 rank',8*(22+data.get('O_shift',0)),'each.')
+    print('PASS:',len(checks),'full invariant-twist maps, literal fifth powers and F5 rank184 each.')
 
 if __name__=='__main__':main()

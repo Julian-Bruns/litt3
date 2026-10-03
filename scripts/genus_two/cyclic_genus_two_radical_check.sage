@@ -19,8 +19,8 @@ def run(output, max_seconds):
     signal.signal(signal.SIGALRM, lambda *_: (_ for _ in ()).throw(TimeoutError('Bound reached')))
     signal.alarm(int(max_seconds))
     root = Path(__file__).resolve().parents[2]
-    source = root/'Research/computations/genus_two_intrinsic_tensor.json'
-    solution_source = root/'Research/computations/genus_two_intrinsic_solutions.json'
+    source = root/'../litt3-computation-data/legacy_workspace_computations/genus_two_intrinsic_tensor.json'
+    solution_source = root/'../litt3-computation-data/legacy_workspace_computations/genus_two_intrinsic_solutions.json'
     data = json.loads(source.read_text())
     saved = json.loads(solution_source.read_text())
     k0 = GF(25, name='a', modulus=PolynomialRing(GF(5), 'z')([2,4,1]))

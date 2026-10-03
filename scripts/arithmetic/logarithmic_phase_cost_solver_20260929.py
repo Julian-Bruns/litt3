@@ -8,7 +8,7 @@ section coefficients are arbitrary geometric coefficients.
 import argparse,json,time
 from pathlib import Path
 from sage.all import GF,PolynomialRing,matrix
-from supported_one_sheet_jets import field_and_jets,compositions
+from supported_marked_jets import field_and_jets,compositions
 p=argparse.ArgumentParser();p.add_argument('profiles',type=Path);p.add_argument('connection',type=Path);p.add_argument('output',type=Path)
 args=p.parse_args();args.output.mkdir(parents=True,exist_ok=True)
 inputs=json.loads(args.profiles.read_text());con=json.loads(args.connection.read_text());N=max(c['pole_bound'] for c in inputs['cases'])

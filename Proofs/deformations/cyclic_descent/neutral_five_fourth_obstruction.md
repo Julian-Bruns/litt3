@@ -8,7 +8,7 @@ This is the selected-row supporting calculation for the
 The already audited model is T:Y²=G(s), with G squarefree of degree13,
 and the ORIGINAL map is u=N(s)/D(s), v=J(s)Y/d(s)^5, D=d².
 Its Hodge input and ordinary target row are in
-[the small-model data](../../../Research/computations/neutral5_hyperelliptic_hodge.json).
+[the small-model data](../../../../litt3-computation-data/legacy_workspace_computations/neutral5_hyperelliptic_hodge.json).
 Set omega=ds/Y=e(z)dz, z=s^6/Y, partial=Y*d/ds and j=z^5.
 The original differential frame is
 
@@ -195,7 +195,7 @@ the kernel shift changes the vector but preserves the scalar. Conjugation
 gives exactly(1+3t³)^5=3t+2t²+t³.
 
 Fresh outputs, source hashes and comparison assertions are recorded in
-[the replay receipt](../../../Research/computations/neutral5_w4_fresh_replays_20260911.json),
+[the replay receipt](../../../../litt3-computation-data/legacy_workspace_computations/neutral5_w4_fresh_replays_20260911.json),
 verified by scripts/deformations/cyclic/record_neutral5_w4_replays.py. This is a comparison
 of fresh full executions, not a substitute for generating their cocycles.
 The separate auditor's independent coefficient, first-marking, jet and

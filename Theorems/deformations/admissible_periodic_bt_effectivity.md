@@ -1,6 +1,6 @@
-# A specified first periodic oper datum is an actual BT1
+# Actual BT effectivity from specified periodic oper data
 
-Version2,21 September2026. Let $C/\overline{\mathbf F}_5$ be smooth,
+Version3,3 October2026. Let $C/\overline{\mathbf F}_5$ be smooth,
 projective and hyperbolic. A specified ONE-PERIODIC maximal-Higgs
 filtered datum in weights $[0,1]$, relative to a specified smooth
 $W_2$ lift, has an actual height-two, dimension-one BT1 realization.
@@ -16,10 +16,18 @@ trivializations. Tensoring the datum by $N$ makes it one-periodic,
 so the preceding assertion supplies an actual everywhere-versal BT1
 with evaluated oper $(E\otimes N,\nabla',L\otimes N)$.
 
-This is finite-level effectivity. It does not supply a global BT2 or
-full group. In particular it applies to the specified first datum of
-the nonordinary example in
+The first assertion uses only finite-level data and supplies no higher
+group. It applies, in particular, to the nonordinary first datum in
 [the explicit higher-Witt theorem](explicit_genus_two_witt_obstruction.md).
+
+If a compatible GLOBAL full periodic filtered tower on one marked
+smooth proper formal lift of $C$ is supplied, retaining that first
+datum, it gives an actual full height-two, dimension-one group on $C$.
+Its first marking is retained and its determinant can be normalized
+to the prescribed finite character. The same assertion applies to
+a full projective tower with discrepancy $\kappa$ after lifting the
+SAME fourth-root correction $N$ throughout the tower. No indigenous
+ordinariness is needed for this conditional full effectivity.
 
 Once one realization exists, all realizations of the same projective
 oper form the already established torsor under

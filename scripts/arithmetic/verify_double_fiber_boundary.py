@@ -3,7 +3,7 @@ import json
 import math
 import sys
 from pathlib import Path
-import verify_pole_ten_norm_support as f
+import fixed_curve_finite_field as f
 
 P, A = f.P, f.A
 Q = [0, 11, 6, 21, 22, 0, 15, 21, 9, 4, 0, 1, 1, 24, 14, 0, 3, 9, 8, 24]

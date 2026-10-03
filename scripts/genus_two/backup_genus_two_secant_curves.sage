@@ -144,6 +144,6 @@ def run(preparation, output):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--preparation', default='Research/computations/backup_genus_two_preparation.json')
-    parser.add_argument('--output', default='Research/computations/backup_genus_two_secant_curves.json')
+    parser.add_argument('--preparation', default='../litt3-computation-data/legacy_workspace_computations/backup_genus_two_preparation.json')
+    parser.add_argument('--output', default='../litt3-computation-data/legacy_workspace_computations/backup_genus_two_secant_curves.json')
     args = parser.parse_args(); run(args.preparation, args.output)

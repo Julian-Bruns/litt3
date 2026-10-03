@@ -8,29 +8,16 @@ v in L_X(10O), and the square alternative for P+g^3 is already impossible.
 The new report and exact data are preserved
 [here](../../../litt3-computation-data/quartic_quotient_trace_replies_20260925/extracted/trace_zero_quadratic_degree10/REPORT.md).
 
-## An identity in the polynomial ideal
+## Reuse the unconditional mixed-norm theorem
 
-Let g=sum g_i x^i, i=0..3, H=x^2+h_1x+h_0, J=x^2+j_1x+j_0.
-The coefficients of P+g^3-H^2J^3 are ten polynomial equations in the
-eight variables g_0,...,g_3,h_0,h_1,j_0,j_1 over F25. The coefficient
-of x^10 cancels. This is the full ideal, without field equations,
-saturation, squarefreeness, or nonvanishing assumptions.
-
-The supplied certificate is an identity1 in this ideal. Each node of
-its directed acyclic graph is either an input coefficient or an explicit
-linear combination of earlier nodes with monomial multipliers. There
-are1271 retained nodes,384974 edges and91,659,180 scalar products;
-the final node1528 is exactly1. The
-[independent verifier](../../scripts/arithmetic/pro_quartic_quotient_trace_20260925/degree10/src/verify_dag.py)
-multiplies out every identity in F25, checks coefficient and exponent
-ranges, checks topological ordering, and does not invoke a Groebner
-basis algorithm. The driver separately reconstructs every input
-coefficient from P+g^3-H^2J^3. Both checks passed locally.
-
-Consequently the ideal has no zero over the algebraic closure. The
-previous norm reduction shows that every nonzero-y candidate in the
-trace-zero sector would solve either this system or the already closed
-square system. Thus all nonzero-y candidates are excluded.
+The full geometric exclusion \(P+g^3\ne H^2J^3\), for cubic \(g\)
+and monic quadratics \(H,J\), is now stated and proved once in the
+[fixed-X norm theorem](../jacobians/isogeny_sieves/trigonal_constant_norm_obstruction.md),
+Section7. It has no support or trace assumptions and includes all
+root collisions. The preceding norm reduction puts every nonzero-y
+trace-zero candidate into this mixed system or the square system,
+which the same theorem excludes. Hence the entire nonzero-y sector
+is closed; the remaining arguments concern polynomial \(v\).
 
 ## Trace and pole bookkeeping on the actual cover
 

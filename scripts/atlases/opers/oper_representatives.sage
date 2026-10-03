@@ -12,10 +12,10 @@ def _oper_folder(folder=None):
         return Path(folder)
     # load()/exec() may inherit the calling script's __file__.
     for root in [Path.cwd()] + list(Path.cwd().parents):
-        candidate = root / 'Research/computations'
+        candidate = root / '../litt3-computation-data/legacy_workspace_computations'
         if (candidate / 'normalized_oper_closed_points.json').exists():
             return candidate
-    raise FileNotFoundError('Run inside litt3 or pass folder=.../Research/computations')
+    raise FileNotFoundError('Run inside litt3 or pass folder=.../../litt3-computation-data/legacy_workspace_computations')
 
 
 def oper_manifest(folder=None):

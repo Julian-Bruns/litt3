@@ -71,5 +71,5 @@ a fixed BT$_N$, with fixed normalized determinant, by replacing the
 last digit $5$ by $5^N$. Its Kummer formula uses $q_B=q_A r^{5^N}$.
 A local example is not a proper-curve counterexample or a common-cover
 example. The global image is constrained further by
-[the Cartier criterion](versal_bt_cartier_rigidity.md).
+[the Cartier criterion](versal_bt_cartier_realization.md).
 [Proof](../../Proofs/deformations/versal_bt_unitroot_ramification.md).

@@ -12,7 +12,7 @@ pt=PolynomialRing(GF(5),'t');tt=pt.gen();k=GF(625,'t',modulus=tt**4+4*tt**3+tt**
 def val(c):return sum(k(c//5**i%5)*t**i for i in range(4))
 def code(c):return sum(int(c.polynomial()[i])*5**i for i in range(4))
 P=PolynomialRing(k,'l');l=P.gen()
-curve=json.loads((root/'Research/computations/rank25_one_parameter_full_exclusion.json').read_text())
+curve=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/rank25_one_parameter_full_exclusion.json').read_text())
 G=P(list(map(val,curve['G_monic'])));Q=P.quotient(G,'z');z=Q.gen();n=G.degree()
 def cv(a):return vector(k,list(Q(a).lift())+[k(0)]*(n-len(list(Q(a).lift()))))
 fm=matrix(k,[cv(z**(5*i)) for i in range(n)]).transpose();fi=fm.inverse()

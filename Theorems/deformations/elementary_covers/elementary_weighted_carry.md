@@ -1,57 +1,88 @@
-# Weighted additive carries for elementary five-groups
+# Weighted additive carries and projective detectors for elementary $p$-groups
 
-Version1, 2026-09-13. Independently audited algebraic statement.
+Version3,3 October2026. Let $k$ be perfect of characteristic $p\ge5$,
+$r\ge2$, and $G=C_p^r$ with FIXED generators $\sigma_i$.
+Put $\Lambda_m=W_m(k)[G]$. In the original normal basis
+$e^\alpha$, $e_i=\sigma_i-1$, $0\le\alpha_i<p$, give $p$ weight $p-1$
+and each $e_i$ weight one; write $\mathcal W^d$ for the decreasing
+weight filtration and put $D=(p-1)r$.
 
-Let k be a perfect field of characteristic5, r>=2, G=C5^r with FIXED
-generators sigma_i, and Lambda_m=W_m(k)[G]. Give 5 weight4 and
-e_i=sigma_i-1 weight1 in the original normal basis e^alpha, 0<=alpha_i<=4.
-Write Wcal^d for the resulting decreasing filtration. Let
-
-    L:Lambda_m -> Lambda_m
-
-be additive and deck-equivariant, with reduction f*Phi, where Phi is
-coefficient Frobenius fixing the original generators and
-f=q+terms of augmentation degree>=3. Assume q is homogeneous quadratic
-and q(a)!=0 for every nonzero ORIGINAL a in F5^r.
-
+Let $L:\Lambda_m\to\Lambda_m$ be additive and deck-equivariant,
+with reduction $f\Phi$, where $\Phi$ is coefficient Frobenius fixing
+the original generators. Suppose $f=q+$ terms of augmentation degree
+at least $a+1$, where $q$ is homogeneous of degree
+$2\le a\le p-2$ and
+\[
+q(v)\ne0\qquad(0\ne v\in\mathbf F_p^r).
+\]
+No commutativity of the higher additive coefficient operators is required.
 Then
+\[
+Lx=0\bmod p^m\ \Longrightarrow\
+x\in\mathcal W^{(p-1)m-a+1}\quad(2\le m\le r);
+\]
+at $m=r+1$ the bound is $x\in\mathcal W^D$.
+For $\Lambda=\Lambda_{r+1}$ one also has
+\[
+\mathcal W^{D+a}\subset L(\mathcal W^D).
+\]
+The reduction of $\mathcal W^D$ is precisely the norm line $kN_G$.
 
-    Lx=0 mod5^m => x in Wcal^(4m-1),  2<=m<=r;
-    Lx=0 mod5^(r+1) => x in Wcal^(4r).
+## Integral norm targets
 
-In Lambda=Lambda_(r+1), one also has
+Put $N_G=\sum_{g\in G}g$. At precision $p^r$, for any coefficient
+$\eta\in W_r(k)$,
+\[
+Lx=N_G\eta\ \Longrightarrow\
+x\in\mathcal W^{D-a},\qquad\operatorname{aug}(x)=0.
+\]
+If moreover $\eta\bmod p=0$, then $x\in\mathcal W^{D-a+1}$.
+At precision $p^{r+1}$ the equation $Lx=N_G\eta$ is soluble
+if and only if $\eta\bmod p=0$. In that case every solution is in
+$\mathcal W^D$, and their reductions are exactly $kN_G$, including
+every prescribed leading norm coefficient.
+Thus the leading reductions at precision $p^r$ lie in
+$J^{D-a}=\operatorname{Ann}(J^{a+1})$, and in
+$J^{D-a+1}=\operatorname{Ann}(J^a)$ for a divisible norm coefficient.
+For $p=5,a=2$, these are $\mathcal F_2$ and $\mathcal F_1$ for EVERY
+elementary rank; the full next-precision solution lies on the norm line.
+These statements require no formal nodal coordinates or discriminant.
 
-    Wcal^(4r+2) subset L(Wcal^(4r)).
+## Exact critical detector
 
-The reduction of Wcal^(4r) is precisely the norm line k*N_G.
-These assertions allow arbitrary higher mixed additive coefficient
-operators; their commutativity is not required.
+The associated graded algebra of $\Lambda$ is
+\[
+k[\tau,E_1,\ldots,E_r]/(\tau^{r+1},E_i^p+\tau E_i),
+\qquad \deg\tau=p-1,\quad\deg E_i=1.
+\]
+For a homogeneous target $Z$ of weight $D+a-1$ define
+\[
+\Theta_i(Z)=\Phi^{-1}\!\left(
+(-1)^{r+1}\sum_{[v]\in\mathbf P^{r-1}(\mathbf F_p)}
+\frac{v_i Z(-1,v)}{q(v)}\right),\qquad1\le i\le r.
+\]
+Every summand is independent of its projective representative.
+Apply inverse Frobenius to the coefficient AFTER the whole sum.
+For every $R\in\mathcal W^{D+a-1}$,
+\[
+\Theta_i(\operatorname{gr}_{D+a-1}R)=0\ \text{for all }i
+\quad\Longleftrightarrow\quad
+R\in L(p\Lambda+\mathcal W^D).
+\]
+The critical source and target each have dimension $(p^r-1)/(p-1)$.
+The $r$ detectors extract the coefficients of
+$E_i^{p-2}\prod_{j\ne i}E_j^{p-1}$ in the unique graded preimage.
 
-There is an explicit test at the preceding weight. The associated graded
-algebra is
+For $p=5,a=2$ this retains the entire older quadratic theorem.
+At $r=3$ the kernel thresholds are7,11,12, absorption starts at14,
+and the three weight13 detectors have positive sign; the sign is
+negative for even $r$.
 
-    k[tau,E_1,...,E_r]/(tau^(r+1), E_i^5+tau*E_i),
-    deg(tau)=4, deg(E_i)=1.
-
-For a homogeneous target Z of weight4r+1 set
-
-    Theta_i(Z)=Phi^-1( (-1)^(r+1) *
-        sum_[a in P^(r-1)(F5)] a_i*Z(-1,a)/q(a) ), 1<=i<=r.
-
-Each summand is independent of the projective representative. Inverse
-Frobenius is applied to the coefficient AFTER the entire sum. For every
-R in Wcal^(4r+1),
-
-    all Theta_i(gr_(4r+1)R)=0
-    iff R belongs to L(5*Lambda+Wcal^(4r)).
-
-For r=3 this gives thresholds7,11,12, tail absorption from weight14,
-and the three positive-sign projective detectors at weight13. For even
-r the sign is negative.
-
-This is an ADDITIVE theorem, not a geometric remainder estimate. Neither
-formal hypersurface type nor equivariance alone supplies its original-
-rational-direction hypothesis. It does not place an actual nonlinear
-Witt comparison in the required weights or prove its detectors vanish.
+This is an ADDITIVE theorem. The original-rational-direction hypothesis
+and the degree restriction on the principal symbol are essential to
+the argument. Equivariance or formal hypersurface type alone supplies
+neither them nor a weight bound or detector vanishing for an actual
+WHOLE nonlinear Witt residual. No geometric lift or descent follows
+without those additional inputs.
 
 [Proof](../../../Proofs/deformations/elementary_covers/elementary_weighted_carry.md).

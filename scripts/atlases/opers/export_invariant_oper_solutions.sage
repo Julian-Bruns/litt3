@@ -14,7 +14,7 @@ source=root/'scripts/atlases/opers/fixed_x_dormant_opers.sage'
 oldargv=sys.argv;sys.argv=['fixed_x_dormant_opers.sage','--build-only']
 ns=dict(globals());exec(compile(source.read_text(),str(source),'exec'),ns);sys.argv=oldargv
 k=ns['k'];a=k.gen();P=ns['P'];equations=ns['coefficients']
-data=json.loads((root/'Research/computations/invariant_oper_centers.json').read_text())
+data=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/invariant_oper_centers.json').read_text())
 R=PolynomialRing(k,'b7');b7=R.gen()
 decode=lambda h:R([k(c[0])+k(c[1])*a for c in h])
 H=decode(data['modulus']);Bs=[decode(h) for h in data['coordinates']]

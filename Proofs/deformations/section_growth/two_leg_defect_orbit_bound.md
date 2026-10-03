@@ -69,51 +69,16 @@ two sections on Z. If r_X is ordinary this function is unavailable.
 The ordinary-X case is treated by uniform cyclic descent in the later
 [full nontrivial-action exclusion](two_defect_nontrivial_five_exclusion.md).
 
-## 4. The existing main parameter also avoids bounded joint covers
+## 4. Use the later witness-degree bound
 
-Recall the already fixed constants
-
-    B0=336000, D=(B0−1)!, G0=1+8D, L=B0²,
-    K0=D*(D!)^18*3^(4G0² L)*(42000!)^(2G0+L).
-
-The parameter t has prime degree r>max(K0,120) over F25. These are
-the ORIGINAL constants in
-[effective cored avoidance](../../quotient_geometry/bounded_atlas_partner_finiteness.md);
-no endpoint or parameter is changed here.
-
-Consider ANY actual jointly minimal common source R for X and a genus-two
-curve Y with n=deg(R/Y)<=B0−1. Its X-degree is n/8. Take the Galois
-closure V→Y of this ONE etale map. It is finite etale, and V→R has
-degree at most(n−1)!. Consequently
-
-    deg(V/X) <= (n/8)(n−1)! <= D,
-    g(V)<=G0,
-    |Gal(V/Y)|<=n!<=D.
-
-All arrows used are composites or the Galois closure of the single
-Y-leg; there is no presumed simultaneous Galois closure over X and Y.
-
-The counting proof gives at most18 topological generators for pi1(X)
-and |Aut(V)|<81g(V)⁴<3^(4G0²), including wild automorphisms. Hence
-there are at most D*(D!)^18 possibilities for the covering object V→X,
-and |Aut(V)|<3^(4G0²).
-
-Any subgroup of order at most D has at most floor(log2 D)<=B0²=L
-generators. Counting ordered generating L-tuples, padded by identities,
-there are therefore at most3^(4G0² L) possible subgroups H⊂Aut(V)
-which could be Gal(V/Y). The quotient V/H determines Y. Thus the number
-of genus-two partners with n<=B0−1 is at most
-
-    K_bounded=D*(D!)^18*3^(4G0² L) <= K0.                 (4)
-
-This finite set is F25-Frobenius stable. The
-[affine branch-family theorem](../../curve_arithmetic/prime_field_branch_family.md) gives
-moduli orbit length r for the selected prime degree r>K0>5.
-It cannot lie in the set counted in(4).
-
-This proves the bounded-joint-degree exclusion WITHOUT a cored or
-connection hypothesis. Applied to(2), it excludes the stated two-defect
-nonordinary-X/nontrivial-five stratum.
+Put $D=335999!$. By
+[quotient descent](../../curve_arithmetic/genus_two_quotient_descent.md),
+EVERY actual same-source witness for the selected main pair has
+X-degree greater than $D^2$. This applies directly to the joint
+normalization $R$, whose two induced maps are finite etale by
+Section2. The bound80 in (2) is therefore impossible.
+No new partner count, auxiliary Galois closure or parameter choice
+is needed; the selected endpoints are unchanged.
 
 ## 5. What remains if five-elements act trivially on the defects
 
@@ -123,11 +88,11 @@ a self-dual representation to a scalar cyclic subgroup pairs each
 eigencharacter with its inverse, so lambda=lambda^-1. Therefore phi²/s
 has at most |barGamma| conjugates, with barGamma the projective image.
 
-If |barGamma|<=5249, (1) gives
-
-    deg(R/Y)<=64*5249=335936<=335999,
-
-contradicting Section4 for the selected pair. Thus |barGamma|>=5250.
+The witness-degree bound and (1) now give
+\[
+D^2<\deg(R/X)\le8b\le8|\overline\Gamma|.
+\]
+Thus $|\overline\Gamma|>D^2/8$, strengthening the former threshold5250.
 
 The finite prime-to-five subgroups of PGL2(k) are cyclic, dihedral,
 A4, S4, A5; the A5 case has order divisible by5 and is absent here.

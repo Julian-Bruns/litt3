@@ -193,7 +193,7 @@ def main():
     args=ap.parse_args()
     started=time.monotonic()
     root=Path(__file__).resolve().parents[2]
-    data=root/'Research/computations'
+    data=root/'../litt3-computation-data/legacy_workspace_computations'
     source=json.loads((data/'backup_bad_double_cyclic_directions.json').read_text())
     case=source['cases'][args.case]
     raw=json.loads((data/('backup_bad_double_jet_%d.json'%args.case)).read_text())

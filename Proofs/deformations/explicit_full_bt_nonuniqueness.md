@@ -7,82 +7,15 @@ including the pairwise non-isogeny consequence. The old numerical and higher-Wit
 inputs, not replayed. The new steps are actual integral effectivity and
 retention of the first marking and the nonzero second-level difference.
 
-## 1. A supplied global tower has global group effectivity
+## 1. Use the effectivity of a supplied global tower
 
-Start with an actual compatible full periodic filtered tower of weights
-$0,1$ on a smooth proper formal lift. Its projective version carries the
-specified flat two-torsion periodicity line $\kappa$. Taking its
-compatible limit gives a projective filtered crystal $\mathcal P$ and
-an ACTUAL projective renormalized-Frobenius comparison
-\[
-\operatorname{RF}(\mathcal P)\simeq\mathcal P.
-\]
-At finite precision this uses the next curve digit and the previous
-filtered tuple, exactly as in the supplied inverse-Cartier construction.
-The full compatible tower supplies those extra digits at every stage;
-the retained graded identifications make the comparisons compatible.
-Thus no periodicity is inferred from separate nonempty finite lifting
-spaces or from the projective special fiber alone.
-
-A determinant-trivial spin lift exists with the specified reduction:
-its central kernel is
-etale $\mu_2$, so its fixed special-fiber lift extends through every
-nilpotent thickening, and the compatible choices extend formally. The
-Lie algebra map is an isomorphism, so the connection and its crystalline
-comparisons lift along with it. The Hodge line is the lifted Borel
-reduction. This is the same central argument used in
-[ordinary effectivity](ordinary_oper_bt_effectivity.md); ordinariness
-there supplies the global tower, not this effectivity step.
-
-Write $\mathcal E$ for that spin lift. The preceding projective
-comparison gives a flat line $\mathcal Q$ with
-\[
-\operatorname{RF}(\mathcal E)\simeq\mathcal E\otimes\mathcal Q,
-\qquad \mathcal Q^2\simeq\mathcal O.
-\]
-Here the renormalized determinant uses the canonical displayed factor
-five in the elementary lattice, as in ordinary effectivity. Reduction
-of this comparison is the SUPPLIED first periodic datum, so
-$\mathcal Q\bmod5=\kappa$. Prime-to-five torsion lifts uniquely
-through the marked nilpotent thickenings. Hence $\mathcal Q$ is the
-fixed formal lift of that SAME $\kappa$; no new two-torsion discrepancy
-can appear at a later level.
-
-Choose the prescribed flat line $N$ with $N^4=\kappa$, $N^8=\mathcal O$,
-and lift it as $\mathcal N$ through the formal tower. The compatible
-trivializations lift as well, so $\mathcal N^4=\mathcal Q$ and
-$\mathcal N^8=\mathcal O$. Crystalline Frobenius sends this finite
-flat line to $\mathcal N^5$. Thus
-\[
-\operatorname{RF}(\mathcal E\otimes\mathcal N)
-\simeq\mathcal E\otimes\mathcal Q\otimes\mathcal N^5
-\simeq\mathcal E\otimes\mathcal N.
-\]
-The horizontal comparison can be chosen to reduce to the fixed first
-one; the residual scalar is a constant unit and is chosen compatibly.
-This retains the specified first periodic datum and determinant $N^2$, exactly as in
-[first-level effectivity](admissible_periodic_bt_effectivity.md).
-
-In a normal decomposition the FULL one-periodic datum now gives
-strongly divisible windows
-\[
-F=U\operatorname{diag}(1,5),\qquad
-V=\operatorname{diag}(5,1)U^{-1},\qquad FV=VF=5,
-\]
-with the actual divided crystalline Taylor comparisons. They are
-compatible at every precision because the supplied tower is compatible,
-not merely nonempty at each finite height. Integral Dieudonne effectivity
-gives full groups locally. On overlaps ALL their crystal levels agree,
-so full faithfulness and effective finite-Hopf descent glue ALL finite
-truncations and their inclusions. Their compatible union is an actual
-full $5$-divisible group on the original characteristic-five curve.
-
-The determinant comparison may be normalized with the fixed finite
-character. Equivalently, twist by the unique inverse square root of
-its rank-one etale character congruent to one modulo five. This leaves
-the first truncation and the projective filtered tower unchanged. The
-same normalization is used for the ordinary reference. No global
-effectivity is being deduced from a single uncompleted BT1 or BT2.
+The [periodic effectivity theorem](admissible_periodic_bt_effectivity.md)
+now includes the general full-tower construction. It applies to an
+ACTUAL compatible global projective filtered tower, retaining the
+first periodic datum and lifting the chosen fourth-root correction.
+Its integral lattice construction uses no indigenous ordinariness.
+It gives actual normalized full groups on the original curve; it
+does not infer a full tower from unrelated nonempty finite fibers.
 
 ## 2. Apply this only to the existing actual rank125 tower
 
@@ -107,7 +40,7 @@ defined over $\mathbf F_{125}$ is required.
 
 ## 3. Its actual BT2 differs from the pulled-back one
 
-The [actual torsor comparison](bt_hodge_obstruction_comparison.md)
+The [actual torsor comparison](all_height_bt_hodge_dictionary.md)
 is an isomorphism between higher-Hodge solutions retaining this FIRST
 periodic datum and normalized marked BT2 extensions. Locally its
 difference is the invertible map
@@ -173,24 +106,12 @@ extensions with identical first truncation and specified determinant.
 
 ## 6. The groups are already distinct up to isogeny
 
-Their common BT1 connection has degree zero and a positive Hodge line
-$L$, with nonzero second fundamental form. Every horizontal line is
-distinct from $L$ and maps nontrivially to its negative-degree quotient.
-It has negative degree. Thus the common reduction is stable as a
-connection, even though its underlying bundle is unstable.
-
-Suppose two of the displayed full groups were isogenous. Evaluate their
-crystals on the same smooth proper formal lift of $T$. Multiply the
-rational crystalline isomorphism by a power of five to make it integral
-and primitive. Quasi-compactness gives a common denominator and a
-largest power dividing an integral map, so its reduction is a nonzero
-horizontal map. A rank-one image is impossible: its horizontal kernel
-in the degree-zero source has negative degree, making the image positive,
-while its saturation in the target is a negative-degree horizontal line.
-A rank-two map has a nonzero determinant between degree-zero lines and
-therefore no zero. Thus the reduction is an isomorphism. Nakayama then
-makes the full integral crystal comparison an isomorphism; full
-faithfulness gives an actual full group isomorphism.
+The common BT1 evaluation is a degree-zero rank-two oper.
+The [crystalline lattice-rigidity lemma](crystalline_oper_lifting.md#rigidity-of-the-integral-lattice)
+therefore rescales any supplied rational comparison of two displayed
+groups to an integral crystal isomorphism. Multiplication by a power
+of five preserves its $F,V$ identities, and full faithfulness gives
+an actual full group isomorphism.
 
 Its action on the specified BT1 is a scalar in $\mathbf F_5^\times$,
 by the established generic endomorphism theorem for this versal ordinary

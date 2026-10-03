@@ -28,7 +28,7 @@ if (args.include_n or args.compact_only) and (args.chain or args.factor or args.
 out=Path(args.out).resolve(); out.mkdir(parents=True,exist_ok=False)
 started=time.monotonic()
 def log(*s): print(round(time.monotonic()-started,2),*s,flush=True)
-base=Path(__file__).resolve().parents[2]/'Research/computations'
+base=Path(__file__).resolve().parents[2]/'../litt3-computation-data/legacy_workspace_computations'
 names=['canonical_atlas_system','wronskian_quadratic_bezout','wronskian_serre_dual']
 raw=[(base/(n+'.json')).read_bytes() for n in names]
 canon,bez,dual=map(json.loads,raw)

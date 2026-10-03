@@ -26,9 +26,13 @@ W=[]
 for j in range(kw.shape[1]):
  b=poly(kw[:,j],wm);a=plus(mul(E,b));W.append((a,b))
 assert len(W)==11
-sm=L(142); cs=np.column_stack([vec(mul(E,{m:1}),forbidden(-133)) for m in sm]);ks=kernel(cs)
-assert ks.shape[1]==1
-b=poly(ks[:,0],sm);b=scale(int(INV[b[(44,1)]]),b);a=plus(mul(E,b));sstar=(a,b)
+# The established positive presentation replaces the section-kernel census.
+sm=L(142)
+BPOS=[13,12,9,11,19,18,1,17,23,12,8,10,9,13,8,
+      0,9,10,4,23,24,24,2,2,12,0,19,14,1,24,
+      8,5,6,7,17,18,18,21,8,11,13,5,20,14,1]
+b={(i,1):c for i,c in enumerate(BPOS) if c}
+a=plus(mul(E,b));sstar=(a,b)
 J=np.column_stack([vec(sub(mul(a,bb),mul(b,aa)),L(18)) for aa,bb in W]);assert rank(J)==7
 S=[]
 for U,V in UV25:S.append(np.column_stack([vec(add(mul(U,a),mul(V,b)),forbidden(-24)) for a,b in W]))

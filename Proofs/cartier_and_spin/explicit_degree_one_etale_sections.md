@@ -19,7 +19,9 @@ e=y^2\sum_{m=1}^{10}[c_m]x^{-m},
 \quad c=(2,16,16,7,1,2,7,1,24,11).
 \]
 Use the two standard affine charts pulled back from P1_x. The
-stability of K is the established generated-hyperplane calculation.
+later [sharp line-degree theorem](small_shift_line_twist_vanishing.md)
+gives maximum line degree minus four in this actual K; in particular
+K is geometrically stable.
 
 ## The positive Frobenius presentation
 
@@ -51,50 +53,13 @@ descends under finite surjective pullback.
 
 ## All degree-zero twists
 
-The connecting map for K(O) has source1,x,x^2 and seven rows
-([c_{i+j}]), i=1,...,7, j=0,1,2. Its first minor is[19], so
-H0(K(O))=0.
-
-The cubic automorphism gamma linearizes K because e is a character
-vector. Suppose a saturated degree-zero line L has three distinct
-conjugate isomorphism classes L0,L1,L2. Their wedges have degree-one
-divisors P,gamma P,gamma^2P. With consistent cyclic labels,
-Li*L_(i+1)=O(O-gamma^i P). The orbit sum is linearly equivalent
-to3O, so L0^2=O(2gamma P-2O). Write
-L0=O(gamma P-O)*tau with tau^2=O. The first wedge identity implies
-gamma*tau=tau. The norm1+gamma+gamma^2 vanishes on Pic^0 because
-the quotient is P1; thus tau^3=O and tau=O. The resulting section
-of L0(O) contradicts H0(K(O))=0.
-
-It remains to exclude invariant classes. An invariant line can be
-linearized, and Hilbert90 supplies an invariant rational section.
-Its invariant divisor reduces to branch-point differences because
-nonfixed orbits are fibers of x. With R_i=(r_i,0), all such classes
-are represented by
-\[
-D_s=\sum s_i(R_i-O),\quad s_i=0,1,2,\quad s_{10}=0.
-\]
-The relations3(R_i-O)=0 and sum(R_i-O)=0 give these19683
-representatives; distinctness is not needed for exhaustiveness.
-
-Put A_s=prod_(s_i=1)(x-r_i), B_s=prod_(s_i=2)(x-r_i),
-S=deg A_s+2deg B_s, D_j=(1,B_s,A_sB_s). The character-j
-basis of H0(O(dO+D_s)) is
-\[
-y^jx^i/D_j,\quad
-0\le i\le\left\lfloor(d-S-10j+3\deg D_j)/3\right\rfloor.
-\]
-The H1 basis has exponents strictly between this upper bound and0.
-Writing e=y^2*x^-10*C(x), multiplication shifts j to j+2 modulo3
-with polynomial factors A_sB_s, P/B_s, P/A_s. These explicitly
-describe all connecting matrices for source d=6 and target d=-5.
-The separate Sage reconstruction verifies P splits in F_(5^8),
-the stated relative quartic is irreducible over F25, and every map
-is injective. Source dimensions0,1,2,3 occur14490,4917,275,1 times.
-
-Any map from a degree-zero line saturates to a line of nonnegative
-degree. Stability of K forces degree zero. This completes all-twist
-vanishing, including noninvariant and nonrational twists.
+The same sharp theorem gives
+\(H^0(K(3O)\otimes L)=0\) for every geometric Pic0 line L.
+Multiplication by the section of \(\mathcal O_X(3O)\) injects
+\(K\otimes L\) into that bundle, proving the claimed vanishing.
+It also gives \(H^0(K(O)\otimes L)=0\). The older degree-zero
+invariant-twist census is unnecessary and has been removed from
+the mixed arithmetic producer.
 
 ## What an étale section would mean
 
@@ -102,7 +67,7 @@ Pass to a connected Galois étale cover pi:S->X. Its full section
 evaluation image I is G-equivariant and locally free; descent gives
 E subset K with pi^*E=I. It is globally generated upstairs, hence
 deg E>=0. Rank one would give a nonnegative saturated line in K,
-contrary to stability and all-twist vanishing. Thus a nonzero
+contrary to the exact maximum line degree minus four. Thus a nonzero
 section forces rank two. Since deg K=1, deg E is0 or1.
 
 For deg E=0, the globally generated degree-zero bundle pi^*E is

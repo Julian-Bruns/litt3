@@ -1,36 +1,33 @@
-# Proof: two-section deck groups and actual defect carriers
+# Proof: two-section Galois groups and their faithful images
 
 [Statement](../../../Theorems/deformations/section_growth/two_defect_deck_reduction.md).
-Use the notation of the statement: q:Z->Y is connected finite etale
+Work over algebraically closed k of characteristic p>=5. Use
+q:Z->Y connected finite etale
 Galois, H0(Y,E)=0, U=H0(Z,q*E) has dimension two, rho:G->GL(U), and
-Gamma=rho(G). Sections2--5 treat 5 dividing |Gamma|; Section6 treats
+Gamma=rho(G). Sections2--5 treat p dividing |Gamma|; Section6 treats
 the complementary case.
 
-## 1. Every actual Sylow5 subgroup is cyclic
+## 1. Every actual Sylow p subgroup is cyclic
 
-The general [section bound](symplectic_p_cover_section_growth.md)
+The general [section bound](cyclic_symplectic_blocks.md)
 gives d(P)<=dim U-1=1 for every nontrivial p-subgroup of the actual
 deck group. The Burnside basis theorem makes P cyclic. In the
 nontrivial-action case, its two-dimensional unipotent image has order
-exactly5 and a unique fixed line. Consequently the projective image
-also has Sylow order5, and H0(Z/P,E_(Z/P))=U^P has dimension one.
+exactly p and a unique fixed line. Consequently the projective image
+also has Sylow order p, and H0(Z/P,E_(Z/P))=U^P has dimension one.
 
 ## 2. A normalizer character must be quadratic
 
 Put N=N_G(P). The original cover Z/P→Z/N is etale Galois with group
-N/P of order prime to5. Its one-dimensional section space U^P has a
-character chi. The corresponding character line L on Z/N satisfies
-h0(E_(Z/N) tensor L)=1. Canonical-valued self-duality and Riemann--Roch
-give the SAME dimension for L^-1. Both spaces pull back to the same
-one-dimensional space on Z/P. Therefore chi=chi^-1.
-
-This also covers the trivial character; no ordinariness assertion on
-Z/N is needed. Thus EVERY normalizer element acts on U^P by +1 or-1.
+N/P of order prime to p. Its one-dimensional section space U^P has a
+character chi. The [one-section character principle](cyclic_symplectic_blocks.md),
+Part4, gives chi²=1, including the trivial case. Thus EVERY normalizer
+element acts on U^P by +1 or-1. No ordinariness assumption on Z/N enters.
 
 Normalizer images are not lost in passing to Gamma. The map
-
-    N_G(P)→N_Gamma(rho(P))
-
+\[
+N_G(P)\longrightarrow N_\Gamma(\rho(P))
+\]
 is surjective. Indeed, in the preimage of the latter normalizer,
 rho^-1(rho(P)) is normal and contains P as a Sylow subgroup. Frattini's
 argument gives the whole preimage as rho^-1(rho(P))*N_G(P); its first
@@ -39,9 +36,9 @@ factor has image rho(P), already in the normalizer image.
 Consequently the Sylow-normalizer character on its unique fixed line
 inside the FAITHFUL Gamma-module U also has order at most two.
 
-## 3. Self-duality rules out the irreducible five-monodromy case
+## 3. Self-duality rules out the irreducible p-monodromy case
 
-For every prime-to5 cyclic subgroup H of G, decompose the pushforward
+For every prime-to-p cyclic subgroup H of G, decompose the pushforward
 of O_Z for Z→Z/H into character lines. Duality and chi(E tensor L)=0
 show that each character and its inverse have equal multiplicity in
 U|_H. Hence the Brauer characters of U and U^dual agree. Their
@@ -50,27 +47,27 @@ character-line descent, not a presumed k-valued symplectic form on U.
 
 If U were irreducible, it would be self-dual. Its invariant nondegenerate
 bilinear form is symmetric or alternating by Schur's lemma and 2!=0.
-In the symmetric case Gamma lies in O2(k), whose identity component is
-k* and component group is C2. Such a finite group has no five-torsion.
-Thus the alternating case is forced: Gamma lies in SL2(k).
+In the symmetric case \(\Gamma\subset O_2(k)\); its identity component
+is \(k^*\) and its component group is \(C_2\), so it has no \(p\)-torsion.
+Thus the alternating case is forced and \(\Gamma\subset SL_2(k)\).
 
-Use [Faber, TheoremB and Remark2.3](https://arxiv.org/pdf/1112.1999).
-In characteristic5, a finite p-irregular projective subgroup with
-Sylow order5 and without a fixed point is conjugate to PSL2(F5) or
-PGL2(F5). The semi-elementary alternative has a fixed point and would
-make U reducible. The characteristic5 A5 case is PSL2(F5).
+By [Faber, TheoremB and Remark2.3](https://arxiv.org/pdf/1112.1999),
+a \(p\)-irregular projective subgroup with Sylow order \(p\), without a
+fixed point, is \(PSL_2(\mathbf F_p)\) or \(PGL_2(\mathbf F_p)\):
+larger field groups have larger Sylow subgroups, the semi-elementary
+case fixes a point, and the characteristic-five \(A_5\) is \(PSL_2(\mathbf F_5)\).
+Both contain the standard \(PSL_2(\mathbf F_p)\).
+Its inverse image in \(\Gamma\subset SL_2(k)\) is the full
+\(SL_2(\mathbf F_p)\). Indeed \(SL_2(k)\) has only one nonidentity
+involution, \(-I\), whereas \(PSL_2(\mathbf F_p)\), \(p\ge5\), has
+several. Hence the central involution cannot be omitted, and the
+orders make the inverse image full.
 
-Both remaining projective groups contain the standard PSL2(F5).
-The preimage of that subgroup inside Gamma⊂SL2(k) is the full SL2(F5).
-To see why the central involution cannot be missing, SL2(k) has only
-one nonidentity involution, -I, whereas A5 has many; a subgroup mapping
-isomorphically to A5 is impossible. A subgroup surjecting onto A5
-and containing -I is the full order120 preimage.
-
-After arranging its Sylow subgroup as upper unitriangular matrices,
-this preimage contains diag(2,3). That element normalizes the Sylow
-subgroup and acts on its fixed line with order FOUR. Section2 excludes
-it. Therefore U is reducible.
+For a generator \(\lambda\in\mathbf F_p^*\), this subgroup contains
+\(\operatorname{diag}(\lambda,\lambda^{-1})\). It normalizes the upper
+unitriangular Sylow and acts on its fixed line with order \(p-1>2\).
+Section2 excludes it. Therefore \(U\) is reducible. The strict
+inequality \(p-1>2\) is the only characteristic restriction here.
 
 ## 4. The three faithful images
 
@@ -81,38 +78,39 @@ triangular group, so the normalizer-surjectivity argument in Section2
 shows chi²=1 on ALL Gamma. Reciprocity of the semisimplified characters
 then gives psi²=1 as well.
 
-The unipotent subgroup has order5. A prime-to5 complement can be
-diagonalized, so Gamma is conjugate to a subgroup generated by
-
-    J=[[1,1],[0,1]] and a subgroup D of {diag(e1,e2): e_i=+/-1}.
-
+The unipotent subgroup has order p. A prime-to-p complement can be
+diagonalized, so \(\Gamma\) is generated by
+\(J=\left(\begin{smallmatrix}1&1\\0&1\end{smallmatrix}\right)\) and
+a subgroup \(D\) of the diagonal matrices with entries \(\pm1\).
 The character e1 is nontrivial on D because U^Gamma=H0(Y,E)=0.
-There are just three such diagonal subgroups:
-
-    D=<-I>, D=<diag(-1,1)>, D={diag(+/-1,+/-1)}.
-
-They give C10, D10, and C2×D10 respectively. Notice that the second
+The three possibilities are
+\[
+D=\langle-I\rangle,\quad
+D=\langle\operatorname{diag}(-1,1)\rangle,\quad
+D=\{\operatorname{diag}(\pm1,\pm1)\}.
+\]
+They give C_(2p), D_(2p), and C2×D_(2p) respectively. Notice that the second
 representation is NONsplit: its invariant line has the nontrivial
 quadratic character and its quotient is trivial. It must not be
 discarded just because the semisimplification has a trivial factor.
 
-## 5. Remove a normal prime-to-five subgroup of the ACTUAL G
+## 5. Remove a normal prime-to-p subgroup of the ACTUAL G
 
 Let G0=rho^-1(<J>), normal in G with quotient D of order2 or4.
 Its Sylow subgroup P is still cyclic. Every n in N_(G0)(P) acts
 trivially on rho(P), because rho(G0)=<J> is abelian. Its conjugation
-automorphism on P=C_(5^a) is therefore congruent to1 modulo5.
-But N_(G0)(P)/C_(G0)(P) has order prime to5: P is abelian and is a
-Sylow subgroup of the normalizer. The kernel of Aut(C_(5^a))→Aut(C5)
-is a five-group. Thus this conjugation automorphism is trivial.
+automorphism on P=C_(p^a) is therefore congruent to1 modulo p.
+But N_(G0)(P)/C_(G0)(P) has order prime to p: P is abelian and is a
+Sylow subgroup of the normalizer. The kernel of Aut(C_(p^a))→Aut(Cp)
+is a p-group. Thus this conjugation automorphism is trivial.
 
 We have P⊂Z(N_(G0)(P)). The
 [Burnside normal-complement theorem, Theorem1.11](https://web.mat.bham.ac.uk/D.A.Craven/docs/lectures/finitegroups2010.pdf)
-supplies the unique normal prime-to5 complement K in G0. It is
-characteristic in G0, hence normal in G. Since rho(G0) is a five-group,
+supplies the unique normal prime-to-p complement K in G0. It is
+characteristic in G0, hence normal in G. Since rho(G0) is a p-group,
 rho(K)=1. The quotient G/K has normal P and quotient D. Schur--Zassenhaus
 (same source, Theorem2.1) splits it; the conjugation action on P is
-the unique order-two or trivial lift of e1/e2 in Aut(C5). This proves
+the unique order-two or trivial lift of e1/e2 in Aut(Cp). This proves
 the three group shapes in the statement, with no order bound on K.
 
 All intermediate curves are actual quotients of Z by freely acting
@@ -123,65 +121,80 @@ character is e1. Its kernel in D gives C of degree two over Y, with
 one section. The remaining Y'→C has degree at most two and preserves
 that section space. Hurwitz gives the displayed genera.
 
-## 6. The complementary branch: five-torsion acts trivially
+## 6. The complementary branch: p-torsion acts trivially
 
-Now suppose rho(P)=1. Put H=ker rho, so H contains P and Gamma=G/H
-has order prime to5. Let S=Z/P and let alpha in H1(S,O_S) be the
-Artin--Schreier class of the UNIQUE degree-five intermediate in the
-cyclic5^a cover Z→S. There are no new sections even on that first
-cover. Its first-socle-layer sequence consequently makes
-
-    alpha cup - : H0(S,E_S)→H1(S,E_S)
-
-an isomorphism. Under canonical-valued duality this is a NONZERO
+Now suppose rho(P)=1. If P=1, take K=ker rho and apply Section7.
+Otherwise put H=ker rho, so H contains P and Gamma=G/H
+has order prime to p. Let S=Z/P and let alpha in H1(S,O_S) be the
+Artin--Schreier class of the UNIQUE degree-p intermediate in the
+cyclic p^a cover Z→S. There are no new sections even on that first
+cover. Its first-socle-layer sequence makes
+\(\alpha\cup-:H^0(S,E_S)\to H^1(S,E_S)\) an isomorphism. Under canonical-valued duality this is a NONZERO
 alternating form B_alpha on the two-dimensional space U.
 
-For n in N_G(P), let c in F5* be its conjugation exponent on P/5P.
+For n in N_G(P), let c in Fp* be its conjugation exponent on P/pP.
 Transport of the AS torsor gives n(alpha)=c^-1 alpha (switching both
 action conventions reverses both occurrences). Naturality of the
-Serre trace gives
-
-    B_(n alpha)(ns,nt)=B_alpha(s,t).
-
-Since B_alpha is alternating and nonzero, this says
-
-    det(rho(n))=c.                                      (6.1)
-
+Serre trace gives \(B_{n\alpha}(ns,nt)=B_\alpha(s,t)\).
+Since \(B_\alpha\) is alternating and nonzero,
+\[
+\det\rho(n)=c. \tag{6.1}
+\]
 The character reciprocity in Section3 implies det(rho(n))²=1, so
 c=+/-1. In particular n in N_H(P) has c=1. As in Section5, the
-prime-to5 normalizer action on the cyclic P cannot have a nontrivial
-lift congruent to1 modulo5. Therefore P⊂Z(N_H(P)).
+prime-to-p normalizer action on the cyclic P cannot have a nontrivial
+lift congruent to1 modulo p. Therefore P⊂Z(N_H(P)).
 
-Burnside's theorem supplies the unique normal prime-to5 complement
+Burnside's theorem supplies the unique normal prime-to-p complement
 K of H. It is characteristic in H and hence normal in G. We have
-K⊂ker rho, so Z→Z/K preserves both sections and has prime-to5 degree.
-Writing P also for H/K, the resulting group is
-
-    G/K ≅ P ⋊ Gamma,   P=C_(5^a),
-
-where Gamma has order prime to5 and acts on P by its determinant
+K⊂ker rho, so Z→Z/K preserves both sections and has prime-to-p degree.
+Writing \(P\) also for \(H/K\), we obtain
+\[
+G/K=P\rtimes\Gamma,\qquad P=C_{p^a},
+\]
+where Gamma has order prime to p and acts on P by its determinant
 character, interpreted as +1 or inversion. Indeed Frattini's argument
-makes N_G(P)→Gamma surjective, (6.1) determines the action modulo5,
-and the prime-to5 part of Aut(C_(5^a)) lifts it uniquely. The extension
+makes N_G(P)→Gamma surjective, (6.1) determines the action modulo p,
+and the prime-to-p part of Aut(C_(p^a)) lifts it uniquely. The extension
 splits by Schur--Zassenhaus. The case P=1 simply takes K=ker rho.
 
-Here Gamma acts faithfully and semisimply on U, has U^Gamma=0, and
-its representation is self-dual. No bound on |Gamma| follows: reciprocal
-characters and dihedral representations still allow arbitrarily large
-orders. This is why the result does not yet give a bounded-genus
-carrier in the complementary branch.
+Here \(\Gamma\) acts faithfully and semisimply on \(U\), has no invariant
+vectors, and is self-dual. Section7 identifies its exact possible types;
+cyclic and dihedral families still allow unbounded order.
 
-Combining both branches: up to a normal prime-to5 cover preserving
-the two defect directions, arbitrary actual Galois covers with source
-defect two have a CYCLIC Sylow5 subgroup. If that subgroup acts
-nontrivially, only the three tower types in the statement remain. If
-it acts trivially, the residual prime-to5 group is exactly a faithful
-self-dual two-dimensional representation group, with determinant
-controlling its action on the cyclic five-part. This is a reduction
-of actual monodromy, not just of a representation chosen after the fact.
+## 7. The residual self-dual prime-to-p images
+
+A reducible semisimple self-dual representation has either reciprocal
+characters, giving a cyclic image, or two quadratic characters.
+The latter image is cyclic of order two or \(C_2^2=D_4\), since neither
+character can be trivial. The determinant is one in the reciprocal case.
+
+If the representation is irreducible, Schur's lemma supplies an invariant
+nondegenerate symmetric or alternating form. In the symmetric case,
+\(\Gamma\subset O_2(k)\): its rotations are cyclic and an element outside
+them is a reflection, so the image is dihedral. In the alternating case,
+\(\Gamma\subset SL_2(k)\). Apply
+[Faber, TheoremC](https://arxiv.org/pdf/1112.1999) to its projective image.
+A cyclic projective image would make \(\Gamma\) abelian and reducible.
+Each remaining projective group—dihedral, \(A_4,S_4,A_5\)—has more than
+one involution. The unique-involution argument from Section3 forces
+\(-I\in\Gamma\); surjectivity then makes \(\Gamma\) the FULL inverse image
+of that projective group in \(SL_2(k)\). These are the binary groups
+in the statement. Their determinants are one.
+
+Consequently only the orthogonal dihedral image can act nontrivially
+on the actual cyclic \(p\)-part; its reflections invert it. All cyclic
+and binary cases give \(G/K=C_{p^a}\times\Gamma\).
+These are necessary group types, without a geometric realization claim.
+Hurwitz gives every stated genus because all intermediate maps are
+actual étale quotients. In the \(C_{2p^a}\) case, its unique coprime
+factor quotients give the fiber product with an actual cyclic-\(p^a\)
+cover of \(Y\), at every \(a\).
 
 ## Application to the selected main pair
 
+For E_r on Y^(1), apply the theorem to q^(1); Frobenius transport
+identifies its groups and actual quotient curves with those of q.
 The curve C in the nontrivial-action case is one of the ten known bad
 doubles. The map Z->T_a preserves defect and has prime-to5 degree,
 so the [descent theorem](../defect_preserving_etale_descent.md) descends
@@ -193,3 +206,8 @@ uses uniform cyclic descent and the opposite-leg orbit bound to exclude
 the entire nontrivial-action branch for the selected main pair. The
 trivial-action branch can still have unbounded cyclic exponent and
 prime-to5 image. This theorem supplies no non-Galois reduction.
+
+The [fresh bounded group-classification review](../../../Research/audits/TWO_SECTION_ALL_PRIME_GROUP_CLASSIFICATION_AUDIT_2026_10_03.md)
+checks the p>=5 extension, residual table, determinant action and actual
+quotients. Original characteristic-five audits remain scoped inputs;
+no numerical replay was needed.

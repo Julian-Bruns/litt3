@@ -26,7 +26,7 @@ def main():
     root = Path(__file__).resolve().parents[2]
     record = json.loads(args.certificate.read_text())
     source = args.tensor or Path(record.get('source') or
-                                root / 'Research/computations/canonical_atlas_system.json')
+                                root / '../litt3-computation-data/legacy_workspace_computations/canonical_atlas_system.json')
     assert sha(source) == record['source_sha256']
     assert record['status'] in ['verified_polynomial_certificate',
                                 'verified_original_polynomial_unit_certificate']

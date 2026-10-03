@@ -1,8 +1,10 @@
 # Initial fourth/fifth loci and descent for the binary rank25 family
 
-Version4,2026-09-13. Independent audits of the initial comparison,
-uniform residue/symbol calculation, relative fifth response and absolute
-filtered fifth comparison PASS. Audited prose with exact algebra checks.
+Version5,3 October2026. The later integral oper calculus replaces
+separate local Taylor, graph and scalar expansions with one whole-input
+identity. Absolute divided quadratic carries, original rational-deck
+residues and every reference, precision and geometric scope below remain.
+The earlier initial/relative/filtered audits retain their exact evidence.
 
 Let h:T->C be an original connected finite etale C5^2 cover in
 characteristic5. Fix a FULL compatible descended marked reference,

@@ -42,9 +42,10 @@ $F_0,V_0$ and no nontrivial self-twist.
 EVERY one of these BT1 groups extends to a full group on $C$. After
 normalizing determinants, it has exactly one marked extension at
 every finite level, and exactly one full marked tower. Here uniqueness
-uses [Cartier rigidity](versal_bt_cartier_rigidity.md); existence is
-supplied by the full group just constructed and its finite-character
-twists. Full towers with arbitrary higher determinant characters
+uses the [absolute extension torsor](versal_bt_extension_torsor.md):
+its zeroth and first cohomology both vanish for the ordinary oper.
+This gives existence and uniqueness starting at EVERY actual normalized
+finite level, without a global next-level reference. Full towers with arbitrary higher determinant characters
 are not being counted.
 
 For either selected genus-two endpoint, the established

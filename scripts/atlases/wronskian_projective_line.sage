@@ -1,11 +1,8 @@
 #!/usr/bin/env sage
 """Exact line certificate, with whole-line consequence conditional on rank theorem."""
 from pathlib import Path
-source=Path('scripts/atlases/wronskian_matrix_pencil.sage').read_text()
-marker="for sample in saved['samples']:"
-assert source.count(marker)==1
-exec(preparse(source.split(marker)[0]))
-first=json.loads(Path('Research/computations/wronskian_matrix_pencil.json').read_text())['samples'][0]
+load('scripts/atlases/wronskian_section_context.sage')
+first=json.loads(Path('../litt3-computation-data/legacy_workspace_computations/wronskian_matrix_pencil.json').read_text())['samples'][0]
 N0=matrix(k,[parse(row) for row in first['N_matrix']])
 R0=matrix(k,[parse(row) for row in first['R_matrix']])
 uv=parse(saved['samples'][1]['U_coefficients']); U=laurent(uv,monsU)
@@ -89,5 +86,5 @@ data['infinity_observation_rank']=infinity['observation_rank']
 data['scope']='Exact polynomial certificate. Main-agent whole-projective-line consequence uses the author-proof admissible-rank55 theorem, not a new audit.'
 data['whole_line_consequence']='At every finite geometric point primitive e is nonzero and lies in ker N. Whenever the quotient is admissible, the admissible-rank55 theorem makes e span that kernel, including pivot-determinant roots. The Bezout identity excludes collinearity for all these points. Rank drops are inadmissible by that theorem. Infinity is U1, excluded by its saved rank2 observation. Thus the entire projective line has no eligible atlas direction, conditional on the author-proof admissible-rank theorem; this is not a global parameter-space exclusion.'
 print('removed factor equals ninth power of leading pole coefficient:',leading_matches,flush=True)
-Path('Research/computations/wronskian_projective_line.json').write_text(json.dumps(data,indent=2,default=int)+'\n')
+Path('../litt3-computation-data/legacy_workspace_computations/wronskian_projective_line.json').write_text(json.dumps(data,indent=2,default=int)+'\n')
 print('DONE',data['elapsed_seconds'],flush=True)

@@ -1,33 +1,36 @@
-# Two regular forms force phase balance modulo five in every degree
+# Two regular forms balance phases in every degree
 
-Version1,29 September2026. Focused independent audit PASS.
-Use the fixed curve and ACTUAL same-source finite etale comparison
-normal form of the [direct trace theorem](direct_common_source_trace.md).
-Suppose t is nonconstant and both endpoint norms are polynomials in
-the respective x-coordinates. There is NO upper bound on their degree.
-
-At every root of A and every29th-root phase, the three cubic-sheet
-phase multiplicities agree modulo five. The proof needs only the
-constant and linear coefficients of the traces of dx/y and dx/y2.
-It does not require a root with a small number of phases, or a finite
-enumeration of phase multisets.
+Version2,3October2026. Use the fixed curve and ACTUAL same-source
+finite etale line/tensor comparison
+[normal form](new_line_comparison_normal_form.md), with nonconstant
+separating parameter t. If both endpoint norms are polynomials in
+their respective x-coordinates, the three cubic-sheet phase
+multiplicities at every A-root agree modulo five, in every degree.
 
 More generally, without norm invariance, the multiplicity difference
-between two cubic sheets, reduced modulo five, is CONSTANT across
-all29 phases at each root. Equal sheet cardinalities make that
-constant zero. This more general assertion is only about the actual
-comparison normal form, not arbitrary separable maps.
+between two cubic sheets modulo five is CONSTANT across all29 phases
+at each root. Equal sheet cardinalities make this constant zero.
+Only the constant and linear coefficients of traces of dx/y and
+dx/y2 are needed; no small-phase anchor or multiset search enters
+this assertion.
 
-There is also an integer consequence. If the common cardinality at
-each root is at most19, phase balance holds as INTEGERS. This permits
-total mass up to76 and improves the previous total-mass<=19 hypothesis.
-More precisely it suffices that, after removing the common residues
-in{0,1,2,3,4}, each root has at most three fivefold blocks on each sheet.
-This last step uses the already proved index-five residue separation
-and three-phase Fourier rigidity.
+Integer balance follows if the common cardinality at each root is
+at most19, allowing total mass up to76. More precisely, after removing
+the common residues in{0,1,2,3,4}, it suffices that every root has at
+most three fivefold phase blocks on each sheet. The index-five norm
+coefficient separates their four roots.
 
-These results do not prove invariant norms in arbitrary degree and
-do not exclude the resulting trace-equation configurations. Neither
-shared-object extraction nor the original common-cover problem is solved.
+The short Fourier rigidity used here is also exact: for three
+equal-cardinality multisets of at most three phases in mu29, the first
+cubic Fourier moment forces equality. For cardinality four, the first
+AND doubled-phase moments force equality. Arbitrary repetitions
+and scalar extension are retained.
 
-[Proof and four small determinants](../../Proofs/cartier_and_spin/unbounded_modular_phase_balance.md).
+The local two-jets, four trace determinants and one residue determinant
+are reconstructed directly from P and A. This foundation is independent
+of cubic descent, the quartic trace obstruction and the older bounded
+phase results, which it subsumes. It does not prove norm invariance
+in arbitrary degree, exclude the resulting trace systems, or extract
+a shared tensor from an unmarked common cover.
+
+[Proof and exact evidence](../../Proofs/cartier_and_spin/unbounded_modular_phase_balance.md).

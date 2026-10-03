@@ -1,18 +1,21 @@
 # Quadratic, cubic and quartic twists vanish for the actual degree-one bundle
 
-Version5,26September2026. For the actual rank-two degree-one bundle
+Version6,3October2026. For the actual rank-two degree-one bundle
 K specified in explicit_degree_one_etale_sections,
 \[
 H^0(X,\operatorname{Sym}^2K(O))=0,\qquad
 H^0(X,\operatorname{Sym}^6K)=H^0(X,\operatorname{Sym}^9K)
 =H^0(X,\operatorname{Sym}^{12}K)=0.
 \]
-In addition, H^0(Sym^3K(3O))=0, so the same orbit product gives
+In addition, $H^0(X,\operatorname{Sym}^3K(3O))=0$.
+The later [sharp line bound](small_shift_line_twist_vanishing.md) gives
 \[
-H^0(X,K(O)\otimes L)=0
-\quad\text{for every }L\in\operatorname{Pic}^0(X).
+H^0(X,K(3O)\otimes L)=0
+\quad\text{for every }L\in\operatorname{Pic}^0(X),
 \]
-Thus K has no line subbundle of degree at least minus one.
+and hence all smaller shifts. K has maximum line degree minus four.
+The quadratic proof uses that bound and cubic symmetry; the shifted
+cubic proof restricts the already required later cubic section basis.
 The same cubic orbit-product argument gives geometric all-twist vanishing:
 \[
 H^0(X,\operatorname{Sym}^mK\otimes L)=0\quad(m=2,3,4)

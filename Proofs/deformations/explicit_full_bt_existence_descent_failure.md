@@ -15,7 +15,7 @@ Set $k_0=\mathbf F_{625}=\mathbf F_5[\tau]$
 with $\tau^4+4\tau^3+\tau^2+4\tau+3=0$, and write
 $F=u(u-1)(u-2)(u-3)(u-\tau)$. The curve $C:v^2=F$ carries the
 specified admissible active oper and actual BT1 $H_C$ of
-[the finite-level counterexample](explicit_bt2_descent_failure.md).
+[the finite-level counterexample](etale_p_witt_obstruction.md).
 Its actual BT2 obstruction is nonzero. Retain its first periodic
 datum, smooth marked $C_2$, flat periodicity line and finite determinant.
 
@@ -34,7 +34,7 @@ operator on $H^1(T,T_T)$ has dimension fifteen and rank eleven.
 Its kernel and obstruction space both have dimension four, each
 split as two plus two under the hyperelliptic involution. The retained
 original map and flat squareclass are checked in the
-[model audit](../../Research/computations/dihedral5_family_model_independent_audit.json).
+[model audit](../../../litt3-computation-data/legacy_workspace_computations/dihedral5_family_model_independent_audit.json).
 Unlike the fourteen neutral rows, that exceptional historical row
 alone did not certify the entire first comparison. The new actual
 runs additionally verify the first FL connection, full first-Frobenius

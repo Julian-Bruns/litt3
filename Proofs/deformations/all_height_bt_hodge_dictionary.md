@@ -1,186 +1,225 @@
-# Proof: repeat the last-digit comparison with the full predecessor fixed
+# Proof: one paired last-digit calculation gives the complete dictionary
 
 [Statement](../../Theorems/deformations/all_height_bt_hodge_dictionary.md).
-Author continuation,21 September2026. The accepted first comparison,
-actual local windows and all-height Cartier realization are inputs.
-The new point is the predecessor-sensitive calculation at general $N$.
-A focused independent
-[audit passed](../../Research/audits/ALL_HEIGHT_BT_HODGE_DICTIONARY_AUDIT_2026_09_21.md);
-no old certificate is replayed. The audit supplied the explicit
-first-nonzero-digit argument below.
+This merges the original actual BT2 comparison with the later
+predecessor-sensitive all-height induction. The Cech sign is j minus i.
+All Frobenius coefficient twists, divided maps, finite determinants
+and flat periodicity lines are retained.
 
-## Paired objects and local references
+## Paired local completions and actual groups
 
-Write $W_m=W(k)/5^m$. The first periodic datum is fixed, including
-the actual first Frobenius and Verschiebung arrows and the normalized
-finite determinant. For $N=1$ it determines the marked $W_2$ curve.
-The [accepted torsor comparison](bt_hodge_obstruction_comparison.md)
-constructs the correspondence between its compatible $W_3$ Hodge
-solutions and actual marked BT2 groups. It is an object-level map,
-not merely an equality of obstruction dimensions or vanishing loci.
+The first periodic datum is fixed, including its actual first
+Frobenius and Verschiebung arrows. At N=1 it is paired with H and
+the marked W2 curve. At a general stage, fix the entire paired
+BT_N/Hodge predecessor through W_(N+1), denoted A_N.
 
-Suppose inductively that a compatible periodic Hodge solution through
-$W_{N+1}$ is paired with an actual BT$_N$, denoted $A_N$. Work on
-affine etale opens. A smooth next curve lift exists, and the Hodge
-line lifts locally because its obstruction is a coherent $H^1$ on
-an affine. Its maximal graded Higgs identification is restored using
-the determinant and a square root congruent to the preceding scalar.
-The specified prime-to-five flat twist has its unique compatible lift.
-Iterating on these affine opens supplies local full periodic
-completions, with their strongly divisible windows and actual local
-full groups. Their first $N$ truncations identify with $A_N$ by the
-inductively constructed correspondence. No global full completion is
-assumed.
+Work on affine etale opens. A smooth next curve lift exists, and
+the Hodge line lifts since its obstruction is coherent H1 on an
+affine. Maximality persists by Nakayama. The determinant restores
+the maximal graded Higgs identification using a square root lifting
+the previous scalar. The prime-to-five flat twist lifts uniquely.
+Repeat locally at every precision, retaining each predecessor.
+This supplies local full periodic completions, rather than a global
+full completion. The filtered-flow construction and Hodge variation
+are those of
+[Lan--Sheng--Zuo, Section5](https://arxiv.org/pdf/1311.6424v2) and
+[Lan--Sheng--Yang--Zuo, Section5](https://arxiv.org/html/1404.0538#S5).
 
-Two local next-Hodge references differ by the last normal line
-variation in $F_*T_C$, modulo the change $\mu(T_C)$ made by the last
-marked curve identification. This is the same sheaf as at the first
-step: all last-digit coefficients are in the square-zero ideal
-$5^N/5^{N+1}$ and their formulas use the fixed mod-five reduction.
-The given predecessor is retained throughout; no preceding line or
-graded identification is changed. Local full completion maps these
-references to actual BT$_{N+1}$ references above $A_N$.
+In a normal decomposition P=P0+P1 set Psharp=P0+5^-1 P1 and
+nabla-tilde=5nabla. The periodic comparison U:sigma*Psharp->P gives
+\[
+F=U\operatorname{diag}(1,5),\qquad
+V=\operatorname{diag}(5,1)U^{-1}.
+\]
+The crystalline connection is d+(d sigma/5)nabla-tilde. Local
+Frobenius changes use the divided Taylor comparison
+\[
+\Gamma_{ij}=\sum_{n\ge0}\widetilde\nabla_{\partial_u}^{\,n}
+ \frac{((\sigma_i(u)-\sigma_j(u))/5)^n}{n!}.
+\]
+Integrality follows from nabla-tilde^n(Psharp) contained in
+5^(n-1)Psharp for n>=1. These are effective weights-[0,1] windows:
+the integral crystal, its Hodge lattice and horizontal F,V satisfy
+the same effectivity hypotheses as the retained
+[local window construction](versal_bt_cartier_realization.md#4-the-actual-local-windows).
+The established window equivalence gives actual local full groups.
+The [marked comparison theorem](versal_bt_display_descent.md)
+supplies unique normalized isomorphisms of actual truncations.
+Their first N levels identify with A_N inductively. At N=1 the
+retained first crystal identifies them with the supplied actual H.
+This local construction uses the initial periodic datum; an actual
+global H is needed to name the marking, not for affine completion.
 
-## The divided predecessor comparison
+Two next-Hodge references differ by the last normal variation
+in F_*T_C, modulo mu(T_C) from the last marked curve identification.
+The square-zero last ideal is5^N/5^(N+1), so its response uses the
+fixed mod-five reduction; the higher digits remain in the references.
+No preceding line, grading or divided map is changed.
+
+## The full predecessor removes every lower mixed digit
 
 On an ordinary splitting cover choose the SAME absolute Frobenius
-lift $\sigma$ for two paired references. In the normalized ordinary
-frame write
+lift sigma for two paired references. In normalized ordinary frames,
 \[
 \nabla e_0=0,\qquad \nabla e_1=e_0\,d\log Q,\qquad
-\Phi_1(e_1)=e_1+\ell_Qe_0,
-\quad \ell_Q=\frac15\log\frac{\sigma(Q)}{Q^5}.
-\tag{2}
+\Phi_1(e_1)=e_1+\ell_Qe_0,\qquad
+\ell_Q=\frac15\log\frac{\sigma(Q)}{Q^5}.
 \]
-The marked equality through BT$_N$ gives characteristic-five Kummer
-parameters $q_j=q_i a^{5^N}$. The potentially different mixed lifts
-initially give only
+The marked characteristic-five equality gives q_j=q_i a^(5^N).
+Initially the mixed lifts give only
 \[
-R_{ij}:=Q_j/(Q_i\widetilde a^{\,5^N})\in1+5\mathcal O
-\pmod{5^{N+1}}.
-\tag{3}
+R_{ij}=Q_j/(Q_i\widetilde a^{\,5^N})
+ \in1+5\mathcal O\pmod{5^{N+1}}.
 \]
-The same matched-ordinary-frame construction as in the accepted first
-comparison is used. The ENTIRE paired predecessor identifies the
-normalized ordinary frames and their divided maps modulo $5^N$.
-This is a condition on the preceding Fontaine datum, not a consequence
-of an abstract BT$_N$ marking alone. We now remove the lower mixed
-digits explicitly rather than assuming that they have vanished.
+The ENTIRE paired predecessor identifies the normalized frames
+and divided maps modulo5^N. This is more input than an abstract
+BT_N marking.
 
-If $R_{ij}\ne1$ at the required precision, let $1\le r\le N$
-be its first nonzero digit, and write
-$R_{ij}=1+5^r\widetilde B\pmod{5^{r+1}}$, with $B\ne0$ modulo five.
-Its contribution to the divided logarithm in (2) is
+Suppose the first nonzero digit is
+R_ij=1+5^r Btilde modulo5^(r+1), with1<=r<=N and B!=0 modulo5.
+Its contribution is
 \[
 \ell_{Q_j}-\ell_{Q_i}
-\equiv5^{r-1}B^5\pmod{5^r}.
-\tag{4}
+ \equiv5^{r-1}B^5\pmod{5^r}.
 \]
-Indeed the other factor $\widetilde a^{5^N}$ contributes
-$5^{N-1}\log(\sigma(\widetilde a)/\widetilde a^5)$,
-which is divisible by $5^N$ and hence invisible modulo $5^r$.
-The numerator involving $R_{ij}$ contributes
-$5^{r-1}\sigma(\widetilde B)$, while its denominator contributes
-$-5^r\widetilde B$. Every further logarithmic term vanishes modulo
-$5^r$, also for $r=1$. The preceding divided maps agree modulo
-$5^N$, so (4) forces $B^5=0$ on the reduced overlap. This contradicts
-the choice of the first nonzero digit. Equivalently one can eliminate
-the digits successively for $r=1,\ldots,N$. Thus
+The factor atilde^(5^N) contributes
+5^(N-1)log(sigma(atilde)/atilde^5), divisible by5^N.
+The ratio R contributes5^(r-1)sigma(Btilde)-5^r Btilde;
+all further logarithmic terms vanish modulo5^r, also when r=1.
+Agreement of the preceding divided maps forces B^5=0 on the
+reduced overlap, a contradiction. Therefore
 \[
 Q_j=Q_i\widetilde a^{\,5^N}\pmod{5^{N+1}}.
-\tag{5}
 \]
-This argument retains the Witt automorphism on coefficients and the
-relative Frobenius twists. It does not use fifth powering as a
-substitute for $\sigma$ over a mixed-characteristic ring.
+This includes the first step. Witt coefficient Frobenius is not
+replaced by fifth powering on the mixed-characteristic ring.
 
-## The two last-digit variations
+## The same Hessian-Bol response at every last digit
 
-Put $d\log Q_i=w_i\,du$ and
-$c=d\log a/d\log q_i$. Equation (5) gives
-$w_j=w_i(1+5^N\widetilde c)\pmod{5^{N+1}}$.
-For the projective potential
+Put dlog(Q_i)=w_i du and c=dlog(a)/dlog(q_i). Then
+w_j=w_i(1+5^N ctilde) modulo5^(N+1). For
 \[
 R(w)=\frac34(w'/w)^2-\frac12w''/w,
 \]
-its last divided variation is
+the divided last variation is
 \[
 \frac{R(w_j)-R(w_i)}{5^N}
-=-\frac12\bigl(c''-(w'/w)c'\bigr)
-=\frac12\mathscr D_H(c^5-c)
-\pmod5.
-\tag{6}
+ =-\frac12\bigl(c''-(w'/w)c'\bigr)
+ =\frac12\mathscr D_H(c^5-c)\pmod5.
 \]
-Quadratic last-digit changes vanish modulo $5^{N+1}$ since
-$2N\ge N+1$. All dependence on the earlier digits remains in the
-references; reducing the linear response uses the same $w\bmod5$.
-The [actual all-height difference classification](versal_bt_cartier_realization.md)
-identifies $c^5-c$ with $\Delta_N(A_i,A_j)$.
+Quadratic last-digit terms vanish since2N>=N+1.
+Here s=w^4(du)^4, so s'/s=-w'/w modulo five. The
+[actual Cartier difference classification](versal_bt_cartier_realization.md)
+identifies c^5-c with Delta_N(A_i,A_j).
 
-A last Hodge change $f\partial_u$ has normalized generator
+A last Hodge change f partial_u has normalized cyclic generator
 \[
 e\longmapsto(1-5^Nf'/2)e+5^Nf e'
-\pmod{5^{N+1}}.
+ \pmod{5^{N+1}}.
 \]
-Using the preceding scalar equation and dividing its potential change
-by $5^N$ gives the SAME mod-five third-order operator
+Differentiating the preceding scalar equation e''=re and dividing
+by5^N gives
 \[
 \mathfrak b_r(f\partial_u)
-=(2rf'+r'f-\tfrac12f''')(du)^2.
+ =(2rf'+r'f-\tfrac12f''')(du)^2.
 \]
-Combining with (6), the actual overlap cocycles satisfy
+Thus the ACTUAL overlap cocycles satisfy
 \[
 \mathscr D_H\Delta_N(A_i,A_j)
-=2\mathfrak b_r(f_{ij}\partial_u).
-\tag{7}
+ =2\mathfrak b_r(f_{ij}\partial_u).
 \]
-Both sides are regular sections of the same bundle over the entire
-overlap. The higher references are already integral, and the actual
-Cartier realization supplies the regular Hessian of the left side.
-Equality on the dense ordinary locus therefore extends across the
-supersingular points. No generic group isomorphism is being invented
-or extended in this step.
+Both sides are regular over the whole overlap. The Hodge references
+are integral, and the
+[actual Hessian theorem](bt_cartier_tangent_identification.md)
+supplies regularity on the left. Equality on the dense ordinary
+open extends across the supersingular divisor. No generic group
+isomorphism is invented in this step.
 
-## Torsors, effectivity and truncation
+## Exact quotient and summed-Wronskian normalization
 
-The accepted sheaf isomorphisms
-$F_*T/\mu(T)\simeq\mathcal N_r$ and
-$\mathcal B_H\simeq\mathcal N_r$ depend only on the first reduction.
-Equation (7) identifies the next local torsors equivariantly by
-$2\mathscr D_H^{-1}\overline{\mathfrak b}_r$.
-Local choices of full completion produce the same next object up to
-the unique normalized comparison: if their next Hodge difference is
-zero, equation (7) makes the actual next group difference zero.
+The Hodge projection is mu(f partial_u)=s_u f^5 partial_u.
+Its composite with b_r is zero. The latter lands in N_r because
+it changes the Hodge line of the same nilpotent flat connection.
+At a simple supersingular point s has order two, less than five;
+its image in F_*T is primitive. It is primitive on the ordinary
+open as well. The quotient F_*T/mu(T) has rank four and degree
+4(g-1), exactly the degree of N_r.
 
-Exactly as at the accepted first step, a global Hodge solution then
-glues actual local BT$_{N+1}$ groups by their unique marked normalized
-isomorphisms. Finite locally free Hopf algebras descend, as do $F,V$
-and the marking by $A_N$. Conversely, a global BT$_{N+1}$ translates
-each paired local Hodge reference by
-$\tfrac12\overline{\mathfrak b}_r^{-1}\mathscr D_H\Delta_N$.
-These translated references glue modulo the last curve automorphisms
-represented by $\mu(T)$. Neither translation changes the predecessor.
+On an ordinary logarithmic chart Omega=dx/x, put D=x partial_x.
+Then
+\[
+\mu(fD)=f^5D,\qquad
+\mathfrak b_r(fD)=-\tfrac12D^3f\,\Omega^2,\qquad
+\mathscr D_H(b)=D^2b\,\Omega^2.
+\]
+The first operator identifies the rank-four quotient with N_r
+generically. Its determinant has an effective zero divisor of
+degree zero, so it is an isomorphism everywhere; no supersingular
+torsion cokernel remains. Cohomology identifies coker(Psi_r)
+with H1(N_r).
 
-The construction is thus inductive and respects truncation. It is
-etale-functorial because every ingredient, including the actual
-group difference and the divided crystalline Taylor comparison, is.
-Applying it to all truncations of a supplied full group gives a
-compatible full Hodge tower. A supplied compatible full Hodge tower
-gives compatible finite groups; their inclusions and multiplication
-maps descend along with their Hopf algebras and define a full group.
-This latter direction also follows from the already checked
-[full periodic effectivity construction](explicit_full_bt_nonuniqueness.md).
+The summed-Wronskian pairing is2C(hDk Omega), and its Hessian
+pullback is2C(bDb' Omega). Frobenius duality gives
+j(b)=[-2D^3b D] in F_*T/mu(T), since
+\[
+C((-2D^3b)D^2b'\Omega)=2C(bDb'\Omega),\qquad
+\overline{\mathfrak b}_rj(b)=D^6b\,\Omega^2=D^2b\,\Omega^2.
+\]
+The last equality uses D^5=D. Hence
+J=bbar_(r*)^-1 D_H*. Taking cohomology of the actual overlap
+identity gives
+\[
+\mathscr D_{H*}e_N(A_N)
+ =2\overline{\mathfrak b}_{r*}\epsilon_N,\qquad
+J(e_N)=2\epsilon_N.
+\]
+This retains absolute scalar Frobenius and the j-minus-i convention.
 
-For the full-group-to-tower direction independently, the full versal
-group has its canonical marked mixed-characteristic pair lift by
-[Xia, Theorem1.2](https://arxiv.org/pdf/1303.2954). Its Hodge filtration
-and integral divided Frobenius give the strongly divisible periodic
-object. That supplies every higher comparison while retaining the
-special-fiber first marking. No such conclusion is drawn from Xia's
-truncated existence theorem alone.
+## Effective correspondence, truncation and full supplied objects
 
-Finally BT$_N$ corresponds to length $N+1$ on the curve side. The
-extra digit forms the divided inverse-Cartier comparison; it does
-not change the group level. This proves the stated finite-height
-translation and does not assert that any of those finite fibers
-is nonempty.
+Paired local completion gives an equivariant map from the local
+next-Hodge torsor to the actual next-BT torsor, for
+\[
+F_*T/\mu(T)
+ \xrightarrow{\ 2\mathscr D_H^{-1}\overline{\mathfrak b}_r\ }
+ \mathcal B_H.
+\]
+It is an isomorphism: both torsors are locally nonempty and the
+coefficient map is an isomorphism.
+
+A global Hodge solution makes the actual next-group differences
+zero. Their unique normalized marked isomorphisms satisfy the
+cocycle and descend finite locally free Hopf algebras, F,V and
+the A_N marking. Conversely, a global BT_(N+1) differs from
+each paired local reference by d_i=Delta_N(A_i,A). Translate that
+Hodge reference by (1/2)bbar_r^-1 D_H(d_i). Changes of representative
+lie in mu(T) and are absorbed by last marked curve identifications.
+The translated references glue without changing their predecessor.
+
+This gives the correspondence inductively, including N=1, and
+respects truncation. Every construction is functorial for ACTUAL
+etale pullback, including the group difference and divided Taylor
+comparison. It compares existence and paired objects; an
+arbitrary selected pair need not have zero difference.
+
+For a supplied compatible full Hodge tower, perform the same
+effective descent at every N. The crystalline comparisons commute
+with truncation, so the inclusions and multiplication maps descend
+with the Hopf algebras and define an actual full group.
+Conversely the truncations of a supplied full group translate the
+paired local Hodge references successively by the just-established
+correspondence, giving a compatible global full Hodge tower.
+Neither direction requires a separate global-completion theorem
+or indigenous ordinariness.
+
+The BT_N group corresponds to curve length N+1. Its next divided
+comparison uses the extra curve digit, proving the finite-height
+translation m -> m-1. No nonemptiness or common-cover conclusion
+is inferred.
+
+The original all-height predecessor calculation was independently
+reviewed in
+[the earlier audit](../../Research/audits/ALL_HEIGHT_BT_HODGE_DICTIONARY_AUDIT_2026_09_21.md).
+Original first/all-height records, proofs, source and receipt hashes
+remain in
+[external provenance](../../../litt3-computation-data/archive_cleanup_20260930/bt_hodge_merge_before_hindsight/).

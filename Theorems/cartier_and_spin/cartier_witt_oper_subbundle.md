@@ -1,6 +1,6 @@
 # A proper common Witt subbundle detects a dormant oper
 
-Version1, 23 September 2026. Let \(k=\overline{\mathbf F}_5\)
+Version2,3 October2026. Let \(k=\overline{\mathbf F}_5\)
 and let \(X\xleftarrow fZ\xrightarrow gY\) be an actual finite
 bi-étale span of smooth projective hyperbolic curves, with \(g(Y)=2\)
 and no clump. On the first Frobenius twists put

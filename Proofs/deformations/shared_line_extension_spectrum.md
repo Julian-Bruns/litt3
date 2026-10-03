@@ -1,6 +1,8 @@
 # Proof: reduced clumps and torsion-twisted negative extensions
 
 [Statement](../../Theorems/deformations/shared_line_extension_spectrum.md).
+[Independent bounded review](../../Research/audits/CARTIER_SYMMETRIC_POWER_RECONSTRUCTION_AUDIT_2026_10_03.md).
+Version5,3 October2026.
 All pullbacks are the given actual finite étale maps. Cohomology
 classes and the identifications of line bundles are retained.
 
@@ -224,126 +226,66 @@ its place in the string, and injectivity of multiplication by $p$
 on common Picard classes identifies the line itself. This proves
 exhaustiveness, including the vanishing of odd-degree cases.
 
-## The actual Cartier flag gives this extension
+## A Cartier line gives the direct symmetric-power reconstruction
 
-Use the characteristic-five flag from the statement. Its
-graded divisor formulas give
+Put $h=(p-1)/2$, $j=(p-3)/2$ and $r=p-2$.
+The clump-size theorem gives $R\equiv-1\pmod p$.
+Both $\Omega(-rS)$ and $\mathcal O(S)\Omega^{-h}$
+therefore have normalized degree divisible by $p$.
+The invariant Picard theorem constructs their unique common
+roots $A,\lambda$, retaining the relative twists.
+
+Adjunction of $F^*A=\Omega(-rS)\hookrightarrow\Omega$
+gives the common map $A\to F_*\Omega$. A nonzero Cartier
+image has common zero-divisor degree
 \[
-F^*A=\Omega(-3S),\qquad
-F^*\det U_2=\Omega^3(-4S).
+2-\frac{2-rR}{p}=\frac{2(p-1)+(p-2)R}{p}.
 \]
-Thus, for $Q=U_2/A$ and $D=QA^{-1}$,
-$F^*D=\Omega(2S)$. The exact sequence
-$0\to A\to U_2\to Q\to0$, twisted by $A^{-1}$, is a
-common pointed extension with quotient $D$.
-It is nonsplit because $U_2$ is stable. Its first Frobenius
-pullback is an oper and is unstable. Frobenius injectivity
-and the one-dimensional boundary space therefore identify its
-class, up to a nonzero scalar, with the constructed string.
+This is a positive multiple of $R$. Since $R\ge p-1$
+and $R\equiv-1\pmod p$, it forces $R=p-1$ and that
+multiple to be one. Comparing the actual line equality
+$A=\Omega^{(1)}(-S^{(1)})$ with $F^*A$ then gives
+$\tau^2=\mathcal O$. Thus outside that boundary the map
+lies in $B$. Its coefficient has order $r<p-1$ at $S$;
+the rank-one jet calculation makes it saturated.
 
-## The pointed extension reconstructs the whole Cartier bundle
+Conversely any common saturated line in $B$ has adjoint
+divisor $cS$, with $0\le c\le p-2$. Its degree equation
+gives $c\equiv-2\pmod p$, hence $c=p-2$.
+Unique common roots and the specified zero divisor identify
+it with $A$, including the actual map up to scalar.
 
-The symplectic pairing on $B$ identifies the last two quotients
-of its common flag with $\Omega Q^{-1}$ and $\Omega A^{-1}$.
-The actual Frobenius identities for $A,D$ give
+Write the canonical section of
+$\mathcal O(S)=\Omega^hF^*\lambda$ locally as $a$.
+The first-line Cartier condition is $C(a^{p-2}dz)=0$;
+the equality $F^*(A\lambda^{p-2})=\Omega^{-pj}$
+fixes its scalar normalization up to one common scalar.
+Apply [the intrinsic scalar reconstruction and product lemma](../projective_connections/dormant_bol_complex.md#canonical-roots-from-scalar-products)
+on both endpoints. Since the data match through the ACTUAL
+maps, it gives common $E,s,D,V$ and
 \[
-F^*(A^2D^3)=\Omega^5.
+B=A\operatorname{Sym}^{p-2}E
+ =\Omega^{-j}\operatorname{Sym}^{p-2}V,\qquad
+D=\Omega\lambda^2,\quad D^p=\Omega(2S).
 \]
-There is no common five-torsion, so $A^2D^3=\Omega$. The
-four graded lines of $B\otimes A^{-1}$ are consequently
-$\mathcal O,D,D^2,D^3$, with these common identifications.
-Put $m=(R+1)/5$, so $\deg D_Y=2m$. The spectrum already
-proved gives
-\[
-J(D)=k,\qquad J(D^2)=J(D^3)=0.
-\]
-Indeed $2m,3m\le R$ for $R\ge4$, while nonvanishing of
-$J(D^j)$ for $j=2,3$ would require $j5^{n-1}=1$ for
-an integer $n\ge1$.
+The specified first line fixes the isomorphism uniquely.
 
-Here extension classes must remain common, not just agree in
-degree. For a common short exact sequence $0\to N'\to N\to
-N''\to0$, the usual injectivity implication
-\[
-\operatorname{Ext}^1_{\rm common}(M,N')=0
-\quad\Longrightarrow\quad
-\operatorname{Ext}^1_{\rm common}(M,N)
-\hookrightarrow\operatorname{Ext}^1_{\rm common}(M,N'')
-\]
-holds whenever all the relevant $\operatorname{Hom}$ groups on
-$Z$ vanish. To see this without any descent assumption, use the
-endpoint extension sequences. A split pushed-out extension has
-unique splittings on the endpoints and on $Z$. Its two preimage
-classes in $\operatorname{Ext}^1(M,N')$ agree on $Z$, since
-$\operatorname{Hom}_Z(M,N'')=0$ makes that preimage unique.
-They are therefore a common class and vanish by hypothesis.
-For line pairs occurring here the group is exactly $J(D^j)$:
-the negative-degree $\operatorname{Hom}_Z$ vanishes, so no extra
-gluing parameter is lost in taking the intersection of endpoint
-cohomology images. For the intermediate filtered bundles the
-same Hom vanishing follows either from their stable slopes or
-successively from the negative-degree graded Hom lines.
+The degree of $D_Y$ is $2(R+1)/p\le2R$.
+The constructed $E$ is stable and first becomes unstable at
+height one; its nonsplit class therefore lies in the already
+classified nonzero line $J(M_{a-1})$. Unique common roots
+identify $D=M_{a-1}$, rather than just their degrees.
 
-Let $E_3=A^\perp\otimes A^{-1}$ and
-$E_4=B\otimes A^{-1}$. It follows that their successive
-extension classes inject into
-\[
-\operatorname{Ext}^1_{\rm common}(D^2,D)=J(D),\qquad
-\operatorname{Ext}^1_{\rm common}(D^3,D^2)=J(D),
-\]
-respectively. In the second assertion the possible kernel first
-injects into $J(D^2)$ and then into $J(D^3)$, both zero.
-Each adjacent class is nonzero. Otherwise the injectivity would
-split off the positive top graded line, contradicting stability
-of $A^\perp$ or $B$ on either endpoint.
-
-Now form $\operatorname{Sym}^3E$ using the specified section $s$.
-Its natural flag has these same graded lines, and its first two
-steps give the original pointed extension $E$. If $e\ne0$ is
-its class in $J(D)$, the three adjacent extension classes are
-$e,2e,3e$. This follows by expanding the cube of the transition
-matrix of $0\to\mathcal O\to E\to D\to0$. All three
-coefficients are units in characteristic five. As $J(D)$ is
-one-dimensional, rescale the third graded identification and
-then the fourth to match the nonzero adjacent classes of
-$E_3,E_4$. The preceding injections lift each match to an
-isomorphism of the whole extensions. This constructs the actual
-common filtered isomorphism $B=A\operatorname{Sym}^3E$.
-
-Finally $B$ is stable on each endpoint and on $Z$. Its common
-automorphisms are scalars, so fixing its first-line identification
-makes this isomorphism unique. The argument classifies this
-particular root selected by a flag. It makes no uniqueness claim
-for roots without that flag or for an integral lift.
-
-## Canonical Bol normalization in every clump size
-
-Let $\tau=\mathcal O(S)\Omega^{-2}$ and
-$F^*\lambda=\tau$ in the common Picard group. This unique
-root exists for every $R\equiv4\pmod5$: its degree is
-divisible by five in the common degree lattice. Put
-$E=U_2\otimes A^{-1}$. Its first Frobenius pullback has oper
-graded lines
-\[
-\Omega^2\tau,\qquad\Omega^3\tau.
-\]
-Also $(\det E)^5=\Omega(2S)=\Omega^5\tau^2$, so injectivity
-of fifth powers on common Picard classes gives
-$\det E=\Omega\lambda^2$.
-Twist by $F^*\lambda^{-1}$ with its canonical Cartier connection.
-This works for a positive-degree $\lambda$ as well as for torsion.
-The actual dormant bundle $\mathcal V=E\lambda^{-1}$ has
-determinant $\omega$ and Frobenius oper quotient $\omega^2$.
-The scalar Bol description identifies it with one of the
-five actual $\mathcal V_i$ on the genus-two endpoint, without
-an additional determinant or two-torsion twist. The construction
-also retains the normalized dormant bundle on $X$ and the actual
-identification on $Z$. Since $F^*(A\lambda^3)=\Omega^{-5}$,
-unique common roots give $A\lambda^3=\Omega^{-1}$. Substituting
-in the symmetric-cube formula proves
-$B=\Omega^{-1}\operatorname{Sym}^3\mathcal V$.
-The pointed section of $E$ is the stated saturated line in
-$\mathcal V$, and $\deg\lambda_Y=(R-4)/5$.
+The rank-$i$ member generated by
+$s^{r-i+1}\operatorname{Sym}^{i-1}E$ has Frobenius oper
+grades $\Omega^t(-(p-1-i)S)$, $1\le t\le i$:
+use the oper grades $\mathcal O(S),\Omega(S)$ of $F^*E$
+and $F^*A=\Omega(-(p-2)S)$.
+For $p=5$ the established proper-subobject classification
+identifies this flag with $A,U_2,A^\perp,B$.
+It also identifies $V_Y$ with one of the five normalized
+Bol bundles. No complete higher-prime subobject lattice
+or integral crystal is inferred.
 
 ## Four-point torsion exclusion
 

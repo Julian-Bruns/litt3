@@ -1,8 +1,9 @@
 # Proof: cyclic descent from a weighted comparison and one terminal carry
 
-Version2, 2026-09-13. The retained geometric construction and the
-strengthened algebra have bounded independent audit PASS. This is
-audited prose, not formal verification.
+Version3,3 October2026. The later integral oper calculus replaces
+the repeated local Taylor and normalization derivations. Version2's
+geometric construction and algebra have independent audit PASS;
+this reference-based local replacement has focused author review.
 [Statement](../../../Theorems/deformations/cyclic_descent/cyclic_power_descent.md).
 
 The two independent algebraic inputs are
@@ -119,110 +120,81 @@ the factor p in its tilde transition, and an unread scalar digit by
 the p² gain proved next. Reduction identifies the preceding Hodge
 graph with the appropriate reduction of the SAME specified upper tuple.
 
-## 3. Uniform termwise integrality
+## 3. The later integral calculus and the required mixed terms
 
-Before substituting weights, write the actual curve displacement as
-pX and use unnormalized graph and scalar variables U,R. We prove
-that every positive-degree comparison term has an integral presentation
-as a finite sum of diagonals of additive multilinear maps. Coefficient
-Frobenius and inverse Frobenius count as additive operations of degree1.
-This is stronger than pointwise integrality on Witt coefficients.
+Before substituting weights, write the curve displacement as pX
+and use unnormalized graph/scalar variables U,R. The later
+[integral oper calculus](../integral_oper_calculus.md) supplies
+all-order Taylor integrality, the p² potential gain and exact
+whole-graph normalization in the CURRENT connection. Its
+torsion-free whole-input hypotheses hold on these local oper lifts.
+For the old convention B_r=[[0,p²r],[1,0]], swapping basis vectors
+gives the later recurrence at g=-1,P=r. Equivalently
+\[
+K_j=P_p p^jL_jP_p^{-1},\qquad P_p=\operatorname{diag}(p,1),
+\tag{1}
+\]
+where L_j is the integral differential-polynomial recurrence for
+[[0,r],[1,0]]. This is the actual divided oper structure, not a
+structure inferred from an arbitrary truncated p-connection.
 
-### Divided Taylor operators
+Absorption additionally needs ORDERED additive multilinear
+presentations. Expand each product in L_j(r+Delta r) without
+polarization. With ell changed displacement factors the complete
+coefficient is 1/(ell!(j-ell)!). The same conjugation gives
+\[
+j-1-v_5(\ell!)-v_5((j-\ell)!)
+\ \ge\ j-1-v_5(j!)\ \ge\ 0.
+\tag{2}
+\]
+For j>=3 this is at least2 and tends to infinity. The r-dependent
+terms of K1,K2 also have p², as in the integral calculus. Hence
+every ordered mixed term is integral, every potential-dependent
+term gains p², and only finitely many terms contribute at each
+precision. No degree-five factorial polarization is used.
 
-In oper coordinates put
+Frobenius discrepancies are expanded in pX BEFORE division by p:
+a displacement-degree d numerator has p^d, leaving p^(d-1);
+the reference constant is integral. In particular
+\[
+\delta(pX)=\Phi(X)-p^4X^5,\qquad
+\delta(p^{m+1}x)=p^m\Phi(x)-p^{5m+4}x^5.
+\tag{3}
+\]
+There is no unweighted delta on Hodge repairs. The actual corrected
+input matrices remain
+\[
+\widetilde J=\epsilon
+\begin{pmatrix}\lambda&p\lambda'/f'\\0&\lambda^{-1}\end{pmatrix},
+\qquad
+\widetilde\nabla=p\partial+
+\begin{pmatrix}0&p^2r\\1&0\end{pmatrix},
+\qquad \lambda^2=f'.
+\tag{4}
+\]
+The diagonal uses the NEW graded map; the upper entry uses the
+PREVIOUS filtered map. Cancellation on the normal coefficient line
+does not trivialize the actual flat epsilon.
 
-    C_r=[[0,r],[1,0]], P_p=diag(p,1),
-    L_0=I, L_(j+1)=partial L_j+C_r L_j.
+Whole-graph normalization, unit inverses and fixed square roots are
+5-integral by the later calculus. Coordinate substitution uses
+integral Hasse--Taylor expansion on an etale patch, and perturbation
+inverses are finite ordered integral series. Phi and Phi^-1 are
+additive valuation-preserving operations fixing the deck generator;
+over W(k), or in a Z5 basis at finite precision, products and ordered
+compositions give integral multilinear presentations. Homogeneous
+maps are deck-equivariant; individual presentations need not be.
+No nongluing output serves as a preceding input object.
 
-For B_r=[[0,p²r],[1,0]] and K_(j+1)=p partial K_j+B_r K_j,
-direct conjugation gives the EXACT differential-polynomial identity
-
-    K_j=P_p p^j L_j P_p^-1
-       =[[p^j L11,p^(j+1)L12],[p^(j-1)L21,p^j L22]].     (1)
-
-Expand each ordered differential-polynomial product in L_j(r+Delta r).
-Its multilinear presentation is integral without polarization. With
-z=z0+Delta z, a term with ell changed displacement factors has the
-complete coefficient1/(ell!(j-ell)!). Thus every ordered mixed term
-has nonnegative p-valuation since
-
-    j-1-v5(ell!)-v5((j-ell)!) >= j-1-v5(j!) >=0.          (2)
-
-Legendre gives v5(j!)=(j-s5(j))/4<=(j-1)/4. For j>=3 the
-bound is at least2. The two smaller matrices are
-
-    K1=[[0,p²r],[1,0]],
-    K2=[[p²r,p³r'],[0,p²r]].
-
-Consequently ALL scalar-dependent output terms gain p², including
-the divided Taylor terms. The bound tends to infinity with j, so
-only finitely many terms contribute at any given precision. On a
-torsion-free oper lift these are the actual divided operators; the
-filtered/graded construction gives their well-defined reductions.
-No arbitrary truncated p-connection is assumed to determine its
-divided structure.
-
-### Frobenius divisions and weighted curve coordinates
-
-The remaining divisions by p occur in dF/p or differences of local
-Frobenius lifts. Expand their numerators with the curve displacement
-pX BEFORE division. Every positive-degree term of displacement degree
-d contains p^d, including terms transported through Phi(X), and after
-division still contains p^(d-1). The constant is the actual integral
-reference Frobenius discrepancy. Thus this gives termwise integral
-presentations, not merely integral values of a quotient.
-
-For example the exact Witt-delta identity is
-
-    delta(pX)=Phi(X)-p^4 X^5,
-    delta(p^(m+1)x)=p^m Phi(x)-p^(5m+4)x^5.              (3)
-
-There is no unweighted delta on Hodge repairs in this chart. A genuine
-global preceding oper enters through the corrected matrices
-
-    Jtilde=epsilon [[lambda,p lambda'/f'],[0,lambda^-1]],
-    nablatilde=p partial+[[0,p²r],[1,0]], lambda²=f'.      (4)
-
-The diagonal uses the NEW graded map, the upper entry the PREVIOUS
-filtered map. This retains the actual flat epsilon. Its cancellation
-on the normal coefficient line is not a global trivialization of it.
-
-### Other operations and the all-degree conclusion
-
-The graph equation c+d s_j-s_i a-s_i b s_j=0 is integral. Its
-fractional-linear version expands at a unit a as
-
-    (c+ds)/(a+bs)=c/a+(ad-bc)s/a²*sum_(j>=0)(-bs/a)^j.
-
-Scalar normalization for H=(1,s)^t, V=nabla H and D=det(H,V) is
-
-    det(nabla V,V)/D-D''/(2D)+3(D')²/(4D²).             (5)
-
-All denominators are units at5; the required square-root series is
-5-integral. Coordinate substitution uses the integral Hasse--Taylor
-expansion on an etale coordinate patch, equivalently the completed
-diagonal, not unsupported divisions partial^ell/ell! in a truncated
-ring. Perturbation inverses of the actual coefficient complexes are
-finite ordered integral series. No nongluing output is a complex input.
-
-At each finite precision all the coefficients in question belong to a
-finite unramified coefficient extension, since k=bar(F5). In a Z_p
-basis Phi and Phi^-1 are integral additive linear maps. Equivalently
-one can keep them as additive valuation-preserving operations over
-W(k) throughout. They fix the abstract deck generator. Products,
-ordered compositions and reference linear operations therefore give
-the claimed integral additive presentations. The homogeneous
-maps are deck-equivariant by the equivariant chart; individual
-multilinear presentations need not be equivariant, as allowed by the
-absorption theorem.
-
-After substituting (X,U,R)=p^m(x,u,R) and dividing the normal discrepancy
-by p^m, a degree-d term has valuation at least
-
-    m(d-1).                                             (6)
-
-No factorial polarization is used at degree5 or any larger degree.
+After (X,U,R)=p^m(x,u,R) and division of the WHOLE discrepancy
+by p^m, every degree-d term therefore has valuation at least
+\[
+m(d-1).
+\tag{6}
+\]
+The local calculus supplies this estimate. Sections1–2 and4–5
+still supply the genuine global chart, weighted elimination and
+actual lower norm coefficient.
 
 ## 4. Weighted elimination, with constants retained
 

@@ -30,7 +30,7 @@ over the coefficient field is used.
 
 Exact sources: `scripts/genus_two/backup_genus_two_prepare.sage`,
 `scripts/genus_two/backup_genus_two_torsion.sage`, and their preparation/torsion JSON
-in Research/computations. These check the original equations and lengths.
+in ../litt3-computation-data/legacy_workspace_computations. These check the original equations and lengths.
 
 ## 2. These are the full intrinsic atlas equations
 
@@ -90,7 +90,7 @@ These ORIGINAL UNROOTED charts suffice for geometric existence; no
 reducedness claim about these slices is required.
 
 Seventeen charts have expanded polynomial unit identities independently
-replayed in `Research/computations/backup_genus_two_atlas_verification.json`.
+replayed in `../litt3-computation-data/legacy_workspace_computations/backup_genus_two_atlas_verification.json`.
 The remaining chart0 of twists1,2,3 has the following compact exact proof.
 Its necessary affine bilinear quotient has length8, certified by sixteen
 original row-module identities, twenty-four borders and a commuting
@@ -123,7 +123,7 @@ every coefficient in these identities, and rejects mutations of both
 the inverse u and a row multiplier.
 
 Receipts `backup_genus_two_factored_replay_twist1.json`, `...twist2.json`,
-`...twist3.json` in Research/computations all PASS. Their certificates
+`...twist3.json` in ../litt3-computation-data/legacy_workspace_computations all PASS. Their certificates
 are local-only in the external backup directory; hashes are in the
 receipts. Replay takes approximately2–3 seconds per chart on one core.
 All twenty original chart ideals therefore contain1 over their exact

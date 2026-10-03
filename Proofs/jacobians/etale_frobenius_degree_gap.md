@@ -154,7 +154,44 @@ Induction through (4.1) proves both bounds in (6).
 This statement concerns extension bounds, not a splitting of the
 Frobenius module into its associated graded.
 
-## 6. Permutation modules with p-group monodromy
+## 6. Deck projectivity from the exact coefficient functor
+
+Let q:T->C be finite étale Galois, and let M=q_*F_p. Its deck
+action commutes with its monodromy. Since the exact functor (4.1)
+commutes with kernels and finite direct sums, apply it to
+m |-> ((h-1)m)_(h in H) to obtain
+\[
+N_T^H=\mathcal N_C(M^H)
+=\mathcal N_{T/H}(\mathbf F_p).
+\tag{6.1}
+\]
+The inclusion is the actual pullback, not presumed injectivity
+on all coherent cohomology.
+
+For G=P a p-group, the free-module assertion is
+[Nakajima, Theorem3](https://doi.org/10.1007/BF01214754);
+the precise cohomological formulation is
+[Cais, Theorem2.24(ii)](https://arxiv.org/pdf/2207.02283#page=16).
+It gives N_T~=k[P]^b and the dual Cartier-nilpotent differential
+module. We use this established result directly.
+
+For arbitrary G, apply this to T->T/P for a Sylow p-subgroup P.
+Thus N_T restricted to P is free. Since [G:P] is invertible,
+the usual induction/restriction averaging makes N_T a direct
+summand of its induced restriction, hence projective over k[G].
+Restriction to every H is projective as well. On a free k[H]
+module the group norm identifies coinvariants and invariants;
+the same holds on direct summands. The norm is the actual
+pullback of trace, so this proves the trace assertion.
+
+For G=P, the norm basis of soc(R^b) identifies the augmentation
+of the semilinear Frobenius matrix with F_C on N_C. Hence the
+matrix of F_T^e has augmentation zero if F_C^e=0. Its entries
+are in J, proving F_T^e N_T subset JN_T. Frobenius fixes each
+group element and preserves J; induction gives the claimed
+radical filtration. This does not diagonalize its iterates.
+
+## 7. Permutation modules with p-group monodromy
 
 For the permutation local system M of D/C, E(M)=h_*O_D, with
 its actual Frobenius. Therefore N_C(M) is the nilpotent part of
@@ -183,17 +220,15 @@ For P=(C_5)^2 the layer coefficients of (1+x+...+x^4)^2 are
 1,2,3,4,5,4,3,2,1. For P=(C_5)^3 they are
 1,3,6,10,15,18,19,18,15,10,6,3,1.
 Multiplying the largest coefficients by b=3 gives15 and57.
-These group-algebra polynomials also occur in the independently
-checked [augmentation-width argument](../deformations/section_growth/augmentation_width_defect.md).
+These are also instances of the Jennings radical-layer formula in
+the [augmentation-width theorem](../deformations/section_growth/augmentation_width_defect.md).
 No indigenous connection or marking is used here.
 
-The cyclic-p case of the local-local filtration is consistent with
-[Cais--Ulmer, Theorem1.2](https://arxiv.org/html/2307.16346v2).
-Their Theorem1.10 supplies extra polarized constraints which the
-elementary H1(O) argument does not assert. Our proof of (4.1)--(9)
-is independent of those additional group-scheme results.
+[Cais--Ulmer, Theorems1.2 and1.10](https://arxiv.org/html/2307.16346v2)
+give further polarized restrictions for cyclic order-p covers;
+the coefficient bounds here do not reconstruct that group scheme.
 
-## 7. Removing the two constant layers
+## 8. Removing the two constant layers
 
 For an arbitrary finite étale cover with p dividing n, the actual
 permutation local system M has the filtration

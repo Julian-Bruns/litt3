@@ -1,6 +1,6 @@
 # Common Cartier subbundles and their graded zero divisors
 
-Version4,20September2026. Let $k$ be algebraically closed of odd
+Version5,3 October2026. Let $k$ be algebraically closed of odd
 characteristic $p$, and let $X\xleftarrow f Z\xrightarrow gY$ be
 an actual coreless finite étale span of smooth projective connected
 hyperbolic curves. Write $B_C=F_{C*}\mathcal O_C/\mathcal O_{C^{(1)}}$,
@@ -131,10 +131,10 @@ are
 \frac{2-3R}{5},\quad \frac{4-R}{5},\quad
 \frac{6+R}{5},\quad \frac{8+3R}{5}.
 \]
-The rank-two construction uses the actual primitive exterior square
-$\Lambda^2B\otimes\omega^{-1}=\mathcal O\oplus F_*\omega^{-2}$.
-A unique common line in its second summand is forced to have
-zero Plücker quadratic, and hence determines $U_2$.
+Horizontal scalar products construct $B=A\operatorname{Sym}^3E$
+for an actual common pointed dormant bundle $E$, giving $U_2$.
+The primitive Plucker line proves its uniqueness. The exceptional
+two-torsion branch still uses the exterior-square quadratic.
 
 ## The four-point two-torsion branch
 

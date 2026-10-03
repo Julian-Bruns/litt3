@@ -1,6 +1,6 @@
 # The actual BT descent obstruction is killed by Cartier pullback
 
-Version2,20 September2026. Let $C/k$ be smooth projective connected,
+Version3,3 October2026. Let $C/k$ be smooth projective connected,
 $k=\overline{\mathbf F}_5$, of genus at least two. Let $A_N/C$ be
 an actual BT$_N$, with everywhere-versal height-two, dimension-one
 BT1 $H$, generically ordinary and with reduced supersingular divisor
@@ -60,10 +60,19 @@ Such an extension need not pull back to the supplied $B$.
 \delta_C\le\delta_D\le d\delta_C.
 \tag{4}
 \]
-If $\delta_D=d\delta_C$, the module $\mathcal K_D$ is free over
-$k[P]$ and the class (3) always vanishes. Thus MAXIMAL defect
-growth is a sufficient condition for descent of next-level
-EXISTENCE, at every height. It is not prescribed-object descent.
+The following conditions are EQUIVALENT:
+\[
+\delta_D=d\delta_C\quad\Longleftrightarrow\quad
+\mathcal K_D\text{ is free over }k[P]\quad\Longleftrightarrow\quad
+H^1(P,\mathcal K_D)=0\quad\Longleftrightarrow\quad
+q^*\text{ is injective on the Cartier cokernel.}
+\tag{4a}
+\]
+Thus MAXIMAL defect growth makes EVERY possible obstruction class
+vanish and forces next-level EXISTENCE descent at every height.
+When growth is smaller, the obstruction space is nonzero, but its
+actual class (3) can still vanish. Neither direction is prescribed-object
+descent.
 
 5. If $P$ is cyclic, put $R=k[t]/(t^d)$ with $t=\gamma-1$.
 For some $1\le\ell_i\le d$,
@@ -98,12 +107,26 @@ the cases $\delta_D=2,4$, its possible obstruction space is a line;
 its actual class remains to be evaluated. More generally, if
 $\delta_C=1$ and $d=5^a$, the single length is even or equals $d$.
 
+7. If $\delta_C=1$, put $J=\operatorname{rad}k[P]$ and
+$h_i=\dim J^i/J^{i+1}$. The later
+[augmentation theorem](section_growth/augmentation_width_defect.md)
+gives the geometric bound
+\[
+\delta_D\ge w_2(P):=\max_i(h_i+h_{i+1}).
+\tag{8}
+\]
+In particular every noncyclic $P$ gives $\delta_D\ge9$;
+if $P\ne C_5^2$ this improves to ten, and Frattini rank at least
+three gives37. An actual exponent-five Heisenberg quotient gives25.
+These are defect bounds for the actual induced connection, not values
+of the actual BT existence class.
+
 The cyclic-five ambient freeness and primitive construction were
 proved in the returned Pro answer. Exact realization removes its
 former distinction between actual differences and the Cartier
-kernel. The intrinsic cokernel, arbitrary five-group extension,
-maximal-growth criterion, and equivariant block-parity comparison
-are subsequent local deductions.
+kernel. The intrinsic cokernel and arbitrary five-group extension are
+subsequent deductions. The later absolute torsor and actual tangent
+bundle identify the obstruction class and supply block parity directly.
 Neither an unconditional existence-descent theorem nor an actual
 proper-curve counterexample is asserted. The two-map common-cover
 problem remains open.

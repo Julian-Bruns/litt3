@@ -54,7 +54,7 @@ def main():
         'geometric_audit': 'Research/audits/RANK25_SURFACE_RETURN_AUDIT_2026_09_12.md',
         'scope_limit': 'Finite verifiers do not themselves prove geometric support; no fresh full W5 replay or Lean verification.'
     }
-    output = root / 'Research/computations/rank25_surface_return_checks.json'
+    output = root / '../litt3-computation-data/legacy_workspace_computations/rank25_surface_return_checks.json'
     output.write_text(json.dumps(receipt, indent=2) + '\n')
     print(json.dumps(receipt, indent=2))
 

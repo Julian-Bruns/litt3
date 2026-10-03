@@ -156,7 +156,7 @@ if __name__=='__main__':
         'omitted':'All reports/logs/archives, prior prompts, fifth replay engines, eight irrelevant dual rows and four-component quotient matrices.',
         'scope':'One absolute fifth trace on the full fourth-lift locus. Candidate universal trace unproved outside the accepted surface.'
     }
-    (ROOT/'Research/computations/rank25_universal_trace_prompt_checks.json').write_text(json.dumps(receipt,indent=2)+'\n')
+    (ROOT/'../litt3-computation-data/legacy_workspace_computations/rank25_universal_trace_prompt_checks.json').write_text(json.dumps(receipt,indent=2)+'\n')
     print(json.dumps(receipt,indent=2))
 
 

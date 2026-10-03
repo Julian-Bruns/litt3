@@ -2,7 +2,7 @@
 
 Version1, 25 September2026. Use the actual K, L=O_X(-O), source
 extensions R_xi and second absolute Frobenius Hom atlas from
-[second_return_actual_quotient_atlas](second_return_actual_quotient_atlas.md).
+[second_return_global_transversality](second_return_global_transversality.md).
 The [character reduction](second_return_character_slices.md) restricts
 every nonzero middle-character map to the following sixteen-coordinate
 source atlas:

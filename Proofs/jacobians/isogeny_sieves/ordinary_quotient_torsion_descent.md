@@ -82,35 +82,15 @@ No conclusion about the invisible p-rank-zero part is inferred.
 
 ## 3. A prime-primary cover has the required torsion model
 
-The established
-[pro-primary cover theorem](pro_primary_frobenius_exclusion.md),
-Sections1-2, supplies the following ACTUAL model. If W->C has
-ell-group Galois closure and m is Frobenius order on H1_et(C,F_ell),
-then W has a model over F_(q^(m*ell^a)), for some a, with rational
-full ell-torsion on J(W). For ell=2, a further two-power extension
-makes J(W)[4] rational, since the kernel of reduction from level4
-to level2 is a two-group.
-
-This same assertion holds for ell=p with ETale p-torsion; it is
-proved explicitly in the
-[unit-root theorem](five_by_abelian_unit_root_exclusion.md), Section1.
-For clarity, the common group argument is as follows. A rational
-point splits the arithmetic fundamental-group sequence. Once
-Frobenius is trivial on the Frattini quotient of the finitely
-generated maximal pro-ell geometric fundamental group, the closure
-of its automorphism action is pro-ell. An actual open subgroup,
-and subsequently that subgroup's Frattini quotient, are fixed
-over ell-power extensions. The subgroup is the full maximal
-pro-ell fundamental group of the cover: taking the Galois closure
-of an ell-group cover above it remains an ell-group extension.
-Thus the second Frattini quotient controls ALL relevant etale
-torsion of the ACTUAL covering Jacobian, not a truncated subgroup
-inherited from the base.
-
-For ell=p finite generation is all that is required; the rank of
-the Frattini quotient is the p-rank. The connected part of p-torsion
-is not asserted rational. A rational point can always be obtained
-over an additional ell-power extension, by the Weil bound.
+The [all-prime pro-primary cover theorem](pro_primary_frobenius_exclusion.md),
+Section2, supplies an ACTUAL model of any cover W->C with ell-group
+Galois closure over F_(q^(m*ell^a)), where m is the Frobenius order
+on H1_et(C,F_ell). Its Jacobian has rational full ell-torsion for
+ell!=p and rational ETale ell-torsion for ell=p. The characteristic
+case uses the finitely generated maximal pro-p group and p-rank;
+it does not make connected p-torsion rational. For ell=2, a further
+two-power extension makes J(W)[4] rational, since the kernel from
+level4 to level2 is a two-group.
 
 For fixed X the sufficient initial orders have
 \[
@@ -152,18 +132,29 @@ Hence beta is an isogeny with kernel contained in B[d]. Its prime
 support is contained in{2,ell}. This step uses etaleness of BOTH
 maps, through the precise equality d=8N.
 
-For lambda!=5, all geometric subgroup schemes of B[lambda^b]
-are defined after making its rank-four etale module constant.
-The extension degree only has primes dividing
+For ANY abelian surface B/F_Q and lambda!=5, the Frobenius order
+on B[lambda^b] has prime support contained in
 \[
-\lambda\prod_{i=1}^4(\lambda^i-1).
+\operatorname{Supp}\bigl(\lambda(\lambda-1)(\lambda^2-1)(\lambda^4-1)\bigr).
 \tag{8}
 \]
+Here no principal polarization on B is needed. Its degree-four
+Frobenius polynomial pairs roots alpha and Q/alpha. A prime t
+occurring in lambda^3-1 but not in the displayed factors has
+ord_t(lambda)=3. Since t does not divide lambda-1, Q has trivial
+t-part in the residue field. The paired roots then have inverse
+t-parts in distinct Frobenius orbits, each of length at least three.
+They cannot both occur in a degree-four polynomial. This removes
+the only extra prime support allowed by GL4. Unipotent parts and
+higher torsion congruence kernels add only lambda.
+
+Making this actual torsion module constant defines every geometric
+subgroup scheme of B[lambda^b], with the support (8).
 At lambda=5, ordinariness identifies geometric torsion with
 mu_(5^b)^2 times (Z/5^b)^2. Over a perfect field its subgroup
 schemes are determined by the etale and Cartier-dual multiplicative
 modules. Their two GL2 actions only introduce primes2,3,5.
-At lambda=2, (8) only introduces2,3,5,7, independent of b.
+At lambda=2, (8) only introduces2,3,5, independent of b.
 
 Thus the kernel of beta descends over an extension with exactly
 the indicated prime support. Quotienting B by this kernel gives

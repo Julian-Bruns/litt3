@@ -1,6 +1,7 @@
 # A missing cubic eigenspace forces actual equivariance
 
-Version1,2026-09-22. Let X be a smooth proper curve of genus g>4,
+Version2,3 October2026. The general three-graph theorem now supplies
+the common trace-budget argument. Let X be a smooth proper curve of genus g>4,
 with geometrically simple Jacobian and number-field endomorphism
 algebra K. Suppose gamma is an automorphism of order three whose
 quotient is rational. Let T be smooth proper, sigma an automorphism

@@ -1,52 +1,80 @@
-# Five distinct actual X-fields have independent norm maps
+# Three cubic graphs control actual map relations and multiplicity
 
-Version1,2026-09-22. Let X be the fixed genus-nine curve, A=J(X),
-K=End^0(A), and E=Q(zeta_3) contained in K. Let
-h_i:T->X be actual finite etale maps from the SAME smooth proper
-connected curve, all of degree d=(g(T)-1)/8. Put
+Version2,3 October2026. The original fixed-X short-relation audit
+is retained; the generalization and stronger rank bounds have a
+focused mathematical review.
+
+## General three-graph theorem
+
+Let X be a smooth proper curve over an algebraically closed field,
+of genus g>4, with geometrically simple Jacobian A and number-field
+endomorphism algebra K. Let gamma have order three and rational
+quotient. Put E=Q(zeta), where zeta=gamma_* on A,
+a=[K:E] and s=g/a. Let h_i:T->X be ACTUAL finite separable maps
+of the same degree d from one smooth proper connected curve.
+For pairwise distinct embedded fields h_i^*k(X), put
 \[
-u_i=(h_i)_*,\qquad v_i=h_i^*=u_i^\dagger,\qquad
-H_{ij}=\operatorname{Tr}_{K/E}(u_iv_j).
+u_i=(h_i)_*,\quad v_i=h_i^*=u_i^\dagger,\quad
+H_{ij}=s\operatorname{Tr}_{K/E}(u_iv_j).
 \]
-If the embedded fields h_i^*k(X) are pairwise distinct, then
+Then s is a positive integer, and at either complex embedding of E,
 \[
-H_{ii}=9d,\qquad H_{ji}=\overline{H_{ij}},\qquad
-|H_{ij}|\le2d\quad(i\ne j).
+H_{ii}=gd,\quad H_{ji}=\overline{H_{ij}},\quad
+\operatorname{Re}(\zeta^eH_{ij})\le d
+\quad(i\ne j,\ e=0,1,2).
 \tag{1}
 \]
-Either complex embedding of E gives the same modulus. Consequently,
-for any family of at most FIVE distinct fields,
+In particular |H_ij|<=2d. Any family of at most ceil(g/2)
+distinct fields has E-linearly independent norm maps.
+
+Let N be the number of fields, m the geometric multiplicity of A
+in J(T), and r=rank_E H. The full triangle, rather than just its
+radius, gives
 \[
-\boxed{u_1,\ldots,u_r\text{ are linearly independent over }E.}
+\max\left\{\frac{g^2N}{4N+g^2-4},
+\frac{3g^2N}{4N+g^2(g+3)-4}\right\}\le r\le am.
 \tag{2}
 \]
-Equal fields are grouped by the actual cubic automorphisms of X.
-In a relation supported on at most five distinct fields, every
-field's grouped E-coefficient must therefore vanish separately.
-
-In particular a relation among THREE maps with nonzero coefficients
-in K whose ratios belong to E forces all three fields to coincide.
-For nonzero integer coefficients, the only possibilities are:
-all three maps are identical and the coefficients sum to zero;
-or the maps are the three cubic conjugates of one map and the
-coefficients are equal. Thus a literal identity
+For every positive integer k one also has
 \[
-(h_1)_*+(h_2)_*+(h_3)_*=0
-\]
-holds exactly for a cubic orbit, after permuting the maps.
-
-If N pairwise distinct fields occur and m is the geometric
-multiplicity of A in J(T), their Gram matrix satisfies
-\[
-\frac{81N}{4N+77}\le\operatorname{rank}_E H\le9m.
+\binom{r+k-1}{k}\ge
+\frac{N}{1+(N-1)(4/g^2)^k}.
 \tag{3}
 \]
-In particular N>154 implies m>=3. This does NOT improve the
-existing m>=5 bound on the first Y-leg Galois closure.
+Consequently N<4^r<=4^(am), so
+\[
+m>\frac{\log N}{a\log4}.
+\tag{4}
+\]
+Thus arbitrarily many distinct actual fields force unbounded
+Jacobian multiplicity. No unbounded field family is presumed.
 
-No Galois hypothesis or cover-degree restriction is imposed.
-Arbitrary K-coefficients outside the stated ratios, individual
-one-form relations, and finite closure of the actual field orbit
-are not settled. Neither original common-cover problem is solved.
+## The fixed genus-nine endpoint
+
+For the fixed X, g=a=9 and s=1. Actual finite etale maps have
+degree d=(g(T)-1)/8. Formula(2) becomes
+\[
+\max\left\{\frac{81N}{4N+77},
+\frac{243N}{4N+968}\right\}\le r\le9m.
+\]
+In particular N>=102 forces m>=3, improving the old threshold155.
+Formula(4) supplies a growing multiplicity bound as N increases.
+
+The norms from at most FIVE distinct fields are independent over E.
+Equal fields are grouped by the actual cubic automorphisms of X;
+every grouped E-coefficient in such a relation must vanish separately.
+
+A relation among THREE maps with nonzero coefficients in K whose
+ratios belong to E forces all three fields to coincide. With
+nonzero integer coefficients, the only possibilities are: all maps
+identical and coefficients summing to zero, or the three cubic
+conjugates of one map with equal coefficients. Hence a literal
+identity (h1)_*+(h2)_*+(h3)_*=0 holds exactly for a cubic orbit.
+
+These are statements about the supplied actual maps. Arbitrary
+K-weighted relations, individual one-form relations, the existence
+of an unbounded actual field orbit and a simultaneous finite
+Galois closure remain outside their scope. In common-cover
+applications BOTH original finite etale legs remain required.
 
 [Proof](../../../Proofs/jacobians/isogeny_sieves/fixed_x_short_map_relations.md).

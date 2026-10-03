@@ -1,6 +1,7 @@
 # Frobenius localization and explicit stabilization of finite theta exceptions
 
-Version6, 2026-09-16.
+Version7,3 October2026. Exact prime-to-p fiber counting replaces
+the earlier bound on the stabilized defect.
 
 Let Q/F_q be an abelian variety, F its q-power Frobenius, and Γ a
 finite group of geometric group automorphisms normalized by Frobenius:
@@ -47,10 +48,15 @@ Choose the norm complement P=((ker Nm_(f^(1)))^0)_red and put
     e=deg(ρ:P→Q)=(n^h/κ)^2,       N=(n M_K)_(p').
 
 Every exceptional prime-to-p character in P lies in P[N]. Its actual
-character cover, of degree N^(2r), reaches the stabilized generic
-defect along the Y-parameter family, at most e_(p')K. This value is
-unchanged for every finite prime-to-p character subgroup containing
-P[N]. If K=0, the bad locus is empty and level N=1 suffices.
+character cover, of degree N^(2r), reaches the EXACT stabilized generic
+defect along the Y-parameter family
+\[
+d_\infty=e_{(p')}\sum_{z\in B_{(p')}}\delta_z\le e_{(p')}K,
+\]
+where B_(p') consists of the bad points of order prime to p, including
+zero if it is bad. This value is unchanged for every finite prime-to-p
+character subgroup containing P[N]. Thus d_infty=0 exactly when
+B_(p') is empty. If K=0, the bad locus is empty and level N=1 suffices.
 For any other complement the same conclusion holds with n replaced
 by an integer annihilator of ker ρ(k); e always suffices.
 No bad-locus finiteness for arbitrary U/Y is asserted.
@@ -76,8 +82,9 @@ Also ker(R−1) is the diagonal E[3]. Every point of B is killed by
 
     M(q,a)=lcm(6,N_+,N_−,D_+/d_+,D_−/d_−).
 
-Outside Q[2]∪ker(R−1), bad points have defect one and form at most
-one free C_6-orbit. Their field degrees are 1,2,3, or 6 according
+EVERY bad point has defect one, by the later all-defect theorem.
+Outside Q[2]∪ker(R−1) they form at most one free C_6-orbit.
+Their field degrees are 1,2,3, or 6 according
 as F acts by I,−I,R^(±1), or −R^(±1).
 
 On the norm complement P≅E^2, put N=(3M(q,a))_(5').
@@ -85,14 +92,15 @@ Every exceptional prime-to-five character α∈P(k), meaning
 ρ(α)∈B, lies in P[N]. The actual character refinement with group
 of characters P[N] has degree N^4 over U and already reaches the
 stabilized generic defect along the Y-parameter family. That defect
-is at most 90 and is unchanged for every finite prime-to-five
-character subgroup Λ containing P[N]. It need not be zero.
+is EXACTLY9|B_(5')|≤90 and is unchanged for every finite prime-to-five
+character subgroup Λ containing P[N]. If nonzero, it is at least18:
+every nonzero C6-orbit has at least two points. Thus no character
+enlargement removes a persistent prime-to-five bad coset.
 
 The bounds depend on the actual finite-field model. Candidate
 membership does not imply badness. Finite bad support is essential;
 no generic-moduli torsion assertion or common-cover exclusion follows.
 [Proof](../../../Proofs/jacobians/theta_divisors/frobenius_exception_sieve.md).
 The audits are scoped to those two lemmas, not the full theorem.
-Version6 uses the independently audited extension of cyclic-triple
-finiteness to nonordinary Y and U; the arithmetic formulas work for
-both ordinary and supersingular E.
+All arithmetic formulas retain their scope for ordinary and
+supersingular E. The exact-count implication has a focused local review.

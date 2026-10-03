@@ -1,6 +1,6 @@
 # Integral source roots remove the critical-lattice case distinctions
 
-30 September2026.
+30 September2026, version3.
 [Statement](../../Theorems/cartier_and_spin/degree_ten_global_corrected_source_energy.md).
 Use the established coefficient spaces and the actual pole profiles;
 no defining programs or incoming certificates are replayed.
@@ -32,7 +32,7 @@ For q this follows also from dq=A^2 dx/y^2, since t divides A and
 the selected points are not cubic branch points. A constant source
 translation removes q(0). The leading coefficient is a unit and all
 source roots split integrally. The
-[cubic-endpoint energy lemma](split_source_cubic_endpoint_energy.md)
+[source quadratic calculus](source_quadratic_calculus.md)
 then gives at most a simple pole for the full corrected expression.
 Multiplication by t removes it.
 
@@ -88,6 +88,25 @@ Together with finite regularity this proves membership in
 H^0(omega_X^2(4O)). Since div(omega0^2)=32O, division by omega0^2
 gives L_X(36O). The three displayed monomial ranges contain13+9+6=28
 elements and give its standard cubic-character basis.
+
+## The twisted-square condition has the same global target
+
+The source quadratic calculus gives
+Qsharp=Tr((dw+3w dq/phi)^2/phi). At ordinary finite points this is
+regular term by term. At the selected linear-v branch, a root of
+pole at most one has phi of pole five and q is regular; dw has pole
+at most two, while w dq/phi is regular. Its square divided by phi
+is regular. Integral roots also contribute regularly. At each fixed
+t-endpoint the square lemma gives a simple pole without any condition
+on critical content; multiplication by t removes it.
+
+At infinity translation invariance allows the same short frame. The
+energy has order at least five by the two moments proved above, and
+dq d(gamma/tau) has order at least five since q,gamma,tau have pole
+orders seven, at most thirteen and twenty-seven. Thus tQsharp has
+pole at most four at O and the same section and L_X(36O) bounds.
+The older corrected expression equals Qsharp-2dq dgamma/tau; this
+identity preserves both conditions rather than identifying them.
 
 ## Computational meaning and precise limitation
 

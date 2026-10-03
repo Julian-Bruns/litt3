@@ -1,48 +1,56 @@
-# An active common oper gives a degree-dependent bound on Witt height
+# An active common oper bounds Witt height by the original degrees
 
-Version1,21 September2026. Fix either selected genus-two endpoint
-$Y/\mathbf F_{q_0}$, with its rational point at infinity. Put
-$Q_Y=q_0^{21760}$, and let $N_q(d)$ be the explicit increasing
-integer function in
-[bounded-degree BT descent](bounded_degree_bt_descent.md).
-The symbol $Q_Y$ is a numerical bound for fields of definition;
-it is not an assertion that every group descends to that one field.
-
-Let $X\xleftarrow f Z\xrightarrow gY_k$ be an ACTUAL common finite
-etale span for the selected genus-nine $X$ and this $Y$, and put
-$n=\deg f$, so $\deg g=8n$. Suppose it admits a common admissible
-ACTIVE projective oper. Then its marked deformation ring is
+Version2,3 October2026. Work over $k=\overline{\mathbf F}_5$ and
+$W=W(k)$. Let $X\xleftarrow fZ\xrightarrow gY$ be two ACTUAL finite
+etale maps of smooth proper connected hyperbolic curves, of degrees
+$n,m$. Suppose they admit matching admissible ACTIVE projective opers,
+the oper on $Y$ is indigenous-ordinary, and
 \[
-R_{f,g}=W(k)/(5^e),\qquad
-\boxed{2\le e\le N_{Q_Y}(128n^2).}
+f^*H^1(X,T_X)\cap g^*H^1(Y,T_Y)=0\quad\text{in }H^1(Z,T_Z).
+\tag{J}
+\]
+Assume the original two-map span has no simultaneous full Witt lift.
+
+Choose an actual BT1 $H_Y$ realizing the oper, over a field
+$\mathbf F_q$ on which $Y$ has a rational point. Put $h=g(Y)$ and
+use $N_{q,h}(d)$ from
+[bounded-degree BT descent](bounded_degree_bt_descent.md).
+Choose a BT1 realization $H_X$ and one connected character cover
+$Z'\to Z$, of degree $c\in\{1,2,4\}$, comparing their ACTUAL first
+periodic data. Then
+\[
+R_{f,g}=W/(5^e),\qquad
+\boxed{2\le e\le N_{q,h}(c^2nm)\le N_{q,h}(16nm).}
 \tag{1}
 \]
-In particular the upper bound depends only on the fixed endpoint
-and the original covering degree, not on a field of definition
-of the span, an auxiliary group, or a comparison marking.
+Every existing simultaneous $W_M$ curve lift produces normalized
+BT$_{M-1}$ groups on the two ORIGINAL endpoints with comparison
+on this SAME $Z'$, retaining the first marking. No new cover is
+introduced at higher levels. A full group on $X$ is not an input.
 
-More precisely, choose actual BT1 realizations of the common oper
-and a single connected character cover $h:Z'\to Z$ of degree
-$c\in\{1,2,4\}$ making them compatible. If its genus-two BT1
-has a model over $\mathbf F_q$, then
+## Uniform bound for the selected endpoints
+
+Fix either selected genus-two $Y/\mathbf F_{q_0}$, with its rational
+point at infinity. A common active oper with its selected genus-nine
+$X$ satisfies (J) and the nonliftability hypothesis; here $m=8n$.
+There are $21760=85\cdot4^4$ actual BT1 classes on this fixed $Y_k$.
+Each has a model over $\mathbf F_{q_0^s}$ for some $1\le s\le2040$:
+the $85$-oper orbit bound combines with the affine symplectic action
+on the four-torsion character torsor, whose order is at most $24$.
+Its unique normalized full tower descends over that SAME field.
+
+Put $Q_Y=q_0^{2040}$ and $N_q(d)=N_{q,2}(d)$. Thus
 \[
-e\le N_q(8c^2n^2).
+\boxed{2\le e\le N_{Q_Y}(128n^2).}
 \tag{2}
 \]
-Every existing simultaneous $W_M$ curve lift produces compatible
-normalized BT$_{M-1}$ groups on the two ORIGINAL endpoints, with
-comparison on this fixed $Z'$. No full group on $X$ or ordinary
-connection on $Z'$ is assumed.
+$Q_Y$ is a numerical bound for field sizes; the period $s$ need
+not divide $2040$. The bound depends only on the fixed endpoint
+and original degree, with no field hypothesis on the span.
 
-The finite-field assertion used here is also useful separately.
-Every one of the $21760$ actual BT1 classes on $Y_k$ has a model
-over $\mathbf F_{q_0^s}$ for some $1\le s\le21760$. Its unique
-determinant-normalized full prolongation descends over the SAME
-field. The field need not grow with the truncation level.
-
-This bounds existing lifts in the active branch. It does not
-produce an active oper, construct the next curve lift, bound $n$,
-or apply to dormant/no-common-connection branches. Both unmarked
-common-cover problems remain UNSOLVED.
+The theorem bounds existing lifts in the active branch. It does
+not produce a common oper, the next curve lift, or a bound on $n$.
+The dormant and no-common-oper branches remain outside its scope.
+The unmarked common-cover problem remains unsolved.
 
 [Proof](../../Proofs/deformations/active_span_witt_bound.md).

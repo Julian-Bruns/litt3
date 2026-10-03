@@ -15,9 +15,9 @@ from pathlib import Path
 def run(output):
     started = time.monotonic()
     root = Path(__file__).resolve().parents[2]
-    source = root/'Research/computations/direct_wronskian_samples.json'
+    source = root/'../litt3-computation-data/legacy_workspace_computations/direct_wronskian_samples.json'
     saved = json.loads(source.read_text())
-    frame_source = root/'Research/computations/canonical_atlas_system.json'
+    frame_source = root/'../litt3-computation-data/legacy_workspace_computations/canonical_atlas_system.json'
     frame = json.loads(frame_source.read_text())
     k = GF(25, name='a', modulus=PolynomialRing(GF(5), 'z')([2,4,1]))
     a = k.gen()

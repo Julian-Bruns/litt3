@@ -1,8 +1,8 @@
 # A finite quotient for the pointed genus-two Frobenius problem
 
-Version3, 16 September2026. The general quotient theorem is independently
-audited. The cubic computation now uses the independently corrected
-dual theta node, replacing the former Richelot-neighbor input.
+Version4, 3 October2026. The quotient and domain theorem is unchanged.
+Later intrinsic dormant results replace the cubic base-algebra calculation
+and prove reducedness throughout the ordinary smooth selected family.
 
 Let k be algebraically closed of characteristic five. On projective
 three-space with coordinates x_i indexed by (Z/2)^2, let G=(Z/2)^4
@@ -52,8 +52,18 @@ This replaces the sixteen planes by one surface and the first
 eighty unstable points, counted with scheme length, by a scheme
 of length five. It gives no automatic uniform bound on the height.
 
-For the actual cubic backup, the corrected exact construction gives
-W and D over F125. Its intrinsic unstable quotient is a single
-reduced closed point of degree FIVE over F125. It is disjoint from
-the first twisted D. The old prototype's factor degrees1,2,2
-belonged to another curve and are superseded by this calculation.
+For every ordinary smooth member
+\(C_a:v^2=u(u-1)(u-2)(u-3)(u-a)\), the intrinsic unstable
+scheme is reduced. Its quotient by two-torsion is canonically the
+finite étale scheme of regular dormant projective connections on the
+curve carrying the pulled-back bundles. Reducedness and the intrinsic
+Galois-equivariant class correspondence identify these finite étale schemes.
+
+For the actual cubic backup, the corrected theta frame gives W and D
+over F125. Its intrinsic unstable quotient is one reduced closed point
+of degree FIVE over F125, disjoint from the first twisted D. The dormant
+quintic proves the residue degree, and the independent polynomial
+first-height test proves disjointness. The old factor degrees1,2,2
+belong to a Richelot neighbor and are not backup evidence.
+
+[Proof](../../Proofs/deformations/pointed_frobenius_quotient.md).

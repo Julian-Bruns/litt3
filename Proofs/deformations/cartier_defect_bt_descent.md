@@ -1,39 +1,33 @@
-# Proof: trace correction preserves the prescribed upstairs object
+# Proof: the absolute class supplies existence, trace supplies prescribed descent
 
 [Statement](../../Theorems/deformations/cartier_defect_bt_descent.md).
-This is local continuation of the returned realization theorem,
-using its all-level extension. No independent audit is claimed.
+Use the later absolute torsor and exact Cartier classification;
+both preserve actual groups and the full lower-level marking.
 
-## Trace on the actual Cartier spaces
+## The absolute class and its relative difference space
 
-At a supersingular point the cover is etale. Taking the trace of
-a function with at most simple poles produces at most a simple pole
-on the base. Elsewhere it preserves regularity. Cartier commutes
-with separable trace on differentials, and the logarithmic form on
-$D$ is the pullback of that on $C$, after the common character cover.
-Consequently
-\[
-C\bigl(\operatorname{Tr}_q(h)\Omega_C\bigr)
-=\operatorname{Tr}_q\bigl(C(h\,q^*\Omega_C)\bigr)=0
-\tag{6}
-\]
-for $h\in K_D$. One can verify this identity after a separable normal
-closure by summing the distinct field embeddings; no division by
-its degree is needed. Since $\operatorname{Tr}_q q^*=d$, formula(1)
-follows. In this formula $d^{-1}$ is in $\mathbf F_5^*$.
+The [absolute extension torsor](versal_bt_extension_torsor.md)
+commutes with actual etale pullback. Its Cartier bundle admits
+coherent trace, with $\operatorname{Tr}_q q^*=d$ on cohomology.
+The supplied next extension $B$ gives $q^*e_N(A_N)=0$.
+Since $d$ is invertible, $e_N(A_N)=0$: an actual normalized
+marked next extension $A$ exists on the original curve.
 
-By [prime-to-five existence descent](prime_to_five_bt_extension_descent.md),
-the given $B$ supplies some next extension $A$ downstairs, retaining
-the complete BT$_N$ marking after determinant normalization. Set
-$h=\Delta_N(q^*A,B)$. Changing $A$ by $a\in K_C$ changes $h$
-by $-q^*a$, so (3) is independent of the choice.
+Cartier commutes with the same pullback and trace. Thus
+$\operatorname{Tr}_q:K_D\to K_C$ and
+$\operatorname{Tr}_q q^*=d$ give the stated direct sum.
+Set $h=\Delta_N(q^*A,B)$. Changing $A$ by $a\in K_C$
+changes $h$ by $-q^*a$, leaving
+$h-d^{-1}q^*\operatorname{Tr}_q h$ unchanged.
+The actual upstairs fiber is a $K_D$-torsor. Therefore this
+projection is onto $K_{D/C}$ and gives its exact dimension.
 
-If (3) vanishes, set $a=d^{-1}\operatorname{Tr}_q h$.
+If $r_q(B)=0$, set $a=d^{-1}\operatorname{Tr}_q h$.
 [Exact realization](versal_bt_cartier_realization.md) gives an actual
 next extension $A'$ with $\Delta_N(A,A')=a$. Then
 \[
 \Delta_N(q^*A',B)=h-q^*a=0.
-\tag{7}
+\tag{1}
 \]
 The actual marked normalized groups are isomorphic, by the all-level
 comparison theorem. Conversely a descended extension provides a
@@ -43,16 +37,23 @@ injectivity of pullback of the difference function.
 
 ## Descending a full tower without changing its upper terms
 
-If $\dim K_D=\dim K_C$, injective pullback and (1) give
+If $\dim K_D=\dim K_C$, injective pullback and the trace decomposition give
 $K_{D/C}=0$. Start with the specified $H$ and comparison
 $q^*H\simeq G_D[5]$. Suppose $A_N$ and
 $q^*A_N\simeq G_D[5^N]$ have been constructed. Regard
 $G_D[5^{N+1}]$ as a next extension via this exact comparison.
-Equations(3)--(7) descend it to $A_{N+1}$, preserving the previous
+The trace correction descends it to $A_{N+1}$, preserving the previous
 whole marked level. The resulting inclusions and multiplication maps
 form a full Barsotti--Tate group. Its pullback is the SPECIFIED $G_D$.
 This induction would be invalid with existence descent alone; the
-realized Cartier correction (7) is what retains the upper object.
+realized Cartier correction (1) is what retains the upper object.
+
+For arbitrary degree with $K_D=0$, injective pullback on functions
+gives $K_C=0$. The ordinary absolute torsor constructs the unique
+next extension of every supplied normalized $A_N$ on $C$.
+Its pullback and the specified upper extension agree because their
+difference lies in $K_D=0$. Induction preserves the given full tower.
+This uses neither a normalized trace nor a Galois closure.
 
 ## The two actual covering maps
 
@@ -61,30 +62,31 @@ For a supplied common admissible active oper, use
 $Z$ it gives
 \[
 f^*H_X\simeq g^*H_Y\otimes\Lambda,
-\tag{8}
+\tag{2}
 \]
 where $\Lambda$ has order dividing four, and $H_Y=G_Y[5]$ for an
 actual normalized full group on $Y$. Lift $\Lambda$ by its finite
 Teichmuller character and put
 \[
 G_Z=g^*G_Y\otimes[\Lambda].
-\tag{9}
+\tag{3}
 \]
 This is a full group on the original source with first level $f^*H_X$.
 The finite character twist changes neither the projective oper nor
 its logarithmic character: the constituent character is multiplied
 by $\Lambda$ and the determinant by $\Lambda^2$, which cancel in
-the logarithmic character $\chi^2\delta^{-1}$. Thus the spaces in
-(4) are exactly those for (9) and $H_X$.
+the logarithmic character $\chi^2\delta^{-1}$. Thus the indigenous Cartier spaces are unchanged.
 
-Apply full prescribed descent to $f$ to obtain $G_X$ with
+Apply either the prime-to-five equal-defect criterion or the
+arbitrary-degree zero-source-kernel criterion to $f$. Both give
+$G_X$ with
 $f^*G_X\simeq G_Z$. A connected source refinement of degree1,2 or4
 trivializes $\Lambda$ and hence its finite Teichmuller lift. On this
 refined source the full groups from the two ORIGINAL endpoints agree.
 [Compatible full-group lifting](compatible_bt_lifting.md) gives a
 simultaneous mixed-characteristic lift and removes the source
-refinement. No simultaneous Galois closure was used. This proves(4)
-and its contrapositive(5).
+refinement. No simultaneous Galois closure was used. This proves the lift
+criterion and its stated necessary conditions for nonliftability.
 
 ## Principal parts and the arbitrary-degree descent test
 
@@ -107,7 +109,7 @@ objects relative to the same local reference by parameters $j_1,j_2$
 from the exact window family. Their polar difference is
 \[
 2\bigl(j_2(0)-j_1(0)\bigr)t^{-1}.
-\tag{10}
+\tag{4}
 \]
 The vanishing of this principal part is coordinate-independent.
 Thus the criterion is a finite matching condition on these local

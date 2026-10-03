@@ -11,7 +11,7 @@ def parse(c):
     return cache[c]
 def mat(rows): return matrix(k,[[parse(c) for c in row] for row in rows])
 paths=['canonical_atlas_system','wronskian_quadratic_bezout','wronskian_serre_dual']
-data=[json.loads(Path('Research/computations/'+p+'.json').read_text()) for p in paths]
+data=[json.loads(Path('../litt3-computation-data/legacy_workspace_computations/'+p+'.json').read_text()) for p in paths]
 canon,bez,dual=data
 Nc=[mat(M) for M in canon['N_tensor']]; Rc=[mat(M) for M in canon['R_tensor']]
 Bc=mat(canon['Bc']); S=mat(dual['S_matrix'])
@@ -95,7 +95,7 @@ out={'scope':'First saved acyclic genus9 oper only. Complete coefficient identit
  'field':'F5[a]/(a^2+4a+2)',
  'identity':'(B Gamma)_(a,b) - delta_(a,b)*(U dot R)/2 = sum_(i,r) c_(a,b,i,r)*U_i*N_r',
  'original_generator_seed_identity':'(B Gamma-I)_(a,b)=sum c*U_i*N_r + delta_(a,b)/2*(sum_i U_i*(R_i-beta_i)+(U dot beta-2))',
- 'source_sha256':{p:hashlib.sha256(Path('Research/computations/'+p+'.json').read_bytes()).hexdigest() for p in paths},
+ 'source_sha256':{p:hashlib.sha256(Path('../litt3-computation-data/legacy_workspace_computations/'+p+'.json').read_bytes()).hexdigest() for p in paths},
  'coefficient_matrix_shape':[2048,16896], 'coefficient_matrix_rank':rank,
  'all_576_by_16896_coefficients_verified':True,'seed_homogeneous_rank':hrank,'seed_affine_rank':len(basis),
  'seed_nonzero_terms':sum(counts)+24,'seed_terms_per_equation':termcounts,
@@ -104,5 +104,5 @@ out={'scope':'First saved acyclic genus9 oper only. Complete coefficient identit
  'basis_entries':[row['matrix_entry'] for row in rows], 'basis_certificates':rows,
  'basis_multiplier_nonzeros':multiplier_nonzeros,
  'elapsed_seconds':time.monotonic()-t0,'maxrss_bytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}
-Path('Research/computations/inverse_cup_seed_certificate.json').write_text(json.dumps(out,indent=2,default=int)+'\n')
+Path('../litt3-computation-data/legacy_workspace_computations/inverse_cup_seed_certificate.json').write_text(json.dumps(out,indent=2,default=int)+'\n')
 log('saved certificates',len(rows),'maxrss',out['maxrss_bytes'])

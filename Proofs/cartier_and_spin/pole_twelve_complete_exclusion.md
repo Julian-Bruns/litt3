@@ -155,9 +155,9 @@ nongap divisors of12 are3 and6, already excluded. Hence the assertion
 also holds on arbitrary actual common sources.
 
 All smaller allowable poles have been excluded by
-[small supported norms](small_supported_norm_functions.md) and their
-dependencies. Pole thirteen is excluded in every degree by
-[its exact norm theorem](pole_thirteen_norm_exclusion.md).
+[small supported norms](marked_divisor_relation_lattice.md) and their
+dependencies. The same lattice excludes pole thirteen in every degree:
+a polynomial in x has pole order divisible by three.
 Fourteen is not in the pole semigroup<3,10>. Thus the first possible
 nonconstant comparison pole is fifteen. Since its degree is at most
 the degree of either actual etale leg, covering degrees at most14

@@ -258,7 +258,7 @@ The local calculation puts $\Delta$ in $H^0(\mathcal O_C(S))$. The
 has made $\Delta$ injective. If its character is unramified, it cannot
 have a simple pole: a nonzero simple pole has nonzero local
 Artin--Schreier class. Hence $\Delta$ is globally regular, and the
-[global Kummer argument](versal_bt2_extension_quotient.md) makes it
+[global Kummer argument](versal_bt_display_descent.md) makes it
 zero. This proves injectivity of the character as well and excludes
 nonzero unramified differences. Arbitrary functions $c^5-c$ can have
 zero character, but their poles have orders divisible by five;

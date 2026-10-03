@@ -53,7 +53,7 @@ Frobenius yields an actual cover of C. No identification of a torsion
 line with its fifth power is needed. Covers may equivalently be described
 by either character convention, since inversion permutes the labels.
 
-## 3. The two classical inputs, with their exact hypotheses
+## 3. Theta divisors and good subgroups
 
 For any positive-rank vector bundle B on a smooth curve with chi(B)=0,
 let D_B={L in J:h^0(B tensor L)>0}. Either D_B=J, or D_B is the support
@@ -71,13 +71,6 @@ a proper theta divisor is being used.
 says that a divisor D on a Jacobian admits an order-ell subgroup meeting
 D only possibly at0 when ell!=p and ell+1>D·C_Abel.
 
-Over a finite-field algebraic closure, for a locally closed irreducible
-subvariety U GENERATING an abelian variety A, and any finite prime set S,
-[Poonen, Lemma6.6](https://math.mit.edu/~poonen/papers/multiples.pdf)
-gives U(k)+A(k){R}=A(k) for some prime set R disjoint from S. Apply to0
-after deleting0 from U: one obtains a nonzero point of U whose order
-avoids S.
-
 ## 4. Good subgroups, with an explicit bound
 
 Apply Section3 to the finite collection B_i of tangent bundles. Each
@@ -93,59 +86,46 @@ If the family is empty the assertion is immediate from any nonzero
 order-ell line. This proof imposes no condition on the Jacobian or on k
 beyond the stated algebraic closure and characteristic.
 
-## 5. Bad subgroups, with no fixed set of allowable primes
+## 5. One section-growth theorem gives all bad refinements
 
-Now k=bar(F_5) and J is simple. For every B_i, its bad locus is either
-all J or a nonempty divisor by Section3. A component of the divisor has
-dimension g−1>=1. On a simple abelian variety its nonempty opens generate
-J: no such open can be contained in a translate of a proper abelian
-subvariety. Poonen therefore supplies a nonzero bad character of order
-coprime to any prescribed finite prime set. The same argument works for
-the whole-J case. All data descend to a finite field after a finite
-constant extension; geometric simplicity and the locally closed condition
-are preserved. No simultaneous finite field for the infinite tower is needed.
+For k=bar(F_5), apply the
+[simultaneous section-growth theorem](../jacobians/ordinary_covers/prime_avoiding_section_growth.md)
+to the finite collection B_i on C^(1). Its generating-locus hypothesis
+is precisely the general condition in Section3. If J(C) is simple,
+every positive-dimensional component of a proper theta locus generates
+it; if the bad locus is all J, use J itself. Section3 above supplies a
+nonempty divisor whenever the bad locus is proper. Formula(1) identifies
+the resulting section growth with the actual tangent growth. Relative
+Frobenius transports the cyclic covers back to C, preserving their
+degrees, nestedness and character decompositions. This proves(3).
 
-Enumerate the finite collection. At stage j, choose one bad character
-L_(j,i) for each B_i, adjoining the prime divisors of each chosen order
-to the avoided set before the next choice. All chosen orders are>1 and
-pairwise coprime. Their character group through stage j is consequently
-cyclic of order the product N_j. Its actual connected Kummer cover of
-C^(1), and inverse Frobenius transport to C, gives C_j. These can be
-chosen compatibly so C_j→C_(j−1) has the product of the new orders as its
-degree. Successive degrees are pairwise coprime and avoid the original S.
+For the two-leg assertion work instead on C_0=Z_0^(1), with every
+actual pulled-back bundle h^(1)*B_r from BOTH endpoints. If A is the
+endpoint abelian subvariety and T its generating bad locus, then
+\[
+A_0=h^{(1)*}A,\qquad T_0=h^{(1)*}T
+\]
+satisfy the same hypothesis on C_0. Indeed
+Nm_h h^*=[deg h] makes h^* finite onto its image, even when5 divides
+deg h. Thus T_0 is irreducible and positive-dimensional. If T_0 lay
+in a translate of a proper abelian subvariety of A_0, its inverse
+image would be a finite union of translates of a proper abelian
+subvariety of A. Irreducibility would put T in one of them, contradicting
+its generating property. Every nonzero twisted coefficient section
+remains nonzero under the actual finite surjective pullback, so T_0
+lies in the bad-character locus of h^(1)*B_r.
 
-For B_i, its j selected bad characters and the identity are distinct
-summands of(1). The identity contributes h^0(B_i), each selected character
-at least one. This proves(3). The proof only uses the generating-component
-condition, giving the more general formulation. No simplicity claim for
-the Jacobians of the growing covers is necessary: every character is
-chosen on the ORIGINAL C^(1).
+Apply the same finite-family theorem ONCE on C_0 to all these bundles.
+Its identity-character summands retain the entire original section
+spaces on Z_0, and each new character adds at least one dimension.
+Tangent functoriality from Sections1/2 proves(6), including an active
+canonical double that splits on Z_0 or later. Relative Frobenius gives
+actual cyclic covers Z_j→Z_0; composition preserves both original
+finite etale maps from this SAME source. No endpoint tower, compositum,
+Galois closure or division by a leg degree is needed. The finite prime
+set is arbitrary; joint minimality and corelessness need not persist.
 
-## 6. Simultaneous growth while retaining both actual maps
-
-Start with the specified actual Z_0→X,Y. Add the prime divisors of both
-leg degrees to S. Apply the previous construction to both endpoint
-families, choosing ALL characters across BOTH endpoints with pairwise
-coprime orders, by enlarging S after every choice. Let X_j→X,Y_j→Y be
-the two resulting cyclic towers. The orders of these covers are coprime
-to each other and to both original leg degrees.
-
-The pullback Z_0×_X X_j is connected: a cyclic Galois extension of degree
-coprime to[k(Z_0):k(X)] is linearly disjoint from k(Z_0). The analogous
-Y-pullback is connected. Their compositum over Z_0 is again connected
-and cyclic, since its two Galois groups have coprime orders. Call this
-smooth projective etale curve Z_j. It surjects etale onto both X_j and
-Y_j. Pullback of regular quadratic tangent vectors is injective and
-preserves the relevant curvature equation. Thus every endpoint defect
-on Z_j is at least the already established defect on its endpoint cover,
-hence at least j. Nestedness follows from the chosen nested character groups.
-
-The finite avoided prime set can contain any user-prescribed primes.
-This constructs actual cyclic refinements above every chosen Z_0, not
-just an abstract direct sum of representations or one-leg Jacobian data.
-Minimality and corelessness of a presentation are NOT preserved or needed.
-
-## 7. Recovering the connection and its canonical double from the bundles
+## 6. Recovering the connection and its canonical double from the bundles
 
 The stable bundles V_r,V_s have equal slopes, so a nonzero morphism is
 an isomorphism. Pull it back by Frobenius. Cartier descent gives a

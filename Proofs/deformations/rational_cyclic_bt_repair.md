@@ -82,7 +82,7 @@ contains all coefficients and reports PASS. This is an author check;
 no new independent audit of the model is claimed.
 
 The [actual BT2 repair theorem](etale_p_witt_obstruction.md), together
-with [group effectivity and obstruction comparison](explicit_bt2_descent_failure.md),
+with [group effectivity and obstruction comparison](etale_p_witt_obstruction.md),
 applies to every geometric cyclic-five cover, hence to (1). No
 additional higher-Witt calculation is hidden in this specialization.
 The source equation is exactly the older fourth-obstruction cover.

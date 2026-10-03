@@ -63,6 +63,42 @@ differentiation gives zeta=u dg=2df/z^2 and, for w=z/u,
 zeta=dw-w dlog u. Its simple zeros E make w separable, with
 pole divisor5G and degree5n. Properness makes dlog u regular.
 
+## A regular logarithmic differential detects the exact annihilator divisor
+
+Fix the actual source q and a nonzero a in H^0(S,O(10H)). Logarithmic
+differentials have at most simple poles. At a point P the residue of
+nu_a=4 da/a-dq/q is4 ord_P(a)-ord_P(q), in characteristic five.
+Consequently regularity is equivalent to
+\[
+\operatorname{ord}_P(a)\equiv2\,\mathbf1_{P\in E}\pmod5
+\quad\text{at every }P.
+\]
+At every finite point a is regular. Hence its order is at least two
+on E and at least zero elsewhere. The divisor H is reduced because h
+is etale. At a point of H the pole bound gives ord_P(a)>=-10.
+The congruence therefore improves this to at least-8 on E intersect H,
+and leaves at least-10 on the other points of H. These are precisely
+the coefficients of2E-10H. Thus div(a)-(2E-10H) is effective. It has
+degree zero and therefore vanishes. The converse follows immediately
+from the same residue computation.
+
+The proved divisor of a gives directly
+\[
+\operatorname{div}(aq)=5(E-G-4H)=5T.
+\]
+Since4=-1 in characteristic five, nu_a=-dlog(aq). If nu_a=0,
+the function aq is a fifth power over the perfect constant field and
+T is principal. Conversely if T is principal, comparison with a
+function having divisor T makes aq a fifth power times a constant.
+The constant has a fifth root in k. Hence nu_a=0 exactly when T
+is principal. The global frame (aq)^(-1) of the Frobenius pullback
+of O_C(T^(1)) has precisely this canonical connection form.
+Finally, after z^2=a, one has4 da/a=8 dz/z=3 dz/z in
+characteristic five. Therefore nu_a=dlog(z^3/q), with the same
+normalization as the preceding small-pole construction. There is no
+additional separable-map or source-existence assertion in this test.
+
+
 ## The fixed-divisor extension and its persistence
 
 Q_D is the elementary modification selecting lambda at D.

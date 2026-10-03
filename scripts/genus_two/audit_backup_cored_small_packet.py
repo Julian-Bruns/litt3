@@ -2,13 +2,13 @@
 """Bounded independent assembly checks for the backup small-signature audit.
 
 Run with sage -python. This verifies the numerical census independently,
-the complete double-cover Cartier list, original certificate/replay linkage,
-and the complete tame/wild exclusion partition. It does not replace the
+original certificate/replay linkage and the complete tame/wild partition.
+Lower two-character ordinarity is now supplied by the maximal-two theorem. It does not replace the
 geometric arguments in BACKUP_CORED_COMPLETION_AUDIT_2026_09_11.md.
 """
 import argparse
 from fractions import Fraction
-from itertools import combinations, combinations_with_replacement
+from itertools import combinations_with_replacement
 import hashlib
 import json
 from pathlib import Path
@@ -50,7 +50,7 @@ for fresh, old in [
     ("twisted", "backup_genus_two_twisted_tangents"),
 ]:
     a = OUT / (fresh + ".json")
-    b = ROOT / "Research/computations" / (old + ".json")
+    b = ROOT / "../litt3-computation-data/legacy_workspace_computations" / (old + ".json")
     assert semantic(read(a)) == semantic(read(b)), fresh
     links[fresh] = {"replay": str(a), "input": str(b),
                     "replay_sha256": hashlib.sha256(a.read_bytes()).hexdigest(),
@@ -122,24 +122,6 @@ u = ring.gen()
 F = u * (u - 1) * (u - 2) * (u - 3) * (u - a)
 dec = lambda co: sum((k(c) * a**i for i, c in enumerate(co)), k.zero())
 poly = lambda coefficients: ring([dec(co) for co in coefficients])
-double_path = ROOT / "Research/computations/backup_genus_two_double_covers.json"
-double_data = read(double_path)
-branches = [k(0), k(1), k(2), k(3), a, None]
-seen = set()
-for row in double_data["covers"]:
-    pair = tuple(row["branch_pair_indices"])
-    assert pair not in seen
-    seen.add(pair)
-    A = ring.one()
-    for index in pair:
-        if branches[index] is not None:
-            A *= u - branches[index]
-    B, remainder = F.quo_rem(A)
-    assert remainder == 0 and A.degree() in (1, 2) and B.degree() in (3, 4)
-    assert A == poly(row["A_coefficients"]) and B == poly(row["elliptic_B_coefficients"])
-    assert A.gcd(B) == 1 and A.is_squarefree() and B.is_squarefree()
-    assert (B**2)[4] == dec(row["elliptic_Hasse_invariant"]) != 0
-assert seen == set(combinations(range(6), 2))
 
 weil = prep["arithmetic"]["Weil_polynomial_coefficients"]
 values = [sum(int(c) * sign**i for i, c in enumerate(weil)) for sign in (1, -1)]
@@ -176,14 +158,12 @@ for order in [24, 36]:
 four = read(OUT / "four_torsion_verify.json")
 assert four["status"].startswith("PASS") and four["order4_twisted_kernel_cases_verified"] == 1200
 assert four["certificate_sha256"] == hashlib.sha256(
-    (ROOT / "Research/computations/backup_genus_two_four_torsion.json").read_bytes()).hexdigest()
+    (ROOT / "../litt3-computation-data/legacy_workspace_computations/backup_genus_two_four_torsion.json").read_bytes()).hexdigest()
 
 result = {"status": "PASS scoped backup cored small-packet assembly",
           "tame_count": 24, "wild_count": 12, "large_count": 2,
           "tame_partition": partition, "small_wild_partition": wild_partition,
           "fresh_replay_links": links,
-          "double_input_sha256": hashlib.sha256(double_path.read_bytes()).hexdigest(),
-          "double_covers_independently_rebuilt": 15,
           "one_point_orders_original_identities": [24, 36],
           "one_point_two_primary_Frobenius_valuations": two_adic_valuations,
           "frobenius24_remainder_mod27": frobenius24_remainder_mod27,

@@ -1,126 +1,71 @@
-# Proof: graph intersections bound short actual-map relations
+# Proof: retain the entire three-graph triangle
 
-[Statement](../../../Theorems/jacobians/isogeny_sieves/fixed_x_short_map_relations.md).
-The new argument passed an
-[independent audit](../../../Research/audits/SHORT_ACTUAL_MAP_RELATIONS_INDEPENDENT_2026_09_22.md).
-Both original common-cover problems remain open.
+We prove a general graph bound, then specialize its short-relation
+consequences to the fixed X. The older
+[independent audit](../../../Research/audits/SHORT_ACTUAL_MAP_RELATIONS_INDEPENDENT_2026_09_22.md)
+covers the fixed-X trace normalization, positivity and five-field
+arguments. The new rank deductions use tensor Gram matrices.
 
-There is a new short-relation constraint: norms from up to FIVE
-distinct embedded X-fields are linearly independent over
-E=Q(zeta3). In particular, a relation with three nonzero coefficients
-whose ratios belong to E forces all three fields to coincide.
-This uses intersections with the three actual automorphism graphs,
-not only disjointness of the pulled-back one-form spaces.
+## 1. The general graph and independence bound
 
-For a literal sum of three Abel--Jacobi maps, the unique trigonal
-pencil gives the exact answer: the three maps form one cubic orbit.
-Arbitrary CM-weighted sums, and a relation involving just one form
-from each nine-space, are different questions and remain outside
-this conclusion.
+Use the notation of the statement. The rational quotient gives
+1+zeta+zeta²=0, so E=Q(zeta3). Rosati sends zeta to zeta² and,
+on the number field K, is complex conjugation. In particular K
+is CM. By [Milne, Section12, Proposition12.12](https://www.jmilne.org/math/xnotes/AVs.pdf#page=24),
+H1(A,Q_ell) has rank s=2g/[K:Q]=g/a over K tensor Q_ell,
+and its trace on b in K is s*Tr_(K/Q)(b).
 
-## Inputs and inventory
+Write u_i=(h_i)_*, v_i=h_i^*, and H_ij=s*Tr_(K/E)(u_i v_j).
+Norm-pullback gives H_ii=gd; adjunction gives H_ji=conjugate(H_ij).
+For i!=j, let Gamma_ij be their reduced joint image in X times X,
+and let c be the degree from T to its normalization. Its
+bidegrees are d/c. Distinct embedded fields make Gamma_ij
+different from each graph of gamma^e.
 
-Work over k=bar(F5). Let X be the fixed genus-nine cyclic trigonal
-curve, A=J(X), and gamma its cubic deck automorphism. Let zeta be
-the induced automorphism gamma_* of A. The established inputs are
+The bilinear Kunneth intersection formula gives
 \[
-\operatorname{End}^0(A)=K,\qquad [K:\mathbf Q]=18,\qquad
-E=\mathbf Q(\zeta)\subset K,\qquad [K:E]=9,
-\quad1+\zeta+\zeta^2=0.
-\tag{1}
-\]
-Rosati on K is complex conjugation, and Aut(X)=<gamma>.
-The [endomorphism-packet theorem](../../../Theorems/jacobians/isogeny_sieves/etale_endomorphism_packets.md)
-also gives K intersect Q^ab=E.
-
-The moving degree-three divisor argument already occurs in
-[degree-five trace descent](../../../Proofs/quotient_geometry/degree_five_trace_descent.md)
-for the degree-three norm case. The three graph intersections occur
-in [cubic packet rigidity](../../../Proofs/quotient_geometry/cubic_packet_map_rigidity.md)
-for a cyclic orbit. Here the latter calculation is applied to an
-arbitrary same-source family, and then traced only from K to E.
-No deck orbit or common finite Galois source is needed for the
-short-relation theorem.
-
-## 1. A bound from actual graph intersections
-
-Let h_1,...,h_N:T->X be actual finite etale maps from the SAME smooth
-proper connected curve. They all have the same degree
-d=(g(T)-1)/8. Assume their embedded fields F_i=h_i^*k(X) are pairwise
-distinct. Write
-\[
-u_i=(h_i)_*:J(T)\to A,\qquad v_i=h_i^*=u_i^\dagger,
-\quad b_{ij}=u_iv_j\in K,
-\quad H_{ij}=\operatorname{Tr}_{K/E}(b_{ij})\in E.
-\tag{2}
-\]
-Then
-\[
-H_{ii}=9d,\qquad H_{ji}=\overline{H_{ij}},\qquad
-|H_{ij}|\le2d\quad(i\ne j),
-\tag{3}
-\]
-where either complex embedding of E can be used for the modulus.
-
-To verify the normalization, let Gamma_ij be the reduced joint image
-of (h_i,h_j) in X x X, and c the degree from T to its normalization.
-The two bidegrees of Gamma_ij are d/c. It is distinct from every
-graph of gamma^e, since F_i and F_j are distinct. The three
-intersection numbers, as e ranges through 0,1,2, are
-\[
-\frac{2d-\operatorname{Tr}_{K/\mathbf Q}
-                    (\zeta^e b_{ij})}{c}\ge0.
-\tag{4}
-\]
-Reversing the correspondence convention just permutes the three
-values. This is the bilinear graph formula in the cited proof.
-The factor c remains in the denominator; it is positive and does
-not change the upper bound 2d. Thus normalization degree greater
-than one is allowed.
-
-The H1 trace is Tr_(K/Q), with no additional multiplicity: H1(A)
-has rank one over K. Since E is imaginary quadratic, (4) says
-\[
-\operatorname{Re}(\zeta^e H_{ij})\le d\qquad(e=0,1,2).
+0\le\Gamma_{ij}\cdot\operatorname{Graph}(\gamma^e)
+=\frac{2d-\operatorname{Tr}(\zeta^e u_i v_j\mid H^1(A))}{c}
+=\frac{2d-2\operatorname{Re}(\zeta^eH_{ij})}{c},
 \tag{5}
 \]
-For any complex number z, one of its rotations by these three
-cube roots has real part at least |z|/2. Hence (5) gives exactly
-|H_ij|<=2d. Equivalently its three half-planes bound the triangle
-with vertices -2d,-2d zeta,-2d zeta^2. This proves (3).
+up to reindexing e. This is the general correspondence calculation
+in [Rosati factorization, Section1](etale_rosati_factorization.md#1-normalize-the-same-source-image).
+Only that bilinear intersection identity is used here; neither
+map is assumed etale. The formula and its inequality require only
+that the joint image differ from the three graphs; distinct fields
+are a sufficient condition. The positive cycle factor c is retained,
+including a singular joint image. Distinct effective divisors
+on a smooth surface have nonnegative intersection.
 
-## 2. Independence through five distinct fields
-
-For any r of the maps and any c_1,...,c_r in C, (3) gives
+Hence the three rotations satisfy Re(zeta^e H_ij)<=d. Their
+half-planes form the triangle with vertices -2d zeta^e,
+whose radius is2d. For R of the maps and coefficients c_i in C,
 \[
-\begin{aligned}
 \overline c^{\,t}Hc
-&\ge9d\sum_i|c_i|^2-4d\sum_{i<j}|c_i||c_j|\\
-&\ge\bigl(9-2(r-1)\bigr)d\sum_i|c_i|^2.
-\end{aligned}
+\ge\bigl(g-2(R-1)\bigr)d\sum_i|c_i|^2.
 \tag{6}
 \]
-Here 2 sum_(i<j)|c_i||c_j| <= (r-1) sum_i|c_i|^2.
-For r<=5 the lower bound is strictly positive unless c=0.
+This follows by bounding each off-diagonal modulus by2d and
+using 2 sum_(i<j)|c_i||c_j|<=(R-1)sum|c_i|².
+If R<=ceil(g/2), the lower bound is positive for c!=0.
+An E-linear relation among the norms gives zero squared Rosati
+norm, hence zero traced quadratic form. Thus all its coefficients
+vanish. Rational denominators can be cleared; no identity is
+reduced modulo the ground-field characteristic.
 
-Suppose sum_i a_i u_i=0 with a_i in E. Taking adjoints gives
-sum_i v_i conjugate(a_i)=0. Its squared Rosati norm, traced from
-K to E, is c^*Hc=0 with c_i=conjugate(a_i). Equation (6) forces
-every a_i=0. All identities are in rational Hom groups; denominators
-can be cleared before invoking them. None is reduced modulo five.
+## 2. Fixed-X short relations and coincident fields
 
-We have proved
-\[
-\boxed{r\le5,\quad F_1,\ldots,F_r\text{ distinct}
-\quad\Longrightarrow\quad
-u_1,\ldots,u_r\text{ are E-linearly independent}.}
-\tag{7}
-\]
+Now specialize to the fixed genus-nine X. Its established
+[endomorphism field](etale_endomorphism_packets.md) has [K:E]=9,
+so s=1, and Aut(X)=<gamma>. For actual etale maps,
+d=(g(T)-1)/8. Section1 proves independence through five distinct
+fields.
 
 Equal embedded X-fields mean that the corresponding maps differ
 by one of the three actual automorphisms of X. Their norms therefore
 differ by powers of zeta, which belong to E. Grouping terms by fields
-in a relation supported on at most five fields, (7) makes each
+in a relation supported on at most five fields, independence makes each
 field's grouped coefficient vanish separately.
 
 In particular, if THREE maps satisfy
@@ -132,7 +77,7 @@ a_1u_1+a_2u_2+a_3u_3=0,\qquad a_i\ne0,
 then all three embedded fields coincide. Cancel the common nonzero
 K-scalar a_1 first. If there were two fields, one field would have
 only one term and its nonzero coefficient could not vanish; three
-fields are excluded by (7). This includes arbitrary nonzero integer
+fields are excluded by independence. This includes arbitrary nonzero integer
 coefficients and any common CM multiple of E-coefficients.
 
 An integral Rosati-unit coefficient satisfies a^dagger a=1. Its
@@ -179,40 +124,66 @@ and their coefficients are all equal. Exactly two distinct maps
 cannot give such a three-term relation with every coefficient
 nonzero. In particular u_1+u_2-u_3=0 is impossible.
 
-## 4. A bounded multiplicity consequence
+## 4. A stronger rank bound from the cubic tensor
 
-Let m be the geometric multiplicity of A in J(T). The K-space
-Hom^0(A,J(T)) has dimension m. Restrict scalars to E and use the
-Hermitian form Tr_(K/E)(v^dagger w). It has E-dimension 9m. For a nonzero v its diagonal is rational,
-being fixed by conjugation on E, and equals
+Return to the general setup, and let m be the multiplicity of A
+in J(T). The K-space Hom^0(A,J(T)) has dimension m, and its
+E-dimension is am. Its Hermitian form
+Q(v,w)=s*Tr_(K/E)(v^dagger w) is positive definite at either
+embedding of E. Indeed
 \[
-\operatorname{Tr}_{K/E}(v^\dagger v)
-=\tfrac12\operatorname{Tr}_{K/\mathbf Q}(v^\dagger v)>0.
+Q(v,v)=\tfrac12\operatorname{Tr}(v^\dagger v\mid H^1(A))>0
+\quad(v\ne0)
 \]
-Apply Rosati positivity on the polarized product A times J(T);
-see [Milne, Theorem17.3](https://www.jmilne.org/math/xnotes/AVs.pdf).
-In an E-basis, density of E in C makes the Hermitian matrix
-positive semidefinite at either embedding. A singular matrix over
-E would have a nonzero E-kernel, contradicting the strict positivity
-just proved. Thus it is positive definite at the chosen embedding. Thus H is a positive semidefinite
-Gram matrix and rank_E H<=9m.
+by [Rosati positivity](https://www.jmilne.org/math/xnotes/AVs.pdf),
+Theorem17.3, applied on A times J(T). Density of E in C gives
+positive semidefiniteness after extension. A singular matrix
+over E would have a nonzero E-kernel, contradicting strict
+positivity. Therefore H is a positive semidefinite Gram matrix
+of rank r<=am.
 
-Its nonzero eigenvalues and (3) give
+Normalize G=H/(gd), so G_ii=1 and |G_ij|<=2/g. Cauchy--Schwarz
+on its nonzero eigenvalues gives r>=N²/tr(G²). The radius bound
+gives tr(G²)<=N+(4/g²)N(N-1), proving the first part of(2).
+
+For any off-diagonal entry z=H_ij/d, retain all three half-planes:
 \[
-\operatorname{rank}_E H
-\ \ge\ \frac{(\operatorname{tr}H)^2}{\operatorname{tr}(H^2)}
-\ \ge\ \frac{81N}{4N+77},\qquad
-\operatorname{rank}_E H\le9m.
-\tag{11}
+0\le\prod_{e=0}^2(1-\operatorname{Re}(\zeta^e z))
+=1-\tfrac34|z|^2-\tfrac14\operatorname{Re}(z^3).
 \]
-Indeed tr H=9dN and tr(H^2)<=d^2 N(4N+77). Hence N>154 forces
-m>=3. This holds for any such actual same-source family, without
-a Galois hypothesis. The lower bound tends to 81/4; it does NOT
-give unbounded multiplicity or a growing-rank solution.
+Equivalently 3g²|G_ij|²+g³Re(G_ij³)<=4. The entrywise cube
+G^(circle3) is the Gram matrix of the third tensor powers of
+vectors realizing G; hence it is positive semidefinite and
+sum_(i,j)Re(G_ij³)>=0. Summing the displayed inequality off
+the diagonal, whose contribution is g²(g+3)N, gives
+\[
+3g^2\operatorname{tr}(G^2)
+\le4N^2+\bigl(g^2(g+3)-4\bigr)N.
+\]
+Combine with r>=N²/tr(G²) to prove the second bound in(2).
+For g=a=9, that bound exceeds18 exactly when N>17424/171,
+so the new integer threshold is102.
 
-Focused verification: checked the normalization factor c, the full
-H1 versus relative field traces, the triangle radius 2d, the
-five-vector lower bound, the rank threshold 154, and the distinction
-between homomorphism identities and differentials. The
-[independent audit](../../../Research/audits/SHORT_ACTUAL_MAP_RELATIONS_INDEPENDENT_2026_09_22.md)
-checks all these points, including positivity at the chosen E-embedding.
+## 5. Tensor powers force growing multiplicity
+
+For each k>=1, the entrywise power G^(circle k) is the Gram
+matrix of the k-th tensor powers. They lie in Sym^k(C^r), of
+dimension B_k=binom(r+k-1,k). Its diagonal is one and its
+off-diagonal squared moduli are at most(4/g²)^k. The same
+trace-square estimate gives
+\[
+B_k\ge\operatorname{rank}G^{\circ k}
+\ge\frac{N}{1+(N-1)(4/g^2)^k},
+\]
+which is(3). Whenever B_k(4/g²)^k<1, rearranging yields
+N<=B_k(1-(4/g²)^k)/(1-B_k(4/g²)^k).
+
+Take k=r. Then B_r=binom(2r-1,r)<=4^r/2 and, since g>4,
+B_r(4/g²)^r<1/2. Thus N<2B_r<=4^r<=4^(am),
+proving(4). This is an unbounded multiplicity conclusion
+conditional on an unbounded supplied family of distinct fields.
+
+All arguments concern maps from the SAME actual curve T.
+They do not prove that a field orbit is unbounded, construct
+a simultaneous Galois closure, or replace either actual etale
+leg of the original common-cover problem.

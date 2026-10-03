@@ -1,7 +1,7 @@
 # A forced fourth endpoint jet and the degree40 exclusion
 
 Version1, 26 September2026. Retain the actual same-source V4
-hypotheses of [trace descent](klein_four_trace_branch_finiteness.md).
+hypotheses of [trace descent](quartic_trace_obstruction.md).
 Use the coefficient convention beta^2=beta+3, ascending rows,
 P=(11,22,18,5,19,20,15,16,9,22,1), A=(1,21,14,22,13).
 

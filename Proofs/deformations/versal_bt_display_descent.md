@@ -65,6 +65,40 @@ comparison. The discrepancy of any marked isomorphism on a connected
 cover is a constant in $1+p\mathbf Z/p^N$ and has a unique scalar
 square-root correction.
 
+## The intrinsic ordinary comparison at every last digit
+
+Trivialize the two ordinary constituents etale-locally. An actual
+ordinary BT$_{N+1}$ is determined by its torsor over the constant
+generator; multiplication and the exponent condition supply its
+Kummer group law. Trivializing that torsor's line gives a unit
+parameter modulo $p^{N+1}$th powers, as in
+[Howe, Section3.2, Lemma3.2.1 and Remark3.2.5](https://arxiv.org/pdf/2003.11129).
+Only a local finite-level parameter is used: Remark3.2.4 excludes
+a general global full-group parameter. The supplied common BT$_N$
+permits $q_B=q_A r^{p^N}$.
+Versality makes $\eta=d\log q_A$ nowhere zero. Put
+$c=d\log r/\eta$. Changing constituent lifts changes $c$ by an
+element of $\mathbf F_p$; their opposite exponents permit every
+such change because two is invertible. Thus $c^p-c$ is intrinsic.
+For three groups the $r$'s multiply and their $\eta$'s agree, so
+these differences add. All formulas commute with etale pullback.
+
+If $c^p-c=0$, then locally $c=a\in\mathbf F_p$ and
+$d\log(rq_A^{-a})=0$. The differential kernel on a smooth ring
+over $k$ consists of $p$th powers, so $r=q_A^a v^p$ locally.
+The constituent exponents $1\pm p^Na/2$ remove $q_A^{p^Na}$,
+preserving determinant and the entire BT$_N$ marking; the remaining
+$p^{N+1}$th power changes no group. The unique comparisons from the
+generic scalar calculation glue. Conversely an actual marked
+comparison gives zero difference.
+
+If $\Delta_N$ is regular on the proper curve, it is a constant.
+The equation $c^p-c=\Delta_N$ makes each local $c$ constant.
+Both $\eta$ and $c\eta=d\log r$ are Cartier-fixed, whence
+$c^{1/p}=c$ and $\Delta_N=0$. This basic comparison uses no integral
+realization or Ext quotient; it is the common input for their later
+exact theorems.
+
 ## Separable descent
 
 Let $D\to C$ be finite separable and carry this corrected isomorphism.

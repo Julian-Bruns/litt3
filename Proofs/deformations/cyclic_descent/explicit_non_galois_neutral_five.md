@@ -107,14 +107,14 @@ statement. It does not constrain the next obstruction on T3.
 
 ## Reproduction
 
-    sage -python scripts/deformations/cyclic/explicit_nonordinary_dihedral5.py --output Research/computations/explicit_nonordinary_dihedral5.json
-    sage -python scripts/deformations/cyclic/analyze_dihedral5_hodge.py --input Research/computations/explicit_nonordinary_dihedral5.json --output Research/computations/explicit_nonordinary_dihedral5_fitting.json
+    sage -python scripts/deformations/cyclic/explicit_nonordinary_dihedral5.py --output ../litt3-computation-data/legacy_workspace_computations/explicit_nonordinary_dihedral5.json
+    sage -python scripts/deformations/cyclic/analyze_dihedral5_hodge.py --input ../litt3-computation-data/legacy_workspace_computations/explicit_nonordinary_dihedral5.json --output ../litt3-computation-data/legacy_workspace_computations/explicit_nonordinary_dihedral5_fitting.json
 
 Producer:7.40s for all fifteen covers. Independent first and enlarged
 window replays, including semilinear diagnostics:8.03s and8.28s. Receipts are
 `explicit_nonordinary_dihedral5_audit.json` and
 `explicit_nonordinary_dihedral5_audit_window24.json` in
-Research/computations. The independent script is
+../litt3-computation-data/legacy_workspace_computations. The independent script is
 scripts/deformations/cyclic/audit_explicit_nonordinary_dihedral5.py.
 
 All finite-field coefficients, branch resolvents, AS equations and
@@ -164,5 +164,5 @@ The blocks have entries [s^(5j-i)]A_T*G² and[s^(5j-i)]A_T and ranks
 10and4. Exact rational principal parts at the N-poles transport rho,
 xi and h*kC, with Psi(xi)=rho checked in all11coordinates. This
 preparation is in scripts/deformations/cyclic/neutral5_hyperelliptic_hodge.py and
-Research/computations/neutral5_hyperelliptic_hodge.json. It computes
+../litt3-computation-data/legacy_workspace_computations/neutral5_hyperelliptic_hodge.json. It computes
 the first repair only, not the obstruction to its fourth extension.

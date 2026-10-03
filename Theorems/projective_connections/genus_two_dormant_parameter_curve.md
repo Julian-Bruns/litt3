@@ -1,8 +1,8 @@
 # The dormant parameter curve is elliptic, with alternating monodromy
 
-Version3, 24 September2026. The optional irreducible-specialization
-count is retained in local evidence; this statement concerns the
-parameter curve, its quintic and the first pointed incidence.
+Version4,3 October2026. The complete first-height incidence now follows
+from the two affine torsion orbits and six symbolic seeds. The optional
+irreducible-specialization count remains local evidence.
 
 Consider the smooth genus-two family
 \[

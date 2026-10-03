@@ -1,6 +1,7 @@
 # Ordinary quotient descent through prime-primary monodromy
 
-Version1,22 September2026. Author proof with a focused local check.
+Version2,3 October2026. The all-prime cover theorem and reciprocal
+Frobenius pairs sharpen the earlier torsion-descent argument.
 
 Let X/F25 be the fixed genus-nine curve, and let
 \[
@@ -16,8 +17,8 @@ isomorphism class of Y. If ell!=5, let m_ell be the Frobenius
 order on J(X)[ell]. Then every prime divisor of m_Y divides
 \[
 \boxed{\quad
-2\cdot3\cdot5\cdot7\cdot m_\ell\cdot\ell
-\prod_{i=1}^{4}(\ell^i-1).
+2\cdot3\cdot5\cdot m_\ell\cdot\ell
+(\ell-1)(\ell^2-1)(\ell^4-1).
 \quad}
 \tag{1}
 \]

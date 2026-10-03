@@ -1,35 +1,48 @@
-# A versal BT1 has only tame point stabilizers
+# Intrinsic quartic symmetries have tame point stabilizers
 
-Version1,21 September2026. Let $C/\overline{\mathbf F}_5$ be a smooth
-proper connected curve of genus $g\ge2$, and let $H/C$ be an actual
-everywhere-versal height-two, dimension-one BT1, generically ordinary
-with reduced supersingular divisor $S$. No BT2 or full group is assumed.
-Let
+Version2,3 October2026. Let $C/\overline{\mathbf F}_5$ be smooth,
+proper and connected of genus $g\ge2$. Let
+$0\ne s\in H^0(C,\omega_C^4)$ have divisor $2S$ with $S$ reduced.
+On the normalization $D$ of its full reduced fourth-root cover,
+write $\Omega^4=-\pi^*s$, where $\Omega$ is the tautological
+differential. Assume
 \[
-G=\{\alpha\in\operatorname{Aut}_k(C):\alpha^*H\simeq H\}.
+C_D(\Omega)=c\Omega
 \]
-This denotes underlying curve automorphisms, not the scalar
-automorphisms of $H$ over the identity curve.
+on every connected component, for the SAME constant $c\in k^\times$.
+This condition is unchanged by a nonzero constant rescaling of $s$.
 
-Then $C\to C/G$ is tamely ramified. More precisely, the stabilizer
-of an ordinary point is cyclic of order dividing four, and that of
-a supersingular point is cyclic of order dividing six. In particular
-every five-subgroup of $G$ acts freely and
+Then the entire quartic-line stabilizer
+\[
+G=\{\alpha\in\operatorname{Aut}_k(C):\alpha^*s\in k^\times s\}
+\]
+fixes $s$ exactly. The quotient $C\to C/G$ is tame: a point
+stabilizer is cyclic of order dividing four outside $S$, and six
+on $S$. Every five-subgroup acts freely, and
 \[
 |G|\le24(g-1).
 \]
-Equality can occur only for a genus-zero quotient with signature
-$(2,4,6)$: the points with inertia two and four are ordinary and the
-points with inertia six form the entire supersingular divisor.
-This is a necessary equality profile, not an assertion of realization.
+Equality requires a genus-zero quotient with signature $(2,4,6)$;
+inertia two and four are outside $S$, and $S$ is the entire
+inertia-six orbit. This is a necessary profile, not a realization.
 
-The underlying local fact is characteristic-independent: a finite
-order-$p$ automorphism fixing a point and preserving a nonzero
-Cartier-fixed regular differential forces its zero order there to
-be at least $p-2$. The logarithmic character cover of $H$ has only
-zero orders zero and two, so this is impossible in characteristic five.
+The hypothesis holds for the intrinsic quartic of an actual
+everywhere-versal height-two, dimension-one BT1 with reduced
+supersingular divisor. It also holds for the normalized curvature
+quartic of every SUPPLIED admissible active determinant-trivial
+oper, using its canonical first periodic datum and the flat
+eighth-torsion correction in
+[finite-level effectivity](admissible_periodic_bt_effectivity.md).
+No ordinariness, BT2 or full group is assumed. Thus preserving
+a chosen BT1 realization is unnecessary; preserving the quartic
+line suffices.
 
-This bounds finite geometric symmetries. It does not make the formal
-return group of a coreless correspondence finite; that group is already
-known to be infinite. It supplies no second map or full BT extension.
+The local input is characteristic-independent: an order-$p$
+automorphism fixing a point and preserving a nonzero regular
+Cartier-eigen differential with nonzero constant eigenvalue
+forces its zero order to be at least $p-2$. Here the fourth-root
+differential has zero orders only zero and two.
+
+This bounds finite geometric symmetries; it supplies neither a
+second map nor a higher BT extension.
 [Proof](../../Proofs/deformations/versal_bt_tame_automorphisms.md).

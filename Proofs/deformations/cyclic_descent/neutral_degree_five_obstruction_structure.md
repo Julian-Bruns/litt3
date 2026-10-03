@@ -155,7 +155,7 @@ Thus regularity and the cohomological duality alone do not exclude a
 primitive surviving mode. No actual oper, Cartier-polarized complex or
 compatible full tower realizing this operator has been constructed.
 The missing datum is its actual higher divided normal residual and
-coupling to other blocks. The old cyclic odd-defect growth theorem is
+coupling to other blocks. The [symplectic section theorem](../section_growth/cyclic_symplectic_blocks.md) is
 stronger than the returned cyclic-evenness observation and is retained.
 
 The [supplied finite verification](../../../scripts/deformations/verify_neutral_degree_five_structure.py)

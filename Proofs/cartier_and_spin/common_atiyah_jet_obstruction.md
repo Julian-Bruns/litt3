@@ -1,4 +1,4 @@
-# Proof: retain a prime-to-p grade when the total rank vanishes
+# Proof: a prime-to-p seed controls every Frobenius direct image
 
 [Statement](../../Theorems/cartier_and_spin/common_atiyah_jet_obstruction.md).
 All connections, maps, splittings and extension classes are common
@@ -51,11 +51,11 @@ Choosing other splittings changes only its representative in (8).
 
 ## Tensoring with an arbitrary-height direct image does not kill it
 
-Write $U=F^{[s]*}H_s$ on the first twist. The diagonal-ideal
+Write $U=F^{[s]*}H_s$ on the seed's twist. The diagonal-ideal
 description of iterated Frobenius gives its common filtration with
 grades
 \[
-B,B\omega,\ldots,B\omega^{q-1},\qquad q=p^s.
+E,E\omega,\ldots,E\omega^{q-1},\qquad q=p^s.
 \tag{9}
 \]
 Indeed étale-locally the corresponding algebra is
@@ -64,31 +64,30 @@ $(\epsilon)$ and its $i$th grade is $\omega^i$. This also proves
 the description for $q>p$, without using first derivatives to
 claim transversality beyond height one.
 
-Let $W=B\omega^{q-1}$ be the TOP grade, an actual subbundle of
-rank $p-1$. Suppose the extension with class
+Let $W=E\omega^{q-1}$ be the TOP grade, an actual subbundle
+of rank r prime to p. Suppose the extension with class
 $\gamma_s=\operatorname{id}_{H_s}\otimes\varepsilon$ splits.
 Pulling its splitting back gives $s:U\to U\otimes\mathcal T$,
 where $\mathcal T=F^{[s]*}\mathcal A$ is the scalar extension
 with class $\beta_s$. Its composite with projection is the identity.
 
-The bundle $(U/W)\otimes\mathcal T$ has grades $B\omega^i$ with
+The bundle $(U/W)\otimes\mathcal T$ has grades $E\omega^i$ with
 \[
 i\in\{0,\ldots,q-2\}\cup\{q,\ldots,2q-2\}.
 \tag{10}
 \]
-None equals $q-1$. The first-height
-[Cartier theorem](common_cartier_subbundles.md) makes $B$ common-simple.
+None equals $q-1$. The seed E is common-simple.
 Different canonical twists are nonisomorphic by their degrees.
 Hence every common map from $W$ to (10) is zero, by induction on
 the target filtration. It follows that $s$ restricts to a splitting
 $W\to W\otimes\mathcal T$. Taking its trace in the $W$ factor and
-dividing by $p-1$ splits $\mathcal T$, contrary to (7).
-For $s=0$, this is simply the usual trace on $B$ itself. We have proved
+dividing by r splits $\mathcal T$, contrary to (7).
+For $s=0$, this is the usual trace on E itself. We have proved
 \[
 \gamma_s\ne0\quad\text{for every }s\ge0.
 \tag{11}
 \]
-No division by $\operatorname{rk}H_s=(p-1)p^s$ occurs.
+No division by $\operatorname{rk}H_s=rp^s$ occurs.
 
 Exactly the same argument applies to $F_*^{[s]}L$ for an arbitrary
 common line $L$. Its pulled-back grades are $L\omega^i$; different
@@ -99,13 +98,11 @@ so these detectors survive subsequent line twists.
 
 ## Self-duality and the Atiyah identity
 
-The local Cartier pairing on $B$ is
-$\langle[a],[b]\rangle=\operatorname{Car}(a\,db)$.
-It is alternating, since $2\operatorname{Car}(a\,da)=0$, and
-perfect: in the basis $[x],\ldots,[x^{p-1}]$ its anti-diagonal
-entries are nonzero. Finite Frobenius duality, using the dualizing
-Cartier trace on differentials, transports it to a perfect common
-alternating $\omega$-valued pairing on every $H_s$.
+Finite Frobenius duality transports the perfect omega-valued
+pairing on E to a perfect common omega-valued pairing on every
+H_s. It preserves its symmetric or alternating type. For the
+specialization E=B, use its established canonical Cartier pairing
+from the [first-height theorem](common_cartier_subbundles.md).
 
 For any self-dual $E\simeq E^\vee\otimes\omega$, the tensor and
 dual rules for Atiyah extensions give
@@ -189,6 +186,67 @@ so its sum with its adjoint gives
 $\ell(w+\ell-1)\gamma_E=0$. The distinction matters when $w=0$:
 then length one is NOT excluded by this argument.
 
+## Initial jets and the weighted one-stage classification
+
+For ANY common-simple $E_0$, let $0\ne V\subset F_*E_0$ be a
+common saturated subbundle. Intersect $F^*V$ with the diagonal-ideal
+filtration of $F^*F_*E_0$. Its induced graded images in
+$E_0\omega^i$ are zero or the whole simple factor. All common
+images are saturated by no-clump. The canonical Cartier connection
+restricts to $F^*V$; its adjacent graded maps have nonzero
+coefficients $i=1,\ldots,p-1$. Thus the nonzero images are exactly
+the indices $0,\ldots,\ell-1$, for some $1\le\ell\le p$.
+
+Projection onto those first $\ell$ grades identifies
+$F^*V$ with the ACTUAL jet bundle $J^{\ell-1}E_0$: its kernel
+has all graded terms zero, and each retained graded map is an
+isomorphism. This common identification transfers the Cartier
+connection and gives $\operatorname{rk}V=r\ell$.
+
+Now suppose $E_0$ has prime-to-$p$ rank $r$ and a perfect common
+$\omega^w$-valued pairing. Self-duality gives
+$\deg E_{0,Y}=rw(g(Y)-1)$. The actual jet identification gives
+\[
+p\deg V_Y=r\ell(w+\ell-1)(g(Y)-1).
+\tag{19}
+\]
+For a proper nonzero $V$, $1\le\ell<p$. Reducing (19) modulo
+$p$, the stated degree and rank hypotheses force
+$\ell\equiv1-w\pmod p$. Thus $w\equiv1$ rules out every proper
+subobject.
+
+Otherwise every proper nonzero subobject has the same rank
+$r\ell$. Two distinct such subobjects have zero intersection:
+a nonzero common intersection is saturated and has the same
+allowed rank, so must equal both. Their common sum therefore has
+rank $2r\ell$. It cannot be proper, which would require rank
+$r\ell$, or whole, which would require $2\ell=p$. The latter
+is impossible for odd $p$; exceeding the ambient rank is also
+impossible. This proves uniqueness. A proper subobject of $V$,
+or the inverse image of a proper subobject of the quotient,
+would contradict it. Hence both factors are common-simple.
+A common splitting would give a second proper subobject.
+For $p=5$, the seeds $\omega^{-2}$ and $\omega^{-1}$ have
+weights $-4$ and $-2$, respectively; this yields the stated
+simplicity and rank3 conclusions without asserting existence.
+
+## One induction for every omega-valued seed and every height
+
+The seed $H_0=E$ is common-simple. Suppose $H_s$ is common-simple
+and let $0\ne V\subset F_*H_s$ be a common saturated subbundle.
+The initial-jet identification just proved transfers its Cartier
+connection to $J^{\ell-1}H_s$, with $1\le\ell\le p$.
+Apply the block-sum identity to $H_s$, using its already proved
+nonzero $\gamma_s$ and actual omega-valued self-duality.
+It gives $\ell^2\gamma_s=0$, so $p\mid\ell$. Hence $\ell=p$,
+and the saturated inclusion $V\subset F_*H_s$ has full rank
+and is equality. This proves common simplicity of $H_{s+1}$.
+
+After induction the same block sum applies to every jet length,
+giving necessity in (2). The converse follows below. The scalar
+detector used only simplicity and the prime-to-p rank of the
+ORIGINAL seed; it did not assume simplicity of a later H_s.
+
 ## The converse for actual jets
 
 On a smooth curve, $J^{n}E$ is the pushforward of $E$ from the
@@ -202,13 +260,12 @@ Flat base change through relative Frobenius gives
 $J^{pm-1}E\simeq F^*J^{m-1}(F_*E)$. This is coordinate independent
 and commutes with the two original étale maps. Its canonical Cartier
 connection is therefore common and dormant. Together with (17),
-this proves the asserted exact jet-length criterion whenever $E$
-is common-simple. The all-height theorem establishes that condition
-for every $H_s$ by induction, without any circular use here.
+this proves the exact jet-length criterion for every H_s.
+The preceding joint induction establishes its common simplicity.
 
 The returned Pro proof establishes the scalar detector and the
-two-block instance. The higher-height detector and (13)--(18) are
-author extensions. A focused review checks the gap in the weight
+two-block instance. The general seed detector, block sum and joint induction are
+extensions. A focused review checks the gap in the weight
 sets (10), the noncommuting block cancellation (16), and actual
 relative-Frobenius base change (18). Standard canonical-filtration
 and direct-image facts are as in

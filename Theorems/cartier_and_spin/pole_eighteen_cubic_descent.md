@@ -1,6 +1,6 @@
 # Every actual pole-eighteen comparison descends cubically
 
-Version1, 27 September2026. Use the actual jointly minimal comparison
+Version2,3October2026. Use the actual jointly minimal comparison
 of the fixed genus-nine X in
 [the normal form](new_line_comparison_normal_form.md). Both finite etale
 maps have the SAME smooth proper source T, distinct embedded X-fields,
@@ -16,8 +16,9 @@ scalar, all norm compositions and all repeated endpoint phases. The
 three non-invariant character coefficients of each actual minimal
 equation vanish. No simultaneous etale Galois closure is assumed.
 
-The nonzero-character exclusion uses integer phase balancing and a
-local endpoint lemma. In particular it does not discard the order-four
+The nonzero-character exclusion uses the later general integer
+phase theorem and a local endpoint lemma. The old phase enumeration
+and integer-pattern census are unnecessary. In particular it does not discard the order-four
 pole resonance in the order-eight character at common infinities.
 
 After rescaling t by a29th root, the scalar epsilon satisfies
@@ -25,9 +26,9 @@ epsilon^2 in F_(5^8), hence epsilon in F_(5^16). This follows from the
 [full-fibre scalar bound](comparison_root_fibre_scalar_bound.md) on the
 new cubic quotient. It bounds no field of definition of T or N.
 
-The requested descent problem is COMPLETE. Existence of its sextic
-parameter map is not decided. Pole16 remains the first possible
-comparison pole, and both original unmarked common-cover problems
-remain UNSOLVED.
+The subsequent [complete pole18 exclusion](pole_eighteen_complete_exclusion.md)
+closes the sextic quotient branch as well. No shared tensor has
+been extracted from an arbitrary unmarked span; both original
+unmarked common-cover problems remain UNSOLVED.
 
 [Proof and verification](../../Proofs/cartier_and_spin/pole_eighteen_cubic_descent.md).

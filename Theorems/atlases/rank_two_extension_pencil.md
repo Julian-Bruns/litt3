@@ -1,44 +1,80 @@
-# Extension classes as primitive polynomial kernel lines
+# Extension kernel lines and the 64-row Frobenius atlas criterion
 
-Use `rank_two_extension_space`. The following statements hold in every
-characteristic, with ell>2g.
+Version2,3October2026. Use
+[rank-two extension conventions](../../Definitions/rank_two_extension_space.md):
+W is stable of rank two with determinant O, and deg L=ell>2g.
+In EVERY characteristic:
 
-1. For every nowhere-zero u, ker N_u=k eta_u, and eta_u!=0. Equivalently
-   M_u has rank2ell+g-2 and kernel u H0(omega).
-2. There is a primitive homogeneous polynomial kernel vector e(u), unique
-   up to nonzero scalar, whose degree is EXACTLY2ell-2. It is nonzero at
-   every point where N_u has its generic rank. In particular it does not
-   lose any admissible point, including outside a chosen minor chart.
-3. If D is the zero divisor of a nonzero section u of W L, the kernel
-   of M_u is canonically H0(omega(D)), multiplied by u. Its generic rank
-   persists for deg D<=1; rank can drop only when deg D>=2. That latter
-   locus has codimension at least2 in P(A).
+1. For a nowhere-zero u, ker N_u is the nonzero extension line k eta_u.
+   Equivalently M_u has rank2ell+g-2 and kernel u H0(omega).
+2. The unique primitive homogeneous polynomial kernel vector has degree
+   EXACTLY2ell-2. It is nonzero everywhere the pencil has its generic
+   rank, including outside every chosen minor chart.
+3. If u has zero divisor D, ker M_u=u H0(omega(D)).
+   Generic rank persists for deg D<=1. The rank-drop locus has
+   codimension at least two in P(H0(W L)).
 
-For the fixed genus-nine oper, apply this with W its Cartier descent
-and L=O(24O). The extension class lies in P48=H1(O(-48O)). Its kernel
-line is given by a64x56 matrix, in place of the136x56 pencil of
-`wronskian_matrix_pencil`. Here is a scalar construction with no auxiliary
-frames. Compute S_40=ker(delta^2-P on L(192O)), dimension64. For each
-basis element T_j and U in S_U, expand the polynomial Wronskian uniquely:
+## Fixed-curve scalar realization
 
-    U delta T_j-T_j delta U = sum_l c_(j,l)(U) m_l^5,
+Fix ANY geometric dormant oper on the genus-nine curve, with the
+[scalar conventions](../../Definitions/scalar_hermitian_data.md).
+Let A=S_U (dimension32), E=P48 (dimension56), and
+S_40=ker(delta^2-P on L192) (dimension64). For a basis T_j of S_40,
+expand the horizontal Wronskian in the56 monomial fifth powers of L64:
+\[
+U\delta T_j-T_j\delta U=\sum_l c_{j,l}(U)m_l^5,\qquad
+S_{i,l}=\operatorname{Res}_O(\ell_i m_l\theta).
+\]
+S is invertible and
+\[
+N_U=(c_{j,l}(U))(S^{[5]})^T:E^{[5]}\longrightarrow k^{64}
+\]
+is linear in the32 scalar Frobenius coordinates U. Its primitive
+kernel vector has degree46. On every admissible quotient direction
+N_U has rank55; on all directions rank N_U<=55.
 
-where m_l runs through the56 monomials of L(64O). Let
+The later [intrinsic Bol comparison](dormant_differential_projection.md)
+identifies the former136-row principal-part tensor with J_0 N_U
+for ONE fixed split injection J_0:k64->k136. This holds on the
+WHOLE tensor space, including all inadmissible and nonacyclic strata,
+and persists over arbitrary coefficient algebras.
 
-    S_(i,l)=Res_O(ell_i m_l theta),       ell_i the P48 basis.
+## Complete atlas equations
 
-Then S is invertible, and
+Put D=-rho32 delta:E->P32 and define the56-square pencil
+\[
+R_U(\eta^{[5]})=
+\rho_{48}\bigl(\kappa^5\operatorname{rem}(U\eta^5)-U(D\eta)^5\bigr).
+\]
+Fifth powers include the coefficients of D. An actual untwisted
+Hermitian atlas inducing the fixed oper exists precisely when
+U in A and eta in E satisfy
+\[
+N_U\eta^{[5]}=0,\quad
+T=-\operatorname{aff}(U\eta^5),\quad
+U\delta T-T\delta U=1,\quad R_U\eta^{[5]}=\eta,
+\qquad\operatorname{pole}_O(U)\in\{111,112\}.
+\]
+Here T is a fixed bilinear expression, not an additional variable.
+The first equation makes T horizontal and its Wronskian constant,
+so that one affine evaluation imposes the middle condition.
+These are finite polynomial equations retaining both infinity charts
+and every quotient direction; atlas equivalence is geometric-pointwise.
 
-    Ntilde_U = (c_(j,l)(U)) (S^[5])^T                       (1)
+For an admissible direction define the128-by56 matrix
+\[
+B_U=\begin{bmatrix}N_U\\N_U^{[1/5]}R_U\end{bmatrix}.
+\]
+Some nonzero scale gives an atlas exactly when rank B_U=55 and
+R_U does not kill ker N_U. Exactly three scales then work.
+Otherwise rank B_U=56 or R_U kills the kernel line.
+Writing U=sum u_i^5 U_i makes these two blocks polynomial
+of degrees5 and6. No generic minor chart is selected.
 
-is a64x56 matrix LINEAR in U with the same kernel as N_U on every
-admissible direction. In particular rank Ntilde_U=55 there. Its primitive
-polynomial kernel has degree46 in U's32 Frobenius coordinates. It may
-replace N_U in the projective Frobenius-line criterion.
+This criterion combines the former136-row atlas result with its
+intrinsic64-row extension pencil. The later
+[resultant gradient](resultant_gradient_atlas.md) makes the
+nonzero-output proviso automatic on the admissible locus.
+No atlas emptiness or original common-cover conclusion is asserted.
 
-Status: author proof, not independently audited. The degree agrees with
-the characteristic-zero extension-space literature; the proof here is
-characteristic-independent. Five exact fixed-curve tests verify every
-Wronskian expansion, residue pairing, rank, and equality of the two kernels.
-No atlas or common-cover exclusion follows merely from the degree formula.
 [Proof](../../Proofs/atlases/rank_two_extension_pencil.md).

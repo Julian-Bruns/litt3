@@ -64,14 +64,18 @@ The twisted sequence above is obtained from the ordinary sequence in
 that section by etale descent through GL_r(F_p) transition matrices.
 Thus p-torsion in G is allowed, with the sharper b_i=gr bound.
 
-For m<=b_i, every prime divisor of an affine transformation's order on
-F_ell^m is ell or divides ell^j-1 for some1<=j<=m. This follows from
-|AGL_m(F_ell)|=ell^m |GL_m(F_ell)| and the product formula for |GL_m|.
-Thus each such prime is allowed by(1). If e is the order of our affine
-transformation, rho Phi^(de) is G-conjugate to rho. In particular the
-G-torsor's Frobenius period divides de. The surjective lifts form an
-invariant subset; restricting to them does not affect this conclusion.
-Induction from the trivial group proves the asserted prime support.
+For \(m\le b_i\), represent an affine transformation of
+\(\mathbf F_\ell^m\) by its homogeneous \((m+1)\)-square matrix.
+Its characteristic polynomial is the linear part's polynomial times
+\(T-1\). Every semisimple eigenvalue therefore has order dividing
+\(\ell^j-1\) for some \(j\le m\), while its unipotent Jordan blocks
+have size at most \(m+1\). Its order divides
+\(\mathcal A_\ell(m)\), hence \(\mathcal A_\ell(b_i)\).
+If \(e\) is that order, \(\rho\Phi^{de}\) is \(G\)-conjugate
+to \(\rho\). Surjective lifts form an invariant subset, so the
+same bound applies to the connected torsor. Induction gives a
+torsor model degree dividing \(\prod_i\mathcal A_{\ell_i}(b_i)\);
+the old prime-support assertion (1) follows at once.
 
 A Frobenius-invariant conjugacy class really has a torsor model over
 that finite field. To see this directly, the arithmetic exact sequence
@@ -85,17 +89,32 @@ field-of-moduli obstruction introduces an uncontrolled prime.
 
 ## 2. Prime-power groups: the same H1 controls every central layer
 
-For G an ell-group, take a central series with successive factors C_ell.
-Start over F_(q^D_ell), where Frobenius acts trivially on H1(C,F_ell).
-At each step of Section1 the coefficient local system is now the SAME
-trivial F_ell local system: the kernel is central. Conjugation by the
-chosen lift a_tilde also acts trivially on it. After any ell-power
-extension the linear Frobenius action is still the identity. Therefore
-the affine action on the set of lifts is a TRANSLATION, of order1 or ell.
-At most a central layers suffice, giving D_ell*ell^a as a field degree.
-This allows arbitrarily large ell-groups without an increasing list of
-prime-to-ell period factors. For ell=p use H1_et(C,F_p), not all coherent
-H1(O_C); the twisted Artin--Schreier argument above guarantees finiteness.
+Start over \(\mathbf F_{q^{D_\ell}}\), where Frobenius is the
+identity on \(H^1_{\mathrm{et}}(C,\mathbf F_\ell)\).
+The quotient torsor with group \(G/\Phi(G)\) is already fixed:
+its surjection factors through the abelian mod-\(\ell\) quotient
+of the fundamental group. No initial \(\ell\)-extension is needed.
+
+Use the series in the statement to lift successively from
+\(G/N_2\) to \(G/N_3,\ldots,G\). Each kernel
+\(N_i/N_{i+1}\) is a trivial elementary abelian coefficient
+system on the ORIGINAL curve C. In Section1 its Frobenius linear
+part and conjugation by the chosen lift are both the identity.
+The action on its affine lift space is a translation, of order
+one or \(\ell\), independently of the kernel's rank. There are
+\(t-1\) such steps, so the torsor degree divides
+\(D_\ell\ell^{t-1}\). For \(\ell=p\) this uses étale
+\(H^1(C,\mathbf F_p)\), rather than coherent \(H^1(C,\mathcal O)\).
+
+Such a series exists with \(t-1\le a-\dim G/\Phi(G)\).
+Indeed every nontrivial normal subgroup of a finite \(\ell\)-group
+meets its center in an element of order \(\ell\), by conjugacy orbit
+counting. Apply this repeatedly inside \(\Phi(G)\) and its
+successive quotients, obtaining central order-\(\ell\) factors.
+Larger elementary central factors can be taken in one step.
+For nilpotent G, take the product of the descended Sylow torsors
+over the least common extension. Its geometric fiber is the
+original connected torsor, proving the stated lcm bound.
 
 For the fixed X, the Frobenius polynomial recorded in
 `fixed_pair_arithmetic` reduces modulo3 to
@@ -152,12 +171,23 @@ Only injectivity and finite generation are needed, not Tate surjectivity;
 see Theorem9.14 of
 [Milne, Abelian Varieties](https://www.jmilne.org/math/CourseNotes/AV110.pdf).
 
-If a finite-order integral matrix of rank r has order divisible by a
-prime L, its cyclic group contains an element of order L. A nontrivial
-rational representation of C_L has dimension at least L-1, because
-the cyclotomic polynomial Phi_L has that degree. Therefore L<=r+1.
-After an extension of degree e whose prime divisors are at most R+1,
-Frobenius acts trivially on Lambda and in particular fixes f^*:J(D)->J(W).
+For a finite-order integral matrix of rank \(r\), each root-of-unity
+eigenvalue of order \(n\) has its full cyclotomic polynomial in the
+characteristic polynomial, so \(\varphi(n)\le r\). The matrix is
+semisimple over \(\mathbf Q\); its order is the lcm of these
+eigenvalue orders, hence divides \(\mathcal M(r)\mid\mathcal M(R)\).
+In particular, if a prime power \(L^a\) divides that order, then
+\(L^{a-1}(L-1)\le R\), which also recovers \(L\le R+1\).
+Thus an extension of degree dividing \(\mathcal M(R)\) fixes all
+of Lambda, including the ACTUAL \(f^*:J(D)\to J(W)\).
+The lcm is finite and has the explicit form
+\[
+\mathcal M(R)=\prod_{L\le R+1}L^{a_L},
+\qquad a_L=\max\{a\ge1:L^{a-1}(L-1)\le R\},
+\]
+with L prime. Indeed every \(n\) with \(\varphi(n)\le R\)
+divides that product, and each displayed prime power is itself
+one of the integers in the lcm.
 
 It remains essential to recover f, not just a Jacobian map. Nonconstant
 maps W->D are determined by their induced homomorphism of Jacobians
@@ -173,8 +203,9 @@ alpha=id and f_1=f_2. Pullbacks on Jacobians suffice because norm and
 pullback are dual under the canonical polarizations.
 
 Apply this to f and its Frobenius conjugate. Fixing f^* fixes f itself,
-which therefore descends. Multiplying the degrees from Sections1 and2
-proves(2) and the assertion for any functorial invariant. The second
+which therefore descends. Multiplying the torsor and map degrees
+proves the full divisibility bound, (2), and the assertion for any
+functorial invariant. The second
 map was never replaced by a freely chosen Jacobian summand.
 
 ## 4. The two high-residue-degree oper orbits
@@ -212,7 +243,7 @@ definition of the atlas fixes the normalized oper point.
 
 The audited enumeration and the representative manifest record degrees
 718 and7324 for orbit_0010 and orbit_0011. The relevant manifest is
-Research/computations/oper_representatives_manifest.json, SHA256
+../litt3-computation-data/legacy_workspace_computations/oper_representatives_manifest.json, SHA256
 263cdce34475e4f16a1feb6fc965d441ed88ff7d95f3ae5eef19f7f7a092cc86.
 Its residue degree divides every extension degree fixing the point,
 contradicting(1)-(3). This proof does not assume tau=0.

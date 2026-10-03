@@ -8,7 +8,7 @@ the exact certificate outside the research workspace.
 import json
 import sys
 from pathlib import Path
-import verify_pole_ten_norm_support as field
+import fixed_curve_finite_field as field
 
 add, mul, neg = field.a25, field.m25, field.n25
 

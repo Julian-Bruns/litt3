@@ -76,7 +76,7 @@ characteristic five. For all135 pairs the certificate proves H7-H8^2!=0.
 The nonzero leading coefficient also excludes a residual point at O.
 Thus a target divisor cannot contain two such points. The certificate
 requires rank18, exact pole27 and failure of the first norm condition
-for all135 pairs. Its [replay record](../../../Research/computations/pro_three_point_replay.json)
+for all135 pairs. Its [replay record](../../../../litt3-computation-data/legacy_workspace_computations/pro_three_point_replay.json)
 retains the source hash and complete counts.
 
 ## 4. The nine-by-nine pair chart is complete after relabelling

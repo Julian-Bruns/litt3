@@ -24,7 +24,7 @@ ap.add_argument('--field-kind',choices=['intrinsic','chosen'],default='intrinsic
 ap.add_argument('--output',type=Path,required=True)
 ap.add_argument('--negative-controls',action='store_true')
 args=ap.parse_args();started=time.monotonic()
-root=Path(__file__).resolve().parents[3];data=root/'Research/computations'
+root=Path(__file__).resolve().parents[3];data=root/'../litt3-computation-data/legacy_workspace_computations'
 prime=GF(5);Z=PolynomialRing(prime,'z');rep=args.representative
 sources={}
 def saved(name):

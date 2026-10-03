@@ -14,8 +14,22 @@ series of G with elementary abelian factors F_(ell_i)^(r_i), and define
     S(G,g) = union_i ({ell_i} union
       {prime L != ell_i : ord_L(ell_i) <= b_i}).                 (1)
 
-Then there is a finite field F_(q^n) over which the entire equivariant
-diagram has a model, and every prime divisor of n belongs to
+For a prime \(\ell\), put
+\[
+\mathcal A_\ell(b)=
+\ell^{\lceil\log_\ell(b+1)\rceil}
+\operatorname{lcm}_{1\le j\le b}(\ell^j-1),
+\qquad
+\mathcal M(R)=\operatorname{lcm}_{\varphi(n)\le R}n,
+\]
+where \(\varphi\) is Euler's function. The torsor has a model over
+a degree \(d\mid\prod_i\mathcal A_{\ell_i}(b_i)\).
+Once that model is fixed, the actual second map has a model after
+an additional degree dividing \(\mathcal M(R)\), where
+\(R=4(g-1)h+4g(D/G)\). Thus the entire equivariant diagram has a
+model over a degree dividing
+\(\mathcal M(R)\prod_i\mathcal A_{\ell_i}(b_i)\).
+In particular every prime divisor of its minimal period belongs to
 
     S(G,g) union {prime L : L <= R+1},
     R = 4(g-1)h + 4g(D/G).                                    (2)
@@ -26,21 +40,30 @@ is defined over F_q, has no other prime divisors. This conclusion concerns
 the datum's minimal orbit length; the theorem does not bound all finite
 extensions over which an arbitrary chosen presentation can be written.
 
-Two independent mechanisms underlie (2):
-
-- The geometric G-torsor itself has a model over a degree whose prime
-  divisors lie in S(G,g).
-- Once this torsor is defined, the additional degree needed for f has
-  prime divisors at most R+1. This second assertion holds for ANY finite
-  G, including nonsolvable groups and groups with characteristic torsion.
+The additional-map bound holds for ANY finite G, including nonsolvable
+groups and groups with characteristic torsion.
 
 ## Stronger bound for prime-power groups, of arbitrary size
 
-If G is an ell-group of order ell^a, let D_ell be the order of Frobenius
-on H1(C_k,F_ell). The geometric G-torsor has a model over an extension
-of degree dividing D_ell*ell^a. Thus its prime-to-ell period divides
-D_ell, independent of the size, exponent, or nilpotency class of G.
-This is a TORSOR bound; the second map still requires its separate bound.
+If \(G\) is a nontrivial \(\ell\)-group of order \(\ell^a\),
+let \(D_\ell\) be the order of Frobenius on
+\(H^1_{\mathrm{et}}(C_k,\mathbf F_\ell)\). Choose a series
+\[
+G=N_1\supset N_2=\Phi(G)\supset\cdots\supset N_{t+1}=1
+\]
+whose factors are elementary abelian and central in \(G/N_{i+1}\).
+The geometric torsor has a model over a degree dividing
+\(D_\ell\ell^{t-1}\). One can take
+\(t-1\le a-\dim_{\mathbf F_\ell}(G/\Phi(G))\).
+Thus an elementary abelian torsor needs only \(D_\ell\); an
+exponent-\(\ell\), class-two torsor needs at most \(D_\ell\ell\).
+
+For a nilpotent \(G=\prod_\ell G_\ell\), the torsor period divides
+\(\operatorname{lcm}_\ell(D_\ell\ell^{t_\ell-1})\), for such
+series in its nontrivial Sylow factors. The actual second map still
+has the separate factor \(\mathcal M(R)\). In particular the
+prime-to-\(\ell\) period for an \(\ell\)-group divides \(D_\ell\),
+independently of the cover order.
 
 For the fixed X/F25, D_3 divides36. Consequently EVERY finite3-group
 etale torsor of X has a model over a degree of the form4*3^b, and
@@ -78,7 +101,8 @@ This is NOT an exclusion of either whole oper orbit, the other sixteen
 representatives, the nontrivial-tau problem, or arbitrary common covers.
 It supplies no bound of the form (1) for a nonsolvable torsor.
 
-Version3, author proof,2026-09-07; no independent audit claimed.
-Version2 allowed p-torsion; version3 adds the uniform prime-power-torsor
-bound and the explicit field containing every cubic torsion line on X.
+Version4,2026-10-03. The affine-action and integral Hom-lattice arguments
+now give full period divisibility. Elementary central factors sharpen
+the prime-primary bound and give the nilpotent product bound. The
+fixed-curve field and oper restrictions are unchanged.
 [Proof and sources](../../../Proofs/jacobians/isogeny_sieves/solvable_atlas_frobenius_periods.md).

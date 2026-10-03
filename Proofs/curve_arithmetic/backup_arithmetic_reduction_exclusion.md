@@ -190,3 +190,21 @@ endpoints by [the established commensurator criterion](liftable_coreless_target_
 Its genus-two
 endpoint would give exactly the excluded potentially good curve.
 The intrinsically characteristic-five coreless case is unaffected.
+
+## Coefficient consequences on the same original source
+
+Let an actual coreless span with endpoint Y carry the supplied
+rank-two rational coefficient data in the statement. The
+[ramified lifting theorem](../deformations/ramified_rapoport_oper.md)
+constructs the required Y-lattice and lifts BOTH original maps,
+contradicting the preceding arithmetic exclusion. No integral
+model, coefficient unramifiedness or prescribed gap denominator
+is an additional hypothesis.
+
+For the stated projective data,
+[projective coefficient lifting](../deformations/projective_coefficient_lifting.md)
+gives a full lift or an ACTUAL singleton clump. When singleton
+clumps are excluded, only the forbidden lift remains. The theorem
+already descends any necessary comparison refinement to the
+original source. This argument excludes supplied coefficients;
+it does not supply one on an arbitrary span.

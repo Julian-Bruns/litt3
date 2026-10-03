@@ -22,7 +22,7 @@ def main():
     parser.add_argument("certificate")
     parser.add_argument("--output", required=True)
     parser.add_argument("--lower-bound", type=int, default=-20)
-    parser.add_argument("--fitting-reference", default="Research/computations/explicit_nonordinary_dihedral5_fitting.json")
+    parser.add_argument("--fitting-reference", default="../litt3-computation-data/legacy_workspace_computations/explicit_nonordinary_dihedral5_fitting.json")
     args = parser.parse_args()
     started = time.monotonic()
     raw = Path(args.certificate).read_bytes()

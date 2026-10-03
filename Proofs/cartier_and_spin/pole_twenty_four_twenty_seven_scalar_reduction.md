@@ -3,8 +3,10 @@
 27 September2026. Let E=F_(5^8),K0=F_(5^14),B=F25 and H=E*mu29.
 The full-fibre norm theorem, applied to multiplicities3m_i, gives
 epsilon^g in H for g=gcd_i(m_i-m0)>0. It does not give a nonzero
-exponent for four equal multiplicities. Integer phase balance follows
-from the two-jet theorem, with no cubic descent.
+exponent for four equal multiplicities. Integer phase balance follows from
+[the independent regular-form theorem](unbounded_modular_phase_balance.md):
+each root mass is at most nine, hence at most19. No bounded Fourier
+anchor, cubic descent or small-phase search is required.
 
 For sum m_i=8, every nonzero difference gcd divides8. For clarity,
 the positive profiles with gcd>1 are(1,1,1,5),g=4 and(1,1,3,3),g=2;
@@ -47,13 +49,10 @@ are uniform, no power bound was obtained: retain the whole F_(5^56)
 possibility. The complete eight/nine moment-field scalar theorem removes
 ALL of K0 in both cases; its intersection with E is precisely F25.
 
-The invariant-norm input is independently complete through pole28:
-the kernel-tree algorithm and the unscaled F_(5^24) short-divisor
-verifier both found no nonpolynomial supported function. The latter
-checked942,210 short divisors at27 and1,339,462 at28, with maximum
-marked zero counts19 and20 respectively. See the version2
-[supported-norm theorem](bounded_supported_norms.md) and its exact
-receipts in the external small_supported_jets_20260927 directory.
+The invariant-norm input follows directly from the
+[exact marked-divisor lattice](marked_divisor_relation_lattice.md),
+which excludes every nonpolynomial supported function through
+pole1,617,893. The former pole27/28 Hermite searches are unnecessary.
 
 No noncube multiplicity constraint from a hypothetical cubic quotient
 is used. The full-source norm has multiplicities3m_i; confusing them

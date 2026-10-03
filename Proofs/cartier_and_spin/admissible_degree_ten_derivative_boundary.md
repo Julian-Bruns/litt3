@@ -38,7 +38,7 @@ For every actual étale candidate:
 
 The seven variable jet coefficients are affine-surjective functions of the 17 parameters. Thus the first assertion excludes a nonempty open subset of a 16-dimensional geometric double-cluster boundary. The second restricts a 15-dimensional quintuple-cluster boundary to an 11-dimensional locus at this jet level. These are necessary conditions only; the surviving loci are not asserted to be étale.
 
-Section 8 also records a trace restriction on `a_1=0`, an exact reformulation of the order-five condition, and a global discriminant-parity condition. The remaining quadratic- and cubic-derivative cases have not been excluded or realized.
+Section8 records the trace restriction, exact order-five condition and discriminant-parity test. The later [trace-dual theorem](admissible_degree_ten_trace_zero_exclusion.md) excludes the remaining quadratic-derivative sector with the order-five requirement. The relaxed non-torsion loci and cubic-derivative sector remain undecided; this sequel is not an input to the boundary proof.
 
 ## 1. Fields, polynomials and accepted dependencies
 
@@ -192,7 +192,7 @@ one has
 \tag{3.5}
 \]
 
-Each gcd assertion has a stored Bézout certificate. The exact quotient `K_0/P` is stored too. These checks are the only special-coefficient hypotheses needed for the pole argument, apart from the degree data and the final osculation obstruction.
+Each gcd assertion has a stored Bézout certificate. The exact quotient `K_0/P` is stored too. Together with the degree data, these supply all special-coefficient hypotheses for the local pole argument. Section6 closes its resulting norm identity by the existing fixed-X mixed-norm theorem.
 
 ## 4. A local pole-multiplicity lemma
 
@@ -357,84 +357,15 @@ P(x)+g(x)^3=(x-r)^4C_2(x)^3,
 
 This derivation allowed arbitrary multiplicities of v and G. In particular the multiplicities 7 and 10 have not been discarded; they are included in (5.5).
 
-## 6. A Bézout certificate excluding (5.5) over the algebraic closure
+## 6. The later mixed-norm exclusion closes (5.5)
 
-Since S2 is coprime to P, `P(r)!=0` for every possible r. Put `z=x-r`. If (5.5) held, let `eta=g(r)`, so `eta^3=-P(r)` and eta is nonzero. Write
-\[
-g(r+z)=\eta K(z),\qquad
-K=1+k_1z+k_2z^2+k_3z^3.
-\]
-
-The order-four vanishing in (5.5) says
-\[
-K(z)^3=P(r+z)/P(r)\pmod{z^4}.
-\]
-
-If `c_j=[z^j]P(r+z)/P(r)`, the coefficients are uniquely forced:
-\[
-k_1=2c_1,\qquad
-k_2=2c_2-k_1^2,\qquad
-k_3=2(c_3-k_1k_2-k_1^3).
-\tag{6.1}
-\]
-
-These formulas use `1/3=2` and `6=1` in characteristic five. Crucially, K is independent of the choice of eta. Thus every possible geometric cubic g is covered by this one calculation at r.
-
-Define
-\[
-D_6(z)=\frac{P(r+z)-P(r)K(z)^3}{z^4}.
-\]
-
-It is monic of degree six. Write its coefficients as `d_i=[z^i]D6`. If it is a cube of a monic quadratic `z^2+u z+w`, its two highest non-leading coefficients force
-\[
-u=2d_5,\qquad w=2d_4-u^2.
-\tag{6.2}
-\]
-
-The remaining coefficients can therefore be tested without solving for any further unknowns.
-
-All these operations are performed in
-\[
-E_0[r]/(\overline S_2(r)),\qquad
-\overline S_2(r)=r^2+\langle188551\rangle r+\langle349600\rangle.
-\]
-
-This quotient is not assumed to be a field. The verifier proves that P(r) is a unit before using its inverse. The residual constant coefficient
-\[
-e_0=d_0-w^3
-\]
-
-is
-\[
-e_0=\langle72690\rangle+\langle324180\rangle r.
-\]
-
-The decisive identity is
-\[
-\bigl(\langle192413\rangle+\langle234095\rangle r\bigr)e_0
-+\langle123002\rangle\overline S_2(r)=1.
-\tag{6.3}
-\]
-
-This is an exact polynomial identity over E0. It is stored in `osculation.json` and recomputed by the verifier. Therefore e0 is nonzero at **every** geometric root of S2. The necessary cube identity fails already in its constant coefficient.
-
-The full residual rows, from constant through degree six, are
-
-```
-[72690,324180]
-[172812,103596]
-[68849,164767]
-[186889,257486]
-[]
-[]
-[]
-```
-
-where each row represents an element of `E0[r]/(S2_monic)`. Only the first row and (6.3) are needed for the contradiction; the others are included for reproducibility.
-
-Combining Sections 5 and 6 excludes `c_y!=0`. Section 5.1 already excluded `c_y=0`. Lemma 3.1 identifies the entire six-parameter locus, so Theorem A follows for the base support. Frobenius transports it to all four supports. The verifier also recomputes the obstruction separately at all four conjugate supports.
-
-**Why this is geometric rather than a point search.** The coefficients of g, v and lambda were arbitrary elements of k. The local valuation argument forced r to lie in the finite geometric zero scheme of S2. Formula (6.1) then forced the only possible cubic Taylor polynomial at r. Identity (6.3) is a unit certificate on that entire zero scheme. No enumeration of values of g, v, lambda or any affine family parameter occurs.
+The [fixed-X mixed-norm theorem](../jacobians/isogeny_sieves/trigonal_constant_norm_obstruction.md),
+Section7, excludes \(P+g^3=H^2J^3\) for every geometric cubic \(g\)
+and monic quadratics \(H,J\), including repeated and common roots.
+Equation(5.5) is its special case \(H=(x-r)^2\), \(J=C_2\).
+Thus all \(c_y\ne0\) boundary candidates are excluded, including
+multiplicities4,7and10. Together with Section5.1 this proves TheoremA
+on all four supports. The old osculating-cubic computation is unnecessary.
 
 ## 7. Universal infinity-cluster conditions on the full 17-dimensional family
 
@@ -594,11 +525,11 @@ P+g^3=H_2(x)^2J_2(x)^3,
 \tag{8.1}
 \]
 
-with the subscripts indicating monic degrees and `deg g<=3`. The number of odd multiplicities is even, and can only be zero or two in degree ten, which explains the two cases. No claim is made here about the solvability of (8.1).
+with the subscripts indicating monic degrees and `deg g<=3`. The number of odd multiplicities is even, and can only be zero or two in degree ten, which explains the two cases. Both alternatives are impossible by the [constant and mixed norm obstructions](../jacobians/isogeny_sieves/trigonal_constant_norm_obstruction.md). Hence the entire trace-zero nonzero-y sector is excluded, without an additional elimination.
 
 There is also a simple infinity restriction when `c_y=0`: v cannot be a polynomial of degree three on an actual trace-zero candidate. In that case `h_*G` has multiplicity one at O. Exactly one sheet has b of pole order three, while all others have pole order at most two, again contradicting trace zero.
 
-These statements apply to the entire actual `a_1=0` sector, not only to Theorem A's smaller boundary. They leave a concrete lower-dimensional polynomial problem for the quadratic-derivative sector.
+At a finite root r of a polynomial v of degree at most two, if P(r)!=0, each of the three points above r has multiplicity ord_r(v). That multiplicity cannot be one. At a root of P it is three times ord_r(v). Thus v is constant, has a single linear factor rooted at a P-root, has two distinct such factors, or is a scalar square of a linear polynomial. This applies to the entire actual `a_1=0` sector and retains all collisions; no remaining shape is asserted realizable.
 
 ### 8.2 The order-five condition is a balanced-divisor condition
 
@@ -676,20 +607,25 @@ It is not sufficient for étaleness. For example the cubic Newton branches used 
 
 ### 9.1 Executed checks
 
-`verification/generation.log` and `verification/verification.log` record the actual runs. The software versions are Python 3.13.5 and NumPy 2.3.5. The delivered verifier:
+`verification/generation.log` and `verification/verification.log` record the actual runs. The software versions are Python 3.13.5 and NumPy 2.3.5. The original delivered verifier also checked the now superseded
+osculating-cubic identity. Its unchanged source and logs remain in the
+retained evidence directory. The current reconstruction source retains
+the checks still used here:
 
 - checks the exact input-polynomial identities and the field construction;
 - reconstructs both ranks and the full 18-dimensional kernel;
 - verifies original equations (4)–(6) on every full kernel basis vector;
 - identifies and verifies the complete seven-dimensional homogeneous boundary formula;
 - checks all coprimality hypotheses, with Bézout identities;
-- recomputes the osculating-cubic obstruction and its unit certificate;
 - independently extracts the infinity jets and checks their ranks;
 - verifies the stored forbidden-boundary point as a necessary-system point only;
-- rebuilds the reduced system and recomputes the osculation obstruction for all four supports;
+- rebuilds and verifies the reduced kernel for all four supports;
 - compares all rebuilt certificates with the delivered portable JSON data.
 
-The optional `--manifest` checks the SHA-256 file manifest as well. No probabilistic tests occur in the proofs. There is no finite-field point enumeration.
+The original archive verifier optionally checks its SHA-256 manifest.
+The current source compares the retained kernel fields of the old
+four-support certificate, omitting its superseded osculation fields.
+No probabilistic tests or finite-field point enumeration are used.
 
 ### 9.2 Implementation pitfalls corrected and guarded against
 
@@ -705,7 +641,7 @@ First-order infinity analysis cannot exclude the entire family: the verified aff
 
 A dimension comparison between a parameter space and an anticipated ramification condition is not a nonexistence proof. No such heuristic is used here. Likewise, discriminant parity by itself misses some ramification, as explained above.
 
-No exhaustive elimination for (8.1), no global nonlinear elimination for the 17-dimensional family, no global normalization/genus calculation, and no torsion computation on an actual degree-ten cover were executed. Those tasks are not represented as completed generators or certificates.
+The norm alternatives(8.1) are now both closed by the existing norm theorem. No global nonlinear elimination of the full17-dimensional family, normalization/genus calculation, or torsion computation on an actual degree-ten cover is claimed.
 
 ### 9.4 Exact remaining problem
 
@@ -715,6 +651,12 @@ a_1\ne0,
 \qquad\text{or}\qquad
 a_1=0,\ a_2\ne0.
 \]
+
+With the full order-five requirement, the later
+[trace-dual exclusion](admissible_degree_ten_trace_zero_exclusion.md)
+closes the second sector. The current actual existence gap is therefore
+\(a_1\ne0\). The following tests remain necessary for the relaxed
+non-torsion families as well.
 
 The latter must also satisfy the trace restrictions in Section 8.1. Every actual point in either sector must pass the cluster restrictions of Section 7 and the full global étaleness requirement. After an actual cover and its divisors have been established, (8.2)–(8.3) provide the precise remaining order-five test.
 
@@ -730,31 +672,3 @@ For the standard background on differents, Riemann–Hurwitz and discriminants, 
 - The Stacks Project, Lemma 49.3.1, tag **0BJF**, “A finite locally free morphism is étale if and only if its discriminant is empty.”
 
 These references are supplementary; the concrete certificates and the new geometric exclusions do not require any downloaded document or prior conversation file.
-
-## Local continuation: reuse the constant-norm theorem
-
-The first alternative in (8.1) is impossible by the already established
-[constant-norm obstruction](../jacobians/isogeny_sieves/trigonal_constant_norm_obstruction.md),
-which excludes P+g^3=h^2 even for arbitrary rational g,h. Its hypotheses
-hold for this exact X. Thus, when a_1=0 and c_y!=0, the only remaining
-trace-zero norm form is P+g^3=H_2^2J_2^3. This uses a stronger existing
-arithmetic theorem, not a new finite search. A local polynomial probe
-also returned the unit ideal for the square subcase and an explicit
-unit identity, but that redundant calculation is not needed for this
-conclusion. The six-variable square-times-cube probe did not finish
-within its recorded 45-second bound; it supplies no decision.
-
-When c_y=0, the returned trace argument excludes deg v=3. At a finite
-root r of a polynomial v of degree at most two, if P(r)!=0 the three
-points above r each have multiplicity ord_r(v). That multiplicity
-cannot be one. At a root of P it is three times ord_r(v), since x-r
-has order three. Consequently v is constant, has degree one with
-its root among the roots of P, has two distinct roots both among
-those roots, or is a scalar square of a linear polynomial. These
-possibilities include every geometric r and retain all multiplicities;
-none is asserted realizable.
-
-The reconstruction source and local bounded outcome are retained in
-[the trace probe](../../scripts/arithmetic/degree_ten_trace_polynomial_probe.py)
-and [its data](../../../litt3-computation-data/structural_norm_replies_20260924/local_trace_probe/).
-

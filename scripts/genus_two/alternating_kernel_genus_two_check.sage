@@ -15,9 +15,9 @@ from pathlib import Path
 def run(output):
     started = time.monotonic()
     root = Path(__file__).resolve().parents[2]
-    source = root/'Research/computations/genus_two_intrinsic_tensor.json'
+    source = root/'../litt3-computation-data/legacy_workspace_computations/genus_two_intrinsic_tensor.json'
     d = json.loads(source.read_text())
-    saved_source = root/'Research/computations/genus_two_intrinsic_solutions.json'
+    saved_source = root/'../litt3-computation-data/legacy_workspace_computations/genus_two_intrinsic_solutions.json'
     saved = json.loads(saved_source.read_text())
     k = GF(25, name='a', modulus=PolynomialRing(GF(5), 'z')([2,4,1]))
     a = k.gen()

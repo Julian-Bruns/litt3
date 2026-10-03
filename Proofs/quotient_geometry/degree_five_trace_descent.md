@@ -1,208 +1,146 @@
 # Proof: degree-five trace and actual endpoint descent
 
 [Statement](../../Theorems/quotient_geometry/degree_five_trace_descent.md).
+Version3 mathematical consolidation,2026-10-03. The general criterion
+below subsumes the three old incidence arguments and adds degree six.
+The original focused check covers Version2.
 
-## Low-degree divisors on the trigonal curve
+## 1. Transitive divisors and a separated pencil
 
-For the cyclic map $x:X\to\mathbf P^1$, the integral functions
-$1,y,y^2$ on the affine line and their orders at infinity give
+Use the general criterion's notation. A reduced degree-e divisor D
+over a field K, with separable points transitively permuted by its
+absolute Galois group, has this dichotomy when \(e\le B\):
 \[
-x_*\mathcal O_X=\mathcal O\oplus\mathcal O(-4)
-                         \oplus\mathcal O(-7).
-\tag{4}
+h^0(\mathcal O_X(D))=1
+\quad\text{or}\quad
+D\text{ is a union of complete fibers of }x.                 \tag{4}
 \]
-The [pencil separation theorem](../jacobians/torsion/reduced_divisor_rigidity.md)
-therefore says that every function of degree at most six belongs to
-$k(x)$. The degree-three extension has no intermediate field, so
-the theorem applies to every function outside $k(x)$. Both the
-splitting and the argument persist after any algebraically closed
-extension of constants.
+Indeed a nonconstant section has degree at most e and therefore
+belongs to \(\overline K(x)\). Its pole divisor contains a complete
+scheme fiber of x. The union of ALL complete fibers contained in D
+is nonempty and Galois stable, so transitivity makes it all of D.
+Reducedness makes these fibers unramified and disjoint; thus \(d\mid e\).
+Their x-values are separable over K because the points of D are
+separable. No uniqueness of a contained fiber is needed.
 
-In particular, suppose an effective divisor $D$ of degree five has
-$h^0(X,\mathcal O_X(D))\ge2$. A nonconstant section, viewed as a
-rational function, has pole divisor bounded by $D$ and degree at most
-five. It is a function of $x$. Its nonzero pole divisor therefore
-contains a COMPLETE scheme fiber of $x$, of degree three.
-There is at most one complete fiber contained in $D$, since two
-different fibers would have degree six. Thus the complete cubic
-fiber in $D$ is uniquely determined by $D$.
+For the given maps put \(K=k(C)\), \(L=k(T)\) and
+\(L'=K\,h^*k(X)\). The joint normalization T' has degree
+\(e=[L':K]\); its generic incidence divisor \(D_K\) on \(X_K\)
+is reduced, separable and transitive of degree e. The full norm
+divisor from T is \(\delta D_K\), with \(\delta=[L:L']\).
+Both fields and the divisor come from the ACTUAL maps.
 
-## The actual generic incidence divisor
+## 2. Prime characteristic degree and the Abel differential
 
-Assume $h$ does not descend through $\pi$. Put $K=k(C)$ and
-$L=k(T)$, with both endpoint fields embedded by the given maps.
-Since $[L:K]=5$ is prime,
+Suppose \(\deg\pi=p=\operatorname{char}(k)\le B\) and \(d\nmid p\).
+If h does not descend, prime degree gives \(L'=L\) and e=p.
+The dichotomy (4) implies \(h^0(\mathcal O_X(D_K))=1\).
+
+On a nonempty open subset where pi is etale, its fiber images give
 \[
-K\,h^*k(X)=L.
-\tag{5}
+d_C:C\longrightarrow\operatorname{Sym}^pX,\qquad
+c\longmapsto\sum_{t\in\pi^{-1}(c)}h(t).                       \tag{7}
 \]
-The map $(\pi,h):T\to C\times X$ is consequently birational onto
-its image. Over the generic point of $C$, that image is a separable
-closed point of $X_K$ of degree five. Denote its associated divisor
-by $D_K$. After passage to a separable closure of $K$, its five
-points are DISTINCT and the absolute Galois group acts transitively
-on them. The distinction of these points uses (5); it is not true
-when $h$ already descends.
+Over a splitting etale neighborhood these distinct images are the
+local maps \(h_i\). Their differential tuple is nonzero because h
+is separable. Thus \(d_C\) has nonzero generic differential.
 
-We claim that the geometric generic divisor has
-\[
-h^0(\mathcal O(D_K))=1.
-\tag{6}
-\]
-Otherwise the preceding low-degree argument supplies its unique
-complete cubic fiber. That fiber is preserved by every automorphism
-of an algebraic closure of $K$ fixing $K$. Since $D_K$ is reduced,
-the fiber consists of three distinct points, forming a proper
-Galois-stable subset of its five points. This contradicts transitivity.
-This proof also rules out a fiber defined only after a purely
-inseparable extension: its three points are among the separable
-points of $D_K$, so their $x$-value is separable over $K$.
-
-## The Abel differential retains the trace
-
-On a nonempty open subset of $C$, the fiber images under $h$ define
-a morphism
-\[
-d:C\longrightarrow\operatorname{Sym}^5X,
-\qquad c\longmapsto\sum_{t\in\pi^{-1}(c)}h(t).
-\tag{7}
-\]
-They are distinct there. Over an etale neighborhood splitting
-$\pi$, this is the unordered tuple of the five local maps $h_i$.
-Its differential is their tuple $(dh_1,\ldots,dh_5)$. Each local
-map is generically separable, because $h$ is separable and $\pi$
-is etale. Hence $d$ has NONZERO differential at the generic point.
-No division by five is involved in this calculation.
-
-Let $a:\operatorname{Sym}^5X\to\operatorname{Pic}^5X$ be the Abel
-map. Its tangent map at an effective divisor $D$ is the connecting
-map in
+For the Abel map \(a:\operatorname{Sym}^pX\to\operatorname{Pic}^pX\),
+its differential is the connecting map of
 \[
 0\to\mathcal O_X\to\mathcal O_X(D)
 \to\mathcal O_D(D)\to0.
-\tag{8}
 \]
-Indeed $T_D\operatorname{Sym}^5X=H^0(\mathcal O_D(D))$, and the
-first-order change of the associated line bundle is that connecting
-class in $H^1(\mathcal O_X)$. Its kernel is
-$H^0(\mathcal O_X(D))/k$. By (6), $da$ is injective at the
-geometric generic divisor. Consequently
+Its kernel is \(H^0(\mathcal O_X(D))/k\), hence is zero at the
+generic incidence divisor. Therefore \(d(a\circ d_C)\ne0\).
+Invariant forms on the Picard variety identify with the full
+canonical space, and differentiating the sum of point Abel images gives
 \[
-d(a\circ d)\ne0.
-\tag{9}
+(a\circ d_C)^*\omega
+=\sum_i h_i^*\omega
+=\operatorname{Tr}_\pi(h^*\omega).                          \tag{10}
 \]
+They span the Picard cotangent bundle, so this trace is nonzero.
+This argument retains an inseparable part of the abstract norm;
+it does not infer constancy from its differential.
 
-After choosing an origin on $\operatorname{Pic}^5X$, its invariant
-one-forms identify with $H^0(X,\omega_X)$. Locally the Abel image
-in (7) is the sum of the five point Abel images. Differentiating
-this sum gives, for every $\omega\in H^0(X,\omega_X)$,
+Conversely, \(h=h_0\pi\) makes the trace \(p h_0^*\omega=0\).
+The field factorization extends to smooth proper models. Separability,
+and etaleness when both original maps are etale, follow in the tower.
+
+The actual norm \(\Phi=h_*\pi^*\) cannot be zero: otherwise the
+trace criterion gives h descended, and then
 \[
-(a\circ d)^*\omega
- =\sum_{i=1}^5h_i^*\omega
- =\operatorname{Tr}_\pi(h^*\omega).
-\tag{10}
+\Phi=[p](h_0)_*\ne0.
 \]
-Invariant forms span the cotangent bundle of the Picard variety.
-Equation (9) therefore proves that the trace in (10) is not
-identically zero whenever $h$ does not descend. This proves the
-forward implication in (1), including the case in which the
-abstract norm homomorphism might have had an inseparable part.
+Indeed \((h_0)_*\) is surjective and multiplication by p is a nonzero
+isogeny, although its differential vanishes.
 
-Conversely, if $h=h_0\pi$, the trace of every pulled-back form is
-$5h_0^*\omega=0$. The factorization of function fields extends to
-a finite map of the smooth proper models. Separability and, when
-applicable, etaleness follow from multiplicativity in the tower.
+## 3. The norm criterion and the actual fiber product
 
-## The Jacobian and deck consequences
+Now assume \(e\le B\) and the actual norm is zero. Its joint-source
+norm is also zero: the original norm is its multiple by delta, and
+a homomorphism of abelian varieties with finite image is zero.
+The Abel class of \(D_K\) is therefore constant. The divisor moves
+because h is nonconstant, so its fixed complete system has at least
+two sections. By (4), it is a union of complete x-fibers.
 
-The homomorphism underlying the Abel map in (10) is
-$\Phi=h_*\pi^*:J(C)\to J(X)$. If it were zero, (10) would vanish,
-so $h=h_0\pi$. But then
+Their e/d distinct x-values form a transitive separable orbit. Hence
 \[
-\Phi=[5]\circ(h_0)_*\ne0.
-\tag{11}
+K'=K(x\circ h),\qquad [K':K]=e/d,\qquad [L':K']=d.
 \]
-Here $(h_0)_*$ is surjective: composing it with pullback is
-multiplication by $\deg h_0$ on $J(X)$. Multiplication by five is
-a nonzero isogeny, even though its differential is zero. This proves
-the asserted nonvanishing of the actual norm homomorphism.
+Let C' be the smooth proper model of K'. The compositum
+\(K'k(X)=L'\) has the FULL degree d over K', so it is the function
+field of the actual fiber product \(C'\times_{\mathbf P^1}X\).
+Its normalization is T'. A cyclic x makes \(T'\to C'\) cyclic.
 
-For the additional norm exclusion let $\deg\pi=m\in\{2,4,5\}$
-and assume $\operatorname{Hom}(J(C),J(X))=0$. Replace $T$ by the
-joint normalization $T'$ of the two fields and write
-$e=[k(T'):k(C)]$, $\delta=[k(T):k(T')]$, so $m=e\delta$.
-The generic incidence divisor on $X$ is now a reduced transitive
-degree-$e$ divisor $D$, and its norm from $T$ is $\delta D$.
-The class of $\delta D$ is constant because the actual norm
-homomorphism is zero. Multiplication by $\delta$ on the Picard
-variety is finite, including when five divides $\delta$. Thus
-the class of $D$ itself is constant: a connected reduced curve
-cannot have nonconstant image in a finite fiber.
+If pi is etale, all intermediate covers in its field tower are
+etale. If h is etale, so is \(h':T'\to X\). The full fiber product
+is integral, and its normalization covers every pair of points over
+the same target point. Multiplicativity of local indices in
+\(xh'=a\pi'\) then gives \(e_x(P)=e_a(Q)\) for EVERY such pair.
+Thus every fiber of x is uniform, and a has exactly its ramification
+indices. All these are actual maps.
 
-The family of divisors $D$ is nonconstant, since $h$ is nonconstant.
-Therefore its fixed complete linear system has at least two sections.
-Since $e\le5$, (4) and pencil separation supply a unique complete
-cubic fiber in $D$. As above, transitivity makes this fiber all of
-$D$, so $e=3$. This is impossible because $e$ divides one of
-$2,4,5$. This proves the low-degree norm exclusion. This paragraph
-uses CONSTANCY of the norm class from the zero homomorphism; the
-earlier degree-five trace argument required the stronger tangent
-analysis because its homomorphism need not have been zero.
+For the unrestricted pencil form, a base divisor of the fixed complete
+incidence system would give a Galois-stable subset of the generic
+transitive divisor. It cannot be the whole moving divisor, so it is
+empty. When the system has two sections it gives a degree-e map u;
+its reduced generic incidence member makes u separable. That member
+is a complete fiber, whose value is K-rational by transitivity.
+Thus \(uh'=a\pi_0\) for an actual map \(a:C\to\mathbf P^1\).
+The joint degree e is the full degree of u, so the fiber product is
+integral with normalization T'. The same local-index argument gives
+uniformity when both original maps are etale.
 
-Finally let $\sigma$ be an order-five deck transformation as in
-the statement. Its action on $T$ is free, so the quotient
-$\pi:T\to T/\langle\sigma\rangle$ is finite etale of degree five.
-Pulling the trace back to $T$ gives
+## 4. Trigonal specialization and deck consequences
+
+For \(x:X\to\mathbf P^1\) on \(y^3=P(x)\), the affine integral basis
+\(1,y,y^2\) and its infinity orders give
+\[
+x_*\mathcal O_X=\mathcal O\oplus\mathcal O(-4)\oplus\mathcal O(-7).
+\]
+The [pencil separation theorem](../jacobians/torsion/reduced_divisor_rigidity.md)
+therefore gives the criterion with d=3 and B=6, over all algebraically
+closed constant extensions. The cubic extension has no intermediate
+field. Prime degree five gives the trace theorem. A zero norm in
+degree at most six forces e=3 or6, excluding degrees2,4,5 and giving
+the stated C' and T' at degrees3 and6. The cyclic action is the actual
+cubic action on X. When h is etale, x's eleven totally ramified
+fibers give the complete uniform atlas for a.
+
+For an order-five deck transformation sigma, the actual quotient
+\(\pi:T\to T/\langle\sigma\rangle\) is etale of degree five, and
 \[
 \pi^*\operatorname{Tr}_\pi
- =1+\sigma+\cdots+\sigma^4=(\sigma-1)^4.
-\tag{12}
+=1+\sigma+\cdots+\sigma^4=(\sigma-1)^4.
 \]
-If $\sigma$ acts nontrivially on $E$, it acts nontrivially on the
-pulled-back canonical space of some map in the specified family.
-That map cannot factor through the quotient. Applying (1) and (12)
-proves (2) and (3). For a representation of a cyclic group of order
-five in characteristic five, (2) is exactly the occurrence of a
-Jordan block of length five. It says nothing analogous about the
-smaller three-dimensional Cartier-kernel spaces alone.
-
-## The degree-three case forces actual cubic equivariance
-
-Let $\deg\pi=3$ and $\operatorname{Hom}(J(C),J(X))=0$. The map
-$h$ cannot descend through $\pi$: a descended nonconstant map
-$C\to X$ would induce a surjective Jacobian norm. Prime degree
-therefore makes the joint field $k(C)h^*k(X)$ equal to $k(T)$.
-Its incidence divisor $D$ is reduced, transitive and of degree three.
-
-The zero norm homomorphism makes the class of $D$ constant. The
-divisors themselves move, so their fixed linear system has at least
-two sections. The low-degree pencil statement above makes each
-generic $D$ a COMPLETE fiber of $x$. Its $x$-value is invariant under
-the absolute Galois group of $k(C)$, hence belongs to $k(C)$; the
-points of $D$ are separable, so no purely inseparable issue occurs.
-This proves $xh=a\pi$ in the actual source field. The rational map
-$a$ extends to a finite separable map of smooth proper curves.
-
-The extension $k(X)/k(x)$ is cyclic Galois of degree three. Its
-compositum with $k(C)$, of degree three by joint minimality, is
-$k(T)$. Thus the normalization of the actual fiber product is $T$
-and $\pi$ is Galois. Restricting its deck generator to the embedded
-$k(X)$ gives a generator of $\operatorname{Gal}(k(X)/k(x))$.
-This proves the asserted equivariance of the ACTUAL map $h$.
-
-If $h$ is etale, multiplicativity of local ramification indices in
-$xh=a\pi$ gives $e_a(\pi(t))=e_x(h(t))$, because both $h$ and
-$\pi$ are etale. The right side is three at the eleven branch
-fibers and one elsewhere. This proves the complete uniform atlas
-statement, including the absence of additional ramification.
-
-For $N=[G,G]\simeq C_3$, the actual quotient $W/N$ is an abelian
-etale cover of $Y$, so its Jacobian has no fixed-$J(X)$ factor by
-the packet theorem. Apply this argument to $W\to W/N$ and the
-original composed map $W\to X$. No compatibility with the remaining
-deck transformations is asserted. In particular the resulting common
-field $k(\mathbf P^1)$ for $X$ and $W/N$ is not assumed to descend
-to a common field for the ORIGINAL endpoints $X,Y$.
+The trace criterion makes this operator nonzero on the canonical
+space of a map h exactly when \(h\circ\sigma\ne h\). If sigma acts
+nontrivially on the deck-stable space E in the statement, some
+generating map does not descend. Thus \((\sigma-1)^4E\ne0\), giving
+a full length-five Jordan block and a regular cyclic summand.
+This says nothing analogous about just the three exact forms.
 
 ## The original genus-two leg and its finite Galois closure
 
@@ -225,6 +163,11 @@ contradicts the actual map $W\to X$. The same proof works for any
 normal $N$ of one of these orders once its quotient Jacobian is
 known to have no $J(X)$ factor. The cited packet test supplies a
 sufficient test involving only $G/N$.
+
+For $N=[G,G]\simeq C_3$, its quotient C is still an abelian etale
+cover of Y with zero Hom to J(X). Section4 gives the full eleven-fiber
+atlas on C. This is a reduction: the resulting common rational field
+for X and C is not asserted to descend to the ORIGINAL endpoints X,Y.
 
 For a concrete family not already eliminated by the small-character
 bound, use the group $\mathsf H$ in (5) of the statement. Its

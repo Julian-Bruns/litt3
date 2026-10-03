@@ -1,6 +1,6 @@
 # Frobenius exclusions for prime-primary common-cover monodromy
 
-Version2,22September2026. Let $X/\mathbf F_{25}$ be the fixed
+Version3,3 October2026. Let $X/\mathbf F_{25}$ be the fixed
 genus-nine curve, and put $A=J(X)$. Let $Y/\mathbf F_{25^b}$ be a
 smooth proper geometrically connected curve with $1\le g(Y)\le8$.
 If $19\nmid b$, then EVERY connected finite etale geometric cover
@@ -25,18 +25,21 @@ common-cover problem.
 ## A general pro-primary arithmetic test
 
 Let $C/\mathbf F_q$ be a smooth proper geometrically connected curve,
-let $\ell\ne\operatorname{char}(\mathbf F_q)$ be prime, and let
-$m$ be the order of Frobenius on $J(C)[\ell]$. Every geometric
+let $\ell$ be ANY prime, and let
+$m$ be the order of Frobenius on $J(C)[\ell](\overline{\mathbf F}_q)$
+(the étale torsion, including when $\ell=\operatorname{char}(\mathbf F_q)$).
+For a zero-dimensional torsion space take $m=1$. Every geometric
 connected etale cover $T\to C$ with $\ell$-group Galois closure has
 a model over $\mathbf F_{q^{m\ell^a}}$, for some $a\ge0$, whose
-Jacobian has rational full $\ell$-torsion over that SAME field.
+Jacobian has rational étale $\ell$-torsion over that SAME field.
+For $\ell\ne\operatorname{char}(\mathbf F_q)$ this is the full torsion.
 Neither the given cover nor any map out of it is assumed to descend
 over the initial field.
 
 Suppose an abelian variety $A_0/\mathbf F_q$ is a geometric isogeny
 factor of $J(T)$, and let $\pi$ be any Frobenius eigenvalue of $A_0$.
 Put $K=\mathbf Q(\pi)$, or any number field containing $\pi$.
-For every choice of reduction at $\ell$ one necessarily has
+At every reduction for which $\pi$ is an $\ell$-adic UNIT one has
 \[
 \boxed{\overline\pi^{\,m}\in\overline{\mu(K)}.}
 \tag{2}
@@ -47,6 +50,9 @@ In particular, if $o$ is the order of $\overline\pi$ and $w$ is
 the prime-to-$\ell$ part of $|\mu(K)|$, then $o\mid mw$.
 The reduction of the prime-to-$\ell$ part of a root of unity is
 injective; root-of-unity twists from outside $K$ cannot bypass (2).
+For $\ell\ne\operatorname{char}(\mathbf F_q)$ every eigenvalue is a
+unit. At the characteristic prime this assertion concerns only the
+unit roots; positive-slope eigenvalues supply no such test.
 
 For the fixed $X$, the existing exact Frobenius calculation gives
 \[
@@ -82,8 +88,11 @@ merely on the prime factors of its degree.
 
 This uses the same test(2), now with the genus-nine curve as the
 base, the geometric factor $J(Y_0)$ as target, and its roots of
-unity $\mu_2$. The tested primes2,3,29 do not give a reverse
-exclusion by this test. No assertion about untested primes or the
-main partner is made in(4).
+unity $\mu_2$. The seven exclusions require only polynomial-power witnesses:
+a valid exponent bound on the base's semisimple Frobenius order and
+failure of the corresponding target annihilation. Exact root orders
+and factorization are unnecessary. The historical tested primes2,3,29
+do not give a reverse exclusion by this test; no assertion about
+untested primes or the main partner is made in(4).
 
 [Proof](../../../Proofs/jacobians/isogeny_sieves/pro_primary_frobenius_exclusion.md).

@@ -13,9 +13,9 @@ from sage.all import GF, LaurentPolynomialRing, PolynomialRing, matrix, vector
 root = Path(__file__).resolve().parents[3]
 ap = argparse.ArgumentParser(description=__doc__)
 ap.add_argument('--output', type=Path,
-                default=root/'Research/computations/rank25_transverse_curve_reconstruction.json')
+                default=root/'../litt3-computation-data/legacy_workspace_computations/rank25_transverse_curve_reconstruction.json')
 args = ap.parse_args()
-sources = {name: root/'Research/computations'/filename for name, filename in {
+sources = {name: root/'../litt3-computation-data/legacy_workspace_computations'/filename for name, filename in {
     'space': 'rank25_fifth_covariant_reconstruction_space.json',
     'normal_form': 'rank25_transverse_normal_form.json',
     'curve': 'rank25_one_parameter_full_exclusion.json',

@@ -27,7 +27,7 @@ fixing h_zeta=a would double-count the coefficient-field conjugate.
 
 ## 2. Cubic symmetry gives the invariant local models
 
-The2854-byte [center description](../../Research/computations/invariant_oper_centers.json)
+The2854-byte [center description](../../../litt3-computation-data/legacy_workspace_computations/invariant_oper_centers.json)
 contains a squarefree degree55 H(b), eight polynomials B_i(b) with B7=b,
 and six irreducible factors of degrees1,1,2,9,19,23. Direct substitution
 in all96 original quadrics verifies55 distinct centers(B0,0,0).
@@ -147,7 +147,7 @@ tuples are
 Distinct j have distinct normalized a9; distinct b have distinct c4;
 different factors are coprime. Changing alpha or beta permutes this same
 list, whether the cubic root already lies in the residue field or not.
-The [compact census](../../Research/computations/complete_oper_solutions_README.md)
+The [compact census](../../Research/notes/oper_census/complete_oper_census.md)
 specifies every index and multiplicity without repeated coordinate rows.
 
 Both the curve and the untwisted atlas problem are defined over F25.

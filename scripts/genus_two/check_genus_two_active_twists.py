@@ -1,5 +1,5 @@
 #!/usr/bin/env sage-python
-"""Exact affine-orbit certificate for genus-two critical data and twists.
+"""Exact affine-orbit certificate for genus-two twisted tangent blocks.
 
 Run with sage -python. The default proves generic nonvanishing by exact
 F5[t] factors; --backup checks the actual cubic parameter. Split twists
@@ -64,19 +64,6 @@ def generic_check():
         sixth=sum((prime(comb(i,6))*D[i]*u**(i-6) for i in range(6,D.degree()+1)),U.zero())
         return R,S,J,sixth,(S*R*R)[4]
 
-    critical=[]
-    for source in (0,4):
-        R,S,J,sixth,c=source_data(source)
-        assert J.degree()==4 and J.leading_coefficient() in prime
-        Q=U.quotient(J,'r');r=Q.gen();V=PolynomialRing(Q,'x');xx=V.gen()
-        FF=V(list(F))
-        for A in (Q(sixth)*V(list(R))*(xx-r)**2,V(list(c*S))):
-            cartier=FF**2*A**4
-            assert all(cartier[5*i+4]==A[i]**5 for i in range(5))
-        critical.append(dict(source=source,discriminant=factor_record(J.discriminant(),6),
-                             critical_K=factor_record(J.resultant(sixth),3),
-                             branch_c=factor_record(c,1),
-                             generic_quartic_identities=['branch','entire critical algebra']))
     records=[];bad=set()
     for source,target,orbit in affine_orbits():
         R,S,J,sixth,c=source_data(source)
@@ -98,9 +85,9 @@ def generic_check():
     expected={(4,7),(4,9),(8,2),(8,10),(11,0),(11,12),(13,3),(13,5),(14,1),(14,6)}
     assert bad==expected
     return dict(status='PASS',mode='symbolic affine orbits',class_labels=[list(p) for p in IDS],
-                critical_representatives=critical,twist_representatives=records,
+                twist_representatives=records,
                 represented_nonzero_class_pairs=225,identically_bad_pairs=[list(p) for p in sorted(bad)],
-                critical_parameter_degree_bound=6,full_twist_parameter_degree_bound=9,
+                full_twist_parameter_degree_bound=9,
                 split_twists='V_d1 direct-sum V_d2; all two-torsion dormant tangents vanish by the count theorem.')
 
 

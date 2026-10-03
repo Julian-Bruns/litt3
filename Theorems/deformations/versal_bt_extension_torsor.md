@@ -1,6 +1,6 @@
 # A rank-four affine torsor represents the actual next BT level
 
-Version1,20 September2026. Let $C/k$ be smooth projective connected,
+Version2,3 October2026. Let $C/k$ be smooth projective connected,
 $k=\overline{\mathbf F}_5$, of genus at least two. Let $A_N/C$ be
 an actual determinant-normalized height-two, dimension-one BT$_N$,
 $N\ge1$. Its BT1 $H$ is everywhere versal, generically ordinary,
@@ -47,12 +47,26 @@ e_N(A_N)=0
 A_N\text{ has an actual normalized marked BT}_{N+1}\text{ on }C.
 \tag{5}
 \]
+If the induced connection is indigenous-ordinary, then
+$H^0(C,\mathcal B_H)=H^1(C,\mathcal B_H)=0$.
+Therefore EVERY supplied normalized marked BT$_N$ has a UNIQUE next
+extension and a UNIQUE full marked tower on the ORIGINAL curve.
+This requires no global next-level reference. It applies to every
+actual versal BT1 on either selected genus-two endpoint. It does
+not identify the two pulled-back towers on a common source.
+
 This statement does not assert a fine moduli scheme on arbitrary,
 possibly nonreduced base schemes, or a universal BT group over the
 total space of the torsor. It classifies actual groups on etale
 curves over $C$ and in particular on $C$ itself.
 
-All constructions commute with actual etale pullback. For a
+All constructions commute with actual etale pullback. For any actual
+five-group Galois cover $q:D\to C$, of group $P$, the ambient module is
+\[
+H^0(D,q^*L)\simeq k[P]^{\,3g(C)-3}.
+\tag{3a}
+\]
+For a
 five-group Galois cover with a next-level reference upstairs,
 the class (4) is exactly the class detected by the Cartier primitive
 in [the existence-descent theorem](bt_p_cover_cartier_obstruction.md),

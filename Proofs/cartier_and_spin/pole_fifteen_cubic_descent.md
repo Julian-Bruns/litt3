@@ -35,30 +35,17 @@ to vanishing of either character pair, and then both vanish.
 Assume index one for a contradiction. Thus M=k(x_i,Z),
 [M:k(Z)]=15, and both character pairs are nonzero.
 
-## Phase balance retains the fivefold exception
+## The later integer phase theorem applies directly
 
-At a zero of t over an A-root alpha, put V=t^3x2. Its leading
-value is b=epsilon b0_alpha xi, xi^29=1. The first slope of x1
-depends on xi^4. Trace of the regular forms x^a dx/y^2,0<=a<=5,
-and x^a dx/y,0<=a<=2 to k(t) is zero. Vandermonde separation
-at the at most four A-roots makes the sums of these phases equal
-on the three cubic sheets. With four occupied roots the multiplicities
-are2,1,1,1; first separate the singleton roots using three-phase
-rigidity, then apply the second trace at the remaining root.
-
-The exact size-five phase lemma has only one exception: distinct
-five-element multisets in mu29 have equal sums only when both
-are five identical copies, with sum zero. All237336 multisets were
-enumerated over an explicitly checked degree14 field, and this
-finite dependency was replayed locally.
-
-The exceptional case is resolved by the OTHER actual endpoint.
-Its leading infinity polynomial has exponents0,3,6,9,12,15,10,13
-and roots delta v_alpha zeta3^j xi_j^10, each repeated five times.
-Its missing degree-five coefficient forces
-sum_j zeta3^-j xi_j^-10=0. Independence of at most three distinct
-29th roots over F25 forces all xi_j equal. Thus the phase multisets
-agree on all three sheets in every case, on both legs.
+At each A-root the actual polynomial norm gives equal sheet
+cardinalities m_alpha, with sum m_alpha=5. The later
+[unbounded phase theorem](unbounded_modular_phase_balance.md)
+therefore balances every phase as an INTEGER multiplicity on the
+three sheets, on both actual legs. Its two-jet field separation
+proves equality modulo five; its index-five norm coefficient
+removes any fivefold discrepancy. Here each root has at most
+one fivefold block. This includes the concentrated norm and
+arbitrary repeated phases, without a size-five multiset search.
 
 Their equal leading germs imply
 \[
@@ -202,11 +189,11 @@ at least two. The quotient-degree-five problem is separate from this
 descent argument and is now closed by
 [the complete pole15 exclusion](pole_fifteen_complete_exclusion.md).
 
-## Verification
+## Scope and evidence
 
-All seven exact suites and the28-file manifest passed locally.
-The independent audit checked actual factor transport, resonance,
-all scalar cases of the finite-part lemma, and the characteristic-five
-q^5 step. See [the integration record](../../Research/audits/CRITICAL_DESCENT_REPLIES_2026_09_27.md).
-Source copies are retained in
-[the source directory](../../scripts/arithmetic/pro_critical_descent_20260927/pole15/verify_all.py).
+The [original audit](../../Research/audits/CRITICAL_DESCENT_REPLIES_2026_09_27.md)
+checks actual factor transport, resonance, all scalar cases of the
+reciprocal lemma and the q^5 step. The later phase theorem replaces
+the finite phase input; the rest of this all-degree proof is unchanged.
+Original evidence and sources remain in
+[external provenance](../../../litt3-computation-data/archive_cleanup_20260930/older_phase_before_hindsight/).

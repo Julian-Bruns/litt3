@@ -149,6 +149,6 @@ independent ranks matching all formulas, including cases where
 M0*M0^[5]=0 but M0²!=0. Separate six-column norm tests check both
 source and target specializations and inversion equivariance.
 Runtime11.93s on one CPU; receipt
-Research/computations/neutral_dihedral_towers_independent_audit_20260911.json.
+../litt3-computation-data/legacy_workspace_computations/neutral_dihedral_towers_independent_audit_20260911.json.
 These matrices test the algebraic proof; they are not substituted
 for the actual geometric Hodge maps or higher Witt calculations.

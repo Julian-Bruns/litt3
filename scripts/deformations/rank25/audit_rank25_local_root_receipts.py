@@ -63,5 +63,5 @@ for run in paths:
         point['roots_excluded_by_Frobenius_and_sign']=len(orbit)*(2 if -lam not in orbit else 1)
     reports.append(point)
 result={'status':'PASS independent Sage field/rank audit','points':reports}
-(root/'Research/computations/rank25_local_root_receipts.json').write_text(json.dumps(result,indent=2)+'\n')
+(root/'../litt3-computation-data/legacy_workspace_computations/rank25_local_root_receipts.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps(result,indent=2))

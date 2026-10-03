@@ -11,7 +11,7 @@ the actual source polynomial.
 ## Actual necessity away from the marked point
 
 Where v is a unit, divide F_ell by v and apply the
-[source-root residue lemma](actual_split_critical_residue_integrality.md)
+[source-root residue lemma](critical_residues_primitive_derivative.md)
 with cubic S/v, constant term t^3/v and multiplier t*x^i*y^j. Its
 second derivative is -2*eta/v. The resulting critical residue is,
 up to a fixed nonzero constant,
@@ -66,7 +66,7 @@ quadratic; its derivative still divides the partial derivative of
 Lambda. Thus positive principal-part coefficients of the trace are
 residues of an integral quadratic trace, and vanish. This is the
 same paired-residue argument as in the
-[constant-family divided trace](degree140_inverse_discriminant_quadratic_traces.md).
+[constant-family divided trace](degree140_actual_source_traces.md).
 At Q9 finite values the traced function is regular, as just shown.
 There are no other possible finite-scale poles. Therefore U is a
 polynomial, not just a rational function agreeing with a polynomial

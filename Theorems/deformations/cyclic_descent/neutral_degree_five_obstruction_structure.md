@@ -55,6 +55,6 @@ upper compatible tower forces that lower next lift to exist.
 The primitive S5 norm model survives both regularity and kernel/cokernel
 duality. Neither this theorem nor that model decides(N5). The cyclic
 even-defect restriction is already contained in the stronger
-[section-growth theorem](../section_growth/symplectic_p_cover_section_growth.md).
+[section-growth theorem](../section_growth/cyclic_symplectic_blocks.md).
 
 [Proof](../../../Proofs/deformations/cyclic_descent/neutral_degree_five_obstruction_structure.md).

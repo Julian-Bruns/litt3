@@ -34,11 +34,18 @@ B_{1,C}=coker(O_(C^(1))->F_(C*)O_C). Then:
    two at (W,+/-M) for the other five W, and one at the other132 points.
    No multiplicity identification with the Raynaud determinant is assumed.
 
+4. For every smooth parameter, no nonzero regular one-form with a
+   double zero is a Cartier eigenform, including eigenvalue zero.
+   This follows directly from the explicit Cartier matrix and does
+   not use the torsion incidence.
+
 In particular, an actual coreless bi-etale span with endpoint C_t cannot
 have a singleton clump image there in the Cartier-zero branch. No bound
 on larger clumps, clump-existence theorem, or exclusion of coreless spans
 is asserted. The result applies to high-prime-degree family members in
 bounded_atlas_partner_finiteness, but does not complete that counterexample.
 
-Version1,2026-09-08.
+Version2,3 October2026. The independently audited singleton-root
+argument is unchanged; the double-zero eigenline corollary is integrated
+from its Cartier matrix with focused author review.
 [Proof](../../../Proofs/jacobians/torsion/family_singleton_root_exclusion.md).

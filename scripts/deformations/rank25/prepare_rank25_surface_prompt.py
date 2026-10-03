@@ -129,13 +129,13 @@ def main():
     payload['known_excluded_root']={'lambda':code((3,2,2,2)),
         'quotient':[0,0,code((0,4,2,2)),code((3,0,4,4))],
         'negative_root':'also excluded by the marked involution'}
-    leverage=json.loads((root/'Research/computations/rank25_surface_trace_leverage.json').read_text())
+    leverage=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/rank25_surface_trace_leverage.json').read_text())
     payload['optional_replacement_fourth_digit_10_0']=leverage['optional_replacement_fourth_digit_10_0']
     payload['filtered_fourth_source_degrees']=[[*v['fourth_digit_exponent'],v['minimal_source_AS_degree']]
                                              for v in leverage['filtered_fourth_solves']]
     payload['mixed_cubic_trace_coefficient_s25_lambda50']=code((3,0,4,0))
     payload['trace_support_SUGGESTION_NOT_PROVED']=[[0,0],[25,0],[0,50],[25,50]]
-    exclusion=json.loads((root/'Research/computations/rank25_one_parameter_full_exclusion.json').read_text())
+    exclusion=json.loads((root/'../litt3-computation-data/legacy_workspace_computations/rank25_one_parameter_full_exclusion.json').read_text())
     assert exclusion['status'].startswith('PASS') and exclusion['root_count']==30
     payload['established_curve_exclusion']={key:exclusion[key] for key in (
         'G_monic','residual_polynomials_mod_G','separating_combination_coefficient',
@@ -173,7 +173,7 @@ def main():
             'uncompressed_bytes':sum(map(len,files.values())),'files':{n:len(v) for n,v in files.items()},
             'sha256':hashlib.sha256(blob).hexdigest(),
             'leverage':'A two-dimensional W5-locus verdict. The whole curve s=lambda^-2 is now excluded; a uniform trace theorem would finish the surface. Support and divided-carry mechanism remain unproved.'}
-    (root/'Research/computations/rank25_surface_prompt_checks.json').write_text(json.dumps(result,indent=2)+'\n')
+    (root/'../litt3-computation-data/legacy_workspace_computations/rank25_surface_prompt_checks.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result,indent=2))
 
 

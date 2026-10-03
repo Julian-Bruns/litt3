@@ -18,9 +18,9 @@ def main():
     parser.add_argument("--output",required=True)
     args=parser.parse_args()
     started=time.monotonic()
-    paths={"model":"Research/computations/neutral5_hyperelliptic_model.json",
-           "primary":"Research/computations/neutral5_w4_input.json",
-           "covers":"Research/computations/explicit_nonordinary_dihedral5.json"}
+    paths={"model":"../litt3-computation-data/legacy_workspace_computations/neutral5_hyperelliptic_model.json",
+           "primary":"../litt3-computation-data/legacy_workspace_computations/neutral5_w4_input.json",
+           "covers":"../litt3-computation-data/legacy_workspace_computations/explicit_nonordinary_dihedral5.json"}
     raw={key:Path(path).read_bytes() for key,path in paths.items()}
     data={key:json.loads(value) for key,value in raw.items()}
     covers=data["covers"]; primary=data["primary"]; model=data["model"]

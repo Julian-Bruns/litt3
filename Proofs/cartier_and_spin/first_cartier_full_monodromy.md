@@ -60,24 +60,28 @@ construction, so these reductions remain in the common category.
 
 ## 2. Two affine quotients of the reduced jet group
 
-Write the first four coefficients of a jet as
+Only the first three coefficients are needed. Write
 \[
-\phi(t)=a\bigl(t+x t^2+(y+x^2)t^3+(z+x^3)t^4+\cdots\bigr).
+\phi(t)=a\bigl(t+x t^2+(y+x^2)t^3+\cdots\bigr).
 \tag{1}
 \]
-The diagonal torus has weights $1,2,3$ on $x,y,z$ (up to reversing
-all weights by the action convention). When $p=5$ and $r=1$, the entire
-unipotent radical is a three-dimensional Heisenberg group, with
-central cross term $2xy'-2yx'$ in this convention. The argument
-below works for all $p\ge5$ without using this special description.
-
-For general jets, direct composition gives
+For \(\psi=A(t+Xt^2+(Y+X^2)t^3+\cdots)\), the first coefficients
+of \((aA)^{-1}\phi\circ\psi\) are
 \[
-x(\phi\circ\psi)=x(\psi)+a(\psi)x(\phi),
-\qquad
-y(\phi\circ\psi)=y(\psi)+a(\psi)^2y(\phi).
+t+(X+Ax)t^2+
+\bigl(Y+X^2+2AxX+A^2(y+x^2)\bigr)t^3.
+\]
+Completing the square gives the two affine cocycles directly:
+\[
+x(\phi\circ\psi)=X+Ax,\qquad
+y(\phi\circ\psi)=Y+A^2y.
 \tag{2}
 \]
+The scaling torus has weights1 and2 on these two translations
+(up to reversing both weights with the action convention).
+This calculation is valid in every coefficient ring and for every
+jet order at least three; no characteristic-five group table is needed.
+
 The first affine action is, up to the invertible scalar $2$, the
 transformation of a connection coefficient on $\omega$.
 The second is, up to the invertible scalar $6$, the
@@ -209,9 +213,18 @@ and has $b^{q-1}\ne0$. Consequently $d=q$, so $T_H=\alpha_q$.
 Together with (4), this proves $H_r=\mathcal G_r$ as group schemes.
 No extrapolation from the first Frobenius kernel is involved.
 
-Choosing compatible local parameters identifies the intermediate
-Frobenius subalgebras on both sides, so the restriction morphisms
-in the actual monodromy tower are the coordinate restriction maps.
+For \(1\le s\le r\), the actual intermediate algebra is
+\[
+A_{p^s}\hookrightarrow A_{p^r},\qquad
+u\longmapsto t^{p^{r-s}}.
+\]
+Writing \(h(t)=\sum_i a_it^i\), its restriction is therefore
+\[
+u\longmapsto\sum_{i=0}^{p^s-1}a_i^{p^{r-s}}u^i.
+\tag{5}
+\]
+The target coefficient twist is retained. These formulas identify
+the actual Frobenius-subalgebra restrictions throughout the tower.
 
 ## 5. The common-oper branch has the projective normalizer
 
@@ -231,10 +244,10 @@ This normalizer is precisely the group $\mathcal N$ of fractional
 linear substitutions
 \[
 t\longmapsto\frac{at+b}{ct+d},\qquad b^p=0,
-\tag{5}
+\tag{6}
 \]
 where matrices are taken projectively and their determinant is
-invertible. The condition makes $d$ a unit locally, and (5)
+invertible. The condition makes $d$ a unit locally, and (6)
 defines an automorphism of $A_p$.
 
 There is a direct proof over arbitrary coefficient algebras.
@@ -252,10 +265,17 @@ $h'(t-c_2t^2)=h$ modulo $t^p$. The coefficient of $t^n$ gives
 \]
 where $c_1=1$. Every factor $n-1$ is invertible. Hence
 $c_n=c_2^{n-1}$ and $h=t/(1-c_2t)$ modulo $t^p$.
-Undoing the normalization gives exactly (5).
-Conversely the three coefficients $1/h',h/h',h^2/h'$ are
-quadratic for a fractional-linear $h$, proving preservation of
-$K_0$. This establishes the full scheme normalizer, including
+Undoing the normalization gives exactly (6).
+Conversely put \(\Delta=ad-bc\). For \(h=(at+b)/(ct+d)\),
+\[
+h'=\frac{\Delta}{(ct+d)^2},\qquad
+\frac1{h'}=\frac{(ct+d)^2}{\Delta},\quad
+\frac h{h'}=\frac{(at+b)(ct+d)}{\Delta},\quad
+\frac{h^2}{h'}=\frac{(at+b)^2}{\Delta}.
+\]
+These coefficients are quadratic over every coefficient ring, so
+they preserve \(K_0\). Modulo \(t^p\),
+\(h^p=b^p/d^p\), proving exactly the truncation condition. This establishes the full scheme normalizer, including
 nilpotent coefficient directions, without classifying Lie algebra
 automorphisms. Equivalently
 \[
@@ -263,7 +283,8 @@ automorphisms. Equivalently
 \]
 
 Its reduction is the projective Borel $B$, whose first jet coefficients
-in (1) have $y=z=0$. The scaling character again has
+in (1) have $y=0$; the remaining jet coefficients
+are fixed by its fractional-linear form. The scaling character again has
 infinite image. If $H_{\mathrm{red}}$ were proper in $B$, it would
 be a conjugate of its scaling torus; a nonzero reduced unipotent
 subgroup stable under that torus is the entire root line. After
@@ -281,16 +302,12 @@ because $B\to B^{(1)}$ is faithfully flat. Therefore $H=\mathcal N$.
 
 ## Scope
 
-The [exact polynomial check](../../scripts/arithmetic/check_first_cartier_jet_group.py),
-run with Sage's Python and SymPy, verifies (1)--(3), the characteristic-five
-Heisenberg cross term, and the three fractional-linear vector-field
-identities. It also checks the two affine cocycles, truncation and
-Lie-generation coefficients for primes $5,7,11,13,17,19$, including
-jet orders through $p^3-1$; the proof above establishes every height
-for every $p\ge5$, without extrapolation. Its
-[executed receipt](../../../litt3-computation-data/bt_obstruction_transport_20260921/first_cartier_jet_group.json)
-records the source hash. It supplements, but does not replace,
-the actual torsor and subgroup arguments above.
+The cocycles are coefficient identities, the all-height Lie
+generation handles every resonance, and the normalizer calculation
+holds over arbitrary coefficient rings. The bounded polynomial
+checker is therefore unnecessary and has been deleted completely.
+Its original executed receipt and source hash remain in
+[the external provenance record](../../../litt3-computation-data/jet_monodromy_before_hindsight/provenance.json).
 
 This proof uses the actual endpoint coordinate-jet torsors to
 determine the reduced monodromy, and the full orbit to recover the

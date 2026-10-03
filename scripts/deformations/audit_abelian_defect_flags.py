@@ -21,7 +21,7 @@ def main():
     ap.add_argument('--output', required=True)
     args = ap.parse_args()
     tic = time.monotonic()
-    data = Path(__file__).resolve().parents[2] / 'Research/computations'
+    data = Path(__file__).resolve().parents[2] / '../litt3-computation-data/legacy_workspace_computations'
     receipt_path = data / 'backup_bad_double_cyclic_directions.json'
     receipt = json.loads(receipt_path.read_text())
     prime = GF(5)

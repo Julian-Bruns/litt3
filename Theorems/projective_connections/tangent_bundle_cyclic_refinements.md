@@ -1,6 +1,6 @@
 # Tangent bundles and controlled cyclic refinements
 
-Version4.
+Version5, 3 October2026.
 
 Let C be a smooth projective connected curve of genus g>=2 over an
 algebraically closed field of characteristic5. Use the
@@ -86,12 +86,23 @@ while (3) deliberately chooses subgroups containing bad characters.
 
 ## 4. Both actual legs survive the bad refinements
 
-Given an ACTUAL bi-etale span X←Z→Y, with simple endpoint Jacobians over
-bar(F_5), finite families on BOTH endpoints, a prescribed connected etale
-refinement Z_0→Z and a finite avoided prime set, there is a nested tower
-of connected CYCLIC etale refinements Z_j→Z_0, all avoiding that set,
-on which every endpoint connection has tangent defect at least j.
-Both maps from the SAME Z_j to X and Y remain finite etale.
+Given an ACTUAL bi-etale span X←Z→Y over bar(F_5), finite connection
+families on BOTH endpoints and a prescribed connected etale refinement
+Z_0→Z, suppose each endpoint bad-character locus contains an
+irreducible positive-dimensional T in an abelian subvariety A, with
+T contained in no translate of a proper abelian subvariety of A.
+Simple endpoint Jacobians suffice.
+
+For every finite avoided prime set there is a nested tower of connected
+CYCLIC etale refinements Z_j→Z_0, of degrees prime to5 and that set,
+with pairwise coprime successive degree factors, such that for EVERY
+specified endpoint connection r, writing r_0 for its pullback to Z_0,
+\[
+\dim T_*(Z_j,r_j)\ge\dim T_*(Z_0,r_0)+j.                    \tag{6}
+\]
+Both maps from the SAME Z_j to X and Y remain finite etale. One tower
+on Z_0 grows all the tangent spaces simultaneously; no identification
+between the endpoint connections is required.
 
 The refined spans need not be jointly minimal or coreless. This is a
 boundary to ordinary-source arguments, NOT a counterexample to an

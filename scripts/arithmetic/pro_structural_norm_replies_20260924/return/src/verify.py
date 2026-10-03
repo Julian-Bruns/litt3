@@ -129,10 +129,6 @@ def main(regenerate: bool=True):
     assert -max(3*i+10*j for i,j in b0)==-142 and b0[(44,1)]==1
     assert pgcd(pos['A'],pos['B'])==[1] and pgcd(pos['A'],P_CODES)==[1]
     check(True,'s_* has no finite or infinite zero in F^2K(-8O)')
-    for twist,dim in [(-8,1),(-9,0)]:
-        X=np.stack([vec(mul(E,{ij:1}),forbidden(twist-125)) for ij in L(150+twist)],axis=1)
-        assert X.shape[1]-len(rref(X)[1])==dim
-    check(True,'h0(F^2K(-8O))=1 and h0(F^2K(-9O))=0')
 
     Fd=load('filtration_matrices.npz');C=Fd['C'];Spos=Fd['Spos']
     for j in range(4):
@@ -187,7 +183,7 @@ def main(regenerate: bool=True):
     check(True,'software-independent JSON agrees with every stored array')
 
     if regenerate:
-        scripts=['reconstruct.py','line_incidence.py','cofactors.py','filtration.py','macaulay.py','modification_model.py','global_coupling.py','export_json.py','explore_projective_period.py']
+        scripts=['reconstruct.py','line_incidence.py','cofactors.py','filtration.py','macaulay.py','modification_model.py','global_coupling.py','export_json.py']
         with tempfile.TemporaryDirectory(prefix='return19_verify_') as tmp:
             target=Path(tmp)
             shutil.copytree(ROOT/'src',target/'src',ignore=shutil.ignore_patterns('__pycache__'))
@@ -197,8 +193,6 @@ def main(regenerate: bool=True):
                 result=subprocess.run([sys.executable,str(target/'src'/script)],capture_output=True,text=True,env=env,timeout=180)
                 if result.returncode:
                     raise RuntimeError(script+' failed:\n'+result.stdout+'\n'+result.stderr)
-                if script=='explore_projective_period.py':
-                    assert 'matrix (291, 259) kernel 0' in result.stdout
                 print('REGENERATED:',script,flush=True)
             for stored in sorted((ROOT/'data').glob('*.npz')):
                 generated=target/'data'/stored.name

@@ -1,6 +1,6 @@
 # Higher Cartier kernels on a clumpless correspondence
 
-Version2,20 September2026. Let $k$ be algebraically closed of odd
+Version3,3 October2026. Let $k$ be algebraically closed of odd
 characteristic $p$, and let $X\leftarrow Z\to Y$ be an actual finite
 étale span of smooth projective connected hyperbolic curves, with
 NO clump. Assume $p\nmid g(Y)-1$. Common bundles, morphisms and
@@ -56,17 +56,19 @@ proved common simplicity, exclude every extra subobject.
 
 ## The connection obstruction that closes the induction
 
-Put $H_s=F_*^{[s]}B^{[1]}$. A common subbundle $V\subset F_*H_s$
+Put $H_s=F_*^{[s]}B^{[1]}$. A NONZERO common saturated subbundle
+$V\subset F_*H_s$
 has a uniquely determined integer $1\le\ell\le p$ and an actual
 common identification
 \[
 F^*V\simeq J^{\ell-1}H_s.
 \]
-The [scalar Atiyah obstruction](common_atiyah_jet_obstruction.md)
-proves that such a jet bundle can have a common connection only
-if $p\mid\ell$. Its proof traces on a rank-$p-1$ canonical grade,
-never on the $p$-divisible total rank. Thus $\ell=p$ and $V=F_*H_s$.
-Starting from common simplicity of $B^{[1]}$ completes the induction.
+The later [general seed theorem](common_atiyah_jet_obstruction.md)
+applies directly to the common-simple rank-p-1 seed B. It proves
+simplicity of EVERY H_s and the exact jet-length criterion in one
+induction. Its scalar detector traces on the original seed,
+whose rank is invertible. No separate Cartier-height induction
+or trace on a p-divisible total rank is needed here.
 
 In particular, in characteristic5 the returned rank20 and rank40
 connection exclusions settle height three. The general block-sum

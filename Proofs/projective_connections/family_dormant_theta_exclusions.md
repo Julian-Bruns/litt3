@@ -1,10 +1,47 @@
-# Proof: spreading the actual determinant and Frobenius exclusions
+# Proof: the actual common rank-two locus and uniform Frobenius boundary
 
 [Statement](../../Theorems/projective_connections/family_dormant_theta_exclusions.md).
 We use the actual Bol kernels and the original relative Frobenius.
 The rational parameter a is a device for computing identities whose
 specializations are curves over \(\overline{\mathbf F}_5\).
 No assertion about deforming a hypothetical common span is made.
+
+## Common moduli geometry
+
+For every smooth parameter, put \(A=J(C_a)\) and
+\(S_0=SU_{C_a}(2,\mathcal O)=\mathbf P^3\). The presentation
+\[
+\rho:S_0\times A\longrightarrow U_{C_a}(2,0),\qquad
+(W,M)\longmapsto W\otimes M
+\]
+is the base change of \([2]:A\to A\) along determinant. The free
+action \((W,M)\mapsto(W\kappa,M\kappa)\) of \(A[2]\) makes it
+finite étale of degree16. Thus the target is a smooth projective
+fivefold. Each actual section-test divisor \(\mathcal D_i\) is
+nonzero: choose M outside the proper theta divisor of \(\mathcal V_i\)
+and test \(M\oplus M\). Its pullback has numerical class
+\[
+\rho^*[\mathcal D_i]=2H+4\Theta.
+\tag{A}
+\]
+The first degree is the rank-two determinant-cut calculation.
+The second is the theta class of the rank-four, Euler-characteristic-zero
+bundle \(\mathcal V_i\otimes W\); the product with projective space
+has no mixed Picard class. Hence each divisor is ample.
+
+Five effective ample divisors on a projective fivefold have nonempty
+common support, even without proper intersection: an ample divisor
+meets every positive-dimensional projective component unless it
+contains it. This proves nonemptiness at EVERY smooth parameter.
+Whenever the common scheme \(\mathcal Z_a\) is finite, its five
+equations form a regular sequence in the regular local rings. Since
+\(H^3=1\) and \(\Theta^2=2\),
+\[
+\operatorname{length}\mathcal Z_a
+=\frac1{16}\binom53 2^3 4^2\Theta^2=160.
+\tag{B}
+\]
+This counts scheme length, not distinct geometric points.
 
 ## Geometric inputs
 
@@ -294,17 +331,134 @@ the five displayed twist families. Hence every common coefficient
 bundle has semistable first pullback. This assertion does not
 distinguish stable from strictly semistable first pullback.
 
+## The cubic fiber: finite support and an explicit reduced point
+
+At \(a=\alpha\), each degree-zero line lies on at most two of the
+five theta divisors, by the
+[base theta theorem](backup_dormant_theta_divisors.md). If E is
+strictly semistable with line factors \(L_1,L_2\), the exact
+cohomology sequence shows that a positive test on E requires a
+positive test on at least one factor. The two factors can therefore
+account for at most four tests. Every common E at this fiber is stable.
+This uses only that implication; a section of a quotient line need
+not lift in a nonsplit extension.
+
+The determinant-zero square and the span of the five Bol points
+exclude \(\det E=\mathcal O\). The fifteen smooth forced quadrics
+already exclude every nontrivial two-torsion determinant and every
+actual double-cover pushforward.
+
+Write \(\mathcal Y_\alpha\subset S\times K\) for the five-test
+scheme with equations \(F_0,\ldots,F_4,G(c)\). On the affine chart
+\(b_3=c_3=1\), its exact ideal is
+\[
+I=(F_0,\ldots,F_4,G(c))
+\subset k_0[b_0,b_1,b_2,c_0,c_1,c_2].
+\tag{E}
+\]
+The retained Sage/Singular computation proves that this quotient is
+finite of vector-space dimension1280. Its656-element
+degree-reverse-lexicographic Gröbner basis has leading ideal containing
+\[
+b_0^8,\ b_1^8,\ b_2^8,\ c_0^8,\ c_1^4,\ c_2^9.
+\]
+The [source](../../scripts/genus_two/theta_exception/simultaneous_locus_probe.py)
+constructs the six actual equations. The original equations, basis,
+quotient dimension, timings and source hash are in the external
+[receipt](../../../litt3-computation-data/theta_exception_20260916/simultaneous_locus_probe.json).
+This executed exact computation remains the input for finiteness;
+it has not been independently replayed. Its old octic remainder is
+no longer needed: the uniform argument below supplies the boundary
+containment.
+
+Here is the projective coverage argument. Lift a point to \((b,M)\)
+in \(S\times A\), with \(E=W_bM\). Since \(\det E\ne\mathcal O\),
+\(M\notin A[2]\). Two distinct two-torsion translates of the genus-two
+theta curve meet only at two-torsion points: for
+\(\tau=\mathcal O(W_i-W_j)\), the two classes
+\(\mathcal O(W_i-O),\mathcal O(W_j-O)\) exhaust
+\(\Theta\cap(\Theta+\tau)\), whose intersection number is2.
+Therefore at least fifteen diagonal translates have \(c_3\ne0\).
+The fourth rows of any fifteen of the sixteen certified translation
+matrices span the four linear forms. One of those same translates
+also has \(b_3\ne0\). Their sixteen affine charts cover the support,
+so the affine finiteness proves projective finiteness.
+
+The two pulled-back test schemes on \(S\times A\) agree
+scheme-theoretically. Near their support, the map to \(U_C(2,0)\)
+is étale of degree16, and the map to \(S\times K\) is étale of
+degree2 because \(M\notin A[2]\). Hence (B) gives
+\[
+16\operatorname{length}\mathcal Z_\alpha
+=2\operatorname{length}\mathcal Y_\alpha,\qquad
+\operatorname{length}\mathcal Y_\alpha=1280.
+\tag{F}
+\]
+The original affine chart already has this full length. It therefore
+omits no point, including on \(c_3=0\). Since
+\(j^*(c_3=0)=2\Theta\), a determinant in \([2]\Theta\) would
+admit a square root M in Theta and produce precisely such a point.
+Thus every determinant avoids \([2]\Theta\).
+
+The explicit point in the statement has the following short certificate.
+For its U,V,b, exact division gives
+\[
+V^2-f=U\bigl(4x^3+([87]+[61]\beta)x^2+
+([54]+[29]\beta)x+[93]+[111]\beta\bigr),
+\]
+and \(G(b)=[97]+[77]\beta\ne0\). Thus the Mumford pair is an actual
+line bundle, and b is a geometrically stable moduli point. It has
+an actual bundle representative over the finite field: the only
+descent obstruction is the scalar gerbe in its zero Brauer group.
+The determinant descends as \(\omega_C\). Writing
+\[
+c=p(M)=([17]+[95]\beta:[71]+[116]\beta:
+[105]+[61]\beta:1),
+\]
+the specialization of the actual section is
+\[
+R(a,b,c)=([101]+[44]\beta)\,Q(a).
+\tag{C}
+\]
+In the quadratic monomial order
+\((z_0^2,z_0z_1,z_0z_2,z_0z_3,z_1^2,z_1z_2,z_1z_3,z_2^2,z_2z_3,z_3^2)\),
+the coefficient vector of Q is
+\[
+(1,102,59,78,17,61,16,69,110,61).
+\]
+Direct polynomial arithmetic gives
+\[
+Q(z(T))=\psi(T)([68]+[124]T+[47]T^2+[9]T^3).
+\tag{D}
+\]
+Hence all five actual section tests are positive. The symmetric
+matrix of Q has determinant [119], so this quadric is smooth.
+At a stable test bundle \(V_i\), a local two-term cohomology
+presentation is a square matrix whose determinant is Q. Nullity
+at least two would kill all its first derivatives. Consequently
+each of the five section dimensions is exactly one.
+
+The maintained [point verifier](../../scripts/genus_two/theta_exception/verify.py)
+now uses the ten-node lemma above: its node-evaluation matrix has
+rank10, with minor[111], and all intrinsic calibration scalars equal1.
+This replaces the old880-by-236 simultaneous tensor-and-scalar system.
+It also differentiates the six equations (E) at the explicit point.
+Their Jacobian determinant is \([48]+[52]\beta\ne0\), proving that
+the point is reduced. The two étale presentations in (F) preserve
+this reducedness. The new small checks and their exact matrix are
+recorded in the
+[replacement certificate](../../../litt3-computation-data/mathematical_cleanup_20261003/rank_two_family_replacement_checks.json).
+The original returned witness and its audits remain unchanged.
+
 ## Effective finiteness and removal of the double-divisor case
 
 We give the degree argument explicitly; it uses an exclusion at
 the cubic fiber, not specialization of a closed containment.
 On \(\mathbf P^3_b\times\mathbf P^3_c\), the five equations
-\(\Delta F_i\) and G(c) define the actual incidence scheme
-\(\mathcal Y_a\). At alpha the completed
-[rank-two proof](backup_rank_two_simultaneous_locus.md) shows that
-this scheme has length1280 and lies entirely in \(b_3c_3\ne0\).
-It also has no point on G(b)=0. These are proved inputs from the
-full cubic calculation and its globalization.
+\(\Delta F_i\) and G(c) define \(\mathcal Y_a\).
+The cubic-fiber argument above gives length1280, no point on
+\(b_3c_3=0\), and no point on G(b)=0. These open-chart and
+stability exclusions supply the nonzero resultant calibrations.
 
 We use the following elementary mixed-resultant degree bound.
 For seven basepoint-free bidegree systems on
@@ -343,17 +497,8 @@ It cannot vanish at an algebraic parameter of larger degree.
 Consequently \(\mathcal Y_a\) is projective and contained in
 the affine chart \(b_3=c_3=1\), so it is finite.
 
-Lift to \(S\times J(C_a)\). The map to \(U_{C_a}(2,0)\)
-is finite étale of degree16. Its actual five determinant divisors
-have class \(2H+4\Theta\) upstairs, hence are ample downstairs.
-Their common scheme is nonempty, and finiteness makes the five
-equations a regular sequence on the smooth fivefold. Therefore
-\[
-\operatorname{length}\mathcal Z_a
-=\frac1{16}\binom53 2^3 4^2\Theta^2=160.
-\tag{18}
-\]
-This is a scheme-length assertion, not a reduced point count.
+The common moduli scheme is nonempty by (A). Its finite length is
+therefore160 by (B), with no reducedness assumption.
 
 The exclusion of c3=0 has a geometric meaning. Under the chosen
 theta coordinates, \(j^*(c_3=0)=2\Theta\): it is the standard
@@ -525,6 +670,25 @@ semistable, its degree-zero subline remains a subline after
 Frobenius, so its semistable first pullback is again strict.
 This proves the uniform assertion for all ordinary parameters.
 
+Once a degree-zero rank-two bundle is strictly semistable, it is
+an extension of two degree-zero line bundles. Frobenius is flat on
+a smooth curve, so every further pullback remains an extension of
+degree-zero lines and is strictly semistable. Consequently EVERY
+common rank-two coefficient on EVERY ordinary smooth member is
+strongly semistable; all its positive-height pullbacks are strict.
+This replaces the separate finite-residue argument and the explicit
+Frobenius-orbit calculation for the cubic witness.
+
+For the backup and the high-degree parameters, the stable common
+bundles have no nontrivial two-torsion self-twist either. If
+\(E\simeq E\kappa\), stability makes the square of the isomorphism
+scalar; rescale it to1. It defines an action of the actual étale
+algebra \(\mathcal O\oplus\kappa\). Its trace is a section of the
+nontrivial degree-zero line \(\kappa\), hence zero, so its two
+eigenbundles have rank1. Thus \(E=\pi_*L\) for the associated
+connected double, with \(\deg L=0\) by Euler characteristics.
+The established double-cover exclusions contradict all five tests.
+
 Finally a stable finite-étale-trivial bundle corresponds to an
 irreducible representation of a finite group over k. Frobenius
 raises its matrix coefficients by the field automorphism and
@@ -543,7 +707,8 @@ The exact source scripts reconstruct the
 and [octic transgression](../../scripts/genus_two/incidence_octic_transgression.py).
 The [specialization checker](../../scripts/genus_two/certify_incidence_specialization.py)
 verifies the content and primitive factor in (24).
-These scripts use the completed cubic backup certificates as
-calibration inputs. The full inputs, outputs, hashes, selected minor
+The scalar [double-base-point checker](../../scripts/genus_two/backup_double_basepoint_octics.py)
+retains the rank164 input identifying the actual octic. These scripts
+use the completed cubic backup certificates as calibration inputs. The full inputs, outputs, hashes, selected minor
 rows and resolved finite-field library discrepancies remain in the
 local research provenance record.

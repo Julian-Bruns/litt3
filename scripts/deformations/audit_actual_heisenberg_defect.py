@@ -170,7 +170,7 @@ def main():
     args = ap.parse_args()
     begin = time.monotonic()
     root = Path(__file__).resolve().parents[2]
-    data = root/'Research/computations'
+    data = root/'../litt3-computation-data/legacy_workspace_computations'
     deckpath = data/'heisenberg125_deck_full_case0_plane0.json'
     hodgepath = data/'heisenberg125_pilot_high.json'
     deck,hodge = [json.loads(p.read_text()) for p in (deckpath,hodgepath)]

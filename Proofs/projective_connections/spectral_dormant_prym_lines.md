@@ -4,6 +4,9 @@
 Author /root, 2026-09-08; global proof and exact symbolic checks, not an
 independent audit. The BNR correspondence is cited below; the explicit
 Frobenius-trivial five-torsion line is the additional construction here.
+Version4 improvement,2026-10-03: construct that line first by Cartier
+descent, so its existence no longer depends on smoothness of the
+unnormalized spectral curve.
 
 ## 1. A horizontal matrix with no denominators
 
@@ -39,113 +42,128 @@ The determinant connection is therefore precisely this canonical
 connection, not an arbitrary connection on the same line. Cartier
 descent proves det V_s=omega_(C^(1)), not just equality of degrees.
 
-## 2. The line on the smooth spectral double
+## 2. The intrinsic line on every normalized root
 
-When q has simple zeros, the spectral equation a^2=2q defines a smooth
-double cover Sigma of C, branched at div(q). It is connected: a square
-has even valuation, whereas q has simple zeros. There are 4g-4 branch
-points, and Riemann--Hurwitz gives g(Sigma)=4g-3.
+Normalize the quadratic root \(a^2=2q\), allowing two components if
+the root splits. The form \(\eta=a\,dt\) is coordinate independent.
+Above a zero of q of order m, an even m gives two unramified points
+and \(\operatorname{ord}(\eta)=m/2\). An odd m gives one ramified
+point: a has order m and dt order one, so eta has order m+1.
+Thus eta is holomorphic and nonzero on every component. The connected
+case has genus \(2g-1+B/2\) by Riemann–Hurwitz, with B the number
+of odd-order zeros.
 
-Write pi_1 for its twist. Apply the BNR correspondence in
-[Groechenig, Theorem3.2, pp.9–10](https://arxiv.org/pdf/1201.0741#page=9),
-which is stated in positive characteristic. In that notation take
-X=C^(1), E=V_s, theta as above, and spectral sheaf L on Sigma^(1).
-The smooth integral spectral curve makes L a line bundle, with
-pi_(1*)L=V_s. Riemann–Roch and the determinant–norm identity give
+The [Cartier-secant identity](cartier_dormant_secants.md#1-intrinsic-potentials-and-exact-cartier-identities)
+gives \(C_1(\sigma^3)=\sigma\) for \(\sigma=q/2\), including
+rational roots on each split component. Since \(2q=4\sigma\) and
+4 is fixed by Cartier semilinearity, it also gives
+\(C_1((2q)^3)=2q\). The root-form identity in that proof is
+\(C_1((2q)^3)=aC(\eta)\,dt\); hence \(C(\eta)=\eta\).
 
-    deg L=4(g−1),       Nm(L)=det(V_s) det(pi_(1*)O)^(-1)=omega²,
+The rank-one Cartier criterion and Cartier descent now define N
+from \((\mathcal O_\Sigma,d+\eta)\), with
+\(F_\Sigma^*N\simeq\mathcal O_\Sigma\) carrying that connection.
+Descent respects tensor products, and the fifth tensor power has
+connection \(d+5\eta=d\). Therefore \(N^5\simeq\mathcal O\).
+On each projective connected component, triviality of N would supply
+a nowhere-zero horizontal function. It would be a nonzero constant,
+contradicting eta nonzero. Thus N has exact order five on each component.
+Cartier descent also proves uniqueness of the line with this specified
+connection and trivialization.
 
-since chi(V_s)=0 and pi_(1*)O=O direct-sum omega^(-1).
-Consequently N=L tensor pi_1^*omega^(-1) has degree zero and norm O.
-The identity pi_1^*Nm(N)=N tensor tau^*N gives tau^*N=N^(-1).
+The deck involution sends eta to -eta, so \(\tau^*N=N^{-1}\).
+For the finite flat degree-two normalization map,
+\(\pi_1^*\operatorname{Nm}(N)=N\otimes\tau^*N=\mathcal O\).
+Its pullback kernel is killed by two, whereas \(\operatorname{Nm}(N)\)
+is killed by five. Hence the norm is trivial, including in the split
+case. Reversing a sends N to its inverse. Swapping r and s identifies
+the new root by \(a_{\rm new}=2a\), since \(2^2=-1\) in
+characteristic five; it sends eta to 2eta and N to \(N^2\).
 
-## 3. Frobenius pullback, including every branch point
+## 3. The normalized BNR line and its exact correction
 
-On Sigma the pullback Higgs matrix has eigenvalue a^5, since
-(a^5)^2=2q^5. An eigen-quotient row is
+Apply [Groechenig, Theorem3.2, pp.9–10](https://arxiv.org/pdf/1201.0741#page=9)
+to \((V_s,\theta)\) on \(C^{(1)}\). It gives a sheaf
+\(\mathcal L\) on the spectral curve with pushforward V_s.
+The curve is reduced and its generic Higgs eigenvalues are distinct,
+so this sheaf has rank one on each component and no zero-dimensional
+torsion. Its pullback modulo torsion is a line \(\widetilde L\)
+on the normalization.
 
-    ell=(2a^3-q',q).                                      (3)
+The eigen-quotient and its two identities are
+\[
+\ell=(2a^3-q',q),\qquad \ell\Phi=a^5\ell,                 \tag{3}
+\]
+\[
+\ell_t=u^5\ell_xT^{-1},\qquad \ell'+\ell M_s=-a\ell.     \tag{6}
+\]
+These follow from \(a'=q'/a\) and the secant equation. The
+[regularity criterion](cartier_dormant_secants.md#2-regularity-is-an-exact-condition-not-an-omitted-infinity-test)
+forces each zero order m to be 0 or 1 modulo five. At a point of the
+normalization with ramification index e, the row's vanishing order is
+e m if m is 0 modulo five, and e(m-1) if m is 1 modulo five. Indeed,
+q is the second entry; in the latter case q' has strictly lower order
+than either q or \(a^3\), while in the former neither first-entry
+term has lower order than q. Thus the common vanishing divisor is
+\(D=5\pi^*T\), with \(T=\sum_x\lfloor m_x/5\rfloor x\).
+Saturating the row gives an everywhere surjective horizontal map
+\[
+\pi^*J\longrightarrow\pi^*\omega_C^5(-D),
+\]
+where the target has its canonical connection plus eta. Locally D
+has a fifth-power equation, whose logarithmic derivative vanishes,
+so saturation preserves the connection identity. Section2 identifies
+the target with the Cartier pullback of
+\(N\otimes\pi_1^*(\omega_{C^{(1)}}(-T^{(1)}))\).
+Cartier descent gives a surjection onto this line from
+\(\pi_1^*V_s\). It and the normalized BNR evaluation onto
+\(\widetilde L\) have the same generic eigen-quotient on each
+component. Their kernels are saturated subbundles of the same bundle
+on a smooth curve, hence equal. Consequently
+\[
+\widetilde L=N\otimes\pi_1^*(\omega_{C^{(1)}}(-T^{(1)})).
+\]
 
-It satisfies ell Phi=a^5 ell. Under the coordinate change above,
-ell_t=u^5 ell_x T^(-1). Thus (3) defines a global map
+The adjunction map embeds V_s in \(\pi_{1*}\widetilde L\): it
+is a generic isomorphism and V_s is torsion free. The cokernel is
+finite length. Since
+\(\deg\widetilde L=4g-4-2\deg T\),
+\(\chi(\mathcal O_\Sigma)=2(1-g)-B/2\), and \(\chi(V_s)=0\),
+its length is
+\[
+2g-2-B/2-2\deg T
+=\sum_x\bigl(\lfloor m_x/2\rfloor-2\lfloor m_x/5\rfloor\bigr).
+\]
+This Euler-characteristic calculation also covers a split root.
+If q has simple zeros, T=0 and the cokernel vanishes; the root is
+connected and smooth already before normalization. Then
+\(g(\Sigma)=4g-3\), \(\operatorname{div}(\eta)=2R\), and the
+old smooth spectral-line assertion follows immediately.
 
-    pi^*J -> pi^*omega_C^5.                              (4)
+## 4. Both actual legs, and the remaining boundary
 
-At q!=0 its second entry is a unit. At a simple zero of q, a=0 and
-q' is a unit on C, hence also on Sigma, so its first entry is a unit.
-Therefore (4) is surjective everywhere, not merely at the generic point.
-
-The tautological spectral evaluation pi_1^*V_s->L is also surjective.
-Pulling it back by F_Sigma gives an eigen-quotient of pi^*J with the same
-eigenvalue a^5. Generically it agrees with (4) up to scalar. The kernel
-of a surjection from a vector bundle to a line on a smooth curve is
-saturated; saturated kernels with the same generic fiber coincide.
-Their quotient lines are therefore isomorphic globally. It follows that
-
-    F_Sigma^*L = pi^*omega_C^5,
-    F_Sigma^*N = O_Sigma.                               (5)
-
-This argument includes the ramification points where the Frobenius
-base change of the spectral model is not normal. It uses the pullback
-of its evaluation map on the actual smooth Sigma, not an identification
-of that singular base change with Sigma.
-
-## 4. The logarithmic differential and exact order
-
-Differentiate (3), using a'=q'/a in the function field and the secant
-equation. One obtains
-
-    ell'+ell M_s=-a ell.                                      (6)
-
-For a horizontal w, the quotient coordinate z=ell w satisfies z'=-az.
-After tensoring by pi^*omega_C^(-5), the trivial line in (5) therefore
-has its Cartier connection d+eta, with eta=a dt. The expression is
-intrinsic. At a simple branch point q=t times a unit, a has order one
-on Sigma and dt has order one. Hence eta has order two there; away
-from the branch divisor a dt is nowhere zero in the pulled-back
-canonical frame. Thus div(eta)=2R.
-
-The connection is descended, so has zero p-curvature. The rank-one
-Cartier criterion gives Cartier(eta)=eta. Equivalently, over the function
-field its nonzero horizontal section h satisfies dh/h=-eta. Since eta
-is holomorphic, every valuation of h is divisible by five; this is the
-usual Kummer description of the line N. The regular extension across
-all points is already supplied by (5).
-
-Under inverse Frobenius twist, (5) means N^5=O, so its order divides
-five. If N were trivial, its pulled-back Cartier connection would admit
-a nowhere-zero global horizontal section. Under (5) this would be a
-unit on the projective connected Sigma, hence a nonzero constant. But
-(d+eta)(constant) is nonzero since eta!=0. Therefore N has exact order
-five. More generally a trivialization of F^*N is unique up to a constant,
-so its connection form eta determines N by Cartier descent.
-
-Changing the square root a to -a changes eta to -eta, and hence N to
-N^(-1). Swapping r and s negates q; the identification a_new=2a is
-valid because 2^2=-1 in characteristic five. It sends eta to 2eta, hence
-N to N^2. These operations preserve the cyclic subgroup generated by N.
-
-## 5. Both actual legs, and the remaining boundary
-
-Jets, the polynomial matrix, Cartier descent and the spectral algebra
-all commute with etale base change. The evaluation quotient is unique
-and the simple branch divisor pulls back to a simple divisor. Thus L,
-N and eta are pulled back as claimed, including covers of degree
-divisible by five and non-Galois covers.
+Normalization of the root commutes with etale base change: the base
+change of the smooth normalization is smooth and is the normalization
+of the pulled-back root. Its form and Cartier line therefore pull back,
+including along covers of degree divisible by five or non-Galois covers.
+The zero multiplicities, correction divisor T and saturated
+eigen-quotient pull back as well, giving the normalized BNR line.
 
 If r_X,s_X and r_Y,s_Y actually agree through X<-Z->Y, their differences
-are the same quadratic on Z. Its spectral double is simultaneously
-Z times_X Sigma_X and Z times_Y Sigma_Y. Both projections to the spectral
-endpoints are finite etale base changes of the ORIGINAL maps. This
-preserves a single actual common source and both line identifications.
-The spectral endpoint maps to X,Y are instead ramified doubles.
+are the same quadratic on Z. Its normalized root is simultaneously
+Z times_X Sigma_X and Z times_Y Sigma_Y. Both projections are finite
+etale base changes of the ORIGINAL maps. Each connected component is
+a single actual common source for its two endpoint components, and
+both preserve the form and line. In the simple-zero case the roots
+are connected and the spectral endpoint maps to X,Y are ramified
+doubles.
 
 The exact identities (1), (2), (3), and (6), including the quotient
 transition formula, are checked by the augmented existing
 [Cartier secant checker](../../scripts/connections/check_cartier_dormant_secants.sage).
 No new point-enumeration algorithm is needed.
 
-## 6. Two failed universal shortcuts
+## 5. Two failed universal shortcuts
 
 The existing [genus-seventeen Hecke counterexample](../examples/igusa_hecke_correspondences.md)
 also tests the present, stronger construction. In its notation the
@@ -174,7 +192,7 @@ the same value here as at I. This proves neither equality of actual
 double orbits nor constancy of rational invariants with poles at I.
 All displayed matrix identities are checked in the existing secant script.
 
-## 7. Genus-two ordinarity from dormant tangents
+## 6. Genus-two ordinarity from dormant tangents
 
 Put a=(r−s)/2 and r0=(r+s)/2. The
 [Cartier-secant dictionary](cartier_dormant_secants.md) gives
@@ -218,7 +236,7 @@ Its explicit models use
     A_ij=(z_i−z_j)u²+(W(z_i)−W(z_j))u+V(z_i)−V(z_j), i<j,
 
 with W,V from the quintic theorem. The
-[original packet](../../Research/computations/backup_genus_two_secant_curves.json)
+[original packet](../../../litt3-computation-data/legacy_workspace_computations/backup_genus_two_secant_curves.json)
 and [generator](../../scripts/genus_two/backup_genus_two_secant_curves.sage)
 retain the field moduli, all ten models and marked Cartier matrices.
 They independently verify the forms and ordinarity now proved uniformly.
